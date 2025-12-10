@@ -1,65 +1,163 @@
-import Image from "next/image";
+﻿import Image from "next/image";
+import Link from "next/link";
+
+export const metadata = {
+  title: "Zoho & Oracle NetSuite Solutions | AGSuite",
+  description:
+    "Choose between Zoho and Oracle NetSuite. Explore CRM, ERP, automation, and cloud solutions tailored for every business.",
+  openGraph: {
+    title: "Zoho & Oracle NetSuite Solutions | AGSuite",
+    description:
+      "Explore Zoho CRM and Oracle NetSuite ERP solutions for fast-scaling companies.",
+    url: "https://agsuitetech.com", // ← CHANGE THIS TO YOUR REAL DOMAIN
+    siteName: "AGSuite",
+    images: [
+      {
+        url: "/images/Background/bghomepage.webp", // ← RECOMMENDED: replace with dedicated OG image (1200×630)
+        width: 1200,
+        height: 630,
+        alt: "Zoho & NetSuite Platform Overview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main
+      className="min-h-screen px-4 md:px-8 lg:px-12 py-6 md:py-10 bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: "url('/images/Background/bghomepage.webp')", // ← FULL PAGE BACKGROUND
+      }}
+    >
+      {/* TOP TWO SECTIONS — ZOHO */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+{/* LEFT — NETSUITE LOGO + BUTTON */}
+<Link
+  href="/netsuite"
+  className="relative h-[45vh] md:h-[70vh]  flex flex-col items-center justify-center text-center rounded-2xl shadow-lg"
+  aria-label="Visit NetSuite Page"
+>
+  <Image
+    src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
+    alt="Oracle NetSuite Logo"
+    width={260}
+    height={120}
+    className="mb-6"
+    priority
+  />
+  <button className="px-8 py-3 rounded-lg bg-gray-700 text-white text-lg font-semibold hover:bg-gray-900 transition">
+    Visit NetSuite →
+  </button>
+</Link>
+
+{/* RIGHT — NETSUITE BACKGROUND */}
+<Link
+  href="/netsuite"
+  className="relative h-[45vh] md:h-[70vh] group overflow-hidden block  shadow-lg"
+  aria-label="Explore Oracle NetSuite"
+>
+  <Image
+    src="/images/netsuiteimages/background/netsuitebg.webp"
+    alt="NetSuite Background"
+    fill
+    className="object-cover  group-hover:scale-105 transition-all duration-700 opacity-99"
+  />
+
+  {/* Main dim overlay */}
+  <div className="absolute inset-0 bg-black/25 " />
+
+  {/* Bottom → Top gradient overlay (same as Zoho) */}
+  <div
+    className="
+      absolute inset-0 
+      bg-linear-to-t
+      from-black/80
+      via-transparent
+      to-transparent
+    "
+  />
+
+  {/* Content */}
+  <article className="absolute bottom-8 left-8 text-white drop-shadow-lg">
+    <h2 className="text-3xl font-semibold">
+      Run Your Entire Business in the Cloud.
+    </h2>
+    <p className="text-xl opacity-90">The #1 ERP for Fast-Growing Companies</p>
+  </article>
+</Link>
+
+
+</section>
+
+
+
+   
+
+      <div className="my-10"></div>
+
+      {/* BOTTOM TWO SECTIONS — NETSUITE (Reversed Layout) */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+{/* LEFT — ZOHO BACKGROUND */}
+<Link
+  href="/zoho"
+  className="relative h-[45vh] md:h-[70vh] group overflow-hidden block  shadow-lg"
+  aria-label="Visit Zoho Solutions"
+>
+  <Image
+    src="/images/zohoimages/background/zohobg.webp"
+    alt="Zoho Background"
+    fill
+    priority
+    className="object-cover group-hover:scale-105 transition-all duration-700 opacity-99"
+  />
+
+  {/* Main dim overlay */}
+  <div className="absolute inset-0 bg-black/25" />
+
+  {/* NEW bottom gradient overlay */}
+  <div
+    className="
+      absolute inset-0 
+      bg-linear-to-t
+      from-black/80
+      via-black/10
+      to-transparent
+    "
+  />
+
+  {/* Content */}
+  <article className="absolute bottom-8 left-8 text-white drop-shadow-lg">
+    <h2 className="text-3xl font-semibold">Smarter Business. Faster Growth.</h2>
+    <p className="text-xl opacity-90">Zoho Solutions for Every Team</p>
+  </article>
+</Link>
+
+
+{/* RIGHT — ZOHO LOGO + BUTTON */}
+<Link
+  href="/zoho"
+  className="relative h-[45vh] md:h-[70vh]  flex flex-col items-center justify-center text-center rounded-2xl shadow-lg"
+  aria-label="Go to Zoho Page"
+>
+  <Image
+    src="/images/zohoimages/zohologos/zohoadvancelogo.webp"
+    alt="Zoho Logo"
+    width={260}
+    height={120}
+    className="mb-6"
+    priority
+  />
+  <button className="px-8 py-3 rounded-lg bg-gray-700 text-white text-lg font-semibold hover:bg-gray-900 transition">
+    Visit Zoho →
+  </button>
+</Link>
+
+</section>
+    </main>
   );
 }
