@@ -1,6 +1,6 @@
 ﻿import Link from 'next/link';
 import { Button } from '../../../../components/Button';
-import { ZohoCard } from '../../components/ZohoCard';
+import { ZohoCard } from '../../../components/ZohoCard';
 
 export default function ZohoCRMPage() {
   return (
