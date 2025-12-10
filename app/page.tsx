@@ -64,6 +64,7 @@ export default function Home() {
     src="/images/netsuiteimages/background/netsuitebg.webp"
     alt="NetSuite Background"
     fill
+    priority
     className="object-cover  group-hover:scale-105 transition-all duration-700 opacity-99"
   />
 
