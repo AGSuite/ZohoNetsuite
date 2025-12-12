@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { NSNavbar } from "./components/NSNavbar";
+import NavbarNetSuite from "./components/NSNavbar";
 import { NSFooter } from "./components/NSFooter";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function NetSuiteLayout({
 }) {
   return (
     <div className="min-h-screen bg-white">
-      <NSNavbar />
+      <NavbarNetSuite />
       <main>{children}</main>
       <NSFooter />
     </div>

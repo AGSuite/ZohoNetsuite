@@ -1,0 +1,222 @@
+// navDataZoho.ts
+
+import CampaignIcon from '@mui/icons-material/Campaign';
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
+import WorkIcon from '@mui/icons-material/Work';
+import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
+import ForumIcon from '@mui/icons-material/Forum';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
+import EventIcon from '@mui/icons-material/Event';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import SchoolIcon from '@mui/icons-material/School';
+import StoreIcon from '@mui/icons-material/Store';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
+import ComputerIcon from '@mui/icons-material/Computer';
+import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
+import BuildIcon from '@mui/icons-material/Build';
+import SettingsIcon from '@mui/icons-material/Settings';
+import Groups from '@mui/icons-material/Groups';
+
+// Types
+export interface MegaMenuItem {
+    label: string;
+    href: string;
+    description?: string;
+}
+
+export interface MegaMenuCategory {
+    title: string;
+    items: MegaMenuItem[];
+}
+
+export interface MegaMenu {
+    title: string;
+    description: string;
+    categories: MegaMenuCategory[];
+}
+
+export interface NavItem {
+    label: string;
+    href: string;
+    description?: string;
+    megaMenu?: MegaMenu;
+    icon?: React.ComponentType<any>;
+}
+
+export interface NavSection {
+    title: string;
+    children: NavItem[];
+}
+
+// --------------------------------------------------
+// ZOHO NAVIGATION DATA - ONLY ZOHO + COMMON SECTIONS
+// --------------------------------------------------
+
+export const navItemsZoho: NavSection[] = [
+    // ---------------- ABOUT US ----------------
+    {
+        title: "About Us",
+        children: [
+            {
+                label: "Who We Are",
+                href: "/about-us",
+                description: "Learn more about AGSuite vision, mission and team.",
+                icon: Groups
+            },
+        ],
+    },
+
+    // ---------------- SOLUTIONS ----------------
+    {
+        title: "Solutions",
+        children: [
+            {
+                label: "ZOHO",
+                href: "/solutions/zoho",
+                megaMenu: {
+                    title: "Zoho Complete Suite of Applications",
+                    description: "All the tools you need for sales, HR, operations & automation.",
+                    categories: [
+                        {
+                            title: "Sales",
+                            items: [
+                                { label: "Zoho CRM", href: "/solutions/zoho/zohocrm" },
+                                { label: "Zoho CRM Plus", href: "/solutions/zoho/zohocrmplus" },
+                                { label: "Zoho Bigin", href: "/solutions/zoho/zohobigin" },
+                            ]
+                        },
+                        {
+                            title: "HR",
+                            items: [
+                                { label: "Zoho People", href: "/solutions/zoho/zohopeople" },
+                                { label: "Zoho Recruit", href: "/solutions/zoho/zohorecruit" },
+                                { label: "Zoho People Plus", href: "/solutions/zoho/zohopeopleplus" },
+                                { label: "Zoho Payroll", href: "/solutions/zoho/zohopayroll" },
+                                { label: "Zoho Expense", href: "/solutions/zoho/zohoexpense" },
+                            ]
+                        },
+                        {
+                            title: "Finance",
+                            items: [
+                                { label: "Zoho Books", href: "/solutions/zoho/zohobooks" },
+                                { label: "Zoho Inventory", href: "/solutions/zoho/zohoinventory" },
+                                { label: "Zoho Finance Plus", href: "/solutions/zoho/zohofinanceplus" },
+                            ]
+                        },
+                        {
+                            title: "Projects",
+                            items: [
+                                { label: "Zoho Projects", href: "/solutions/zoho/zohoprojects" },
+                                { label: "Zoho Sprints", href: "/solutions/zoho/zohosprint" },
+                            ]
+                        },
+                        {
+                            title: "Service",
+                            items: [
+                                { label: "Zoho Desk", href: "/solutions/zoho/zohodesk" },
+                                { label: "Zoho SalesIQ", href: "/solutions/zoho/zohosalesiq" },
+                                { label: "Zoho FSM", href: "/solutions/zoho/zohofsm" },
+                            ]
+                        },
+                        {
+                            title: "Email & Collaboration",
+                            items: [
+                                { label: "Zoho Mail", href: "/solutions/zoho/zohomail" },
+                                { label: "Zoho Workplace", href: "/solutions/zoho/zohoworkplace" },
+                            ]
+                        },
+                        {
+                            title: "Marketing",
+                            items: [
+                                { label: "Zoho Sites", href: "/solutions/zoho/zohosites" },
+                                { label: "Zoho Social", href: "/solutions/zoho/zohosocial" },
+                                { label: "Zoho Commerce", href: "/solutions/zoho/zohocommerce" },
+                                { label: "Zoho Marketing Automation", href: "/solutions/zoho/zohomarketingauto" },
+                                { label: "Zoho Marketing Plus", href: "/solutions/zoho/zohomarketingplus" },
+                            ]
+                        },
+                        {
+                            title: "BI & Analytics",
+                            items: [
+                                { label: "Zoho Analytics", href: "/solutions/zoho/zohoanalytics" },
+                                { label: "Zoho Flow", href: "/solutions/zoho/zohoflow" },
+                            ]
+                        },
+                        {
+                            title: "Dev Platforms",
+                            items: [
+                                { label: "Zoho Creator", href: "/solutions/zoho/zohocreator" },
+                                { label: "Zoho Catalyst", href: "/solutions/zoho/zohocatalyst" },
+                            ]
+                        },
+                        {
+                            title: "IT Management",
+                            items: [
+                                { label: "Zoho IT Management", href: "/solutions/zoho/zohoitmanagement" },
+                            ]
+                        },
+                        {
+                            title: "Complete Suite",
+                            items: [
+                                { label: "Zoho One", href: "/solutions/zoho/zohoone" },
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+
+    // ---------------- SERVICES ----------------
+    {
+        title: "Services",
+        children: [
+            { label: 'Digital Transformation', href: '/services/digital-transformation', description: 'Modernize your business.', icon: RocketLaunchIcon },
+            { label: 'Integration Services', href: '/services/integration-services', description: 'Connect systems easily.', icon: IntegrationInstructionsIcon },
+            { label: 'Training Services', href: '/services/training-services', description: 'Expert-led training programs.', icon: SchoolIcon },
+            { label: 'Low-Code App Development', href: '/services/low-code', description: 'Build apps faster.', icon: BuildIcon },
+            { label: 'Managed Services', href: '/services/managed-services', description: 'Complete IT management.', icon: SettingsIcon },
+        ]
+    },
+
+    // ---------------- INDUSTRIES ----------------
+    {
+        title: "Industries",
+        children: [
+            { label: 'Software & Technology', href: '/industries/software', description: 'Solutions for tech businesses.', icon: ComputerIcon },
+            { label: 'IT & Professional Services', href: '/industries/it-services', description: 'Automation for service providers.', icon: WorkIcon },
+            { label: 'Wholesale Distribution', href: '/industries/wholesale', description: 'Distribution & logistics tools.', icon: LocalShippingIcon },
+            { label: 'Advertising & Marketing', href: '/industries/advertising-marketing', description: 'Boost your campaigns.', icon: CampaignIcon },
+            { label: 'Media & Publishing', href: '/industries/media', description: 'Tools for media houses.', icon: NewspaperIcon },
+            { label: 'Retail & E-Commerce', href: '/industries/retail', description: 'Retail automation suite.', icon: StoreIcon },
+            { label: 'Transportation & Logistics', href: '/industries/transport', description: 'Smart logistics systems.', icon: LocalShippingIcon },
+            { label: 'Manufacturing', href: '/industries/manufacturing', description: 'Optimize manufacturing cycles.', icon: PrecisionManufacturingIcon },
+        ]
+    },
+
+    // ---------------- INSIGHTS ----------------
+    {
+        title: "Insights",
+        children: [
+            { label: 'Blogs', href: '/blog', description: 'Latest articles & updates.', icon: ForumIcon },
+            { label: 'Case Study', href: '/casestudy', description: 'Our success stories.', icon: LocalLibraryIcon },
+            { label: 'Events', href: '/insights/events', description: 'Workshops & webinars.', icon: EventIcon },
+            { label: 'Awards & Achievements', href: '/insights/awards', description: 'Recognition & milestones.', icon: EmojiEventsIcon },
+        ]
+    },
+
+    // ---------------- CONTACT ----------------
+    {
+        title: "Contact",
+        children: [
+            { label: 'Careers', href: '/contact-us/careers', description: 'Join our growing team.', icon: WorkIcon },
+            { label: 'Support', href: '/contact-us/support', description: 'Get expert help.', icon: SupportAgentIcon },
+            { label: 'Request Quote', href: '/contact-us/quote', description: 'Get project pricing.', icon: RequestQuoteIcon },
+            { label: 'Free Consultation', href: '/free-consultation', description: 'Talk to our team.', icon: ContactSupportIcon }
+        ]
+    }
+];

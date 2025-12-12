@@ -6,7 +6,7 @@ export default function ZohoCRMPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
+      <section className="bg-linear-to-br from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-4xl">
             <h1 className="text-5xl font-bold mb-6">Zoho CRM</h1>

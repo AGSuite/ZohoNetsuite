@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ZohoNavbar } from "./components/ZohoNavbar";
+import ZohoNavbar from "./components/ZohoNavbar";
 import { ZohoFooter } from "./components/ZohoFooter";
 
 export const metadata: Metadata = {
