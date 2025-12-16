@@ -1,7 +1,8 @@
 ﻿import Link from 'next/link';
 import { ZohoHero } from './components/ZohoHero';
 import { ZohoCard } from './components/ZohoCard';
-import { Metrics } from '../components/home/Metrics';
+import ZohoMetrics from './components/ZohoMetrics';
+import ZohoDashboardHero from './components/ZohoDashboardHero';
 import { Features } from '../components/home/Features';
 import { WhyChooseUs } from '../components/home/WhyChooseUs';
 import { Testimonials } from '../components/home/Testimonials';
@@ -20,17 +21,9 @@ export default function ZohoPage() {
         ctaHref="/zoho/solutions"
       />
 
-      <Metrics
-        title="Trusted by Millions Globally"
-        subtitle="Powering businesses of all sizes with cloud software"
-        bgColor="bg-white"
-        metrics={[
-          { value: "100M+", label: "Users Worldwide", description: "Across 190+ countries" },
-          { value: "55+", label: "SaaS Applications", description: "Covering every business need" },
-          { value: "25+", label: "Years in Business", description: "Long-term stability & innovation" },
-          { value: "24/7", label: "Premium Support", description: "Whenever you need us" },
-        ]}
-      />
+      <ZohoMetrics />
+
+      <ZohoDashboardHero />
 
       {/* Key Solutions Grid (Existing) */}
       <section className="py-20 bg-gray-50">

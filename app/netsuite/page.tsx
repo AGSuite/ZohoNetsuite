@@ -1,7 +1,8 @@
 ﻿import Link from 'next/link';
 import { NSHero } from './components/NSHero';
 import { NSCard } from './components/NSCard';
-import { Metrics } from '../components/home/Metrics';
+import NSMetrics from './components/NSMetrics';
+import NSDashboardHero from './components/NSDashboardHero';
 import { Features } from '../components/home/Features';
 import { WhyChooseUs } from '../components/home/WhyChooseUs';
 import { Testimonials } from '../components/home/Testimonials';
@@ -20,18 +21,9 @@ export default function NetSuitePage() {
         ctaHref="/netsuite/solutions"
       />
 
-      <Metrics
-        title="Global Leader in Cloud ERP"
-        subtitle="Proven success for businesses worldwide"
-        bgColor="bg-gray-900"
-        textColor="text-white"
-        metrics={[
-          { value: "37,000+", label: "Customers", description: "Globally trust NetSuite" },
-          { value: "#1", label: "Cloud ERP", description: "Market leader according to Gartner" },
-          { value: "200+", label: "Countries", description: "Supporting global operations" },
-          { value: "24/7", label: "Business Uptime", description: "Reliable cloud infrastructure" },
-        ]}
-      />
+      <NSMetrics />
+
+      <NSDashboardHero />
 
       {/* Key Solutions Grid (Existing) */}
       <section className="py-20 bg-gray-50">

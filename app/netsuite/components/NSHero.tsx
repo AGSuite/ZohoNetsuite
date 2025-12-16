@@ -37,7 +37,7 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                 }}
               />
 
-              <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+              <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="max-w-2xl">
                   <h1 className="text-4xl sm:text-4xl lg:text-4xl font-medium leading-snug text-gray-900">
                     NetSuite ERP Solutions
@@ -145,21 +145,15 @@ const HeroSlide = ({
   textColor = 'light',
 }: any) => {
   return (
-    <div className="relative h-full w-full flex items-center">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 -z-10 bg-cover bg-center"
-        style={{ backgroundImage: `url('${bg}')` }}
-      />
-      
+    <div className="relative h-full w-full flex items-center bg-cover bg-center" style={{ backgroundImage: `url('${bg}')` }}>
       {/* Gradient overlay: dark left → light center → transparent right */}
       {showOverlay && (
-        <div className="absolute inset-0 -z-5 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/20 to-transparent" />
       )}
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         {/* Left Content */}
-        <div className="max-w-2xl">
+        <div className="max-w-2xl text-left">
           <h1 className={`text-4xl sm:text-4xl lg:text-4xl font-medium leading-snug animate-fadeInUp ${
             textColor === 'dark' ? 'text-gray-900' : 'text-white'
           }`}>
@@ -177,8 +171,8 @@ const HeroSlide = ({
           }`}>{desc}</p>
 
           <div className="mt-8 relative inline-flex group animate-fadeInUp animation-delay-1200">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
-            <button className="relative px-8 py-3 rounded-xl bg-gray-900 text-white font-semibold shadow-xl">
+            <div className={`absolute inset-0 rounded-xl bg-gradient-to-r ${textColor === 'light' ? 'from-[#44BCFF] via-[#FF44EC] to-[#FF675E]' : 'from-[#44BCFF] via-[#FF44EC] to-[#FF675E]'} opacity-70 blur-lg group-hover:opacity-100 transition duration-700`} />
+            <button className="bg-gray-900 text-white relative px-8 py-3 rounded-xl font-semibold shadow-xl hover:scale-105 transition-transform duration-300">
               {cta}
             </button>
           </div>
@@ -192,7 +186,7 @@ const HeroSlide = ({
               alt={title}
               width={1600}
               height={1400}
-              className="w-full max-w-4xl object-contain"
+              className="w-full max-w-4xl object-contain drop-shadow-2xl"
             />
           </div>
         )}
