@@ -506,30 +506,27 @@ const NavbarNetSuite = () => {
             </svg>
           </button>
 
-           <Link
-              href="/zoho"
-              className="hidden lg:flex items-center gap-2 px-4 py-2 rounded-3xl border border-gray-400 shadow-sm transition-all duration-300 text-gray-700 hover:text-blue-600 hover:border-blue-600"
-            >
-            Visit Zoho
-           </Link>
+          <div className="hidden lg:flex relative inline-flex group">
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
             <Link
-                href="/netsuite/contact"
-                className={`hidden lg:flex items-center gap-2 px-4 py-2 rounded-3xl border border-blue-400 shadow-blue-700 transition-all duration-300 bg-blue-600 text-white hover:bg-blue-700`}
+              href="/netsuite/contact"
+              className="relative px-6 py-2.5 rounded-xl bg-gray-900 text-white font-semibold shadow-xl flex items-center gap-2"
             >
-            Get Started
-            <svg
+              Get Started
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
                 className="w-5 h-5"
-            >
+              >
                 <path
-                fillRule="evenodd"
-                d="M5 10a.75.75 0 01.75-.75h6.638L10.237 6.29a.75.75 0 111.04-1.08l3.53 3.25a.75.75 0 010 1.08l-3.53 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"
-                clipRule="evenodd"
+                  fillRule="evenodd"
+                  d="M5 10a.75.75 0 01.75-.75h6.638L10.237 6.29a.75.75 0 111.04-1.08l3.53 3.25a.75.75 0 010 1.08l-3.53 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"
+                  clipRule="evenodd"
                 />
-            </svg>
-           </Link>
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -669,20 +666,16 @@ const NavbarNetSuite = () => {
             ))}
 
             <div className="pt-4 border-t border-gray-200">
-               <Link
-                href="/zoho"
-                className="block w-full text-center px-4 py-2 mb-3 text-gray-800 border border-gray-300 rounded-md hover:bg-gray-50"
+              <div className="relative inline-flex group w-full">
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
+                <Link
+                  href="/netsuite/contact"
+                  className="relative block w-full text-center px-6 py-3 rounded-xl bg-gray-900 text-white font-semibold shadow-xl"
                   onClick={() => setOpenNavbar(false)}
                 >
-                Visit Zoho
+                  Get Started
                 </Link>
-              <Link
-                href="/netsuite/contact"
-                className="block w-full text-center px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md"
-                onClick={() => setOpenNavbar(false)}
-              >
-                Get Started
-              </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -1,49 +1,272 @@
-import { Button } from '../../components/Button';
+"use client";
+
+import React from "react";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 interface NSHeroProps {
-  title: string;
-  subtitle: string;
-  description: string;
+  title?: string;
+  subtitle?: string;
+  description?: string;
   ctaText?: string;
   ctaHref?: string;
 }
 
-export function NSHero({
+export const NSHero: React.FC<NSHeroProps> = () => {
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  return (
+    <div className="relative w-full overflow-hidden bg-white">
+      <section className="relative w-full h-[calc(100vh-80px)] flex items-center mt-20">
+        <div className="relative w-full h-full">
+          {!isMounted ? (
+            /* SSR Placeholder */
+            <div className="relative h-full w-full flex items-center">
+              <div
+                className="absolute inset-0 -z-10 bg-cover bg-center"
+                style={{
+                  backgroundImage: "url('/images/Background/herobluebg.webp')",
+                }}
+              />
+
+              <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+                <div className="max-w-2xl">
+                  <h1 className="text-4xl sm:text-4xl lg:text-4xl font-medium leading-snug text-gray-900">
+                    NetSuite ERP Solutions
+                    <br />
+                    <span className="text-2xl sm:text-4xl lg:text-4xl font-medium text-gray-900">
+                      For Modern Businesses
+                    </span>
+                  </h1>
+
+                  <p className="mt-3 text-base sm:text-lg font-medium text-gray-600">
+                    Run finance, operations & reporting in a single connected platform.
+                  </p>
+
+                  <div className="mt-8 relative inline-flex group">
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
+                    <button className="relative px-8 py-3 rounded-xl bg-gray-900 text-white font-semibold shadow-xl">
+                      Explore NetSuite ERP
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <Swiper
+              className="hero-swiper w-full h-full"
+              modules={[Pagination, Autoplay]}
+              loop
+              autoplay={{ delay: 4500, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
+              speed={900}
+              onSlideChange={() => {
+                // Trigger animations to restart on slide change
+                setTimeout(() => {
+                  const activeSlide = document.querySelector('.swiper-slide-active');
+                  if (activeSlide) {
+                    const animatedElements = activeSlide.querySelectorAll('.animate-fadeInUp, .animate-fadeInRight');
+                    animatedElements.forEach((el) => {
+                      (el as HTMLElement).classList.remove('animate-fadeInUp', 'animate-fadeInRight');
+                      void (el as HTMLElement).offsetWidth; // Trigger reflow
+                      if (el.classList.contains('hidden')) return;
+                      const isImage = el.querySelector('img');
+                      (el as HTMLElement).classList.add(isImage ? 'animate-fadeInRight' : 'animate-fadeInUp');
+                    });
+                  }
+                }, 50);
+              }}
+            >
+              {/* SLIDE 1 - NetSuite ERP */}
+              <SwiperSlide>
+                <HeroSlide
+                  bg="/images/Background/herobluebg.webp"
+                  title="NetSuite ERP Solutions"
+                  subtitle="For Modern Businesses"
+                  desc="Run finance, operations & reporting in a single connected platform."
+                  cta="Explore NetSuite ERP"
+                  image="/images/Dashboard/netsuitedash2.webp"
+                  showOverlay={false}
+                  textColor="dark"
+                />
+              </SwiperSlide>
+
+              {/* SLIDE 2 - CFO Automation */}
+              <SwiperSlide>
+                <HeroSlide
+                  bg="/images/Background/teambg.webp"
+                  title="CFO Automation"
+                  subtitle="Smarter Finance. Faster Growth"
+                  desc="Automate closing, approvals & compliance—focus on strategy."
+                  cta="Upgrade CFO Operations"
+                  showOverlay={true}
+                  textColor="light"
+                />
+              </SwiperSlide>
+
+              {/* SLIDE 3 - NetSuite Efficiency */}
+              <SwiperSlide>
+                <HeroSlide
+                  bg="/images/Background/teambg2.webp"
+                  title="Maximize NetSuite Efficiency"
+                  subtitle="Faster Data. Smarter Decisions"
+                  desc="Optimize performance, automate workflows, and eliminate bottlenecks."
+                  cta="Optimize Your NetSuite"
+                  showOverlay={true}
+                  textColor="light"
+                />
+              </SwiperSlide>
+            </Swiper>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+/* ---------------- HELPERS ---------------- */
+
+const HeroSlide = ({
+  bg,
   title,
   subtitle,
-  description,
-  ctaText = "Get Started",
-  ctaHref = "/netsuite/contact"
-}: NSHeroProps) {
+  desc,
+  cta,
+  image,
+  showOverlay = true,
+  textColor = 'light',
+}: any) => {
   return (
-    <section className="bg-white text-gray-900 pt-32 pb-20">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="max-w-4xl">
-          <h1 className="text-5xl font-bold mb-6">{title}</h1>
-          <h2 className="text-2xl font-light mb-8 text-gray-600">{subtitle}</h2>
-          <p className="text-xl mb-8 text-gray-500">
-            {description}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button
-              variant="secondary"
-              size="lg"
-              className="bg-orange-600 text-white hover:bg-orange-700 shadow-md"
-              href={ctaHref}
-            >
-              {ctaText}
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-orange-600 text-orange-600 hover:bg-orange-50"
-              href="/netsuite/solutions"
-            >
-              View All Solutions
-            </Button>
+    <div className="relative h-full w-full flex items-center">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 -z-10 bg-cover bg-center"
+        style={{ backgroundImage: `url('${bg}')` }}
+      />
+      
+      {/* Gradient overlay: dark left → light center → transparent right */}
+      {showOverlay && (
+        <div className="absolute inset-0 -z-5 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
+      )}
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        {/* Left Content */}
+        <div className="max-w-2xl">
+          <h1 className={`text-4xl sm:text-4xl lg:text-4xl font-medium leading-snug animate-fadeInUp ${
+            textColor === 'dark' ? 'text-gray-900' : 'text-white'
+          }`}>
+            {title}
+            <br />
+            <span className={`text-2xl sm:text-4xl lg:text-4xl font-medium ${
+              textColor === 'dark' ? 'text-gray-900' : 'text-white'
+            }`}>
+              {subtitle}
+            </span>
+          </h1>
+
+          <p className={`mt-3 text-base sm:text-lg font-medium animate-fadeInUp animation-delay-600 ${
+            textColor === 'dark' ? 'text-gray-600' : 'text-white/80'
+          }`}>{desc}</p>
+
+          <div className="mt-8 relative inline-flex group animate-fadeInUp animation-delay-1200">
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
+            <button className="relative px-8 py-3 rounded-xl bg-gray-900 text-white font-semibold shadow-xl">
+              {cta}
+            </button>
           </div>
         </div>
+          
+        {/* Right Image (if provided) */}
+        {image && (
+          <div className="hidden lg:flex justify-center lg:justify-end animate-fadeInRight animation-delay-900">
+            <Image
+              src={image}
+              alt={title}
+              width={1600}
+              height={1400}
+              className="w-full max-w-4xl object-contain"
+            />
+          </div>
+        )}
       </div>
-    </section>
+    </div>
   );
+};
+
+/* Styles for animations */
+const styles = `
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-fadeInRight {
+    animation: fadeInRight 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .animation-delay-900 {
+    animation-delay: 0.9s;
+  }
+
+  .animation-delay-1200 {
+    animation-delay: 1.2s;
+  }
+
+  /* Reset animations on inactive slides */
+  .swiper-slide:not(.swiper-slide-active) .animate-fadeInUp,
+  .swiper-slide:not(.swiper-slide-active) .animate-fadeInRight {
+    opacity: 0;
+  }
+
+  /* Ensure animations play on active slide */
+  .swiper-slide-active .animate-fadeInUp,
+  .swiper-slide-active .animate-fadeInRight {
+    animation-play-state: running;
+  }
+`;
+
+// Inject styles
+if (typeof document !== 'undefined') {
+  const styleId = 'nshero-animations';
+  if (!document.getElementById(styleId)) {
+    const styleElement = document.createElement('style');
+    styleElement.id = styleId;
+    styleElement.textContent = styles;
+    document.head.appendChild(styleElement);
+  }
 }

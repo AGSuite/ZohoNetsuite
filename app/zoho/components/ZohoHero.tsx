@@ -25,261 +25,106 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
 
   return (
     <div className="relative w-full overflow-hidden bg-white">
-      <div className="absolute inset-0 -z-20 bg-white" />
-
       <section className="relative w-full h-[calc(100vh-80px)] flex items-center mt-20">
         <div className="relative w-full h-full">
           {!isMounted ? (
-             /* Static Placeholder for SSR - Mimics Slide 1 Layout */
-             <div className="relative h-full w-full flex items-center">
-                 <div className="absolute inset-0 -z-10 bg-white" />
-                 <div className="relative mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
-                     <div className="flex flex-col justify-center text-center lg:text-left">
-                         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-gray-900">
-                             <span className="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-900 bg-clip-text text-transparent">NetSuite ERP</span>
-                             <br />
-                             <span className="text-gray-700">The #1 Cloud System for</span>
-                             <br />
-                             <span className="bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent font-extrabold tracking-wide">Modern Businesses</span>
-                         </h1>
-                         <p className="mt-4 text-lg text-gray-600">Run finance, operations & reporting in a single connected platform.</p>
-                         <div className="mt-8 flex justify-center lg:justify-start">
-                             <div className="relative inline-flex group">
-                                 <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
-                                 <button className="relative px-8 py-3 rounded-xl bg-gray-900 text-white font-semibold shadow-xl">Explore NetSuite ERP</button>
-                             </div>
-                         </div>
-                     </div>
-                     <div className="hidden lg:flex justify-center lg:justify-end">
-                         <Image src="/images/Dashboard/dashboardnetmain.webp" alt="NetSuite ERP" width={1600} height={1400} priority sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 1200px" className="w-full max-w-4xl object-contain scale-110" />
-                     </div>
-                 </div>
-             </div>
+            /* SSR Placeholder */
+            <div className="relative h-full w-full flex items-center">
+              <div
+                className="absolute inset-0 -z-10 bg-cover bg-center"
+                style={{
+                  backgroundImage: "url('/images/Background/heropinkbg.webp')",
+                }}
+              />
+
+              <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+                <div className="max-w-2xl">
+                  <h1 className="text-4xl sm:text-4xl lg:text-4xl font-medium leading-snug text-gray-900">
+                    Zoho Cloud Suite
+                    <br />
+                    <span className="text-2xl sm:text-4xl lg:text-4xl font-medium text-gray-900">
+                      All-in-One Platform for Business
+                    </span>
+                  </h1>
+
+                  <p className="mt-3 text-base sm:text-lg font-medium text-gray-600">
+                    Streamline CRM, projects & operations in a unified Zoho ecosystem.
+                  </p>
+
+                  <div className="mt-8 relative inline-flex group">
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#E91E63] via-[#FF4081] to-[#F06292] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
+                    <button className="relative px-8 py-3 rounded-xl bg-gray-900 text-white font-semibold shadow-xl">
+                      Explore Zoho Suite
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           ) : (
-          <Swiper
-            className="hero-swiper w-full h-full"
-            modules={[Pagination, Autoplay]}
-            loop={true}
-            autoplay={{ delay: 3500, disableOnInteraction: false }}
-            pagination={{ clickable: true }}
-            speed={900}
-            effect="slide"
-            observer={true}
-            observeParents={true}
-          >
+            <Swiper
+              className="hero-swiper w-full h-full"
+              modules={[Pagination, Autoplay]}
+              loop
+              autoplay={{ delay: 4500, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
+              speed={900}
+              onSlideChange={() => {
+                // Trigger animations to restart on slide change
+                setTimeout(() => {
+                  const activeSlide = document.querySelector('.swiper-slide-active');
+                  if (activeSlide) {
+                    const animatedElements = activeSlide.querySelectorAll('.animate-fadeInUp, .animate-fadeInRight');
+                    animatedElements.forEach((el) => {
+                      (el as HTMLElement).classList.remove('animate-fadeInUp', 'animate-fadeInRight');
+                      void (el as HTMLElement).offsetWidth; // Trigger reflow
+                      if (el.classList.contains('hidden')) return;
+                      const isImage = el.querySelector('img');
+                      (el as HTMLElement).classList.add(isImage ? 'animate-fadeInRight' : 'animate-fadeInUp');
+                    });
+                  }
+                }, 50);
+              }}
+            >
+              {/* SLIDE 1 - Zoho Cloud Suite */}
+              <SwiperSlide>
+                <HeroSlide
+                  bg="/images/Background/heropinkbg.webp"
+                  title="Zoho Cloud Suite"
+                  subtitle="All-in-One Platform for Business"
+                  desc="Streamline CRM, projects & operations in a unified Zoho ecosystem."
+                  cta="Explore Zoho Suite"
+                  image="/images/Dashboard/zohodash.webp"
+                  showOverlay={false}
+                  textColor="dark"
+                />
+              </SwiperSlide>
 
-            {/* ===================================================================================== */}
-            {/* SLIDE 1 */}
-            {/* ===================================================================================== */}
-            <SwiperSlide>
-              <div className="relative h-full w-full flex items-center">
+              {/* SLIDE 2 - Zoho CRM */}
+              <SwiperSlide>
+                <HeroSlide
+                  bg="/images/Background/teambg.webp"
+                  title="Zoho CRM Excellence"
+                  subtitle="Transform Customer Relationships"
+                  desc="Boost sales productivity with intelligent automation and insights."
+                  cta="Discover Zoho CRM"
+                  showOverlay={true}
+                  textColor="light"
+                />
+              </SwiperSlide>
 
-                <div className="absolute inset-0 -z-10 bg-white" />
-
-                <div className="relative mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-                  {/* LEFT */}
-                  <div className="flex flex-col justify-center text-center lg:text-left">
-
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-gray-900">
-
-                      <span className="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-900 bg-clip-text text-transparent">
-                        NetSuite ERP
-                      </span>
-
-                      <br />
-
-                      <span className="text-gray-700">The #1 Cloud System for</span>
-
-                      <br />
-
-                      <span className="bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent font-extrabold tracking-wide">
-                        Modern Businesses
-                      </span>
-                    </h1>
-
-                    <p className="mt-4 text-lg text-gray-600">
-                      Run finance, operations & reporting in a single connected platform.
-                    </p>
-
-                    <div className="mt-8 flex justify-center lg:justify-start">
-                      <div className="relative inline-flex group">
-                        <div className="absolute inset-0 rounded-xl bg-gradient-to-r 
-                          from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 
-                          blur-lg group-hover:opacity-100 transition duration-700" />
-
-                        <button className="relative px-8 py-3 rounded-xl bg-gray-900 text-white font-semibold shadow-xl">
-                          Explore NetSuite ERP
-                        </button>
-                      </div>
-                    </div>
-
-                  </div>
-
-                  {/* RIGHT IMAGE */}
-                  <div className="hidden lg:flex justify-center lg:justify-end">
-                    <Image
-                      src="/images/Dashboard/dashboardnetmain.webp"
-                      alt="NetSuite ERP"
-                      width={1600}
-                      height={1400}
-                      priority
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 1200px"
-                      className="w-full max-w-4xl object-contain scale-110"
-                    />
-                  </div>
-
-                </div>
-              </div>
-            </SwiperSlide>
-
-            {/* ===================================================================================== */}
-            {/* SLIDE 2 */}
-            {/* ===================================================================================== */}
-            <SwiperSlide>
-              <div className="relative h-full w-full flex items-center">
-
-                <div className="absolute inset-0 -z-20 bg-white" />
-
-                <div className="relative mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-                  <div className="flex flex-col justify-center text-center lg:text-left">
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                      CFO Automation <br />
-                      <span className="text-gray-600">
-                        Smarter Finance. Faster Growth.
-                      </span>
-                    </h1>
-
-                    <p className="mt-4 text-lg text-gray-700">
-                      Automate closing, approvals & compliance—focus on strategy.
-                    </p>
-
-                    <div className="mt-8 flex justify-center lg:justify-start">
-                      <div className="relative inline-flex group">
-                        <div className="absolute inset-0 rounded-xl bg-gradient-to-r 
-                          from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 
-                          blur-lg group-hover:opacity-100 transition duration-700" />
-                        <button className="relative px-8 py-3 rounded-xl bg-gray-900 text-white font-semibold shadow-xl">
-                          Upgrade CFO Operations
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </SwiperSlide>
-
-            {/* ===================================================================================== */}
-            {/* SLIDE 3 — NetSuite Optimization */}
-            {/* ===================================================================================== */}
-            <SwiperSlide>
-              <div className="relative h-full w-full flex items-center">
-
-                <div className="absolute inset-0 -z-20 bg-white" />
-
-                <div className="relative mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-                  <div className="flex flex-col justify-center text-center lg:text-left">
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                      Maximize NetSuite Efficiency <br />
-                      <span className="text-gray-600">Faster Data. Smarter Decisions.</span>
-                    </h1>
-
-                    <p className="mt-4 text-lg text-gray-700">
-                      Optimize performance, automate workflows, and eliminate bottlenecks with AGSuite&apos;s NetSuite expertise.
-                    </p>
-
-                    <div className="mt-8 flex justify-center lg:justify-start">
-                      <div className="relative inline-flex group">
-                        <div className="absolute inset-0 rounded-xl bg-gradient-to-r 
-                          from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 
-                          blur-lg group-hover:opacity-100 transition duration-700" />
-                        <button className="relative px-8 py-3 rounded-xl bg-gray-900 text-white font-semibold shadow-xl">
-                          Optimize Your NetSuite
-                        </button> 
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </SwiperSlide>
-
-            {/* ===================================================================================== */}
-            {/* SLIDE 4 — Zoho Suite */}
-            {/* ===================================================================================== */}
-            <SwiperSlide>
-              <div className="relative h-full w-full flex items-center">
-
-                {/* Background */}
-                <div className="absolute inset-0 -z-20 bg-white" />
-
-                <div className="relative mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-
-                  {/* LEFT CONTENT */}
-                  <div className="flex flex-col justify-center text-center lg:text-left">
-
-                    {/* Big Heading */}
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-gray-900">
-
-                      <span className="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-900 
-                        bg-clip-text text-transparent">
-                        Zoho Cloud Suite
-                      </span>
-
-                      <br />
-
-                      <span className="text-gray-700">
-                        All-in-One Platform for
-                      </span>
-
-                      <br />
-
-                      <span className="bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent font-extrabold tracking-wide">
-                        Modern Businesses
-                      </span>
-
-                    </h1>
-
-                    <p className="mt-4 text-lg text-gray-600">
-                      Streamline CRM, projects & operations in a unified Zoho ecosystem.
-                    </p>
-
-                    {/* CTA Button */}
-                    <div className="mt-8 flex justify-center lg:justify-start">
-                      <div className="relative inline-flex group">
-                        <div className="absolute inset-0 rounded-xl bg-gradient-to-r 
-                          from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 
-                          blur-lg group-hover:opacity-100 transition duration-700" />
-
-                        <button className="relative px-8 py-3 rounded-xl bg-gray-900 text-white font-semibold shadow-xl">
-                          Explore Zoho Suite
-                        </button>
-                      </div>
-                    </div>
-
-                  </div>
-
-                  {/* RIGHT IMAGE – BIG */}
-                  <div className="hidden lg:flex justify-center lg:justify-end">
-                    <Image
-                      src="/images/dashboard/zohodashboard.webp"
-                      alt="Zoho Dashboard"
-                      width={1100}
-                      height={900}
-                      loading="lazy"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 70vw, 900px"
-                      className="w-full max-w-2xl object-contain scale-110"
-                    />
-                  </div>
-
-                </div>
-              </div>
-            </SwiperSlide>
-
-          </Swiper>
+              {/* SLIDE 3 - Business Automation */}
+              <SwiperSlide>
+                <HeroSlide
+                  bg="/images/Background/teambg2.webp"
+                  title="Complete Business Automation"
+                  subtitle="Work Smarter, Not Harder"
+                  desc="Automate workflows across HR, finance, and operations with Zoho One."
+                  cta="Automate Your Business"
+                  showOverlay={true}
+                  textColor="light"
+                />
+              </SwiperSlide>
+            </Swiper>
           )}
         </div>
       </section>
@@ -287,4 +132,141 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
   );
 };
 
+/* ---------------- HELPERS ---------------- */
 
+const HeroSlide = ({
+  bg,
+  title,
+  subtitle,
+  desc,
+  cta,
+  image,
+  showOverlay = true,
+  textColor = 'light',
+}: any) => {
+  return (
+    <div className="relative h-full w-full flex items-center">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 -z-10 bg-cover bg-center"
+        style={{ backgroundImage: `url('${bg}')` }}
+      />
+      
+      {/* Gradient overlay: dark left → light center → transparent right */}
+      {showOverlay && (
+        <div className="absolute inset-0 -z-5 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
+      )}
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        {/* Left Content */}
+        <div className="max-w-2xl">
+          <h1 className={`text-4xl sm:text-4xl lg:text-4xl font-medium leading-snug animate-fadeInUp ${
+            textColor === 'dark' ? 'text-gray-900' : 'text-white'
+          }`}>
+            {title}
+            <br />
+            <span className={`text-2xl sm:text-4xl lg:text-4xl font-medium ${
+              textColor === 'dark' ? 'text-gray-900' : 'text-white'
+            }`}>
+              {subtitle}
+            </span>
+          </h1>
+
+          <p className={`mt-3 text-base sm:text-lg font-medium animate-fadeInUp animation-delay-600 ${
+            textColor === 'dark' ? 'text-gray-600' : 'text-white/80'
+          }`}>{desc}</p>
+
+          <div className="mt-8 relative inline-flex group animate-fadeInUp animation-delay-1200">
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#E91E63] via-[#FF4081] to-[#F06292] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
+            <button className="relative px-8 py-3 rounded-xl bg-gray-900 text-white font-semibold shadow-xl">
+              {cta}
+            </button>
+          </div>
+        </div>
+          
+        {/* Right Image (if provided) */}
+        {image && (
+          <div className="hidden lg:flex justify-center lg:justify-end animate-fadeInRight animation-delay-900">
+            <Image
+              src={image}
+              alt={title}
+              width={1600}
+              height={1400}
+              className="w-full max-w-4xl object-contain"
+            />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+/* Styles for animations */
+const styles = `
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-fadeInRight {
+    animation: fadeInRight 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .animation-delay-900 {
+    animation-delay: 0.9s;
+  }
+
+  .animation-delay-1200 {
+    animation-delay: 1.2s;
+  }
+
+  /* Reset animations on inactive slides */
+  .swiper-slide:not(.swiper-slide-active) .animate-fadeInUp,
+  .swiper-slide:not(.swiper-slide-active) .animate-fadeInRight {
+    opacity: 0;
+  }
+
+  /* Ensure animations play on active slide */
+  .swiper-slide-active .animate-fadeInUp,
+  .swiper-slide-active .animate-fadeInRight {
+    animation-play-state: running;
+  }
+`;
+
+// Inject styles
+if (typeof document !== 'undefined') {
+  const styleId = 'zohohero-animations';
+  if (!document.getElementById(styleId)) {
+    const styleElement = document.createElement('style');
+    styleElement.id = styleId;
+    styleElement.textContent = styles;
+    document.head.appendChild(styleElement);
+  }
+}
