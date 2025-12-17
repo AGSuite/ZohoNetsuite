@@ -1,10 +1,9 @@
 ﻿import Link from 'next/link';
 import { ZohoHero } from './components/ZohoHero';
-import dynamic from 'next/dynamic';
-
-const ZohoCard = dynamic(() => import('./components/ZohoCard').then(mod => mod.ZohoCard));
-const ZohoMetrics = dynamic(() => import('./components/ZohoMetrics')); 
+import { ZohoCard } from './components/ZohoCard';
+import ZohoMetrics from './components/ZohoMetrics';
 import ZohoDashboardHero from './components/ZohoDashboardHero';
+import dynamic from 'next/dynamic';
 
 const Features = dynamic(() => import('../components/home/Features').then(mod => mod.Features));
 const WhyChooseUs = dynamic(() => import('../components/home/WhyChooseUs').then(mod => mod.WhyChooseUs));

@@ -1,10 +1,9 @@
 ﻿import Link from 'next/link';
 import { NSHero } from './components/NSHero';
-import dynamic from 'next/dynamic';
-
-const NSCard = dynamic(() => import('./components/NSCard').then(mod => mod.NSCard));
-const NSMetrics = dynamic(() => import('./components/NSMetrics')); 
+import { NSCard } from './components/NSCard';
+import NSMetrics from './components/NSMetrics';
 import NSDashboardHero from './components/NSDashboardHero';
+import dynamic from 'next/dynamic';
 
 const Features = dynamic(() => import('../components/home/Features').then(mod => mod.Features));
 const WhyChooseUs = dynamic(() => import('../components/home/WhyChooseUs').then(mod => mod.WhyChooseUs));
