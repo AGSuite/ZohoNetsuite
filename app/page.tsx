@@ -34,6 +34,7 @@ export default function Home() {
         alt="Background"
         fill
         priority
+        fetchPriority="high"
         className="object-cover -z-10"
       />
       {/* TOP TWO SECTIONS — ZOHO */}
@@ -52,6 +53,7 @@ export default function Home() {
     height={120}
     className="mb-6"
     priority
+    fetchPriority="high"
   />
   <button className="px-8 py-3 rounded-lg bg-gray-700 text-white text-lg font-semibold hover:bg-gray-900 transition">
     Visit NetSuite →
@@ -69,6 +71,7 @@ export default function Home() {
     alt="NetSuite Background"
     fill
     priority
+    fetchPriority="high"
     className="object-cover  group-hover:scale-105 transition-all duration-700 opacity-99"
   />
 
@@ -118,6 +121,7 @@ export default function Home() {
     alt="Zoho Background"
     fill
     priority
+    fetchPriority="high"
     className="object-cover group-hover:scale-105 transition-all duration-700 opacity-99"
   />
 
@@ -156,6 +160,7 @@ export default function Home() {
     height={120}
     className="mb-6"
     priority
+    fetchPriority="high"
   />
   <button className="px-8 py-3 rounded-lg bg-gray-700 text-white text-lg font-semibold hover:bg-gray-900 transition">
     Visit Zoho →
