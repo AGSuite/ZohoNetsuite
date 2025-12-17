@@ -72,20 +72,27 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
               pagination={{ clickable: true }}
               speed={900}
               onSlideChange={() => {
-                // Trigger animations to restart on slide change
-                setTimeout(() => {
+                requestAnimationFrame(() => {
                   const activeSlide = document.querySelector('.swiper-slide-active');
                   if (activeSlide) {
                     const animatedElements = activeSlide.querySelectorAll('.animate-fadeInUp, .animate-fadeInRight');
                     animatedElements.forEach((el) => {
-                      (el as HTMLElement).classList.remove('animate-fadeInUp', 'animate-fadeInRight');
-                      void (el as HTMLElement).offsetWidth; // Trigger reflow
-                      if (el.classList.contains('hidden')) return;
-                      const isImage = el.querySelector('img');
-                      (el as HTMLElement).classList.add(isImage ? 'animate-fadeInRight' : 'animate-fadeInUp');
+                      const element = el as HTMLElement;
+                      // Store original animation class
+                      const animationClass = element.classList.contains('animate-fadeInRight') ? 'animate-fadeInRight' : 'animate-fadeInUp';
+                      
+                      // Remove class to reset
+                      element.classList.remove('animate-fadeInUp', 'animate-fadeInRight');
+                      
+                      // Re-add class in next frame to trigger animation
+                      requestAnimationFrame(() => {
+                         if (!element.classList.contains('hidden')) {
+                            element.classList.add(animationClass);
+                         }
+                      });
                     });
                   }
-                }, 50);
+                });
               }}
             >
               {/* SLIDE 1 - Zoho Cloud Suite */}
