@@ -29,7 +29,7 @@ const IMAGES = {
   left2: "/images/people/laptopmen.webp",
   center: "/images/Dashboard/NetsuiteDashboard.webp",
   right1: "/images/people/laptopmen2.webp",
-  right2: "/images/people/laptopgirl1.webp",
+  right2: "/images/people/laptopgirl.webp",
 } as const;
 
 const NSDashboardHero: React.FC = () => {

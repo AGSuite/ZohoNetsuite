@@ -27,11 +27,15 @@ export const metadata = {
 export default function Home() {
   return (
     <main
-      className="min-h-screen px-4 md:px-8 lg:px-12 py-6 md:py-10 bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: "url('/images/Background/bghomepage.webp')", // ← FULL PAGE BACKGROUND
-      }}
+      className="min-h-screen px-4 md:px-8 lg:px-12 py-6 md:py-10 relative z-0"
     >
+      <Image
+        src="/images/Background/bghomepage.webp"
+        alt="Background"
+        fill
+        priority
+        className="object-cover -z-10"
+      />
       {/* TOP TWO SECTIONS — ZOHO */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
 

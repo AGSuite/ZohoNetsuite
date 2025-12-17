@@ -30,11 +30,14 @@ export const NSHero: React.FC<NSHeroProps> = () => {
           {!isMounted ? (
             /* SSR Placeholder */
             <div className="relative h-full w-full flex items-center">
-              <div
-                className="absolute inset-0 -z-10 bg-cover bg-center"
-                style={{
-                  backgroundImage: "url('/images/Background/herobluebg.webp')",
-                }}
+              <Image
+                src="/images/Background/herobluebg.webp"
+                alt="NetSuite Background"
+                fill
+                priority
+                fetchPriority="high"
+                className="object-cover -z-10"
+                sizes="100vw"
               />
 
               <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -96,6 +99,7 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   image="/images/Dashboard/netsuitedash2.webp"
                   showOverlay={false}
                   textColor="dark"
+                  priority={true}
                 />
               </SwiperSlide>
 
@@ -143,9 +147,21 @@ const HeroSlide = ({
   image,
   showOverlay = true,
   textColor = 'light',
+  priority = false, // Add priority prop
 }: any) => {
   return (
-    <div className="relative h-full w-full flex items-center bg-cover bg-center" style={{ backgroundImage: `url('${bg}')` }}>
+    <div className="relative h-full w-full flex items-center">
+      {/* Optimized Background Image */}
+      <Image
+        src={bg}
+        alt="Hero Background"
+        fill
+        priority={priority}
+        fetchPriority={priority ? "high" : "auto"}
+        className="object-cover -z-10"
+        sizes="100vw"
+      />
+      
       {/* Gradient overlay: dark left → light center → transparent right */}
       {showOverlay && (
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/20 to-transparent" />
@@ -186,6 +202,7 @@ const HeroSlide = ({
               alt={title}
               width={1600}
               height={1400}
+              priority={priority} // Also prioritize the content image if it's the main slide
               className="w-full max-w-4xl object-contain drop-shadow-2xl"
             />
           </div>

@@ -3,12 +3,14 @@ import { NSHero } from './components/NSHero';
 import { NSCard } from './components/NSCard';
 import NSMetrics from './components/NSMetrics';
 import NSDashboardHero from './components/NSDashboardHero';
-import { Features } from '../components/home/Features';
-import { WhyChooseUs } from '../components/home/WhyChooseUs';
-import { Testimonials } from '../components/home/Testimonials';
-import { FAQ } from '../components/home/FAQ';
-import { CTA } from '../components/home/CTA';
-import { BlogSection } from '../components/home/BlogSection';
+import dynamic from 'next/dynamic';
+
+const Features = dynamic(() => import('../components/home/Features').then(mod => mod.Features));
+const WhyChooseUs = dynamic(() => import('../components/home/WhyChooseUs').then(mod => mod.WhyChooseUs));
+const Testimonials = dynamic(() => import('../components/home/Testimonials').then(mod => mod.Testimonials));
+const FAQ = dynamic(() => import('../components/home/FAQ').then(mod => mod.FAQ));
+const CTA = dynamic(() => import('../components/home/CTA').then(mod => mod.CTA));
+const BlogSection = dynamic(() => import('../components/home/BlogSection').then(mod => mod.BlogSection));
 
 export default function NetSuitePage() {
   return (
