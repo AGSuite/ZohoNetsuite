@@ -25,11 +25,11 @@ const logos: Logo[] = [
 /* ------------ Main hero images (keep same paths) ------------ */
 
 const IMAGES = {
-  left1: "/images/banners/tem.png",
-  left2: "/images/banners/tem1.png",
-  center: "/images/Dashboard/zohodash.webp",
-  right1: "/images/banners/tem4.jpg",
-  right2: "/images/banners/tem5.jpg",
+  left1: "/images/people/laptopgirl3.webp",
+  left2: "/images/people/laptopmen.webp",
+  center: "/images/Dashboard/NetsuiteDashboard.webp",
+  right1: "/images/people/laptopmen2.webp",
+  right2: "/images/people/laptopgirl.webp",
 } as const;
 
 const ZohoDashboardHero: React.FC = () => {
