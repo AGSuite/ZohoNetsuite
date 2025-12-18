@@ -11,7 +11,7 @@ const NetsuiteCTA = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/netsuiteimages/background/NetsuiteCTA.webp" /* <-- Replace your image here */
+          src="/images/netsuiteimages/background/netsuiteCTA.webp" /* <-- Matches actual filename case */
           alt="NetSuite Calculator CTA"
           fill
           className="object-cover"

@@ -22,7 +22,7 @@ const services: ServiceItem[] = [
     heading: "",
     description:
       "Empowering businesses with modern, scalable, and automated digital solutions that streamline operations and accelerate growth.",
-    bgImage: "/images/services/Digitalservices.webp",
+    bgImage: "/images/Services/Digitalservices.webp",
     href: "/netsuite/services/digital-transformation",
   },
   {
@@ -30,7 +30,7 @@ const services: ServiceItem[] = [
     heading: "",
     description:
       "Connect your apps, ERP, CRM, and workflows seamlessly using API-led, cloud-to-cloud, and hybrid integrations tailored for your business.",
-    bgImage: "/images/services/integrationservices.webp",
+    bgImage: "/images/Services/integrationservices.webp",
     href: "/netsuite/services/integration",
   },
   {
@@ -38,7 +38,7 @@ const services: ServiceItem[] = [
     heading: "",
     description:
       "Expert NetSuite implementation services ensuring a smooth transition ensuring your business processes are optimized for success.",
-    bgImage: "/images/services/trainingservices.webp",
+    bgImage: "/images/Services/trainingservices.webp",
     href: "/netsuite/services/implementation",
   },
   {
@@ -46,7 +46,7 @@ const services: ServiceItem[] = [
     heading: "",
     description:
       "Build fast, efficient, and scalable business apps with NetSuite's SuiteCloud platform to automate processes and improve productivity.",
-    bgImage: "/images/services/lowcodeservices.webp",
+    bgImage: "/images/Services/lowcodeservices.webp",
     href: "/netsuite/services/suitecloud",
   },
   {
@@ -54,7 +54,7 @@ const services: ServiceItem[] = [
     heading: "",
     description:
       "End-to-end support, monitoring, and optimization of your NetSuite environment so your business runs smoothly without downtime.",
-    bgImage: "/images/services/managedservices.webp",
+    bgImage: "/images/Services/managedservices.webp",
     href: "/netsuite/services/managed-services",
   },
 ];

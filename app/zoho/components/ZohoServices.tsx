@@ -22,7 +22,7 @@ const services: ServiceItem[] = [
     heading: "",
     description:
       "Modernize your business operations with Zoho's unified cloud operating system designed for scalability.",
-    bgImage: "/images/services/Digitalservices.webp",
+    bgImage: "/images/Services/Digitalservices.webp",
     href: "/zoho/services/digital-transformation",
   },
   {
@@ -30,7 +30,7 @@ const services: ServiceItem[] = [
     heading: "",
     description:
       "Seamless setup and configuration of Zoho One, CRM, Books, and other apps tailored to your unique workflows.",
-    bgImage: "/images/services/managedservices.webp",
+    bgImage: "/images/Services/managedservices.webp",
     href: "/zoho/services/implementation",
   },
   {
@@ -38,7 +38,7 @@ const services: ServiceItem[] = [
     heading: "",
     description:
       "Connect Zoho seamlessly with your existing third-party applications using Zoho Flow and custom API integrations.",
-    bgImage: "/images/services/integrationservices.webp",
+    bgImage: "/images/Services/integrationservices.webp",
     href: "/zoho/services/integration",
   },
   {
@@ -46,7 +46,7 @@ const services: ServiceItem[] = [
     heading: "",
     description:
       "Build custom low-code applications with Zoho Creator to automate unique business processes and eliminate spreadsheets.",
-    bgImage: "/images/services/lowcodeservices.webp",
+    bgImage: "/images/Services/lowcodeservices.webp",
     href: "/zoho/services/creator-development",
   },
   {
@@ -54,7 +54,7 @@ const services: ServiceItem[] = [
     heading: "",
     description:
       "Empower your team with comprehensive training and ongoing managed support to maximize your Zoho investment.",
-    bgImage: "/images/services/trainingservices.webp",
+    bgImage: "/images/Services/trainingservices.webp",
     href: "/zoho/services/training-services",
   },
 ];
