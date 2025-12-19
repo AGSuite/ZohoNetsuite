@@ -263,7 +263,7 @@ export default function FooterFormSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        className="relative group lg:w-[100%] mx-auto"
+        className="relative group lg:w-full mx-auto"
       >
         <div className="absolute -inset-1 bg-linear-to-r from-blue-500/90 to-indigo-500/90 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition duration-1000"></div>
         <div className="relative bg-white p-8 lg:p-10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100">

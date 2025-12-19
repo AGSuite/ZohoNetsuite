@@ -369,7 +369,7 @@ const NavbarNetSuite = () => {
 
                       <div className="flex gap-8">
                         {/* Tabs */}
-                        <div className="w-48 flex-shrink-0">
+                        <div className="w-48 shrink-0">
                           <div className="space-y-2">
                             {item.children.map((child, idx) => {
                               const isMega = !!child.megaMenu;

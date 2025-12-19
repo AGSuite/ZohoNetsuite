@@ -1,6 +1,14 @@
-﻿import Link from 'next/link';
-import { NSHero } from './components/NSHero';
+﻿import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
+
+const NSHero = dynamic(() => import('./components/NSHero').then(mod => mod.NSHero), {
+  ssr: true,
+  loading: () => (
+    <div className="relative h-[80vh] w-full bg-gray-50 animate-pulse flex items-center justify-center">
+      <div className="text-gray-900 text-2xl font-bold">Loading...</div>
+    </div>
+  )
+});
 
 export const metadata: Metadata = {
   title: "Oracle NetSuite ERP Solutions | AGSuite Technologies",
@@ -14,7 +22,6 @@ export const metadata: Metadata = {
 
 const NSMetrics = dynamic(() => import('./components/NSMetrics').then(mod => mod.default));
 const NSDashboardHero = dynamic(() => import('./components/NSDashboardHero').then(mod => mod.default));
-import dynamic from 'next/dynamic';
 
 const NSIndustries = dynamic(() => import('./components/NSIndustries').then(mod => mod.default));
 const Testimonials = dynamic(() => import('../components/home/Testimonials').then(mod => mod.Testimonials));
