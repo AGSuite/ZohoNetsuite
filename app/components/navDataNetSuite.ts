@@ -60,7 +60,7 @@ export const navItemsNetSuite: NavSection[] = [
         children: [
             {
                 label: "Who We Are",
-                href: "/about-us",
+                href: "/netsuite/about-us",
                 description: "Learn more about AGSuite vision, mission and team.",
                 icon: Groups
             },
@@ -81,55 +81,55 @@ export const navItemsNetSuite: NavSection[] = [
                         {
                             title: 'Core ERP',
                             items: [
-                                { label: 'NetSuite ERP', href: '/solutions/netsuite/erp' },
-                                { label: 'NetSuite Accounting Software', href: '/solutions/netsuite/netsuiteaccounting' },
-                                { label: 'Global Business Management', href: '/solutions/netsuite/globalbusiness' },
+                                { label: 'NetSuite ERP', href: '/netsuite/solutions/erp' },
+                                { label: 'NetSuite Accounting Software', href: '/netsuite/solutions/netsuiteaccounting' },
+                                { label: 'Global Business Management', href: '/netsuite/solutions/globalbusiness' },
                             ]
                         },
                         {
                             title: 'Customer Management',
                             items: [
-                                { label: 'NetSuite CRM', href: '/solutions/netsuite/netsuitecrm' },
+                                { label: 'NetSuite CRM', href: '/netsuite/solutions/netsuitecrm' },
                             ]
                         },
                         {
                             title: 'Project Management',
                             items: [
-                                { label: 'NetSuite SRP', href: '/solutions/netsuite/netsuitesrp' },
-                                { label: 'SuiteProject Pro (OpenAir)', href: '/solutions/netsuite/netsuiteopenair' },
+                                { label: 'NetSuite SRP', href: '/netsuite/solutions/netsuitesrp' },
+                                { label: 'SuiteProject Pro (OpenAir)', href: '/netsuite/solutions/netsuiteopenair' },
                             ]
                         },
                         {
                             title: 'Analytics & Intelligence',
                             items: [
-                                { label: 'NetSuite Business Intelligence', href: '/solutions/netsuite/businessintelligence' },
-                                { label: 'NetSuite Analytics Warehouse', href: '/solutions/netsuite/netsuiteanalytics' },
-                                { label: 'Artificial Intelligence in NetSuite', href: '/solutions/netsuite/netsuiteai' },
+                                { label: 'NetSuite Business Intelligence', href: '/netsuite/solutions/businessintelligence' },
+                                { label: 'NetSuite Analytics Warehouse', href: '/netsuite/solutions/netsuiteanalytics' },
+                                { label: 'Artificial Intelligence in NetSuite', href: '/netsuite/solutions/netsuiteai' },
                             ]
                         },
                         {
                             title: 'E-Commerce',
                             items: [
-                                { label: 'NetSuite E-Commerce', href: '/solutions/netsuite/netsuiteecommerce' },
+                                { label: 'NetSuite E-Commerce', href: '/netsuite/solutions/netsuiteecommerce' },
                             ]
                         },
                         {
                             title: 'Specialized Solutions',
                             items: [
-                                { label: 'SuiteSuccess', href: '/solutions/netsuite/suitesuccess' },
-                                { label: 'India Localization for NetSuite', href: '/solutions/netsuite/indialocalization' },
+                                { label: 'SuiteSuccess', href: '/netsuite/solutions/suitesuccess' },
+                                { label: 'India Localization for NetSuite', href: '/netsuite/solutions/indialocalization' },
                             ]
                         },
                         {
                             title: 'Planning & Budgeting',
                             items: [
-                                { label: 'NetSuite Planning and Budgeting', href: '/solutions/netsuite/netsuiteplanning' },
+                                { label: 'NetSuite Planning and Budgeting', href: '/netsuite/solutions/netsuiteplanning' },
                             ]
                         },
                         {
                             title: 'Why Choose NetSuite',
                             items: [
-                                { label: 'Why NetSuite', href: '/solutions/netsuite/whynetsuite' },
+                                { label: 'Why NetSuite', href: '/netsuite/solutions/whynetsuite' },
                             ]
                         },
                     ],
@@ -147,17 +147,17 @@ export const navItemsNetSuite: NavSection[] = [
                         {
                             title: 'Connectors',
                             items: [
-                                { label: 'Magento 2 NetSuite Connector', href: '/solutions/netsuiteaddon/connectors/magento2' },
-                                { label: 'Amazon NetSuite Connector', href: '/solutions/netsuite-add-on/connectors/amazon' },
-                                { label: 'Shopify NetSuite Connector', href: '/solutions/netsuite-add-on/connectors/shopify' },
+                                { label: 'Magento 2 NetSuite Connector', href: '/netsuite/solutions/netsuiteaddon/connectors/magento2' },
+                                { label: 'Amazon NetSuite Connector', href: '/netsuite/solutions/netsuiteaddon/connectors/amazon' },
+                                { label: 'Shopify NetSuite Connector', href: '/netsuite/solutions/netsuiteaddon/connectors/shopify' },
                             ],
                         },
                         {
                             title: 'Other Add-ons',
                             items: [
-                                { label: 'India Localization', href: '/solutions/netsuite-add-on/india-localization' },
-                                { label: 'Smart Commission App', href: '/solutions/netsuite-add-on/smart-commission' },
-                                { label: 'NetSuite Data Backup', href: '/solutions/netsuite-add-on/data-backup' },
+                                { label: 'India Localization', href: '/netsuite/solutions/netsuiteaddon/india-localization' },
+                                { label: 'Smart Commission App', href: '/netsuite/solutions/netsuiteaddon/smart-commission' },
+                                { label: 'NetSuite Data Backup', href: '/netsuite/solutions/netsuiteaddon/data-backup' },
                             ],
                         },
                     ],
@@ -170,11 +170,11 @@ export const navItemsNetSuite: NavSection[] = [
     {
         title: 'Services',
         children: [
-            { label: 'Digital Transformation', href: '/services/digital-transformation', description: 'Modernize your business for the digital age.', icon: RocketLaunchIcon },
-            { label: 'Integration Services', href: '/services/integration-services', description: 'Seamlessly connect your systems.', icon: IntegrationInstructionsIcon },
-            { label: 'Training Services', href: '/services/training-services', description: 'Upskill your team with expert-led training.', icon: SchoolIcon },
-            { label: 'Low-Code Application Development', href: '/services/low-code', description: 'Build apps faster with minimal coding.', icon: BuildIcon },
-            { label: 'Managed Services', href: '/services/managed-services', description: 'End-to-end IT management & support.', icon: SettingsIcon },
+            { label: 'Digital Transformation', href: '/netsuite/services/digital-transformation', description: 'Modernize your business for the digital age.', icon: RocketLaunchIcon },
+            { label: 'Integration Services', href: '/netsuite/services/integration-services', description: 'Seamlessly connect your systems.', icon: IntegrationInstructionsIcon },
+            { label: 'Training Services', href: '/netsuite/services/training-services', description: 'Upskill your team with expert-led training.', icon: SchoolIcon },
+            { label: 'Low-Code Application Development', href: '/netsuite/services/low-code', description: 'Build apps faster with minimal coding.', icon: BuildIcon },
+            { label: 'Managed Services', href: '/netsuite/services/managed-services', description: 'End-to-end IT management & support.', icon: SettingsIcon },
         ],
     },
 
@@ -182,14 +182,14 @@ export const navItemsNetSuite: NavSection[] = [
     {
         title: 'Industries',
         children: [
-            { label: 'Software & Technology', href: '/industries/software', description: 'Tools for modern software companies.', icon: ComputerIcon },
-            { label: 'IT & Professional Services', href: '/industries/it-services', description: 'Scaling solutions for IT firms.', icon: WorkIcon },
-            { label: 'Wholesale Distribution', href: '/industries/wholesale', description: 'Optimize supply chain & inventory.', icon: LocalShippingIcon },
-            { label: 'Advertising & Marketing', href: '/industries/advertising-marketing', description: 'Boost your digital campaigns.', icon: CampaignIcon },
-            { label: 'Media & Publishing', href: '/industries/media', description: 'Solutions for media operations.', icon: NewspaperIcon },
-            { label: 'Retail & E-Commerce', href: '/industries/retail', description: 'End-to-end retail automation.', icon: StoreIcon },
-            { label: 'Transportation & Logistics', href: '/industries/transport', description: 'Smart logistics solutions.', icon: LocalShippingIcon },
-            { label: 'Manufacturing', href: '/industries/manufacturing', description: 'Streamline production cycles.', icon: PrecisionManufacturingIcon },
+            { label: 'Software & Technology', href: '/netsuite/industries/software', description: 'Tools for modern software companies.', icon: ComputerIcon },
+            { label: 'IT & Professional Services', href: '/netsuite/industries/it-services', description: 'Scaling solutions for IT firms.', icon: WorkIcon },
+            { label: 'Wholesale Distribution', href: '/netsuite/industries/wholesale', description: 'Optimize supply chain & inventory.', icon: LocalShippingIcon },
+            { label: 'Advertising & Marketing', href: '/netsuite/industries/advertising-marketing', description: 'Boost your digital campaigns.', icon: CampaignIcon },
+            { label: 'Media & Publishing', href: '/netsuite/industries/media', description: 'Solutions for media operations.', icon: NewspaperIcon },
+            { label: 'Retail & E-Commerce', href: '/netsuite/industries/retail', description: 'End-to-end retail automation.', icon: StoreIcon },
+            { label: 'Transportation & Logistics', href: '/netsuite/industries/transport', description: 'Smart logistics solutions.', icon: LocalShippingIcon },
+            { label: 'Manufacturing', href: '/netsuite/industries/manufacturing', description: 'Streamline production cycles.', icon: PrecisionManufacturingIcon },
         ],
     },
 
@@ -197,10 +197,10 @@ export const navItemsNetSuite: NavSection[] = [
     {
         title: 'Insights',
         children: [
-            { label: 'Blogs', href: '/blog', description: 'Latest posts & insights.', icon: ForumIcon },
-            { label: 'Case Study', href: '/casestudy', description: 'Our success stories.', icon: LocalLibraryIcon },
-            { label: 'Events', href: '/insights/events', description: 'Webinars & workshops.', icon: EventIcon },
-            { label: 'Awards & Achievements', href: '/insights/awards', description: 'Recognition & milestones.', icon: EmojiEventsIcon },
+            { label: 'Blogs', href: '/netsuite/blog', description: 'Latest posts & insights.', icon: ForumIcon },
+            { label: 'Case Study', href: '/netsuite/casestudy', description: 'Our success stories.', icon: LocalLibraryIcon },
+            { label: 'Events', href: '/netsuite/insights/events', description: 'Webinars & workshops.', icon: EventIcon },
+            { label: 'Awards & Achievements', href: '/netsuite/insights/awards', description: 'Recognition & milestones.', icon: EmojiEventsIcon },
         ],
     },
 
@@ -208,10 +208,10 @@ export const navItemsNetSuite: NavSection[] = [
     {
         title: 'Contact',
         children: [
-            { label: 'Careers', href: '/contact-us/careers', description: 'Join our growing team.', icon: WorkIcon },
-            { label: 'Support', href: '/contact-us/support', description: '24/7 client support.', icon: SupportAgentIcon },
-            { label: 'Request Quote', href: '/contact-us/quote', description: 'Get a project estimate.', icon: RequestQuoteIcon },
-            { label: 'Free Consultation', href: '/free-consultation', description: 'Talk to an expert.', icon: ContactSupportIcon }
+            { label: 'Careers', href: '/netsuite/contact/careers', description: 'Join our growing team.', icon: WorkIcon },
+            { label: 'Support', href: '/netsuite/contact/support', description: '24/7 client support.', icon: SupportAgentIcon },
+            { label: 'Request Quote', href: '/netsuite/contact/quote', description: 'Get a project estimate.', icon: RequestQuoteIcon },
+            { label: 'Free Consultation', href: '/netsuite/free-consultation', description: 'Talk to an expert.', icon: ContactSupportIcon }
         ],
     },
 ];

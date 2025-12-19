@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     content:
       "Zoho CRM has revolutionized our sales process. We've automated 80% of our lead follow-ups and seen a 30% conversion increase.",
     avatar:
-      "/images/people/person1.webp"
+      "/images/people/laptopmen.webp"
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const testimonials: Testimonial[] = [
     content:
       "Zoho People simplified our entire HR workflow. Onboarding new employees used to take days, now it's done in hours.",
     avatar:
-      "/images/people/person2.webp"
+      "/images/people/laptopgirl.webp"
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const testimonials: Testimonial[] = [
     content:
       "Integrating Zoho Desk with our CRM gave us a 360-degree view of our customers. Support resolution times dropped by half.",
     avatar:
-      "/images/people/person3.webp"
+      "/images/people/laptopmen2.webp"
   },
   {
     id: 4,
@@ -50,7 +50,7 @@ const testimonials: Testimonial[] = [
     content:
       "Zoho Books is incredibly intuitive. Invoicing and expense tracking are now effortless, giving us more time to focus on clients.",
     avatar:
-      "/images/people/person4.webp"
+      "/images/people/laptopgirl1.webp"
   }
 ];
 
@@ -159,7 +159,7 @@ const ZohoTestimonialSection = () => {
           {extendedTestimonials.map((t, index) => (
             <div
               key={`${t.id}-${index}`}
-              className="inline-block flex-shrink-0 w-[90vw] md:w-[60vw] lg:w-[40vw] px-4"
+              className="inline-block shrink-0 w-[90vw] md:w-[60vw] lg:w-[40vw] px-4"
             >
               {/* Card */}
               <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-100 h-full flex flex-col justify-between">

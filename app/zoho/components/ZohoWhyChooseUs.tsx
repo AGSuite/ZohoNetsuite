@@ -40,7 +40,7 @@ const ZohoWhyChooseUs = () => {
             {/* Background Image Inside Container */}
             <div className="absolute inset-0 z-0">
               <Image
-                src="/images/backgroundimg/peoplebg.webp" 
+                src="/images/Background/teambg2.webp" 
                 alt="Business technology background"
                 fill
                 className="object-cover"

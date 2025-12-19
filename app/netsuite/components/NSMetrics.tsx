@@ -89,7 +89,7 @@ export default function NSMetrics() {
   return (
     <section
       className="relative py-16 sm:py-20 lg:py-24 bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/images/backgroundimg/metricbg.png')" }}
+      style={{ backgroundImage: "url('/images/Background/teambg.webp')" }}
     >
       <div className="absolute inset-0 bg-white/80" />
 
@@ -196,6 +196,7 @@ export default function NSMetrics() {
                   width={500}
                   height={300}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </motion.div>
 
@@ -212,6 +213,7 @@ export default function NSMetrics() {
                   width={600}
                   height={800}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </motion.div>
 
@@ -228,6 +230,7 @@ export default function NSMetrics() {
                   width={800}
                   height={500}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </motion.div>
 

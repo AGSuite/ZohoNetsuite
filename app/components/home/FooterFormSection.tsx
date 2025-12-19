@@ -1,6 +1,8 @@
 "use client";
 import Script from "next/script";
+import Image from "next/image";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 // Define global functions for the form
 declare global {
@@ -198,34 +200,77 @@ export default function FooterFormSection() {
 
 
 
-<section
-  className="bg-linear-to-br from-gray-50 via-orange-50 to-purple-100 py-16 md:py-20 lg:py-24 relative bg-cover bg-center"
-  style={{ backgroundImage: "url('/images/Background/footerformbg.webp')" }}
->
-  <div className="max-w-7xl mx-auto px-6 md:px-10">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+<section className="relative py-24 lg:py-32 overflow-hidden bg-gray-900">
+  {/* Sophisticated Background with Overlay */}
+  <div 
+    className="absolute inset-0 bg-cover bg-fixed bg-center transition-transform duration-[10s] hover:scale-110"
+    style={{ 
+      backgroundImage: "url('/images/Background/footerformbg.webp')",
+      filter: "brightness(0.3) saturate(1.2)"
+    }}
+  />
+  <div className="absolute inset-0 bg-linear-to-l from-gray-750/10 via-gray-700/10 to-transparent" />
+
+  <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
       
-      {/* Left Side: Heading Section */}
-      <div className=" flex-col space-y-6">
-        <span className="inline-block text-sm px-4 py-2 bg-gray-100 backdrop-blur-sm rounded-full font-medium text-gray-900">
-        Let’s Get Started !!
-      </span>
+      {/* Left Side: Impactful Heading */}
+      <motion.div 
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="flex flex-col space-y-8"
+      >
+        <div>
+          <span className="inline-block text-xs font-bold tracking-[0.2em] text-blue-400 uppercase py-2 px-4 bg-blue-500/10 border border-blue-500/20 rounded-lg mb-6">
+            Partner with AGSuite
+          </span>
+          
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-[1.05] tracking-tight">
+            Elevate Your <span className="text-blue-500">Business</span> Future.
+          </h2>
+          
+          <p className="mt-8 text-xl text-gray-400 leading-relaxed max-w-xl font-light">
+            Empower your enterprise with seamless automation and cloud solutions tailored for growth.
+          </p>
+        </div>
 
-        <h2 className="text-xl md:text-xl lg:text-2xl font-medium text-gray-100 leading-tight">
-        Optimized solutions to elevate
-        your business future, at your fingertips           
-        </h2>
+        <div className="flex items-center gap-6 pt-6">
+          <div className="p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 flex items-center gap-4">
+            <div className="flex -space-x-2">
+              <div className="w-10 h-10 rounded-full border-2 border-gray-900 overflow-hidden relative">
+                <Image src="/images/people/laptopmen.webp" alt="Client 1" fill className="object-cover" sizes="40px" />
+              </div>
+              <div className="w-10 h-10 rounded-full border-2 border-gray-900 overflow-hidden relative">
+                <Image src="/images/people/laptopgirl.webp" alt="Client 2" fill className="object-cover" sizes="40px" />
+              </div>
+              <div className="w-10 h-10 rounded-full border-2 border-gray-900 overflow-hidden relative">
+                <Image src="/images/people/laptopmen2.webp" alt="Client 3" fill className="object-cover" sizes="40px" />
+              </div>
+            </div>
+            <div>
+              <p className="text-white font-bold text-lg leading-tight">500+</p>
+              <p className="text-gray-500 text-xs">Trusted Clients</p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
 
- 
-      </div>
-
-
-            {/* Right Side: Zoho Form */}
-            <div className="bg-white/10 p-8 lg:p-7 rounded-3xl shadow-2xl">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `
-<div id="crmWebToEntityForm" class="zcwf_lblLeft crmWebToEntityForm" style="padding-top:0px!important;margin-top:0px!important;">
+      {/* Right Side: Professional White Theme Form */}
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        className="relative group lg:w-[100%] mx-auto"
+      >
+        <div className="absolute -inset-1 bg-linear-to-r from-blue-500/90 to-indigo-500/90 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition duration-1000"></div>
+        <div className="relative bg-white p-8 lg:p-10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `
+<div id="crmWebToEntityForm" class="zcwf_lblLeft crmWebToEntityForm">
 <form id="webform409531000000325116" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000000325116" method="POST" onSubmit="javascript:document.charset='UTF-8'; return checkMandatory409531000000325116()" accept-charset="UTF-8">
  <input type="text" class="dsp" name="xnQsjsdp" value="cae9ae065232fde2e40c34423041df835a4066ff2103c546e198d684b35e9861">
  <input type="hidden" name="zc_gad" id="zc_gad" value="">
@@ -236,192 +281,145 @@ export default function FooterFormSection() {
 <input type="text" class="dsp" id="LDTuvid" name="LDTuvid">
 
 <style>
-html,body{margin:0px;}
-*{box-sizing:border-box;}
+.zcwf_title { font-size: 32px; font-weight: 800; color: #111827!important; text-align: left; margin-bottom: 30px; letter-spacing: -0.02em; }
+.agsuite_column { width: 50%; float: left; padding: 0 10px; margin-bottom: 18px; }
+.agsuite_column-large { width: 100%; float: left; padding: 0 10px; margin-bottom: 18px; }
+.agsuite_container::after { content: ""; display: table; clear: both; }
 
-.agsuite_container{max-width:100%;margin:0 auto;overflow:hidden;}
-.zcwf_title{font-size:28px;font-weight:700;color:#f2f7f6!important;text-align:center;margin-bottom:24px;padding:0;}
-.agsuite_column{width:50%;float:left;padding:0 8px;margin-bottom:16px;}
-.agsuite_column-large{width:100%;float:left;padding:0 8px;margin-bottom:16px;}
-.agsuite_container::after{content:"";display:table;clear:both;}
-
-.agsuite_container input[type="text"],.agsuite_container textarea{width:100%;padding:12px 16px;font-size:15px;font-weight:400;color:#1f2937!important;background:#f9fafb!important;border:1.5px solid #d1d5db!important;border-radius:8px!important;transition:all 0.3s ease;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
-.agsuite_container input[type="text"]:focus,.agsuite_container textarea:focus{outline:none!important;border-color:#10b981!important;background:#ffffff!important;box-shadow:0 0 0 3px rgba(16,185,129,0.1)!important;}
-.agsuite_container input::placeholder,.agsuite_container textarea::placeholder{color:#9ca3af!important;font-size:15px!important;font-weight:400!important;}
-
-.agsuite_container select,.zcwf_col_fld_slt{width:100%;padding:12px 16px;font-size:15px;color:#1f2937!important;background:#f9fafb!important;border:1.5px solid #d1d5db!important;border-radius:8px!important;height:auto!important;transition:all 0.3s ease;cursor:pointer;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
-.agsuite_container select:focus,.zcwf_col_fld_slt:focus{outline:none!important;border-color:#10b981!important;background:#ffffff!important;box-shadow:0 0 0 3px rgba(16,185,129,0.1)!important;}
-select option{color:#1f2937;background:#ffffff;padding:8px;}
-
-.agsuite_container textarea{min-height:120px;resize:vertical;}
-.captcha_column{width:100%;float:left;padding:8px;margin-top:8px;}
-#submit_btn{margin:16px 0 0 0!important;text-align:center;}
-
-.zcwf_button{width:100%;max-width:100%!important;padding:14px 24px!important;font-size:16px!important;font-weight:600!important;color:#ffffff!important;background: linear-gradient(135deg, #f87171 0%, #b91c1c 100%);
-!important;border:none!important;border-radius:10px!important;cursor:pointer!important;transition:all 0.3s ease!important;box-shadow:0 4px 6px rgba(5,150,105,0.2)!important;text-transform:uppercase;letter-spacing:0.5px;}
-.zcwf_button:hover{background:linear-gradient(135deg,#047857 0%,#065f46 100%)!important;box-shadow:0 6px 12px rgba(5,150,105,0.3)!important;transform:translateY(-2px);}
-.zcwf_button:active{transform:translateY(0);}
-
-.g-recaptcha{margin:16px auto;display:flex;justify-content:center;}
-#recapErr409531000000325116{font-size:13px;color:#dc2626;text-align:center;margin-top:8px;visibility:hidden;}
-
-.zcwf_row{margin:0;}
-.zcwf_col_fld{float:left;width:100%;padding:0;position:relative;}
-.zcwf_col_fld:after{content:'';display:table;clear:both;}
-.zcwf_col_help{display:none;}
-.dsp{display:none;}
-.wfrm_fld_dpNn{display:none;}
-
-#crmWebToEntityForm{color:#1f2937;max-width:100%;margin:0;padding:0;text-align:left;}
-#crmWebToEntityForm.zcwf_lblLeft{width:100%;padding:0;margin:0;box-sizing:border-box;}
-#crmWebToEntityForm.zcwf_lblLeft *{box-sizing:border-box;direction:ltr;}
-
-@media (max-width:768px){
-.agsuite_column{width:100%;padding:0;margin-bottom:16px;}
-.agsuite_column-large{width:100%;padding:0;}
-.captcha_column{width:100%;}
-.zcwf_title{font-size:24px;}
-#submit_btn{margin-left:0!important;}
+.agsuite_container input[type="text"], 
+.agsuite_container textarea, 
+.zcwf_col_fld_slt {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 14px;
+  background: #f9fafb !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 12px !important;
+  color: #111827 !important;
+  transition: all 0.3s ease;
 }
 
-@media (max-width:480px){
-.agsuite_container input[type="text"],.agsuite_container textarea,.agsuite_container select{font-size:16px;padding:10px 14px;}
-.zcwf_button{padding:12px 20px!important;font-size:15px!important;}
+.agsuite_container input:focus, 
+.agsuite_container textarea:focus, 
+.zcwf_col_fld_slt:focus {
+  outline: none !important;
+  border-color: #3b82f6 !important;
+  background: #fff !important;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
+}
+
+.agsuite_container input::placeholder, 
+.agsuite_container textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+.zcwf_col_fld_slt {
+  appearance: none;
+  cursor: pointer;
+}
+
+select option {
+  background: #fff;
+  color: #111827;
+}
+
+.agsuite_container textarea { min-height: 100px; resize: none; }
+
+.zcwf_button {
+  width: 100%;
+  padding: 16px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  background: #3b82f6 !important;
+  border: none !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 8px 24px -8px #3b82f6 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 10px;
+}
+
+.zcwf_button:hover {
+  background: #2563eb !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px #3b82f6 !important;
+}
+
+.g-recaptcha { margin-top: 15px; display: flex; justify-content: flex-start; }
+#recapErr409531000000325116 { font-size: 12px; color: #ef4444; margin-top: 10px; visibility: hidden; }
+.dsp { display: none; }
+
+@media (max-width: 640px) {
+  .agsuite_column { width: 100%; padding: 0; }
 }
 </style>
 
 <div class="agsuite_container">
-  <div class="zcwf_title">Get in Touch</div>
+  <div class="zcwf_title">Get a Consultation</div>
   
   <div class="agsuite_column">
-    <div class="zcwf_row">
-      <div class="zcwf_col_fld">
-        <input type="text" id="Last_Name" aria-required="true" aria-label="Last Name" name="Last Name" placeholder="Name*" maxlength="80">
-      </div>
-    </div>
+    <input type="text" id="Last_Name" name="Last Name" placeholder="Full Name*" maxlength="80">
   </div>
   
   <div class="agsuite_column">
-    <div class="zcwf_row">
-      <div class="zcwf_col_fld">
-        <input type="text" ftype="email" autocomplete="false" id="Email" aria-required="true" aria-label="Email" name="Email" placeholder="Business Email*" maxlength="100">
-      </div>
-    </div>
+    <input type="text" ftype="email" id="Email" name="Email" placeholder="Business Email*" maxlength="100">
   </div>
   
   <div class="agsuite_column">
-    <div class="zcwf_row">
-      <div class="zcwf_col_fld">
-        <input type="text" id="Designation" aria-required="true" aria-label="Designation" name="Designation" placeholder="Role*" maxlength="100">
-      </div>
-    </div>
+    <input type="text" id="Designation" name="Designation" placeholder="Job Title" maxlength="100">
   </div>
   
   <div class="agsuite_column">
-    <div class="zcwf_row">
-      <div class="zcwf_col_fld">
-        <input type="text" id="Mobile" aria-required="true" aria-label="Mobile" name="Mobile" maxlength="30" placeholder="Mobile*" onkeypress="return validateNumber(event)">
-      </div>
-    </div>
-  </div>
-  
-  <div class="agsuite_column">
-    <div class="zcwf_row">
-      <div class="zcwf_col_fld">
-        <input type="text" id="Company" aria-required="true" aria-label="Company" name="Company" maxlength="200" placeholder="Company Name*">
-      </div>
-    </div>
-  </div>
-  
-  <div class="agsuite_column">
-    <div class="zcwf_row">
-      <div class="zcwf_col_fld">
-        <select class="zcwf_col_fld_slt" role="combobox" id="LEADCF5" onChange="addAriaSelected409531000000325116()" aria-required="true" aria-label="LEADCF5" name="LEADCF5">
-          <option value="" disabled selected>Product/Services*</option>
-          <option value="NetSuite&#x20;Product&#x20;&#x2f;Services">Oracle NetSuite</option>
-          <option value="Zoho&#x20;Products&#x2f;Services">Zoho</option>
-        </select>
-      </div>
-    </div>
-  </div>
-  
-  <div class="agsuite_column">
-    <div class="zcwf_row wfrm_fld_dpNn">
-      <div class="zcwf_col_fld">
-        <select class="zcwf_col_fld_slt" role="combobox" id="Lead_Source" onChange="addAriaSelected409531000000325116()" name="Lead Source">
-          <option selected value="Website">Website</option>
-        </select>
-      </div>
-    </div>
-  </div>
-  
-  <div class="agsuite_column">
-    <div class="zcwf_row">
-      <div class="zcwf_col_fld">
-        <select class="zcwf_col_fld_slt" role="combobox" id="LEADCF40" onChange="addAriaSelected409531000000325116()" aria-label="LEADCF40" name="LEADCF40">
-          <option value="" disabled selected>Annual Revenue*</option>
-          <option value="Under&#x20;&#x24;500K">Under $500K</option>
-          <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">$500k to $1M</option>
-          <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">$1M to $2M</option>
-          <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">$2M to $5M</option>
-          <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">$5M to $10M</option>
-          <option value="&#x24;10M&#x20;to&#x20;&#x24;20M">$10M to $20M</option>
-          <option value="&#x24;20M&#x20;to&#x20;&#x24;30M">$20M to $30M</option>
-          <option value="&#x24;30M&#x20;to&#x20;&#x24;50M">$30M to $50M</option>
-          <option value="&#x24;50M&#x20;to&#x20;&#x24;100M">$50M to $100M</option>
-          <option value="&#x24;100M&#x20;to&#x20;&#x24;150M">$100M to $150M</option>
-          <option value="&#x24;150M&#x20;to&#x20;&#x24;200M">$150M to $200M</option>
-          <option value="&#x24;200M&#x20;to&#x20;&#x24;250M">$200M to $250M</option>
-          <option value="&#x24;250M&#x20;to&#x20;&#x24;300M">$250M to $300M</option>
-          <option value="&#x24;300M&#x20;to&#x20;&#x24;400M">$300M to $400M</option>
-          <option value="&#x24;400M&#x20;to&#x20;&#x24;500M">$400M to $500M</option>
-        </select>
-      </div>
-    </div>
-  </div>
-  
-  <div class="agsuite_column">
-    <div class="zcwf_row">
-      <div class="zcwf_col_fld">
-        <select class="zcwf_col_fld_slt" role="combobox" id="LEADCF41" onChange="addAriaSelected409531000000325116()" aria-label="LEADCF41" name="LEADCF41">
-          <option value="" disabled selected>How did you hear about us?</option>
-          <option value="Email">Email</option>
-          <option value="Event">Event</option>
-          <option value="Friend&#x2f;Associate">Friend/Associate</option>
-          <option value="Search">Search</option>
-          <option value="Social&#x20;Media">Social Media</option>
-          <option value="Referral">Referral</option>
-        </select>
-      </div>
-    </div>
+    <input type="text" id="Mobile" name="Mobile" maxlength="30" placeholder="Mobile Number*" onkeypress="return validateNumber(event)">
   </div>
   
   <div class="agsuite_column-large">
-    <div class="zcwf_row">
-      <div class="zcwf_col_fld">
-        <textarea id="Description" aria-required="true" aria-label="Description" name="Description" placeholder="Tell Us How We Can Help!*"></textarea>
-      </div>
-    </div>
+    <input type="text" id="Company" name="Company" maxlength="200" placeholder="Company Name*">
   </div>
   
-  <div class="captcha_column">
+  <div class="agsuite_column">
+    <select class="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5" onChange="addAriaSelected409531000000325116()">
+      <option value="" disabled selected>Service Interest*</option>
+      <option value="NetSuite&#x20;Product&#x20;&#x2f;Services">Oracle NetSuite</option>
+      <option value="Zoho&#x20;Products&#x2f;Services">Zoho Suite</option>
+    </select>
+  </div>
+  
+  <div class="agsuite_column">
+    <select class="zcwf_col_fld_slt" id="LEADCF40" name="LEADCF40" onChange="addAriaSelected409531000000325116()">
+      <option value="" disabled selected>Annual Revenue*</option>
+      <option value="Under&#x20;&#x24;500K">Under $500K</option>
+      <option value="&#x24;1M+">$1M+</option>
+      <option value="&#x24;10M+">$10M+</option>
+    </select>
+  </div>
+  
+  <div class="agsuite_column-large">
+    <textarea id="Description" name="Description" placeholder="Tell us about your requirements*"></textarea>
+  </div>
+  
+  <div class="agsuite_column-large">
     <div class="g-recaptcha" data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="light" data-callback="rccallback409531000000325116" captcha-verified="false" id="recap409531000000325116"></div>
-    <div id="recapErr409531000000325116">Captcha validation failed. If you are not a robot then please try again.</div>
-    <div id="submit_btn">
-      <input type="submit" id="formsubmit" class="formsubmit zcwf_button" value="Submit" aria-label="Submit">
-    </div>
+    <div id="recapErr409531000000325116">Please verify you are not a robot.</div>
+    <input type="submit" id="formsubmit" class="zcwf_button" value="Send Request" aria-label="Submit Form">
   </div>
 </div>
 </form>
 </div>
-                  `,
-                }}
-              />
-            </div>
-
-          </div>
+              `,
+            }}
+          />
         </div>
-      </section>
+      </motion.div>
+
+    </div>
+
+    
+  </div>
+</section>
     </>
   );
 }

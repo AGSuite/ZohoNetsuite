@@ -1,14 +1,28 @@
-﻿export default function AboutUsPage() {
+﻿import React from 'react';
+import PageTemplate from '../../components/PageTemplate';
+
+export default function ZohoAboutUs() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">About Us</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            This is the About Us page. Content coming soon.
-          </p>
-        </div>
-      </div>
-    </div>
+    <PageTemplate
+      theme="zoho"
+      title="Empowering Businesses with AGSuite"
+      subtitle="Who We Are"
+      description="AGSuite is a premier technology consulting firm specializing in Zoho ecosystem transformations. We help businesses leverage the full power of cloud automation to drive growth, efficiency, and innovation."
+      ctaText="Ready to transform your business?"
+      features={[
+        {
+          title: "Our Mission",
+          description: "To bridge the gap between complex business challenges and elegant technology solutions."
+        },
+        {
+          title: "Our Vision",
+          description: "To be the global leader in digital transformation, powered by the most innovative cloud platforms."
+        },
+        {
+          title: "Our Team",
+          description: "A collective of certified experts and visionary strategists dedicated to your success."
+        }
+      ]}
+    />
   );
 }

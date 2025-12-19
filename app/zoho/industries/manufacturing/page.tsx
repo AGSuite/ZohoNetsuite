@@ -1,15 +1,19 @@
-﻿export default function ManufacturingPage() {
+﻿import React from 'react';
+import PageTemplate from '../../../components/PageTemplate';
+
+export default function ZohoManufacturingIndustry() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Manufacturing</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            This is the Manufacturing page. Content coming soon.
-          </p>
-        </div>
-      </div>
-    </div>
+    <PageTemplate
+      theme="zoho"
+      title="Optimize Your Manufacturing Cycles"
+      subtitle="Industries We Serve"
+      description="Manage your production, inventory, and supply chain across multiple factories with Zoho's integrated platform."
+      ctaText="Optimize Your Production"
+      features={[
+        { title: "Production Planning", description: "Schedule and track your manufacturing orders and tasks with ease." },
+        { title: "Quality Control", description: "Maintain high standards with built-in quality control and audit tools." },
+        { title: "Supply Chain", description: "Maintain real-time visibility into your entire supply chain and inventory." }
+      ]}
+    />
   );
 }
-

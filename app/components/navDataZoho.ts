@@ -63,7 +63,7 @@ export const navItemsZoho: NavSection[] = [
         children: [
             {
                 label: "Who We Are",
-                href: "/about-us",
+                href: "/zoho/about-us",
                 description: "Learn more about AGSuite vision, mission and team.",
                 icon: Groups
             },
@@ -84,85 +84,85 @@ export const navItemsZoho: NavSection[] = [
                         {
                             title: "Sales",
                             items: [
-                                { label: "Zoho CRM", href: "/solutions/zoho/zohocrm" },
-                                { label: "Zoho CRM Plus", href: "/solutions/zoho/zohocrmplus" },
-                                { label: "Zoho Bigin", href: "/solutions/zoho/zohobigin" },
+                                { label: "Zoho CRM", href: "/zoho/solutions/zohocrm" },
+                                { label: "Zoho CRM Plus", href: "/zoho/solutions/zohocrmplus" },
+                                { label: "Zoho Bigin", href: "/zoho/solutions/zohobigin" },
                             ]
                         },
                         {
                             title: "HR",
                             items: [
-                                { label: "Zoho People", href: "/solutions/zoho/zohopeople" },
-                                { label: "Zoho Recruit", href: "/solutions/zoho/zohorecruit" },
-                                { label: "Zoho People Plus", href: "/solutions/zoho/zohopeopleplus" },
-                                { label: "Zoho Payroll", href: "/solutions/zoho/zohopayroll" },
-                                { label: "Zoho Expense", href: "/solutions/zoho/zohoexpense" },
+                                { label: "Zoho People", href: "/zoho/solutions/zohopeople" },
+                                { label: "Zoho Recruit", href: "/zoho/solutions/zohorecruit" },
+                                { label: "Zoho People Plus", href: "/zoho/solutions/zohopeopleplus" },
+                                { label: "Zoho Payroll", href: "/zoho/solutions/zohopayroll" },
+                                { label: "Zoho Expense", href: "/zoho/solutions/zohoexpense" },
                             ]
                         },
                         {
                             title: "Finance",
                             items: [
-                                { label: "Zoho Books", href: "/solutions/zoho/zohobooks" },
-                                { label: "Zoho Inventory", href: "/solutions/zoho/zohoinventory" },
-                                { label: "Zoho Finance Plus", href: "/solutions/zoho/zohofinanceplus" },
+                                { label: "Zoho Books", href: "/zoho/solutions/zohobooks" },
+                                { label: "Zoho Inventory", href: "/zoho/solutions/zohoinventory" },
+                                { label: "Zoho Finance Plus", href: "/zoho/solutions/zohofinanceplus" },
                             ]
                         },
                         {
                             title: "Projects",
                             items: [
-                                { label: "Zoho Projects", href: "/solutions/zoho/zohoprojects" },
-                                { label: "Zoho Sprints", href: "/solutions/zoho/zohosprint" },
+                                { label: "Zoho Projects", href: "/zoho/solutions/zohoprojects" },
+                                { label: "Zoho Sprints", href: "/zoho/solutions/zohosprint" },
                             ]
                         },
                         {
                             title: "Service",
                             items: [
-                                { label: "Zoho Desk", href: "/solutions/zoho/zohodesk" },
-                                { label: "Zoho SalesIQ", href: "/solutions/zoho/zohosalesiq" },
-                                { label: "Zoho FSM", href: "/solutions/zoho/zohofsm" },
+                                { label: "Zoho Desk", href: "/zoho/solutions/zohodesk" },
+                                { label: "Zoho SalesIQ", href: "/zoho/solutions/zohosalesiq" },
+                                { label: "Zoho FSM", href: "/zoho/solutions/zohofsm" },
                             ]
                         },
                         {
                             title: "Email & Collaboration",
                             items: [
-                                { label: "Zoho Mail", href: "/solutions/zoho/zohomail" },
-                                { label: "Zoho Workplace", href: "/solutions/zoho/zohoworkplace" },
+                                { label: "Zoho Mail", href: "/zoho/solutions/zohomail" },
+                                { label: "Zoho Workplace", href: "/zoho/solutions/zohoworkplace" },
                             ]
                         },
                         {
                             title: "Marketing",
                             items: [
-                                { label: "Zoho Sites", href: "/solutions/zoho/zohosites" },
-                                { label: "Zoho Social", href: "/solutions/zoho/zohosocial" },
-                                { label: "Zoho Commerce", href: "/solutions/zoho/zohocommerce" },
-                                { label: "Zoho Marketing Automation", href: "/solutions/zoho/zohomarketingauto" },
-                                { label: "Zoho Marketing Plus", href: "/solutions/zoho/zohomarketingplus" },
+                                { label: "Zoho Sites", href: "/zoho/solutions/zohosites" },
+                                { label: "Zoho Social", href: "/zoho/solutions/zohosocial" },
+                                { label: "Zoho Commerce", href: "/zoho/solutions/zohocommerce" },
+                                { label: "Zoho Marketing Automation", href: "/zoho/solutions/zohomarketingauto" },
+                                { label: "Zoho Marketing Plus", href: "/zoho/solutions/zohomarketingplus" },
                             ]
                         },
                         {
                             title: "BI & Analytics",
                             items: [
-                                { label: "Zoho Analytics", href: "/solutions/zoho/zohoanalytics" },
-                                { label: "Zoho Flow", href: "/solutions/zoho/zohoflow" },
+                                { label: "Zoho Analytics", href: "/zoho/solutions/zohoanalytics" },
+                                { label: "Zoho Flow", href: "/zoho/solutions/zohoflow" },
                             ]
                         },
                         {
                             title: "Dev Platforms",
                             items: [
-                                { label: "Zoho Creator", href: "/solutions/zoho/zohocreator" },
-                                { label: "Zoho Catalyst", href: "/solutions/zoho/zohocatalyst" },
+                                { label: "Zoho Creator", href: "/zoho/solutions/zohocreator" },
+                                { label: "Zoho Catalyst", href: "/zoho/solutions/zohocatalyst" },
                             ]
                         },
                         {
                             title: "IT Management",
                             items: [
-                                { label: "Zoho IT Management", href: "/solutions/zoho/zohoitmanagement" },
+                                { label: "Zoho IT Management", href: "/zoho/solutions/zohoitmanagement" },
                             ]
                         },
                         {
                             title: "Complete Suite",
                             items: [
-                                { label: "Zoho One", href: "/solutions/zoho/zohoone" },
+                                { label: "Zoho One", href: "/zoho/solutions/zohoone" },
                             ]
                         }
                     ]
@@ -175,11 +175,11 @@ export const navItemsZoho: NavSection[] = [
     {
         title: "Services",
         children: [
-            { label: 'Digital Transformation', href: '/services/digital-transformation', description: 'Modernize your business.', icon: RocketLaunchIcon },
-            { label: 'Integration Services', href: '/services/integration-services', description: 'Connect systems easily.', icon: IntegrationInstructionsIcon },
-            { label: 'Training Services', href: '/services/training-services', description: 'Expert-led training programs.', icon: SchoolIcon },
-            { label: 'Low-Code App Development', href: '/services/low-code', description: 'Build apps faster.', icon: BuildIcon },
-            { label: 'Managed Services', href: '/services/managed-services', description: 'Complete IT management.', icon: SettingsIcon },
+            { label: 'Digital Transformation', href: '/zoho/services/digital-transformation', description: 'Modernize your business.', icon: RocketLaunchIcon },
+            { label: 'Integration Services', href: '/zoho/services/integration-services', description: 'Connect systems easily.', icon: IntegrationInstructionsIcon },
+            { label: 'Training Services', href: '/zoho/services/training-services', description: 'Expert-led training programs.', icon: SchoolIcon },
+            { label: 'Low-Code App Development', href: '/zoho/services/low-code', description: 'Build apps faster.', icon: BuildIcon },
+            { label: 'Managed Services', href: '/zoho/services/managed-services', description: 'Complete IT management.', icon: SettingsIcon },
         ]
     },
 
@@ -187,14 +187,14 @@ export const navItemsZoho: NavSection[] = [
     {
         title: "Industries",
         children: [
-            { label: 'Software & Technology', href: '/industries/software', description: 'Solutions for tech businesses.', icon: ComputerIcon },
-            { label: 'IT & Professional Services', href: '/industries/it-services', description: 'Automation for service providers.', icon: WorkIcon },
-            { label: 'Wholesale Distribution', href: '/industries/wholesale', description: 'Distribution & logistics tools.', icon: LocalShippingIcon },
-            { label: 'Advertising & Marketing', href: '/industries/advertising-marketing', description: 'Boost your campaigns.', icon: CampaignIcon },
-            { label: 'Media & Publishing', href: '/industries/media', description: 'Tools for media houses.', icon: NewspaperIcon },
-            { label: 'Retail & E-Commerce', href: '/industries/retail', description: 'Retail automation suite.', icon: StoreIcon },
-            { label: 'Transportation & Logistics', href: '/industries/transport', description: 'Smart logistics systems.', icon: LocalShippingIcon },
-            { label: 'Manufacturing', href: '/industries/manufacturing', description: 'Optimize manufacturing cycles.', icon: PrecisionManufacturingIcon },
+            { label: 'Software & Technology', href: '/zoho/industries/software', description: 'Solutions for tech businesses.', icon: ComputerIcon },
+            { label: 'IT & Professional Services', href: '/zoho/industries/it-services', description: 'Automation for service providers.', icon: WorkIcon },
+            { label: 'Wholesale Distribution', href: '/zoho/industries/wholesale', description: 'Distribution & logistics tools.', icon: LocalShippingIcon },
+            { label: 'Advertising & Marketing', href: '/zoho/industries/advertising-marketing', description: 'Boost your campaigns.', icon: CampaignIcon },
+            { label: 'Media & Publishing', href: '/zoho/industries/media', description: 'Tools for media houses.', icon: NewspaperIcon },
+            { label: 'Retail & E-Commerce', href: '/zoho/industries/retail', description: 'Retail automation suite.', icon: StoreIcon },
+            { label: 'Transportation & Logistics', href: '/zoho/industries/transport', description: 'Smart logistics systems.', icon: LocalShippingIcon },
+            { label: 'Manufacturing', href: '/zoho/industries/manufacturing', description: 'Optimize manufacturing cycles.', icon: PrecisionManufacturingIcon },
         ]
     },
 
@@ -202,10 +202,10 @@ export const navItemsZoho: NavSection[] = [
     {
         title: "Insights",
         children: [
-            { label: 'Blogs', href: '/blog', description: 'Latest articles & updates.', icon: ForumIcon },
-            { label: 'Case Study', href: '/casestudy', description: 'Our success stories.', icon: LocalLibraryIcon },
-            { label: 'Events', href: '/insights/events', description: 'Workshops & webinars.', icon: EventIcon },
-            { label: 'Awards & Achievements', href: '/insights/awards', description: 'Recognition & milestones.', icon: EmojiEventsIcon },
+            { label: 'Blogs', href: '/zoho/blog', description: 'Latest articles & updates.', icon: ForumIcon },
+            { label: 'Case Study', href: '/zoho/casestudy', description: 'Our success stories.', icon: LocalLibraryIcon },
+            { label: 'Events', href: '/zoho/insights/events', description: 'Workshops & webinars.', icon: EventIcon },
+            { label: 'Awards & Achievements', href: '/zoho/insights/awards', description: 'Recognition & milestones.', icon: EmojiEventsIcon },
         ]
     },
 
@@ -213,10 +213,10 @@ export const navItemsZoho: NavSection[] = [
     {
         title: "Contact",
         children: [
-            { label: 'Careers', href: '/contact-us/careers', description: 'Join our growing team.', icon: WorkIcon },
-            { label: 'Support', href: '/contact-us/support', description: 'Get expert help.', icon: SupportAgentIcon },
-            { label: 'Request Quote', href: '/contact-us/quote', description: 'Get project pricing.', icon: RequestQuoteIcon },
-            { label: 'Free Consultation', href: '/free-consultation', description: 'Talk to our team.', icon: ContactSupportIcon }
+            { label: 'Careers', href: '/zoho/contact/careers', description: 'Join our growing team.', icon: WorkIcon },
+            { label: 'Support', href: '/zoho/contact/support', description: 'Get expert help.', icon: SupportAgentIcon },
+            { label: 'Request Quote', href: '/zoho/contact/quote', description: 'Get project pricing.', icon: RequestQuoteIcon },
+            { label: 'Free Consultation', href: '/zoho/free-consultation', description: 'Talk to our team.', icon: ContactSupportIcon }
         ]
     }
 ];

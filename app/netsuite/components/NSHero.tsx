@@ -55,7 +55,7 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   </p>
 
                   <div className="mt-8 relative inline-flex group">
-                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
+                    <div className="absolute inset-0 rounded-xl bg-linear-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
                     <button className="relative px-8 py-3 rounded-xl bg-gray-900 text-white font-semibold shadow-xl">
                       Explore NetSuite ERP
                     </button>
@@ -164,7 +164,7 @@ const HeroSlide = ({
       
       {/* Gradient overlay: dark left → light center → transparent right */}
       {showOverlay && (
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/20 to-transparent" />
       )}
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -187,7 +187,7 @@ const HeroSlide = ({
           }`}>{desc}</p>
 
           <div className="mt-8 relative inline-flex group animate-fadeInUp animation-delay-1200">
-            <div className={`absolute inset-0 rounded-xl bg-gradient-to-r ${textColor === 'light' ? 'from-[#44BCFF] via-[#FF44EC] to-[#FF675E]' : 'from-[#44BCFF] via-[#FF44EC] to-[#FF675E]'} opacity-70 blur-lg group-hover:opacity-100 transition duration-700`} />
+            <div className={`absolute inset-0 rounded-xl bg-linear-to-r ${textColor === 'light' ? 'from-[#44BCFF] via-[#FF44EC] to-[#FF675E]' : 'from-[#44BCFF] via-[#FF44EC] to-[#FF675E]'} opacity-70 blur-lg group-hover:opacity-100 transition duration-700`} />
             <button className="bg-gray-900 text-white relative px-8 py-3 rounded-xl font-semibold shadow-xl hover:scale-105 transition-transform duration-300">
               {cta}
             </button>
@@ -204,6 +204,7 @@ const HeroSlide = ({
               height={1400}
               priority={priority} // Also prioritize the content image if it's the main slide
               className="w-full max-w-4xl object-contain drop-shadow-2xl"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
         )}

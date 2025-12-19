@@ -36,6 +36,7 @@ export default function Home() {
         priority
         fetchPriority="high"
         className="object-cover -z-10"
+        sizes="100vw"
       />
       {/* TOP TWO SECTIONS — ZOHO */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -51,7 +52,7 @@ export default function Home() {
     alt="Oracle NetSuite Logo"
     width={260}
     height={120}
-    className="mb-6"
+    className="mb-6 w-auto h-auto"
     priority
     fetchPriority="high"
   />
@@ -72,7 +73,8 @@ export default function Home() {
     fill
     priority
     fetchPriority="high"
-    className="object-cover  group-hover:scale-105 transition-all duration-700 opacity-99"
+    className="object-cover group-hover:scale-105 transition-all duration-700 opacity-99"
+    sizes="(max-width: 768px) 100vw, 50vw"
   />
 
   {/* Main dim overlay */}
@@ -120,9 +122,8 @@ export default function Home() {
     src="/images/zohoimages/background/zohobg.webp"
     alt="Zoho Background"
     fill
-    priority
-    fetchPriority="high"
     className="object-cover group-hover:scale-105 transition-all duration-700 opacity-99"
+    sizes="(max-width: 768px) 100vw, 50vw"
   />
 
   {/* Main dim overlay */}
@@ -158,9 +159,7 @@ export default function Home() {
     alt="Zoho Logo"
     width={260}
     height={120}
-    className="mb-6"
-    priority
-    fetchPriority="high"
+    className="mb-6 w-auto h-auto"
   />
   <button className="px-8 py-3 rounded-lg bg-gray-700 text-white text-lg font-semibold hover:bg-gray-900 transition">
     Visit Zoho →

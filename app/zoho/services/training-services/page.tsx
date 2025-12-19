@@ -1,15 +1,19 @@
-﻿export default function TrainingServicesPage() {
+﻿import React from 'react';
+import PageTemplate from '../../../components/PageTemplate';
+
+export default function ZohoTrainingServices() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Training Services</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            This is the Training Services page. Content coming soon.
-          </p>
-        </div>
-      </div>
-    </div>
+    <PageTemplate
+      theme="zoho"
+      title="Expert-led Training Services"
+      subtitle="Our Services"
+      description="Empower your team with the knowledge and skills they need to master Zoho applications and drive maximum value for your business."
+      ctaText="Upskill Your Team"
+      features={[
+        { title: "Customized Programs", description: "Tailored training programs based on your team's unique needs and goals." },
+        { title: "Hands-on Workshops", description: "Interactive, hands-on workshops to ensure your team learns by doing." },
+        { title: "Ongoing Support", description: "Get continuous support and guidance as your team masters Zoho tools." }
+      ]}
+    />
   );
 }
-

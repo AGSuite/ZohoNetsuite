@@ -1,15 +1,28 @@
-﻿export default function DigitalTransformationPage() {
+﻿import React from 'react';
+import PageTemplate from '../../../components/PageTemplate';
+
+export default function ZohoDigitalTransformation() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Digital Transformation</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            This is the Digital Transformation page. Content coming soon.
-          </p>
-        </div>
-      </div>
-    </div>
+    <PageTemplate
+      theme="zoho"
+      title="Digital Transformation with Zoho"
+      subtitle="Our Services"
+      description="Reimagine your business processes for the digital age. We help you transition from legacy systems to a modern, automated cloud environment using Zoho's versatile platform."
+      ctaText="Start Your Transformation"
+      features={[
+        {
+          title: "Process Automation",
+          description: "Identify and automate repetitive tasks to free up your team for high-value work."
+        },
+        {
+          title: "Legacy Migration",
+          description: "Safely move your data and workflows from old systems to the Zoho cloud."
+        },
+        {
+          title: "Change Management",
+          description: "Ensure smooth adoption across your organization with our expert guidance."
+        }
+      ]}
+    />
   );
 }
-

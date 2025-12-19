@@ -122,7 +122,7 @@ const NavbarNetSuite = () => {
             width={120}
             height={40}
             priority
-            className="transition-all duration-300"
+            className="transition-all duration-300 w-auto h-auto"
           />
         </Link>
         
@@ -191,7 +191,7 @@ const NavbarNetSuite = () => {
 
               {/* Dropdown for non-Solutions */}
               {item.title !== 'Solutions' && item.children.length > 0 && openDropdown === item.title && (
-                <div className="fixed left-0 right-0 top-20 w-screen bg-gradient-to-br from-white via-white to-white backdrop-blur-md shadow-lg border-b border-gray-200 transition-all duration-200 z-50">
+                <div className="fixed left-0 right-0 top-20 w-screen bg-linear-to-br from-white via-white to-white backdrop-blur-md shadow-lg border-b border-gray-200 transition-all duration-200 z-50">
                   <div className="mx-auto max-w-[1600px] px-5 sm:px-10 md:px-12 lg:px-5 py-8">
                     {item.title === 'Services' && (
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -352,7 +352,7 @@ const NavbarNetSuite = () => {
                 item.children.some((child) => child.megaMenu) &&
                 openDropdown === 'Solutions' && (
                   <div
-                    className="hidden lg:block fixed left-0 right-0 top-20 w-screen bg-gradient-to-br from-gray-50 via-gray-50 to-gray-50 backdrop-blur-md shadow-lg border-b border-gray-200 transition-all duration-300 z-50"
+                    className="hidden lg:block fixed left-0 right-0 top-20 w-screen bg-linear-to-br from-gray-50 via-gray-50 to-gray-50 backdrop-blur-md shadow-lg border-b border-gray-200 transition-all duration-300 z-50"
                     style={{ maxHeight: '80vh', overflowY: 'auto', borderRadius: '0 0 2rem 2rem' }}
                   >
                     <div className="max-w-[1600px] mx-auto px-5 sm:px-10 md:px-12 lg:px-5 py-8 relative">
@@ -506,8 +506,8 @@ const NavbarNetSuite = () => {
             </svg>
           </button>
 
-          <div className="hidden lg:flex relative inline-flex group">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
+          <div className="hidden lg:inline-flex relative group">
+            <div className="absolute inset-0 rounded-xl bg-linear-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
             <Link
               href="/netsuite/contact"
               className="relative px-6 py-2.5 rounded-xl bg-gray-900 text-white font-semibold shadow-xl flex items-center gap-2"
@@ -667,7 +667,7 @@ const NavbarNetSuite = () => {
 
             <div className="pt-4 border-t border-gray-200">
               <div className="relative inline-flex group w-full">
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
+                <div className="absolute inset-0 rounded-xl bg-linear-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
                 <Link
                   href="/netsuite/contact"
                   className="relative block w-full text-center px-6 py-3 rounded-xl bg-gray-900 text-white font-semibold shadow-xl"

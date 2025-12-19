@@ -1,15 +1,28 @@
-﻿export default function ContactPage() {
+﻿import React from 'react';
+import PageTemplate from '../../components/PageTemplate';
+
+export default function ZohoContactPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            This is the Contact page. Content coming soon.
-          </p>
-        </div>
-      </div>
-    </div>
+    <PageTemplate
+      theme="zoho"
+      title="Get in Touch with Our Experts"
+      subtitle="Contact Us"
+      description="Whether you have a question about our services, need technical support, or want to discuss a new project, our team is here to help you succeed."
+      ctaText="Start the Conversation"
+      features={[
+        {
+          title: "Sales Inquiries",
+          description: "Talk to our sales team about finding the right solutions for your business growth."
+        },
+        {
+          title: "Partnership Opportunities",
+          description: "Interested in collaborating with AGSuite? Let's discuss how we can grow together."
+        },
+        {
+          title: "General Questions",
+          description: "Got a quick question? Reach out and we'll get back to you as soon as possible."
+        }
+      ]}
+    />
   );
 }
-

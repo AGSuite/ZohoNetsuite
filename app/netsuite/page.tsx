@@ -1,8 +1,19 @@
 ﻿import Link from 'next/link';
 import { NSHero } from './components/NSHero';
+import { Metadata } from 'next';
 
-import NSMetrics from './components/NSMetrics';
-import NSDashboardHero from './components/NSDashboardHero';
+export const metadata: Metadata = {
+  title: "Oracle NetSuite ERP Solutions | AGSuite Technologies",
+  description: "Scale your business with the world's #1 Cloud ERP. AGSuite offers expert NetSuite implementation, integration, and managed services.",
+  openGraph: {
+    title: "NetSuite ERP Solutions | AGSuite Technologies",
+    description: "Cloud ERP for Fast-Growing Companies. Run your entire business in the cloud.",
+    images: ["/images/Background/herobluebg.webp"],
+  },
+};
+
+const NSMetrics = dynamic(() => import('./components/NSMetrics').then(mod => mod.default));
+const NSDashboardHero = dynamic(() => import('./components/NSDashboardHero').then(mod => mod.default));
 import dynamic from 'next/dynamic';
 
 const NSIndustries = dynamic(() => import('./components/NSIndustries').then(mod => mod.default));

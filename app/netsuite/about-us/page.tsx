@@ -1,15 +1,28 @@
-﻿export default function AboutUsPage() {
+﻿import React from 'react';
+import PageTemplate from '../../components/PageTemplate';
+
+export default function NetSuiteAboutUs() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">About Us</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            This is the About Us page. Content coming soon.
-          </p>
-        </div>
-      </div>
-    </div>
+    <PageTemplate
+      theme="netsuite"
+      title="Scale Your Enterprise with AGSuite"
+      subtitle="Who We Are"
+      description="AGSuite is a leading global NetSuite partner, providing expert implementation, optimization, and support services. We empower enterprises to achieve peak performance through Oracle NetSuite's unified cloud business suite."
+      ctaText="Ready for enterprise-grade growth?"
+      features={[
+        {
+          title: "Expert Consulting",
+          description: "Our certified NetSuite consultants bring decades of industry experience to every project."
+        },
+        {
+          title: "Strategic Partnerships",
+          description: "As an Oracle NetSuite partner, we provide direct access to the latest innovations and best practices."
+        },
+        {
+          title: "Proven Methodology",
+          description: "Our structured approach ensures on-time, on-budget delivery and maximum ROI."
+        }
+      ]}
+    />
   );
 }
-

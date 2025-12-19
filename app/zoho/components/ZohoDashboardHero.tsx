@@ -50,7 +50,7 @@ const ZohoDashboardHero: React.FC = () => {
             className="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl md:text-5xl"
           >
             Deliver smarter cloud solutions with{" "}
-            <span className="bg-gradient-to-r from-red-600 via-rose-500 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-red-600 via-rose-500 to-purple-600 bg-clip-text text-transparent">
               AGSuite experts
             </span>
           </h1>
@@ -77,7 +77,6 @@ const ZohoDashboardHero: React.FC = () => {
                 src={IMAGES.center}
                 alt="AGSuite cloud dashboard overview"
                 fill
-                priority
                 sizes="(max-width: 768px) 90vw, 500px"
                 className="object-cover"
               />
@@ -104,6 +103,7 @@ const ZohoDashboardHero: React.FC = () => {
                   alt="AGSuite consultant collaborating with client"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1280px) 150px, 120px"
                 />
               </div>
             </motion.div>
@@ -125,13 +125,14 @@ const ZohoDashboardHero: React.FC = () => {
                   alt="AGSuite team discussing implementation strategy"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1280px) 200px, 160px"
                 />
               </div>
             </motion.div>
 
             {/* Center dashboard (big, comes from bottom first) */}
             <motion.div
-              className="relative z-20 flex-shrink-0"
+              className="relative z-20 shrink-0"
               initial={{ y: 60, opacity: 0, scale: 0.9 }}
               animate={
                 isInView
@@ -145,7 +146,6 @@ const ZohoDashboardHero: React.FC = () => {
                   src={IMAGES.center}
                   alt="AGSuite cloud dashboard showing business insights"
                   fill
-                  priority
                   sizes="(min-width: 1280px) 680px, (min-width: 1024px) 520px, 420px"
                   className="object-cover"
                 />
@@ -170,6 +170,7 @@ const ZohoDashboardHero: React.FC = () => {
                   alt="Customer using AGSuite solutions"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1280px) 200px, 160px"
                 />
               </div>
             </motion.div>
@@ -191,6 +192,7 @@ const ZohoDashboardHero: React.FC = () => {
                   alt="Happy AGSuite client"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1280px) 150px, 120px"
                 />
               </div>
             </motion.div>

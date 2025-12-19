@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     content:
       "NetSuite's financial management module transformed how we handle our global accounting. AGSuite's implementation was seamless.",
     avatar:
-      "/images/people/person1.webp" 
+      "/images/people/laptopmen.webp" 
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const testimonials: Testimonial[] = [
     content:
       "The real-time visibility into our supply chain has been a game changer. We've reduced inventory holding costs by 20%.",
     avatar:
-      "/images/people/person2.webp"
+      "/images/people/laptopgirl.webp"
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const testimonials: Testimonial[] = [
     content:
       "AGSuite's customization of NetSuite saved us hundreds of man-hours. Their support team is responsive and knowledgeable.",
     avatar:
-      "/images/people/person3.webp"
+      "/images/people/laptopmen2.webp"
   },
   {
     id: 4,
@@ -50,7 +50,7 @@ const testimonials: Testimonial[] = [
     content:
       "Scaling our e-commerce business was painless with NetSuite. We added two new regions in a month without any system hiccups.",
     avatar:
-      "/images/people/person4.webp"
+      "/images/people/laptopgirl1.webp"
   }
 ];
 
