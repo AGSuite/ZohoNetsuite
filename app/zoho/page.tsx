@@ -1,14 +1,6 @@
-﻿import dynamic from 'next/dynamic';
+﻿import Link from 'next/link';
+import { ZohoHero } from './components/ZohoHero';
 import { Metadata } from 'next';
-
-const ZohoHero = dynamic(() => import('./components/ZohoHero').then(mod => mod.ZohoHero), {
-  ssr: true,
-  loading: () => (
-    <div className="relative h-[80vh] w-full bg-gray-50 animate-pulse flex items-center justify-center">
-      <div className="text-gray-900 text-2xl font-bold">Loading...</div>
-    </div>
-  )
-});
 
 export const metadata: Metadata = {
   title: "Zoho Solutions | CRM, HR, Finance & Automation | AGSuite",
@@ -22,6 +14,7 @@ export const metadata: Metadata = {
 
 const ZohoMetrics = dynamic(() => import('./components/ZohoMetrics').then(mod => mod.default));
 const ZohoDashboardHero = dynamic(() => import('./components/ZohoDashboardHero').then(mod => mod.default));
+import dynamic from 'next/dynamic';
 
 const ZohoIndustries = dynamic(() => import('./components/ZohoIndustries').then(mod => mod.default));
 const Testimonials = dynamic(() => import('../components/home/Testimonials').then(mod => mod.Testimonials));

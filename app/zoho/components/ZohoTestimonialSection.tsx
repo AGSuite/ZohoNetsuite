@@ -130,13 +130,13 @@ const ZohoTestimonialSection = () => {
         className="absolute inset-x-0 top-20 h-64 mx-auto w-[90%] rounded-3xl opacity-20 blur-3xl"
         style={{
           background:
-            "linear-gradient(90deg, #3b82f6 -0.55%, #facc15 22.86%, #ef4444 48.36%, #10b981 73.33%, #6366f1 99.34%)"
+            "linear-gradient(90deg, #ef4444 -0.55%, #f97316 22.86%, #facc15 48.36%, #fb923c 73.33%, #dc2626 99.34%)"
         }}
       />
 
       {/* Heading */}
       <div className="text-center relative z-10 mb-14">
-        <p className="text-lg font-medium text-blue-600">
+        <p className="text-lg font-medium text-red-600">
           Transforming Businesses Globally
         </p>
         <h2 className="mt-2 text-4xl font-bold text-gray-900">

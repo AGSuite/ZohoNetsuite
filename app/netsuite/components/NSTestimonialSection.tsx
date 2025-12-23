@@ -157,7 +157,7 @@ const NSTestimonialSection = () => {
           {extendedTestimonials.map((t, index) => (
             <div
               key={`${t.id}-${index}`}
-              className="inline-block flex-shrink-0 w-[90vw] md:w-[60vw] lg:w-[40vw] px-4"
+              className="inline-block shrink-0 w-[90vw] md:w-[60vw] lg:w-[40vw] px-4"
             >
               {/* Card */}
               <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-100 h-full flex flex-col justify-between">
