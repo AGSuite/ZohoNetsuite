@@ -215,9 +215,7 @@ const ZohoDashboardHero: React.FC = () => {
                     href={logo.link || "#"}
                     target={logo.link ? "_blank" : undefined}
                     rel={logo.link ? "noopener noreferrer" : undefined}
-                    className="flex h-14 w-38 sm:h-26 sm:w-42 rounded-2xl shadow-rose-100 items-center justify-center 
-                              bg-white  
-                              hover:shadow-md transition"
+                    className="flex h-14 w-38 sm:h-26 sm:w-42 rounded-2xl shadow-rose-100 items-center justify-center bg-white hover:shadow-md transition"
                     aria-label={logo.name}
                   >
                     <Image
@@ -234,15 +232,19 @@ const ZohoDashboardHero: React.FC = () => {
           </div>
 
           {/* Marquee Animation */}
-          <style>
+          <style jsx global>
             {`
               .animate-marquee {
                 display: inline-flex;
-                animation: marquee 18s linear infinite;
+                animation: marquee 20s linear infinite;
+                will-change: transform;
               }
               @keyframes marquee {
                 0% { transform: translateX(0); }
                 100% { transform: translateX(-50%); }
+              }
+              .animate-marquee:hover {
+                animation-play-state: paused;
               }
             `}
           </style>
