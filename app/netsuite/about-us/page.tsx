@@ -672,7 +672,7 @@ export default function AboutClient() {
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-1">
            
-            <h2 className="mb-10 bg-linear-to-l leading-relaxed from-blue-100 via-blue-50 to-gray-50 text-transparent bg-clip-text mx-auto max-w-4xl font-medium text-3xl sm:text-4xl lg:text-5xl">
+            <h2 className="mb-10 bg-linear-to-l leading-relaxed from-blue-900 via-blue-950 to-blue-950 text-transparent bg-clip-text mx-auto max-w-4xl font-medium text-3xl sm:text-4xl lg:text-5xl">
               Celebrating Excellence & Recognition
             </h2>
 

@@ -1,15 +1,12 @@
-﻿export default function SolutionsPage() {
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Solutions</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            This is the Solutions page. Content coming soon.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
+﻿import React from 'react';
+import { Metadata } from 'next';
+import NetSuiteSolutionsClient from './components/NetSuiteSolutionsClient';
 
+export const metadata: Metadata = {
+  title: "Oracle NetSuite Business Solutions | AGSuite Technologies",
+  description: "Explore our comprehensive range of Oracle NetSuite solutions including ERP, CRM, OneWorld, and Business Intelligence. Tailored to help your business scale.",
+};
+
+export default function NetSuiteSolutionsPage() {
+  return <NetSuiteSolutionsClient />;
+}

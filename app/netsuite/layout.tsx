@@ -14,6 +14,12 @@ export default function NetSuiteLayout({
 }) {
   return (
     <div className="min-h-screen bg-white">
+      <link rel="preconnect" href="https://www.google.com" />
+      <link rel="preconnect" href="https://www.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://salesiq.zoho.in" />
+      <link rel="dns-prefetch" href="https://www.google.com" />
+      <link rel="dns-prefetch" href="https://www.gstatic.com" />
+      <link rel="dns-prefetch" href="https://salesiq.zoho.in" />
       <NavbarNetSuite />
       <main>{children}</main>
       <NSFooter />

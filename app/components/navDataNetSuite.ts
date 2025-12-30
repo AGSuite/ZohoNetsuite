@@ -73,7 +73,7 @@ export const navItemsNetSuite: NavSection[] = [
         children: [
             {
                 label: 'NETSUITE',
-                href: '/solutions/netsuite',
+                href: '/netsuite/solutions',
                 megaMenu: {
                     title: 'NetSuite Business Management Solutions',
                     description: 'Comprehensive ERP and business management platform',
@@ -81,55 +81,55 @@ export const navItemsNetSuite: NavSection[] = [
                         {
                             title: 'Core ERP',
                             items: [
-                                { label: 'NetSuite ERP', href: '/netsuite/solutions/erp' },
-                                { label: 'NetSuite Accounting Software', href: '/netsuite/solutions/netsuiteaccounting' },
-                                { label: 'Global Business Management', href: '/netsuite/solutions/globalbusiness' },
+                                { label: 'NetSuite ERP', href: '/netsuite/solutions/core-erp/erp' },
+                                { label: 'NetSuite Accounting Software', href: '/netsuite/solutions/core-erp/accounting' },
+                                { label: 'Global Business Management', href: '/netsuite/solutions/core-erp/global-business' },
                             ]
                         },
                         {
                             title: 'Customer Management',
                             items: [
-                                { label: 'NetSuite CRM', href: '/netsuite/solutions/netsuitecrm' },
+                                { label: 'NetSuite CRM', href: '/netsuite/solutions/customer-management/crm' },
                             ]
                         },
                         {
                             title: 'Project Management',
                             items: [
-                                { label: 'NetSuite SRP', href: '/netsuite/solutions/netsuitesrp' },
-                                { label: 'SuiteProject Pro (OpenAir)', href: '/netsuite/solutions/netsuiteopenair' },
+                                { label: 'NetSuite SRP', href: '/netsuite/solutions/project-management/srp' },
+                                { label: 'SuiteProject Pro (OpenAir)', href: '/netsuite/solutions/project-management/openair' },
                             ]
                         },
                         {
                             title: 'Analytics & Intelligence',
                             items: [
-                                { label: 'NetSuite Business Intelligence', href: '/netsuite/solutions/businessintelligence' },
-                                { label: 'NetSuite Analytics Warehouse', href: '/netsuite/solutions/netsuiteanalytics' },
-                                { label: 'Artificial Intelligence in NetSuite', href: '/netsuite/solutions/netsuiteai' },
+                                { label: 'NetSuite Business Intelligence', href: '/netsuite/solutions/analytics/bi' },
+                                { label: 'NetSuite Analytics Warehouse', href: '/netsuite/solutions/analytics/warehouse' },
+                                { label: 'Artificial Intelligence in NetSuite', href: '/netsuite/solutions/analytics/ai' },
                             ]
                         },
                         {
                             title: 'E-Commerce',
                             items: [
-                                { label: 'NetSuite E-Commerce', href: '/netsuite/solutions/netsuiteecommerce' },
+                                { label: 'NetSuite E-Commerce', href: '/netsuite/solutions/ecommerce/main' },
                             ]
                         },
                         {
                             title: 'Specialized Solutions',
                             items: [
-                                { label: 'SuiteSuccess', href: '/netsuite/solutions/suitesuccess' },
-                                { label: 'India Localization for NetSuite', href: '/netsuite/solutions/indialocalization' },
+                                { label: 'SuiteSuccess', href: '/netsuite/solutions/specialized/suitesuccess' },
+                                { label: 'India Localization for NetSuite', href: '/netsuite/solutions/specialized/india-localization' },
                             ]
                         },
                         {
                             title: 'Planning & Budgeting',
                             items: [
-                                { label: 'NetSuite Planning and Budgeting', href: '/netsuite/solutions/netsuiteplanning' },
+                                { label: 'NetSuite Planning and Budgeting', href: '/netsuite/solutions/planning/main' },
                             ]
                         },
                         {
                             title: 'Why Choose NetSuite',
                             items: [
-                                { label: 'Why NetSuite', href: '/netsuite/solutions/whynetsuite' },
+                                { label: 'Why NetSuite', href: '/netsuite/solutions/why-netsuite/main' },
                             ]
                         },
                     ],
@@ -139,7 +139,7 @@ export const navItemsNetSuite: NavSection[] = [
             // --------------- NETSUITE ADD-ONS ---------------
             {
                 label: 'NETSUITE ADD-ONS',
-                href: '/solutions/netsuiteaddon',
+                href: '/netsuite/solutions/addons',
                 megaMenu: {
                     title: 'NetSuite Add-On Solutions',
                     description: 'Extend NetSuite with connectors & automation tools',
@@ -147,17 +147,17 @@ export const navItemsNetSuite: NavSection[] = [
                         {
                             title: 'Connectors',
                             items: [
-                                { label: 'Magento 2 NetSuite Connector', href: '/netsuite/solutions/netsuiteaddon/connectors/magento2' },
-                                { label: 'Amazon NetSuite Connector', href: '/netsuite/solutions/netsuiteaddon/connectors/amazon' },
-                                { label: 'Shopify NetSuite Connector', href: '/netsuite/solutions/netsuiteaddon/connectors/shopify' },
+                                { label: 'Magento 2 NetSuite Connector', href: '/netsuite/solutions/addons/connectors/magento2' },
+                                { label: 'Amazon NetSuite Connector', href: '/netsuite/solutions/addons/connectors/amazon' },
+                                { label: 'Shopify NetSuite Connector', href: '/netsuite/solutions/addons/connectors/shopify' },
                             ],
                         },
                         {
                             title: 'Other Add-ons',
                             items: [
-                                { label: 'India Localization', href: '/netsuite/solutions/netsuiteaddon/india-localization' },
-                                { label: 'Smart Commission App', href: '/netsuite/solutions/netsuiteaddon/smart-commission' },
-                                { label: 'NetSuite Data Backup', href: '/netsuite/solutions/netsuiteaddon/data-backup' },
+                                { label: 'India Localization', href: '/netsuite/solutions/addons/india-localization' },
+                                { label: 'Smart Commission App', href: '/netsuite/solutions/addons/smart-commission' },
+                                { label: 'NetSuite Data Backup', href: '/netsuite/solutions/addons/data-backup' },
                             ],
                         },
                     ],

@@ -89,7 +89,7 @@ export default function NSMetrics() {
   return (
     <section
       className="relative py-16 sm:py-20 lg:py-24 bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/images/Background/teambg.webp')" }}
+      style={{ backgroundImage: "url('')" }}
     >
       <div className="absolute inset-0 bg-white/80" />
 
