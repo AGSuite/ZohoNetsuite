@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import FlipNumbers from 'react-flip-numbers';
 import { Trophy, Users, Globe2, Rocket, Layout, Database, Share2, Code, ShieldCheck, HeartHandshake, ExternalLink, ArrowRight, Settings, Zap, CheckCircle2 } from 'lucide-react';
-import FooterFormSection from '../../../../components/home/FooterFormSection';
+import FooterFormSection from '@/app/components/home/FooterFormSection';
 
 export default function NetSuiteAddonsClient() {
   const { ref: statsRef, inView: statsInView } = useInView({
@@ -172,10 +172,8 @@ export default function NetSuiteAddonsClient() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="flex-1 max-w-2xl"
             >
-              <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase py-2 px-4 rounded-full mb-6 text-blue-400 bg-blue-900/40 border border-blue-800">
-                Supercharge Your Suite
-              </span>
-              <h1 className="text-5xl md:text-7xl font-black mb-8 leading-[1.05] tracking-tight text-white">
+              
+              <h1 className="text-5xl md:text-7xl font-semibold mb-8 leading-[1.05] tracking-tight text-white">
                 NetSuite <span className="text-blue-500">Add-Ons</span> & Extensions
               </h1>
               <p className="text-xl leading-relaxed font-light text-gray-300">
@@ -198,7 +196,7 @@ export default function NetSuiteAddonsClient() {
               transition={{ duration: 1, delay: 0.2 }}
               className="flex-1 relative w-full aspect-square max-w-[550px] z-20"
             >
-              <div className="w-full h-full rounded-[3rem] bg-linear-to-br from-blue-600/20 to-indigo-900/20 overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(37,99,235,0.2)] relative group">
+              <div className="w-full h-[450px] rounded-2xl bg-linear-to-br from-blue-600/20 to-indigo-900/20 overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(37,99,235,0.2)] relative group">
                 <Image
                   src="/images/lap/lap1.webp"
                   alt="NetSuite Add-Ons & Extensions"
@@ -209,24 +207,21 @@ export default function NetSuiteAddonsClient() {
                 <div className="absolute inset-0 bg-linear-to-t from-[#000b21]/60 to-transparent" />
               </div>
               
-              {/* Top Right Floating Card */}
+              {/* Top Left Floating Card */}
               <motion.div 
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 }}
-                className="absolute top-10 -right-6 lg:-right-12 bg-blue-500/30 backdrop-blur-2xl border border-white/20 p-6 rounded-3xl shadow-2xl max-w-[260px] z-30"
+                className="absolute top-10 -left-6 lg:-left-12 bg-white/95 backdrop-blur-md border border-gray-200 p-6 rounded-3xl shadow-2xl max-w-[280px] z-30"
               >
-                <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center gap-3">
                    <div className="p-2.5 bg-blue-600 rounded-xl">
                      <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                      </svg>
                    </div>
-                   <h4 className="text-sm font-bold text-white uppercase tracking-wider">Extend Suite</h4>
+                   <h4 className="text-base font-bold text-gray-900 tracking-wide">Add-ons & Extensions</h4>
                 </div>
-                <p className="text-xs text-blue-50/90 leading-relaxed font-medium">
-                  Boost productivity with specialized apps.
-                </p>
               </motion.div>
 
               {/* Bottom Center Quote Card */}
