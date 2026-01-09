@@ -37,6 +37,7 @@ export default function Home() {
         fetchPriority="high"
         className="object-cover -z-10"
         sizes="100vw"
+        quality={75}
       />
       {/* TOP TWO SECTIONS — ZOHO */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -75,6 +76,7 @@ export default function Home() {
     fetchPriority="high"
     className="object-cover group-hover:scale-105 transition-all duration-700 opacity-99"
     sizes="(max-width: 768px) 100vw, 50vw"
+    quality={75}
   />
 
   {/* Main dim overlay */}
@@ -124,6 +126,7 @@ export default function Home() {
     fill
     className="object-cover group-hover:scale-105 transition-all duration-700 opacity-99"
     sizes="(max-width: 768px) 100vw, 50vw"
+    quality={75}
   />
 
   {/* Main dim overlay */}

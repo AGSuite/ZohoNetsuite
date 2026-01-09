@@ -22,7 +22,7 @@ const FAQ = dynamic(() => import('../components/home/FAQ').then(mod => mod.FAQ))
 
 const ZohoServices = dynamic(() => import('./components/ZohoServices').then(mod => mod.default));
 const ZohoCTA = dynamic(() => import('./components/ZohoCTA').then(mod => mod.default));
-const ZohoHowItWorks = dynamic(() => import('./components/ZohoHowItWorks').then(mod => mod.default));
+// const ZohoHowItWorks = dynamic(() => import('./components/ZohoHowItWorks').then(mod => mod.default));
 const ZohoWhyChooseUs = dynamic(() => import('./components/ZohoWhyChooseUs').then(mod => mod.default));
 const ZohoTestimonialSection = dynamic(() => import('./components/ZohoTestimonialSection').then(mod => mod.default));
 const FooterFormSection = dynamic(() => import('../components/home/FooterFormSection').then(mod => mod.default));
@@ -51,7 +51,7 @@ export default function ZohoPage() {
       <ZohoCTA />
 
 
-      <ZohoHowItWorks />
+      {/* <ZohoHowItWorks /> */}
 
       <ZohoWhyChooseUs />
 

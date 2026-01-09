@@ -39,6 +39,7 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                 fetchPriority="high"
                 className="object-cover -z-10"
                 sizes="100vw"
+                quality={75}
               />
 
               <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -144,6 +145,7 @@ const HeroSlide = ({
         fetchPriority={priority ? "high" : "auto"}
         className="object-cover -z-10"
         sizes="100vw"
+        quality={75}
       />
       
       {showOverlay && (

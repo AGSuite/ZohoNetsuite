@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+// Cache-busted version - 2026-01-06
 import React from "react";
 import { motion, Variants } from "framer-motion";
 
@@ -53,17 +53,6 @@ const NSHowItWorks: React.FC<NSHowItWorksProps> = ({ steps = defaultSteps }) => 
         </div>
 
         <div className="relative mt-8 lg:mt-10">
-
-          {/* Background dotted line */}
-          <div className="absolute inset-x-0 hidden md:block top-2 xl:px-44 md:px-20 lg:px-28">
-            <Image
-              src="https://cdn.rareblocks.xyz/collection/celebration/images/steps/2/curved-dotted-line.svg"
-              alt="Process timeline"
-              width={1400}
-              height={200}
-              className="w-full"
-            />
-          </div>
 
           {/* Steps Grid */}
           <div className="relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12">

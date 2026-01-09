@@ -557,6 +557,89 @@ export default function NetSuiteSolutionsClient() {
         </div>
       </section>
 
+      {/* Challenges Section */}
+      <section className="py-24 bg-linear-to-b from-[#000b21] via-[#000b21] to-[#0a0a0a] overflow-hidden relative">
+        {/* Decorative elements matching hero section */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Challenges</span>
+            <h3 className="text-4xl md:text-5xl font-black text-white mt-6">Common Business Challenges</h3>
+            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">Understanding the obstacles that NetSuite helps you overcome</p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* LEFT SIDE - CHALLENGES LIST */}
+            <div className="space-y-4">
+              {challenges.map((item, index) => (
+                <div 
+                  key={index}
+                  onClick={() => setActiveChallenge(index)}
+                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
+                    activeChallenge === index 
+                      ? 'bg-white/10 border-blue-400/50 shadow-lg backdrop-blur-sm' 
+                      : 'bg-white/5 border-white/10 hover:bg-white/10'
+                  }`}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className={`p-2 rounded-lg transition-colors ${
+                      activeChallenge === index 
+                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50' 
+                        : 'bg-white/10 text-blue-300'
+                    }`}>
+                      <CheckCircle2 size={20} />
+                    </div>
+                    <h4 className={`text-xl font-bold transition-colors ${
+                      activeChallenge === index ? 'text-white' : 'text-gray-300'
+                    }`}>
+                      {item.title}
+                    </h4>
+                  </div>
+                  <AnimatePresence>
+                    {activeChallenge === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden"
+                      >
+                        <p className="text-blue-100 mt-4 leading-relaxed pl-12">
+                          {item.description}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
+
+            {/* RIGHT SIDE - IMAGE */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 aspect-square">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeChallenge}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={challenges[activeChallenge].image}
+                    alt={challenges[activeChallenge].title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-transparent to-transparent" />
+                </motion.div>
+              </AnimatePresence>  
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* NetSuite Solutions Grid */}
       <section id="solutions" className="py-24 bg-linear-to-b from-white via-[#ffffff] to-[#ffffff] relative overflow-hidden">
         {/* Decorative elements */}

@@ -158,7 +158,7 @@ export default function NetSuiteAddonsClient() {
   return (
     <div className="min-h-screen selection:bg-gray-900 selection:text-white bg-linear-to-b from-[#000b21] via-[#000b21] to-[#0a0a0a]">
       {/* Premium Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden text-white">
+      <section className="relative pt-12 pb-10 lg:pt-48 lg:pb-12 overflow-hidden text-white">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
@@ -173,7 +173,7 @@ export default function NetSuiteAddonsClient() {
               className="flex-1 max-w-2xl"
             >
               
-              <h1 className="text-5xl md:text-7xl font-semibold mb-8 leading-[1.05] tracking-tight text-white">
+              <h1 className="text-5xl md:text-6xl font-semibold mb-8 leading-[1.05] tracking-tight text-white">
                 NetSuite <span className="text-blue-500">Add-Ons</span> & Extensions
               </h1>
               <p className="text-xl leading-relaxed font-light text-gray-300">
@@ -207,12 +207,12 @@ export default function NetSuiteAddonsClient() {
                 <div className="absolute inset-0 bg-linear-to-t from-[#000b21]/60 to-transparent" />
               </div>
               
-              {/* Top Left Floating Card */}
+              {/* Top Right Floating Card */}
               <motion.div 
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 }}
-                className="absolute top-10 -left-6 lg:-left-12 bg-white/95 backdrop-blur-md border border-gray-200 p-6 rounded-3xl shadow-2xl max-w-[280px] z-30"
+                className="absolute top-10 -right-6 lg:-right-12 bg-gray-50 backdrop-blur-2xl border border-white/20 p-3 rounded-xl shadow-2xl max-w-[360px] z-20"
               >
                 <div className="flex items-center gap-3">
                    <div className="p-2.5 bg-blue-600 rounded-xl">
@@ -220,7 +220,9 @@ export default function NetSuiteAddonsClient() {
                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                      </svg>
                    </div>
-                   <h4 className="text-base font-bold text-gray-900 tracking-wide">Add-ons & Extensions</h4>
+                   <h4 className="text-xs font-semibold text-black uppercase tracking-wider">25+ Extensions
+                   Certified SuiteCloud add-ons and connectors.
+</h4>
                 </div>
               </motion.div>
 
@@ -229,18 +231,55 @@ export default function NetSuiteAddonsClient() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
-                className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md p-6 rounded-4xl shadow-2xl w-[92%] z-30 border border-white/20"
+                className="absolute bottom-11 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-2xl w-[85%] z-30 border border-white/30"
               >
                  <div className="flex flex-col items-center text-center">
-                   <svg className="w-8 h-8 text-blue-600 mb-1 opacity-40" fill="currentColor" viewBox="0 0 24 24">
-                     <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C15.4647 8 15.017 8.44772 15.017 9V12C15.017 12.5523 14.5693 13 14.017 13H13.017V21H14.017ZM6.017 21L6.017 18C6.017 16.8954 6.91243 16 8.017 16H11.017C11.5693 16 12.017 15.5523 12.017 15V9C12.017 8.44772 11.5693 8 11.017 8H8.017C7.46472 8 7.017 8.44772 7.017 9V12C7.017 12.5523 6.56929 13 6.017 13H5.017V21H6.017Z" />
+                   <svg className="w-7 h-7 text-blue-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                    </svg>
-                   <p className="text-gray-900 text-xs italic font-black uppercase tracking-tight leading-tight">
-                     A great system is made exceptional with the right extensions.
+                   <p className="text-gray-900 text-xs font-bold uppercase tracking-wide leading-tight">
+                     Exceptional systems need the right extensions
                    </p>
                  </div>
               </motion.div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section ref={statsRef} className="py-12 relative z-20 -translate-y-10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 p-10 rounded-[3rem] border border-blue-500/20 backdrop-blur-xl bg-blue-600/5 shadow-2xl shadow-blue-900/20">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={statsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ delay: index * 0.1 }}
+                className="flex flex-col items-center text-center space-y-4"
+              >
+                <div className="p-3 rounded-2xl bg-blue-500/10 text-blue-400">
+                  <stat.icon size={24} strokeWidth={1.5} />
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="text-4xl md:text-5xl font-black text-white flex items-center">
+                    <FlipNumbers
+                      height={48}
+                      width={32}
+                      color="white"
+                      play={statsInView}
+                      numbers={stat.value.toString()}
+                      duration={2}
+                    />
+                    {stat.suffix && <span className="ml-1 -translate-y-1 inline-block">{stat.suffix}</span>}
+                  </div>
+                  <p className="text-sm font-bold uppercase tracking-widest mt-2 text-gray-400">
+                    {stat.label}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -292,39 +331,138 @@ export default function NetSuiteAddonsClient() {
         </div>
       </section>
 
-      {/* Add-on Services Section */}
+      {/* Why NetSuite Add-ons Section */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-blue-600 font-bold uppercase tracking-wider text-sm">Expansion Capabilities</h2>
-            <h3 className="text-4xl md:text-5xl font-black text-gray-900">Suite Extension Services</h3>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              We don't just provide apps; we provide end-to-end expertise to ensure they work seamlessly with your specific configuration.
-            </p>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* LEFT SIDE - IMAGE */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-gray-200"
+            >
+              <Image 
+                src="/images/lap/group2.webp" 
+                alt="Why Choose NetSuite Add-ons for Business Growth" 
+                fill 
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply" />
+            </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all group"
-              >
-                <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                  <service.icon className="text-blue-600 group-hover:text-white transition-colors" size={28} />
-                </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h4>
-                <p className="text-gray-600 leading-relaxed mb-6 italic text-sm">
-                  {service.description}
-                </p>
-                <Link href={service.href} className="text-blue-600 font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all text-sm">
-                  Learn More <ArrowRight size={16} />
+            {/* RIGHT SIDE - CONTENT */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <div className="space-y-4">
+                <h2 className="text-blue-600 font-bold uppercase tracking-wider text-sm">Why Extend</h2>
+                <h3 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
+                  Why NetSuite Add-ons are Essential for Growth
+                </h3>
+              </div>
+              
+              <p className="text-lg text-gray-600 leading-relaxed font-light">
+                While NetSuite delivers powerful core functionality, extending it with certified add-ons unlocks your true competitive advantage. From localized compliance to high-performance integrations, our extensions bridge the gap between out-of-the-box features and your unique business requirements—without the complexity of custom development.
+              </p>
+
+              <div className="pt-4">
+                <Link href="/netsuite/contact" className="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-4 transition-all uppercase tracking-widest text-sm">
+                  Explore Add-on Benefits <ArrowRight size={18} />
                 </Link>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Add-on Services Section */}
+      <section className="py-16 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
+          <h2 className="text-5xl font-semibold text-gray-900 text-center">
+            Suite Extension Services
+          </h2>
+
+          <p className="text-gray-700 text-lg max-w-2xl text-center">
+            We don't just provide apps; we provide end-to-end expertise to ensure they work seamlessly with your specific configuration.
+          </p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
+            {services.map((service, index) => {
+              const cardBgColors = [
+                "bg-linear-to-br from-[#ffffff] to-[#eef0ff]",
+                "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]",
+                "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
+                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]",
+                "bg-linear-to-br from-[#ffffff] to-[#ffece8]",
+                "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]",
+              ];
+              
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
+                >
+                  <motion.div
+                    initial="initial"
+                    whileHover="hover"
+                    variants={{
+                      initial: { scale: 1 },
+                      hover: { 
+                        scale: 1.04,
+                        transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] }
+                      }
+                    }}
+                    className={`
+                      relative group rounded-2xl p-7 border border-gray-200 
+                      transition-all duration-300 h-full shadow-xl hover:shadow-blue-100
+                      ${cardBgColors[index % cardBgColors.length]}
+                    `}
+                  >
+                    {/* ICON with rotation animation triggered by card hover */}
+                    <motion.div
+                      variants={{
+                        initial: { rotate: 0, y: 0 },
+                        hover: { 
+                          rotate: 360, 
+                          y: -6,
+                          transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] }
+                        }
+                      }}
+                      className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5"
+                    >
+                      <service.icon className="w-6 h-6 text-white" />
+                    </motion.div>
+
+                    {/* TITLE */}
+                    <h2 className="text-lg font-semibold text-gray-900 leading-tight">
+                      {service.title}
+                    </h2>
+
+                    {/* DESCRIPTION */}
+                    <p className="text-gray-600 text-sm leading-relaxed mt-2">
+                      {service.description}
+                    </p>
+
+                    {/* LINK */}
+                    <div className="mt-6 border-t border-gray-300 pt-3">
+                      <Link
+                        href={service.href}
+                        className="text-black hover:text-blue-600 text-sm font-medium transition-all"
+                      >
+                        Learn More →
+                      </Link>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -379,91 +517,29 @@ export default function NetSuiteAddonsClient() {
         </div>
       </section>
 
-      {/* Challenges Section */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="bg-red-50 text-red-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Challenges</span>
-            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mt-6">Overcoming Growth Hurdles</h3>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-16 items-stretch">
-            <div className="order-2 lg:order-1 space-y-4">
-              {challenges.map((item, index) => (
-                <div 
-                  key={index}
-                  onClick={() => setActiveChallenge(index)}
-                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
-                    activeChallenge === index ? 'bg-gray-50 border-gray-200' : 'bg-transparent border-transparent hover:bg-gray-50/50'
-                  }`}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-full transition-colors ${activeChallenge === index ? 'bg-red-500 text-white' : 'bg-gray-100 text-gray-400'}`}>
-                      <CheckCircle2 size={20} />
-                    </div>
-                    <h4 className={`text-xl font-bold transition-colors ${activeChallenge === index ? 'text-gray-900' : 'text-gray-500'}`}>
-                      {item.title}
-                    </h4>
-                  </div>
-                  <AnimatePresence>
-                    {activeChallenge === index && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden"
-                      >
-                        <p className="text-gray-600 mt-4 leading-relaxed font-light pl-11">
-                          {item.description}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
-            </div>
-
-            <div className="order-1 lg:order-2 relative rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100 h-full min-h-[400px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeChallenge}
-                  initial={{ opacity: 0, scale: 1.1 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="absolute inset-0"
-                >
-                  <Image
-                    src={challenges[activeChallenge].image}
-                    alt={challenges[activeChallenge].title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Benefits Section */}
-      <section className="py-24 bg-gray-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-24 bg-linear-to-b from-[#000b21] via-[#000b21] to-[#0a0a0a] overflow-hidden relative">
+        {/* Decorative elements matching hero section */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <span className="bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Benefits</span>
-            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mt-6">Advantages of Our Extension Suite</h3>
+            <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Benefits</span>
+            <h3 className="text-4xl md:text-5xl font-black text-white mt-6">Key Advantages of NetSuite Add-ons</h3>
+            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">Discover how extensions transform your NetSuite operations and drive growth</p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-stretch">
-            <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border border-gray-200 h-full min-h-[400px]">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* LEFT SIDE - IMAGE */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 aspect-square">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeBenefit}
-                  initial={{ opacity: 0, scale: 1.1 }}
+                  initial={{ opacity: 0, scale: 1.05 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                   className="absolute inset-0"
                 >
                   <Image
@@ -472,25 +548,34 @@ export default function NetSuiteAddonsClient() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-transparent to-transparent" />
                 </motion.div>
-              </AnimatePresence>
+              </AnimatePresence>  
             </div>
 
+            {/* RIGHT SIDE - BENEFITS LIST */}
             <div className="space-y-4">
               {benefits.map((item, index) => (
                 <div 
                   key={index}
                   onClick={() => setActiveBenefit(index)}
                   className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
-                    activeBenefit === index ? 'bg-white border-blue-200 shadow-lg' : 'bg-transparent border-transparent hover:bg-white/50'
+                    activeBenefit === index 
+                      ? 'bg-white/10 border-blue-400/50 shadow-lg backdrop-blur-sm' 
+                      : 'bg-white/5 border-white/10 hover:bg-white/10'
                   }`}
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-full ${activeBenefit === index ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-400'}`}>
+                    <div className={`p-2 rounded-lg transition-colors ${
+                      activeBenefit === index 
+                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50' 
+                        : 'bg-white/10 text-blue-300'
+                    }`}>
                       <CheckCircle2 size={20} />
                     </div>
-                    <h4 className={`text-xl font-bold ${activeBenefit === index ? 'text-gray-900' : 'text-gray-500'}`}>
+                    <h4 className={`text-xl font-bold transition-colors ${
+                      activeBenefit === index ? 'text-white' : 'text-gray-300'
+                    }`}>
                       {item.title}
                     </h4>
                   </div>
@@ -502,7 +587,7 @@ export default function NetSuiteAddonsClient() {
                         exit={{ height: 0, opacity: 0 }}
                         className="overflow-hidden"
                       >
-                        <p className="text-gray-600 mt-4 leading-relaxed font-light pl-11">
+                        <p className="text-blue-100 mt-4 leading-relaxed pl-12">
                           {item.description}
                         </p>
                       </motion.div>
@@ -515,29 +600,124 @@ export default function NetSuiteAddonsClient() {
         </div>
       </section>
 
+      {/* Challenges Section */}
+      <section className="py-24 bg-linear-to-b from-[#000b21] via-[#000b21] to-[#0a0a0a] overflow-hidden relative">
+        {/* Decorative elements matching hero section */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Challenges</span>
+            <h3 className="text-4xl md:text-5xl font-black text-white mt-6">Common Business Challenges</h3>
+            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">Understanding the obstacles that NetSuite Add-ons help you overcome</p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* LEFT SIDE - CHALLENGES LIST */}
+            <div className="space-y-4">
+              {challenges.map((item, index) => (
+                <div 
+                  key={index}
+                  onClick={() => setActiveChallenge(index)}
+                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
+                    activeChallenge === index 
+                      ? 'bg-white/10 border-blue-400/50 shadow-lg backdrop-blur-sm' 
+                      : 'bg-white/5 border-white/10 hover:bg-white/10'
+                  }`}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className={`p-2 rounded-lg transition-colors ${
+                      activeChallenge === index 
+                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50' 
+                        : 'bg-white/10 text-blue-300'
+                    }`}>
+                      <CheckCircle2 size={20} />
+                    </div>
+                    <h4 className={`text-xl font-bold transition-colors ${
+                      activeChallenge === index ? 'text-white' : 'text-gray-300'
+                    }`}>
+                      {item.title}
+                    </h4>
+                  </div>
+                  <AnimatePresence>
+                    {activeChallenge === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden"
+                      >
+                        <p className="text-blue-100 mt-4 leading-relaxed pl-12">
+                          {item.description}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
+
+            {/* RIGHT SIDE - IMAGE */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 aspect-square">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeChallenge}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={challenges[activeChallenge].image}
+                    alt={challenges[activeChallenge].title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-transparent to-transparent" />
+                </motion.div>
+              </AnimatePresence>  
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Modern CTA */}
-      <section className="py-24 overflow-hidden relative bg-[#000b21]">
-         <div className="max-w-7xl mx-auto px-6 text-center">
+      <section className="py-24 overflow-hidden relative bg-gray-50">
+         <div className="max-w-7xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-blue-600/10 border border-blue-500/20 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
+              className="border border-gray-200 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
             >
-               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-3xl -mr-32 -mt-32" />
-               <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/10 blur-3xl -ml-32 -mb-32" />
-
-               <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                 Supercharge your NetSuite today. Ready to explore our apps?
-               </h2>
+               {/* Background Image */}
+               <Image
+                 src="/images/lap/group1.webp"
+                 alt="NetSuite Add-ons Background"
+                 fill
+                 className="object-cover"
+               />
                
-               <div className="flex flex-wrap justify-center gap-6 relative z-10">
-                 <Link href="/netsuite/contact" className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition shadow-xl">
-                   Talk to an Expert
-                 </Link>
-                 <Link href="/netsuite/solutions" className="px-10 py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/10">
-                   Explore Solutions
-                 </Link>
+               {/* Gradient Overlay - Dark left to transparent right */}
+               <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/80 to-transparent" />
+               
+               {/* Decorative blur elements */}
+               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-3xl -mr-32 -mt-32" />
+               <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />
+
+               {/* Content - Left Aligned */}
+               <div className="relative z-10 max-w-2xl">
+                 <h2 className="text-3xl md:text-5xl font-medium text-white mb-8 leading-tight text-left">
+                   Supercharge your NetSuite today. Ready to explore our apps?
+                 </h2>
+                 
+                 <div className="flex justify-start">
+                   <Link href="/netsuite/contact" className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition shadow-xl">
+                     Talk to an Expert
+                   </Link>
+                 </div>
                </div>
             </motion.div>
          </div>

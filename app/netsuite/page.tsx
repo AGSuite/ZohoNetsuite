@@ -21,7 +21,7 @@ const Testimonials = dynamic(() => import('../components/home/Testimonials').the
 const FAQ = dynamic(() => import('../components/home/FAQ').then(mod => mod.FAQ));
 const NSServices = dynamic(() => import('./components/NSServices').then(mod => mod.default));
 const NetsuiteCTA = dynamic(() => import('./components/NetsuiteCTA').then(mod => mod.default));
-const NSHowItWorks = dynamic(() => import('./components/NSHowItWorks').then(mod => mod.default));
+// const NSHowItWorks = dynamic(() => import('./components/NSHowItWorks').then(mod => mod.default));
 const NSWhyChooseUs = dynamic(() => import('./components/NSWhyChooseUs').then(mod => mod.default));
 const NSTestimonialSection = dynamic(() => import('./components/NSTestimonialSection').then(mod => mod.default));
 const FooterFormSection = dynamic(() => import('../components/home/FooterFormSection').then(mod => mod.default));
@@ -53,7 +53,7 @@ export default function NetSuitePage() {
 
       <NetsuiteCTA />
 
-      <NSHowItWorks />
+      {/* <NSHowItWorks /> */}
 
       <NSWhyChooseUs />
 
