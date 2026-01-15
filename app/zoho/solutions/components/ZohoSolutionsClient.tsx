@@ -15,40 +15,7 @@ export default function ZohoSolutionsClient() {
     threshold: 0.2,
   });
 
-  const solutions = [
-    {
-      title: "Zoho CRM",
-      description: "Convert more leads, engage with customers, and grow your revenue with the gold standard in customer relationship management.",
-      image: "/images/lap/lap2.webp",
-      cardTitle: "Sales Leader",
-      cardText: "Most popular CRM for high-growth teams.",
-      quote: "Close deals faster with better relationships."
-    },
-    {
-      title: "Zoho Books",
-      description: "Powerful accounting software for small to medium businesses to manage their finances and stay compliant.",
-      image: "/images/lap/lap3.webp",
-      cardTitle: "Finance Hub",
-      cardText: "Automate your accounting workflows.",
-      quote: "Numbers tell a story; make yours remarkable."
-    },
-    {
-      title: "Zoho People",
-      description: "Simplify your HR processes and focus on your people while we handle the administration, from onboarding to performance.",
-      image: "/images/lap/lap4.webp",
-      cardTitle: "HR Mastery",
-      cardText: "Total employee lifecycle management.",
-      quote: "Your people are your greatest asset."
-    },
-    {
-      title: "Zoho One",
-      description: "The operating system for business. A single suite of 45+ applications to run your entire enterprise in the cloud.",
-      image: "/images/lap/lap5.webp",
-      cardTitle: "Total Suite",
-      cardText: "Unify every department seamlessly.",
-      quote: "Simplified technology for complex businesses."
-    }
-  ];
+
 
   const stats = [
     { label: 'Happy Clients', value: 250, suffix: '+', icon: Trophy },
@@ -63,27 +30,27 @@ export default function ZohoSolutionsClient() {
   const challenges = [
     {
       title: "Disconnected Applications",
-      description: "Managing a patchwork of separate tools for sales, HR, and finance results in fragmented data silos and redundant manual effort. This lack of integration prevents teams from having a clear, singular view of the business, leading to missed opportunities and increased operational overhead. A unified ecosystem is the only way to ensure that your data works for you, not against you.",
+      description: "Fragmented tools cause data silos and manual effort, hindering a unified business view.",
       image: "/images/lap/lap2.webp"
     },
     {
       title: "Manual Data Entry",
-      description: "Entering the same data across multiple platforms manually drastically increases error rates and wastes hundreds of valuable employee hours every month. These manual processes are not only inefficient but also create bottlenecks that slow down your entire business cycle. Automating these repetitive tasks allows your team to focus on high-value, strategic work that actually drives growth.",
+      description: "Manual processes increase error rates and waste employee time. Automation enables focus on strategic growth.",
       image: "/images/lap/lap3.webp"
     },
     {
       title: "Security & Governance Risk",
-      description: "Managing user permissions across dozens of independent, unlinked applications creates significant security blind spots and compliance risks. Without centralized governance, it is nearly impossible to maintain a secure audit trail or ensure that sensitive company data is protected across the entire digital footprint. A unified platform provides the robust control needed for modern enterprise security.",
+      description: "Disjointed apps create security blind spots. A unified platform provides centralized control and data protection.",
       image: "/images/lap/lap4.webp"
     },
     {
       title: "Information Silos",
-      description: "Critical customer information often remains trapped in individual employee mailboxes or local spreadsheets, preventing cross-departmental collaboration. This lack of transparency leads to inconsistent customer experiences and makes it difficult for management to get an accurate pulse on project statuses or sales pipelines. Breaking down these silos is critical for organizational agility.",
+      description: "Trapped customer data prevents collaboration. Breaking these silos is critical for organizational agility.",
       image: "/images/lap/lap5.webp"
     },
     {
       title: "Slow Operational Response",
-      description: "Without automated workflows, internal approvals and customer support requests often get buried in cluttered inboxes, leading to frustrating delays. These slow response times can damage your brand reputation and result in lost revenue over time. Implementing intelligent, automated routing ensures that every critical task is addressed promptly and efficiently by the right person.",
+      description: "Cluttered inboxes and manual workflows cause delays. Intelligent automation ensures every task is handled efficiently.",
       image: "/images/aboutus/heroimg.webp"
     }
   ];
@@ -91,27 +58,27 @@ export default function ZohoSolutionsClient() {
   const benefits = [
     {
       title: "Unified Business Suite",
-      description: "Unify every department—from sales and marketing to finance and HR—with a single, cohesive operating system. Zoho One ensures that data flows seamlessly from lead to cash, providing your entire organization with a single source of truth. This integration eliminates friction and empowers your teams to collaborate more effectively than ever before.",
+      description: "Connect sales, finance, and HR into one cohesive system, ensuring a single source of truth across your organization.",
       image: "/images/aboutus/mission1.webp"
     },
     {
       title: "End-to-End Automation",
-      description: "Implement sophisticated, automated workflows that take care of repetitive tasks and complex approval processes across your entire business. By automating these routines, you significantly reduce human error and free up your workforce to focus on the innovation and creativity that sets your brand apart in a crowded marketplace.",
+      description: "Replace repetitive tasks with automated workflows, reducing human error and freeing teams for innovation.",
       image: "/images/aboutus/niche1.webp"
     },
     {
       title: "Simplified Management",
-      description: "Take advantage of centralized administrative controls for all 55+ Zoho applications, making user management and security auditing effortless. This consolidated approach to IT management reduces complexity, lowers administrative costs, and ensures that your organization stays compliant with the latest data protection regulations with minimal effort.",
+      description: "Centralized control for 55+ apps makes user management and security auditing effortless and compliant.",
       image: "/images/aboutus/visiongirl.webp"
     },
     {
       title: "Data-Driven Insights",
-      description: "With all your business data living in a single, unified ecosystem, you can leverage advanced analytics to gain deep insights into your operations. From complex sales forecasting to real-time project profitability tracking, have the numbers you need at your fingertips to make confident, strategic decisions that drive your business forward.",
+      description: "Leverage advanced analytics to gain deep operational insights, enabling confident, strategic decisions.",
       image: "/images/aboutus/heroimg1.webp"
     },
     {
       title: "Cost-Effective Scaling",
-      description: "Zoho's flexible pricing models and the comprehensive 'One' license allow your business to scale and add new capabilities without the massive overhead of individual software contracts. This predictable cost structure enables you to expand your digital capabilities as your business grows, ensuring that your technology investment always aligns with your budget.",
+      description: "Scale easily without the overhead of multiple software contracts using Zoho's flexible pricing models.",
       image: "/images/aboutus/mission.webp"
     }
   ];
@@ -133,25 +100,25 @@ export default function ZohoSolutionsClient() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="flex-1 max-w-2xl"
             >
-    
+
               <h1 className="text-5xl md:text-6xl font-semibold mb-8 leading-[1.05] tracking-tight text-white">
                 Zoho <span className="text-blue-500">Business</span> Integrated Solutions
               </h1>
               <p className="text-xl leading-relaxed font-light text-gray-300">
                 AGSuite offers end-to-end Zoho implementation and consulting. From sales automation to payroll, unify your entire operational lifecycle with the world's most versatile cloud suite.
               </p>
-              
+
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link href="/contact-us" className="px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-900/40">
                   Get Started Now
                 </Link>
-                <Link href="#solutions" className="px-8 py-4 bg-white/5 text-white font-bold rounded-2xl hover:bg-white/10 transition backdrop-blur-md border border-white/10">
+                <Link href="#services" className="px-8 py-4 bg-white/5 text-white font-bold rounded-2xl hover:bg-white/10 transition backdrop-blur-md border border-white/10">
                   View Features
                 </Link>
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
@@ -167,41 +134,41 @@ export default function ZohoSolutionsClient() {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-[#000b21]/60 to-transparent" />
               </div>
-              
+
               {/* Top Right Floating Card */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 }}
                 className="absolute top-10 -right-6 lg:-right-12 bg-gray-50 backdrop-blur-2xl border border-white/20 p-3 rounded-xl shadow-2xl max-w-[360px] z-20"
               >
                 <div className="flex items-center gap-3">
-                   <div className="p-2.5 bg-blue-600 rounded-xl">
-                     <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                     </svg>
-                   </div>
-                   <h4 className="text-xs font-semibold text-black uppercase tracking-wider">75M+ Users
-                   The world's most comprehensive cloud suite.
-</h4>
+                  <div className="p-2.5 bg-blue-600 rounded-xl">
+                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-xs font-semibold text-black uppercase tracking-wider">75M+ Users
+                    The world's most comprehensive cloud suite.
+                  </h4>
                 </div>
               </motion.div>
 
               {/* Bottom Center Quote Card */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
                 className="absolute bottom-11 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-2xl w-[85%] z-30 border border-white/30"
               >
-                 <div className="flex flex-col items-center text-center">
-                   <svg className="w-7 h-7 text-blue-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                   </svg>
-                   <p className="text-gray-900 text-xs font-bold uppercase tracking-wide leading-tight">
-                     A unified business is a powerful business
-                   </p>
-                 </div>
+                <div className="flex flex-col items-center text-center">
+                  <svg className="w-7 h-7 text-blue-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                  <p className="text-gray-900 text-xs font-bold uppercase tracking-wide leading-tight">
+                    A unified business is a powerful business
+                  </p>
+                </div>
               </motion.div>
             </motion.div>
           </div>
@@ -273,17 +240,17 @@ export default function ZohoSolutionsClient() {
                 </Link>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-gray-100"
             >
-              <Image 
-                src="/images/aboutus/heroimg1.webp" 
-                alt="Zoho Unified Suite" 
-                fill 
+              <Image
+                src="/images/aboutus/heroimg1.webp"
+                alt="Zoho Unified Suite"
+                fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-red-600/10 mix-blend-multiply" />
@@ -303,10 +270,10 @@ export default function ZohoSolutionsClient() {
               viewport={{ once: true }}
               className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-gray-200"
             >
-              <Image 
-                src="/images/lap/group2.webp" 
-                alt="Why Choose Zoho for Business Growth" 
-                fill 
+              <Image
+                src="/images/lap/group2.webp"
+                alt="Why Choose Zoho for Business Growth"
+                fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-red-600/10 mix-blend-multiply" />
@@ -325,7 +292,7 @@ export default function ZohoSolutionsClient() {
                   Why Zoho is the Right Choice for Your Business
                 </h3>
               </div>
-              
+
               <p className="text-lg text-gray-600 leading-relaxed font-light">
                 Discover why thousands of businesses worldwide trust Zoho as their unified business operating system. From startup to enterprise, Zoho scales with you—offering unparalleled flexibility, privacy, and cost-effectiveness in the cloud software market.
               </p>
@@ -341,7 +308,7 @@ export default function ZohoSolutionsClient() {
       </section>
 
       {/* Zoho Services Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
+      <section id="services" className="py-16 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
           <h2 className="text-5xl font-semibold text-gray-900 text-center">
             Zoho Services
@@ -398,7 +365,7 @@ export default function ZohoSolutionsClient() {
                 "bg-linear-to-br from-[#ffffff] to-[#ffece8]",
                 "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]",
               ];
-              
+
               return (
                 <motion.div
                   key={index}
@@ -412,7 +379,7 @@ export default function ZohoSolutionsClient() {
                     whileHover="hover"
                     variants={{
                       initial: { scale: 1 },
-                      hover: { 
+                      hover: {
                         scale: 1.04,
                         transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] }
                       }
@@ -427,8 +394,8 @@ export default function ZohoSolutionsClient() {
                     <motion.div
                       variants={{
                         initial: { rotate: 0, y: 0 },
-                        hover: { 
-                          rotate: 360, 
+                        hover: {
+                          rotate: 360,
                           y: -6,
                           transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] }
                         }
@@ -465,64 +432,14 @@ export default function ZohoSolutionsClient() {
         </div>
       </section>
 
-      {/* Key Applications Grid */}
-      <section id="solutions" className="py-24 border-y bg-[#1a0505] border-red-900/30">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h3 className="text-3xl md:text-5xl font-black text-white mb-6">Key Zoho Applications</h3>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light">
-              Discover the most popular Zoho tools that transform how businesses operate globally.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {solutions.map((feature, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/10 transition-all group flex flex-col"
-              >
-                <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8">
-                  <Image
-                    src={feature.image}
-                    alt={feature.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-red-900/60 to-transparent" />
-                </div>
 
-                <div className="space-y-4 flex-1">
-                  <h3 className="text-2xl font-bold text-white tracking-tight">
-                    {feature.title}
-                  </h3>
-                  <div className="w-12 h-1 bg-red-500 rounded-full" />
-                  <p className="text-gray-400 leading-relaxed font-light text-sm italic">
-                    "{feature.quote}"
-                  </p>
-                  <p className="text-gray-300 leading-relaxed font-light">
-                    {feature.description}
-                  </p>
-                </div>
-
-                <Link href="/free-consultation" className="mt-8 inline-flex items-center gap-2 text-red-400 font-bold hover:text-red-300 transition group/link text-xs uppercase tracking-widest">
-                  Learn more
-                  <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Benefits Section */}
       <section className="py-24 bg-linear-to-b from-[#000b21] via-[#000b21] to-[#0a0a0a] overflow-hidden relative">
         {/* Decorative elements matching hero section */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
-        
+
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Benefits</span>
@@ -550,32 +467,29 @@ export default function ZohoSolutionsClient() {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-transparent to-transparent" />
                 </motion.div>
-              </AnimatePresence>  
+              </AnimatePresence>
             </div>
 
             {/* RIGHT SIDE - BENEFITS LIST */}
             <div className="space-y-4">
               {benefits.map((item, index) => (
-                <div 
+                <div
                   key={index}
                   onClick={() => setActiveBenefit(index)}
-                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
-                    activeBenefit === index 
-                      ? 'bg-white/10 border-red-400/50 shadow-lg backdrop-blur-sm' 
-                      : 'bg-white/5 border-white/10 hover:bg-white/10'
-                  }`}
+                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeBenefit === index
+                    ? 'bg-white/10 border-red-400/50 shadow-lg backdrop-blur-sm'
+                    : 'bg-white/5 border-white/10 hover:bg-white/10'
+                    }`}
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-lg transition-colors ${
-                      activeBenefit === index 
-                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50' 
-                        : 'bg-white/10 text-blue-300'
-                    }`}>
+                    <div className={`p-2 rounded-lg transition-colors ${activeBenefit === index
+                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50'
+                      : 'bg-white/10 text-blue-300'
+                      }`}>
                       <CheckCircle2 size={20} />
                     </div>
-                    <h4 className={`text-xl font-bold transition-colors ${
-                      activeBenefit === index ? 'text-white' : 'text-gray-300'
-                    }`}>
+                    <h4 className={`text-xl font-bold transition-colors ${activeBenefit === index ? 'text-white' : 'text-gray-300'
+                      }`}>
                       {item.title}
                     </h4>
                   </div>
@@ -605,7 +519,7 @@ export default function ZohoSolutionsClient() {
         {/* Decorative elements matching hero section */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
-        
+
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Challenges</span>
@@ -617,26 +531,23 @@ export default function ZohoSolutionsClient() {
             {/* LEFT SIDE - CHALLENGES LIST */}
             <div className="space-y-4">
               {challenges.map((item, index) => (
-                <div 
+                <div
                   key={index}
                   onClick={() => setActiveChallenge(index)}
-                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
-                    activeChallenge === index 
-                      ? 'bg-white/10 border-red-400/50 shadow-lg backdrop-blur-sm' 
-                      : 'bg-white/5 border-white/10 hover:bg-white/10'
-                  }`}
+                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeChallenge === index
+                    ? 'bg-white/10 border-red-400/50 shadow-lg backdrop-blur-sm'
+                    : 'bg-white/5 border-white/10 hover:bg-white/10'
+                    }`}
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-lg transition-colors ${
-                      activeChallenge === index 
-                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50' 
-                        : 'bg-white/10 text-blue-300'
-                    }`}>
+                    <div className={`p-2 rounded-lg transition-colors ${activeChallenge === index
+                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50'
+                      : 'bg-white/10 text-blue-300'
+                      }`}>
                       <CheckCircle2 size={20} />
                     </div>
-                    <h4 className={`text-xl font-bold transition-colors ${
-                      activeChallenge === index ? 'text-white' : 'text-gray-300'
-                    }`}>
+                    <h4 className={`text-xl font-bold transition-colors ${activeChallenge === index ? 'text-white' : 'text-gray-300'
+                      }`}>
                       {item.title}
                     </h4>
                   </div>
@@ -677,7 +588,7 @@ export default function ZohoSolutionsClient() {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-transparent to-transparent" />
                 </motion.div>
-              </AnimatePresence>  
+              </AnimatePresence>
             </div>
           </div>
         </div>
@@ -685,42 +596,42 @@ export default function ZohoSolutionsClient() {
 
       {/* Modern CTA */}
       <section className="py-24 overflow-hidden relative bg-gray-50">
-         <div className="max-w-7xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="border border-gray-200 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
-            >
-               {/* Background Image */}
-               <Image
-                 src="/images/lap/group1.webp"
-                 alt="Zoho Solutions Background"
-                 fill
-                 className="object-cover"
-               />
-               
-               {/* Gradient Overlay - Dark left to transparent right */}
-               <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/80 to-transparent" />
-               
-               {/* Decorative blur elements */}
-               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-3xl -mr-32 -mt-32" />
-               <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="border border-gray-200 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
+          >
+            {/* Background Image */}
+            <Image
+              src="/images/lap/group1.webp"
+              alt="Zoho Solutions Background"
+              fill
+              className="object-cover"
+            />
 
-               {/* Content - Left Aligned */}
-               <div className="relative z-10 max-w-2xl">
-                 <h2 className="text-3xl md:text-5xl font-medium text-white mb-8 leading-tight text-left">
-                   Empower your team with Zoho. Ready to transform your business?
-                 </h2>
-                 
-                 <div className="flex justify-start">
-                   <Link href="/contact-us" className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition shadow-xl">
-                     Talk to an Expert
-                   </Link>
-                 </div>
-               </div>
-            </motion.div>
-         </div>
+            {/* Gradient Overlay - Dark left to transparent right */}
+            <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/80 to-transparent" />
+
+            {/* Decorative blur elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-3xl -mr-32 -mt-32" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />
+
+            {/* Content - Left Aligned */}
+            <div className="relative z-10 max-w-2xl">
+              <h2 className="text-3xl md:text-5xl font-medium text-white mb-8 leading-tight text-left">
+                Empower your team with Zoho. Ready to transform your business?
+              </h2>
+
+              <div className="flex justify-start">
+                <Link href="/contact-us" className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition shadow-xl">
+                  Talk to an Expert
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       <FooterFormSection />

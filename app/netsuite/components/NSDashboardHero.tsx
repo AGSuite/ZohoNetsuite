@@ -199,29 +199,30 @@ const NSDashboardHero: React.FC = () => {
           </div>
         </div>
 
-        {/* Marquee Container */}
+        {/* Trusted by logos – moving marquee under dashboard */}
         <div className="mt-16 w-full">
-          <p className="mb-8 text-center text-xl font-semibold uppercase tracking-[0.22em] text-gray-900">
+          <p className="mb-4 text-center text-2xl font-semibold uppercase tracking-[0.22em] text-gray-900 sm:text-xl">
             Trusted by 100,000+ companies
           </p>
 
+          {/* Marquee Container */}
           <div className="relative w-full overflow-hidden py-3">
-            <div className="animate-marquee flex items-center gap-12">
-              {[...logos, ...logos, ...logos].map((logo, index) => (
-                <div key={index} className="shrink-0">
+            <div className="animate-marquee whitespace-nowrap flex items-center gap-10">
+              {logos.concat(logos).map((logo, index) => (
+                <div key={index} className="inline-flex">
                   <a
                     href={logo.link || "#"}
                     target={logo.link ? "_blank" : undefined}
                     rel={logo.link ? "noopener noreferrer" : undefined}
-                    className="flex h-16 w-44 items-center justify-center rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 px-6 py-4"
+                    className="flex h-14 w-38 sm:h-26 sm:w-42 rounded-2xl shadow-rose-100 items-center justify-center bg-white hover:shadow-md transition"
                     aria-label={logo.name}
                   >
                     <Image
                       src={logo.logo}
                       alt={`${logo.name} logo`}
-                      width={160}
-                      height={80}
-                      className="h-10 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                      width={190}
+                      height={96}
+                      className="h-9 sm:h-28 w-auto object-contain"
                     />
                   </a>
                 </div>
@@ -229,17 +230,17 @@ const NSDashboardHero: React.FC = () => {
             </div>
           </div>
 
+          {/* Marquee Animation */}
           <style jsx global>
             {`
               .animate-marquee {
-                display: flex;
-                width: max-content;
-                animation: marquee 30s linear infinite;
+                display: inline-flex;
+                animation: marquee 20s linear infinite;
                 will-change: transform;
               }
               @keyframes marquee {
                 0% { transform: translateX(0); }
-                100% { transform: translateX(-33.33%); }
+                100% { transform: translateX(-50%); }
               }
               .animate-marquee:hover {
                 animation-play-state: paused;

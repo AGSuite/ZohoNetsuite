@@ -147,7 +147,7 @@ export default function NSMetrics() {
 
                 <div className="text-center space-y-1">
                   <Wrench className="w-9 h-9 text-purple-500 mx-auto mb-1" />
-                  <Counter end={30} suffix="+" inView={metricsInView} />
+                  <Counter end={50} suffix="+" inView={metricsInView} />
                   <p className="text-purple-600 text-sm">Experts</p>
                 </div>
 
@@ -181,7 +181,27 @@ export default function NSMetrics() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="mt-8 lg:mt-0 flex justify-center lg:justify-end"
           >
-            <div className="grid grid-cols-[1.7fr_1.3fr] gap-4 sm:gap-6 w-full max-w-lg lg:max-w-xl">
+            {/* Mobile View - Single Image */}
+            <div className="block md:hidden w-full">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={imageInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
+                className={`h-64 sm:h-80 rounded-3xl overflow-hidden ${glowShadow}`}
+              >
+                <Image
+                  src="/images/people/laptopgirl.webp"
+                  alt="NetSuite Team"
+                  width={600}
+                  height={400}
+                  className="w-full h-full object-cover"
+                  sizes="100vw"
+                />
+              </motion.div>
+            </div>
+
+            {/* Desktop View - Image Collage Grid */}
+            <div className="hidden md:grid grid-cols-[1.7fr_1.3fr] gap-4 sm:gap-6 w-full max-w-lg lg:max-w-xl">
 
               {/* Top Left Image */}
               <motion.div
@@ -196,7 +216,7 @@ export default function NSMetrics() {
                   width={500}
                   height={300}
                   className="w-full h-full object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="33vw"
                 />
               </motion.div>
 
@@ -213,7 +233,7 @@ export default function NSMetrics() {
                   width={600}
                   height={800}
                   className="w-full h-full object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="33vw"
                 />
               </motion.div>
 
@@ -230,7 +250,7 @@ export default function NSMetrics() {
                   width={800}
                   height={500}
                   className="w-full h-full object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="50vw"
                 />
               </motion.div>
 

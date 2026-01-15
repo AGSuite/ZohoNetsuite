@@ -159,7 +159,7 @@ type CounterItem = {
 
 const counters: CounterItem[] = [
   { label: 'Enterprises Served', value: 180, icon: Trophy },
-  { label: 'NetSuite Experts', value: 30, icon: Users },
+  { label: 'NetSuite Experts', value: 50, icon: Users },
   { label: 'Global Roll-outs', value: 50, icon: Globe2 },
   { label: 'Years Experience', value: 15, icon: Rocket },
 ];

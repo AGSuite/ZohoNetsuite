@@ -15,40 +15,7 @@ export default function NetSuiteAddonsClient() {
     threshold: 0.2,
   });
 
-  const addons = [
-    {
-      title: "E-Commerce Connectors",
-      description: "Seamlessly integrate NetSuite with Magento, Shopify, and Amazon. Synchronize inventory, orders, and pricing in real-time.",
-      image: "/images/lap/lap2.webp",
-      cardTitle: "Sync Pro",
-      cardText: "Real-time data flow between your store and ERP.",
-      quote: "Integration is the bridge to omnichannel success."
-    },
-    {
-      title: "India Localization",
-      description: "Automate GST, E-Invoicing, and TDS within NetSuite. Stay 100% compliant with Indian tax laws without leaving the system.",
-      image: "/images/lap/lap3.webp",
-      cardTitle: "GST Ready",
-      cardText: "Pre-built reports and API registrations.",
-      quote: "Compliance made simple for the Indian market."
-    },
-    {
-      title: "Smart Commission",
-      description: "Automate complex sales commission structures. Incentivize your team with accurate, real-time commission tracking.",
-      image: "/images/lap/lap4.webp",
-      cardTitle: "Incentive Sync",
-      cardText: "Automated calculations for every sales tier.",
-      quote: "Reward your performers with data-driven accuracy."
-    },
-    {
-      title: "Data Backup Solution",
-      description: "Ensure business continuity with secure, off-site backups of your NetSuite data. One-click recovery and long-term archiving.",
-      image: "/images/lap/lap5.webp",
-      cardTitle: "Secure Store",
-      cardText: "Redundant cloud storage for enterprise data.",
-      quote: "Peace of mind is the ultimate business continuity plan."
-    }
-  ];
+
 
   const stats = [
     { label: 'Enterprises Served', value: 180, suffix: '+', icon: Trophy },
@@ -102,27 +69,27 @@ export default function NetSuiteAddonsClient() {
   const challenges = [
     {
       title: "Data Disconnection",
-      description: "As organizations scale, managing separate systems for sales, inventory, and finance leads to dangerous data silos. This fragmentation often results in critical manual entry errors and a lack of real-time visibility into business-critical metrics. Bridging these gaps is essential for maintaining accurate records and making informed, data-driven decisions that impact the company's bottom line.",
+      description: "Fragmented systems for sales and finance lead to data silos and manual errors.",
       image: "/images/lap/lap2.webp"
     },
     {
       title: "Compliance Hurdles",
-      description: "Keeping up with local tax regulations, such as GST in India, manually is both time-consuming and prone to legal risks. Modern businesses require automated solutions that can handle complex tax calculations, E-invoicing, and TDS requirements without the need for constant manual intervention. Failing to automate compliance can lead to significant audit risks and financial penalties.",
+      description: "Managing tax regulations like GST manually is time-consuming and carries audit risks.",
       image: "/images/lap/lap3.webp"
     },
     {
       title: "Scalability Roadblocks",
-      description: "Basic entry-level tools often fail as order volumes grow, causing significant system slowdowns and widespread customer dissatisfaction. Without robust, scalable extensions, businesses struggle to handle peak loads during promotional seasons or periods of rapid growth. Scaling operations requires a technology stack that is built to handle high-frequency data transactions without compromising performance.",
+      description: "Entry-level tools often fail as volumes grow, causing system slowdowns and customer dissatisfaction.",
       image: "/images/lap/lap4.webp"
     },
     {
       title: "Integration Fragility",
-      description: "Custom-built, ad-hoc connectors often lack robust error handling and fail when APIs are updated or network issues occur. This 'fragility' in the integration layer leads to frequent downtime, data loss, and double-entry of information. Our certified connectors are built to withstand platform updates and ensure a continuous, reliable flow of information between NetSuite and external apps.",
+      description: "Ad-hoc connectors often lack robust error handling, leading to frequent downtime and data loss.",
       image: "/images/lap/lap5.webp"
     },
     {
       title: "Security & Data Governance",
-      description: "Using unvetted third-party extensions can introduce significant security vulnerabilities and data governance issues. Protecting sensitive financial and customer information requires extensions that follow strict security protocols and regulatory standards. Our add-ons go through rigorous testing to ensure they meet the highest standards of data integrity and protection for enterprise use.",
+      description: "Unvetted extensions can introduce security vulnerabilities and compromise sensitive enterprise data.",
       image: "/images/aboutus/heroimg.webp"
     }
   ];
@@ -130,27 +97,27 @@ export default function NetSuiteAddonsClient() {
   const benefits = [
     {
       title: "Unified Ecosystem",
-      description: "Connect all your third-party applications and niche platforms directly to NetSuite to create a single source of truth across your entire enterprise. By unifying your technology stack, you eliminate communication gaps between departments and ensure that every team is working with the same real-time data, significantly improving organizational alignment.",
+      description: "Connect all apps to NetSuite for a single source of truth across the enterprise.",
       image: "/images/aboutus/mission1.webp"
     },
     {
       title: "Automated Compliance",
-      description: "Our localization add-ons are specifically designed to handle GST, E-invoicing, and TDS automatically, keeping your business 100% audit-ready in the Indian market. By automating these complex regulatory requirements, you free up your finance team to focus on strategic analysis rather than manual tax filing and compliance monitoring.",
+      description: "Automatically handle GST, E-invoicing, and TDS, keeping your business audit-ready.",
       image: "/images/aboutus/niche1.webp"
     },
     {
       title: "Operational Efficiency",
-      description: "Eliminate up to 90% of manual data entry with our smart connectors that synchronize orders, inventory, and payments in real-time. This level of automation significantly reduces human error, speeds up order fulfillment cycles, and lowers operational costs, allowing your business to operate with greater agility and precision in a competitive market.",
+      description: "Eliminate manual entry with real-time synchronization of orders, inventory, and payments.",
       image: "/images/aboutus/visiongirl.webp"
     },
     {
       title: "Real-time Synchronization",
-      description: "Our high-performance connectors ensure that data flows between NetSuite and your external platforms instantly, eliminating the dangerous delays that lead to overselling or delayed shipments. Having an accurate, real-time pulse on your inventory and sales performance allows for better demand planning and improved customer service levels.",
+      description: "Ensure instant data flow between platforms, preventing overselling and delayed shipments.",
       image: "/images/aboutus/heroimg1.webp"
     },
     {
       title: "Certified Reliability",
-      description: "All our add-ons are built following NetSuite's best practices and SuiteCloud standards, ensuring they are stable, secure, and ready for future platform releases. You can grow your business with confidence, knowing that your critical extensions will continue to function seamlessly even as NetSuite evolves with its bi-annual updates.",
+      description: "Add-ons built to SuiteCloud standards ensure stability through future NetSuite updates.",
       image: "/images/aboutus/mission.webp"
     }
   ];
@@ -172,25 +139,25 @@ export default function NetSuiteAddonsClient() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="flex-1 max-w-2xl"
             >
-              
+
               <h1 className="text-5xl md:text-6xl font-semibold mb-8 leading-[1.05] tracking-tight text-white">
                 NetSuite <span className="text-blue-500">Add-Ons</span> & Extensions
               </h1>
               <p className="text-xl leading-relaxed font-light text-gray-300">
                 Extend the core power of NetSuite with our suite of tailor-made connectors and applications designed for high-growth businesses.
               </p>
-              
+
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link href="/netsuite/contact" className="px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-900/40">
                   Get Started Now
                 </Link>
-                <Link href="#solutions" className="px-8 py-4 bg-white/5 text-white font-bold rounded-2xl hover:bg-white/10 transition backdrop-blur-md border border-white/10">
+                <Link href="#services" className="px-8 py-4 bg-white/5 text-white font-bold rounded-2xl hover:bg-white/10 transition backdrop-blur-md border border-white/10">
                   View Features
                 </Link>
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
@@ -206,41 +173,41 @@ export default function NetSuiteAddonsClient() {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-[#000b21]/60 to-transparent" />
               </div>
-              
+
               {/* Top Right Floating Card */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 }}
                 className="absolute top-10 -right-6 lg:-right-12 bg-gray-50 backdrop-blur-2xl border border-white/20 p-3 rounded-xl shadow-2xl max-w-[360px] z-20"
               >
                 <div className="flex items-center gap-3">
-                   <div className="p-2.5 bg-blue-600 rounded-xl">
-                     <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                     </svg>
-                   </div>
-                   <h4 className="text-xs font-semibold text-black uppercase tracking-wider">25+ Extensions
-                   Certified SuiteCloud add-ons and connectors.
-</h4>
+                  <div className="p-2.5 bg-blue-600 rounded-xl">
+                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-xs font-semibold text-black uppercase tracking-wider">25+ Extensions
+                    Certified SuiteCloud add-ons and connectors.
+                  </h4>
                 </div>
               </motion.div>
 
               {/* Bottom Center Quote Card */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
                 className="absolute bottom-11 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-2xl w-[85%] z-30 border border-white/30"
               >
-                 <div className="flex flex-col items-center text-center">
-                   <svg className="w-7 h-7 text-blue-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                   </svg>
-                   <p className="text-gray-900 text-xs font-bold uppercase tracking-wide leading-tight">
-                     Exceptional systems need the right extensions
-                   </p>
-                 </div>
+                <div className="flex flex-col items-center text-center">
+                  <svg className="w-7 h-7 text-blue-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                  <p className="text-gray-900 text-xs font-bold uppercase tracking-wide leading-tight">
+                    Exceptional systems need the right extensions
+                  </p>
+                </div>
               </motion.div>
             </motion.div>
           </div>
@@ -312,17 +279,17 @@ export default function NetSuiteAddonsClient() {
                 </Link>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-gray-100"
             >
-              <Image 
-                src="/images/aboutus/niche1.webp" 
-                alt="NetSuite Extensions" 
-                fill 
+              <Image
+                src="/images/aboutus/niche1.webp"
+                alt="NetSuite Extensions"
+                fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply" />
@@ -342,10 +309,10 @@ export default function NetSuiteAddonsClient() {
               viewport={{ once: true }}
               className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-gray-200"
             >
-              <Image 
-                src="/images/lap/group2.webp" 
-                alt="Why Choose NetSuite Add-ons for Business Growth" 
-                fill 
+              <Image
+                src="/images/lap/group2.webp"
+                alt="Why Choose NetSuite Add-ons for Business Growth"
+                fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply" />
@@ -364,7 +331,7 @@ export default function NetSuiteAddonsClient() {
                   Why NetSuite Add-ons are Essential for Growth
                 </h3>
               </div>
-              
+
               <p className="text-lg text-gray-600 leading-relaxed font-light">
                 While NetSuite delivers powerful core functionality, extending it with certified add-ons unlocks your true competitive advantage. From localized compliance to high-performance integrations, our extensions bridge the gap between out-of-the-box features and your unique business requirements—without the complexity of custom development.
               </p>
@@ -380,7 +347,7 @@ export default function NetSuiteAddonsClient() {
       </section>
 
       {/* Add-on Services Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
+      <section id="services" className="py-16 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
           <h2 className="text-5xl font-semibold text-gray-900 text-center">
             Suite Extension Services
@@ -400,7 +367,7 @@ export default function NetSuiteAddonsClient() {
                 "bg-linear-to-br from-[#ffffff] to-[#ffece8]",
                 "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]",
               ];
-              
+
               return (
                 <motion.div
                   key={index}
@@ -414,7 +381,7 @@ export default function NetSuiteAddonsClient() {
                     whileHover="hover"
                     variants={{
                       initial: { scale: 1 },
-                      hover: { 
+                      hover: {
                         scale: 1.04,
                         transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] }
                       }
@@ -429,8 +396,8 @@ export default function NetSuiteAddonsClient() {
                     <motion.div
                       variants={{
                         initial: { rotate: 0, y: 0 },
-                        hover: { 
-                          rotate: 360, 
+                        hover: {
+                          rotate: 360,
                           y: -6,
                           transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] }
                         }
@@ -467,62 +434,14 @@ export default function NetSuiteAddonsClient() {
         </div>
       </section>
 
-      {/* Core Add-ons Grid */}
-      <section id="solutions" className="py-24 border-y bg-[#000b21] border-blue-900/30">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h3 className="text-3xl md:text-5xl font-black text-white mb-6">Popular Add-ons</h3>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light">
-              Explore our highest-rated extensions used by market leaders across industries.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {addons.map((feature, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2.5rem] p-8 hover:bg-white/10 transition-all group flex flex-col"
-              >
-                <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8">
-                  <Image
-                    src={feature.image}
-                    alt={feature.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-blue-900/60 to-transparent" />
-                </div>
 
-                <div className="space-y-4 flex-1">
-                  <span className="text-blue-400 text-[10px] font-bold uppercase tracking-[0.2em]">{feature.cardTitle}</span>
-                  <h3 className="text-xl font-bold text-white tracking-tight">
-                    {feature.title}
-                  </h3>
-                  <div className="w-10 h-1 bg-blue-500 rounded-full" />
-                  <p className="text-gray-300 leading-relaxed font-light text-sm">
-                    {feature.description}
-                  </p>
-                </div>
-
-                <Link href="/free-consultation" className="mt-8 inline-flex items-center gap-2 text-blue-400 font-bold hover:text-blue-300 transition group/link text-xs uppercase tracking-widest">
-                  View Specs
-                  <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Benefits Section */}
       <section className="py-24 bg-linear-to-b from-[#000b21] via-[#000b21] to-[#0a0a0a] overflow-hidden relative">
         {/* Decorative elements matching hero section */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
-        
+
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Benefits</span>
@@ -550,32 +469,29 @@ export default function NetSuiteAddonsClient() {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-transparent to-transparent" />
                 </motion.div>
-              </AnimatePresence>  
+              </AnimatePresence>
             </div>
 
             {/* RIGHT SIDE - BENEFITS LIST */}
             <div className="space-y-4">
               {benefits.map((item, index) => (
-                <div 
+                <div
                   key={index}
                   onClick={() => setActiveBenefit(index)}
-                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
-                    activeBenefit === index 
-                      ? 'bg-white/10 border-blue-400/50 shadow-lg backdrop-blur-sm' 
+                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeBenefit === index
+                      ? 'bg-white/10 border-blue-400/50 shadow-lg backdrop-blur-sm'
                       : 'bg-white/5 border-white/10 hover:bg-white/10'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-lg transition-colors ${
-                      activeBenefit === index 
-                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50' 
+                    <div className={`p-2 rounded-lg transition-colors ${activeBenefit === index
+                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50'
                         : 'bg-white/10 text-blue-300'
-                    }`}>
+                      }`}>
                       <CheckCircle2 size={20} />
                     </div>
-                    <h4 className={`text-xl font-bold transition-colors ${
-                      activeBenefit === index ? 'text-white' : 'text-gray-300'
-                    }`}>
+                    <h4 className={`text-xl font-bold transition-colors ${activeBenefit === index ? 'text-white' : 'text-gray-300'
+                      }`}>
                       {item.title}
                     </h4>
                   </div>
@@ -605,7 +521,7 @@ export default function NetSuiteAddonsClient() {
         {/* Decorative elements matching hero section */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
-        
+
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Challenges</span>
@@ -617,26 +533,23 @@ export default function NetSuiteAddonsClient() {
             {/* LEFT SIDE - CHALLENGES LIST */}
             <div className="space-y-4">
               {challenges.map((item, index) => (
-                <div 
+                <div
                   key={index}
                   onClick={() => setActiveChallenge(index)}
-                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
-                    activeChallenge === index 
-                      ? 'bg-white/10 border-blue-400/50 shadow-lg backdrop-blur-sm' 
+                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeChallenge === index
+                      ? 'bg-white/10 border-blue-400/50 shadow-lg backdrop-blur-sm'
                       : 'bg-white/5 border-white/10 hover:bg-white/10'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-lg transition-colors ${
-                      activeChallenge === index 
-                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50' 
+                    <div className={`p-2 rounded-lg transition-colors ${activeChallenge === index
+                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50'
                         : 'bg-white/10 text-blue-300'
-                    }`}>
+                      }`}>
                       <CheckCircle2 size={20} />
                     </div>
-                    <h4 className={`text-xl font-bold transition-colors ${
-                      activeChallenge === index ? 'text-white' : 'text-gray-300'
-                    }`}>
+                    <h4 className={`text-xl font-bold transition-colors ${activeChallenge === index ? 'text-white' : 'text-gray-300'
+                      }`}>
                       {item.title}
                     </h4>
                   </div>
@@ -677,7 +590,7 @@ export default function NetSuiteAddonsClient() {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-transparent to-transparent" />
                 </motion.div>
-              </AnimatePresence>  
+              </AnimatePresence>
             </div>
           </div>
         </div>
@@ -685,42 +598,42 @@ export default function NetSuiteAddonsClient() {
 
       {/* Modern CTA */}
       <section className="py-24 overflow-hidden relative bg-gray-50">
-         <div className="max-w-7xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="border border-gray-200 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
-            >
-               {/* Background Image */}
-               <Image
-                 src="/images/lap/group1.webp"
-                 alt="NetSuite Add-ons Background"
-                 fill
-                 className="object-cover"
-               />
-               
-               {/* Gradient Overlay - Dark left to transparent right */}
-               <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/80 to-transparent" />
-               
-               {/* Decorative blur elements */}
-               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-3xl -mr-32 -mt-32" />
-               <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="border border-gray-200 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
+          >
+            {/* Background Image */}
+            <Image
+              src="/images/lap/group1.webp"
+              alt="NetSuite Add-ons Background"
+              fill
+              className="object-cover"
+            />
 
-               {/* Content - Left Aligned */}
-               <div className="relative z-10 max-w-2xl">
-                 <h2 className="text-3xl md:text-5xl font-medium text-white mb-8 leading-tight text-left">
-                   Supercharge your NetSuite today. Ready to explore our apps?
-                 </h2>
-                 
-                 <div className="flex justify-start">
-                   <Link href="/netsuite/contact" className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition shadow-xl">
-                     Talk to an Expert
-                   </Link>
-                 </div>
-               </div>
-            </motion.div>
-         </div>
+            {/* Gradient Overlay - Dark left to transparent right */}
+            <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/80 to-transparent" />
+
+            {/* Decorative blur elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-3xl -mr-32 -mt-32" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />
+
+            {/* Content - Left Aligned */}
+            <div className="relative z-10 max-w-2xl">
+              <h2 className="text-3xl md:text-5xl font-medium text-white mb-8 leading-tight text-left">
+                Supercharge your NetSuite today. Ready to explore our apps?
+              </h2>
+
+              <div className="flex justify-start">
+                <Link href="/netsuite/contact" className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition shadow-xl">
+                  Talk to an Expert
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       <FooterFormSection />

@@ -25,6 +25,14 @@ const NetsuiteCTA = dynamic(() => import('./components/NetsuiteCTA').then(mod =>
 const NSWhyChooseUs = dynamic(() => import('./components/NSWhyChooseUs').then(mod => mod.default));
 const NSTestimonialSection = dynamic(() => import('./components/NSTestimonialSection').then(mod => mod.default));
 const FooterFormSection = dynamic(() => import('../components/home/FooterFormSection').then(mod => mod.default));
+const FooterFormSectionDark = dynamic(() => import('../components/home/FooterFormSectionDark').then(mod => mod.default));
+const FooterFormLight = dynamic(() => import('../components/home/FooterFormLight').then(mod => mod.default));
+const FooterFormRed = dynamic(() => import('../components/home/FooterFormRed').then(mod => mod.default));
+
+// Alternative Contact Form Designs
+const ContactFormDesign1 = dynamic(() => import('./components/ContactFormDesign1').then(mod => mod.default));
+const ContactFormDesign2 = dynamic(() => import('./components/ContactFormDesign2').then(mod => mod.default));
+const ContactFormDesign4 = dynamic(() => import('./components/ContactFormDesign4').then(mod => mod.default));
 
 
 export default function NetSuitePage() {
@@ -43,7 +51,6 @@ export default function NetSuitePage() {
       <NSDashboardHero />
 
       {/* Key Solutions Grid (Existing) */}
-
 
 
 
@@ -66,6 +73,12 @@ export default function NetSuitePage() {
       <FAQ variant="netsuite" />
 
       <FooterFormSection />
+      <FooterFormLight />
+      {/* <FooterFormRed />
+      <FooterFormSectionDark />
+      <ContactFormDesign1 />
+      <ContactFormDesign2 />*/}
+      <ContactFormDesign4 />
     </div>
   );
 }
