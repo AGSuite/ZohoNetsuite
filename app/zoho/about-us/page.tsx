@@ -25,7 +25,7 @@ import {
 } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import FlipNumbers from 'react-flip-numbers';
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation, type Variants } from 'framer-motion';
 // import Resource from '../homepage/components/Resource';
 // import Clients from '../homepage/components/Clients';
 import FooterFormSection from '@/app/components/home/FooterFormSection';
@@ -165,6 +165,43 @@ const counters: CounterItem[] = [
   { label: 'Years Experience', value: 15, icon: Rocket },
 ];
 
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" as any }
+  }
+};
+
+const staggerContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const slideInLeft: Variants = {
+  hidden: { opacity: 0, x: -60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" as any }
+  }
+};
+
+const slideInRight: Variants = {
+  hidden: { opacity: 0, x: 60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" as any }
+  }
+};
+
 // ---------------- About stats section ----------------
 
 function AboutStatsSection() {
@@ -179,30 +216,42 @@ function AboutStatsSection() {
   }, [statsInView, controls]);
 
   return (
-    <section className="relative py-20 bg-white overflow-hidden">
+    <section className="relative py-24 bg-white overflow-hidden">
       <div className="relative mx-auto max-w-7xl px-6 sm:px-10 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center gap-14">
         {/* LEFT: Text */}
-        <div className="flex-1 space-y-8 text-center lg:text-left lg:pr-8">
-          <h2 className="text-gray-950 text-3xl sm:text-4xl lg:text-5xl font-medium">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="flex-1 space-y-8 text-center lg:text-left lg:pr-8"
+        >
+          <motion.h2 variants={fadeInUp} className="text-gray-900 text-3xl md:text-4xl lg:text-5xl font-medium">
             Who We Are
-          </h2>
-          <p className="text-gray-700 text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-            AGSuite Technologies is an Advanced Zoho Partner and trusted Oracle NetSuite Solution 
+          </motion.h2>
+          <motion.p variants={fadeInUp} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            AGSuite Technologies is an Advanced Zoho Partner and trusted Oracle NetSuite Solution
             Provider, helping businesses streamline operations with powerful CRM and ERP solutions.
-            As an experienced Zoho implementation partner, we deliver tailored Zoho CRM and business 
-            automation services designed for scalability and success. We also specialize in 
-            NetSuite implementation, customization, and integration, enabling companies to boost 
-            efficiency and growth. At AGSuite Tech, we empower organizations to drive digital 
-            transformation and achieve lasting results through innovative Zoho and Oracle NetSuite 
+            As an experienced Zoho implementation partner, we deliver tailored Zoho CRM and business
+            automation services designed for scalability and success. We also specialize in
+            NetSuite implementation, customization, and integration, enabling companies to boost
+            efficiency and growth. At AGSuite Tech, we empower organizations to drive digital
+            transformation and achieve lasting results through innovative Zoho and Oracle NetSuite
             solutions.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* RIGHT: Image */}
-        <div className="flex-1 flex justify-center lg:justify-end">
+        <motion.div
+          variants={slideInRight}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="flex-1 flex justify-center lg:justify-end"
+        >
           <div className="w-80 h-80 md:w-136 md:h-125 bg-blue-100 rounded-md overflow-hidden border-4 border-white">
             <Image
-              src="/images/aboutus/heroimg1.webp"
+              src="/images/aboutus/heroimg2.webp"
               alt="AGSuite Technologies Team"
               width={800}
               height={800}
@@ -210,24 +259,29 @@ function AboutStatsSection() {
               priority
             />
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-15 px-6 sm:px-10 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-10">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        className="max-w-7xl mx-auto mt-15 px-6 sm:px-10 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-10"
+      >
         {/* LEFT: Text */}
         <div className="flex-1 space-y-5 text-center lg:text-left">
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
+          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900">
             Strategic Partners
-          </h2>
-          <p className="text-gray-700 text-base lg:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0">
+          </motion.h2>
+          <motion.p variants={fadeInUp} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0">
             We collaborate with world-class technology partners to deliver scalable, innovative, and
             future-ready business solutions that empower enterprises worldwide.
-          </p>
+          </motion.p>
         </div>
 
         {/* RIGHT: Partner Logos in Box */}
-        <div className="flex-1 grid grid-cols-1 justify-center items-center">
-   
+        <motion.div variants={fadeInUp} className="flex-1 grid grid-cols-1 justify-center items-center">
           <div className="flex justify-center items-center">
             <Image
               src="/images/zohoimages/zohologos/zohoadvancelogo.webp"
@@ -237,37 +291,41 @@ function AboutStatsSection() {
               className="object-contain"
             />
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Animated Counters Section */}
       <div
         ref={statsRef}
-        className="relative mx-auto max-w-6xl px-6 sm:px-10 md:px-12 lg:px-16 mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 text-center border rounded-3xl border-gray-300 shadow-[-10px_0_30px_rgba(255,120,150,0.18),10px_0_30px_rgba(80,170,255,0.18),0_-10px_30px_rgba(255,140,200,0.14),0_10px_30px_rgba(255,180,90,0.14)]"
+        className="max-w-7xl mx-auto mt-20 px-6 sm:px-10"
       >
-        {counters.map((item, index) => (
-          <motion.div
-            // index is stable here as counters is static
-            // eslint-disable-next-line react/no-array-index-key
-            key={index}
-            variants={{
-              hidden: { opacity: 0, y: 40 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            initial="hidden"
-            animate={controls}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            className="bg-white p-6 rounded-3xl"
-          >
-            <div className="flex justify-center my-5">
-              <item.icon strokeWidth={1} className="h-12 w-12 text-gray-800" />
-            </div>
-            <div className="mb-2">
-              <FlipCounter end={item.value} suffix="+" duration={3} inView={statsInView} />
-            </div>
-            <p className="text-gray-700 text-sm font-medium">{item.label}</p>
-          </motion.div>
-        ))}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+          {counters.map((item, index) => (
+            <motion.div
+              // index is stable here as counters is static
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              initial="hidden"
+              animate={controls}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="text-center group"
+            >
+              <div className="flex justify-center mb-4">
+                <div className="p-4 bg-rose-100 rounded-2xl group-hover:bg-rose-600 transition-colors duration-300">
+                  <item.icon className="w-8 h-8 text-rose-600 group-hover:text-white transition-colors duration-300" />
+                </div>
+              </div>
+              <div className="mb-2 flex justify-center">
+                <FlipCounter end={item.value} suffix="+" duration={3} inView={statsInView} />
+              </div>
+              <p className="text-gray-600 font-medium text-lg">{item.label}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -376,15 +434,15 @@ export default function AboutClient() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 md:px-10 lg:px-16 space-y-28">
           {/* OUR MISSION */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20"
-          >
+          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
             {/* Left Image Section */}
-            <div className="flex-1 relative flex justify-center items-center pb-12">
+            <motion.div
+              variants={slideInLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="flex-1 relative flex justify-center items-center pb-12"
+            >
               <div className="relative rounded-2xl w-full max-w-[500px]">
                 <div className="rounded-2xl overflow-hidden shadow-md">
                   <Image
@@ -420,42 +478,54 @@ export default function AboutClient() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Text */}
-            <div className="flex-1 flex flex-col justify-center text-center lg:text-left">
-              <h2 className="text-4xl font-semibold text-slate-900 mb-6">Our Mission</h2>
-              <p className="text-slate-700 leading-relaxed text-lg max-w-xl mx-auto lg:mx-0">
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="flex-1 flex flex-col justify-center text-center lg:text-left"
+            >
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-6">Our Mission</motion.h2>
+              <motion.p variants={fadeInUp} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
                 AGSuite Technologies thrives on empowering businesses through cutting-edge
                 technology solutions, specializing in Oracle NetSuite and Zoho. Our passion is to
                 streamline operations, enhance efficiency, and drive sustainable growth for our
                 clients. Our commitment lies in being a catalyst for positive transformation,
                 helping clients achieve their strategic goals in the dynamic digital landscape.
-              </p>
-            </div>
-          </motion.div>
+              </motion.p>
+            </motion.div>
+          </div>
 
           {/* OUR VISION */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col-reverse lg:flex-row items-center gap-16 lg:gap-20"
-          >
-            <div className="flex-1 flex flex-col justify-center text-center lg:text-left">
-              <h2 className="text-4xl font-semibold text-slate-900 mb-6">Our Vision</h2>
-              <p className="text-slate-700 leading-relaxed text-lg max-w-xl mx-auto lg:mx-0">
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-16 lg:gap-20">
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="flex-1 flex flex-col justify-center text-center lg:text-left"
+            >
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-6">Our Vision</motion.h2>
+              <motion.p variants={fadeInUp} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
                 AGSuite Technologies envisions global leadership in technology consulting, setting
                 industry benchmarks for innovation, integrity, and client satisfaction. We aspire to
                 be the preferred choice, renowned for transformative solutions, agility, and
                 empathetic growth. Our vision is to forge lasting partnerships, defining the zenith
                 of excellence in the dynamic field of technology.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             {/* Right Image Collage */}
-            <div className="flex-1 relative flex justify-center items-center">
+            <motion.div
+              variants={slideInRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="flex-1 relative flex justify-center items-center"
+            >
               <svg
                 className="absolute top-[-20px] right-[20px] w-22 h-22 text-black/50 z-0"
                 viewBox="0 0 110 100"
@@ -499,18 +569,18 @@ export default function AboutClient() {
                   </p>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
           {/* OUR NICHE */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20"
-          >
-            <div className="flex-1 relative flex justify-center items-center">
+          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+            <motion.div
+              variants={slideInLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="flex-1 relative flex justify-center items-center"
+            >
               <div className="rounded-2xl overflow-hidden shadow-md w-full max-w-[500px]">
                 <Image
                   src="/images/aboutus/mission2.webp"
@@ -530,59 +600,84 @@ export default function AboutClient() {
                   className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
                 />
               </div>
-            </div>
+            </motion.div>
 
-            <div className="flex-1 flex flex-col justify-center text-center lg:text-left">
-              <h2 className="text-4xl font-semibold text-slate-900 mb-6">Our Niche</h2>
-              <p className="text-slate-700 leading-relaxed text-lg max-w-xl mx-auto lg:mx-0">
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              className="flex-1 flex flex-col justify-center text-center lg:text-left"
+            >
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-6">Our Niche</motion.h2>
+              <motion.p variants={fadeInUp} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
                 AGSuite Technologies excels in Oracle NetSuite and Zoho Implementation, offering
                 top-notch Technology Consulting Services. Our specialization includes Customizations,
                 Managed Services, and Integrations, ensuring tailored solutions for clients. With a
                 focus on client success, we leverage our expertise to lead in the dynamic landscape
                 of cloud-based business solutions.
-              </p>
-            </div>
-          </motion.div>
+              </motion.p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       <section
-        className="relative w-full py-24 bg-cover bg-center"
+        className="relative w-full py-24 bg-cover bg-center overflow-hidden"
         style={{
           backgroundImage: "url('/images/aboutus/CTA2.webp')",
+          backgroundAttachment: 'fixed',
         }}
       >
-        <div className="absolute inset-0 bg-gray-900/60" />
+        {/* Dark Gradient Overlay - Dark on left, lighter in middle, very little on right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-transparent z-0" />
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center text-white px-6">
-          <h2 className="text-3xl md:text-4xl font-medium mb-4">
-            Let’s Create a Positive Social Impact Together
-          </h2>
-          <p className="text-md md:text-md mb-6">
-            Join us in making a difference through innovation, responsibility, and action.
-          </p>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-16 text-left"
+        >
+          <div className="max-w-2xl">
+            <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl lg:text-4xl font-medium mb-4 text-white leading-tight">
+              Drive Scalable Growth with the <span className="text-rose-400">Zoho Ecosystem</span>
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-base md:text-lg mb-8 text-gray-200 leading-relaxed max-w-xl">
+              Unlock the full potential of your business with AGSuite Technologies.
+              Our Zoho experts deliver tailored solutions that automate workflows and enhance productivity.
+            </motion.p>
 
-          <Link
-            href="#clients"
-            className="bg-rose-500 hover:bg-rose-600 text-white font-semibold px-8 py-3 rounded-lg transition duration-300"
-            scroll={false}
-          >
-            Learn More
-          </Link>
-        </div>
+            <motion.div variants={fadeInUp} className="flex">
+              <Link
+                href="#contact"
+                className="bg-rose-600 hover:bg-rose-700 text-white font-semibold px-8 py-3 rounded-full transition duration-300 shadow-lg shadow-rose-900/40"
+              >
+                Implement Zoho
+              </Link>
+            </motion.div>
+          </div>
+        </motion.div>
       </section>
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mt-2">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mt-2">
               Our Core Values
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center"
+          >
             {coreValues.map((val) => (
-              <div
+              <motion.div
+                variants={fadeInUp}
                 key={val.title}
                 className="group relative rounded-3xl overflow-hidden bg-white border border-gray-200 hover:bg-rose-800 hover:border-rose-500 transition-all duration-500 shadow-sm hover:shadow-xl"
               >
@@ -613,9 +708,9 @@ export default function AboutClient() {
                     <val.icon className="w-5 h-5 text-rose-600 group-hover:text-white transition-colors duration-500" />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -676,57 +771,68 @@ export default function AboutClient() {
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-1">
-           
-            <h2 className="mb-10 bg-gradient-to-l leading-relaxed from-red-100 via-red-50 to-gray-50 text-transparent bg-clip-text mx-auto max-w-4xl font-medium text-3xl sm:text-4xl lg:text-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.h2 variants={fadeInUp} className="mb-12 text-center bg-linear-to-l leading-relaxed from-rose-900 via-rose-950 to-rose-950 text-transparent bg-clip-text mx-auto max-w-4xl font-medium text-3xl md:text-4xl lg:text-5xl">
               Celebrating Excellence & Recognition
-            </h2>
+            </motion.h2>
 
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20">
-        
-
-            <div className=" flex justify-center">
-              <Image
-                src="/images/Dashboard/awards2.webp"
-                alt="Awards and Recognition"
-                width={900}
-                height={500}
-                className="rounded-2xl shadow-xl object-contain"
-              />
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20">
+              <motion.div variants={fadeInUp} className="flex justify-center group">
+                <Image
+                  src="/images/Dashboard/awards2.webp"
+                  alt="Awards and Recognition"
+                  width={900}
+                  height={500}
+                  className="rounded-2xl shadow-2xl object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           <div className="mt-16 h-px w-full bg-linear-to-r from-transparent via-rose-200 to-transparent" />
         </div>
       </section>
 
 
-      <div className="w-full flex flex-col items-center text-center mt-10 mb-10 px-4 sm:px-6 lg:px-8 relative">
-        <div className="absolute top-0 left-10 w-32 h-32 bg-blue-200/40 blur-3xl rounded-full -z-10" />
-        <div className="absolute bottom-10 right-10 w-40 h-40 bg-purple-300/40 blur-3xl rounded-full -z-10" />
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="w-full flex flex-col items-center text-center mt-10 mb-10 px-4 sm:px-6 lg:px-8 relative"
+      >
+        <div className="absolute top-0 left-10 w-32 h-32 bg-rose-200/40 blur-3xl rounded-full -z-10" />
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-pink-300/40 blur-3xl rounded-full -z-10" />
 
-        <h2
-          className="text-2xl sm:text-4xl font-bold mb-6 
+        <motion.h2
+          variants={fadeInUp}
+          className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 
           bg-linear-to-r from-gray-900 via-gray-900 to-gray-900 
-          bg-clip-text text-transparent drop-shadow-[0_4px_12px_rgba(100,100,255,0.35)]"
+          bg-clip-text text-transparent drop-shadow-[0_4px_12px_rgba(244,63,94,0.35)]"
         >
           Our Global Presence
-        </h2>
+        </motion.h2>
 
-        <p className="max-w-2xl text-gray-600 mb-10 text-lg">
+        <motion.p variants={fadeInUp} className="max-w-2xl text-gray-600 mb-10 text-base md:text-lg leading-relaxed">
           Delivering excellence across continents with a strong and growing worldwide footprint.
-        </p>
+        </motion.p>
 
-        <div className="relative w-full max-w-6xl shadow-2xl rounded-3xl overflow-hidden border border-gray-200/70 bg-white p-4">
+        <div className="relative w-full max-w-6xl shadow-2xl rounded-3xl overflow-hidden border border-gray-200/70 bg-white p-4 group">
           <div className="relative w-full h-[40vh] sm:h-[55vh] lg:h-[75vh] rounded-2xl overflow-hidden">
             <Image
               src="/images/Dashboard/Presence.webp"
               alt="Global Presence Map"
               fill
-              className="object-contain rounded-2xl"
+              className="object-contain rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]"
             />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <section id="contact" className=" bg-white">
         <FooterFormSection />
