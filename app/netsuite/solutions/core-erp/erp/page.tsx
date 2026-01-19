@@ -1,17 +1,30 @@
 "use client";
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence, useSpring, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
-import FlipNumbers from 'react-flip-numbers';
-import { 
+import {
   Building2, TrendingUp, Shield, Zap, BarChart3, Layers, CheckCircle2, ArrowRight,
   DollarSign, FileText, Settings, Check, ChevronDown, Database, Share2, Code,
   ShieldCheck, HeartHandshake, Users, Layout
 } from 'lucide-react';
 import FooterFormSection from '@/app/components/home/FooterFormSection';
+
+function Counter({ value }: { value: number }) {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const spring = useSpring(0, { mass: 0.8, stiffness: 75, damping: 15 });
+  const display = useTransform(spring, (current) => Math.round(current));
+
+  useEffect(() => {
+    if (inView) {
+      spring.set(value);
+    }
+  }, [inView, spring, value]);
+
+  return <span ref={ref}><motion.span>{display}</motion.span></span>;
+}
 
 export default function NetSuiteERPPage() {
   const { ref: statsRef, inView: statsInView } = useInView({ triggerOnce: false, threshold: 0.2 });
@@ -75,51 +88,128 @@ export default function NetSuiteERPPage() {
 
   return (
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
-      {/* Hero Section */}
-      <section className="relative h-[550px] lg:h-[600px] overflow-hidden">
+      {/* Full Screen Hero Section with Integrated Metrics */}
+      <section className="relative min-h-screen overflow-hidden flex flex-col">
+        {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image src="/images/lap/group1.webp" alt="NetSuite ERP" fill priority className="object-cover" />
         </div>
-        <div className="absolute inset-0 bg-linear-to-r from-black via-black/90 to-transparent z-10" />
-        
-        <div className="relative z-20 h-full max-w-7xl mx-auto px-6 flex items-center">
-          <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="max-w-2xl">
-            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="text-4xl md:text-5xl font-semibold mb-4 leading-[1.1] text-white">
-              NetSuite <span className="text-blue-500">ERP Solutions</span>
-            </motion.h1>
-            <motion.div initial={{ width: 0 }} animate={{ width: "120px" }} transition={{ delay: 0.5, duration: 0.6 }} className="h-1 bg-blue-600 mb-6" />
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed font-light">
-              Automate core processes and gain real-time visibility into operational and financial performance.
-            </motion.p>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="flex flex-wrap gap-4">
-              <Link href="/netsuite/contact" className="px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-900/40">Get Started</Link>
-              <Link href="#features" className="px-8 py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/20">Explore Features</Link>
+
+        {/* Gradient Overlay - Left to Right */}
+        <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/80 to-transparent z-10" />
+
+        {/* Main Content Container */}
+        <div className="relative z-20 flex-1 flex flex-col justify-end max-w-7xl mx-auto px-4 sm:px-6 w-full pt-32 sm:pt-40 md:pt-48 pb-12 sm:pb-16">
+          {/* Hero Content */}
+          <div className="mb-8 sm:mb-10 lg:mb-12">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-3xl"
+            >
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-4 sm:mb-6 leading-[1.1] text-white"
+              >
+                NetSuite <span className="text-blue-600">ERP Solutions</span>
+              </motion.h1>
+
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "120px" }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="h-1 bg-blue-700 mb-4 sm:mb-6"
+              />
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 md:mb-10 leading-relaxed font-light max-w-2xl"
+              >
+                Automate core processes and gain real-time visibility into operational and financial performance with the world's #1 cloud ERP platform.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
+              >
+                <Link
+                  href="/netsuite/contact"
+                  className="px-6 sm:px-8 py-3 sm:py-4 bg-blue-700 text-white font-bold rounded-2xl hover:bg-blue-800 transition shadow-xl shadow-blue-900/40 text-center"
+                >
+                  Get Started
+                </Link>
+                <Link
+                  href="#features"
+                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/20 text-center"
+                >
+                  Explore Features
+                </Link>
+              </motion.div>
             </motion.div>
+          </div>
+
+          {/* Integrated Metrics Section */}
+          <motion.div
+            ref={statsRef}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="border-t border-white/20 pt-8 sm:pt-10 md:pt-12"
+          >
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: 1 + (index * 0.15),
+                    duration: 0.6,
+                    ease: "easeOut"
+                  }}
+                  className="text-center group"
+                >
+                  <div className="flex justify-center mb-2 sm:mb-3">
+                    <div className="p-2 sm:p-3 bg-blue-700/20 rounded-xl sm:rounded-2xl group-hover:bg-blue-700/30 transition-colors duration-300">
+                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-500 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                  </div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2 flex items-center justify-center gap-1">
+                    <Counter value={stat.value} />
+                    <span className="text-blue-500 text-2xl sm:text-3xl md:text-4xl">{stat.suffix}</span>
+                  </div>
+                  <div className="text-gray-400 font-medium text-xs sm:text-sm md:text-base px-2">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+          className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:block"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="flex flex-col items-center gap-2"
+          >
+            <span className="text-white/60 text-sm font-medium">Scroll to explore</span>
+            <ChevronDown className="w-6 h-6 text-white/60" />
+          </motion.div>
+        </motion.div>
       </section>
 
-      {/* Stats Section */}
-      <section ref={statsRef} className="py-20 bg-linear-to-b from-[#000b21] to-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.15, duration: 0.6 }} className="text-center">
-                <div className="flex justify-center mb-4">
-                  <div className="p-4 bg-blue-600/20 rounded-2xl">
-                    <stat.icon className="w-8 h-8 text-blue-400" />
-                  </div>
-                </div>
-                <div className="text-5xl font-bold text-white mb-2 flex items-center justify-center gap-1">
-                  {statsInView && <FlipNumbers height={48} width={32} color="#ffffff" play perspective={1000} numbers={String(stat.value)} />}
-                  <span className="text-blue-400">{stat.suffix}</span>
-                </div>
-                <div className="text-gray-400 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* What is NetSuite ERP Section with Light Gradient */}
       <section className="py-24 bg-linear-to-br from-blue-50/30 via-white to-indigo-50/20">
@@ -179,7 +269,7 @@ export default function NetSuiteERPPage() {
           </motion.h2>
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-700 text-lg max-w-2xl text-center">
             End-to-end services to ensure your NetSuite ERP implementation succeeds
-          </motion. p>
+          </motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
             {services.map((service, index) => {
               const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
@@ -329,25 +419,72 @@ export default function NetSuiteERPPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <span className="bg-blue-600/10 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">FAQ</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-6 mb-4">Frequently Asked Questions</h2>
-            <p className="text-gray-600 text-lg">Everything you need to know about NetSuite ERP</p>
+      <section className="py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
+        {/* Background Gradients */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] -z-10" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[120px] -z-10" />
+
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="bg-blue-600/10 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+              FAQ
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-6 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-slate-600 text-lg">
+              Everything you need to know about NetSuite ERP
+            </p>
           </motion.div>
+
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.08, duration: 0.5 }} className="border border-gray-200 rounded-2xl overflow-hidden">
-                <button onClick={() => setOpenFAQ(openFAQ === index ? null : index)} className="w-full px-6 py-5 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors">
-                  <span className="text-left font-bold text-gray-900 text-lg">{faq.question}</span>
-                  <ChevronDown className={`w-5 h-5 text-blue-600 transition-transform ${openFAQ === index ? 'rotate-180' : ''}`} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className={`group rounded-2xl border transition-all duration-300 ${openFAQ === index
+                  ? 'bg-white border-blue-500/30 shadow-2xl shadow-blue-900/10 scale-[1.02] z-10'
+                  : 'bg-white/80 border-white/50 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-200 hover:-translate-y-1 hover:bg-white'
+                  }`}
+              >
+                <button
+                  onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+                  className="w-full px-8 py-6 flex items-center justify-between transition-colors cursor-pointer"
+                >
+                  <span className={`text-left font-bold text-lg transition-colors ${openFAQ === index ? 'text-blue-700' : 'text-gray-900 group-hover:text-blue-600'
+                    }`}>
+                    {faq.question}
+                  </span>
+                  <div className={`p-2 rounded-full transition-all duration-300 flex-shrink-0 ml-4 ${openFAQ === index
+                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white rotate-180 shadow-lg shadow-blue-500/30'
+                    : 'bg-gray-100 text-gray-500 group-hover:bg-blue-50 group-hover:text-blue-600'
+                    }`}>
+                    <ChevronDown className="w-5 h-5" />
+                  </div>
                 </button>
                 <AnimatePresence>
                   {openFAQ === index && (
-                    <motion.div initial={{ height: 0 }} animate={{ height: "auto" }} exit={{ height: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
-                      <div className="px-6 py-5 bg-gray-50 border-t border-gray-200">
-                        <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-8 pb-8 pt-0">
+                        <div className="h-px w-full bg-linear-to-r from-transparent via-gray-200 to-transparent mb-6" />
+                        <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+                          {faq.answer}
+                        </p>
                       </div>
                     </motion.div>
                   )}

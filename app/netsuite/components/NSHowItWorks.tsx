@@ -40,7 +40,7 @@ const NSHowItWorks: React.FC<NSHowItWorksProps> = ({ steps = defaultSteps }) => 
 
         {/* Heading */}
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold leading-tight text-black sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight text-black">
             How{" "}
             <span className="bg-linear-to-r from-red-600 via-rose-500 to-purple-600 bg-clip-text text-transparent">
               AGSuite
@@ -57,15 +57,15 @@ const NSHowItWorks: React.FC<NSHowItWorksProps> = ({ steps = defaultSteps }) => 
           {/* Steps Grid */}
           <div className="relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12">
             {steps.map((step, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 className="flex flex-col items-center"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.4, ease: "easeOut" }}
               >
-                
+
                 {/* Step Number Circle */}
                 <div className="flex items-center justify-center w-20 h-20 mx-auto bg-white border-2 border-gray-200 rounded-full shadow-sm">
                   <span className="text-md font-semibold text-gray-700">

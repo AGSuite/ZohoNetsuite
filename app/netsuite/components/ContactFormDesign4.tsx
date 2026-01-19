@@ -21,9 +21,9 @@ export default function ContactFormDesign4() {
         <div className="rounded-[40px] bg-[#0d0d0d]/70 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden">
           {/* Inner white fade for form container */}
           <div className="absolute inset-0 bg-white/5 rounded-[40px]"></div>
-          
+
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
-            
+
             {/* Left Side - Info with Big Question (Dark Theme) */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -33,17 +33,6 @@ export default function ContactFormDesign4() {
               className="flex flex-col h-full justify-between p-8 lg:p-16"
             >
               <div>
-                {/* NetSuite Partner Logo */}
-                <div className="mb-8">
-                  <Image
-                    src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
-                    alt="NetSuite Partner"
-                    width={220}
-                    height={70}
-                    className="h-16 w-auto object-contain"
-                  />
-                </div>
-
                 {/* Big Question Title */}
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.15]">
                   Ready to Transform{" "}
@@ -63,6 +52,17 @@ export default function ContactFormDesign4() {
                   <p className="text-gray-400 text-base leading-relaxed max-w-lg">
                     Whether you're looking to implement, optimize, or integrate NetSuite — we've got you covered.
                   </p>
+                </div>
+
+                {/* NetSuite Partner Logo */}
+                <div className="mb-10">
+                  <Image
+                    src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
+                    alt="NetSuite Partner"
+                    width={220}
+                    height={70}
+                    className="h-16 w-auto object-contain"
+                  />
                 </div>
 
                 {/* Trust Badges / Stats */}
@@ -119,11 +119,11 @@ export default function ContactFormDesign4() {
                   <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
                     Full Name <span className="text-blue-500">*</span>
                   </label>
-                  <input 
-                    type="text" 
-                    name="Last Name" 
-                    className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]" 
-                    placeholder="John Doe" 
+                  <input
+                    type="text"
+                    name="Last Name"
+                    className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
+                    placeholder="John Doe"
                   />
                 </div>
 
@@ -132,11 +132,11 @@ export default function ContactFormDesign4() {
                   <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
                     Business Email <span className="text-blue-500">*</span>
                   </label>
-                  <input 
-                    type="email" 
-                    name="Email" 
-                    className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]" 
-                    placeholder="john@company.com" 
+                  <input
+                    type="email"
+                    name="Email"
+                    className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
+                    placeholder="john@company.com"
                   />
                 </div>
 
@@ -146,22 +146,22 @@ export default function ContactFormDesign4() {
                     <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
                       Job Title <span className="text-blue-500">*</span>
                     </label>
-                    <input 
-                      type="text" 
-                      name="Designation" 
-                      className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]" 
-                      placeholder="CTO" 
+                    <input
+                      type="text"
+                      name="Designation"
+                      className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
+                      placeholder="CTO"
                     />
                   </div>
                   <div>
                     <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
                       Mobile Number <span className="text-blue-500">*</span>
                     </label>
-                    <input 
-                      type="tel" 
-                      name="Mobile" 
-                      className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]" 
-                      placeholder="+1 (555) 000-0000" 
+                    <input
+                      type="tel"
+                      name="Mobile"
+                      className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
+                      placeholder="+1 (555) 000-0000"
                     />
                   </div>
                 </div>
@@ -171,11 +171,11 @@ export default function ContactFormDesign4() {
                   <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
                     Company Name <span className="text-blue-500">*</span>
                   </label>
-                  <input 
-                    type="text" 
-                    name="Company" 
-                    className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]" 
-                    placeholder="Company Inc." 
+                  <input
+                    type="text"
+                    name="Company"
+                    className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
+                    placeholder="Company Inc."
                   />
                 </div>
 
@@ -185,8 +185,8 @@ export default function ContactFormDesign4() {
                     <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
                       Service Interest <span className="text-blue-500">*</span>
                     </label>
-                    <select 
-                      name="LEADCF5" 
+                    <select
+                      name="LEADCF5"
                       className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none appearance-none cursor-pointer shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                     >
                       <option value="">Select Service</option>
@@ -201,8 +201,8 @@ export default function ContactFormDesign4() {
                     <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
                       Annual Revenue <span className="text-blue-500">*</span>
                     </label>
-                    <select 
-                      name="LEADCF40" 
+                    <select
+                      name="LEADCF40"
                       className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none appearance-none cursor-pointer shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                     >
                       <option value="">Select Revenue</option>
@@ -220,10 +220,10 @@ export default function ContactFormDesign4() {
                   <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
                     Tell us about your requirements
                   </label>
-                  <textarea 
-                    name="Description" 
-                    rows={3} 
-                    className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all resize-none outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]" 
+                  <textarea
+                    name="Description"
+                    rows={3}
+                    className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all resize-none outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                     placeholder="Share your project details..."
                   ></textarea>
                 </div>
@@ -243,8 +243,8 @@ export default function ContactFormDesign4() {
                     </span>
                   </label>
 
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     className="shrink-0 px-8 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02]"
                   >
                     Send Message

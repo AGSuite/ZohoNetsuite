@@ -31,28 +31,30 @@ export const NSHero: React.FC<NSHeroProps> = () => {
           {!isMounted ? (
             /* SSR Placeholder - Simple and Fast */
             <div className="relative h-full w-full flex items-center">
-              <Image
-                src="/images/Background/herobluebg.webp"
-                alt="NetSuite Background"
-                fill
-                priority
-                fetchPriority="high"
-                className="object-cover -z-10"
-                sizes="100vw"
-                quality={75}
-              />
+              <div className="absolute inset-0 top-0 -z-10">
+                <Image
+                  src="/images/Background/herobluebg.webp"
+                  alt="NetSuite Background"
+                  fill
+                  priority
+                  fetchPriority="high"
+                  className="object-cover"
+                  sizes="100vw"
+                  quality={75}
+                />
+              </div>
 
               <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="max-w-2xl">
-                  <h1 className="text-4xl sm:text-4xl lg:text-4xl font-medium leading-snug text-gray-900">
+                  <h1 className="text-5xl sm:text-5xl lg:text-5xl font-medium leading-snug text-gray-900">
                     NetSuite ERP Solutions
                     <br />
-                    <span className="text-2xl sm:text-4xl lg:text-4xl font-medium text-gray-900">
+                    <span className="text-3xl sm:text-5xl lg:text-5xl font-medium text-gray-900">
                       For Modern Businesses
                     </span>
                   </h1>
 
-                  <p className="mt-3 text-base sm:text-lg font-medium text-gray-600">
+                  <p className="mt-3 text-lg sm:text-xl font-medium text-gray-600">
                     Run finance, operations & reporting in a single connected platform.
                   </p>
 
@@ -115,6 +117,19 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   textColor="light"
                 />
               </SwiperSlide>
+
+              <SwiperSlide>
+                <HeroSlide
+                  isActive={activeIndex === 3}
+                  bg="/images/Background/teambg3.png"
+                  title="AI-Powered NetSuite"
+                  subtitle="Intelligence Meets Efficiency"
+                  desc="Harness AI to automate insights, predict trends, and drive smarter business decisions."
+                  cta="Discover AI Solutions"
+                  showOverlay={true}
+                  textColor="light"
+                />
+              </SwiperSlide>
             </Swiper>
           )}
         </div>
@@ -137,19 +152,21 @@ const HeroSlide = ({
 }: any) => {
   return (
     <div className="relative h-full w-full flex items-center">
-      <Image
-        src={bg}
-        alt="Hero Background"
-        fill
-        priority={priority}
-        fetchPriority={priority ? "high" : "auto"}
-        className="object-cover -z-10"
-        sizes="100vw"
-        quality={75}
-      />
-      
+      <div className="absolute inset-0 top-0 -z-10">
+        <Image
+          src={bg}
+          alt="Hero Background"
+          fill
+          priority={priority}
+          fetchPriority={priority ? "high" : "auto"}
+          className="object-cover"
+          sizes="100vw"
+
+        />
+      </div>
+
       {showOverlay && (
-        <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/60 to-transparent" />
       )}
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -161,27 +178,24 @@ const HeroSlide = ({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <h1 className={`text-4xl sm:text-4xl lg:text-4xl font-medium leading-snug ${
-                  textColor === 'dark' ? 'text-gray-900' : 'text-white'
-                }`}>
+                <h1 className={`text-5xl sm:text-5xl lg:text-5xl font-medium leading-snug ${textColor === 'dark' ? 'text-gray-900' : 'text-white'
+                  }`}>
                   {title}
                   <br />
-                  <span className={`text-2xl sm:text-4xl lg:text-4xl font-medium ${
-                    textColor === 'dark' ? 'text-gray-900' : 'text-white'
-                  }`}>
+                  <span className={`text-3xl sm:text-5xl lg:text-5xl font-medium ${textColor === 'dark' ? 'text-gray-900' : 'text-white'
+                    }`}>
                     {subtitle}
                   </span>
                 </h1>
 
-                <motion.p 
+                <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                  className={`mt-3 text-base sm:text-lg font-medium ${
-                  textColor === 'dark' ? 'text-gray-600' : 'text-white/80'
-                }`}>{desc}</motion.p>
+                  className={`mt-3 text-lg sm:text-xl font-medium ${textColor === 'dark' ? 'text-gray-600' : 'text-white/80'
+                    }`}>{desc}</motion.p>
 
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -196,7 +210,7 @@ const HeroSlide = ({
             )}
           </AnimatePresence>
         </div>
-          
+
         {image && (
           <div className="hidden lg:flex justify-center lg:justify-end">
             <AnimatePresence mode="wait">

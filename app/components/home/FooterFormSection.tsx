@@ -21,30 +21,30 @@ declare global {
 export default function FooterFormSection() {
   useEffect(() => {
     // Define all form validation functions globally
-    window.addAriaSelected409531000000325116 = function() {
+    window.addAriaSelected409531000000325116 = function () {
       const optionElem = (event as Event & { target: HTMLSelectElement }).target;
       const previousSelectedOption = optionElem.querySelector('[aria-selected=true]');
-      if(previousSelectedOption) {
+      if (previousSelectedOption) {
         previousSelectedOption.removeAttribute('aria-selected');
       }
       optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
     };
 
-    window.rccallback409531000000325116 = function() {
-      if(document.getElementById('recap409531000000325116')) {
+    window.rccallback409531000000325116 = function () {
+      if (document.getElementById('recap409531000000325116')) {
         document.getElementById('recap409531000000325116')?.setAttribute('captcha-verified', 'true');
       }
       const errorElement = document.getElementById('recapErr409531000000325116');
-      if(errorElement && errorElement.style.visibility === 'visible') {
+      if (errorElement && errorElement.style.visibility === 'visible') {
         errorElement.style.visibility = 'hidden';
       }
     };
 
-    window.reCaptchaAlert409531000000325116 = function() {
+    window.reCaptchaAlert409531000000325116 = function () {
       const recap = document.getElementById('recap409531000000325116');
-      if(recap && recap.getAttribute('captcha-verified') === 'false') {
+      if (recap && recap.getAttribute('captcha-verified') === 'false') {
         const errorElement = document.getElementById('recapErr409531000000325116');
-        if(errorElement) {
+        if (errorElement) {
           errorElement.style.visibility = 'visible';
         }
         return false;
@@ -52,7 +52,7 @@ export default function FooterFormSection() {
       return true;
     };
 
-    window.validateEmail409531000000325116 = function() {
+    window.validateEmail409531000000325116 = function () {
       const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
       if (!form) return true;
       const emailFld = form.querySelectorAll('[ftype=email]');
@@ -77,22 +77,22 @@ export default function FooterFormSection() {
       return true;
     };
 
-    window.checkMandatory409531000000325116 = function() {
-      const mndFileds = ['Company','Last Name','Designation','Email','Mobile','Description','LEADCF5','LEADCF40'];
-      const fldLangVal = ['Company Name','Name','Role','Business Email','Mobile','Tell Us How We Can Help','Product / Services','Annual Revenue'];
+    window.checkMandatory409531000000325116 = function () {
+      const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Description', 'LEADCF5', 'LEADCF40'];
+      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Tell Us How We Can Help', 'Product / Services', 'Annual Revenue'];
       const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
       if (!form) return false;
-      
-      for(let i=0; i<mndFileds.length; i++) {
+
+      for (let i = 0; i < mndFileds.length; i++) {
         const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
-        if(fieldObj) {
+        if (fieldObj) {
           if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length === 0) {
             alert(fldLangVal[i] + ' cannot be empty.');
             fieldObj.focus();
             return false;
-          } else if(fieldObj.nodeName === 'SELECT') {
+          } else if (fieldObj.nodeName === 'SELECT') {
             const selectField = fieldObj as HTMLSelectElement;
-            if(selectField.options[selectField.selectedIndex].value === '-None-') {
+            if (selectField.options[selectField.selectedIndex].value === '-None-') {
               alert(fldLangVal[i] + ' cannot be none.');
               fieldObj.focus();
               return false;
@@ -101,61 +101,61 @@ export default function FooterFormSection() {
         }
       }
       window.trackVisitor409531000000325116();
-      if(!window.validateEmail409531000000325116()) return false;
-      if(!window.reCaptchaAlert409531000000325116()) return false;
-      
+      if (!window.validateEmail409531000000325116()) return false;
+      if (!window.reCaptchaAlert409531000000325116()) return false;
+
       window.sendEmail();
       const submitButton = document.querySelector('.crmWebToEntityForm .formsubmit') as HTMLInputElement;
-      if(submitButton) {
+      if (submitButton) {
         submitButton.setAttribute('disabled', 'true');
       }
       return true;
     };
 
-    window.validateNumber = function(e: KeyboardEvent) {
+    window.validateNumber = function (e: KeyboardEvent) {
       const pattern = /^[0-9]$/;
       return pattern.test(e.key);
     };
 
-    window.sendEmail = function() {
+    window.sendEmail = function () {
       const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
       if (!form) return;
       const formData = new FormData(form);
-      
+
       fetch('https://agsuitetech.com/pricing/form_process.php', {
         method: 'POST',
         body: formData
       })
-      .then(response => response.json())
-      .then(data => {
-        if (data.status === 'success') {
-          console.log('Email sent successfully.');
-        } else {
-          console.error('Failed to send email:', data.error);
-        }
-      })
-      .catch(error => {
-        console.error('Error while sending email:', error);
-      });
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === 'success') {
+            console.log('Email sent successfully.');
+          } else {
+            console.error('Failed to send email:', data.error);
+          }
+        })
+        .catch(error => {
+          console.error('Error while sending email:', error);
+        });
     };
 
-    window.trackVisitor409531000000325116 = function() {
+    window.trackVisitor409531000000325116 = function () {
       try {
         const zoho = (window as { $zoho?: { salesiq: { visitor: { uniqueid: () => string; email: (email: string) => void } } } }).$zoho;
-        if(zoho) {
+        if (zoho) {
           const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
           if (form) {
             const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
-            if(LDTuvidObj) {
+            if (LDTuvidObj) {
               LDTuvidObj.value = zoho.salesiq.visitor.uniqueid();
             }
             const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
-            if(emailObj) {
+            if (emailObj) {
               zoho.salesiq.visitor.email(emailObj.value);
             }
           }
         }
-      } catch(e) {
+      } catch (e) {
         console.log('Zoho tracking error:', e);
       }
     };
@@ -168,8 +168,9 @@ export default function FooterFormSection() {
         src="https://www.google.com/recaptcha/api.js"
         strategy="lazyOnload"
       />
-      
-      <Script
+
+      {/* COMMENTED FOR NOW - Zoho SalesIQ Chatbot */}
+      {/* <Script
         id="zoho-salesiq-footer"
         strategy="lazyOnload"
         dangerouslySetInnerHTML={{
@@ -190,8 +191,8 @@ export default function FooterFormSection() {
             t.parentNode.insertBefore(s, t);
           `
         }}
-      />
-      
+      /> */}
+
       <Script
         id="wf_anal_footer"
         src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=2ad153905083cc4b4058fa27687055376e156f7ad6e9fc52d9895986981cb6172bddf27a9051f3745fcf3d24b09fb012gidcf736cc89d868a9fa6150881def27ffe802f94e956bff6513de684e48d8b35c1gid0596f309f4dca6fd5d8b7704fd1d37b52bdbc54dd97c1957c613be2d12dd943agid1b08a4436f8cfc10239cf5e2aa7cda0a23e1cf9ad370739723a113c3f7318e99&tw=d44cee7b494604b05833cee35187d02e3ccf139f17b3bef4604b84b3f02bded7"
@@ -200,76 +201,76 @@ export default function FooterFormSection() {
 
 
 
-<section className="relative py-24 lg:py-32 overflow-hidden bg-gray-900">
-  {/* Sophisticated Background with Overlay */}
-  <div 
-    className="absolute inset-0 bg-cover bg-fixed bg-center transition-transform duration-[10s] hover:scale-110"
-    style={{ 
-      backgroundImage: "url('/images/Background/footerformbg.webp')",
-      filter: "brightness(0.3) saturate(1.2)"
-    }}
-  />
-  <div className="absolute inset-0 bg-linear-to-l from-gray-750/10 via-gray-700/10 to-transparent" />
+      <section className="relative py-24 lg:py-32 overflow-hidden bg-gray-900">
+        {/* Sophisticated Background with Overlay */}
+        <div
+          className="absolute inset-0 bg-cover bg-fixed bg-center transition-transform duration-[10s] hover:scale-110"
+          style={{
+            backgroundImage: "url('/images/Background/footerformbg.webp')",
+            filter: "brightness(0.3) saturate(1.2)"
+          }}
+        />
+        <div className="absolute inset-0 bg-linear-to-l from-gray-750/10 via-gray-700/10 to-transparent" />
 
-  <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-      
-      {/* Left Side: Impactful Heading */}
-      <motion.div 
-        initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex flex-col space-y-8"
-      >
-        <div>
-          <span className="inline-block text-xs font-bold tracking-[0.2em] text-blue-400 uppercase py-2 px-4 bg-blue-500/10 border border-blue-500/20 rounded-lg mb-6">
-            Partner with AGSuite
-          </span>
-          
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-[1.05] tracking-tight">
-            Elevate Your <span className="text-blue-500">Business</span> Future.
-          </h2>
-          
-          <p className="mt-8 text-xl text-gray-400 leading-relaxed max-w-xl font-light">
-            Empower your enterprise with seamless automation and cloud solutions tailored for growth.
-          </p>
-        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-        <div className="flex items-center gap-6 pt-6">
-          <div className="p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 flex items-center gap-4">
-            <div className="flex -space-x-2">
-              <div className="w-10 h-10 rounded-full border-2 border-gray-900 overflow-hidden relative">
-                <Image src="/images/people/laptopmen.webp" alt="Client 1" fill className="object-cover" sizes="40px" />
-              </div>
-              <div className="w-10 h-10 rounded-full border-2 border-gray-900 overflow-hidden relative">
-                <Image src="/images/people/laptopgirl.webp" alt="Client 2" fill className="object-cover" sizes="40px" />
-              </div>
-              <div className="w-10 h-10 rounded-full border-2 border-gray-900 overflow-hidden relative">
-                <Image src="/images/people/laptopmen2.webp" alt="Client 3" fill className="object-cover" sizes="40px" />
-              </div>
-            </div>
-            <div>
-              <p className="text-white font-bold text-lg leading-tight">500+</p>
-              <p className="text-gray-500 text-xs">Trusted Clients</p>
-            </div>
-          </div>
-        </div>
-      </motion.div>
+            {/* Left Side: Impactful Heading */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex flex-col space-y-8"
+            >
+              <div>
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-[1.05] tracking-tight">
+                  Elevate Your <span className="text-blue-500">Business</span> Future.
+                </h2>
 
-      {/* Right Side: Professional White Theme Form */}
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        className="relative group lg:w-full mx-auto"
-      >
-        <div className="absolute -inset-1 bg-linear-to-r from-blue-500/90 to-indigo-500/90 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition duration-1000"></div>
-        <div className="relative bg-white p-8 lg:p-10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100">
-          <div
-            dangerouslySetInnerHTML={{
-              __html: `
+                <p className="mt-8 text-xl text-gray-400 leading-relaxed max-w-xl font-light mb-8">
+                  Empower your enterprise with seamless automation and cloud solutions tailored for growth.
+                </p>
+
+                <div className="mb-8">
+                  <img src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" alt="NetSuite Partner" className="h-16 w-auto brightness-0 invert" />
+                </div>
+              </div>
+
+              <div className="flex items-center gap-6 pt-6">
+                <div className="p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 flex items-center gap-4">
+                  <div className="flex -space-x-2">
+                    <div className="w-10 h-10 rounded-full border-2 border-gray-900 overflow-hidden relative">
+                      <Image src="/images/people/laptopmen.webp" alt="Client 1" fill className="object-cover" sizes="40px" />
+                    </div>
+                    <div className="w-10 h-10 rounded-full border-2 border-gray-900 overflow-hidden relative">
+                      <Image src="/images/people/laptopgirl.webp" alt="Client 2" fill className="object-cover" sizes="40px" />
+                    </div>
+                    <div className="w-10 h-10 rounded-full border-2 border-gray-900 overflow-hidden relative">
+                      <Image src="/images/people/laptopmen2.webp" alt="Client 3" fill className="object-cover" sizes="40px" />
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-lg leading-tight">500+</p>
+                    <p className="text-gray-500 text-xs">Trusted Clients</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Side: Professional White Theme Form */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="relative group lg:w-full mx-auto"
+            >
+              <div className="absolute -inset-1 bg-linear-to-r from-blue-500/90 to-indigo-500/90 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition duration-1000"></div>
+              <div className="relative bg-white p-8 lg:p-10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: `
 <div id="crmWebToEntityForm" class="zcwf_lblLeft crmWebToEntityForm">
 <form id="webform409531000000325116" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000000325116" method="POST" onSubmit="javascript:document.charset='UTF-8'; return checkMandatory409531000000325116()" accept-charset="UTF-8">
  <input type="text" class="dsp" name="xnQsjsdp" value="cae9ae065232fde2e40c34423041df835a4066ff2103c546e198d684b35e9861">
@@ -410,16 +411,16 @@ select option {
 </form>
 </div>
               `,
-            }}
-          />
-        </div>
-      </motion.div>
+                  }}
+                />
+              </div>
+            </motion.div>
 
-    </div>
+          </div>
 
-    
-  </div>
-</section>
+
+        </div >
+      </section >
     </>
   );
 }

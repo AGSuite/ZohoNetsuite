@@ -22,30 +22,30 @@ declare global {
 export default function NetSuiteContactFormModern() {
   useEffect(() => {
     // Define all form validation functions globally
-    window.addAriaSelected409531000000325116 = function() {
+    window.addAriaSelected409531000000325116 = function () {
       const optionElem = (event as Event & { target: HTMLSelectElement }).target;
       const previousSelectedOption = optionElem.querySelector('[aria-selected=true]');
-      if(previousSelectedOption) {
+      if (previousSelectedOption) {
         previousSelectedOption.removeAttribute('aria-selected');
       }
       optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
     };
 
-    window.rccallback409531000000325116 = function() {
-      if(document.getElementById('recap409531000000325116')) {
+    window.rccallback409531000000325116 = function () {
+      if (document.getElementById('recap409531000000325116')) {
         document.getElementById('recap409531000000325116')?.setAttribute('captcha-verified', 'true');
       }
       const errorElement = document.getElementById('recapErr409531000000325116');
-      if(errorElement && errorElement.style.visibility === 'visible') {
+      if (errorElement && errorElement.style.visibility === 'visible') {
         errorElement.style.visibility = 'hidden';
       }
     };
 
-    window.reCaptchaAlert409531000000325116 = function() {
+    window.reCaptchaAlert409531000000325116 = function () {
       const recap = document.getElementById('recap409531000000325116');
-      if(recap && recap.getAttribute('captcha-verified') === 'false') {
+      if (recap && recap.getAttribute('captcha-verified') === 'false') {
         const errorElement = document.getElementById('recapErr409531000000325116');
-        if(errorElement) {
+        if (errorElement) {
           errorElement.style.visibility = 'visible';
         }
         return false;
@@ -53,7 +53,7 @@ export default function NetSuiteContactFormModern() {
       return true;
     };
 
-    window.validateEmail409531000000325116 = function() {
+    window.validateEmail409531000000325116 = function () {
       const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
       if (!form) return true;
       const emailFld = form.querySelectorAll('[ftype=email]');
@@ -78,22 +78,22 @@ export default function NetSuiteContactFormModern() {
       return true;
     };
 
-    window.checkMandatory409531000000325116 = function() {
-      const mndFileds = ['Company','Last Name','Designation','Email','Mobile','Description','LEADCF5','LEADCF40'];
-      const fldLangVal = ['Company Name','Name','Role','Business Email','Mobile','Tell Us How We Can Help','Product / Services','Annual Revenue'];
+    window.checkMandatory409531000000325116 = function () {
+      const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Description', 'LEADCF5', 'LEADCF40'];
+      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Tell Us How We Can Help', 'Product / Services', 'Annual Revenue'];
       const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
       if (!form) return false;
-      
-      for(let i=0; i<mndFileds.length; i++) {
+
+      for (let i = 0; i < mndFileds.length; i++) {
         const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
-        if(fieldObj) {
+        if (fieldObj) {
           if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length === 0) {
             alert(fldLangVal[i] + ' cannot be empty.');
             fieldObj.focus();
             return false;
-          } else if(fieldObj.nodeName === 'SELECT') {
+          } else if (fieldObj.nodeName === 'SELECT') {
             const selectField = fieldObj as HTMLSelectElement;
-            if(selectField.options[selectField.selectedIndex].value === '-None-') {
+            if (selectField.options[selectField.selectedIndex].value === '-None-') {
               alert(fldLangVal[i] + ' cannot be none.');
               fieldObj.focus();
               return false;
@@ -102,61 +102,61 @@ export default function NetSuiteContactFormModern() {
         }
       }
       window.trackVisitor409531000000325116();
-      if(!window.validateEmail409531000000325116()) return false;
-      if(!window.reCaptchaAlert409531000000325116()) return false;
-      
+      if (!window.validateEmail409531000000325116()) return false;
+      if (!window.reCaptchaAlert409531000000325116()) return false;
+
       window.sendEmail();
       const submitButton = document.querySelector('.crmWebToEntityForm .formsubmit') as HTMLInputElement;
-      if(submitButton) {
+      if (submitButton) {
         submitButton.setAttribute('disabled', 'true');
       }
       return true;
     };
 
-    window.validateNumber = function(e: KeyboardEvent) {
+    window.validateNumber = function (e: KeyboardEvent) {
       const pattern = /^[0-9]$/;
       return pattern.test(e.key);
     };
 
-    window.sendEmail = function() {
+    window.sendEmail = function () {
       const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
       if (!form) return;
       const formData = new FormData(form);
-      
+
       fetch('https://agsuitetech.com/pricing/form_process.php', {
         method: 'POST',
         body: formData
       })
-      .then(response => response.json())
-      .then(data => {
-        if (data.status === 'success') {
-          console.log('Email sent successfully.');
-        } else {
-          console.error('Failed to send email:', data.error);
-        }
-      })
-      .catch(error => {
-        console.error('Error while sending email:', error);
-      });
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === 'success') {
+            console.log('Email sent successfully.');
+          } else {
+            console.error('Failed to send email:', data.error);
+          }
+        })
+        .catch(error => {
+          console.error('Error while sending email:', error);
+        });
     };
 
-    window.trackVisitor409531000000325116 = function() {
+    window.trackVisitor409531000000325116 = function () {
       try {
         const zoho = (window as { $zoho?: { salesiq: { visitor: { uniqueid: () => string; email: (email: string) => void } } } }).$zoho;
-        if(zoho) {
+        if (zoho) {
           const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
           if (form) {
             const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
-            if(LDTuvidObj) {
+            if (LDTuvidObj) {
               LDTuvidObj.value = zoho.salesiq.visitor.uniqueid();
             }
             const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
-            if(emailObj) {
+            if (emailObj) {
               zoho.salesiq.visitor.email(emailObj.value);
             }
           }
         }
-      } catch(e) {
+      } catch (e) {
         console.log('Zoho tracking error:', e);
       }
     };
@@ -169,8 +169,9 @@ export default function NetSuiteContactFormModern() {
         src="https://www.google.com/recaptcha/api.js"
         strategy="lazyOnload"
       />
-      
-      <Script
+
+      {/* COMMENTED FOR NOW - Zoho SalesIQ Chatbot */}
+      {/* <Script
         id="zoho-salesiq-footer"
         strategy="lazyOnload"
         dangerouslySetInnerHTML={{
@@ -191,8 +192,8 @@ export default function NetSuiteContactFormModern() {
             t.parentNode.insertBefore(s, t);
           `
         }}
-      />
-      
+      /> */}
+
       <Script
         id="wf_anal_footer"
         src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=2ad153905083cc4b4058fa27687055376e156f7ad6e9fc52d9895986981cb6172bddf27a9051f3745fcf3d24b09fb012gidcf736cc89d868a9fa6150881def27ffe802f94e956bff6513de684e48d8b35c1gid0596f309f4dca6fd5d8b7704fd1d37b52bdbc54dd97c1957c613be2d12dd943agid1b08a4436f8cfc10239cf5e2aa7cda0a23e1cf9ad370739723a113c3f7318e99&tw=d44cee7b494604b05833cee35187d02e3ccf139f17b3bef4604b84b3f02bded7"
@@ -208,7 +209,7 @@ export default function NetSuiteContactFormModern() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            
+
             {/* Left Side: Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -221,11 +222,11 @@ export default function NetSuiteContactFormModern() {
                 <span className="inline-block px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-full text-xs font-bold text-blue-400 uppercase tracking-wider mb-6">
                   Contact
                 </span>
-                
+
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
                   Get in touch
                 </h2>
-                
+
                 <p className="text-lg text-gray-400 leading-relaxed max-w-lg">
                   Have questions or ready to transform your business with AI automation? Reach out anytime and let's connect.
                 </p>

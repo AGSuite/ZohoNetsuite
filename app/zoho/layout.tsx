@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ZohoNavbar from "./components/ZohoNavbar";
-import { ZohoFooter } from "./components/ZohoFooter";
+import ZohoFooter from "../components/footers/ZohoFooter";
 
 export const metadata: Metadata = {
   title: "Zoho Solutions - Business Software Suite",

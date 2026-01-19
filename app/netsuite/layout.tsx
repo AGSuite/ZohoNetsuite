@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import NavbarNetSuite from "./components/NSNavbar";
-import { NSFooter } from "./components/NSFooter";
+import NetSuiteFooter from "../components/footers/NetSuiteFooter";
 
 export const metadata: Metadata = {
   title: "NetSuite Solutions - Enterprise ERP & CRM",
@@ -22,7 +22,7 @@ export default function NetSuiteLayout({
       <link rel="dns-prefetch" href="https://salesiq.zoho.in" />
       <NavbarNetSuite />
       <main>{children}</main>
-      <NSFooter />
+      <NetSuiteFooter />
     </div>
   );
 }

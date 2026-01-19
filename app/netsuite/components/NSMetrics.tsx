@@ -110,8 +110,8 @@ export default function NSMetrics() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="flex flex-col justify-center"
           >
-           
-            <h2 className="text-3xl sm:text-3xl lg:text-4xl font-medium text-gray-900 leading-tight mb-5">
+
+            <h2 className="text-3xl sm:text-3xl lg:text-5xl font-medium text-gray-900 leading-tight mb-5">
               We Simplify Your <span className="text-blue-900">Business</span>
             </h2>
 

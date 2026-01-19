@@ -20,30 +20,30 @@ declare global {
 export default function FooterFormSectionDark() {
   useEffect(() => {
     // Define all form validation functions globally (same as original)
-    window.addAriaSelected409531000000325116 = function() {
+    window.addAriaSelected409531000000325116 = function () {
       const optionElem = (event as Event & { target: HTMLSelectElement }).target;
       const previousSelectedOption = optionElem.querySelector('[aria-selected=true]');
-      if(previousSelectedOption) {
+      if (previousSelectedOption) {
         previousSelectedOption.removeAttribute('aria-selected');
       }
       optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
     };
 
-    window.rccallback409531000000325116 = function() {
-      if(document.getElementById('recap409531000000325116')) {
+    window.rccallback409531000000325116 = function () {
+      if (document.getElementById('recap409531000000325116')) {
         document.getElementById('recap409531000000325116')?.setAttribute('captcha-verified', 'true');
       }
       const errorElement = document.getElementById('recapErr409531000000325116');
-      if(errorElement && errorElement.style.visibility === 'visible') {
+      if (errorElement && errorElement.style.visibility === 'visible') {
         errorElement.style.visibility = 'hidden';
       }
     };
 
-    window.reCaptchaAlert409531000000325116 = function() {
+    window.reCaptchaAlert409531000000325116 = function () {
       const recap = document.getElementById('recap409531000000325116');
-      if(recap && recap.getAttribute('captcha-verified') === 'false') {
+      if (recap && recap.getAttribute('captcha-verified') === 'false') {
         const errorElement = document.getElementById('recapErr409531000000325116');
-        if(errorElement) {
+        if (errorElement) {
           errorElement.style.visibility = 'visible';
         }
         return false;
@@ -51,7 +51,7 @@ export default function FooterFormSectionDark() {
       return true;
     };
 
-    window.validateEmail409531000000325116 = function() {
+    window.validateEmail409531000000325116 = function () {
       const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
       if (!form) return true;
       const emailFld = form.querySelectorAll('[ftype=email]');
@@ -76,22 +76,22 @@ export default function FooterFormSectionDark() {
       return true;
     };
 
-    window.checkMandatory409531000000325116 = function() {
-      const mndFileds = ['Company','Last Name','Designation','Email','Mobile','Description','LEADCF5','LEADCF40'];
-      const fldLangVal = ['Company Name','Name','Role','Business Email','Mobile','Tell Us How We Can Help','Product / Services','Annual Revenue'];
+    window.checkMandatory409531000000325116 = function () {
+      const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Description', 'LEADCF5', 'LEADCF40'];
+      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Tell Us How We Can Help', 'Product / Services', 'Annual Revenue'];
       const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
       if (!form) return false;
-      
-      for(let i=0; i<mndFileds.length; i++) {
+
+      for (let i = 0; i < mndFileds.length; i++) {
         const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
-        if(fieldObj) {
+        if (fieldObj) {
           if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length === 0) {
             alert(fldLangVal[i] + ' cannot be empty.');
             fieldObj.focus();
             return false;
-          } else if(fieldObj.nodeName === 'SELECT') {
+          } else if (fieldObj.nodeName === 'SELECT') {
             const selectField = fieldObj as HTMLSelectElement;
-            if(selectField.options[selectField.selectedIndex].value === '-None-') {
+            if (selectField.options[selectField.selectedIndex].value === '-None-') {
               alert(fldLangVal[i] + ' cannot be none.');
               fieldObj.focus();
               return false;
@@ -102,7 +102,7 @@ export default function FooterFormSectionDark() {
       return true;
     };
 
-    window.validateNumber = function(e: KeyboardEvent) {
+    window.validateNumber = function (e: KeyboardEvent) {
       const key = e.key;
       if (!/[0-9]/.test(key) && key !== 'Backspace' && key !== 'Tab' && key !== 'Delete' && key !== 'ArrowLeft' && key !== 'ArrowRight') {
         e.preventDefault();
@@ -111,7 +111,7 @@ export default function FooterFormSectionDark() {
       return true;
     };
 
-    window.trackVisitor409531000000325116 = function() {
+    window.trackVisitor409531000000325116 = function () {
       // Tracking implementation
     };
   }, []);
@@ -139,7 +139,7 @@ export default function FooterFormSectionDark() {
           <div className="absolute inset-0 bg-white/5 rounded-[40px] pointer-events-none"></div>
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            
+
             {/* Left Side - Info */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -167,7 +167,7 @@ export default function FooterFormSectionDark() {
               <div className="space-y-6 relative">
                 {/* Vertical Line */}
                 <div className="absolute left-6 top-8 bottom-8 w-0.5 bg-linear-to-b from-cyan-500 via-blue-500 to-purple-500"></div>
-                
+
                 <div className="flex items-start gap-5 relative">
                   <div className="w-12 h-12 rounded-full bg-cyan-500 flex items-center justify-center text-white font-black text-lg z-10 shadow-[0_0_20px_rgba(6,182,212,0.5)]">1</div>
                   <div className="pt-2">
@@ -175,7 +175,7 @@ export default function FooterFormSectionDark() {
                     <p className="text-gray-500 text-sm">Understand your business needs</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-5 relative">
                   <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-black text-lg z-10 shadow-[0_0_20px_rgba(59,130,246,0.5)]">2</div>
                   <div className="pt-2">
@@ -183,7 +183,7 @@ export default function FooterFormSectionDark() {
                     <p className="text-gray-500 text-sm">Tailored implementation plan</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-5 relative">
                   <div className="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white font-black text-lg z-10 shadow-[0_0_20px_rgba(168,85,247,0.5)]">3</div>
                   <div className="pt-2">
@@ -326,8 +326,8 @@ export default function FooterFormSectionDark() {
         </motion.div>
       </div>
 
-      {/* Zoho tracking script */}
-      <Script
+      {/* COMMENTED FOR NOW - Zoho SalesIQ Chatbot */}
+      {/* <Script
         id="zoho-salesiq"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -337,7 +337,7 @@ export default function FooterFormSectionDark() {
             s.src="https://salesiq.zohopublic.in/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);
           `,
         }}
-      />
+      /> */}
     </section>
   );
 }

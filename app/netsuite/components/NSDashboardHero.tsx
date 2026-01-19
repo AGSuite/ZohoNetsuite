@@ -47,7 +47,7 @@ const NSDashboardHero: React.FC = () => {
         <header className="max-w-3xl text-center">
           <h1
             id="agsuite-cloud-solutions-heading"
-            className="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl md:text-5xl"
+            className="text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl md:text-5xl"
           >
             Deliver smarter cloud solutions with{" "}
             <span className="bg-linear-to-r from-red-600 via-rose-500 to-purple-600 bg-clip-text text-transparent">

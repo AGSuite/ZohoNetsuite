@@ -34,30 +34,30 @@ const NetsuiteCTA = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
         <div className="max-w-xl">
           {/* Heading */}
-          <motion.h2 
+          <motion.h2
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white leading-tight drop-shadow-lg"
+            className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white leading-tight drop-shadow-lg"
           >
             Calculate Your NetSuite ROI Instantly
           </motion.h2>
 
           {/* Subheading */}
-          <motion.p 
+          <motion.p
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             className="mt-4 text-lg text-gray-200 leading-relaxed"
           >
-            Use our intelligent NetSuite Calculator to estimate pricing, ROI,  
+            Use our intelligent NetSuite Calculator to estimate pricing, ROI,
             and implementation timelines tailored to your business.
           </motion.p>
 
           {/* CTA Button */}
-          <motion.div 
+          <motion.div
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}

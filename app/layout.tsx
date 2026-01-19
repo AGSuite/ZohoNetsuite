@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inter, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
+import ScrollToTopWrapper from "./components/shared/ScrollToTopWrapper";
+
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,7 +34,9 @@ export default function RootLayout({
       >
         {/* <Navbar /> */}
         <main>{children}</main>
-        {/* <Footer /> */}
+
+        {/* Global Scroll to Top Button */}
+        <ScrollToTopWrapper />
       </body>
     </html>
   );

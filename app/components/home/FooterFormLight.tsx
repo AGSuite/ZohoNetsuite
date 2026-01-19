@@ -13,7 +13,7 @@ export default function FooterFormLight() {
 
       <div className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[850px]">
-          
+
           {/* Left Side - Full Image with Dark Overlay */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -24,38 +24,29 @@ export default function FooterFormLight() {
           >
             {/* Full Background Image */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="/images/people/threeteam.webp" 
-              alt="Team Collaboration" 
+            <img
+              src="/images/Background/teambg.webp"
+              alt="Team Collaboration"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            
-            {/* Black Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60"></div>
-            
+
+            {/* Black Overlay - Stronger as requested */}
+            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+
             {/* Decorative gradient accent */}
             <div className="absolute inset-0 bg-gradient-to-t from-blue-900/30 via-transparent to-transparent"></div>
-            
+
             {/* Content on top of overlay */}
             <div className="relative z-10 flex flex-col justify-center h-full p-8 lg:p-16">
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-md mb-8 w-fit"
-              >
-                <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-                <span className="text-white/90 text-sm font-semibold tracking-wider uppercase">Get In Touch</span>
-              </motion.div>
+
 
               {/* Main Heading */}
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
                 className="text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight"
               >
                 Let's Start{" "}
@@ -69,11 +60,22 @@ export default function FooterFormLight() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                transition={{ duration: 0.6, delay: 0.35 }}
                 className="text-white/80 text-xl lg:text-2xl font-medium leading-relaxed mb-10 max-w-lg"
               >
                 Transform your business with our award-winning expertise. We turn complex challenges into automated success stories.
               </motion.p>
+
+              {/* NetSuite Partner Logo */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.45 }}
+                className="mb-10"
+              >
+                <img src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" alt="NetSuite Partner" className="h-16 w-auto brightness-0 invert" />
+              </motion.div>
 
               {/* Stats Row */}
               <motion.div
@@ -149,11 +151,11 @@ export default function FooterFormLight() {
                 <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
                   Full Name <span className="text-blue-500">*</span>
                 </label>
-                <input 
-                  type="text" 
-                  name="Last Name" 
-                  className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]" 
-                  placeholder="John Doe" 
+                <input
+                  type="text"
+                  name="Last Name"
+                  className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
+                  placeholder="John Doe"
                 />
               </div>
 
@@ -162,11 +164,11 @@ export default function FooterFormLight() {
                 <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
                   Business Email <span className="text-blue-500">*</span>
                 </label>
-                <input 
-                  type="email" 
-                  name="Email" 
-                  className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]" 
-                  placeholder="john@company.com" 
+                <input
+                  type="email"
+                  name="Email"
+                  className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
+                  placeholder="john@company.com"
                 />
               </div>
 
@@ -176,22 +178,22 @@ export default function FooterFormLight() {
                   <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
                     Job Title <span className="text-blue-500">*</span>
                   </label>
-                  <input 
-                    type="text" 
-                    name="Designation" 
-                    className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]" 
-                    placeholder="CTO" 
+                  <input
+                    type="text"
+                    name="Designation"
+                    className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
+                    placeholder="CTO"
                   />
                 </div>
                 <div>
                   <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
                     Mobile Number <span className="text-blue-500">*</span>
                   </label>
-                  <input 
-                    type="tel" 
-                    name="Mobile" 
-                    className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]" 
-                    placeholder="+1 (555) 000-0000" 
+                  <input
+                    type="tel"
+                    name="Mobile"
+                    className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
+                    placeholder="+1 (555) 000-0000"
                   />
                 </div>
               </div>
@@ -201,11 +203,11 @@ export default function FooterFormLight() {
                 <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
                   Company Name <span className="text-blue-500">*</span>
                 </label>
-                <input 
-                  type="text" 
-                  name="Company" 
-                  className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]" 
-                  placeholder="Company Inc." 
+                <input
+                  type="text"
+                  name="Company"
+                  className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
+                  placeholder="Company Inc."
                 />
               </div>
 
@@ -216,8 +218,8 @@ export default function FooterFormLight() {
                     Service Interest <span className="text-blue-500">*</span>
                   </label>
                   <div className="relative">
-                    <select 
-                      name="LEADCF5" 
+                    <select
+                      name="LEADCF5"
                       className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none appearance-none cursor-pointer shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                     >
                       <option value="">Select Service</option>
@@ -236,8 +238,8 @@ export default function FooterFormLight() {
                     Annual Revenue <span className="text-blue-500">*</span>
                   </label>
                   <div className="relative">
-                    <select 
-                      name="LEADCF40" 
+                    <select
+                      name="LEADCF40"
                       className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none appearance-none cursor-pointer shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                     >
                       <option value="">Select Revenue</option>
@@ -259,13 +261,13 @@ export default function FooterFormLight() {
               {/* Requirements */}
               <div>
                 <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
-                  Tell us about your requirements
+                  More Details / Questions <span className="text-blue-500">*</span>
                 </label>
-                <textarea 
-                  name="Description" 
-                  rows={3} 
-                  className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all resize-none outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]" 
-                  placeholder="Share your project details..."
+                <textarea
+                  name="Description"
+                  rows={3}
+                  className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all resize-none outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
+                  placeholder="Type your questions or project details here..."
                 ></textarea>
               </div>
 
@@ -284,8 +286,8 @@ export default function FooterFormLight() {
                   </span>
                 </label>
 
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   className="shrink-0 px-8 py-4 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-600 hover:from-blue-700 hover:via-blue-800 hover:to-indigo-700 text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/30 hover:scale-[1.02]"
                 >
                   Get Free Consultation

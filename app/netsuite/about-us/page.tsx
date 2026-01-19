@@ -189,10 +189,10 @@ function AboutStatsSection() {
             AGSuite Technologies is a trusted Oracle NetSuite Solution Provider and Advanced Zoho
             Partner, helping businesses streamline operations with powerful ERP and CRM solutions.
             We specialize in NetSuite implementation, customization, and integration, enabling
-            companies to boost efficiency and growth and achieve seamless digital transformation. 
-            As an experienced partner, we also deliver tailored Zoho CRM and business automation 
-            services designed for scalability and success. At AGSuite Tech, we empower 
-            organizations to drive growth and achieve lasting results through innovative 
+            companies to boost efficiency and growth and achieve seamless digital transformation.
+            As an experienced partner, we also deliver tailored Zoho CRM and business automation
+            services designed for scalability and success. At AGSuite Tech, we empower
+            organizations to drive growth and achieve lasting results through innovative
             Oracle NetSuite and Zoho solutions.
           </p>
         </div>
@@ -235,7 +235,7 @@ function AboutStatsSection() {
               className="object-contain"
             />
           </div>
-         
+
         </div>
       </div>
 
@@ -671,13 +671,13 @@ export default function AboutClient() {
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-1">
-           
-            <h2 className="mb-10 bg-linear-to-l leading-relaxed from-blue-900 via-blue-950 to-blue-950 text-transparent bg-clip-text mx-auto max-w-4xl font-medium text-3xl sm:text-4xl lg:text-5xl">
-              Celebrating Excellence & Recognition
-            </h2>
+
+          <h2 className="mb-10 bg-linear-to-l leading-relaxed from-blue-900 via-blue-950 to-blue-950 text-transparent bg-clip-text mx-auto max-w-4xl font-medium text-3xl sm:text-4xl lg:text-5xl">
+            Celebrating Excellence & Recognition
+          </h2>
 
           <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20">
-        
+
 
             <div className=" flex justify-center">
               <Image
@@ -694,7 +694,7 @@ export default function AboutClient() {
         </div>
       </section>
 
-    
+
 
       <section id="testimonials" className="py-20 bg-white">
         <NSTestimonialSection />
