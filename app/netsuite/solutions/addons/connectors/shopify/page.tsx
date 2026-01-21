@@ -41,15 +41,15 @@ export default function ShopifyConnectorPage() {
 
   const benefits = [
     { title: "Real-Time Sync", description: "Sync orders, inventory, and customers between Shopify and NetSuite automatically.", image: "/images/lap/lap5.webp" },
-    { title: "Inventory Management", description: "Avoid overselling with real-time inventory updates across all channels.", image: "/images/Dashboard/barcha.webp" },
+    { title: "Inventory Management", description: "Avoid overselling with real-time inventory updates across all channels.", image: "/images/lap/lap2.webp" },
     { title: "Automated Fulfillment", description: "Push tracking numbers and fulfillment status back to Shopify instantly.", image: "/images/people/laptopgirl3.webp" },
-    { title: "Customer Insights", description: "Gain a 360-degree view of your customers and their buying habits.", image: "/images/people/group2.webp" }
+    { title: "Customer Insights", description: "Gain a 360-degree view of your customers and their buying habits.", image: "/images/people/group5.webp" }
   ];
 
   const challenges = [
-    { title: "Overselling", description: "Eliminate the risk of selling out-of-stock items with live inventory sync.", image: "/images/aboutus/integrity.webp" },
-    { title: "Manual Entry Errors", description: "Stop manually re-keying orders and minimize costly data entry mistakes.", image: "/images/people/man.webp" },
-    { title: "Delayed Shipping", description: "Accelerate order processing and get products to customers faster.", image: "/images/people/laptopmen2.webp" },
+    { title: "Overselling", description: "Eliminate the risk of selling out-of-stock items with live inventory sync.", image: "/images/people/laptopmen1.jpg" },
+    { title: "Manual Entry Errors", description: "Stop manually re-keying orders and minimize costly data entry mistakes.", image: "/images/people/laptopmen2.webp" },
+    { title: "Delayed Shipping", description: "Accelerate order processing and get products to customers faster.", image: "/images/people/laptopgirl1.webp" },
     { title: "Data Silos", description: "Connect your front-end store with your back-office ERP seamlessly.", image: "/images/lap/lap1.webp" }
   ];
 
@@ -60,6 +60,15 @@ export default function ShopifyConnectorPage() {
     { title: "Fulfillment Sync", description: "Update Shopify with tracking numbers and shipping status from NetSuite.", icon: Truck },
     { title: "Refund Management", description: "Process refunds and returns in NetSuite and update Shopify automatically.", icon: Repeat },
     { title: "Multi-Store Support", description: "Connect multiple Shopify stores to a single NetSuite account.", icon: Globe },
+  ];
+
+  const services = [
+    { title: "Connector Setup", description: "Configure the connector to match your business rules.", icon: Layers, href: "/netsuite/services/implementation" },
+    { title: "Custom Mapping", description: "Map custom fields between Shopify and NetSuite.", icon: ShoppingBag, href: "/netsuite/services/consulting" },
+    { title: "Historical Data", description: "Import past orders and customers into NetSuite.", icon: BarChart3, href: "/netsuite/services/integration" },
+    { title: "Real-Time Sync", description: "Optimize sync frequency for high-volume stores.", icon: Zap, href: "/netsuite/services/managed-services" },
+    { title: "Multi-Store Setup", description: "Connect multiple Shopify domains to one account.", icon: Globe, href: "/netsuite/services/implementation" },
+    { title: "Support & Maintenance", description: "Ongoing monitoring and troubleshooting.", icon: Users, href: "/netsuite/services/training-services" }
   ];
 
   const pricingPlans = [
@@ -83,7 +92,7 @@ export default function ShopifyConnectorPage() {
       <section className="relative min-h-screen overflow-hidden flex flex-col">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/lap/lap2.webp"
+            src="/images/lap/lap1.webp"
             alt="NetSuite Shopify Connector"
             fill
             priority
@@ -143,15 +152,9 @@ export default function ShopifyConnectorPage() {
               >
                 <Link
                   href="/netsuite/contact"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-[#95BF47] text-black font-bold rounded-2xl hover:bg-[#a9d950] transition shadow-xl shadow-[#95BF47]/20 text-center"
+                  className="px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-lg bg-[#95BF47] text-black font-bold rounded-full hover:bg-[#a9d950] transition shadow-xl shadow-[#95BF47]/20 hover:shadow-2xl hover:scale-105"
                 >
                   Connect Now
-                </Link>
-                <Link
-                  href="#features"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/20 text-center"
-                >
-                  See How It Works
                 </Link>
               </motion.div>
             </motion.div>
@@ -343,6 +346,40 @@ export default function ShopifyConnectorPage() {
         </div>
       </section>
 
+      {/* Services Section */}
+      <section className="py-16 bg-linear-to-br from-indigo-50/40 via-white to-blue-50/30 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-semibold text-gray-900 text-center">
+            Implementation Services
+          </motion.h2>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-700 text-lg max-w-2xl text-center">
+            Expert services to help you connect and optimize
+          </motion.p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
+            {services.map((service, index) => {
+              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
+                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
+              return (
+                <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}>
+                  <motion.div initial="initial" whileHover="hover" variants={{ initial: { scale: 1 }, hover: { scale: 1.04, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } } }}
+                    className={`relative group rounded-2xl p-7 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}>
+                    <motion.div variants={{ initial: { rotate: 0, y: 0 }, hover: { rotate: 360, y: -6, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } } }}
+                      className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5">
+                      <service.icon className="w-6 h-6 text-black" />
+                    </motion.div>
+                    <h2 className="text-lg font-semibold text-gray-900 leading-tight">{service.title}</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mt-2">{service.description}</p>
+                    <div className="mt-6 border-t border-gray-300 pt-3">
+                      <Link href={service.href} className="text-black hover:text-[#95BF47] text-sm font-medium transition-all">Learn More →</Link>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-gradient-to-br from-gray-50 via-[#95BF47]/10 to-blue-50/20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
@@ -415,8 +452,8 @@ export default function ShopifyConnectorPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className={`group rounded-2xl border transition-all duration-300 ${openFAQ === index
-                    ? 'bg-white border-[#95BF47]/30 shadow-2xl shadow-[#95BF47]/10 scale-[1.02] z-10'
-                    : 'bg-white/80 border-white/50 shadow-sm hover:shadow-xl hover:shadow-[#95BF47]/5 hover:border-[#95BF47]/20 hover:-translate-y-1 hover:bg-white'
+                  ? 'bg-white border-[#95BF47]/30 shadow-2xl shadow-[#95BF47]/10 scale-[1.02] z-10'
+                  : 'bg-white/80 border-white/50 shadow-sm hover:shadow-xl hover:shadow-[#95BF47]/5 hover:border-[#95BF47]/20 hover:-translate-y-1 hover:bg-white'
                   }`}
               >
                 <button
@@ -428,8 +465,8 @@ export default function ShopifyConnectorPage() {
                     {faq.question}
                   </span>
                   <div className={`p-2 rounded-full transition-all duration-300 flex-shrink-0 ml-4 ${openFAQ === index
-                      ? 'bg-gradient-to-r from-[#95BF47] to-[#88ae40] text-white rotate-180 shadow-lg shadow-[#95BF47]/30'
-                      : 'bg-gray-100 text-gray-500 group-hover:bg-[#95BF47]/20 group-hover:text-[#95BF47]'
+                    ? 'bg-gradient-to-r from-[#95BF47] to-[#88ae40] text-white rotate-180 shadow-lg shadow-[#95BF47]/30'
+                    : 'bg-gray-100 text-gray-500 group-hover:bg-[#95BF47]/20 group-hover:text-[#95BF47]'
                     }`}>
                     <ChevronDown className="w-5 h-5" />
                   </div>
@@ -461,7 +498,7 @@ export default function ShopifyConnectorPage() {
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative rounded-[3rem] overflow-hidden border border-gray-200">
-            <Image src="/images/aboutus/CTA3.webp" alt="Get Connected" fill className="object-cover" />
+            <Image src="/images/lap/lap4.webp" alt="Get Connected" fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
             <div className="relative z-10 p-12 lg:p-24">
               <div className="max-w-2xl">

@@ -49,26 +49,26 @@ export default function NetSuiteERPPage() {
   ];
 
   const services = [
-    { title: "Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
-    { title: "Integration Services", description: "Connect your apps and workflows seamlessly with API-led integrations.", icon: Share2, href: "/netsuite/services/integration" },
-    { title: "SuiteCloud Development", description: "Build scalable business apps with NetSuite's platform.", icon: Code, href: "/netsuite/services/suitecloud" },
-    { title: "Managed Services", description: "End-to-end support and optimization of your NetSuite environment.", icon: ShieldCheck, href: "/netsuite/services/managed-services" },
-    { title: "Consulting & Advisory", description: "Strategic guidance to align NetSuite with your business goals.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
-    { title: "Training Services", description: "Comprehensive training programs to maximize system utilization.", icon: Users, href: "/netsuite/services/training-services" },
+    { title: "NetSuite Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
+    { title: "NetSuite Integration", description: "Connect your apps and workflows seamlessly with API-led integrations.", icon: Share2, href: "/netsuite/services/integration" },
+    { title: "NetSuite Customization", description: "Tailor NetSuite to your unique business needs with SuiteScript and SuiteCloud.", icon: Code, href: "/netsuite/services/suitecloud" },
+    { title: "NetSuite Managed Support", description: "End-to-end support and optimization of your NetSuite environment.", icon: ShieldCheck, href: "/netsuite/services/managed-services" },
+    { title: "NetSuite Training", description: "Comprehensive training programs to maximize system utilization.", icon: Users, href: "/netsuite/services/training-services" },
+    { title: "NetSuite Consulting", description: "Strategic guidance to align NetSuite with your business goals.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
   ];
 
   const benefits = [
     { title: "Unified Platform", description: "Consolidate all business processes on a single cloud platform.", image: "/images/lap/lap1.webp" },
-    { title: "Real-Time Visibility", description: "Access critical business metrics with real-time dashboards.", image: "/images/aboutus/mission1.webp" },
-    { title: "Scalable Architecture", description: "Grow without limitations with cloud-native scaling.", image: "/images/aboutus/vision.webp" },
-    { title: "Cost Efficiency", description: "Reduce operational costs with automated workflows and eliminated redundancies.", image: "/images/aboutus/niche1.webp" }
+    { title: "Real-Time Visibility", description: "Access critical business metrics with real-time dashboards.", image: "/images/people/laptopgirl.webp" },
+    { title: "Scalable Architecture", description: "Grow without limitations with cloud-native scaling.", image: "/images/lap/lap3.webp" },
+    { title: "Cost Efficiency", description: "Reduce operational costs with automated workflows and eliminated redundancies.", image: "/images/people/laptopmen2.webp" }
   ];
 
   const challenges = [
     { title: "Disconnected Systems", description: "Multiple legacy systems create data silos and inconsistencies.", image: "/images/lap/lap3.webp" },
     { title: "Manual Processes", description: "Time-consuming workflows drain resources and increase errors.", image: "/images/lap/lap4.webp" },
     { title: "Limited Visibility", description: "Delayed reporting prevents timely business decisions.", image: "/images/lap/lap5.webp" },
-    { title: "Compliance Risks", description: "Keeping up with regulatory requirements across multiple systems is error-prone.", image: "/images/aboutus/integrity.webp" }
+    { title: "Compliance Risks", description: "Keeping up with regulatory requirements across multiple systems is error-prone.", image: "/images/people/fourteam.webp" }
   ];
 
   const pricingPlans = [
@@ -141,15 +141,9 @@ export default function NetSuiteERPPage() {
               >
                 <Link
                   href="/netsuite/contact"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-blue-700 text-white font-bold rounded-2xl hover:bg-blue-800 transition shadow-xl shadow-blue-900/40 text-center"
+                  className="px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-lg font-bold rounded-full transition-all bg-transparent border-2 border-white text-white hover:bg-gradient-to-r hover:from-blue-900 hover:to-slate-900 hover:border-transparent shadow-xl shadow-blue-900/20 hover:shadow-2xl hover:scale-105"
                 >
                   Get Started
-                </Link>
-                <Link
-                  href="#features"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/20 text-center"
-                >
-                  Explore Features
                 </Link>
               </motion.div>
             </motion.div>

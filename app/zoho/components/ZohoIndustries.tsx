@@ -173,7 +173,7 @@ const ZohoIndustries = () => {
   return (
     <section className="py-16 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
-        <h2 className="text-5xl font-semibold text-gray-900 text-center">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900 text-center">
           Industries We Transform with Zoho
         </h2>
 

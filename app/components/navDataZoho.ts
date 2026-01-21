@@ -20,6 +20,7 @@ import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstruct
 import BuildIcon from '@mui/icons-material/Build';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Groups from '@mui/icons-material/Groups';
+import Business from '@mui/icons-material/Business';
 
 // Types
 export interface MegaMenuItem {
@@ -66,6 +67,12 @@ export const navItemsZoho: NavSection[] = [
                 href: "/zoho/about-us",
                 description: "Learn more about AGSuite vision, mission and team.",
                 icon: Groups
+            },
+            {
+                label: "Our Offices",
+                href: "/zoho/about-us#offices",
+                description: "Explore our global presence and office locations.",
+                icon: Business
             },
         ],
     },

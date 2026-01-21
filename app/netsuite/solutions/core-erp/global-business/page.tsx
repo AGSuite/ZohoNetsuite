@@ -16,9 +16,8 @@ import {
   CheckCircle2,
   ArrowRight,
   Scale,
-  Landmark,
-  Check,
-  ChevronDown
+  Landmark, Check, ChevronDown, Users, Database, Share2, Code, ShieldCheck,
+  HeartHandshake
 } from 'lucide-react';
 import FooterFormSection from '@/app/components/home/FooterFormSection';
 
@@ -86,41 +85,29 @@ export default function GlobalBusinessPage() {
     }
   ];
 
-  const features = [
-    {
-      title: "Real-Time Consolidation",
-      description: "Instant visibility across all global entities",
-      icon: Network
-    },
-    {
-      title: "Multi-Currency",
-      description: "Support for 190+ currencies worldwide",
-      icon: Coins
-    },
-    {
-      title: "Tax Compliance",
-      description: "Automated tax management for 100+ countries",
-      icon: Scale
-    },
-    {
-      title: "Local Compliance",
-      description: "Built-in support for local regulations",
-      icon: Shield
-    }
+  const services = [
+    { title: "NetSuite Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
+    { title: "NetSuite Integration", description: "Connect your apps and workflows seamlessly with API-led integrations.", icon: Share2, href: "/netsuite/services/integration" },
+    { title: "NetSuite Customization", description: "Tailor NetSuite to your unique business needs with SuiteScript and SuiteCloud.", icon: Code, href: "/netsuite/services/suitecloud" },
+    { title: "NetSuite Managed Support", description: "End-to-end support and optimization of your NetSuite environment.", icon: ShieldCheck, href: "/netsuite/services/managed-services" },
+    { title: "NetSuite Training", description: "Comprehensive training programs to maximize system utilization.", icon: Users, href: "/netsuite/services/training-services" },
+    { title: "NetSuite Consulting", description: "Strategic guidance to align NetSuite with your business goals.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
   ];
+
+
 
   const benefits = [
     { title: "One View", description: "Consolidated real-time visibility across all global operations.", image: "/images/lap/lap1.webp" },
-    { title: "Local Compliance", description: "Automated tax and reporting compliance for every jurisdiction.", image: "/images/aboutus/mission1.webp" },
-    { title: "Multi-Currency", description: "Seamless management of 190+ currencies with automated rate updates.", image: "/images/aboutus/vision.webp" },
-    { title: "Standardization", description: "Unified processes and data across all subsidiaries.", image: "/images/aboutus/niche1.webp" }
+    { title: "Local Compliance", description: "Automated tax and reporting compliance for each jurisdiction.", image: "/images/people/laptopgirl3.webp" },
+    { title: "Multi-Currency", description: "Seamless management of 190+ currencies with automated rate updates.", image: "/images/lap/lap2.webp" },
+    { title: "Standardization", description: "Unified processes and data across all subsidiaries.", image: "/images/people/laptopmen.webp" }
   ];
 
   const challenges = [
     { title: "Fragmented Data", description: "Stop struggling with disconnected systems and manual consolidation.", image: "/images/lap/lap3.webp" },
     { title: "Regulatory Risks", description: "Mitigate risks of non-compliance in foreign markets.", image: "/images/lap/lap4.webp" },
     { title: "FX Exposure", description: "Manage currency fluctuation risks with real-time tools.", image: "/images/lap/lap5.webp" },
-    { title: "Slow Expansion", description: "Launch new subsidiaries in weeks, not months.", image: "/images/aboutus/integrity.webp" }
+    { title: "Slow Expansion", description: "Launch new subsidiaries in weeks, not months.", image: "/images/people/threeteam.webp" }
   ];
 
   const pricingPlans = [
@@ -199,7 +186,7 @@ export default function GlobalBusinessPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/aboutus/mission3.webp"
+            src="/images/lap/group2.webp"
             alt="Global Business Management Background"
             fill
             priority
@@ -209,6 +196,14 @@ export default function GlobalBusinessPage() {
 
         {/* Gradient Overlay - Left to Right */}
         <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/80 to-transparent z-10" />
+
+        {/* Violet Storm Glow */}
+        <div
+          className="absolute inset-0 z-10 pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(139, 92, 246, 0.15), transparent 70%)"
+          }}
+        />
 
         {/* Main Content Container */}
         <div className="relative z-20 flex-1 flex flex-col justify-end max-w-7xl mx-auto px-4 sm:px-6 w-full pt-32 sm:pt-40 md:pt-48 pb-12 sm:pb-16">
@@ -253,15 +248,9 @@ export default function GlobalBusinessPage() {
               >
                 <Link
                   href="/netsuite/contact"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-blue-700 text-white font-bold rounded-2xl hover:bg-blue-800 transition shadow-xl shadow-blue-900/40 text-center"
+                  className="px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-lg font-bold rounded-full transition-all bg-transparent border-2 border-white text-white hover:bg-gradient-to-r hover:from-blue-900 hover:to-slate-900 hover:border-transparent shadow-xl shadow-blue-900/20 hover:shadow-2xl hover:scale-105"
                 >
                   Go Global Now
-                </Link>
-                <Link
-                  href="#capabilities"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/20 text-center"
-                >
-                  Explore Capabilities
                 </Link>
               </motion.div>
             </motion.div>
@@ -333,7 +322,7 @@ export default function GlobalBusinessPage() {
               className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-gray-100"
             >
               <Image
-                src="/images/aboutus/mission2.webp"
+                src="/images/people/people4.webp"
                 alt="Global Business Management"
                 fill
                 className="object-cover"
@@ -370,7 +359,14 @@ export default function GlobalBusinessPage() {
       </section>
 
       {/* Global Capabilities */}
-      <section id="capabilities" className="py-24 bg-gray-50">
+      <section id="capabilities" className="py-24 bg-gray-50 relative overflow-hidden">
+        {/* Subtle Purple Glow */}
+        <div
+          className="absolute inset-x-0 top-0 h-96 pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse 50% 100% at 50% 0%, rgba(139, 92, 246, 0.05), transparent 70%)"
+          }}
+        />
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
@@ -420,46 +416,38 @@ export default function GlobalBusinessPage() {
         </div>
       </section>
 
-      {/* Features Cards */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
-              Key Features
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Powerful global management capabilities
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{
-                  background: "linear-gradient(to bottom right, #ffffff, #f8fafc)",
-                  transition: { duration: 0.3 }
-                }}
-                style={{
-                  background: "linear-gradient(to bottom right, #1e40af, #3b82f6)"
-                }}
-                className="rounded-2xl p-8 border border-blue-400/30 hover:border-gray-300 hover:shadow-xl transition-all duration-300 group"
-              >
-                <div className="p-3 bg-white/20 group-hover:bg-blue-600 rounded-xl w-fit mb-4 transition-colors">
-                  <feature.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-white group-hover:text-gray-900 mb-2 transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-blue-100 group-hover:text-gray-600 text-sm leading-relaxed transition-colors">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
+
+      {/* Services Section */}
+      <section className="py-16 bg-linear-to-br from-indigo-50/40 via-white to-blue-50/30 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-semibold text-gray-900 text-center">
+            Global Services
+          </motion.h2>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-700 text-lg max-w-2xl text-center">
+            Services designed to support international growth and compliance
+          </motion.p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
+            {services.map((service, index) => {
+              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
+                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
+              return (
+                <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}>
+                  <motion.div initial="initial" whileHover="hover" variants={{ initial: { scale: 1 }, hover: { scale: 1.04, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } } }}
+                    className={`relative group rounded-2xl p-7 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}>
+                    <motion.div variants={{ initial: { rotate: 0, y: 0 }, hover: { rotate: 360, y: -6, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } } }}
+                      className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <h2 className="text-lg font-semibold text-gray-900 leading-tight">{service.title}</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mt-2">{service.description}</p>
+                    <div className="mt-6 border-t border-gray-300 pt-3">
+                      <Link href={service.href} className="text-black hover:text-blue-600 text-sm font-medium transition-all">Learn More →</Link>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -549,7 +537,14 @@ export default function GlobalBusinessPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gray-50 relative overflow-hidden">
+        {/* Subtle Purple Glow */}
+        <div
+          className="absolute inset-x-0 top-0 h-96 pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse 50% 100% at 50% 0%, rgba(139, 92, 246, 0.05), transparent 70%)"
+          }}
+        />
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="bg-blue-600/10 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
@@ -614,11 +609,49 @@ export default function GlobalBusinessPage() {
         </div>
       </section>
 
+      {/* NetSuite Services Section with Light Gradient */}
+      <section className="py-16 bg-linear-to-br from-indigo-50/40 via-white to-blue-50/30 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-semibold text-gray-900 text-center">
+            NetSuite Global Services
+          </motion.h2>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-700 text-lg max-w-2xl text-center">
+            Expert services to help you manage and scale global business operations
+          </motion.p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
+            {services.map((service, index) => {
+              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
+                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
+              return (
+                <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}>
+                  <motion.div initial="initial" whileHover="hover" variants={{ initial: { scale: 1 }, hover: { scale: 1.04, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } } }}
+                    className={`relative group rounded-2xl p-7 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}>
+                    <motion.div variants={{ initial: { rotate: 0, y: 0 }, hover: { rotate: 360, y: -6, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } } }}
+                      className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <h2 className="text-lg font-semibold text-gray-900 leading-tight">{service.title}</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mt-2">{service.description}</p>
+                    <div className="mt-6 border-t border-gray-300 pt-3">
+                      <Link href={service.href} className="text-black hover:text-blue-600 text-sm font-medium transition-all">Learn More →</Link>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
-      <section className="py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
-        {/* Background Gradients */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] -z-10" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[120px] -z-10" />
+      <section className="py-24 relative overflow-hidden bg-black">
+        {/* Violet Storm Background with Top Glow */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139, 92, 246, 0.25), transparent 70%), #000000",
+          }}
+        />
 
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <motion.div
@@ -628,13 +661,13 @@ export default function GlobalBusinessPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="bg-blue-600/10 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+            <span className="bg-purple-600/20 text-purple-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
               FAQ
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-6 mb-4">
+            <h2 className="text-4xl md:text-5xl font-black text-white mt-6 mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-slate-600 text-lg">
+            <p className="text-gray-400 text-lg">
               Everything you need to know about Global Business Management
             </p>
           </motion.div>
@@ -648,21 +681,21 @@ export default function GlobalBusinessPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className={`group rounded-2xl border transition-all duration-300 ${openFAQ === index
-                  ? 'bg-white border-blue-500/30 shadow-2xl shadow-blue-900/10 scale-[1.02] z-10'
-                  : 'bg-white/80 border-white/50 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-200 hover:-translate-y-1 hover:bg-white'
+                  ? 'bg-white border-purple-500/30 shadow-2xl shadow-purple-900/20 scale-[1.02] z-10'
+                  : 'bg-white/95 border-white/50 shadow-lg hover:shadow-2xl hover:shadow-purple-900/10 hover:border-purple-200 hover:-translate-y-1'
                   }`}
               >
                 <button
                   onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
                   className="w-full px-8 py-6 flex items-center justify-between transition-colors cursor-pointer"
                 >
-                  <span className={`text-left font-bold text-lg transition-colors ${openFAQ === index ? 'text-blue-700' : 'text-gray-900 group-hover:text-blue-600'
+                  <span className={`text-left font-bold text-lg transition-colors ${openFAQ === index ? 'text-purple-600' : 'text-gray-900 group-hover:text-purple-600'
                     }`}>
                     {faq.question}
                   </span>
                   <div className={`p-2 rounded-full transition-all duration-300 flex-shrink-0 ml-4 ${openFAQ === index
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white rotate-180 shadow-lg shadow-blue-500/30'
-                    : 'bg-gray-100 text-gray-500 group-hover:bg-blue-50 group-hover:text-blue-600'
+                    ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white rotate-180 shadow-lg shadow-purple-500/30'
+                    : 'bg-gray-100 text-gray-400 group-hover:bg-purple-100 group-hover:text-purple-600'
                     }`}>
                     <ChevronDown className="w-5 h-5" />
                   </div>
@@ -692,7 +725,14 @@ export default function GlobalBusinessPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gray-50 relative overflow-hidden">
+        {/* Subtle Purple Glow */}
+        <div
+          className="absolute inset-x-0 top-0 h-96 pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse 50% 100% at 50% 0%, rgba(139, 92, 246, 0.05), transparent 70%)"
+          }}
+        />
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -701,7 +741,7 @@ export default function GlobalBusinessPage() {
             className="relative rounded-[3rem] overflow-hidden border border-gray-200"
           >
             <Image
-              src="/images/aboutus/CTA2.webp"
+              src="/images/lap/lap4.webp"
               alt="Expand Globally with NetSuite"
               fill
               className="object-cover"

@@ -33,14 +33,14 @@ const ZohoWhyChooseUs = () => {
       <div className="min-h-screen flex items-center">
         {/* Centered Card/Container with Padding */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 w-full">
-          
+
           {/* Inner Card Container with Background */}
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-            
+
             {/* Background Image Inside Container */}
             <div className="absolute inset-0 z-0">
               <Image
-                src="/images/Background/teambg2.webp" 
+                src="/images/Background/teambg2.webp"
                 alt="Business technology background"
                 fill
                 className="object-cover"
@@ -53,16 +53,16 @@ const ZohoWhyChooseUs = () => {
 
             {/* Content */}
             <div className="relative z-20 p-8 md:p-12 lg:p-16">
-              
+
               {/* Left Side Content - Why Choose Us */}
               <div className="max-w-2xl">
                 {/* Heading */}
-                <motion.h2 
+                <motion.h2
                   initial={{ x: -100, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="text-4xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-12 ml-5"
+                  className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white leading-tight mb-12 ml-5"
                 >
                   Why Partner with AGSuite?
                 </motion.h2>
@@ -70,15 +70,15 @@ const ZohoWhyChooseUs = () => {
                 {/* Points List */}
                 <div className="space-y-8">
                   {points.map((point, idx) => (
-                    <motion.div 
-                      key={idx} 
+                    <motion.div
+                      key={idx}
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ 
-                        duration: 0.8, 
+                      transition={{
+                        duration: 0.8,
                         delay: idx * 0.3,
-                        ease: "easeOut" 
+                        ease: "easeOut"
                       }}
                       className="flex items-start gap-5"
                     >

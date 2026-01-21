@@ -6,9 +6,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import {
-  ShoppingBag, TrendingUp, Globe, CreditCard, Truck, Users,
-  CheckCircle2, ArrowRight, BarChart3, Smartphone, Monitor,
-  Check, ChevronDown, Package, Zap, Search, ShieldCheck
+  ShoppingBag, TrendingUp, Globe, CreditCard, Truck, Users, CheckCircle2, ArrowRight,
+  BarChart3, Smartphone, Monitor, Check, ChevronDown, Package, Zap, Search, ShieldCheck,
+  Database, Share2, Code, HeartHandshake
 } from 'lucide-react';
 import FooterFormSection from '@/app/components/home/FooterFormSection';
 
@@ -42,15 +42,15 @@ export default function NetSuiteEcommercePage() {
   const benefits = [
     { title: "Unified Commerce", description: "Connect your web store directly to your ERP for real-time inventory, pricing, and order management.", image: "/images/lap/lap4.webp" },
     { title: "B2B & B2C", description: "Support both B2B and B2C business models on a single, flexible cloud platform.", image: "/images/people/laptopmen2.webp" },
-    { title: "Global Expansion", description: "Run multiple stores, languages, and currencies from a single NetSuite account.", image: "/images/Dashboard/Presence.webp" },
+    { title: "Global Expansion", description: "Run multiple stores, languages, and currencies from a single NetSuite account.", image: "/images/lap/group1.webp" },
     { title: "Omnichannel POS", description: "Unify online and in-store sales to deliver a seamless shopping experience.", image: "/images/people/fourteam.webp" }
   ];
 
   const challenges = [
-    { title: "Disjointed Systems", description: "Eliminate manual data entry and errors by unifying ecommerce with your ERP.", image: "/images/people/group3.webp" },
-    { title: "Inventory Issues", description: "Prevent stockouts and overselling with real-time inventory visibility across all channels.", image: "/images/aboutus/mission.webp" },
+    { title: "Disjointed Systems", description: "Eliminate manual data entry and errors by unifying ecommerce with your ERP.", image: "/images/people/laptopgirl3.webp" },
+    { title: "Inventory Issues", description: "Prevent stockouts and overselling with real-time inventory visibility across all channels.", image: "/images/lap/lap4.webp" },
     { title: "Slow Scaling", description: "Launch new brands and business models quickly without replatforming.", image: "/images/lap/lap1.webp" },
-    { title: "Legacy Tech Debt", description: "Move to a cloud-native platform that updates automatically and stays secure.", image: "/images/aboutus/value.webp" }
+    { title: "Legacy Tech Debt", description: "Move to a cloud-native platform that updates automatically and stays secure.", image: "/images/lap/lap5.webp" }
   ];
 
   const commerceModules = [
@@ -60,6 +60,15 @@ export default function NetSuiteEcommercePage() {
     { title: "CRM Integration", description: "Provide personalized service with a 360-degree view of the customer.", icon: Users },
     { title: "Marketing", description: "Drive sales with targeted email campaigns and promotions.", icon: TrendingUp },
     { title: "Analytics", description: "Gain insights into sales, inventory, and customer behavior.", icon: BarChart3 },
+  ];
+
+  const services = [
+    { title: "NetSuite Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
+    { title: "NetSuite Integration", description: "Connect your apps and workflows seamlessly with API-led integrations.", icon: Share2, href: "/netsuite/services/integration" },
+    { title: "NetSuite Customization", description: "Tailor NetSuite to your unique business needs with SuiteScript and SuiteCloud.", icon: Code, href: "/netsuite/services/suitecloud" },
+    { title: "NetSuite Managed Support", description: "End-to-end support and optimization of your NetSuite environment.", icon: ShieldCheck, href: "/netsuite/services/managed-services" },
+    { title: "NetSuite Training", description: "Comprehensive training programs to maximize system utilization.", icon: Users, href: "/netsuite/services/training-services" },
+    { title: "NetSuite Consulting", description: "Strategic guidance to align NetSuite with your business goals.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
   ];
 
   const pricingPlans = [
@@ -84,11 +93,11 @@ export default function NetSuiteEcommercePage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/lap/lap5.webp"
+            src="/images/lap/lap2.webp"
             alt="NetSuite Ecommerce Background"
             fill
             priority
-            className="object-cover"
+            className="object-cover object-right"
           />
         </div>
 
@@ -138,15 +147,9 @@ export default function NetSuiteEcommercePage() {
               >
                 <Link
                   href="/netsuite/contact"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-blue-700 text-white font-bold rounded-2xl hover:bg-blue-800 transition shadow-xl shadow-blue-900/40 text-center"
+                  className="px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-lg bg-blue-700 text-white font-bold rounded-full hover:bg-blue-600 transition-all shadow-xl shadow-blue-900/40 hover:shadow-2xl hover:scale-105"
                 >
                   Get Started
-                </Link>
-                <Link
-                  href="#features"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/20 text-center"
-                >
-                  Explore Commerce
                 </Link>
               </motion.div>
             </motion.div>
@@ -211,7 +214,7 @@ export default function NetSuiteEcommercePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
-              <Image src="/images/Dashboard/netsuitedash2.webp" alt="What is NetSuite SuiteCommerce" fill className="object-cover" />
+              <Image src="/images/lap/lap4.webp" alt="What is NetSuite SuiteCommerce" fill className="object-cover" />
               <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply" />
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="space-y-6">
@@ -339,6 +342,40 @@ export default function NetSuiteEcommercePage() {
         </div>
       </section>
 
+      {/* Services Section */}
+      <section className="py-16 bg-linear-to-br from-indigo-50/40 via-white to-blue-50/30 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-semibold text-gray-900 text-center">
+            NetSuite Commerce Services
+          </motion.h2>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-700 text-lg max-w-2xl text-center">
+            Expert services to help you build and grow your online business
+          </motion.p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
+            {services.map((service, index) => {
+              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
+                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
+              return (
+                <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}>
+                  <motion.div initial="initial" whileHover="hover" variants={{ initial: { scale: 1 }, hover: { scale: 1.04, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } } }}
+                    className={`relative group rounded-2xl p-7 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}>
+                    <motion.div variants={{ initial: { rotate: 0, y: 0 }, hover: { rotate: 360, y: -6, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } } }}
+                      className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <h2 className="text-lg font-semibold text-gray-900 leading-tight">{service.title}</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mt-2">{service.description}</p>
+                    <div className="mt-6 border-t border-gray-300 pt-3">
+                      <Link href={service.href} className="text-black hover:text-blue-600 text-sm font-medium transition-all">Learn More →</Link>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50/20 to-indigo-50/30">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
@@ -411,8 +448,8 @@ export default function NetSuiteEcommercePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className={`group rounded-2xl border transition-all duration-300 ${openFAQ === index
-                    ? 'bg-white border-blue-500/30 shadow-2xl shadow-blue-900/10 scale-[1.02] z-10'
-                    : 'bg-white/80 border-white/50 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-200 hover:-translate-y-1 hover:bg-white'
+                  ? 'bg-white border-blue-500/30 shadow-2xl shadow-blue-900/10 scale-[1.02] z-10'
+                  : 'bg-white/80 border-white/50 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-200 hover:-translate-y-1 hover:bg-white'
                   }`}
               >
                 <button
@@ -424,8 +461,8 @@ export default function NetSuiteEcommercePage() {
                     {faq.question}
                   </span>
                   <div className={`p-2 rounded-full transition-all duration-300 flex-shrink-0 ml-4 ${openFAQ === index
-                      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white rotate-180 shadow-lg shadow-blue-500/30'
-                      : 'bg-gray-100 text-gray-500 group-hover:bg-blue-50 group-hover:text-blue-600'
+                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white rotate-180 shadow-lg shadow-blue-500/30'
+                    : 'bg-gray-100 text-gray-500 group-hover:bg-blue-50 group-hover:text-blue-600'
                     }`}>
                     <ChevronDown className="w-5 h-5" />
                   </div>

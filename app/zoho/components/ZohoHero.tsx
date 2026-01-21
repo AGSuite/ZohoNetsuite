@@ -44,15 +44,15 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
 
               <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="max-w-2xl">
-                  <h1 className="text-4xl sm:text-4xl lg:text-4xl font-medium leading-snug text-gray-900">
+                  <h1 className="text-5xl sm:text-5xl lg:text-5xl font-medium leading-snug text-gray-900">
                     Zoho Cloud Suite
                     <br />
-                    <span className="text-2xl sm:text-4xl lg:text-4xl font-medium text-gray-900">
+                    <span className="text-3xl sm:text-5xl lg:text-5xl font-medium text-gray-900">
                       All-in-One Platform for Business
                     </span>
                   </h1>
 
-                  <p className="mt-3 text-base sm:text-lg font-medium text-gray-600">
+                  <p className="mt-3 text-lg sm:text-xl font-medium text-gray-600">
                     Streamline CRM, projects & operations in a unified Zoho ecosystem.
                   </p>
 
@@ -152,7 +152,7 @@ const HeroSlide = ({
         className="object-cover -z-10"
         sizes="100vw"
       />
-      
+
       {/* Gradient overlay: dark left → light center → transparent right */}
       {showOverlay && (
         <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/20 to-transparent" />
@@ -168,27 +168,24 @@ const HeroSlide = ({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <h1 className={`text-4xl sm:text-4xl lg:text-4xl font-medium leading-snug ${
-                  textColor === 'dark' ? 'text-gray-900' : 'text-white'
-                }`}>
+                <h1 className={`text-5xl sm:text-5xl lg:text-5xl font-medium leading-snug ${textColor === 'dark' ? 'text-gray-900' : 'text-white'
+                  }`}>
                   {title}
                   <br />
-                  <span className={`text-2xl sm:text-4xl lg:text-4xl font-medium ${
-                    textColor === 'dark' ? 'text-gray-900' : 'text-white'
-                  }`}>
+                  <span className={`text-3xl sm:text-5xl lg:text-5xl font-medium ${textColor === 'dark' ? 'text-gray-900' : 'text-white'
+                    }`}>
                     {subtitle}
                   </span>
                 </h1>
 
-                <motion.p 
+                <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                  className={`mt-3 text-base sm:text-lg font-medium ${
-                  textColor === 'dark' ? 'text-gray-600' : 'text-white/80'
-                }`}>{desc}</motion.p>
+                  className={`mt-3 text-lg sm:text-xl font-medium ${textColor === 'dark' ? 'text-gray-600' : 'text-white/80'
+                    }`}>{desc}</motion.p>
 
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -203,7 +200,7 @@ const HeroSlide = ({
             )}
           </AnimatePresence>
         </div>
-          
+
         {/* Right Image (if provided) */}
         {image && (
           <div className="hidden lg:flex justify-center lg:justify-end">

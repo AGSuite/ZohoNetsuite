@@ -71,42 +71,12 @@ export default function NetSuiteSolutionsClient() {
   ];
 
   const services = [
-    {
-      title: "Digital Transformation",
-      description: "Empowering businesses with modern, scalable, and automated digital solutions that streamline operations and accelerate growth.",
-      icon: Layout,
-      href: "/netsuite/services/digital-transformation"
-    },
-    {
-      title: "Implementation",
-      description: "Expert NetSuite implementation services ensuring a smooth transition ensuring your business processes are optimized for success.",
-      icon: Database,
-      href: "/netsuite/services/implementation"
-    },
-    {
-      title: "Integration Services",
-      description: "Connect your apps, ERP, CRM, and workflows seamlessly using API-led, cloud-to-cloud, and hybrid integrations tailored for your business.",
-      icon: Share2,
-      href: "/netsuite/services/integration"
-    },
-    {
-      title: "SuiteCloud Development",
-      description: "Build fast, efficient, and scalable business apps with NetSuite's SuiteCloud platform to automate processes and improve productivity.",
-      icon: Code,
-      href: "/netsuite/services/suitecloud"
-    },
-    {
-      title: "Managed Services",
-      description: "End-to-end support, monitoring, and optimization of your NetSuite environment so your business runs smoothly without downtime.",
-      icon: ShieldCheck,
-      href: "/netsuite/services/managed-services"
-    },
-    {
-      title: "Consulting & Advisory",
-      description: "Strategic guidance to help you align NetSuite with your long-term business goals and industry best practices.",
-      icon: HeartHandshake,
-      href: "/netsuite/services/consulting"
-    }
+    { title: "NetSuite Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
+    { title: "NetSuite Integration", description: "Connect your apps and workflows seamlessly with API-led integrations.", icon: Share2, href: "/netsuite/services/integration" },
+    { title: "NetSuite Customization", description: "Tailor NetSuite to your unique business needs with SuiteScript and SuiteCloud.", icon: Code, href: "/netsuite/services/suitecloud" },
+    { title: "NetSuite Managed Support", description: "End-to-end support and optimization of your NetSuite environment.", icon: ShieldCheck, href: "/netsuite/services/managed-services" },
+    { title: "NetSuite Training", description: "Comprehensive training programs to maximize system utilization.", icon: Users, href: "/netsuite/services/training-services" },
+    { title: "NetSuite Consulting", description: "Strategic guidance to align NetSuite with your business goals.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
   ];
 
   const [activeChallenge, setActiveChallenge] = useState(0);
@@ -194,7 +164,7 @@ export default function NetSuiteSolutionsClient() {
   return (
     <div className="min-h-screen selection:bg-gray-900 selection:text-white bg-linear-to-b from-[#000b21] via-[#000b21] to-[#0a0a0a]">
       {/* Premium Hero Section */}
-      <section className="relative pt-12 pb-10 lg:pt-48 lg:pb-12 overflow-hidden text-white">
+      <section className="relative pt-12 pb-24 lg:pt-48 lg:pb-32 overflow-hidden text-white">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
@@ -209,21 +179,49 @@ export default function NetSuiteSolutionsClient() {
               className="flex-1 max-w-2xl"
             >
 
-              <h1 className="text-5xl md:text-6xl font-semibold mb-8 leading-[1.05] tracking-tight text-white">
-                Oracle <span className="text-blue-500">Net
-                  Suite</span> Business Solutions
+              <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight tracking-tight text-white">
+                Oracle <span className="bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">NetSuite</span>
+                <br />
+                Business Solutions
               </h1>
-              <p className="text-xl leading-relaxed font-light text-gray-300">
+              <p className="text-lg sm:text-xl font-medium leading-relaxed text-gray-300">
                 AGSuite provides comprehensive NetSuite solutions tailored to your unique business needs. From core ERP to specialized add-ons, we help you scale with confidence.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-4">
-                <Link href="/netsuite/contact" className="px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-900/40">
-                  Get Started Now
-                </Link>
-                <Link href="#solutions" className="px-8 py-4 bg-white/5 text-white font-bold rounded-2xl hover:bg-white/10 transition backdrop-blur-md border border-white/10">
-                  View Features
-                </Link>
+                <motion.div
+                  className="relative inline-flex group/btn-wrap"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {/* Vibrant Gradient Background Glow */}
+                  <div className="absolute inset-0 rounded-2xl bg-linear-to-r from-blue-600 via-indigo-500 to-purple-600 opacity-40 blur-xl group-hover/btn-wrap:opacity-70 transition duration-1000" />
+
+                  <Link
+                    href="/netsuite/contact"
+                    className="relative flex items-center gap-4 px-10 py-5 bg-white/10 backdrop-blur-md text-white font-bold rounded-2xl transition shadow-2xl overflow-hidden group/btn border border-white/20 hover:bg-linear-to-r hover:from-blue-600 hover:to-indigo-700 hover:border-transparent transition-all duration-500"
+                  >
+                    {/* Unique Moving Circle on Hover */}
+                    <motion.div
+                      className="absolute top-1/2 left-0 w-16 h-16 bg-white/20 rounded-full -translate-y-1/2 pointer-events-none blur-xl"
+                      initial={{ x: "-100%", opacity: 0 }}
+                      whileHover={{ x: "300%", opacity: 1 }}
+                      transition={{ duration: 0.8, ease: "easeInOut" }}
+                    />
+
+                    {/* Shimmer Layers */}
+                    <div className="absolute inset-0 z-0 pointer-events-none">
+                      <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:animate-[sweep_2s_ease-in-out_infinite]" />
+                    </div>
+
+                    <span className="relative z-10 text-lg uppercase tracking-wider">Get Started Now</span>
+
+                    {/* Circle Wrapper for Arrow */}
+                    <div className="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-white/10 border border-white/20 transition-all duration-300 group-hover/btn:bg-white group-hover/btn:text-blue-600 group-hover/btn:scale-110">
+                      <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
+                    </div>
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
 
@@ -231,9 +229,9 @@ export default function NetSuiteSolutionsClient() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="flex-1 relative w-full aspect-square max-w-[550px] z-20"
+              className="flex-1 relative w-full h-[450px] max-w-[550px] z-20 lg:-mt-16"
             >
-              <div className="w-full h-[450px] rounded-2xl bg-linear-to-br from-blue-600/20 to-indigo-900/20 overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(37,99,235,0.2)] relative group">
+              <div className="w-full h-full rounded-2xl bg-linear-to-br from-blue-600/20 to-indigo-900/20 overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(37,99,235,0.2)] relative group">
                 <Image
                   src="/images/lap/lap1.webp"
                   alt="Oracle NetSuite Business Solutions"
@@ -249,36 +247,41 @@ export default function NetSuiteSolutionsClient() {
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 }}
-                className="absolute top-10 -right-6 lg:-right-12 bg-gray-50 backdrop-blur-2xl border border-white/20 p-3 rounded-xl shadow-2xl max-w-[360px] z-20"
+                className="absolute top-10 -right-6 lg:-right-12 bg-white/90 backdrop-blur-3xl border border-white/30 p-4 rounded-2xl shadow-2xl max-w-[200px] z-20 group/card"
               >
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 bg-blue-600 rounded-xl">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover/card:scale-110 transition-transform">
+                    <CheckCircle2 className="w-6 h-6 text-white" strokeWidth={2.5} />
                   </div>
-                  <h4 className="text-xs font-semibold text-black  uppercase tracking-wider">38,000+ Clients                    The world's most deployed cloud ERP system.
-                  </h4>
+                  <div className="text-center">
+                    <h4 className="text-xl font-bold text-gray-900 leading-none">38,000+</h4>
+                    <p className="text-[10px] font-bold text-blue-600 uppercase tracking-widest mt-1">Global Clients</p>
+                  </div>
                 </div>
-                {/* <p className="text-sm text-blue-50/90 leading-relaxed font-medium">
-                  The world's most deployed cloud ERP system.
-                </p> */}
               </motion.div>
 
-              {/* Bottom Center Quote Card */}
+              {/* Center Bottom Information Card */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
-                className="absolute bottom-11 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-2xl w-[85%] z-30 border border-white/30"
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-white/95 backdrop-blur-xl py-6 px-10 rounded-[1.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] w-full max-w-[420px] z-30 border border-white/60 group/bottom-card"
               >
-                <div className="flex flex-col items-center text-center">
-                  <svg className="w-7 h-7 text-blue-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                  </svg>
-                  <p className="text-gray-900 text-xs font-bold uppercase tracking-wide leading-tight">
-                    Digital transformation starts with a unified suite
-                  </p>
+                <div className="flex items-center gap-5">
+                  <div className="relative flex-shrink-0 scale-110">
+                    <div className="absolute inset-0 bg-blue-600 blur-lg opacity-25 group-hover/bottom-card:opacity-40 transition-opacity" />
+                    <div className="relative w-14 h-14 bg-linear-to-br from-blue-600 to-indigo-600 rounded-[2.5rem] flex items-center justify-center text-white shadow-xl">
+                      <Rocket size={28} strokeWidth={2.5} />
+                    </div>
+                  </div>
+                  <div className="text-left">
+                    <p className="text-gray-900 text-xl font-bold leading-tight tracking-tight">
+                      Scale with the #1 Cloud ERP
+                    </p>
+                    <p className="text-blue-600 text-[11px] font-black uppercase tracking-[0.2em] mt-1.5 opacity-80">
+                      Digital Transformation
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
@@ -315,7 +318,7 @@ export default function NetSuiteSolutionsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3, duration: 0.6 }}
-                  className="text-4xl md:text-5xl font-black text-gray-900 leading-tight"
+                  className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
                 >
                   What is Oracle NetSuite?
                 </motion.h3>
@@ -325,7 +328,7 @@ export default function NetSuiteSolutionsClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-lg text-gray-600 leading-relaxed font-light"
+                className="text-lg sm:text-xl text-gray-600 leading-relaxed font-medium"
               >
                 Oracle NetSuite is the world's most deployed cloud Enterprise Resource Planning (ERP) solution.
                 Built from the ground up for the cloud, it provides a single, unified platform to manage every aspect of your business—from financials and CRM to inventory and e-commerce.
@@ -420,7 +423,7 @@ export default function NetSuiteSolutionsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4, duration: 0.6 }}
-                  className="text-4xl md:text-5xl font-black text-gray-900 leading-tight"
+                  className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
                 >
                   Why NetSuite is the Right Choice for Your Business
                 </motion.h3>
@@ -431,7 +434,7 @@ export default function NetSuiteSolutionsClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5, duration: 0.6 }}
-                className="text-lg text-gray-600 leading-relaxed font-light"
+                className="text-lg sm:text-xl text-gray-600 leading-relaxed font-medium"
               >
                 Discover why thousands of fast-growing organizations worldwide trust Oracle NetSuite as their cloud ERP platform to drive digital transformation, streamline operations, and achieve sustainable growth in today's competitive landscape.
               </motion.p>
@@ -458,11 +461,11 @@ export default function NetSuiteSolutionsClient() {
       {/* NetSuite Services Section */}
       <section className="py-16 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
-          <h2 className="text-5xl font-semibold text-gray-900 text-center">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 text-center">
             NetSuite Services
           </h2>
 
-          <p className="text-gray-700 text-lg max-w-2xl text-center">
+          <p className="text-gray-700 text-lg sm:text-xl max-w-2xl text-center font-medium">
             We provide end-to-end services to ensure your NetSuite environment is perfectly aligned with your business needs.
           </p>
 
@@ -517,7 +520,7 @@ export default function NetSuiteSolutionsClient() {
                     </motion.div>
 
                     {/* TITLE */}
-                    <h2 className="text-lg font-semibold text-gray-900 leading-tight">
+                    <h2 className="text-lg font-bold text-gray-900 leading-tight">
                       {service.title}
                     </h2>
 
@@ -553,8 +556,8 @@ export default function NetSuiteSolutionsClient() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Benefits</span>
-            <h3 className="text-4xl md:text-5xl font-black text-white mt-6">Key Advantages of NetSuite</h3>
-            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">Discover how NetSuite transforms business operations and drives growth</p>
+            <h3 className="text-4xl lg:text-5xl font-bold text-white mt-6">Key Advantages of NetSuite</h3>
+            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg sm:text-xl font-medium">Discover how NetSuite transforms business operations and drives growth</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -660,8 +663,8 @@ export default function NetSuiteSolutionsClient() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Challenges</span>
-            <h3 className="text-4xl md:text-5xl font-black text-white mt-6">Common Business Challenges</h3>
-            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">Understanding the obstacles that NetSuite helps you overcome</p>
+            <h3 className="text-4xl lg:text-5xl font-bold text-white mt-6">Common Business Challenges</h3>
+            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg sm:text-xl font-medium">Understanding the obstacles that NetSuite helps you overcome</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -766,8 +769,8 @@ export default function NetSuiteSolutionsClient() {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">NetSuite Solutions</h3>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">NetSuite Solutions</h3>
+            <p className="text-gray-600 text-lg sm:text-xl max-w-2xl mx-auto font-medium">
               Comprehensive solutions to power every aspect of your business operations
             </p>
           </div>

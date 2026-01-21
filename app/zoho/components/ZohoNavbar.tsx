@@ -89,15 +89,14 @@ const ZohoNavbar = () => {
   useEffect(() => {
     setMounted(true);
   }, []);
-  
+
 
   return (
     <header
-      className={`fixed top-0 shadow-md left-0 right-0 w-full z-50 transition-all duration-300 ${
-        isScrolled || alwaysScrolled
-          ? 'bg-white backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 shadow-md left-0 right-0 w-full z-50 transition-all duration-300 ${isScrolled || alwaysScrolled
+        ? 'bg-white backdrop-blur-md shadow-lg'
+        : 'bg-transparent'
+        }`}
     >
       <div className="mx-auto max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5 h-20 flex items-center justify-between">
         {/* Logo */}
@@ -137,36 +136,34 @@ const ZohoNavbar = () => {
               style={{ display: 'inline-block', width: '100%' }}
             >
               <button
-                className={`px-5 py-3 hover:text-red-900 transition-colors duration-300 flex items-center gap-2 whitespace-nowrap ${
-                  isScrolled || alwaysScrolled ? 'text-black' : 'text-gray-900'
-                }`}
+                className={`px-5 py-3 hover:text-red-900 transition-colors duration-300 flex items-center gap-2 whitespace-nowrap ${isScrolled || alwaysScrolled ? 'text-black' : 'text-gray-900'
+                  }`}
                 tabIndex={0}
                 onClick={() => toggleDropdown(item.title)}
                 onFocus={() => {
-                    setOpenDropdown(item.title);
-                    if (item.title === 'Solutions') {
+                  setOpenDropdown(item.title);
+                  if (item.title === 'Solutions') {
                     setOpenMegaMenu('ZOHO');
-                    }
+                  }
                 }}
                 onBlur={() => {
-                    setTimeout(() => {
+                  setTimeout(() => {
                     if (!document.querySelector('.dropdown-container:hover')) {
-                        setOpenDropdown(null);
-                        setOpenMegaMenu(null);
+                      setOpenDropdown(null);
+                      setOpenMegaMenu(null);
                     }
-                    }, 100);
+                  }, 100);
                 }}
               >
                 {item.title}
                 <svg
-                    className={`w-4 h-4 transition-transform duration-200 ${
-                    openDropdown === item.title ? 'rotate-180' : ''
+                  className={`w-4 h-4 transition-transform duration-200 ${openDropdown === item.title ? 'rotate-180' : ''
                     }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
 
@@ -291,9 +288,9 @@ const ZohoNavbar = () => {
                           <h3 className="text-5xl font-medium text-red-500 mb-5">{item.title}</h3>
                           <p className="text-lg text-gray-900">Empowering businesses through innovation.</p>
                         </div>
-                        <div className="gap-4">
+                        <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4">
                           {item.children.map((link, i) => (
-                            <div key={i} className="bg-white p-4 rounded-lg shadow flex flex-col items-start">
+                            <div key={i} className="bg-white p-4 rounded-lg shadow flex flex-col items-start h-full">
                               <Link
                                 href={link.href}
                                 className="text-base text-black mb-1 hover:underline flex items-center gap-2"
@@ -340,20 +337,18 @@ const ZohoNavbar = () => {
                               const isMega = !!child.megaMenu;
                               const tabContent = (
                                 <div
-                                  className={`group cursor-pointer p-4 rounded-l-lg border transition-all duration-200 ${
-                                    openMegaMenu === child.label
-                                      ? 'border-gray-100 bg-gray-100'
-                                      : 'border-transparent hover:border-red-100 hover:bg-red-50'
-                                  }`}
+                                  className={`group cursor-pointer p-4 rounded-l-lg border transition-all duration-200 ${openMegaMenu === child.label
+                                    ? 'border-gray-100 bg-gray-100'
+                                    : 'border-transparent hover:border-red-100 hover:bg-red-50'
+                                    }`}
                                   onMouseEnter={() => handleMegaMenuClick(child.label)}
                                 >
                                   <div className="flex items-center justify-between">
                                     <h3
-                                      className={`text-base font-bold transition-colors duration-200 ${
-                                        openMegaMenu === child.label
-                                          ? 'text-red-600'
-                                          : 'text-gray-900 group-hover:text-red-600'
-                                      }`}
+                                      className={`text-base font-bold transition-colors duration-200 ${openMegaMenu === child.label
+                                        ? 'text-red-600'
+                                        : 'text-gray-900 group-hover:text-red-600'
+                                        }`}
                                     >
                                       {child.label}
                                     </h3>
@@ -372,9 +367,9 @@ const ZohoNavbar = () => {
                                   href={child.href}
                                   passHref
                                   onClick={() => {
-                                      setOpenNavbar(false);
-                                      setOpenDropdown(null);
-                                      setOpenMegaMenu(null);
+                                    setOpenNavbar(false);
+                                    setOpenDropdown(null);
+                                    setOpenMegaMenu(null);
                                   }}
                                 >
                                   {tabContent}
@@ -391,19 +386,17 @@ const ZohoNavbar = () => {
                           {item.children.map((child, idx) => (
                             <div
                               key={idx}
-                              className={`transition-all duration-300 ${
-                                openMegaMenu === child.label
-                                  ? 'opacity-100 visible relative'
-                                  : 'opacity-0 invisible absolute top-0 left-0 right-0'
-                              }`}
+                              className={`transition-all duration-300 ${openMegaMenu === child.label
+                                ? 'opacity-100 visible relative'
+                                : 'opacity-0 invisible absolute top-0 left-0 right-0'
+                                }`}
                             >
                               <div className="space-y-4">
                                 <div
-                                  className={`grid gap-6 ${
-                                    child.label === 'ZOHO'
-                                      ? 'grid-cols-1 md:grid-cols-3 lg:grid-cols-6'
-                                      : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'
-                                  }`}
+                                  className={`grid gap-6 ${child.label === 'ZOHO'
+                                    ? 'grid-cols-1 md:grid-cols-3 lg:grid-cols-6'
+                                    : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'
+                                    }`}
                                 >
                                   {child.megaMenu?.categories.map((category, catIndex) => (
                                     <div
@@ -448,9 +441,8 @@ const ZohoNavbar = () => {
         <div className="flex items-center gap-4">
           <button
             onClick={toggleNavbar}
-            className={`lg:hidden p-2 rounded-lg transition-colors duration-300 ${
-              isScrolled ? 'bg-gray-100/80 hover:bg-gray-200/80' : 'bg-white/20 hover:bg-white/30'
-            }`}
+            className={`lg:hidden p-2 rounded-lg transition-colors duration-300 ${isScrolled ? 'bg-gray-100/80 hover:bg-gray-200/80' : 'bg-white/20 hover:bg-white/30'
+              }`}
             aria-label="Toggle mobile menu"
           >
             <svg
@@ -459,9 +451,8 @@ const ZohoNavbar = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className={`w-6 h-6 transition-colors duration-300 ${
-                isScrolled ? 'text-gray-500' : 'text-gray-900'
-              }`}
+              className={`w-6 h-6 transition-colors duration-300 ${isScrolled ? 'text-gray-500' : 'text-gray-900'
+                }`}
             >
               {openNavbar ? (
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -498,11 +489,10 @@ const ZohoNavbar = () => {
       {/* Mobile Menu */}
       {openNavbar && (
         <div
-          className={`lg:hidden border-t transition-all duration-300 ${
-            isScrolled
-              ? 'bg-white/95 backdrop-blur-md border-gray-200'
-              : 'bg-white/95 backdrop-blur-md border-gray-200'
-          }`}
+          className={`lg:hidden border-t transition-all duration-300 ${isScrolled
+            ? 'bg-white/95 backdrop-blur-md border-gray-200'
+            : 'bg-white/95 backdrop-blur-md border-gray-200'
+            }`}
         >
           <div className="px-5 py-4 space-y-4 h-[calc(100vh-80px)] overflow-y-auto">
             {navItems.map((item, index) => (
@@ -517,9 +507,8 @@ const ZohoNavbar = () => {
                 >
                   {item.title}
                   <span
-                    className={`ml-2 transition-transform duration-200 ${
-                      openMobileSection === item.title ? 'rotate-90' : ''
-                    }`}
+                    className={`ml-2 transition-transform duration-200 ${openMobileSection === item.title ? 'rotate-90' : ''
+                      }`}
                   >
                     &gt;
                   </span>

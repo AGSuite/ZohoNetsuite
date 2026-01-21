@@ -8,7 +8,8 @@ import { useInView } from 'react-intersection-observer';
 import {
   Rocket, Layers, Users, TrendingUp, Zap,
   CheckCircle2, ArrowRight, BarChart3, Target, Clock,
-  Check, ChevronDown, Award, Briefcase, ShieldCheck
+  Check, ChevronDown, Award, Briefcase, ShieldCheck, Database, Settings, Heart,
+  Share2, Code, HeartHandshake
 } from 'lucide-react';
 import FooterFormSection from '@/app/components/home/FooterFormSection';
 
@@ -42,15 +43,15 @@ export default function SuiteSuccessPage() {
   const benefits = [
     { title: "Rapid Implementation", description: "Go live in as little as 100 days with pre-configured solutions.", image: "/images/people/group5.webp" },
     { title: "Industry Validation", description: "Built on leading practices from thousands of real-world deployments.", image: "/images/lap/lap2.webp" },
-    { title: "Role-Based Dashboards", description: "Pre-built dashboards and KPIs for every role in your organization.", image: "/images/Dashboard/netsuitedash2.webp" },
+    { title: "Role-Based Dashboards", description: "Pre-built dashboards and KPIs for every role in your organization.", image: "/images/lap/lap3.webp" },
     { title: "Continuous Updates", description: "Stay current with automatic upgrades and new feature releases.", image: "/images/lap/lap4.webp" }
   ];
 
   const challenges = [
     { title: "Long Deployments", description: "Avoid multi-year ERP projects that drain resources and momentum.", image: "/images/people/laptopmen2.webp" },
     { title: "Scope Creep", description: "Stick to a defined scope with a proven implementation methodology.", image: "/images/lap/lap1.webp" },
-    { title: "Generic Solutions", description: "Stop customizing generic software. Start with industry-specific fit.", image: "/images/aboutus/CTA1.webp" },
-    { title: "High Costs", description: "Reduce implementation costs with a phased, agile approach.", image: "/images/people/man.webp" }
+    { title: "Generic Solutions", description: "Stop customizing generic software. Start with industry-specific fit.", image: "/images/people/laptopgirl.webp" },
+    { title: "High Costs", description: "Reduce implementation costs with a phased, agile approach.", image: "/images/people/fourteam.webp" }
   ];
 
   const successStairway = [
@@ -59,6 +60,15 @@ export default function SuiteSuccessPage() {
     { title: "Consume", description: "Expand with project management, warehouse, and industry features.", icon: Briefcase },
     { title: "Optimize", description: "Leverage advanced analytics, AI, and business intelligence.", icon: BarChart3 },
     { title: "Dominate", description: "Innovate and disrupt your market with a future-proof platform.", icon: Award },
+  ];
+
+  const services = [
+    { title: "NetSuite Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
+    { title: "NetSuite Integration", description: "Connect your apps and workflows seamlessly with API-led integrations.", icon: Share2, href: "/netsuite/services/integration" },
+    { title: "NetSuite Customization", description: "Tailor NetSuite to your unique business needs with SuiteScript and SuiteCloud.", icon: Code, href: "/netsuite/services/suitecloud" },
+    { title: "NetSuite Managed Support", description: "End-to-end support and optimization of your NetSuite environment.", icon: ShieldCheck, href: "/netsuite/services/managed-services" },
+    { title: "NetSuite Training", description: "Comprehensive training programs to maximize system utilization.", icon: Users, href: "/netsuite/services/training-services" },
+    { title: "NetSuite Consulting", description: "Strategic guidance to align NetSuite with your business goals.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
   ];
 
   const faqs = [
@@ -76,7 +86,7 @@ export default function SuiteSuccessPage() {
       <section className="relative min-h-screen overflow-hidden flex flex-col">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/people/group5.webp"
+            src="/images/people/fourteam.webp"
             alt="NetSuite SuiteSuccess"
             fill
             priority
@@ -136,15 +146,9 @@ export default function SuiteSuccessPage() {
               >
                 <Link
                   href="/netsuite/contact"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-900/40 text-center"
+                  className="px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-lg font-bold rounded-full transition-all bg-transparent border-2 border-white text-white hover:bg-gradient-to-r hover:from-blue-900 hover:to-indigo-900 hover:border-transparent shadow-xl shadow-blue-900/20 hover:shadow-2xl hover:scale-105"
                 >
                   Start Your Journey
-                </Link>
-                <Link
-                  href="#stairway"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/20 text-center"
-                >
-                  View Stairway
                 </Link>
               </motion.div>
             </motion.div>
@@ -208,7 +212,7 @@ export default function SuiteSuccessPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
-              <Image src="/images/Dashboard/netsuitedash2.webp" alt="NetSuite SuiteSuccess Dashboard" fill className="object-cover" />
+              <Image src="/images/lap/lap5.webp" alt="NetSuite SuiteSuccess Dashboard" fill className="object-cover" />
               <div className="absolute inset-0 bg-blue-600/5 mix-blend-multiply" />
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="space-y-6">
@@ -224,6 +228,40 @@ export default function SuiteSuccessPage() {
                 </Link>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-16 bg-linear-to-br from-indigo-50/40 via-white to-blue-50/30 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-semibold text-gray-900 text-center">
+            SuiteSuccess Services
+          </motion.h2>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-700 text-lg max-w-2xl text-center">
+            Expert guidance to accelerate your implementation
+          </motion.p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
+            {services.map((service, index) => {
+              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
+                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
+              return (
+                <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}>
+                  <motion.div initial="initial" whileHover="hover" variants={{ initial: { scale: 1 }, hover: { scale: 1.04, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } } }}
+                    className={`relative group rounded-2xl p-7 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}>
+                    <motion.div variants={{ initial: { rotate: 0, y: 0 }, hover: { rotate: 360, y: -6, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } } }}
+                      className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <h2 className="text-lg font-semibold text-gray-900 leading-tight">{service.title}</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mt-2">{service.description}</p>
+                    <div className="mt-6 border-t border-gray-300 pt-3">
+                      <Link href={service.href} className="text-black hover:text-blue-600 text-sm font-medium transition-all">Learn More →</Link>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -336,6 +374,40 @@ export default function SuiteSuccessPage() {
         </div>
       </section>
 
+      {/* NetSuite Services Section */}
+      <section className="py-16 bg-linear-to-br from-indigo-50/40 via-white to-blue-50/30 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-semibold text-gray-900 text-center">
+            NetSuite Success Services
+          </motion.h2>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-700 text-lg max-w-2xl text-center">
+            Expert services to help you accelerate your NetSuite journey
+          </motion.p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
+            {services.map((service, index) => {
+              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
+                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
+              return (
+                <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}>
+                  <motion.div initial="initial" whileHover="hover" variants={{ initial: { scale: 1 }, hover: { scale: 1.04, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } } }}
+                    className={`relative group rounded-2xl p-7 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}>
+                    <motion.div variants={{ initial: { rotate: 0, y: 0 }, hover: { rotate: 360, y: -6, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } } }}
+                      className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <h2 className="text-lg font-semibold text-gray-900 leading-tight">{service.title}</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mt-2">{service.description}</p>
+                    <div className="mt-6 border-t border-gray-300 pt-3">
+                      <Link href={service.href} className="text-black hover:text-blue-600 text-sm font-medium transition-all">Learn More →</Link>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 relative z-10">
@@ -412,7 +484,7 @@ export default function SuiteSuccessPage() {
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative rounded-[3rem] overflow-hidden border border-gray-200">
-            <Image src="/images/aboutus/CTA2.webp" alt="Start SuiteSuccess" fill className="object-cover" />
+            <Image src="/images/lap/lap1.webp" alt="Start SuiteSuccess" fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
             <div className="relative z-10 p-12 lg:p-24">
               <div className="max-w-2xl">

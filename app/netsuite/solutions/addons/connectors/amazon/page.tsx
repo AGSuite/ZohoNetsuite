@@ -6,9 +6,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import {
-  ShoppingBag, RefreshCw, Layers, Users, TrendingUp, Zap,
-  CheckCircle2, ArrowRight, BarChart3, Package, Truck,
-  Check, ChevronDown, DollarSign, Globe
+  ShoppingBag, RefreshCw, Layers, Users, TrendingUp, Zap, CheckCircle2, ArrowRight,
+  BarChart3, Package, Truck, Check, ChevronDown, DollarSign, Globe, Database, Share2,
+  Code, ShieldCheck, HeartHandshake
 } from 'lucide-react';
 import FooterFormSection from '@/app/components/home/FooterFormSection';
 
@@ -41,16 +41,16 @@ export default function AmazonConnectorPage() {
 
   const benefits = [
     { title: "Automated FBA Sync", description: "Automatically sync Fulfillment by Amazon (FBA) orders and inventory.", image: "/images/lap/lap1.webp" },
-    { title: "Settlement Reconciliation", description: "Simplify accounting with automated Amazon Settlement Report processing.", image: "/images/Dashboard/barcha.webp" },
-    { title: "Multi-Region Support", description: "Connect Amazon marketplaces from North America, Europe, and Asia.", image: "/images/people/group4.webp" },
-    { title: "FBM Management", description: "Manage Fulfillment by Merchant (FBM) orders and shipping from NetSuite.", image: "/images/people/shipping.webp" }
+    { title: "Settlement Reconciliation", description: "Simplify accounting with automated Amazon Settlement Report processing.", image: "/images/people/laptopgirl3.webp" },
+    { title: "Multi-Region Support", description: "Connect Amazon marketplaces from North America, Europe, and Asia.", image: "/images/people/fourteam.webp" },
+    { title: "FBM Management", description: "Manage Fulfillment by Merchant (FBM) orders and shipping from NetSuite.", image: "/images/people/laptopmen.webp" }
   ];
 
   const challenges = [
-    { title: "Accounting Nightmares", description: "Stop manually reconciling complex Amazon settlement reports.", image: "/images/people/man.webp" },
+    { title: "Accounting Nightmares", description: "Stop manually reconciling complex Amazon settlement reports.", image: "/images/people/laptopmen1.jpg" },
     { title: "Inventory Mishaps", description: "Prevent overselling by keeping FBM inventory in sync with NetSuite.", image: "/images/lap/lap3.webp" },
     { title: "Order Delays", description: "Speed up FBM fulfillment by pushing orders to NetSuite instantly.", image: "/images/people/laptopmen2.webp" },
-    { title: "Lack of Visibility", description: "Get a clear picture of your Amazon profitability including fees.", image: "/images/Dashboard/netsuitedash2.webp" }
+    { title: "Lack of Visibility", description: "Get a clear picture of your Amazon profitability including fees.", image: "/images/lap/lap5.webp" }
   ];
 
   const connectorFeatures = [
@@ -60,6 +60,15 @@ export default function AmazonConnectorPage() {
     { title: "Shipment Tracking", description: "Push tracking numbers to Amazon for FBM orders.", icon: Truck },
     { title: "Customer Sync", description: "Create or update customer records based on Amazon orders.", icon: Users },
     { title: "Multi-Marketplace", description: "Support for unified accounts and multiple international marketplaces.", icon: Globe },
+  ];
+
+  const services = [
+    { title: "NetSuite Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
+    { title: "NetSuite Integration", description: "Connect your apps and workflows seamlessly with API-led integrations.", icon: Share2, href: "/netsuite/services/integration" },
+    { title: "NetSuite Customization", description: "Tailor NetSuite to your unique business needs with SuiteScript and SuiteCloud.", icon: Code, href: "/netsuite/services/suitecloud" },
+    { title: "NetSuite Managed Support", description: "End-to-end support and optimization of your NetSuite environment.", icon: ShieldCheck, href: "/netsuite/services/managed-services" },
+    { title: "NetSuite Training", description: "Comprehensive training programs to maximize system utilization.", icon: Users, href: "/netsuite/services/training-services" },
+    { title: "NetSuite Consulting", description: "Strategic guidance to align NetSuite with your business goals.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
   ];
 
   const pricingPlans = [
@@ -83,7 +92,7 @@ export default function AmazonConnectorPage() {
       <section className="relative min-h-screen overflow-hidden flex flex-col">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/lap/lap1.webp"
+            src="/images/lap/lap2.webp"
             alt="NetSuite Amazon Connector"
             fill
             priority
@@ -143,15 +152,9 @@ export default function AmazonConnectorPage() {
               >
                 <Link
                   href="/netsuite/contact"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-[#FF9900] text-black font-bold rounded-2xl hover:bg-[#ffad33] transition shadow-xl shadow-[#FF9900]/20 text-center"
+                  className="px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-lg font-bold rounded-full transition-all bg-transparent border-2 border-white text-white hover:bg-gradient-to-r hover:from-[#FF9900] hover:to-orange-900 hover:border-transparent shadow-xl shadow-orange-900/20 hover:shadow-2xl hover:scale-105"
                 >
                   Connect Amazon
-                </Link>
-                <Link
-                  href="#features"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/20 text-center"
-                >
-                  See How It Works
                 </Link>
               </motion.div>
             </motion.div>
@@ -343,6 +346,40 @@ export default function AmazonConnectorPage() {
         </div>
       </section>
 
+      {/* Services Section */}
+      <section className="py-16 bg-linear-to-br from-indigo-50/40 via-white to-blue-50/30 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-semibold text-gray-900 text-center">
+            Integration Services
+          </motion.h2>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-700 text-lg max-w-2xl text-center">
+            Expert services to help you manage your Amazon integration
+          </motion.p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
+            {services.map((service, index) => {
+              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
+                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
+              return (
+                <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}>
+                  <motion.div initial="initial" whileHover="hover" variants={{ initial: { scale: 1 }, hover: { scale: 1.04, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } } }}
+                    className={`relative group rounded-2xl p-7 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}>
+                    <motion.div variants={{ initial: { rotate: 0, y: 0 }, hover: { rotate: 360, y: -6, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } } }}
+                      className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <h2 className="text-lg font-semibold text-gray-900 leading-tight">{service.title}</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mt-2">{service.description}</p>
+                    <div className="mt-6 border-t border-gray-300 pt-3">
+                      <Link href={service.href} className="text-black hover:text-blue-600 text-sm font-medium transition-all">Learn More →</Link>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-gradient-to-br from-gray-50 via-[#FF9900]/10 to-blue-50/20">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
@@ -415,8 +452,8 @@ export default function AmazonConnectorPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className={`group rounded-2xl border transition-all duration-300 ${openFAQ === index
-                    ? 'bg-white border-[#FF9900]/30 shadow-2xl shadow-[#FF9900]/10 scale-[1.02] z-10'
-                    : 'bg-white/80 border-white/50 shadow-sm hover:shadow-xl hover:shadow-[#FF9900]/5 hover:border-[#FF9900]/20 hover:-translate-y-1 hover:bg-white'
+                  ? 'bg-white border-[#FF9900]/30 shadow-2xl shadow-[#FF9900]/10 scale-[1.02] z-10'
+                  : 'bg-white/80 border-white/50 shadow-sm hover:shadow-xl hover:shadow-[#FF9900]/5 hover:border-[#FF9900]/20 hover:-translate-y-1 hover:bg-white'
                   }`}
               >
                 <button
@@ -428,8 +465,8 @@ export default function AmazonConnectorPage() {
                     {faq.question}
                   </span>
                   <div className={`p-2 rounded-full transition-all duration-300 flex-shrink-0 ml-4 ${openFAQ === index
-                      ? 'bg-gradient-to-r from-[#FF9900] to-[#ffcc66] text-black rotate-180 shadow-lg shadow-[#FF9900]/30'
-                      : 'bg-gray-100 text-gray-500 group-hover:bg-[#FF9900]/20 group-hover:text-[#FF9900]'
+                    ? 'bg-gradient-to-r from-[#FF9900] to-[#ffcc66] text-black rotate-180 shadow-lg shadow-[#FF9900]/30'
+                    : 'bg-gray-100 text-gray-500 group-hover:bg-[#FF9900]/20 group-hover:text-[#FF9900]'
                     }`}>
                     <ChevronDown className="w-5 h-5" />
                   </div>
@@ -461,7 +498,7 @@ export default function AmazonConnectorPage() {
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative rounded-[3rem] overflow-hidden border border-gray-200">
-            <Image src="/images/aboutus/CTA1.webp" alt="Get Connected with Amazon" fill className="object-cover" />
+            <Image src="/images/lap/lap3.webp" alt="Get Connected with Amazon" fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
             <div className="relative z-10 p-12 lg:p-24">
               <div className="max-w-2xl">

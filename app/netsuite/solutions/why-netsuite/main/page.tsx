@@ -6,9 +6,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import {
-  Globe, ShieldCheck, Trophy, Users, TrendingUp, Zap,
-  CheckCircle2, ArrowRight, BarChart3, Cloud, Server,
-  Check, ChevronDown, Rocket, Layers
+  Globe, ShieldCheck, Trophy, Users, TrendingUp, Zap, CheckCircle2, ArrowRight,
+  BarChart3, Cloud, Server, Check, ChevronDown, Rocket, Layers, Database, Share2,
+  Code, HeartHandshake
 } from 'lucide-react';
 import FooterFormSection from '@/app/components/home/FooterFormSection';
 
@@ -41,25 +41,26 @@ export default function WhyNetSuitePage() {
 
   const benefits = [
     { title: "True Cloud Platform", description: "Born in the cloud, NetSuite eliminates the need for on-premise hardware and maintenance.", image: "/images/lap/lap4.webp" },
-    { title: "Unified Data Model", description: "All your data in one database. No more silos between CRM, ERP, and Ecommerce.", image: "/images/Dashboard/netsuitedash2.webp" },
-    { title: "Scalability", description: "Grow from a startup to an enterprise without ever changing your ERP system.", image: "/images/people/group1.webp" },
-    { title: "Built-in Intelligence", description: "Real-time analytics and BI embedded in every process and dashboard.", image: "/images/Dashboard/barcha.webp" }
+    { title: "Unified Data Model", description: "All your data in one database. No more silos between CRM, ERP, and Ecommerce.", image: "/images/lap/lap5.webp" },
+    { title: "Scalability", description: "Grow from a startup to an enterprise without ever changing your ERP system.", image: "/images/lap/group1.webp" },
+    { title: "Built-in Intelligence", description: "Real-time analytics and BI embedded in every process and dashboard.", image: "/images/lap/lap3.webp" }
   ];
 
   const challenges = [
     { title: "Fragmented Systems", description: "Stop juggling multiple disconnected systems and spreadsheets.", image: "/images/lap/lap1.webp" },
     { title: "Version Lock", description: "Never get stuck on an old version again. Everyone is always on the latest release.", image: "/images/people/laptopmen2.webp" },
-    { title: "Global Expansion", description: "Expand easily with built-in multi-currency, multi-language, and tax compliance.", image: "/images/aboutus/mission.webp" },
-    { title: "IT Complexity", description: "Offload security, backups, and upgrades to NetSuite's world-class infrastructure.", image: "/images/aboutus/integrity.webp" }
+    { title: "Global Expansion", description: "Expand easily with built-in multi-currency, multi-language, and tax compliance.", image: "/images/people/fourteam.webp" },
+    { title: "IT Complexity", description: "Offload security, backups, and upgrades to NetSuite's world-class infrastructure.", image: "/images/people/fourteam.webp" }
   ];
 
-  const features = [
-    { title: "#1 Cloud ERP", description: "Recognized as the world's leading cloud ERP solution by Gartner and IDC.", icon: Trophy },
-    { title: "360° Visibility", description: "See your entire business in real-time with customizable dashboards.", icon: BarChart3 },
-    { title: "Industry Suites", description: "Pre-configured editions for Software, Manufacturing, Retail, and more.", icon: Layers },
-    { title: "Global Reach", description: "Used by companies in over 200 countries and territories.", icon: Globe },
-    { title: "Platform Flexibility", description: "Customize and extend functionality with SuiteCloud developer tools.", icon: Server },
-    { title: "Proven Security", description: "Enterprise-grade security, certifications, and reliability.", icon: ShieldCheck },
+
+  const services = [
+    { title: "NetSuite Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
+    { title: "NetSuite Integration", description: "Connect your apps and workflows seamlessly with API-led integrations.", icon: Share2, href: "/netsuite/services/integration" },
+    { title: "NetSuite Customization", description: "Tailor NetSuite to your unique business needs with SuiteScript and SuiteCloud.", icon: Code, href: "/netsuite/services/suitecloud" },
+    { title: "NetSuite Managed Support", description: "End-to-end support and optimization of your NetSuite environment.", icon: ShieldCheck, href: "/netsuite/services/managed-services" },
+    { title: "NetSuite Training", description: "Comprehensive training programs to maximize system utilization.", icon: Users, href: "/netsuite/services/training-services" },
+    { title: "NetSuite Consulting", description: "Strategic guidance to align NetSuite with your business goals.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
   ];
 
   const faqs = [
@@ -77,7 +78,7 @@ export default function WhyNetSuitePage() {
       <section className="relative min-h-screen overflow-hidden flex flex-col">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/aboutus/mission.webp"
+            src="/images/lap/group2.webp"
             alt="Why NetSuite"
             fill
             priority
@@ -137,15 +138,9 @@ export default function WhyNetSuitePage() {
               >
                 <Link
                   href="/netsuite/contact"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-900/40 text-center"
+                  className="px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-lg font-bold rounded-full transition-all bg-transparent border-2 border-white text-white hover:bg-gradient-to-r hover:from-blue-900 hover:to-indigo-900 hover:border-transparent shadow-xl shadow-blue-900/20 hover:shadow-2xl hover:scale-105"
                 >
                   Join the Leaders
-                </Link>
-                <Link
-                  href="#features"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/20 text-center"
-                >
-                  Explore Platform
                 </Link>
               </motion.div>
             </motion.div>
@@ -209,7 +204,7 @@ export default function WhyNetSuitePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
-              <Image src="/images/people/group1.webp" alt="NetSuite Team and Success" fill className="object-cover" />
+              <Image src="/images/people/laptopgirl1.webp" alt="NetSuite Team and Success" fill className="object-cover" />
               <div className="absolute inset-0 bg-blue-600/5 mix-blend-multiply" />
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="space-y-6">
@@ -313,26 +308,38 @@ export default function WhyNetSuitePage() {
         </div>
       </section>
 
-      <section id="features" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">Unmatched Capabilities</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">The world's most deployed cloud ERP</p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((module, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 50, scale: 0.9 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ scale: 1.05, background: "linear-gradient(to bottom right, #ffffff, #ffffff)", transition: { duration: 0.3, ease: "easeInOut" } }}
-                style={{ background: "linear-gradient(to bottom right, #f0f9ff, #e0f2fe, #bae6fd)" }}
-                className="border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 group">
-                <div className="p-3 bg-blue-600 rounded-xl w-fit mb-6 group-hover:bg-gray-900 transition-colors">
-                  <module.icon className="w-6 h-6 text-white" />
-                </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3 transition-colors duration-300">{module.title}</h4>
-                <p className="text-gray-600 leading-relaxed text-sm transition-colors duration-300">{module.description}</p>
-              </motion.div>
-            ))}
+
+
+      {/* Services Section */}
+      <section className="py-16 bg-linear-to-br from-indigo-50/40 via-white to-blue-50/30 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-semibold text-gray-900 text-center">
+            NetSuite Services
+          </motion.h2>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-700 text-lg max-w-2xl text-center">
+            Partner with experts to maximize your NetSuite investment
+          </motion.p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
+            {services.map((service, index) => {
+              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
+                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
+              return (
+                <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}>
+                  <motion.div initial="initial" whileHover="hover" variants={{ initial: { scale: 1 }, hover: { scale: 1.04, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } } }}
+                    className={`relative group rounded-2xl p-7 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}>
+                    <motion.div variants={{ initial: { rotate: 0, y: 0 }, hover: { rotate: 360, y: -6, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } } }}
+                      className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <h2 className="text-lg font-semibold text-gray-900 leading-tight">{service.title}</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mt-2">{service.description}</p>
+                    <div className="mt-6 border-t border-gray-300 pt-3">
+                      <Link href={service.href} className="text-black hover:text-blue-600 text-sm font-medium transition-all">Learn More →</Link>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -367,8 +374,8 @@ export default function WhyNetSuitePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className={`group rounded-2xl border transition-all duration-300 ${openFAQ === index
-                    ? 'bg-white border-blue-500/30 shadow-2xl shadow-blue-900/10 scale-[1.02] z-10'
-                    : 'bg-white/80 border-white/50 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-200 hover:-translate-y-1 hover:bg-white'
+                  ? 'bg-white border-blue-500/30 shadow-2xl shadow-blue-900/10 scale-[1.02] z-10'
+                  : 'bg-white/80 border-white/50 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-200 hover:-translate-y-1 hover:bg-white'
                   }`}
               >
                 <button
@@ -380,8 +387,8 @@ export default function WhyNetSuitePage() {
                     {faq.question}
                   </span>
                   <div className={`p-2 rounded-full transition-all duration-300 flex-shrink-0 ml-4 ${openFAQ === index
-                      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white rotate-180 shadow-lg shadow-blue-500/30'
-                      : 'bg-gray-100 text-gray-500 group-hover:bg-blue-50 group-hover:text-blue-600'
+                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white rotate-180 shadow-lg shadow-blue-500/30'
+                    : 'bg-gray-100 text-gray-500 group-hover:bg-blue-50 group-hover:text-blue-600'
                     }`}>
                     <ChevronDown className="w-5 h-5" />
                   </div>
@@ -413,7 +420,7 @@ export default function WhyNetSuitePage() {
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative rounded-[3rem] overflow-hidden border border-gray-200">
-            <Image src="/images/aboutus/CTA1.webp" alt="Get NetSuite" fill className="object-cover" />
+            <Image src="/images/people/laptopgirl3.webp" alt="Get NetSuite" fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
             <div className="relative z-10 p-12 lg:p-24">
               <div className="max-w-2xl">

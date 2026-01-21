@@ -22,6 +22,9 @@ import {
   Trophy,
   RefreshCcw,
   Users,
+  Building2,
+  MapPin,
+  Mail,
 } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import FlipNumbers from 'react-flip-numbers';
@@ -29,6 +32,81 @@ import { motion, useAnimation, type Variants } from 'framer-motion';
 // import Resource from '../homepage/components/Resource';
 // import Clients from '../homepage/components/Clients';
 import FooterFormSection from '@/app/components/home/FooterFormSection';
+import ZohoTestimonialSection from '../components/ZohoTestimonialSection';
+import { AnimatePresence } from 'framer-motion';
+
+// ---------------- Address Data ----------------
+
+interface Address {
+  city: string;
+  state: string;
+  address: string;
+  email?: string;
+  label: string;
+}
+
+interface OfficeData {
+  [key: string]: Address[];
+}
+
+const officeData: OfficeData = {
+  INDIA: [
+    {
+      label: 'Pune, INDIA',
+      city: 'Pune',
+      state: 'Maharashtra',
+      address: 'Office No. 1110, 11th floor, Gera’s Imperium Rise, Hinjewadi Rajiv Gandhi Infotech Park, Hinjewadi, Pune, Maharashtra, INDIA – 411057.',
+    },
+    {
+      label: 'Mumbai Location',
+      city: 'Mumbai',
+      state: 'Maharashtra',
+      address: '3rd Floor, Unit no. 4, Inspire, Main Road, G Block BKC, Bandra Kurla Complex, Mumbai, Maharashtra INDIA – 400051',
+    },
+    {
+      label: 'Bangalore Location',
+      city: 'Bangalore',
+      state: 'Karnataka',
+      address: 'Whitefield, Survey No. 192, Whitefield Main Road, B Narayanapura, Mahadevapura, Bangalore, KA, INDIA – 560001',
+    },
+    {
+      label: 'Hyderabad Location',
+      city: 'Hyderabad',
+      state: 'Telangana',
+      address: '6th Floor, N Heights, Plot No 38, Phase 2 Hitec City, Siddiq nagar, Hyderabad, Telangana, INDIA – 500081',
+    },
+    {
+      label: 'Gurugram Location',
+      city: 'Gurugram',
+      state: 'Haryana',
+      address: '07th Floor, Gate No. 03 & Gate No. 04, Ambience Island, NH 48, Gurugram, Haryana, INDIA – 122002',
+    },
+    {
+      label: 'India Rajasthan',
+      city: 'Udaipur',
+      state: 'Rajasthan',
+      address: 'F-18 Subcity Center, Opp. Income Tax Office, Udaipur, Rajasthan INDIA – 313001.',
+    },
+  ],
+  USA: [
+    {
+      label: 'Florida, USA',
+      city: 'Fort Myers',
+      state: 'Florida',
+      address: '6421-1 Metro Plantation Road, Fort Myers, FL, US – 33966',
+      email: 'contact@agsuitetech.com',
+    },
+  ],
+  UK: [
+    {
+      label: 'Cornwall, UK',
+      city: 'St Austell',
+      state: 'Cornwall',
+      address: 'The Old Dairy, Drummers Hill, St Austell, Cornwall, PL26 8XR',
+      email: 'contact@agsuitetech.com',
+    },
+  ],
+};
 
 // ---------------- Flip Counter ----------------
 
@@ -715,14 +793,14 @@ export default function AboutClient() {
       </section>
 
       <section
-        className="relative py-20 bg-white overflow-hidden"
+        className="relative pt-20 pb-6 bg-white overflow-hidden"
         style={{
           boxShadow: 'inset 0 0.6em 0.8em -1em #100000',
         }}
       >
         <div className="relative mx-auto max-w-7xl px-6 sm:px-10 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center gap-14" />
 
-        <section className="relative w-full h-[60vh] md:h-[65vh] mt-10 px-4 md:px-6 lg:px-8">
+        <section className="relative w-full h-[60vh] md:h-[65vh] mt-2 px-4 md:px-6 lg:px-8">
           <div
             className="relative w-full h-full rounded-3xl overflow-hidden"
             style={{
@@ -733,8 +811,11 @@ export default function AboutClient() {
               backgroundAttachment: 'fixed',
             }}
           >
+            {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-black/40 z-0" />
+
             <div className="relative z-10 h-full flex flex-col justify-center px-8 md:px-12 lg:px-20 max-w-xl">
-              <h2 className="text-white text-2xl md:text-3xl lg:text-4xl leading-tight">
+              <h2 className="text-white text-2xl md:text-3xl lg:text-4xl leading-tight whitespace-nowrap">
                 AGSuite <span className="font-bold italic">Technologies</span>
               </h2>
 
@@ -756,8 +837,8 @@ export default function AboutClient() {
         </section>
       </section>
 
-      <section
-        className="relative py-10 sm:py-24 bg-white text-gray-900 overflow-hidden"
+      {/* <section
+        className="relative py-8 sm:py-20 bg-white text-gray-900 overflow-hidden"
         style={{
           backgroundImage: "url('/images/backgroundimg/bg3.webp')",
           backgroundSize: 'cover',
@@ -794,49 +875,163 @@ export default function AboutClient() {
             </div>
           </motion.div>
 
-          <div className="mt-16 h-px w-full bg-linear-to-r from-transparent via-rose-200 to-transparent" />
+          <div className="mt-12 h-px w-full bg-linear-to-r from-transparent via-rose-200 to-transparent" />
         </div>
+      </section> */}
+
+      <section id="testimonials" className="pt-12 pb-20 bg-white">
+        <ZohoTestimonialSection />
       </section>
 
+      <section id="offices" className="relative py-24 bg-gradient-to-b from-[#0f172a] via-[#020617] to-[#020617] overflow-hidden">
+        {/* Glow Effects */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-rose-600/10 blur-[120px] rounded-full -z-0" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full -z-0" />
 
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="w-full flex flex-col items-center text-center mt-10 mb-10 px-4 sm:px-6 lg:px-8 relative"
-      >
-        <div className="absolute top-0 left-10 w-32 h-32 bg-rose-200/40 blur-3xl rounded-full -z-10" />
-        <div className="absolute bottom-10 right-10 w-40 h-40 bg-pink-300/40 blur-3xl rounded-full -z-10" />
-
-        <motion.h2
-          variants={fadeInUp}
-          className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 
-          bg-linear-to-r from-gray-900 via-gray-900 to-gray-900 
-          bg-clip-text text-transparent drop-shadow-[0_4px_12px_rgba(244,63,94,0.35)]"
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 md:px-12 lg:px-16 flex flex-col items-center text-center"
         >
-          Our Global Presence
-        </motion.h2>
+          <motion.h2
+            variants={fadeInUp}
+            className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 text-white"
+          >
+            Our Global Presence & Offices
+          </motion.h2>
 
-        <motion.p variants={fadeInUp} className="max-w-2xl text-gray-600 mb-10 text-base md:text-lg leading-relaxed">
-          Delivering excellence across continents with a strong and growing worldwide footprint.
-        </motion.p>
+          <motion.p variants={fadeInUp} className="max-w-2xl text-gray-400 mb-12 text-base md:text-lg leading-relaxed">
+            Delivering excellence across continents with a strong and growing worldwide footprint.
+          </motion.p>
 
-        <div className="relative w-full max-w-6xl shadow-2xl rounded-3xl overflow-hidden border border-gray-200/70 bg-white p-4 group">
-          <div className="relative w-full h-[40vh] sm:h-[55vh] lg:h-[75vh] rounded-2xl overflow-hidden">
-            <Image
-              src="/images/Dashboard/Presence.webp"
-              alt="Global Presence Map"
-              fill
-              className="object-contain rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]"
-            />
+          <div className="relative w-full max-w-6xl rounded-[40px] overflow-hidden border border-white/10 bg-white/5 p-2 shadow-2xl group">
+            <div className="relative w-full h-[45vh] sm:h-[60vh] lg:h-[85vh] rounded-[32px] overflow-hidden bg-slate-900/50">
+              <Image
+                src="/images/Dashboard/Presence.webp"
+                alt="Global Presence Map"
+                fill
+                className="object-cover rounded-[32px] transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
           </div>
-        </div>
-      </motion.div>
+
+          <OfficeDisplay themeColor="rose" />
+        </motion.div>
+      </section>
 
       <section id="contact" className=" bg-white">
         <FooterFormSection />
       </section>
     </main>
+  );
+}
+
+function OfficeDisplay({ themeColor }: { themeColor: 'blue' | 'rose' }) {
+  const [activeTab, setActiveTab] = useState('INDIA');
+
+  const colorConfig = {
+    blue: {
+      primary: 'bg-blue-600',
+      secondary: 'text-blue-600',
+      hover: 'hover:bg-blue-700',
+      border: 'border-blue-600/30',
+      light: 'bg-blue-500/10',
+      activeTab: 'bg-blue-600',
+    },
+    rose: {
+      primary: 'bg-rose-600',
+      secondary: 'text-rose-600',
+      hover: 'hover:bg-rose-700',
+      border: 'border-rose-600/30',
+      light: 'bg-rose-500/10',
+      activeTab: 'bg-rose-600',
+    },
+  };
+
+  const config = colorConfig[themeColor];
+
+  return (
+    <div className="w-full mt-20">
+      {/* Tabs */}
+      <div className="flex justify-center mb-12">
+        <div className="flex bg-white/5 backdrop-blur-md p-1.5 rounded-2xl border border-white/10 shadow-2xl">
+          {Object.keys(officeData).map((country) => (
+            <button
+              key={country}
+              onClick={() => setActiveTab(country)}
+              className={`px-8 py-3 rounded-xl text-sm md:text-base font-semibold transition-all duration-300 ${activeTab === country
+                ? `${config.activeTab} text-white shadow-lg`
+                : 'text-gray-400 hover:text-white hover:bg-white/5'
+                }`}
+            >
+              {country}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="min-h-[300px] w-full">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left"
+          >
+            {officeData[activeTab].map((office, index) => (
+              <motion.div
+                key={office.label + index}
+                className="group relative bg-white rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100"
+              >
+                {/* Subtle light gradient overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br from-white via-white to-${themeColor === 'blue' ? 'blue' : 'rose'}-50/30 opacity-100`} />
+
+                <div className={`absolute top-0 right-0 w-32 h-32 ${config.primary} opacity-[0.03] rounded-bl-full -mr-10 -mt-10 transition-all duration-500 group-hover:scale-150 group-hover:opacity-[0.08]`} />
+
+                <div className="relative z-10">
+                  <div className={`w-14 h-14 ${config.light} rounded-2xl flex items-center justify-center mb-6 border border-${themeColor === 'blue' ? 'blue' : 'rose'}-100 transition-transform duration-500 group-hover:rotate-6`}>
+                    <Building2 className={`w-7 h-7 ${config.secondary}`} />
+                  </div>
+
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 truncate">
+                    {office.label}
+                  </h3>
+                  <div className="flex items-center gap-2 text-gray-500 font-medium mb-6">
+                    <MapPin className={`w-4 h-4 ${config.secondary}`} />
+                    <span className="text-sm">{office.city}, {office.state}</span>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-4">
+                      <div className={`mt-1.5 w-2 h-2 rounded-full ${config.primary} flex-shrink-0 animate-pulse`} />
+                      <p className="text-gray-600 leading-relaxed text-sm">
+                        {office.address}
+                      </p>
+                    </div>
+
+                    {office.email && (
+                      <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
+                        <Mail className={`w-5 h-5 ${config.secondary}`} />
+                        <a
+                          href={`mailto:${office.email}`}
+                          className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium"
+                        >
+                          {office.email}
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </div>
   );
 }

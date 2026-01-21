@@ -3,6 +3,8 @@ import { Inter, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/Navbar";
 import ScrollToTopWrapper from "./components/shared/ScrollToTopWrapper";
+import CursorFollower from "./components/shared/CursorFollower";
+import SocialSidebar from "./components/shared/SocialSidebar";
 
 
 const inter = Inter({
@@ -34,6 +36,12 @@ export default function RootLayout({
       >
         {/* <Navbar /> */}
         <main>{children}</main>
+
+        {/* Global Social Sidebar */}
+        <SocialSidebar />
+
+        {/* Global Cursor Follower */}
+        <CursorFollower />
 
         {/* Global Scroll to Top Button */}
         <ScrollToTopWrapper />

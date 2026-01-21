@@ -11,7 +11,7 @@ export default function ZohoFooter() {
                         <div className="mb-6">
                             {/* AGSuite Logo */}
                             <Image
-                                src="/images/logos/agsuite-logo.webp"
+                                src="/images/logos/agsuite_logo.webp"
                                 alt="AGSuite Technologies"
                                 width={180}
                                 height={60}

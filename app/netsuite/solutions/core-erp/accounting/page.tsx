@@ -6,22 +6,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import {
-  Calculator,
-  FileText,
-  TrendingUp,
-  PieChart,
-  Receipt,
-  Wallet,
-  Building2,
-  CheckCircle2,
-  ArrowRight,
-  Calendar,
-  DollarSign,
-  Percent,
-  Settings,
-  Check,
-  ChevronDown,
-  BarChart3
+  Building2, CheckCircle2, ArrowRight, Calendar, DollarSign, Percent, Settings, Check,
+  ChevronDown, BarChart3, Database, Share2, Code, ShieldCheck, HeartHandshake, Users,
+  TrendingUp, FileText, Receipt, Wallet, PieChart, Calculator
 } from 'lucide-react';
 import FooterFormSection from '@/app/components/home/FooterFormSection';
 
@@ -89,27 +76,13 @@ export default function AccountingSoftwarePage() {
     }
   ];
 
-  const features = [
-    {
-      title: "Real-Time Dashboards",
-      description: "Instant visibility into financial metrics",
-      icon: BarChart3
-    },
-    {
-      title: "Automated Workflows",
-      description: "Streamline approval and reconciliation",
-      icon: Settings
-    },
-    {
-      title: "Multi-Currency",
-      description: "Support for global transactions",
-      icon: DollarSign
-    },
-    {
-      title: "Compliance Ready",
-      description: "Built-in controls and audit trails",
-      icon: CheckCircle2
-    }
+  const services = [
+    { title: "NetSuite Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
+    { title: "NetSuite Integration", description: "Connect your apps and workflows seamlessly with API-led integrations.", icon: Share2, href: "/netsuite/services/integration" },
+    { title: "NetSuite Customization", description: "Tailor NetSuite to your unique business needs with SuiteScript and SuiteCloud.", icon: Code, href: "/netsuite/services/suitecloud" },
+    { title: "NetSuite Managed Support", description: "End-to-end support and optimization of your NetSuite environment.", icon: ShieldCheck, href: "/netsuite/services/managed-services" },
+    { title: "NetSuite Training", description: "Comprehensive training programs to maximize system utilization.", icon: Users, href: "/netsuite/services/training-services" },
+    { title: "NetSuite Consulting", description: "Strategic guidance to align NetSuite with your business goals.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
   ];
 
   const benefits = [
@@ -198,15 +171,15 @@ export default function AccountingSoftwarePage() {
   return (
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
       {/* Full Screen Hero Section with Integrated Metrics */}
-      <section className="relative min-h-screen overflow-hidden flex flex-col">
+      <section className="relative min-h-screen overflow-hidden flex flex-col bg-[#000b21]">
         {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute top-20 lg:top-0 right-0 w-full h-[50vh] lg:h-full lg:w-[65%] z-0">
           <Image
             src="/images/lap/lap2.webp"
             alt="NetSuite Accounting Software Background"
             fill
             priority
-            className="object-cover"
+            className="object-contain object-top lg:object-right"
           />
         </div>
 
@@ -258,15 +231,9 @@ export default function AccountingSoftwarePage() {
               >
                 <Link
                   href="/netsuite/contact"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-blue-700 text-white font-bold rounded-2xl hover:bg-blue-800 transition shadow-xl shadow-blue-900/40 text-center"
+                  className="px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-lg bg-blue-700 text-white font-bold rounded-full hover:bg-blue-600 transition-all shadow-xl shadow-blue-900/40 hover:shadow-2xl hover:scale-105"
                 >
                   Start Free Trial
-                </Link>
-                <Link
-                  href="#features"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/20 text-center"
-                >
-                  View Features
                 </Link>
               </motion.div>
             </motion.div>
@@ -425,46 +392,36 @@ export default function AccountingSoftwarePage() {
         </div>
       </section>
 
-      {/* Features Cards */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
-              Key Capabilities
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Powerful features for modern accounting
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{
-                  background: "linear-gradient(to bottom right, #ffffff, #f8fafc)",
-                  transition: { duration: 0.3 }
-                }}
-                style={{
-                  background: "linear-gradient(to bottom right, #1e40af, #3b82f6)"
-                }}
-                className="rounded-2xl p-8 border border-blue-400/30 hover:border-gray-300 hover:shadow-xl transition-all duration-300 group"
-              >
-                <div className="p-3 bg-white/20 group-hover:bg-blue-600 rounded-xl w-fit mb-4 transition-colors">
-                  <feature.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-white group-hover:text-gray-900 mb-2 transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-blue-100 group-hover:text-gray-600 text-sm leading-relaxed transition-colors">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
+      {/* NetSuite Services Section */}
+      <section className="py-16 bg-linear-to-br from-indigo-50/40 via-white to-blue-50/30 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-semibold text-gray-900 text-center">
+            NetSuite Accounting Services
+          </motion.h2>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-700 text-lg max-w-2xl text-center">
+            Expert services to ensure your NetSuite accounting implementation succeeds
+          </motion.p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
+            {services.map((service, index) => {
+              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
+                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
+              return (
+                <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}>
+                  <motion.div initial="initial" whileHover="hover" variants={{ initial: { scale: 1 }, hover: { scale: 1.04, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } } }}
+                    className={`relative group rounded-2xl p-7 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}>
+                    <motion.div variants={{ initial: { rotate: 0, y: 0 }, hover: { rotate: 360, y: -6, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } } }}
+                      className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <h2 className="text-lg font-semibold text-gray-900 leading-tight">{service.title}</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mt-2">{service.description}</p>
+                    <div className="mt-6 border-t border-gray-300 pt-3">
+                      <Link href={service.href} className="text-black hover:text-blue-600 text-sm font-medium transition-all">Learn More →</Link>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -736,6 +693,6 @@ export default function AccountingSoftwarePage() {
       </section>
 
       <FooterFormSection />
-    </div>
+    </div >
   );
 }

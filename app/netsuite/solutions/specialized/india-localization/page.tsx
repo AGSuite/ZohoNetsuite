@@ -6,9 +6,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import {
-  FileText, IndianRupee, Layers, Users, TrendingUp, Zap,
-  CheckCircle2, ArrowRight, BarChart3, Calculator, Building,
-  Check, ChevronDown, Landmark, Globe, ShieldCheck, Truck
+  FileText, IndianRupee, Layers, Users, TrendingUp, Zap, CheckCircle2, ArrowRight,
+  BarChart3, Calculator, Building, Check, ChevronDown, Landmark, Globe, ShieldCheck,
+  Truck, Database, Share2, Code, HeartHandshake
 } from 'lucide-react';
 import FooterFormSection from '@/app/components/home/FooterFormSection';
 
@@ -40,26 +40,26 @@ export default function IndiaLocalizationPage() {
   ];
 
   const benefits = [
-    { title: "GST Compliance", description: "Automated GST calculation, return filing, and e-invoicing integration.", image: "/images/people/twopeople.webp" },
-    { title: "TDS & TCS Management", description: "Handle Tax Deducted at Source (TDS) and TCS with automated logic.", image: "/images/lap/lap3.webp" },
-    { title: "Local Reporting", description: "Generate balance sheets, profit & loss, and cash flow in statutory formats.", image: "/images/Dashboard/barcha.webp" },
-    { title: "Multi-Location Support", description: "Manage multiple GSTINs and branches within a single NetSuite account.", image: "/images/people/office.webp" }
+    { title: "GST Compliance", description: "Automated GST calculation, return filing, and e-invoicing integration.", image: "/images/people/laptopmen2.webp" },
+    { title: "TDS & TCS Management", description: "Handle Tax Deducted at Source (TDS) and TCS with automated logic.", image: "/images/lap/lap4.webp" },
+    { title: "Local Reporting", description: "Generate balance sheets, profit & loss, and cash flow in statutory formats.", image: "/images/lap/lap5.webp" },
+    { title: "Multi-Location Support", description: "Manage multiple GSTINs and branches within a single NetSuite account.", image: "/images/people/laptopgirl1.webp" }
   ];
 
   const challenges = [
-    { title: "Complex Regulations", description: "Navigate the ever-changing landscape of Indian tax laws without manual worry.", image: "/images/aboutus/integrity.webp" },
+    { title: "Complex Regulations", description: "Navigate the ever-changing landscape of Indian tax laws without manual worry.", image: "/images/people/laptopmen1.jpg" },
     { title: "Multiple GST Registry", description: "Handle different GST registrations for each state branch effortlessly.", image: "/images/lap/lap1.webp" },
-    { title: "Manual E-Way Bills", description: "Eliminate manual data entry for E-Way bill generation and tracking.", image: "/images/people/man.webp" },
-    { title: "Statutory Audits", description: "Be audit-ready with traceable, compliant financial records at all times.", image: "/images/people/twopeople.webp" }
+    { title: "Manual E-Way Bills", description: "Eliminate manual data entry for E-Way bill generation and tracking.", image: "/images/people/laptopmen.webp" },
+    { title: "Statutory Audits", description: "Be audit-ready with traceable, compliant financial records at all times.", image: "/images/lap/group1.webp" }
   ];
 
-  const features = [
-    { title: "GST Engine", description: "Automatic determination of CGST, SGST, and IGST based on location.", icon: Calculator },
-    { title: "E-Invoicing", description: "Direct integration with IRP for generating IRN and QR codes.", icon: FileText },
-    { title: "E-Way Bill", description: "Generate E-Way bills directly from NetSuite transactions.", icon: Truck },
-    { title: "Vendor Portal", description: "Allow vendors to upload invoices and track payments.", icon: Users },
-    { title: "Indian Payroll", description: "Integrated payroll solution for Indian salary structures and compliance.", icon: Users },
-    { title: "Banking Integration", description: "Connect with major Indian banks for seamless payments and reconciliation.", icon: Landmark },
+  const services = [
+    { title: "NetSuite Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
+    { title: "NetSuite Integration", description: "Connect your apps and workflows seamlessly with API-led integrations.", icon: Share2, href: "/netsuite/services/integration" },
+    { title: "NetSuite Customization", description: "Tailor NetSuite to your unique business needs with SuiteScript and SuiteCloud.", icon: Code, href: "/netsuite/services/suitecloud" },
+    { title: "NetSuite Managed Support", description: "End-to-end support and optimization of your NetSuite environment.", icon: ShieldCheck, href: "/netsuite/services/managed-services" },
+    { title: "NetSuite Training", description: "Comprehensive training programs to maximize system utilization.", icon: Users, href: "/netsuite/services/training-services" },
+    { title: "NetSuite Consulting", description: "Strategic guidance to align NetSuite with your business goals.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
   ];
 
   const pricingPlans = [
@@ -83,7 +83,7 @@ export default function IndiaLocalizationPage() {
       <section className="relative min-h-screen overflow-hidden flex flex-col">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/people/twopeople.webp"
+            src="/images/lap/group2.webp"
             alt="NetSuite India Localization"
             fill
             priority
@@ -143,15 +143,9 @@ export default function IndiaLocalizationPage() {
               >
                 <Link
                   href="/netsuite/contact"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-orange-600 text-white font-bold rounded-2xl hover:bg-orange-700 transition shadow-xl shadow-orange-900/40 text-center"
+                  className="px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-lg font-bold rounded-full transition-all bg-transparent border-2 border-white text-white hover:bg-gradient-to-r hover:from-orange-600 hover:to-red-700 hover:border-transparent shadow-xl shadow-orange-900/20 hover:shadow-2xl hover:scale-105"
                 >
                   Get Compliant
-                </Link>
-                <Link
-                  href="#features"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/20 text-center"
-                >
-                  Explore Features
                 </Link>
               </motion.div>
             </motion.div>
@@ -215,7 +209,7 @@ export default function IndiaLocalizationPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
-              <Image src="/images/lap/lap3.webp" alt="NetSuite India Accounting" fill className="object-cover" />
+              <Image src="/images/people/fourteam.webp" alt="NetSuite India Accounting" fill className="object-cover" />
               <div className="absolute inset-0 bg-blue-600/5 mix-blend-multiply" />
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="space-y-6">
@@ -319,26 +313,36 @@ export default function IndiaLocalizationPage() {
         </div>
       </section>
 
-      <section id="features" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">Localization Features</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">Everything you need for India</p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((module, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 50, scale: 0.9 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ scale: 1.05, background: "linear-gradient(to bottom right, #ffffff, #ffffff)", transition: { duration: 0.3, ease: "easeInOut" } }}
-                style={{ background: "linear-gradient(to bottom right, #fffaf0, #fffcf5, #ffedd5)" }}
-                className="border border-orange-500/20 rounded-2xl p-8 hover:border-orange-500 hover:shadow-2xl transition-all duration-300 group">
-                <div className="p-3 bg-orange-600 rounded-xl w-fit mb-6 group-hover:bg-gray-900 transition-colors">
-                  <module.icon className="w-6 h-6 text-white" />
-                </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3 transition-colors duration-300">{module.title}</h4>
-                <p className="text-gray-600 leading-relaxed text-sm transition-colors duration-300">{module.description}</p>
-              </motion.div>
-            ))}
+      {/* Services Section */}
+      <section className="py-16 bg-linear-to-br from-indigo-50/40 via-white to-blue-50/30 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-semibold text-gray-900 text-center">
+            Localization Services
+          </motion.h2>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-700 text-lg max-w-2xl text-center">
+            Expert services to help you manage your India Localization
+          </motion.p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
+            {services.map((service, index) => {
+              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
+                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
+              return (
+                <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}>
+                  <motion.div initial="initial" whileHover="hover" variants={{ initial: { scale: 1 }, hover: { scale: 1.04, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } } }}
+                    className={`relative group rounded-2xl p-7 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}>
+                    <motion.div variants={{ initial: { rotate: 0, y: 0 }, hover: { rotate: 360, y: -6, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } } }}
+                      className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <h2 className="text-lg font-semibold text-gray-900 leading-tight">{service.title}</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mt-2">{service.description}</p>
+                    <div className="mt-6 border-t border-gray-300 pt-3">
+                      <Link href={service.href} className="text-black hover:text-blue-600 text-sm font-medium transition-all">Learn More →</Link>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -461,7 +465,7 @@ export default function IndiaLocalizationPage() {
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative rounded-[3rem] overflow-hidden border border-gray-200">
-            <Image src="/images/aboutus/CTA1.webp" alt="Get Localized with NetSuite" fill className="object-cover" />
+            <Image src="/images/people/group5.webp" alt="Get Localized with NetSuite" fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
             <div className="relative z-10 p-12 lg:p-24">
               <div className="max-w-2xl">

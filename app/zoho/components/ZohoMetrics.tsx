@@ -89,7 +89,7 @@ export default function ZohoMetrics() {
   return (
     <section
       className="relative py-16 sm:py-20 lg:py-24 bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/images/Background/teambg.webp')" }}
+    // style={{ backgroundImage: "url('/images/Background/teambg.webp')" }}
     >
       <div className="absolute inset-0 bg-white/90" />
 
@@ -111,7 +111,7 @@ export default function ZohoMetrics() {
             className="flex flex-col justify-center"
           >
             {/* Heading */}
-            <h2 className="text-3xl sm:text-3xl lg:text-4xl font-medium text-gray-900 leading-tight mb-5">
+            <h2 className="text-3xl sm:text-3xl lg:text-5xl font-medium text-gray-900 leading-tight mb-5">
               We Simplify Your <span className="text-red-600">Business</span>
             </h2>
 

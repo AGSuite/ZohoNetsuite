@@ -6,9 +6,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import {
-  Bot, Sparkles, Brain, Cpu, Zap, TrendingUp,
-  CheckCircle2, ArrowRight, LineChart, ShieldCheck, Search,
-  Check, ChevronDown, Lightbulb, Workflow, Target
+  Bot, Sparkles, Brain, Cpu, Zap, TrendingUp, CheckCircle2, ArrowRight, LineChart,
+  ShieldCheck, Search, Check, ChevronDown, Lightbulb, Workflow, Target, Settings,
+  Database, Users, Share2, Code, HeartHandshake
 } from 'lucide-react';
 import FooterFormSection from '@/app/components/home/FooterFormSection';
 
@@ -40,7 +40,7 @@ export default function NetSuiteAIPage() {
   ];
 
   const benefits = [
-    { title: "Intelligent Insights", description: "Uncover hidden patterns in your data automatically to drive strategy.", image: "/images/Dashboard/graph2.webp" },
+    { title: "Intelligent Insights", description: "Uncover hidden patterns in your data automatically to drive strategy.", image: "/images/people/laptopgirl1.webp" },
     { title: "Supply Chain Prediction", description: "Predict risks and optimize inventory with machine learning models.", image: "/images/lap/lap4.webp" },
     { title: "Cash Flow Forecasting", description: "Accurately predict cash flow based on historical trends and current data.", image: "/images/lap/lap3.webp" },
     { title: "Smart Automation", description: "Automate routine tasks to save time and reduce manual errors.", image: "/images/people/laptopgirl3.webp" }
@@ -48,9 +48,9 @@ export default function NetSuiteAIPage() {
 
   const challenges = [
     { title: "Data Overload", description: "Stop drowning in data and start getting actionable intelligence.", image: "/images/lap/lap1.webp" },
-    { title: "Manual Processes", description: "Eliminate time-consuming manual data entry and analysis.", image: "/images/people/man.webp" },
-    { title: "Business Uncertainty", description: "Reduce risk with data-driven predictions and forecasting.", image: "/images/aboutus/mission.webp" },
-    { title: "Siloed Intelligence", description: "Embed AI across your entire suite, not just in isolated pockets.", image: "/images/aboutus/CTA1.webp" }
+    { title: "Manual Processes", description: "Eliminate time-consuming manual data entry and analysis.", image: "/images/people/laptopmen.webp" },
+    { title: "Business Uncertainty", description: "Reduce risk with data-driven predictions and forecasting.", image: "/images/lap/lap2.webp" },
+    { title: "Siloed Intelligence", description: "Embed AI across your entire suite, not just in isolated pockets.", image: "/images/people/fourteam.webp" }
   ];
 
   const aiModules = [
@@ -60,6 +60,15 @@ export default function NetSuiteAIPage() {
     { title: "Smart Automation", description: "Automate routine tasks and workflows to save time and reduce errors.", icon: Bot },
     { title: "Personalized Recommendations", description: "AI-driven product recommendations for e-commerce and sales.", icon: Sparkles },
     { title: "Anomaly Detection", description: "Automatically identify outliers and potential fraud in financial transactions.", icon: ShieldCheck },
+  ];
+
+  const services = [
+    { title: "NetSuite Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
+    { title: "NetSuite Integration", description: "Connect your apps and workflows seamlessly with API-led integrations.", icon: Share2, href: "/netsuite/services/integration" },
+    { title: "NetSuite Customization", description: "Tailor NetSuite to your unique business needs with SuiteScript and SuiteCloud.", icon: Code, href: "/netsuite/services/suitecloud" },
+    { title: "NetSuite Managed Support", description: "End-to-end support and optimization of your NetSuite environment.", icon: ShieldCheck, href: "/netsuite/services/managed-services" },
+    { title: "NetSuite Training", description: "Comprehensive training programs to maximize system utilization.", icon: Users, href: "/netsuite/services/training-services" },
+    { title: "NetSuite Consulting", description: "Strategic guidance to align NetSuite with your business goals.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
   ];
 
   const pricingPlans = [
@@ -81,16 +90,16 @@ export default function NetSuiteAIPage() {
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
       {/* Full Screen Hero Section */}
       <section className="relative min-h-screen overflow-hidden flex flex-col">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute top-24 inset-x-0 bottom-0 z-0">
           <Image
-            src="/images/Dashboard/barcha.webp"
+            src="/images/lap/lap8_11zon.webp"
             alt="NetSuite AI Background"
             fill
             priority
-            className="object-cover"
+            className="object-cover object-top"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent z-10" />
+        <div className="absolute top-24 inset-x-0 bottom-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent z-10" />
 
         <div className="relative z-20 flex-1 flex flex-col justify-end max-w-7xl mx-auto px-4 sm:px-6 w-full pt-32 sm:pt-40 md:pt-48 pb-12 sm:pb-16">
           <div className="mb-8 sm:mb-10 lg:mb-12">
@@ -143,15 +152,9 @@ export default function NetSuiteAIPage() {
               >
                 <Link
                   href="/netsuite/contact"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-blue-700 text-white font-bold rounded-2xl hover:bg-blue-800 transition shadow-xl shadow-blue-900/40 text-center"
+                  className="px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-lg font-bold rounded-full transition-all bg-transparent border-2 border-white text-white hover:bg-gradient-to-r hover:from-blue-900 hover:to-slate-900 hover:border-transparent shadow-xl shadow-blue-900/20 hover:shadow-2xl hover:scale-105"
                 >
                   Start AI Journey
-                </Link>
-                <Link
-                  href="#features"
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/20 text-center"
-                >
-                  Explore Capabilities
                 </Link>
               </motion.div>
             </motion.div>
@@ -215,7 +218,7 @@ export default function NetSuiteAIPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
-              <Image src="/images/Dashboard/netsuitedash2.webp" alt="What is NetSuite AI" fill className="object-cover" />
+              <Image src="/images/lap/lap4.webp" alt="What is NetSuite AI" fill className="object-cover" />
               <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-24 h-24 bg-blue-600/20 rounded-full flex items-center justify-center backdrop-blur-sm animate-pulse">
@@ -348,6 +351,40 @@ export default function NetSuiteAIPage() {
         </div>
       </section>
 
+      {/* Services Section */}
+      <section className="py-16 bg-linear-to-br from-indigo-50/40 via-white to-blue-50/30 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-semibold text-gray-900 text-center">
+            AI Services
+          </motion.h2>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-700 text-lg max-w-2xl text-center">
+            Expert services to help you manage your AI initiatives
+          </motion.p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
+            {services.map((service, index) => {
+              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
+                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
+              return (
+                <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}>
+                  <motion.div initial="initial" whileHover="hover" variants={{ initial: { scale: 1 }, hover: { scale: 1.04, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } } }}
+                    className={`relative group rounded-2xl p-7 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}>
+                    <motion.div variants={{ initial: { rotate: 0, y: 0 }, hover: { rotate: 360, y: -6, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } } }}
+                      className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <h2 className="text-lg font-semibold text-gray-900 leading-tight">{service.title}</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mt-2">{service.description}</p>
+                    <div className="mt-6 border-t border-gray-300 pt-3">
+                      <Link href={service.href} className="text-black hover:text-blue-600 text-sm font-medium transition-all">Learn More →</Link>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50/20 to-indigo-50/30">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
@@ -420,8 +457,8 @@ export default function NetSuiteAIPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className={`group rounded-2xl border transition-all duration-300 ${openFAQ === index
-                    ? 'bg-white border-blue-500/30 shadow-2xl shadow-blue-900/10 scale-[1.02] z-10'
-                    : 'bg-white/80 border-white/50 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-200 hover:-translate-y-1 hover:bg-white'
+                  ? 'bg-white border-blue-500/30 shadow-2xl shadow-blue-900/10 scale-[1.02] z-10'
+                  : 'bg-white/80 border-white/50 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-200 hover:-translate-y-1 hover:bg-white'
                   }`}
               >
                 <button
@@ -433,8 +470,8 @@ export default function NetSuiteAIPage() {
                     {faq.question}
                   </span>
                   <div className={`p-2 rounded-full transition-all duration-300 flex-shrink-0 ml-4 ${openFAQ === index
-                      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white rotate-180 shadow-lg shadow-blue-500/30'
-                      : 'bg-gray-100 text-gray-500 group-hover:bg-blue-50 group-hover:text-blue-600'
+                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white rotate-180 shadow-lg shadow-blue-500/30'
+                    : 'bg-gray-100 text-gray-500 group-hover:bg-blue-50 group-hover:text-blue-600'
                     }`}>
                     <ChevronDown className="w-5 h-5" />
                   </div>
@@ -466,7 +503,7 @@ export default function NetSuiteAIPage() {
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative rounded-[3rem] overflow-hidden border border-gray-200">
-            <Image src="/images/aboutus/CTA3.webp" alt="Get Started with NetSuite AI" fill className="object-cover" />
+            <Image src="/images/lap/lap5.webp" alt="Get Started with NetSuite AI" fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
             <div className="relative z-10 p-12 lg:p-24">
               <div className="max-w-2xl">
