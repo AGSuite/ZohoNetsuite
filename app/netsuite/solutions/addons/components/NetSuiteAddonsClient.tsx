@@ -10,10 +10,7 @@ import { Trophy, Users, Globe2, Rocket, Layout, Database, Share2, Code, ShieldCh
 import FooterFormSection from '@/app/components/home/FooterFormSection';
 
 export default function NetSuiteAddonsClient() {
-  const { ref: statsRef, inView: statsInView } = useInView({
-    triggerOnce: false,
-    threshold: 0.2,
-  });
+
 
   // Mouse tracking for hero section
   const mouseX = useMotionValue(0);
@@ -31,12 +28,7 @@ export default function NetSuiteAddonsClient() {
     mouseY.set(clientY - top);
   };
 
-  const stats = [
-    { label: 'Enterprises Served', value: 180, suffix: '+', icon: Trophy },
-    { label: 'Active Extensions', value: 25, suffix: '+', icon: Settings },
-    { label: 'API Calls / Day', value: 1, suffix: 'M+', icon: Zap },
-    { label: 'Compliance Rate', value: 100, suffix: '%', icon: ShieldCheck },
-  ];
+
 
   const services = [
     { title: "NetSuite Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
@@ -234,42 +226,7 @@ export default function NetSuiteAddonsClient() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section ref={statsRef} className="py-12 relative z-20 -translate-y-10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 p-10 rounded-[2rem] border border-blue-500/20 backdrop-blur-xl bg-blue-600/5 shadow-2xl shadow-blue-900/20">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={statsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ delay: index * 0.1 }}
-                className="flex flex-col items-center text-center space-y-4"
-              >
-                <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400">
-                  <stat.icon size={24} strokeWidth={1.5} />
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="text-4xl md:text-5xl font-black text-white flex items-center">
-                    <FlipNumbers
-                      height={48}
-                      width={32}
-                      color="white"
-                      play={statsInView}
-                      numbers={stat.value.toString()}
-                      duration={2}
-                    />
-                    {stat.suffix && <span className="ml-1 -translate-y-1 inline-block">{stat.suffix}</span>}
-                  </div>
-                  <p className="text-sm font-bold uppercase tracking-widest mt-2 text-gray-400">
-                    {stat.label}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Introduction */}
       <section className="py-24 bg-white relative">

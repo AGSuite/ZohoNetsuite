@@ -41,6 +41,15 @@ export default function NetSuiteCRMPage() {
     { title: "Data-Driven Decisions", description: "Real-time analytics to guide sales strategy.", image: "/images/lap/lap1.webp" }
   ];
 
+  const crmCapabilities = [
+    { title: "Sales Force Automation", description: "Manage leads, opportunities, and sales forecasts with real-time visibility.", icon: Target },
+    { title: "Customer Service Management", description: "Streamline case management and provide superior support with a 360-degree customer view.", icon: Heart },
+    { title: "Marketing Automation", description: "Create, execute, and track marketing campaigns and their impact on revenue.", icon: Mail },
+    { title: "Partner Relationship Management", description: "Collaborate effectively with partners and track their performance in real-time.", icon: Users },
+    { title: "Mobile CRM", description: "Access customer data, update records, and view dashboards from any mobile device.", icon: Phone },
+    { title: "CRM Analytics", description: "Gain actionable insights into sales performance and customer trends.", icon: BarChart3 },
+  ];
+
   const challenges = [
     { title: "Disconnected Data", description: "Customer data siloed in different systems involves manual reconciliation.", image: "/images/people/fourteam.webp" },
     { title: "Manual Processes", description: "Time wasted on manual data entry reduces selling time.", image: "/images/lap/lap2.webp" },
@@ -139,6 +148,30 @@ export default function NetSuiteCRMPage() {
                 </Link>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">CRM Capabilities</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">Comprehensive tools to manage your entire customer lifecycle</p>
+          </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {crmCapabilities.map((module, index) => (
+              <motion.div key={index} initial={{ opacity: 0, y: 50, scale: 0.9 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ scale: 1.05, background: "linear-gradient(to bottom right, #ffffff, #ffffff)", transition: { duration: 0.3, ease: "easeInOut" } }}
+                style={{ background: "linear-gradient(to bottom right, #0a1f44, #1a2f5a, #0f2847)" }}
+                className="border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 group">
+                <div className="p-3 bg-blue-600 rounded-xl w-fit mb-6 group-hover:bg-gray-900 transition-colors">
+                  <module.icon className="w-6 h-6 text-white" />
+                </div>
+                <h4 className="text-xl font-bold text-white group-hover:text-gray-900 mb-3 transition-colors duration-300">{module.title}</h4>
+                <p className="text-blue-100 group-hover:text-gray-600 leading-relaxed text-sm transition-colors duration-300">{module.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
