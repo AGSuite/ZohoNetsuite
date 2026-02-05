@@ -1,25 +1,27 @@
-import CampaignIcon from '@mui/icons-material/Campaign';
-import ContactSupportIcon from '@mui/icons-material/ContactSupport';
-import WorkIcon from '@mui/icons-material/Work';
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
-import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
-import ForumIcon from '@mui/icons-material/Forum';
-import NewspaperIcon from '@mui/icons-material/Newspaper';
-import EventIcon from '@mui/icons-material/Event';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import SchoolIcon from '@mui/icons-material/School';
-import StoreIcon from '@mui/icons-material/Store';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
-import ComputerIcon from '@mui/icons-material/Computer';
-import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
-import BuildIcon from '@mui/icons-material/Build';
-import SettingsIcon from '@mui/icons-material/Settings';
-import Groups from '@mui/icons-material/Groups';
-import Business from '@mui/icons-material/Business';
-import CalculateIcon from '@mui/icons-material/Calculate';
+import {
+    Megaphone,
+    HelpCircle,
+    Briefcase,
+    Headset,
+    FileText,
+    MessageSquare,
+    Newspaper,
+    Calendar,
+    Trophy,
+    GraduationCap,
+    Store,
+    Truck,
+    Factory,
+    Monitor,
+    BookOpen,
+    Rocket,
+    Layers,
+    Wrench,
+    Settings,
+    Users,
+    Building2,
+    Calculator
+} from 'lucide-react';
 
 // Types
 export interface MegaMenuItem {
@@ -64,13 +66,13 @@ export const navItemsNetSuite: NavSection[] = [
                 label: "Who We Are",
                 href: "/netsuite/about-us",
                 description: "Learn more about AGSuite vision, mission and team.",
-                icon: Groups
+                icon: Users
             },
             {
                 label: "Our Offices",
                 href: "/netsuite/about-us#offices",
                 description: "Explore our global presence and office locations.",
-                icon: Business
+                icon: Building2
             },
         ],
     },
@@ -202,11 +204,11 @@ export const navItemsNetSuite: NavSection[] = [
     {
         title: 'Services',
         children: [
-            { label: 'Digital Transformation', href: '/netsuite/services/digital-transformation', description: 'Modernize your business for the digital age.', icon: RocketLaunchIcon },
-            { label: 'Integration Services', href: '/netsuite/services/integration-services', description: 'Seamlessly connect your systems.', icon: IntegrationInstructionsIcon },
-            { label: 'Training Services', href: '/netsuite/services/training-services', description: 'Upskill your team with expert-led training.', icon: SchoolIcon },
-            { label: 'Low-Code Application Development', href: '/netsuite/services/low-code', description: 'Build apps faster with minimal coding.', icon: BuildIcon },
-            { label: 'Managed Services', href: '/netsuite/services/managed-services', description: 'End-to-end IT management & support.', icon: SettingsIcon },
+            { label: 'Digital Transformation', href: '/netsuite/services/digital-transformation', description: 'Modernize your business for the digital age.', icon: Rocket },
+            { label: 'Integration Services', href: '/netsuite/services/integration-services', description: 'Seamlessly connect your systems.', icon: Layers },
+            { label: 'Training Services', href: '/netsuite/services/training-services', description: 'Upskill your team with expert-led training.', icon: GraduationCap },
+            { label: 'Low-Code Application Development', href: '/netsuite/services/low-code', description: 'Build apps faster with minimal coding.', icon: Wrench },
+            { label: 'Managed Services', href: '/netsuite/services/managed-services', description: 'End-to-end IT management & support.', icon: Settings },
         ],
     },
 
@@ -214,14 +216,14 @@ export const navItemsNetSuite: NavSection[] = [
     {
         title: 'Industries',
         children: [
-            { label: 'Software & Technology', href: '/netsuite/industries/software', description: 'Tools for modern software companies.', icon: ComputerIcon },
-            { label: 'IT & Professional Services', href: '/netsuite/industries/it-services', description: 'Scaling solutions for IT firms.', icon: WorkIcon },
-            { label: 'Wholesale Distribution', href: '/netsuite/industries/wholesale', description: 'Optimize supply chain & inventory.', icon: LocalShippingIcon },
-            { label: 'Advertising & Marketing', href: '/netsuite/industries/advertising-marketing', description: 'Boost your digital campaigns.', icon: CampaignIcon },
-            { label: 'Media & Publishing', href: '/netsuite/industries/media', description: 'Solutions for media operations.', icon: NewspaperIcon },
-            { label: 'Retail & E-Commerce', href: '/netsuite/industries/retail', description: 'End-to-end retail automation.', icon: StoreIcon },
-            { label: 'Transportation & Logistics', href: '/netsuite/industries/transport', description: 'Smart logistics solutions.', icon: LocalShippingIcon },
-            { label: 'Manufacturing', href: '/netsuite/industries/manufacturing', description: 'Streamline production cycles.', icon: PrecisionManufacturingIcon },
+            { label: 'Software & Technology', href: '/netsuite/industries/software', description: 'Tools for modern software companies.', icon: Monitor },
+            { label: 'IT & Professional Services', href: '/netsuite/industries/it-services', description: 'Scaling solutions for IT firms.', icon: Briefcase },
+            { label: 'Wholesale Distribution', href: '/netsuite/industries/wholesale', description: 'Optimize supply chain & inventory.', icon: Truck },
+            { label: 'Advertising & Marketing', href: '/netsuite/industries/advertising-marketing', description: 'Boost your digital campaigns.', icon: Megaphone },
+            { label: 'Media & Publishing', href: '/netsuite/industries/media', description: 'Solutions for media operations.', icon: Newspaper },
+            { label: 'Retail & E-Commerce', href: '/netsuite/industries/retail', description: 'End-to-end retail automation.', icon: Store },
+            { label: 'Transportation & Logistics', href: '/netsuite/industries/transport', description: 'Smart logistics solutions.', icon: Truck },
+            { label: 'Manufacturing', href: '/netsuite/industries/manufacturing', description: 'Streamline production cycles.', icon: Factory },
         ],
     },
 
@@ -229,11 +231,11 @@ export const navItemsNetSuite: NavSection[] = [
     {
         title: 'Insights',
         children: [
-            { label: 'Blogs', href: '/netsuite/blog', description: 'Latest posts & insights.', icon: ForumIcon },
-            { label: 'Case Study', href: '/netsuite/casestudy', description: 'Our success stories.', icon: LocalLibraryIcon },
-            { label: 'Events', href: '/netsuite/insights/events', description: 'Webinars & workshops.', icon: EventIcon },
-            { label: 'Pricing Calculator', href: '/netsuite-calculator', description: 'Estimate your NetSuite ROI.', icon: CalculateIcon },
-            { label: 'Awards & Achievements', href: '/netsuite/insights/awards', description: 'Recognition & milestones.', icon: EmojiEventsIcon },
+            { label: 'Blogs', href: '/netsuite/blog', description: 'Latest posts & insights.', icon: MessageSquare },
+            { label: 'Case Study', href: '/netsuite/casestudy', description: 'Our success stories.', icon: BookOpen },
+            { label: 'Events', href: '/netsuite/insights/events', description: 'Webinars & workshops.', icon: Calendar },
+            { label: 'Pricing Calculator', href: '/netsuite-calculator', description: 'Estimate your NetSuite ROI.', icon: Calculator },
+            { label: 'Awards & Achievements', href: '/netsuite/insights/awards', description: 'Recognition & milestones.', icon: Trophy },
         ],
     },
 
@@ -241,10 +243,10 @@ export const navItemsNetSuite: NavSection[] = [
     {
         title: 'Contact',
         children: [
-            { label: 'Careers', href: '/netsuite/contact/careers', description: 'Join our growing team.', icon: WorkIcon },
-            { label: 'Support', href: '/netsuite/contact/support', description: '24/7 client support.', icon: SupportAgentIcon },
-            { label: 'Request Quote', href: '/netsuite/contact/quote', description: 'Get a project estimate.', icon: RequestQuoteIcon },
-            { label: 'Free Consultation', href: '/netsuite/free-consultation', description: 'Talk to an expert.', icon: ContactSupportIcon }
+            { label: 'Careers', href: '/netsuite/contact/careers', description: 'Join our growing team.', icon: Briefcase },
+            { label: 'Support', href: '/netsuite/contact/support', description: '24/7 client support.', icon: Headset },
+            { label: 'Request Quote', href: '/netsuite/contact/quote', description: 'Get a project estimate.', icon: FileText },
+            { label: 'Free Consultation', href: '/netsuite/free-consultation', description: 'Talk to an expert.', icon: HelpCircle }
         ],
     },
 ];

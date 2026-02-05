@@ -123,6 +123,7 @@ const NSKeyCapabilities = () => {
                                         fill
                                         className={`object-cover transition-transform duration-700 ${isHovered ? "scale-105 brightness-[0.7]" : "scale-100 brightness-[0.5]"
                                             }`}
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                                     />
 
                                     {/* Overlay */}

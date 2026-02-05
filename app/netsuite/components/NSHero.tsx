@@ -5,16 +5,14 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import { motion, AnimatePresence } from "framer-motion";
-import { DM_Sans } from "next/font/google";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import { NSCircularDesign } from "./NSCircularDesign";
+import dynamic from "next/dynamic";
 
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  display: "swap",
+const NSCircularDesign = dynamic(() => import("./NSCircularDesign").then(mod => mod.NSCircularDesign), {
+  ssr: false,
+  loading: () => <div className="w-[350px] h-[350px] xl:w-[550px] xl:h-[550px] rounded-full bg-blue-50/50 animate-pulse mx-auto" />
 });
 
 interface NSHeroProps {
@@ -28,13 +26,17 @@ interface NSHeroProps {
 export const NSHero: React.FC<NSHeroProps> = () => {
   const [isMounted, setIsMounted] = React.useState(false);
   const [activeIndex, setActiveIndex] = React.useState(0);
+  const [skipFirstAnimation, setSkipFirstAnimation] = React.useState(true);
 
   React.useEffect(() => {
     setIsMounted(true);
+    // After mount, we allow animations for subsequent slides
+    const timer = setTimeout(() => setSkipFirstAnimation(false), 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className={`relative w-full overflow-hidden bg-white ${dmSans.className}`}>
+    <div className={`relative w-full overflow-hidden bg-white font-dm-sans`}>
       <section className="relative w-full h-[calc(100vh-80px)] flex items-center mt-20">
         <div className="relative w-full h-full">
           {!isMounted ? (
@@ -98,32 +100,10 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   desc="Run finance, operations & reporting in a single connected platform."
                   cta="Explore NetSuite ERP"
                   link="/netsuite/solutions/core-erp/erp"
-                  customVisual={
-                    <div className="relative w-full flex justify-center lg:justify-end">
-                      {/* Premium Multi-colored glow shadow */}
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[130%] -z-10 blur-[130px] opacity-35 select-none pointer-events-none">
-                        <div className="absolute inset-0">
-                          <div className="absolute top-0 left-0 w-[80%] h-[80%] bg-pink-300 rounded-full blur-[60px]" />
-                          <div className="absolute top-0 right-0 w-[80%] h-[80%] bg-orange-400 rounded-full blur-[60px]" />
-                          <div className="absolute bottom-0 right-0 w-[80%] h-[80%] bg-red-400 rounded-full blur-[60px]" />
-                          <div className="absolute bottom-0 left-0 w-[80%] h-[80%] bg-blue-500 rounded-full blur-[60px]" />
-                        </div>
-                      </div>
-                      <Image
-                        src="/images/Dashboard/netsuitedash2.webp"
-                        alt="NetSuite ERP Solutions"
-                        width={1800}
-                        height={1600}
-                        priority={true}
-                        className="w-[140%] max-w-none object-contain drop-shadow-[0_25px_50px_rgba(59,130,246,0.2)] -mr-[10%] transition-transform duration-700 hover:scale-[1.02]"
-                        sizes="(max-width: 1024px) 100vw, 60vw"
-                      />
-                    </div>
-                  }
-                  showOverlay={false}
-                  textColor="dark"
+                  image="/images/Dashboard/netsuitedash2.webp"
                   priority={true}
                   multiColorShadow={true}
+                  skipEntranceAnimation={skipFirstAnimation}
                 />
               </SwiperSlide>
 
@@ -324,12 +304,11 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   textColor="dark"
                 />
               </SwiperSlide>
-
             </Swiper>
           )}
         </div>
-      </section >
-    </div >
+      </section>
+    </div>
   );
 };
 
@@ -348,6 +327,7 @@ const HeroSlide = ({
   priority = false,
   isActive = false,
   multiColorShadow = false,
+  skipEntranceAnimation = false,
 }: any) => {
   return (
     <div className="relative h-full w-full flex items-center">
@@ -380,7 +360,7 @@ const HeroSlide = ({
           <AnimatePresence mode="wait">
             {isActive && (
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={skipEntranceAnimation ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >

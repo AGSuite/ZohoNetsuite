@@ -329,6 +329,7 @@ const NSMetrics = () => {
                                     height={600}
                                     className="w-full h-auto rounded-2xl shadow-2xl shadow-blue-500/30 border-2 border-white/20"
                                     priority
+                                    sizes="100vw"
                                 />
                             </div>
                         </motion.div>

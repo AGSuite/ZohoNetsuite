@@ -1,26 +1,28 @@
 // navDataZoho.ts
 
-import CampaignIcon from '@mui/icons-material/Campaign';
-import ContactSupportIcon from '@mui/icons-material/ContactSupport';
-import WorkIcon from '@mui/icons-material/Work';
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
-import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
-import ForumIcon from '@mui/icons-material/Forum';
-import NewspaperIcon from '@mui/icons-material/Newspaper';
-import EventIcon from '@mui/icons-material/Event';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import SchoolIcon from '@mui/icons-material/School';
-import StoreIcon from '@mui/icons-material/Store';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
-import ComputerIcon from '@mui/icons-material/Computer';
-import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
-import BuildIcon from '@mui/icons-material/Build';
-import SettingsIcon from '@mui/icons-material/Settings';
-import Groups from '@mui/icons-material/Groups';
-import Business from '@mui/icons-material/Business';
+import {
+    Megaphone,
+    HelpCircle,
+    Briefcase,
+    Headset,
+    FileText,
+    MessageSquare,
+    Newspaper,
+    Calendar,
+    Trophy,
+    GraduationCap,
+    Store,
+    Truck,
+    Factory,
+    Monitor,
+    BookOpen,
+    Rocket,
+    Layers,
+    Wrench,
+    Settings,
+    Users,
+    Building2
+} from 'lucide-react';
 
 // Types
 export interface MegaMenuItem {
@@ -66,13 +68,13 @@ export const navItemsZoho: NavSection[] = [
                 label: "Who We Are",
                 href: "/zoho/about-us",
                 description: "Learn more about AGSuite vision, mission and team.",
-                icon: Groups
+                icon: Users
             },
             {
                 label: "Our Offices",
                 href: "/zoho/about-us#offices",
                 description: "Explore our global presence and office locations.",
-                icon: Business
+                icon: Building2
             },
         ],
     },
@@ -182,11 +184,11 @@ export const navItemsZoho: NavSection[] = [
     {
         title: "Services",
         children: [
-            { label: 'Digital Transformation', href: '/zoho/services/digital-transformation', description: 'Modernize your business.', icon: RocketLaunchIcon },
-            { label: 'Integration Services', href: '/zoho/services/integration-services', description: 'Connect systems easily.', icon: IntegrationInstructionsIcon },
-            { label: 'Training Services', href: '/zoho/services/training-services', description: 'Expert-led training programs.', icon: SchoolIcon },
-            { label: 'Low-Code App Development', href: '/zoho/services/low-code', description: 'Build apps faster.', icon: BuildIcon },
-            { label: 'Managed Services', href: '/zoho/services/managed-services', description: 'Complete IT management.', icon: SettingsIcon },
+            { label: 'Digital Transformation', href: '/zoho/services/digital-transformation', description: 'Modernize your business.', icon: Rocket },
+            { label: 'Integration Services', href: '/zoho/services/integration-services', description: 'Connect systems easily.', icon: Layers },
+            { label: 'Training Services', href: '/zoho/services/training-services', description: 'Expert-led training programs.', icon: GraduationCap },
+            { label: 'Low-Code App Development', href: '/zoho/services/low-code', description: 'Build apps faster.', icon: Wrench },
+            { label: 'Managed Services', href: '/zoho/services/managed-services', description: 'Complete IT management.', icon: Settings },
         ]
     },
 
@@ -194,14 +196,14 @@ export const navItemsZoho: NavSection[] = [
     {
         title: "Industries",
         children: [
-            { label: 'Software & Technology', href: '/zoho/industries/software', description: 'Solutions for tech businesses.', icon: ComputerIcon },
-            { label: 'IT & Professional Services', href: '/zoho/industries/it-services', description: 'Automation for service providers.', icon: WorkIcon },
-            { label: 'Wholesale Distribution', href: '/zoho/industries/wholesale', description: 'Distribution & logistics tools.', icon: LocalShippingIcon },
-            { label: 'Advertising & Marketing', href: '/zoho/industries/advertising-marketing', description: 'Boost your campaigns.', icon: CampaignIcon },
-            { label: 'Media & Publishing', href: '/zoho/industries/media', description: 'Tools for media houses.', icon: NewspaperIcon },
-            { label: 'Retail & E-Commerce', href: '/zoho/industries/retail', description: 'Retail automation suite.', icon: StoreIcon },
-            { label: 'Transportation & Logistics', href: '/zoho/industries/transport', description: 'Smart logistics systems.', icon: LocalShippingIcon },
-            { label: 'Manufacturing', href: '/zoho/industries/manufacturing', description: 'Optimize manufacturing cycles.', icon: PrecisionManufacturingIcon },
+            { label: 'Software & Technology', href: '/zoho/industries/software', description: 'Solutions for tech businesses.', icon: Monitor },
+            { label: 'IT & Professional Services', href: '/zoho/industries/it-services', description: 'Automation for service providers.', icon: Briefcase },
+            { label: 'Wholesale Distribution', href: '/zoho/industries/wholesale', description: 'Distribution & logistics tools.', icon: Truck },
+            { label: 'Advertising & Marketing', href: '/zoho/industries/advertising-marketing', description: 'Boost your campaigns.', icon: Megaphone },
+            { label: 'Media & Publishing', href: '/zoho/industries/media', description: 'Tools for media houses.', icon: Newspaper },
+            { label: 'Retail & E-Commerce', href: '/zoho/industries/retail', description: 'Retail automation suite.', icon: Store },
+            { label: 'Transportation & Logistics', href: '/zoho/industries/transport', description: 'Smart logistics systems.', icon: Truck },
+            { label: 'Manufacturing', href: '/zoho/industries/manufacturing', description: 'Optimize manufacturing cycles.', icon: Factory },
         ]
     },
 
@@ -209,10 +211,10 @@ export const navItemsZoho: NavSection[] = [
     {
         title: "Insights",
         children: [
-            { label: 'Blogs', href: '/zoho/blog', description: 'Latest articles & updates.', icon: ForumIcon },
-            { label: 'Case Study', href: '/zoho/casestudy', description: 'Our success stories.', icon: LocalLibraryIcon },
-            { label: 'Events', href: '/zoho/insights/events', description: 'Workshops & webinars.', icon: EventIcon },
-            { label: 'Awards & Achievements', href: '/zoho/insights/awards', description: 'Recognition & milestones.', icon: EmojiEventsIcon },
+            { label: 'Blogs', href: '/zoho/blog', description: 'Latest articles & updates.', icon: MessageSquare },
+            { label: 'Case Study', href: '/zoho/casestudy', description: 'Our success stories.', icon: BookOpen },
+            { label: 'Events', href: '/zoho/insights/events', description: 'Workshops & webinars.', icon: Calendar },
+            { label: 'Awards & Achievements', href: '/zoho/insights/awards', description: 'Recognition & milestones.', icon: Trophy },
         ]
     },
 
@@ -220,10 +222,10 @@ export const navItemsZoho: NavSection[] = [
     {
         title: "Contact",
         children: [
-            { label: 'Careers', href: '/zoho/contact/careers', description: 'Join our growing team.', icon: WorkIcon },
-            { label: 'Support', href: '/zoho/contact/support', description: 'Get expert help.', icon: SupportAgentIcon },
-            { label: 'Request Quote', href: '/zoho/contact/quote', description: 'Get project pricing.', icon: RequestQuoteIcon },
-            { label: 'Free Consultation', href: '/zoho/free-consultation', description: 'Talk to our team.', icon: ContactSupportIcon }
+            { label: 'Careers', href: '/zoho/contact/careers', description: 'Join our growing team.', icon: Briefcase },
+            { label: 'Support', href: '/zoho/contact/support', description: 'Get expert help.', icon: Headset },
+            { label: 'Request Quote', href: '/zoho/contact/quote', description: 'Get project pricing.', icon: FileText },
+            { label: 'Free Consultation', href: '/zoho/free-consultation', description: 'Talk to our team.', icon: HelpCircle }
         ]
     }
 ];

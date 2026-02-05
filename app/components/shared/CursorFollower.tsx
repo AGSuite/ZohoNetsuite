@@ -12,6 +12,8 @@ export default function CursorFollower() {
     const smoothMouseY = useSpring(mouseY, springConfig);
 
     useEffect(() => {
+        if (window.innerWidth < 1024) return;
+
         const handleMouseMove = (event: MouseEvent) => {
             mouseX.set(event.clientX);
             mouseY.set(event.clientY);
@@ -20,6 +22,14 @@ export default function CursorFollower() {
         window.addEventListener("mousemove", handleMouseMove);
         return () => window.removeEventListener("mousemove", handleMouseMove);
     }, [mouseX, mouseY]);
+
+    // Use a state for double safety on mobile
+    const [isMobile, setIsMobile] = React.useState(true);
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 1024);
+    }, []);
+
+    if (isMobile) return null;
 
     return (
         <motion.div

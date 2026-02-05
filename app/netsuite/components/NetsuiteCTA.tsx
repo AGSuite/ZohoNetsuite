@@ -2,8 +2,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import NetSuitePricingCalculator from "./NetSuitePricingCalculator";
+import dynamic from "next/dynamic";
 import { X } from "lucide-react";
+
+const NetSuitePricingCalculator = dynamic(() => import("./NetSuitePricingCalculator"), {
+  loading: () => <div className="min-h-[600px] flex items-center justify-center bg-[#020617] text-white">Loading Calculator...</div>,
+  ssr: false
+});
 
 const NetsuiteCTA = () => {
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
@@ -22,7 +27,7 @@ const NetsuiteCTA = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/netsuiteimages/background/netsuiteCTA.webp" /* <-- Matches actual filename case */
+            src="/images/netsuiteimages/background/netsuiteCTA.webp"
             alt="NetSuite Calculator CTA"
             fill
             className="object-cover"
@@ -123,4 +128,3 @@ const NetsuiteCTA = () => {
 };
 
 export default NetsuiteCTA;
-

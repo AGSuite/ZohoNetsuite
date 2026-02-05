@@ -47,6 +47,13 @@ const socialLinks = [
 ];
 
 export default function SocialSidebar() {
+    const [isMobile, setIsMobile] = React.useState(true);
+    React.useEffect(() => {
+        setIsMobile(window.innerWidth < 1024);
+    }, []);
+
+    if (isMobile) return null;
+
     return (
         <div className="fixed left-0 top-[65%] -translate-y-1/2 z-[100] hidden lg:flex flex-col gap-1.5">
             {socialLinks.map((social) => (
