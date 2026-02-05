@@ -25,11 +25,12 @@ import {
   Building2,
   MapPin,
   Mail,
+  Linkedin,
 } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import FlipNumbers from 'react-flip-numbers';
 import { motion, useAnimation, type Variants } from 'framer-motion';
-import FooterFormSection from '@/app/components/home/FooterFormSection';
+import ContactFormDesign4 from '../components/ContactFormDesign4';
 import NSTestimonialSection from '../components/NSTestimonialSection';
 import { AnimatePresence } from 'framer-motion';
 
@@ -483,6 +484,7 @@ export default function AboutClient() {
           onClick={togglePlay}
           className="absolute bottom-6 right-6 z-20 p-3 rounded-full bg-white/20 hover:bg-white/30 transition"
           aria-label={isPlaying ? 'Pause video' : 'Play video'}
+          suppressHydrationWarning={true}
         >
           {isPlaying ? (
             <Pause className="w-6 h-6 text-white" />
@@ -646,6 +648,7 @@ export default function AboutClient() {
 
           {/* OUR NICHE */}
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+            {/* Left Image Section */}
             <motion.div
               variants={slideInLeft}
               initial="hidden"
@@ -674,6 +677,7 @@ export default function AboutClient() {
               </div>
             </motion.div>
 
+            {/* Right Text */}
             <motion.div
               variants={staggerContainer}
               initial="hidden"
@@ -820,6 +824,7 @@ export default function AboutClient() {
               <button
                 type="button"
                 className="mt-6 inline-flex items-center gap-2 border-2 border-white/60 text-white px-6 py-2 text-sm rounded-full font-medium hover:bg-white/10 hover:border-white transition-all duration-300 w-fit group"
+                suppressHydrationWarning={true}
               >
                 <span>Explore more</span>
                 <span className="text-base transform group-hover:translate-x-1 transition-transform duration-300">
@@ -896,14 +901,14 @@ export default function AboutClient() {
             variants={fadeInUp}
             className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 text-white"
           >
-            Our Global Presence & Offices
+            Our Global Presence
           </motion.h2>
 
           <motion.p variants={fadeInUp} className="max-w-2xl text-gray-400 mb-12 text-base md:text-lg leading-relaxed">
             Delivering excellence across continents with a strong and growing worldwide footprint.
           </motion.p>
 
-          <div className="relative w-full max-w-6xl rounded-[40px] overflow-hidden border border-white/10 bg-white/5 p-2 shadow-2xl group">
+          <div className="relative w-full max-w-6xl rounded-[40px] overflow-hidden border border-white/10 bg-white/5 p-2 shadow-2xl group mb-20">
             <div className="relative w-full h-[45vh] sm:h-[60vh] lg:h-[85vh] rounded-[32px] overflow-hidden bg-slate-900/50">
               <Image
                 src="/images/Dashboard/Presence.webp"
@@ -914,12 +919,25 @@ export default function AboutClient() {
             </div>
           </div>
 
-          <OfficeDisplay themeColor="blue" />
+          {/* <OfficeDisplay themeColor="blue" /> */}
+
+          <motion.h2
+            variants={fadeInUp}
+            className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 text-white"
+          >
+            Meet Our Visionary Leaders
+          </motion.h2>
+
+          <motion.p variants={fadeInUp} className="max-w-2xl text-gray-400 mb-12 text-base md:text-lg leading-relaxed">
+            Driving innovation and excellence with a passion for transformative technology.
+          </motion.p>
+
+          <OurLeaders themeColor="blue" />
         </motion.div>
       </section>
 
       <section id="contact" className=" bg-white">
-        <FooterFormSection />
+        <ContactFormDesign4 />
       </section>
     </main>
   );
@@ -962,6 +980,7 @@ function OfficeDisplay({ themeColor }: { themeColor: 'blue' | 'rose' }) {
                 ? `${config.activeTab} text-white shadow-lg`
                 : 'text-gray-400 hover:text-white hover:bg-white/5'
                 }`}
+              suppressHydrationWarning={true}
             >
               {country}
             </button>
@@ -1029,6 +1048,86 @@ function OfficeDisplay({ themeColor }: { themeColor: 'blue' | 'rose' }) {
           </motion.div>
         </AnimatePresence>
       </div>
+    </div>
+  );
+}
+
+const leadersData = [
+  {
+    name: "Anukr Goyal",
+    title: "CEO",
+    image: "/images/people/Ankur.jpg",
+    linkedin: "https://www.linkedin.com/in/ankurgoyal2/",
+  },
+  {
+    name: "Rajat Goyal",
+    title: "Director",
+    image: "/images/people/Rajat.jpg",
+    linkedin: "https://www.linkedin.com/in/rajat-goyal-9007a6101/",
+  },
+  {
+    name: "Nikhil Jain",
+    title: "CTO",
+    image: "/images/people/Nikhil.jpg",
+    linkedin: "#",
+  },
+];
+
+function OurLeaders({ themeColor }: { themeColor: 'blue' | 'rose' }) {
+  const colorConfig = {
+    blue: {
+      primary: 'bg-blue-600',
+      text: 'text-blue-600',
+      hover: 'hover:bg-blue-700',
+      border: 'border-blue-600/30',
+    },
+    rose: {
+      primary: 'bg-rose-600',
+      text: 'text-rose-600',
+      hover: 'hover:bg-rose-700',
+      border: 'border-rose-600/30',
+    },
+  };
+
+  const config = colorConfig[themeColor];
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mx-auto">
+      {leadersData.map((leader, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 hover:bg-white/10 transition-all duration-300"
+        >
+          <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden mb-6">
+            <Image
+              src={leader.image}
+              alt={leader.name}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            {/* Social Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <a
+                href={leader.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="self-end p-3 bg-[#0077b5] text-white rounded-full hover:scale-110 transition-transform shadow-lg"
+                aria-label={`${leader.name} LinkedIn`}
+              >
+                <Linkedin className="w-5 h-5 fill-current" />
+              </a>
+            </div>
+          </div>
+
+          <div className="text-left">
+            <h3 className="text-xl font-bold text-white mb-1">{leader.name}</h3>
+            <p className={`text-sm font-medium ${config.text} uppercase tracking-wider`}>{leader.title}</p>
+          </div>
+        </motion.div>
+      ))}
     </div>
   );
 }

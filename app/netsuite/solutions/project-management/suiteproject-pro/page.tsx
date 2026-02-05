@@ -10,7 +10,7 @@ import {
   BarChart3, Layers, Building, Check, ChevronDown, Workflow, Cloud, CheckSquare,
   Database, Share2, Code, ShieldCheck, HeartHandshake
 } from 'lucide-react';
-import FooterFormSection from '@/app/components/home/FooterFormSection';
+import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -228,6 +228,67 @@ export default function SuiteprojectProPage() {
         </div>
       </section>
 
+      <section id="features" className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">Enterprise PSA Features</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">Advanced capabilities for complex organizations</p>
+          </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {openairModules.map((module, index) => (
+              <motion.div key={index} initial={{ opacity: 0, y: 50, scale: 0.9 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.3, ease: "easeInOut" } }}
+                style={{ background: "linear-gradient(to bottom right, #0a1f44, #1a2f5a, #0f2847)" }}
+                className="border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 group">
+                <div className="p-3 bg-blue-600 rounded-xl w-fit mb-6 group-hover:bg-gray-900 transition-colors">
+                  <module.icon className="w-6 h-6 text-white" />
+                </div>
+                <h4 className="text-xl font-bold text-white group-hover:text-blue-600 mb-3 transition-colors duration-300">{module.title}</h4>
+                <p className="text-blue-100 group-hover:text-gray-300 leading-relaxed text-sm transition-colors duration-300">{module.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 sm:py-24 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-bold mb-4 sm:mb-6 uppercase tracking-wider">
+              <Zap className="w-4 h-4" />
+              <span>NetSuite Services</span>
+            </motion.div>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-4 sm:mb-6 tracking-tight">
+              Comprehensive NetSuite <span className="text-blue-600">Services</span>
+            </motion.h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {services.map((service, index) => {
+              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
+                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
+              return (
+                <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} className="h-full">
+                  <motion.div whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.3 } }} className={`relative p-8 sm:p-10 rounded-3xl sm:rounded-[2.5rem] border border-gray-100 h-full shadow-2xl shadow-blue-900/5 hover:shadow-blue-900/10 transition-all group overflow-hidden ${cardBgColors[index % cardBgColors.length]}`}>
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-blue-100/50 to-indigo-100/50 rounded-full blur-3xl -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
+                    <div className="w-14 sm:w-16 h-14 sm:h-16 bg-slate-900 rounded-[1.5rem] sm:rounded-[2rem] flex items-center justify-center mb-6 sm:mb-8 shadow-xl group-hover:rotate-12 transition-transform duration-500 relative z-10">
+                      <service.icon className="w-7 sm:w-8 h-7 sm:h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-3 sm:mb-4 group-hover:text-blue-600 transition-colors relative z-10 leading-tight">{service.title}</h3>
+                    <p className="text-slate-600 leading-relaxed mb-6 sm:mb-8 text-base sm:text-lg font-medium relative z-10">{service.description}</p>
+                    <Link href={service.href} className="inline-flex items-center gap-2 text-blue-600 font-bold group/link relative z-10 text-base sm:text-lg">
+                      Explore Service <ArrowRight className="w-5 h-5 group-hover/link:translate-x-2 transition-transform" />
+                    </Link>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="py-24 bg-[#000b21] overflow-hidden relative">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
@@ -308,67 +369,6 @@ export default function SuiteprojectProPage() {
                 </motion.div>
               </AnimatePresence>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section id="features" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">Enterprise PSA Features</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">Advanced capabilities for complex organizations</p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {openairModules.map((module, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 50, scale: 0.9 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ scale: 1.05, transition: { duration: 0.3, ease: "easeInOut" } }}
-                style={{ background: "linear-gradient(to bottom right, #0a1f44, #1a2f5a, #0f2847)" }}
-                className="border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 group">
-                <div className="p-3 bg-blue-600 rounded-xl w-fit mb-6 group-hover:bg-gray-900 transition-colors">
-                  <module.icon className="w-6 h-6 text-white" />
-                </div>
-                <h4 className="text-xl font-bold text-white group-hover:text-blue-600 mb-3 transition-colors duration-300">{module.title}</h4>
-                <p className="text-blue-100 group-hover:text-gray-300 leading-relaxed text-sm transition-colors duration-300">{module.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 sm:py-24 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-bold mb-4 sm:mb-6 uppercase tracking-wider">
-              <Zap className="w-4 h-4" />
-              <span>NetSuite Services</span>
-            </motion.div>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-4 sm:mb-6 tracking-tight">
-              Comprehensive NetSuite <span className="text-blue-600">Services</span>
-            </motion.h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {services.map((service, index) => {
-              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
-                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
-              return (
-                <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} className="h-full">
-                  <motion.div whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.3 } }} className={`relative p-8 sm:p-10 rounded-3xl sm:rounded-[2.5rem] border border-gray-100 h-full shadow-2xl shadow-blue-900/5 hover:shadow-blue-900/10 transition-all group overflow-hidden ${cardBgColors[index % cardBgColors.length]}`}>
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-blue-100/50 to-indigo-100/50 rounded-full blur-3xl -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
-                    <div className="w-14 sm:w-16 h-14 sm:h-16 bg-slate-900 rounded-[1.5rem] sm:rounded-[2rem] flex items-center justify-center mb-6 sm:mb-8 shadow-xl group-hover:rotate-12 transition-transform duration-500 relative z-10">
-                      <service.icon className="w-7 sm:w-8 h-7 sm:h-8 text-white" />
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-3 sm:mb-4 group-hover:text-blue-600 transition-colors relative z-10 leading-tight">{service.title}</h3>
-                    <p className="text-slate-600 leading-relaxed mb-6 sm:mb-8 text-base sm:text-lg font-medium relative z-10">{service.description}</p>
-                    <Link href={service.href} className="inline-flex items-center gap-2 text-blue-600 font-bold group/link relative z-10 text-base sm:text-lg">
-                      Explore Service <ArrowRight className="w-5 h-5 group-hover/link:translate-x-2 transition-transform" />
-                    </Link>
-                  </motion.div>
-                </motion.div>
-              );
-            })}
           </div>
         </div>
       </section>
@@ -506,7 +506,7 @@ export default function SuiteprojectProPage() {
         </div>
       </section>
 
-      <FooterFormSection />
+      <ContactFormDesign4 />
     </div>
   );
 }

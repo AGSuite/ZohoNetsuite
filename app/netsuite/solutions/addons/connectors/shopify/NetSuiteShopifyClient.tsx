@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ShoppingCart, RefreshCw, Zap, ArrowRight, CheckCircle2, Globe, Database, ShieldCheck, Share2, Code, HeartHandshake, Users } from 'lucide-react';
-import FooterFormSection from '@/app/components/home/FooterFormSection';
+import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
 
 export default function NetSuiteShopifyClient() {
   const services = [
@@ -128,7 +128,7 @@ export default function NetSuiteShopifyClient() {
         </div>
       </section>
 
-      <FooterFormSection />
+      <ContactFormDesign4 />
     </div>
   );
 }

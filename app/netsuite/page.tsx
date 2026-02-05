@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { NSHero } from './components/NSHero';
 import { Metadata } from 'next';
 
@@ -12,9 +13,11 @@ export const metadata: Metadata = {
   },
 };
 
-const NSMetrics = dynamic(() => import('./components/NSMetrics').then(mod => mod.default));
+const NSMetrics = dynamic(() => import('./components/NSMetrics').then(mod => mod.default), {
+  loading: () => <div className="h-96 bg-gray-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
+});
+const NSKeyCapabilities = dynamic(() => import('./components/NSKeyCapabilities').then(mod => mod.default));
 const NSDashboardHero = dynamic(() => import('./components/NSDashboardHero').then(mod => mod.default));
-import dynamic from 'next/dynamic';
 
 const NSIndustries = dynamic(() => import('./components/NSIndustries').then(mod => mod.default));
 const Testimonials = dynamic(() => import('../components/home/Testimonials').then(mod => mod.Testimonials));
@@ -24,14 +27,7 @@ const NetsuiteCTA = dynamic(() => import('./components/NetsuiteCTA').then(mod =>
 // const NSHowItWorks = dynamic(() => import('./components/NSHowItWorks').then(mod => mod.default));
 const NSWhyChooseUs = dynamic(() => import('./components/NSWhyChooseUs').then(mod => mod.default));
 const NSTestimonialSection = dynamic(() => import('./components/NSTestimonialSection').then(mod => mod.default));
-const FooterFormSection = dynamic(() => import('../components/home/FooterFormSection').then(mod => mod.default));
-const FooterFormSectionDark = dynamic(() => import('../components/home/FooterFormSectionDark').then(mod => mod.default));
-const FooterFormLight = dynamic(() => import('../components/home/FooterFormLight').then(mod => mod.default));
-const FooterFormRed = dynamic(() => import('../components/home/FooterFormRed').then(mod => mod.default));
-
-// Alternative Contact Form Designs
-const ContactFormDesign1 = dynamic(() => import('./components/ContactFormDesign1').then(mod => mod.default));
-const ContactFormDesign2 = dynamic(() => import('./components/ContactFormDesign2').then(mod => mod.default));
+const NSCustomerSuccess = dynamic(() => import('./components/NSCustomerSuccess').then(mod => mod.default));
 const ContactFormDesign4 = dynamic(() => import('./components/ContactFormDesign4').then(mod => mod.default));
 
 
@@ -47,8 +43,8 @@ export default function NetSuitePage() {
       />
 
       <NSMetrics />
-
-      <NSDashboardHero />
+      <NSKeyCapabilities />
+      {/* <NSDashboardHero /> */}
 
       {/* Key Solutions Grid (Existing) */}
 
@@ -65,6 +61,7 @@ export default function NetSuitePage() {
       <NSWhyChooseUs />
 
       <NSTestimonialSection />
+      <NSCustomerSuccess />
 
 
 
@@ -72,12 +69,6 @@ export default function NetSuitePage() {
 
       <FAQ variant="netsuite" />
 
-      <FooterFormSection />
-      <FooterFormLight />
-      <FooterFormRed />
-      {/*<FooterFormSectionDark />
-      <ContactFormDesign1 />
-      <ContactFormDesign2 />*/}
       <ContactFormDesign4 />
     </div>
   );

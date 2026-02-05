@@ -1,7 +1,7 @@
 "use client";
 import Script from "next/script";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 // Define global functions for the form
@@ -19,7 +19,9 @@ declare global {
 }
 
 export default function FooterFormSection() {
+  const [mounted, setMounted] = useState(false);
   useEffect(() => {
+    setMounted(true);
     // Define all form validation functions globally
     window.addAriaSelected409531000000325116 = function () {
       const optionElem = (event as Event & { target: HTMLSelectElement }).target;
@@ -267,10 +269,11 @@ export default function FooterFormSection() {
               className="relative group lg:w-full mx-auto"
             >
               <div className="absolute -inset-1 bg-linear-to-r from-blue-500/90 to-indigo-500/90 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition duration-1000"></div>
-              <div className="relative bg-white p-8 lg:p-10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100">
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: `
+              <div className="relative bg-white p-8 lg:p-10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100" suppressHydrationWarning>
+                {mounted && (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: `
 <div id="crmWebToEntityForm" class="zcwf_lblLeft crmWebToEntityForm">
 <form id="webform409531000000325116" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000000325116" method="POST" onSubmit="javascript:document.charset='UTF-8'; return checkMandatory409531000000325116()" accept-charset="UTF-8">
  <input type="text" class="dsp" name="xnQsjsdp" value="cae9ae065232fde2e40c34423041df835a4066ff2103c546e198d684b35e9861">
@@ -411,16 +414,14 @@ select option {
 </form>
 </div>
               `,
-                  }}
-                />
+                    }}
+                  />
+                )}
               </div>
             </motion.div>
-
           </div>
-
-
-        </div >
-      </section >
+        </div>
+      </section>
     </>
   );
 }

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import { Share2, Link as LinkIcon, Database, Zap, Cpu, Layers, Globe, ArrowRight, CheckCircle2 } from 'lucide-react';
-import FooterFormSection from '@/app/components/home/FooterFormSection';
+import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
 import FlipNumbers from 'react-flip-numbers';
 
 export default function NetSuiteIntegrationClient() {
@@ -84,7 +84,7 @@ export default function NetSuiteIntegrationClient() {
               <p className="text-xl leading-relaxed font-light text-gray-300">
                 Unify your business ecosystem. We bridge the gap between NetSuite and your e-commerce stores, CRMs, and third-party apps for seamless, real-time data flow.
               </p>
-              
+
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link href="/netsuite/contact" className="px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-900/40">
                   Talk to an Architect
@@ -95,7 +95,7 @@ export default function NetSuiteIntegrationClient() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
@@ -184,45 +184,45 @@ export default function NetSuiteIntegrationClient() {
       {/* Challenges & Solutions */}
       <section className="py-24 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div className="space-y-8">
-                    <h3 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
-                        Overcoming Scaling Challenges
-                    </h3>
-                    <div className="space-y-4">
-                        {challenges.map((item, index) => (
-                            <div 
-                                key={index} 
-                                onClick={() => setActiveChallenge(index)}
-                                className={`p-6 rounded-2xl cursor-pointer transition-all border ${activeChallenge === index ? 'bg-white border-blue-200 shadow-lg' : 'bg-transparent border-transparent hover:bg-white/50'}`}
-                            >
-                                <h4 className={`text-xl font-bold ${activeChallenge === index ? 'text-gray-900' : 'text-gray-500'}`}>{item.title}</h4>
-                                {activeChallenge === index && (
-                                    <p className="text-gray-600 mt-2 text-sm leading-relaxed">{item.description}</p>
-                                )}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={activeChallenge}
-                            initial={{ opacity: 0, scale: 1.1 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.95 }}
-                            className="absolute inset-0"
-                        >
-                            <Image src={challenges[activeChallenge].image} alt="Challenges" fill className="object-cover" />
-                        </motion.div>
-                    </AnimatePresence>
-                </div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h3 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
+                Overcoming Scaling Challenges
+              </h3>
+              <div className="space-y-4">
+                {challenges.map((item, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setActiveChallenge(index)}
+                    className={`p-6 rounded-2xl cursor-pointer transition-all border ${activeChallenge === index ? 'bg-white border-blue-200 shadow-lg' : 'bg-transparent border-transparent hover:bg-white/50'}`}
+                  >
+                    <h4 className={`text-xl font-bold ${activeChallenge === index ? 'text-gray-900' : 'text-gray-500'}`}>{item.title}</h4>
+                    {activeChallenge === index && (
+                      <p className="text-gray-600 mt-2 text-sm leading-relaxed">{item.description}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
+
+            <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeChallenge}
+                  initial={{ opacity: 0, scale: 1.1 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  className="absolute inset-0"
+                >
+                  <Image src={challenges[activeChallenge].image} alt="Challenges" fill className="object-cover" />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
         </div>
       </section>
 
-      <FooterFormSection />
+      <ContactFormDesign4 />
     </div>
   );
 }

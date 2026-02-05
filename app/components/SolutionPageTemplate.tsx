@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import FlipNumbers from 'react-flip-numbers';
 import { ArrowRight, CheckCircle2, ExternalLink, LucideIcon } from 'lucide-react';
-import FooterFormSection from './home/FooterFormSection';
+import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
 import ServiceExploreSection from './ServiceExploreSection';
 
 interface HeroData {
@@ -113,11 +113,11 @@ export default function SolutionPageTemplate({
 }: SolutionPageTemplateProps) {
   const [activeChallenge, setActiveChallenge] = useState(0);
   const [activeBenefit, setActiveBenefit] = useState(0);
-  
+
   const isNetSuite = theme === 'netsuite';
   const brandColor = isNetSuite ? 'blue' : 'red';
-  const bgGradient = isNetSuite 
-    ? 'from-[#000b21] via-[#000b21] to-[#0a0a0a]' 
+  const bgGradient = isNetSuite
+    ? 'from-[#000b21] via-[#000b21] to-[#0a0a0a]'
     : 'from-[#fff5f5] via-[#fffaf2] to-white';
 
   const { ref: statsRef, inView: statsInView } = useInView({
@@ -158,7 +158,7 @@ export default function SolutionPageTemplate({
               <p className={`text-xl leading-relaxed font-light ${isNetSuite ? 'text-gray-300' : 'text-gray-600'}`}>
                 {hero.description}
               </p>
-              
+
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link href={cta.primaryBtnHref} className={`px-8 py-4 ${isNetSuite ? 'bg-blue-600 hover:bg-blue-700 shadow-blue-900/40' : 'bg-red-600 hover:bg-red-700 shadow-red-900/40'} text-white font-bold rounded-2xl transition shadow-xl`}>
                   {cta.primaryBtnText}
@@ -171,7 +171,7 @@ export default function SolutionPageTemplate({
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
@@ -187,21 +187,21 @@ export default function SolutionPageTemplate({
                 />
                 <div className={`absolute inset-0 bg-linear-to-t ${isNetSuite ? 'from-[#000b21]/60' : 'from-[#fff5f5]/60'} to-transparent`} />
               </div>
-              
+
               {/* Top Right Floating Card */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 }}
                 className={`absolute top-10 -right-6 lg:-right-12 ${isNetSuite ? 'bg-blue-500/30' : 'bg-red-500/30'} backdrop-blur-2xl border border-white/20 p-6 rounded-3xl shadow-2xl max-w-[260px] z-30`}
               >
                 <div className="flex items-center gap-3 mb-3">
-                   <div className={`p-2.5 ${isNetSuite ? 'bg-blue-600' : 'bg-red-600'} rounded-xl`}>
-                     <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                     </svg>
-                   </div>
-                   <h4 className="text-sm font-bold text-white uppercase tracking-wider">{hero.cardTitle || "Premium Solution"}</h4>
+                  <div className={`p-2.5 ${isNetSuite ? 'bg-blue-600' : 'bg-red-600'} rounded-xl`}>
+                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-sm font-bold text-white uppercase tracking-wider">{hero.cardTitle || "Premium Solution"}</h4>
                 </div>
                 <p className={`text-xs ${isNetSuite ? 'text-blue-50/90' : 'text-red-50/90'} leading-relaxed font-medium`}>
                   {hero.cardText || "Tailored excellence for your business growth."}
@@ -209,20 +209,20 @@ export default function SolutionPageTemplate({
               </motion.div>
 
               {/* Bottom Center Quote Card */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
                 className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md p-6 rounded-4xl shadow-2xl w-[92%] z-30 border border-white/20"
               >
-                 <div className="flex flex-col items-center text-center">
-                   <svg className={`w-8 h-8 ${isNetSuite ? 'text-blue-600' : 'text-red-600'} mb-1 opacity-40`} fill="currentColor" viewBox="0 0 24 24">
-                     <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C15.4647 8 15.017 8.44772 15.017 9V12C15.017 12.5523 14.5693 13 14.017 13H13.017V21H14.017ZM6.017 21L6.017 18C6.017 16.8954 6.91243 16 8.017 16H11.017C11.5693 16 12.017 15.5523 12.017 15V9C12.017 8.44772 11.5693 8 11.017 8H8.017C7.46472 8 7.017 8.44772 7.017 9V12C7.017 12.5523 6.56929 13 6.017 13H5.017V21H6.017Z" />
-                   </svg>
-                   <p className="text-gray-900 text-xs italic font-black uppercase tracking-tight leading-tight">
-                     {hero.quote || "Innovation defines the bridge between today and tomorrow."}
-                   </p>
-                 </div>
+                <div className="flex flex-col items-center text-center">
+                  <svg className={`w-8 h-8 ${isNetSuite ? 'text-blue-600' : 'text-red-600'} mb-1 opacity-40`} fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C15.4647 8 15.017 8.44772 15.017 9V12C15.017 12.5523 14.5693 13 14.017 13H13.017V21H14.017ZM6.017 21L6.017 18C6.017 16.8954 6.91243 16 8.017 16H11.017C11.5693 16 12.017 15.5523 12.017 15V9C12.017 8.44772 11.5693 8 11.017 8H8.017C7.46472 8 7.017 8.44772 7.017 9V12C7.017 12.5523 6.56929 13 6.017 13H5.017V21H6.017Z" />
+                  </svg>
+                  <p className="text-gray-900 text-xs italic font-black uppercase tracking-tight leading-tight">
+                    {hero.quote || "Innovation defines the bridge between today and tomorrow."}
+                  </p>
+                </div>
               </motion.div>
             </motion.div>
           </div>
@@ -262,17 +262,17 @@ export default function SolutionPageTemplate({
                   </div>
                 )}
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-gray-100"
               >
-                <Image 
-                  src={intro.image} 
-                  alt={intro.title} 
-                  fill 
+                <Image
+                  src={intro.image}
+                  alt={intro.title}
+                  fill
                   className="object-cover"
                 />
                 <div className={`absolute inset-0 ${isNetSuite ? 'bg-blue-600/10' : 'bg-red-600/10'} mix-blend-multiply`} />
@@ -296,7 +296,7 @@ export default function SolutionPageTemplate({
                     <FlipNumbers
                       height={32}
                       width={22}
-                       color={isNetSuite ? "white" : "#111827"}
+                      color={isNetSuite ? "white" : "#111827"}
                       background="transparent"
                       play={statsInView}
                       numbers={stat.value.toString()}
@@ -365,7 +365,7 @@ export default function SolutionPageTemplate({
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
               {gridItems.items.map((feature, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -392,7 +392,7 @@ export default function SolutionPageTemplate({
                     </h3>
                     <div className={`w-12 h-1 ${isNetSuite ? 'bg-blue-500' : 'bg-red-500'} rounded-full`} />
                     {feature.quote && (
-                        <p className={`${isNetSuite ? 'text-gray-400' : 'text-gray-600'} leading-relaxed font-light text-sm italic`}>
+                      <p className={`${isNetSuite ? 'text-gray-400' : 'text-gray-600'} leading-relaxed font-light text-sm italic`}>
                         "{feature.quote}"
                       </p>
                     )}
@@ -428,12 +428,11 @@ export default function SolutionPageTemplate({
             <div className="grid lg:grid-cols-2 gap-16 items-stretch">
               <div className="order-2 lg:order-1 space-y-4">
                 {challenges.items.map((item, index) => (
-                  <div 
+                  <div
                     key={index}
                     onClick={() => setActiveChallenge(index)}
-                    className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
-                      activeChallenge === index ? 'bg-gray-50 border-gray-200' : 'bg-transparent border-transparent hover:bg-gray-50/50'
-                    }`}
+                    className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeChallenge === index ? 'bg-gray-50 border-gray-200' : 'bg-transparent border-transparent hover:bg-gray-50/50'
+                      }`}
                   >
                     <div className="flex items-center gap-4">
                       <div className={`p-2 rounded-full transition-colors ${activeChallenge === index ? 'bg-red-500 text-white' : 'bg-gray-100 text-gray-400'}`}>
@@ -519,12 +518,11 @@ export default function SolutionPageTemplate({
 
               <div className="space-y-4">
                 {benefits.items.map((item, index) => (
-                  <div 
+                  <div
                     key={index}
                     onClick={() => setActiveBenefit(index)}
-                    className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
-                      activeBenefit === index ? 'bg-white border-blue-200 shadow-lg' : 'bg-transparent border-transparent hover:bg-white/50'
-                    }`}
+                    className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeBenefit === index ? 'bg-white border-blue-200 shadow-lg' : 'bg-transparent border-transparent hover:bg-white/50'
+                      }`}
                   >
                     <div className="flex items-center gap-4">
                       <div className={`p-2 rounded-full ${activeBenefit === index ? (isNetSuite ? 'bg-blue-600' : 'bg-red-600') + ' text-white' : 'bg-gray-100 text-gray-400'}`}>
@@ -563,35 +561,35 @@ export default function SolutionPageTemplate({
 
       {/* Modern CTA */}
       <section className={`py-24 overflow-hidden relative ${isNetSuite ? 'bg-[#000b21]' : 'bg-[#fff5f5]'}`}>
-         <div className="max-w-7xl mx-auto px-6 text-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className={`${isNetSuite ? 'bg-blue-600/10 border-blue-500/20' : 'bg-white border-red-100'} border rounded-[3rem] p-12 lg:p-24 relative overflow-hidden`}
-            >
-               <div className={`absolute top-0 right-0 w-64 h-64 ${isNetSuite ? 'bg-blue-500/10' : 'bg-red-500/10'} blur-3xl -mr-32 -mt-32`} />
-               <div className={`absolute bottom-0 left-0 w-64 h-64 ${isNetSuite ? 'bg-indigo-500/10' : 'bg-orange-600/10'} blur-3xl -ml-32 -mb-32`} />
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className={`${isNetSuite ? 'bg-blue-600/10 border-blue-500/20' : 'bg-white border-red-100'} border rounded-[3rem] p-12 lg:p-24 relative overflow-hidden`}
+          >
+            <div className={`absolute top-0 right-0 w-64 h-64 ${isNetSuite ? 'bg-blue-500/10' : 'bg-red-500/10'} blur-3xl -mr-32 -mt-32`} />
+            <div className={`absolute bottom-0 left-0 w-64 h-64 ${isNetSuite ? 'bg-indigo-500/10' : 'bg-orange-600/10'} blur-3xl -ml-32 -mb-32`} />
 
-               <h2 className={`text-3xl md:text-5xl font-bold ${isNetSuite ? 'text-white' : 'text-gray-900'} mb-8 leading-tight`}>
-                 {cta.title}
-               </h2>
-               
-               <div className="flex flex-wrap justify-center gap-6 relative z-10">
-                 <Link href={cta.primaryBtnHref} className={`px-10 py-4 ${isNetSuite ? 'bg-blue-600 hover:bg-blue-700' : 'bg-red-600 hover:bg-red-700'} text-white font-bold rounded-2xl transition shadow-xl`}>
-                   {cta.primaryBtnText}
-                 </Link>
-                 {cta.secondaryBtnText && (
-                   <Link href={cta.secondaryBtnHref || "#"} className="px-10 py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/10">
-                     {cta.secondaryBtnText}
-                   </Link>
-                 )}
-               </div>
-            </motion.div>
-         </div>
+            <h2 className={`text-3xl md:text-5xl font-bold ${isNetSuite ? 'text-white' : 'text-gray-900'} mb-8 leading-tight`}>
+              {cta.title}
+            </h2>
+
+            <div className="flex flex-wrap justify-center gap-6 relative z-10">
+              <Link href={cta.primaryBtnHref} className={`px-10 py-4 ${isNetSuite ? 'bg-blue-600 hover:bg-blue-700' : 'bg-red-600 hover:bg-red-700'} text-white font-bold rounded-2xl transition shadow-xl`}>
+                {cta.primaryBtnText}
+              </Link>
+              {cta.secondaryBtnText && (
+                <Link href={cta.secondaryBtnHref || "#"} className="px-10 py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/10">
+                  {cta.secondaryBtnText}
+                </Link>
+              )}
+            </div>
+          </motion.div>
+        </div>
       </section>
 
-      <FooterFormSection />
+      <ContactFormDesign4 />
     </div>
   );
 }

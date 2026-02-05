@@ -156,6 +156,7 @@ export default function FooterFormLight() {
                   name="Last Name"
                   className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                   placeholder="John Doe"
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -169,6 +170,7 @@ export default function FooterFormLight() {
                   name="Email"
                   className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                   placeholder="john@company.com"
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -183,6 +185,7 @@ export default function FooterFormLight() {
                     name="Designation"
                     className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                     placeholder="CTO"
+                    suppressHydrationWarning
                   />
                 </div>
                 <div>
@@ -194,6 +197,7 @@ export default function FooterFormLight() {
                     name="Mobile"
                     className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                     placeholder="+1 (555) 000-0000"
+                    suppressHydrationWarning
                   />
                 </div>
               </div>
@@ -208,6 +212,7 @@ export default function FooterFormLight() {
                   name="Company"
                   className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                   placeholder="Company Inc."
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -221,6 +226,7 @@ export default function FooterFormLight() {
                     <select
                       name="LEADCF5"
                       className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none appearance-none cursor-pointer shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
+                      suppressHydrationWarning
                     >
                       <option value="">Select Service</option>
                       <option value="NetSuite Product/Services">Oracle NetSuite</option>
@@ -241,6 +247,7 @@ export default function FooterFormLight() {
                     <select
                       name="LEADCF40"
                       className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none appearance-none cursor-pointer shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
+                      suppressHydrationWarning
                     >
                       <option value="">Select Revenue</option>
                       <option value="Under $500K">Under $500K</option>
@@ -289,6 +296,7 @@ export default function FooterFormLight() {
                 <button
                   type="submit"
                   className="shrink-0 px-8 py-4 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-600 hover:from-blue-700 hover:via-blue-800 hover:to-indigo-700 text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/30 hover:scale-[1.02]"
+                  suppressHydrationWarning
                 >
                   Get Free Consultation
                 </button>

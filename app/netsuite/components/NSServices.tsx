@@ -21,8 +21,7 @@ const services: ServiceItem[] = [
   {
     title: "Digital Transformation",
     heading: "",
-    description:
-      "Empowering businesses with modern, scalable, and automated digital solutions that streamline operations and accelerate growth.",
+    description: "Modernize your business operations with our strategic digital roadmap.",
     bgImage: "/images/Services/Digitalservices.webp",
     href: "/netsuite/services/digital-transformation",
     icon: (
@@ -34,10 +33,9 @@ const services: ServiceItem[] = [
   {
     title: "Integration Services",
     heading: "",
-    description:
-      "Connect your apps, ERP, CRM, and workflows seamlessly using API-led, cloud-to-cloud, and hybrid integrations tailored for your business.",
+    description: "Connect NetSuite with your entire ecosystem via robust API-led integrations.",
     bgImage: "/images/lap/group2.webp",
-    href: "/netsuite/services/integration",
+    href: "/netsuite/services/integration-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -47,8 +45,7 @@ const services: ServiceItem[] = [
   {
     title: "Implementation",
     heading: "",
-    description:
-      "Expert NetSuite implementation services ensuring a smooth transition ensuring your business processes are optimized for success.",
+    description: "Go live with confidence using our expert NetSuite implementation strategy.",
     bgImage: "/images/Services/trainingservices.webp",
     href: "/netsuite/services/implementation",
     icon: (
@@ -61,10 +58,9 @@ const services: ServiceItem[] = [
   {
     title: "SuiteCloud Development",
     heading: "",
-    description:
-      "Build fast, efficient, and scalable business apps with NetSuite's SuiteCloud platform to automate processes and improve productivity.",
+    description: "Extend your ERP's capabilities with custom-built SuiteApps.",
     bgImage: "/images/Services/lowcodeservices.webp",
-    href: "/netsuite/services/suitecloud",
+    href: "/netsuite/services/low-code",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
@@ -74,8 +70,7 @@ const services: ServiceItem[] = [
   {
     title: "Managed Services",
     heading: "",
-    description:
-      "End-to-end support, monitoring, and optimization of your NetSuite environment so your business runs smoothly without downtime.",
+    description: "Get dedicated support to keep your NetSuite operations running.",
     bgImage: "/images/Services/managedservices.webp",
     href: "/netsuite/services/managed-services",
     icon: (
@@ -247,7 +242,10 @@ export default function NSServices() {
                   {/* CTA Button - Fixed at bottom */}
                   <div className="absolute bottom-6 left-5">
                     <Link href={service.href}>
-                      <button className="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 hover:shadow-lg transition-all duration-300 text-sm w-fit">
+                      <button
+                        suppressHydrationWarning={true}
+                        className="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 hover:shadow-lg transition-all duration-300 text-sm w-fit"
+                      >
                         Know More
                       </button>
                     </Link>
@@ -344,7 +342,10 @@ export default function NSServices() {
                   {/* CTA Button - Fixed at bottom */}
                   <div className="absolute bottom-6 left-5">
                     <Link href={service.href}>
-                      <button className="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 hover:shadow-lg transition-all duration-300 text-sm w-fit">
+                      <button
+                        suppressHydrationWarning={true}
+                        className="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 hover:shadow-lg transition-all duration-300 text-sm w-fit"
+                      >
                         Know More
                       </button>
                     </Link>
@@ -386,7 +387,10 @@ export default function NSServices() {
                 <div className="flex justify-between items-end">
                   <p className="text-base opacity-90 line-clamp-2 max-w-[70%]">{service.description}</p>
                   <Link href={service.href}>
-                    <button className="px-5 py-2.5 bg-white text-black text-sm rounded-full font-semibold shrink-0 hover:bg-blue-50 transition-all">
+                    <button
+                      suppressHydrationWarning={true}
+                      className="px-5 py-2.5 bg-white text-black text-sm rounded-full font-semibold shrink-0 hover:bg-blue-50 transition-all"
+                    >
                       Know More
                     </button>
                   </Link>

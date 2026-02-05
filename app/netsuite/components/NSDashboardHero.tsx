@@ -2,14 +2,22 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
+
 import { motion, useInView } from "framer-motion";
 
-/* ------------ Logos (same paths you already use) ------------ */
 
-type Logo = { id: string; logo: string; name: string; link?: string };
 
-const logos: Logo[] = [
+/* ------------ Main hero images (keep same paths) ------------ */
+
+const IMAGES = {
+  left1: "/images/people/laptopgirl3.webp",
+  left2: "/images/people/laptopmen.webp",
+  center: "/images/Dashboard/NetsuiteDashboard.webp",
+  right1: "/images/people/laptopmen2.webp",
+  right2: "/images/people/laptopgirl.webp",
+} as const;
+
+const logos = [
   { id: "affle", logo: "/images/assets/affle tech.webp", name: "Affle", link: "https://www.affle.com" },
   { id: "tyfone", logo: "/images/assets/tyfone tech.webp", name: "Tyfone", link: "https://www.tyfone.com" },
   { id: "airling", logo: "/images/assets/airling tech.webp", name: "Airling", link: "#" },
@@ -22,16 +30,6 @@ const logos: Logo[] = [
   { id: "pace", logo: "/images/assets/pace services.webp", name: "Pace", link: "#" },
 ];
 
-/* ------------ Main hero images (keep same paths) ------------ */
-
-const IMAGES = {
-  left1: "/images/people/laptopgirl3.webp",
-  left2: "/images/people/laptopmen.webp",
-  center: "/images/Dashboard/NetsuiteDashboard.webp",
-  right1: "/images/people/laptopmen2.webp",
-  right2: "/images/people/laptopgirl.webp",
-} as const;
-
 const NSDashboardHero: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(sectionRef, { amount: 0.3, once: true });
@@ -42,21 +40,29 @@ const NSDashboardHero: React.FC = () => {
       aria-labelledby="agsuite-cloud-solutions-heading"
       className="relative w-full bg-white"
     >
-      <div className="mx-auto flex max-w-7xl flex-col items-center px-4 pb-5 pt-12 sm:px-6 md:pt-5 lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col items-center px-4 pb-5 pt-12 sm:px-6 md:pt-15 lg:px-8">
         {/* Headline + subline + CTA */}
         <header className="max-w-3xl text-center">
-          <h1
+          <motion.h1
             id="agsuite-cloud-solutions-heading"
             className="text-3xl font-medium tracking-tight text-gray-900 sm:text-4xl md:text-5xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             Deliver smarter cloud solutions with{" "}
             <span className="bg-linear-to-r from-red-600 via-rose-500 to-purple-600 bg-clip-text text-transparent">
               AGSuite experts
             </span>
-          </h1>
-          <p className="mt-3 text-xs font-medium uppercase tracking-[0.18em] text-gray-500 sm:text-[13px]">
+          </motion.h1>
+          <motion.p
+            className="mt-3 text-xs font-medium uppercase tracking-[0.18em] text-gray-500 sm:text-[13px]"
+            initial={{ opacity: 0, y: 15 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
             Powering digital transformation for growing businesses worldwide
-          </p>
+          </motion.p>
         </header>
 
         {/* Dashboard + people images */}
@@ -199,56 +205,58 @@ const NSDashboardHero: React.FC = () => {
           </div>
         </div>
 
-        {/* Trusted by logos – moving marquee under dashboard */}
-        <div className="mt-16 w-full">
-          <p className="mb-4 text-center text-2xl font-semibold uppercase tracking-[0.22em] text-gray-900 sm:text-xl">
-            Trusted by 100,000+ companies
+        {/* TRUSTED PARTNERS MARQUEE */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 1.6 }}
+          className="w-full border-t border-gray-200 pt-12 mt-16"
+        >
+          <p className="mb-8 text-center text-xl font-medium uppercase text-gray-700 tracking-wide">
+            Trusted by industry leading brands
           </p>
 
-          {/* Marquee Container */}
-          <div className="relative w-full overflow-hidden py-3">
+          <div className="relative w-full overflow-hidden py-6">
             <div className="animate-marquee whitespace-nowrap flex items-center gap-10">
               {logos.concat(logos).map((logo, index) => (
                 <div key={index} className="inline-flex">
                   <a
                     href={logo.link || "#"}
-                    target={logo.link ? "_blank" : undefined}
-                    rel={logo.link ? "noopener noreferrer" : undefined}
-                    className="flex h-14 w-38 sm:h-26 sm:w-42 rounded-2xl shadow-rose-100 items-center justify-center bg-white hover:shadow-md transition"
+                    target={logo.link !== "#" ? "_blank" : undefined}
+                    rel={logo.link !== "#" ? "noopener noreferrer" : undefined}
+                    className="flex h-12 w-40 sm:h-16 sm:w-44 rounded-2xl items-center justify-center bg-white hover:shadow-xl transition-all duration-300 border border-gray-100"
                     aria-label={logo.name}
                   >
                     <Image
                       src={logo.logo}
                       alt={`${logo.name} logo`}
-                      width={190}
-                      height={96}
-                      className="h-9 sm:h-28 w-auto object-contain"
+                      width={160}
+                      height={50}
+                      className="h-8 sm:h-13 w-auto object-contain"
                     />
                   </a>
                 </div>
               ))}
             </div>
           </div>
+        </motion.div>
 
-          {/* Marquee Animation */}
-          <style jsx global>
-            {`
-              .animate-marquee {
-                display: inline-flex;
-                animation: marquee 20s linear infinite;
-                will-change: transform;
-              }
-              @keyframes marquee {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-50%); }
-              }
-              .animate-marquee:hover {
-                animation-play-state: paused;
-              }
-            `}
-          </style>
-        </div>
       </div>
+
+      <style jsx global>{`
+        @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50.5%); }
+        }
+        .animate-marquee {
+        display: inline-flex;
+        animation: marquee 30s linear infinite;
+        will-change: transform;
+        }
+        .animate-marquee:hover {
+        animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 };

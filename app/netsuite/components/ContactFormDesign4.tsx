@@ -87,7 +87,7 @@ export default function ContactFormDesign4() {
               </div>
 
               <div className="mt-10">
-                <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]">
+                <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]" suppressHydrationWarning>
                   Schedule a Free Consultation
                 </button>
               </div>
@@ -113,7 +113,7 @@ export default function ContactFormDesign4() {
                 <p className="text-gray-600 text-lg lg:text-xl mb-10">Fill in your details and we'll reach out within 24 hours</p>
               </div>
 
-              <form className="relative z-10 space-y-5">
+              <form className="relative z-10 space-y-5" suppressHydrationWarning>
                 {/* Full Name */}
                 <div>
                   <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
@@ -124,6 +124,7 @@ export default function ContactFormDesign4() {
                     name="Last Name"
                     className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                     placeholder="John Doe"
+                    suppressHydrationWarning
                   />
                 </div>
 
@@ -137,6 +138,7 @@ export default function ContactFormDesign4() {
                     name="Email"
                     className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                     placeholder="john@company.com"
+                    suppressHydrationWarning
                   />
                 </div>
 
@@ -151,6 +153,7 @@ export default function ContactFormDesign4() {
                       name="Designation"
                       className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                       placeholder="CTO"
+                      suppressHydrationWarning
                     />
                   </div>
                   <div>
@@ -162,6 +165,7 @@ export default function ContactFormDesign4() {
                       name="Mobile"
                       className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                       placeholder="+1 (555) 000-0000"
+                      suppressHydrationWarning
                     />
                   </div>
                 </div>
@@ -176,6 +180,7 @@ export default function ContactFormDesign4() {
                     name="Company"
                     className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none placeholder-gray-400 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                     placeholder="Company Inc."
+                    suppressHydrationWarning
                   />
                 </div>
 
@@ -188,6 +193,7 @@ export default function ContactFormDesign4() {
                     <select
                       name="LEADCF5"
                       className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none appearance-none cursor-pointer shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
+                      suppressHydrationWarning
                     >
                       <option value="">Select Service</option>
                       <option value="NetSuite Implementation">NetSuite Implementation</option>
@@ -204,6 +210,7 @@ export default function ContactFormDesign4() {
                     <select
                       name="LEADCF40"
                       className="w-full bg-gradient-to-br from-blue-50/50 via-white to-purple-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none appearance-none cursor-pointer shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
+                      suppressHydrationWarning
                     >
                       <option value="">Select Revenue</option>
                       <option value="Under $500K">Under $500K</option>
@@ -246,6 +253,7 @@ export default function ContactFormDesign4() {
                   <button
                     type="submit"
                     className="shrink-0 px-8 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02]"
+                    suppressHydrationWarning
                   >
                     Send Message
                   </button>

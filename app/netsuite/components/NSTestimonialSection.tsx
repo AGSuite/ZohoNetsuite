@@ -62,13 +62,18 @@ const NSTestimonialSection = () => {
   const [paused, setPaused] = useState(false);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
 
-  // Card width based on screen
-  const cardWidth = useMemo(() => {
-    if (typeof window === "undefined") return 800;
-    const vw = window.innerWidth;
-    if (vw >= 1024) return Math.floor(vw * 0.35);
-    if (vw >= 768) return Math.floor(vw * 0.7);
-    return Math.floor(vw * 0.9);
+  const [cardWidth, setCardWidth] = useState(800);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const vw = window.innerWidth;
+      if (vw >= 1024) setCardWidth(Math.floor(vw * 0.35));
+      else if (vw >= 768) setCardWidth(Math.floor(vw * 0.7));
+      else setCardWidth(Math.floor(vw * 0.9));
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
@@ -134,9 +139,7 @@ const NSTestimonialSection = () => {
 
       {/* Heading */}
       <div className="text-center relative z-10 mb-14">
-        <p className="text-lg font-medium text-blue-600">
-          Trusted by Industry Leaders
-        </p>
+
         <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900">
           What NetSuite Users Say
         </h2>
@@ -205,12 +208,14 @@ const NSTestimonialSection = () => {
         <div className="absolute top-1/2 right-5 flex gap-3 -translate-y-1/2">
           <button
             onClick={handlePrev}
+            suppressHydrationWarning
             className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition"
           >
             ◀
           </button>
           <button
             onClick={handleNext}
+            suppressHydrationWarning
             className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition"
           >
             ▶

@@ -19,6 +19,7 @@ import BuildIcon from '@mui/icons-material/Build';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Groups from '@mui/icons-material/Groups';
 import Business from '@mui/icons-material/Business';
+import CalculateIcon from '@mui/icons-material/Calculate';
 
 // Types
 export interface MegaMenuItem {
@@ -152,19 +153,43 @@ export const navItemsNetSuite: NavSection[] = [
                     description: 'Extend NetSuite with connectors & automation tools',
                     categories: [
                         {
-                            title: 'Connectors',
+                            title: 'Other Add-ons',
                             items: [
-                                { label: 'Magento 2 NetSuite Connector', href: '/netsuite/solutions/addons/connectors/magento2' },
-                                { label: 'Amazon NetSuite Connector', href: '/netsuite/solutions/addons/connectors/amazon' },
-                                { label: 'Shopify NetSuite Connector', href: '/netsuite/solutions/addons/connectors/shopify' },
+                                {
+                                    label: 'India Localization',
+                                    href: '/netsuite/solutions/addons/india-localization',
+                                    description: 'E-invoicing, GST & statutory compliance for India'
+                                },
+                                {
+                                    label: 'Smart Commission App',
+                                    href: '/netsuite/solutions/addons/smart-commission',
+                                    description: 'Automate complex partner & sales commission tracking'
+                                },
+                                {
+                                    label: 'NetSuite Data Backup',
+                                    href: '/netsuite/solutions/addons/data-backup',
+                                    description: 'Secure automated backup for your critical ERP data'
+                                },
                             ],
                         },
                         {
-                            title: 'Other Add-ons',
+                            title: 'Connectors',
                             items: [
-                                { label: 'India Localization', href: '/netsuite/solutions/addons/india-localization' },
-                                { label: 'Smart Commission App', href: '/netsuite/solutions/addons/smart-commission' },
-                                { label: 'NetSuite Data Backup', href: '/netsuite/solutions/addons/data-backup' },
+                                {
+                                    label: 'Magento 2 NetSuite Connector',
+                                    href: '/netsuite/solutions/addons/connectors/magento2',
+                                    description: 'Real-time sync between Magento storefront & NetSuite'
+                                },
+                                {
+                                    label: 'Amazon NetSuite Connector',
+                                    href: '/netsuite/solutions/addons/connectors/amazon',
+                                    description: 'Automate Amazon FBA/FBM orders & inventory'
+                                },
+                                {
+                                    label: 'Shopify NetSuite Connector',
+                                    href: '/netsuite/solutions/addons/connectors/shopify',
+                                    description: 'Seamless integration for Shopify & Shopify Plus'
+                                },
                             ],
                         },
                     ],
@@ -207,6 +232,7 @@ export const navItemsNetSuite: NavSection[] = [
             { label: 'Blogs', href: '/netsuite/blog', description: 'Latest posts & insights.', icon: ForumIcon },
             { label: 'Case Study', href: '/netsuite/casestudy', description: 'Our success stories.', icon: LocalLibraryIcon },
             { label: 'Events', href: '/netsuite/insights/events', description: 'Webinars & workshops.', icon: EventIcon },
+            { label: 'Pricing Calculator', href: '/netsuite-calculator', description: 'Estimate your NetSuite ROI.', icon: CalculateIcon },
             { label: 'Awards & Achievements', href: '/netsuite/insights/awards', description: 'Recognition & milestones.', icon: EmojiEventsIcon },
         ],
     },

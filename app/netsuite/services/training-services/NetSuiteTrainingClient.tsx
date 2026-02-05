@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import { BookOpen, Users, GraduationCap, Award, CheckCircle2, ArrowRight, ShieldCheck, Zap, Laptop, Globe, Code } from 'lucide-react';
-import FooterFormSection from '@/app/components/home/FooterFormSection';
+import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
 
 export default function NetSuiteTrainingClient() {
   const { ref: statsRef, inView: statsInView } = useInView({
@@ -34,11 +34,11 @@ export default function NetSuiteTrainingClient() {
       benefits: ["Custom dashboard creation", "Advanced saved searches", "Pivot table mastery"]
     },
     {
-        title: "New Release Training",
-        description: "Stay ahead of NetSuite's bi-annual updates with targeted training on new features and functional enhancements.",
-        icon: Zap,
-        benefits: ["Feature impact analysis", "Workflow optimization", "New UI navigation"]
-      }
+      title: "New Release Training",
+      description: "Stay ahead of NetSuite's bi-annual updates with targeted training on new features and functional enhancements.",
+      icon: Zap,
+      benefits: ["Feature impact analysis", "Workflow optimization", "New UI navigation"]
+    }
   ];
 
   const stats = [
@@ -94,7 +94,7 @@ export default function NetSuiteTrainingClient() {
               <p className="text-xl leading-relaxed font-light text-gray-300">
                 Maximize your NetSuite ROI with specialized training programs. From end-user basics to advanced SuiteCloud development, we ensure your team has the skills to succeed.
               </p>
-              
+
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link href="/netsuite/contact" className="px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-900/40">
                   Book a Training Session
@@ -105,7 +105,7 @@ export default function NetSuiteTrainingClient() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
@@ -147,24 +147,24 @@ export default function NetSuiteTrainingClient() {
               </p>
               <div className="space-y-4">
                 {["Role-based training paths", "Hands-on practical exercises", "Ongoing support and mentoring"].map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-3">
-                        <CheckCircle2 className="text-blue-600" size={20} />
-                        <span className="text-gray-700 font-medium">{item}</span>
-                    </div>
+                  <div key={idx} className="flex items-center gap-3">
+                    <CheckCircle2 className="text-blue-600" size={20} />
+                    <span className="text-gray-700 font-medium">{item}</span>
+                  </div>
                 ))}
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-gray-100"
             >
-              <Image 
-                src="/images/aboutus/heroimg.webp" 
-                alt="NetSuite Training" 
-                fill 
+              <Image
+                src="/images/aboutus/heroimg.webp"
+                alt="NetSuite Training"
+                fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply" />
@@ -195,23 +195,23 @@ export default function NetSuiteTrainingClient() {
                 className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm hover:shadow-xl transition-all group"
               >
                 <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-blue-600 transition-colors">
-                        <module.icon className="text-blue-600 group-hover:text-white transition-colors" size={32} />
-                    </div>
-                    <div className="space-y-4">
-                        <h4 className="text-2xl font-bold text-gray-900">{module.title}</h4>
-                        <p className="text-gray-600 leading-relaxed italic text-sm">
-                            {module.description}
-                        </p>
-                        <div className="grid grid-cols-1 gap-2 pt-2">
-                            {module.benefits.map((benefit, i) => (
-                                <div key={i} className="flex items-center gap-2 text-xs font-medium text-gray-500">
-                                    <div className="w-1 h-1 bg-blue-500 rounded-full" />
-                                    {benefit}
-                                </div>
-                            ))}
+                  <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-blue-600 transition-colors">
+                    <module.icon className="text-blue-600 group-hover:text-white transition-colors" size={32} />
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-2xl font-bold text-gray-900">{module.title}</h4>
+                    <p className="text-gray-600 leading-relaxed italic text-sm">
+                      {module.description}
+                    </p>
+                    <div className="grid grid-cols-1 gap-2 pt-2">
+                      {module.benefits.map((benefit, i) => (
+                        <div key={i} className="flex items-center gap-2 text-xs font-medium text-gray-500">
+                          <div className="w-1 h-1 bg-blue-500 rounded-full" />
+                          {benefit}
                         </div>
+                      ))}
                     </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -222,91 +222,90 @@ export default function NetSuiteTrainingClient() {
       {/* Modes of Delivery */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
-                <h3 className="text-4xl md:text-5xl font-black text-gray-900">Delivery Methods</h3>
+          <div className="text-center mb-16">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900">Delivery Methods</h3>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-stretch">
+            <div className="space-y-4">
+              {trainingModes.map((mode, index) => (
+                <div
+                  key={index}
+                  onClick={() => setActiveTab(index)}
+                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeTab === index ? 'bg-blue-50 border-blue-200 shadow-sm' : 'bg-transparent border-transparent hover:bg-gray-50'
+                    }`}
+                >
+                  <h4 className={`text-xl font-bold transition-colors ${activeTab === index ? 'text-blue-700' : 'text-gray-500'}`}>
+                    {mode.title}
+                  </h4>
+                  <AnimatePresence>
+                    {activeTab === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden"
+                      >
+                        <p className="text-gray-600 mt-4 leading-relaxed font-light">
+                          {mode.description}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-16 items-stretch">
-                <div className="space-y-4">
-                    {trainingModes.map((mode, index) => (
-                        <div 
-                        key={index}
-                        onClick={() => setActiveTab(index)}
-                        className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${
-                            activeTab === index ? 'bg-blue-50 border-blue-200 shadow-sm' : 'bg-transparent border-transparent hover:bg-gray-50'
-                        }`}
-                        >
-                        <h4 className={`text-xl font-bold transition-colors ${activeTab === index ? 'text-blue-700' : 'text-gray-500'}`}>
-                            {mode.title}
-                        </h4>
-                        <AnimatePresence>
-                            {activeTab === index && (
-                            <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: "auto", opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                className="overflow-hidden"
-                            >
-                                <p className="text-gray-600 mt-4 leading-relaxed font-light">
-                                    {mode.description}
-                                </p>
-                            </motion.div>
-                            )}
-                        </AnimatePresence>
-                        </div>
-                    ))}
-                </div>
-
-                <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100 h-full min-h-[400px]">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                        key={activeTab}
-                        initial={{ opacity: 0, scale: 1.1 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="absolute inset-0"
-                        >
-                        <Image
-                            src={trainingModes[activeTab].image}
-                            alt={trainingModes[activeTab].title}
-                            fill
-                            className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
-                        </motion.div>
-                    </AnimatePresence>
-                </div>
+            <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100 h-full min-h-[400px]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0, scale: 1.1 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={trainingModes[activeTab].image}
+                    alt={trainingModes[activeTab].title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
+                </motion.div>
+              </AnimatePresence>
             </div>
+          </div>
         </div>
       </section>
 
       {/* Modern CTA */}
       <section className="py-24 overflow-hidden relative bg-[#000b21]">
-         <div className="max-w-7xl mx-auto px-6 text-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="bg-blue-600/10 border border-blue-500/20 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
-            >
-               <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                 Empower your team with expert NetSuite knowledge.
-               </h2>
-               
-               <div className="flex flex-wrap justify-center gap-6 relative z-10">
-                 <Link href="/netsuite/contact" className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition shadow-xl">
-                   Talk to an Instructor
-                 </Link>
-                 <Link href="/netsuite/services" className="px-10 py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/10">
-                   Explore All Services
-                 </Link>
-               </div>
-            </motion.div>
-         </div>
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="bg-blue-600/10 border border-blue-500/20 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
+              Empower your team with expert NetSuite knowledge.
+            </h2>
+
+            <div className="flex flex-wrap justify-center gap-6 relative z-10">
+              <Link href="/netsuite/contact" className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition shadow-xl">
+                Talk to an Instructor
+              </Link>
+              <Link href="/netsuite/services" className="px-10 py-4 bg-white/10 text-white font-bold rounded-2xl hover:bg-white/20 transition backdrop-blur-md border border-white/10">
+                Explore All Services
+              </Link>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
-      <FooterFormSection />
+      <ContactFormDesign4 />
     </div>
   );
 }

@@ -115,11 +115,10 @@ export const FAQ = ({ variant }: FAQProps) => {
                         setActiveCategory("netsuite");
                         setOpenItems({});
                       }}
-                      className={`px-5 py-2 rounded-full font-medium transition-all duration-300 ${
-                        activeCategory === "netsuite"
+                      className={`px-5 py-2 rounded-full font-medium transition-all duration-300 ${activeCategory === "netsuite"
                           ? "bg-linear-to-r from-red-600 to-red-800 text-white shadow-md"
                           : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                      }`}
+                        }`}
                     >
                       NetSuite
                     </button>
@@ -128,11 +127,10 @@ export const FAQ = ({ variant }: FAQProps) => {
                         setActiveCategory("zoho");
                         setOpenItems({});
                       }}
-                      className={`px-5 py-2 rounded-full font-medium transition-all duration-300 ${
-                        activeCategory === "zoho"
+                      className={`px-5 py-2 rounded-full font-medium transition-all duration-300 ${activeCategory === "zoho"
                           ? "bg-linear-to-r from-rose-600 to-pink-700 text-white shadow-md"
                           : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                      }`}
+                        }`}
                     >
                       Zoho
                     </button>
@@ -157,23 +155,22 @@ export const FAQ = ({ variant }: FAQProps) => {
                 >
                   <button
                     onClick={() => toggle(idx)}
+                    suppressHydrationWarning
                     className="flex justify-between items-center w-full px-6 py-5 text-left group"
                   >
                     <span className="text-lg md:text-xl font-medium text-gray-800 group-hover:text-rose-600 transition-colors">
                       {faq.q}
                     </span>
                     <div
-                      className={`transform transition-transform duration-300 ${
-                        isOpen ? "rotate-180 text-rose-600" : "text-gray-500"
-                      }`}
+                      className={`transform transition-transform duration-300 ${isOpen ? "rotate-180 text-rose-600" : "text-gray-500"
+                        }`}
                     >
                       <FaChevronDown className="w-5 h-5" />
                     </div>
                   </button>
                   <div
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                      isOpen ? "max-h-96 opacity-100 py-4 px-6" : "max-h-0 opacity-0 px-6"
-                    }`}
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-96 opacity-100 py-4 px-6" : "max-h-0 opacity-0 px-6"
+                      }`}
                   >
                     <p className="text-gray-700 leading-relaxed pt-0 pb-4">
                       {faq.a}

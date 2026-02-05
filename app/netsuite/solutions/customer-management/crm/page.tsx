@@ -11,7 +11,7 @@ import {
   Heart, Briefcase, Check, ChevronDown, MessageSquare, UserCircle, Database, Share2,
   ShieldCheck, Code, HeartHandshake
 } from 'lucide-react';
-import FooterFormSection from '@/app/components/home/FooterFormSection';
+import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
 
 export default function NetSuiteCRMPage() {
   const { ref: statsRef, inView: statsInView } = useInView({ triggerOnce: false, threshold: 0.2 });
@@ -372,7 +372,7 @@ export default function NetSuiteCRMPage() {
         </div>
       </section>
 
-      <FooterFormSection />
+      <ContactFormDesign4 />
     </div>
   );
 }

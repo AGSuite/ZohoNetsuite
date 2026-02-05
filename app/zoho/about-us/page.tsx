@@ -31,7 +31,7 @@ import FlipNumbers from 'react-flip-numbers';
 import { motion, useAnimation, type Variants } from 'framer-motion';
 // import Resource from '../homepage/components/Resource';
 // import Clients from '../homepage/components/Clients';
-import FooterFormSection from '@/app/components/home/FooterFormSection';
+import ContactFormDesign4 from '../../netsuite/components/ContactFormDesign4';
 import ZohoTestimonialSection from '../components/ZohoTestimonialSection';
 import { AnimatePresence } from 'framer-motion';
 
@@ -921,8 +921,8 @@ export default function AboutClient() {
         </motion.div>
       </section>
 
-      <section id="contact" className=" bg-white">
-        <FooterFormSection />
+      <section id="contact">
+        <ContactFormDesign4 />
       </section>
     </main>
   );

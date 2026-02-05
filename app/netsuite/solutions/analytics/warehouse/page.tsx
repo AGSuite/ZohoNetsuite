@@ -10,7 +10,7 @@ import {
   BarChart3, Cloud, Network, Check, ChevronDown, GitBranch, Server, Code,
   ShieldCheck, HeartHandshake, Users
 } from 'lucide-react';
-import FooterFormSection from '@/app/components/home/FooterFormSection';
+import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -505,7 +505,7 @@ export default function AnalyticsWarehousePage() {
         </div>
       </section>
 
-      <FooterFormSection />
+      <ContactFormDesign4 />
     </div>
   );
 }

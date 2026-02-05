@@ -105,6 +105,7 @@ export default function FooterFormRed() {
                 name="Last Name"
                 className="w-full bg-white border border-slate-200 focus:border-red-500 focus:bg-red-50/30 focus:ring-4 focus:ring-red-500/10 rounded-xl px-4 py-3 text-slate-900 outline-none transition-all placeholder:text-slate-400"
                 placeholder="John Doe"
+                suppressHydrationWarning
               />
             </div>
 
@@ -118,6 +119,7 @@ export default function FooterFormRed() {
                 name="Email"
                 className="w-full bg-white border border-slate-200 focus:border-red-500 focus:bg-red-50/30 focus:ring-4 focus:ring-red-500/10 rounded-xl px-4 py-3 text-slate-900 outline-none transition-all placeholder:text-slate-400"
                 placeholder="john@company.com"
+                suppressHydrationWarning
               />
             </div>
 
@@ -132,6 +134,7 @@ export default function FooterFormRed() {
                   name="Designation"
                   className="w-full bg-white border border-slate-200 focus:border-red-500 focus:bg-red-50/30 focus:ring-4 focus:ring-red-500/10 rounded-xl px-4 py-3 text-slate-900 outline-none transition-all placeholder:text-slate-400"
                   placeholder="CTO"
+                  suppressHydrationWarning
                 />
               </div>
               <div>
@@ -143,6 +146,7 @@ export default function FooterFormRed() {
                   name="Mobile"
                   className="w-full bg-white border border-slate-200 focus:border-red-500 focus:bg-red-50/30 focus:ring-4 focus:ring-red-500/10 rounded-xl px-4 py-3 text-slate-900 outline-none transition-all placeholder:text-slate-400"
                   placeholder="+1 (555) 000-0000"
+                  suppressHydrationWarning
                 />
               </div>
             </div>
@@ -157,6 +161,7 @@ export default function FooterFormRed() {
                 name="Company"
                 className="w-full bg-white border border-slate-200 focus:border-red-500 focus:bg-red-50/30 focus:ring-4 focus:ring-red-500/10 rounded-xl px-4 py-3 text-slate-900 outline-none transition-all placeholder:text-slate-400"
                 placeholder="Company Inc."
+                suppressHydrationWarning
               />
             </div>
 
@@ -170,6 +175,7 @@ export default function FooterFormRed() {
                   <select
                     name="LEADCF5"
                     className="w-full bg-white border border-slate-200 focus:border-red-500 focus:bg-red-50/30 focus:ring-4 focus:ring-red-500/10 rounded-xl px-4 py-3 text-slate-900 outline-none appearance-none cursor-pointer"
+                    suppressHydrationWarning
                   >
                     <option value="">Select Service</option>
                     <option value="NetSuite Implementation">NetSuite Implementation</option>
@@ -193,6 +199,7 @@ export default function FooterFormRed() {
                   <select
                     name="LEADCF40"
                     className="w-full bg-white border border-slate-200 focus:border-red-500 focus:bg-red-50/30 focus:ring-4 focus:ring-red-500/10 rounded-xl px-4 py-3 text-slate-900 outline-none appearance-none cursor-pointer"
+                    suppressHydrationWarning
                   >
                     <option value="">Select Revenue</option>
                     <option value="Under $500K">Under $500K</option>
@@ -241,6 +248,7 @@ export default function FooterFormRed() {
               <button
                 type="submit"
                 className="shrink-0 px-8 py-3.5 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]"
+                suppressHydrationWarning
               >
                 Send Message
               </button>

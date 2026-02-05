@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import FlipNumbers from 'react-flip-numbers';
 import { Trophy, Users, Globe2, Rocket, Layout, Database, Share2, Code, ShieldCheck, HeartHandshake, ExternalLink, ArrowRight, CheckCircle2 } from 'lucide-react';
-import FooterFormSection from '@/app/components/home/FooterFormSection';
+import ContactFormDesign4 from '../../components/ContactFormDesign4';
 
 export default function NetSuiteSolutionsClient() {
   const { ref: statsRef, inView: statsInView } = useInView({
@@ -859,7 +859,7 @@ export default function NetSuiteSolutionsClient() {
         </div>
       </section>
 
-      <FooterFormSection />
+      <ContactFormDesign4 />
     </div>
   );
 }

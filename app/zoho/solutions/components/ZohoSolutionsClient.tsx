@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import { Trophy, Users, Globe2, Rocket, Layout, Database, Share2, Code, ShieldCheck, HeartHandshake, ExternalLink, ArrowRight, CheckCircle2 } from 'lucide-react';
-import FooterFormSection from '@/app/components/home/FooterFormSection';
+import ContactFormDesign4 from '../../../netsuite/components/ContactFormDesign4';
 import FlipNumbers from 'react-flip-numbers';
 
 export default function ZohoSolutionsClient() {
@@ -634,7 +634,7 @@ export default function ZohoSolutionsClient() {
         </div>
       </section>
 
-      <FooterFormSection />
+      <ContactFormDesign4 />
     </div>
   );
 }

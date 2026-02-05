@@ -25,7 +25,7 @@ const ZohoCTA = dynamic(() => import('./components/ZohoCTA').then(mod => mod.def
 // const ZohoHowItWorks = dynamic(() => import('./components/ZohoHowItWorks').then(mod => mod.default));
 const ZohoWhyChooseUs = dynamic(() => import('./components/ZohoWhyChooseUs').then(mod => mod.default));
 const ZohoTestimonialSection = dynamic(() => import('./components/ZohoTestimonialSection').then(mod => mod.default));
-const FooterFormSection = dynamic(() => import('../components/home/FooterFormSection').then(mod => mod.default));
+const ContactFormDesign4 = dynamic(() => import('../netsuite/components/ContactFormDesign4').then(mod => mod.default));
 
 
 export default function ZohoPage() {
@@ -65,7 +65,7 @@ export default function ZohoPage() {
 
 
 
-      <FooterFormSection />
+      <ContactFormDesign4 />
     </div>
   );
 }
