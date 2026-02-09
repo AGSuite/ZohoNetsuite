@@ -134,7 +134,6 @@ export default function NSServices() {
 
     return () => {
       mm.revert();
-      ScrollTrigger.killAll();
     };
   }, []);
 

@@ -272,7 +272,6 @@ const NSMetrics = () => {
                                             fill
                                             sizes="(min-width: 1280px) 680px, (min-width: 1024px) 520px, 420px"
                                             className="object-cover"
-                                            priority
                                         />
                                     </div>
                                 </motion.div>

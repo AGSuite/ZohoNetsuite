@@ -22,6 +22,7 @@ import {
   Trophy,
   RefreshCcw,
   Users,
+  UserCog,
   Building2,
   MapPin,
   Mail,
@@ -31,8 +32,9 @@ import { useInView } from 'react-intersection-observer';
 import FlipNumbers from 'react-flip-numbers';
 import { motion, useAnimation, type Variants } from 'framer-motion';
 import ContactFormDesign4 from '../components/ContactFormDesign4';
-import NSTestimonialSection from '../components/NSTestimonialSection';
+import NSCustomerSuccess from '../components/NSCustomerSuccess';
 import { AnimatePresence } from 'framer-motion';
+import { ChevronRight, Sparkles } from 'lucide-react';
 
 // ---------------- Address Data ----------------
 
@@ -114,6 +116,7 @@ type FlipCounterProps = {
   duration?: number;
   suffix?: string;
   inView: boolean;
+  color?: string;
 };
 
 const FlipCounter = memo(function FlipCounter({
@@ -121,6 +124,7 @@ const FlipCounter = memo(function FlipCounter({
   duration = 3,
   suffix = '',
   inView,
+  color = '#2563EB',
 }: FlipCounterProps) {
   const padNumber = (num: number) => num.toString().padStart(2, '0');
   const numberStr = padNumber(end);
@@ -173,12 +177,12 @@ const FlipCounter = memo(function FlipCounter({
   }, [rollingIndex, rollingNumbers]);
 
   return (
-    <div className="flex items-center justify-center text-4xl md:text-6xl font-medium text-blue-600">
+    <div className="flex items-center justify-center text-4xl md:text-6xl font-medium" style={{ color }}>
       {staticPart && <span className="mr-1">{staticPart}</span>}
       <FlipNumbers
         height={55}
         width={36}
-        color="#2563EB"
+        color={color}
         background="transparent"
         play={inView}
         duration={duration / Math.max(rollingNumbers.length, 1)}
@@ -236,8 +240,8 @@ type CounterItem = {
 };
 
 const counters: CounterItem[] = [
-  { label: 'Enterprises Served', value: 180, icon: Trophy },
-  { label: 'NetSuite Experts', value: 50, icon: Users },
+  { label: 'Enterprises Served', value: 180, icon: Building2 },
+  { label: 'NetSuite Experts', value: 50, icon: UserCog },
   { label: 'Global Roll-outs', value: 50, icon: Globe2 },
   { label: 'Years Experience', value: 15, icon: Rocket },
 ];
@@ -281,19 +285,9 @@ const slideInRight: Variants = {
 
 // ---------------- About stats section ----------------
 
-function AboutStatsSection() {
-  const controls = useAnimation();
-  const { ref: statsRef, inView: statsInView } = useInView({
-    triggerOnce: false,
-    threshold: 0.2,
-  });
-
-  useEffect(() => {
-    controls.start(statsInView ? 'visible' : 'hidden');
-  }, [statsInView, controls]);
-
+function WhoWeAreSection() {
   return (
-    <section className="relative py-24 bg-linear-to-b from-white via-white to-blue-50  overflow-hidden">
+    <section className="relative py-24 bg-linear-to-b from-white via-white to-white overflow-hidden">
       <div className="relative mx-auto max-w-7xl px-6 sm:px-10 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center gap-14">
         {/* LEFT: Text */}
         <motion.div
@@ -306,16 +300,8 @@ function AboutStatsSection() {
           <motion.h2 variants={fadeInUp} className="text-gray-900 text-3xl md:text-4xl lg:text-5xl font-medium">
             Who We Are
           </motion.h2>
-          <motion.p variants={fadeInUp} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-            AGSuite Technologies is a trusted Oracle NetSuite Solution Provider and Advanced Zoho
-            Partner, helping businesses streamline operations with powerful ERP and CRM solutions.
-            We specialize in NetSuite implementation, customization, and integration, enabling
-            companies to boost efficiency and growth and achieve seamless digital transformation.
-            As an experienced partner, we also deliver tailored Zoho CRM and business automation
-            services designed for scalability and success. At AGSuite Tech, we empower
-            organizations to drive growth and achieve lasting results through innovative
-            Oracle NetSuite and Zoho solutions.
-          </motion.p>
+          <motion.p variants={fadeInUp} className="text-gray-700 text-2xl md:text-2xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            AGSuite Technologies is a trusted Oracle NetSuite Solution Provider helping businesses streamline operations with a unified cloud ERP platform. We specialize in NetSuite implementation, customization, and integration to improve efficiency and support scalable growth. Our expertise enables organizations to achieve seamless digital transformation and long-term success.          </motion.p>
         </motion.div>
 
         {/* RIGHT: Image */}
@@ -326,7 +312,7 @@ function AboutStatsSection() {
           viewport={{ once: true, amount: 0.3 }}
           className="flex-1 flex justify-center lg:justify-end"
         >
-          <div className="w-80 h-80 md:w-136 md:h-125 bg-blue-100 rounded-md overflow-hidden border-4 border-white">
+          <div className="w-80 h-80 md:w-136 md:h-125 bg-blue-100 rounded-md overflow-hidden border-4 border-white ">
             <Image
               src="/images/aboutus/heroimg0.webp"
               alt="AGSuite Technologies Team"
@@ -338,73 +324,211 @@ function AboutStatsSection() {
           </div>
         </motion.div>
       </div>
+    </section>
+  );
+}
 
-      <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        className="max-w-7xl mx-auto mt-15 px-6 sm:px-10 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-10"
-      >
-        {/* LEFT: Text */}
-        <div className="flex-1 space-y-5 text-center lg:text-left">
-          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900">
-            Strategic Partners
-          </motion.h2>
-          <motion.p variants={fadeInUp} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0">
-            We collaborate with world-class technology partners to deliver scalable, innovative, and
-            future-ready business solutions that empower enterprises worldwide.
-          </motion.p>
-        </div>
+const partnerLogos = [
+  { logo: "/images/assets/png-logos/affle-png.png", name: "Affle" },
+  { logo: "/images/assets/png-logos/tyfone_tech-removebg-preview.png", name: "Tyfone" },
+  { logo: "/images/assets/png-logos/airling_tech-removebg-preview.png", name: "Airling" },
+  { logo: "/images/assets/png-logos/video_verse_tech-removebg-preview.png", name: "VideoVerse" },
+  { logo: "/images/assets/png-logos/quickheal-png.png", name: "Quick Heal" },
+  { logo: "/images/assets/png-logos/uniAcco-png.png", name: "UniAcco" },
+];
 
-        {/* RIGHT: Partner Logos in Box */}
-        <motion.div variants={fadeInUp} className="flex-1 grid grid-cols-1 justify-center items-center">
-          <div className="flex justify-center items-center">
-            <Image
-              src="/images/netsuiteimages/netsuitelogos/netsuiteblack.png"
-              alt="Oracle NetSuite Partner"
-              width={280}
-              height={120}
-              className="object-contain"
-            />
-          </div>
-        </motion.div>
-      </motion.div>
+function StrategicPartnersSection() {
+  const controls = useAnimation();
+  const { ref: statsRef, inView: statsInView } = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
 
-      {/* Animated Counters Section */}
-      <div
-        ref={statsRef}
-        className="max-w-7xl mx-auto mt-20 px-6 sm:px-10"
-      >
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
-          {counters.map((item, index) => (
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+    controls.start(statsInView ? 'visible' : 'hidden');
+  }, [statsInView, controls]);
+
+  return (
+    <section className="relative py-24 bg-gradient-to-br from-[#020617] via-[#010b2a] to-black overflow-hidden">
+      {/* Background Star Particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {isMounted && [...Array(100)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute bg-white rounded-full"
+            style={{
+              width: Math.random() * 2 + 1 + 'px',
+              height: Math.random() * 2 + 1 + 'px',
+              top: Math.random() * 100 + '%',
+              left: Math.random() * 100 + '%',
+            }}
+            animate={{
+              y: [0, -40, 0],
+              x: [0, Math.random() * 30 - 15, 0],
+              opacity: [0.1, 0.7, 0.1],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: Math.random() * 6 + 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: Math.random() * 5,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 md:px-12 lg:px-16">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+          {/* LEFT: Heading, Subline, Logo */}
+          <div className="flex-1 space-y-8 text-center lg:text-left">
+            <div className="space-y-4">
+              <motion.h2
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="text-3xl md:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-50 via-blue-500 to-blue-500 leading-tight"
+              >
+                Strategic Partners
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-gray-300 text-base md:text-2xl leading-relaxed max-w-lg mx-auto lg:mx-0"
+              >
+                We collaborate with world-class technology partners to deliver scalable, innovative, and
+                future-ready business solutions that empower enterprises worldwide.
+              </motion.p>
+            </div>
+
+            {/* Logo right after subline */}
             <motion.div
-              // index is stable here as counters is static
-              // eslint-disable-next-line react/no-array-index-key
-              key={index}
-              variants={{
-                hidden: { opacity: 0, y: 40 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial="hidden"
-              animate={controls}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="text-center group"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex justify-center lg:justify-start"
             >
-              <div className="flex justify-center mb-4">
-                <div className="p-4 bg-blue-100 rounded-2xl group-hover:bg-blue-600 transition-colors duration-300">
-                  <item.icon className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
-                </div>
+              <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-2xl">
+                <Image
+                  src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
+                  alt="Oracle NetSuite Partner"
+                  width={280}
+                  height={120}
+                  className="object-contain brightness-0 invert"
+                />
               </div>
-              <div className="mb-2 flex justify-center">
-                <FlipCounter end={item.value} suffix="+" duration={3} inView={statsInView} />
-              </div>
-              <p className="text-gray-600 font-medium text-lg">{item.label}</p>
             </motion.div>
-          ))}
+          </div>
+
+          {/* RIGHT: Animated Counters Section */}
+          <div
+            ref={statsRef}
+            className="flex-1 w-full"
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+              {counters.map((item, index) => {
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.15 }}
+                    className="relative group p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm overflow-hidden text-center"
+                  >
+                    {/* Decorative faint icon bg */}
+                    <div className="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
+                      <item.icon className="w-24 h-24 text-white" strokeWidth={1} />
+                    </div>
+
+                    <div className="relative z-10 flex flex-col items-center">
+                      <div className="p-4 bg-blue-600/10 rounded-2xl group-hover:bg-blue-600 transition-colors duration-300 text-blue-400 group-hover:text-white mb-6 border border-white/5">
+                        <item.icon className="w-10 h-10" strokeWidth={1.2} />
+                      </div>
+
+                      <div className="space-y-3">
+                        <p className="text-gray-400 font-medium text-sm group-hover:text-gray-200 transition-colors uppercase tracking-widest">
+                          {item.label}
+                        </p>
+                        <div className="text-4xl lg:text-5xl font-bold text-white tracking-tight">
+                          <FlipCounter end={item.value} suffix="+" duration={3} inView={statsInView} color="#FFFFFF" />
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
+  );
+}
+
+function ClientsSection() {
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-blue-600 text-2xl md:text-4xl lg:text-5xl font-medium"
+          >
+            Trusted by Industry Leaders
+          </motion.h2>
+        </div>
+
+        <div className="relative w-full overflow-hidden py-4">
+          <div className="flex items-center gap-16 animate-marquee-slow whitespace-nowrap">
+            {partnerLogos.concat(partnerLogos).map((logo, index) => (
+              <div key={index} className="flex-shrink-0  hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                <Image
+                  src={logo.logo}
+                  alt={logo.name}
+                  width={180}
+                  height={60}
+                  className="h-18 w-auto object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <style jsx global>{`
+        @keyframes marquee-slow {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee-slow {
+          display: flex;
+          animation: marquee-slow 40s linear infinite;
+        }
+        .animate-marquee-slow:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+    </section>
+  );
+}
+
+function AboutStatsSection() {
+  return (
+    <>
+      <WhoWeAreSection />
+      <StrategicPartnersSection />
+      <ClientsSection />
+    </>
   );
 }
 
@@ -414,6 +538,11 @@ export default function AboutClient() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [videoSrc, setVideoSrc] = useState('/images/videos/aboutus.mp4');
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Detect screen width and switch video for mobile
   useEffect(() => {
@@ -790,99 +919,9 @@ export default function AboutClient() {
         </div>
       </section>
 
-      <section
-        className="relative pt-20 pb-16 bg-white overflow-hidden"
-        style={{
-          boxShadow: 'inset 0 0.6em 0.8em -1em #100000',
-        }}
-      >
-        <div className="relative mx-auto max-w-7xl px-6 sm:px-10 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center gap-14" />
 
-        <section className="relative w-full h-[60vh] md:h-[55vh] mt-8 px-4 md:px-6 lg:px-8">
-          <div
-            className="relative w-full h-full rounded-3xl overflow-hidden"
-            style={{
-              backgroundImage: "url('/images/aboutus/child66.png')",
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              backgroundAttachment: 'fixed',
-            }}
-          >
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/20 z-0" />
-
-            <div className="relative z-10 h-full flex flex-col justify-center px-8 md:px-12 lg:px-20 max-w-xl">
-              <h2 className="text-white text-2xl md:text-3xl lg:text-5xl whitespace-nowrap">
-                AGSuite <span className="font-bold italic">Technologies</span>
-              </h2>
-
-              <p className="mt-4 text-sm md:text-base lg:text-lg text-white/95 leading-relaxed">
-                Empowering Businesses With Innovative Software Solutions.
-              </p>
-
-              <button
-                type="button"
-                className="mt-6 inline-flex items-center gap-2 border-2 border-white/60 text-white px-6 py-2 text-sm rounded-full font-medium hover:bg-white/10 hover:border-white transition-all duration-300 w-fit group"
-                suppressHydrationWarning={true}
-              >
-                <span>Explore more</span>
-                <span className="text-base transform group-hover:translate-x-1 transition-transform duration-300">
-                  →
-                </span>
-              </button>
-            </div>
-          </div>
-        </section>
-      </section>
-
-      <section
-        className="relative py-8 sm:py-20 bg-white text-gray-900 overflow-hidden"
-        style={{
-          backgroundImage: "url('/images/backgroundimg/bg3.webp')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-        }}
-      >
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 h-48 sm:h-64 w-[80%] bg-linear-to-br from-blue-400/15 via-blue-300/15 to-blue-200/15 blur-2xl" />
-          <div className="absolute -bottom-24 -right-16 h-56 w-56 sm:h-72 sm:w-72 rounded-full bg-linear-to-tr from-blue-400/25 to-blue-500/20 blur-3xl" />
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-1">
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <motion.h2 variants={fadeInUp} className="mb-10 bg-linear-to-l leading-relaxed from-blue-900 via-blue-950 to-blue-950 text-transparent bg-clip-text mx-auto max-w-4xl font-medium text-3xl md:text-4xl lg:text-5xl">
-              Celebrating Excellence & Recognition
-            </motion.h2>
-
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20">
-              <motion.div variants={fadeInUp} className=" flex justify-center">
-                <Image
-                  src="/images/Dashboard/awards2.webp"
-                  alt="Awards and Recognition"
-                  width={900}
-                  height={500}
-                  className="rounded-2xl shadow-xl object-contain"
-                />
-              </motion.div>
-            </div>
-          </motion.div>
-
-          <div className="mt-12 h-px w-full bg-linear-to-r from-transparent via-blue-200 to-transparent" />
-        </div>
-      </section>
-
-
-
-      <section id="testimonials" className="pt-12 pb-20 bg-white">
-        <NSTestimonialSection />
+      <section id="testimonials" className="bg-white">
+        <NSCustomerSuccess />
       </section>
 
       <section id="offices" className="relative py-24 bg-gradient-to-b from-[#0f172a] via-[#020617] to-[#020617] overflow-hidden">
@@ -936,8 +975,58 @@ export default function AboutClient() {
         </motion.div>
       </section>
 
-      <section id="contact" className=" bg-white">
+      {/* <section id="contact" className=" bg-white">
         <ContactFormDesign4 />
+      </section> */}
+
+      {/* Premium CTA Section */}
+      {/* Premium CTA Section */}
+      <section className=" pb-0 bg-white overflow-hidden w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative overflow-hidden w-full bg-gradient-to-br from-[#0033ad] via-[#0055ff] to-[#00c2cb] px-6 md:px-26 py-24 flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl"
+        >
+          {/* Background Star Particles */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {isMounted && [...Array(20)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute bg-white rounded-full"
+                style={{
+                  width: Math.random() * 2 + 1 + 'px',
+                  height: Math.random() * 2 + 1 + 'px',
+                  top: Math.random() * 100 + '%',
+                  left: Math.random() * 100 + '%',
+                }}
+                animate={{
+                  y: [0, -40, 0],
+                  x: [0, Math.random() * 30 - 15, 0],
+                  opacity: [0.2, 0.8, 0.2],
+                }}
+                transition={{
+                  duration: Math.random() * 5 + 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: Math.random() * 5,
+                }}
+              />
+            ))}
+          </div>
+
+          <div className="relative z-10 max-w-3xl text-left">
+            <h3 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight leading-tight">Ready to scale your enterprise?</h3>
+            <p className="text-white/90 text-lg md:text-xl font-medium">Join 38,000+ high-growth businesses running on the world's #1 Cloud ERP.</p>
+          </div>
+
+          <Link
+            href="/netsuite/contact"
+            className="relative z-10 px-12 py-5 bg-white text-blue-700 hover:bg-blue-50 rounded-xl font-bold transition-all shadow-xl flex items-center gap-3 group text-xl whitespace-nowrap active:scale-95 shrink-0"
+          >
+            Get Started <ChevronRight className="w-7 h-7 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
       </section>
     </main>
   );

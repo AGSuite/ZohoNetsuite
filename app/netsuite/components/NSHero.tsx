@@ -104,6 +104,8 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   priority={true}
                   multiColorShadow={true}
                   skipEntranceAnimation={skipFirstAnimation}
+                  showOverlay={false}
+                  textColor="dark"
                 />
               </SwiperSlide>
 
@@ -428,7 +430,7 @@ const HeroSlide = ({
                       width={1800}
                       height={1600}
                       priority={priority}
-                      className="w-[125%] max-w-none object-contain drop-shadow-[0_20px_60px_rgba(59,130,246,0.25)] -ml-[15%] transition-transform duration-700 hover:scale-[1.02]"
+                      className="w-[140%] max-w-none object-contain drop-shadow-[0_20px_60px_rgba(59,130,246,0.25)] -ml-[25%] transition-transform duration-700 hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 60vw"
                     />
                   )}

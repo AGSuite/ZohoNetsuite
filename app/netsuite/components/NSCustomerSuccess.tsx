@@ -89,7 +89,7 @@ const NSCustomerSuccess = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-4xl lg:text-5xl font-black text-[#1a1a1a] tracking-tight"
+                        className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 tracking-tight"
                     >
                         Transforming businesses,<br />one customer at a time
                     </motion.h2>
@@ -177,7 +177,7 @@ const NSCustomerSuccess = () => {
                                 alt={customer.companyName}
                                 width={140}
                                 height={60}
-                                className="h-8 md:h-12 w-auto object-contain"
+                                className="h-8 md:h-19 w-auto object-contain"
                             />
                             {/* Active Underline */}
                             {activeIdx === idx && (

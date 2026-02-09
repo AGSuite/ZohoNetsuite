@@ -44,13 +44,12 @@ const NSWhyChooseUs = () => {
                 alt="Business technology background"
                 fill
                 className="object-cover"
-                priority
                 sizes="(max-width: 1280px) 100vw, 1280px"
               />
             </div>
 
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 z-10 bg-linear-to-r from-gray-900/95 via-gray-900/70 to-transparent" />
+            <div className="absolute inset-0 z-10 bg-linear-to-r from-gray-900/95 via-gray-900/90 to-gray-900/50" />
 
             {/* Content */}
             <div className="relative z-20 p-8 md:p-12 lg:p-16">

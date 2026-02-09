@@ -43,6 +43,8 @@ export default function NetSuitePage() {
       />
 
       <NSMetrics />
+      <NSCustomerSuccess />
+
       <NSKeyCapabilities />
       {/* <NSDashboardHero /> */}
 
@@ -61,7 +63,6 @@ export default function NetSuitePage() {
       <NSWhyChooseUs />
 
       <NSTestimonialSection />
-      <NSCustomerSuccess />
 
 
 

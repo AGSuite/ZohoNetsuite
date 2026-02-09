@@ -102,23 +102,21 @@ const NetsuiteCTA = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 overflow-y-auto"
+            className="fixed inset-0 z-[150] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className="relative w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden"
+              className="relative w-full max-w-6xl rounded-[3rem] shadow-2xl overflow-hidden bg-[#020617]"
             >
               <button
                 onClick={() => setIsCalculatorOpen(false)}
-                className="absolute top-6 right-6 z-[60] p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors text-gray-500 hover:text-gray-900 shadow-sm"
+                className="absolute top-5 right-5 z-[160] p-2 bg-white/5 hover:bg-white/10 rounded-full transition-all text-slate-400 hover:text-white border border-white/10"
               >
-                <X size={24} />
+                <X size={20} />
               </button>
-              <div className="max-h-[90vh] overflow-y-auto">
-                <NetSuitePricingCalculator />
-              </div>
+              <NetSuitePricingCalculator />
             </motion.div>
           </motion.div>
         )}

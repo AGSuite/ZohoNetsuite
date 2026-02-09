@@ -1,223 +1,213 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, useInView, useSpring, useTransform, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronRight, TrendingUp } from 'lucide-react';
+import { ChevronRight, ArrowRight } from 'lucide-react';
 
-const RollingNumber = ({ value, suffix = "" }: { value: string, suffix?: string }) => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
+interface Capability {
+    id: number;
+    title: string;
+    subline: string;
+    description: string;
+    image: string;
+    link: string;
+}
 
-    // Extract numeric part
-    const numericValue = parseFloat(value.replace(/[^0-9.]/g, '')) || 0;
-
-    const springValue = useSpring(0, {
-        stiffness: 40,
-        damping: 20,
-        mass: 1,
-    });
-
-    const displayValue = useTransform(springValue, (current) => {
-        if (value.includes('.')) {
-            return current.toFixed(1);
-        }
-        return Math.floor(current).toLocaleString();
-    });
-
-    useEffect(() => {
-        if (isInView) {
-            springValue.set(numericValue);
-        }
-    }, [isInView, numericValue, springValue]);
-
-    return (
-        <span ref={ref} className="tabular-nums">
-            <motion.span>{displayValue}</motion.span>
-            <span>{value.replace(/[0-9.]/g, '')}{suffix}</span>
-        </span>
-    );
-};
-
-const mainStats = [
+const capabilities: Capability[] = [
     {
         id: 1,
-        value: "2.5X",
-        subline: "increase in average project delivery speed for global logistics teams",
-        image: "/images/people/laptopgirl3.webp",
-        brand: "logistics"
+        title: "Built for Rapid Scaling",
+        subline: "Grow without system limitations",
+        description: "NetSuite supports increasing transactions, users, subsidiaries, and global expansion without requiring costly system replacements.",
+        image: "/images/lap/lap3.webp",
+        link: "/netsuite/solutions"
     },
     {
         id: 2,
-        value: "31%",
-        subline: "reduction in operational overhead for multi-national manufacturers",
-        image: "/images/people/laptopmen.webp",
-        brand: "manufacturing"
+        title: "Real-Time Business Visibility",
+        subline: "Make faster, smarter decisions",
+        description: "Enterprise leaders gain live dashboards, reporting, and analytics to monitor performance and act quickly.",
+        image: "/images/lap/lap7_11zon.webp",
+        link: "/netsuite/solutions"
     },
     {
         id: 3,
-        value: "129%",
-        subline: "average ROI achieved by our retail customers within the first year",
-        image: "/images/people/laptopmen2.webp",
-        brand: "retail"
+        title: "End-to-End Business Management",
+        subline: "One platform for all operations",
+        description: "Finance, CRM, inventory, procurement, and HR are managed in a single unified system.",
+        image: "/images/lap/lap9_11zon.webp",
+        link: "/netsuite/solutions"
+    },
+    {
+        id: 4,
+        title: "Automation & Operational Efficiency",
+        subline: "Reduce manual work",
+        description: "Automate workflows like billing, approvals, reporting, and financial close processes.",
+        image: "/images/lap/lap6_11zon.webp",
+        link: "/netsuite/solutions"
+    },
+    {
+        id: 5,
+        title: "Global Business Ready",
+        subline: "Expand confidently across regions",
+        description: "Multi-currency, multi-tax, and multi-subsidiary management enables international growth.",
+        image: "/images/people/global.webp",
+        link: "/netsuite/solutions"
     }
 ];
 
 const NSKeyCapabilities = () => {
-    const [hoveredId, setHoveredId] = useState<number | null>(null);
+    const [activeTab, setActiveTab] = useState(capabilities[0].id);
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
         setIsMounted(true);
     }, []);
 
+    const activeCapability = capabilities.find(cap => cap.id === activeTab) || capabilities[0];
+
     return (
         <section
-            className="relative py-24 overflow-hidden font-['DM_Sans',sans-serif]"
-            style={{
-                background: "linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(34, 197, 94, 0.05) 50%, rgba(239, 68, 68, 0.08) 100%)"
-            }}
+            className="relative pt-24 pb-0 overflow-hidden bg-white"
         >
-            {/* Background decorative blurs */}
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-400/10 rounded-full blur-[150px] -mr-96 -mt-48" />
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-green-400/10 rounded-full blur-[120px] -ml-48 -mb-24" />
-
-            <div className="relative z-10 max-w-[1400px] mx-auto px-6">
-                <div className="text-center mb-16">
+            <div className="relative z-10 max-w-[1240px] mx-auto px-6">
+                <div className="text-center mb-20">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-slate-950 via-slate-900 to-blue-700 tracking-tighter mb-4"
-                    >
+                        className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 tracking-tight"                    >
                         See why high-growth enterprises<br />run on NetSuite
                     </motion.h2>
                 </div>
 
-                {/* Top Interactive Flex Track - REDUCED HEIGHT */}
-                <div className="flex flex-col md:flex-row gap-5 mb-12 h-[380px]">
-                    {mainStats.map((stat) => {
-                        const isHovered = hoveredId === stat.id;
-                        return (
+                <div className="grid lg:grid-cols-2 gap-16 items-stretch">
+                    {/* Left Side - Image with Content */}
+                    <div className="order-2 lg:order-1 relative min-h-[500px] lg:min-h-[650px] rounded-3xl overflow-hidden shadow-xl">
+                        <AnimatePresence mode="wait">
                             <motion.div
-                                key={stat.id}
-                                onMouseEnter={() => setHoveredId(stat.id)}
-                                onMouseLeave={() => setHoveredId(null)}
-                                className="relative overflow-hidden cursor-pointer h-full"
-                                animate={{
-                                    flex: isHovered ? 2 : 1,
-                                }}
-                                transition={{
-                                    type: "spring",
-                                    stiffness: 250,
-                                    damping: 30,
-                                    mass: 1
-                                }}
+                                key={activeTab}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.4 }}
+                                className="absolute inset-0 h-full w-full"
                             >
-                                <div className="relative h-full w-full rounded-[2rem] overflow-hidden border-4 border-white shadow-2xl shadow-slate-200/50">
-                                    {/* Image */}
-                                    <Image
-                                        src={stat.image}
-                                        alt={stat.brand}
-                                        fill
-                                        className={`object-cover transition-transform duration-700 ${isHovered ? "scale-105 brightness-[0.7]" : "scale-100 brightness-[0.5]"
-                                            }`}
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                                    />
+                                <Image
+                                    src={activeCapability.image}
+                                    alt={activeCapability.title}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                    priority
+                                />
 
-                                    {/* Overlay */}
-                                    <div className="absolute inset-0 bg-blue-600/20 mix-blend-overlay z-10" />
-                                    <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
+                                {/* Black Overlay Gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/20 to-transparent z-10" />
 
-                                    {/* Brand Badge */}
-                                    <div className="absolute top-6 right-6 z-20">
-                                        <div className="bg-gray-900/50 backdrop-blur-md px-5 py-2.5 rounded-xl border border-white/30 flex items-center gap-4 shadow-lg shadow-blue-900/20">
-                                            <Image
-                                                src="/images/logos/agsuite_logo.webp"
-                                                alt="AGSuite"
-                                                width={100}
-                                                height={32}
-                                                className="h-6 w-auto object-contain "
-                                            />
-                                            <div className="w-px h-5 bg-white/40" />
-                                            <Image
-                                                src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
-                                                alt="NetSuite Partner"
-                                                width={100}
-                                                height={32}
-                                                className="h-6 w-auto object-contain brightness-0 invert"
-                                            />
-                                        </div>
-                                    </div>
+                                {/* Content inside Image */}
+                                <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 md:p-12">
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.2 }}
+                                        className="space-y-6"
+                                    >
+                                        <p className="text-white/95 text-xl leading-relaxed font-normal max-w-lg">
+                                            {activeCapability.description}
+                                        </p>
 
-                                    {/* Content */}
-                                    <div className="absolute bottom-8 left-8 right-8 z-20">
-                                        <div className="space-y-1">
-                                            <div className="flex items-center gap-1.5">
-                                                <TrendingUp className="w-5 h-5 text-green-500 fill-green-500/20" />
-                                            </div>
-                                            <h3 className="text-5xl font-black text-white tracking-tighter">
-                                                <RollingNumber value={stat.value} />
-                                            </h3>
-                                            <p className={`text-white/90 font-medium leading-tight max-w-[280px] transition-all duration-500 ${isHovered ? "text-base opacity-100 translate-y-0" : "text-sm opacity-90"
-                                                }`}>
-                                                {stat.subline}
-                                            </p>
-                                        </div>
-                                    </div>
+                                        <Link
+                                            href={activeCapability.link}
+                                            className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-slate-900 rounded-lg hover:bg-[#2563eb] hover:text-white transition-all font-semibold group/btn"
+                                        >
+                                            Learn More <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                                        </Link>
+                                    </motion.div>
                                 </div>
                             </motion.div>
-                        );
-                    })}
-                </div>
-
-                {/* Premium CTA Strip */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mt-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between p-10 bg-gradient-to-br from-[#0033ad] via-[#0055ff] to-[#00c2cb] rounded-[2.5rem] shadow-[0_40px_80px_-15px_rgba(0,51,173,0.35)] gap-8"
-                >
-                    {/* Background Star Particles */}
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                        {isMounted && [...Array(15)].map((_, i) => (
-                            <motion.div
-                                key={i}
-                                className="absolute bg-white rounded-full"
-                                style={{
-                                    width: Math.random() * 2 + 1 + 'px',
-                                    height: Math.random() * 2 + 1 + 'px',
-                                    top: Math.random() * 100 + '%',
-                                    left: Math.random() * 100 + '%',
-                                }}
-                                animate={{
-                                    y: [0, -30, 0],
-                                    x: [0, Math.random() * 20 - 10, 0],
-                                    opacity: [0.2, 0.8, 0.2],
-                                }}
-                                transition={{
-                                    duration: Math.random() * 5 + 3,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                    delay: Math.random() * 5,
-                                }}
-                            />
-                        ))}
+                        </AnimatePresence>
                     </div>
 
-                    <div className="relative z-10 max-w-2xl text-left">
-                        <h3 className="text-3xl font-black text-white mb-2 tracking-tight">Ready to scale?</h3>
-                        <p className="text-white/90 text-lg font-medium">Join 38,000+ businesses running on the world's #1 Cloud ERP.</p>
+                    {/* Right Side - Interactive Points */}
+                    <div className="order-1 lg:order-2 flex flex-col h-full bg-white border-t border-slate-100">
+                        {capabilities.map((capability) => (
+                            <button
+                                key={capability.id}
+                                onClick={() => setActiveTab(capability.id)}
+                                className={`group relative flex-1 flex items-center px-4 text-left transition-all border-b border-slate-100 last:border-b-0 outline-none ${activeTab === capability.id ? 'bg-slate-50/50' : 'hover:bg-slate-50/30'
+                                    }`}
+                            >
+                                {/* Active Indicator Line */}
+                                {activeTab === capability.id && (
+                                    <motion.div
+                                        layoutId="active-line"
+                                        className="absolute top-0 left-0 w-full h-[3px] bg-[#2563eb]"
+                                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                    />
+                                )}
+
+                                <span className={`text-xl md:text-2xl transition-all duration-300 ${activeTab === capability.id
+                                    ? 'text-slate-900 font-bold translate-x-3'
+                                    : 'text-slate-400 group-hover:text-slate-600 group-hover:translate-x-1'
+                                    }`}>
+                                    {capability.title}
+                                </span>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* Full-width Edge-to-Edge CTA - Touches bottom */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="mt-18 relative overflow-hidden bg-gradient-to-br from-[#002a8c] via-[#0044cc] to-[#0099a3] shadow-[0_20px_50px_-15px_rgba(0,51,173,0.3)]"
+            >
+                {/* Background Star Particles */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    {isMounted && [...Array(15)].map((_, i) => (
+                        <motion.div
+                            key={i}
+                            className="absolute bg-white rounded-full"
+                            style={{
+                                width: Math.random() * 2 + 1 + 'px',
+                                height: Math.random() * 2 + 1 + 'px',
+                                top: Math.random() * 100 + '%',
+                                left: Math.random() * 100 + '%',
+                            }}
+                            animate={{
+                                y: [0, -30, 0],
+                                x: [0, Math.random() * 20 - 10, 0],
+                                opacity: [0.2, 0.8, 0.2],
+                            }}
+                            transition={{
+                                duration: Math.random() * 5 + 3,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                                delay: Math.random() * 5,
+                            }}
+                        />
+                    ))}
+                </div>
+
+                <div className="max-w-[1240px] mx-auto px-6 py-24 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div className="relative z-10 text-left cursor-default">
+                        <h3 className="text-3xl md:text-5xl font-black text-white mb-3 tracking-tight">Ready to Accelerate Your Business?</h3>
+                        <p className="text-white/90 text-lg md:text-xl font-medium">Join 38,000+ businesses running on the world's #1 Cloud ERP.</p>
                     </div>
                     <Link
                         href="/netsuite/contact"
-                        className="relative z-10 px-10 py-4 bg-white text-blue-700 hover:bg-blue-50 rounded-2xl font-bold transition-all shadow-xl flex items-center gap-3 group text-lg whitespace-nowrap active:scale-95"
+                        className="relative z-10 px-10 py-5 bg-white text-[#002a8c] hover:bg-blue-50 rounded-xl font-bold transition-all shadow-xl flex items-center gap-3 group text-xl whitespace-nowrap active:scale-95"
                     >
                         Get Started <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                     </Link>
-                </motion.div>
-            </div>
+                </div>
+            </motion.div>
         </section>
     );
 };
