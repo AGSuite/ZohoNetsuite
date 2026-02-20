@@ -36,6 +36,9 @@ import NSCustomerSuccess from '../components/NSCustomerSuccess';
 import { AnimatePresence } from 'framer-motion';
 import { ChevronRight, Sparkles } from 'lucide-react';
 
+
+
+
 // ---------------- Address Data ----------------
 
 interface Address {
@@ -287,21 +290,62 @@ const slideInRight: Variants = {
 
 function WhoWeAreSection() {
   return (
-    <section className="relative py-24 bg-linear-to-b from-white via-white to-white overflow-hidden">
-      <div className="relative mx-auto max-w-7xl px-6 sm:px-10 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center gap-14">
-        {/* LEFT: Text */}
+    <section className="relative py-24 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+      <div className="relative mx-auto max-w-7xl px-6 sm:px-10 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center gap-12">
+        {/* LEFT: Text and Feature Cards */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="flex-1 space-y-8 text-center lg:text-left lg:pr-8"
+          className="flex-1 space-y-6 text-left flex flex-col justify-center"
         >
-          <motion.h2 variants={fadeInUp} className="text-gray-900 text-3xl md:text-4xl lg:text-5xl font-medium">
-            Who We Are
+          {/* ABOUT US Badge */}
+          <motion.div variants={fadeInUp} className="inline-block">
+            {/* <span className="inline-block px-4 py-2 bg-blue-100 text-blue-700 text-sm font-medium rounded-full uppercase tracking-wide">
+              About Us
+            </span> */}
+          </motion.div>
+
+          {/* Main Heading */}
+          <motion.h2 variants={fadeInUp} className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-blue-600 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
+            Empowering You<br />to Secure Your<br />
+            <span className="italic font-serif">Business & Growth</span>
           </motion.h2>
-          <motion.p variants={fadeInUp} className="text-gray-700 text-2xl md:text-2xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
-            AGSuite Technologies is a trusted Oracle NetSuite Solution Provider helping businesses streamline operations with a unified cloud ERP platform. We specialize in NetSuite implementation, customization, and integration to improve efficiency and support scalable growth. Our expertise enables organizations to achieve seamless digital transformation and long-term success.          </motion.p>
+
+          {/* Description */}
+          <motion.p variants={fadeInUp} className="text-gray-600 text-sm md:text-base leading-relaxed max-w-xl">
+            AGSuite Technologies is a trusted Oracle NetSuite Solution Provider helping businesses streamline operations with a unified cloud ERP platform. We specialize in NetSuite implementation, customization, and integration to improve efficiency and support scalable growth.
+          </motion.p>
+
+          {/* Feature Cards */}
+          <motion.div variants={fadeInUp} className="space-y-3 pt-2">
+            {/* Oracle NetSuite Solution Provider */}
+            <div className="flex items-start gap-3">
+              <div className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-gray-900 font-semibold text-base mb-0.5">Certified Oracle NetSuite Partner</h3>
+                <p className="text-gray-600 text-xs leading-relaxed">Trusted Solution Provider with 15+ years of expertise in NetSuite implementation and optimization.</p>
+              </div>
+            </div>
+
+            {/* Comprehensive Services */}
+            {/* <div className="flex items-start gap-3">
+              <div className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-gray-900 font-semibold text-base mb-0.5">End-to-End Business Solutions</h3>
+                <p className="text-gray-600 text-xs leading-relaxed">From implementation to customization, integration, and ongoing support for sustainable growth.</p>
+              </div>
+            </div> */}
+          </motion.div>
         </motion.div>
 
         {/* RIGHT: Image */}
@@ -312,15 +356,17 @@ function WhoWeAreSection() {
           viewport={{ once: true, amount: 0.3 }}
           className="flex-1 flex justify-center lg:justify-end"
         >
-          <div className="w-80 h-80 md:w-136 md:h-125 bg-blue-100 rounded-md overflow-hidden border-4 border-white ">
-            <Image
-              src="/images/aboutus/heroimg0.webp"
-              alt="AGSuite Technologies Team"
-              width={800}
-              height={800}
-              className="w-full h-full object-cover"
-              priority
-            />
+          <div className="relative w-full max-w-[900px]">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/aboutus/Agsuitedoor.webp"
+                alt="AGSuite Technologies Team"
+                width={1400}
+                height={900}
+                className="w-full h-auto object-cover"
+                priority
+              />
+            </div>
           </div>
         </motion.div>
       </div>
@@ -390,7 +436,7 @@ function StrategicPartnersSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="text-3xl md:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-50 via-blue-500 to-blue-500 leading-tight"
+                className="text-3xl md:text-4xl lg:text-5xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-gray-50 via-blue-500 to-blue-500 leading-tight"
               >
                 Strategic Partners
               </motion.h2>
@@ -414,13 +460,13 @@ function StrategicPartnersSection() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex justify-center lg:justify-start"
             >
-              <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-2xl">
+              <div className="bg-white/100 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl">
                 <Image
-                  src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
+                  src="/images/logos/oracle netsuite logo.png"
                   alt="Oracle NetSuite Partner"
-                  width={280}
+                  width={320}
                   height={120}
-                  className="object-contain brightness-0 invert"
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </motion.div>
@@ -475,8 +521,8 @@ function StrategicPartnersSection() {
 
 function ClientsSection() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+    <section className="py-14 bg-white">
+      <div className="max-w-8xl mx-auto px-6 sm:px-10 lg:px-16">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -489,7 +535,7 @@ function ClientsSection() {
         </div>
 
         <div className="relative w-full overflow-hidden py-4">
-          <div className="flex items-center gap-16 animate-marquee-slow whitespace-nowrap">
+          <div className="flex items-center gap-15 animate-marquee-slow whitespace-nowrap">
             {partnerLogos.concat(partnerLogos).map((logo, index) => (
               <div key={index} className="flex-shrink-0  hover:grayscale-0 hover:opacity-100 transition-all duration-300">
                 <Image
@@ -512,12 +558,79 @@ function ClientsSection() {
         }
         .animate-marquee-slow {
           display: flex;
-          animation: marquee-slow 40s linear infinite;
+          animation: marquee-slow 10s linear infinite;
         }
         .animate-marquee-slow:hover {
           animation-play-state: paused;
         }
       `}</style>
+    </section>
+  );
+}
+
+function AwardsAndRecognitionSection() {
+  return (
+    <section className="relative pt-0 pb-16 bg-white overflow-hidden">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 md:px-12 lg:px-16">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+          {/* LEFT: Headline */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-xl"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-700 to-blue-500 leading-tight tracking-tight">
+              Recognized Excellence in
+              <span className="block italic font-serif mt-1">NetSuite Solutions</span>
+            </h2>
+          </motion.div>
+
+          {/* RIGHT: Award images horizontal - no card wrappers */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex flex-row items-center justify-center gap-10"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="hover:-translate-y-2 transition-transform duration-300"
+            >
+              <Image
+                src="/images/awards/Netsuitepartneraward.png"
+                alt="NetSuite Partner Award"
+                width={280}
+                height={280}
+                className="w-64 h-64 object-contain "
+                priority
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="hover:-translate-y-2 transition-transform duration-300"
+            >
+              <Image
+                src="/images/awards/partnerofyear.png"
+                alt="Partner of the Year Award"
+                width={280}
+                height={280}
+                className="w-54 h-64 object-contain "
+                priority
+              />
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 }
@@ -528,6 +641,9 @@ function AboutStatsSection() {
       <WhoWeAreSection />
       <StrategicPartnersSection />
       <ClientsSection />
+      <section id="testimonials" className="bg-white">
+        <NSCustomerSuccess />
+      </section>
     </>
   );
 }
@@ -624,6 +740,7 @@ export default function AboutClient() {
       </section>
 
       <AboutStatsSection />
+
 
 
       {/* Mission / Vision */}
@@ -920,11 +1037,10 @@ export default function AboutClient() {
       </section>
 
 
-      <section id="testimonials" className="bg-white">
-        <NSCustomerSuccess />
-      </section>
 
-      <section id="offices" className="relative py-24 bg-gradient-to-b from-[#0f172a] via-[#020617] to-[#020617] overflow-hidden">
+
+      {/* Global Leaders Section - dark theme */}
+      <section id="leaders" className="relative py-24 bg-gradient-to-b from-[#0f172a] via-[#020617] to-[#020617] overflow-hidden">
         {/* Glow Effects */}
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full -z-0" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 blur-[120px] rounded-full -z-0" />
@@ -940,30 +1056,6 @@ export default function AboutClient() {
             variants={fadeInUp}
             className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 text-white"
           >
-            Our Global Presence
-          </motion.h2>
-
-          <motion.p variants={fadeInUp} className="max-w-2xl text-gray-400 mb-12 text-base md:text-lg leading-relaxed">
-            Delivering excellence across continents with a strong and growing worldwide footprint.
-          </motion.p>
-
-          <div className="relative w-full max-w-6xl rounded-[40px] overflow-hidden border border-white/10 bg-white/5 p-2 shadow-2xl group mb-20">
-            <div className="relative w-full h-[45vh] sm:h-[60vh] lg:h-[85vh] rounded-[32px] overflow-hidden bg-slate-900/50">
-              <Image
-                src="/images/Dashboard/Presence.webp"
-                alt="Global Presence Map"
-                fill
-                className="object-cover rounded-[32px] transition-transform duration-700 group-hover:scale-110"
-              />
-            </div>
-          </div>
-
-          {/* <OfficeDisplay themeColor="blue" /> */}
-
-          <motion.h2
-            variants={fadeInUp}
-            className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 text-white"
-          >
             Meet Our Visionary Leaders
           </motion.h2>
 
@@ -974,6 +1066,53 @@ export default function AboutClient() {
           <OurLeaders themeColor="blue" />
         </motion.div>
       </section>
+
+
+
+      {/* Global Presence Section - white theme */}
+      <section id="offices" className="relative pt-24 pb-10 bg-white overflow-hidden">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 md:px-12 lg:px-16 flex flex-col items-center text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-blue-600"
+          >
+            Our Global Presence
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="max-w-2xl text-gray-500 mb-12 text-base md:text-lg leading-relaxed"
+          >
+            Delivering excellence across continents with a strong and growing worldwide footprint.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative w-full max-w-6xl overflow-hidden group"
+          >
+            <div className="relative w-full h-[45vh] sm:h-[60vh] lg:h-[85vh] overflow-hidden rounded-3xl">
+              <Image
+                src="/images/Dashboard/Presence.webp"
+                alt="Global Presence Map"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Awards Recognition Section */}
+      <AwardsAndRecognitionSection />
 
       {/* <section id="contact" className=" bg-white">
         <ContactFormDesign4 />
@@ -1143,22 +1282,25 @@ function OfficeDisplay({ themeColor }: { themeColor: 'blue' | 'rose' }) {
 
 const leadersData = [
   {
-    name: "Anukr Goyal",
+    name: "Ankur Goyal",
     title: "CEO",
     image: "/images/people/Ankur.jpg",
     linkedin: "https://www.linkedin.com/in/ankurgoyal2/",
+    bio: "Visionary leader driving AGSuite's strategic vision with 15+ years in enterprise technology solutions."
   },
   {
     name: "Rajat Goyal",
     title: "Director",
     image: "/images/people/Rajat.jpg",
     linkedin: "https://www.linkedin.com/in/rajat-goyal-9007a6101/",
+    bio: "Strategic business leader specializing in operational excellence and global expansion initiatives."
   },
   {
     name: "Nikhil Jain",
     title: "CTO",
-    image: "/images/people/Nikhil.jpg",
+    image: "/images/people/Nikhil.png",
     linkedin: "#",
+    bio: "Technology innovator leading AGSuite's technical strategy and cloud architecture excellence."
   },
 ];
 
@@ -1181,39 +1323,66 @@ function OurLeaders({ themeColor }: { themeColor: 'blue' | 'rose' }) {
   const config = colorConfig[themeColor];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-7xl mx-auto">
       {leadersData.map((leader, index) => (
         <motion.div
           key={index}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 hover:bg-white/10 transition-all duration-300"
+          className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-300 flex flex-col overflow-hidden"
         >
-          <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden mb-6">
-            <Image
-              src={leader.image}
-              alt={leader.name}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            {/* Social Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-              <a
-                href={leader.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="self-end p-3 bg-[#0077b5] text-white rounded-full hover:scale-110 transition-transform shadow-lg"
-                aria-label={`${leader.name} LinkedIn`}
-              >
-                <Linkedin className="w-5 h-5 fill-current" />
-              </a>
-            </div>
-          </div>
+          {/* Same Light Gradient Background for All Cards */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-cyan-500/5 to-teal-500/5 opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
 
-          <div className="text-left">
-            <h3 className="text-xl font-bold text-white mb-1">{leader.name}</h3>
-            <p className={`text-sm font-medium ${config.text} uppercase tracking-wider`}>{leader.title}</p>
+          {/* Decorative Corner Designs */}
+          <div className="absolute top-0 right-0 w-32 h-32 border-t-2 border-r-2 border-white/10 rounded-tr-3xl" />
+          <div className="absolute bottom-0 left-0 w-32 h-32 border-b-2 border-l-2 border-white/10 rounded-bl-3xl" />
+          <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white/10 to-transparent rounded-tr-3xl" />
+          <div className="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr from-white/10 to-transparent rounded-bl-3xl" />
+
+          {/* Content */}
+          <div className="relative z-10 flex flex-col items-center">
+            {/* Larger Image at Top */}
+            <div className="relative w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 ring-4 ring-white/20 group-hover:ring-white/40 transition-all duration-300 shadow-2xl">
+              <Image
+                src={leader.image}
+                alt={leader.name}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+            </div>
+
+            {/* Bio/Information */}
+            <div className="flex-1 mb-6">
+              <p className="text-gray-300 text-sm leading-relaxed text-center">
+                {leader.bio}
+              </p>
+            </div>
+
+            {/* Name and Designation at Bottom - Split Layout */}
+            <div className="border-t border-white/20 pt-5 w-full">
+              <div className="flex items-center justify-between">
+                {/* Left Side - Name and Designation */}
+                <div className="text-left">
+                  <h3 className="text-2xl font-semibold text-white mb-1">{leader.name}</h3>
+                  <p className="text-sm text-gray-400 font-normal">{leader.title}</p>
+                </div>
+
+                {/* Right Side - LinkedIn Only */}
+                <div>
+                  <a
+                    href={leader.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-10 h-10 bg-[#0077b5] text-white rounded-lg hover:bg-[#006399] transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                    aria-label={`${leader.name} LinkedIn`}
+                  >
+                    <Linkedin className="w-5 h-5 fill-current" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
       ))}

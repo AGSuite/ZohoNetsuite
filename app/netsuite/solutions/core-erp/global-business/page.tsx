@@ -181,135 +181,191 @@ export default function GlobalBusinessPage() {
 
   return (
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
-      {/* Full Screen Hero Section with Integrated Metrics */}
-      <section className="relative min-h-screen overflow-hidden flex flex-col">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/lap/group2.webp"
-            alt="Global Business Management Background"
-            fill
-            priority
-            className="object-cover"
-          />
-        </div>
-
-        {/* Gradient Overlay - Left to Right */}
-        <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/80 to-transparent z-10" />
-
-        {/* Violet Storm Glow */}
-        <div
-          className="absolute inset-0 z-10 pointer-events-none"
-          style={{
-            background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(139, 92, 246, 0.15), transparent 70%)"
-          }}
-        />
+      {/* Hero Section - Dark Gradient, Left Text + Right Image */}
+      <section className="relative min-h-screen overflow-hidden flex flex-col bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d]">
+        {/* Ambient glow effects */}
+        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-800/10 rounded-full blur-[100px] pointer-events-none" />
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
         {/* Main Content Container */}
-        <div className="relative z-20 flex-1 flex flex-col justify-end max-w-7xl mx-auto px-4 sm:px-6 w-full pt-32 sm:pt-40 md:pt-48 pb-12 sm:pb-16">
-          {/* Hero Content */}
-          <div className="mb-8 sm:mb-10 lg:mb-12">
+        <div className="relative z-10 flex-1 flex flex-col justify-end max-w-7xl mx-auto px-4 sm:px-6 w-full pt-28 sm:pt-36 md:pt-44 pb-12 sm:pb-16">
+          {/* Hero Content - Two Column */}
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-10 lg:mb-14">
+            {/* LEFT: Headline + Subtitle + Button */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-3xl"
             >
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-4 sm:mb-6 leading-[1.1] text-white"
+                transition={{ delay: 0.2 }}
+                className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
-                Manage Your <span className="text-blue-600">Global Operations</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
+                  NetSuite Global Business Management
+                </span>
               </motion.h1>
 
               <motion.div
                 initial={{ width: 0 }}
-                animate={{ width: "120px" }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-                className="h-1 bg-blue-700 mb-4 sm:mb-6"
+                animate={{ width: "80px" }}
+                transition={{ delay: 0.45, duration: 0.6 }}
+                className="h-[3px] bg-gradient-to-r from-blue-500 to-blue-300 mb-5 sm:mb-6 rounded-full"
               />
 
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 md:mb-10 leading-relaxed font-light max-w-2xl"
+                transition={{ delay: 0.35 }}
+                className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                Manage multiple subsidiaries, currencies, and tax regulations from a single cloud solution.
+                Manage multiple subsidiaries, currencies, and tax regulations from a single cloud solution with real-time visibility across 200+ countries.
               </motion.p>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
               >
                 <Link
                   href="/netsuite/contact"
-                  className="px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-lg font-bold rounded-full transition-all bg-transparent border-2 border-white text-white hover:bg-gradient-to-r hover:from-blue-900 hover:to-slate-900 hover:border-transparent shadow-xl shadow-blue-900/20 hover:shadow-2xl hover:scale-105"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
                 >
                   Go Global Now
+                  <motion.span
+                    animate={{ x: [0, 6, 0] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                    className="flex items-center"
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.span>
                 </Link>
+              </motion.div>
+            </motion.div>
+
+            {/* RIGHT: Image with overlay cards */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, delay: 0.3 }}
+              className="relative hidden lg:block"
+            >
+              {/* Main image */}
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-900/30 aspect-[4/3]">
+                <Image
+                  src="/images/lap/group2.webp"
+                  alt="NetSuite Global Business Dashboard"
+                  fill
+                  priority
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#000814]/80 via-[#000814]/20 to-transparent" />
+              </div>
+              {/* Tagline card - bottom-left, outside image */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.85, duration: 0.6 }}
+                className="absolute -bottom-5 -left-6 max-w-[70%] z-10"
+              >
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-5 py-3 flex items-center gap-3 shadow-xl">
+                  <div className="w-8 h-8 rounded-lg bg-blue-500/30 flex items-center justify-center shrink-0">
+                    <Globe2 className="w-4 h-4 text-blue-300" />
+                  </div>
+                  <p className="text-white/80 text-xs font-medium leading-snug">
+                    Operate across 200+ countries with built-in multi-currency, multi-subsidiary, and tax compliance.
+                  </p>
+                </div>
+              </motion.div>
+              {/* Floating card - top left */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+                className="absolute -top-4 -left-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 shadow-xl"
+              >
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                    <Globe2 className="w-4 h-4 text-blue-400" />
+                  </div>
+                  <div>
+                    <p className="text-white text-xs font-medium">Countries</p>
+                    <p className="text-blue-300 text-sm font-medium">200+ Supported</p>
+                  </div>
+                </div>
+              </motion.div>
+              {/* Floating card - right middle */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.0, duration: 0.6 }}
+                className="absolute top-1/3 -right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 shadow-xl"
+              >
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                    <Scale className="w-4 h-4 text-purple-400" />
+                  </div>
+                  <div>
+                    <p className="text-white text-xs font-medium">Tax Jurisdictions</p>
+                    <p className="text-purple-300 text-sm font-medium">100+ Compliant</p>
+                  </div>
+                </div>
               </motion.div>
             </motion.div>
           </div>
 
-          {/* Integrated Metrics Section */}
+          {/* Metrics Row */}
           <motion.div
             ref={statsRef}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="border-t border-white/20 pt-8 sm:pt-10 md:pt-12"
+            transition={{ delay: 0.7, duration: 0.8 }}
+            className="border-t border-white/15 pt-8 sm:pt-10"
           >
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 1 + (index * 0.15),
-                    duration: 0.6,
-                    ease: "easeOut"
-                  }}
+                  transition={{ delay: 0.9 + index * 0.12, duration: 0.5 }}
                   className="text-center group"
                 >
                   <div className="flex justify-center mb-2 sm:mb-3">
                     <div className="p-2 sm:p-3 bg-blue-700/20 rounded-xl sm:rounded-2xl group-hover:bg-blue-700/30 transition-colors duration-300">
-                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-500 group-hover:scale-110 transition-transform duration-300" />
+                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                   </div>
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2 flex items-center justify-center gap-1">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-1 sm:mb-2 flex items-center justify-center gap-1">
                     <Counter value={stat.value} />
-                    <span className="text-blue-500 text-2xl sm:text-3xl md:text-4xl">{stat.suffix}</span>
+                    <span className="text-blue-400 text-2xl sm:text-3xl md:text-4xl">{stat.suffix}</span>
                   </div>
                   <div className="text-gray-400 font-medium text-xs sm:text-sm md:text-base px-2">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
-
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
-            className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:block"
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              className="flex flex-col items-center gap-2"
-            >
-              <span className="text-white/60 text-sm font-medium">Scroll to explore</span>
-              <ChevronDown className="w-6 h-6 text-white/60" />
-            </motion.div>
-          </motion.div>
         </div>
       </section>
+
+      {/* Secondary Navigation Bar */}
+      <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
+            <a href="#what-is-global" className="px-4 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">What is Global Business?</a>
+            <a href="#benefits" className="px-4 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">Benefits</a>
+            <a href="#capabilities" className="px-4 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">Capabilities</a>
+            <a href="#challenges" className="px-4 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">Challenges</a>
+            <a href="#suitesuccess" className="px-4 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">SuiteSuccess</a>
+            <a href="#pricing" className="px-4 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">Pricing</a>
+            <a href="#resources" className="px-4 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">Resources</a>
+          </div>
+        </div>
+      </nav>
 
       {/* What is Global Business Management Section */}
       <section className="py-24 bg-white">

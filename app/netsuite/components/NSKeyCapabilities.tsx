@@ -70,10 +70,10 @@ const NSKeyCapabilities = () => {
 
     return (
         <section
-            className="relative pt-24 pb-0 overflow-hidden bg-white"
+            className="relative pt-16 pb-0 overflow-hidden bg-white"
         >
             <div className="relative z-10 max-w-[1240px] mx-auto px-6">
-                <div className="text-center mb-20">
+                <div className="text-center mb-12">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -83,9 +83,9 @@ const NSKeyCapabilities = () => {
                     </motion.h2>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-16 items-stretch">
+                <div className="grid lg:grid-cols-2 gap-8 items-stretch">
                     {/* Left Side - Image with Content */}
-                    <div className="order-2 lg:order-1 relative min-h-[500px] lg:min-h-[650px] rounded-3xl overflow-hidden shadow-xl">
+                    <div className="order-2 lg:order-1 relative min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden shadow-xl">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={activeTab}
@@ -108,25 +108,27 @@ const NSKeyCapabilities = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/20 to-transparent z-10" />
 
                                 {/* Content inside Image */}
-                                <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 md:p-12">
+                                <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-8">
                                     <motion.div
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.2 }}
-                                        className="space-y-6"
+                                        className="space-y-4"
                                     >
-                                        <p className="text-white/95 text-xl leading-relaxed font-normal max-w-lg">
+                                        <p className="text-white/95 text-base md:text-lg leading-relaxed font-normal max-w-lg">
                                             {activeCapability.description}
                                         </p>
 
                                         <Link
                                             href={activeCapability.link}
-                                            className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-slate-900 rounded-lg hover:bg-[#2563eb] hover:text-white transition-all font-semibold group/btn"
+                                            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 rounded-lg hover:bg-[#2563eb] hover:text-white transition-all font-semibold group/btn text-sm"
                                         >
                                             Learn More <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                                         </Link>
                                     </motion.div>
                                 </div>
+
+
                             </motion.div>
                         </AnimatePresence>
                     </div>
@@ -139,6 +141,7 @@ const NSKeyCapabilities = () => {
                                 onClick={() => setActiveTab(capability.id)}
                                 className={`group relative flex-1 flex items-center px-4 text-left transition-all border-b border-slate-100 last:border-b-0 outline-none ${activeTab === capability.id ? 'bg-slate-50/50' : 'hover:bg-slate-50/30'
                                     }`}
+                                suppressHydrationWarning
                             >
                                 {/* Active Indicator Line */}
                                 {activeTab === capability.id && (
@@ -149,7 +152,7 @@ const NSKeyCapabilities = () => {
                                     />
                                 )}
 
-                                <span className={`text-xl md:text-2xl transition-all duration-300 ${activeTab === capability.id
+                                <span className={`text-lg md:text-xl transition-all duration-300 ${activeTab === capability.id
                                     ? 'text-slate-900 font-bold translate-x-3'
                                     : 'text-slate-400 group-hover:text-slate-600 group-hover:translate-x-1'
                                     }`}>

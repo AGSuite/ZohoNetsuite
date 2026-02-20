@@ -160,35 +160,6 @@ const NSCustomerSuccess = () => {
                         </motion.div>
                     </AnimatePresence>
                 </div>
-
-                {/* Logo Navigation Tabs - Tightened */}
-                <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 border-t border-gray-100 pt-8">
-                    {customers.map((customer, idx) => (
-                        <button
-                            key={customer.id}
-                            onClick={() => setActiveIdx(idx)}
-                            className={`group relative transition-all duration-300 transform ${activeIdx === idx
-                                ? "opacity-100 scale-105"
-                                : "opacity-30 grayscale hover:opacity-60 hover:grayscale-0"
-                                }`}
-                        >
-                            <Image
-                                src={customer.logo}
-                                alt={customer.companyName}
-                                width={140}
-                                height={60}
-                                className="h-8 md:h-19 w-auto object-contain"
-                            />
-                            {/* Active Underline */}
-                            {activeIdx === idx && (
-                                <motion.div
-                                    layoutId="activeUnderline"
-                                    className="absolute -bottom-4 left-0 right-0 h-1 bg-blue-600 rounded-full"
-                                />
-                            )}
-                        </button>
-                    ))}
-                </div>
             </div>
         </section>
     );

@@ -62,7 +62,7 @@ export default function NetSuitePage() {
 
       <NSWhyChooseUs />
 
-      <NSTestimonialSection />
+      {/* <NSTestimonialSection /> */}
 
 
 

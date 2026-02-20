@@ -11,117 +11,118 @@ interface DesktopDropdownProps {
 
 export const DesktopDropdown: React.FC<DesktopDropdownProps> = ({ item, setOpenDropdown }) => {
     return (
-        <div className="fixed left-1/2 -translate-x-1/2 top-20 w-[1100px] bg-white rounded-2xl shadow-2xl border border-gray-100 transition-all duration-200 z-50 overflow-hidden mt-1">
-            <div className="grid grid-cols-[2fr_1fr] divide-x divide-gray-100 min-h-fit">
-                {/* Left Section - Content */}
-                <div className="p-6">
-                    <div className="space-y-5">
-                        {/* Banner */}
-                        <div className={`relative rounded-xl p-5 overflow-hidden bg-gradient-to-r ${item.title === 'Services' ? 'from-blue-600 to-indigo-700' :
-                            item.title === 'Industries' ? 'from-indigo-600 to-purple-700' :
-                                item.title === 'Insights' ? 'from-purple-600 to-pink-700' :
-                                    item.title === 'Contact' ? 'from-cyan-600 to-blue-700' :
-                                        'from-gray-900 to-gray-800'
-                            }`}>
-                            <div className="absolute inset-0 opacity-10">
-                                <Image
-                                    src={
-                                        item.title === 'Services' ? "/images/lap/lap4.webp" :
-                                            item.title === 'Industries' ? "/images/people/fourteam.webp" :
-                                                item.title === 'Insights' ? "/images/lap/lap3.webp" :
-                                                    item.title === 'Contact' ? "/images/people/laptopmen.webp" :
-                                                        "/images/lap/lap1.webp"
-                                    }
-                                    alt={item.title} fill className="object-cover"
-                                    sizes="400px"
-                                />
-                            </div>
-                            <div className="relative z-10 flex items-center justify-between">
-                                <div>
-                                    <h3 className="text-xl font-bold text-white mb-0.5">
-                                        {item.title === 'Services' ? 'Our NetSuite Services' :
-                                            item.title === 'Industries' ? 'Industries We Serve' :
-                                                item.title === 'Insights' ? 'Insights & Resources' :
-                                                    item.title === 'Contact' ? 'Get In Touch' :
-                                                        'About AGSuite'}
-                                    </h3>
-                                    <p className="text-white/80 text-xs">
-                                        {item.title === 'Services' ? 'Accelerate your business growth' :
-                                            item.title === 'Industries' ? 'Tailored solutions for every vertical' :
-                                                item.title === 'Insights' ? 'Expert knowledge and trends' :
-                                                    item.title === 'Contact' ? "We're here to help you succeed" :
-                                                        'Your trusted implementation partner'}
-                                    </p>
+        <div className="fixed left-0 right-0 top-20 w-screen bg-white shadow-2xl border-b border-gray-200 z-50">
+            <div className="max-w-7xl mx-auto px-5 py-6">
+                <div className="grid grid-cols-[2fr_1fr] divide-x divide-gray-100 min-h-fit">
+                    {/* Left Section - Content */}
+                    <div className="p-6">
+                        <div className="space-y-5">
+                            {/* Banner */}
+                            <div className={`relative rounded-xl p-5 overflow-hidden bg-gradient-to-r ${item.title === 'Services' ? 'from-blue-600 to-indigo-700' :
+                                item.title === 'Industries' ? 'from-indigo-600 to-purple-700' :
+                                    item.title === 'Insights' ? 'from-purple-600 to-pink-700' :
+                                        item.title === 'Contact' ? 'from-cyan-600 to-blue-700' :
+                                            'from-gray-900 to-gray-800'
+                                }`}>
+                                <div className="absolute inset-0 opacity-10">
+                                    <Image
+                                        src={
+                                            item.title === 'Services' ? "/images/lap/lap4.webp" :
+                                                item.title === 'Industries' ? "/images/people/fourteam.webp" :
+                                                    item.title === 'Insights' ? "/images/lap/lap3.webp" :
+                                                        item.title === 'Contact' ? "/images/people/laptopmen.webp" :
+                                                            "/images/lap/lap1.webp"
+                                        }
+                                        alt={item.title} fill className="object-cover"
+                                        sizes="400px"
+                                    />
                                 </div>
-                                <Link
-                                    href={item.title === 'Services' ? '/netsuite/services' : item.title === 'Industries' ? '/netsuite/industries' : item.title === 'Insights' ? '/netsuite/insights' : item.title === 'Contact' ? '/netsuite/contact' : '/netsuite/about'}
-                                    className="px-4 py-2 bg-white text-gray-900 text-xs font-bold rounded-lg hover:bg-gray-100 transition-colors"
-                                    onClick={() => setOpenDropdown(null)}
-                                >
-                                    View All
-                                </Link>
-                            </div>
-                        </div>
-
-                        {/* Links Grid */}
-                        <div className={`grid gap-3 ${item.title === 'Services' || item.title === 'Industries' ? 'grid-cols-3' : 'grid-cols-2'}`}>
-                            {item.children.map((link: any, i: number) => {
-                                const showDescription = item.title !== 'Services' && item.title !== 'Industries';
-                                return (
+                                <div className="relative z-10 flex items-center justify-between">
+                                    <div>
+                                        <h3 className="text-xl font-bold text-white mb-0.5">
+                                            {item.title === 'Services' ? 'Our NetSuite Services' :
+                                                item.title === 'Industries' ? 'Industries We Serve' :
+                                                    item.title === 'Insights' ? 'Insights & Resources' :
+                                                        item.title === 'Contact' ? 'Get In Touch' :
+                                                            'About AGSuite'}
+                                        </h3>
+                                        <p className="text-white/80 text-xs">
+                                            {item.title === 'Services' ? 'Accelerate your business growth' :
+                                                item.title === 'Industries' ? 'Tailored solutions for every vertical' :
+                                                    item.title === 'Insights' ? 'Expert knowledge and trends' :
+                                                        item.title === 'Contact' ? "We're here to help you succeed" :
+                                                            'Your trusted implementation partner'}
+                                        </p>
+                                    </div>
                                     <Link
-                                        key={i}
-                                        href={link.href}
-                                        className={`group flex items-start gap-3 rounded-xl hover:bg-gray-50 border border-transparent hover:border-gray-100 transition-all font-outfit ${showDescription ? 'p-4' : 'p-3'}`}
+                                        href={item.title === 'Services' ? '/netsuite/services' : item.title === 'Industries' ? '/netsuite/industries' : item.title === 'Insights' ? '/netsuite/insights' : item.title === 'Contact' ? '/netsuite/contact' : '/netsuite/about'}
+                                        className="px-4 py-2 bg-white text-gray-900 text-xs font-bold rounded-lg hover:bg-gray-100 transition-colors"
                                         onClick={() => setOpenDropdown(null)}
                                     >
-                                        <div className={`p-2 rounded-lg transition-colors flex-shrink-0 ${item.title === 'Services' ? 'bg-blue-50 group-hover:bg-blue-100' :
-                                            item.title === 'Industries' ? 'bg-indigo-50 group-hover:bg-indigo-100' :
-                                                item.title === 'Insights' ? 'bg-purple-50 group-hover:bg-purple-100' :
-                                                    item.title === 'Contact' ? 'bg-cyan-50 group-hover:bg-cyan-100' :
-                                                        'bg-gray-100 group-hover:bg-gray-200'
-                                            }`}>
-                                            {link.icon && <link.icon className={`w-5 h-5 ${item.title === 'Services' ? 'text-blue-600' :
-                                                item.title === 'Industries' ? 'text-indigo-600' :
-                                                    item.title === 'Insights' ? 'text-purple-600' :
-                                                        item.title === 'Contact' ? 'text-cyan-600' :
-                                                            'text-gray-700'
-                                                }`} />}
-                                        </div>
-                                        <div className="flex-1 min-w-0">
-                                            <div className={`${showDescription ? 'text-[16px]' : 'text-[14px]'} font-bold text-gray-900 group-hover:text-blue-600 transition-colors ${showDescription ? 'mb-1' : ''}`}>{link.label}</div>
-                                            {showDescription && (
-                                                <p className="text-[14px] text-gray-500 leading-relaxed line-clamp-1">{link.description}</p>
-                                            )}
-                                        </div>
+                                        View All
                                     </Link>
-                                );
-                            })}
+                                </div>
+                            </div>
+
+                            {/* Links Grid */}
+                            <div className="grid gap-3 grid-cols-3">
+                                {item.children.map((link: any, i: number) => {
+                                    return (
+                                        <Link
+                                            key={i}
+                                            href={link.href}
+                                            className="group flex items-start gap-3 rounded-xl hover:bg-gray-50 border border-transparent hover:border-gray-100 transition-all font-outfit p-4"
+                                            onClick={() => setOpenDropdown(null)}
+                                        >
+                                            <div className={`p-2 rounded-lg transition-colors flex-shrink-0 ${item.title === 'Services' ? 'bg-blue-50 group-hover:bg-blue-100' :
+                                                item.title === 'Industries' ? 'bg-indigo-50 group-hover:bg-indigo-100' :
+                                                    item.title === 'Insights' ? 'bg-purple-50 group-hover:bg-purple-100' :
+                                                        item.title === 'Contact' ? 'bg-cyan-50 group-hover:bg-cyan-100' :
+                                                            'bg-gray-100 group-hover:bg-gray-200'
+                                                }`}>
+                                                {link.icon && <link.icon className={`w-5 h-5 ${item.title === 'Services' ? 'text-blue-600' :
+                                                    item.title === 'Industries' ? 'text-indigo-600' :
+                                                        item.title === 'Insights' ? 'text-purple-600' :
+                                                            item.title === 'Contact' ? 'text-cyan-600' :
+                                                                'text-gray-700'
+                                                    }`} />}
+                                            </div>
+                                            <div className="flex-1 min-w-0">
+                                                <div className="text-[14px] font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-1">{link.label}</div>
+                                                {link.description && (
+                                                    <p className="text-[12px] text-gray-500 leading-relaxed line-clamp-1">{link.description}</p>
+                                                )}
+                                            </div>
+                                        </Link>
+                                    );
+                                })}
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                {/* Right Section - Featured Card */}
-                <div className="p-6 bg-gray-50/50 flex flex-col items-stretch h-full">
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-3">Featured Solution</div>
-                    <div className="relative flex-1 w-full rounded-2xl overflow-hidden shadow-lg group/card border border-gray-100 min-h-[180px]">
-                        <Image
-                            src={
-                                item.title === 'Services' ? "/images/lap/lap4.webp" :
-                                    item.title === 'Industries' ? "/images/people/fourteam.webp" :
-                                        item.title === 'Insights' ? "/images/lap/lap3.webp" :
-                                            item.title === 'Contact' ? "/images/people/laptopmen.webp" :
-                                                "/images/lap/lap1.webp"
-                            }
-                            alt="Featured" fill className="object-cover group-hover/card:scale-105 transition-transform duration-700"
-                            sizes="400px"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
-                        <div className="absolute inset-0 p-5 flex flex-col justify-end">
-                            <h4 className="text-lg font-bold text-white mb-1 leading-tight">Empower Your Business</h4>
-                            <p className="text-[11px] text-white/80 mb-3 leading-relaxed">Leverage cloud ERP to drive growth.</p>
-                            <Link href="/netsuite/contact" className="inline-flex items-center gap-2 text-xs font-bold text-white group-hover/card:gap-3 transition-all" onClick={() => setOpenDropdown(null)}>
-                                Get started now <span>→</span>
-                            </Link>
+                    {/* Right Section - Featured Card */}
+                    <div className="p-6 bg-gray-50/50 flex flex-col items-stretch h-full">
+                        <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-3">Featured Solution</div>
+                        <div className="relative flex-1 w-full rounded-2xl overflow-hidden shadow-lg group/card border border-gray-100 min-h-[180px]">
+                            <Image
+                                src={
+                                    item.title === 'Services' ? "/images/lap/lap4.webp" :
+                                        item.title === 'Industries' ? "/images/people/fourteam.webp" :
+                                            item.title === 'Insights' ? "/images/lap/lap3.webp" :
+                                                item.title === 'Contact' ? "/images/people/laptopmen.webp" :
+                                                    "/images/lap/lap1.webp"
+                                }
+                                alt="Featured" fill className="object-cover group-hover/card:scale-105 transition-transform duration-700"
+                                sizes="400px"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
+                            <div className="absolute inset-0 p-5 flex flex-col justify-end">
+                                <h4 className="text-lg font-bold text-white mb-1 leading-tight">Empower Your Business</h4>
+                                <p className="text-[11px] text-white/80 mb-3 leading-relaxed">Leverage cloud ERP to drive growth.</p>
+                                <Link href="/netsuite/contact" className="inline-flex items-center gap-2 text-xs font-bold text-white group-hover/card:gap-3 transition-all" onClick={() => setOpenDropdown(null)}>
+                                    Get started now <span>→</span>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

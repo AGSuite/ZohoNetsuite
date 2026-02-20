@@ -89,7 +89,7 @@ const NSWhyChooseUs = () => {
 
                       {/* Text Content */}
                       <div className="flex-1 pt-1">
-                        <h3 className="text-lg md:text-xl font-bold text-white mb-2">
+                        <h3 className="text-lg md:text-2xl font-medium text-white mb-2">
                           {point.title}
                         </h3>
                         <p className="text-gray-300 text-sm md:text-base leading-relaxed">
