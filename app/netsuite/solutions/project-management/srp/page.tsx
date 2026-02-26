@@ -1,17 +1,38 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useSpring, useTransform } from 'framer-motion';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useInView } from 'react-intersection-observer';
+import React, { useState, useEffect } from "react";
 import {
-  Briefcase, TrendingUp, Clock, Users, DollarSign, Calendar,
-  CheckCircle2, ArrowRight, BarChart3, FileText, Target,
-  Check, ChevronDown, CheckSquare, Zap, PieChart, Smartphone, Settings, Database,
-  Share2, Code, ShieldCheck, HeartHandshake
-} from 'lucide-react';
-import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
+  motion,
+  AnimatePresence,
+  useSpring,
+  useTransform,
+} from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+import { useInView } from "react-intersection-observer";
+import {
+  Briefcase,
+  Users,
+  Clock,
+  DollarSign,
+  PieChart,
+  ArrowRight,
+  Shield,
+  Zap,
+  BarChart3,
+  CheckCircle2,
+  Check,
+  ChevronRight,
+  Layers,
+  TrendingUp,
+  Target,
+  FileText,
+  Globe,
+  Settings,
+} from "lucide-react";
+import { SRPCircularDesign } from "@/app/netsuite/components/SRPCircularDesign";
+import { FAQ } from "@/app/components/home/FAQ";
+import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -24,72 +45,181 @@ function Counter({ value }: { value: number }) {
     }
   }, [inView, spring, value]);
 
-  return <span ref={ref}><motion.span>{display}</motion.span></span>;
+  return (
+    <span ref={ref}>
+      <motion.span>{display}</motion.span>
+    </span>
+  );
 }
 
 export default function NetSuiteSRPPage() {
-  const { ref: statsRef, inView: statsInView } = useInView({ triggerOnce: false, threshold: 0.2 });
+  const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
-  const [activeChallenge, setActiveChallenge] = useState(0);
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const stats = [
-    { label: 'Utilization Increase', value: 30, suffix: '%', icon: TrendingUp },
-    { label: 'Margin Improvement', value: 25, suffix: '%', icon: DollarSign },
-    { label: 'Time Saved', value: 40, suffix: '%', icon: Clock },
-    { label: 'Project Success', value: 95, suffix: '%', icon: Target },
+    { label: "Utilization Increase", value: 30, suffix: "%", icon: TrendingUp },
+    { label: "Margin Improvement", value: 25, suffix: "%", icon: DollarSign },
+    { label: "Time Saved", value: 40, suffix: "%", icon: Clock },
+    { label: "Project Success", value: 95, suffix: "%", icon: Target },
+  ];
+
+  const modules = [
+    {
+      title: "Project Management",
+      description:
+        "Manage projects from inception to completion with real-time visibility into status, budgets, and milestones.",
+      image: "/images/people/laptopgirl.webp",
+      color: "#1e8a9e",
+      rgb: "14,108,130",
+    },
+    {
+      title: "Resource Management",
+      description:
+        "Optimize utilization by assigning the right people to the right projects based on skills and availability.",
+      image: "/images/lap/lap2.webp",
+      color: "#3b5299",
+      rgb: "40,65,145",
+    },
+    {
+      title: "Project Accounting",
+      description:
+        "Connect project activities directly to the financials for accurate cost tracking and margin analysis.",
+      image: "/images/lap/lap3.webp",
+      color: "#8b3a6a",
+      rgb: "125,42,88",
+    },
+    {
+      title: "Billing & Invoicing",
+      description:
+        "Automate complex billing rules including fixed-bid, time-and-materials, and milestone-based invoicing.",
+      image: "/images/people/laptopgirl1.webp",
+      color: "#1a7a55",
+      rgb: "18,108,72",
+    },
+    {
+      title: "Time & Expense",
+      description:
+        "Capture time and expenses easily from any device to ensure accurate project costing and billing.",
+      image: "/images/lap/lap4.webp",
+      color: "#a05a18",
+      rgb: "145,75,18",
+    },
+    {
+      title: "Revenue Recognition",
+      description:
+        "Comply with ASC 606 and IFRS 15 standards with automated revenue schedules tied to project progress.",
+      image: "/images/lap/lap1.webp",
+      color: "#4a3a8a",
+      rgb: "65,45,130",
+    },
+    {
+      title: "Project Analytics",
+      description:
+        "Gain deep insights into project performance, resource capacity, and profitability with real-time reports.",
+      image: "/images/lap/lap5.webp",
+      color: "#1a6080",
+      rgb: "20,88,115",
+    },
+    {
+      title: "Collaboration Portals",
+      description:
+        "Empower clients and partners with secure portals to track project progress and approve time/milestones.",
+      image: "/images/people/fourteam.webp",
+      color: "#6a2575",
+      rgb: "95,30,105",
+    },
+    {
+      title: "Capacity Planning",
+      description:
+        "Forecast future resource needs based on the sales pipeline and current project commitments.",
+      image: "/images/lap/lap7_11zon.webp",
+      color: "#154e8a",
+      rgb: "18,68,130",
+    },
+    {
+      title: "Global Projects",
+      description:
+        "Manage international projects with multi-currency and multi-language support in a single system.",
+      image: "/images/people/threeteam.webp",
+      color: "#1a6545",
+      rgb: "20,95,60",
+    },
+    {
+      title: "Opportunity Management",
+      description:
+        "Link CRM opportunities directly to project delivery for early insight into upcoming resource needs.",
+      image: "/images/people/laptopmen2.webp",
+      color: "#8a2a3a",
+      rgb: "130,35,48",
+    },
+    {
+      title: "Project Dashboards",
+      description:
+        "Role-based dashboards for project managers, executives, and resources to monitor what matters most.",
+      image: "/images/lap/lap8_11zon.webp",
+      color: "#0f4e8a",
+      rgb: "12,68,130",
+    },
   ];
 
   const benefits = [
-    { title: "Project Visibility", description: "Gain real-time visibility into project status, budget, and resources.", image: "/images/lap/lap4.webp" },
-    { title: "Resource Optimization", description: "Allocate the right resources to the right projects at the right time.", image: "/images/people/threeteam.webp" },
-    { title: "Automated Billing", description: "Streamline billing and invoicing with automated rules and workflows.", image: "/images/lap/lap3.webp" },
-    { title: "Profitability Insights", description: "Track project profitability in real-time and make data-driven decisions.", image: "/images/lap/lap2.webp" }
+    {
+      title: "Unified Platform",
+      description: "Consolidate your entire services business on a single cloud platform, from opportunity to PSA to ERP.",
+      image: "/images/lap/lap1.webp",
+      points: ["One source of truth for projects and finance", "Eliminate siloed data between teams", "Real-time sync across all departments", "Single login for your entire organization"]
+    },
+    {
+      title: "Resource Optimization",
+      description: "Ensure the right people are working on the right projects based on skills, availability, and cost.",
+      image: "/images/people/laptopgirl.webp",
+      points: ["Visualize resource capacity in real-time", "Skill-based resource matching", "Reduced bench time and burnout", "Optimal resource load balancing"]
+    },
+    {
+      title: "Project Visibility",
+      description: "Access critical project metrics instantly with live dashboards and customizable reports.",
+      image: "/images/lap/lap3.webp",
+      points: ["Live project health indicators", "Budget vs. Actuals tracking", "Drill-down to transaction details", "Automated stakeholder reporting"]
+    },
+    {
+      title: "Accurate Revenue Recognition",
+      description: "Automate complex revenue recognition rules to ensure compliance and accurate financial forecasting.",
+      image: "/images/people/laptopmen2.webp",
+      points: ["ASC 606 and IFRS 15 compliant", "Automated revenue schedules", "Integration with project milestones", "Reduce audit risks and manual effort"]
+    },
+    {
+      title: "Streamlined Billing",
+      description: "Accelerate billing cycles with flexible, automated invoicing tied directly to project activity.",
+      image: "/images/lap/lap2.webp",
+      points: ["Support for T&M, Fixed-Price, and Hybrid", "Automated milestone billing", "Consolidated client invoices", "Faster collection and improved cash flow"]
+    },
+    {
+      title: "Intelligent Automation",
+      description: "Take humans out of the administrative loop for repetitive, rules-based tasks.",
+      image: "/images/people/fourteam.webp",
+      points: ["Automated time & expense approvals", "Workflow rules for project escalations", "AI-driven project demand forecasting", "Resource request and fulfillment automation"]
+    },
   ];
 
-  const challenges = [
-    { title: "Siloed Teams", description: "Break down barriers between sales, services, and finance.", image: "/images/people/twopeople.webp" },
-    { title: "Revenue Leakage", description: "Capture every billable hour and expense to maximize revenue.", image: "/images/people/laptopgirl.webp" },
-    { title: "Low Utilization", description: "Maximize billable hours and resource utilization rates.", image: "/images/people/laptopmen2.webp" },
-    { title: "Billing Errors", description: "Eliminate billing errors and disputes with accurate, automated invoicing.", image: "/images/lap/lap1.webp" }
-  ];
-
-  const srpModules = [
-    { title: "Project Management", description: "Plan, track, and deliver projects on time and within budget.", icon: Briefcase },
-    { title: "Resource Allocation", description: "Optimize resource utilization across all projects.", icon: Users },
-    { title: "Time & Expense", description: "Track time and expenses with mobile apps and automated workflows.", icon: Clock },
-    { title: "Project Accounting", description: "Real-time project profitability and revenue recognition.", icon: DollarSign },
-    { title: "Billing & Invoicing", description: "Flexible billing models including T&M, fixed-price, and milestone.", icon: FileText },
-    { title: "Analytics & Reporting", description: "Real-time dashboards for project performance insights.", icon: BarChart3 },
-  ];
-
-  const services = [
-    { title: "NetSuite Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
-    { title: "NetSuite Integration", description: "Connect your apps and workflows seamlessly with API-led integrations.", icon: Share2, href: "/netsuite/services/integration" },
-    { title: "NetSuite Customization", description: "Tailor NetSuite to your unique business needs with SuiteScript and SuiteCloud.", icon: Code, href: "/netsuite/services/suitecloud" },
-    { title: "NetSuite Managed Support", description: "End-to-end support and optimization of your NetSuite environment.", icon: ShieldCheck, href: "/netsuite/services/managed-services" },
-    { title: "NetSuite Training", description: "Comprehensive training programs to maximize system utilization.", icon: Users, href: "/netsuite/services/training-services" },
-    { title: "NetSuite Consulting", description: "Strategic guidance to align NetSuite with your business goals.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
-  ];
-
-  const pricingPlans = [
-    { name: "Starter", description: "For small service teams", price: "Contact Us", features: ["Project Management", "Time Tracking", "Basic Reporting", "Up to 10 Users", "Email Support"] },
-    { name: "Professional", description: "For growing PS firms", price: "Contact Us", popular: true, features: ["Everything in Starter", "Resource Management", "Advanced Billing", "Unlimited Users", "24/7 Support", "API Access"] },
-    { name: "Enterprise", description: "For large PS organizations", price: "Contact Us", features: ["Everything in Professional", "Advanced Analytics", "Custom Workflows", "Dedicated Manager", "Priority Support", "Custom SLA"] }
-  ];
-
-  const faqs = [
-    { question: "What is NetSuite SRP?", answer: "NetSuite Service Resource Planning (SRP) is a comprehensive professional services automation solution that helps services organizations manage projects, resources, time, billing, and profitability from a single platform." },
-    { question: "How does resource management work?", answer: "NetSuite SRP provides complete visibility into resource availability, skills, and allocation. You can assign resources to projects, track utilization, and identify capacity gaps to optimize your team's productivity." },
-    { question: "Can I track project profitability in real-time?", answer: "Yes! NetSuite SRP offers real-time project accounting with budget vs. actuals, revenue recognition, and profitability analysis. You can see exactly how each project is performing financially at any moment." },
-    { question: "What billing models are supported?", answer: "NetSuite SRP supports multiple billing models including time & materials, fixed-price, milestone-based, retainer, and hybrid models. You can configure different billing rules for different projects or clients." },
-    { question: "Is there mobile time tracking?", answer: "Absolutely. NetSuite offers mobile apps for iOS and Android that allow your team to track time and expenses on the go, with or without internet connection." },
-    { question: "How does it integrate with NetSuite ERP?", answer: "NetSuite SRP is built on the same platform as NetSuite ERP, providing seamless integration with financials, CRM, and other modules without any middleware or custom integrations." }
+  // Static particle data
+  const CTA_PARTICLES = [
+    { w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 },
+    { w: 1.4, h: 2.1, top: 28, left: 22, dur: 4.1, delay: 1.2 },
+    { w: 2.8, h: 1.2, top: 45, left: 37, dur: 6.3, delay: 0.8 },
+    { w: 1.7, h: 2.4, top: 62, left: 55, dur: 3.8, delay: 2.1 },
+    { w: 2.3, h: 1.8, top: 78, left: 70, dur: 5.5, delay: 0.3 },
+    { w: 1.2, h: 1.5, top: 90, left: 85, dur: 4.7, delay: 1.9 },
+    { w: 2.6, h: 2.0, top: 5, left: 50, dur: 3.5, delay: 0.6 },
+    { w: 1.9, h: 1.3, top: 33, left: 72, dur: 6.1, delay: 1.4 },
+    { w: 2.4, h: 2.7, top: 55, left: 15, dur: 4.4, delay: 0.9 },
+    { w: 1.5, h: 1.9, top: 70, left: 40, dur: 5.8, delay: 2.5 },
+    { w: 2.0, h: 1.4, top: 18, left: 63, dur: 3.9, delay: 1.7 },
+    { w: 2.9, h: 2.2, top: 42, left: 88, dur: 5.0, delay: 0.2 },
   ];
 
   return (
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
-      {/* Full Screen Hero Section */}
+      {/* ── Hero Section ─────────────────────────────────────────────────── */}
       <section className="relative min-h-screen overflow-hidden flex flex-col">
         <div className="absolute inset-0 z-0">
           <Image
@@ -102,126 +232,226 @@ export default function NetSuiteSRPPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent z-10" />
 
-        <div className="relative z-20 flex-1 flex flex-col justify-end max-w-7xl mx-auto px-4 sm:px-6 w-full pt-32 sm:pt-40 md:pt-48 pb-12 sm:pb-16">
-          <div className="mb-8 sm:mb-10 lg:mb-12">
+        <div
+          className="absolute inset-0 z-10 pointer-events-none"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+            backgroundSize: '70px 70px',
+          }}
+        />
+
+        <div className="relative z-20 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10">
+          {/* Breadcrumb */}
+          <motion.nav
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+            className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20"
+            aria-label="Breadcrumb"
+          >
+            <Link href="/netsuite" className="text-blue-300 hover:text-white transition-colors duration-200">
+              Home
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-white/30" />
+            <span className="text-white/50">Solutions</span>
+            <ChevronRight className="w-3.5 h-3.5 text-white/30" />
+            <span className="text-white/80">SRP</span>
+          </motion.nav>
+
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8">
+            {/* LEFT — Headline + Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-3xl"
             >
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-4 sm:mb-6 leading-[1.1] text-white"
+                transition={{ delay: 0.2 }}
+                className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
-                NetSuite <span className="text-blue-600">SRP</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
+                  NetSuite SRP — Services Resource Planning
+                </span>
               </motion.h1>
 
               <motion.div
                 initial={{ width: 0 }}
-                animate={{ width: "120px" }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-                className="h-1 bg-blue-700 mb-4 sm:mb-6"
+                animate={{ width: "80px" }}
+                transition={{ delay: 0.45, duration: 0.6 }}
+                className="h-[3px] bg-gradient-to-r from-blue-500 to-blue-300 mb-5 sm:mb-6 rounded-full"
               />
 
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 md:mb-10 leading-relaxed font-light max-w-2xl"
+                transition={{ delay: 0.35 }}
+                className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                Complete professional services automation for project-based businesses.
+                Scale your service business with the world&apos;s first cloud-native Solution that unites projects, resources, and financials on a single platform.
               </motion.p>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
               >
                 <Link
-                  href="/netsuite/contact"
-                  className="px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-lg font-bold rounded-full transition-all bg-transparent border-2 border-white text-white hover:bg-gradient-to-r hover:from-blue-900 hover:to-slate-900 hover:border-transparent shadow-xl shadow-blue-900/20 hover:shadow-2xl hover:scale-105"
+                  href="#contact-form"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
                 >
-                  Get Started
+                  Start Scaling Now
+                  <motion.span
+                    animate={{ x: [0, 6, 0] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                    className="flex items-center"
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.span>
                 </Link>
               </motion.div>
             </motion.div>
+
+            {/* RIGHT — SRP Cloud Design */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.1, delay: 0.3 }}
+              className="relative hidden lg:flex items-center justify-center"
+              style={{ height: 580 }}
+            >
+              <SRPCircularDesign />
+            </motion.div>
           </div>
 
-          {/* Integrated Metrics Section */}
+          {/* Metrics Row */}
           <motion.div
             ref={statsRef}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="border-t border-white/20 pt-8 sm:pt-10 md:pt-12"
+            transition={{ delay: 0.7, duration: 0.8 }}
+            className="border-t border-white/15 pt-5 sm:pt-6"
           >
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 1 + (index * 0.15),
-                    duration: 0.6,
-                    ease: "easeOut"
-                  }}
+                  transition={{ delay: 0.9 + index * 0.12, duration: 0.5 }}
                   className="text-center group"
                 >
                   <div className="flex justify-center mb-2 sm:mb-3">
                     <div className="p-2 sm:p-3 bg-blue-700/20 rounded-xl sm:rounded-2xl group-hover:bg-blue-700/30 transition-colors duration-300">
-                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-500 group-hover:scale-110 transition-transform duration-300" />
+                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                   </div>
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2 flex items-center justify-center gap-1">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-1 sm:mb-2 flex items-center justify-center gap-1">
                     <Counter value={stat.value} />
-                    <span className="text-blue-500 text-2xl sm:text-3xl md:text-4xl">{stat.suffix}</span>
+                    <span className="text-blue-400 text-2xl sm:text-3xl md:text-4xl">{stat.suffix}</span>
                   </div>
                   <div className="text-gray-400 font-medium text-xs sm:text-sm md:text-base px-2">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
+        </div>
+      </section>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
-            className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:block"
-          >
+      {/* ── Secondary Nav ─────────────────────────────────────────────────── */}
+      <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
+            {[
+              { label: "What is SRP?", href: "#what-is-srp" },
+              { label: "Modules", href: "#modules" },
+              { label: "Benefits", href: "#benefits" },
+              { label: "Pricing", href: "#pricing" },
+              { label: "FAQ", href: "#faq" },
+            ].map(link => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="px-4 py-2 text-base font-semibold hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap"
+              >
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-blue-600 to-cyan-500">
+                  {link.label}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
+
+      <section id="what-is-srp" className="pt-5 pb-14 bg-white scroll-mt-36">
+        <div className="max-w-8xl mx-auto px-16">
+          <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+            {/* LEFT — Dashboard Image */}
             <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              className="flex flex-col items-center gap-2"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="flex items-center justify-center rounded-2xl overflow-hidden p-4 mt-15"
+              style={{ minHeight: 340 }}
             >
-              <span className="text-white/60 text-sm font-medium">Scroll to explore</span>
-              <ChevronDown className="w-6 h-6 text-white/60" />
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/netsuiteimages/solutions/NetsuiteSRP.webp"
+                  alt="NetSuite SRP Dashboard"
+                  width={560}
+                  height={380}
+                  className="w-full h-auto rounded-xl object-contain"
+                />
+              </div>
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
 
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
-              <Image src="/images/lap/lap5.webp" alt="What is NetSuite SRP" fill className="object-cover" />
-              <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply" />
-            </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="space-y-6">
+            {/* RIGHT — Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="space-y-6 mt-15"
+            >
               <div className="space-y-4">
-                <h2 className="text-blue-600 font-bold uppercase tracking-wider text-sm">About NetSuite SRP</h2>
-                <h3 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">What is NetSuite SRP?</h3>
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+                  Maximize Billable Hours with NetSuite SRP.
+                </h3>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">NetSuite Service Resource Planning is a complete PSA solution for professional services organizations.</p>
-              <p className="text-lg text-gray-600 leading-relaxed">Manage projects, resources, time, expenses, and billing while gaining real-time visibility into profitability and performance.</p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                NetSuite SRP is the world&apos;s first and only cloud solution that unites the entire services lifecycle — from opportunity to professional services automation (PSA) to ERP financials — in one unified platform.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Eliminate siloed teams and manual spreadsheets. With NetSuite SRP, your service organization gains the agility and visibility needed to scale profitably in a global market.
+              </p>
               <div className="pt-4">
-                <Link href="/netsuite/contact" className="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-4 transition-all uppercase tracking-widest text-sm">
-                  Learn More <ArrowRight size={18} />
+                <Link
+                  href="#contact-form"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
+                  style={{
+                    background: 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)',
+                    color: '#ffffff',
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#0a1f5c';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                  }}
+                >
+                  <span>Empower Your Firm</span>
+                  <motion.span
+                    className="flex items-center"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <ArrowRight size={17} strokeWidth={2.5} />
+                  </motion.span>
                 </Link>
               </div>
             </motion.div>
@@ -229,195 +459,83 @@ export default function NetSuiteSRPPage() {
         </div>
       </section>
 
-
-
-      <section id="features" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">SRP Capabilities</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">Everything you need for professional services</p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {srpModules.map((module, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 50, scale: 0.9 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ scale: 1.05, background: "linear-gradient(to bottom right, #ffffff, #ffffff)", transition: { duration: 0.3, ease: "easeInOut" } }}
-                style={{ background: "linear-gradient(to bottom right, #0a1f44, #1a2f5a, #0f2847)" }}
-                className="border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 group">
-                <div className="p-3 bg-blue-600 rounded-xl w-fit mb-6 group-hover:bg-gray-900 transition-colors">
-                  <module.icon className="w-6 h-6 text-white" />
-                </div>
-                <h4 className="text-xl font-bold text-white group-hover:text-gray-900 mb-3 transition-colors duration-300">{module.title}</h4>
-                <p className="text-blue-100 group-hover:text-gray-600 leading-relaxed text-sm transition-colors duration-300">{module.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-16 bg-linear-to-br from-indigo-50/40 via-white to-blue-50/30 relative overflow-hidden">
+      {/* ── SRP Modules Grid ─────────────────────────────────────────────────── */}
+      <section id="modules" className="py-16 bg-white relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-semibold text-gray-900 text-center">
-            NetSuite SRP Services
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-medium text-gray-900 text-center">
+            NetSuite SRP Modules
           </motion.h2>
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-700 text-lg max-w-2xl text-center">
-            Expert services to help you deliver projects efficiently and profitably
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-600 text-lg max-w-2xl text-center">
+            All integrated modules to manage project delivery and financial excellence in one unified platform
           </motion.p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
-            {services.map((service, index) => {
-              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
-                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
-              return (
-                <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}>
-                  <motion.div initial="initial" whileHover="hover" variants={{ initial: { scale: 1 }, hover: { scale: 1.04, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } } }}
-                    className={`relative group rounded-2xl p-7 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}>
-                    <motion.div variants={{ initial: { rotate: 0, y: 0 }, hover: { rotate: 360, y: -6, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } } }}
-                      className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5">
-                      <service.icon className="w-6 h-6 text-white" />
-                    </motion.div>
-                    <h2 className="text-lg font-semibold text-gray-900 leading-tight">{service.title}</h2>
-                    <p className="text-gray-600 text-sm leading-relaxed mt-2">{service.description}</p>
-                    <div className="mt-6 border-t border-gray-300 pt-3">
-                      <Link href={service.href} className="text-black hover:text-blue-600 text-sm font-medium transition-all">Learn More →</Link>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-24 bg-[#000b21] overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px]" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Advantages</span>
-            <h3 className="text-4xl md:text-5xl font-black text-white mt-6">Why Choose NetSuite SRP?</h3>
-            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">Transform your services business</p>
-          </motion.div>
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 min-h-[350px] lg:min-h-[450px]">
-              <AnimatePresence mode="wait">
-                <motion.div key={activeBenefit} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.5, ease: "easeOut" }} className="absolute inset-0">
-                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover" />
-                </motion.div>
-              </AnimatePresence>
-            </motion.div>
-            <div className="space-y-4">
-              {benefits.map((item, index) => (
-                <motion.div key={index} initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }}
-                  onClick={() => setActiveBenefit(index)} className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeBenefit === index ? 'bg-white/10 border-blue-400/50 shadow-lg backdrop-blur-sm' : 'bg-white/5 border-white/10 hover:bg-white/10'}`}>
-                  <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-lg transition-colors ${activeBenefit === index ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50' : 'bg-white/10 text-blue-300'}`}>
-                      <CheckCircle2 size={20} />
-                    </div>
-                    <h4 className={`text-xl font-bold transition-colors ${activeBenefit === index ? 'text-white' : 'text-gray-300'}`}>{item.title}</h4>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
+            {modules.map((mod, index) => (
+              <Link key={index} href="#contact-form" className="block">
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
+                  whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white"
+                  style={{ minHeight: 340 }}
+                >
+                  {/* Top: Image Section with Color Overlay */}
+                  <div className="relative h-44 shrink-0 overflow-hidden">
+                    <Image
+                      src={mod.image}
+                      alt={mod.title}
+                      fill
+                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }}
+                    />
                   </div>
-                  <AnimatePresence>
-                    {activeBenefit === index && (
-                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-                        <p className="text-blue-100 mt-4 leading-relaxed pl-12">{item.description}</p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Challenges Section */}
-      <section className="py-24 bg-gradient-to-b from-[#000b21] via-[#000b21] to-[#0a0a0a] overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px]" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Challenges</span>
-            <h3 className="text-4xl md:text-5xl font-black text-white mt-6">Common Service Challenges</h3>
-            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">Overcome obstacles with NetSuite SRP</p>
-          </motion.div>
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
-            <div className="space-y-4 flex flex-col justify-center">
-              {challenges.map((item, index) => (
-                <motion.div key={index} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }}
-                  onClick={() => setActiveChallenge(index)} className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeChallenge === index ? 'bg-white/10 border-blue-400/50 shadow-lg backdrop-blur-sm' : 'bg-white/5 border-white/10 hover:bg-white/10'}`}>
-                  <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-lg transition-colors ${activeChallenge === index ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50' : 'bg-white/10 text-blue-300'}`}>
-                      <CheckCircle2 size={20} />
+                  {/* Bottom: Information Section */}
+                  <div
+                    className="flex-1 p-5 pb-6 flex flex-col relative"
+                    style={{ backgroundColor: `rgb(${mod.rgb})` }}
+                  >
+                    <div className="flex-1">
+                      <h4 className="text-white font-bold text-lg mb-2 tracking-wide">
+                        {mod.title}
+                      </h4>
+                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">
+                        {mod.description}
+                      </p>
                     </div>
-                    <h4 className={`text-xl font-bold transition-colors ${activeChallenge === index ? 'text-white' : 'text-gray-300'}`}>{item.title}</h4>
-                  </div>
-                  <AnimatePresence>
-                    {activeChallenge === index && (
-                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-                        <p className="text-blue-100 mt-4 leading-relaxed pl-12">{item.description}</p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))}
-            </div>
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 min-h-[350px] lg:min-h-[450px]">
-              <AnimatePresence mode="wait">
-                <motion.div key={activeChallenge} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.5, ease: "easeOut" }} className="absolute inset-0">
-                  <Image src={challenges[activeChallenge].image} alt={challenges[activeChallenge].title} fill className="object-cover" />
-                </motion.div>
-              </AnimatePresence>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
-      <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50/20 to-indigo-50/30">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <span className="bg-blue-600/10 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Pricing</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-6 mb-4">Choose Your Plan</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">Flexible solutions for services organizations</p>
-          </motion.div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {pricingPlans.map((plan, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}
-                className={`bg-white rounded-2xl p-8 border-2 ${plan.popular ? 'border-blue-600 shadow-2xl shadow-blue-200 relative' : 'border-gray-200'}`}>
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Most Popular</span>
+                    {/* Hover Reveal Button */}
+                    <div className="absolute bottom-6 left-5 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                      <span className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full shadow-md">
+                        Explore <ArrowRight size={10} />
+                      </span>
+                    </div>
+
+                    {/* Multi-color Bottom Border */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500" />
                   </div>
-                )}
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{plan.description}</p>
-                  <div className="text-4xl font-bold text-blue-600">{plan.price}</div>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/netsuite/contact" className={`block text-center px-6 py-3 rounded-xl font-bold transition ${plan.popular ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-gray-100 text-gray-900 hover:bg-gray-200'}`}>
-                  Get Started
-                </Link>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
-        {/* Background Gradients */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] -z-10" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[120px] -z-10" />
+      {/* ── Benefits Section ─────────────────────────────────────────────── */}
+      <section
+        id="benefits"
+        className="py-24 relative overflow-hidden scroll-mt-36"
+        style={{ background: "linear-gradient(135deg, #060e1f 0%, #0a1e4a 25%, #0f2a57 55%, #091828 80%, #050d1a 100%)" }}
+      >
+        {/* Glow Orbs */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3" style={{ background: "radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%)" }} />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3" style={{ background: "radial-gradient(circle, rgba(99,179,237,0.18) 0%, transparent 70%)" }} />
 
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -425,87 +543,179 @@ export default function NetSuiteSRPPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="bg-blue-600/10 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
-              FAQ
-            </span>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-6 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-slate-600 text-lg">
-              Everything you need to know about NetSuite SRP
-            </p>
+            <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+              Why Leaders Choose NetSuite SRP
+            </h3>
           </motion.div>
 
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className={`group rounded-2xl border transition-all duration-300 ${openFAQ === index
-                  ? 'bg-white border-blue-500/30 shadow-2xl shadow-blue-900/10 scale-[1.02] z-10'
-                  : 'bg-white/80 border-white/50 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-200 hover:-translate-y-1 hover:bg-white'
-                  }`}
-              >
-                <button
-                  onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-                  className="w-full px-8 py-6 flex items-center justify-between transition-colors cursor-pointer"
+          {/* Benefit Content Grid */}
+          <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
+            {/* Left Side: Image Display */}
+            <div className="order-2 lg:order-1 relative min-h-[380px] lg:min-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeBenefit}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0 h-full w-full"
                 >
-                  <span className={`text-left font-bold text-lg transition-colors ${openFAQ === index ? 'text-blue-700' : 'text-slate-900 group-hover:text-blue-600'
-                    }`}>
-                    {faq.question}
-                  </span>
-                  <div className={`p-2 rounded-full transition-all duration-300 flex-shrink-0 ml-4 ${openFAQ === index
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white rotate-180 shadow-lg shadow-blue-500/30'
-                    : 'bg-gray-100 text-gray-500 group-hover:bg-blue-50 group-hover:text-blue-600'
-                    }`}>
-                    <ChevronDown className="w-5 h-5" />
+                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover object-center" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10" />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Right Side: Interactive List */}
+            <div className="order-1 lg:order-2 rounded-3xl border border-white/10 bg-white/[0.03] p-4 flex flex-col gap-2 justify-center shadow-inner backdrop-blur-sm">
+              {benefits.map((item, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveBenefit(index)}
+                  className={`group relative w-full flex flex-col justify-center px-5 py-4 text-left rounded-xl transition-all duration-300 outline-none ${activeBenefit === index
+                    ? 'bg-white shadow-xl border-l-4 border-blue-600'
+                    : 'bg-white/5 border-l-4 border-transparent hover:bg-white/10'
+                    }`}
+                  suppressHydrationWarning
+                >
+                  <div className="flex items-center gap-4 w-full">
+                    <div className={`shrink-0 transition-colors duration-300 ${activeBenefit === index ? 'text-blue-600' : 'text-gray-400 group-hover:text-gray-200'}`}>
+                      {index === 0 && <Layers size={20} />}
+                      {index === 1 && <Users size={20} />}
+                      {index === 2 && <PieChart size={20} />}
+                      {index === 3 && <Zap size={20} />}
+                      {index === 4 && <DollarSign size={20} />}
+                      {index >= 5 && <Shield size={20} />}
+                    </div>
+                    <span className={`text-base md:text-lg flex-1 font-semibold transition-all duration-300 ${activeBenefit === index ? 'text-gray-900' : 'text-gray-300 group-hover:text-white'}`}>
+                      {item.title}
+                    </span>
+                    <ChevronRight className={`w-4 h-4 shrink-0 transition-all duration-300 ${activeBenefit === index ? 'text-blue-600 rotate-90' : 'text-gray-500 opacity-0 group-hover:opacity-60'}`} />
                   </div>
-                </button>
-                <AnimatePresence>
-                  {openFAQ === index && (
+
+                  {activeBenefit === index && (
                     <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden mt-3 pl-9"
                     >
-                      <div className="px-8 pb-8 pt-0">
-                        <div className="h-px w-full bg-linear-to-r from-transparent via-gray-200 to-transparent mb-6" />
-                        <p className="text-slate-600 leading-relaxed text-base md:text-lg">
-                          {faq.answer}
-                        </p>
-                      </div>
+                      <p className="text-gray-500 text-sm leading-relaxed mb-3">{item.description}</p>
+                      <ul className="space-y-1.5">
+                        {item.points.map((pt, pi) => (
+                          <li key={pi} className="flex items-start gap-2 text-sm text-gray-600">
+                            <Check size={13} className="text-blue-600 mt-0.5 shrink-0" /> {pt}
+                          </li>
+                        ))}
+                      </ul>
                     </motion.div>
                   )}
-                </AnimatePresence>
-              </motion.div>
-            ))}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative rounded-[3rem] overflow-hidden border border-gray-200">
-            <Image src="/images/people/fourteam.webp" alt="Get Started with NetSuite SRP" fill className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
-            <div className="relative z-10 p-12 lg:p-24">
-              <div className="max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Ready to Optimize Your Services?</h2>
-                <p className="text-xl text-gray-300 mb-8">Let's discuss how NetSuite SRP can transform your professional services business.</p>
-                <Link href="/netsuite/contact" className="inline-flex items-center gap-2 px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition shadow-xl">
-                  Schedule a Consultation <ArrowRight size={20} />
-                </Link>
+      {/* ── Pricing Section ─────────────────────────────────────────────────── */}
+      <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="rounded-3xl overflow-hidden shadow-2xl"
+            style={{ backgroundColor: '#06303f' }}
+          >
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
+              {/* LEFT — Text + CTA */}
+              <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
+                <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
+                  How Much Does NetSuite SRP Cost?
+                </h2>
+                <p className="text-white/75 text-base leading-relaxed mb-8">
+                  NetSuite SRP pricing is tailored to the size and complexity of your service organization. Your annual subscription includes the core platform, the SRP module (PSA), and user seats — along with a one-time implementation fee. As your firm grows, you can easily add users or activate additional modules for global management or advanced analytics without infrastructure downtime.
+                </p>
+                <div>
+                  <Link
+                    href="#contact-form"
+                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-yellow-400 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg"
+                  >
+                    Contact Us Now <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </div>
+
+              {/* RIGHT — Organic Blob Image */}
+              <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
+                <div className="absolute inset-0 bg-[#052838]" />
+                <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
+                <div className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#0a5060]" style={{ borderRadius: '45% 55% 50% 50% / 50% 50% 50% 50%' }} />
+                <div
+                  className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl"
+                  style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}
+                >
+                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite SRP Pricing" fill className="object-cover object-top" />
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
+      {/* ── FAQ Section ──────────────────────────────────────────────────────── */}
+      <FAQ variant="netsuite" id="faq" />
+
+      {/* ── CTA Banner ────────────────────────────────────────────────────────── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#002a8c] via-[#0044cc] to-[#0099a3] shadow-2xl"
+          >
+            {/* Particles */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              {CTA_PARTICLES.map((p, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute bg-white rounded-full"
+                  style={{ width: `${p.w}px`, height: `${p.h}px`, top: `${p.top}%`, left: `${p.left}%` }}
+                  animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }}
+                  transition={{ duration: p.dur, repeat: Infinity, ease: 'easeInOut', delay: p.delay }}
+                />
+              ))}
+            </div>
+
+            <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
+              <div className="text-left max-w-2xl">
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                  Optimize Your Firm on NetSuite SRP —{" "}
+                  <span className="text-cyan-300">Scale Globally.</span>
+                </h2>
+                <p className="text-white/80 text-lg md:text-xl font-medium">
+                  Join thousands of professional services firms that traded spreadsheets for the world&apos;s #1 cloud SRP solution.
+                </p>
+              </div>
+
+              <Link
+                href="#contact-form"
+                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
+              >
+                Go Live on SRP
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Contact Form ─────────────────────────────────────────────────────── */}
       <ContactFormDesign4 />
     </div>
   );

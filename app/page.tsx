@@ -65,43 +65,74 @@ export default function Home() {
           </button>
         </Link>
 
-        {/* RIGHT — NETSUITE BACKGROUND */}
+        {/* RIGHT — NETSUITE PEOPLE IMAGE */}
         <Link
           href="/netsuite"
-          className="relative h-[45vh] md:h-[70vh] group overflow-hidden block  shadow-lg"
+          className="relative h-[45vh] md:h-[70vh] group overflow-hidden block shadow-lg"
           aria-label="Explore Oracle NetSuite"
         >
           <Image
-            src="/images/netsuiteimages/background/netsuitebg.webp"
-            alt="NetSuite Background"
+            src="/images/people/people5_11zon.webp"
+            alt="Oracle NetSuite Business Professionals"
             fill
             priority
             fetchPriority="high"
-            className="object-cover group-hover:scale-105 transition-all duration-700 opacity-99"
+            className="object-cover object-center group-hover:scale-105 transition-all duration-700"
             sizes="(max-width: 768px) 100vw, 50vw"
-            quality={75}
+            quality={80}
           />
 
-          {/* Main dim overlay */}
-          <div className="absolute inset-0 bg-black/25 " />
-
-          {/* Bottom → Top gradient overlay (same as Zoho) */}
+          {/* Top dark gradient — logo area */}
           <div
-            className="
-      absolute inset-0 
-      bg-linear-to-t
-      from-black/80
-      via-transparent
-      to-transparent
-    "
+            className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/5 to-transparent"
           />
+
+          {/* Bottom dark gradient — text area */}
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"
+          />
+
+          {/* Oracle NetSuite Logo — Top Left Corner */}
+          <div className="absolute top-5 left-6 z-10">
+            <Image
+              src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
+              alt="Oracle NetSuite Partner Logo"
+              width={160}
+              height={60}
+              className="h-10 w-auto object-contain drop-shadow-lg brightness-200"
+            />
+          </div>
 
           {/* Content */}
-          <article className="absolute bottom-8 left-8 text-white drop-shadow-lg">
-            <h2 className="text-3xl font-semibold">
-              Run Your Entire Business in the Cloud.
+          <article className="absolute bottom-5 left-5 md:bottom-8 md:left-8 text-white drop-shadow-lg">
+            <h2 className="text-base md:text-3xl font-semibold leading-snug">
+              <span
+                style={{
+                  background:
+                    "linear-gradient(90deg, #cceeff 0%, #a0d8f1 30%, #ffffff 60%, #d4eaff 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  fontWeight: 600,
+                }}
+              >
+                Oracle NetSuite
+              </span>{" "}
+              <span className="text-white font-semibold hidden md:inline">—</span>{" "}
+              <span
+                style={{
+                  background:
+                    "linear-gradient(90deg, #ffd580 0%, #ffb347 50%, #ff8c42 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  fontWeight: 600,
+                }}
+              >
+                #1 ERP
+              </span>
             </h2>
-            <p className="text-xl opacity-90">The #1 ERP for Fast-Growing Companies</p>
+            <p className="hidden md:block text-lg opacity-90 mt-1">Run Your Entire Business Smarter &amp; Faster</p>
           </article>
         </Link>
 
@@ -120,36 +151,43 @@ export default function Home() {
         {/* LEFT — ZOHO BACKGROUND */}
         <Link
           href="/zoho"
-          className="relative h-[45vh] md:h-[70vh] group overflow-hidden block  shadow-lg"
+          className="relative h-[45vh] md:h-[70vh] group overflow-hidden block shadow-lg"
           aria-label="Visit Zoho Solutions"
         >
           <Image
             src="/images/zohoimages/background/zohobg.webp"
             alt="Zoho Background"
             fill
-            className="object-cover group-hover:scale-105 transition-all duration-700 opacity-99"
+            className="object-cover group-hover:scale-105 transition-all duration-700"
             sizes="(max-width: 768px) 100vw, 50vw"
             quality={75}
           />
 
-          {/* Main dim overlay */}
-          <div className="absolute inset-0 bg-black/25" />
-
-          {/* NEW bottom gradient overlay */}
+          {/* Top dark gradient — logo area */}
           <div
-            className="
-      absolute inset-0 
-      bg-linear-to-t
-      from-black/80
-      via-black/10
-      to-transparent
-    "
+            className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/10 to-transparent"
           />
 
+          {/* Bottom dark gradient — text area */}
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"
+          />
+
+          {/* Zoho Logo — Top Left Corner */}
+          <div className="absolute top-5 left-6 z-10">
+            <Image
+              src="/images/zohoimages/zohologos/zohoadvancelogo.webp"
+              alt="Zoho Advanced Partner Logo"
+              width={220}
+              height={80}
+              className="h-14 w-auto object-contain drop-shadow-lg"
+            />
+          </div>
+
           {/* Content */}
-          <article className="absolute bottom-8 left-8 text-white drop-shadow-lg">
-            <h2 className="text-3xl font-semibold">Smarter Business. Faster Growth.</h2>
-            <p className="text-xl opacity-90">Zoho Solutions for Every Team</p>
+          <article className="absolute bottom-5 left-5 md:bottom-8 md:left-8 text-white drop-shadow-lg">
+            <h2 className="text-base md:text-3xl font-semibold">Smarter Business. Faster Growth.</h2>
+            <p className="hidden md:block text-xl opacity-90">Zoho Solutions for Every Team</p>
           </article>
         </Link>
 

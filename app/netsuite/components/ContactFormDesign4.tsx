@@ -6,7 +6,7 @@ import Image from "next/image";
 // Design 4: Dark Theme with White Form
 export default function ContactFormDesign4() {
   return (
-    <section className="relative py-24 bg-[#0a0a0a] overflow-hidden">
+    <section id="contact-form" className="relative py-24 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
       {/* Multi-color gradient glows - Blue, Purple, Pink */}
       <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-blue-500/30 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3"></div>
       <div className="absolute top-0 left-1/4 w-[700px] h-[700px] bg-cyan-400/25 rounded-full blur-[130px] -translate-y-1/2"></div>

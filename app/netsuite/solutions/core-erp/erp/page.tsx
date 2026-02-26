@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { ERPCircularDesign } from '@/app/netsuite/components/ERPCircularDesign';
 import { FAQ } from '@/app/components/home/FAQ';
+import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -139,6 +140,23 @@ export default function NetSuiteERPPage() {
 
         {/* Main Content Container */}
         <div className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10">
+          {/* Breadcrumb — absolutely positioned so it doesn't affect centering */}
+          <motion.nav
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+            className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20"
+            aria-label="Breadcrumb"
+          >
+            <Link href="/netsuite" className="text-blue-300 hover:text-white transition-colors duration-200">
+              Home
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-white/30" />
+            <span className="text-white/50">Solutions</span>
+            <ChevronRight className="w-3.5 h-3.5 text-white/30" />
+            <span className="text-white/80">ERP</span>
+          </motion.nav>
+
           {/* Hero Content - Two Column */}
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8">
             {/* LEFT: Headline + Subtitle + Button */}
@@ -147,6 +165,7 @@ export default function NetSuiteERPPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
+
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -180,7 +199,7 @@ export default function NetSuiteERPPage() {
                 transition={{ delay: 0.5 }}
               >
                 <Link
-                  href="/netsuite/contact"
+                  href="#contact-form"
                   className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
                 >
                   Get Started
@@ -245,43 +264,30 @@ export default function NetSuiteERPPage() {
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
-            <a
-              href="#what-is-erp"
-              className="px-4 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap"
-            >
-              What is NetSuite ERP?
-            </a>
-            <a
-              href="#modules"
-              className="px-4 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap"
-            >
-              Modules
-            </a>
-            <a
-              href="#benefits"
-              className="px-4 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap"
-            >
-              Benefits
-            </a>
-            <a
-              href="#pricing"
-              className="px-4 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap"
-            >
-              Pricing
-            </a>
-            <a
-              href="#faq"
-              className="px-4 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap"
-            >
-              FAQ
-            </a>
+            {[
+              { label: "What is NetSuite ERP?", href: "#what-is-erp" },
+              { label: "Modules", href: "#modules" },
+              { label: "Benefits", href: "#benefits" },
+              { label: "Pricing", href: "#pricing" },
+              { label: "FAQ", href: "#faq" },
+            ].map(link => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="px-4 py-2 text-base font-semibold hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap"
+              >
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-blue-600 to-cyan-500">
+                  {link.label}
+                </span>
+              </a>
+            ))}
           </div>
         </div>
       </nav>
 
 
       {/* What is NetSuite ERP Section with Light Gradient */}
-      <section id="what-is-erp" className="pt-5 pb-14 bg-linear-to-br from-white via-white to-white">
+      <section id="what-is-erp" className="pt-5 pb-14 bg-linear-to-br from-white via-white to-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
           <div className="grid lg:grid-cols-2 gap-6 items-stretch">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative min-h-[400px] lg:min-h-[490px] -mt-4 rounded-3xl overflow-hidden ">
@@ -296,7 +302,7 @@ export default function NetSuiteERPPage() {
               <p className="text-lg text-gray-600 leading-relaxed">With real-time visibility and a single source of truth, NetSuite ERP empowers organizations to make faster decisions and scale efficiently.</p>
               <div className="pt-4">
                 <Link
-                  href="/netsuite/contact"
+                  href="#contact-form"
                   className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
                   style={{
                     background: 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)',
@@ -328,7 +334,7 @@ export default function NetSuiteERPPage() {
 
 
       {/* NetSuite ERP Modules Section */}
-      <section id="modules" className="py-16 bg-white relative overflow-hidden">
+      <section id="modules" className="py-16 bg-white relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-medium text-gray-900 text-center">
             NetSuite ERP Modules
@@ -352,55 +358,56 @@ export default function NetSuiteERPPage() {
               { title: "Ecommerce", description: "Native B2B/B2C storefront connected directly to inventory, orders, and fulfilment.", image: "/images/lap/lap8_11zon.webp", color: "#0f4e8a", rgb: "12,68,130" },
               { title: "Marketing Automation", description: "Campaign management, lead nurture, and ROI analytics integrated with CRM.", image: "/images/people/laptopmen.webp", color: "#523a8a", rgb: "75,48,130" },
             ].map((mod, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white"
-                style={{ minHeight: 380 }}
-              >
-                {/* Top: Image Section with Color Overlay */}
-                <div className="relative h-48 shrink-0 overflow-hidden">
-                  <Image
-                    src={mod.image}
-                    alt={mod.title}
-                    fill
-                    className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div
-                    className="absolute inset-0"
-                    style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }}
-                  />
-                </div>
-
-                {/* Bottom: Information Section */}
-                <div
-                  className="flex-1 p-5 pb-6 flex flex-col relative"
-                  style={{ backgroundColor: `rgb(${mod.rgb})` }}
+              <Link key={index} href="#contact-form" className="block">
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
+                  whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white"
+                  style={{ minHeight: 380 }}
                 >
-                  <div className="flex-1">
-                    <h4 className="text-white font-bold text-lg mb-2 tracking-wide">
-                      {mod.title}
-                    </h4>
-                    <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">
-                      {mod.description}
-                    </p>
+                  {/* Top: Image Section with Color Overlay */}
+                  <div className="relative h-48 shrink-0 overflow-hidden">
+                    <Image
+                      src={mod.image}
+                      alt={mod.title}
+                      fill
+                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }}
+                    />
                   </div>
 
-                  {/* Hover Reveal Button - Absolute so it doesn't take space */}
-                  <div className="absolute bottom-6 left-5 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
-                    <span className="inline-flex items-center gap-2 text-white font-bold uppercase tracking-widest text-[10px] border-b border-white/40 pb-0.5">
-                      Get Started <ArrowRight size={12} />
-                    </span>
-                  </div>
+                  {/* Bottom: Information Section */}
+                  <div
+                    className="flex-1 p-5 pb-6 flex flex-col relative"
+                    style={{ backgroundColor: `rgb(${mod.rgb})` }}
+                  >
+                    <div className="flex-1">
+                      <h4 className="text-white font-bold text-lg mb-2 tracking-wide">
+                        {mod.title}
+                      </h4>
+                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">
+                        {mod.description}
+                      </p>
+                    </div>
 
-                  {/* Multi-color Bottom Border */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500" />
-                </div>
-              </motion.div>
+                    {/* Hover Reveal Button */}
+                    <div className="absolute bottom-6 left-5 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                      <span className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full shadow-md">
+                        Get Started <ArrowRight size={10} />
+                      </span>
+                    </div>
+
+                    {/* Multi-color Bottom Border */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500" />
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
@@ -408,8 +415,12 @@ export default function NetSuiteERPPage() {
 
 
 
-      {/* Benefits Section - Redesigned like NSKeyCapabilities with Dark Teal Theme */}
-      <section id="benefits" className="py-24 relative overflow-hidden bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d]">
+      {/* Benefits Section - Redesigned like NSKeyCapabilities with Dark Blue Theme */}
+      <section
+        id="benefits"
+        className="py-24 relative overflow-hidden scroll-mt-36"
+        style={{ background: "linear-gradient(135deg, #060e1f 0%, #0a1e4a 25%, #0f2a57 55%, #091828 80%, #050d1a 100%)" }}
+      >
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
@@ -448,9 +459,9 @@ export default function NetSuiteERPPage() {
             } as React.CSSProperties} />
           ))}
 
-          {/* Glow Orbs */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3" />
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-800/15 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3" />
+          {/* Glow Orbs — vibrant blue tones to match the new gradient */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3" style={{ background: "radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%)" }} />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3" style={{ background: "radial-gradient(circle, rgba(99,179,237,0.18) 0%, transparent 70%)" }} />
 
           {/* Concentric circle rings */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full border border-white/[0.03]" />
@@ -562,7 +573,7 @@ export default function NetSuiteERPPage() {
 
 
       {/* Pricing Section — New Design */}
-      <section id="pricing" className="py-12 bg-gray-50 overflow-hidden">
+      <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           {/* Card wrapper */}
           <motion.div
@@ -589,7 +600,7 @@ export default function NetSuiteERPPage() {
 
                 <div>
                   <Link
-                    href="/netsuite/contact"
+                    href="#contact-form"
                     className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-yellow-400 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg"
                   >
                     Contact Us Now <ArrowRight size={16} />
@@ -640,7 +651,7 @@ export default function NetSuiteERPPage() {
       </section >
 
       {/* FAQ Section */}
-      <FAQ variant="netsuite" />
+      <FAQ variant="netsuite" id="faq" />
 
       {/* CTA Section — Premium Blue Gradient */}
       <section className="py-16 bg-white">
@@ -652,7 +663,7 @@ export default function NetSuiteERPPage() {
             transition={{ duration: 0.7 }}
             className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#002a8c] via-[#0044cc] to-[#0099a3] shadow-2xl"
           >
-            {/* Animated star particles — static positions to avoid SSR mismatch */}
+            {/* Animated star particles */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {CTA_PARTICLES.map((p, i) => (
                 <motion.div
@@ -682,28 +693,30 @@ export default function NetSuiteERPPage() {
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               {/* Left — Text */}
               <div className="text-left max-w-2xl">
-                <span className="inline-block text-xs font-bold uppercase tracking-widest text-cyan-300 mb-4">NetSuite ERP</span>
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
                   Go Live on NetSuite ERP —{" "}
                   <span className="text-cyan-300">Faster Than You Think.</span>
                 </h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">
-                  Join 38,000+ businesses that replaced spreadsheets and legacy systems with the world's #1 cloud ERP. Your transformation starts with one conversation.
+                  Join 38,000+ businesses that replaced spreadsheets and legacy systems with the world&apos;s #1 cloud ERP. Your transformation starts with one conversation.
                 </p>
               </div>
 
-              {/* Right — CTA Button */}
-              <Link
-                href="/netsuite/contact"
+              {/* Right — CTA Button (scrolls to form below) */}
+              <a
+                href="#contact-form"
                 className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
               >
                 Start Your ERP Journey
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>
       </section>
+
+      {/* Contact Form */}
+      <ContactFormDesign4 />
 
     </div>
   );

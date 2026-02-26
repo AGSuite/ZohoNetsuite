@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function NetSuiteCalculatorPage() {
     return (
-        <div className="pt-20">
+        <div className="pt-16 md:pt-20 pb-10 px-3 sm:px-4 md:px-6 flex justify-center">
             <NetSuitePricingCalculator />
         </div>
     );

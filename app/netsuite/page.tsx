@@ -17,6 +17,7 @@ const NSMetrics = dynamic(() => import('./components/NSMetrics').then(mod => mod
   loading: () => <div className="h-96 bg-gray-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
 });
 const NSKeyCapabilities = dynamic(() => import('./components/NSKeyCapabilities').then(mod => mod.default));
+const NSCaseStudiesSlider = dynamic(() => import('./components/NSCaseStudiesSlider').then(mod => mod.default));
 const NSDashboardHero = dynamic(() => import('./components/NSDashboardHero').then(mod => mod.default));
 
 const NSIndustries = dynamic(() => import('./components/NSIndustries').then(mod => mod.default));
@@ -44,12 +45,12 @@ export default function NetSuitePage() {
 
       <NSMetrics />
       <NSCustomerSuccess />
+      <NSCaseStudiesSlider />
 
       <NSKeyCapabilities />
       {/* <NSDashboardHero /> */}
 
       {/* Key Solutions Grid (Existing) */}
-
 
 
       <NSServices />

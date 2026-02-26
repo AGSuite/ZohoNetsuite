@@ -85,11 +85,7 @@ const NetSuitePricingCalculator = () => {
     const toggleIndustry = (ind: string) => {
         const current = [...formData.industries];
         const index = current.indexOf(ind);
-        if (index > -1) {
-            current.splice(index, 1);
-        } else {
-            current.push(ind);
-        }
+        if (index > -1) { current.splice(index, 1); } else { current.push(ind); }
         updateFormData('industries', current);
     };
 
@@ -126,7 +122,6 @@ const NetSuitePricingCalculator = () => {
         } finally { setSubmitting(false); }
     };
 
-    // Calculate aggregated recommendations for all selected industries
     const aggregatedRecommendations = useMemo(() => {
         const recs = new Set<string>();
         formData.industries.forEach(ind => {
@@ -137,82 +132,109 @@ const NetSuitePricingCalculator = () => {
         return Array.from(recs);
     }, [formData.industries]);
 
+    // ── SUCCESS SCREEN ──────────────────────────────────────────────────────
     if (showSuccess) return (
-        <div className="h-full flex items-center justify-center p-12 bg-white rounded-[3rem]">
+        <div className="min-h-[60vh] flex items-center justify-center p-6 md:p-12 bg-white rounded-2xl md:rounded-[3rem] mx-auto max-w-2xl">
             <div className="text-center">
-                <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl shadow-blue-500/20"><Check className="w-10 h-10 text-white" /></div>
-                <h2 className="text-3xl font-medium text-slate-900 mb-3">Quote Sent Successfully</h2>
-                <p className="text-slate-500 mb-10 max-w-sm">Our team will be in touch shortly.</p>
-                <button onClick={() => window.location.reload()} className="bg-blue-600 text-white px-12 py-4 rounded-2xl font-medium uppercase tracking-widest hover:scale-105 transition-all">Close</button>
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-xl shadow-blue-500/20">
+                    <Check className="w-8 h-8 md:w-10 md:h-10 text-white" />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-medium text-slate-900 mb-2">Quote Sent Successfully</h2>
+                <p className="text-slate-500 mb-8 max-w-sm mx-auto text-sm md:text-base">Our team will be in touch shortly.</p>
+                <button
+                    onClick={() => window.location.reload()}
+                    className="bg-blue-600 text-white px-8 md:px-12 py-3 md:py-4 rounded-2xl font-medium uppercase tracking-widest hover:scale-105 transition-all text-sm md:text-base"
+                >
+                    Close
+                </button>
             </div>
         </div>
     );
 
+    // ── MAIN CALCULATOR ─────────────────────────────────────────────────────
     return (
-        <div className="w-[95vw] max-w-6xl h-[min(800px,90vh)] bg-[#020617] text-slate-200 border border-white/10 rounded-[3rem] shadow-2xl flex flex-col font-['DM_Sans',sans-serif] overflow-hidden relative">
-            {/* Background Decorative Gradient */}
+        <div className="w-full max-w-6xl mx-auto bg-[#020617] text-slate-200 border border-white/10 rounded-2xl md:rounded-[3rem] shadow-2xl flex flex-col font-['DM_Sans',sans-serif] overflow-hidden relative min-h-[600px] md:min-h-[700px]">
+
+            {/* Background Gradient */}
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/10 via-slate-950 to-purple-900/10 pointer-events-none z-0" />
 
-            {/* Header: Enhanced with Larger Logos & Tighter Items */}
-            <div className="relative z-20 px-10 py-5 bg-gradient-to-r from-[#0033ad] via-[#111827] to-[#581c87] flex items-center justify-between border-b border-white/5">
-                <div className="flex items-center p-1 bg-white/5 rounded-2xl border border-white/10">
-                    <div className="flex items-center gap-6 px-4 py-2">
-                        <Image src="/images/logos/agsuite_logo.webp" alt="AGSuite" width={140} height={45} className="h-10 w-auto object-contain brightness-0 invert" />
+            {/* ── HEADER ── */}
+            <div className="relative z-20 px-4 sm:px-6 md:px-10 py-3 md:py-5 bg-gradient-to-r from-[#0033ad] via-[#111827] to-[#581c87] flex items-center justify-between gap-3 border-b border-white/5 flex-wrap sm:flex-nowrap">
+
+                {/* Logos */}
+                <div className="flex items-center p-1 bg-white/5 rounded-xl md:rounded-2xl border border-white/10 shrink-0">
+                    <div className="flex items-center gap-3 md:gap-6 px-3 md:px-4 py-1.5 md:py-2">
+                        <Image
+                            src="/images/logos/agsuite_logo.webp"
+                            alt="AGSuite"
+                            width={110}
+                            height={36}
+                            className="h-7 md:h-10 w-auto object-contain brightness-0 invert"
+                        />
                         <div className="w-px h-4 bg-white/40" />
-                        <Image src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" alt="NetSuite Partner" width={140} height={45} className="h-10 w-auto object-contain brightness-0 invert" />
+                        <Image
+                            src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
+                            alt="NetSuite Partner"
+                            width={110}
+                            height={36}
+                            className="h-7 md:h-10 w-auto object-contain brightness-0 invert"
+                        />
                     </div>
                 </div>
 
-                <div className="flex items-center gap-3">
+                {/* Step indicators */}
+                <div className="flex items-center gap-1.5 sm:gap-3 ml-auto">
                     {stepTitles.map((t, i) => (
-                        <div key={i} className={`flex items-center gap-2 transition-all ${currentStep >= i + 1 ? 'opacity-100' : 'opacity-30'}`}>
-                            <span className={`w-7 h-7 rounded-lg flex items-center justify-center text-[10px] font-bold border ${currentStep === i + 1 ? 'bg-white text-blue-900 border-white' : 'border-white/20 text-white'}`}>{i + 1}</span>
-                            <span className="hidden lg:block text-[10px] font-medium uppercase tracking-[0.15em] text-white/80">{t}</span>
+                        <div key={i} className={`flex items-center gap-1.5 sm:gap-2 transition-all ${currentStep >= i + 1 ? 'opacity-100' : 'opacity-30'}`}>
+                            <span className={`w-6 h-6 md:w-7 md:h-7 rounded-md md:rounded-lg flex items-center justify-center text-[9px] md:text-[10px] font-bold border shrink-0 ${currentStep === i + 1 ? 'bg-white text-blue-900 border-white' : 'border-white/20 text-white'}`}>
+                                {i + 1}
+                            </span>
+                            <span className="hidden md:block text-[10px] font-medium uppercase tracking-[0.15em] text-white/80">{t}</span>
                         </div>
                     ))}
                 </div>
             </div>
 
-            {/* Main Content Area */}
-            <main className="relative z-10 flex-1 overflow-y-auto px-12 py-10 custom-scrollbar scroll-smooth">
+            {/* ── MAIN CONTENT ── */}
+            <main className="relative z-10 flex-1 overflow-y-auto px-4 sm:px-6 md:px-10 lg:px-12 py-6 md:py-10 custom-scrollbar scroll-smooth">
                 <form onSubmit={handleSubmit} className="h-full flex flex-col">
 
                     {/* STEP 1: INDUSTRY */}
                     {currentStep === 1 && (
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
-                            <div className="mb-10 flex justify-between items-end">
+                            <div className="mb-6 md:mb-10 flex flex-wrap justify-between items-start gap-3">
                                 <div>
-                                    <h2 className="text-4xl font-medium text-white mb-2">Select Your Industry</h2>
-                                    <p className="text-lg text-slate-400">Choose all verticals that represent your business operations.</p>
+                                    <h2 className="text-2xl md:text-4xl font-medium text-white mb-1 md:mb-2">Select Your Industry</h2>
+                                    <p className="text-sm md:text-lg text-slate-400">Choose all verticals that represent your business operations.</p>
                                 </div>
-                                <div className="text-blue-400 text-sm font-bold uppercase tracking-widest bg-blue-500/10 px-4 py-2 rounded-xl border border-blue-500/20">
+                                <div className="text-blue-400 text-xs md:text-sm font-bold uppercase tracking-widest bg-blue-500/10 px-3 md:px-4 py-1.5 md:py-2 rounded-xl border border-blue-500/20 shrink-0">
                                     {formData.industries.length} Selected
                                 </div>
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                                {industries.map(ind => {
-                                    const isActive = formData.industries.includes(ind);
-                                    return (
-                                        <button
-                                            key={ind} type="button" onClick={() => toggleIndustry(ind)}
-                                            className={`p-5 rounded-2xl border-2 transition-all text-left flex items-center gap-4 group relative overflow-hidden h-24 ${isActive
-                                                ? 'bg-gradient-to-br from-blue-600 to-indigo-700 border-blue-400 shadow-xl'
-                                                : 'bg-gradient-to-br from-white to-blue-50 border-white text-slate-900 hover:border-blue-200'}`}
-                                        >
-                                            <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm ${isActive ? 'bg-white/20' : 'bg-blue-600/10'}`}>
-                                                <Building2 className={`w-5 h-5 ${isActive ? 'text-white' : 'text-blue-600'}`} />
-                                            </div>
-                                            <div className="flex flex-col justify-center">
-                                                <span className={`text-[17px] font-medium tracking-tight leading-tight transition-colors ${isActive ? 'text-white' : 'text-slate-900 group-hover:text-blue-700'}`}>{ind}</span>
-                                            </div>
-                                            {isActive && (
-                                                <div className="absolute top-3 right-3">
-                                                    <div className="bg-white rounded-full p-0.5"><Check size={10} className="text-blue-600" strokeWidth={5} /></div>
+                            <div className="overflow-y-auto max-h-[42vh] md:max-h-[50vh] pr-1 custom-scrollbar">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
+                                    {industries.map(ind => {
+                                        const isActive = formData.industries.includes(ind);
+                                        return (
+                                            <button
+                                                key={ind} type="button" onClick={() => toggleIndustry(ind)}
+                                                className={`p-4 md:p-5 rounded-2xl border-2 transition-all text-left flex items-center gap-3 md:gap-4 group relative overflow-hidden h-16 md:h-24 ${isActive
+                                                    ? 'bg-gradient-to-br from-blue-600 to-indigo-700 border-blue-400 shadow-xl'
+                                                    : 'bg-gradient-to-br from-white to-blue-50 border-white text-slate-900 hover:border-blue-200'}`}
+                                            >
+                                                <div className={`w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm ${isActive ? 'bg-white/20' : 'bg-blue-600/10'}`}>
+                                                    <Building2 className={`w-4 h-4 md:w-5 md:h-5 ${isActive ? 'text-white' : 'text-blue-600'}`} />
                                                 </div>
-                                            )}
-                                        </button>
-                                    );
-                                })}
+                                                <span className={`text-sm md:text-[17px] font-medium tracking-tight leading-tight transition-colors ${isActive ? 'text-white' : 'text-slate-900 group-hover:text-blue-700'}`}>{ind}</span>
+                                                {isActive && (
+                                                    <div className="absolute top-2.5 right-2.5">
+                                                        <div className="bg-white rounded-full p-0.5"><Check size={9} className="text-blue-600" strokeWidth={5} /></div>
+                                                    </div>
+                                                )}
+                                            </button>
+                                        );
+                                    })}
+                                </div>
                             </div>
                         </div>
                     )}
@@ -220,15 +242,16 @@ const NetSuitePricingCalculator = () => {
                     {/* STEP 2: GEO */}
                     {currentStep === 2 && (
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
-                            <div className="mb-8">
-                                <h2 className="text-4xl font-medium text-white mb-2">Geographic Scope</h2>
-                                <p className="text-lg text-slate-400">Where does your business operate globally?</p>
+                            <div className="mb-6 md:mb-8">
+                                <h2 className="text-2xl md:text-4xl font-medium text-white mb-1 md:mb-2">Geographic Scope</h2>
+                                <p className="text-sm md:text-lg text-slate-400">Where does your business operate globally?</p>
                             </div>
-                            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3 mb-10">
+                            {/* Country grid */}
+                            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-3 mb-6 md:mb-10">
                                 {countries.map(c => (
                                     <button
                                         key={c} type="button" onClick={() => handleCountryToggle(c)}
-                                        className={`py-4 rounded-xl border-2 transition-all text-[11px] font-medium uppercase tracking-widest ${formData.countryEntities[c]
+                                        className={`py-3 md:py-4 rounded-xl border-2 transition-all text-[10px] md:text-[11px] font-medium uppercase tracking-widest ${formData.countryEntities[c]
                                             ? 'bg-blue-600 border-blue-400 text-white shadow-lg'
                                             : 'bg-white border-white text-slate-900 hover:border-blue-100'}`}
                                     >
@@ -236,14 +259,19 @@ const NetSuitePricingCalculator = () => {
                                     </button>
                                 ))}
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+                            {/* Selected countries */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-h-[240px] md:max-h-[300px] overflow-y-auto pr-1 custom-scrollbar">
                                 {Object.keys(formData.countryEntities).map(c => (
-                                    <div key={c} className="bg-gradient-to-br from-white to-blue-50 p-5 rounded-3xl flex items-center justify-between border-2 border-white shadow-lg">
-                                        <span className="text-lg font-medium text-slate-900">{c}</span>
-                                        <div className="flex items-center gap-4 bg-blue-100/50 p-2 rounded-2xl border border-blue-200">
-                                            <button type="button" onClick={() => updateFormData('countryEntities', { ...formData.countryEntities, [c]: Math.max(1, formData.countryEntities[c] - 1) })} className="w-8 h-8 rounded-xl bg-white flex items-center justify-center text-slate-600 hover:text-red-600 shadow-sm"><Minus size={16} /></button>
-                                            <span className="text-lg font-medium text-blue-900 w-6 text-center tabular-nums">{formData.countryEntities[c]}</span>
-                                            <button type="button" onClick={() => updateFormData('countryEntities', { ...formData.countryEntities, [c]: formData.countryEntities[c] + 1 })} className="w-8 h-8 rounded-xl bg-white flex items-center justify-center text-slate-600 hover:text-blue-600 shadow-sm"><Plus size={16} /></button>
+                                    <div key={c} className="bg-gradient-to-br from-white to-blue-50 p-3 md:p-5 rounded-2xl md:rounded-3xl flex items-center justify-between border-2 border-white shadow-lg gap-2">
+                                        <span className="text-sm md:text-lg font-medium text-slate-900 truncate">{c}</span>
+                                        <div className="flex items-center gap-2 md:gap-4 bg-blue-100/50 p-1.5 md:p-2 rounded-xl md:rounded-2xl border border-blue-200 shrink-0">
+                                            <button type="button" onClick={() => updateFormData('countryEntities', { ...formData.countryEntities, [c]: Math.max(1, formData.countryEntities[c] - 1) })} className="w-7 h-7 md:w-8 md:h-8 rounded-lg md:rounded-xl bg-white flex items-center justify-center text-slate-600 hover:text-red-600 shadow-sm">
+                                                <Minus size={14} />
+                                            </button>
+                                            <span className="text-sm md:text-lg font-medium text-blue-900 w-5 text-center tabular-nums">{formData.countryEntities[c]}</span>
+                                            <button type="button" onClick={() => updateFormData('countryEntities', { ...formData.countryEntities, [c]: formData.countryEntities[c] + 1 })} className="w-7 h-7 md:w-8 md:h-8 rounded-lg md:rounded-xl bg-white flex items-center justify-center text-slate-600 hover:text-blue-600 shadow-sm">
+                                                <Plus size={14} />
+                                            </button>
                                         </div>
                                     </div>
                                 ))}
@@ -254,37 +282,40 @@ const NetSuitePricingCalculator = () => {
                     {/* STEP 3: SOLUTIONS */}
                     {currentStep === 3 && (
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
-                            <div className="mb-10">
-                                <h2 className="text-4xl font-medium text-white mb-2">Solution Pack</h2>
-                                <p className="text-lg text-slate-400">Select modules required for your NetSuite environment.</p>
+                            <div className="mb-6 md:mb-10">
+                                <h2 className="text-2xl md:text-4xl font-medium text-white mb-1 md:mb-2">Solution Pack</h2>
+                                <p className="text-sm md:text-lg text-slate-400">Select modules required for your NetSuite environment.</p>
                             </div>
-                            <div className="space-y-10">
+                            <div className="space-y-6 md:space-y-10">
                                 {aggregatedRecommendations.length > 0 && (
                                     <div>
-                                        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 mb-5">Tailored Recommendations</p>
-                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 mb-3 md:mb-5">Tailored Recommendations</p>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
                                             {aggregatedRecommendations.map(m => (
                                                 <button
                                                     key={m} type="button"
                                                     onClick={() => updateFormData('modules', formData.modules.includes(m) ? formData.modules.filter(x => x !== m) : [...formData.modules, m])}
-                                                    className={`p-6 rounded-[2rem] border-2 transition-all flex items-center gap-5 text-left h-24 ${formData.modules.includes(m)
+                                                    className={`p-4 md:p-6 rounded-2xl md:rounded-[2rem] border-2 transition-all flex items-center gap-3 md:gap-5 text-left h-16 md:h-24 ${formData.modules.includes(m)
                                                         ? 'bg-blue-600 border-blue-400 text-white shadow-xl translate-y-[-2px]'
                                                         : 'bg-gradient-to-br from-white to-blue-50 border-white text-slate-900 hover:border-blue-100'}`}
                                                 >
-                                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center shadow-inner ${formData.modules.includes(m) ? 'bg-white/20' : 'bg-blue-100'}`}><Settings size={18} className={formData.modules.includes(m) ? 'text-white' : 'text-blue-600'} /></div>
-                                                    <span className="text-[17px] font-medium transition-colors">{m}</span>
+                                                    <div className={`w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center shadow-inner shrink-0 ${formData.modules.includes(m) ? 'bg-white/20' : 'bg-blue-100'}`}>
+                                                        <Settings size={16} className={formData.modules.includes(m) ? 'text-white' : 'text-blue-600'} />
+                                                    </div>
+                                                    <span className="text-sm md:text-[17px] font-medium transition-colors leading-tight">{m}</span>
                                                 </button>
                                             ))}
                                         </div>
                                     </div>
                                 )}
                                 <div>
-                                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-5">General Modules</p>
-                                    <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
+                                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-3 md:mb-5">General Modules</p>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-3">
                                         {commonModules.map(m => (
                                             <button
-                                                key={m} type="button" onClick={() => updateFormData('modules', formData.modules.includes(m) ? formData.modules.filter(x => x !== m) : [...formData.modules, m])}
-                                                className={`p-4 rounded-xl border-2 text-[11px] font-medium transition-all text-center ${formData.modules.includes(m)
+                                                key={m} type="button"
+                                                onClick={() => updateFormData('modules', formData.modules.includes(m) ? formData.modules.filter(x => x !== m) : [...formData.modules, m])}
+                                                className={`p-3 md:p-4 rounded-xl border-2 text-[10px] md:text-[11px] font-medium transition-all text-center ${formData.modules.includes(m)
                                                     ? 'bg-slate-700 border-slate-600 text-white shadow-lg'
                                                     : 'bg-white border-white text-slate-900 hover:border-blue-50'}`}
                                             >
@@ -300,30 +331,59 @@ const NetSuitePricingCalculator = () => {
                     {/* STEP 4: CONTACT */}
                     {currentStep === 4 && (
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
-                            <div className="mb-10">
-                                <h2 className="text-4xl font-medium text-white mb-2">Final Review</h2>
-                                <p className="text-lg text-slate-400">Complete your details to receive the tailored quote.</p>
+                            <div className="mb-4 md:mb-10">
+                                <h2 className="text-xl md:text-4xl font-medium text-white mb-1 md:mb-2">Final Review</h2>
+                                <p className="text-xs md:text-lg text-slate-400">Complete your details to receive the tailored quote.</p>
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto lg:mx-0">
-                                <div className="space-y-2">
-                                    <label className="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Full Name</label>
-                                    <input type="text" value={formData.name} onChange={e => updateFormData('name', e.target.value)} placeholder="e.g. John Doe" className="w-full bg-white border border-white/20 p-5 rounded-2xl text-lg font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm" />
+                            <div className="grid grid-cols-2 gap-2.5 md:gap-6 max-w-4xl">
+                                {/* Full Name */}
+                                <div className="space-y-1 md:space-y-2">
+                                    <label className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-0.5">Full Name</label>
+                                    <input
+                                        type="text" value={formData.name}
+                                        onChange={e => updateFormData('name', e.target.value)}
+                                        placeholder="John Doe"
+                                        className="w-full bg-white border border-white/20 px-3 py-2.5 md:p-5 rounded-lg md:rounded-2xl text-sm md:text-lg font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm"
+                                    />
                                 </div>
-                                <div className="space-y-2">
-                                    <label className="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Company Name</label>
-                                    <input type="text" value={formData.companyname} onChange={e => updateFormData('companyname', e.target.value)} placeholder="e.g. AGSuite" className="w-full bg-white border border-white/20 p-5 rounded-2xl text-lg font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm" />
+                                {/* Company Name */}
+                                <div className="space-y-1 md:space-y-2">
+                                    <label className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-0.5">Company</label>
+                                    <input
+                                        type="text" value={formData.companyname}
+                                        onChange={e => updateFormData('companyname', e.target.value)}
+                                        placeholder="e.g. AGSuite"
+                                        className="w-full bg-white border border-white/20 px-3 py-2.5 md:p-5 rounded-lg md:rounded-2xl text-sm md:text-lg font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm"
+                                    />
                                 </div>
-                                <div className="space-y-2">
-                                    <label className="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Business Email</label>
-                                    <input type="email" value={formData.email} onChange={e => updateFormData('email', e.target.value)} placeholder="email@company.com" className="w-full bg-white border border-white/20 p-5 rounded-2xl text-lg font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm" />
+                                {/* Email */}
+                                <div className="space-y-1 md:space-y-2">
+                                    <label className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-0.5">Email</label>
+                                    <input
+                                        type="email" value={formData.email}
+                                        onChange={e => updateFormData('email', e.target.value)}
+                                        placeholder="email@company.com"
+                                        className="w-full bg-white border border-white/20 px-3 py-2.5 md:p-5 rounded-lg md:rounded-2xl text-sm md:text-lg font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm"
+                                    />
                                 </div>
-                                <div className="space-y-2">
-                                    <label className="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Phone Number</label>
-                                    <input type="tel" value={formData.phone} onChange={e => updateFormData('phone', e.target.value)} placeholder="+1 (555) 000-0000" className="w-full bg-white border border-white/20 p-5 rounded-2xl text-lg font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm" />
+                                {/* Phone */}
+                                <div className="space-y-1 md:space-y-2">
+                                    <label className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-0.5">Phone</label>
+                                    <input
+                                        type="tel" value={formData.phone}
+                                        onChange={e => updateFormData('phone', e.target.value)}
+                                        placeholder="+91 00000 00000"
+                                        className="w-full bg-white border border-white/20 px-3 py-2.5 md:p-5 rounded-lg md:rounded-2xl text-sm md:text-lg font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm"
+                                    />
                                 </div>
-                                <div className="col-span-1 md:col-span-2 space-y-2">
-                                    <label className="text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-1">Company Revenue (ARR)</label>
-                                    <select value={formData.revenue} onChange={e => updateFormData('revenue', e.target.value)} className="w-full bg-white border border-white/20 p-5 rounded-2xl text-lg font-medium text-slate-900 focus:border-blue-500 outline-none transition-all appearance-none cursor-pointer shadow-sm">
+                                {/* Revenue — full width */}
+                                <div className="col-span-2 space-y-1 md:space-y-2">
+                                    <label className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-0.5">Revenue (ARR)</label>
+                                    <select
+                                        value={formData.revenue}
+                                        onChange={e => updateFormData('revenue', e.target.value)}
+                                        className="w-full bg-white border border-white/20 px-3 py-2.5 md:p-5 rounded-lg md:rounded-2xl text-sm md:text-lg font-medium text-slate-900 focus:border-blue-500 outline-none transition-all appearance-none cursor-pointer shadow-sm"
+                                    >
                                         <option value="">Select Revenue Range</option>
                                         {revenueRanges.map(r => <option key={r} value={r}>{r}</option>)}
                                     </select>
@@ -334,32 +394,46 @@ const NetSuitePricingCalculator = () => {
                 </form>
             </main>
 
-            {/* Footer with Professional Blue Gradient Primary Action */}
-            <div className="relative z-10 px-12 py-8 border-t border-white/5 bg-slate-900/40 backdrop-blur-3xl flex items-center justify-between">
+            {/* ── FOOTER NAV ── */}
+            <div className="relative z-10 px-3 sm:px-6 md:px-12 py-3 md:py-8 border-t border-white/5 bg-slate-900/40 backdrop-blur-3xl flex items-center justify-between gap-2">
                 <button
                     type="button" onClick={prevStep} disabled={currentStep === 1}
-                    className="flex items-center gap-3 px-8 py-3 rounded-2xl text-xs font-medium uppercase tracking-widest text-slate-400 hover:text-white transition-all disabled:opacity-0"
+                    className="flex items-center gap-1 md:gap-3 px-3 sm:px-5 md:px-8 py-2 md:py-3 rounded-lg md:rounded-2xl text-[9px] md:text-xs font-medium uppercase tracking-widest text-slate-400 hover:text-white transition-all disabled:opacity-0 shrink-0"
                 >
-                    <ChevronLeft size={20} /> Previous
+                    <ChevronLeft size={15} /> <span className="hidden sm:inline">Previous</span>
                 </button>
-                <div className="flex items-center gap-5">
+
+                {/* Step dots — mobile only */}
+                <div className="flex sm:hidden items-center gap-1.5">
+                    {stepTitles.map((_, i) => (
+                        <div key={i} className={`rounded-full transition-all duration-300 ${currentStep === i + 1 ? 'w-4 h-1.5 bg-blue-500' : 'w-1.5 h-1.5 bg-white/20'}`} />
+                    ))}
+                </div>
+
+                <div className="flex items-center gap-2 md:gap-5 shrink-0">
                     {currentStep < totalSteps ? (
-                        <button type="button" onClick={nextStep} className="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-12 py-4 rounded-2xl font-bold uppercase tracking-widest hover:scale-105 shadow-xl shadow-blue-500/20 active:scale-95 transition-all flex items-center gap-3">
-                            Continue <ChevronRight size={18} />
+                        <button
+                            type="button" onClick={nextStep}
+                            className="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 sm:px-6 md:px-12 py-2 md:py-4 rounded-lg md:rounded-2xl font-bold uppercase tracking-wider hover:scale-105 shadow-lg shadow-blue-500/20 active:scale-95 transition-all flex items-center gap-1.5 md:gap-3 text-[10px] md:text-sm"
+                        >
+                            Continue <ChevronRight size={13} />
                         </button>
                     ) : (
-                        <button type="button" onClick={handleSubmit} className="bg-gradient-to-r from-[#0033ad] to-[#1e40af] text-white px-14 py-5 rounded-[2.2rem] font-bold uppercase tracking-[0.2em] hover:scale-105 shadow-2xl shadow-blue-600/30 active:scale-95 transition-all flex items-center gap-3">
-                            {submitting ? 'Submitting...' : 'Generate Quote'} <Sparkles size={20} />
+                        <button
+                            type="button" onClick={handleSubmit}
+                            className="bg-gradient-to-r from-[#0033ad] to-[#1e40af] text-white px-4 sm:px-8 md:px-14 py-2 md:py-5 rounded-xl md:rounded-[2.2rem] font-bold uppercase tracking-wider hover:scale-105 shadow-xl shadow-blue-600/30 active:scale-95 transition-all flex items-center gap-1.5 md:gap-3 text-[10px] md:text-sm"
+                        >
+                            {submitting ? 'Sending...' : 'Get Quote'} <Sparkles size={13} />
                         </button>
                     )}
                 </div>
             </div>
 
             <style jsx global>{`
-                .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+                .custom-scrollbar::-webkit-scrollbar { width: 4px; }
                 .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-                .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 20px; }
-                .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
+                .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 20px; }
+                .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
             `}</style>
         </div>
     );

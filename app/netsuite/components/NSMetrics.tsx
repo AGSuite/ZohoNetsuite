@@ -19,22 +19,42 @@ const logos = [
     { id: "pace", logo: "/images/assets/png-logos/pace_services-removebg-preview.png", name: "Pace", link: "#" },
 ];
 
-const NSMetrics = () => {
-    const { ref: sectionRef, inView: sectionInView } = useInView({
-        triggerOnce: true,
-        threshold: 0.1,
-    });
+// Reusable fade-up variant
+const fadeUp = {
+    hidden: { opacity: 0, y: 24 },
+    show: (delay: number = 0) => ({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.65, ease: "easeOut", delay },
+    }),
+};
 
+const NSMetrics = () => {
     const [isHovered, setIsHovered] = useState(false);
+
+    // Each block gets its OWN inView ref so it fires when it scrolls into view
+    const { ref: badgeRef, inView: badgeInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    const { ref: headlineRef, inView: headlineInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    const { ref: subtextRef, inView: subtextInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    const { ref: ctaRef, inView: ctaInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    const { ref: statsRef, inView: statsInView } = useInView({ triggerOnce: true, threshold: 0.15 });
+    const { ref: dashboardRef, inView: dashboardInView } = useInView({ triggerOnce: true, threshold: 0.1 });
+    const { ref: marqueeRef, inView: marqueeInView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
     // Split headline into words for animation
     const headlineText = "83 % of companies meet or exceed their";
     const highlightText = "ROI expectations";
     const words = headlineText.split(" ");
 
+    const stats = [
+        { value: "2.5X", label: "Average lift in productivity" },
+        { value: "31%", label: "Average cost reduction" },
+        { value: "25%", label: "Revenue growth rate" },
+        { value: "129%", label: "Average ROI increase" },
+    ];
+
     return (
         <section
-            ref={sectionRef}
             className="relative py-24 overflow-hidden font-['DM_Sans',sans-serif]"
             style={{
                 background: "radial-gradient(at 0% 82.58333206176758%, #4a055c 0px, transparent 50%), radial-gradient(at 97.58620673212512% 84.0833330154419%, #10011f 0px, transparent 50%), radial-gradient(at 10.73275845626305% 10.12499968210856%, #000000 0px, transparent 50%), radial-gradient(at 48.66379293902167% 89.91666634877524%, #1000ed 0px, transparent 50%), #021526"
@@ -59,9 +79,9 @@ const NSMetrics = () => {
 
                     {/* Badge */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.5 }}
+                        ref={badgeRef}
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={badgeInView ? { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut", delay: 0 } } : {}}
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-xl"
                     >
                         <div className="flex items-center gap-1">
@@ -76,23 +96,24 @@ const NSMetrics = () => {
 
                     {/* Headline with Word-by-Word Animation */}
                     <motion.h2
+                        ref={headlineRef}
                         className="text-4xl md:text-6xl lg:text-5xl font-semibold text-white mb-6 tracking-tight leading-tight"
                     >
                         {words.map((word, index) => (
                             <motion.span
                                 key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.4, delay: 0.1 + index * 0.1 }}
+                                initial={{ opacity: 0, y: 18 }}
+                                animate={headlineInView ? { opacity: 1, y: 0 } : {}}
+                                transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.1 }}
                                 className="inline-block mr-[0.3em]"
                             >
                                 {word}
                             </motion.span>
                         ))}
                         <motion.span
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.4, delay: 0.1 + words.length * 0.1 }}
+                            initial={{ opacity: 0, y: 18 }}
+                            animate={headlineInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.35, ease: "easeOut", delay: words.length * 0.07 }}
                             className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400"
                         >
                             {highlightText}
@@ -101,9 +122,10 @@ const NSMetrics = () => {
 
                     {/* Subtext */}
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.6, delay: 0.2 + words.length * 0.1 }}
+                        ref={subtextRef}
+                        initial={{ opacity: 0, y: 18 }}
+                        animate={subtextInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
                         className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto mb-10 font-medium leading-relaxed"
                     >
                         AGSuite Technologies empowers businesses to meet and exceed ROI expectations with Oracle NetSuite.
@@ -111,9 +133,10 @@ const NSMetrics = () => {
 
                     {/* CTA Buttons */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.6, delay: 0.3 + words.length * 0.1 }}
+                        ref={ctaRef}
+                        initial={{ opacity: 0, y: 18 }}
+                        animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-wrap items-center justify-center gap-4"
                     >
                         <button
@@ -130,98 +153,42 @@ const NSMetrics = () => {
                         </button>
                     </motion.div>
 
-                    {/* Statistics Above Dashboard */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.8, delay: 0.4 + words.length * 0.1 }}
-                        className="mt-16 mb-8"
-                    >
+                    {/* Statistics Above Dashboard — each stat animates one by one on scroll */}
+                    <div ref={statsRef} className="mt-16 mb-8">
                         <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12 max-w-6xl mx-auto px-6">
-                            {/* Stat 1 */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.8, delay: 1.0 + words.length * 0.1 }}
-                                className="flex items-center gap-3"
-                            >
-                                <svg className="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                                </svg>
-                                <div>
-                                    <div className="text-4xl font-bold text-white">2.5X</div>
-                                    <div className="text-sm text-slate-300">Average lift in productivity</div>
-                                </div>
-                            </motion.div>
-
-                            {/* Stat 2 */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.8, delay: 1.3 + words.length * 0.1 }}
-                                className="flex items-center gap-3"
-                            >
-                                <svg className="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                                </svg>
-                                <div>
-                                    <div className="text-4xl font-bold text-white">31%</div>
-                                    <div className="text-sm text-slate-300">Average cost reduction</div>
-                                </div>
-                            </motion.div>
-
-                            {/* Stat 3 */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.8, delay: 1.6 + words.length * 0.1 }}
-                                className="flex items-center gap-3"
-                            >
-                                <svg className="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                                </svg>
-                                <div>
-                                    <div className="text-4xl font-bold text-white">25%</div>
-                                    <div className="text-sm text-slate-300">Revenue growth rate</div>
-                                </div>
-                            </motion.div>
-
-                            {/* Stat 4 */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.8, delay: 1.9 + words.length * 0.1 }}
-                                className="flex items-center gap-3"
-                            >
-                                <svg className="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                                </svg>
-                                <div>
-                                    <div className="text-4xl font-bold text-white">129%</div>
-                                    <div className="text-sm text-slate-300">Average ROI increase</div>
-                                </div>
-                            </motion.div>
+                            {stats.map((stat, index) => (
+                                <motion.div
+                                    key={stat.value}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={statsInView ? { opacity: 1, y: 0 } : {}}
+                                    transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.18 }}
+                                    className="flex items-center gap-3"
+                                >
+                                    <svg className="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                                    </svg>
+                                    <div>
+                                        <div className="text-4xl font-bold text-white">{stat.value}</div>
+                                        <div className="text-sm text-slate-300">{stat.label}</div>
+                                    </div>
+                                </motion.div>
+                            ))}
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* NetSuite Dashboard Image with Side Images */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 60 }}
-                        animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 1, delay: 0.5 + words.length * 0.1, ease: "easeOut" }}
-                        className="relative"
-                    >
+                    <div ref={dashboardRef} className="relative">
                         {/* Glow Effect */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gradient-to-r from-blue-500/20 via-purple-500/15 to-cyan-500/10 blur-[100px] rounded-full -z-10" />
 
                         {/* Desktop / Tablet collage layout */}
                         <div className="hidden items-center justify-center md:flex">
-                            {/* Left images (come from right) */}
+                            {/* Left images */}
                             <motion.div
                                 className="hidden lg:block -mr-2"
-                                initial={{ x: 80, opacity: 0 }}
-                                animate={sectionInView ? { x: 0, opacity: 1 } : { x: 80, opacity: 0 }}
-                                transition={{ duration: 0.9, delay: 2.2 + words.length * 0.1, ease: "easeOut" }}
+                                initial={{ x: 60, opacity: 0 }}
+                                animate={dashboardInView ? { x: 0, opacity: 1 } : { x: 60, opacity: 0 }}
+                                transition={{ duration: 0.65, ease: "easeOut", delay: 0.15 }}
                             >
                                 <div className="relative h-40 w-32 overflow-hidden rounded-2xl shadow-lg lg:h-44 lg:w-36 xl:h-72 xl:w-30 translate-y-6">
                                     <Image
@@ -236,9 +203,9 @@ const NSMetrics = () => {
 
                             <motion.div
                                 className="hidden md:block -mr-3"
-                                initial={{ x: 90, opacity: 0 }}
-                                animate={sectionInView ? { x: 0, opacity: 1 } : { x: 90, opacity: 0 }}
-                                transition={{ duration: 0.9, delay: 2.4 + words.length * 0.1, ease: "easeOut" }}
+                                initial={{ x: 60, opacity: 0 }}
+                                animate={dashboardInView ? { x: 0, opacity: 1 } : { x: 60, opacity: 0 }}
+                                transition={{ duration: 0.65, ease: "easeOut", delay: 0.3 }}
                             >
                                 <div className="relative h-52 w-40 overflow-hidden rounded-2xl shadow-lg lg:h-60 lg:w-48 xl:h-94 xl:w-42 translate-y-2">
                                     <Image
@@ -254,9 +221,9 @@ const NSMetrics = () => {
                             {/* Main Dashboard with Hover Zoom */}
                             <motion.div
                                 className="relative z-20 shrink-0"
-                                initial={{ y: 60, opacity: 0, scale: 0.9 }}
-                                animate={sectionInView ? { y: 0, opacity: 1, scale: 1 } : { y: 60, opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.9, delay: 2.0 + words.length * 0.1, ease: "easeOut" }}
+                                initial={{ y: 40, opacity: 0, scale: 0.95 }}
+                                animate={dashboardInView ? { y: 0, opacity: 1, scale: 1 } : { y: 40, opacity: 0, scale: 0.95 }}
+                                transition={{ duration: 0.65, ease: "easeOut", delay: 0 }}
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}
                             >
@@ -277,12 +244,12 @@ const NSMetrics = () => {
                                 </motion.div>
                             </motion.div>
 
-                            {/* Right images (come from left) */}
+                            {/* Right images */}
                             <motion.div
                                 className="hidden md:block -ml-3"
-                                initial={{ x: -90, opacity: 0 }}
-                                animate={sectionInView ? { x: 0, opacity: 1 } : { x: -90, opacity: 0 }}
-                                transition={{ duration: 0.9, delay: 2.6 + words.length * 0.1, ease: "easeOut" }}
+                                initial={{ x: -60, opacity: 0 }}
+                                animate={dashboardInView ? { x: 0, opacity: 1 } : { x: -60, opacity: 0 }}
+                                transition={{ duration: 0.65, ease: "easeOut", delay: 0.3 }}
                             >
                                 <div className="relative h-52 w-40 overflow-hidden rounded-2xl shadow-lg lg:h-60 lg:w-48 xl:h-94 xl:w-42 translate-y-2">
                                     <Image
@@ -297,9 +264,9 @@ const NSMetrics = () => {
 
                             <motion.div
                                 className="hidden lg:block -ml-2"
-                                initial={{ x: -80, opacity: 0 }}
-                                animate={sectionInView ? { x: 0, opacity: 1 } : { x: -80, opacity: 0 }}
-                                transition={{ duration: 0.9, delay: 2.8 + words.length * 0.1, ease: "easeOut" }}
+                                initial={{ x: -60, opacity: 0 }}
+                                animate={dashboardInView ? { x: 0, opacity: 1 } : { x: -60, opacity: 0 }}
+                                transition={{ duration: 0.65, ease: "easeOut", delay: 0.15 }}
                             >
                                 <div className="relative h-40 w-32 overflow-hidden rounded-2xl shadow-lg lg:h-44 lg:w-36 xl:h-72 xl:w-30 translate-y-6">
                                     <Image
@@ -316,9 +283,9 @@ const NSMetrics = () => {
                         {/* Mobile: just the center dashboard */}
                         <motion.div
                             className="block md:hidden"
-                            initial={{ y: 40, opacity: 0, scale: 0.95 }}
-                            animate={sectionInView ? { y: 0, opacity: 1, scale: 1 } : { y: 40, opacity: 0, scale: 0.95 }}
-                            transition={{ duration: 0.9, delay: 2.0 + words.length * 0.1, ease: "easeOut" }}
+                            initial={{ y: 30, opacity: 0, scale: 0.97 }}
+                            animate={dashboardInView ? { y: 0, opacity: 1, scale: 1 } : { y: 30, opacity: 0, scale: 0.97 }}
+                            transition={{ duration: 0.65, ease: "easeOut" }}
                         >
                             <div className="relative max-w-3xl mx-auto">
                                 <Image
@@ -332,13 +299,14 @@ const NSMetrics = () => {
                                 />
                             </div>
                         </motion.div>
-                    </motion.div>
+                    </div>
 
                     {/* TRUSTED PARTNERS MARQUEE */}
                     <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.8, delay: 3.0 + words.length * 0.1 }}
+                        ref={marqueeRef}
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={marqueeInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.45, ease: "easeOut" }}
                         className="w-full border-t border-white/10 pt-8 mt-10"
                     >
                         <p className="mb-8 text-center text-2xl font-medium uppercase text-gray-200 tracking-wide">
