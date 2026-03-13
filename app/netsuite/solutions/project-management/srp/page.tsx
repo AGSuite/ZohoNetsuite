@@ -667,7 +667,21 @@ export default function NetSuiteSRPPage() {
       </section>
 
       {/* ── FAQ Section ──────────────────────────────────────────────────────── */}
-      <FAQ variant="netsuite" id="faq" />
+      <FAQ
+        variant="netsuite"
+        id="faq"
+        customSubtitle="Everything you need to know about NetSuite SRP — services resource planning, project costing, revenue recognition, and utilisation reporting."
+        customFaqs={[
+          { q: "What is NetSuite SRP (Services Resource Planning)?", a: "NetSuite SRP is NetSuite's native solution for professional services and project-based businesses — integrating project management, resource scheduling, time and expense capture, project billing, contract management, and real-time revenue recognition within the core NetSuite ERP. Unlike OpenAir (a separate product), SRP is fully embedded in NetSuite with no integration layer required." },
+          { q: "How does SRP differ from NetSuite OpenAir?", a: "SRP is the project management module built natively into NetSuite ERP — ideal for businesses where project billing and financial management need to be tightly integrated without a separate system. OpenAir is a dedicated, more feature-rich PSA platform suited for large professional services organisations with complex resource management, multi-currency billing, and advanced project analytics needs." },
+          { q: "How does SRP handle project budgets and cost tracking?", a: "SRP allows project managers to define detailed budgets by task, resource type, and cost category. Actual time and expense entries are tracked against budget in real time — with budget vs actual variance reports, cost overrun alerts, and project profitability dashboards visible to both project managers and finance teams." },
+          { q: "What billing types does NetSuite SRP support?", a: "SRP supports time and materials (T&M), fixed fee, milestone billing, retainer, and hybrid billing models. Billing schedules are defined at project or task level. Approved timesheets automatically populate draft invoices, with project managers reviewing billable hours before invoices are released to accounts receivable." },
+          { q: "How does SRP handle revenue recognition for services contracts?", a: "SRP includes ASC 606 / IFRS 15 compliant revenue recognition — supporting percentage of completion, milestone, and straight-line methods. Revenue schedules are generated automatically based on project delivery progress and contract terms, and post directly to the NetSuite general ledger for financial reporting." },
+          { q: "Can SRP manage resource availability and utilisation targets?", a: "Yes. SRP provides a resource availability view across all active projects — showing current bookings, remaining capacity, and utilisation rates by resource, team, and department. Utilisation targets can be set at role or individual level, with variance reporting to identify under or over-allocated resources." },
+          { q: "How does time and expense capture work for project teams using SRP?", a: "Team members submit weekly timesheets against specific projects and tasks through the NetSuite interface or mobile app. Expense reports with receipt capture are submitted similarly. Approval workflows route entries to project managers for billable time review, and to finance for expense reimbursement — all tracked in NetSuite." },
+          { q: "How long does a NetSuite SRP implementation take?", a: "A standard NetSuite SRP implementation covering project setup, billing rules, resource management, timesheet workflows, and revenue recognition typically takes 6 to 10 weeks for a single-entity professional services organisation. Multi-entity or multi-currency implementations with complex revenue recognition rules may take 10 to 16 weeks." },
+        ]}
+      />
 
       {/* ── CTA Banner ────────────────────────────────────────────────────────── */}
       <section className="py-16 bg-white">

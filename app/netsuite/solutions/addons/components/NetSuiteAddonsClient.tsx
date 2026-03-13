@@ -1,32 +1,31 @@
 "use client";
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence, useMotionValue, useSpring, useMotionTemplate } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence, useSpring, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
-import FlipNumbers from 'react-flip-numbers';
-import { Trophy, Users, Globe2, Rocket, Layout, Database, Share2, Code, ShieldCheck, HeartHandshake, ExternalLink, ArrowRight, Settings, Zap, CheckCircle2 } from 'lucide-react';
+import { Trophy, Users, Globe2, Rocket, Database, Share2, Code, ShieldCheck, HeartHandshake, ArrowRight, CheckCircle2, Zap, Settings } from 'lucide-react';
 import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
+
+function Counter({ value }: { value: number }) {
+  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
+  const spring = useSpring(0, { mass: 0.8, stiffness: 75, damping: 15 });
+  const display = useTransform(spring, (v) => Math.round(v));
+  useEffect(() => { if (inView) { spring.set(value); } else { spring.set(0); } }, [inView, spring, value]);
+  return <span ref={ref}><motion.span>{display}</motion.span></span>;
+}
 
 export default function NetSuiteAddonsClient() {
 
+  const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
 
-  // Mouse tracking for hero section
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const smoothMouseX = useSpring(mouseX, { damping: 50, stiffness: 400 });
-  const smoothMouseY = useSpring(mouseY, { damping: 50, stiffness: 400 });
-
-  const background = useMotionTemplate`radial-gradient(650px circle at ${smoothMouseX}px ${smoothMouseY}px, rgba(37, 99, 235, 0.15), transparent 80%)`;
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    const { clientX, clientY, currentTarget } = e;
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  };
+  const heroStats = [
+    { label: 'Certified Add-Ons', value: 25, suffix: '+', icon: CheckCircle2 },
+    { label: 'Integrations Built', value: 150, suffix: '+', icon: Settings },
+    { label: 'Years on SuiteCloud', value: 10, suffix: '+', icon: Trophy },
+    { label: 'Support Uptime', value: 99, suffix: '%', icon: Zap },
+  ];
 
 
 
@@ -99,132 +98,82 @@ export default function NetSuiteAddonsClient() {
   ];
 
   return (
-    <div className="min-h-screen selection:bg-gray-900 selection:text-white bg-linear-to-b from-[#000b21] via-[#000b21] to-[#0a0a0a]">
-      {/* Premium Hero Section */}
-      <section className="relative pt-12 pb-24 lg:pt-48 lg:pb-32 overflow-hidden text-white">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
-        </div>
+    <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
+      {/* Premium Hero Section — Smart Commission Style */}
+      <section className="relative min-h-screen overflow-hidden flex flex-col bg-gradient-to-br from-[#000814] via-[#000f22] to-[#001535]">
+        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-800/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '70px 70px' }} />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16 lg:items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex-1 max-w-2xl"
-            >
+        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-8">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+                className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15] tracking-tight">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">NetSuite Add-Ons &amp; Extensions</span>
+              </motion.h1>
+              <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }} className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full" />
+              <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }} className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8">
+                Extend the core power of NetSuite with certified connectors and applications — built for high-growth businesses on SuiteCloud.
+              </motion.p>
+              <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+                <Link href="/netsuite/contact" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl hover:scale-105">
+                  Explore Add-Ons
+                  <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }} className="flex items-center"><ArrowRight className="w-4 h-4" /></motion.span>
+                </Link>
+              </motion.div>
+            </motion.div>
 
-              <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight tracking-tight text-white">
-                NetSuite <span className="bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">Add-Ons</span>
-                <br />
-                & Extensions
-              </h1>
-              <p className="text-lg sm:text-xl font-medium leading-relaxed text-gray-300">
-                Extend the core power of NetSuite with our suite of tailor-made connectors and applications designed for high-growth businesses.
-              </p>
-
-              <div className="mt-10 flex flex-wrap gap-4">
-                <motion.div
-                  className="relative inline-flex group/btn-wrap"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {/* Vibrant Gradient Background Glow */}
-                  <div className="absolute inset-0 rounded-2xl bg-linear-to-r from-blue-600 via-indigo-500 to-purple-600 opacity-40 blur-xl group-hover/btn-wrap:opacity-70 transition duration-1000" />
-
-                  <Link
-                    href="/netsuite/contact"
-                    className="relative flex items-center gap-4 px-6 py-3 md:px-10 md:py-5 bg-white/10 backdrop-blur-md text-white font-bold rounded-2xl transition shadow-2xl overflow-hidden group/btn border border-white/20 hover:bg-linear-to-r hover:from-blue-600 hover:to-indigo-700 hover:border-transparent transition-all duration-500"
-                  >
-                    {/* Unique Moving Circle on Hover */}
-                    <motion.div
-                      className="absolute top-1/2 left-0 w-16 h-16 bg-white/20 rounded-full -translate-y-1/2 pointer-events-none blur-xl"
-                      initial={{ x: "-100%", opacity: 0 }}
-                      whileHover={{ x: "300%", opacity: 1 }}
-                      transition={{ duration: 0.8, ease: "easeInOut" }}
-                    />
-
-                    {/* Shimmer Layers */}
-                    <div className="absolute inset-0 z-0 pointer-events-none">
-                      <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:animate-[sweep_2s_ease-in-out_infinite]" />
+            <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
+              <div className="relative w-[88%] ml-auto">
+                <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
+                  <Image src="/images/people/fourteam.webp" alt="NetSuite Add-Ons" fill className="object-cover object-center" priority />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.6 }}
+                    className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #1e3a8a, #2563eb)' }}>
+                      <Settings className="w-5 h-5 text-white" />
                     </div>
-
-                    <span className="relative z-10 text-sm md:text-lg uppercase tracking-wider">Get Started Now</span>
-
-                    {/* Circle Wrapper for Arrow */}
-                    <div className="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-white/10 border border-white/20 transition-all duration-300 group-hover/btn:bg-white group-hover/btn:text-blue-600 group-hover/btn:scale-110">
-                      <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
+                    <div>
+                      <p className="text-gray-900 text-sm font-bold leading-tight">SuiteCloud Extension Platform</p>
+                      <p className="text-gray-500 text-xs mt-0.5">India Localization · Smart Commission · Shopify · More</p>
                     </div>
-                  </Link>
+                  </motion.div>
+                </div>
+                <motion.div initial={{ opacity: 0, x: -20, y: -10 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ delay: 0.8, duration: 0.6 }}
+                  className="absolute -top-5 -left-10 flex items-center gap-3.5 bg-white rounded-2xl px-4 py-3 shadow-2xl border border-gray-100">
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #1e3a8a, #2563eb)' }}>
+                    <CheckCircle2 className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-gray-900 text-[13px] font-bold leading-tight whitespace-nowrap">25+ Certified Add-Ons</p>
+                    <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">Native · Reliable · Scalable</p>
+                  </div>
                 </motion.div>
               </div>
             </motion.div>
+          </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="flex-1 relative w-full h-[450px] max-w-[550px] z-20 lg:-mt-16"
-            >
-              <div className="w-full h-full rounded-2xl bg-linear-to-br from-blue-600/20 to-indigo-900/20 overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(37,99,235,0.2)] relative group">
-                <Image
-                  src="/images/lap/lap1.webp"
-                  alt="NetSuite Add-Ons & Extensions"
-                  fill
-                  priority
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-[#000b21]/60 to-transparent" />
-              </div>
-
-              {/* Top Right Floating Card */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6 }}
-                className="absolute top-10 -right-6 lg:-right-12 bg-white/90 backdrop-blur-3xl border border-white/30 p-4 rounded-2xl shadow-2xl max-w-[200px] z-20 group/card"
-              >
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover/card:scale-110 transition-transform">
-                    <CheckCircle2 className="w-6 h-6 text-white" strokeWidth={2.5} />
-                  </div>
-                  <div className="text-center">
-                    <h4 className="text-xl font-bold text-gray-900 leading-none">25+</h4>
-                    <p className="text-[10px] font-bold text-blue-600 uppercase tracking-widest mt-1">Certified Apps</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Center Bottom Information Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-white/95 backdrop-blur-xl py-6 px-10 rounded-[1.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] w-full max-w-[420px] z-30 border border-white/60 group/bottom-card"
-              >
-                <div className="flex items-center gap-5">
-                  <div className="relative flex-shrink-0 scale-110">
-                    <div className="absolute inset-0 bg-blue-600 blur-lg opacity-25 group-hover/bottom-card:opacity-40 transition-opacity" />
-                    <div className="relative w-14 h-14 bg-linear-to-br from-blue-600 to-indigo-600 rounded-[2.5rem] flex items-center justify-center text-white shadow-xl">
-                      <Rocket size={28} strokeWidth={2.5} />
+          <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.8 }} className="border-t border-white/15 pt-5 sm:pt-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+              {heroStats.map((s, i) => (
+                <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 + i * 0.12 }} className="text-center group">
+                  <div className="flex justify-center mb-2 sm:mb-3">
+                    <div className="p-2 sm:p-3 bg-blue-700/20 rounded-xl group-hover:bg-blue-700/30 transition-colors">
+                      <s.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 group-hover:scale-110 transition-transform" />
                     </div>
                   </div>
-                  <div className="text-left">
-                    <p className="text-gray-900 text-xl font-bold leading-tight tracking-tight">
-                      Maximize Your ROI
-                    </p>
-                    <p className="text-blue-600 text-[11px] font-black uppercase tracking-[0.2em] mt-1.5 opacity-80">
-                      Certified SuiteCloud Apps
-                    </p>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-1 flex items-center justify-center gap-1">
+                    <Counter value={s.value} /><span className="text-blue-400 text-2xl sm:text-3xl md:text-4xl">{s.suffix}</span>
                   </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          </div>
+                  <div className="text-gray-400 font-medium text-xs sm:text-sm px-2">{s.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
+
 
 
 

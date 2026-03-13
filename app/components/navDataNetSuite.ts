@@ -1,4 +1,5 @@
 import {
+    Heart,
     Megaphone,
     HelpCircle,
     Briefcase,
@@ -73,6 +74,12 @@ export const navItemsNetSuite: NavSection[] = [
                 href: "/netsuite/about-us#offices",
                 description: "Explore our global presence and office locations.",
                 icon: Building2
+            },
+            {
+                label: "Life at AGSuite",
+                href: "/netsuite/life-at-agsuite",
+                description: "Discover our vibrant culture, events, and work environment.",
+                icon: Heart
             },
         ],
     },
@@ -231,11 +238,11 @@ export const navItemsNetSuite: NavSection[] = [
     {
         title: 'Insights',
         children: [
-            { label: 'Blogs', href: '/netsuite/blog', description: 'Latest posts & insights.', icon: MessageSquare },
-            { label: 'Case Study', href: '/netsuite/casestudy', description: 'Our success stories.', icon: BookOpen },
-            { label: 'Events', href: '/netsuite/insights/events', description: 'Webinars & workshops.', icon: Calendar },
-            { label: 'Pricing Calculator', href: '/netsuite-calculator', description: 'Estimate your NetSuite ROI.', icon: Calculator },
-            { label: 'Awards & Achievements', href: '/netsuite/insights/awards', description: 'Recognition & milestones.', icon: Trophy },
+            { label: 'Blogs', href: '/netsuite/blogs', description: 'Latest posts & insights.', icon: MessageSquare },
+            { label: 'Case Studies', href: '/netsuite/case-studies', description: 'Our success stories.', icon: BookOpen },
+            { label: 'Events', href: '/netsuite/insights#events', description: 'Webinars & workshops.', icon: Calendar },
+            { label: 'Pricing Calculator', href: '/netsuite/insights#pricing-calculator', description: 'Estimate your NetSuite ROI.', icon: Calculator },
+            { label: 'Awards & Achievements', href: '/netsuite/insights#awards', description: 'Recognition & milestones.', icon: Trophy },
         ],
     },
 
@@ -245,7 +252,7 @@ export const navItemsNetSuite: NavSection[] = [
         children: [
             { label: 'Careers', href: '/netsuite/contact/careers', description: 'Join our growing team.', icon: Briefcase },
             { label: 'Support', href: '/netsuite/contact/support', description: '24/7 client support.', icon: Headset },
-            { label: 'Request Quote', href: '/netsuite/contact/quote', description: 'Get a project estimate.', icon: FileText },
+            { label: 'Request Quote', href: '/netsuite/contact/request-quote', description: 'Get a project estimate.', icon: FileText },
             { label: 'Free Consultation', href: '/netsuite/free-consultation', description: 'Talk to an expert.', icon: HelpCircle }
         ],
     },

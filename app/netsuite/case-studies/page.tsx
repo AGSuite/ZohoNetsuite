@@ -19,35 +19,44 @@ const NSCaseStudiesGrid = dynamic(() => import('./components/NSCaseStudiesGrid')
 export default function CaseStudiesPage() {
     return (
         <div className="relative bg-slate-50 min-h-screen">
-            {/* Custom Case Studies Hero Section */}
-            <section className="relative w-full min-h-[70vh] flex flex-col justify-center bg-gradient-to-br from-[#0a0a0a] via-[#000d2b] to-[#001f5c] text-white pt-32 pb-40 md:pb-48 overflow-hidden font-['DM_Sans',sans-serif]">
+            {/* ── Case Studies Hero ── */}
+            <section className="relative w-full flex flex-col justify-center bg-gradient-to-br from-[#0a0a0a] via-[#000d2b] to-[#001f5c] text-white py-40 overflow-hidden font-['DM_Sans',sans-serif]">
                 {/* Background Image with Overlay */}
                 <div className="absolute inset-0 w-full h-full">
                     <Image
-                        src="/images/people/laptopmen.webp"
+                        src="/images/people/fourteam.webp"
                         alt="Case Studies Background"
                         fill
                         className="object-cover opacity-20 mix-blend-luminosity"
                         priority
                     />
-                    {/* Dark gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/50" />
                 </div>
 
-                <div className="max-w-[1400px] w-full mx-auto px-6 lg:px-12 relative z-10 text-center flex flex-col items-center">
-                    <span className="text-blue-300 font-bold tracking-widest uppercase text-xs md:text-sm mb-4 block">
+                {/* Grid overlay */}
+                <div className="absolute inset-0 opacity-[0.07] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)', backgroundSize: '56px 56px' }} />
+                {/* Glow blobs */}
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[120px] pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-indigo-600/15 rounded-full blur-[100px] pointer-events-none" />
+
+                <div className="relative z-10 max-w-4xl w-full mx-auto px-6 text-center flex flex-col items-center">
+                    <span className="inline-flex items-center px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white font-medium tracking-widest uppercase text-xs md:text-sm mb-6 backdrop-blur-sm shadow-sm hover:bg-white/15 transition-colors">
                         Customer Success Stories
                     </span>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight shadow-sm max-w-5xl">
-                        Real Results with <br className="hidden md:block" /> Oracle NetSuite
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-tight mb-6">
+                        From Complexity to Clarity:{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-400">
+                            Scaling Ambitious Brands
+                        </span>
                     </h1>
-                    <p className="text-lg md:text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed font-medium">
-                        Explore our library of case studies to see how we've helped businesses across industries scale, automate processes, and achieve real-time visibility with the world's #1 Cloud ERP.
+                    <p className="text-lg md:text-xl text-blue-100/80 max-w-2xl mx-auto leading-relaxed font-medium">
+                        Discover how industry leaders are transforming their operations and driving remarkable growth with Oracle NetSuite and AGSuite.
                     </p>
                 </div>
             </section>
 
-            <div className="pb-20 relative z-20 -mt-28 md:-mt-32">
+            {/* Filter + Grid — sits naturally below hero, no negative margin */}
+            <div className="pb-20 relative z-20">
                 <NSCaseStudiesGrid />
             </div>
         </div>

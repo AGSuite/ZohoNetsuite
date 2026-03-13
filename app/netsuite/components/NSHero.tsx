@@ -56,27 +56,23 @@ export const NSHero: React.FC<NSHeroProps> = () => {
               </div>
 
               <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div className="max-w-2xl lg:-ml-12">
-                  <h1 className="text-3xl  sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-gray-900 whitespace-nowrap">
-                    NetSuite ERP Solutions
+                <div className="max-w-3xl lg:-ml-12">
+                  <h1 className="text-3xl sm:text-4xl lg:text-6xl font-medium leading-tight tracking-tight bg-linear-to-r from-blue-600 via-blue-800 to-blue-900 bg-clip-text text-transparent pb-1">
+                    Empower Your Global Operations with the World's #1 NetSuite ERP Solution
                   </h1>
 
-                  <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight text-gray-900">
-                    For Modern Businesses
-                  </h2>
-
-                  <p className="mt-2 text-base sm:text-lg lg:text-xl font-normal leading-relaxed text-gray-700">
-                    Run finance, operations & reporting in a single connected platform.
+                  <p className="mt-6 text-base sm:text-lg lg:text-xl font-normal leading-relaxed text-gray-700 max-w-2xl">
+                    Run your entire finance, operations, and reporting on a single, seamlessly connected cloud platform.
                   </p>
 
-                  <div className="mt-5 relative inline-flex group">
+                  <div className="mt-8 relative inline-flex group">
                     <div className="absolute inset-0 rounded-xl bg-linear-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
-                    <button
-                      suppressHydrationWarning={true}
-                      className="relative px-8 py-3.5 rounded-xl bg-gray-900 text-white font-semibold shadow-xl"
+                    <Link
+                      href="/netsuite/solutions/core-erp/erp"
+                      className="relative px-10 py-4 rounded-xl bg-gray-950 text-white font-bold shadow-xl flex items-center gap-2 hover:scale-[1.02] transition-transform"
                     >
-                      Explore NetSuite ERP
-                    </button>
+                      Experience NetSuite ERP
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -95,10 +91,9 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                 <HeroSlide
                   isActive={activeIndex === 0}
                   bg="/images/Background/herobluebg.webp"
-                  title="NetSuite ERP Solutions"
-                  subtitle="For Modern Businesses"
-                  desc="Run finance, operations & reporting in a single connected platform."
-                  cta="Explore NetSuite ERP"
+                  title="Empower Your Global Operations with the World's #1 NetSuite ERP Solution"
+                  desc="Run your entire finance, operations, and reporting on a single, seamlessly connected cloud platform."
+                  cta="Experience NetSuite ERP"
                   link="/netsuite/solutions/core-erp/erp"
                   image="/images/Dashboard/netsuitedash2.webp"
                   priority={true}
@@ -114,12 +109,10 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   isActive={activeIndex === 1}
                   customBg={
                     <div className="absolute inset-0 overflow-hidden bg-slate-50">
-                      {/* Same Corner Gradients for shared design language */}
                       <div className="absolute -top-[15%] -left-[10%] w-[70%] h-[70%] rounded-full bg-gradient-to-br from-blue-300/50 via-purple-300/40 to-transparent blur-[140px]" />
                       <div className="absolute -bottom-[15%] -right-[10%] w-[70%] h-[70%] rounded-full bg-gradient-to-tl from-emerald-300/50 via-cyan-300/40 to-transparent blur-[140px]" />
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] rounded-full bg-blue-100/60 blur-[100px]" />
 
-                      {/* Same consistent Floating Particles */}
                       <motion.div
                         animate={{
                           y: [0, -30, 0],
@@ -138,9 +131,8 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                       />
                     </div>
                   }
-                  title="AI-Powered NetSuite"
-                  subtitle="Intelligence Meets Efficiency"
-                  desc="Harness AI to automate insights, predict trends, and drive smarter business decisions."
+                  title="Unlock Predictive Intelligence with AI-Powered NetSuite Automation"
+                  desc="Harness the power of AI to automate complex insights and drive smarter business decisions."
                   cta="Discover AI Solutions"
                   link="/netsuite/solutions/analytics/ai"
                   customVisual={<NSCircularDesign />}
@@ -153,14 +145,12 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                 <HeroSlide
                   isActive={activeIndex === 2}
                   bg="/images/Background/herobg5.png"
-                  title="CFO Automation"
-                  subtitle="Smarter Finance. Faster Growth"
-                  desc="Automate closing, approvals & compliance—focus on strategy."
-                  cta="Upgrade CFO Operations"
+                  title="Master Your Financial Future with Smart CFO Automation and Real-Time Scale"
+                  desc="Automate complex closing, approvals, and compliance so your finance team can focus on strategy."
+                  cta="Upgrade Financial Ops"
                   link="/netsuite/solutions/core-erp/accounting"
                   customVisual={
                     <div className="relative w-full flex justify-center lg:justify-end">
-                      {/* Premium Multi-colored glow shadow */}
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[130%] -z-10 blur-[130px] opacity-30 select-none pointer-events-none">
                         <div className="absolute inset-0 animate-pulse">
                           <div className="absolute top-0 left-0 w-[80%] h-[80%] bg-pink-300 rounded-full blur-[60px]" />
@@ -189,12 +179,10 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   isActive={activeIndex === 3}
                   customBg={
                     <div className="absolute inset-0 overflow-hidden bg-slate-50">
-                      {/* Corner Gradients - Darker & Broader for better visibility */}
                       <div className="absolute -top-[15%] -left-[10%] w-[70%] h-[70%] rounded-full bg-gradient-to-br from-blue-50/10 via-purple-50/10 to-transparent blur-[140px]" />
                       <div className="absolute -bottom-[15%] -right-[10%] w-[70%] h-[70%] rounded-full bg-gradient-to-tl from-emerald-50/10 via-cyan-50/10 to-transparent blur-[140px]" />
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] rounded-full bg-blue-50/10 blur-[100px]" />
 
-                      {/* Prominent Wavy Lines Design */}
                       <svg className="absolute inset-0 w-full h-full opacity-60" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M-100 300C200 200 400 400 700 300C1000 200 1200 400 1500 300" stroke="url(#wave-grad-2)" strokeWidth="2.5" strokeDasharray="2 10" />
                         <path d="M-100 450C200 350 400 550 700 450C1000 350 1200 550 1500 450" stroke="url(#wave-grad-1)" strokeWidth="2" strokeDasharray="1 20" />
@@ -215,7 +203,6 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                         </defs>
                       </svg>
 
-                      {/* Animated Floating Particles */}
                       <motion.div
                         animate={{
                           y: [0, -30, 0],
@@ -234,15 +221,12 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                       />
                     </div>
                   }
-                  // bg="/images/Background/3.png"
-                  title="Maximize NetSuite Efficiency"
-                  subtitle="Faster Data. Smarter Decisions"
-                  desc="Optimize performance, automate workflows, and eliminate bottlenecks."
+                  title="Accelerate Your Growth with Expert NetSuite Managed Services and Efficiency"
+                  desc="Optimize performance, automate custom workflows, and scale your business without limitations."
                   cta="Optimize Your NetSuite"
                   link="/netsuite/services/managed-services"
                   customVisual={
                     <div className="relative w-full h-full flex items-center justify-center p-4">
-                      {/* Main Laptop Image */}
                       <Image
                         src="/images/lap/lap10_11zon.webp"
                         alt="NetSuite Dashboard"
@@ -251,8 +235,6 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                         className="w-[135%] max-w-none object-contain filter drop-shadow-[0_20px_30px_rgba(219,39,119,0.4)] drop-shadow-[0_30px_60px_rgba(147,51,234,0.3)] -mr-[1%] transition-transform duration-700 hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 60vw"
                       />
 
-                      {/* Floating Professional Cards */}
-                      {/* Top Left Card */}
                       <motion.div
                         initial={{ opacity: 0, x: -30, y: -20 }}
                         animate={{ opacity: 1, x: 0, y: 0 }}
@@ -283,7 +265,6 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                         <span className="text-[15px] font-bold text-gray-800 leading-tight">Operations, Financials, Analytics</span>
                       </motion.div>
 
-                      {/* Bottom Center Card */}
                       <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -291,7 +272,6 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                         className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[115%] bg-white p-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-40 flex items-center gap-5 border border-gray-50"
                       >
                         <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#f4f9eb] flex items-center justify-center shadow-inner">
-                          {/* "Inverted Comma" / Quote Icon */}
                           <svg className="w-8 h-8 text-[#95C93D]" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C20.1216 16 21.017 16.8954 21.017 18V21C21.017 22.1046 20.1216 23 19.017 23H16.017C14.9124 23 14.017 22.1046 14.017 21ZM14.017 11L14.017 8C14.017 6.89543 14.9124 6 16.017 6H19.017C20.1216 6 21.017 6.89543 21.017 8V11C21.017 12.1046 20.1216 13 19.017 13H16.017C14.9124 13 14.017 12.1046 14.017 11ZM3.017 21L3.017 18C3.017 16.8954 3.91243 16 5.01699 16H8.01699C9.12156 16 10.017 16.8954 10.017 18V21C10.017 22.1046 9.12156 23 8.01699 23H5.01699C3.91243 23 3.017 22.1046 3.017 21ZM3.017 11L3.017 8C3.017 6.89543 3.91243 6 5.01699 6H8.01699C9.12156 6 10.017 6.89543 10.017 8V11C10.017 12.1046 9.12156 13 8.01699 13H5.01699C3.91243 13 3.017 12.1046 3.017 11Z" />
                           </svg>
@@ -366,19 +346,12 @@ const HeroSlide = ({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight whitespace-nowrap ${textColor === 'dark'
-                  ? "bg-linear-to-r from-gray-950 via-slate-900 to-gray-700 bg-clip-text text-transparent"
+                <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight pb-1 ${textColor === 'dark'
+                  ? "bg-linear-to-r from-blue-950 via-blue-800 to-blue-900 bg-clip-text text-transparent"
                   : "text-white"
                   }`}>
                   {title}
                 </h1>
-
-                <h2 className={`mt-2 text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight ${textColor === 'dark'
-                  ? "bg-linear-to-r from-blue-700 via-violet-700 to-fuchsia-700 bg-clip-text text-transparent"
-                  : "text-white"
-                  }`}>
-                  {subtitle}
-                </h2>
 
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}

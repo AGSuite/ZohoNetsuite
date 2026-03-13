@@ -1,67 +1,27 @@
 "use client";
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence, useSpring, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
-import FlipNumbers from 'react-flip-numbers';
-import { Trophy, Users, Globe2, Rocket, Layout, Database, Share2, Code, ShieldCheck, HeartHandshake, ExternalLink, ArrowRight, CheckCircle2 } from 'lucide-react';
+import {
+  Trophy, Users, Globe2, Rocket, Layout, Database, Share2, Code, ShieldCheck,
+  HeartHandshake, ArrowRight, CheckCircle2, BarChart3, ShoppingCart, Globe,
+  TrendingUp, Package, Layers, DollarSign, BookOpen, Star, ChevronDown, ChevronRight, GraduationCap, Wrench, Settings
+} from 'lucide-react';
 import ContactFormDesign4 from '../../components/ContactFormDesign4';
 
-export default function NetSuiteSolutionsClient() {
-  const { ref: statsRef, inView: statsInView } = useInView({
-    triggerOnce: false,
-    threshold: 0.2,
-  });
+function Counter({ value }: { value: number }) {
+  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
+  const spring = useSpring(0, { mass: 0.8, stiffness: 75, damping: 15 });
+  const display = useTransform(spring, (v) => Math.round(v));
+  useEffect(() => { if (inView) { spring.set(value); } else { spring.set(0); } }, [inView, spring, value]);
+  return <span ref={ref}><motion.span>{display}</motion.span></span>;
+}
 
-  const netSuiteSolutions = [
-    {
-      title: "CRM",
-      description: "Replace spreadsheets with automated processes to improve customer responsiveness.",
-      link: "/netsuite/solutions/crm"
-    },
-    {
-      title: "SRP",
-      description: "Improve cash flow and eliminate revenue leakage by completing projects within timelines.",
-      link: "/netsuite/solutions/srp"
-    },
-    {
-      title: "Business Intelligence",
-      description: "Perform actionable analysis and gain operational insights across departments with SuiteAnalytics.",
-      link: "/netsuite/solutions/business-intelligence"
-    },
-    {
-      title: "Enterprise Resource Planning (ERP)",
-      description: "Automate core processes and gain real-time visibility into operational and financial performance.",
-      link: "/netsuite/solutions/erp"
-    },
-    {
-      title: "Accounting Software",
-      description: "Transform general ledger management, optimize AR/AP, and streamline tax management.",
-      link: "/netsuite/solutions/accounting"
-    },
-    {
-      title: "Global Business Management",
-      description: "Manage multiple subsidiaries from a single cloud solution, ensuring standardized processes globally.",
-      link: "/netsuite/solutions/global"
-    },
-    {
-      title: "OpenAir",
-      description: "Leading cloud-based PSA solution that ensures timely project delivery through enhanced resource utilization.",
-      link: "/netsuite/solutions/openair"
-    },
-    {
-      title: "SuiteSuccess",
-      description: "Complete suite of ERP, CRM, PSA, commerce, HR, and BI solutions on the NetSuite cloud platform.",
-      link: "/netsuite/solutions/suitesuccess"
-    },
-    {
-      title: "E-Commerce Solutions",
-      description: "Unify business operations and commerce applications for personalized shopping experiences.",
-      link: "/netsuite/solutions/ecommerce"
-    }
-  ];
+export default function NetSuiteSolutionsClient() {
+  const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
 
   const stats = [
     { label: 'Enterprises Served', value: 180, suffix: '+', icon: Trophy },
@@ -70,473 +30,414 @@ export default function NetSuiteSolutionsClient() {
     { label: 'Years Experience', value: 15, suffix: '+', icon: Rocket },
   ];
 
+  // All NetSuite Solutions with full detail
+  const solutions = [
+    {
+      category: "Core ERP",
+      title: "Enterprise Resource Planning (ERP)",
+      subtitle: "The Foundation of Your Business",
+      description: "NetSuite ERP is the world's #1 cloud-based business management solution. Automate core processes — from financials and order management to supply chain and warehousing — and gain real-time visibility across your entire organization in a single unified platform.",
+      highlights: [
+        "End-to-end financial management",
+        "Real-time operational dashboards",
+        "Order-to-cash automation",
+        "Global multi-subsidiary support",
+      ],
+      link: "/netsuite/solutions/core-erp/erp",
+      image: "/images/netsuiteimages/solutions/NetsuiteERP.webp",
+      icon: Database,
+      tag: "Most Popular",
+    },
+    {
+      category: "Core ERP",
+      title: "NetSuite Accounting Software",
+      subtitle: "Intelligent Financial Management",
+      description: "Transform your accounting operations with NetSuite's powerful cloud-based accounting software. Automate your general ledger, AR/AP, tax management, and multi-currency financial close — all with built-in compliance and audit trails.",
+      highlights: [
+        "Automated accounts payable & receivable",
+        "Multi-currency & multi-tax compliance",
+        "Real-time financial reporting",
+        "One-click financial close",
+      ],
+      link: "/netsuite/solutions/core-erp/accounting",
+      image: "/images/netsuiteimages/solutions/netsuiteaccounting.webp",
+      icon: DollarSign,
+      tag: "Finance",
+    },
+    {
+      category: "Core ERP",
+      title: "Global Business Management",
+      subtitle: "Scale Without Borders",
+      description: "Manage your entire global enterprise from a single platform. NetSuite OneWorld supports multi-subsidiary, multi-currency, and multi-language operations — giving you consolidated visibility and standardised processes across every region.",
+      highlights: [
+        "Multi-subsidiary consolidation",
+        "190+ currency support",
+        "Local compliance per country",
+        "Real-time intercompany eliminations",
+      ],
+      link: "/netsuite/solutions/core-erp/global-business",
+      image: "/images/netsuiteimages/solutions/NetsuiteGlobal.webp",
+      icon: Globe,
+      tag: "Global",
+    },
+    {
+      category: "Customer Management",
+      title: "NetSuite CRM",
+      subtitle: "360° Customer Relationship Management",
+      description: "Replace disconnected tools with a single CRM built on top of your ERP. Manage leads, opportunities, cases, and marketing campaigns — all with complete visibility into customer financials, orders, and support history in one place.",
+      highlights: [
+        "Lead-to-quote-to-cash in one system",
+        "Sales force automation",
+        "Marketing campaign management",
+        "360° customer view with financials",
+      ],
+      link: "/netsuite/solutions/customer-management/crm",
+      image: "/images/netsuiteimages/solutions/NetsuiteCRM.webp",
+      icon: Users,
+      tag: "CRM",
+    },
+    {
+      category: "Project Management",
+      title: "NetSuite SRP",
+      subtitle: "Services Resource Planning",
+      description: "Improve cash flow and eliminate revenue leakage by completing projects on time and within budget. NetSuite SRP connects project management, resource scheduling, time and expense tracking, and project billing in one seamless cloud solution.",
+      highlights: [
+        "Project-based billing & revenue recognition",
+        "Resource utilization tracking",
+        "Real-time project profitability",
+        "Integrated time & expense capture",
+      ],
+      link: "/netsuite/solutions/project-management/netsuite-srp",
+      image: "/images/netsuiteimages/solutions/NetsuiteSRP.webp",
+      icon: Rocket,
+      tag: "Professional Services",
+    },
+    {
+      category: "Project Management",
+      title: "NetSuite OpenAir (SuiteProject Pro)",
+      subtitle: "Enterprise PSA for Professional Services",
+      description: "The leading cloud-based PSA solution for services organizations. OpenAir ensures timely project delivery through enhanced resource utilization, sophisticated project accounting, and revenue forecasting — purpose-built for services-led businesses.",
+      highlights: [
+        "Advanced resource management",
+        "Sophisticated project accounting",
+        "Revenue & utilization forecasting",
+        "Client portal for collaboration",
+      ],
+      link: "/netsuite/solutions/project-management/openair",
+      image: "/images/lap/lap9_11zon.webp",
+      icon: Layers,
+      tag: "PSA",
+    },
+    {
+      category: "Analytics",
+      title: "NetSuite Business Intelligence",
+      subtitle: "Data-Driven Decision Making",
+      description: "Transform raw business data into powerful, actionable insights. SuiteAnalytics provides built-in reporting, dashboards, and ad-hoc analysis across every NetSuite module — empowering every team to drive performance with real-time data.",
+      highlights: [
+        "Pre-built KPI dashboards",
+        "Ad-hoc reporting & analysis",
+        "Cross-module data exploration",
+        "Scheduled automated reports",
+      ],
+      link: "/netsuite/solutions/analytics/bi",
+      image: "/images/lap/lap8_11zon.webp",
+      icon: BarChart3,
+      tag: "Analytics",
+    },
+    {
+      category: "Analytics",
+      title: "NetSuite Analytics Warehouse",
+      subtitle: "Enterprise Data Warehousing",
+      description: "Unlock the full power of your NetSuite data with the dedicated Analytics Warehouse. Connect NetSuite data with external sources for deep, enterprise-scale analysis — with pre-built connectors to Tableau, Power BI, and leading BI platforms.",
+      highlights: [
+        "Pre-built data models for NetSuite",
+        "Connect external data sources",
+        "Power BI & Tableau connectors",
+        "Historical trend analysis",
+      ],
+      link: "/netsuite/solutions/analytics/warehouse",
+      image: "/images/lap/lap7_11zon.webp",
+      icon: Database,
+      tag: "Data Warehouse",
+    },
+    {
+      category: "Analytics",
+      title: "NetSuite AI & Machine Learning",
+      subtitle: "Intelligent Automation",
+      description: "Harness the power of AI built natively into NetSuite. From intelligent forecasting to anomaly detection and process recommendations — NetSuite's AI capabilities help you predict, automate, and optimise across every business function.",
+      highlights: [
+        "AI-driven cash flow forecasting",
+        "Anomaly detection for AP/AR",
+        "Intelligent process recommendations",
+        "Predictive analytics dashboards",
+      ],
+      link: "/netsuite/solutions/analytics/ai",
+      image: "/images/lap/lap10_11zon.webp",
+      icon: Star,
+      tag: "AI",
+    },
+    {
+      category: "E-Commerce",
+      title: "NetSuite SuiteCommerce",
+      subtitle: "Unified Commerce for B2B & B2C",
+      description: "Power your entire commerce experience from a single platform. SuiteCommerce unifies your online store with inventory, orders, and financials — providing real-time product availability, personalised shopping, and seamless omnichannel fulfilment.",
+      highlights: [
+        "B2B & B2C on one platform",
+        "Real-time inventory & pricing",
+        "Seamless omnichannel fulfilment",
+        "Built-in SEO & mobile-first design",
+      ],
+      link: "/netsuite/solutions/ecommerce/main",
+      image: "/images/lap/lap6_11zon.webp",
+      icon: ShoppingCart,
+      tag: "E-Commerce",
+    },
+    {
+      category: "Planning",
+      title: "NetSuite Planning & Budgeting",
+      subtitle: "Smarter Financial Planning",
+      description: "Ditch spreadsheets and plan with confidence. NetSuite PBCS provides FP&A teams with collaborative budgeting, rolling forecasts, scenario modelling, and driver-based planning — all connected live to your NetSuite actuals.",
+      highlights: [
+        "Driver-based budgeting & forecasting",
+        "Scenario modelling",
+        "Collaborative planning workflows",
+        "Live connection to actuals",
+      ],
+      link: "/netsuite/solutions/planning/main",
+      image: "/images/lap/lap5.webp",
+      icon: TrendingUp,
+      tag: "FP&A",
+    },
+    {
+      category: "Specialised",
+      title: "NetSuite SuiteSuccess",
+      subtitle: "The Complete Cloud Business Suite",
+      description: "SuiteSuccess is Oracle NetSuite's industry-optimized implementation methodology. It combines preconfigured ERP, CRM, PSA, Commerce, HR, and BI on a single platform — with built-in leading practices for rapid deployment and measurable business outcomes.",
+      highlights: [
+        "Pre-configured for your industry",
+        "Faster time-to-value",
+        "Unified ERP + CRM + BI + HR",
+        "Continuous improvement framework",
+      ],
+      link: "/netsuite/solutions/specialized/suitesuccess",
+      image: "/images/lap/lap4.webp",
+      icon: Trophy,
+      tag: "All-in-One",
+    },
+    {
+      category: "Specialised",
+      title: "NetSuite India Localization",
+      subtitle: "GST-Ready Cloud ERP",
+      description: "Complete compliance for Indian businesses built natively in NetSuite. Manage GST, TDS, e-invoicing, E-Way bills, and statutory reporting — all automated, accurate, and audit-ready within your NetSuite account.",
+      highlights: [
+        "Automated GST & e-invoicing",
+        "TDS & TCS management",
+        "Multi-GSTIN support",
+        "Statutory report generation",
+      ],
+      link: "/netsuite/solutions/specialized/india-localization",
+      image: "/images/lap/lap3.webp",
+      icon: BookOpen,
+      tag: "India",
+    },
+  ];
+
   const services = [
-    { title: "NetSuite Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
-    { title: "NetSuite Integration", description: "Connect your apps and workflows seamlessly with API-led integrations.", icon: Share2, href: "/netsuite/services/integration" },
-    { title: "NetSuite Customization", description: "Tailor NetSuite to your unique business needs with SuiteScript and SuiteCloud.", icon: Code, href: "/netsuite/services/suitecloud" },
-    { title: "NetSuite Managed Support", description: "End-to-end support and optimization of your NetSuite environment.", icon: ShieldCheck, href: "/netsuite/services/managed-services" },
-    { title: "NetSuite Training", description: "Comprehensive training programs to maximize system utilization.", icon: Users, href: "/netsuite/services/training-services" },
-    { title: "NetSuite Consulting", description: "Strategic guidance to align NetSuite with your business goals.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
-  ];
-
-  const [activeChallenge, setActiveChallenge] = useState(0);
-  const [activeBenefit, setActiveBenefit] = useState(0);
-
-  const challenges = [
-    {
-      title: "Complexity Overload",
-      description: "As businesses grow, managing multiple disconnected functions—finance, sales, and operations—leads to massive operational complexity. Traditional systems often fail to keep pace, resulting in fragmented data and inefficient communication across departments. This lack of a central platform causes significant delays in decision-making and project execution.",
-      image: "/images/lap/lap2.webp"
-    },
-    {
-      title: "Reporting Friction",
-      description: "Consolidating financial data manually from different business units can take weeks of painstaking manual work. By the time reports are finalized, the data is outdated, making real-time strategic decisions nearly impossible. Businesses lose their competitive edge when they cannot react quickly to market shifts due to stale reporting cycles.",
-      image: "/images/lap/lap3.webp"
-    },
-    {
-      title: "Manual Process Errors",
-      description: "Relying on legacy spreadsheets for critical business data is a recipe for disaster. Human errors in data entry, version control issues, and broken formulas can lead to costly financial discrepancies and data inconsistencies that undermine stakeholders' trust. Moving away from manual processes is essential for maintaining accurate, audit-ready records.",
-      image: "/images/lap/lap4.webp"
-    },
-    {
-      title: "Visibility Gaps",
-      description: "Without a unified view of the organization, leadership often lacks real-time insights into key performance indicators such as project profitability, resource allocation, and cash flow. These visibility gaps prevent proactive problem-solving, as issues are often discovered only after they have significantly impacted the bottom line.",
-      image: "/images/lap/lap5.webp"
-    },
-    {
-      title: "Integration Debt",
-      description: "Many organizations struggle with 'brittle' IT architectures where legacy systems are connected via custom scripts that break during software updates. This accumulation of integration debt slows down digital transformation initiatives and makes it difficult to adopt new technologies that could streamline operations and improve customer experiences.",
-      image: "/images/aboutus/heroimg.webp"
-    }
-  ];
-
-  const benefits = [
-    {
-      title: "Accelerated Growth",
-      description: "Scale your business effortlessly with a cloud-native platform that grows with you across new markets and subsidiaries.",
-      image: "/images/aboutus/mission1.webp"
-    },
-    {
-      title: "Total Visibility",
-      description: "Real-time dashboards and unified data provide 360-degree visibility for faster, data-driven decision-making.",
-      image: "/images/aboutus/niche.webp"
-    },
-    {
-      title: "Future-Proof Platform",
-      description: "Automatic bi-annual updates ensure you always have the latest features and security without disruption.",
-      image: "/images/aboutus/vision.webp"
-    },
-    {
-      title: "Lower Total Cost",
-      description: "Reduce IT infrastructure costs by up to 50% by consolidating systems on a single cloud platform.",
-      image: "/images/aboutus/social.webp"
-    },
-    {
-      title: "Operational Excellence",
-      description: "Automate lead-to-cash processes to improve efficiency and free teams for strategic, high-value work.",
-      image: "/images/aboutus/CTA2.webp"
-    }
-  ];
-
-  const addons = [
-    {
-      title: "India Localization",
-      description: "Handle GST, Tax Audit, and local compliance within NetSuite with our certified localization suite.",
-      link: "/netsuite/solutions/addons/india-localization"
-    },
-    {
-      title: "Smart Commission",
-      description: "Automate complex sales commission calculations and incentive structures directly in NetSuite.",
-      link: "/netsuite/solutions/addons/smart-commission"
-    },
-    {
-      title: "Data Backup",
-      description: "Ensure your critical NetSuite data is securely backed up and accessible whenever you need it.",
-      link: "/netsuite/solutions/addons/data-backup"
-    },
-    {
-      title: "E-Commerce Connectors",
-      description: "Sync your Shopify, Magento, or WooCommerce store with NetSuite for real-time inventory and order management.",
-      link: "/netsuite/solutions/addons/connectors"
-    }
+    { title: "Digital Transformation", description: "Modernize your business for the digital age.", icon: Rocket, href: "/netsuite/services/digital-transformation" },
+    { title: "Integration Services", description: "Seamlessly connect your systems.", icon: Layers, href: "/netsuite/services/integration-services" },
+    { title: "Training Services", description: "Upskill your team with expert-led training.", icon: GraduationCap, href: "/netsuite/services/training-services" },
+    { title: "Low-Code Development", description: "Build apps faster with minimal coding.", icon: Wrench, href: "/netsuite/services/low-code" },
+    { title: "Managed Services", description: "End-to-end IT management & support.", icon: Settings, href: "/netsuite/services/managed-services" },
   ];
 
   return (
-    <div className="min-h-screen selection:bg-gray-900 selection:text-white bg-linear-to-b from-[#000b21] via-[#000b21] to-[#0a0a0a]">
-      {/* Premium Hero Section */}
-      <section className="relative pt-12 pb-24 lg:pt-48 lg:pb-32 overflow-hidden text-white">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
-        </div>
+    <div className="min-h-screen bg-white">
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16 lg:items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex-1 max-w-2xl"
-            >
-
-              <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight tracking-tight text-white">
-                Oracle <span className="bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">NetSuite</span>
-                <br />
-                Business Solutions
-              </h1>
-              <p className="text-lg sm:text-xl font-medium leading-relaxed text-gray-300">
-                AGSuite provides comprehensive NetSuite solutions tailored to your unique business needs. From core ERP to specialized add-ons, we help you scale with confidence.
-              </p>
-
-              <div className="mt-10 flex flex-wrap gap-4">
-                <motion.div
-                  className="relative inline-flex group/btn-wrap"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {/* Vibrant Gradient Background Glow */}
-                  <div className="absolute inset-0 rounded-2xl bg-linear-to-r from-blue-600 via-indigo-500 to-purple-600 opacity-40 blur-xl group-hover/btn-wrap:opacity-70 transition duration-1000" />
-
-                  <Link
-                    href="/netsuite/contact"
-                    className="relative flex items-center gap-4 px-10 py-5 bg-white/10 backdrop-blur-md text-white font-bold rounded-2xl transition shadow-2xl overflow-hidden group/btn border border-white/20 hover:bg-linear-to-r hover:from-blue-600 hover:to-indigo-700 hover:border-transparent transition-all duration-500"
-                  >
-                    {/* Unique Moving Circle on Hover */}
-                    <motion.div
-                      className="absolute top-1/2 left-0 w-16 h-16 bg-white/20 rounded-full -translate-y-1/2 pointer-events-none blur-xl"
-                      initial={{ x: "-100%", opacity: 0 }}
-                      whileHover={{ x: "300%", opacity: 1 }}
-                      transition={{ duration: 0.8, ease: "easeInOut" }}
-                    />
-
-                    {/* Shimmer Layers */}
-                    <div className="absolute inset-0 z-0 pointer-events-none">
-                      <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:animate-[sweep_2s_ease-in-out_infinite]" />
-                    </div>
-
-                    <span className="relative z-10 text-lg uppercase tracking-wider">Get Started Now</span>
-
-                    {/* Circle Wrapper for Arrow */}
-                    <div className="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-white/10 border border-white/20 transition-all duration-300 group-hover/btn:bg-white group-hover/btn:text-blue-600 group-hover/btn:scale-110">
-                      <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
-                    </div>
-                  </Link>
+      {/* ─────────────── HERO SECTION ─────────────── */}
+      <section className="relative min-h-screen overflow-hidden flex flex-col" style={{ background: "linear-gradient(135deg,#000814,#000f22,#001535)" }}>
+        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px]" />
+        <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px)', backgroundSize: '70px 70px' }} />
+        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-8">
+          <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20">
+            <Link href="/netsuite" className="text-blue-300 hover:text-white transition-colors">Home</Link>
+            <ChevronRight className="w-3.5 h-3.5 text-white/30" /><span className="text-white/80">NetSuite Solutions</span>
+          </motion.nav>
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6" style={{ minHeight: 'calc(100vh - 150px)' }}>
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15]">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">Oracle NetSuite Business Solutions</span>
+              </motion.h1>
+              <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }} className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full" />
+              <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }} className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8">
+                Comprehensive NetSuite solutions tailored to your unique business needs. From core ERP to specialized add-ons — scale with confidence on the world&apos;s #1 cloud platform.
+              </motion.p>
+              <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+                <Link href="#solutions" className="inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl hover:scale-105">
+                  Explore All Solutions <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity }}><ArrowRight className="w-4 h-4" /></motion.span>
+                </Link>
+              </motion.div>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
+              <div className="relative w-[88%] ml-auto">
+                <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
+                  <Image src="/images/people/fourteam.webp" alt="Oracle NetSuite Solutions" fill className="object-cover object-center" priority />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }} className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}><Database className="w-5 h-5 text-white" /></div>
+                    <div><p className="text-gray-900 text-sm font-bold">Oracle NetSuite ERP Platform</p><p className="text-gray-500 text-xs mt-0.5">ERP · CRM · Analytics · E-Commerce · Planning</p></div>
+                  </motion.div>
+                </div>
+                <motion.div initial={{ opacity: 0, x: -20, y: -10 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ delay: 0.8 }} className="absolute -top-5 -left-10 flex items-center gap-3.5 bg-white rounded-2xl px-4 py-3 shadow-2xl border border-gray-100">
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}><CheckCircle2 className="w-5 h-5 text-white" /></div>
+                  <div><p className="text-gray-900 text-[13px] font-bold whitespace-nowrap">38,000+ Global Clients</p><p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">Trusted · Scalable · Cloud-Native</p></div>
                 </motion.div>
               </div>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="flex-1 relative w-full h-[450px] max-w-[550px] z-20 lg:-mt-16"
-            >
-              <div className="w-full h-full rounded-2xl bg-linear-to-br from-blue-600/20 to-indigo-900/20 overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(37,99,235,0.2)] relative group">
-                <Image
-                  src="/images/lap/lap1.webp"
-                  alt="Oracle NetSuite Business Solutions"
-                  fill
-                  priority
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-[#000b21]/60 to-transparent" />
-              </div>
-
-              {/* Top Right Floating Card */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6 }}
-                className="absolute top-10 -right-6 lg:-right-12 bg-white/90 backdrop-blur-3xl border border-white/30 p-4 rounded-2xl shadow-2xl max-w-[200px] z-20 group/card"
-              >
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover/card:scale-110 transition-transform">
-                    <CheckCircle2 className="w-6 h-6 text-white" strokeWidth={2.5} />
-                  </div>
-                  <div className="text-center">
-                    <h4 className="text-xl font-bold text-gray-900 leading-none">38,000+</h4>
-                    <p className="text-[10px] font-bold text-blue-600 uppercase tracking-widest mt-1">Global Clients</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Center Bottom Information Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-white/95 backdrop-blur-xl py-6 px-10 rounded-[1.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] w-full max-w-[420px] z-30 border border-white/60 group/bottom-card"
-              >
-                <div className="flex items-center gap-5">
-                  <div className="relative flex-shrink-0 scale-110">
-                    <div className="absolute inset-0 bg-blue-600 blur-lg opacity-25 group-hover/bottom-card:opacity-40 transition-opacity" />
-                    <div className="relative w-14 h-14 bg-linear-to-br from-blue-600 to-indigo-600 rounded-[2.5rem] flex items-center justify-center text-white shadow-xl">
-                      <Rocket size={28} strokeWidth={2.5} />
-                    </div>
-                  </div>
-                  <div className="text-left">
-                    <p className="text-gray-900 text-xl font-bold leading-tight tracking-tight">
-                      Scale with the #1 Cloud ERP
-                    </p>
-                    <p className="text-blue-600 text-[11px] font-black uppercase tracking-[0.2em] mt-1.5 opacity-80">
-                      Digital Transformation
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
           </div>
+          <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="border-t border-white/15 pt-5 sm:pt-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+              {stats.map((s, i) => (
+                <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 + i * 0.12 }} className="text-center group">
+                  <div className="flex justify-center mb-2 sm:mb-3"><div className="p-2 sm:p-3 bg-blue-700/20 rounded-xl group-hover:bg-blue-700/30 transition-colors"><s.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 group-hover:scale-110 transition-transform" /></div></div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-1 flex items-center justify-center gap-1"><Counter value={s.value} /><span className="text-blue-400 text-2xl sm:text-3xl md:text-4xl">{s.suffix}</span></div>
+                  <div className="text-gray-400 font-medium text-xs sm:text-sm px-2">{s.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Introduction / What is NetSuite */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1]
-              }}
-              className="space-y-8"
-            >
-              <div className="space-y-4">
-                <motion.h2
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2, duration: 0.6 }}
-                  className="text-blue-600 font-bold uppercase tracking-wider text-sm"
-                >
-                  Introduction
-                </motion.h2>
-                <motion.h3
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3, duration: 0.6 }}
-                  className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
-                >
-                  What is Oracle NetSuite?
-                </motion.h3>
-              </div>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-lg sm:text-xl text-gray-600 leading-relaxed font-medium"
-              >
-                Oracle NetSuite is the world's most deployed cloud Enterprise Resource Planning (ERP) solution.
-                Built from the ground up for the cloud, it provides a single, unified platform to manage every aspect of your business—from financials and CRM to inventory and e-commerce.
-              </motion.p>
-              {/* <p className="text-lg text-gray-600 leading-relaxed font-light">
-                With real-time visibility and a single source of truth, NetSuite empowers over 38,000 organizations globally to scale faster, work smarter, and drive sustainable growth.
-              </p> */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-                className="pt-4"
-              >
-                <Link href="/netsuite/solutions/why-netsuite/main" className="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-4 transition-all uppercase tracking-widest text-sm">
-                  Deep Dive into NetSuite <ArrowRight size={18} />
+      {/* ─────────────── INTRO SECTION ─────────────── */}
+      <section className="pt-10 pb-14 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="flex items-center justify-center rounded-2xl" style={{ minHeight: 340 }}>
+              <Image src="/images/lap/group1.webp" alt="Oracle NetSuite Platform" width={560} height={380} className="w-full h-auto rounded-xl object-contain" />
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="space-y-6">
+              <h3 className="text-3xl md:text-4xl lg:text-4xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">The #1 Cloud ERP for Growing Businesses</h3>
+              <p className="text-lg text-gray-600 leading-relaxed">Oracle NetSuite is the world&apos;s most deployed cloud Enterprise Resource Planning (ERP) solution. Built from the ground up for the cloud, it provides a single, unified platform to manage every aspect of your business — from financials and CRM to inventory and e-commerce.</p>
+              <p className="text-lg text-gray-600 leading-relaxed">Every solution is purpose-built for cloud — running inside your NetSuite account with real-time data, no silos, and unified reporting across every department.</p>
+              <div className="pt-4">
+                <Link href="/netsuite/solutions/why-netsuite/main" className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest text-white transition-all" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}>
+                  Deep Dive into NetSuite <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 1.2, repeat: Infinity }}><ArrowRight size={17} /></motion.span>
                 </Link>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{
-                duration: 0.8,
-                delay: 0.2,
-                ease: [0.22, 1, 0.36, 1]
-              }}
-              className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-gray-100"
-            >
-              <Image
-                src="/images/lap/group1.webp"
-                alt="NetSuite Unified Platform"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why NetSuite Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* LEFT SIDE - IMAGE */}
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1]
-              }}
-              className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-gray-200"
-            >
-              <Image
-                src="/images/lap/group2.webp"
-                alt="Why Choose Oracle NetSuite for Business Growth"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply" />
-            </motion.div>
-
-            {/* RIGHT SIDE - CONTENT */}
-            <motion.div
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{
-                duration: 0.8,
-                delay: 0.2,
-                ease: [0.22, 1, 0.36, 1]
-              }}
-              className="space-y-8"
-            >
-              <div className="space-y-4">
-                <motion.h2
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3, duration: 0.6 }}
-                  className="text-blue-600 font-bold uppercase tracking-wider text-sm"
-                >
-                  Why Choose Us
-                </motion.h2>
-                <motion.h3
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4, duration: 0.6 }}
-                  className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
-                >
-                  Why NetSuite is the Right Choice for Your Business
-                </motion.h3>
               </div>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-                className="text-lg sm:text-xl text-gray-600 leading-relaxed font-medium"
-              >
-                Discover why thousands of fast-growing organizations worldwide trust Oracle NetSuite as their cloud ERP platform to drive digital transformation, streamline operations, and achieve sustainable growth in today's competitive landscape.
-              </motion.p>
-
-
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.6, duration: 0.6 }}
-                className="pt-4"
-              >
-                <Link href="/netsuite/contact" className="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-4 transition-all uppercase tracking-widest text-sm">
-                  Explore NetSuite Benefits <ArrowRight size={18} />
-                </Link>
-              </motion.div>
             </motion.div>
           </div>
         </div>
       </section>
 
+      {/* ─────────────── ALL SOLUTIONS — ALTERNATING ROWS ─────────────── */}
+      <section id="solutions" className="py-24 relative overflow-hidden bg-gradient-to-b from-[#f4f9ff] via-white to-[#f5f8ff]">
+        {/* Decorative Background Orbs */}
+        <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-100/40 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+        <div className="absolute bottom-1/3 right-0 w-[600px] h-[600px] bg-indigo-100/40 rounded-full blur-[100px] translate-x-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-cyan-100/30 rounded-full blur-[80px] translate-y-1/2 pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="bg-blue-600/10 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Solutions Portfolio</span>
+            <h2 className="text-4xl lg:text-5xl font-bold mt-6 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#1e3a8a] via-blue-600 to-black">All NetSuite Solutions</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              Comprehensive solutions to power every aspect of your business operations — all on one unified cloud platform.
+            </p>
+          </motion.div>
 
-      {/* NetSuite Services Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 text-center">
-            NetSuite Services
-          </h2>
-
-          <p className="text-gray-700 text-lg sm:text-xl max-w-2xl text-center font-medium">
-            We provide end-to-end services to ensure your NetSuite environment is perfectly aligned with your business needs.
-          </p>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
-            {services.map((service, index) => {
-              const cardBgColors = [
-                "bg-linear-to-br from-[#ffffff] to-[#eef0ff]",
-                "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]",
-                "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
-                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]",
-                "bg-linear-to-br from-[#ffffff] to-[#ffece8]",
-                "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]",
-              ];
-
+          <div className="flex flex-col">
+            {solutions.map((solution, index) => {
+              const isEven = index % 2 === 0;
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-12 lg:py-16 ${index < solutions.length - 1 ? 'border-b border-gray-200' : ''}`}
                 >
+                  {/* IMAGE SIDE */}
+                  <div className={`relative ${isEven ? 'order-1' : 'order-1 lg:order-2'}`}>
+                    <div className="relative h-64 sm:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-md">
+                      <Image
+                        src={solution.image}
+                        alt={solution.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+
+                  {/* TEXT SIDE */}
+                  <div className={`${isEven ? 'order-2' : 'order-2 lg:order-1'}`}>
+                    <h3 className="text-2xl lg:text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-black via-[#1e3a8a] to-blue-600 leading-tight mb-3">
+                      {solution.title}
+                    </h3>
+                    <p className="text-gray-500 text-base leading-relaxed mb-5 line-clamp-4">
+                      {solution.description}
+                    </p>
+                    <Link
+                      href={solution.link}
+                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300 group shadow-sm hover:shadow-md"
+                      style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = '#fff'; (e.currentTarget as HTMLAnchorElement).style.color = '#1e3a8a'; (e.currentTarget as HTMLAnchorElement).style.border = '1.5px solid #1e3a8a'; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg,#1e3a8a,#2563eb)'; (e.currentTarget as HTMLAnchorElement).style.color = '#fff'; (e.currentTarget as HTMLAnchorElement).style.border = 'none'; }}
+                    >
+                      View Details
+                      <ChevronDown className="w-4 h-4 -rotate-90 group-hover:translate-x-0.5 transition-transform" />
+                    </Link>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────── SERVICES SECTION ─────────────── */}
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-5">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
+            <span className="bg-blue-600/10 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Our Services</span>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-6 mb-4">NetSuite Services</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              End-to-end services to ensure your NetSuite environment is perfectly aligned with your business needs.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-6">
+            {services.map((service, index) => {
+              const cardBgColors = [
+                "bg-gradient-to-br from-white to-[#eef0ff]",
+                "bg-gradient-to-br from-white to-[#eaf6ff]",
+                "bg-gradient-to-br from-white to-[#e8ffef]",
+                "bg-gradient-to-br from-white to-[#f9eaff]",
+                "bg-gradient-to-br from-white to-[#ffece8]",
+                "bg-gradient-to-br from-white to-[#eaf8ff]",
+              ];
+              return (
+                <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}>
                   <motion.div
                     initial="initial"
                     whileHover="hover"
-                    variants={{
-                      initial: { scale: 1 },
-                      hover: {
-                        scale: 1.04,
-                        transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] }
-                      }
-                    }}
-                    className={`
-                      relative group rounded-2xl p-7 border border-gray-200 
-                      transition-all duration-300 h-full shadow-xl hover:shadow-red-100
-                      ${cardBgColors[index % cardBgColors.length]}
-                    `}
+                    variants={{ initial: { scale: 1 }, hover: { scale: 1.04, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } } }}
+                    className={`relative group rounded-2xl p-7 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}
                   >
-                    {/* ICON with rotation animation triggered by card hover */}
                     <motion.div
-                      variants={{
-                        initial: { rotate: 0, y: 0 },
-                        hover: {
-                          rotate: 360,
-                          y: -6,
-                          transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] }
-                        }
-                      }}
+                      variants={{ initial: { rotate: 0, y: 0 }, hover: { rotate: 360, y: -6, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } } }}
                       className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5"
                     >
                       <service.icon className="w-6 h-6 text-white" />
                     </motion.div>
-
-                    {/* TITLE */}
-                    <h2 className="text-lg font-bold text-gray-900 leading-tight">
-                      {service.title}
-                    </h2>
-
-                    {/* DESCRIPTION */}
-                    <p className="text-gray-600 text-sm leading-relaxed mt-2">
-                      {service.description}
-                    </p>
-
-                    {/* LINK */}
+                    <h2 className="text-lg font-bold text-gray-900 leading-tight">{service.title}</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed mt-2">{service.description}</p>
                     <div className="mt-6 border-t border-gray-300 pt-3">
-                      <Link
-                        href={service.href}
-                        className="text-black hover:text-red-600 text-sm font-medium transition-all"
-                      >
-                        Learn More →
-                      </Link>
+                      <Link href={service.href} className="text-black hover:text-blue-600 text-sm font-medium transition-all">Learn More →</Link>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -546,281 +447,8 @@ export default function NetSuiteSolutionsClient() {
         </div>
       </section>
 
-
-      {/* Benefits Section */}
-      <section className="py-24 bg-linear-to-b from-[#000b21] via-[#000b21] to-[#0a0a0a] overflow-hidden relative">
-        {/* Decorative elements matching hero section */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Benefits</span>
-            <h3 className="text-4xl lg:text-5xl font-bold text-white mt-6">Key Advantages of NetSuite</h3>
-            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg sm:text-xl font-medium">Discover how NetSuite transforms business operations and drives growth</p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* LEFT SIDE - IMAGE */}
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1]
-              }}
-              className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 aspect-square"
-            >
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeBenefit}
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="absolute inset-0"
-                >
-                  <Image
-                    src={benefits[activeBenefit].image}
-                    alt={benefits[activeBenefit].title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-transparent to-transparent" />
-                </motion.div>
-              </AnimatePresence>
-            </motion.div>
-
-            {/* RIGHT SIDE - BENEFITS LIST */}
-            <motion.div
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{
-                duration: 0.8,
-                delay: 0.2,
-                ease: [0.22, 1, 0.36, 1]
-              }}
-              className="space-y-4"
-            >
-              {benefits.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.3 + (index * 0.1),
-                    ease: [0.22, 1, 0.36, 1]
-                  }}
-                  onClick={() => setActiveBenefit(index)}
-                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeBenefit === index
-                    ? 'bg-white/10 border-blue-400/50 shadow-lg backdrop-blur-sm'
-                    : 'bg-white/5 border-white/10 hover:bg-white/10'
-                    }`}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-lg transition-colors ${activeBenefit === index
-                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50'
-                      : 'bg-white/10 text-blue-300'
-                      }`}>
-                      <CheckCircle2 size={20} />
-                    </div>
-                    <h4 className={`text-xl font-bold transition-colors ${activeBenefit === index ? 'text-white' : 'text-gray-300'
-                      }`}>
-                      {item.title}
-                    </h4>
-                  </div>
-                  <AnimatePresence>
-                    {activeBenefit === index && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden"
-                      >
-                        <p className="text-blue-100 mt-4 leading-relaxed pl-12">
-                          {item.description}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Challenges Section */}
-      <section className="py-24 bg-linear-to-b from-[#000b21] via-[#000b21] to-[#0a0a0a] overflow-hidden relative">
-        {/* Decorative elements matching hero section */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Challenges</span>
-            <h3 className="text-4xl lg:text-5xl font-bold text-white mt-6">Common Business Challenges</h3>
-            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg sm:text-xl font-medium">Understanding the obstacles that NetSuite helps you overcome</p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* LEFT SIDE - CHALLENGES LIST */}
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1]
-              }}
-              className="space-y-4"
-            >
-              {challenges.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.2 + (index * 0.1),
-                    ease: [0.22, 1, 0.36, 1]
-                  }}
-                  onClick={() => setActiveChallenge(index)}
-                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeChallenge === index
-                    ? 'bg-white/10 border-blue-400/50 shadow-lg backdrop-blur-sm'
-                    : 'bg-white/5 border-white/10 hover:bg-white/10'
-                    }`}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-lg transition-colors ${activeChallenge === index
-                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50'
-                      : 'bg-white/10 text-blue-300'
-                      }`}>
-                      <CheckCircle2 size={20} />
-                    </div>
-                    <h4 className={`text-xl font-bold transition-colors ${activeChallenge === index ? 'text-white' : 'text-gray-300'
-                      }`}>
-                      {item.title}
-                    </h4>
-                  </div>
-                  <AnimatePresence>
-                    {activeChallenge === index && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden"
-                      >
-                        <p className="text-blue-100 mt-4 leading-relaxed pl-12">
-                          {item.description}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* RIGHT SIDE - IMAGE */}
-            <motion.div
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{
-                duration: 0.8,
-                delay: 0.2,
-                ease: [0.22, 1, 0.36, 1]
-              }}
-              className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 aspect-square"
-            >
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeChallenge}
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="absolute inset-0"
-                >
-                  <Image
-                    src={challenges[activeChallenge].image}
-                    alt={challenges[activeChallenge].title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-transparent to-transparent" />
-                </motion.div>
-              </AnimatePresence>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* NetSuite Solutions Grid */}
-      <section id="solutions" className="py-24 bg-linear-to-b from-white via-[#ffffff] to-[#ffffff] relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">NetSuite Solutions</h3>
-            <p className="text-gray-600 text-lg sm:text-xl max-w-2xl mx-auto font-medium">
-              Comprehensive solutions to power every aspect of your business operations
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {netSuiteSolutions.map((solution, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                  ease: [0.22, 1, 0.36, 1]
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  background: "linear-gradient(to bottom right, #ffffff, #ffffff)",
-                  transition: { duration: 0.3, ease: "easeInOut" }
-                }}
-                style={{
-                  background: "linear-gradient(to bottom right, #0a1f44, #1a2f5a, #0f2847)"
-                }}
-                className="border border-blue-500/20 rounded-2xl p-6 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 ease-in-out group flex flex-col"
-              >
-                <div className="flex-1">
-                  <h4 className="text-xl font-bold text-white group-hover:text-gray-900 mb-3 transition-colors duration-300 ease-in-out">
-                    {solution.title}
-                  </h4>
-                  <p className="text-blue-100 group-hover:text-gray-600 leading-relaxed text-sm mb-4 transition-colors duration-300 ease-in-out">
-                    {solution.description}
-                  </p>
-                </div>
-
-                <Link
-                  href={solution.link}
-                  className="inline-flex items-center gap-2 text-blue-400 group-hover:text-blue-600 font-semibold text-sm hover:gap-3 transition-all duration-300 ease-in-out mt-auto"
-                >
-                  Learn More
-                  <ArrowRight size={16} />
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Modern CTA */}
-      <section className="py-24 overflow-hidden relative bg-gray-50">
+      {/* ─────────────── CTA SECTION ─────────────── */}
+      <section className="py-24 overflow-hidden relative bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -828,27 +456,14 @@ export default function NetSuiteSolutionsClient() {
             viewport={{ once: true }}
             className="border border-gray-200 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
           >
-            {/* Background Image */}
-            <Image
-              src="/images/lap/group1.webp"
-              alt="NetSuite Solutions Background"
-              fill
-              className="object-cover"
-            />
-
-            {/* Gradient Overlay - Dark left to transparent right */}
-            <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/80 to-transparent" />
-
-            {/* Decorative blur elements */}
+            <Image src="/images/lap/group1.webp" alt="NetSuite Solutions" fill className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-3xl -mr-32 -mt-32" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />
-
-            {/* Content - Left Aligned */}
             <div className="relative z-10 max-w-2xl">
-              <h2 className="text-3xl md:text-5xl font-medium text-white mb-8 leading-tight text-left">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
                 Scale your business with the world's #1 Cloud ERP. Ready to get started?
               </h2>
-
               <div className="flex justify-start">
                 <Link href="/netsuite/contact" className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition shadow-xl">
                   Talk to an Expert

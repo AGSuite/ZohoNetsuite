@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const logos = [
@@ -139,18 +140,20 @@ const NSMetrics = () => {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-wrap items-center justify-center gap-4"
                     >
-                        <button
+                        <Link
+                            href="#contact-form"
                             className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-base transition-all shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40 hover:scale-105 active:scale-100"
                             suppressHydrationWarning={true}
                         >
                             Start For Free
-                        </button>
-                        <button
+                        </Link>
+                        <Link
+                            href="/netsuite/contact"
                             className="px-10 py-4 bg-white/5 border border-white/10 hover:border-white/20 text-white rounded-xl font-bold text-base transition-all backdrop-blur-sm hover:bg-white/10"
                             suppressHydrationWarning={true}
                         >
                             Get Demo
-                        </button>
+                        </Link>
                     </motion.div>
 
                     {/* Statistics Above Dashboard — each stat animates one by one on scroll */}

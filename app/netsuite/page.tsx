@@ -1,5 +1,6 @@
 ﻿import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import { getPosts } from '../../sanity/lib/fetch'
 import { NSHero } from './components/NSHero';
 import { Metadata } from 'next';
 
@@ -27,12 +28,15 @@ const NSServices = dynamic(() => import('./components/NSServices').then(mod => m
 const NetsuiteCTA = dynamic(() => import('./components/NetsuiteCTA').then(mod => mod.default));
 // const NSHowItWorks = dynamic(() => import('./components/NSHowItWorks').then(mod => mod.default));
 const NSWhyChooseUs = dynamic(() => import('./components/NSWhyChooseUs').then(mod => mod.default));
+const NSBlogsSlider = dynamic(() => import('./components/NSBlogsSlider').then(mod => mod.default));
 const NSTestimonialSection = dynamic(() => import('./components/NSTestimonialSection').then(mod => mod.default));
 const NSCustomerSuccess = dynamic(() => import('./components/NSCustomerSuccess').then(mod => mod.default));
 const ContactFormDesign4 = dynamic(() => import('./components/ContactFormDesign4').then(mod => mod.default));
 
 
-export default function NetSuitePage() {
+export default async function NetSuitePage() {
+  const blogs = await getPosts();
+
   return (
     <div className="relative">
       <NSHero
@@ -62,6 +66,8 @@ export default function NetSuitePage() {
       {/* <NSHowItWorks /> */}
 
       <NSWhyChooseUs />
+
+      <NSBlogsSlider blogs={blogs} variant="small" />
 
       {/* <NSTestimonialSection /> */}
 

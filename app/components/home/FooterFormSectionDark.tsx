@@ -11,8 +11,8 @@ declare global {
     reCaptchaAlert409531000000325116: () => boolean;
     validateEmail409531000000325116: () => boolean;
     checkMandatory409531000000325116: () => boolean;
-    validateNumber: (e: KeyboardEvent) => boolean;
-    sendEmail: () => void;
+    validateNumber?: (e: KeyboardEvent) => boolean;
+    sendEmail?: () => void;
     trackVisitor409531000000325116: () => void;
   }
 }

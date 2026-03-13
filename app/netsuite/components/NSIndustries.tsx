@@ -30,8 +30,7 @@ const industryRoutes: Record<string, string> = {
   "Software and Technology": "/netsuite/industries/software",
   "IT and Professional Services": "/netsuite/industries/it-services",
   "Wholesale Distribution": "/netsuite/industries/wholesale",
-  "Advertising and Digital Marketing Agencies":
-    "/netsuite/industries/advertising-marketing",
+  "Advertising and Digital Marketing Agencies": "/netsuite/industries/advertising-marketing",
   "Media and Publishing": "/netsuite/industries/media",
   "Retail & E-Commerce": "/netsuite/industries/retail",
   "Transportation and Logistics": "/netsuite/industries/transport",

@@ -13,8 +13,8 @@ declare global {
     reCaptchaAlert409531000000325116: () => boolean;
     validateEmail409531000000325116: () => boolean;
     checkMandatory409531000000325116: () => boolean;
-    validateNumber: (e: KeyboardEvent) => boolean;
-    sendEmail: () => void;
+    validateNumber?: (e: KeyboardEvent) => boolean;
+    sendEmail?: () => void;
     trackVisitor409531000000325116: () => void;
   }
 }
@@ -101,11 +101,11 @@ export default function NetSuiteContactFormModern() {
           }
         }
       }
-      window.trackVisitor409531000000325116();
-      if (!window.validateEmail409531000000325116()) return false;
-      if (!window.reCaptchaAlert409531000000325116()) return false;
+      window.trackVisitor409531000000325116?.();
+      if (window.validateEmail409531000000325116 && !window.validateEmail409531000000325116()) return false;
+      if (window.reCaptchaAlert409531000000325116 && !window.reCaptchaAlert409531000000325116()) return false;
 
-      window.sendEmail();
+      window.sendEmail?.();
       const submitButton = document.querySelector('.crmWebToEntityForm .formsubmit') as HTMLInputElement;
       if (submitButton) {
         submitButton.setAttribute('disabled', 'true');

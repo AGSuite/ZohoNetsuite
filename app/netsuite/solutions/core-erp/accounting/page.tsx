@@ -39,10 +39,13 @@ const CTA_PARTICLES = [
 ];
 
 function Counter({ value }: { value: number }) {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
   const spring = useSpring(0, { mass: 0.8, stiffness: 75, damping: 15 });
   const display = useTransform(spring, (current) => Math.round(current));
-  useEffect(() => { if (inView) spring.set(value); }, [inView, spring, value]);
+  useEffect(() => {
+    if (inView) { spring.set(value); }
+    else { spring.set(0); }
+  }, [inView, spring, value]);
   return <span ref={ref}><motion.span>{display}</motion.span></span>;
 }
 
@@ -126,7 +129,7 @@ export default function AccountingSoftwarePage() {
           }}
         />
 
-        <div className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10">
+        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10">
           {/* Breadcrumb — absolutely positioned so it doesn't affect centering */}
           <motion.nav
             initial={{ opacity: 0, y: -8 }}
@@ -144,7 +147,7 @@ export default function AccountingSoftwarePage() {
             <span className="text-white/80">Accounting</span>
           </motion.nav>
 
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
 
             {/* LEFT */}
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>

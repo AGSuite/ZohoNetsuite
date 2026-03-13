@@ -142,10 +142,10 @@ const NSCaseStudiesGrid = () => {
     }, [searchQuery, selectedIndustry]);
 
     return (
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 font-['DM_Sans',sans-serif]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 font-['DM_Sans',sans-serif] pt-12">
 
             {/* Filter & Search Bar Section */}
-            <div className="bg-white rounded-[2rem] shadow-xl shadow-blue-900/5 border border-slate-100 p-6 md:p-8 mb-12 transform -translate-y-12 relative z-20">
+            <div className="bg-white rounded-[2rem] shadow-xl shadow-blue-900/5 border border-slate-100 p-6 md:p-8 mb-12 relative z-20">
                 <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
 
                     {/* Search Bar */}

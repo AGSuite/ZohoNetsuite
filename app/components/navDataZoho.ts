@@ -1,6 +1,7 @@
 // navDataZoho.ts
 
 import {
+    Heart,
     Megaphone,
     HelpCircle,
     Briefcase,
@@ -75,6 +76,12 @@ export const navItemsZoho: NavSection[] = [
                 href: "/zoho/about-us#offices",
                 description: "Explore our global presence and office locations.",
                 icon: Building2
+            },
+            {
+                label: "Life at AGSuite",
+                href: "/zoho/life-at-agsuite",
+                description: "Discover our vibrant culture, events, and work environment.",
+                icon: Heart
             },
         ],
     },
@@ -224,7 +231,7 @@ export const navItemsZoho: NavSection[] = [
         children: [
             { label: 'Careers', href: '/zoho/contact/careers', description: 'Join our growing team.', icon: Briefcase },
             { label: 'Support', href: '/zoho/contact/support', description: 'Get expert help.', icon: Headset },
-            { label: 'Request Quote', href: '/zoho/contact/quote', description: 'Get project pricing.', icon: FileText },
+            { label: 'Request Quote', href: '/zoho/contact/request-quote', description: 'Get project pricing.', icon: FileText },
             { label: 'Free Consultation', href: '/zoho/free-consultation', description: 'Talk to our team.', icon: HelpCircle }
         ]
     }

@@ -1,226 +1,501 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useSpring, useTransform } from 'framer-motion';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useInView } from 'react-intersection-observer';
+import React, { useState, useEffect } from "react";
 import {
-  Zap, TrendingUp, Globe, Users, DollarSign, Award, CheckCircle2, ArrowRight,
-  BarChart3, Layers, Building, Check, ChevronDown, Workflow, Cloud, CheckSquare,
-  Database, Share2, Code, ShieldCheck, HeartHandshake
-} from 'lucide-react';
-import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
+  motion,
+  AnimatePresence,
+  useSpring,
+  useTransform,
+} from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+import { useInView } from "react-intersection-observer";
+import {
+  Users,
+  DollarSign,
+  PieChart,
+  ArrowRight,
+  Shield,
+  BarChart3,
+  CheckCircle2,
+  Check,
+  ChevronRight,
+  Layers,
+  TrendingUp,
+  Target,
+  Globe,
+  Workflow,
+  Building2,
+} from "lucide-react";
+import { FAQ } from "@/app/components/home/FAQ";
+import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
 
 function Counter({ value }: { value: number }) {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
   const spring = useSpring(0, { mass: 0.8, stiffness: 75, damping: 15 });
   const display = useTransform(spring, (current) => Math.round(current));
 
   useEffect(() => {
-    if (inView) {
-      spring.set(value);
-    }
+    if (inView) { spring.set(value); }
+    else { spring.set(0); }
   }, [inView, spring, value]);
 
-  return <span ref={ref}><motion.span>{display}</motion.span></span>;
+  return (
+    <span ref={ref}>
+      <motion.span>{display}</motion.span>
+    </span>
+  );
 }
 
+
 export default function OpenAirPage() {
-  const { ref: statsRef, inView: statsInView } = useInView({ triggerOnce: false, threshold: 0.2 });
+  const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
-  const [activeChallenge, setActiveChallenge] = useState(0);
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const stats = [
-    { label: 'Enterprise Users', value: 50000, suffix: '+', icon: Users },
-    { label: 'Revenue Growth', value: 35, suffix: '%', icon: TrendingUp },
-    { label: 'Global Availability', value: 99, suffix: '%', icon: Globe },
-    { label: 'Customer Satisfaction', value: 98, suffix: '%', icon: Award },
+    { label: "Enterprise Users", value: 50000, suffix: "+", icon: Users },
+    { label: "Revenue Growth", value: 35, suffix: "%", icon: TrendingUp },
+    { label: "Global Availability", value: 99, suffix: "%", icon: Globe },
+    { label: "Customer Satisfaction", value: 98, suffix: "%", icon: Target },
+  ];
+
+  const modules = [
+    {
+      title: "Advanced PSA",
+      description:
+        "Enterprise-grade professional services automation for complex, large-scale organizations with deep integrations.",
+      image: "/images/people/laptopgirl.webp",
+      color: "#1e8a9e",
+      rgb: "14,108,130",
+    },
+    {
+      title: "Portfolio Management",
+      description:
+        "Manage multiple projects and programs across your organization with full portfolio-level visibility.",
+      image: "/images/lap/lap2.webp",
+      color: "#3b5299",
+      rgb: "40,65,145",
+    },
+    {
+      title: "Global Resource Management",
+      description:
+        "Optimize resources across global teams with AI-powered insights, skills matching, and real-time utilization.",
+      image: "/images/lap/lap3.webp",
+      color: "#8b3a6a",
+      rgb: "125,42,88",
+    },
+    {
+      title: "Advanced Billing",
+      description:
+        "Support for the most complex billing scenarios including T&M, fixed-price, milestone, and outcome-based.",
+      image: "/images/people/laptopgirl1.webp",
+      color: "#1a7a55",
+      rgb: "18,108,72",
+    },
+    {
+      title: "Revenue Recognition",
+      description:
+        "ASC 606 and IFRS 15 compliant revenue recognition with percentage-of-completion and milestone-based rules.",
+      image: "/images/lap/lap4.webp",
+      color: "#a05a18",
+      rgb: "145,75,18",
+    },
+    {
+      title: "Workflow Automation",
+      description:
+        "Automate complex approval workflows and business processes across your entire services organization.",
+      image: "/images/lap/lap1.webp",
+      color: "#4a3a8a",
+      rgb: "65,45,130",
+    },
+    {
+      title: "Project Accounting",
+      description:
+        "Connect project activities directly to financials for accurate cost tracking and real-time margin analysis.",
+      image: "/images/lap/lap5.webp",
+      color: "#1a6080",
+      rgb: "20,88,115",
+    },
+    {
+      title: "Time & Expense",
+      description:
+        "Capture time and expenses from any device with smart rules for approval, policies, and project coding.",
+      image: "/images/people/fourteam.webp",
+      color: "#6a2575",
+      rgb: "95,30,105",
+    },
+    {
+      title: "Capacity Planning",
+      description:
+        "Forecast future resource needs based on the sales pipeline and current project commitments globally.",
+      image: "/images/lap/lap7_11zon.webp",
+      color: "#154e8a",
+      rgb: "18,68,130",
+    },
+    {
+      title: "Global Operations",
+      description:
+        "One system for all your entities, supporting multi-currency, multi-language, taxation, and local compliance.",
+      image: "/images/people/threeteam.webp",
+      color: "#1a6545",
+      rgb: "20,95,60",
+    },
+    {
+      title: "Opportunity Management",
+      description:
+        "Link CRM opportunities to project delivery for early insight into upcoming resource needs and capacity.",
+      image: "/images/people/laptopmen2.webp",
+      color: "#8a2a3a",
+      rgb: "130,35,48",
+    },
+    {
+      title: "Project Dashboards",
+      description:
+        "Role-based dashboards for project managers, executives, and resources to monitor what matters most.",
+      image: "/images/lap/lap8_11zon.webp",
+      color: "#0f4e8a",
+      rgb: "12,68,130",
+    },
   ];
 
   const benefits = [
-    { title: "Global Resource Mgmt", description: "Optimize resource utilization across global teams, skills, and time zones.", image: "/images/people/fourteam.webp" },
-    { title: "Complex Billing", description: "Handle the most complex billing scenarios including outcome-based and recurring.", image: "/images/lap/lap2.webp" },
-    { title: "Adv. Revenue Recognition", description: "Automate revenue recognition compliant with ASC 606 and IFRS 15.", image: "/images/lap/lap3.webp" },
-    { title: "Global Operations", description: "One system for all your entities, currencies, taxation, and languages.", image: "/images/people/laptopgirl3.webp" }
+    {
+      title: "Global Resource Management",
+      description: "Optimize resource utilization across global teams, skills, and time zones with AI-powered insights.",
+      image: "/images/people/fourteam.webp",
+      points: ["AI-powered skill matching", "Cross-timezone visibility", "Real-time utilization tracking", "Global bench management"],
+    },
+    {
+      title: "Complex Billing Automation",
+      description: "Handle the most complex billing scenarios including outcome-based, recurring, and hybrid models.",
+      image: "/images/lap/lap2.webp",
+      points: ["T&M, Fixed-Price, Hybrid billing", "Outcome-based models", "Automated invoice generation", "Client self-service portals"],
+    },
+    {
+      title: "Advanced Revenue Recognition",
+      description: "Automate revenue recognition compliant with ASC 606 and IFRS 15 for accurate financial forecasting.",
+      image: "/images/lap/lap3.webp",
+      points: ["ASC 606 and IFRS 15 compliant", "Percentage-of-completion", "Milestone-based recognition", "Reduce audit risk"],
+    },
+    {
+      title: "Global Operations",
+      description: "Run a unified services organization across multiple countries, currencies, and tax jurisdictions.",
+      image: "/images/people/laptopgirl3.webp",
+      points: ["Multi-currency & multi-entity", "Local tax compliance", "Consolidated reporting", "100+ country support"],
+    },
+    {
+      title: "Portfolio Management",
+      description: "Gain executive-level visibility across hundreds of concurrent projects and programs.",
+      image: "/images/lap/lap5.webp",
+      points: ["Program-level dashboards", "Cross-project resource views", "Portfolio health indicators", "Risk & issue tracking"],
+    },
+    {
+      title: "Enterprise Security",
+      description: "Protect sensitive project and financial data with enterprise-grade security and role-based access.",
+      image: "/images/people/laptopmen2.webp",
+      points: ["Role-based access controls", "SOC 2 Type II certified", "Data encryption at rest & in transit", "Comprehensive audit trails"],
+    },
   ];
 
-  const challenges = [
-    { title: "Distributed Teams", description: "Unify project delivery across disjointed global teams and regions.", image: "/images/people/twopeople.webp" },
-    { title: "Multi-Currency Chaos", description: "Eliminate spreadsheet conversions and currency risks.", image: "/images/lap/lap5.webp" },
-    { title: "Compliance Risk", description: "Ensure compliance with diverse local regulations and accounting standards.", image: "/images/lap/lap1.webp" },
-    { title: "Suboptimal Utilization", description: "Stop leaving money on the table with poor resource planning.", image: "/images/people/laptopmen2.webp" }
-  ];
-
-  const openairModules = [
-    { title: "Advanced PSA", description: "Enterprise-grade professional services automation for complex organizations.", icon: Building },
-    { title: "Portfolio Management", description: "Manage multiple projects and programs across your organization.", icon: Layers },
-    { title: "Global Resource Management", description: "Optimize resources across global teams with AI-powered insights.", icon: Globe },
-    { title: "Advanced Billing", description: "Support for complex billing scenarios including T&M, fixed-price, and milestone.", icon: DollarSign },
-    { title: "Revenue Recognition", description: "ASC 606 compliant revenue recognition with percentage-of-completion.", icon: BarChart3 },
-    { title: "Workflow Automation", description: "Automate complex approval workflows and business processes.", icon: Workflow },
-  ];
-
-  const services = [
-    { title: "NetSuite Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
-    { title: "NetSuite Integration", description: "Connect your apps and workflows seamlessly with API-led integrations.", icon: Share2, href: "/netsuite/services/integration" },
-    { title: "NetSuite Customization", description: "Tailor NetSuite to your unique business needs with SuiteScript and SuiteCloud.", icon: Code, href: "/netsuite/services/suitecloud" },
-    { title: "NetSuite Managed Support", description: "End-to-end support and optimization of your NetSuite environment.", icon: ShieldCheck, href: "/netsuite/services/managed-services" },
-    { title: "NetSuite Training", description: "Comprehensive training programs to maximize system utilization.", icon: Users, href: "/netsuite/services/training-services" },
-    { title: "NetSuite Consulting", description: "Strategic guidance to align NetSuite with your business goals.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
-  ];
-
-  const pricingPlans = [
-    { name: "Professional", description: "For mid-size PS firms", price: "Contact Us", features: ["Advanced PSA", "Resource Management", "Time & Expense", "Up to 100 Users", "Email Support"] },
-    { name: "Enterprise", description: "For large organizations", price: "Contact Us", popular: true, features: ["Everything in Professional", "Portfolio Management", "Advanced Analytics", "Unlimited Users", "24/7 Support", "Dedicated CSM"] },
-    { name: "Global", description: "For multinational PS firms", price: "Contact Us", features: ["Everything in Enterprise", "Multi-Currency", "Global Consolidation", "Advanced Security", "Priority Support", "Custom SLA"] }
-  ];
-
-  const faqs = [
-    { question: "What is SuiteProject Pro (OpenAir)?", answer: "SuiteProject Pro, formerly OpenAir, is NetSuite's enterprise-grade professional services automation solution designed for large, complex services organizations with advanced PSA requirements." },
-    { question: "How is OpenAir different from SRP?", answer: "OpenAir is designed for larger, more complex organizations with advanced needs like portfolio management, global operations, and sophisticated revenue recognition. SRP is ideal for small to mid-size services firms." },
-    { question: "Does OpenAir support global operations?", answer: "Yes! OpenAir is built for global organizations with support for multiple currencies, languages, time zones, and compliance with local regulations across 100+ countries." },
-    { question: "What about revenue recognition?", answer: "OpenAir includes advanced revenue recognition capabilities compliant with ASC 606 and IFRS 15, including percentage-of-completion, milestone-based, and custom recognition rules." },
-    { question: "Can I manage multiple projects simultaneously?", answer: "Absolutely. OpenAir includes portfolio management capabilities that allow you to manage hundreds or thousands of projects across multiple programs and business units." },
-    { question: "Is there API access?", answer: "Yes, OpenAir provides comprehensive REST and SOAP APIs for integration with other systems, custom reporting, and workflow automation." }
+  // Static particle data
+  const CTA_PARTICLES = [
+    { w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 },
+    { w: 1.4, h: 2.1, top: 28, left: 22, dur: 4.1, delay: 1.2 },
+    { w: 2.8, h: 1.2, top: 45, left: 37, dur: 6.3, delay: 0.8 },
+    { w: 1.7, h: 2.4, top: 62, left: 55, dur: 3.8, delay: 2.1 },
+    { w: 2.3, h: 1.8, top: 78, left: 70, dur: 5.5, delay: 0.3 },
+    { w: 1.2, h: 1.5, top: 90, left: 85, dur: 4.7, delay: 1.9 },
+    { w: 2.6, h: 2.0, top: 5, left: 50, dur: 3.5, delay: 0.6 },
+    { w: 1.9, h: 1.3, top: 33, left: 72, dur: 6.1, delay: 1.4 },
+    { w: 2.4, h: 2.7, top: 55, left: 15, dur: 4.4, delay: 0.9 },
+    { w: 1.5, h: 1.9, top: 70, left: 40, dur: 5.8, delay: 2.5 },
+    { w: 2.0, h: 1.4, top: 18, left: 63, dur: 3.9, delay: 1.7 },
+    { w: 2.9, h: 2.2, top: 42, left: 88, dur: 5.0, delay: 0.2 },
   ];
 
   return (
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
-      {/* Full Screen Hero Section */}
-      <section className="relative min-h-screen overflow-hidden flex flex-col">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/people/fourteam.webp"
-            alt="SuiteProject Pro OpenAir Background"
-            fill
-            priority
-            className="object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent z-10" />
+      {/* ── Hero Section ─────────────────────────────────────────────────── */}
+      <section className="relative min-h-screen overflow-hidden flex flex-col bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d]">
+        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-800/10 rounded-full blur-[100px] pointer-events-none" />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
+            backgroundSize: '70px 70px',
+          }}
+        />
 
-        <div className="relative z-20 flex-1 flex flex-col justify-end max-w-7xl mx-auto px-4 sm:px-6 w-full pt-32 sm:pt-40 md:pt-48 pb-12 sm:pb-16">
-          <div className="mb-8 sm:mb-10 lg:mb-12">
+        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10">
+          {/* Breadcrumb */}
+          <motion.nav
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+            className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20"
+            aria-label="Breadcrumb"
+          >
+            <Link href="/netsuite" className="text-blue-300 hover:text-white transition-colors duration-200">
+              Home
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-white/30" />
+            <span className="text-white/50">Solutions</span>
+            <ChevronRight className="w-3.5 h-3.5 text-white/30" />
+            <span className="text-white/80">OpenAir</span>
+          </motion.nav>
+
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
+            {/* LEFT — Headline + Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-3xl"
             >
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-4 sm:mb-6 leading-[1.1] text-white"
+                transition={{ delay: 0.2 }}
+                className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
-                SuiteProject Pro <span className="text-blue-600">(OpenAir)</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
+                  NetSuite SuiteProject Pro (OpenAir)
+                </span>
               </motion.h1>
 
               <motion.div
                 initial={{ width: 0 }}
-                animate={{ width: "120px" }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-                className="h-1 bg-blue-700 mb-4 sm:mb-6"
+                animate={{ width: "80px" }}
+                transition={{ delay: 0.45, duration: 0.6 }}
+                className="h-[3px] bg-gradient-to-r from-blue-500 to-blue-300 mb-5 sm:mb-6 rounded-full"
               />
 
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 md:mb-10 leading-relaxed font-light max-w-2xl"
+                transition={{ delay: 0.35 }}
+                className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                Enterprise professional services automation for global organizations.
+                Enterprise professional services automation built for global organizations — managing thousands of projects, resources, and complex billing scenarios with ease.
               </motion.p>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
               >
                 <Link
-                  href="/netsuite/contact"
-                  className="px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-lg font-bold rounded-full transition-all bg-transparent border-2 border-white text-white hover:bg-gradient-to-r hover:from-blue-900 hover:to-slate-900 hover:border-transparent shadow-xl shadow-blue-900/20 hover:shadow-2xl hover:scale-105"
+                  href="#contact-form"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
                 >
-                  Get Started
+                  Get Started with OpenAir
+                  <motion.span
+                    animate={{ x: [0, 6, 0] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                    className="flex items-center"
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.span>
                 </Link>
               </motion.div>
             </motion.div>
+
+            {/* RIGHT — Accounting-style: image + floating cards */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.0, delay: 0.4 }}
+              className="relative hidden lg:flex items-center justify-center"
+              style={{ minHeight: 460 }}
+            >
+              {/* Outer wrapper — leaves room for the top-left card to peek out */}
+              <div className="relative w-[88%] ml-auto">
+
+                {/* Main image — smaller, rounded */}
+                <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
+                  <Image
+                    src="/images/lap/lap9_11zon.webp"
+                    alt="NetSuite SuiteProject Pro OpenAir"
+                    fill
+                    className="object-cover object-center"
+                    priority
+                  />
+                  {/* Bottom scrim */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+
+                  {/* Bottom white card — inside image at bottom */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.1, duration: 0.6, ease: "easeOut" }}
+                    className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3"
+                  >
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #059669, #10b981)' }}>
+                      <CheckCircle2 className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-gray-900 text-sm font-bold leading-tight">
+                        Manage 1,000s of projects globally
+                      </p>
+                      <p className="text-gray-500 text-xs mt-0.5 leading-snug">
+                        Real-time PSA · Global Resources · ASC 606 Revenue Rec.
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Top-left white card — peeking outside image on the left */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20, y: -10 }}
+                  animate={{ opacity: 1, x: 0, y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.6, ease: "easeOut" }}
+                  className="absolute -top-5 -left-10 flex items-center gap-3.5 bg-white rounded-2xl px-4 py-3 shadow-2xl border border-gray-100"
+                >
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #0f4c81, #0ea5e9)' }}>
+                    <Building2 className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-gray-900 text-[13px] font-bold leading-tight whitespace-nowrap">
+                      SuiteProject Pro (OpenAir)
+                    </p>
+                    <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">
+                      PSA · Portfolio · Global Ops · Billing · Rev. Rec.
+                    </p>
+                  </div>
+                </motion.div>
+
+              </div>
+            </motion.div>
           </div>
 
-          {/* Integrated Metrics Section */}
+          {/* Metrics Row */}
           <motion.div
             ref={statsRef}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="border-t border-white/20 pt-8 sm:pt-10 md:pt-12"
+            transition={{ delay: 0.7, duration: 0.8 }}
+            className="border-t border-white/15 pt-5 sm:pt-6 relative z-10"
           >
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 1 + (index * 0.15),
-                    duration: 0.6,
-                    ease: "easeOut"
-                  }}
+                  transition={{ delay: 0.9 + index * 0.12, duration: 0.5 }}
                   className="text-center group"
                 >
                   <div className="flex justify-center mb-2 sm:mb-3">
                     <div className="p-2 sm:p-3 bg-blue-700/20 rounded-xl sm:rounded-2xl group-hover:bg-blue-700/30 transition-colors duration-300">
-                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-500 group-hover:scale-110 transition-transform duration-300" />
+                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                   </div>
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2 flex items-center justify-center gap-1">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-1 sm:mb-2 flex items-center justify-center gap-1">
                     <Counter value={stat.value} />
-                    <span className="text-blue-500 text-2xl sm:text-3xl md:text-4xl">{stat.suffix}</span>
+                    <span className="text-blue-400 text-2xl sm:text-3xl md:text-4xl">{stat.suffix}</span>
                   </div>
                   <div className="text-gray-400 font-medium text-xs sm:text-sm md:text-base px-2">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
+        </div>
+      </section>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
-            className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:block"
-          >
+      {/* ── Secondary Nav ─────────────────────────────────────────────────── */}
+      <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
+            {[
+              { label: "What is OpenAir?", href: "#what-is-openair" },
+              { label: "Modules", href: "#modules" },
+              { label: "Benefits", href: "#benefits" },
+              { label: "Pricing", href: "#pricing" },
+              { label: "FAQ", href: "#faq" },
+            ].map(link => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="px-4 py-2 text-base font-semibold hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap"
+              >
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-blue-600 to-cyan-500">
+                  {link.label}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
+
+      {/* ── What is OpenAir Section ─────────────────────────────────────── */}
+      <section id="what-is-openair" className="pt-5 pb-14 bg-white scroll-mt-36">
+        <div className="max-w-8xl mx-auto px-16">
+          <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+            {/* LEFT — Dashboard Image */}
             <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              className="flex flex-col items-center gap-2"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="flex items-center justify-center rounded-2xl overflow-hidden p-4 mt-15"
+              style={{ minHeight: 340 }}
             >
-              <span className="text-white/60 text-sm font-medium">Scroll to explore</span>
-              <ChevronDown className="w-6 h-6 text-white/60" />
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/netsuiteimages/solutions/NetsuiteSRP.webp"
+                  alt="NetSuite OpenAir Dashboard"
+                  width={560}
+                  height={380}
+                  className="w-full h-auto rounded-xl object-contain"
+                />
+              </div>
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
 
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
-              <Image src="/images/people/laptopgirl1.webp" alt="What is OpenAir" fill className="object-cover" />
-              <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply" />
-            </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="space-y-6">
+            {/* RIGHT — Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="space-y-6 mt-15"
+            >
               <div className="space-y-4">
-                <h2 className="text-blue-600 font-bold uppercase tracking-wider text-sm">About OpenAir</h2>
-                <h3 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">What is SuiteProject Pro?</h3>
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+                  Scale Your Enterprise with NetSuite OpenAir.
+                </h3>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">SuiteProject Pro (formerly OpenAir) is the leading PSA solution for enterprise services organizations.</p>
-              <p className="text-lg text-gray-600 leading-relaxed">Built for scale, it handles thousands of projects, global resources, and complex billing scenarios with ease.</p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                SuiteProject Pro (formerly OpenAir) is the leading PSA solution for enterprise services organizations. Built for complex, global businesses, it handles thousands of projects, cross-border resource management, and advanced billing scenarios all in one unified platform.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Eliminate data silos and manual processes. With NetSuite OpenAir, your services organization gains the agility, visibility, and compliance needed to grow profitably across every geography.
+              </p>
               <div className="pt-4">
-                <Link href="/netsuite/contact" className="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-4 transition-all uppercase tracking-widest text-sm">
-                  Learn More <ArrowRight size={18} />
+                <Link
+                  href="#contact-form"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
+                  style={{
+                    background: 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)',
+                    color: '#ffffff',
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#0a1f5c';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                  }}
+                >
+                  <span>Empower Your Enterprise</span>
+                  <motion.span
+                    className="flex items-center"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <ArrowRight size={17} strokeWidth={2.5} />
+                  </motion.span>
                 </Link>
               </div>
             </motion.div>
@@ -228,195 +503,83 @@ export default function OpenAirPage() {
         </div>
       </section>
 
-
-
-      <section id="features" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">Enterprise PSA Features</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">Advanced capabilities for complex organizations</p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {openairModules.map((module, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 50, scale: 0.9 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ scale: 1.05, background: "linear-gradient(to bottom right, #ffffff, #ffffff)", transition: { duration: 0.3, ease: "easeInOut" } }}
-                style={{ background: "linear-gradient(to bottom right, #0a1f44, #1a2f5a, #0f2847)" }}
-                className="border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 group">
-                <div className="p-3 bg-blue-600 rounded-xl w-fit mb-6 group-hover:bg-gray-900 transition-colors">
-                  <module.icon className="w-6 h-6 text-white" />
-                </div>
-                <h4 className="text-xl font-bold text-white group-hover:text-gray-900 mb-3 transition-colors duration-300">{module.title}</h4>
-                <p className="text-blue-100 group-hover:text-gray-600 leading-relaxed text-sm transition-colors duration-300">{module.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-16 bg-linear-to-br from-indigo-50/40 via-white to-blue-50/30 relative overflow-hidden">
+      {/* ── OpenAir Modules Grid ──────────────────────────────────────────── */}
+      <section id="modules" className="py-16 bg-white relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-semibold text-gray-900 text-center">
-            NetSuite OpenAir Services
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-medium text-gray-900 text-center">
+            NetSuite OpenAir Modules
           </motion.h2>
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-700 text-lg max-w-2xl text-center">
-            Expert services to help you manage your enterprise PSA operations
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-600 text-lg max-w-2xl text-center">
+            All integrated modules to manage enterprise project delivery and financial excellence in one unified platform
           </motion.p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
-            {services.map((service, index) => {
-              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
-                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
-              return (
-                <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.15, ease: "easeOut" }}>
-                  <motion.div initial="initial" whileHover="hover" variants={{ initial: { scale: 1 }, hover: { scale: 1.04, transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] } } }}
-                    className={`relative group rounded-2xl p-7 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}>
-                    <motion.div variants={{ initial: { rotate: 0, y: 0 }, hover: { rotate: 360, y: -6, transition: { duration: 0.8, ease: [0.42, 0, 0.58, 1] } } }}
-                      className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5">
-                      <service.icon className="w-6 h-6 text-white" />
-                    </motion.div>
-                    <h2 className="text-lg font-semibold text-gray-900 leading-tight">{service.title}</h2>
-                    <p className="text-gray-600 text-sm leading-relaxed mt-2">{service.description}</p>
-                    <div className="mt-6 border-t border-gray-300 pt-3">
-                      <Link href={service.href} className="text-black hover:text-blue-600 text-sm font-medium transition-all">Learn More →</Link>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-24 bg-[#000b21] overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px]" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Advantages</span>
-            <h3 className="text-4xl md:text-5xl font-black text-white mt-6">Why Choose OpenAir?</h3>
-            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">Scalable PSA for global enterprises</p>
-          </motion.div>
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 min-h-[350px] lg:min-h-[450px]">
-              <AnimatePresence mode="wait">
-                <motion.div key={activeBenefit} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.5, ease: "easeOut" }} className="absolute inset-0">
-                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover" />
-                </motion.div>
-              </AnimatePresence>
-            </motion.div>
-            <div className="space-y-4">
-              {benefits.map((item, index) => (
-                <motion.div key={index} initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }}
-                  onClick={() => setActiveBenefit(index)} className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeBenefit === index ? 'bg-white/10 border-blue-400/50 shadow-lg backdrop-blur-sm' : 'bg-white/5 border-white/10 hover:bg-white/10'}`}>
-                  <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-lg transition-colors ${activeBenefit === index ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50' : 'bg-white/10 text-blue-300'}`}>
-                      <CheckCircle2 size={20} />
-                    </div>
-                    <h4 className={`text-xl font-bold transition-colors ${activeBenefit === index ? 'text-white' : 'text-gray-300'}`}>{item.title}</h4>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
+            {modules.map((mod, index) => (
+              <Link key={index} href="#contact-form" className="block">
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
+                  whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white"
+                  style={{ minHeight: 340 }}
+                >
+                  {/* Top: Image Section with Color Overlay */}
+                  <div className="relative h-44 shrink-0 overflow-hidden">
+                    <Image
+                      src={mod.image}
+                      alt={mod.title}
+                      fill
+                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }}
+                    />
                   </div>
-                  <AnimatePresence>
-                    {activeBenefit === index && (
-                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-                        <p className="text-blue-100 mt-4 leading-relaxed pl-12">{item.description}</p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Challenges Section */}
-      <section className="py-24 bg-gradient-to-b from-[#000b21] via-[#000b21] to-[#0a0a0a] overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px]" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Challenges</span>
-            <h3 className="text-4xl md:text-5xl font-black text-white mt-6">Common Enterprise Challenges</h3>
-            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">Solve complex PS problems</p>
-          </motion.div>
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
-            <div className="space-y-4 flex flex-col justify-center">
-              {challenges.map((item, index) => (
-                <motion.div key={index} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }}
-                  onClick={() => setActiveChallenge(index)} className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeChallenge === index ? 'bg-white/10 border-blue-400/50 shadow-lg backdrop-blur-sm' : 'bg-white/5 border-white/10 hover:bg-white/10'}`}>
-                  <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-lg transition-colors ${activeChallenge === index ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/50' : 'bg-white/10 text-blue-300'}`}>
-                      <CheckCircle2 size={20} />
+                  {/* Bottom: Information Section */}
+                  <div
+                    className="flex-1 p-5 pb-6 flex flex-col relative"
+                    style={{ backgroundColor: `rgb(${mod.rgb})` }}
+                  >
+                    <div className="flex-1">
+                      <h4 className="text-white font-bold text-lg mb-2 tracking-wide">
+                        {mod.title}
+                      </h4>
+                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">
+                        {mod.description}
+                      </p>
                     </div>
-                    <h4 className={`text-xl font-bold transition-colors ${activeChallenge === index ? 'text-white' : 'text-gray-300'}`}>{item.title}</h4>
-                  </div>
-                  <AnimatePresence>
-                    {activeChallenge === index && (
-                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-                        <p className="text-blue-100 mt-4 leading-relaxed pl-12">{item.description}</p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))}
-            </div>
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 min-h-[350px] lg:min-h-[450px]">
-              <AnimatePresence mode="wait">
-                <motion.div key={activeChallenge} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.5, ease: "easeOut" }} className="absolute inset-0">
-                  <Image src={challenges[activeChallenge].image} alt={challenges[activeChallenge].title} fill className="object-cover" />
-                </motion.div>
-              </AnimatePresence>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
-      <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50/20 to-indigo-50/30">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <span className="bg-blue-600/10 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Pricing</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-6 mb-4">Choose Your Plan</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">Enterprise solutions for professional services</p>
-          </motion.div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {pricingPlans.map((plan, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}
-                className={`bg-white rounded-2xl p-8 border-2 ${plan.popular ? 'border-blue-600 shadow-2xl shadow-blue-200 relative' : 'border-gray-200'}`}>
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Most Popular</span>
+                    {/* Hover Reveal Button */}
+                    <div className="absolute bottom-6 left-5 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                      <span className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full shadow-md">
+                        Explore <ArrowRight size={10} />
+                      </span>
+                    </div>
+
+                    {/* Multi-color Bottom Border */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500" />
                   </div>
-                )}
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{plan.description}</p>
-                  <div className="text-4xl font-bold text-blue-600">{plan.price}</div>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/netsuite/contact" className={`block text-center px-6 py-3 rounded-xl font-bold transition ${plan.popular ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-gray-100 text-gray-900 hover:bg-gray-200'}`}>
-                  Get Started
-                </Link>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
-        {/* Background Gradients */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] -z-10" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[120px] -z-10" />
+      {/* ── Benefits Section ─────────────────────────────────────────────── */}
+      <section
+        id="benefits"
+        className="py-24 relative overflow-hidden scroll-mt-36"
+        style={{ background: "linear-gradient(135deg, #060e1f 0%, #0a1e4a 25%, #0f2a57 55%, #091828 80%, #050d1a 100%)" }}
+      >
+        {/* Glow Orbs */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3" style={{ background: "radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%)" }} />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3" style={{ background: "radial-gradient(circle, rgba(99,179,237,0.18) 0%, transparent 70%)" }} />
 
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -424,87 +587,193 @@ export default function OpenAirPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="bg-blue-600/10 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
-              FAQ
-            </span>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-6 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-slate-600 text-lg">
-              Everything you need to know about OpenAir
-            </p>
+            <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+              Why Leaders Choose NetSuite OpenAir
+            </h3>
           </motion.div>
 
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className={`group rounded-2xl border transition-all duration-300 ${openFAQ === index
-                  ? 'bg-white border-blue-500/30 shadow-2xl shadow-blue-900/10 scale-[1.02] z-10'
-                  : 'bg-white/80 border-white/50 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-200 hover:-translate-y-1 hover:bg-white'
-                  }`}
-              >
-                <button
-                  onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-                  className="w-full px-8 py-6 flex items-center justify-between transition-colors cursor-pointer"
+          {/* Benefit Content Grid */}
+          <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
+            {/* Left Side: Image Display */}
+            <div className="order-2 lg:order-1 relative min-h-[380px] lg:min-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeBenefit}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0 h-full w-full"
                 >
-                  <span className={`text-left font-bold text-lg transition-colors ${openFAQ === index ? 'text-blue-700' : 'text-slate-900 group-hover:text-blue-600'
-                    }`}>
-                    {faq.question}
-                  </span>
-                  <div className={`p-2 rounded-full transition-all duration-300 flex-shrink-0 ml-4 ${openFAQ === index
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white rotate-180 shadow-lg shadow-blue-500/30'
-                    : 'bg-gray-100 text-gray-500 group-hover:bg-blue-50 group-hover:text-blue-600'
-                    }`}>
-                    <ChevronDown className="w-5 h-5" />
+                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover object-center" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10" />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Right Side: Interactive List */}
+            <div className="order-1 lg:order-2 rounded-3xl border border-white/10 bg-white/[0.03] p-4 flex flex-col gap-2 justify-center shadow-inner backdrop-blur-sm">
+              {benefits.map((item, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveBenefit(index)}
+                  className={`group relative w-full flex flex-col justify-center px-5 py-4 text-left rounded-xl transition-all duration-300 outline-none ${activeBenefit === index
+                    ? 'bg-white shadow-xl border-l-4 border-blue-600'
+                    : 'bg-white/5 border-l-4 border-transparent hover:bg-white/10'
+                    }`}
+                  suppressHydrationWarning
+                >
+                  <div className="flex items-center gap-4 w-full">
+                    <div className={`shrink-0 transition-colors duration-300 ${activeBenefit === index ? 'text-blue-600' : 'text-gray-400 group-hover:text-gray-200'}`}>
+                      {index === 0 && <Globe size={20} />}
+                      {index === 1 && <DollarSign size={20} />}
+                      {index === 2 && <PieChart size={20} />}
+                      {index === 3 && <Layers size={20} />}
+                      {index === 4 && <BarChart3 size={20} />}
+                      {index >= 5 && <Shield size={20} />}
+                    </div>
+                    <span className={`text-base md:text-lg flex-1 font-semibold transition-all duration-300 ${activeBenefit === index ? 'text-gray-900' : 'text-gray-300 group-hover:text-white'}`}>
+                      {item.title}
+                    </span>
+                    <ChevronRight className={`w-4 h-4 shrink-0 transition-all duration-300 ${activeBenefit === index ? 'text-blue-600 rotate-90' : 'text-gray-500 opacity-0 group-hover:opacity-60'}`} />
                   </div>
-                </button>
-                <AnimatePresence>
-                  {openFAQ === index && (
+
+                  {activeBenefit === index && (
                     <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden mt-3 pl-9"
                     >
-                      <div className="px-8 pb-8 pt-0">
-                        <div className="h-px w-full bg-linear-to-r from-transparent via-gray-200 to-transparent mb-6" />
-                        <p className="text-slate-600 leading-relaxed text-base md:text-lg">
-                          {faq.answer}
-                        </p>
-                      </div>
+                      <p className="text-gray-500 text-sm leading-relaxed mb-3">{item.description}</p>
+                      <ul className="space-y-1.5">
+                        {item.points.map((pt, pi) => (
+                          <li key={pi} className="flex items-start gap-2 text-sm text-gray-600">
+                            <Check size={13} className="text-blue-600 mt-0.5 shrink-0" /> {pt}
+                          </li>
+                        ))}
+                      </ul>
                     </motion.div>
                   )}
-                </AnimatePresence>
-              </motion.div>
-            ))}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative rounded-[3rem] overflow-hidden border border-gray-200">
-            <Image src="/images/lap/lap4.webp" alt="Get Started with OpenAir" fill className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
-            <div className="relative z-10 p-12 lg:p-24">
-              <div className="max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Ready for Enterprise PSA?</h2>
-                <p className="text-xl text-gray-300 mb-8">Discover how OpenAir can transform your professional services organization.</p>
-                <Link href="/netsuite/contact" className="inline-flex items-center gap-2 px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition shadow-xl">
-                  Schedule a Demo <ArrowRight size={20} />
-                </Link>
+      {/* ── Pricing Section ─────────────────────────────────────────────────── */}
+      <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="rounded-3xl overflow-hidden shadow-2xl"
+            style={{ backgroundColor: '#06303f' }}
+          >
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
+              {/* LEFT — Text + CTA */}
+              <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
+                <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
+                  How Much Does NetSuite OpenAir Cost?
+                </h2>
+                <p className="text-white/75 text-base leading-relaxed mb-8">
+                  NetSuite OpenAir pricing is tailored to the size and complexity of your enterprise services organization. Your subscription includes the core platform, the OpenAir PSA module, and user seats — along with a one-time implementation fee. As your organization grows globally, you can easily activate additional modules for multi-entity management, advanced analytics, and custom integrations without any infrastructure downtime.
+                </p>
+                <div>
+                  <Link
+                    href="#contact-form"
+                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-yellow-400 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg"
+                  >
+                    Contact Us Now <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </div>
+
+              {/* RIGHT — Organic Blob Image */}
+              <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
+                <div className="absolute inset-0 bg-[#052838]" />
+                <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
+                <div className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#0a5060]" style={{ borderRadius: '45% 55% 50% 50% / 50% 50% 50% 50%' }} />
+                <div
+                  className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl"
+                  style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}
+                >
+                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite OpenAir Pricing" fill className="object-cover object-top" />
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
+      {/* ── FAQ Section ──────────────────────────────────────────────────────── */}
+      <FAQ
+        variant="netsuite"
+        id="faq"
+        customSubtitle="Everything you need to know about NetSuite OpenAir & SuiteProject Pro — PSA, project billing, resource management, and implementation timelines."
+        customFaqs={[
+          { q: "What is NetSuite OpenAir / SuiteProject Pro?", a: "NetSuite OpenAir is a purpose-built Professional Services Automation (PSA) platform for project-based businesses — covering project management, resource planning, time and expense tracking, project billing, and real-time utilisation analytics. SuiteProject Pro brings similar capabilities natively within NetSuite ERP for organisations that want project management embedded directly in their financial system." },
+          { q: "What types of businesses benefit most from OpenAir?", a: "OpenAir is designed for professional and managed services organisations — consulting firms, IT services companies, marketing agencies, engineering firms, staffing businesses, and any organisation that delivers projects, tracks billable hours, and invoices clients based on time, milestones, or fixed fees." },
+          { q: "How does OpenAir handle project billing?", a: "OpenAir supports all standard professional services billing models — time and materials (T&M), fixed fee, milestone-based, retainer, and hybrid. Approved timesheets feed directly into invoicing workflows, with project managers approving billable hours before invoices are generated. Revenue recognition rules are applied automatically based on contract type and delivery completion." },
+          { q: "How does resource management work in OpenAir?", a: "OpenAir provides a real-time resource capacity and demand view across all projects — showing which resources are available, overallocated, or underutilised. Project managers can search resources by skill, certification, location, and availability, then book them to projects directly. Utilisation targets and forecasts are tracked at individual, team, and department levels." },
+          { q: "How does time and expense capture work for project teams?", a: "OpenAir provides a mobile-first timesheet and expense capture interface for project teams. Time is submitted against specific projects and tasks, with configurable approval workflows for manager review. Expense receipts are captured by photo on mobile devices, categorised, and routed for approval — then automatically processed into reimbursement and client billing." },
+          { q: "Can OpenAir integrate with NetSuite financials?", a: "Yes. OpenAir integrates natively with NetSuite financials — approved project revenue, billing, and cost data sync automatically to NetSuite for financial reporting, revenue recognition, and cash collection. Project profitability is visible in real time within both OpenAir and NetSuite dashboards." },
+          { q: "Does OpenAir support revenue recognition for long-term contracts?", a: "Yes. OpenAir includes ASC 606 / IFRS 15 compliant revenue recognition — supporting percentage-of-completion, milestone, and straight-line recognition methods. Revenue schedules are generated automatically based on project delivery progress and contract terms, flowing into NetSuite for financial statement reporting." },
+          { q: "How long does an OpenAir implementation take?", a: "A standard NetSuite OpenAir implementation for a professional services firm — covering project setup, resource management, timesheet workflows, billing rules, and integration with NetSuite financials — typically takes 8 to 14 weeks. Larger implementations with complex billing arrangements, multi-entity structures, or custom integrations may take 14 to 20 weeks." },
+        ]}
+      />
+
+      {/* ── CTA Banner ────────────────────────────────────────────────────────── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#002a8c] via-[#0044cc] to-[#0099a3] shadow-2xl"
+          >
+            {/* Particles */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              {CTA_PARTICLES.map((p, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute bg-white rounded-full"
+                  style={{ width: `${p.w}px`, height: `${p.h}px`, top: `${p.top}%`, left: `${p.left}%` }}
+                  animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }}
+                  transition={{ duration: p.dur, repeat: Infinity, ease: 'easeInOut', delay: p.delay }}
+                />
+              ))}
+            </div>
+
+            <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
+              <div className="text-left max-w-2xl">
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                  Transform Your Enterprise on NetSuite OpenAir —{" "}
+                  <span className="text-cyan-300">Scale Globally.</span>
+                </h2>
+                <p className="text-white/80 text-lg md:text-xl font-medium">
+                  Join thousands of enterprise services organizations that traded complexity for the world&apos;s #1 cloud PSA solution.
+                </p>
+              </div>
+
+              <Link
+                href="#contact-form"
+                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
+              >
+                Go Live on OpenAir
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Contact Form ─────────────────────────────────────────────────────── */}
       <ContactFormDesign4 />
     </div>
   );

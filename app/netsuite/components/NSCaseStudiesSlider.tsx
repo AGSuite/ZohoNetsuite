@@ -67,20 +67,25 @@ const NSCaseStudiesSlider = () => {
     };
 
     return (
-        <section className="py-20 md:py-28 bg-gradient-to-br from-[#0a0a0a] via-[#040b16] to-[#001f5c] text-white relative overflow-hidden font-['DM_Sans',sans-serif]">
+        <section
+            className="py-20 md:py-28 relative overflow-hidden font-['DM_Sans',sans-serif] scroll-mt-36"
+            style={{ background: "linear-gradient(135deg, #000814 0%, #000f22 25%, #001535 55%, #000c1a 80%, #000810 100%)" }}
+        >
             {/* Background elements */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3" style={{ background: "radial-gradient(circle, rgba(37,99,235,0.25) 0%, transparent 70%)" }} />
             <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:flex-row gap-12 lg:gap-8 items-center">
 
                 {/* LEFT SIDE: Text & Controls */}
                 <div className="w-full lg:w-[35%] flex flex-col justify-center space-y-6">
-                    <span className="text-blue-300 font-bold tracking-widest uppercase text-sm">
-                        Success Stories
-                    </span>
-                    <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight text-white shadow-sm">
-                        Real Results with <br className="hidden lg:block" /> Oracle NetSuite
+                    <div>
+                        <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-medium tracking-widest uppercase text-xs md:text-sm backdrop-blur-sm shadow-sm hover:bg-blue-500/20 transition-colors">
+                            Success Stories
+                        </span>
+                    </div>
+                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-300 leading-snug tracking-tight">
+                        Real Results with Oracle NetSuite
                     </h2>
                     <p className="text-blue-100/80 text-lg max-w-md font-medium leading-relaxed">
                         Discover how fast-growing businesses across industries are transforming their operations and scaling seamlessly.
@@ -97,16 +102,8 @@ const NSCaseStudiesSlider = () => {
                     </div>
                 </div>
 
-                {/* RIGHT SIDE: 2 Cards + Edges Arrows */}
-                <div className="w-full lg:w-[65%] w-full flex items-center relative gap-6">
-                    {/* LEFT EDGE ARROW */}
-                    <Link
-                        href="/netsuite/case-studies"
-                        aria-label="View more case studies"
-                        className="hidden md:flex absolute -left-6 lg:-left-4 z-20 w-12 h-12 rounded-full border border-blue-400/30 items-center justify-center bg-[#0a0a0a] hover:bg-blue-600 hover:border-blue-500 text-white transition-all shadow-xl hover:scale-105 active:scale-95"
-                    >
-                        <ChevronLeft className="w-6 h-6" />
-                    </Link>
+                {/* RIGHT SIDE: 2 Cards + Edge Arrow */}
+                <div className="w-full lg:w-[65%] flex items-center relative gap-6">
 
                     {/* The Two Cards Container */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full relative z-10">
@@ -157,6 +154,7 @@ const NSCaseStudiesSlider = () => {
                                     <button
                                         onClick={(e) => handleReadClick(e, study)}
                                         className="mt-auto flex items-center font-bold text-[#0a0a0a] group-hover:text-[#2563eb] transition-colors bg-transparent border-none p-0 cursor-pointer"
+                                        suppressHydrationWarning
                                     >
                                         <span className="border-b-2 border-transparent group-hover:border-[#2563eb] pb-0.5 transition-all">
                                             Read Case Study
@@ -172,9 +170,15 @@ const NSCaseStudiesSlider = () => {
                     <Link
                         href="/netsuite/case-studies"
                         aria-label="View more case studies"
-                        className="hidden md:flex absolute -right-6 lg:-right-4 z-20 w-12 h-12 rounded-full border border-blue-400/30 items-center justify-center bg-[#0a0a0a] hover:bg-blue-600 hover:border-blue-500 text-white transition-all shadow-xl hover:scale-105 active:scale-95"
+                        className="hidden md:flex absolute -right-6 lg:-right-8 z-20"
                     >
-                        <ChevronRight className="w-6 h-6" />
+                        <motion.div
+                            animate={{ x: [0, 8, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                            className="w-16 h-16 rounded-full shadow-2xl items-center justify-center bg-white hover:bg-blue-50 flex border-2 border-slate-100 group transition-all"
+                        >
+                            <ChevronRight className="w-8 h-8 text-[#001f5c] group-hover:scale-110 transition-transform" />
+                        </motion.div>
                     </Link>
                 </div>
 
@@ -183,7 +187,7 @@ const NSCaseStudiesSlider = () => {
                     <Link
                         href="/netsuite/case-studies"
                         aria-label="View more case studies"
-                        className="flex items-center gap-2 text-blue-300 font-bold bg-white/5 px-6 py-3 rounded-full hover:bg-white/10 transition-colors"
+                        className="flex items-center gap-2 text-white font-bold bg-white/10 hover:bg-white/20 px-6 py-3 rounded-full transition-colors border border-white/10"
                     >
                         See More Case Studies <ChevronRight className="w-5 h-5" />
                     </Link>

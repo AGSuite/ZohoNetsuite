@@ -178,16 +178,19 @@ const zohoFaqs = [
 interface FAQProps {
   variant?: "zoho" | "netsuite" | "netsuite-accounting" | "netsuite-global-business" | "netsuite-crm";
   id?: string;
+  customFaqs?: { q: string; a: string }[];
+  customSubtitle?: string;
 }
 
-export const FAQ = ({ variant, id }: FAQProps) => {
+export const FAQ = ({ variant, id, customFaqs, customSubtitle }: FAQProps) => {
   const [activeCategory, setActiveCategory] = useState<"zoho" | "netsuite" | "netsuite-accounting" | "netsuite-global-business" | "netsuite-crm">(
     variant || "netsuite"
   );
   const [openItems, setOpenItems] = useState<{ [key: number]: boolean }>({});
 
-  const faqs =
-    activeCategory === "zoho"
+  const faqs = customFaqs
+    ? customFaqs
+    : activeCategory === "zoho"
       ? zohoFaqs
       : activeCategory === "netsuite-accounting"
         ? accountingFaqs
@@ -257,17 +260,19 @@ export const FAQ = ({ variant, id }: FAQProps) => {
                   className="leading-relaxed text-sm"
                   style={{ color: "rgba(255,255,255,0.80)" }}
                 >
-                  {variant === "zoho"
-                    ? "Find answers to common questions about Zoho solutions and how AGSuite can help."
-                    : variant === "netsuite-accounting"
-                      ? "Everything you need to know about NetSuite Cloud Accounting — from closing faster and multi-entity consolidation to compliance and go-live timelines."
-                      : variant === "netsuite-global-business"
-                        ? "Everything you need to know about NetSuite Global Business Management — from multi-subsidiary setup and multi-currency to intercompany automation and global compliance."
-                        : variant === "netsuite-crm"
-                          ? "Everything you need to know about NetSuite CRM — from sales automation and pipeline forecasting to marketing ROI and customer service management."
-                          : variant === "netsuite"
-                            ? "Everything you need to know about NetSuite ERP — from pricing and licensing to implementation and long-term support."
-                            : "Choose between Oracle NetSuite or Zoho to explore FAQs tailored for each solution."}
+                  {customSubtitle
+                    ? customSubtitle
+                    : variant === "zoho"
+                      ? "Find answers to common questions about Zoho solutions and how AGSuite can help."
+                      : variant === "netsuite-accounting"
+                        ? "Everything you need to know about NetSuite Cloud Accounting — from closing faster and multi-entity consolidation to compliance and go-live timelines."
+                        : variant === "netsuite-global-business"
+                          ? "Everything you need to know about NetSuite Global Business Management — from multi-subsidiary setup and multi-currency to intercompany automation and global compliance."
+                          : variant === "netsuite-crm"
+                            ? "Everything you need to know about NetSuite CRM — from sales automation and pipeline forecasting to marketing ROI and customer service management."
+                            : variant === "netsuite"
+                              ? "Everything you need to know about NetSuite ERP — from pricing and licensing to implementation and long-term support."
+                              : "Choose between Oracle NetSuite or Zoho to explore FAQs tailored for each solution."}
                 </p>
 
                 {/* Filter Buttons — only shown when no variant is locked */}

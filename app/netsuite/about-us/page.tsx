@@ -254,7 +254,7 @@ const fadeInUp: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }
+    transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] as any }
   }
 };
 
@@ -263,7 +263,7 @@ const staggerContainer: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2
+      staggerChildren: 0.15
     }
   }
 };
@@ -273,7 +273,7 @@ const slideInLeft: Variants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }
+    transition: { delay: 0.8, duration: 0.7, ease: [0.22, 1, 0.36, 1] as any }
   }
 };
 
@@ -282,7 +282,35 @@ const slideInRight: Variants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }
+    transition: { delay: 0.8, duration: 0.7, ease: [0.22, 1, 0.36, 1] as any }
+  }
+};
+
+const wordContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    }
+  }
+};
+
+const wordItem: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 8,
+    filter: "blur(4px)"
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.4,
+      ease: "easeOut"
+    }
   }
 };
 
@@ -808,14 +836,22 @@ export default function AboutClient() {
               viewport={{ once: true, amount: 0.2 }}
               className="flex-1 flex flex-col justify-center text-center lg:text-left"
             >
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-6">Our Mission</motion.h2>
-              <motion.p variants={fadeInUp} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-                AGSuite Technologies thrives on empowering businesses through cutting-edge
-                technology solutions, specializing in Oracle NetSuite and Zoho. Our passion is to
-                streamline operations, enhance efficiency, and drive sustainable growth for our
-                clients. Our commitment lies in being a catalyst for positive transformation,
-                helping clients achieve their strategic goals in the dynamic digital landscape.
-              </motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 bg-gradient-to-r from-[#000814] via-[#001535] to-black bg-clip-text text-transparent">Our Mission</motion.h2>
+              <motion.div variants={wordContainer} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
+                {(() => {
+                  const text = "AGSuite Technologies thrives on empowering businesses through cutting-edge technology solutions, specializing in Oracle NetSuite and Zoho. Our passion is to streamline operations, enhance efficiency, and drive sustainable growth for our clients. Our commitment lies in being a catalyst for positive transformation, helping clients achieve their strategic goals in the dynamic digital landscape.";
+                  const words = text.split(' ');
+                  const groups = [];
+                  for (let i = 0; i < words.length; i += 3) {
+                    groups.push(words.slice(i, i + 3).join(' '));
+                  }
+                  return groups.map((group, i) => (
+                    <motion.span key={i} variants={wordItem} className="inline-block mr-[0.35em]">
+                      {group}
+                    </motion.span>
+                  ));
+                })()}
+              </motion.div>
             </motion.div>
           </div>
 
@@ -828,14 +864,22 @@ export default function AboutClient() {
               viewport={{ once: true, amount: 0.2 }}
               className="flex-1 flex flex-col justify-center text-center lg:text-left"
             >
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-6">Our Vision</motion.h2>
-              <motion.p variants={fadeInUp} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-                AGSuite Technologies envisions global leadership in technology consulting, setting
-                industry benchmarks for innovation, integrity, and client satisfaction. We aspire to
-                be the preferred choice, renowned for transformative solutions, agility, and
-                empathetic growth. Our vision is to forge lasting partnerships, defining the zenith
-                of excellence in the dynamic field of technology.
-              </motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 bg-gradient-to-r from-[#000814] via-[#001535] to-black bg-clip-text text-transparent">Our Vision</motion.h2>
+              <motion.div variants={wordContainer} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
+                {(() => {
+                  const text = "AGSuite Technologies envisions global leadership in technology consulting, setting industry benchmarks for innovation, integrity, and client satisfaction. We aspire to be the preferred choice, renowned for transformative solutions, agility, and empathetic growth. Our vision is to forge lasting partnerships, defining the zenith of excellence in the dynamic field of technology.";
+                  const words = text.split(' ');
+                  const groups = [];
+                  for (let i = 0; i < words.length; i += 3) {
+                    groups.push(words.slice(i, i + 3).join(' '));
+                  }
+                  return groups.map((group, i) => (
+                    <motion.span key={i} variants={wordItem} className="inline-block mr-[0.35em]">
+                      {group}
+                    </motion.span>
+                  ));
+                })()}
+              </motion.div>
             </motion.div>
 
             {/* Right Image Collage */}
@@ -931,14 +975,22 @@ export default function AboutClient() {
               viewport={{ once: true, amount: 0.2 }}
               className="flex-1 flex flex-col justify-center text-center lg:text-left"
             >
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-6">Our Niche</motion.h2>
-              <motion.p variants={fadeInUp} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-                AGSuite Technologies excels in Oracle NetSuite and Zoho Implementation, offering
-                top-notch Technology Consulting Services. Our specialization includes Customizations,
-                Managed Services, and Integrations, ensuring tailored solutions for clients. With a
-                focus on client success, we leverage our expertise to lead in the dynamic landscape
-                of cloud-based business solutions.
-              </motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 bg-gradient-to-r from-[#000814] via-[#001535] to-black bg-clip-text text-transparent">Our Niche</motion.h2>
+              <motion.div variants={wordContainer} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
+                {(() => {
+                  const text = "AGSuite Technologies excels in Oracle NetSuite and Zoho Implementation, offering top-notch Technology Consulting Services. Our specialization includes Customizations, Managed Services, and Integrations, ensuring tailored solutions for clients. With a focus on client success, we leverage our expertise to lead in the dynamic landscape of cloud-based business solutions.";
+                  const words = text.split(' ');
+                  const groups = [];
+                  for (let i = 0; i < words.length; i += 3) {
+                    groups.push(words.slice(i, i + 3).join(' '));
+                  }
+                  return groups.map((group, i) => (
+                    <motion.span key={i} variants={wordItem} className="inline-block mr-[0.35em]">
+                      {group}
+                    </motion.span>
+                  ));
+                })()}
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -1039,11 +1091,39 @@ export default function AboutClient() {
 
 
 
-      {/* Global Leaders Section - dark theme */}
-      <section id="leaders" className="relative py-24 bg-gradient-to-b from-[#0f172a] via-[#020617] to-[#020617] overflow-hidden">
+      {/* Global Leaders Section - dark theme with stars */}
+      <section id="leaders" className="relative py-24 bg-gradient-to-br from-[#000814] via-[#001535] to-[#000814] overflow-hidden">
+        {/* Moving Stars Effect */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {isMounted && [...Array(40)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute bg-white rounded-full"
+              style={{
+                width: Math.random() * 2 + 1 + 'px',
+                height: Math.random() * 2 + 1 + 'px',
+                top: Math.random() * 100 + '%',
+                left: Math.random() * 100 + '%',
+                opacity: Math.random() * 0.5 + 0.1,
+              }}
+              animate={{
+                y: [0, -40, 0],
+                x: [0, Math.random() * 30 - 15, 0],
+                opacity: [0.1, 0.8, 0.1],
+              }}
+              transition={{
+                duration: Math.random() * 5 + 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: Math.random() * 5,
+              }}
+            />
+          ))}
+        </div>
+
         {/* Glow Effects */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full -z-0" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 blur-[120px] rounded-full -z-0" />
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-600/20 blur-[120px] rounded-full -z-0 pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-indigo-600/20 blur-[120px] rounded-full -z-0 pointer-events-none" />
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -1059,7 +1139,7 @@ export default function AboutClient() {
             Meet Our Visionary Leaders
           </motion.h2>
 
-          <motion.p variants={fadeInUp} className="max-w-2xl text-gray-400 mb-12 text-base md:text-lg leading-relaxed">
+          <motion.p variants={fadeInUp} className="max-w-2xl text-blue-200 mb-10 text-base md:text-lg leading-relaxed">
             Driving innovation and excellence with a passion for transformative technology.
           </motion.p>
 
@@ -1291,7 +1371,7 @@ const leadersData = [
   {
     name: "Rajat Goyal",
     title: "Director",
-    image: "/images/people/Rajat.jpg",
+    image: "/images/people/Rajat.png",
     linkedin: "https://www.linkedin.com/in/rajat-goyal-9007a6101/",
     bio: "Strategic business leader specializing in operational excellence and global expansion initiatives."
   },
@@ -1305,83 +1385,53 @@ const leadersData = [
 ];
 
 function OurLeaders({ themeColor }: { themeColor: 'blue' | 'rose' }) {
-  const colorConfig = {
-    blue: {
-      primary: 'bg-blue-600',
-      text: 'text-blue-600',
-      hover: 'hover:bg-blue-700',
-      border: 'border-blue-600/30',
-    },
-    rose: {
-      primary: 'bg-rose-600',
-      text: 'text-rose-600',
-      hover: 'hover:bg-rose-700',
-      border: 'border-rose-600/30',
-    },
-  };
-
-  const config = colorConfig[themeColor];
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl mx-auto">
       {leadersData.map((leader, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-300 flex flex-col overflow-hidden"
+          className="group relative bg-gradient-to-br from-[#e6f0ff] to-[#f0f5ff] rounded-[2rem] p-4 hover:bg-gradient-to-br hover:from-[#001535] hover:to-[#002b6b] transition-all duration-500 overflow-hidden flex flex-col shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-900/40 text-left max-w-[310px] mx-auto w-full"
         >
-          {/* Same Light Gradient Background for All Cards */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-cyan-500/5 to-teal-500/5 opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
-
-          {/* Decorative Corner Designs */}
-          <div className="absolute top-0 right-0 w-32 h-32 border-t-2 border-r-2 border-white/10 rounded-tr-3xl" />
-          <div className="absolute bottom-0 left-0 w-32 h-32 border-b-2 border-l-2 border-white/10 rounded-bl-3xl" />
-          <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white/10 to-transparent rounded-tr-3xl" />
-          <div className="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr from-white/10 to-transparent rounded-bl-3xl" />
-
-          {/* Content */}
-          <div className="relative z-10 flex flex-col items-center">
-            {/* Larger Image at Top */}
-            <div className="relative w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 ring-4 ring-white/20 group-hover:ring-white/40 transition-all duration-300 shadow-2xl">
+          {/* Inner Image Container - No Background, Rounded Image */}
+          <div className="relative w-full h-48 md:h-52 mb-6 overflow-hidden flex items-end justify-center">
+            <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden group-hover:bg-white/50 transition-colors duration-500">
               <Image
                 src={leader.image}
                 alt={leader.name}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
               />
             </div>
+          </div>
 
-            {/* Bio/Information */}
-            <div className="flex-1 mb-6">
-              <p className="text-gray-300 text-sm leading-relaxed text-center">
-                {leader.bio}
-              </p>
+          <div className="px-2 flex-grow flex flex-col pt-2">
+            {/* Name and LinkedIn Inline */}
+            <div className="flex items-center justify-between mb-1">
+              <h3 className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-[#001535] to-[#004e9a] bg-clip-text text-transparent group-hover:from-white group-hover:to-white transition-all duration-500">
+                {leader.name}
+              </h3>
+              <a
+                href={leader.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#0077b5] group-hover:text-white hover:scale-110 transition-transform duration-300 flex-shrink-0"
+                aria-label={`${leader.name} LinkedIn`}
+              >
+                <Linkedin className="w-6 h-6 fill-current" />
+              </a>
             </div>
 
-            {/* Name and Designation at Bottom - Split Layout */}
-            <div className="border-t border-white/20 pt-5 w-full">
-              <div className="flex items-center justify-between">
-                {/* Left Side - Name and Designation */}
-                <div className="text-left">
-                  <h3 className="text-2xl font-semibold text-white mb-1">{leader.name}</h3>
-                  <p className="text-sm text-gray-400 font-normal">{leader.title}</p>
-                </div>
-
-                {/* Right Side - LinkedIn Only */}
-                <div>
-                  <a
-                    href={leader.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-10 h-10 bg-[#0077b5] text-white rounded-lg hover:bg-[#006399] transition-all shadow-lg hover:shadow-xl hover:scale-105"
-                    aria-label={`${leader.name} LinkedIn`}
-                  >
-                    <Linkedin className="w-5 h-5 fill-current" />
-                  </a>
-                </div>
-              </div>
+            {/* Title & Bio combined */}
+            <div className="mb-2 flex-grow">
+              <span className="block text-sm font-semibold bg-gradient-to-r from-[#001535] to-[#004e9a] bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:to-cyan-300 transition-all duration-500 mb-3 border-b border-gray-300 group-hover:border-blue-400/30 pb-3 w-max pr-6">
+                {leader.title}
+              </span>
+              <p className="text-[13px] md:text-[14px] font-medium bg-gradient-to-r from-[#1e293b] to-[#334155] bg-clip-text text-transparent group-hover:from-white/80 group-hover:to-white/80 transition-all duration-500 leading-relaxed">
+                {leader.bio}
+              </p>
             </div>
           </div>
         </motion.div>
