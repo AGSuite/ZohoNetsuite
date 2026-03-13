@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -7,18 +7,7 @@ import { Mail, CheckCircle, Sparkles, ShieldCheck } from 'lucide-react';
 // Define global types for Zoho
 declare global {
   interface Window {
-    $zoho?: {
-      salesiq?: {
-        widgetcode: string;
-        values: Record<string, unknown>;
-        ready: () => void;
-        visitor?: {
-          uniqueid: () => string;
-          name: (name: string) => void;
-          email: (email: string) => void;
-        };
-      };
-    };
+    $zoho?: any;
     addAriaSelected409531000000398076?: (event: Event) => void;
     rccallback409531000000398076?: () => void;
     reCaptchaAlert409531000000398076?: () => boolean;
