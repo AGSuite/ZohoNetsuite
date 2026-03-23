@@ -302,7 +302,7 @@ const ZohoMetrics = () => {
                         </p>
 
                         <div className="relative w-full overflow-hidden py-2">
-                            <div className="animate-marquee whitespace-nowrap flex items-center gap-5">
+                            <div className="animate-marquee whitespace-nowrap flex items-center gap-5" style={{ willChange: 'transform' }}>
                                 {logos.concat(logos).map((logo, index) => (
                                     <div key={index} className="inline-flex">
                                         <a
@@ -317,6 +317,7 @@ const ZohoMetrics = () => {
                                                 alt={`${logo.name} logo`}
                                                 width={190}
                                                 height={60}
+                                                sizes="190px"
                                                 className="h-15 sm:h-26 w-auto object-contain brightness-0 invert opacity-100 hover:opacity-100 hover:brightness-100 hover:invert-0 transition-all duration-300"
                                             />
                                         </a>

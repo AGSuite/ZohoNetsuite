@@ -43,8 +43,9 @@ const ZohoWhyChooseUs = () => {
                 src="/images/Background/teambg2.webp"
                 alt="Business technology background"
                 fill
+                sizes="(max-width: 768px) 100vw, 1200px"
                 className="object-cover"
-                priority
+                loading="lazy"
               />
             </div>
 

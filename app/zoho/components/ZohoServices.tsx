@@ -187,6 +187,7 @@ export default function ZohoServices() {
                     src={service.bgImage}
                     alt={service.title}
                     fill
+                    sizes="(max-width: 1024px) 50vw, 260px"
                     className="object-cover"
                   />
                   {/* Black gradient overlay - transparent top to dark bottom */}
@@ -284,6 +285,7 @@ export default function ZohoServices() {
                     src={service.bgImage}
                     alt={service.title}
                     fill
+                    sizes="50vw"
                     className="object-cover"
                   />
                   {/* Black gradient overlay - transparent top to dark bottom */}
@@ -374,6 +376,7 @@ export default function ZohoServices() {
                 src={service.bgImage}
                 alt={service.title}
                 fill
+                sizes="100vw"
                 className="object-cover"
               />
 

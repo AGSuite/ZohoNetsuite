@@ -83,14 +83,14 @@ const ZohoCustomerSuccess = () => {
         goTo(next, 1);
     }, [activeIdx, goTo]);
 
-    // Auto-rotate
+    // Auto-rotate (no dependency on activeIdx - use functional update pattern)
     useEffect(() => {
         const interval = setInterval(() => {
             setDirection(1);
             setActiveIdx((prev) => (prev + 1) % customers.length);
         }, 8000);
         return () => clearInterval(interval);
-    }, [activeIdx]);
+    }, []);
 
     const activeCustomer = customers[activeIdx];
 
@@ -161,6 +161,7 @@ const ZohoCustomerSuccess = () => {
                                         src={activeCustomer.bgImage}
                                         alt={activeCustomer.companyName}
                                         fill
+                                        sizes="(max-width: 768px) 100vw, 40vw"
                                         className="object-cover brightness-110 contrast-110"
                                     />
                                     {/* Color Overlay */}
@@ -197,6 +198,7 @@ const ZohoCustomerSuccess = () => {
                                                 src={activeCustomer.personAvatar}
                                                 alt={activeCustomer.personName}
                                                 fill
+                                                sizes="56px"
                                                 className="object-cover"
                                             />
                                         </div>

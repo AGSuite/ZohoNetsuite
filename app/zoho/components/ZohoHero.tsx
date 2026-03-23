@@ -8,7 +8,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import dynamic from "next/dynamic";
 
 
 
@@ -163,6 +162,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                           animate={{ rotate: 360 }}
                           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
                           className="absolute inset-0 flex items-center justify-center"
+                          style={{ willChange: 'transform' }}
                         >
                           {[
                             { src: "/images/zoho logos/zoho Crm logo.png", angle: 0 },
@@ -200,6 +200,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                           animate={{ rotate: -360 }}
                           transition={{ duration: 65, repeat: Infinity, ease: "linear" }}
                           className="absolute inset-0 flex items-center justify-center"
+                          style={{ willChange: 'transform' }}
                         >
                           {[
                             { src: "/images/zoho logos/zoho people logo.png", angle: 30 },
@@ -250,7 +251,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                   customVisual={
                     <div className="relative w-full flex justify-center lg:justify-end">
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[130%] -z-10 blur-[130px] opacity-20 select-none pointer-events-none">
-                        <div className="absolute inset-0 animate-pulse">
+                        <div>
                           <div className="absolute top-0 left-0 w-[80%] h-[80%] bg-gray-300 rounded-full blur-[60px]" />
                           <div className="absolute top-0 right-0 w-[80%] h-[80%] bg-gray-400 rounded-full blur-[60px]" />
                           <div className="absolute bottom-0 right-0 w-[80%] h-[80%] bg-gray-500 rounded-full blur-[60px]" />

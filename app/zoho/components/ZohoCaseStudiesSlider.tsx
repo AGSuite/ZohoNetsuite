@@ -103,7 +103,7 @@ const ZohoCaseStudiesSlider = () => {
                         {caseStudies.map((study) => (
                             <div key={study.id} className="bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col group transition-transform duration-300 hover:-translate-y-2 border border-white/10">
                                 <div className="relative h-56 md:h-64 w-full overflow-hidden">
-                                    <Image src={study.image} alt={study.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                                    <Image src={study.image} alt={study.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent opacity-60" />
                                     <div className="absolute top-4 right-4 bg-white shadow-lg p-2 px-3 rounded-lg flex items-center justify-center">
                                         <span className="text-blue-900 font-bold text-sm tracking-tight">Zoho Cloud</span>
@@ -125,9 +125,10 @@ const ZohoCaseStudiesSlider = () => {
                         ))}
                     </div>
                     <Link href="/zoho/case-studies" aria-label="More studies" className="hidden md:flex absolute -right-6 lg:-right-8 z-20">
-                        <motion.div animate={{ x: [0, 8, 0] }} transition={{ duration: 1.5, repeat: Infinity }} className="w-16 h-16 rounded-full shadow-2xl items-center justify-center bg-white flex border-2 border-slate-100 group">
+                        <div className="w-16 h-16 rounded-full shadow-2xl items-center justify-center bg-white flex border-2 border-slate-100 group" style={{ animation: 'slideArrow 1.5s ease-in-out infinite' }}>
                             <ChevronRight className="w-8 h-8 text-[#001f5c] group-hover:scale-110" />
-                        </motion.div>
+                        </div>
+                        <style>{`@keyframes slideArrow { 0%,100%{transform:translateX(0)} 50%{transform:translateX(8px)} }`}</style>
                     </Link>
                 </div>
             </div>
