@@ -91,9 +91,14 @@ export default function ZohoBlogsSlider({ blogs, variant = 'default' }: ZohoBlog
                                         </div>
 
                                         <div className="flex flex-col flex-1 p-5 md:p-6 bg-white">
-                                            <div className="flex items-center gap-3 mb-3 text-[11px] text-gray-400 font-medium">
+                                            <div className="flex items-center gap-3 mb-3 text-[11px] text-gray-600 font-medium">
                                                 {blog.author && <span className="text-blue-600 font-bold uppercase tracking-widest text-[10px] border-l-2 border-blue-600 pl-2">{blog.author}</span>}
-                                                <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5" />{new Date(blog.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                                                {blog.publishedAt && !isNaN(new Date(blog.publishedAt).getTime()) && (
+                                                    <span className="flex items-center gap-1">
+                                                        <Calendar className="w-3.5 h-3.5" />
+                                                        {new Date(blog.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                                                    </span>
+                                                )}
                                             </div>
                                             <h3 className={`${variant === 'small' ? 'text-sm md:text-base font-bold' : 'text-base md:text-lg font-bold'} text-gray-900 group-hover/item:text-blue-600 transition-colors leading-snug line-clamp-2`}>{blog.title}</h3>
                                             <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-5">{blog.excerpt || 'Read the full story to understand how Zoho can benefit your enterprise...'}</p>

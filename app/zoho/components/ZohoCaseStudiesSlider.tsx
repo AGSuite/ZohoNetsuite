@@ -113,7 +113,7 @@ const ZohoCaseStudiesSlider = () => {
                                     </div>
                                 </div>
                                 <div className="p-6 md:p-8 flex flex-col flex-grow bg-white text-slate-900">
-                                    <h4 className="text-[13px] font-extrabold text-[#2563eb] uppercase tracking-widest mb-2 border-l-2 border-[#2563eb] pl-2">{study.company}</h4>
+                                    <p className="text-[13px] font-extrabold text-[#2563eb] uppercase tracking-widest mb-2 border-l-2 border-[#2563eb] pl-2">{study.company}</p>
                                     <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 group-hover:text-[#2563eb] transition-colors line-clamp-2">{study.title}</h3>
                                     <p className="text-slate-600 mb-6 flex-grow line-clamp-3 leading-relaxed">{study.description}</p>
                                     <button onClick={(e) => handleReadClick(e, study)} className="mt-auto flex items-center font-bold text-[#0a0a0a] group-hover:text-[#2563eb] transition-colors bg-transparent border-none p-0 cursor-pointer text-sm">
@@ -140,10 +140,10 @@ const ZohoCaseStudiesSlider = () => {
                         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white rounded-3xl shadow-2xl z-[101] overflow-hidden">
                             <div className="relative">
                                 <button onClick={closeModal} className="absolute top-4 right-4 p-2 bg-white/20 hover:bg-black/20 rounded-full text-white z-10"><X className="w-5 h-5" /></button>
-                                <div className="bg-gradient-to-r from-[#001f5c] to-[#0a0a0a] p-6 text-white"><h3 className="text-xl font-bold mb-2 pr-8 leading-tight">Access Zoho Case Study</h3><p className="text-blue-100/90 text-sm line-clamp-2">{selectedStudy?.title}</p></div>
+                                <div className="bg-gradient-to-r from-[#001f5c] to-[#0a0a0a] p-6 text-white"><h2 className="text-xl font-bold mb-2 pr-8 leading-tight">Access Zoho Case Study</h2><p className="text-blue-100/90 text-sm line-clamp-2">{selectedStudy?.title}</p></div>
                                 <div className="p-6 md:p-8 text-left text-slate-800">
                                     {isSubmitted ? (
-                                        <div className="text-center py-6"><div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4"><CheckCircle2 className="w-8 h-8" /></div><h4 className="text-2xl font-bold text-slate-900 mb-2">Thank You!</h4><p className="text-slate-600">The study has been sent to your email.</p><button onClick={closeModal} className="mt-8 w-full bg-slate-900 text-white py-3 rounded-xl">Close</button></div>
+                                        <div className="text-center py-6"><div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4"><CheckCircle2 className="w-8 h-8" /></div><h3 className="text-2xl font-bold text-slate-900 mb-2">Thank You!</h3><p className="text-slate-600">The study has been sent to your email.</p><button onClick={closeModal} className="mt-8 w-full bg-slate-900 text-white py-3 rounded-xl">Close</button></div>
                                     ) : (
                                         <form onSubmit={handleSubmit} className="space-y-4">
                                             <div><label className="block text-xs font-bold text-slate-700 uppercase mb-1">Name *</label><input type="text" name="name" required value={formData.name} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none text-sm" placeholder="John Doe" /></div>

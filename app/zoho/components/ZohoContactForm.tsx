@@ -176,29 +176,29 @@ export default function ZohoContactForm() {
                                 <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/contact-us/thank-you.php" readOnly />
 
                                 <div>
-                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Full Name *</label>
-                                    <input type="text" name="Last Name" required placeholder="John Doe" className="w-full bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
+                                    <label htmlFor="lastName" className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Full Name *</label>
+                                    <input type="text" id="lastName" name="Last Name" required placeholder="John Doe" className="w-full bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                 </div>
 
                                 <div>
-                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Business Email *</label>
-                                    <input type="email" name="Email" required placeholder="john@company.com" className="w-full bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
+                                    <label htmlFor="email" className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Business Email *</label>
+                                    <input type="email" id="email" name="Email" required placeholder="john@company.com" className="w-full bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Mobile Number *</label>
-                                        <input type="tel" name="Mobile" required placeholder="+91 00000 00000" className="w-full bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
+                                        <label htmlFor="mobile" className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Mobile Number *</label>
+                                        <input type="tel" id="mobile" name="Mobile" required placeholder="+91 00000 00000" className="w-full bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                     </div>
                                     <div>
-                                        <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Company *</label>
-                                        <input type="text" name="Company" required placeholder="Company Inc." className="w-full bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
+                                        <label htmlFor="company" className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Company *</label>
+                                        <input type="text" id="company" name="Company" required placeholder="Company Inc." className="w-full bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Service Interest *</label>
-                                    <select name="LEADCF5" required className="w-full bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer">
+                                    <label htmlFor="serviceInterest" className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Service Interest *</label>
+                                    <select id="serviceInterest" name="LEADCF5" required className="w-full bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer">
                                         <option value="">Select Service</option>
                                         <option value="Zoho One Implementation">Zoho One Implementation</option>
                                         <option value="Zoho CRM Customization">Zoho CRM Customization</option>
@@ -209,8 +209,8 @@ export default function ZohoContactForm() {
                                 </div>
 
                                 <div>
-                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Requirements *</label>
-                                    <textarea name="Description" required rows={3} placeholder="Share your project goals or challenges..." className="w-full bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400" />
+                                    <label htmlFor="description" className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Requirements *</label>
+                                    <textarea id="description" name="Description" required rows={3} placeholder="Share your project goals or challenges..." className="w-full bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400" />
                                 </div>
 
                                 <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.01] text-sm">

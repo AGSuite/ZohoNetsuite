@@ -203,7 +203,7 @@ const ZohoCustomerSuccess = () => {
                                             />
                                         </div>
                                         <div>
-                                            <h4 className="text-lg font-bold text-[#1a1a1a]">{activeCustomer.personName}</h4>
+                                            <p className="text-lg font-bold text-[#1a1a1a]">{activeCustomer.personName}</p>
                                             <p className="text-sm text-gray-500 font-medium">{activeCustomer.personRole}</p>
                                         </div>
                                     </div>
@@ -224,18 +224,21 @@ const ZohoCustomerSuccess = () => {
                 </div>
 
                 {/* Dot Indicators */}
-                <div className="flex items-center justify-center gap-2 mt-8">
+                <div className="flex items-center justify-center gap-0 mt-8">
                     {customers.map((_, idx) => (
                         <button
                             suppressHydrationWarning
                             key={idx}
                             onClick={() => goTo(idx, idx > activeIdx ? 1 : -1)}
                             aria-label={`Go to testimonial ${idx + 1}`}
-                            className={`rounded-full transition-all duration-300 focus:outline-none ${idx === activeIdx
-                                ? 'w-7 h-2.5 bg-rose-600'
-                                : 'w-2.5 h-2.5 bg-gray-300 hover:bg-rose-300'
-                                }`}
-                        />
+                            className="inline-flex items-center justify-center w-11 h-11 focus:outline-none"
+                        >
+                            <span className={`rounded-full transition-all duration-300 block ${
+                                idx === activeIdx
+                                    ? 'w-7 h-2.5 bg-rose-600'
+                                    : 'w-2.5 h-2.5 bg-gray-300 hover:bg-rose-300'
+                            }`} />
+                        </button>
                     ))}
                 </div>
 

@@ -238,17 +238,19 @@ const ZohoKeyCapabilities = () => {
                                 </motion.p>
                             </AnimatePresence>
                             {/* Dot indicators */}
-                            <div className="flex items-center justify-center gap-1.5 mt-2">
+                            <div className="flex items-center justify-center gap-0 mt-2">
                                 {capabilities.map((cap) => (
                                     <button
                                         key={cap.id}
                                         onClick={() => setActiveTab(cap.id)}
                                         aria-label={`Go to ${cap.title}`}
-                                        className={`rounded-full transition-all duration-300 ${activeTab === cap.id
+                                        className="inline-flex items-center justify-center w-11 h-11 focus:outline-none"
+                                    >
+                                        <span className={`rounded-full transition-all duration-300 block ${activeTab === cap.id
                                             ? 'w-5 h-2 bg-rose-600'
                                             : 'w-2 h-2 bg-slate-300 hover:bg-rose-300'
-                                            }`}
-                                    />
+                                            }`} />
+                                    </button>
                                 ))}
                             </div>
                         </div>
@@ -289,31 +291,24 @@ const ZohoKeyCapabilities = () => {
                 viewport={{ once: true }}
                 className="mt-16 relative overflow-hidden bg-gradient-to-br from-[#880e4f] via-[#c2185b] to-[#e91e63] shadow-[0_20px_50px_-15px_rgba(233,30,99,0.3)]"
             >
-                {/* Background particles */}
+                {/* Background particles - CSS only, compositor-safe */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    {isMounted && [...Array(15)].map((_, i) => (
-                        <motion.div
+                    {isMounted && [...Array(12)].map((_, i) => (
+                        <span
                             key={i}
                             className="absolute bg-white rounded-full"
                             style={{
-                                width: Math.random() * 2 + 1 + 'px',
-                                height: Math.random() * 2 + 1 + 'px',
-                                top: Math.random() * 100 + '%',
-                                left: Math.random() * 100 + '%',
-                            }}
-                            animate={{
-                                y: [0, -30, 0],
-                                x: [0, Math.random() * 20 - 10, 0],
-                                opacity: [0.2, 0.8, 0.2],
-                            }}
-                            transition={{
-                                duration: Math.random() * 5 + 3,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                                delay: Math.random() * 5,
+                                width: `${(i % 3) + 1}px`,
+                                height: `${(i % 3) + 1}px`,
+                                top: `${(i * 7 + 5) % 100}%`,
+                                left: `${(i * 13 + 8) % 100}%`,
+                                opacity: 0.3,
+                                animation: `floatParticle ${3 + (i % 5)}s ease-in-out ${(i * 0.4) % 3}s infinite`,
+                                willChange: 'transform',
                             }}
                         />
                     ))}
+                    <style>{`@keyframes floatParticle{0%,100%{transform:translateY(0)}50%{transform:translateY(-28px)}}`}</style>
                 </div>
 
                 <div className="max-w-[1240px] mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 text-center md:text-left">
