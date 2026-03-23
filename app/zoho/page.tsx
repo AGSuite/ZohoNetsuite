@@ -1,4 +1,7 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import { getZohoPosts } from '../../sanity/lib/zohoFetch';
+
 import { ZohoHero } from './components/ZohoHero';
 import { Metadata } from 'next';
 
@@ -12,23 +15,24 @@ export const metadata: Metadata = {
   },
 };
 
-const ZohoMetrics = dynamic(() => import('./components/ZohoMetrics').then(mod => mod.default));
-const ZohoDashboardHero = dynamic(() => import('./components/ZohoDashboardHero').then(mod => mod.default));
-import dynamic from 'next/dynamic';
-
-const ZohoIndustries = dynamic(() => import('./components/ZohoIndustries').then(mod => mod.default));
-const Testimonials = dynamic(() => import('../components/home/Testimonials').then(mod => mod.Testimonials));
-const FAQ = dynamic(() => import('../components/home/FAQ').then(mod => mod.FAQ));
-
+const ZohoMetrics = dynamic(() => import('./components/ZohoMetrics').then(mod => mod.default), {
+  loading: () => <div className="h-96 bg-gray-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
+});
+const ZohoCustomerSuccess = dynamic(() => import('./components/ZohoCustomerSuccess').then(mod => mod.default));
+const ZohoCaseStudiesSlider = dynamic(() => import('./components/ZohoCaseStudiesSlider').then(mod => mod.default));
+const ZohoKeyCapabilities = dynamic(() => import('./components/ZohoKeyCapabilities').then(mod => mod.default));
 const ZohoServices = dynamic(() => import('./components/ZohoServices').then(mod => mod.default));
+const ZohoIndustries = dynamic(() => import('./components/ZohoIndustries').then(mod => mod.default));
 const ZohoCTA = dynamic(() => import('./components/ZohoCTA').then(mod => mod.default));
-// const ZohoHowItWorks = dynamic(() => import('./components/ZohoHowItWorks').then(mod => mod.default));
 const ZohoWhyChooseUs = dynamic(() => import('./components/ZohoWhyChooseUs').then(mod => mod.default));
-const ZohoTestimonialSection = dynamic(() => import('./components/ZohoTestimonialSection').then(mod => mod.default));
-const ContactFormDesign4 = dynamic(() => import('../netsuite/components/ContactFormDesign4').then(mod => mod.default));
+const ZohoBlogsSlider = dynamic(() => import('./components/ZohoBlogsSlider').then(mod => mod.default));
+const FAQ = dynamic(() => import('../components/home/FAQ').then(mod => mod.FAQ));
+const ZohoContactForm = dynamic(() => import('./components/ZohoContactForm').then(mod => mod.default));
+
+export default async function ZohoPage() {
+  const blogs = await getZohoPosts();
 
 
-export default function ZohoPage() {
   return (
     <div className="relative">
       <ZohoHero
@@ -40,32 +44,26 @@ export default function ZohoPage() {
       />
 
       <ZohoMetrics />
+      
+      <ZohoCustomerSuccess />
+      
+      <ZohoCaseStudiesSlider />
 
-      <ZohoDashboardHero />
+      <ZohoKeyCapabilities />
 
       <ZohoServices />
-
 
       <ZohoIndustries />
 
       <ZohoCTA />
 
-
-      {/* <ZohoHowItWorks /> */}
-
       <ZohoWhyChooseUs />
 
-      <ZohoTestimonialSection />
+      <ZohoBlogsSlider blogs={blogs} variant="small" />
 
+      <FAQ variant="zoho" layout="centered" />
 
-
-
-
-      <FAQ variant="zoho" />
-
-
-
-      <ContactFormDesign4 />
+      <ZohoContactForm />
     </div>
   );
 }

@@ -2,6 +2,8 @@
 
 import React, { useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+import { usePathname } from "next/navigation";
+
 
 export default function CursorFollower() {
     const mouseX = useMotionValue(0);
@@ -23,13 +25,15 @@ export default function CursorFollower() {
         return () => window.removeEventListener("mousemove", handleMouseMove);
     }, [mouseX, mouseY]);
 
-    // Use a state for double safety on mobile
+    const pathname = usePathname();
+    const isStudio = pathname.includes('/studio');
     const [isMobile, setIsMobile] = React.useState(true);
     useEffect(() => {
         setIsMobile(window.innerWidth < 1024);
     }, []);
 
-    if (isMobile) return null;
+    if (isMobile || isStudio) return null;
+
 
     return (
         <motion.div

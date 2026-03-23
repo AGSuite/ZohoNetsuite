@@ -6,22 +6,22 @@ import { motion } from "framer-motion";
 const ZohoWhyChooseUs = () => {
   const points = [
     {
-      icon: <Award className="w-12 h-12 text-blue-500 stroke-1" />,
+      icon: <Award className="w-12 h-12 text-rose-500 stroke-1" />,
       title: "Authorized Zoho Advanced Partner",
       desc: "Recognized expertise in deploying complex Zoho ecosystems for maximum value.",
     },
     {
-      icon: <Wrench className="w-12 h-12 text-blue-500 stroke-1" />,
+      icon: <Wrench className="w-12 h-12 text-rose-500 stroke-1" />,
       title: "500+ Successful Integrations",
       desc: "Seamlessly connecting Zoho apps with third-party tools for unified operations.",
     },
     {
-      icon: <Headphones className="w-12 h-12 text-blue-500 stroke-1" />,
+      icon: <Headphones className="w-12 h-12 text-rose-500 stroke-1" />,
       title: "Dedicated Training & Support",
       desc: "Comprehensive user training and ongoing support to ensure high adoption rates.",
     },
     {
-      icon: <Globe2 className="w-12 h-12 text-blue-500 stroke-1" />,
+      icon: <Globe2 className="w-12 h-12 text-rose-500 stroke-1" />,
       title: "Industry-Specific Solutions",
       desc: "Tailored configurations for Retail, Manufacturing, Services, and more.",
     },

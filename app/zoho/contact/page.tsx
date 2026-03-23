@@ -1,125 +1,146 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import Script from "next/script";
-import { useEffect, useState } from "react";
-import EmbeddedZohoForm from "../homepage/EmbeddedZohoForm";
-import { Mail, MapPin } from "lucide-react";
+import Image from "next/image";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  ArrowRight,
+  Clock,
+  Globe,
+  Globe2,
+  CheckCircle,
+  ChevronRight,
+  Building2,
+  Send,
+  Briefcase,
+  HelpCircle,
+  Target,
+  Users,
+} from "lucide-react";
 
-const offices = {
-  India: [
-    {
-      title: "Pune, INDIA",
-      location: "Pune, Maharashtra",
-      address: `Office No. 1110, 11th floor, Gera’s Imperium Rise, Hinjewadi Rajiv Gandhi Infotech Park,
-Hinjewadi, Pune, Maharashtra, INDIA – 411057.`,
-    },
-    {
-      title: "Mumbai Location",
-      location: "Mumbai, Maharashtra",
-      address: `3rd Floor, Unit no. 4, Inspire, Main Road, G Block BKC,
-Bandra Kurla Complex, Mumbai, Maharashtra INDIA – 400051`,
-    },
-    {
-      title: "Bangalore Location",
-      location: "Bangalore, Karnataka",
-      address: `Whitefield, Survey No. 192, Whitefield Main Road,
-B Narayanapura, Mahadevapura, Bangalore, KA, INDIA – 560001`,
-    },
-    {
-      title: "Hyderabad Location",
-      location: "Hyderabad, Telangana",
-      address: `6th Floor, N Heights, Plot No 38, Phase 2 Hitec City,
-Siddiq nagar, Hyderabad, Telangana, INDIA – 500081`,
-    },
-    {
-      title: "Gurugram Location",
-      location: "Gurugram, Haryana",
-      address: `07th Floor, Gate No. 03 & Gate No. 04, Ambience Island,
-NH 48, Gurugram, Haryana, INDIA – 122002`,
-    },
-    {
-      title: "Udaipur, Rajasthan",
-      location: "Udaipur, Rajasthan",
-      address: `F-18 Subcity Center, Opp. Income Tax Office,
-Udaipur, Rajasthan INDIA – 313001`,
-    },
-  ],
-  USA: [
-    {
-      title: "Florida, USA",
-      location: "Fort Myers, Florida",
-      address: `6421-1 Metro Plantation Road,
-Fort Myers, FL, US – 33966`,
-      email: "contact@agsuitetech.com",
-    },
-  ],
-  UK: [
-    {
-      title: "Cornwall, UK",
-      location: "St Austell, Cornwall",
-      address: `The Old Dairy, Drummers Hill, St Austell,
-Cornwall, PL26 8XR`,
-      email: "contact@agsuitetech.com",
-    },
-  ],
-};
+/* ─── Office Locations Data (Zoho Values) ─────────────────────────────────── */
+type Region = "All" | "INDIA" | "USA" | "UK";
 
-// Define global functions for the form
+const locations: {
+  region: Region;
+  city: string;
+  state: string;
+  flag: string;
+  address: string;
+  email: string;
+  phone?: string;
+  mapUrl: string;
+}[] = [
+    {
+      region: "INDIA",
+      city: "Pune",
+      state: "Maharashtra, INDIA",
+      flag: "🇮🇳",
+      address: `Office No. 1110, 11th floor, Gera's Imperium Rise, Hinjewadi Rajiv Gandhi Infotech Park, Hinjewadi, Pune, Maharashtra, INDIA – 411057.`,
+      email: "contact@agsuitetech.com",
+      mapUrl: "https://maps.google.com/?q=Gera+Imperium+Rise+Hinjewadi+Pune",
+    },
+    {
+      region: "INDIA",
+      city: "Mumbai",
+      state: "Maharashtra, INDIA",
+      flag: "🇮🇳",
+      address: `3rd Floor, Unit no. 4, Inspire, Main Road, G Block BKC, Bandra Kurla Complex, Mumbai, Maharashtra INDIA – 400051`,
+      email: "contact@agsuitetech.com",
+      mapUrl: "https://maps.google.com/?q=Inspire+BKC+Bandra+Kurla+Complex+Mumbai",
+    },
+    {
+      region: "INDIA",
+      city: "Bangalore",
+      state: "Karnataka, INDIA",
+      flag: "🇮🇳",
+      address: `Whitefield, Survey No. 192, Whitefield Main Road, B Narayanapura, Mahadevapura, Bangalore, KA, INDIA – 560001`,
+      email: "contact@agsuitetech.com",
+      mapUrl: "https://maps.google.com/?q=Whitefield+Main+Road+Mahadevapura+Bangalore",
+    },
+    {
+      region: "INDIA",
+      city: "Hyderabad",
+      state: "Telangana, INDIA",
+      flag: "🇮🇳",
+      address: `6th Floor, N Heights, Plot No 38, Phase 2 Hitec City, Siddiq nagar, Hyderabad, Telangana, INDIA – 500081`,
+      email: "contact@agsuitetech.com",
+      mapUrl: "https://maps.google.com/?q=N+Heights+Hitec+City+Hyderabad",
+    },
+    {
+      region: "INDIA",
+      city: "Gurugram",
+      state: "Haryana, INDIA",
+      flag: "🇮🇳",
+      address: `07th Floor, Gate No. 03 & Gate No. 04, Ambience Island, NH 48, Gurugram, Haryana, INDIA – 122002`,
+      email: "contact@agsuitetech.com",
+      mapUrl: "https://maps.google.com/?q=Ambience+Island+NH48+Gurugram",
+    },
+    {
+      region: "INDIA",
+      city: "Udaipur",
+      state: "Rajasthan, INDIA",
+      flag: "🇮🇳",
+      address: `F-18 Subcity Center, Opp. Income Tax Office, Udaipur, Rajasthan INDIA – 313001`,
+      email: "contact@agsuitetech.com",
+      mapUrl: "https://maps.google.com/?q=Subcity+Center+Udaipur+Rajasthan",
+    },
+    {
+      region: "USA",
+      city: "Fort Myers",
+      state: "Florida, USA",
+      flag: "🇺🇸",
+      address: `6421-1 Metro Plantation Road, Fort Myers, FL, US – 33966`,
+      email: "contact@agsuitetech.com",
+      mapUrl: "https://maps.google.com/?q=6421+Metro+Plantation+Road+Fort+Myers+FL",
+    },
+    {
+      region: "UK",
+      city: "St Austell",
+      state: "Cornwall, UK",
+      flag: "🇬🇧",
+      address: `The Old Dairy, Drummers Hill, St Austell, Cornwall, PL26 8XR`,
+      email: "contact@agsuitetech.com",
+      mapUrl: "https://maps.google.com/?q=Drummers+Hill+St+Austell+Cornwall",
+    },
+  ];
+
+/* ─── Particles ───────────────────────────────────────────────────────────── */
+const PARTICLES = [
+  { w: 2, h: 2, top: 10, left: 15, dur: 5, delay: 0.3 },
+  { w: 1.5, h: 1.5, top: 25, left: 70, dur: 4.2, delay: 1.1 },
+  { w: 3, h: 3, top: 55, left: 8, dur: 6, delay: 0.7 },
+  { w: 2, h: 2, top: 75, left: 88, dur: 4.8, delay: 2.0 },
+  { w: 1, h: 1, top: 40, left: 42, dur: 3.5, delay: 0.5 },
+  { w: 2.5, h: 2.5, top: 85, left: 30, dur: 5.5, delay: 1.5 },
+];
+
 declare global {
   interface Window {
-    addAriaSelected409531000000325116: () => void;
-    rccallback409531000000325116: () => void;
-    reCaptchaAlert409531000000325116: () => boolean;
-    validateEmail409531000000325116: () => boolean;
-    checkMandatory409531000000325116: () => boolean;
-    validateNumber?: (e: KeyboardEvent) => boolean;
-    sendEmail?: () => void;
-    trackVisitor409531000000325116: () => void;
+    validateEmailContactZoho?: () => boolean;
+    checkMandatoryContactZoho?: (e: any) => boolean;
   }
 }
 
 export default function ZohoContactPage() {
+  const [locationFilter, setLocationFilter] = useState<Region>("All");
+  const [isClient, setIsClient] = useState(false);
+
   useEffect(() => {
-    // Define the functions globally when component mounts
-    window.addAriaSelected409531000000325116 = function () {
-      const optionElem = (event as any).target;
-      const previousSelectedOption = optionElem.querySelector('[aria-selected=true]');
-      if (previousSelectedOption) {
-        previousSelectedOption.removeAttribute('aria-selected');
-      }
-      optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
-    };
-
-    window.rccallback409531000000325116 = function () {
-      if (document.getElementById('recap409531000000325116')) {
-        document.getElementById('recap409531000000325116')?.setAttribute('captcha-verified', 'true');
-      }
-      const errorElement = document.getElementById('recapErr409531000000325116');
-      if (errorElement && errorElement.style.visibility === 'visible') {
-        errorElement.style.visibility = 'hidden';
-      }
-    };
-
-    window.reCaptchaAlert409531000000325116 = function () {
-      const recap = document.getElementById('recap409531000000325116');
-      if (recap && recap.getAttribute('captcha-verified') === 'false') {
-        const errorElement = document.getElementById('recapErr409531000000325116');
-        if (errorElement) {
-          errorElement.style.visibility = 'visible';
-        }
-        return false;
-      }
-      return true;
-    };
-
-    window.validateEmail409531000000325116 = function () {
-      const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
+    setIsClient(true);
+    
+    // Global Validation Logic for Zoho CRM Form
+    window.validateEmailContactZoho = function () {
+      const form = document.forms.namedItem('WebToLeadsContactZoho');
       if (!form) return true;
-      const emailFld = form.querySelectorAll('[ftype=email]');
+      const emailFld = form.querySelectorAll('input[type="email"]');
       for (let i = 0; i < emailFld.length; i++) {
         const emailVal = (emailFld[i] as HTMLInputElement).value;
-        if ((emailVal.replace(/^\s+|\s+$/g, '')).length !== 0) {
+        if (emailVal.replace(/^\s+|\s+$/g, '').length !== 0) {
           const atpos = emailVal.indexOf('@');
           const dotpos = emailVal.lastIndexOf('.');
           if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
@@ -127,226 +148,533 @@ export default function ZohoContactPage() {
             (emailFld[i] as HTMLInputElement).focus();
             return false;
           }
-          const restrictedDomains = /(gmail\.com|yahoo\.com|outlook\.com|live\.com)$/i;
-          if (restrictedDomains.test(emailVal)) {
-            alert('Gmail, Yahoo, Outlook, and Live email addresses are not allowed.');
-            (emailFld[i] as HTMLInputElement).focus();
-            return false;
-          }
         }
       }
       return true;
     };
 
-    window.checkMandatory409531000000325116 = function () {
-      const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Description', 'LEADCF5', 'LEADCF40'];
-      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Tell Us How We Can Help', 'Product / Services', 'Annual Revenue'];
-      const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
-      if (!form) return false;
+    window.checkMandatoryContactZoho = function (e: any) {
+      const form = e.target as HTMLFormElement;
+      const mndFileds = ['First Name', 'Last Name', 'Email', 'Mobile', 'Company', 'Description'];
+      const fldLangVal = ['First Name', 'Last Name', 'Email', 'Mobile', 'Company', 'Requirements'];
 
       for (let i = 0; i < mndFileds.length; i++) {
-        const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
-        if (fieldObj) {
-          if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length === 0) {
-            alert(fldLangVal[i] + ' cannot be empty.');
-            fieldObj.focus();
-            return false;
-          } else if (fieldObj.nodeName === 'SELECT') {
-            const selectField = fieldObj as HTMLSelectElement;
-            if (selectField.options[selectField.selectedIndex].value === '-None-') {
-              alert(fldLangVal[i] + ' cannot be none.');
-              fieldObj.focus();
-              return false;
-            }
-          }
+        const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement;
+        if (fieldObj && fieldObj.value.replace(/^\s+|\s+$/g, '').length === 0) {
+          alert(fldLangVal[i] + ' cannot be empty.');
+          fieldObj.focus();
+          return false;
         }
       }
-      window.trackVisitor409531000000325116?.();
-      if (window.validateEmail409531000000325116 && !window.validateEmail409531000000325116()) return false;
-      if (window.reCaptchaAlert409531000000325116 && !window.reCaptchaAlert409531000000325116()) return false;
 
-      window.sendEmail?.();
-      const submitButton = document.querySelector('.crmWebToEntityForm .formsubmit') as HTMLInputElement;
-      if (submitButton) {
-        submitButton.setAttribute('disabled', 'true');
+      if (window.validateEmailContactZoho && !window.validateEmailContactZoho()) {
+        return false;
       }
+
       return true;
-    };
-
-    window.validateNumber = function (e: KeyboardEvent) {
-      const pattern = /^[0-9]$/;
-      return pattern.test(e.key);
-    };
-
-    window.sendEmail = function () {
-      const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
-      if (!form) return;
-      const formData = new FormData(form);
-
-      fetch('https://agsuitetech.com/pricing/form_process.php', {
-        method: 'POST',
-        body: formData
-      })
-        .then(response => response.json())
-        .then(data => {
-          if (data.status === 'success') {
-            console.log('Email sent successfully.');
-          } else {
-            console.error('Failed to send email:', data.error);
-          }
-        })
-        .catch(error => {
-          console.error('Error while sending email:', error);
-        });
-    };
-
-    window.trackVisitor409531000000325116 = function () {
-      try {
-        const zoho = (window as any).$zoho;
-        if (zoho) {
-          const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
-          if (form) {
-            const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
-            if (LDTuvidObj) {
-              LDTuvidObj.value = zoho.salesiq.visitor.uniqueid();
-            }
-            const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
-            if (emailObj) {
-              zoho.salesiq.visitor.email(emailObj.value);
-            }
-          }
-        }
-      } catch (e) {
-        console.log('Zoho tracking error:', e);
-      }
     };
   }, []);
 
-  const [activeCountry, setActiveCountry] = useState<keyof typeof offices>("India");
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    if (window.checkMandatoryContactZoho && !window.checkMandatoryContactZoho(e.nativeEvent)) {
+      e.preventDefault();
+    }
+  };
+
+  if (!isClient) return null;
 
   return (
-    <>
-      <Script
-        src="https://www.google.com/recaptcha/api.js"
-        strategy="lazyOnload"
-      />
-      <Script
-        id="wf_anal_footer"
-        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=2ad153905083cc4b4058fa27687055376e156f7ad6e9fc52d9895986981cb6172bddf27a9051f3745fcf3d24b09fb012gidcf736cc89d868a9fa6150881def27ffe802f94e956bff6513de684e48d8b35c1gid0596f309f4dca6fd5d8b7704fd1d37b52bdbc54dd97c1957c613be2d12dd943agid1b08a4436f8cfc10239cf5e2aa7cda0a23e1cf9ad370739723a113c3f7318e99&tw=d44cee7b494604b05833cee35187d02e3ccf139f17b3bef4604b84b3f02bded7"
-        strategy="lazyOnload"
-      />
-      <section className="pt-20">
-        <div className="min-h-[80vh] flex items-center justify-center bg-[url('/images/contact/girlcontact.jpg')] bg-cover bg-center bg-no-repeat px-6 md:px-10 py-12 md:py-16">
-          <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <div className="flex flex-col items-start space-y-4">
-              <p className="text-sm text-gray-100 tracking-wide">
-                <Link href="/" className="hover:underline hover:text-gray-100 transition">Home</Link>
-                <span className="mx-2">/</span>
-                <span className="text-gray-100 font-medium lowercase">zoho / contact</span>
-              </p>
+    <div className="min-h-screen bg-white selection:bg-blue-900 selection:text-white">
 
-              <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
-                Contact Us
+      {/* ── Hero / Form Section ─────────────────────────────────────────────── */}
+      <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d] flex items-center">
+
+        {/* Grid lines */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
+            backgroundSize: "70px 70px",
+          }}
+        />
+
+        {/* Glow blobs */}
+        <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-blue-600/15 rounded-full blur-[140px] -translate-x-1/3 -translate-y-1/4 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4 pointer-events-none" />
+        <div className="absolute bottom-0 left-1/2 w-[800px] h-[400px] bg-cyan-700/10 rounded-full blur-[150px] -translate-x-1/2 translate-y-1/3 pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-28 pb-20">
+
+          {/* Breadcrumb */}
+          <motion.nav
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-2 text-sm font-medium mb-16"
+          >
+            <Link href="/zoho" className="text-blue-300 hover:text-white transition-colors">Home</Link>
+            <ChevronRight className="w-3.5 h-3.5 text-white/30" />
+            <span className="text-white/60">Contact</span>
+          </motion.nav>
+
+          <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-start">
+
+            {/* ── LEFT: Headline + Info ─────────────────────────────────────── */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="flex flex-col gap-10 lg:sticky lg:top-32"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white backdrop-blur-sm w-fit">
+                <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                <span className="text-blue-900 text-xs font-medium tracking-widest uppercase">Get in Touch</span>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium text-white leading-[1.1] tracking-tight">
+                Architecting Digital <br />
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-indigo-300 to-cyan-200">
+                   Excellence with Zoho
+                </span>
               </h1>
 
-              <p className="text-gray-100 text-lg lg:text-xl max-w-lg leading-relaxed font-light">
-                Reach out to our certified Zoho experts today and start your digital transformation journey.
-              </p>
-            </div>
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: 80 }}
+                transition={{ delay: 0.5, duration: 0.7 }}
+                className="h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"
+              />
 
-            <div className="bg-white p-8 lg:p-10 rounded-[2.5rem] shadow-2xl border border-gray-100">
-              <EmbeddedZohoForm />
-            </div>
+              <div className="space-y-4">
+                <p className="text-gray-300 text-lg leading-relaxed max-w-lg">
+                  Bridge the gap between vision and execution. Partner with certified Zoho experts to build a resilient, unified, and data-driven enterprise.
+                </p>
+              </div>
+
+              <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6">
+                {[
+                  { label: 'Implementations', value: '250+', icon: Building2 },
+                  { label: 'Zoho Experts', value: '75+', icon: Users },
+                  { label: 'Global Clients', value: '15+', icon: Globe2 },
+                  { label: 'Success Rate', value: '100%', icon: Target },
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 + i * 0.1 }}
+                    className="p-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition-colors group"
+                  >
+                    <div className="mb-4 w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                      <item.icon className="w-6 h-6" />
+                    </div>
+                    <div className="text-3xl font-bold text-white mb-1">{item.value}</div>
+                    <p className="text-gray-400 text-sm font-medium uppercase tracking-wider leading-tight">{item.label}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* ── RIGHT: Form (PERFECT NETSUITE MIRROR) ──────────────────────── */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="relative bg-white rounded-[2.5rem] shadow-[0_32px_80px_rgba(0,0,0,0.5)] overflow-hidden">
+                <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600" />
+                
+                <div className="relative z-10 p-8 lg:p-10">
+                  <div className="mb-8 border-b border-gray-100 pb-6">
+                    <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Get Expert Guidance</h2>
+                    <p className="text-gray-500 text-base">Fill in your details — we'll respond within 24 hours.</p>
+                  </div>
+
+                  <form 
+                    action="https://crm.zoho.in/crm/WebToLeadForm" 
+                    name="WebToLeadsContactZoho" 
+                    method="POST" 
+                    onSubmit={handleFormSubmit}
+                    acceptCharset="UTF-8"
+                    className="space-y-5"
+                  >
+                    <input type="text" className="hidden" name="xnQsjsdp" defaultValue="cae9ae065232fde2e40c34423041df835a4066ff2103c546e198d684b35e9861" readOnly />
+                    <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
+                    <input type="text" className="hidden" name="xmIwtLD" defaultValue="3820b2b7a84f952a9adb8f71d02ba0d6e9247f59314524fd5d4528cf4dff99b516b0d501ae4661e854a71c2dfb2b5263" readOnly />
+                    <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
+                    <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/contact-us/thank-you.php" readOnly />
+
+                    {/* First + Last Name Row */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div>
+                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">First Name *</label>
+                        <input type="text" name="First Name" required placeholder="John" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                      </div>
+                      <div>
+                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Last Name *</label>
+                        <input type="text" name="Last Name" required placeholder="Doe" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                      </div>
+                    </div>
+
+                    {/* Business Email Row */}
+                    <div>
+                      <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Business Email *</label>
+                      <input type="email" name="Email" required placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                    </div>
+
+                    {/* Mobile + Job Title Row */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div>
+                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Mobile Number *</label>
+                        <input type="tel" name="Mobile" required placeholder="+91 00000 00000" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                      </div>
+                      <div>
+                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Job Title *</label>
+                        <input type="text" name="Designation" required placeholder="CTO" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                      </div>
+                    </div>
+
+                    {/* Company Name Row */}
+                    <div>
+                      <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Company Name *</label>
+                      <input type="text" name="Company" required placeholder="Company Inc." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                    </div>
+
+                    {/* Service Interest + Annual Revenue Row */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div>
+                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Service Interest *</label>
+                        <select name="LEADCF5" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
+                          <option value="">Select Service</option>
+                          <option value="Zoho One Implementation">Zoho One Implementation</option>
+                          <option value="Zoho CRM Customization">Zoho CRM Customization</option>
+                          <option value="Zoho Books Accounting">Zoho Books Accounting</option>
+                          <option value="Zoho Integration">Zoho Integration</option>
+                          <option value="Zoho Support">Zoho Support</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Annual Revenue *</label>
+                        <select name="LEADCF40" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
+                          <option value="">Select Range</option>
+                          <option value="Under $500K">Under $500K</option>
+                          <option value="1M+">$1M - $10M</option>
+                          <option value="10M+">$10M+</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Requirements Textarea */}
+                    <div>
+                      <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Requirements *</label>
+                      <textarea name="Description" required rows={3} placeholder="Share your project details, challenges, or goals..." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400 shadow-sm" />
+                    </div>
+
+                    {/* Privacy + Submit Row */}
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-1">
+                      <label className="flex items-start gap-3 cursor-pointer group">
+                        <div className="relative mt-0.5">
+                          <input type="checkbox" className="sr-only peer" required />
+                          <div className="w-5 h-5 bg-gray-100 border-2 border-gray-100 rounded peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-all" />
+                          <svg className="absolute top-0.5 left-0.5 w-4 h-4 text-white opacity-0 peer-checked:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-gray-500 text-sm leading-snug">
+                          I agree to the Privacy Policy and Terms of Service.
+                        </span>
+                      </label>
+
+                      <button type="submit" className="shrink-0 inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-full transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm">
+                        <Send className="w-4 h-4" />
+                        Send Message
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      <section
-        className="relative text-white py-24 px-4 md:px-8 lg:px-20"
-        style={{
-          backgroundImage: "url('/images/backgroundimg/bg3.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat"
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
-
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <h2 className="text-center text-4xl md:text-5xl font-bold mb-16 tracking-tight italic">Our Offices</h2>
-
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
-            {Object.keys(offices).map((country) => (
-              <button
-                key={country}
-                onClick={() => setActiveCountry(country as keyof typeof offices)}
-                className={`px-10 py-3 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 ${activeCountry === country
-                  ? "bg-red-600 shadow-[0_0_20px_rgba(220,38,38,0.5)] scale-105 border-red-400"
-                  : "bg-white/10 backdrop-blur-md hover:bg-white/20 border border-white/10"
-                  }`}
+      {/* ── Quick Access Sub-Pages (THE 4 CARDS) ───────────────────────────── */}
+      <section className="py-20 bg-white border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Careers",
+                desc: "Join our growing team.",
+                link: "/zoho/contact/careers",
+                icon: Briefcase,
+                image: "/images/contact/carrer.webp"
+              },
+              {
+                title: "Support",
+                desc: "24/7 client support.",
+                link: "/zoho/contact/support",
+                icon: HelpCircle,
+                image: "/images/contact/support.webp"
+              },
+              {
+                title: "Request Quote",
+                desc: "Get project pricing.",
+                link: "/zoho/contact/request-quote",
+                icon: Clock,
+                image: "/images/contact/quote.webp"
+              },
+              {
+                title: "Free Consultation",
+                desc: "Talk to our team.",
+                link: "/zoho/contact/free-consultation",
+                icon: Target,
+                image: "/images/contact/consultation.webp"
+              }
+            ].map((item, i) => (
+              <Link
+                key={i}
+                href={item.link}
+                className="group relative h-[420px] rounded-3xl overflow-hidden border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/20 hover:-translate-y-2 flex flex-col justify-end"
               >
-                {country}
-              </button>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-blue-900/0 transition-colors" />
+                <div className="relative z-10 p-8 text-left">
+                  <div className="w-12 h-12 rounded-xl bg-blue-500/20 backdrop-blur-md flex items-center justify-center mb-4 group-hover:bg-blue-500 transition-colors duration-300">
+                    <item.icon size={24} className="text-white" />
+                  </div>
+                  <h3 className="text-2xl font-medium text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-300 text-sm mb-6 group-hover:text-white transition-colors">{item.desc}</p>
+                  <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-blue-900 group-hover:text-blue-600 border border-white/20 hover:border-white transition-all duration-300 backdrop-blur-sm">
+                    <span className="text-xs font-medium uppercase tracking-wider">Explore More</span>
+                    <ArrowRight size={14} />
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 w-0 group-hover:w-full transition-all duration-700" />
+              </Link>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {offices[activeCountry].map((office, index) => (
-              <div
-                key={index}
-                className="relative bg-black/60 backdrop-blur-2xl p-8 rounded-3xl border border-white/10 shadow-2xl hover:bg-black/70 transition-all group overflow-hidden"
-              >
-                <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-red-500 to-transparent group-hover:w-2 transition-all"></div>
+      {/* ── Office Locations Section ─────────────────────────────────────────── */}
+      <section className="py-24 relative overflow-hidden bg-white">
+        <div
+          className="absolute inset-0 z-0 pointer-events-none opacity-40"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, #c0d1f9ff 1px, transparent 1px),
+              linear-gradient(to bottom, #94b3fbff 1px, transparent 1px)
+            `,
+            backgroundSize: "20px 20px",
+            backgroundPosition: "0 0, 0 0",
+            maskImage: `
+              repeating-linear-gradient(to right, black 0px, black 3px, transparent 3px, transparent 8px),
+              repeating-linear-gradient(to bottom, black 0px, black 3px, transparent 3px, transparent 8px)
+            `,
+            WebkitMaskImage: `
+              repeating-linear-gradient(to right, black 0px, black 3px, transparent 3px, transparent 8px),
+              repeating-linear-gradient(to bottom, black 0px, black 3px, transparent 3px, transparent 8px)
+            `,
+            maskComposite: "intersect",
+            WebkitMaskComposite: "source-in",
+          }}
+        />
 
-                <h3 className="text-xl font-bold text-red-500 mb-2 italic uppercase tracking-tight">{office.title}</h3>
-                <p className="text-sm text-gray-400 font-bold mb-4 flex items-center gap-2">
-                  <MapPin size={14} className="text-red-500" /> {office.location}
-                </p>
-                <div className="h-px w-full bg-white/10 mb-5" />
-                <p className="text-sm text-gray-200 whitespace-pre-line leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
-                  {office.address}
-                </p>
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-100/30 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[400px] bg-indigo-100/40 rounded-full blur-[130px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-100/20 rounded-full blur-[120px] translate-y-1/2 pointer-events-none" />
 
-                {(office as any).email && (
-                  <div className="mt-6 pt-5 border-t border-white/5">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-10"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-5 shadow-sm">
+              <Globe className="w-4 h-4 text-blue-600" />
+              <span className="text-blue-700 text-xs font-semibold tracking-widest uppercase">Our Global Presence</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 mb-4 tracking-tight">
+              We're Where{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+                Innovation Happens
+              </span>
+            </h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
+              With offices across India, USA, and UK, our certified Zoho experts are always just a conversation away.
+            </p>
+          </motion.div>
+
+          {/* Region Tabs */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex items-center justify-center gap-2 sm:gap-3 mb-10 flex-wrap"
+          >
+            {(["All", "INDIA", "USA", "UK"] as Region[]).map(tab => {
+              const isActive = locationFilter === tab;
+              const flags: Record<Region, string> = { All: "🌐", INDIA: "🇮🇳", USA: "🇺🇸", UK: "🇬🇧" };
+              const labels: Record<Region, string> = { All: "Global Offices", INDIA: "INDIA", USA: "USA", UK: "UK" };
+              return (
+                <button
+                  key={tab}
+                  onClick={() => setLocationFilter(tab)}
+                  className={`relative inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 border ${isActive
+                    ? "bg-gradient-to-r from-[#0a1f5c] to-[#1d4ed8] text-white border-transparent shadow-lg shadow-blue-600/25 scale-[1.03]"
+                    : "bg-white text-gray-600 border-gray-200 hover:border-blue-300 hover:text-blue-700 hover:bg-blue-50 shadow-sm"
+                    }`}
+                >
+                  <span className="text-base leading-none">{flags[tab]}</span>
+                  {labels[tab]}
+                </button>
+              );
+            })}
+          </motion.div>
+
+          {/* Locations Grid */}
+          <motion.div
+            key={locationFilter}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {locations
+              .filter(loc => locationFilter === "All" || loc.region === locationFilter)
+              .map((loc, index) => (
+                <motion.div
+                  key={`${loc.city}-${index}`}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.06, ease: "easeOut" }}
+                  whileHover={{ y: -5, transition: { duration: 0.22 } }}
+                  className="group relative bg-white rounded-2xl overflow-hidden flex flex-col border border-gray-200 shadow-md hover:shadow-xl hover:border-blue-200 transition-all duration-300"
+                >
+                  <div className="h-[3px] w-full shrink-0" style={{ background: "linear-gradient(90deg, #0a1f5c, #1d4ed8, #60a5fa)" }} />
+                  <div className="relative z-10 p-6 flex flex-col flex-1 gap-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-2xl">{loc.flag}</span>
+                        <div>
+                          <h3 className="text-base font-medium text-gray-900 leading-tight">{loc.city}</h3>
+                          <p className="text-xs text-blue-600 font-semibold mt-0.5">{loc.state}</p>
+                        </div>
+                      </div>
+                      <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-blue-50 border border-blue-100 shrink-0 shadow-sm">
+                        <Building2 className="w-4 h-4 text-blue-600" />
+                      </div>
+                    </div>
+                    <div className="h-px bg-gray-100 w-full" />
+                    <div className="space-y-3 flex-1">
+                      <div className="flex items-start gap-2.5">
+                        <div className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0 mt-0.5 bg-blue-50 border border-blue-100">
+                          <MapPin className="w-3 h-3 text-blue-600" />
+                        </div>
+                        <a href={loc.mapUrl} target="_blank" rel="noopener noreferrer" className="text-gray-600 text-sm leading-relaxed hover:text-blue-600 hover:underline transition-colors">
+                          {loc.address}
+                        </a>
+                      </div>
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0 bg-blue-50 border border-blue-100">
+                          <Mail className="w-3 h-3 text-blue-600" />
+                        </div>
+                        <a href={`mailto:${loc.email}`} className="text-gray-700 text-sm font-semibold hover:text-blue-600 transition-colors">
+                          {loc.email}
+                        </a>
+                      </div>
+                    </div>
                     <a
-                      href={`mailto:${(office as any).email}`}
-                      className="inline-flex items-center gap-2 text-red-500 hover:text-red-400 font-bold text-sm tracking-tight transition-colors"
+                      href={loc.mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto inline-flex items-center justify-center gap-2 w-full py-2.5 px-5 rounded-xl font-semibold text-sm text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg group/btn shadow-md"
+                      style={{ background: "linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)" }}
                     >
-                      <Mail size={16} /> {(office as any).email}
+                      Locate Our Office
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </a>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-24">
-            <h3 className="text-3xl md:text-4xl font-bold mb-6 italic">Ready to Connect?</h3>
-            <p className="text-lg text-gray-300 mb-10 max-w-xl mx-auto font-light">
-              Our global team is ready to assist you with your business needs across all timezones.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-              <Link
-                href="/zoho/contact/free-consultation"
-                className="w-full sm:w-auto px-10 py-4 bg-red-600 text-white rounded-full font-bold shadow-xl hover:bg-red-700 hover:shadow-red-600/20 transition-all uppercase tracking-widest text-xs"
-              >
-                Free Consultation
-              </Link>
-
-              <a
-                href="mailto:contact@agsuitetech.com"
-                className="w-full sm:w-auto px-10 py-4 bg-white/5 backdrop-blur-md border border-white/20 text-white rounded-full font-bold hover:bg-white/10 transition-all uppercase tracking-widest text-xs flex items-center justify-center gap-2"
-              >
-                <Mail size={16} /> Email Us
-              </a>
-            </div>
-          </div>
+                </motion.div>
+              ))}
+          </motion.div>
         </div>
       </section>
-    </>
+
+      {/* ── Bottom Global CTA ────────────────────────────────────────────────── */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="rounded-[2.5rem] overflow-hidden relative"
+            style={{
+              background: "linear-gradient(135deg, #000814 0%, #001240 20%, #0a2472 45%, #1d4ed8 65%, #0e1b6e 80%, #000d2e 100%)",
+            }}
+          >
+            <div
+              className="absolute inset-0 pointer-events-none opacity-20"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
+                backgroundSize: "50px 50px",
+              }}
+            />
+            
+            <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[100px] -translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-indigo-600/25 rounded-full blur-[90px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+            <div className="absolute bottom-0 left-1/2 w-[500px] h-[250px] bg-cyan-700/15 rounded-full blur-[80px] -translate-x-1/2 translate-y-1/2 pointer-events-none" />
+
+            <div className="relative z-10 px-10 py-16 flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="max-w-2xl text-left">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm mb-4">
+                  <Globe className="w-4 h-4 text-cyan-400" />
+                  <span className="text-cyan-300 text-xs font-semibold tracking-wider uppercase">Anywhere You Are</span>
+                </div>
+                <h3 className="text-3xl sm:text-4xl font-medium text-white mb-4 leading-tight">
+                  No Matter Your{" "}
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-blue-300 to-indigo-300">
+                    Location
+                  </span>
+                  {" "}— We're Ready to Help
+                </h3>
+                <p className="text-blue-100/70 text-base leading-relaxed">
+                  Our global team of certified Zoho consultants delivers world-class implementations, 24/7 support, and tailored solutions wherever you operate.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+                <button
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white text-[#0a1f5c] font-semibold rounded-xl hover:bg-cyan-50 transition-all duration-200 shadow-xl hover:scale-[1.02] text-sm"
+                >
+                  <Send className="w-4 h-4" />
+                  Contact Us Now
+                </button>
+                <Link
+                  href="/zoho/contact/free-consultation"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/15 hover:border-white/60 backdrop-blur-sm transition-all duration-200 text-sm"
+                >
+                  Free Consultation
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
   );
 }
-
-// End of file

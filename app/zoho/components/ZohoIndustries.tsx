@@ -133,7 +133,7 @@ const ServiceCard = ({
       whileHover="hover"
       className={`
         relative group rounded-2xl p-7 border border-gray-200 
-        transition-all duration-300 h-full shadow-xl hover:shadow-blue-100
+        transition-all duration-300 h-full shadow-xl hover:shadow-rose-100
         ${cardBg}
       `}
     >
@@ -159,7 +159,7 @@ const ServiceCard = ({
       <div className="mt-6 border-t border-gray-300 pt-3">
         <Link
           href={href}
-          className="text-black hover:text-blue-600 text-sm font-medium transition-all"
+          className="text-black hover:text-rose-600 text-sm font-medium transition-all"
         >
           Learn More →
         </Link>

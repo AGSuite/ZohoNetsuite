@@ -2,11 +2,12 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 const socialLinks = [
     {
         name: "Facebook",
-        url: "https://facebook.com",
+        url: "https://www.facebook.com/AGSuiteTech",
         color: "bg-[#1877F2]",
         icon: (
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -16,7 +17,7 @@ const socialLinks = [
     },
     {
         name: "Instagram",
-        url: "https://instagram.com",
+        url: "https://www.instagram.com/agsuitetech/",
         color: "bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045]",
         icon: (
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -26,7 +27,7 @@ const socialLinks = [
     },
     {
         name: "Twitter",
-        url: "https://twitter.com",
+        url: "https://x.com/agsuite",
         color: "bg-black",
         icon: (
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -36,7 +37,7 @@ const socialLinks = [
     },
     {
         name: "LinkedIn",
-        url: "https://linkedin.com",
+        url: "https://www.linkedin.com/company/agsuitetech/",
         color: "bg-[#0077B5]",
         icon: (
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -47,12 +48,15 @@ const socialLinks = [
 ];
 
 export default function SocialSidebar() {
+    const pathname = usePathname();
+    const isStudio = pathname.includes('/studio');
     const [isMobile, setIsMobile] = React.useState(true);
     React.useEffect(() => {
         setIsMobile(window.innerWidth < 1024);
     }, []);
 
-    if (isMobile) return null;
+    if (isMobile || isStudio) return null;
+
 
     return (
         <div className="fixed left-0 top-[65%] -translate-y-1/2 z-[100] hidden lg:flex flex-col gap-1.5">

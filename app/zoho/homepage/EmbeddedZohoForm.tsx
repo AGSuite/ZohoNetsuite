@@ -6,11 +6,11 @@ export default function EmbeddedZohoForm() {
     return (
         <div id="crmWebToEntityForm" className="zcwf_lblLeft crmWebToEntityForm">
             <form id="webform409531000000325116" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000000325116" method="POST" acceptCharset="UTF-8">
-                <input type="text" className="hidden" name="xnQsjsdp" value="cae9ae065232fde2e40c34423041df835a4066ff2103c546e198d684b35e9861" />
-                <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-                <input type="text" className="hidden" name="xmIwtLD" value="3820b2b7a84f952a9adb8f71d02ba0d6e9247f59314524fd5d4528cf4dff99b516b0d501ae4661e854a71c2dfb2b5263" />
-                <input type="text" className="hidden" name="actionType" value="TGVhZHM=" />
-                <input type="text" className="hidden" name="returnURL" value="https://agsuitetech.com/contact-us/thank-you.php" />
+                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="cae9ae065232fde2e40c34423041df835a4066ff2103c546e198d684b35e9861" readOnly />
+                <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
+                <input type="text" className="hidden" name="xmIwtLD" defaultValue="3820b2b7a84f952a9adb8f71d02ba0d6e9247f59314524fd5d4528cf4dff99b516b0d501ae4661e854a71c2dfb2b5263" readOnly />
+                <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
+                <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/contact-us/thank-you.php" readOnly />
                 <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" />
                 <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" />
 
@@ -115,16 +115,16 @@ export default function EmbeddedZohoForm() {
                     </div>
 
                     <div className="agsuite_column">
-                        <select className="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5">
-                            <option value="" disabled selected>Service Interest*</option>
+                        <select className="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5" defaultValue="">
+                            <option value="" disabled>Service Interest*</option>
                             <option value="NetSuite Product /Services">Oracle NetSuite</option>
                             <option value="Zoho Products/Services">Zoho Suite</option>
                         </select>
                     </div>
 
                     <div className="agsuite_column">
-                        <select className="zcwf_col_fld_slt" id="LEADCF40" name="LEADCF40">
-                            <option value="" disabled selected>Annual Revenue*</option>
+                        <select className="zcwf_col_fld_slt" id="LEADCF40" name="LEADCF40" defaultValue="">
+                            <option value="" disabled>Annual Revenue*</option>
                             <option value="Under $500K">Under $500K</option>
                             <option value="1M+">$1M+</option>
                             <option value="10M+">$10M+</option>

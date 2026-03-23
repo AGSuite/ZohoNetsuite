@@ -180,9 +180,10 @@ interface FAQProps {
   id?: string;
   customFaqs?: { q: string; a: string }[];
   customSubtitle?: string;
+  layout?: "centered" | "sidebar";
 }
 
-export const FAQ = ({ variant, id, customFaqs, customSubtitle }: FAQProps) => {
+export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar" }: FAQProps) => {
   const [activeCategory, setActiveCategory] = useState<"zoho" | "netsuite" | "netsuite-accounting" | "netsuite-global-business" | "netsuite-crm">(
     variant || "netsuite"
   );
@@ -205,13 +206,13 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle }: FAQProps) => {
   };
 
   return (
-    <div id={id} className="w-full relative text-gray-800 bg-[#f0f4ff] scroll-mt-36">
+    <div id={id} className={`w-full relative text-gray-800 ${variant === "zoho" ? "bg-white" : "bg-[#f0f4ff]"} scroll-mt-36`}>
       <section className="py-16 mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          {/* Sidebar - Sticky */}
-          <div className="lg:col-span-4 lg:sticky lg:top-24">
+        <div className={`flex flex-col ${layout === "sidebar" ? "lg:grid lg:grid-cols-12 gap-10" : "items-center gap-12"}`}>
+          {/* Sidebar or Top Header */}
+          <div className={`${layout === "sidebar" ? "lg:col-span-4 lg:sticky lg:top-24" : "w-full max-w-4xl"}`}>
             <aside
-              className="relative p-8 rounded-2xl overflow-hidden shadow-2xl"
+              className={`relative p-8 rounded-2xl overflow-hidden shadow-2xl ${layout === "centered" ? "text-center flex flex-col items-center" : ""}`}
               style={{
                 background: "linear-gradient(145deg, #0a1628 0%, #0f2a57 50%, #1a3a7a 100%)",
               }}
@@ -243,11 +244,11 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle }: FAQProps) => {
                   }}
                 />
 
-                <h2 className="text-4xl md:text-5xl font-medium leading-tight">
+                <h2 className={`text-4xl md:text-5xl font-medium leading-tight ${layout === "centered" ? "text-center" : ""}`}>
                   <span className="text-white">
                     Frequently{" "}
                   </span>
-                  <br />
+                  {layout === "sidebar" && <br />}
                   <span className="text-white">
                     Asked{" "}
                   </span>
@@ -306,7 +307,7 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle }: FAQProps) => {
                         }`}
                       style={
                         activeCategory === "zoho"
-                          ? { background: "linear-gradient(135deg, #2563eb, #1d4ed8)", boxShadow: "0 4px 14px rgba(37,99,235,0.5)" }
+                          ? { background: "linear-gradient(135deg, #e11d48, #be123c)", boxShadow: "0 4px 14px rgba(225,29,72,0.5)" }
                           : { background: "rgba(255,255,255,0.07)" }
                       }
                     >
@@ -319,7 +320,7 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle }: FAQProps) => {
           </div>
 
           {/* FAQ Accordion List */}
-          <div className="lg:col-span-8 space-y-3">
+          <div className={`${layout === "sidebar" ? "lg:col-span-8" : "w-full max-w-4xl"} space-y-3`}>
             {faqs.map((faq, idx) => {
               const isOpen = openItems[idx];
               return (
@@ -341,16 +342,16 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle }: FAQProps) => {
                   >
                     <span
                       className={`text-base md:text-lg font-semibold transition-colors pr-4 ${isOpen
-                        ? "text-blue-700"
-                        : "text-gray-800 group-hover:text-blue-600"
+                        ? (activeCategory === "zoho" ? "text-rose-700" : "text-blue-700")
+                        : (activeCategory === "zoho" ? "text-gray-800 group-hover:text-rose-600" : "text-gray-800 group-hover:text-blue-600")
                         }`}
                     >
                       {faq.q}
                     </span>
                     <div
                       className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen
-                        ? "bg-blue-600 text-white rotate-180"
-                        : "bg-blue-50 text-blue-400 group-hover:bg-blue-100"
+                        ? (activeCategory === "zoho" ? "bg-rose-600 text-white rotate-180" : "bg-blue-600 text-white rotate-180")
+                        : (activeCategory === "zoho" ? "bg-rose-50 text-rose-400 group-hover:bg-rose-100" : "bg-blue-50 text-blue-400 group-hover:bg-blue-100")
                         }`}
                     >
                       <FaChevronDown className="w-3.5 h-3.5" />
@@ -363,7 +364,7 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle }: FAQProps) => {
                       : "max-h-0 opacity-0 px-6"
                       }`}
                   >
-                    <div className="w-full h-px bg-blue-100 mb-4" />
+                    <div className={`w-full h-px ${activeCategory === "zoho" ? "bg-rose-100" : "bg-blue-100"} mb-4`} />
                     <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                       {faq.a}
                     </p>

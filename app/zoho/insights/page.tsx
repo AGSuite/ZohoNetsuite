@@ -1,15 +1,14 @@
-﻿export default function InsightsPage() {
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Insights</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            This is the Insights page. Content coming soon.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
+import React from 'react';
+import { Metadata } from 'next';
+import { getZohoPosts } from '../../../sanity/lib/zohoFetch';
+import ZohoInsightsClient from './components/ZohoInsightsClient';
 
+export const metadata: Metadata = {
+  title: "Zoho Insights & Resources | AGSuite Technologies",
+  description: "Explore our latest Zoho blogs, case studies, and achievements. Stay updated with the latest in Zoho cloud solutions.",
+};
+
+export default async function ZohoInsightsPage() {
+  const blogs = await getZohoPosts();
+  return <ZohoInsightsClient blogs={blogs} />;
+}

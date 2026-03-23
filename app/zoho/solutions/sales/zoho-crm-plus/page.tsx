@@ -1,15 +1,199 @@
-﻿export default function ZohoCrmPlusPage() {
+"use client";
+
+import React from "react";
+import { 
+  Zap, 
+  Heart, 
+  Target, 
+  Layers, 
+  TrendingUp,
+  Users,
+  ShieldCheck,
+  Globe2,
+  Lock,
+  MessageSquare,
+  BarChart3,
+  Search
+} from "lucide-react";
+import ZohoSolutionTemplate from "@/app/zoho/components/solutions/ZohoSolutionTemplate";
+
+export default function ZohoCRMPlusPage() {
+  const stats = [
+    { label: "Customer Experience", value: 45, suffix: "% better", icon: Heart },
+    { label: "Sales & Support ROI", value: 65, suffix: "%", icon: TrendingUp },
+    { label: "Team Productivity", value: 50, suffix: "%", icon: Zap },
+    { label: "Conversion Rate", value: 35, suffix: "%", icon: Target },
+  ];
+
+  const modules = [
+    {
+      title: "Advanced CRM",
+      description: "Get the full power of Zoho CRM Enterprise, with advanced automation and AI-powered insights.",
+      image: "/images/lap/lap1.webp",
+      color: "#1a7a55",
+      rgb: "18,108,72",
+    },
+    {
+      title: "Omnichannel Support (Desk)",
+      description: "Integrate customer support directly with your sales data for a complete customer lifecycle view.",
+      image: "/images/people/laptopgirl.webp",
+      color: "#a05a18",
+      rgb: "145,75,18",
+    },
+    {
+      title: "Engagement (SalesIQ)",
+      description: "Chat with visitors in real-time and track their behavior on your website to identify hot leads.",
+      image: "/images/lap/lap3.webp",
+      color: "#4a3a8a",
+      rgb: "65,45,130",
+    },
+    {
+      title: "Campaign Management",
+      description: "Run multi-channel marketing campaigns and track their direct impact on your sales pipeline.",
+      image: "/images/people/laptopmen.webp",
+      color: "#1a6080",
+      rgb: "20,88,115",
+    },
+    {
+      title: "Social Media Platform",
+      description: "Manage all your social channels and engage with followers directly within your CRM suite.",
+      image: "/images/people/threeteam.webp",
+      color: "#6a2575",
+      rgb: "95,30,105",
+    },
+    {
+      title: "Surveys & Feedback",
+      description: "Collect customer feedback at critical touchpoints and use it to improve your customer experience.",
+      image: "/images/lap/lap2.webp",
+      color: "#154e8a",
+      rgb: "18,68,130",
+    },
+    {
+      title: "Advanced Analytics",
+      description: "Gain deep insights into your sales, support, and marketing performance with cross-app analytics.",
+      image: "/images/people/laptopmen2.webp",
+      color: "#1a6545",
+      rgb: "20,95,60",
+    },
+    {
+      title: "Project Management",
+      description: "Convert won deals into projects and ensure a smooth handoff between sales and delivery teams.",
+      image: "/images/lap/lap4.webp",
+      color: "#8a2a3a",
+      rgb: "130,35,48",
+    },
+    {
+      title: "AI Assistant (Zia)",
+      description: "Leverage Zia across all apps to predict conversions, detect anomalies, and suggest best actions.",
+      image: "/images/people/laptopgirl1.webp",
+      color: "#0f4e8a",
+      rgb: "12,68,130",
+    },
+    {
+      title: "Unified Admin Panel",
+      description: "Centrally manage all your sales, marketing, and support tools from one single administrative console.",
+      image: "/images/lap/lap5.webp",
+      color: "#523a8a",
+      rgb: "75,48,130",
+    },
+    {
+      title: "Telephony & SMS",
+      description: "Connect with customers on their preferred channels with built-in telephony and SMS integrations.",
+      image: "/images/people/threeteam.webp",
+      color: "#1a7a55",
+      rgb: "18,108,72",
+    },
+    {
+      title: "Secure Collaboration",
+      description: "Communicate with teams across departments with shared feeds, chats, and document collaboration.",
+      image: "/images/lap/lap2.webp",
+      color: "#a05a18",
+      rgb: "145,75,18",
+    },
+  ];
+
+  const benefits = [
+    {
+      title: "The Ultimate CX Platform",
+      description: "Break down the wall between sales, marketing, and support. Zoho CRM Plus provides a unified platform to deliver exceptional customer experiences.",
+      image: "/images/people/fourteam.webp",
+      points: [
+        "Unify every stage of the customer journey",
+        "Seamless data flow between sales and support",
+        "Single source of truth for customer info",
+        "Integrated engagement tools on one platform"
+      ],
+    },
+    {
+      title: "Unbeatable Team Productivity",
+      description: "Empower your teams to work together. From marketing handoffs to support escalations, everything happens on one platform.",
+      image: "/images/lap/lap2.webp",
+      points: [
+        "Eliminate app switching and context loss",
+        "Shared customer context for all teams",
+        "Automated cross-departmental workflows",
+        "Centralized communication and collaboration"
+      ],
+    },
+    {
+      title: "Data-Driven CX Decisions",
+      description: "Measure what matters. With cross-app analytics, you can see exactly how marketing spend or support quality impacts your sales line.",
+      image: "/images/people/laptopmen2.webp",
+      points: [
+        "Unified dashboards for CX metrics",
+        "Closed-loop attribution from click to close",
+        "Deep performance insights across teams",
+        "Predictive AI for better forecasting"
+      ],
+    },
+    {
+      title: "Simplified Administration",
+      description: "Stop managing individual apps. CRM Plus gives you one place to manage users, security, and billing for your entire customer suite.",
+      image: "/images/lap/lap1.webp",
+      points: [
+        "One admin console for 8 powerful apps",
+        "Unified user management and SSO",
+        "Single invoice for the entire customer suite",
+        "Enterprise-grade security across all apps"
+      ],
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Zoho Crm Plus</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            This is the Zoho Crm Plus page. Content coming soon.
-          </p>
-        </div>
-      </div>
-    </div>
+    <ZohoSolutionTemplate
+      title="Zoho CRM Plus — The Unified Customer Experience Platform"
+      subtitle="Better Client Relationships, One Unified Platform."
+      description="Zoho CRM Plus brings together your sales, marketing, and help desk teams on one unified platform to deliver a consistently great customer experience at every touchpoint."
+      breadcrumb={[
+        { label: "Home", href: "/zoho" },
+        { label: "Solutions", href: "/zoho/solutions" },
+        { label: "Sales", href: "/zoho/solutions/sales" },
+        { label: "Zoho CRM Plus", href: "/zoho/solutions/sales/zoho-crm-plus" },
+      ]}
+      stats={stats}
+      modules={modules}
+      benefits={benefits}
+      heroImage="/images/lap/lap2.webp"
+      heroCard1={{
+        title: "8 Powerful Apps",
+        subtitle: "One unified customer experience suite.",
+        icon: Layers
+      }}
+      heroCard2={{
+        title: "65% Higher ROI",
+        subtitle: "Accelerated sales and support efficiency.",
+        icon: TrendingUp
+      }}
+      pricingInfo={{
+        description: "Get the complete CX suite for one transparent price per user. Experience absolute value with Zoho CRM Plus.",
+        plans: [
+          "Monthly: $60 /user/month",
+          "Annual: $50 /user/month (Billed yearly)",
+          "All 8 Customer Apps Included",
+          "Enterprise Support Included",
+        ],
+        ctaText: "Start My Free Trial",
+      }}
+    />
   );
 }
-

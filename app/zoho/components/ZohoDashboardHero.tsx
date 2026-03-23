@@ -27,7 +27,7 @@ const logos: Logo[] = [
 const IMAGES = {
   left1: "/images/people/laptopgirl3.webp",
   left2: "/images/people/laptopmen.webp",
-  center: "/images/Dashboard/NetsuiteDashboard.webp",
+  center: "/images/Dashboard/zohodash.webp",
   right1: "/images/people/laptopmen2.webp",
   right2: "/images/people/laptopgirl.webp",
 } as const;
