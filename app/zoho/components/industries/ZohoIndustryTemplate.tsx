@@ -52,7 +52,7 @@ function Counter({ value }: { value: number }) {
 
 /* ─── Types ─── */
 export interface IndustryStat {
-  icon: React.ElementType;
+  icon: React.ComponentType<{ className?: string }>;
   value: number;
   suffix: string;
   label: string;
@@ -69,7 +69,7 @@ export interface IndustryChallenge {
   challenge?: string;
   solution?: string;
   image?: string;
-  icon?: React.ElementType;
+  icon?: React.ComponentType<{ className?: string }>;
   link?: string;
   rgb?: string;
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import {
@@ -122,7 +123,7 @@ const ServiceCard = ({
   description: string;
   cardBg: string;
 }) => {
-  const Icon = industryIconMap[title];
+  const Icon = industryIconMap[title] as React.ComponentType<{ className?: string }>;
   const href = industryRoutes[title];
 
   return (

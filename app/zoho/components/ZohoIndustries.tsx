@@ -123,7 +123,7 @@ const ServiceCard = ({
   description: string;
   cardBg: string;
 }) => {
-  const Icon = industryIconMap[title];
+  const Icon = industryIconMap[title] as React.ComponentType<{ className?: string }>;
   const href = industryRoutes[title];
 
   return (
