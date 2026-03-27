@@ -30,7 +30,7 @@ import {
   ClipboardList,
 } from "lucide-react";
 import { FAQ } from "@/app/components/home/FAQ";
-import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+import ZohoContactForm from "@/app/zoho/components/ZohoContactForm";
 
 interface Stat {
   label: string;
@@ -609,7 +609,7 @@ export default function ZohoServiceTemplate({
 
       {/* ── Contact Section ─────────────────────────────────────────── */}
       <section id="contact-form" className="scroll-mt-36">
-        <ContactFormDesign4 />
+        <ZohoContactForm />
       </section>
     </div>
   );

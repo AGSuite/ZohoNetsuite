@@ -32,7 +32,7 @@ import {
 import { useInView } from 'react-intersection-observer';
 import FlipNumbers from 'react-flip-numbers';
 import { motion, useAnimation, type Variants, AnimatePresence } from 'framer-motion';
-import ContactFormDesign4 from '../../netsuite/components/ContactFormDesign4';
+import ZohoContactForm from '../components/ZohoContactForm';
 import ZohoTestimonialSection from '../components/ZohoTestimonialSection';
 
 // ---------------- Address Data ----------------
@@ -1144,6 +1144,8 @@ export default function AboutClient() {
           </Link>
         </motion.div>
       </section>
+
+      <ZohoContactForm />
     </main>
   );
 }

@@ -10,7 +10,7 @@ import {
   HeartHandshake, ArrowRight, CheckCircle2, BarChart3, ShoppingCart, Globe,
   TrendingUp, Package, Layers, DollarSign, BookOpen, Star, ChevronDown, ChevronRight, GraduationCap, Wrench, Settings, PieChart, Zap
 } from 'lucide-react';
-import ContactFormDesign4 from '../../../netsuite/components/ContactFormDesign4';
+import ZohoContactForm from '../../components/ZohoContactForm';
 import { FAQ } from '@/app/components/home/FAQ';
 
 function Counter({ value }: { value: number }) {
@@ -438,7 +438,7 @@ export default function ZohoSolutionsClient() {
         <FAQ variant="zoho" layout="sidebar" />
       </section>
 
-      <ContactFormDesign4 />
+      <ZohoContactForm />
     </div>
   );
 }

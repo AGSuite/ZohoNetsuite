@@ -24,7 +24,7 @@ import {
   Calendar,
   Linkedin,
 } from "lucide-react";
-import ContactFormDesign4 from "../../netsuite/components/ContactFormDesign4";
+import ZohoContactForm from "../components/ZohoContactForm";
 
 export default function ZohoLifeAtAGSuite() {
   const [isMounted, setIsMounted] = useState(false);
@@ -792,7 +792,7 @@ export default function ZohoLifeAtAGSuite() {
       {/* ─────────────────────────────────────────────────────────
           CONTACT SECTION (CTA)
       ────────────────────────────────────────────────────────── */}
-      <ContactFormDesign4 />
+      <ZohoContactForm />
     </div>
   );
 }

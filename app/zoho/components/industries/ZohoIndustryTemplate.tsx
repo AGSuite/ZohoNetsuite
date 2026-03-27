@@ -32,7 +32,7 @@ import {
   Settings,
   GraduationCap,
 } from "lucide-react";
-import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+import ZohoContactForm from "@/app/zoho/components/ZohoContactForm";
 import { FAQ } from "@/app/components/home/FAQ";
 
 /* ─── Animated Counter ─── */
@@ -858,7 +858,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
 
       {/* ══════ CONTACT FORM ══════ */}
       <section id="contact-form">
-        <ContactFormDesign4 />
+        <ZohoContactForm />
       </section>
     </div>
   );
