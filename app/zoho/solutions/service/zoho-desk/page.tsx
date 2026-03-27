@@ -174,6 +174,7 @@ export default function ZohoDeskPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap1.webp"
+      whatIsImage="/images/zoho Dashboards/zoho desk.webp"
       heroCard1={{
         title: "Omnichannel Support",
         subtitle: "Unified help desk for all channels.",

@@ -120,7 +120,7 @@ export default function ZohoTrainingServicesPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/Services/trainingservices.webp"
+      heroImage="/images/netsuiteimages/Servicesimg/traning.webp"
       introImage="/images/Services/traning2.webp"
       introTitle="Unlock the Full Potential of Your Team."
       introDescription1="Software is only as effective as the people who use it. Our Zoho training programmes bridge the gap between technical complexity and daily productivity."

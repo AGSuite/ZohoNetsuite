@@ -33,6 +33,7 @@ import {
 } from "lucide-react";
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
 
 // Static CTA particles — avoids SSR mismatch
 const CTA_PARTICLES = [
@@ -766,6 +767,7 @@ export default function NetSuiteBIPage() {
       </section>
 
       {/* ── Contact Form ─────────────────────────────────────────────────── */}
+      <NSServicesSection />
       <ContactFormDesign4 />
     </div>
   );

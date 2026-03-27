@@ -12,6 +12,7 @@ import {
 import { ERPCircularDesign } from '@/app/netsuite/components/ERPCircularDesign';
 import { FAQ } from '@/app/components/home/FAQ';
 import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
+import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -698,7 +699,7 @@ export default function NetSuiteERPPage() {
                   <span className="text-cyan-300">Faster Than You Think.</span>
                 </h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">
-                  Join 38,000+ businesses that replaced spreadsheets and legacy systems with the world&apos;s #1 cloud ERP. Your transformation starts with one conversation.
+                  Join 43,000+ businesses that replaced spreadsheets and legacy systems with the world&apos;s #1 cloud ERP. Your transformation starts with one conversation.
                 </p>
               </div>
 
@@ -716,6 +717,7 @@ export default function NetSuiteERPPage() {
       </section>
 
       {/* Contact Form */}
+      <NSServicesSection />
       <ContactFormDesign4 />
 
     </div>

@@ -176,6 +176,7 @@ export default function ZohoPayrollPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap4.webp"
+      whatIsImage="/images/zoho Dashboards/zoho payroll.webp"
       heroCard1={{
         title: "100% Statutory Compliance",
         subtitle: "Automated PF, ESI, and Tax handling.",

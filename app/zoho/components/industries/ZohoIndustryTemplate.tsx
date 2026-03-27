@@ -121,34 +121,34 @@ const benefitIcons = [
 
 const zohoServices = [
   {
-    title: "Digital Transformation",
-    description: "Modernize your business for the digital age.",
+    title: "Zoho Implementation",
+    description: "Organizations can benefit from professional assistance in implementing Zoho solutions tailored to their specific business requirements.",
     icon: Rocket,
-    href: "/zoho/services/digital-transformation",
+    href: "/zoho/services/implementation",
   },
   {
-    title: "Integration Services",
-    description: "Seamlessly connect your Zoho apps with existing systems.",
+    title: "Zoho Integration",
+    description: "Expert support is available for seamlessly integrating Zoho applications with existing systems and third-party tools, enhancing operational efficiency.",
     icon: Layers,
     href: "/zoho/services/integration-services",
   },
   {
-    title: "Training Services",
-    description: "Upskill your team with expert-led Zoho training.",
-    icon: GraduationCap,
-    href: "/zoho/services/training-services",
-  },
-  {
-    title: "Low-Code Development",
-    description: "Build apps faster with Zoho Creator.",
+    title: "Zoho Customization",
+    description: "Businesses can leverage custom development options to tailor Zoho applications to their unique workflows and operational needs.",
     icon: Wrench,
-    href: "/zoho/services/low-code",
+    href: "/zoho/services/digital-transformation",
   },
   {
-    title: "Managed Services",
-    description: "End-to-end Zoho management & support.",
+    title: "Zoho Managed Support",
+    description: "Ongoing support and maintenance services ensure the smooth functioning and optimal performance of Zoho solutions, providing peace of mind to organizations.",
     icon: Settings,
     href: "/zoho/services/managed-services",
+  },
+  {
+    title: "Zoho Training",
+    description: "Comprehensive training programs are available to empower teams with the necessary knowledge and skills to effectively utilize Zoho applications, maximizing their potential for business growth.",
+    icon: GraduationCap,
+    href: "/zoho/services/training-services",
   },
 ];
 
@@ -851,7 +851,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
               a: f.answer || f.a || "" 
             }))} 
             variant="zoho" 
-            layout="centered" 
+            layout="sidebar" 
           />
         </section>
       )}

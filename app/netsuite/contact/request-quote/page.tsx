@@ -217,8 +217,6 @@ export default function RequestQuotePremium() {
         };
 
         window.checkMandatory409531000000398090 = function (e: any) {
-            e.preventDefault();
-
             const form = e.target as HTMLFormElement;
             const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Description', 'LEADCF5', 'LEADCF40'];
             const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Tell Us How We Can Help', 'Product / Services', 'Annual Revenue'];
@@ -241,8 +239,6 @@ export default function RequestQuotePremium() {
                 }
             }
 
-            window.trackVisitor409531000000398090?.();
-
             if (window.validateEmail409531000000398090 && !window.validateEmail409531000000398090()) {
                 return false;
             }
@@ -251,25 +247,42 @@ export default function RequestQuotePremium() {
                 return false;
             }
 
-            // Disable submit button
-            const submitButton = form.querySelector('.formsubmit') as HTMLButtonElement;
-            if (submitButton) {
-                submitButton.disabled = true;
-                submitButton.textContent = 'Submitting...';
-            }
-
-            // Submit the form
-            form.submit();
-            window.sendEmail?.();
-
             return true;
         };
     }, []);
 
     // Event handlers
-    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        return window.checkMandatory409531000000398090?.(e.nativeEvent) ?? false;
+    const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        if (window.checkMandatory409531000000398090 && !window.checkMandatory409531000000398090(e.nativeEvent)) {
+            e.preventDefault();
+            return;
+        }
+
+        // Visitor Tracking
+        try {
+            if (window.$zoho?.salesiq?.visitor) {
+                const form = e.currentTarget;
+                const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
+                if (LDTuvidObj) {
+                    LDTuvidObj.value = window.$zoho.salesiq.visitor.uniqueid() || '';
+                }
+                const nameObj = form.elements.namedItem('Last Name') as HTMLInputElement;
+                const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
+                if (nameObj) window.$zoho.salesiq.visitor.name(nameObj.value);
+                if (emailObj) window.$zoho.salesiq.visitor.email(emailObj.value);
+            }
+        } catch (err) { }
+
+        // Send internal email
+        const formData = new FormData(e.currentTarget);
+        try {
+            await fetch('https://agsuitetech.com/pricing/form_process_quote.php', {
+                method: 'POST',
+                body: formData
+            });
+        } catch (err) {
+            console.error('Email send error:', err);
+        }
     };
 
     const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -420,13 +433,13 @@ export default function RequestQuotePremium() {
                                             className="space-y-4"
                                         >
                                             {/* Hidden fields */}
-                                            <input type='text' style={{ display: 'none' }} name='xnQsjsdp' value='25b67a18495a38c26c4529cef55d54f6bace20476d7a4d5e2bb7d894c19c7f2e' readOnly />
+                                            <input type='text' className="hidden" name='xnQsjsdp' value='25b67a18495a38c26c4529cef55d54f6bace20476d7a4d5e2bb7d894c19c7f2e' readOnly />
                                             <input type='hidden' name='zc_gad' id='zc_gad' value='' />
-                                            <input type='text' style={{ display: 'none' }} name='xmIwtLD' value='95d875217118008a2ecf7947f0648d183623cabaa0a94862090253d05e14a18ca712257b6dee380bd8eefbc51a4a6a91' readOnly />
-                                            <input type='text' style={{ display: 'none' }} name='actionType' value='TGVhZHM=' readOnly />
-                                            <input type='text' style={{ display: 'none' }} name='returnURL' value='https&#x3a;&#x2f;&#x2f;agsuitetech.com&#x2f;thankyou.php' readOnly />
-                                            <input type='text' style={{ display: 'none' }} id='ldeskuid' name='ldeskuid' />
-                                            <input type='text' style={{ display: 'none' }} id='LDTuvid' name='LDTuvid' />
+                                            <input type='text' className="hidden" name='xmIwtLD' value='95d875217118008a2ecf7947f0648d183623cabaa0a94862090253d05e14a18ca712257b6dee380bd8eefbc51a4a6a91' readOnly />
+                                            <input type='text' className="hidden" name='actionType' value='TGVhZHM=' readOnly />
+                                            <input type='text' className="hidden" name='returnURL' value='https://agsuitetech.com/thankyou.php' readOnly />
+                                            <input type='text' className="hidden" id='ldeskuid' name='ldeskuid' readOnly />
+                                            <input type='text' className="hidden" id='LDTuvid' name='LDTuvid' readOnly />
 
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                 <input
@@ -484,8 +497,13 @@ export default function RequestQuotePremium() {
                                                     defaultValue=""
                                                 >
                                                     <option value="" disabled>Select Product/Services *</option>
-                                                    <option value='NetSuite Product / Services'>NetSuite</option>
-                                                    <option value='Zoho Products/Services'>Zoho</option>
+                                                    <option value='NetSuite&#x20;Product&#x20;&#x2f;Services'>Oracle NetSuite</option>
+                                                    <option value='Zoho&#x20;Products&#x2f;Services'>Zoho</option>
+                                                </select>
+
+                                                {/* Lead Source (Hidden defaultValue Website) */}
+                                                <select className='hidden' id='Lead_Source' name='Lead Source' defaultValue='Website'>
+                                                    <option value='Website'>Website</option>
                                                 </select>
                                                 <select
                                                     className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'

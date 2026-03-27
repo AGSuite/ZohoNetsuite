@@ -18,19 +18,27 @@ interface CaseStudy {
 const caseStudies: CaseStudy[] = [
     {
         id: 1,
-        title: "Scaling Manufacturing Operations Globally",
-        description: "How a leading manufacturer streamlined supply chain and reduced operational costs by 30% with NetSuite.",
+        title: "NetSuite for Software Technology and Mobility Solutions",
+        description: "The Company specializes in Ride-Hailing & Information Technology.",
         image: "/images/lap/lap3.webp",
-        company: "Global Tech Mfg",
-        industry: "Manufacturing"
+        company: "Software and Technology",
+        industry: "Software and Technology"
     },
     {
         id: 2,
-        title: "Omnichannel Retail Revolution",
-        description: "A fast-growing retail brand unified their online and offline sales, boosting customer satisfaction and inventory accuracy.",
+        title: "NetSuite for Software Technology",
+        description: "The company is an investment and wealth management organization.",
         image: "/images/lap/lap6_11zon.webp",
-        company: "Urban Retail Co.",
-        industry: "Retail & E-Commerce"
+        company: "Software and Technology",
+        industry: "Software and Technology"
+    },
+    {
+        id: 3,
+        title: "NetSuite for Professional Services",
+        description: "The Company is a comprehensive biopharmaceutical consulting organization.",
+        image: "/images/lap/lap7_11zon.webp",
+        company: "IT & Professional Services",
+        industry: "IT & Professional Services"
     }
 ];
 
@@ -38,14 +46,14 @@ const NSCaseStudiesSlider = () => {
     const [selectedStudy, setSelectedStudy] = useState<CaseStudy | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [formData, setFormData] = useState({ name: '', designation: '', phone: '', email: '' });
+    const [formData, setFormData] = useState({ 'Last Name': '', 'Designation': '', 'Mobile': '', 'Email': '', 'Company': '' });
 
     const handleReadClick = (e: React.MouseEvent, study: CaseStudy) => {
         e.preventDefault();
         setSelectedStudy(study);
         setIsModalOpen(true);
         setIsSubmitted(false);
-        setFormData({ name: '', designation: '', phone: '', email: '' });
+        setFormData({ 'Last Name': '', 'Designation': '', 'Mobile': '', 'Email': '', 'Company': '' });
     };
 
     const closeModal = () => {
@@ -61,8 +69,27 @@ const NSCaseStudiesSlider = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        const body = new URLSearchParams({
+            xnQsjsdp: 'aeb83282318cb02a8ccb07763a35cce40b6e959704c1e51bf9269ecfce4b7b52',
+            xmIwtLD: 'e999bc5b9d911a3cd702e241d595159f390ceb7d74d14b6dc70f151887d84a6d5d7f808be7b5ef7c1fa4ebea17c2d735',
+            actionType: 'TGVhZHM=',
+            returnURL: 'null',
+            zc_gad: '',
+            'Last Name': formData['Last Name'],
+            Designation: formData['Designation'],
+            Mobile: formData['Mobile'],
+            Email: formData['Email'],
+            Company: formData['Company'],
+            Description: `Requested Case Study: ${selectedStudy?.title}`,
+        });
+        fetch('https://crm.zoho.in/crm/WebToLeadForm', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: body.toString(),
+        });
         setIsSubmitted(true);
     };
 
@@ -144,7 +171,7 @@ const NSCaseStudiesSlider = () => {
                                     <h4 className="text-[13px] font-extrabold text-[#2563eb] uppercase tracking-widest mb-2 border-l-2 border-[#2563eb] pl-2">
                                         {study.company}
                                     </h4>
-                                    <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 group-hover:text-[#2563eb] transition-colors line-clamp-2">
+                                    <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 group-hover:text-[#2563eb] transition-colors leading-tight">
                                         {study.title}
                                     </h3>
                                     <p className="text-slate-600 mb-6 flex-grow line-clamp-3 leading-relaxed">
@@ -229,99 +256,19 @@ const NSCaseStudiesSlider = () => {
                                     <h3 className="text-xl font-bold mb-2 pr-8 leading-tight">
                                         Access Case Study
                                     </h3>
-                                    <p className="text-blue-100/90 text-sm line-clamp-2">
+                                    <p className="text-blue-100/90 text-sm pr-4">
                                         {selectedStudy?.title}
                                     </p>
                                 </div>
 
                                 {/* Modal Body (Form / Success) */}
                                 <div className="p-6 md:p-8 text-left text-slate-800">
-                                    {isSubmitted ? (
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            className="text-center py-6"
-                                        >
-                                            <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                                <CheckCircle2 className="w-8 h-8" />
-                                            </div>
-                                            <h4 className="text-2xl font-bold text-slate-900 mb-2">Thank You!</h4>
-                                            <p className="text-slate-600">
-                                                The case study has been sent to your email.
-                                            </p>
-                                            <button
-                                                onClick={closeModal}
-                                                className="mt-8 w-full bg-slate-900 hover:bg-slate-800 text-white py-3 rounded-xl font-medium transition-colors"
-                                            >
-                                                Close Window
-                                            </button>
-                                        </motion.div>
-                                    ) : (
-                                        <form onSubmit={handleSubmit} className="space-y-4">
-                                            <p className="text-sm text-slate-500 mb-4">
-                                                Please fill out the form below to read the full case study.
-                                            </p>
-
-                                            <div>
-                                                <label htmlFor="name" className="block text-xs font-bold text-slate-700 uppercase tracking-widest mb-1">Name *</label>
-                                                <input
-                                                    type="text"
-                                                    name="name"
-                                                    required
-                                                    value={formData.name}
-                                                    onChange={handleInputChange}
-                                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 outline-none transition-all text-sm"
-                                                    placeholder="John Doe"
-                                                />
-                                            </div>
-
-                                            <div>
-                                                <label htmlFor="designation" className="block text-xs font-bold text-slate-700 uppercase tracking-widest mb-1">Designation *</label>
-                                                <input
-                                                    type="text"
-                                                    name="designation"
-                                                    required
-                                                    value={formData.designation}
-                                                    onChange={handleInputChange}
-                                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 outline-none transition-all text-sm"
-                                                    placeholder="e.g. CEO, IT Manager"
-                                                />
-                                            </div>
-
-                                            <div>
-                                                <label htmlFor="phone" className="block text-xs font-bold text-slate-700 uppercase tracking-widest mb-1">Phone No. *</label>
-                                                <input
-                                                    type="tel"
-                                                    name="phone"
-                                                    required
-                                                    value={formData.phone}
-                                                    onChange={handleInputChange}
-                                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 outline-none transition-all text-sm"
-                                                    placeholder="+1 (555) 000-0000"
-                                                />
-                                            </div>
-
-                                            <div>
-                                                <label htmlFor="email" className="block text-xs font-bold text-slate-700 uppercase tracking-widest mb-1">Email Address *</label>
-                                                <input
-                                                    type="email"
-                                                    name="email"
-                                                    required
-                                                    value={formData.email}
-                                                    onChange={handleInputChange}
-                                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 outline-none transition-all text-sm"
-                                                    placeholder="john@company.com"
-                                                />
-                                            </div>
-
-                                            <button
-                                                type="submit"
-                                                className="w-full mt-2 bg-gradient-to-r from-[#001f5c] to-[#0a0a0a] hover:from-[#0a0a0a] hover:to-[#0a0a0a] text-white py-4 rounded-xl font-bold tracking-wide transition-all shadow-lg active:scale-[0.98]"
-                                            >
-                                                Read Full Study
-                                            </button>
-                                        </form>
-                                    )}
+                                    <iframe 
+                                        src="https://crm.zoho.in/crm/WebFormServeServlet?rid=bb4b0617c340619de1172c4e88a6168efcd072362b1960f18710725b4a562d7f779e62a2f104e2e43439fe2010aaf9d1gid6c22d9b2008ecf3fcfeff53f1607c09e903786de4923a2f7bac9742fed07c2b5"
+                                        className="w-full h-[500px]"
+                                        frameBorder="0"
+                                        title="Read Case Study Form"
+                                    />
                                 </div>
                             </div>
                         </motion.div>

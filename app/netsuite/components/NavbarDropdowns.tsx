@@ -55,7 +55,7 @@ export const DesktopDropdown: React.FC<DesktopDropdownProps> = ({ item, setOpenD
                                         </p>
                                     </div>
                                     <Link
-                                        href={item.title === 'Services' ? '/netsuite/services' : item.title === 'Industries' ? '/netsuite/industries' : item.title === 'Insights' ? '/netsuite/insights' : item.title === 'Contact' ? '/netsuite/contact' : '/netsuite/about'}
+                                        href={item.title === 'Services' ? '/netsuite/services' : item.title === 'Industries' ? '/netsuite/industries' : item.title === 'Insights' ? '/netsuite/insights' : item.title === 'Contact' ? '/netsuite/contact' : '/netsuite/about-us'}
                                         className="px-4 py-2 bg-white text-gray-900 text-xs font-bold rounded-lg hover:bg-gray-100 transition-colors"
                                         onClick={() => setOpenDropdown(null)}
                                     >

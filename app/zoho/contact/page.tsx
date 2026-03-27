@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import {
   MapPin,
   Phone,
@@ -133,7 +134,7 @@ export default function ZohoContactPage() {
   useEffect(() => {
     setIsClient(true);
     
-    // Global Validation Logic for Zoho CRM Form
+    // Global functions for Zoho CRM Form
     window.validateEmailContactZoho = function () {
       const form = document.forms.namedItem('WebToLeadsContactZoho');
       if (!form) return true;
@@ -148,6 +149,12 @@ export default function ZohoContactPage() {
             (emailFld[i] as HTMLInputElement).focus();
             return false;
           }
+          const restrictedDomains = /(gmail\.com|yahoo\.com|outlook\.com|live\.com)$/i;
+          if (restrictedDomains.test(emailVal)) {
+            alert('Gmail, Yahoo, Outlook, and Live email addresses are not allowed.');
+            (emailFld[i] as HTMLInputElement).focus();
+            return false;
+          }
         }
       }
       return true;
@@ -155,8 +162,8 @@ export default function ZohoContactPage() {
 
     window.checkMandatoryContactZoho = function (e: any) {
       const form = e.target as HTMLFormElement;
-      const mndFileds = ['First Name', 'Last Name', 'Email', 'Mobile', 'Company', 'Description'];
-      const fldLangVal = ['First Name', 'Last Name', 'Email', 'Mobile', 'Company', 'Requirements'];
+      const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Description', 'LEADCF5', 'LEADCF40'];
+      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Tell Us How We Can Help', 'Product/Services', 'Annual Revenue'];
 
       for (let i = 0; i < mndFileds.length; i++) {
         const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement;
@@ -167,6 +174,13 @@ export default function ZohoContactPage() {
         }
       }
 
+      const recap = document.getElementById('recap409531000000325116');
+      if (recap && recap.getAttribute('captcha-verified') === 'false') {
+        const recapErr = document.getElementById('recapErr409531000000325116');
+        if (recapErr) recapErr.style.visibility = 'visible';
+        return false;
+      }
+
       if (window.validateEmailContactZoho && !window.validateEmailContactZoho()) {
         return false;
       }
@@ -175,10 +189,55 @@ export default function ZohoContactPage() {
     };
   }, []);
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (form: HTMLFormElement) => {
+    const formData = new FormData(form);
+    try {
+      const response = await fetch('https://agsuitetech.com/pricing/form_process_contact.php', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await response.json();
+      if (data.status === 'success') {
+        console.log('Email sent successfully.');
+      } else {
+        console.error('Failed to send email:', data.error);
+      }
+    } catch (error) {
+      console.error('Error while sending email:', error);
+    }
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     if (window.checkMandatoryContactZoho && !window.checkMandatoryContactZoho(e.nativeEvent)) {
       e.preventDefault();
+      return;
     }
+    
+    // Visitor Tracking update
+    try {
+      // @ts-ignore
+      if (window.$zoho && window.$zoho.salesiq) {
+        const form = e.currentTarget;
+        const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
+        if (LDTuvidObj) {
+          // @ts-ignore
+          LDTuvidObj.value = window.$zoho.salesiq.visitor.uniqueid();
+        }
+        const nameObj = form.elements.namedItem('Last Name') as HTMLInputElement;
+        const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
+        if (nameObj) {
+          // @ts-ignore
+          window.$zoho.salesiq.visitor.name(nameObj.value);
+        }
+        if (emailObj) {
+          // @ts-ignore
+          window.$zoho.salesiq.visitor.email(emailObj.value);
+        }
+      }
+    } catch (err) {}
+
+    await sendEmail(e.currentTarget);
+    // Submit button will be disabled by browser default or handled by Zoho script
   };
 
   if (!isClient) return null;
@@ -303,16 +362,14 @@ export default function ZohoContactPage() {
                     <input type="text" className="hidden" name="xmIwtLD" defaultValue="3820b2b7a84f952a9adb8f71d02ba0d6e9247f59314524fd5d4528cf4dff99b516b0d501ae4661e854a71c2dfb2b5263" readOnly />
                     <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
                     <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/contact-us/thank-you.php" readOnly />
+                    <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
+                    <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
 
-                    {/* First + Last Name Row */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    {/* Name Row */}
+                    <div className="grid grid-cols-1 sm:grid-cols-1 gap-5">
                       <div>
-                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">First Name *</label>
-                        <input type="text" name="First Name" required placeholder="John" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
-                      </div>
-                      <div>
-                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Last Name *</label>
-                        <input type="text" name="Last Name" required placeholder="Doe" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Name *</label>
+                        <input type="text" id="Last_Name" name="Last Name" required placeholder="John Doe" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
                       </div>
                     </div>
 
@@ -344,30 +401,64 @@ export default function ZohoContactPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
                         <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Service Interest *</label>
-                        <select name="LEADCF5" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
+                        <select name="LEADCF5" id="LEADCF5" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
                           <option value="">Select Service</option>
-                          <option value="Zoho One Implementation">Zoho One Implementation</option>
-                          <option value="Zoho CRM Customization">Zoho CRM Customization</option>
-                          <option value="Zoho Books Accounting">Zoho Books Accounting</option>
-                          <option value="Zoho Integration">Zoho Integration</option>
-                          <option value="Zoho Support">Zoho Support</option>
+                          <option value='NetSuite&#x20;Product&#x20;&#x2f;Services'>Oracle NetSuite</option>
+                          <option value='Zoho&#x20;Products&#x2f;Services'>Zoho</option>
                         </select>
                       </div>
                       <div>
                         <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Annual Revenue *</label>
-                        <select name="LEADCF40" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
-                          <option value="">Select Range</option>
-                          <option value="Under $500K">Under $500K</option>
-                          <option value="1M+">$1M - $10M</option>
-                          <option value="10M+">$10M+</option>
+                        <select name="LEADCF40" id="LEADCF40" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
+                          <option value="">Select Revenue</option>
+                          <option value='Under&#x20;&#x24;500K'>Under &#x24;500K</option>
+                          <option value='&#x24;500k&#x20;to&#x20;&#x24;1M'>&#x24;500k to &#x24;1M</option>
+                          <option value='&#x24;1M&#x20;to&#x20;&#x24;2M'>&#x24;1M to &#x24;2M</option>
+                          <option value='&#x24;2M&#x20;to&#x20;&#x24;5M'>&#x24;2M to &#x24;5M</option>
+                          <option value='&#x24;5M&#x20;to&#x20;&#x24;10M'>&#x24;5M to &#x24;10M</option>
+                          <option value='&#x24;10M&#x20;to&#x20;&#x24;20M'>&#x24;10M to &#x24;20M</option>
+                          <option value='&#x24;20M&#x20;to&#x20;&#x24;30M'>&#x24;20M to &#x24;30M</option>
+                          <option value='&#x24;30M&#x20;to&#x20;&#x24;50M'>&#x24;30M to &#x24;50M</option>
+                          <option value='&#x24;50M&#x20;to&#x20;&#x24;100M'>&#x24;50M to &#x24;100M</option>
+                          <option value='&#x24;100M&#x20;to&#x20;&#x24;150M'>&#x24;100M to &#x24;150M</option>
+                          <option value='&#x24;150M&#x20;to&#x20;&#x24;200M'>&#x24;150M to &#x24;200M</option>
+                          <option value='&#x24;200M&#x20;to&#x20;&#x24;250M'>&#x24;200M to &#x24;250M</option>
+                          <option value='&#x24;250M&#x20;to&#x20;&#x24;300M'>&#x24;250M to &#x24;300M</option>
+                          <option value='&#x24;300M&#x20;to&#x20;&#x24;400M'>&#x24;300M to &#x24;400M</option>
+                          <option value='&#x24;400M&#x20;to&#x20;&#x24;500M'>&#x24;400M to &#x24;500M</option>
                         </select>
                       </div>
+                    </div>
+
+                    {/* Lead Source (Hidden defaultValue Website) */}
+                    <select className='hidden' id='Lead_Source' name='Lead Source' defaultValue='Website'>
+                      <option value='Website'>Website</option>
+                    </select>
+
+                    {/* How did you hear about us Row */}
+                    <div>
+                      <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">How did you hear about us?</label>
+                      <select name="LEADCF41" id="LEADCF41" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
+                        <option value="">Select Option</option>
+                        <option value='Email'>Email</option>
+                        <option value='Event'>Event</option>
+                        <option value='Friend&#x2f;Associate'>Friend&#x2f;Associate</option>
+                        <option value='Search'>Search</option>
+                        <option value='Social&#x20;Media'>Social Media</option>
+                        <option value='Referral'>Referral</option>
+                      </select>
                     </div>
 
                     {/* Requirements Textarea */}
                     <div>
                       <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Requirements *</label>
-                      <textarea name="Description" required rows={3} placeholder="Share your project details, challenges, or goals..." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400 shadow-sm" />
+                      <textarea id="Description" name="Description" required rows={3} placeholder="Tell Us How We Can Help!*" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400 shadow-sm" />
+                    </div>
+
+                    {/* Captcha Section */}
+                    <div className="flex flex-col gap-2">
+                      <div className='g-recaptcha' data-sitekey='6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3' data-theme='light' data-callback='rccallback409531000000325116' captcha-verified='false' id='recap409531000000325116'></div>
+                      <div id='recapErr409531000000325116' style={{ display: 'none', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
                     </div>
 
                     {/* Privacy + Submit Row */}
@@ -675,6 +766,23 @@ export default function ZohoContactPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* ── Scripts ─────────────────────────────────────────────────────────── */}
+      <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
+      <Script id="zoho-salesiq" strategy="afterInteractive">
+        {`
+          var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.in/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
+          function rccallback409531000000325116() {
+            if(document.getElementById('recap409531000000325116')!=undefined){
+              document.getElementById('recap409531000000325116').setAttribute('captcha-verified',true);
+            }
+            if(document.getElementById('recapErr409531000000325116')!=undefined && document.getElementById('recapErr409531000000325116').style.visibility == 'visible' ){
+              document.getElementById('recapErr409531000000325116').style.visibility='hidden';
+            }
+          }
+        `}
+      </Script>
+      <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=2ad153905083cc4b4058fa27687055376e156f7ad6e9fc52d9895986981cb6172bddf27a9051f3745fcf3d24b09fb012gidcf736cc89d868a9fa6150881def27ffe802f94e956bff6513de684e48d8b35c1gid0596f309f4dca6fd5d8b7704fd1d37b52bdbc54dd97c1957c613be2d12dd943agid1b08a4436f8cfc10239cf5e2aa7cda0a23e1cf9ad370739723a113c3f7318e99&tw=d44cee7b494604b05833cee35187d02e3ccf139f17b3bef4604b84b3f02bded7" />
     </div>
   );
 }

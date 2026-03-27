@@ -38,6 +38,7 @@ export default function AddonsPage() {
       title: "India Localization",
       subtitle: "GST-Ready Compliance for Indian Businesses",
       description: "Handle the full complexity of Indian taxation natively inside NetSuite. Our certified India Localization suite automates GST, TDS, e-invoicing with IRP integration, E-Way bill generation, and statutory reporting — keeping your business compliant and audit-ready at all times.",
+      description2: "Built specifically to mirror the latest compliance mandates, it minimizes manual entry overhead and ensures total alignment with Indian tax laws directly from your unified cloud ERP.",
       highlights: [
         "Automated GST & GSTR filings",
         "Real-time IRP e-invoicing (IRN + QR)",
@@ -55,6 +56,7 @@ export default function AddonsPage() {
       title: "Smart Commission",
       subtitle: "Automated Sales Commission Management",
       description: "Eliminate spreadsheets and manual commission calculations forever. Smart Commission automates multi-tier commission plans, quota tracking, clawback rules, manager approvals, and payroll export — all running 100% inside your NetSuite account with real-time visibility for reps and managers.",
+      description2: "Enhance your sales motivation securely with transparent, error-free automated payout structures that can be tailored precisely to match the unique compensation plans of your global teams.",
       highlights: [
         "Multi-tier commission plan automation",
         "Quota tracking & attainment dashboards",
@@ -62,7 +64,7 @@ export default function AddonsPage() {
         "Payroll export & manager approval workflow",
       ],
       link: "/netsuite/solutions/addons/smart-commission",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/lap/lap7_11zon.webp",
       icon: DollarSign,
       tag: "Revenue",
       color: "blue",
@@ -72,6 +74,7 @@ export default function AddonsPage() {
       title: "Data Backup & Recovery",
       subtitle: "Enterprise-Grade NetSuite Data Protection",
       description: "Protect your critical NetSuite data with automated, encrypted, off-site backups. Our Data Backup solution provides granular point-in-time record recovery, SuiteScript backup, and compliance-ready audit trails — so your data is always safe and recoverable no matter what happens.",
+      description2: "Maintain complete peace of mind knowing your enterprise financial records are continuously secured against accidental deletion, malicious attacks, or unforeseen system interruptions without sacrificing performance.",
       highlights: [
         "Automated daily off-site backups",
         "AES-256 encrypted storage",
@@ -89,6 +92,7 @@ export default function AddonsPage() {
       title: "Amazon Connector",
       subtitle: "NetSuite ↔ Amazon Full Sync",
       description: "Eliminate manual Amazon order management with a bi-directional connector that syncs FBA and FBM orders, inventory, settlements, customers, and shipment tracking across all Amazon marketplaces directly into NetSuite — fully automated, with no middleware required.",
+      description2: "Streamline your multi-channel retail operations by effortlessly managing massive enterprise order volumes without the burdensome risk of manual data entry errors or missed reconciliation targets.",
       highlights: [
         "FBA & FBM order sync",
         "Real-time inventory level updates",
@@ -106,6 +110,7 @@ export default function AddonsPage() {
       title: "Shopify Connector",
       subtitle: "NetSuite ↔ Shopify Bi-Directional Sync",
       description: "Connect your Shopify store and NetSuite ERP with a powerful bi-directional connector. Sync orders, products, inventory, fulfilments, and refunds in real time — with multi-store, multi-currency, and multi-location inventory support built in.",
+      description2: "Deliver a flawlessly responsive customer experience by guaranteeing that your front-end web storefront always remains in perfect synchronization with your back-office fulfilment and financial ledgers.",
       highlights: [
         "Bi-directional order & product sync",
         "Real-time inventory across locations",
@@ -123,6 +128,7 @@ export default function AddonsPage() {
       title: "Magento (Adobe Commerce) Connector",
       subtitle: "NetSuite ↔ Adobe Commerce Full Integration",
       description: "Bridge your Adobe Commerce (Magento) store with NetSuite for a unified B2B and B2C commerce operation. Sync orders, multi-source inventory, customer groups, tier pricing, and configurable products — with enterprise-grade reliability and real-time data flow.",
+      description2: "Unify your complex omnichannel growth strategies with a brilliantly robust backend architecture explicitly designed to handle high-frequency transaction throughput flawlessly across modern storefronts.",
       highlights: [
         "B2B & B2C order management",
         "Multi-source inventory sync",
@@ -140,6 +146,7 @@ export default function AddonsPage() {
       title: "Custom Connectors & Integrations",
       subtitle: "Connect Any Platform to NetSuite",
       description: "Need a connector for a platform not listed? Our NetSuite-certified integration team builds custom connections for ERP systems, logistics providers, payment gateways, WMS platforms, and any API-enabled service — using NetSuite SuiteTalk, REST APIs, and SuiteScript.",
+      description2: "Unlock true digital agility and transformation by seamlessly linking your entire enterprise technology stack, ensuring smooth data continuity, and eliminating operational friction across all specialized departments.",
       highlights: [
         "Custom API & webhook integrations",
         "ERP, WMS & logistics connectors",
@@ -247,6 +254,7 @@ export default function AddonsPage() {
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               Native NetSuite extensions built for commissions, data protection, Indian compliance, and multi-channel commerce.
             </p>
+
           </motion.div>
 
           <div className="flex flex-col">
@@ -273,8 +281,11 @@ export default function AddonsPage() {
                     <h3 className="text-2xl lg:text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-black via-[#1e3a8a] to-blue-600 leading-tight mb-3">
                       {addon.title}
                     </h3>
-                    <p className="text-gray-500 text-base leading-relaxed mb-5 line-clamp-4">
+                    <p className="text-gray-500 text-base leading-relaxed mb-3">
                       {addon.description}
+                    </p>
+                    <p className="text-gray-500 text-base leading-relaxed mb-5">
+                      {addon.description2}
                     </p>
                     <Link
                       href={addon.link}

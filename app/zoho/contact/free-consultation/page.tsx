@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import {
     Sparkles,
     CheckCircle,
@@ -58,6 +59,12 @@ export default function ZohoFreeConsultation() {
                         (emailFld[i] as HTMLInputElement).focus();
                         return false;
                     }
+                    const restrictedDomains = /(gmail\.com|yahoo\.com|outlook\.com|live\.com)$/i;
+                    if (restrictedDomains.test(emailVal)) {
+                        alert('Gmail, Yahoo, Outlook, and Live email addresses are not allowed.');
+                        (emailFld[i] as HTMLInputElement).focus();
+                        return false;
+                    }
                 }
             }
             return true;
@@ -65,16 +72,23 @@ export default function ZohoFreeConsultation() {
 
         window.checkMandatoryZConsult = function (e: any) {
             const form = e.target as HTMLFormElement;
-            const mndFileds = ['Last Name', 'Email', 'Mobile', 'Company', 'Description'];
-            const fldLangVal = ['Name', 'Email', 'Mobile', 'Company', 'Challenge Description'];
+            const mndFileds = ['Last Name', 'Email', 'Designation', 'Mobile', 'Company', 'LEADCF5', 'Annual_Revenue', 'Description'];
+            const fldLangVal = ['Name', 'Email', 'Role', 'Mobile', 'Company', 'Product/Services', 'Annual Revenue', 'Challenge Description'];
 
             for (let i = 0; i < mndFileds.length; i++) {
-                const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement;
+                const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
                 if (fieldObj && fieldObj.value.replace(/^\s+|\s+$/g, '').length === 0) {
                     alert(fldLangVal[i] + ' cannot be empty.');
                     fieldObj.focus();
                     return false;
                 }
+            }
+
+            const recap = document.getElementById('recap409531000000398076');
+            if (recap && recap.getAttribute('captcha-verified') === 'false') {
+                const recapErr = document.getElementById('recapErr409531000000398076');
+                if (recapErr) recapErr.style.visibility = 'visible';
+                return false;
             }
 
             if (window.validateEmailZConsult && !window.validateEmailZConsult()) {
@@ -85,10 +99,54 @@ export default function ZohoFreeConsultation() {
         };
     }, []);
 
-    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const sendEmail = async (form: HTMLFormElement) => {
+        const formData = new FormData(form);
+        try {
+            const response = await fetch('https://agsuitetech.com/pricing/consultation_process.php', {
+                method: 'POST',
+                body: formData
+            });
+            const data = await response.json();
+            if (data.status === 'success') {
+                console.log('Email sent successfully.');
+            } else {
+                console.error('Failed to send email:', data.error);
+            }
+        } catch (error) {
+            console.error('Error while sending email:', error);
+        }
+    };
+
+    const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         if (window.checkMandatoryZConsult && !window.checkMandatoryZConsult(e.nativeEvent)) {
             e.preventDefault();
+            return;
         }
+
+        // Visitor Tracking
+        try {
+            // @ts-ignore
+            if (window.$zoho && window.$zoho.salesiq) {
+                const form = e.currentTarget;
+                const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
+                if (LDTuvidObj) {
+                    // @ts-ignore
+                    LDTuvidObj.value = window.$zoho.salesiq.visitor.uniqueid();
+                }
+                const nameObj = form.elements.namedItem('Last Name') as HTMLInputElement;
+                const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
+                if (nameObj) {
+                    // @ts-ignore
+                    window.$zoho.salesiq.visitor.name(nameObj.value);
+                }
+                if (emailObj) {
+                    // @ts-ignore
+                    window.$zoho.salesiq.visitor.email(emailObj.value);
+                }
+            }
+        } catch (err) {}
+
+        await sendEmail(e.currentTarget);
     };
 
     if (!isClient) return null;
@@ -226,6 +284,7 @@ export default function ZohoFreeConsultation() {
                                     </div>
 
                                     <form 
+                                        id="webform409531000000398076"
                                         action="https://crm.zoho.in/crm/WebToLeadForm" 
                                         name="WebToLeadsConsultZoho" 
                                         method="POST" 
@@ -233,11 +292,13 @@ export default function ZohoFreeConsultation() {
                                         acceptCharset="UTF-8"
                                         className="space-y-4"
                                     >
-                                        <input type="text" className="hidden" name="xnQsjsdp" defaultValue="cae9ae065232fde2e40c34423041df835a4066ff2103c546e198d684b35e9861" readOnly />
+                                        <input type="text" className="hidden" name="xnQsjsdp" defaultValue="c8ca8ae9d9a028ad1829d7b6672a73889deb8a8363ec4697c92f3db46344ff6b" readOnly />
                                         <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                                        <input type="text" className="hidden" name="xmIwtLD" defaultValue="3820b2b7a84f952a9adb8f71d02ba0d6e9247f59314524fd5d4528cf4dff99b516b0d501ae4661e854a71c2dfb2b5263" readOnly />
+                                        <input type="text" className="hidden" name="xmIwtLD" defaultValue="2f6fbcbccdbab984b5b2558389fe0f6d28bf60ce7e3964b2b6210b4f5a840a2a0047f993325f425b93837214b9dbeabb" readOnly />
                                         <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
-                                        <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/contact-us/thank-you.php" readOnly />
+                                        <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/free-consultation-now/thank-you.php" readOnly />
+                                        <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
+                                        <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
 
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div>
@@ -252,30 +313,75 @@ export default function ZohoFreeConsultation() {
 
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div>
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Mobile Number *</label>
-                                                <input type="tel" name="Mobile" required placeholder="+91 00000 00000" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Role *</label>
+                                                <input type="text" id="Designation" name="Designation" required placeholder="CFO / Manager" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                             </div>
                                             <div>
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Company Name *</label>
-                                                <input type="text" name="Company" required placeholder="Company Inc." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Mobile Number *</label>
+                                                <input type="tel" id="Mobile" name="Mobile" required placeholder="+91 00000 00000" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                             </div>
                                         </div>
 
-                                        <div>
-                                            <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Consultation Focus *</label>
-                                            <select name="LEADCF5" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer">
-                                                <option value="">Select Priority</option>
-                                                <option value="Zoho Implementation Strategy">New Implementation Strategy</option>
-                                                <option value="Zoho Performance Audit">System Performance Audit</option>
-                                                <option value="Zoho Migration Planning">Data Migration Planning</option>
-                                                <option value="Zoho Integration Architecting">API & Integration Architecting</option>
-                                                <option value="Zoho Licensing Advisory">Cost & Licensing Advisory</option>
-                                            </select>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            <div>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Company Name *</label>
+                                                <input type="text" id="Company" name="Company" required placeholder="Company Inc." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
+                                            </div>
+                                            <div>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Consultation Focus *</label>
+                                                <select id="LEADCF5" name="LEADCF5" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer" defaultValue="">
+                                                    <option value="" disabled>Select Product/Services *</option>
+                                                    <option value='Oracle&#x20;NetSuite'>Oracle NetSuite</option>
+                                                    <option value='Zoho'>Zoho</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            <div>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Annual Revenue *</label>
+                                                <select id="Annual_Revenue" name="Annual_Revenue" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer" defaultValue="">
+                                                    <option value="" disabled>Select Revenue *</option>
+                                                    <option value='Under&#x20;&#x24;500K'>Under &#x24;500K</option>
+                                                    <option value='&#x24;500k&#x20;to&#x20;&#x24;1M'>&#x24;500k to &#x24;1M</option>
+                                                    <option value='&#x24;1M&#x20;to&#x20;&#x24;2M'>&#x24;1M to &#x24;2M</option>
+                                                    <option value='&#x24;2M&#x20;to&#x20;&#x24;5M'>&#x24;2M to &#x24;5M</option>
+                                                    <option value='&#x24;5M&#x20;to&#x20;&#x24;10M'>&#x24;5M to &#x24;10M</option>
+                                                    <option value='&#x24;10M&#x20;to&#x20;&#x24;20M'>&#x24;10M to &#x24;20M</option>
+                                                    <option value='&#x24;20M&#x20;to&#x20;&#x24;30M'>&#x24;20M to &#x24;30M</option>
+                                                    <option value='&#x24;30M&#x20;to&#x20;&#x24;50M'>&#x24;30M to &#x24;50M</option>
+                                                    <option value='&#x24;50M&#x20;to&#x20;&#x24;100M'>&#x24;50M to &#x24;100M</option>
+                                                    <option value='&#x24;100M&#x20;to&#x20;&#x24;150M'>&#x24;100M to &#x24;150M</option>
+                                                    <option value='&#x24;150M&#x20;to&#x20;&#x24;200M'>&#x24;150M to &#x24;200M</option>
+                                                    <option value='&#x24;200M&#x20;to&#x20;&#x24;250M'>&#x24;200M to &#x24;250M</option>
+                                                    <option value='&#x24;250M&#x20;to&#x20;&#x24;300M'>&#x24;250M to &#x24;300M</option>
+                                                    <option value='&#x24;300M&#x20;to&#x20;&#x24;400M'>&#x24;300M to &#x24;400M</option>
+                                                    <option value='&#x24;400M&#x20;to&#x20;&#x24;500M'>&#x24;400M to &#x24;500M</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">How did you hear about us?</label>
+                                                <select id="Lead_Source" name="Lead Source" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer" defaultValue="">
+                                                    <option value="" disabled>Select Option</option>
+                                                    <option value='Email'>Email</option>
+                                                    <option value='Event'>Event</option>
+                                                    <option value='Friend&#x2f;Associate&#x2f;Accountant'>Friend / Associate</option>
+                                                    <option value='Search'>Search</option>
+                                                    <option value='Social&#x20;Media'>Social Media</option>
+                                                    <option value='Referral'>Referral</option>
+                                                </select>
+                                            </div>
                                         </div>
 
                                         <div>
                                             <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Primary Business Challenge *</label>
-                                            <textarea name="Description" required rows={3} placeholder="Tell us about your biggest operational hurdle or your scaling objectives..." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400" />
+                                            <textarea id="Description" name="Description" required rows={3} placeholder="Tell us about your biggest operational hurdle or your scaling objectives..." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400" />
+                                        </div>
+
+                                        {/* Captcha Section */}
+                                        <div className="flex flex-col gap-2">
+                                            <div className='g-recaptcha' data-sitekey='6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3' data-theme='light' data-callback='rccallback409531000000398076' captcha-verified='false' id='recap409531000000398076'></div>
+                                            <div id='recapErr409531000000398076' style={{ display: 'none', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
                                         </div>
 
                                         <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm">
@@ -355,6 +461,22 @@ export default function ZohoFreeConsultation() {
                     </div>
                 </div>
             </section>
+            {/* ── Scripts ─────────────────────────────────────────────────────────── */}
+            <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
+            <Script id="zoho-salesiq-consult" strategy="afterInteractive">
+                {`
+                    var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.in/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
+                    function rccallback409531000000398076() {
+                        if(document.getElementById('recap409531000000398076')!=undefined){
+                            document.getElementById('recap409531000000398076').setAttribute('captcha-verified',true);
+                        }
+                        if(document.getElementById('recapErr409531000000398076')!=undefined && document.getElementById('recapErr409531000000398076').style.visibility == 'visible' ){
+                            document.getElementById('recapErr409531000000398076').style.visibility='hidden';
+                        }
+                    }
+                `}
+            </Script>
+            <Script id="wf_anal_consult" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=e9afb9e35a2bbd47add959e56e33e0879319b2c30faae93144ceb41c12088615d10f6ceab6f573426dacb17b83561b72gidc4904c4c6a88fccfccdba12a96a9253ab1e43e0ff3c4202a2713cd70980714b0gidf9df2680fefedb48bf61611dd8257371d95c724209cd7e51551844c331b447d3gid670a6f27d1ba095ba42cef1e786b991f3bb06a823459ffd6f12a9e48fce97bba&tw=255e274a3d4071d2619df92ea60a0ab44be6cb0d7910b47114703256f4e9e7c7" />
         </div>
     );
 }

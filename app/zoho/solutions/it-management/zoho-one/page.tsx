@@ -173,7 +173,8 @@ export default function ZohoOnePage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap2.webp" 
+      heroImage="/images/lap/lap2.webp"
+      whatIsImage="/images/zoho Dashboards/zoho one.webp" 
       heroCard1={{
         title: "45+ Integrated Apps",
         subtitle: "One platform for all business needs.",

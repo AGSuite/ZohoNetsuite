@@ -20,47 +20,36 @@ interface CustomerSuccess {
 const customers: CustomerSuccess[] = [
     {
         id: 1,
-        companyName: "Affle",
-        logo: "/images/assets/png-logos/affle-png.png",
-        personName: "Vikas Garg",
-        personRole: "CFO, Affle",
-        personAvatar: "/images/people/laptopmen.webp",
-        testimonial: "NetSuite's scalability has been crucial for our global expansion. AGSuite helped us automate complex inter-company transactions and multi-currency reporting across 20+ countries, giving us real-time financial visibility.",
+        companyName: "Sequence Inc. US",
+        logo: "/images/assets/Sequence.png",
+        personName: "",
+        personRole: "VP Business Technology",
+        personAvatar: "",
+        testimonial: "Ankur and his team at AGSuite have been extremely cooperative to our technological needs. Through the application of NetSuite, they helped us create a better customer server, templates and forms which helped us in taking accurate customer surveys. They also designed PDF and PHP Formatting pages that helped us working on API interface as well.",
         bgImage: "/images/people/laptopmen.webp",
         overlayColor: "from-blue-900/90 via-blue-900/80 to-blue-900/60"
     },
     {
         id: 2,
-        companyName: "Tyfone",
-        logo: "/images/assets/png-logos/tyfone_tech-removebg-preview.png",
-        personName: "Michael Thompson",
-        personRole: "Director of Operations",
-        personAvatar: "/images/people/laptopmen2.webp",
-        testimonial: "Implementing NetSuite with AGSuite was a game-changer for Tyfone. We streamlined our order-to-cash process and integrated our proprietary tech stack seamlessly. The transition was smooth and the post-go-live support was exceptional.",
-        bgImage: "/images/people/laptopmen2.webp",
+        companyName: "Coastal Group UK",
+        logo: "/images/assets/costal whole.png",
+        personName: "",
+        personRole: "Director",
+        personAvatar: "",
+        testimonial: "We went operational with Go Live on January 15. But we quickly realized a tremendous load of working with such a comprehensive technological system for our business. It was then that we came in contact with AGSuite. Through seamlessly fluid operations, understanding of business solutions and client query redressal mechanism, AGSuite provides consistent customer service. Moreover, it has helped streamline business operations for us. It has made our functioning more systematic and oriented.",
+        bgImage: "/images/people/laptopgirl.webp",
         overlayColor: "from-indigo-900/90 via-indigo-900/80 to-indigo-900/60"
     },
     {
         id: 3,
-        companyName: "UniAcco",
-        logo: "/images/assets/png-logos/uniAcco-png.png",
-        personName: "Sarah Miller",
-        personRole: "Head of Finance",
-        personAvatar: "/images/people/laptopgirl.webp",
-        testimonial: "AGSuite's deep expertise in NetSuite allowed us to customize the platform for our unique student housing model. We now have a unified view of our operations that helps us make faster, data-driven decisions every day.",
-        bgImage: "/images/people/laptopgirl.webp",
+        companyName: "PG Paper",
+        logo: "/images/assets/pg whole.png",
+        personName: "",
+        personRole: "Vice President Business Development",
+        personAvatar: "",
+        testimonial: "We had a drastic experience with our previous technology vendor, ultimately resulting in contract disruption midterm. However, when we came in contact with AGSuite, we were given the confidence to upgrade our business technologies and working system. It has been three years since we are working in collaboration with AGSuite. I would highly recommend AGSuite since it provides impeccable customer service and resolves queries by addressing them 24x7.",
+        bgImage: "/images/people/laptopmen2.webp",
         overlayColor: "from-emerald-900/90 via-emerald-900/80 to-emerald-900/60"
-    },
-    {
-        id: 4,
-        companyName: "Quick Heal",
-        logo: "/images/assets/png-logos/quickheal-png.png",
-        personName: "Emily Davis",
-        personRole: "Logistics Manager",
-        personAvatar: "/images/people/laptopgirl1.webp",
-        testimonial: "The visibility we've gained with NetSuite into our supply chain is incredible. AGSuite understood our challenges and delivered a solution that has significantly reduced our operational overhead and improved inventory accuracy.",
-        bgImage: "/images/people/laptopgirl1.webp",
-        overlayColor: "from-rose-900/90 via-rose-900/80 to-rose-900/60"
     }
 ];
 
@@ -167,14 +156,21 @@ const NSCustomerSuccess = () => {
                                     <div className={`absolute inset-0 bg-gradient-to-t ${activeCustomer.overlayColor} z-10 transition-all duration-700`} />
 
                                     {/* Logo Box */}
-                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl p-6 shadow-2xl w-[65%] max-w-[200px] flex items-center justify-center z-20">
-                                        <Image
-                                            src={activeCustomer.logo}
-                                            alt={activeCustomer.companyName}
-                                            width={160}
-                                            height={70}
-                                            className="h-auto w-full object-contain"
-                                        />
+                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl p-6 shadow-2xl w-[65%] max-w-[200px] flex items-center justify-center z-20 min-h-[80px]">
+                                        {activeCustomer.logo ? (
+                                            <div className="relative w-full h-[60px]">
+                                                <Image
+                                                    src={activeCustomer.logo}
+                                                    alt={activeCustomer.companyName}
+                                                    fill
+                                                    className="object-contain"
+                                                />
+                                            </div>
+                                        ) : (
+                                            <h3 className="text-xl md:text-2xl font-bold text-center text-blue-900">
+                                                {activeCustomer.companyName.split(' ')[0]}
+                                            </h3>
+                                        )}
                                     </div>
                                 </div>
 
@@ -191,19 +187,9 @@ const NSCustomerSuccess = () => {
                                         </blockquote>
                                     </div>
 
-                                    <div className="flex items-center gap-4">
-                                        <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-lg">
-                                            <Image
-                                                src={activeCustomer.personAvatar}
-                                                alt={activeCustomer.personName}
-                                                fill
-                                                className="object-cover"
-                                            />
-                                        </div>
-                                        <div>
-                                            <h4 className="text-lg font-bold text-[#1a1a1a]">{activeCustomer.personName}</h4>
-                                            <p className="text-sm text-gray-500 font-medium">{activeCustomer.personRole}</p>
-                                        </div>
+                                    <div className="mt-4 pt-6 border-t border-gray-100">
+                                        <h4 className="text-lg font-bold text-blue-900">{activeCustomer.companyName}</h4>
+                                        <p className="text-sm text-gray-500 font-medium uppercase tracking-wide mt-1">{activeCustomer.personRole}</p>
                                     </div>
                                 </div>
                             </motion.div>

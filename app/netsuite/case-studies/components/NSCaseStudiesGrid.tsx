@@ -18,79 +18,124 @@ interface CaseStudy {
 const allCaseStudies: CaseStudy[] = [
     {
         id: 1,
-        title: "Scaling Manufacturing Operations Globally",
-        description: "How a leading manufacturer streamlined supply chain and reduced operational costs by 30% with NetSuite's advanced manufacturing module.",
+        title: "NetSuite for Software Technology and Mobility Solutions",
+        description: "The Company specializes in Ride-Hailing & Information Technology.",
         image: "/images/lap/lap3.webp",
-        company: "Global Tech Mfg",
-        industry: "Manufacturing",
-        tags: ["ERP", "Supply Chain", "Global"]
+        company: "Software and Technology",
+        industry: "Software and Technology",
+        tags: ["NetSuite", "Software and Technology"]
     },
     {
         id: 2,
-        title: "Omnichannel Retail Revolution",
-        description: "A fast-growing retail brand unified their online and offline sales, boosting customer satisfaction and achieving 99% inventory accuracy.",
+        title: "NetSuite for Software Technology",
+        description: "The company is an investment and wealth management organization.",
         image: "/images/lap/lap6_11zon.webp",
-        company: "Urban Retail Co.",
-        industry: "Retail",
-        tags: ["Omnichannel", "Inventory", "CRM"]
+        company: "Software and Technology",
+        industry: "Software and Technology",
+        tags: ["NetSuite", "Software and Technology"]
     },
     {
         id: 3,
-        title: "Streamlining Professional Services",
-        description: "Professional services firm automated resource planning and billing, increasing project margins by 25%.",
+        title: "NetSuite for Software Technology and Development Services",
+        description: "One of the top companies in the software development sector.",
         image: "/images/lap/lap9_11zon.webp",
-        company: "Apex Consulting",
-        industry: "Services",
-        tags: ["SRP", "Project Management", "Billing"]
+        company: "Software and Technology",
+        industry: "Software and Technology",
+        tags: ["NetSuite", "Software and Technology"]
     },
     {
         id: 4,
-        title: "Transforming Wholesale Distribution",
-        description: "Wholesale distributor automated warehouse management, reducing order fulfillment time by 40%.",
+        title: "NetSuite for Professional Services",
+        description: "The Company is a comprehensive biopharmaceutical consulting organization.",
         image: "/images/lap/lap7_11zon.webp",
-        company: "Prime Distro",
-        industry: "Distribution",
-        tags: ["WMS", "Order Management"]
+        company: "IT & Professional Services",
+        industry: "IT & Professional Services",
+        tags: ["IT & Professional Services", "NetSuite"]
     },
     {
         id: 5,
-        title: "Software & SaaS Growth Engine",
-        description: "SaaS company utilized NetSuite for advanced revenue recognition, easing their IPO process and financial reporting.",
+        title: "NetSuite for Wholesale Distribution Sector",
+        description: "The Company is an independent and family-owned fastener supplier.",
         image: "/images/people/global.webp",
-        company: "CloudSync Inc.",
-        industry: "Software",
-        tags: ["Revenue Recognition", "Financials"]
+        company: "Wholesale Distribution",
+        industry: "Wholesale Distribution",
+        tags: ["NetSuite", "Wholesale Distribution"]
     },
     {
         id: 6,
-        title: "Healthcare Equipment Tracking",
-        description: "Medical device supplier implemented advanced serial tracking and compliance reporting, saving hundreds of hours monthly.",
+        title: "NetSuite for Wholesale Distribution",
+        description: "The Company specializes in the design and manufacture of high-quality products.",
         image: "/images/people/laptopgirl.webp",
-        company: "MedEquip Solutions",
-        industry: "Healthcare",
-        tags: ["Compliance", "Tracking", "Inventory"]
+        company: "Wholesale Distribution",
+        industry: "Wholesale Distribution",
+        tags: ["NetSuite", "Wholesale Distribution"]
     },
     {
         id: 7,
-        title: "Non-Profit Financial Transparency",
-        description: "Global NGO replaced five disparate systems with NetSuite, automating grant accounting and global consolidations.",
+        title: "Netsuite for Advertising Services",
+        description: "One of the leading companies in the advertising and digital marketing industry.",
         image: "/images/people/laptopmen.webp",
-        company: "Earth Alliance",
-        industry: "Non-Profit",
-        tags: ["Financials", "Global"]
+        company: "Advertising",
+        industry: "Advertising and Digital Marketing Agencies",
+        tags: ["Advertising and Digital Marketing Agencies", "NetSuite"]
     },
     {
         id: 8,
-        title: "Automotive Parts Distribution",
-        description: "B2B auto parts distributor scaled B2B eCommerce with SuiteCommerce, increasing average order value by 15%.",
+        title: "NetSuite for Retail Sector",
+        description: "The Company is a leading, specialist supplier of retail and e-commerce solutions.",
         image: "/images/people/laptopgirl1.webp",
-        company: "AutoPro Parts",
-        industry: "Distribution",
-        tags: ["SuiteCommerce", "B2B"]
+        company: "Retail & E-Commerce",
+        industry: "Retail & E-Commerce",
+        tags: ["NetSuite", "Retail & E-Commerce"]
+    },
+    {
+        id: 9,
+        title: "NetSuite for Manufacturing Services",
+        description: "The company was established 15 years ago to provide top-tier manufacturing services.",
+        image: "/images/lap/lap3.webp",
+        company: "Manufacturing",
+        industry: "Manufacturing",
+        tags: ["Manufacturing", "NetSuite"]
+    },
+    {
+        id: 10,
+        title: "NetSuite for Healthcare Services",
+        description: "A leading integrated healthcare delivery service provider in the region.",
+        image: "/images/lap/lap6_11zon.webp",
+        company: "Services",
+        industry: "Services",
+        tags: ["NetSuite", "Services"]
+    },
+    {
+        id: 11,
+        title: "NetSuite for Food & Beverage",
+        description: "One of the leading dry fruits and nuts providers offering premium quality products.",
+        image: "/images/lap/lap9_11zon.webp",
+        company: "Food & Beverage",
+        industry: "Services",
+        tags: ["NetSuite", "Services"]
+    },
+    {
+        id: 12,
+        title: "NetSuite for Civil Engineering",
+        description: "One of the top consulting firms in the civil engineering and construction sector.",
+        image: "/images/lap/lap7_11zon.webp",
+        company: "Civil Engineering",
+        industry: "Services",
+        tags: ["NetSuite", "Services"]
+    },
+    {
+        id: 13,
+        title: "NetSuite for CAD Design and Drafting Services",
+        description: "The company outsourced CAD services to companies all over the world.",
+        image: "/images/people/global.webp",
+        company: "CAD Services",
+        industry: "Services",
+        tags: ["NetSuite", "Services"]
     }
 ];
 
-const INDUSTRIES = ["All", "Manufacturing", "Retail", "Services", "Distribution", "Software", "Healthcare", "Non-Profit"];
+const INDUSTRIES = ["All", "Software and Technology", "IT & Professional Services", "Wholesale Distribution", "Advertising and Digital Marketing Agencies", "Retail & E-Commerce", "Manufacturing", "Services"];
 
 const NSCaseStudiesGrid = () => {
     const [searchQuery, setSearchQuery] = useState("");
@@ -100,14 +145,14 @@ const NSCaseStudiesGrid = () => {
     const [selectedStudy, setSelectedStudy] = useState<CaseStudy | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [formData, setFormData] = useState({ name: '', designation: '', phone: '', email: '' });
+    const [formData, setFormData] = useState({ 'Last Name': '', 'Designation': '', 'Mobile': '', 'Email': '', 'Company': '' });
 
     const handleReadClick = (e: React.MouseEvent, study: CaseStudy) => {
         e.preventDefault();
         setSelectedStudy(study);
         setIsModalOpen(true);
         setIsSubmitted(false);
-        setFormData({ name: '', designation: '', phone: '', email: '' });
+        setFormData({ 'Last Name': '', 'Designation': '', 'Mobile': '', 'Email': '', 'Company': '' });
     };
 
     const closeModal = () => {
@@ -123,8 +168,7 @@ const NSCaseStudiesGrid = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
+    const handleSubmit = () => {
         setIsSubmitted(true);
     };
 
@@ -242,7 +286,7 @@ const NSCaseStudiesGrid = () => {
                                     <h4 className="text-[13px] font-extrabold text-[#2563eb] uppercase tracking-widest mb-3 border-l-2 border-[#2563eb] pl-2 flex items-center">
                                         {study.company}
                                     </h4>
-                                    <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 group-hover:text-[#2563eb] transition-colors line-clamp-2">
+                                    <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 group-hover:text-[#2563eb] transition-colors leading-tight">
                                         {study.title}
                                     </h3>
                                     <p className="text-slate-600 mb-6 flex-grow line-clamp-3 leading-relaxed text-sm">
@@ -307,99 +351,19 @@ const NSCaseStudiesGrid = () => {
                                     <h3 className="text-xl font-bold mb-2 pr-8 leading-tight">
                                         Access Case Study
                                     </h3>
-                                    <p className="text-blue-100/90 text-sm line-clamp-2">
+                                    <p className="text-blue-100/90 text-sm pr-4">
                                         {selectedStudy?.title}
                                     </p>
                                 </div>
 
                                 {/* Modal Body (Form / Success) */}
                                 <div className="p-6 md:p-8 text-left text-slate-800">
-                                    {isSubmitted ? (
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            className="text-center py-6"
-                                        >
-                                            <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                                <CheckCircle2 className="w-8 h-8" />
-                                            </div>
-                                            <h4 className="text-2xl font-bold text-slate-900 mb-2">Thank You!</h4>
-                                            <p className="text-slate-600">
-                                                The case study has been sent to your email.
-                                            </p>
-                                            <button
-                                                onClick={closeModal}
-                                                className="mt-8 w-full bg-slate-900 hover:bg-slate-800 text-white py-3 rounded-xl font-medium transition-colors"
-                                            >
-                                                Close Window
-                                            </button>
-                                        </motion.div>
-                                    ) : (
-                                        <form onSubmit={handleSubmit} className="space-y-4">
-                                            <p className="text-sm text-slate-500 mb-4">
-                                                Please fill out the form below to read the full case study.
-                                            </p>
-
-                                            <div>
-                                                <label htmlFor="name" className="block text-xs font-bold text-slate-700 uppercase tracking-widest mb-1">Name *</label>
-                                                <input
-                                                    type="text"
-                                                    name="name"
-                                                    required
-                                                    value={formData.name}
-                                                    onChange={handleInputChange}
-                                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 outline-none transition-all text-sm"
-                                                    placeholder="John Doe"
-                                                />
-                                            </div>
-
-                                            <div>
-                                                <label htmlFor="designation" className="block text-xs font-bold text-slate-700 uppercase tracking-widest mb-1">Designation *</label>
-                                                <input
-                                                    type="text"
-                                                    name="designation"
-                                                    required
-                                                    value={formData.designation}
-                                                    onChange={handleInputChange}
-                                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 outline-none transition-all text-sm"
-                                                    placeholder="e.g. CEO, IT Manager"
-                                                />
-                                            </div>
-
-                                            <div>
-                                                <label htmlFor="phone" className="block text-xs font-bold text-slate-700 uppercase tracking-widest mb-1">Phone No. *</label>
-                                                <input
-                                                    type="tel"
-                                                    name="phone"
-                                                    required
-                                                    value={formData.phone}
-                                                    onChange={handleInputChange}
-                                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 outline-none transition-all text-sm"
-                                                    placeholder="+1 (555) 000-0000"
-                                                />
-                                            </div>
-
-                                            <div>
-                                                <label htmlFor="email" className="block text-xs font-bold text-slate-700 uppercase tracking-widest mb-1">Email Address *</label>
-                                                <input
-                                                    type="email"
-                                                    name="email"
-                                                    required
-                                                    value={formData.email}
-                                                    onChange={handleInputChange}
-                                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/20 outline-none transition-all text-sm"
-                                                    placeholder="john@company.com"
-                                                />
-                                            </div>
-
-                                            <button
-                                                type="submit"
-                                                className="w-full mt-2 bg-gradient-to-r from-[#001f5c] to-[#0a0a0a] hover:from-[#0a0a0a] hover:to-[#0a0a0a] text-white py-4 rounded-xl font-bold tracking-wide transition-all shadow-lg active:scale-[0.98]"
-                                            >
-                                                Read Full Study
-                                            </button>
-                                        </form>
-                                    )}
+                                    <iframe 
+                                        src="https://crm.zoho.in/crm/WebFormServeServlet?rid=bb4b0617c340619de1172c4e88a6168efcd072362b1960f18710725b4a562d7f779e62a2f104e2e43439fe2010aaf9d1gid6c22d9b2008ecf3fcfeff53f1607c09e903786de4923a2f7bac9742fed07c2b5"
+                                        className="w-full h-[500px]"
+                                        frameBorder="0"
+                                        title="Read Case Study Form"
+                                    />
                                 </div>
                             </div>
                         </motion.div>

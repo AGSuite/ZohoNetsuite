@@ -21,7 +21,7 @@ const services: ServiceItem[] = [
   {
     title: "Digital Transformation",
     heading: "",
-    description: "Modernize your business operations with our strategic digital roadmap.",
+    description: "Modernize your business for the digital age with our strategic transformation roadmap.",
     bgImage: "/images/Services/Digitalservices.webp",
     href: "/netsuite/services/digital-transformation",
     icon: (
@@ -33,7 +33,7 @@ const services: ServiceItem[] = [
   {
     title: "Integration Services",
     heading: "",
-    description: "Connect NetSuite with your entire ecosystem via robust API-led integrations.",
+    description: "Seamlessly connect NetSuite with your entire ecosystem via robust API-led integrations.",
     bgImage: "/images/lap/group2.webp",
     href: "/netsuite/services/integration-services",
     icon: (
@@ -43,22 +43,22 @@ const services: ServiceItem[] = [
     ),
   },
   {
-    title: "Implementation",
+    title: "Training Services",
     heading: "",
-    description: "Go live with confidence using our expert NetSuite implementation strategy.",
+    description: "Upskill your team with expert-led NetSuite training to maximise platform adoption.",
     bgImage: "/images/Services/trainingservices.webp",
-    href: "/netsuite/services/implementation",
+    href: "/netsuite/services/training-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
       </svg>
     ),
   },
   {
-    title: "SuiteCloud Development",
+    title: "Low-Code Development",
     heading: "",
-    description: "Extend your ERP's capabilities with custom-built SuiteApps.",
+    description: "Build powerful custom SuiteApps and extend your ERP faster with minimal coding.",
     bgImage: "/images/Services/lowcodeservices.webp",
     href: "/netsuite/services/low-code",
     icon: (
@@ -70,7 +70,7 @@ const services: ServiceItem[] = [
   {
     title: "Managed Services",
     heading: "",
-    description: "Get dedicated support to keep your NetSuite operations running.",
+    description: "End-to-end IT management and dedicated support to keep your NetSuite operations running smoothly.",
     bgImage: "/images/Services/managedservices.webp",
     href: "/netsuite/services/managed-services",
     icon: (
@@ -80,6 +80,7 @@ const services: ServiceItem[] = [
     ),
   },
 ];
+
 
 export default function NSServices() {
   const [activeIdx, setActiveIdx] = useState<number>(0);

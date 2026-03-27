@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
@@ -176,7 +176,7 @@ export default function Home() {
           {/* Zoho Logo — Top Left Corner */}
           <div className="absolute top-5 left-6 z-10">
             <Image
-              src="/images/zohoimages/zohologos/zohoadvancelogo.webp"
+              src="/images/zoho logos/zoho premium.png"
               alt="Zoho Advanced Partner Logo"
               width={220}
               height={80}
@@ -199,7 +199,7 @@ export default function Home() {
           aria-label="Go to Zoho Page"
         >
           <Image
-            src="/images/zohoimages/zohologos/zohoadvancelogo.webp"
+            src="/images/zoho logos/zoho premium.png"
             alt="Zoho Logo"
             width={191}
             height={110}

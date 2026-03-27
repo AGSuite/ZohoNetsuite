@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useSpring, useTransform } from 'framer-motion';
@@ -12,6 +12,7 @@ import {
   Share2, Code, ShieldCheck, HeartHandshake
 } from 'lucide-react';
 import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
+import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -506,6 +507,7 @@ export default function NetsuiteSrpPage() {
           </motion.div>
         </div>
       </section>
+      <NSServicesSection />
 
       <ContactFormDesign4 />
     </div>

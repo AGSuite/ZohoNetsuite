@@ -120,7 +120,7 @@ export default function ZohoIntegrationServicesPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/Services/integrationservices.webp"
+      heroImage="/images/netsuiteimages/Servicesimg/integration.webp"
       introImage="/images/Services/integration2.webp"
       introTitle="Unify Your Entire Business Stack."
       introDescription1="A disconnected business is an inefficient business. Our integration experts ensure your Zoho platform communicates seamlessly with every other tool in your stack."

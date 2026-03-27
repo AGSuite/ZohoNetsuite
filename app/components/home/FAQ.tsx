@@ -210,7 +210,7 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
       <section className="py-16 mx-auto max-w-7xl px-6 lg:px-10">
         <div className={`flex flex-col ${layout === "sidebar" ? "lg:grid lg:grid-cols-12 gap-10" : "items-center gap-12"}`}>
           {/* Sidebar or Top Header */}
-          <div className={`${layout === "sidebar" ? "lg:col-span-4 lg:sticky lg:top-24" : "w-full max-w-4xl"}`}>
+          <div className={`${layout === "sidebar" ? "lg:col-span-4 lg:sticky lg:top-24 lg:self-start" : "w-full max-w-4xl"}`}>
             <aside
               className={`relative p-8 rounded-2xl overflow-hidden shadow-2xl ${layout === "centered" ? "text-center flex flex-col items-center" : ""}`}
               style={{

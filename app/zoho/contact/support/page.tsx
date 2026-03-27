@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import {
     LifeBuoy,
     Clock,
@@ -16,7 +17,10 @@ import {
     Send,
     Phone,
     Mail,
-    Globe
+    Globe,
+    Upload,
+    RefreshCcw,
+    Users
 } from "lucide-react";
 
 /* ─── Particles ───────────────────────────────────────────────────────────── */
@@ -31,69 +35,80 @@ const PARTICLES = [
 
 declare global {
   interface Window {
-    validateEmailZSupport?: () => boolean;
-    checkMandatoryZSupport?: (e: any) => boolean;
+    zsValidateMandatoryFields?: () => boolean;
+    zsRegenerateCaptcha?: () => void;
   }
 }
 
 export default function ZohoSupportPage() {
     const [isClient, setIsClient] = useState(false);
+    const [captchaUrl, setCaptchaUrl] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     useEffect(() => {
         setIsClient(true);
-
-        // Global Validation Logic for Zoho Support Form
-        window.validateEmailZSupport = function () {
-            const form = document.forms.namedItem('WebToLeadsSupportZoho');
-            if (!form) return true;
-            const emailFld = form.querySelectorAll('input[type="email"]');
-            for (let i = 0; i < emailFld.length; i++) {
-                const emailVal = (emailFld[i] as HTMLInputElement).value;
-                if (emailVal.replace(/^\s+|\s+$/g, '').length !== 0) {
-                    const atpos = emailVal.indexOf('@');
-                    const dotpos = emailVal.lastIndexOf('.');
-                    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
-                        alert('Please enter a valid email address.');
-                        (emailFld[i] as HTMLInputElement).focus();
-                        return false;
+        
+        // Manual implementation of Zoho Desk Captcha Regeneration for React
+        window.zsRegenerateCaptcha = function () {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://desk.zoho.in/support/GenerateCaptcha?action=getNewCaptcha&_=' + new Date().getTime(), true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    try {
+                        const response = JSON.parse(xhr.responseText);
+                        setCaptchaUrl(response.captchaUrl);
+                        const xJdfEaS = document.getElementsByName('xJdfEaS')[0] as HTMLInputElement;
+                        if (xJdfEaS) xJdfEaS.value = response.captchaDigest;
+                    } catch (e) {
+                        console.error("Captcha error:", e);
                     }
                 }
-            }
-            return true;
-        };
-
-        window.checkMandatoryZSupport = function (e: any) {
-            const form = e.target as HTMLFormElement;
-            const mndFileds = ['Last Name', 'Email', 'Mobile', 'Company', 'Description'];
-            const fldLangVal = ['Name', 'Email', 'Mobile', 'Company', 'Issue Description'];
-
-            for (let i = 0; i < mndFileds.length; i++) {
-                const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement;
-                if (fieldObj && fieldObj.value.replace(/^\s+|\s+$/g, '').length === 0) {
-                    alert(fldLangVal[i] + ' cannot be empty.');
-                    fieldObj.focus();
-                    return false;
-                }
-            }
-
-            if (window.validateEmailZSupport && !window.validateEmailZSupport()) {
-                return false;
-            }
-
-            return true;
+            };
+            xhr.send();
         };
     }, []);
 
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        if (window.checkMandatoryZSupport && !window.checkMandatoryZSupport(e.nativeEvent)) {
-            e.preventDefault();
+        const form = e.currentTarget;
+        const required = ["Subject", "First Name", "Contact Name", "Email", "zsWebFormCaptchaWord"];
+        let isValid = true;
+
+        for (const field of required) {
+            const fld = form.elements.namedItem(field) as HTMLInputElement;
+            if (fld && !fld.value.trim()) {
+                alert(`${field === 'Contact Name' ? 'Last Name' : field} cannot be empty`);
+                if (fld.focus) fld.focus();
+                isValid = false;
+                break;
+            }
         }
+
+        if (!isValid) {
+            e.preventDefault();
+            return;
+        }
+
+        // External Visitor Tracking (SalesIQ)
+        try {
+            // @ts-ignore
+            if (window.$zoho && window.$zoho.salesiq) {
+                const name = (form.elements.namedItem('First Name') as HTMLInputElement).value + ' ' + (form.elements.namedItem('Contact Name') as HTMLInputElement).value;
+                const email = (form.elements.namedItem('Email') as HTMLInputElement).value;
+                // @ts-ignore
+                window.$zoho.salesiq.visitor.name(name);
+                // @ts-ignore
+                window.$zoho.salesiq.visitor.email(email);
+            }
+        } catch (err) {}
+
+        setIsSubmitting(true);
     };
 
     if (!isClient) return null;
 
     return (
         <div className="min-h-screen bg-white selection:bg-blue-900 selection:text-white">
+            <Script src="https://js.zohostatic.in/support/app/js/jqueryandencoder.ef05974972bf3bca1b87.js" strategy="afterInteractive" />
 
             {/* ── Hero / Form Section ─────────────────────────────────────────────── */}
             <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d] flex items-center">
@@ -150,20 +165,20 @@ export default function ZohoSupportPage() {
                         >
                             {/* Badge */}
                             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/10 bg-white backdrop-blur-sm w-fit shadow-lg shadow-blue-500/10">
-                                <LifeBuoy className="w-4.5 h-4.5 text-blue-600 animate-spin-slow" />
-                                <span className="text-blue-900 text-xs font-medium tracking-widest uppercase">Certified Zoho Support</span>
+                                <LifeBuoy className="w-4.5 h-4.5 text-blue-600" />
+                                <span className="text-blue-900 text-xs font-medium tracking-widest uppercase">Zoho Desk Integration</span>
                             </div>
 
                             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-50 via-indigo-50 to-cyan-50 leading-[1.1] tracking-tight">
-                                Reliable Support. <br />
+                                Specialized Zoho <br />
                                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-indigo-300 to-cyan-200">
-                                    Zero Business Lag.
+                                     Helpdesk Support.
                                 </span>
                             </h1>
 
                             <div className="space-y-4">
                                 <p className="text-gray-300 text-lg leading-relaxed max-w-lg">
-                                    Experiencing a technical blocker or need system optimization? Our certified Zoho specialists provide SLA-backed support to ensure your business continuity.
+                                    Directly connected to our Zoho Desk environment. Open a case for technical issues, environment optimization, or customization requests.
                                 </p>
                             </div>
 
@@ -172,27 +187,27 @@ export default function ZohoSupportPage() {
                                 {[
                                     {
                                         icon: Mail,
-                                        title: "Email Support",
-                                        contact: "support@agsuitetech.com",
-                                        desc: "Detail your issue for ticket queuing and technical resolution."
+                                        title: "Direct Ticketing",
+                                        contact: "Automated Case Creation",
+                                        desc: "Detail your issue to initiate an immediate support workflow."
                                     },
                                     {
-                                        icon: Phone,
-                                        title: "Phone Support",
-                                        contact: "+91 (20) 1234 5678",
-                                        desc: "Direct connection for mission-critical environment failures."
+                                        icon: RefreshCcw,
+                                        title: "SLA Response",
+                                        contact: "Priority Management",
+                                        desc: "Every ticket is tracked with strict response and resolution SLAs."
                                     },
                                     {
-                                        icon: Clock,
-                                        title: "Response SLA",
-                                        contact: "Under 24 Hours",
-                                        desc: "We prioritize your operations with rapid triage and expert fixing."
+                                        icon: Users,
+                                        title: "Certified Experts",
+                                        contact: "75+ Zoho Specialists",
+                                        desc: "Access a global pool of certified consultants for complex fixes."
                                     },
                                     {
-                                        icon: HelpCircle,
-                                        title: "Client Portal",
-                                        contact: "Managed Service Desk",
-                                        desc: "Real-time ticket tracking for our managed services clients."
+                                        icon: Target,
+                                        title: "Optimization",
+                                        contact: "System Performance",
+                                        desc: "Beyond fixes, we optimize your Zoho environment for peak efficiency."
                                     }
                                 ].map((item, i) => (
                                     <motion.div
@@ -200,17 +215,16 @@ export default function ZohoSupportPage() {
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.4 + i * 0.1 }}
-                                        className="p-6 rounded-3xl border border-white/20 bg-gradient-to-br from-white via-white/95 to-blue-50 shadow-xl hover:shadow-blue-400/20 hover:-translate-y-1 transition-all duration-300 group"
+                                        className="p-6 rounded-[2rem] border border-white/20 bg-white hover:bg-gray-50 transition-all duration-300 group shadow-xl shadow-black/20"
                                     >
                                         <div className="flex items-center gap-4 mb-4">
                                             <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
                                                 <item.icon size={20} />
                                             </div>
-                                            <div className="h-[1px] flex-1 bg-gradient-to-r from-blue-100 to-transparent group-hover:from-blue-500 transition-all duration-500" />
                                         </div>
-                                        <h4 className="bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-black font-bold text-lg mb-1 leading-tight transition-colors uppercase">{item.title}</h4>
+                                        <h4 className="text-gray-900 font-bold text-lg mb-1 leading-tight uppercase transition-colors">{item.title}</h4>
                                         <p className="text-blue-600 text-sm font-semibold mb-2">{item.contact}</p>
-                                        <p className="text-gray-500 text-xs leading-relaxed font-medium">{item.desc}</p>
+                                        <p className="text-gray-600 text-xs leading-relaxed font-medium">{item.desc}</p>
                                     </motion.div>
                                 ))}
                             </div>
@@ -228,65 +242,123 @@ export default function ZohoSupportPage() {
                                 <div className="relative z-10 p-8 lg:p-10">
                                     <div className="mb-8 border-b border-gray-100 pb-6">
                                         <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Open Support Ticket</h2>
-                                        <p className="text-gray-500 text-base">Detail your technical or operational query — we'll connect shortly.</p>
+                                        <p className="text-gray-500 text-base">Fill out the form to open a case in our Zoho Desk.</p>
                                     </div>
 
                                     <form 
-                                        action="https://crm.zoho.in/crm/WebToLeadForm" 
-                                        name="WebToLeadsSupportZoho" 
+                                        action="https://desk.zoho.in/support/WebToCase" 
+                                        name="zsWebToCase_100504000001340024" 
+                                        id="zsWebToCase_100504000001340024" 
                                         method="POST" 
                                         onSubmit={handleFormSubmit}
+                                        encType="multipart/form-data"
                                         acceptCharset="UTF-8"
                                         className="space-y-5"
                                     >
-                                        <input type="text" className="hidden" name="xnQsjsdp" defaultValue="cae9ae065232fde2e40c34423041df835a4066ff2103c546e198d684b35e9861" readOnly />
-                                        <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                                        <input type="text" className="hidden" name="xmIwtLD" defaultValue="3820b2b7a84f952a9adb8f71d02ba0d6e9247f59314524fd5d4528cf4dff99b516b0d501ae4661e854a71c2dfb2b5263" readOnly />
-                                        <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
-                                        <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/contact-us/thank-you.php" readOnly />
+                                        <input type="hidden" name="xnQsjsdp" defaultValue="edbsne80a7a137f60f5b09ef1e4c9bc70ad0a" />
+                                        <input type="hidden" name="xmIwtLD" defaultValue="edbsn0d3e8787e0f8593207d41c639514556c45c9d78bb3f63e8d870ddcd0989381fd" />
+                                        <input type="hidden" name="xJdfEaS" defaultValue="" />
+                                        <input type="hidden" name="actionType" defaultValue="Q2FzZXM=" />
+                                        <input type="hidden" id="property(module)" name="property(module)" defaultValue="Cases" />
+                                        <input type="hidden" id="dependent_field_values_Cases" defaultValue='{"JSON_VALUES":{},"JSON_SELECT_VALUES":{},"JSON_MAP_DEP_LABELS":[]}' />
+                                        <input type="hidden" name="returnURL" defaultValue="https://www.agsuitetech.com" />
 
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                            <div>
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Full Name *</label>
-                                                <input type="text" name="Last Name" required placeholder="John Doe" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
-                                            </div>
-                                            <div>
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Business Email *</label>
-                                                <input type="email" name="Email" required placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
-                                            </div>
-                                        </div>
-
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                            <div>
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Mobile Number *</label>
-                                                <input type="tel" name="Mobile" required placeholder="+91 00000 00000" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
-                                            </div>
-                                            <div>
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Company Name *</label>
-                                                <input type="text" name="Company" required placeholder="Company Inc." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
-                                            </div>
-                                        </div>
-
+                                        {/* Subject */}
                                         <div>
-                                            <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Support Category *</label>
-                                            <select name="LEADCF5" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer">
-                                                <option value="">Select Category</option>
-                                                <option value="Zoho Technical Issue">Technical Issue</option>
-                                                <option value="Zoho Optimization">Environment Optimization</option>
-                                                <option value="Zoho Integration Help">Integration Failure</option>
-                                                <option value="Zoho Customization">Customization Request</option>
-                                                <option value="Zoho Training">Employee Training</option>
+                                            <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Subject *</label>
+                                            <input type="text" name="Subject" required placeholder="Briefly describe the issue" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                                        </div>
+
+                                        {/* Name Row */}
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                            <div>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">First Name *</label>
+                                                <input type="text" name="First Name" required placeholder="John" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                                            </div>
+                                            <div>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Last Name *</label>
+                                                <input type="text" name="Contact Name" required placeholder="Doe" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                                            </div>
+                                        </div>
+
+                                        {/* Email + Priority */}
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                            <div>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Email *</label>
+                                                <input type="email" name="Email" required placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                                            </div>
+                                            <div>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Priority</label>
+                                                <select name="Priority" defaultValue="" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer shadow-sm">
+                                                    <option value="" disabled>-None-</option>
+                                                    <option value="High">High</option>
+                                                    <option value="Medium">Medium</option>
+                                                    <option value="Low">Low</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        {/* Product Selection */}
+                                        <div>
+                                            <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Zoho Product Name</label>
+                                            <select name="Zoho Product Name" id="CASECF1" defaultValue="" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer shadow-sm">
+                                                <option value="" disabled>-None-</option>
+                                                <option value="Zoho People">Zoho People</option>
+                                                <option value="Zoho CRM">Zoho CRM</option>
+                                                <option value="Zoho Books">Zoho Books</option>
+                                                <option value="Zoho Creator">Zoho Creator</option>
+                                                <option value="Zoho inventory">Zoho inventory</option>
+                                                <option value="Zoho Payroll">Zoho Payroll</option>
+                                                <option value="Zoho Projects">Zoho Projects</option>
+                                                <option value="Zoho Desk">Zoho Desk</option>
+                                                <option value="Zoho Campaigns">Zoho Campaigns</option>
                                             </select>
                                         </div>
 
+                                        {/* Description */}
                                         <div>
-                                            <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Describe the Technical Issue *</label>
-                                            <textarea name="Description" required rows={4} placeholder="Provide details about the issue, error codes, or desired optimization..." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400" />
+                                            <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Issue Description</label>
+                                            <textarea name="Description" rows={3} placeholder="Please provide technical details..." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400 shadow-sm" />
                                         </div>
 
-                                        <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm">
-                                            <Send className="w-4 h-4" />
-                                            Submit Support Ticket
+                                        {/* Captcha */}
+                                        <div className="bg-blue-50/30 p-5 rounded-2xl border border-blue-100 space-y-4">
+                                            <div className="flex items-center justify-between">
+                                                <label className="text-gray-700 text-xs font-semibold uppercase tracking-wider">Security Verification *</label>
+                                                <button type="button" onClick={() => window.zsRegenerateCaptcha && window.zsRegenerateCaptcha()} className="text-blue-600 text-[10px] font-bold uppercase hover:underline flex items-center gap-1">
+                                                    <RefreshCcw className="w-3 h-3" /> Refresh
+                                                </button>
+                                            </div>
+                                            
+                                            <div className="flex flex-col sm:flex-row items-center gap-4">
+                                                <div className="w-full sm:w-1/2 h-14 bg-white rounded-lg border border-blue-100 flex items-center justify-center overflow-hidden">
+                                                    {captchaUrl ? (
+                                                        <img src={captchaUrl} alt="Captcha" className="h-full object-contain" />
+                                                    ) : (
+                                                        <p className="text-xs text-blue-300 animate-pulse">Loading Captcha...</p>
+                                                    )}
+                                                </div>
+                                                <div className="w-full sm:w-1/2">
+                                                    <input type="text" name="zsWebFormCaptchaWord" required placeholder="Enter Code" className="w-full bg-white border-2 border-blue-100 focus:border-blue-600 rounded-lg px-4 py-2.5 text-gray-900 text-sm outline-none transition-all text-center tracking-widest font-bold" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Submit */}
+                                        <button 
+                                            type="submit" 
+                                            id="zsSubmitButton_100504000001340024"
+                                            disabled={isSubmitting}
+                                            className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed group"
+                                        >
+                                            {isSubmitting ? (
+                                                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                            ) : (
+                                                <>
+                                                    <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                                    Submit Case to Desk
+                                                </>
+                                            )}
                                         </button>
                                     </form>
                                 </div>
@@ -361,6 +433,17 @@ export default function ZohoSupportPage() {
                     </div>
                 </div>
             </section>
+
+            {/* Trigger captcha load on mount */}
+            <Script id="captcha-loader" strategy="afterInteractive">
+                {`
+                    setTimeout(function() {
+                        if (window.zsRegenerateCaptcha) {
+                            window.zsRegenerateCaptcha();
+                        }
+                    }, 1000);
+                `}
+            </Script>
         </div>
     );
 }

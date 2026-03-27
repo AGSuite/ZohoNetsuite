@@ -195,11 +195,11 @@ export default function ZohoSolutionsClient() {
   ];
 
   const services = [
-    { title: "Digital Transformation", description: "Modernize your business for the digital age with Zoho.", icon: Rocket, href: "/zoho/services/digital-transformation" },
-    { title: "Integration Services", description: "Seamlessly connect Zoho with your existing systems.", icon: Layers, href: "/zoho/services/integration-services" },
-    { title: "Training Services", description: "Upskill your team with expert-led Zoho training.", icon: GraduationCap, href: "/zoho/services/training-services" },
-    { title: "Low-Code Development", description: "Build apps faster with Zoho Creator.", icon: Wrench, href: "/zoho/services/low-code" },
-    { title: "Managed Services", description: "End-to-end Zoho management & support.", icon: Settings, href: "/zoho/services/managed-services" },
+    { title: "Zoho Implementation", description: "Organizations can benefit from professional assistance in implementing Zoho solutions tailored to their specific business requirements.", icon: Rocket, href: "/zoho/services/implementation" },
+    { title: "Zoho Integration", description: "Expert support is available for seamlessly integrating Zoho applications with existing systems and third-party tools, enhancing operational efficiency.", icon: Layers, href: "/zoho/services/integration-services" },
+    { title: "Zoho Customization", description: "Businesses can leverage custom development options to tailor Zoho applications to their unique workflows and operational needs.", icon: Wrench, href: "/zoho/services/digital-transformation" },
+    { title: "Zoho Managed Support", description: "Ongoing support and maintenance services ensure the smooth functioning and optimal performance of Zoho solutions, providing peace of mind to organizations.", icon: Settings, href: "/zoho/services/managed-services" },
+    { title: "Zoho Training", description: "Comprehensive training programs are available to empower teams with the necessary knowledge and skills to effectively utilize Zoho applications, maximizing their potential for business growth.", icon: GraduationCap, href: "/zoho/services/training-services" },
   ];
 
   return (
@@ -435,7 +435,7 @@ export default function ZohoSolutionsClient() {
       </section>
 
       <section id="faq" className="scroll-mt-36">
-        <FAQ variant="zoho" layout="centered" />
+        <FAQ variant="zoho" layout="sidebar" />
       </section>
 
       <ContactFormDesign4 />

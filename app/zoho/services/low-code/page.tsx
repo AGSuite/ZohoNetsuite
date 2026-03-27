@@ -120,7 +120,7 @@ export default function ZohoLowCodePage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/Services/lowcodeservices.webp"
+      heroImage="/images/netsuiteimages/Servicesimg/low code.webp"
       introImage="/images/Services/lowcode.webp"
       introTitle="Tailor-Made Software for Your Unique Business."
       introDescription1="Sometimes off-the-shelf software doesn't fit your processes. Our low-code development services bridge that gap with custom Zoho Creator applications."

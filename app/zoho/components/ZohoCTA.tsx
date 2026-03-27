@@ -64,14 +64,14 @@ const ZohoCTA = () => {
             className="mt-8"
           >
             <a
-              href="/zoho-calculator"
+              href="#contact-form"
               className="
                 inline-flex items-center px-7 py-4 
                 bg-white text-black font-semibold 
                 rounded-xl shadow-lg hover:bg-gray-200 transition
               "
             >
-              Calculate Savings →
+              Discover Your Savings →
             </a>
           </motion.div>
         </div>

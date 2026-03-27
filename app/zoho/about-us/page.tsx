@@ -176,11 +176,11 @@ const FlipCounter = memo(function FlipCounter({
   }, [rollingIndex, rollingNumbers]);
 
   return (
-    <div className="flex items-center justify-center text-4xl md:text-6xl font-medium" style={{ color }}>
+    <div className="flex items-center justify-center text-3xl md:text-5xl font-medium" style={{ color }}>
       {staticPart && <span className="mr-1">{staticPart}</span>}
       <FlipNumbers
-        height={55}
-        width={36}
+        height={45}
+        width={30}
         color={color}
         background="transparent"
         play={inView}
@@ -236,13 +236,16 @@ type CounterItem = {
   label: string;
   value: number;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  suffix: string;
 };
 
 const counters: CounterItem[] = [
-  { label: 'Enterprises Served', value: 180, icon: Building2 },
-  { label: 'Zoho Experts', value: 30, icon: UserCog },
-  { label: 'Global Roll-outs', value: 50, icon: Globe2 },
-  { label: 'Years Experience', value: 15, icon: Rocket },
+  { label: 'Projects Completed', value: 500, icon: Target, suffix: "+" },
+  { label: 'Global Customers', value: 200, icon: Building2, suffix: "+" },
+  { label: 'Industry Expertise', value: 10, icon: UserCog, suffix: "+" },
+  { label: 'Customer Retention', value: 84, icon: Heart, suffix: "%" },
+  { label: 'Years Experience', value: 15, icon: Rocket, suffix: "+" },
+  { label: 'Countries Serving', value: 10, icon: Globe2, suffix: "+" },
 ];
 
 const fadeInUp: Variants = {
@@ -363,7 +366,7 @@ function WhoWeAreSection() {
           <div className="relative w-full max-w-[900px]">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/aboutus/Agsuitedoor.webp"
+                src="/images/aboutus/zohodoor.jpg"
                 alt="AGSuite Technologies Team"
                 width={1400}
                 height={900}
@@ -442,7 +445,7 @@ function StrategicPartnersSection() {
                 transition={{ duration: 0.8 }}
                 className="text-3xl md:text-4xl lg:text-5xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-gray-50 via-blue-500 to-blue-500 leading-tight"
               >
-                Strategic Partners
+                Global Impact & Expertise
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, x: -30 }}
@@ -466,7 +469,7 @@ function StrategicPartnersSection() {
             >
               <div className="bg-white/100 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl">
                 <Image
-                  src="/images/zohoimages/zohologos/zohoadvancelogo.webp"
+                  src="/images/zoho logos/zoho premium.png"
                   alt="Advanced Zoho Partner"
                   width={320}
                   height={120}
@@ -481,7 +484,7 @@ function StrategicPartnersSection() {
             ref={statsRef}
             className="flex-1 w-full"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
               {counters.map((item, index) => {
                 return (
                   <motion.div
@@ -490,24 +493,24 @@ function StrategicPartnersSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.15 }}
-                    className="relative group p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm overflow-hidden text-center"
+                    className="relative group p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm overflow-hidden text-center"
                   >
                     {/* Decorative faint icon bg */}
                     <div className="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
-                      <item.icon className="w-24 h-24 text-white" strokeWidth={1} />
+                      <item.icon className="w-16 h-16 text-white" strokeWidth={1} />
                     </div>
 
                     <div className="relative z-10 flex flex-col items-center">
-                      <div className="p-4 bg-blue-600/10 rounded-2xl group-hover:bg-blue-600 transition-colors duration-300 text-blue-400 group-hover:text-white mb-6 border border-white/5">
-                        <item.icon className="w-10 h-10" strokeWidth={1.2} />
+                      <div className="p-3 bg-blue-600/10 rounded-xl group-hover:bg-blue-600 transition-colors duration-300 text-blue-400 group-hover:text-white mb-4 border border-white/5">
+                        <item.icon className="w-7 h-7" strokeWidth={1.2} />
                       </div>
 
-                      <div className="space-y-3">
-                        <p className="text-gray-400 font-medium text-sm group-hover:text-gray-200 transition-colors uppercase tracking-widest">
+                      <div className="space-y-2">
+                        <p className="text-gray-400 font-medium text-[11px] group-hover:text-gray-200 transition-colors uppercase tracking-widest pb-1">
                           {item.label}
                         </p>
-                        <div className="text-4xl lg:text-5xl font-bold text-white tracking-tight">
-                          <FlipCounter end={item.value} suffix="+" duration={3} inView={statsInView} color="#FFFFFF" />
+                        <div className="text-3xl lg:text-4xl font-bold text-white tracking-tight">
+                          <FlipCounter end={item.value} suffix={item.suffix} duration={3} inView={statsInView} color="#FFFFFF" />
                         </div>
                       </div>
                     </div>
@@ -568,73 +571,6 @@ function ClientsSection() {
           animation-play-state: paused;
         }
       `}</style>
-    </section>
-  );
-}
-
-function AwardsAndRecognitionSection() {
-  return (
-    <section className="relative pt-0 pb-16 bg-white overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 md:px-12 lg:px-16">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          {/* LEFT: Headline */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-xl"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-700 to-blue-500 leading-tight tracking-tight">
-              Recognized Excellence in
-              <span className="block italic font-serif mt-1">Zoho Solutions</span>
-            </h2>
-          </motion.div>
-
-          {/* RIGHT: Award images horizontal - no card wrappers */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-row items-center justify-center gap-10"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="hover:-translate-y-2 transition-transform duration-300"
-            >
-              <Image
-                src="/images/awards/Netsuitepartneraward.png"
-                alt="Partner Award"
-                width={280}
-                height={280}
-                className="w-64 h-64 object-contain "
-                priority
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="hover:-translate-y-2 transition-transform duration-300"
-            >
-              <Image
-                src="/images/awards/partnerofyear.png"
-                alt="Partner of the Year Award"
-                width={280}
-                height={280}
-                className="w-54 h-64 object-contain "
-                priority
-              />
-            </motion.div>
-          </motion.div>
-        </div>
-      </div>
     </section>
   );
 }
@@ -813,7 +749,7 @@ export default function AboutClient() {
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 bg-gradient-to-r from-[#000814] via-[#001535] to-black bg-clip-text text-transparent">Our Mission</motion.h2>
               <motion.div variants={wordContainer} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
                 {(() => {
-                  const text = "AGSuite Technologies thrives on empowering businesses through cutting-edge technology solutions, specializing in Zoho and Oracle NetSuite. Our passion is to streamline operations, enhance efficiency, and drive sustainable growth for our clients. Our commitment lies in being a catalyst for positive transformation, helping clients achieve their strategic goals in the dynamic digital landscape.";
+                  const text = "AGSuite Technologies thrives on empowering businesses through cutting-edge technology solutions, specializing in Zoho. Our passion is to streamline operations, enhance efficiency, and drive sustainable growth for our clients. Our commitment lies in being a catalyst for positive transformation, helping clients achieve their strategic goals in the dynamic digital landscape.";
                   const words = text.split(' ');
                   const groups = [];
                   for (let i = 0; i < words.length; i += 3) {
@@ -841,7 +777,7 @@ export default function AboutClient() {
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 bg-gradient-to-r from-[#000814] via-[#001535] to-black bg-clip-text text-transparent">Our Vision</motion.h2>
               <motion.div variants={wordContainer} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
                 {(() => {
-                  const text = "AGSuite Technologies envisions global leadership in technology consulting, setting industry benchmarks for innovation, integrity, and client satisfaction. We aspire to be the preferred choice, renowned for transformative solutions, agility, and empathetic growth. Our vision is to forge lasting partnerships, defining the zenith of excellence in the dynamic field of technology.";
+                  const text = "AGSuite Technologies envisions global leadership in Zoho consulting, setting industry benchmarks for innovation, integrity, and client satisfaction. We aspire to be the preferred choice, renowned for transformative Zoho solutions, agility, and empathetic growth. Our vision is to forge lasting partnerships, defining the zenith of excellence in the dynamic field of cloud technology.";
                   const words = text.split(' ');
                   const groups = [];
                   for (let i = 0; i < words.length; i += 3) {
@@ -952,7 +888,7 @@ export default function AboutClient() {
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 bg-gradient-to-r from-[#000814] via-[#001535] to-black bg-clip-text text-transparent">Our Niche</motion.h2>
               <motion.div variants={wordContainer} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
                 {(() => {
-                  const text = "AGSuite Technologies excels in Zoho and Oracle NetSuite Implementation, offering top-notch Technology Consulting Services. Our specialization includes Customizations, Managed Services, and Integrations, ensuring tailored solutions for clients. With a focus on client success, we leverage our expertise to lead in the dynamic landscape of cloud-based business solutions.";
+                  const text = "AGSuite Technologies excels in Zoho Implementation, offering top-notch Zoho Consulting Services. Our specialization includes Customizations, Managed Services, and Integrations, ensuring tailored solutions for clients. With a focus on client success, we leverage our expertise to lead in the dynamic landscape of cloud-based business solutions.";
                   const words = text.split(' ');
                   const groups = [];
                   for (let i = 0; i < words.length; i += 3) {
@@ -1160,9 +1096,6 @@ export default function AboutClient() {
         </div>
       </section>
 
-      {/* Awards Recognition Section */}
-      <AwardsAndRecognitionSection />
-
       {/* Premium CTA Section */}
       <section className=" pb-0 bg-white overflow-hidden w-full">
         <motion.div
@@ -1221,12 +1154,12 @@ const leadersData = [
     title: "CEO",
     image: "/images/people/Ankur.jpg",
     linkedin: "https://www.linkedin.com/in/ankurgoyal2/",
-    bio: "Visionary leader driving AGSuite's strategic vision with 15+ years in enterprise technology solutions."
+    bio: "Visionary leader driving AGSuite's strategic vision with 25+ years in enterprise technology solutions."
   },
   {
     name: "Rajat Goyal",
     title: "Director",
-    image: "/images/people/Rajat.png",
+    image: "/images/people/Rajat_v2.png",
     linkedin: "https://www.linkedin.com/in/rajat-goyal-9007a6101/",
     bio: "Strategic business leader specializing in operational excellence and global expansion initiatives."
   },
@@ -1237,11 +1170,18 @@ const leadersData = [
     linkedin: "#",
     bio: "Technology innovator leading AGSuite's technical strategy and cloud architecture excellence."
   },
+  {
+    name: "Shailesh Punse",
+    title: "Head of Sales & Marketing",
+    image: "/images/people/Shailesh.jpg",
+    linkedin: "#",
+    bio: "Driving global revenue growth and strategic partnerships with 25+ years of cross-industry expertise."
+  },
 ];
 
 function OurLeaders({ themeColor }: { themeColor: 'blue' | 'rose' }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl mx-auto">
       {leadersData.map((leader, index) => (
         <motion.div
           key={index}

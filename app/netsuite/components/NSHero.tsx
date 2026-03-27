@@ -91,10 +91,10 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                 <HeroSlide
                   isActive={activeIndex === 0}
                   bg="/images/Background/herobluebg.webp"
-                  title="Empower Your Global Operations with the World's #1 NetSuite ERP Solution"
-                  desc="Run your entire finance, operations, and reporting on a single, seamlessly connected cloud platform."
-                  cta="Experience NetSuite ERP"
-                  link="/netsuite/solutions/core-erp/erp"
+                  title="Built for Your Industry. Powered by NetSuite."
+                  desc="Empower your business with industry-specific NetSuite solutions designed to streamline operations, improve visibility, and accelerate growth across Software & Technology, Financial Services, AdTech, EdTech, MarTech, IT/ITES, Manufacturing, Retail, and more."
+                  cta="Book a Demo"
+                  link="/netsuite/contact"
                   image="/images/Dashboard/netsuitedash2.webp"
                   priority={true}
                   multiColorShadow={true}
@@ -131,10 +131,10 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                       />
                     </div>
                   }
-                  title="Unlock Predictive Intelligence with AI-Powered NetSuite Automation"
-                  desc="Harness the power of AI to automate complex insights and drive smarter business decisions."
-                  cta="Discover AI Solutions"
-                  link="/netsuite/solutions/analytics/ai"
+                  title="Streamlining IT Operations with NetSuite"
+                  desc="Simplify project management, resource planning, and financial tracking with a centralized Oracle NetSuite ERP system."
+                  cta="Book a Demo"
+                  link="/netsuite/contact"
                   customVisual={<NSCircularDesign />}
                   showOverlay={false}
                   textColor="dark"
@@ -145,10 +145,10 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                 <HeroSlide
                   isActive={activeIndex === 2}
                   bg="/images/Background/herobg5.png"
-                  title="Master Your Financial Future with Smart CFO Automation and Real-Time Scale"
-                  desc="Automate complex closing, approvals, and compliance so your finance team can focus on strategy."
-                  cta="Upgrade Financial Ops"
-                  link="/netsuite/solutions/core-erp/accounting"
+                  title="Simplifying Supply Chains with NetSuite"
+                  desc="Gain complete control over procurement, inventory, and logistics with real-time supply chain insights."
+                  cta="Book a Demo"
+                  link="/netsuite/contact"
                   customVisual={
                     <div className="relative w-full flex justify-center lg:justify-end">
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[130%] -z-10 blur-[130px] opacity-30 select-none pointer-events-none">
@@ -221,10 +221,10 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                       />
                     </div>
                   }
-                  title="Accelerate Your Growth with Expert NetSuite Managed Services and Efficiency"
-                  desc="Optimize performance, automate custom workflows, and scale your business without limitations."
-                  cta="Optimize Your NetSuite"
-                  link="/netsuite/services/managed-services"
+                  title="Powering Seamless Commerce with NetSuite"
+                  desc="Deliver unified retail and eCommerce experiences with integrated order, inventory, and customer management."
+                  cta="Book a Demo"
+                  link="/netsuite/contact"
                   customVisual={
                     <div className="relative w-full h-full flex items-center justify-center p-4">
                       <Image

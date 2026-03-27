@@ -177,6 +177,7 @@ export default function ZohoFinancePlusPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap1.webp"
+      whatIsImage="/images/zoho Dashboards/zoho finance plus.webp"
       heroCard1={{
         title: "Unified Back-Office",
         subtitle: "One platform for all financial operations.",

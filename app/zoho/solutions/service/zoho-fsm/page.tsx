@@ -180,6 +180,7 @@ export default function ZohoFsmPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap4.webp"
+      whatIsImage="/images/zoho Dashboards/zoho FSM.webp"
       heroCard1={{
         title: "95% Satisfaction",
         subtitle: "Accurate scheduling and on-time service.",

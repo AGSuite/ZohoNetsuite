@@ -174,6 +174,7 @@ export default function ZohoMailPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap2.webp"
+      whatIsImage="/images/zoho Dashboards/zoho mail.webp"
       heroCard1={{
         title: "99.9% Uptime SLA",
         subtitle: "Reliable, secure business communication.",

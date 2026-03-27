@@ -368,137 +368,137 @@ export default function ZohoCareersPage() {
             </p>
           </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-20">
+          <div className="flex flex-col lg:flex-row gap-20">
 
-          {/* LEFT: Position List */}
-          <div className="flex-1">
+            {/* LEFT: Position List */}
+            <div className="flex-1">
 
-            {/* Filters */}
-            <div className="grid sm:grid-cols-2 gap-6 mb-12">
-              <div className="relative group">
-                <Filter className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 group-focus-within:text-rose-500 transition-colors" />
-                <select
-                  value={type}
-                  onChange={(e) => setType(e.target.value)}
-                  className="w-full pl-12 pr-10 py-4 bg-white border border-gray-100 rounded-3xl appearance-none focus:ring-4 focus:ring-rose-100 focus:border-rose-500 outline-none transition-all font-medium text-gray-700 cursor-pointer shadow-sm shadow-rose-900/5"
-                >
-                  {jobTypes.map((jt) => (
-                    <option key={jt.value} value={jt.value}>{jt.label}</option>
-                  ))}
-                </select>
-                <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                  <ArrowRight className="w-4 h-4 rotate-90" />
+              {/* Filters */}
+              <div className="grid sm:grid-cols-2 gap-6 mb-12">
+                <div className="relative group">
+                  <Filter className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 group-focus-within:text-rose-500 transition-colors" />
+                  <select
+                    value={type}
+                    onChange={(e) => setType(e.target.value)}
+                    className="w-full pl-12 pr-10 py-4 bg-white border border-gray-100 rounded-3xl appearance-none focus:ring-4 focus:ring-rose-100 focus:border-rose-500 outline-none transition-all font-medium text-gray-700 cursor-pointer shadow-sm shadow-rose-900/5"
+                  >
+                    {jobTypes.map((jt) => (
+                      <option key={jt.value} value={jt.value}>{jt.label}</option>
+                    ))}
+                  </select>
+                  <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                    <ArrowRight className="w-4 h-4 rotate-90" />
+                  </div>
+                </div>
+                <div className="relative group">
+                  <MapPin className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 group-focus-within:text-rose-500 transition-colors" />
+                  <select
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                    className="w-full pl-12 pr-10 py-4 bg-white border border-gray-100 rounded-3xl appearance-none focus:ring-4 focus:ring-rose-100 focus:border-rose-500 outline-none transition-all font-medium text-gray-700 cursor-pointer shadow-sm shadow-rose-900/5"
+                  >
+                    {locations.map((loc) => (
+                      <option key={loc.value} value={loc.value}>{loc.label}</option>
+                    ))}
+                  </select>
+                  <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                    <ArrowRight className="w-4 h-4 rotate-90" />
+                  </div>
                 </div>
               </div>
-              <div className="relative group">
-                <MapPin className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 group-focus-within:text-rose-500 transition-colors" />
-                <select
-                  value={location}
-                  onChange={(e) => setLocation(e.target.value)}
-                  className="w-full pl-12 pr-10 py-4 bg-white border border-gray-100 rounded-3xl appearance-none focus:ring-4 focus:ring-rose-100 focus:border-rose-500 outline-none transition-all font-medium text-gray-700 cursor-pointer shadow-sm shadow-rose-900/5"
-                >
-                  {locations.map((loc) => (
-                    <option key={loc.value} value={loc.value}>{loc.label}</option>
-                  ))}
-                </select>
-                <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                  <ArrowRight className="w-4 h-4 rotate-90" />
-                </div>
-              </div>
-            </div>
 
-            {/* Job Cards */}
-            <div className="space-y-6">
-              <AnimatePresence mode="popLayout">
-                {filteredJobs.length > 0 ? (
-                  filteredJobs.map((job, idx) => (
-                    <motion.div
-                      key={job.title}
-                      layout
-                      initial={{ opacity: 0, scale: 0.98 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.3, delay: idx * 0.05 }}
-                      className="group bg-gradient-to-br from-white via-rose-50/60 to-orange-50/40 p-6 sm:p-8 rounded-[2rem] border border-white/90 shadow-[0_8px_32px_rgba(46,0,13,0.10)] hover:shadow-[0_16px_48px_rgba(46,0,13,0.18)] hover:border-rose-200 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-8"
-                    >
-                      <div className="flex items-center gap-6">
-                        <div
-                          className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 text-rose-300 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg"
-                          style={{ background: "linear-gradient(135deg, #4c0519, #e11d48)" }}
-                        >
-                          <Briefcase size={24} />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-bold text-[#4c0519] group-hover:text-rose-700 transition-colors tracking-tight uppercase leading-tight">
-                            {job.title}
-                          </h3>
-                          <div className="flex items-center gap-5 mt-2 text-sm font-semibold">
-                            <span className="flex items-center gap-1.5 text-[#4c0519]">
-                              <MapPin size={14} className="text-rose-500" /> {job.locationName}
-                            </span>
-                            <span className="w-1.5 h-1.5 rounded-full bg-rose-300" />
-                            <span className="capitalize text-[#4c0519] font-bold">{job.type.replace('-', ' ')}</span>
+              {/* Job Cards */}
+              <div className="space-y-6">
+                <AnimatePresence mode="popLayout">
+                  {filteredJobs.length > 0 ? (
+                    filteredJobs.map((job, idx) => (
+                      <motion.div
+                        key={job.title}
+                        layout
+                        initial={{ opacity: 0, scale: 0.98 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ duration: 0.3, delay: idx * 0.05 }}
+                        className="group bg-gradient-to-br from-white via-rose-50/60 to-orange-50/40 p-6 sm:p-8 rounded-[2rem] border border-white/90 shadow-[0_8px_32px_rgba(46,0,13,0.10)] hover:shadow-[0_16px_48px_rgba(46,0,13,0.18)] hover:border-rose-200 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-8"
+                      >
+                        <div className="flex items-center gap-6">
+                          <div
+                            className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 text-rose-300 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg"
+                            style={{ background: "linear-gradient(135deg, #4c0519, #e11d48)" }}
+                          >
+                            <Briefcase size={24} />
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-bold text-[#4c0519] group-hover:text-rose-700 transition-colors tracking-tight uppercase leading-tight">
+                              {job.title}
+                            </h3>
+                            <div className="flex items-center gap-5 mt-2 text-sm font-semibold">
+                              <span className="flex items-center gap-1.5 text-[#4c0519]">
+                                <MapPin size={14} className="text-rose-500" /> {job.locationName}
+                              </span>
+                              <span className="w-1.5 h-1.5 rounded-full bg-rose-300" />
+                              <span className="capitalize text-[#4c0519] font-bold">{job.type.replace('-', ' ')}</span>
+                            </div>
                           </div>
                         </div>
+                        <button
+                          onClick={() => {
+                            document.getElementById('apply-form')?.scrollIntoView({ behavior: 'smooth' });
+                          }}
+                          className="sm:w-auto w-full px-8 py-4 rounded-2xl text-white font-bold text-sm hover:shadow-xl hover:shadow-rose-500/30 transition-all flex items-center justify-center gap-2 group-hover:translate-x-1"
+                          style={{ background: "linear-gradient(135deg, #4c0519, #e11d48)" }}
+                          onMouseEnter={(e) => {
+                            (e.currentTarget as HTMLButtonElement).style.background = "linear-gradient(135deg, #e11d48, #fb7185)";
+                          }}
+                          onMouseLeave={(e) => {
+                            (e.currentTarget as HTMLButtonElement).style.background = "linear-gradient(135deg, #4c0519, #e11d48)";
+                          }}
+                        >
+                          Apply Now <ArrowRight size={18} />
+                        </button>
+                      </motion.div>
+                    ))
+                  ) : (
+                    <div className="py-24 text-center bg-gray-50 rounded-[3rem] border-2 border-dashed border-gray-200">
+                      <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto mb-6 border border-gray-100 text-gray-300 shadow-sm">
+                        <Search size={32} />
                       </div>
-                      <button
-                        onClick={() => {
-                          document.getElementById('apply-form')?.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                        className="sm:w-auto w-full px-8 py-4 rounded-2xl text-white font-bold text-sm hover:shadow-xl hover:shadow-rose-500/30 transition-all flex items-center justify-center gap-2 group-hover:translate-x-1"
-                        style={{ background: "linear-gradient(135deg, #4c0519, #e11d48)" }}
-                        onMouseEnter={(e) => {
-                          (e.currentTarget as HTMLButtonElement).style.background = "linear-gradient(135deg, #e11d48, #fb7185)";
-                        }}
-                        onMouseLeave={(e) => {
-                          (e.currentTarget as HTMLButtonElement).style.background = "linear-gradient(135deg, #4c0519, #e11d48)";
-                        }}
-                      >
-                        Apply Now <ArrowRight size={18} />
-                      </button>
-                    </motion.div>
-                  ))
-                ) : (
-                  <div className="py-24 text-center bg-gray-50 rounded-[3rem] border-2 border-dashed border-gray-200">
-                    <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto mb-6 border border-gray-100 text-gray-300 shadow-sm">
-                      <Search size={32} />
+                      <p className="text-gray-500 font-bold text-xl">No positions found matching your criteria.</p>
+                      <p className="text-gray-400 text-sm mt-2">Try adjusting your filters or search terms.</p>
                     </div>
-                    <p className="text-gray-500 font-bold text-xl">No positions found matching your criteria.</p>
-                    <p className="text-gray-400 text-sm mt-2">Try adjusting your filters or search terms.</p>
-                  </div>
-                )}
-              </AnimatePresence>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
-          </div>
 
-          {/* RIGHT: Form Sticky */}
-          <div id="apply-form" className="w-full lg:w-[450px] xl:w-[500px] shrink-0">
-            <div className="sticky top-32">
-              <div className="bg-white rounded-[3rem] border border-gray-100 overflow-hidden shadow-[0_32px_80px_-15px_rgba(0,0,0,0.1)] transition-all hover:shadow-[0_32px_80px_-15px_rgba(225,29,72,0.15)]">
-                <div className="bg-gradient-to-br from-[#1a0505] to-[#4c0519] p-10 text-white relative overflow-hidden">
-                  <div className="relative z-10">
-                    <h3 className="text-3xl font-bold mb-3 tracking-tight">Express Interest</h3>
-                    <p className="text-rose-200 text-base leading-relaxed font-medium">
-                      Apply for current openings at <span className="font-bold text-white underline decoration-rose-500/50">AGSuite Technologies</span>.
-                    </p>
+            {/* RIGHT: Form Sticky */}
+            <div id="apply-form" className="w-full lg:w-[450px] xl:w-[500px] shrink-0">
+              <div className="sticky top-32">
+                <div className="bg-white rounded-[3rem] border border-gray-100 overflow-hidden shadow-[0_32px_80px_-15px_rgba(0,0,0,0.1)] transition-all hover:shadow-[0_32px_80px_-15px_rgba(225,29,72,0.15)]">
+                  <div className="bg-gradient-to-br from-[#1a0505] to-[#4c0519] p-10 text-white relative overflow-hidden">
+                    <div className="relative z-10">
+                      <h3 className="text-3xl font-bold mb-3 tracking-tight">Express Interest</h3>
+                      <p className="text-rose-200 text-base leading-relaxed font-medium">
+                        Apply for current openings at <span className="font-bold text-white underline decoration-rose-500/50">AGSuite Technologies</span>.
+                      </p>
+                    </div>
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-rose-500/20 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
                   </div>
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-rose-500/20 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-                </div>
-                <div className="bg-white p-0">
-                  <iframe
-                    title="AGSuite Zoho Application Form"
-                    frameBorder={0}
-                    className="w-full h-[1500px] rounded-[3rem]"
-                    src="https://agsuitetech.zohorecruit.in/forms/58f06577622ce45d508407aae11148ceb8899baae51685ee90b1efbe959f4f75"
-                    allow="fullscreen"
-                    scrolling="no"
-                  />
+                  <div className="bg-white p-0">
+                    <iframe
+                      title="AGSuite Zoho Application Form"
+                      frameBorder={0}
+                      className="w-full h-[1500px] rounded-[3rem]"
+                      src="https://agsuitetech.zohorecruit.in/forms/58f06577622ce45d508407aae11148ceb8899baae51685ee90b1efbe959f4f75"
+                      allow="fullscreen"
+                      scrolling="no"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-        </div>
+          </div>
         </div>
       </section>
     </div>

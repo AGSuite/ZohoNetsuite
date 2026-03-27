@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import {
   MapPin,
   Phone,
@@ -129,24 +130,121 @@ const PARTICLES = [
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [locationFilter, setLocationFilter] = useState<Region>("All");
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    company: "",
-    jobTitle: "",
-    serviceInterest: "",
-    annualRevenue: "",
-    message: "",
-    privacyAccepted: false,
-  });
+  const [isClient, setIsClient] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+  useEffect(() => {
+    setIsClient(true);
+    
+    // Global functions for Zoho CRM Form
+    // @ts-ignore
+    window.validateEmailContactNetSuite = function () {
+      const form = document.forms.namedItem('WebToLeadsContactNetSuite');
+      if (!form) return true;
+      const emailFld = form.querySelectorAll('input[type="email"]');
+      for (let i = 0; i < emailFld.length; i++) {
+        const emailVal = (emailFld[i] as HTMLInputElement).value;
+        if (emailVal.replace(/^\s+|\s+$/g, '').length !== 0) {
+          const atpos = emailVal.indexOf('@');
+          const dotpos = emailVal.lastIndexOf('.');
+          if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+            alert('Please enter a valid email address.');
+            (emailFld[i] as HTMLInputElement).focus();
+            return false;
+          }
+          const restrictedDomains = /(gmail\.com|yahoo\.com|outlook\.com|live\.com)$/i;
+          if (restrictedDomains.test(emailVal)) {
+            alert('Gmail, Yahoo, Outlook, and Live email addresses are not allowed.');
+            (emailFld[i] as HTMLInputElement).focus();
+            return false;
+          }
+        }
+      }
+      return true;
+    };
+
+    // @ts-ignore
+    window.checkMandatoryContactNetSuite = function (e: any) {
+      const form = e.target as HTMLFormElement;
+      const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Description', 'LEADCF5', 'LEADCF40'];
+      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Tell Us How We Can Help', 'Product/Services', 'Annual Revenue'];
+
+      for (let i = 0; i < mndFileds.length; i++) {
+        const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement;
+        if (fieldObj && fieldObj.value.replace(/^\s+|\s+$/g, '').length === 0) {
+          alert(fldLangVal[i] + ' cannot be empty.');
+          fieldObj.focus();
+          return false;
+        }
+      }
+
+      const recap = document.getElementById('recap409531000000325116_ns');
+      if (recap && recap.getAttribute('captcha-verified') === 'false') {
+        const recapErr = document.getElementById('recapErr409531000000325116_ns');
+        if (recapErr) recapErr.style.visibility = 'visible';
+        return false;
+      }
+
+      // @ts-ignore
+      if (window.validateEmailContactNetSuite && !window.validateEmailContactNetSuite()) {
+        return false;
+      }
+
+      return true;
+    };
+  }, []);
+
+  const sendEmail = async (form: HTMLFormElement) => {
+    const formData = new FormData(form);
+    try {
+      const response = await fetch('https://agsuitetech.com/pricing/form_process_contact.php', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await response.json();
+      if (data.status === 'success') {
+        console.log('Email sent successfully.');
+      } else {
+        console.error('Failed to send email:', data.error);
+      }
+    } catch (error) {
+      console.error('Error while sending email:', error);
+    }
   };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    // @ts-ignore
+    if (window.checkMandatoryContactNetSuite && !window.checkMandatoryContactNetSuite(e.nativeEvent)) {
+      e.preventDefault();
+      return;
+    }
+
+    // Visitor Tracking update
+    try {
+      // @ts-ignore
+      if (window.$zoho && window.$zoho.salesiq) {
+        const form = e.currentTarget;
+        const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
+        if (LDTuvidObj) {
+          // @ts-ignore
+          LDTuvidObj.value = window.$zoho.salesiq.visitor.uniqueid();
+        }
+        const nameObj = form.elements.namedItem('Last Name') as HTMLInputElement;
+        const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
+        if (nameObj) {
+          // @ts-ignore
+          window.$zoho.salesiq.visitor.name(nameObj.value);
+        }
+        if (emailObj) {
+          // @ts-ignore
+          window.$zoho.salesiq.visitor.email(emailObj.value);
+        }
+      }
+    } catch (err) {}
+
+    await sendEmail(e.currentTarget);
+  };
+
+  if (!isClient) return null;
 
   return (
     <div className="min-h-screen bg-white selection:bg-blue-900 selection:text-white">
@@ -305,43 +403,42 @@ export default function ContactPage() {
                       <p className="text-gray-500 max-w-xs">Thank you for reaching out. Our team will connect with you within 24 hours.</p>
                     </motion.div>
                   ) : (
-                    <form onSubmit={handleSubmit} className="space-y-5" suppressHydrationWarning>
+                    <form 
+                      action="https://crm.zoho.in/crm/WebToLeadForm" 
+                      name="WebToLeadsContactNetSuite" 
+                      method="POST" 
+                      onSubmit={handleSubmit}
+                      acceptCharset="UTF-8"
+                      className="space-y-5"
+                    >
+                      <input type="text" className="hidden" name="xnQsjsdp" defaultValue="cae9ae065232fde2e40c34423041df835a4066ff2103c546e198d684b35e9861" readOnly />
+                      <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
+                      <input type="text" className="hidden" name="xmIwtLD" defaultValue="3820b2b7a84f952a9adb8f71d02ba0d6e9247f59314524fd5d4528cf4dff99b516b0d501ae4661e854a71c2dfb2b5263" readOnly />
+                      <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
+                      <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/contact-us/thank-you.php" readOnly />
+                      <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
+                      <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
 
-                      {/* First + Last Name */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      {/* Name Row */}
+                      <div className="grid grid-cols-1 sm:grid-cols-1 gap-5">
                         <div>
-                          <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
-                            First Name <span className="text-blue-600">*</span>
+                          <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
+                            Name <span className="text-blue-600">*</span>
                           </label>
                           <input
                             type="text"
                             required
-                            placeholder="John"
-                            value={formData.firstName}
-                            onChange={e => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
+                            id="Last_Name"
+                            name="Last Name"
+                            placeholder="John Doe"
                             className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
-                            suppressHydrationWarning
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
-                            Last Name <span className="text-blue-600">*</span>
-                          </label>
-                          <input
-                            type="text"
-                            required
-                            placeholder="Doe"
-                            value={formData.lastName}
-                            onChange={e => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
-                            className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
-                            suppressHydrationWarning
                           />
                         </div>
                       </div>
 
                       {/* Business Email */}
                       <div>
-                        <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
+                        <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
                           Business Email <span className="text-blue-600">*</span>
                         </label>
                         <input
@@ -349,117 +446,128 @@ export default function ContactPage() {
                           required
                           name="Email"
                           placeholder="john@company.com"
-                          value={formData.email}
-                          onChange={e => setFormData(prev => ({ ...prev, email: e.target.value }))}
                           className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
-                          suppressHydrationWarning
                         />
                       </div>
 
                       {/* Phone + Job Title */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
-                          <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
+                          <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
                             Mobile Number <span className="text-blue-600">*</span>
                           </label>
                           <input
                             type="tel"
                             name="Mobile"
                             placeholder="+1 (555) 000-0000"
-                            value={formData.phone}
-                            onChange={e => setFormData(prev => ({ ...prev, phone: e.target.value }))}
                             className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
-                            suppressHydrationWarning
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
+                          <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
                             Job Title <span className="text-blue-600">*</span>
                           </label>
                           <input
                             type="text"
                             name="Designation"
                             placeholder="CFO"
-                            value={formData.jobTitle}
-                            onChange={e => setFormData(prev => ({ ...prev, jobTitle: e.target.value }))}
                             className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
-                            suppressHydrationWarning
                           />
                         </div>
                       </div>
 
                       {/* Company */}
                       <div>
-                        <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
+                        <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
                           Company Name <span className="text-blue-600">*</span>
                         </label>
                         <input
                           type="text"
                           name="Company"
                           placeholder="Company Inc."
-                          value={formData.company}
-                          onChange={e => setFormData(prev => ({ ...prev, company: e.target.value }))}
                           className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
-                          suppressHydrationWarning
                         />
                       </div>
 
                       {/* Service Interest + Annual Revenue */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
-                          <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
+                          <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
                             Service Interest <span className="text-blue-600">*</span>
                           </label>
                           <select
                             name="LEADCF5"
-                            value={formData.serviceInterest}
-                            onChange={e => setFormData(prev => ({ ...prev, serviceInterest: e.target.value }))}
                             className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer"
-                            suppressHydrationWarning
                           >
                             <option value="">Select Service</option>
-                            <option value="NetSuite Implementation">NetSuite Implementation</option>
-                            <option value="NetSuite Customization">NetSuite Customization</option>
-                            <option value="NetSuite Integration">NetSuite Integration</option>
-                            <option value="NetSuite Support">NetSuite Support</option>
-                            <option value="NetSuite Training">NetSuite Training</option>
-                            <option value="NetSuite Upgrade">NetSuite Upgrade</option>
+                            <option value='NetSuite&#x20;Product&#x20;&#x2f;Services'>Oracle NetSuite</option>
+                            <option value='Zoho&#x20;Products&#x2f;Services'>Zoho</option>
                           </select>
                         </div>
                         <div>
-                          <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
+                          <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
                             Annual Revenue <span className="text-blue-600">*</span>
                           </label>
                           <select
                             name="LEADCF40"
-                            value={formData.annualRevenue}
-                            onChange={e => setFormData(prev => ({ ...prev, annualRevenue: e.target.value }))}
                             className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer"
-                            suppressHydrationWarning
                           >
                             <option value="">Select Revenue</option>
-                            <option value="Under $500K">Under $500K</option>
-                            <option value="$500K - $1M">$500K – $1M</option>
-                            <option value="$1M - $5M">$1M – $5M</option>
-                            <option value="$5M - $10M">$5M – $10M</option>
-                            <option value="$10M+">$10M+</option>
+                            <option value='Under&#x20;&#x24;500K'>Under &#x24;500K</option>
+                            <option value='&#x24;500k&#x20;to&#x20;&#x24;1M'>&#x24;500k to &#x24;1M</option>
+                            <option value='&#x24;1M&#x20;to&#x20;&#x24;2M'>&#x24;1M to &#x24;2M</option>
+                            <option value='&#x24;2M&#x20;to&#x20;&#x24;5M'>&#x24;2M to &#x24;5M</option>
+                            <option value='&#x24;5M&#x20;to&#x20;&#x24;10M'>&#x24;5M to &#x24;10M</option>
+                            <option value='&#x24;10M&#x20;to&#x20;&#x24;20M'>&#x24;10M to &#x24;20M</option>
+                            <option value='&#x24;20M&#x20;to&#x20;&#x24;30M'>&#x24;20M to &#x24;30M</option>
+                            <option value='&#x24;30M&#x20;to&#x20;&#x24;50M'>&#x24;30M to &#x24;50M</option>
+                            <option value='&#x24;50M&#x20;to&#x20;&#x24;100M'>&#x24;50M to &#x24;100M</option>
+                            <option value='&#x24;100M&#x20;to&#x20;&#x24;150M'>&#x24;100M to &#x24;150M</option>
+                            <option value='&#x24;150M&#x20;to&#x20;&#x24;200M'>&#x24;150M to &#x24;200M</option>
+                            <option value='&#x24;200M&#x20;to&#x20;&#x24;250M'>&#x24;200M to &#x24;250M</option>
+                            <option value='&#x24;250M&#x20;to&#x20;&#x24;300M'>&#x24;250M to &#x24;300M</option>
+                            <option value='&#x24;300M&#x20;to&#x20;&#x24;400M'>&#x24;300M to &#x24;400M</option>
+                            <option value='&#x24;400M&#x20;to&#x20;&#x24;500M'>&#x24;400M to &#x24;500M</option>
                           </select>
                         </div>
                       </div>
 
+                      {/* Lead Source (Hidden defaultValue Website) */}
+                      <select className='hidden' id='Lead_Source' name='Lead Source' defaultValue='Website'>
+                        <option value='Website'>Website</option>
+                      </select>
+
+                      {/* How did you hear about us? */}
+                      <div>
+                        <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">How did you hear about us?</label>
+                        <select name="LEADCF41" className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer">
+                          <option value="">Select Option</option>
+                          <option value='Email'>Email</option>
+                          <option value='Event'>Event</option>
+                          <option value='Friend&#x2f;Associate'>Friend&#x2f;Associate</option>
+                          <option value='Search'>Search</option>
+                          <option value='Social&#x20;Media'>Social Media</option>
+                          <option value='Referral'>Referral</option>
+                        </select>
+                      </div>
+
                       {/* Message */}
                       <div>
-                        <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
+                        <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
                           Tell Us About Your Requirements
                         </label>
                         <textarea
                           name="Description"
                           rows={3}
-                          placeholder="Share your project details, challenges, or goals…"
-                          value={formData.message}
-                          onChange={e => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                          placeholder="Tell Us How We Can Help!*"
                           className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none resize-none placeholder-gray-400"
                         />
+                      </div>
+
+                      {/* Captcha Section */}
+                      <div className="flex flex-col gap-2">
+                        <div className='g-recaptcha' data-sitekey='6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3' data-theme='light' data-callback='rccallback409531000000325116_ns' captcha-verified='false' id='recap409531000000325116_ns'></div>
+                        <div id='recapErr409531000000325116_ns' style={{ display: 'none', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
                       </div>
 
                       {/* Privacy + Submit */}
@@ -469,8 +577,7 @@ export default function ContactPage() {
                             <input
                               type="checkbox"
                               className="sr-only peer"
-                              checked={formData.privacyAccepted}
-                              onChange={e => setFormData(prev => ({ ...prev, privacyAccepted: e.target.checked }))}
+                              required
                             />
                             <div className="w-5 h-5 bg-gray-100 border-2 border-gray-300 rounded peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-all" />
                             <svg className="absolute top-0.5 left-0.5 w-4 h-4 text-white opacity-0 peer-checked:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -487,8 +594,7 @@ export default function ContactPage() {
 
                         <button
                           type="submit"
-                          className="shrink-0 inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semimedium rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/30 hover:scale-[1.03] text-sm"
-                          suppressHydrationWarning
+                          className="shrink-0 inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/30 hover:scale-[1.03] text-sm"
                         >
                           <Send className="w-4 h-4" />
                           Send Message
@@ -883,6 +989,22 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* ── Scripts ─────────────────────────────────────────────────────────── */}
+      <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
+      <Script id="zoho-salesiq-ns" strategy="afterInteractive">
+        {`
+          var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.in/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
+          function rccallback409531000000325116_ns() {
+            if(document.getElementById('recap409531000000325116_ns')!=undefined){
+              document.getElementById('recap409531000000325116_ns').setAttribute('captcha-verified',true);
+            }
+            if(document.getElementById('recapErr409531000000325116_ns')!=undefined && document.getElementById('recapErr409531000000325116_ns').style.visibility == 'visible' ){
+              document.getElementById('recapErr409531000000325116_ns').style.visibility='hidden';
+            }
+          }
+        `}
+      </Script>
+      <Script id="wf_anal_ns" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=2ad153905083cc4b4058fa27687055376e156f7ad6e9fc52d9895986981cb6172bddf27a9051f3745fcf3d24b09fb012gidcf736cc89d868a9fa6150881def27ffe802f94e956bff6513de684e48d8b35c1gid0596f309f4dca6fd5d8b7704fd1d37b52bdbc54dd97c1957c613be2d12dd943agid1b08a4436f8cfc10239cf5e2aa7cda0a23e1cf9ad370739723a113c3f7318e99&tw=d44cee7b494604b05833cee35187d02e3ccf139f17b3bef4604b84b3f02bded7" />
     </div>
   );
 }

@@ -323,21 +323,19 @@ export default function ZohoServiceTemplate({
       {/* ── Overview Section ─────────────────────────────────────── */}
       <section id="overview" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="flex items-center justify-center rounded-2xl overflow-hidden p-4 mt-15"
-              style={{ minHeight: 340 }}
+              className="relative min-h-[400px] rounded-3xl overflow-hidden mt-12 lg:mt-15"
             >
               <Image
                 src={introImage}
                 alt="Overview"
-                width={560}
-                height={380}
-                className="w-full h-auto rounded-xl object-contain shadow-2xl"
+                fill
+                className="object-cover rounded-3xl shadow-2xl transition-transform duration-700 hover:scale-105"
               />
             </motion.div>
 
@@ -605,7 +603,7 @@ export default function ZohoServiceTemplate({
       {/* ── FAQ Section ────────────────────────────────────────────── */}
       {faqs.length > 0 && (
         <section id="faq" className="scroll-mt-36">
-          <FAQ customFaqs={faqs.map(f => ({ q: f.question, a: f.answer }))} variant="zoho" layout="centered" />
+          <FAQ customFaqs={faqs.map(f => ({ q: f.question, a: f.answer }))} variant="zoho" layout="sidebar" />
         </section>
       )}
 

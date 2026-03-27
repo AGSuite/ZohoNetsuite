@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect } from "react";
 import {
@@ -34,9 +34,10 @@ import {
 } from "lucide-react";
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
 import { CRMCircularDesign } from "@/app/netsuite/components/CRMCircularDesign";
 
-// ── Static CTA particles (SSR-safe) ──────────────────────────────────────────
+// -- Static CTA particles (SSR-safe) ------------------------------------------
 const CTA_PARTICLES = [
   { w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 },
   { w: 1.4, h: 2.1, top: 28, left: 22, dur: 4.1, delay: 1.2 },
@@ -85,7 +86,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Sales Force Automation",
       description:
-        "Manage every lead, opportunity, and forecast in real time — giving sales reps the pipeline visibility they need to close faster and managers the accuracy to plan confidently.",
+        "Manage every lead, opportunity, and forecast in real time � giving sales reps the pipeline visibility they need to close faster and managers the accuracy to plan confidently.",
       image: "/images/people/laptopmen.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
@@ -93,7 +94,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Marketing Automation",
       description:
-        "Design, execute, and measure multi-channel campaigns — from email nurture to webinar follow-ups — with ROI tracked directly to revenue in the same system.",
+        "Design, execute, and measure multi-channel campaigns � from email nurture to webinar follow-ups � with ROI tracked directly to revenue in the same system.",
       image: "/images/lap/lap1.webp",
       color: "#a05a18",
       rgb: "145,75,18",
@@ -101,7 +102,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Customer Service Management",
       description:
-        "Empower support agents with a 360° customer history — open cases, past orders, contract terms — so every interaction is informed and resolution times plummet.",
+        "Empower support agents with a 360� customer history � open cases, past orders, contract terms � so every interaction is informed and resolution times plummet.",
       image: "/images/people/laptopgirl.webp",
       color: "#4a3a8a",
       rgb: "65,45,130",
@@ -109,7 +110,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Partner Relationship Management",
       description:
-        "Give channel partners their own portal to register deals, access resources, and track commissions — accelerating partner-led revenue without adding headcount.",
+        "Give channel partners their own portal to register deals, access resources, and track commissions � accelerating partner-led revenue without adding headcount.",
       image: "/images/people/fourteam.webp",
       color: "#1a6080",
       rgb: "20,88,115",
@@ -117,7 +118,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "CRM Analytics & Dashboards",
       description:
-        "Real-time sales dashboards, funnel analytics, and territory performance reports — built on live transaction data, not yesterday's exports.",
+        "Real-time sales dashboards, funnel analytics, and territory performance reports � built on live transaction data, not yesterday's exports.",
       image: "/images/lap/lap2.webp",
       color: "#6a2575",
       rgb: "95,30,105",
@@ -125,7 +126,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Mobile CRM",
       description:
-        "Access full customer records, log calls, update opportunities, and submit quotes from any iOS or Android device — keeping field sales teams productive wherever they are.",
+        "Access full customer records, log calls, update opportunities, and submit quotes from any iOS or Android device � keeping field sales teams productive wherever they are.",
       image: "/images/people/laptopmen2.webp",
       color: "#154e8a",
       rgb: "18,68,130",
@@ -133,7 +134,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Quote & Order Management",
       description:
-        "Generate accurate, branded quotes in seconds with product catalogs, pricing rules, and discount approvals — converting to orders without re-keying a single line.",
+        "Generate accurate, branded quotes in seconds with product catalogs, pricing rules, and discount approvals � converting to orders without re-keying a single line.",
       image: "/images/lap/lap3.webp",
       color: "#1a6545",
       rgb: "20,95,60",
@@ -141,7 +142,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Territory & Quota Management",
       description:
-        "Assign territories, set quotas, and balance workloads across your sales org — then track attainment in real time with automatic alerts when reps fall behind pace.",
+        "Assign territories, set quotas, and balance workloads across your sales org � then track attainment in real time with automatic alerts when reps fall behind pace.",
       image: "/images/lap/lap4.webp",
       color: "#8a2a3a",
       rgb: "130,35,48",
@@ -149,7 +150,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Case & Escalation Management",
       description:
-        "Route support cases, set SLA rules, trigger auto escalations, and measure first-reply and resolution times — building a support operation that retains clients.",
+        "Route support cases, set SLA rules, trigger auto escalations, and measure first-reply and resolution times � building a support operation that retains clients.",
       image: "/images/people/laptopgirl1.webp",
       color: "#0f4e8a",
       rgb: "12,68,130",
@@ -157,7 +158,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Email & Campaign Tracking",
       description:
-        "Track opens, clicks, and conversions per campaign — then segment responders for follow-up sequences automatically, keeping marketing and sales perfectly aligned.",
+        "Track opens, clicks, and conversions per campaign � then segment responders for follow-up sequences automatically, keeping marketing and sales perfectly aligned.",
       image: "/images/lap/lap5.webp",
       color: "#523a8a",
       rgb: "75,48,130",
@@ -165,7 +166,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Customer Segmentation",
       description:
-        "Build dynamic customer segments based on purchase history, industry, or deal size — then target each segment with relevant offers and messaging at scale.",
+        "Build dynamic customer segments based on purchase history, industry, or deal size � then target each segment with relevant offers and messaging at scale.",
       image: "/images/people/threeteam.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
@@ -173,7 +174,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Forecasting & Reporting",
       description:
-        "Bottom-up and top-down sales forecasting with commit, best case, and pipeline views — giving leadership the revenue predictability needed for confident planning.",
+        "Bottom-up and top-down sales forecasting with commit, best case, and pipeline views � giving leadership the revenue predictability needed for confident planning.",
       image: "/images/lap/lap7_11zon.webp",
       color: "#a05a18",
       rgb: "145,75,18",
@@ -182,9 +183,9 @@ export default function NetSuiteCRMPage() {
 
   const benefits = [
     {
-      title: "360° Customer Intelligence",
+      title: "360� Customer Intelligence",
       description:
-        "Every customer record in NetSuite CRM connects to their quote history, orders, invoices, support cases, and campaign activity — giving sales, marketing, and service one complete, live view without toggling between systems.",
+        "Every customer record in NetSuite CRM connects to their quote history, orders, invoices, support cases, and campaign activity � giving sales, marketing, and service one complete, live view without toggling between systems.",
       image: "/images/people/fourteam.webp",
       points: [
         "Unified customer timeline across all touchpoints",
@@ -196,7 +197,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Accelerated Quote-to-Cash",
       description:
-        "NetSuite CRM eliminates the friction between a won deal and a paid invoice — reps build quotes from live product catalogs, approvals happen in-system, and orders are created automatically without exporting to a separate billing tool.",
+        "NetSuite CRM eliminates the friction between a won deal and a paid invoice � reps build quotes from live product catalogs, approvals happen in-system, and orders are created automatically without exporting to a separate billing tool.",
       image: "/images/lap/lap2.webp",
       points: [
         "Quotes generated from live product and pricing data",
@@ -208,7 +209,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Intelligent Sales Automation",
       description:
-        "Eliminate the administrative burden that kills selling time — NetSuite CRM automates lead assignment, follow-up reminders, pipeline stage updates, and activity logging so reps spend more hours with prospects.",
+        "Eliminate the administrative burden that kills selling time � NetSuite CRM automates lead assignment, follow-up reminders, pipeline stage updates, and activity logging so reps spend more hours with prospects.",
       image: "/images/people/laptopmen2.webp",
       points: [
         "Automated lead routing by territory and score",
@@ -220,7 +221,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Marketing ROI Transparency",
       description:
-        "Stop guessing which campaigns drive revenue — NetSuite CRM links every lead and opportunity back to the campaign that sourced it, giving marketing teams closed-loop attribution with no spreadsheet gymnastics.",
+        "Stop guessing which campaigns drive revenue � NetSuite CRM links every lead and opportunity back to the campaign that sourced it, giving marketing teams closed-loop attribution with no spreadsheet gymnastics.",
       image: "/images/lap/lap1.webp",
       points: [
         "Campaign-to-opportunity attribution built-in",
@@ -232,7 +233,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Service That Retains Customers",
       description:
-        "Equip your support team with the full customer context they need to resolve cases faster — open orders, billing status, prior issues, and contract terms — so every interaction feels premium and builds loyalty.",
+        "Equip your support team with the full customer context they need to resolve cases faster � open orders, billing status, prior issues, and contract terms � so every interaction feels premium and builds loyalty.",
       image: "/images/people/laptopgirl.webp",
       points: [
         "Case auto-routing by product, region, or priority",
@@ -244,7 +245,7 @@ export default function NetSuiteCRMPage() {
     {
       title: "Accurate Sales Forecasting",
       description:
-        "Replace gut-feel pipeline reviews with data-driven forecasts — NetSuite CRM combines historical win rates, deal velocity, and stage-weighted probabilities to give leadership a reliable revenue outlook every week.",
+        "Replace gut-feel pipeline reviews with data-driven forecasts � NetSuite CRM combines historical win rates, deal velocity, and stage-weighted probabilities to give leadership a reliable revenue outlook every week.",
       image: "/images/lap/lap3.webp",
       points: [
         "Commit, best case, and pipeline forecast views",
@@ -257,7 +258,7 @@ export default function NetSuiteCRMPage() {
 
   return (
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
-      {/* ── Hero ─────────────────────────────────────────────────────────────── */}
+      {/* -- Hero --------------------------------------------------------------- */}
       <section
         className="relative min-h-screen overflow-hidden flex flex-col"
         style={{
@@ -314,7 +315,7 @@ export default function NetSuiteCRMPage() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  NetSuite CRM — Customer Relationship Management
+                  NetSuite CRM � Customer Relationship Management
                 </span>
               </motion.h1>
 
@@ -331,8 +332,8 @@ export default function NetSuiteCRMPage() {
                 transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                The only CRM natively unified with your ERP — giving sales,
-                marketing, and service a single 360° view of every customer,
+                The only CRM natively unified with your ERP � giving sales,
+                marketing, and service a single 360� view of every customer,
                 from first touchpoint to paid invoice.
               </motion.p>
 
@@ -361,7 +362,7 @@ export default function NetSuiteCRMPage() {
               </motion.div>
             </motion.div>
 
-            {/* RIGHT — CRM Orbital Diagram */}
+            {/* RIGHT � CRM Orbital Diagram */}
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -411,7 +412,7 @@ export default function NetSuiteCRMPage() {
         </div>
       </section>
 
-      {/* ── Sticky Nav ───────────────────────────────────────────────────────── */}
+      {/* -- Sticky Nav --------------------------------------------------------- */}
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
@@ -436,11 +437,11 @@ export default function NetSuiteCRMPage() {
         </div>
       </nav>
 
-      {/* ── What is NetSuite CRM ─────────────────────────────────────────────── */}
+      {/* -- What is NetSuite CRM ----------------------------------------------- */}
       <section id="what-is-crm" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
           <div className="grid lg:grid-cols-2 gap-6 items-stretch">
-            {/* LEFT — Dashboard Image */}
+            {/* LEFT � Dashboard Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -468,11 +469,11 @@ export default function NetSuiteCRMPage() {
             >
               <div className="space-y-4">
                 <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  Turn Customer Relationships into Revenue — at Scale.
+                  Turn Customer Relationships into Revenue � at Scale.
                 </h3>
               </div>
               <p className="text-lg text-gray-600 leading-relaxed">
-                NetSuite CRM is the only customer relationship management platform built natively on a unified ERP architecture — providing sales, marketing, and service teams with a single source of truth that spans from initial lead to final invoice without any integration gaps.
+                NetSuite CRM is the only customer relationship management platform built natively on a unified ERP architecture � providing sales, marketing, and service teams with a single source of truth that spans from initial lead to final invoice without any integration gaps.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 By consolidating customer history, order details, and support cases into one real-time dashboard, organizations can make faster decisions, forecast more accurately, and deliver a seamless experience that drives long-term retention and growth.
@@ -517,7 +518,7 @@ export default function NetSuiteCRMPage() {
         </div>
       </section>
 
-      {/* ── CRM Modules Grid ─────────────────────────────────────────────────── */}
+      {/* -- CRM Modules Grid --------------------------------------------------- */}
       <section
         id="modules"
         className="py-16 bg-white relative overflow-hidden scroll-mt-36"
@@ -587,7 +588,7 @@ export default function NetSuiteCRMPage() {
                         {mod.description}
                       </p>
                     </div>
-                    {/* Hover pill — white bg + black text */}
+                    {/* Hover pill � white bg + black text */}
                     <div className="absolute bottom-6 left-5 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                       <span className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full shadow-md">
                         Get Started <ArrowRight size={10} />
@@ -603,7 +604,7 @@ export default function NetSuiteCRMPage() {
         </div>
       </section>
 
-      {/* ── Benefits — dark starfield, blue theme ────────────────────────────── */}
+      {/* -- Benefits � dark starfield, blue theme ------------------------------ */}
       <section
         id="benefits"
         className="py-24 relative overflow-hidden scroll-mt-36"
@@ -773,7 +774,7 @@ export default function NetSuiteCRMPage() {
         </div>
       </section>
 
-      {/* ── Pricing ───────────────────────────────────────────────────────────── */}
+      {/* -- Pricing ------------------------------------------------------------- */}
       <section
         id="pricing"
         className="py-12 bg-gray-50 overflow-hidden scroll-mt-36"
@@ -798,9 +799,9 @@ export default function NetSuiteCRMPage() {
                   NetSuite CRM pricing is tailored to your business size and
                   requirements. The annual subscription combines the core
                   financial management platform, any additional modules you need,
-                  and your user count — plus a one-time implementation fee. As
+                  and your user count � plus a one-time implementation fee. As
                   your business grows, activate new modules or add users
-                  instantly — no upgrades, no downtime, no infrastructure
+                  instantly � no upgrades, no downtime, no infrastructure
                   headaches.
                 </p>
                 <div>
@@ -813,7 +814,7 @@ export default function NetSuiteCRMPage() {
                 </div>
               </div>
 
-              {/* Right — organic image */}
+              {/* Right � organic image */}
               <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
                 <div className="absolute inset-0 bg-[#052838]" />
                 <div
@@ -853,10 +854,10 @@ export default function NetSuiteCRMPage() {
         </div>
       </section>
 
-      {/* ── FAQ ───────────────────────────────────────────────────────────────── */}
+      {/* -- FAQ ----------------------------------------------------------------- */}
       <FAQ variant="netsuite-crm" id="faq" />
 
-      {/* ── CTA Banner ────────────────────────────────────────────────────────── */}
+      {/* -- CTA Banner ---------------------------------------------------------- */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -898,7 +899,7 @@ export default function NetSuiteCRMPage() {
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                  Close More Deals —{" "}
+                  Close More Deals �{" "}
                   <span className="text-cyan-200">
                     With CRM Built for Growth.
                   </span>
@@ -921,7 +922,8 @@ export default function NetSuiteCRMPage() {
         </div>
       </section>
 
-      {/* ── Contact Form ──────────────────────────────────────────────────────── */}
+      {/* -- Contact Form -------------------------------------------------------- */}
+      <NSServicesSection />
       <ContactFormDesign4 />
     </div>
   );

@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
 
 const CTA_PARTICLES = [
   { w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 },
@@ -363,6 +364,7 @@ export default function NetSuiteAIPage() {
           </motion.div>
         </div>
       </section>
+      <NSServicesSection />
 
       <ContactFormDesign4 />
     </div>

@@ -70,67 +70,38 @@ export default function ZohoServicesPage() {
   const services = [
     {
       title: "Zoho Implementation",
-      description:
-        "Go live on Zoho faster, cleaner, and with zero surprises. Our proven implementation methodology covers everything from discovery workshops to hypercare — delivering a fully configured, user-adopted Zoho system that works from day one.",
-      link: "/zoho/services/digital-transformation",
+      description: "Organizations can benefit from professional assistance in implementing Zoho solutions tailored to their specific business requirements.",
+      link: "/zoho/services/implementation",
       image: "/images/Services/digitaltrans.webp",
       icon: Rocket,
     },
     {
+      title: "Zoho Integration",
+      description: "Expert support is available for seamlessly integrating Zoho applications with existing systems and third-party tools, enhancing operational efficiency.",
+      link: "/zoho/services/integration-services",
+      image: "/images/netsuiteimages/Servicesimg/integration.webp",
+      icon: Share2,
+    },
+    {
+      title: "Zoho Customization",
+      description: "Businesses can leverage custom development options to tailor Zoho applications to their unique workflows and operational needs.",
+      link: "/zoho/services/digital-transformation",
+      image: "/images/people/laptopgirl.webp",
+      icon: Code,
+    },
+    {
       title: "Zoho Managed Support",
-      description:
-        "Elevate your Zoho environment with mission-critical support. Our team handles everything from complex troubleshooting to bi-annual upgrade readiness and continuous system fine-tuning, ensuring maximum uptime and efficiency.",
+      description: "Ongoing support and maintenance services ensure the smooth functioning and optimal performance of Zoho solutions, providing peace of mind to organizations.",
       link: "/zoho/services/managed-services",
       image: "/images/Services/managedservices.webp",
       icon: ShieldCheck,
     },
     {
-      title: "Digital Transformation",
-      description:
-        "Move beyond simple CRM setup. We help you rethink your business workflows, automate manual processes, and migrate legacy data into a unified, high-performance cloud ecosystem built entirely on Zoho's integrated suite.",
-      link: "/zoho/services/digital-transformation",
-      image: "/images/Services/Digitalservices.webp",
-      icon: Zap,
-    },
-    {
-      title: "Zoho Integration Services",
-      description:
-        "Eliminate data silos by connecting Zoho with your ERP, e-commerce, payroll, and third-party logistics systems. We build robust, API-led integrations using Zoho Flow that ensure real-time data flow across your entire tech stack.",
-      link: "/zoho/services/integration-services",
-      image: "/images/Services/integrationservices.webp",
-      icon: Share2,
-    },
-    {
-      title: "Zoho Customization",
-      description:
-        "Extend Zoho's capabilities with specialized Deluge scripts and custom forms. We build industry-specific features within the native framework (Zoho Creator) to solve your most complex operational challenges and unique business requirements.",
-      link: "/zoho/services/digital-transformation",
-      image: "/images/Services/lowcodeservices.webp",
-      icon: Code,
-    },
-    {
-      title: "Zoho Training Services",
-      description:
-        "High-adoption starts with high-quality training. We provide role-based training paths for admins, power users, and executives to ensure your team is confident, efficient, and productive from day one on the Zoho platform.",
+      title: "Zoho Training",
+      description: "Comprehensive training programs are available to empower teams with the necessary knowledge and skills to effectively utilize Zoho applications, maximizing their potential for business growth.",
       link: "/zoho/services/training-services",
       image: "/images/Services/trainingservices.webp",
       icon: Users,
-    },
-    {
-      title: "Low-Code Development",
-      description:
-        "Build bespoke apps and automations within Zoho's native low-code platform — Zoho Creator. We deliver functional tools in weeks, not months, with zero compromise on quality or upgrade safety.",
-      link: "/zoho/services/low-code",
-      image: "/images/Services/lowcode.webp",
-      icon: Code,
-    },
-    {
-      title: "Zoho Consulting",
-      description:
-        "Align your Zoho investment with your long-term business goals. Our consultants provide strategic roadmaps, ROI projections, and global rollout planning to ensure sustained success with the Zoho One business suite.",
-      link: "/zoho/services/digital-transformation",
-      image: "/images/Services/managed.webp",
-      icon: HeartHandshake,
     },
   ];
 
@@ -375,15 +346,13 @@ export default function ZohoServicesPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="flex items-center justify-center rounded-2xl"
-              style={{ minHeight: 340 }}
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden shadow-2xl w-full h-full min-h-[400px]"
             >
               <Image
-                src="/images/zohoimages/zohologos/zohoadvancelogo.webp"
-                alt="Zoho Services"
-                width={560}
-                height={380}
-                className="w-full h-auto rounded-xl object-contain"
+                src="/images/people/threeteam.webp"
+                alt="AGSuite Zoho Expert Team"
+                fill
+                className="object-cover object-center transform hover:scale-105 transition-transform duration-700"
               />
             </motion.div>
             <motion.div
@@ -487,9 +456,11 @@ export default function ZohoServicesPage() {
                     <h3 className="text-2xl lg:text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-black via-[#1e3a8a] to-blue-600 leading-tight mb-3">
                       {ind.title}
                     </h3>
-                    <p className="text-gray-500 text-base leading-relaxed mb-5 line-clamp-4">
-                      {ind.description}
-                    </p>
+                    <div className="text-gray-500 text-base leading-relaxed mb-6 space-y-4">
+                      {ind.description.split('\n\n').map((paragraph, i) => (
+                        <p key={i}>{paragraph}</p>
+                      ))}
+                    </div>
                     <Link
                       href={ind.link}
                       className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300 group shadow-lg hover:shadow-xl hover:scale-105"
@@ -658,7 +629,7 @@ export default function ZohoServicesPage() {
 
       {/* ─────────────── FAQ SECTION ─────────────── */}
       <section id="faq" className="scroll-mt-36">
-        <FAQ variant="zoho" layout="centered" />
+        <FAQ variant="zoho" layout="sidebar" />
       </section>
 
       <ZohoContactForm />

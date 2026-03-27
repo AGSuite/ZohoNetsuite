@@ -61,7 +61,7 @@ export default async function ZohoPage() {
 
       <ZohoBlogsSlider blogs={blogs} variant="small" />
 
-      <FAQ variant="zoho" layout="centered" />
+      <FAQ variant="zoho" layout="sidebar" />
 
       <ZohoContactForm />
     </div>

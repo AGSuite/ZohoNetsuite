@@ -33,7 +33,7 @@ export default function ZohoFooter() {
                         {/* Zoho Partner Badge */}
                         <div className="mb-6">
                             <Image
-                                src="/images/zohoimages/zohologos/zohoadvancelogo.webp"
+                                src="/images/zoho logos/zoho premium.png"
                                 alt="Zoho Partner"
                                 width={180}
                                 height={60}

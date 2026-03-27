@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
@@ -774,6 +775,7 @@ export default function OpenAirPage() {
       </section>
 
       {/* ── Contact Form ─────────────────────────────────────────────────────── */}
+      <NSServicesSection />
       <ContactFormDesign4 />
     </div>
   );

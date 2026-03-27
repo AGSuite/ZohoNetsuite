@@ -20,45 +20,45 @@ interface CustomerSuccess {
 const customers: CustomerSuccess[] = [
     {
         id: 1,
-        companyName: "Growth Marketing",
-        logo: "/images/assets/png-logos/affle-png.png", // Reusing logos as placeholders or if they are shared clients
-        personName: "David Chen",
-        personRole: "Sales Director, Growth Marketing",
+        companyName: "Initium Learning Pvt Ltd",
+        logo: "/images/assets/initiumlearning.jpg",
+        personName: "CEO",
+        personRole: "Chief Executive Officer",
         personAvatar: "/images/people/laptopmen.webp",
-        testimonial: "Zoho CRM has revolutionized our sales process. AGSuite helped us automate 80% of our lead follow-ups and we've seen a 30% conversion increase in just six months. The level of customization they provided is unmatched.",
+        testimonial: "The support and service extended by the partner were commendable. The team was prompt in responding to queries and provided timely assistance. A suggestion for improvement would be to include training on the effective use of Zoho at no additional cost to help users fully leverage the platform.",
         bgImage: "/images/people/laptopmen.webp",
         overlayColor: "from-red-900/90 via-red-900/80 to-red-900/60"
     },
     {
         id: 2,
-        companyName: "Global Tech Services",
-        logo: "/images/assets/png-logos/tyfone_tech-removebg-preview.png",
-        personName: "Jennifer Wu",
-        personRole: "HR Manager",
+        companyName: "AgriApp Technologies Pvt Ltd",
+        logo: "/images/assets/Agrilogo.jfif",
+        personName: "Business Analyst",
+        personRole: "Strategic Operations",
         personAvatar: "/images/people/laptopgirl.webp",
-        testimonial: "Zoho People simplified our entire HR workflow. Onboarding new employees used to take days, now it's done in hours. AGSuite's team understood our complex hierarchy and built a system that just works.",
+        testimonial: "I wish to express my profound satisfaction with AGSuite Technologies. I had the privilege of collaborating with them for the Zoho One implementation, and I am sincerely grateful for the exceptional support extended by their team. The staff at AGSuite Technologies exhibited unwavering commitment and professionalism throughout the entire process, contributing significantly to the success of the implementation.",
         bgImage: "/images/people/laptopgirl.webp",
         overlayColor: "from-rose-900/90 via-rose-900/80 to-rose-900/60"
     },
     {
         id: 3,
-        companyName: "ServiceFirst Inc.",
-        logo: "/images/assets/png-logos/uniAcco-png.png",
-        personName: "Robert Evans",
-        personRole: "COO",
+        companyName: "Allwave-AV Systems",
+        logo: "/images/assets/allwaveav.png",
+        personName: "Vice President",
+        personRole: "Business Development",
         personAvatar: "/images/people/laptopmen2.webp",
-        testimonial: "Integrating Zoho Desk with our CRM gave us a 360-degree view of our customers. AGSuite implemented a seamless flow between support and sales, dropping our resolution times by 50% and boosting satisfaction.",
+        testimonial: "Zoho has enhanced the way of mapping the progress, monitoring the company's growth and have made our operations simplified. Zoho is an efficient software which can help various organisations in their purview to grow. I strongly recommend organisations to use this tool which can make your complex operations simple. I would like to mention special thanks to Rajat and his team for an extremely great support pre and post execution of this software.",
         bgImage: "/images/people/laptopmen2.webp",
         overlayColor: "from-pink-900/90 via-pink-900/80 to-pink-900/60"
     },
     {
         id: 4,
-        companyName: "Creative Designs",
-        logo: "/images/assets/png-logos/quickheal-png.png",
-        personName: "Amanda Lewis",
-        personRole: "Finance Head",
+        companyName: "iCan K-Mint Wealth",
+        logo: "/images/assets/icankmint.png",
+        personName: "Managing Partner",
+        personRole: "Wealth Management",
         personAvatar: "/images/people/laptopgirl1.webp",
-        testimonial: "Zoho Books is incredibly intuitive, and with AGSuite's guidance on automation, our invoicing and expense tracking have become effortless. We now have real-time financial insights that were previously impossible to track.",
+        testimonial: "Great service and customisations as needed by the team for Zoho designing and implementation.",
         bgImage: "/images/people/laptopgirl1.webp",
         overlayColor: "from-purple-900/90 via-purple-900/80 to-purple-900/60"
     }
@@ -193,15 +193,6 @@ const ZohoCustomerSuccess = () => {
                                     </div>
 
                                     <div className="flex items-center gap-4">
-                                        <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-lg">
-                                            <Image
-                                                src={activeCustomer.personAvatar}
-                                                alt={activeCustomer.personName}
-                                                fill
-                                                sizes="56px"
-                                                className="object-cover"
-                                            />
-                                        </div>
                                         <div>
                                             <p className="text-lg font-bold text-[#1a1a1a]">{activeCustomer.personName}</p>
                                             <p className="text-sm text-gray-500 font-medium">{activeCustomer.personRole}</p>
@@ -233,11 +224,10 @@ const ZohoCustomerSuccess = () => {
                             aria-label={`Go to testimonial ${idx + 1}`}
                             className="inline-flex items-center justify-center w-11 h-11 focus:outline-none"
                         >
-                            <span className={`rounded-full transition-all duration-300 block ${
-                                idx === activeIdx
+                            <span className={`rounded-full transition-all duration-300 block ${idx === activeIdx
                                     ? 'w-7 h-2.5 bg-rose-600'
                                     : 'w-2.5 h-2.5 bg-gray-300 hover:bg-rose-300'
-                            }`} />
+                                }`} />
                         </button>
                     ))}
                 </div>

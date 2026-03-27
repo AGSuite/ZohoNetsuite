@@ -14,43 +14,35 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "David Chen",
-    role: "Sales Director",
-    company: "Growth Marketing",
-    content:
-      "Zoho CRM has revolutionized our sales process. We've automated 80% of our lead follow-ups and seen a 30% conversion increase.",
-    avatar:
-      "/images/people/laptopmen.webp"
+    name: "CEO",
+    role: "Initium Learning Pvt Ltd",
+    company: "Business Services",
+    content: "The support and service extended by the partner were commendable. The team was prompt in responding to queries and provided timely assistance. A suggestion for improvement would be to include training on the effective use of Zoho at no additional cost to help users fully leverage the platform.",
+    avatar: "/images/people/laptopmen.webp"
   },
   {
     id: 2,
-    name: "Jennifer Wu",
-    role: "HR Manager",
-    company: "Global Tech Services",
-    content:
-      "Zoho People simplified our entire HR workflow. Onboarding new employees used to take days, now it's done in hours.",
-    avatar:
-      "/images/people/laptopgirl.webp"
+    name: "Business Analyst",
+    role: "AgriApp Technologies Pvt Ltd",
+    company: "Agriculture Tech",
+    content: "I wish to express my profound satisfaction with AGSuite Technologies. I had the privilege of collaborating with them for the Zoho One implementation, and I am sincerely grateful for the exceptional support extended by their team. The staff at AGSuite Technologies exhibited unwavering commitment and professionalism throughout the entire process, contributing significantly to the success of the implementation.",
+    avatar: "/images/people/laptopgirl.webp"
   },
   {
     id: 3,
-    name: "Robert Evans",
-    role: "COO",
-    company: "ServiceFirst Inc.",
-    content:
-      "Integrating Zoho Desk with our CRM gave us a 360-degree view of our customers. Support resolution times dropped by half.",
-    avatar:
-      "/images/people/laptopmen2.webp"
+    name: "Vice President",
+    role: "Allwave-AV Systems",
+    company: "AV Systems",
+    content: "Zoho has enhanced the way of mapping the progress, monitoring the company's growth and have made our operations simplified. Zoho is an efficient software which can help various organisations in their purview to grow. I strongly recommend organisations to use this tool which can make your complex operations simple. I would like to mention special thanks to Rajat and his team for an extremely great support pre and post execution of this software.",
+    avatar: "/images/people/laptopmen2.webp"
   },
   {
     id: 4,
-    name: "Amanda Lewis",
-    role: "Finance Head",
-    company: "Creative Designs",
-    content:
-      "Zoho Books is incredibly intuitive. Invoicing and expense tracking are now effortless, giving us more time to focus on clients.",
-    avatar:
-      "/images/people/laptopgirl1.webp"
+    name: "Managing Partner",
+    role: "iCan K-Mint Wealth",
+    company: "Wealth Management",
+    content: "Great service and customisations as needed by the team for Zoho designing and implementation.",
+    avatar: "/images/people/laptopgirl1.webp"
   }
 ];
 
@@ -84,7 +76,7 @@ const ZohoTestimonialSection = () => {
   }, []);
 
   const extendedTestimonials = useMemo(
-    () => [...testimonials, ...testimonials],
+    () => [...testimonials, ...testimonials, ...testimonials], // Triple for smoother loop with fewer cards
     []
   );
 
@@ -186,11 +178,7 @@ const ZohoTestimonialSection = () => {
 
                 {/* User */}
                 <div className="flex items-center mt-6">
-                  {/* Placeholder Avatar or Initials if image fails */}
-                  <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden shrink-0">
-                    <span className="text-gray-500 font-bold">{t.name.charAt(0)}</span>
-                  </div>
-                  <div className="ml-4">
+                  <div>
                     <p className="text-base font-bold text-gray-900">{t.name}</p>
                     <p className="text-sm text-gray-600">
                       {t.role}, {t.company}

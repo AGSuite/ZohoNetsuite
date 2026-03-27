@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
 
 const CTA_PARTICLES = [
   { w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 },
@@ -327,7 +328,7 @@ export default function WhyNetsuitePage() {
         id="faq"
         customSubtitle="Everything you need to know about why businesses choose NetSuite — cloud ERP benefits, migration from legacy systems, and TCO."
         customFaqs={[
-          { q: "Why do businesses choose NetSuite over other ERP systems?", a: "NetSuite is the world's #1 cloud ERP, trusted by 38,000+ organisations across 219 countries. Businesses choose it for its single unified platform covering financials, CRM, ecommerce, inventory, HR, and analytics — eliminating the integration complexity of best-of-breed systems. Oracle-backed reliability, continuous innovation with 2 upgrades per year, and a lower total cost of ownership make it the platform of choice for growth-stage businesses and enterprises alike." },
+          { q: "Why do businesses choose NetSuite over other ERP systems?", a: "NetSuite is the world's #1 cloud ERP, trusted by 43,000+ organisations across 219 countries. Businesses choose it for its single unified platform covering financials, CRM, ecommerce, inventory, HR, and analytics — eliminating the integration complexity of best-of-breed systems. Oracle-backed reliability, continuous innovation with 2 upgrades per year, and a lower total cost of ownership make it the platform of choice for growth-stage businesses and enterprises alike." },
           { q: "Is NetSuite suitable for mid-size and enterprise businesses?", a: "Yes. NetSuite scales from early-stage businesses with 10 users to global enterprises with 10,000+ users and dozens of subsidiaries. The same platform handles multi-currency, multi-subsidiary, multi-language, and multi-tax operations — and as your business grows, you activate additional NetSuite modules without changing platforms." },
           { q: "How does NetSuite's cloud model reduce IT overhead?", a: "NetSuite is delivered as a true multi-tenant SaaS platform — Oracle manages all infrastructure, security patches, performance scaling, and platform upgrades. Your IT team has zero hardware to maintain, zero upgrade projects, and zero database administration. This typically reduces IT infrastructure costs by 50-70% compared to on-premise ERP." },
           { q: "How does NetSuite handle multiple subsidiaries and currencies?", a: "NetSuite OneWorld is purpose-built for multi-entity operations — supporting 190+ currencies, automated intercompany elimination, localised tax compliance for 100+ countries, consolidated group reporting, and entity-specific financial statements. All of this is managed from a single NetSuite account with no separate system per country." },
@@ -363,6 +364,7 @@ export default function WhyNetsuitePage() {
           </motion.div>
         </div>
       </section>
+      <NSServicesSection />
 
       <ContactFormDesign4 />
     </div>

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, {
   memo,
@@ -180,11 +180,11 @@ const FlipCounter = memo(function FlipCounter({
   }, [rollingIndex, rollingNumbers]);
 
   return (
-    <div className="flex items-center justify-center text-4xl md:text-6xl font-medium" style={{ color }}>
+    <div className="flex items-center justify-center text-3xl md:text-5xl font-medium" style={{ color }}>
       {staticPart && <span className="mr-1">{staticPart}</span>}
       <FlipNumbers
-        height={55}
-        width={36}
+        height={45}
+        width={30}
         color={color}
         background="transparent"
         play={inView}
@@ -240,13 +240,16 @@ type CounterItem = {
   label: string;
   value: number;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  suffix: string;
 };
 
 const counters: CounterItem[] = [
-  { label: 'Enterprises Served', value: 180, icon: Building2 },
-  { label: 'NetSuite Experts', value: 50, icon: UserCog },
-  { label: 'Global Roll-outs', value: 50, icon: Globe2 },
-  { label: 'Years Experience', value: 15, icon: Rocket },
+  { label: 'Projects Completed', value: 500, icon: Target, suffix: "+" },
+  { label: 'Global Customers', value: 200, icon: Building2, suffix: "+" },
+  { label: 'Industry Expertise', value: 10, icon: UserCog, suffix: "+" },
+  { label: 'Customer Retention', value: 84, icon: Heart, suffix: "%" },
+  { label: 'Years Experience', value: 15, icon: Rocket, suffix: "+" },
+  { label: 'Countries Serving', value: 10, icon: Globe2, suffix: "+" },
 ];
 
 const fadeInUp: Variants = {
@@ -464,9 +467,9 @@ function StrategicPartnersSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="text-3xl md:text-4xl lg:text-5xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-gray-50 via-blue-500 to-blue-500 leading-tight"
+                className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight"
               >
-                Strategic Partners
+                Certified Oracle NetSuite Solution Provider
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, x: -30 }}
@@ -475,8 +478,7 @@ function StrategicPartnersSection() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-gray-300 text-base md:text-2xl leading-relaxed max-w-lg mx-auto lg:mx-0"
               >
-                We collaborate with world-class technology partners to deliver scalable, innovative, and
-                future-ready business solutions that empower enterprises worldwide.
+                As a leading NetSuite Partner, we help you transform your business with scalable, innovative, and future-ready ERP solutions.
               </motion.p>
             </div>
 
@@ -488,12 +490,12 @@ function StrategicPartnersSection() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex justify-center lg:justify-start"
             >
-              <div className="bg-white/100 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl">
+              <div className="bg-transparent p-4 rounded-2xl border border-white/10 shadow-2xl">
                 <Image
-                  src="/images/logos/oracle netsuite logo.png"
-                  alt="Oracle NetSuite Partner"
-                  width={320}
-                  height={120}
+                  src="/images/netsuiteimages/netsuitelogos/netsuitepartner.webp"
+                  alt="Oracle NetSuite Partner Logo"
+                  width={400}
+                  height={150}
                   className="w-full h-auto object-contain"
                 />
               </div>
@@ -505,7 +507,7 @@ function StrategicPartnersSection() {
             ref={statsRef}
             className="flex-1 w-full"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
               {counters.map((item, index) => {
                 return (
                   <motion.div
@@ -514,24 +516,24 @@ function StrategicPartnersSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.15 }}
-                    className="relative group p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm overflow-hidden text-center"
+                    className="relative group p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm overflow-hidden text-center"
                   >
                     {/* Decorative faint icon bg */}
                     <div className="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
-                      <item.icon className="w-24 h-24 text-white" strokeWidth={1} />
+                      <item.icon className="w-16 h-16 text-white" strokeWidth={1} />
                     </div>
 
                     <div className="relative z-10 flex flex-col items-center">
-                      <div className="p-4 bg-blue-600/10 rounded-2xl group-hover:bg-blue-600 transition-colors duration-300 text-blue-400 group-hover:text-white mb-6 border border-white/5">
-                        <item.icon className="w-10 h-10" strokeWidth={1.2} />
+                      <div className="p-3 bg-blue-600/10 rounded-xl group-hover:bg-blue-600 transition-colors duration-300 text-blue-400 group-hover:text-white mb-4 border border-white/5">
+                        <item.icon className="w-7 h-7" strokeWidth={1.2} />
                       </div>
 
-                      <div className="space-y-3">
-                        <p className="text-gray-400 font-medium text-sm group-hover:text-gray-200 transition-colors uppercase tracking-widest">
+                      <div className="space-y-2">
+                        <p className="text-gray-400 font-medium text-[11px] group-hover:text-gray-200 transition-colors uppercase tracking-widest pb-1">
                           {item.label}
                         </p>
-                        <div className="text-4xl lg:text-5xl font-bold text-white tracking-tight">
-                          <FlipCounter end={item.value} suffix="+" duration={3} inView={statsInView} color="#FFFFFF" />
+                        <div className="text-3xl lg:text-4xl font-bold text-white tracking-tight">
+                          <FlipCounter end={item.value} suffix={item.suffix} duration={3} inView={statsInView} color="#FFFFFF" />
                         </div>
                       </div>
                     </div>
@@ -839,7 +841,7 @@ export default function AboutClient() {
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 bg-gradient-to-r from-[#000814] via-[#001535] to-black bg-clip-text text-transparent">Our Mission</motion.h2>
               <motion.div variants={wordContainer} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
                 {(() => {
-                  const text = "AGSuite Technologies thrives on empowering businesses through cutting-edge technology solutions, specializing in Oracle NetSuite and Zoho. Our passion is to streamline operations, enhance efficiency, and drive sustainable growth for our clients. Our commitment lies in being a catalyst for positive transformation, helping clients achieve their strategic goals in the dynamic digital landscape.";
+                  const text = "AGSuite Technologies thrives on empowering businesses through cutting-edge technology solutions, specializing in Oracle NetSuite ERP. Our passion is to streamline operations, enhance efficiency, and drive sustainable growth for our clients. Our commitment lies in being a catalyst for positive transformation, helping clients achieve their strategic goals in the dynamic digital landscape.";
                   const words = text.split(' ');
                   const groups = [];
                   for (let i = 0; i < words.length; i += 3) {
@@ -867,7 +869,7 @@ export default function AboutClient() {
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 bg-gradient-to-r from-[#000814] via-[#001535] to-black bg-clip-text text-transparent">Our Vision</motion.h2>
               <motion.div variants={wordContainer} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
                 {(() => {
-                  const text = "AGSuite Technologies envisions global leadership in technology consulting, setting industry benchmarks for innovation, integrity, and client satisfaction. We aspire to be the preferred choice, renowned for transformative solutions, agility, and empathetic growth. Our vision is to forge lasting partnerships, defining the zenith of excellence in the dynamic field of technology.";
+                  const text = "AGSuite Technologies envisions global leadership in NetSuite consulting, setting industry benchmarks for innovation, integrity, and client satisfaction. We aspire to be the preferred choice, renowned for transformative NetSuite solutions, agility, and empathetic growth. Our vision is to forge lasting partnerships, defining the zenith of excellence in the dynamic field of ERP technology.";
                   const words = text.split(' ');
                   const groups = [];
                   for (let i = 0; i < words.length; i += 3) {
@@ -978,7 +980,7 @@ export default function AboutClient() {
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 bg-gradient-to-r from-[#000814] via-[#001535] to-black bg-clip-text text-transparent">Our Niche</motion.h2>
               <motion.div variants={wordContainer} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
                 {(() => {
-                  const text = "AGSuite Technologies excels in Oracle NetSuite and Zoho Implementation, offering top-notch Technology Consulting Services. Our specialization includes Customizations, Managed Services, and Integrations, ensuring tailored solutions for clients. With a focus on client success, we leverage our expertise to lead in the dynamic landscape of cloud-based business solutions.";
+                  const text = "AGSuite Technologies excels in Oracle NetSuite Implementation, offering top-notch Technology Consulting Services. Our specialization includes NetSuite Customizations, Managed Services, and Integrations, ensuring tailored solutions for clients. With a focus on client success, we leverage our expertise to lead in the dynamic landscape of cloud-based business solutions.";
                   const words = text.split(' ');
                   const groups = [];
                   for (let i = 0; i < words.length; i += 3) {
@@ -1236,7 +1238,7 @@ export default function AboutClient() {
 
           <div className="relative z-10 max-w-3xl text-left">
             <h3 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight leading-tight">Ready to scale your enterprise?</h3>
-            <p className="text-white/90 text-lg md:text-xl font-medium">Join 38,000+ high-growth businesses running on the world's #1 Cloud ERP.</p>
+            <p className="text-white/90 text-lg md:text-xl font-medium">Join 43,000+ high-growth businesses running on the world's #1 Cloud ERP.</p>
           </div>
 
           <Link
@@ -1246,6 +1248,10 @@ export default function AboutClient() {
             Get Started <ChevronRight className="w-7 h-7 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>
+      </section>
+
+      <section className="bg-white">
+        <ContactFormDesign4 />
       </section>
     </main>
   );
@@ -1366,12 +1372,12 @@ const leadersData = [
     title: "CEO",
     image: "/images/people/Ankur.jpg",
     linkedin: "https://www.linkedin.com/in/ankurgoyal2/",
-    bio: "Visionary leader driving AGSuite's strategic vision with 15+ years in enterprise technology solutions."
+    bio: "Visionary leader driving AGSuite's strategic vision with 25+ years in enterprise technology solutions."
   },
   {
     name: "Rajat Goyal",
     title: "Director",
-    image: "/images/people/Rajat.png",
+    image: "/images/people/Rajat_v2.png",
     linkedin: "https://www.linkedin.com/in/rajat-goyal-9007a6101/",
     bio: "Strategic business leader specializing in operational excellence and global expansion initiatives."
   },
@@ -1382,11 +1388,18 @@ const leadersData = [
     linkedin: "#",
     bio: "Technology innovator leading AGSuite's technical strategy and cloud architecture excellence."
   },
+  {
+    name: "Shailesh Punse",
+    title: "Head of Sales & Marketing",
+    image: "/images/people/Shailesh.jpg",
+    linkedin: "#",
+    bio: "Driving global revenue growth and strategic partnerships with 25+ years of cross-industry expertise."
+  },
 ];
 
 function OurLeaders({ themeColor }: { themeColor: 'blue' | 'rose' }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl mx-auto">
       {leadersData.map((leader, index) => (
         <motion.div
           key={index}

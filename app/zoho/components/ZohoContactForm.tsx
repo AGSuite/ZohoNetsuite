@@ -7,10 +7,10 @@ import Image from "next/image";
 import { Send } from "lucide-react";
 
 declare global {
-  interface Window {
-    validateEmailZDesign4?: () => boolean;
-    checkMandatoryZDesign4?: (e: any) => boolean;
-  }
+    interface Window {
+        validateEmailZDesign4?: () => boolean;
+        checkMandatoryZDesign4?: (e: any) => boolean;
+    }
 }
 
 export default function ZohoContactForm() {
@@ -161,10 +161,10 @@ export default function ZohoContactForm() {
                             <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Get Expert Guidance</h3>
                             <p className="text-gray-500 text-sm mb-8">Connect with our certified Zoho consultants today.</p>
 
-                            <form 
-                                action="https://crm.zoho.in/crm/WebToLeadForm" 
-                                name="WebToLeadsDesign4Zoho" 
-                                method="POST" 
+                            <form
+                                action="https://crm.zoho.in/crm/WebToLeadForm"
+                                name="WebToLeadsDesign4Zoho"
+                                method="POST"
                                 onSubmit={handleFormSubmit}
                                 acceptCharset="UTF-8"
                                 className="space-y-4"

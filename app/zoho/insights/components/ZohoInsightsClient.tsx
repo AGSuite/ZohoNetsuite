@@ -65,21 +65,6 @@ function AwardsAndRecognitionSection() {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="flex flex-row items-center justify-center gap-10"
                     >
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
-                            className="hover:-translate-y-2 transition-transform duration-300"
-                        >
-                            <Image
-                                src="/images/awards/Netsuitepartneraward.png" // Placeholder if no Zoho specific award image found, but user said "same"
-                                alt="Zoho Partner Award"
-                                width={180}
-                                height={180}
-                                className="w-56 h-56 object-contain"
-                            />
-                        </motion.div>
                          <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}

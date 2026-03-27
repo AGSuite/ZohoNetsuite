@@ -207,6 +207,7 @@ export default function ZohoCRMPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap2.webp"
+      whatIsImage="/images/zoho Dashboards/zoho crm.webp"
       heroCard1={{
         title: "250,000+ Businesses",
         subtitle: "The world's most popular cloud CRM.",

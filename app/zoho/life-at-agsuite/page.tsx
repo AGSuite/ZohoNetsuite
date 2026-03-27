@@ -39,12 +39,12 @@ export default function ZohoLifeAtAGSuite() {
       title: "CEO",
       image: "/images/people/Ankur.jpg",
       linkedin: "https://www.linkedin.com/in/ankurgoyal2/",
-      bio: "Visionary leader driving AGSuite's strategic vision with 15+ years in enterprise technology solutions."
+      bio: "Visionary leader driving AGSuite's strategic vision with 25+ years in enterprise technology solutions."
     },
     {
       name: "Rajat Goyal",
       title: "Director",
-      image: "/images/people/Rajat.png",
+      image: "/images/people/Rajat_v2.png",
       linkedin: "https://www.linkedin.com/in/rajat-goyal-9007a6101/",
       bio: "Strategic business leader specializing in operational excellence and global expansion initiatives."
     },
@@ -54,6 +54,13 @@ export default function ZohoLifeAtAGSuite() {
       image: "/images/people/Nikhil.png",
       linkedin: "#",
       bio: "Technology innovator leading AGSuite's technical strategy and cloud architecture excellence."
+    },
+    {
+      name: "Shailesh Punse",
+      title: "Head of Sales & Marketing",
+      image: "/images/people/Shailesh.jpg",
+      linkedin: "#",
+      bio: "Driving global revenue growth and strategic partnerships with 25+ years of cross-industry expertise."
     },
   ];
 
@@ -200,7 +207,7 @@ export default function ZohoLifeAtAGSuite() {
                   <Target className="text-blue-600 w-7 h-7" />
                 </div>
                 <div>
-                  <h4 className="text-3xl font-medium text-gray-900">98%</h4>
+                  <h4 className="text-3xl font-medium text-gray-900">84%</h4>
                   <p className="text-[12px] text-gray-500 font-medium uppercase tracking-wider">Client Retention</p>
                 </div>
               </div>
@@ -213,8 +220,8 @@ export default function ZohoLifeAtAGSuite() {
                   <Trophy className="text-indigo-600 w-7 h-7" />
                 </div>
                 <div>
-                  <h4 className="text-3xl font-medium text-gray-900">55+</h4>
-                  <p className="text-[12px] text-gray-500 font-medium uppercase tracking-wider">Zoho Apps Mastered</p>
+                  <h4 className="text-3xl font-medium text-gray-900">500+</h4>
+                  <p className="text-[12px] text-gray-500 font-medium uppercase tracking-wider">Projects Completed</p>
                 </div>
               </div>
             </motion.div>
@@ -617,7 +624,7 @@ export default function ZohoLifeAtAGSuite() {
             Driving innovation and excellence with a passion for transformative technology.
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl mx-auto">
             {leadersData.map((leader, index) => (
               <motion.div
                 key={index}

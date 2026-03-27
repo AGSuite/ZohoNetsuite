@@ -178,6 +178,7 @@ export default function ZohoSalesIqPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap2.webp"
+      whatIsImage="/images/zoho Dashboards/zoho sales IQ.webp"
       heroCard1={{
         title: "Real-time Tracking",
         subtitle: "Monitor website visitors instantly.",

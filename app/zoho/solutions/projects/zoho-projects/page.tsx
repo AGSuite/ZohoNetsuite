@@ -174,6 +174,7 @@ export default function ZohoProjectsPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/people/laptopmen2.webp"
+      whatIsImage="/images/zoho Dashboards/zoho projects.webp"
       heroCard1={{
         title: "On-Time Delivery",
         subtitle: "40% higher project success rate.",

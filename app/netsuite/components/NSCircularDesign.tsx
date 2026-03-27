@@ -28,12 +28,12 @@ const STAKEHOLDERS = [
 
 // Module labels in the dark ring
 const MODULES = [
-    { name: "HUMAN RESOURCE", angle: -90 },
-    { name: "BFN", angle: -30 },
-    { name: "PSA SCM", angle: 30 },
-    { name: "COMMERCE", angle: 90 },
-    { name: "CRM", angle: 150 },
-    { name: "ERP FINANCIALS", angle: 210 },
+    { name: "FINANCIALS", angle: -90 },
+    { name: "SCM", angle: -30 },
+    { name: "BFN", angle: 30 },
+    { name: "PSA", angle: 90 },
+    { name: "E-COMMERCE", angle: 150 },
+    { name: "CRM", angle: 210 },
 ];
 
 // Outer ring labels with light gradient colors (like reference image)
@@ -214,7 +214,7 @@ export const NSCircularDesign = () => {
                     </text>
 
                     {/* PLATFORM text on bottom (curved downward) - White text */}
-                    <path id="platformBottomPath" fill="none" d="M 385, 300 a 85,85 0 0,1 -170,0" />
+                    <path id="platformBottomPath" fill="none" d="M 215, 300 a 85,85 0 0,0 170,0" />
                     <text className="text-[13px] font-black fill-white uppercase tracking-[0.3em]">
                         <textPath href="#platformBottomPath" startOffset="50%" textAnchor="middle">
                             PLATFORM

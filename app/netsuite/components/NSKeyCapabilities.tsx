@@ -319,7 +319,7 @@ const NSKeyCapabilities = () => {
                 <div className="max-w-[1240px] mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 text-center md:text-left">
                     <div className="relative z-10 cursor-default">
                         <h3 className="text-2xl md:text-5xl font-black text-white mb-2 md:mb-3 tracking-tight">Ready to Accelerate Your Business?</h3>
-                        <p className="text-white/90 text-base md:text-xl font-medium">Join 38,000+ businesses running on the world&#39;s #1 Cloud ERP.</p>
+                        <p className="text-white/90 text-base md:text-xl font-medium">Join 43,000+ businesses running on the world&#39;s #1 Cloud ERP.</p>
                     </div>
                     <Link
                         href="/netsuite/contact"
