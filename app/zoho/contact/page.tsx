@@ -138,10 +138,10 @@ export default function ZohoContactPage() {
     setIsClient(true);
     
     // Global functions for Zoho CRM Form
-    window.validateEmailContactZoho = function () {
-      const form = document.forms.namedItem('WebToLeadsContactZoho');
+    (window as any).validateEmail409531000000325116 = function () {
+      const form = document.forms.namedItem('WebToLeads409531000000325116');
       if (!form) return true;
-      const emailFld = form.querySelectorAll('input[type="email"]');
+      const emailFld = form.querySelectorAll('[data-ftype="email"]');
       for (let i = 0; i < emailFld.length; i++) {
         const emailVal = (emailFld[i] as HTMLInputElement).value;
         if (emailVal.replace(/^\s+|\s+$/g, '').length !== 0) {
@@ -152,18 +152,12 @@ export default function ZohoContactPage() {
             (emailFld[i] as HTMLInputElement).focus();
             return false;
           }
-          const restrictedDomains = /(gmail\.com|yahoo\.com|outlook\.com|live\.com)$/i;
-          if (restrictedDomains.test(emailVal)) {
-            alert('Gmail, Yahoo, Outlook, and Live email addresses are not allowed.');
-            (emailFld[i] as HTMLInputElement).focus();
-            return false;
-          }
         }
       }
       return true;
     };
 
-    window.checkMandatoryContactZoho = function (e: any) {
+    (window as any).checkMandatory409531000000325116 = function (e: any) {
       const form = e.target as HTMLFormElement;
       const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Description', 'LEADCF5', 'LEADCF40'];
       const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Tell Us How We Can Help', 'Product/Services', 'Annual Revenue'];
@@ -184,7 +178,7 @@ export default function ZohoContactPage() {
         return false;
       }
 
-      if (window.validateEmailContactZoho && !window.validateEmailContactZoho()) {
+      if ((window as any).validateEmail409531000000325116 && !(window as any).validateEmail409531000000325116()) {
         return false;
       }
 
@@ -211,36 +205,35 @@ export default function ZohoContactPage() {
   };
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    if (window.checkMandatoryContactZoho && !window.checkMandatoryContactZoho(e.nativeEvent)) {
+    if ((window as any).checkMandatory409531000000325116 && !(window as any).checkMandatory409531000000325116(e.nativeEvent)) {
       e.preventDefault();
       return;
     }
     
     // Visitor Tracking update
     try {
-      // @ts-ignore
-      if (window.$zoho && window.$zoho.salesiq) {
+      if ((window as any).$zoho && (window as any).$zoho.salesiq) {
         const form = e.currentTarget;
         const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
         if (LDTuvidObj) {
-          // @ts-ignore
-          LDTuvidObj.value = window.$zoho.salesiq.visitor.uniqueid();
+          LDTuvidObj.value = (window as any).$zoho.salesiq.visitor.uniqueid();
         }
         const nameObj = form.elements.namedItem('Last Name') as HTMLInputElement;
         const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
         if (nameObj) {
-          // @ts-ignore
-          window.$zoho.salesiq.visitor.name(nameObj.value);
+          (window as any).$zoho.salesiq.visitor.name(nameObj.value);
         }
         if (emailObj) {
-          // @ts-ignore
-          window.$zoho.salesiq.visitor.email(emailObj.value);
+          (window as any).$zoho.salesiq.visitor.email(emailObj.value);
         }
       }
     } catch (err) {}
 
     await sendEmail(e.currentTarget);
-    // Submit button will be disabled by browser default or handled by Zoho script
+    const submitButton = document.querySelector('.formsubmit-contact') as HTMLButtonElement;
+    if (submitButton) {
+      submitButton.setAttribute('disabled', 'true');
+    }
   };
 
   if (!isClient) return null;
@@ -371,7 +364,8 @@ export default function ZohoContactPage() {
 
                   <form 
                     action="https://crm.zoho.in/crm/WebToLeadForm" 
-                    name="WebToLeadsContactZoho" 
+                    id="WebToLeads409531000000325116"
+                    name="WebToLeads409531000000325116" 
                     method="POST" 
                     onSubmit={handleFormSubmit}
                     acceptCharset="UTF-8"
@@ -396,7 +390,7 @@ export default function ZohoContactPage() {
                     {/* Business Email Row */}
                     <div>
                       <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Business Email *</label>
-                      <input type="email" name="Email" required placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                      <input type="email" name="Email" data-ftype="email" required placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
                     </div>
 
                     {/* Mobile + Job Title Row */}
