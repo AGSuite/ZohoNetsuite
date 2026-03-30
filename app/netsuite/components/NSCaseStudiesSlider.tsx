@@ -17,14 +17,6 @@ interface CaseStudy {
 
 const caseStudies: CaseStudy[] = [
     {
-        id: 1,
-        title: "NetSuite for Software Technology and Mobility Solutions",
-        description: "The Company specializes in Ride-Hailing & Information Technology.",
-        image: "/images/lap/lap3.webp",
-        company: "Software and Technology",
-        industry: "Software and Technology"
-    },
-    {
         id: 2,
         title: "NetSuite for Software Technology",
         description: "The company is an investment and wealth management organization.",

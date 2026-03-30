@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { getPosts } from '../../sanity/lib/fetch'
 import { NSHero } from './components/NSHero';

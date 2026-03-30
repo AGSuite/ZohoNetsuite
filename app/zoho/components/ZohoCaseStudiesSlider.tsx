@@ -17,14 +17,6 @@ interface CaseStudy {
 
 const caseStudies: CaseStudy[] = [
     {
-        id: 1,
-        title: "Zoho for Agriculture Industry",
-        description: "Transforming traditional agriculture through sustainable and tech-driven solutions.",
-        image: "/images/lap/lap3.webp",
-        company: "Agriculture",
-        industry: "Agriculture"
-    },
-    {
         id: 2,
         title: "Zoho for Business Consulting & Services Industry Sector",
         description: "A leading managed consulting provider streamlines its client management and service delivery.",

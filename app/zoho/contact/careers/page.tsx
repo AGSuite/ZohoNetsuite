@@ -79,7 +79,7 @@ export default function ZohoCareersPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white selection:bg-rose-900 selection:text-white">
+    <div className="min-h-screen bg-white selection:bg-blue-900 selection:text-white">
 
       {/* ── Hero — matches NetSuite careers exactly but with Zoho accents ─────── */}
       <section className="relative min-h-screen overflow-hidden flex flex-col">
@@ -107,9 +107,9 @@ export default function ZohoCareersPage() {
             className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20"
             aria-label="Breadcrumb"
           >
-            <Link href="/zoho" className="text-rose-300 hover:text-white transition-colors duration-200">Home</Link>
+            <Link href="/zoho" className="text-blue-300 hover:text-white transition-colors duration-200">Home</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <Link href="/zoho/contact" className="text-rose-300 hover:text-white transition-colors">Contact</Link>
+            <Link href="/zoho/contact" className="text-blue-300 hover:text-white transition-colors">Contact</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/80">Careers</span>
           </motion.nav>
@@ -132,17 +132,17 @@ export default function ZohoCareersPage() {
                 transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-rose-100 to-rose-400">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
                   Build Your Career in the Zoho Ecosystem
                 </span>
               </motion.h1>
 
-              {/* Rose accent line */}
+              {/* Blue accent line */}
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: "80px" }}
                 transition={{ delay: 0.45, duration: 0.6 }}
-                className="h-[3px] bg-gradient-to-r from-rose-500 to-rose-300 mb-5 sm:mb-6 rounded-full"
+                className="h-[3px] bg-gradient-to-r from-blue-500 to-blue-300 mb-5 sm:mb-6 rounded-full"
               />
 
               {/* Paragraph */}
@@ -163,7 +163,7 @@ export default function ZohoCareersPage() {
               >
                 <a
                   href="#open-positions"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-rose-600 hover:border-rose-500 transition-all duration-300 shadow-xl shadow-rose-900/20 hover:shadow-rose-600/30 hover:scale-105"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
                 >
                   Explore Open Roles
                   <motion.span
@@ -189,7 +189,7 @@ export default function ZohoCareersPage() {
 
                 {/* Main image — 390px height, rounded-2xl */}
                 <div
-                  className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-rose-900/50"
+                  className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50"
                   style={{ height: 390 }}
                 >
                   <Image
@@ -211,7 +211,7 @@ export default function ZohoCareersPage() {
                 >
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                    style={{ background: "linear-gradient(135deg, #4c0519, #e11d48)" }}
+                    style={{ background: "linear-gradient(135deg, #0a1f5c, #1d4ed8)" }}
                   >
                     <Target className="w-5 h-5 text-white" />
                   </div>
@@ -234,7 +234,7 @@ export default function ZohoCareersPage() {
                 >
                   <div
                     className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-                    style={{ background: "linear-gradient(135deg, #4c0519 0%, #e11d48 100%)" }}
+                    style={{ background: "linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)" }}
                   >
                     <Briefcase className="w-5 h-5 text-white" />
                   </div>
@@ -270,13 +270,13 @@ export default function ZohoCareersPage() {
                   className="text-center group"
                 >
                   <div className="flex justify-center mb-2 sm:mb-3">
-                    <div className="p-2 sm:p-3 bg-rose-700/20 rounded-xl sm:rounded-2xl group-hover:bg-rose-700/30 transition-colors duration-300">
-                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-rose-400 group-hover:scale-110 transition-transform duration-300" />
+                    <div className="p-2 sm:p-3 bg-blue-700/20 rounded-xl sm:rounded-2xl group-hover:bg-blue-700/30 transition-colors duration-300">
+                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                   </div>
                   <div className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-1 sm:mb-2 flex items-center justify-center gap-1">
                     <Counter value={stat.value} />
-                    <span className="text-rose-400 text-2xl sm:text-3xl md:text-4xl">{stat.suffix}</span>
+                    <span className="text-blue-400 text-2xl sm:text-3xl md:text-4xl">{stat.suffix}</span>
                   </div>
                   <div className="text-gray-400 font-medium text-xs sm:text-sm md:text-base px-2">
                     {stat.label}
@@ -296,8 +296,8 @@ export default function ZohoCareersPage() {
           className="absolute inset-0 z-0 pointer-events-none opacity-40"
           style={{
             backgroundImage: `
-              linear-gradient(to right, #fecdd3ff 1px, transparent 1px),
-              linear-gradient(to bottom, #fda4afff 1px, transparent 1px)
+              linear-gradient(to right, #c0d1f9ff 1px, transparent 1px),
+              linear-gradient(to bottom, #94b3fbff 1px, transparent 1px)
             `,
             backgroundSize: "20px 20px",
             backgroundPosition: "0 0, 0 0",
@@ -321,14 +321,14 @@ export default function ZohoCareersPage() {
               repeating-linear-gradient(
                 to right,
                 black 0px,
-                black 3px,
+                black 2px,
                 transparent 3px,
                 transparent 8px
               ),
               repeating-linear-gradient(
                 to bottom,
                 black 0px,
-                black 3px,
+                black 2px,
                 transparent 3px,
                 transparent 8px
               )
@@ -339,9 +339,9 @@ export default function ZohoCareersPage() {
         />
 
         {/* Tricolor Ambient Gradient Blobs */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-rose-100/30 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 w-[600px] h-[400px] bg-red-100/40 rounded-full blur-[130px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-orange-100/20 rounded-full blur-[120px] translate-y-1/2 pointer-events-none" />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-green-100/30 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[400px] bg-blue-100/40 rounded-full blur-[130px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-red-100/20 rounded-full blur-[120px] translate-y-1/2 pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
 
@@ -353,13 +353,13 @@ export default function ZohoCareersPage() {
             transition={{ duration: 0.7 }}
             className="text-center mb-14"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-50 border border-rose-100 mb-5">
-              <Briefcase className="w-4 h-4 text-rose-600" />
-              <span className="text-rose-700 text-xs font-medium tracking-widest uppercase">Explore Roles</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-5 shadow-sm">
+              <Briefcase className="w-4 h-4 text-blue-600" />
+              <span className="text-blue-700 text-xs font-medium tracking-widest uppercase">Explore Roles</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 mb-4 tracking-tight">
               Open{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-red-600">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
                 Positions
               </span>
             </h2>
@@ -376,11 +376,11 @@ export default function ZohoCareersPage() {
               {/* Filters */}
               <div className="grid sm:grid-cols-2 gap-6 mb-12">
                 <div className="relative group">
-                  <Filter className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 group-focus-within:text-rose-500 transition-colors" />
+                  <Filter className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 group-focus-within:text-blue-500 transition-colors" />
                   <select
                     value={type}
                     onChange={(e) => setType(e.target.value)}
-                    className="w-full pl-12 pr-10 py-4 bg-white border border-gray-100 rounded-3xl appearance-none focus:ring-4 focus:ring-rose-100 focus:border-rose-500 outline-none transition-all font-medium text-gray-700 cursor-pointer shadow-sm shadow-rose-900/5"
+                    className="w-full pl-12 pr-10 py-4 bg-white border border-gray-100 rounded-3xl appearance-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none transition-all font-medium text-gray-700 cursor-pointer shadow-sm shadow-blue-900/5"
                   >
                     {jobTypes.map((jt) => (
                       <option key={jt.value} value={jt.value}>{jt.label}</option>
@@ -391,11 +391,11 @@ export default function ZohoCareersPage() {
                   </div>
                 </div>
                 <div className="relative group">
-                  <MapPin className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 group-focus-within:text-rose-500 transition-colors" />
+                  <MapPin className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 group-focus-within:text-blue-500 transition-colors" />
                   <select
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
-                    className="w-full pl-12 pr-10 py-4 bg-white border border-gray-100 rounded-3xl appearance-none focus:ring-4 focus:ring-rose-100 focus:border-rose-500 outline-none transition-all font-medium text-gray-700 cursor-pointer shadow-sm shadow-rose-900/5"
+                    className="w-full pl-12 pr-10 py-4 bg-white border border-gray-100 rounded-3xl appearance-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none transition-all font-medium text-gray-700 cursor-pointer shadow-sm shadow-blue-900/5"
                   >
                     {locations.map((loc) => (
                       <option key={loc.value} value={loc.value}>{loc.label}</option>
@@ -419,25 +419,25 @@ export default function ZohoCareersPage() {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.3, delay: idx * 0.05 }}
-                        className="group bg-gradient-to-br from-white via-rose-50/60 to-orange-50/40 p-6 sm:p-8 rounded-[2rem] border border-white/90 shadow-[0_8px_32px_rgba(46,0,13,0.10)] hover:shadow-[0_16px_48px_rgba(46,0,13,0.18)] hover:border-rose-200 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-8"
+                        className="group bg-gradient-to-br from-white via-blue-50/60 to-indigo-50/40 p-6 sm:p-8 rounded-[2rem] border border-white/90 shadow-[0_8px_32px_rgba(0,13,46,0.10)] hover:shadow-[0_16px_48px_rgba(0,13,46,0.18)] hover:border-blue-200 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-8"
                       >
                         <div className="flex items-center gap-6">
                           <div
-                            className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 text-rose-300 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg"
-                            style={{ background: "linear-gradient(135deg, #4c0519, #e11d48)" }}
+                            className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 text-blue-300 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg"
+                            style={{ background: "linear-gradient(135deg, #0a1f5c, #1d4ed8)" }}
                           >
                             <Briefcase size={24} />
                           </div>
                           <div>
-                            <h3 className="text-lg font-bold text-[#4c0519] group-hover:text-rose-700 transition-colors tracking-tight uppercase leading-tight">
+                            <h3 className="text-lg font-bold text-[#0a1f5c] group-hover:text-blue-700 transition-colors tracking-tight uppercase leading-tight">
                               {job.title}
                             </h3>
                             <div className="flex items-center gap-5 mt-2 text-sm font-semibold">
-                              <span className="flex items-center gap-1.5 text-[#4c0519]">
-                                <MapPin size={14} className="text-rose-500" /> {job.locationName}
+                              <span className="flex items-center gap-1.5 text-[#0a1f5c]">
+                                <MapPin size={14} className="text-blue-500" /> {job.locationName}
                               </span>
-                              <span className="w-1.5 h-1.5 rounded-full bg-rose-300" />
-                              <span className="capitalize text-[#4c0519] font-bold">{job.type.replace('-', ' ')}</span>
+                              <span className="w-1.5 h-1.5 rounded-full bg-blue-300" />
+                              <span className="capitalize text-[#0a1f5c] font-bold">{job.type.replace('-', ' ')}</span>
                             </div>
                           </div>
                         </div>
@@ -445,13 +445,13 @@ export default function ZohoCareersPage() {
                           onClick={() => {
                             document.getElementById('apply-form')?.scrollIntoView({ behavior: 'smooth' });
                           }}
-                          className="sm:w-auto w-full px-8 py-4 rounded-2xl text-white font-bold text-sm hover:shadow-xl hover:shadow-rose-500/30 transition-all flex items-center justify-center gap-2 group-hover:translate-x-1"
-                          style={{ background: "linear-gradient(135deg, #4c0519, #e11d48)" }}
+                          className="sm:w-auto w-full px-8 py-4 rounded-2xl text-white font-bold text-sm hover:shadow-xl hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-2 group-hover:translate-x-1"
+                          style={{ background: "linear-gradient(135deg, #0a1f5c, #1d4ed8)" }}
                           onMouseEnter={(e) => {
-                            (e.currentTarget as HTMLButtonElement).style.background = "linear-gradient(135deg, #e11d48, #fb7185)";
+                            (e.currentTarget as HTMLButtonElement).style.background = "linear-gradient(135deg, #1d4ed8, #3b82f6)";
                           }}
                           onMouseLeave={(e) => {
-                            (e.currentTarget as HTMLButtonElement).style.background = "linear-gradient(135deg, #4c0519, #e11d48)";
+                            (e.currentTarget as HTMLButtonElement).style.background = "linear-gradient(135deg, #0a1f5c, #1d4ed8)";
                           }}
                         >
                           Apply Now <ArrowRight size={18} />
@@ -474,15 +474,15 @@ export default function ZohoCareersPage() {
             {/* RIGHT: Form Sticky */}
             <div id="apply-form" className="w-full lg:w-[450px] xl:w-[500px] shrink-0">
               <div className="sticky top-32">
-                <div className="bg-white rounded-[3rem] border border-gray-100 overflow-hidden shadow-[0_32px_80px_-15px_rgba(0,0,0,0.1)] transition-all hover:shadow-[0_32px_80px_-15px_rgba(225,29,72,0.15)]">
-                  <div className="bg-gradient-to-br from-[#1a0505] to-[#4c0519] p-10 text-white relative overflow-hidden">
+                <div className="bg-white rounded-[3rem] border border-gray-100 overflow-hidden shadow-[0_32px_80px_-15px_rgba(0,0,0,0.1)] transition-all hover:shadow-[0_32px_80px_-15px_rgba(29,78,216,0.15)]">
+                  <div className="bg-gradient-to-br from-[#000814] to-[#001a4d] p-10 text-white relative overflow-hidden">
                     <div className="relative z-10">
                       <h3 className="text-3xl font-bold mb-3 tracking-tight">Express Interest</h3>
-                      <p className="text-rose-200 text-base leading-relaxed font-medium">
-                        Apply for current openings at <span className="font-bold text-white underline decoration-rose-500/50">AGSuite Technologies</span>.
+                      <p className="text-blue-200 text-base leading-relaxed font-medium">
+                        Apply for current openings at <span className="font-bold text-white underline decoration-blue-500/50">AGSuite Technologies</span>.
                       </p>
                     </div>
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-rose-500/20 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/20 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
                   </div>
                   <div className="bg-white p-0">
                     <iframe

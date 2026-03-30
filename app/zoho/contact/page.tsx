@@ -21,6 +21,9 @@ import {
   HelpCircle,
   Target,
   Users,
+  UserCog,
+  Heart,
+  Rocket,
 } from "lucide-react";
 
 /* ─── Office Locations Data (Zoho Values) ─────────────────────────────────── */
@@ -310,25 +313,42 @@ export default function ZohoContactPage() {
                 </p>
               </div>
 
-              <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6">
+              {/* Consultation Metrics Cards (Synced from About Us) */}
+              <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-5">
                 {[
-                  { label: 'Implementations', value: '250+', icon: Building2 },
-                  { label: 'Zoho Experts', value: '75+', icon: Users },
-                  { label: 'Global Clients', value: '15+', icon: Globe2 },
-                  { label: 'Success Rate', value: '100%', icon: Target },
+                  { label: "Projects Completed", value: "500+", icon: Target },
+                  { label: "Global Customers", value: "200+", icon: Building2 },
+                  { label: "Industry Expertise", value: "10+", icon: UserCog },
+                  { label: "Customer Retention", value: "84%", icon: Heart },
+                  { label: "Years Experience", value: "15+", icon: Rocket },
+                  { label: "Countries Serving", value: "10+", icon: Globe2 },
                 ].map((item, i) => (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
+                    whileHover={{ rotate: 1.5, y: -5 }}
                     transition={{ delay: 0.4 + i * 0.1 }}
-                    className="p-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition-colors group"
+                    className="relative group p-6 rounded-[2rem] bg-white border border-blue-100 shadow-xl shadow-blue-900/5 overflow-hidden"
                   >
-                    <div className="mb-4 w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
-                      <item.icon className="w-6 h-6" />
+                    {/* Decorative faint icon bg */}
+                    <div className="absolute -right-4 -bottom-4 opacity-[0.1] group-hover:opacity-[0.2] transition-all duration-500 pointer-events-none">
+                      <item.icon className="w-20 h-20 text-blue-900" strokeWidth={1} />
                     </div>
-                    <div className="text-3xl font-bold text-white mb-1">{item.value}</div>
-                    <p className="text-gray-400 text-sm font-medium uppercase tracking-wider leading-tight">{item.label}</p>
+
+                    <div className="relative z-10 flex flex-col items-start text-left">
+                      <div className="mb-4 w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
+                        <item.icon className="w-5 h-5 font-bold" strokeWidth={1.5} />
+                      </div>
+                      <div className="space-y-1">
+                        <div className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-blue-900 to-black tracking-tight">
+                          {item.value}
+                        </div>
+                        <p className="text-gray-500 font-semibold text-[10px] group-hover:text-blue-700 transition-colors uppercase tracking-widest leading-tight">
+                          {item.label}
+                        </p>
+                      </div>
+                    </div>
                   </motion.div>
                 ))}
               </div>
