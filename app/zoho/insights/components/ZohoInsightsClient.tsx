@@ -10,9 +10,11 @@ import {
     ArrowRight, CheckCircle2, ChevronRight, Activity, BookOpen,
     Calendar, MapPin, Clock, Users, ExternalLink, Zap, Star
 } from 'lucide-react';
-import ZohoContactForm from '../../components/ZohoContactForm';
-import ZohoCaseStudiesSlider from '../../components/ZohoCaseStudiesSlider';
-import ZohoBlogsSlider from '../../components/ZohoBlogsSlider';
+import dynamic from 'next/dynamic';
+
+const ZohoContactForm = dynamic(() => import('../../components/ZohoContactForm'), { ssr: false });
+const ZohoCaseStudiesSlider = dynamic(() => import('../../components/ZohoCaseStudiesSlider'), { ssr: false });
+const ZohoBlogsSlider = dynamic(() => import('../../components/ZohoBlogsSlider'), { ssr: false });
 
 const InsightNav = () => (
     <div className="bg-[#000d2e] border-y border-white/10 sticky top-[72px] z-[40] backdrop-blur-md">
@@ -54,7 +56,7 @@ function AwardsAndRecognitionSection() {
                             Recognized Excellence in Zoho Solutions
                         </h2>
                         <p className="mt-4 text-gray-500">
-                             Partnering with Zoho to deliver best-in-class digital transformation for global enterprises.
+                            Partnering with Zoho to deliver best-in-class digital transformation for global enterprises.
                         </p>
                     </motion.div>
 
@@ -65,7 +67,7 @@ function AwardsAndRecognitionSection() {
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="flex flex-row items-center justify-center gap-10"
                     >
-                         <motion.div
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -129,7 +131,7 @@ function EventsSection() {
                                 "/images/Events/5th aniversary/5thaniversary-3.jpg",
                             ].map((src, i) => (
                                 <div key={i} className="relative h-full w-96 rounded-3xl overflow-hidden shrink-0 group">
-                                    <Image src={src} alt="Anniversary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                                    <Image src={src} alt="Anniversary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="384px" />
                                 </div>
                             ))}
                         </motion.div>
@@ -197,10 +199,10 @@ export default function ZohoInsightsClient({ blogs }: { blogs: any[] }) {
                                 </Link>
                             </motion.div>
                         </motion.div>
-                         <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center">
+                        <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center">
                             <div className="relative w-[88%] ml-auto">
                                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50 h-[390px]">
-                                    <Image src="/images/people/fourteam.webp" alt="Zoho Insights" fill className="object-cover object-center" priority />
+                                    <Image src="/images/people/fourteam.webp" alt="Zoho Insights" fill className="object-cover object-center" priority sizes="(max-width: 768px) 100vw, 50vw" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                                 </div>
                             </div>

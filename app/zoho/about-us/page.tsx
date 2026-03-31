@@ -32,8 +32,10 @@ import {
 import { useInView } from 'react-intersection-observer';
 import FlipNumbers from 'react-flip-numbers';
 import { motion, useAnimation, type Variants, AnimatePresence } from 'framer-motion';
-import ZohoContactForm from '../components/ZohoContactForm';
-import ZohoTestimonialSection from '../components/ZohoTestimonialSection';
+import dynamic from 'next/dynamic';
+
+const ZohoContactForm = dynamic(() => import('../components/ZohoContactForm'), { ssr: false });
+const ZohoTestimonialSection = dynamic(() => import('../components/ZohoTestimonialSection'), { ssr: false });
 
 // ---------------- Address Data ----------------
 
@@ -240,9 +242,9 @@ type CounterItem = {
 };
 
 const counters: CounterItem[] = [
-  { label: 'Projects Completed', value: 500, icon: Target, suffix: "+" },
-  { label: 'Global Customers', value: 200, icon: Building2, suffix: "+" },
-  { label: 'Industry Expertise', value: 10, icon: UserCog, suffix: "+" },
+  { label: 'Happy Clients', value: 500, icon: Users, suffix: "+" },
+  { label: 'Zoho Experts', value: 50, icon: UserCog, suffix: "+" },
+  { label: 'Industry Expertise', value: 12, icon: Building2, suffix: "+" },
   { label: 'Customer Retention', value: 84, icon: Heart, suffix: "%" },
   { label: 'Years Experience', value: 15, icon: Rocket, suffix: "+" },
   { label: 'Countries Serving', value: 10, icon: Globe2, suffix: "+" },
@@ -604,7 +606,7 @@ export default function AboutClient() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
-        setVideoSrc('/images/videos/mobileintro.mp4');
+        setVideoSrc('/images/videos/zohomobile aboutus.mp4');
       } else {
         setVideoSrc('/images/videos/aboutus.mp4');
       }

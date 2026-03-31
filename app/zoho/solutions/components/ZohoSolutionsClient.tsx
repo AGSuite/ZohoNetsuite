@@ -10,8 +10,10 @@ import {
   HeartHandshake, ArrowRight, CheckCircle2, BarChart3, ShoppingCart, Globe,
   TrendingUp, Package, Layers, DollarSign, BookOpen, Star, ChevronDown, ChevronRight, GraduationCap, Wrench, Settings, PieChart, Zap
 } from 'lucide-react';
-import ZohoContactForm from '../../components/ZohoContactForm';
-import { FAQ } from '@/app/components/home/FAQ';
+import dynamic from 'next/dynamic';
+
+const ZohoContactForm = dynamic(() => import('../../components/ZohoContactForm'), { ssr: false });
+const FAQ = dynamic(() => import('@/app/components/home/FAQ').then(mod => mod.FAQ), { ssr: false });
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
@@ -25,8 +27,8 @@ export default function ZohoSolutionsClient() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
 
   const stats = [
-    { label: 'Happy Clients', value: 250, suffix: '+', icon: Trophy },
-    { label: 'Zoho Experts', value: 30, suffix: '+', icon: Users },
+    { label: 'Happy Clients', value: 500, suffix: '+', icon: Trophy },
+    { label: 'Zoho Experts', value: 50, suffix: '+', icon: Users },
     { label: 'Global Roll-outs', value: 50, suffix: '+', icon: Globe2 },
     { label: 'Years Experience', value: 15, suffix: '+', icon: Rocket },
   ];
@@ -232,7 +234,7 @@ export default function ZohoSolutionsClient() {
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/people/fourteam.webp" alt="Zoho Business Solutions" fill className="object-cover object-center" priority />
+                  <Image src="/images/people/fourteam.webp" alt="Zoho Business Solutions" fill className="object-cover object-center" priority sizes="(max-width: 768px) 100vw, 50vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }} className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,#003580,#0044cc)' }}><Database className="w-5 h-5 text-white" /></div>
@@ -321,6 +323,7 @@ export default function ZohoSolutionsClient() {
                         alt={solution.title}
                         fill
                         className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </div>
                   </div>
@@ -414,15 +417,15 @@ export default function ZohoSolutionsClient() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="border border-gray-200 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
+            className="bg-[#000814] rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
           >
-            <Image src="/images/lap/group1.webp" alt="Zoho Solutions" fill className="object-cover opacity-20" />
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
+            <Image src="/images/lap/group1.webp" alt="Zoho Solutions" fill className="object-cover" sizes="(max-width: 1200px) 100vw, 1200px" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
             <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/10 blur-3xl -mr-32 -mt-32" />
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-indigo-500/10 blur-3xl -ml-32 -mb-32" />
             <div className="relative z-10 max-w-2xl text-left">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-                Scale your business with the <span className="text-blue-600">Zoho Ecosystem</span>. Ready to get started?
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight drop-shadow-2xl">
+                Scale your business with the <span className="text-blue-400">Zoho Ecosystem</span>. Ready to get started?
               </h2>
               <div className="flex justify-start">
                 <Link href="/zoho/contact" className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition shadow-xl">

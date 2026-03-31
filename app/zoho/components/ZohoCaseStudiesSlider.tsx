@@ -100,7 +100,7 @@ const ZohoCaseStudiesSlider = () => {
                             Case Studies
                         </span>
                     </div>
-                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-rose-400 leading-snug tracking-tight">
+                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white leading-snug tracking-tight">
                         Real Results with Zoho Solutions
                     </h2>
                     <p className="text-blue-100/80 text-lg max-w-md font-medium leading-relaxed">
@@ -167,7 +167,7 @@ const ZohoCaseStudiesSlider = () => {
                                 <button onClick={closeModal} className="absolute top-4 right-4 p-2 bg-white/20 hover:bg-black/20 rounded-full text-white z-10"><X className="w-5 h-5" /></button>
                                 <div className="bg-gradient-to-r from-[#001f5c] to-[#0a0a0a] p-6 text-white"><h2 className="text-xl font-bold mb-2 pr-8 leading-tight">Access Zoho Case Study</h2><p className="text-blue-100/90 text-sm pr-4">{selectedStudy?.title}</p></div>
                                 <div className="p-6 md:p-8 text-left text-slate-800">
-                                    <iframe 
+                                    <iframe
                                         src="https://crm.zoho.in/crm/WebFormServeServlet?rid=bb4b0617c340619de1172c4e88a6168efcd072362b1960f18710725b4a562d7f779e62a2f104e2e43439fe2010aaf9d1gid6c22d9b2008ecf3fcfeff53f1607c09e903786de4923a2f7bac9742fed07c2b5"
                                         className="w-full h-[500px]"
                                         frameBorder="0"

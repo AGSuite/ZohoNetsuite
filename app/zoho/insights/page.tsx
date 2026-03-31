@@ -5,7 +5,7 @@ import ZohoInsightsClient from './components/ZohoInsightsClient';
 
 export const metadata: Metadata = {
   title: "Zoho Insights & Resources | AGSuite Technologies",
-  description: "Explore our latest Zoho blogs, case studies, and achievements. Stay updated with the latest in Zoho cloud solutions.",
+  description: "Explore our latest Zoho blogs, case studies, webinars, and achievements. Stay ahead with expert Zoho solutions.",
 };
 
 export default async function ZohoInsightsPage() {

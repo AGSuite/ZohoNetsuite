@@ -8,16 +8,16 @@ import Link from "next/link";
 import { useState } from "react";
 
 const logos = [
-    { id: "affle", logo: "/images/assets/png-logos/affle-png.png", name: "Affle", link: "https://www.affle.com" },
-    { id: "tyfone", logo: "/images/assets/png-logos/tyfone_tech-removebg-preview.png", name: "Tyfone", link: "https://www.tyfone.com" },
-    { id: "airling", logo: "/images/assets/png-logos/airling_tech-removebg-preview.png", name: "Airling", link: "#" },
-    { id: "videoverse", logo: "/images/assets/png-logos/video_verse_tech-removebg-preview.png", name: "VideoVerse", link: "https://www.videoverse.com" },
-    { id: "quickheal", logo: "/images/assets/png-logos/quickheal-png.png", name: "Quick Heal", link: "https://www.quickheal.com" },
-    { id: "controlservice", logo: "/images/assets/png-logos/control_service-removebg-preview.png", name: "Control Service", link: "#" },
-    { id: "uniacco", logo: "/images/assets/png-logos/uniAcco-png.png", name: "UniAcco", link: "https://www.uniacco.com" },
-    { id: "dlz", logo: "/images/assets/png-logos/dlz-png.png", name: "DLZ", link: "#" },
-    { id: "indovance", logo: "/images/assets/png-logos/indovance_service-removebg-preview.png", name: "Indovance", link: "https://www.indovance.com" },
-    { id: "pace", logo: "/images/assets/png-logos/pace_services-removebg-preview.png", name: "Pace", link: "#" },
+    { id: "affle", logo: "/images/assets/affle%20tech.webp", name: "Affle", link: "https://www.affle.com" },
+    { id: "tyfone", logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone", link: "https://www.tyfone.com" },
+    { id: "airling", logo: "/images/assets/airling%20tech.webp", name: "Airling", link: "#" },
+    { id: "videoverse", logo: "/images/assets/video%20verse%20tech.webp", name: "VideoVerse", link: "https://www.videoverse.com" },
+    { id: "quickheal", logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal", link: "https://www.quickheal.com" },
+    { id: "controlservice", logo: "/images/assets/control%20service.webp", name: "Control Service", link: "#" },
+    { id: "uniacco", logo: "/images/assets/uniAcco%20service.webp", name: "UniAcco", link: "https://www.uniacco.com" },
+    { id: "dlz", logo: "/images/assets/dlz%20service.webp", name: "DLZ", link: "#" },
+    { id: "indovance", logo: "/images/assets/indovance%20service.webp", name: "Indovance", link: "https://www.indovance.com" },
+    { id: "pace", logo: "/images/assets/pace%20services.webp", name: "Pace", link: "#" },
 ];
 
 const ZohoMetrics = () => {
@@ -36,8 +36,8 @@ const ZohoMetrics = () => {
     const words = headlineText.split(" ");
 
     const stats = [
-        { value: "3.2X", label: "Lift in lead conversion" },
-        { value: "45%", label: "Faster time to market" },
+        { value: "500+", label: "Happy Clients" },
+        { value: "50+", label: "Zoho Experts" },
         { value: "28%", label: "Reduction in IT costs" },
         { value: "150%", label: "Average ROI on Zoho One" },
     ];
@@ -301,24 +301,24 @@ const ZohoMetrics = () => {
                             Trusted by industry leading brands
                         </p>
 
-                        <div className="relative w-full overflow-hidden py-2">
-                            <div className="animate-marquee whitespace-nowrap flex items-center gap-5" style={{ willChange: 'transform' }}>
+                        <div className="relative w-full overflow-hidden py-10">
+                            <div className="animate-marquee whitespace-nowrap flex items-center gap-8" style={{ willChange: 'transform' }}>
                                 {logos.concat(logos).map((logo, index) => (
                                     <div key={index} className="inline-flex">
                                         <a
                                             href={logo.link || "#"}
                                             target={logo.link !== "#" ? "_blank" : undefined}
                                             rel={logo.link !== "#" ? "noopener noreferrer" : undefined}
-                                            className="flex h-12 w-40 sm:h-16 sm:w-44 items-center justify-center transition-all duration-300"
+                                            className="flex h-16 w-36 sm:h-18 sm:w-44 items-center justify-center bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 p-2"
                                             aria-label={logo.name}
                                         >
                                             <Image
                                                 src={logo.logo}
                                                 alt={`${logo.name} logo`}
-                                                width={190}
-                                                height={60}
-                                                sizes="190px"
-                                                className="h-15 sm:h-26 w-auto object-contain brightness-0 invert opacity-100 hover:opacity-100 hover:brightness-100 hover:invert-0 transition-all duration-300"
+                                                width={200}
+                                                height={65}
+                                                sizes="200px"
+                                                className="max-h-full w-auto object-contain transition-all duration-300"
                                             />
                                         </a>
                                     </div>

@@ -34,17 +34,10 @@ import {
   ChevronRight,
   MonitorPlay,
   Zap,
-  GraduationCap,
-  Wrench,
-  Settings,
-  Layers,
-  Map,
-  Megaphone
+  GraduationCap
 } from "lucide-react";
-import dynamic from "next/dynamic";
-
-const ZohoContactForm = dynamic(() => import("../../components/ZohoContactForm"), { ssr: false });
-const FAQ = dynamic(() => import("@/app/components/home/FAQ").then(mod => mod.FAQ), { ssr: false });
+import ZohoContactForm from "../../components/ZohoContactForm";
+import { FAQ } from "@/app/components/home/FAQ";
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
@@ -64,185 +57,90 @@ function Counter({ value }: { value: number }) {
   );
 }
 
-export default function ZohoIndustriesClient() {
+export default function ZohoServicesClient() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
 
   const stats = [
     { label: "Happy Clients", value: 500, suffix: "+", icon: Trophy },
     { label: "Zoho Experts", value: 50, suffix: "+", icon: Users },
-    { label: "Global Roll-outs", value: 50, suffix: "+", icon: Globe2 },
+    { label: "Technical Integrations", value: 300, suffix: "+", icon: Share2 },
     { label: "Years Experience", value: 15, suffix: "+", icon: Rocket },
-  ];
-
-  const industries = [
-    {
-      category: "Manufacturing",
-      title: "Manufacturing",
-      subtitle: "Optimize Production & Supply Chain",
-      description:
-        "Zoho provides a unified manufacturing solution that connects floor operations with core business processes. Streamline production, optimize inventory, and improve quality control with Zoho Inventory and Zoho Creator to accelerate time-to-market.",
-      highlights: [
-        "Production & routing management",
-        "WIP & routing tracking",
-        "Quality assurance & control",
-        "Advanced inventory management",
-      ],
-      link: "/zoho/industries/manufacturing",
-      image: "/images/industries/manufacture-compressed-1.webp",
-      icon: Package,
-      tag: "Manufacturing",
-    },
-    {
-      category: "Software & Tech",
-      title: "Software & Tech Companies",
-      subtitle: "Accelerate Growth & Scale Globally",
-      description:
-        "Automate complex billing, revenue management, and financial consolidations. Zoho gives software companies real-time visibility into subscription metrics through Zoho Subscriptions, helping you navigate rapid growth and manage customers effectively.",
-      highlights: [
-        "Advanced revenue recognition",
-        "Subscription & complex billing",
-        "Multi-entity consolidation",
-        "SaaS metrics & reporting",
-      ],
-      link: "/zoho/industries/software",
-      image: "/images/industries/logistics-means-transport-together-with-technological-futuristic-holograms (2)_11zon.jpg",
-      icon: Code,
-      tag: "Technology",
-    },
-    {
-      category: "Retail",
-      title: "Retail & E-Commerce",
-      subtitle: "Deliver Seamless Omnichannel Experiences",
-      description:
-        "Connect your e-commerce, POS, and order management with financial and inventory systems using Zoho Commerce and Zoho Inventory. Empower retailers to provide consistent, personalized shopping experiences across every customer touchpoint.",
-      highlights: [
-        "Unified omnichannel commerce",
-        "Real-time inventory visibility",
-        "Intelligent order routing",
-        "Customer 360 profile",
-      ],
-      link: "/zoho/industries/retail",
-      image: "/images/industries/ecommerce.webp",
-      icon: ShoppingCart,
-      tag: "Omnichannel",
-    },
-    {
-      category: "Wholesale Distribution",
-      title: "Wholesale Distribution",
-      subtitle: "Maximize Supply Chain Efficiency",
-      description:
-        "Run your entire distribution business on Zoho. Automate procurement, optimize warehouse operations, and improve order fulfillment with Zoho Inventory and Zoho Books to reduce costs and exceed customer expectations.",
-      highlights: [
-        "Demand planning & procurement",
-        "Warehouse Management System (WMS)",
-        "Advanced order fulfillment",
-        "B2B commerce capabilities",
-      ],
-      link: "/zoho/industries/wholesale",
-      image: "/images/industries/Wholesale-Distribution-compressed.webp",
-      icon: Truck,
-      tag: "Distribution",
-    },
-    {
-      category: "Professional Services",
-      title: "IT Services",
-      subtitle: "Streamline Project Delivery & Billing",
-      description:
-        "Maximize resource utilization, streamline project accounting, and automate billing using Zoho Projects and Zoho Invoice. Zoho helps IT services firms deliver projects on time and on budget while ensuring accurate revenue recognition.",
-      highlights: [
-        "Resource management & scheduling",
-        "Project accounting & billing",
-        "Time & expense tracking",
-        "Services profitability reporting",
-      ],
-      link: "/zoho/industries/it-services",
-      image: "/images/industries/Professional-Services-compressed-1 (1).webp",
-      icon: Briefcase,
-      tag: "Services",
-    },
-    {
-      category: "Media & Publishing",
-      title: "Media & Publishing",
-      subtitle: "Optimize Ad Sales & Subscription Revenue",
-      description:
-        "Manage the complete media lifecycle from advertising sales to subscriber management. Zoho unifies front and back-office operations using Zoho CRM and Zoho Subscriptions to optimize revenue, reduce churn, and drive digital transformation.",
-      highlights: [
-        "Advertising sales & billing",
-        "Subscription & circulation management",
-        "Revenue recognition",
-        "Financial consolidation",
-      ],
-      link: "/zoho/industries/media",
-      image: "/images/industries/media.webp",
-      icon: MonitorPlay,
-      tag: "Media",
-    },
-    {
-      category: "Advertising",
-      title: "Advertising & Digital Marketing",
-      subtitle: "Manage Campaigns & Margins Effectively",
-      description:
-        "Integrate your project management and financials using Zoho CRM and Zoho Campaigns to gain real-time visibility into campaign profitability. Zoho helps agencies optimize resource allocation and improve cash flow.",
-      highlights: [
-        "Campaign profitability tracking",
-        "Resource utilization",
-        "Client and vendor billing",
-        "Financial reporting & analysis",
-      ],
-      link: "/zoho/industries/advertising-marketing",
-      image: "/images/industries/marketing.jpg",
-      icon: Megaphone,
-      tag: "Agencies",
-    },
-    {
-      category: "Transportation",
-      title: "Transportation & Logistics",
-      subtitle: "Drive Operational Excellence",
-      description:
-        "Gain complete visibility across your operations and financials with Zoho. Help transportation and logistics companies manage fleets, streamline billing with Zoho Books, and optimize customer relationships through Zoho CRM.",
-      highlights: [
-        "Fleet & asset management",
-        "Route optimization integration",
-        "Automated dispatch & billing",
-        "Real-time financial visibility",
-      ],
-      link: "/zoho/industries/transport",
-      image: "/images/industries/logistics-means-transport-together-with-technological-futuristic-holograms (2)_11zon.jpg",
-      icon: Map,
-      tag: "Logistics",
-    },
   ];
 
   const services = [
     {
       title: "Zoho Implementation",
       description: "Organizations can benefit from professional assistance in implementing Zoho solutions tailored to their specific business requirements.",
+      link: "/zoho/services/implementation",
+      image: "/images/Services/digitaltrans.webp",
       icon: Rocket,
-      href: "/zoho/services/implementation",
     },
     {
       title: "Zoho Integration",
       description: "Expert support is available for seamlessly integrating Zoho applications with existing systems and third-party tools, enhancing operational efficiency.",
-      icon: Layers,
-      href: "/zoho/services/integration-services",
+      link: "/zoho/services/integration-services",
+      image: "/images/netsuiteimages/Servicesimg/integration.webp",
+      icon: Share2,
     },
     {
       title: "Zoho Customization",
       description: "Businesses can leverage custom development options to tailor Zoho applications to their unique workflows and operational needs.",
-      icon: Wrench,
-      href: "/zoho/services/digital-transformation",
+      link: "/zoho/services/digital-transformation",
+      image: "/images/people/laptopgirl.webp",
+      icon: Code,
     },
     {
       title: "Zoho Managed Support",
       description: "Ongoing support and maintenance services ensure the smooth functioning and optimal performance of Zoho solutions, providing peace of mind to organizations.",
-      icon: Settings,
-      href: "/zoho/services/managed-services",
+      link: "/zoho/services/managed-services",
+      image: "/images/Services/managedservices.webp",
+      icon: ShieldCheck,
     },
     {
       title: "Zoho Training",
       description: "Comprehensive training programs are available to empower teams with the necessary knowledge and skills to effectively utilize Zoho applications, maximizing their potential for business growth.",
-      icon: GraduationCap,
-      href: "/zoho/services/training-services",
+      link: "/zoho/services/training-services",
+      image: "/images/Services/trainingservices.webp",
+      icon: Users,
+    },
+  ];
+
+  const industries = [
+    {
+      title: "Manufacturing",
+      description: "Optimize production and supply chain operations.",
+      icon: Package,
+      href: "/zoho/industries/manufacturing",
+    },
+    {
+      title: "Software & Tech",
+      description: "Accelerate growth and manage complex billing.",
+      icon: Code,
+      href: "/zoho/industries/software",
+    },
+    {
+      title: "Retail",
+      description: "Deliver seamless omnichannel customer experiences.",
+      icon: ShoppingCart,
+      href: "/zoho/industries/retail",
+    },
+    {
+      title: "Wholesale Distribution",
+      description: "Maximize supply chain efficiency and visibility.",
+      icon: Truck,
+      href: "/zoho/industries/wholesale",
+    },
+    {
+      title: "IT Services",
+      description: "Streamline project delivery and resource utilization.",
+      icon: Briefcase,
+      href: "/zoho/industries/it-services",
+    },
+    {
+      title: "Media & Publishing",
+      description: "Optimize ad sales and subscription revenue streams.",
+      icon: MonitorPlay,
+      href: "/zoho/industries/media",
     },
   ];
 
@@ -278,7 +176,7 @@ export default function ZohoIndustriesClient() {
               Home
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/80">Zoho Industries</span>
+            <span className="text-white/80">Zoho Services</span>
           </motion.nav>
           <div
             className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6"
@@ -296,7 +194,7 @@ export default function ZohoIndustriesClient() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15]"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  Zoho Industry Solutions
+                  Global Zoho Specialist Services
                 </span>
               </motion.h1>
               <motion.div
@@ -311,10 +209,9 @@ export default function ZohoIndustriesClient() {
                 transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8"
               >
-                Zoho delivers unified business management solutions tailored
-                for specific industries. Discover how we can help your
-                organization overcome sector-specific challenges and accelerate
-                growth with Zoho's powerful suite.
+                Scale your vision with AGSuite's comprehensive Zoho services. 
+                From mission-critical implementations to complex integrations and 
+                24/7 managed support, we empower brands to run entirely in the Zoho cloud.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
@@ -322,10 +219,10 @@ export default function ZohoIndustriesClient() {
                 transition={{ delay: 0.5 }}
               >
                 <Link
-                  href="#industries"
+                  href="#services"
                   className="inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl hover:scale-105"
                 >
-                  Explore Industries{" "}
+                  Explore Services{" "}
                   <motion.span
                     animate={{ x: [0, 6, 0] }}
                     transition={{ duration: 1.2, repeat: Infinity }}
@@ -349,7 +246,7 @@ export default function ZohoIndustriesClient() {
                 >
                   <Image
                     src="/images/people/fourteam.webp"
-                    alt="Zoho Industry Expertise"
+                    alt="Zoho Specialist Services"
                     fill
                     className="object-cover object-center"
                     priority
@@ -372,10 +269,10 @@ export default function ZohoIndustriesClient() {
                   </div>
                   <div>
                     <p className="text-gray-900 text-sm font-bold">
-                      Purpose-built for your industry
+                      Certified Expert Delivery
                     </p>
                     <p className="text-gray-500 text-xs mt-0.5">
-                      Manufacturing · Software · Retail · Services
+                      Implementation · Integration · Support · Consulting
                     </p>
                   </div>
                 </motion.div>
@@ -395,10 +292,10 @@ export default function ZohoIndustriesClient() {
                   </div>
                   <div>
                     <p className="text-gray-900 text-[13px] font-bold whitespace-nowrap">
-                      Global Industry Expertise
+                      Global Zoho Partner
                     </p>
                     <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">
-                      Tailored · Innovative · Scalable
+                      Efficient · Scalable · Reliable
                     </p>
                   </div>
                 </motion.div>
@@ -450,15 +347,14 @@ export default function ZohoIndustriesClient() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="flex items-center justify-center rounded-2xl"
-              style={{ minHeight: 340 }}
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden shadow-2xl w-full h-full min-h-[400px]"
             >
               <Image
-                src="/images/lap/group1.webp"
-                alt="Zoho by Industry"
-                width={560}
-                height={380}
-                className="w-full h-auto rounded-xl object-contain"
+                src="/images/people/threeteam.webp"
+                alt="AGSuite Zoho Expert Team"
+                fill
+                className="object-cover object-center transform hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </motion.div>
             <motion.div
@@ -469,19 +365,19 @@ export default function ZohoIndustriesClient() {
               className="space-y-6"
             >
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
-                Tailored to Your Industry
+                Architecting Your Zoho Success
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Zoho is designed with industry-specific best practices built
-                right in. From manufacturing floors to software subscriptions,
-                Zoho provides the apps and workflows you need to run your
-                business efficiently across 55+ integrated applications.
+                As a certified Advanced Zoho Partner, AGSuite provides the
+                technical expertise and strategic vision needed to maximize
+                your Zoho investment. From global rollouts to complex 
+                automations, we ensure your system scales with your business.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Unlike fragmented systems, Zoho One offers a seamless,
-                cloud-native business suite that unifies your entire operations
-                structure. Focus on growing your business with a platform that
-                natively speaks your industry's language.
+                Our approach combines industry best practices with deep 
+                technical knowledge in Zoho CRM, Zoho One, Zoho Flow, and API-led 
+                integrations. We help you eliminate operational silos and 
+                drive predictable growth in a unified cloud environment.
               </p>
               <div className="pt-4">
                 <Link
@@ -505,8 +401,11 @@ export default function ZohoIndustriesClient() {
         </div>
       </section>
 
-      {/* ─────────────── ALL INDUSTRIES — ALTERNATING ROWS ─────────────── */}
-      <section id="industries" className="py-24 relative overflow-hidden bg-gradient-to-b from-[#f4f9ff] via-white to-[#f5f8ff]">
+      {/* ─────────────── ALL SERVICES — ALTERNATING ROWS ─────────────── */}
+      <section id="services" className="py-24 relative overflow-hidden bg-gradient-to-b from-[#f4f9ff] via-white to-[#f5f8ff]">
+        {/* Decorative Background Orbs */}
+        <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-100/40 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+        <div className="absolute bottom-1/3 right-0 w-[600px] h-[600px] bg-indigo-100/40 rounded-full blur-[100px] translate-x-1/2 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -515,19 +414,19 @@ export default function ZohoIndustriesClient() {
             className="text-center mb-16"
           >
             <span className="bg-blue-600/10 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
-              Industry Portfolio
+              Service Portfolio
             </span>
             <h2 className="text-4xl lg:text-5xl font-bold mt-6 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#1e3a8a] via-blue-600 to-black">
-              Industries We Serve
+              Comprehensive Zoho Expertise
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              We empower businesses across diverse sectors with Zoho's
-              robust cloud architecture and industry-specialized capabilities.
+              We empower global enterprises with end-to-end services that cover
+              every phase of the Zoho lifecycle.
             </p>
           </motion.div>
 
           <div className="flex flex-col">
-            {industries.map((ind, index) => {
+            {services.map((ind, index) => {
               const isEven = index % 2 === 0;
               return (
                 <motion.div
@@ -536,13 +435,13 @@ export default function ZohoIndustriesClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-12 lg:py-16 ${index < industries.length - 1 ? "border-b border-gray-200" : ""}`}
+                  className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-12 lg:py-16 ${index < services.length - 1 ? "border-b border-gray-200" : ""}`}
                 >
                   {/* IMAGE SIDE */}
                   <div
                     className={`relative ${isEven ? "order-1" : "order-1 lg:order-2"}`}
                   >
-                    <div className="relative h-64 sm:h-72 lg:h-80 rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10">
+                    <div className="relative h-64 sm:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/10">
                       <Image
                         src={ind.image}
                         alt={ind.title}
@@ -560,9 +459,11 @@ export default function ZohoIndustriesClient() {
                     <h3 className="text-2xl lg:text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-black via-[#1e3a8a] to-blue-600 leading-tight mb-3">
                       {ind.title}
                     </h3>
-                    <p className="text-gray-500 text-base leading-relaxed mb-5 line-clamp-4">
-                      {ind.description}
-                    </p>
+                    <div className="text-gray-500 text-base leading-relaxed mb-6 space-y-4">
+                      {ind.description.split('\n\n').map((paragraph, i) => (
+                        <p key={i}>{paragraph}</p>
+                      ))}
+                    </div>
                     <Link
                       href={ind.link}
                       className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300 group shadow-lg hover:shadow-xl hover:scale-105"
@@ -589,7 +490,7 @@ export default function ZohoIndustriesClient() {
                           "none";
                       }}
                     >
-                      View Solutions
+                      View Details
                       <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                     </Link>
                   </div>
@@ -600,7 +501,7 @@ export default function ZohoIndustriesClient() {
         </div>
       </section>
 
-      {/* ─────────────── SERVICES SECTION ─────────────── */}
+      {/* ─────────────── INDUSTRIES SECTION ─────────────── */}
       <section className="py-20 bg-gray-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-5">
           <motion.div
@@ -610,19 +511,19 @@ export default function ZohoIndustriesClient() {
             className="text-center"
           >
             <span className="bg-blue-600/10 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
-              Our Services
+              Our Vertical Expertise
             </span>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-6 mb-4">
-              Zoho Services
+              Industries We Serve
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              End-to-end services to ensure your Zoho environment is
-              perfectly aligned with your business needs.
+              Tailored Zoho solutions for every sector. Discover how we 
+              optimize operations for your specific industry.
             </p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-6">
-            {services.map((service, index) => {
+            {industries.map((ind, index) => {
               const cardBgColors = [
                 "bg-gradient-to-br from-white to-[#eef0ff]",
                 "bg-gradient-to-br from-white to-[#eaf6ff]",
@@ -669,17 +570,17 @@ export default function ZohoIndustriesClient() {
                       }}
                       className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-5"
                     >
-                      <service.icon className="w-6 h-6 text-white" />
+                      <ind.icon className="w-6 h-6 text-white" />
                     </motion.div>
                     <h2 className="text-lg font-bold text-gray-900 leading-tight">
-                      {service.title}
+                      {ind.title}
                     </h2>
                     <p className="text-gray-600 text-sm leading-relaxed mt-2">
-                      {service.description}
+                      {ind.description}
                     </p>
                     <div className="mt-6 border-t border-gray-300 pt-3">
                       <Link
-                        href={service.href}
+                        href={ind.href}
                         className="text-black hover:text-blue-600 text-sm font-medium transition-all"
                       >
                         Learn More →
@@ -704,7 +605,7 @@ export default function ZohoIndustriesClient() {
           >
             <Image
               src="/images/lap/group1.webp"
-              alt="Zoho Industries"
+              alt="Zoho Services"
               fill
               className="object-cover"
               sizes="(max-width: 1200px) 100vw, 1200px"
@@ -714,7 +615,7 @@ export default function ZohoIndustriesClient() {
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />
             <div className="relative z-10 max-w-2xl text-left">
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                Scale your industry operations with the Zoho Ecosystem.
+                Scale your vision with the Zoho Business Cloud. 
                 Ready to get started?
               </h2>
               <div className="flex justify-start">
