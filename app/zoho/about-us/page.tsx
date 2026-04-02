@@ -31,7 +31,7 @@ import {
 } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import FlipNumbers from 'react-flip-numbers';
-import { motion, useAnimation, type Variants, AnimatePresence } from 'framer-motion';
+import { motion, useAnimation, type Variants, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
 const ZohoContactForm = dynamic(() => import('../components/ZohoContactForm'), { ssr: false });
@@ -274,7 +274,7 @@ const slideInLeft: Variants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { delay: 0.8, duration: 0.7, ease: [0.22, 1, 0.36, 1] as any }
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as any }
   }
 };
 
@@ -330,18 +330,18 @@ function WhoWeAreSection() {
           className="flex-1 space-y-6 text-left flex flex-col justify-center"
         >
           {/* Main Heading */}
-          <motion.h2 variants={fadeInUp} className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-blue-600 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
+          <motion.h2 variants={slideInLeft} className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-blue-600 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
             Empowering You<br />to Secure Your<br />
             <span className="italic font-serif">Business & Growth</span>
           </motion.h2>
 
           {/* Description */}
-          <motion.p variants={fadeInUp} className="text-gray-600 text-sm md:text-base leading-relaxed max-w-xl">
+          <motion.p variants={slideInLeft} className="text-gray-600 text-sm md:text-base leading-relaxed max-w-xl">
             AGSuite Technologies is a trusted Advanced Zoho Partner helping businesses streamline operations with a unified cloud CRM and business platform. We specialize in Zoho implementation, customization, and integration to improve efficiency and support scalable growth.
           </motion.p>
 
           {/* Feature Cards */}
-          <motion.div variants={fadeInUp} className="space-y-3 pt-2">
+          <motion.div variants={slideInLeft} className="space-y-3 pt-2">
             {/* Advanced Zoho Partner */}
             <div className="flex items-start gap-3">
               <div className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
@@ -444,7 +444,7 @@ function StrategicPartnersSection() {
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-3xl md:text-4xl lg:text-5xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-gray-50 via-blue-500 to-blue-500 leading-tight"
               >
                 Global Impact & Expertise
@@ -453,7 +453,7 @@ function StrategicPartnersSection() {
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-gray-300 text-base md:text-2xl leading-relaxed max-w-lg mx-auto lg:mx-0"
               >
                 We collaborate with world-class technology partners to deliver scalable, innovative, and
@@ -466,7 +466,7 @@ function StrategicPartnersSection() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
               className="flex justify-center lg:justify-start"
             >
               <div className="bg-white/100 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl">
@@ -494,7 +494,7 @@ function StrategicPartnersSection() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.15 }}
+                    transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                     className="relative group p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm overflow-hidden text-center"
                   >
                     {/* Decorative faint icon bg */}
@@ -595,8 +595,18 @@ function AboutStatsSection() {
 export default function AboutClient() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [videoSrc, setVideoSrc] = useState('/images/videos/aboutus.mp4');
+  const [videoSrc, setVideoSrc] = useState('/images/videos/zohoaboutus.mp4');
+  const heroRef = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
+
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
+  const borderRadius = useTransform(scrollYProgress, [0, 1], [0, 64]);
+  const padding = useTransform(scrollYProgress, [0, 1], ["0px", "80px"]);
 
   useEffect(() => {
     setIsMounted(true);
@@ -608,7 +618,7 @@ export default function AboutClient() {
       if (window.innerWidth <= 768) {
         setVideoSrc('/images/videos/zohomobile aboutus.mp4');
       } else {
-        setVideoSrc('/images/videos/aboutus.mp4');
+        setVideoSrc('/images/videos/zohoaboutus.mp4');
       }
     };
 
@@ -629,56 +639,69 @@ export default function AboutClient() {
   }, [isPlaying]);
 
   return (
-    <main id="main" role="main" className="flex flex-col">
+    <main id="main" role="main" className="flex flex-col bg-white">
       {/* Hero Section */}
       <section
-        className="relative w-full h-screen overflow-hidden isolate"
+        ref={heroRef}
+        className="relative w-full h-[120vh] mt-0 isolate bg-white"
         aria-labelledby="hero-title"
         role="banner"
       >
-        {/* Background Video */}
-        <video
-          key={videoSrc}
-          ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          src={videoSrc}
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
+        {/* Background Video Container */}
+        <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center translate-z-0">
+          <motion.div
+             style={{
+               scale,
+               borderRadius,
+               padding,
+             }}
+             className="relative w-full h-full overflow-hidden z-0 flex items-center justify-center bg-white"
+          >
+            <video
+              key={videoSrc}
+              ref={videoRef}
+              className="w-full h-full object-cover shadow-2xl"
+              src={videoSrc}
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{ borderRadius: 'inherit' }}
+            />
 
-        {/* Radial Glow Effect */}
-        <div
-          className="pointer-events-none absolute -bottom-10 left-0 right-0 h-48 z-1"
-          aria-hidden="true"
-          style={{
-            background:
-              'radial-gradient(60% 60% at 30% 100%, rgba(37,99,235,0.25), transparent 70%)',
-          }}
-        />
+            {/* Radial Glow Effect */}
+            <div
+              className="pointer-events-none absolute -bottom-10 left-0 right-0 h-48 z-1"
+              aria-hidden="true"
+              style={{
+                background:
+                  'radial-gradient(60% 60% at 30% 100%, rgba(37,99,235,0.25), transparent 70%)',
+              }}
+            />
+
+            {/* Play / Pause Button */}
+            <button
+              type="button"
+              onClick={togglePlay}
+              className="absolute bottom-10 right-10 z-20 p-3 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm transition-all duration-300"
+              aria-label={isPlaying ? 'Pause video' : 'Play video'}
+              suppressHydrationWarning={true}
+            >
+              {isPlaying ? (
+                <Pause className="w-6 h-6 text-white" />
+              ) : (
+                <Play className="w-6 h-6 text-white" />
+              )}
+            </button>
+          </motion.div>
+        </div>
 
         {/* Content (optional) */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white pointer-events-none">
           <h1 id="hero-title" className="sr-only">
             About AGSuite Technologies
           </h1>
         </div>
-
-        {/* Play / Pause Button */}
-        <button
-          type="button"
-          onClick={togglePlay}
-          className="absolute bottom-6 right-6 z-20 p-3 rounded-full bg-white/20 hover:bg-white/30 transition"
-          aria-label={isPlaying ? 'Pause video' : 'Play video'}
-          suppressHydrationWarning={true}
-        >
-          {isPlaying ? (
-            <Pause className="w-6 h-6 text-white" />
-          ) : (
-            <Play className="w-6 h-6 text-white" />
-          )}
-        </button>
       </section>
 
       <AboutStatsSection />
@@ -714,12 +737,12 @@ export default function AboutClient() {
                   />
                 </div>
 
-                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-blue-700 rounded-2xl shadow-lg px-3 py-2 w-[65%] flex items-center gap-4">
-                  <div className="w-18 h-18 flex items-center justify-center rounded-xl text-white-600 stroke-3">
+                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-gradient-to-br from-red-50 via-blue-50 to-emerald-50 backdrop-blur-md rounded-2xl shadow-xl px-4 py-3 w-[75%] flex items-center gap-4 border border-white/50">
+                  <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-red-100/50">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-10 h-10 text-white stroke-2"
-                      fill="white"
+                      className="w-7 h-7 text-red-600 stroke-2"
+                      fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
@@ -731,8 +754,8 @@ export default function AboutClient() {
                     </svg>
                   </div>
 
-                  <div className="flex flex-col leading-tight">
-                    <p className="text-md text-gray-100">
+                  <div className="flex flex-col leading-snug">
+                    <p className="text-[15px] font-bold bg-gradient-to-r from-red-600 to-black bg-clip-text text-transparent">
                       Empowering businesses with scalable solutions.
                     </p>
                   </div>
@@ -824,23 +847,25 @@ export default function AboutClient() {
                 />
               </div>
 
-              <div className="absolute left-[10px] bottom-[20px] bg-blue-600 text-white p-5 rounded-xl shadow-xl max-w-[300px] z-20">
-                <div className="flex items-start gap-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-16 h-6 text-white stroke-2"
-                    fill="white"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M7 7a5 5 0 00-5 5v5h5v-5H5.5A2.5 2.5 0 017 9.5V7zm12 0a5 5 0 00-5 5v5h5v-5h-1.5A2.5 2.5 0 0119 9.5V7z"
-                    />
-                  </svg>
+              <div className="absolute left-[10px] bottom-[20px] bg-gradient-to-br from-red-50/95 via-blue-50/95 to-emerald-50/95 backdrop-blur-sm p-5 rounded-2xl shadow-2xl max-w-[300px] z-20 border border-white/50">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-red-100/50">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-8 h-8 text-red-600 stroke-2"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M7 7a5 5 0 00-5 5v5h5v-5H5.5A2.5 2.5 0 017 9.5V7zm12 0a5 5 0 00-5 5v5h5v-5h-1.5A2.5 2.5 0 0119 9.5V7z"
+                      />
+                    </svg>
+                  </div>
 
-                  <p className="text-md leading-relaxed">
+                  <p className="text-[17px] font-bold bg-gradient-to-r from-red-600 to-black bg-clip-text text-transparent leading-relaxed pt-1">
                     To lead globally with innovative, client-focused technology
                   </p>
                 </div>

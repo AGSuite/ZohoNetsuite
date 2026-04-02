@@ -68,6 +68,7 @@ interface ZohoServiceTemplateProps {
   introTitle: string;
   introDescription1: string;
   introDescription2: string;
+  bgImage?: string;
   faqs?: { question: string; answer: string }[];
 }
 
@@ -102,6 +103,7 @@ export default function ZohoServiceTemplate({
   introTitle,
   introDescription1,
   introDescription2,
+  bgImage,
   faqs = [],
 }: ZohoServiceTemplateProps) {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
@@ -111,17 +113,19 @@ export default function ZohoServiceTemplate({
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen overflow-hidden flex flex-col">
-        {/* ── Hero Background Image ── */}
-        <div className="absolute inset-0 z-0">
+        {/* ── Hero Background ── */}
+        <div className="absolute inset-0 z-0 bg-[#000814]">
           <Image
-            src={heroImage}
+            src={bgImage || introImage}
             alt="Hero Background"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center opacity-30 select-none pointer-events-none"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#000814] via-transparent to-[#000814]/80" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
+          <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
         </div>
 
         <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10">
@@ -222,10 +226,11 @@ export default function ZohoServiceTemplate({
                   style={{ height: 390 }}
                 >
                   <Image
-                    src={introImage}
+                    src={heroImage}
                     alt={title}
                     fill
                     className="object-cover object-center"
+                    priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                 </div>

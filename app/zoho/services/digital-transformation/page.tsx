@@ -203,7 +203,7 @@ export default function ZohoDigitalTransformationPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/netsuiteimages/Servicesimg/Digital transformation.webp"
+      heroImage="/images/zohoimages/zoho implementation.png"
       introImage="/images/Services/Digitalservices.webp"
       introTitle="Zoho Business Transformation Done Right."
       introDescription1="Digital transformation isn't just about software — it's about reimagining how your business operates and grows. Zoho provides the unified platform, and AGSuite provides the expertise to make it real."

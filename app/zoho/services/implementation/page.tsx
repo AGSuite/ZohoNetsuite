@@ -159,8 +159,9 @@ export default function ZohoImplementationPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/Services/managedservices.webp"
-      introImage="/images/netsuiteimages/Servicesimg/finamce.webp"
+      heroImage="/images/zohoimages/zoho implementation.png"
+      introImage="/images/people/laptopgirl.webp"
+      bgImage="/images/zohoimages/background/zohobg.webp"
       introTitle="A Risk-Free Path to Zoho Success."
       introDescription1="A successful software implementation is more than just turning on an app — it's a strategic business transformation. Whether you are deploying Zoho CRM or the entire Zoho One suite, our experts guide you through every phase."
       introDescription2="AGSuite's implementation methodology combines deep technical expertise with industry best practices, ensuring your system is configured to scale, your data is secure, and your team is ready to succeed from day one."

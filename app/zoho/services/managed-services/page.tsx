@@ -120,8 +120,9 @@ export default function ZohoManagedServicesPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/netsuiteimages/Servicesimg/managedservices.webp"
+      heroImage="/images/Services/managedservices.webp"
       introImage="/images/Services/managed.webp"
+      bgImage="/images/zohoimages/background/zohobg.webp"
       introTitle="Proactive Zoho Support You Can Trust."
       introDescription1="Maintaining a high-performing Zoho environment requires more than just reactive fixes. Our managed services provide the strategic and technical depth to keep your system ahead of your business needs."
       introDescription2="We act as an extension of your team, providing the peace of mind that your Zoho platform is optimized, secure, and ready for growth every day of the year."

@@ -162,37 +162,76 @@ export default function ContactFormDesign4() {
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
               {/* Left Side - Info */}
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="flex flex-col h-full justify-between p-8 lg:p-16"
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.12,
+                      delayChildren: 0.2
+                    }
+                  }
+                }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="flex flex-col h-full justify-between p-8 lg:p-14"
               >
                 <div>
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.15]">
+                  <motion.h2 
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                    }}
+                    className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.15]"
+                  >
                     Ready to Transform{" "}
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400">
                       Your Business?
                     </span>
-                  </h2>
+                  </motion.h2>
 
-                  <div className="space-y-4 mb-10 text-gray-300">
+                  <motion.div 
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                    }}
+                    className="space-y-4 mb-10 text-gray-300"
+                  >
                     <p className="text-lg">Take the first step towards streamlined operations and accelerated growth with Oracle NetSuite.</p>
-                  </div>
+                  </motion.div>
 
-                  <div className="mb-10">
+                  <motion.div 
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                    }}
+                    className="mb-10"
+                  >
                     <Image src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" alt="NetSuite Partner" width={220} height={70} className="h-16 w-auto object-contain" />
-                  </div>
+                  </motion.div>
 
                   <div className="grid grid-cols-2 gap-4 mb-8 text-white">
-                    <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
+                    <motion.div 
+                      variants={{
+                        hidden: { opacity: 0, scale: 0.95, y: 20 },
+                        visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5 } }
+                      }}
+                      className="p-5 rounded-2xl bg-white/5 border border-white/10"
+                    >
                       <p className="text-3xl font-bold text-blue-400 mb-1">180+</p>
                       <p className="text-gray-400 text-sm">Successful Implementations</p>
-                    </div>
-                    <div className="p-5 rounded-2xl bg-white/5 border border-white/10">
+                    </motion.div>
+                    <motion.div 
+                      variants={{
+                        hidden: { opacity: 0, scale: 0.95, y: 20 },
+                        visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5, delay: 0.1 } }
+                      }}
+                      className="p-5 rounded-2xl bg-white/5 border border-white/10"
+                    >
                       <p className="text-3xl font-bold text-purple-400 mb-1">50+</p>
                       <p className="text-gray-400 text-sm">NetSuite Experts</p>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </motion.div>
