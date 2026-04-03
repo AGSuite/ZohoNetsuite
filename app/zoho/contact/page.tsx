@@ -372,9 +372,9 @@ export default function ZohoContactPage() {
                     acceptCharset="UTF-8"
                     className="space-y-5"
                   >
-                    <input type="text" className="hidden" name="xnQsjsdp" defaultValue="d350d5f190b98a73788f37a928249b0c103447cddd32d7b43650abefe9008176" readOnly />
+                    <input type="text" className="hidden" name="xnQsjsdp" defaultValue="19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f" readOnly />
                     <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                    <input type="text" className="hidden" name="xmIwtLD" defaultValue="0c89f378a8fa7adc2a64861fb7484f215a635922aa35616269ed9654a77c1423e1e3996b799ddf35ab0dd58d601aac7e" readOnly />
+                    <input type="text" className="hidden" name="xmIwtLD" defaultValue="8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee" readOnly />
                     <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
                     <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/best-cloud-based-crm/thank-you/" readOnly />
                     <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
@@ -399,7 +399,7 @@ export default function ZohoContactPage() {
                       <div>
                         <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Mobile Number *</label>
                         <input type="tel" name="Mobile" required placeholder="+91 00000 00000" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
-                      </div>
+                       </div>
                       <div>
                         <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Job Title *</label>
                         <input type="text" name="Designation" required placeholder="CTO" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
@@ -426,12 +426,15 @@ export default function ZohoContactPage() {
                         <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Annual Revenue *</label>
                         <select name="Annual Revenue" id="Annual_Revenue" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
                           <option value="">Select Revenue</option>
-                          <option value='Under&#x20;&#x24;500K'>Under &#x24;500K</option>
-                          <option value='&#x24;500k&#x20;to&#x20;&#x24;1M'>&#x24;500k to &#x24;1M</option>
-                          <option value='&#x24;1M&#x20;to&#x20;&#x24;2M'>&#x24;1M to &#x24;2M</option>
-                          <option value='&#x24;2M&#x20;to&#x20;&#x24;5M'>&#x24;2M to &#x24;5M</option>
-                          <option value='&#x24;5M&#x20;to&#x20;&#x24;10M'>&#x24;5M to &#x24;10M</option>
-                          <option value='&#x24;10M+'>&#x24;10M+</option>
+                          <option value="Under&#x20;&#x24;500K">Under &#x24;500K</option>
+                          <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">&#x24;500k to &#x24;1M</option>
+                          <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">&#x24;1M to &#x24;20M</option>
+                          <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">&#x24;2M to &#x24;5M</option>
+                          <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">&#x24;5M to &#x24;10M</option>
+                          <option value='&#x24;10M&#x20;to&#x20;&#x24;20M'>&#x24;10M to &#x24;20M</option>
+                          <option value='&#x24;20M&#x20;to&#x20;&#x24;30M'>&#x24;20M to &#x24;30M</option>
+                          <option value='&#x24;30M&#x20;to&#x20;&#x24;50M'>&#x24;30M to &#x24;50M</option>
+                          <option value='&#x24;50M&#x20;to&#x20;&#x24;100M'>&#x24;50M to &#x24;100M</option>
                         </select>
                       </div>
                     </div>
@@ -513,12 +516,13 @@ export default function ZohoContactPage() {
                         </span>
                       </label>
 
-                      <button type="submit" className="shrink-0 inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-full transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm">
+                      <button type="submit" className="shrink-0 inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-full transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm formsubmit-contact">
                         <Send className="w-4 h-4" />
                         Send Message
                       </button>
                     </div>
                   </form>
+
                 </div>
               </div>
             </motion.div>

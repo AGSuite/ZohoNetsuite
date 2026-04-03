@@ -314,9 +314,9 @@ export default function ZohoContactForm() {
                                 variants={containerVariants}
                                 className="space-y-6"
                             >
-                                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="d350d5f190b98a73788f37a928249b0c103447cddd32d7b43650abefe9008176" readOnly />
+                                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f" readOnly />
                                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                                <input type="text" className="hidden" name="xmIwtLD" defaultValue="0c89f378a8fa7adc2a64861fb7484f215a635922aa35616269ed9654a77c1423e1e3996b799ddf35ab0dd58d601aac7e" readOnly />
+                                <input type="text" className="hidden" name="xmIwtLD" defaultValue="8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee" readOnly />
                                 <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
                                 <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/best-cloud-based-crm/thank-you/" readOnly />
                                 <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
@@ -370,12 +370,15 @@ export default function ZohoContactForm() {
                                         <div className="relative group">
                                             <select name="Annual Revenue" required defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000026445204?.(); }} className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md pr-10">
                                                 <option value="" disabled>Select Yearly Revenue</option>
-                                                <option value="Under&#x20;&#x24;500K">Under $500K</option>
-                                                <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">$500k - $1M</option>
-                                                <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">$1M - $2M</option>
-                                                <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">$2M - $5M</option>
-                                                <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">$5M - $10M</option>
-                                                <option value="&#x24;10M+">$10M+</option>
+                                                <option value="Under&#x20;&#x24;500K">Under &#x24;500K</option>
+                                                <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">&#x24;500k to &#x24;1M</option>
+                                                <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">&#x24;1M to &#x24;2M</option>
+                                                <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">&#x24;2M to &#x24;5M</option>
+                                                <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">&#x24;5M to &#x24;10M</option>
+                                                <option value='&#x24;10M&#x20;to&#x20;&#x24;20M'>&#x24;10M to &#x24;20M</option>
+                                                <option value='&#x24;20M&#x20;to&#x20;&#x24;30M'>&#x24;20M to &#x24;30M</option>
+                                                <option value='&#x24;30M&#x20;to&#x20;&#x24;50M'>&#x24;30M to &#x24;50M</option>
+                                                <option value='&#x24;50M&#x20;to&#x20;&#x24;100M'>&#x24;50M to &#x24;100M</option>
                                             </select>
                                             <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-blue-600">
                                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" /></svg>
@@ -434,6 +437,7 @@ export default function ZohoContactForm() {
                                         </div>
                                     </motion.div>
                                 </div>
+
 
 
 

@@ -27,19 +27,6 @@ const PARTICLES = [
     { w: 1, h: 1, top: 40, left: 42, dur: 3.5, delay: 0.5 },
 ];
 
-declare global {
-    interface Window {
-        $zoho?: any;
-        addAriaSelected409531000000398090?: (e: any) => void;
-        rccallback409531000000398090?: () => void;
-        reCaptchaAlert409531000000398090?: () => boolean;
-        validateEmail409531000000398090?: () => boolean;
-        validateNumber?: (e: KeyboardEvent) => boolean;
-        sendEmail?: () => void;
-        trackVisitor409531000000398090?: () => void;
-        checkMandatory409531000000398090?: (e: any) => boolean;
-    }
-}
 
 export default function RequestQuotePremium() {
     const [isClient, setIsClient] = useState(false);
@@ -433,13 +420,14 @@ export default function RequestQuotePremium() {
                                             className="space-y-4"
                                         >
                                             {/* Hidden fields */}
-                                            <input type='text' className="hidden" name='xnQsjsdp' value='25b67a18495a38c26c4529cef55d54f6bace20476d7a4d5e2bb7d894c19c7f2e' readOnly />
+                                            <input type='text' className="hidden" name='xnQsjsdp' value='19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f' readOnly />
                                             <input type='hidden' name='zc_gad' id='zc_gad' value='' />
-                                            <input type='text' className="hidden" name='xmIwtLD' value='95d875217118008a2ecf7947f0648d183623cabaa0a94862090253d05e14a18ca712257b6dee380bd8eefbc51a4a6a91' readOnly />
+                                            <input type='text' className="hidden" name='xmIwtLD' value='8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee' readOnly />
                                             <input type='text' className="hidden" name='actionType' value='TGVhZHM=' readOnly />
-                                            <input type='text' className="hidden" name='returnURL' value='https://agsuitetech.com/thankyou.php' readOnly />
+                                            <input type='text' className="hidden" name='returnURL' value='https://agsuitetech.com/best-cloud-based-crm/thank-you/' readOnly />
                                             <input type='text' className="hidden" id='ldeskuid' name='ldeskuid' readOnly />
                                             <input type='text' className="hidden" id='LDTuvid' name='LDTuvid' readOnly />
+
 
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                 <input
@@ -507,29 +495,24 @@ export default function RequestQuotePremium() {
                                                 </select>
                                                 <select
                                                     className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
-                                                    id='LEADCF40'
+                                                    id='Annual_Revenue'
                                                     onChange={handleSelectChange}
                                                     required
-                                                    name='LEADCF40'
+                                                    name='Annual Revenue'
                                                     defaultValue=""
                                                 >
                                                     <option value="" disabled>Annual Revenue *</option>
-                                                    <option value='Under $500K'>Under $500K</option>
-                                                    <option value='$500k to $1M'>$500k to $1M</option>
-                                                    <option value='$1M to $2M'>$1M to $2M</option>
-                                                    <option value='$2M to $5M'>$2M to $5M</option>
-                                                    <option value='$5M to $10M'>$5M to $10M</option>
-                                                    <option value='$10M to $20M'>$10M to $20M</option>
-                                                    <option value='$20M to $30M'>$20M to $30M</option>
-                                                    <option value='$30M to $50M'>$30M to $50M</option>
-                                                    <option value='$50M to $100M'>$50M to $100M</option>
-                                                    <option value='$100M to $150M'>$100M to $150M</option>
-                                                    <option value='$150M to $200M'>$150M to $200M</option>
-                                                    <option value='$200M to $250M'>$200M to $250M</option>
-                                                    <option value='$250M to $300M'>$250M to $300M</option>
-                                                    <option value='$300M to $400M'>$300M to $400M</option>
-                                                    <option value='$400M to $500M'>$400M to $500M</option>
+                                                    <option value="Under&#x20;&#x24;500K">Under &#x24;500K</option>
+                                                    <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">&#x24;500k to &#x24;1M</option>
+                                                    <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">&#x24;1M to &#x24;2M</option>
+                                                    <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">&#x24;2M to &#x24;5M</option>
+                                                    <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">&#x24;5M to &#x24;10M</option>
+                                                    <option value='&#x24;10M&#x20;to&#x20;&#x24;20M'>&#x24;10M to &#x24;20M</option>
+                                                    <option value='&#x24;20M&#x20;to&#x20;&#x24;30M'>&#x24;20M to &#x24;30M</option>
+                                                    <option value='&#x24;30M&#x20;to&#x20;&#x24;50M'>&#x24;30M to &#x24;50M</option>
+                                                    <option value='&#x24;50M&#x20;to&#x20;&#x24;100M'>&#x24;50M to &#x24;100M</option>
                                                 </select>
+
                                                 <select
                                                     className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
                                                     id='LEADCF41'

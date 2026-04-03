@@ -1,19 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import {
     Sparkles,
     CheckCircle,
-    Target,
     ChevronRight,
-    Send,
     ArrowRight,
     Briefcase,
     HelpCircle,
-    Clock
+    Clock,
+    Target,
+    Send
 } from "lucide-react";
 
 /* ─── Particles ───────────────────────────────────────────────────────────── */
@@ -26,26 +27,93 @@ const PARTICLES = [
     { w: 2.5, h: 2.5, top: 85, left: 30, dur: 5.5, delay: 1.5 },
 ];
 
-export default function FreeConsultationTopLevel() {
-    const [submitted, setSubmitted] = useState(false);
-    const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        company: "",
-        jobTitle: "",
-        serviceInterest: "",
-        annualRevenue: "",
-        message: "",
-        privacyAccepted: false,
-    });
+declare global {
+  interface Window {
+    validateEmail409531000026445204_ns?: () => boolean;
+    checkMandatory409531000026445204_ns?: (e: any) => boolean;
+    trackVisitor409531000026445204_ns?: () => void;
+  }
+}
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 5000);
+export default function FreeConsultationTopLevel() {
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+
+        window.validateEmail409531000026445204_ns = function () {
+            const form = document.forms.namedItem('WebToLeads409531000026445204_ns');
+            if (!form) return true;
+            const emailFld = form.querySelectorAll('input[type="email"], [ftype="email"]');
+            for (let i = 0; i < emailFld.length; i++) {
+                const emailVal = (emailFld[i] as HTMLInputElement).value;
+                if (emailVal.replace(/^\s+|\s+$/g, '').length !== 0) {
+                    const atpos = emailVal.indexOf('@');
+                    const dotpos = emailVal.lastIndexOf('.');
+                    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+                        alert('Please enter a valid email address.');
+                        (emailFld[i] as HTMLInputElement).focus();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        };
+
+        window.checkMandatory409531000026445204_ns = function (e: any) {
+            const form = e.target as HTMLFormElement;
+            const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Annual Revenue', 'Description'];
+            const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Annual Revenue', 'Type Message'];
+
+            for (let i = 0; i < mndFileds.length; i++) {
+                const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+                if (fieldObj && fieldObj.value.replace(/^\s+|\s+$/g, '').length === 0) {
+                    alert(fldLangVal[i] + ' cannot be empty.');
+                    fieldObj.focus();
+                    return false;
+                }
+            }
+
+            const recap = document.getElementById('recap409531000026445204_ns');
+            if (recap && recap.getAttribute('captcha-verified') === 'false') {
+                const recapErr = document.getElementById('recapErr409531000026445204_ns');
+                if (recapErr) recapErr.style.visibility = 'visible';
+                return false;
+            }
+
+            window.trackVisitor409531000026445204_ns?.();
+            if (window.validateEmail409531000026445204_ns && !window.validateEmail409531000026445204_ns()) {
+                return false;
+            }
+
+            return true;
+        };
+
+        window.trackVisitor409531000026445204_ns = function () {
+          try {
+            if (window.$zoho?.salesiq?.visitor) {
+              const form = document.forms.namedItem('WebToLeads409531000026445204_ns');
+              if (form) {
+                const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
+                if (LDTuvidObj) { LDTuvidObj.value = window.$zoho.salesiq.visitor.uniqueid() || ''; }
+                const nameField = form.elements.namedItem('Last Name') as HTMLInputElement;
+                if (nameField?.value) { window.$zoho.salesiq.visitor.name(nameField.value); }
+                const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
+                if (emailObj?.value) { window.$zoho.salesiq.visitor.email(emailObj.value); }
+              }
+            }
+          } catch (e) { console.log('Zoho tracking error:', e); }
+        };
+    }, []);
+
+    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        if (window.checkMandatory409531000026445204_ns && !window.checkMandatory409531000026445204_ns(e.nativeEvent)) {
+            e.preventDefault();
+            return;
+        }
     };
+
+    if (!isClient) return null;
 
     return (
         <div className="min-h-screen bg-white selection:bg-blue-900 selection:text-white">
@@ -185,142 +253,185 @@ export default function FreeConsultationTopLevel() {
                                         <p className="text-gray-500 text-base">Select your area of interest below — we'll connect soon.</p>
                                     </div>
 
-                                    {submitted ? (
-                                        <motion.div
-                                            initial={{ opacity: 0, scale: 0.95 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            className="flex flex-col items-center justify-center py-16 text-center gap-4"
-                                        >
-                                            <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
-                                                <CheckCircle className="w-8 h-8 text-green-600" />
-                                            </div>
-                                            <h3 className="text-xl font-medium text-gray-900">Request Sent!</h3>
-                                            <p className="text-gray-500 max-w-xs">Thank you for your interest. Our experts will reach out within 24 hours.</p>
-                                        </motion.div>
-                                    ) : (
-                                        <form onSubmit={handleSubmit} className="space-y-5">
-                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                                <div>
-                                                    <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
-                                                        First Name <span className="text-blue-600">*</span>
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        required
-                                                        placeholder="John"
-                                                        value={formData.firstName}
-                                                        onChange={e => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
-                                                        className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
-                                                        Last Name <span className="text-blue-600">*</span>
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        required
-                                                        placeholder="Doe"
-                                                        value={formData.lastName}
-                                                        onChange={e => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
-                                                        className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
-                                                    />
-                                                </div>
-                                            </div>
+                                    <form 
+                                        id="webform409531000026445204_ns"
+                                        action="https://crm.zoho.in/crm/WebToLeadForm" 
+                                        name="WebToLeads409531000026445204_ns" 
+                                        method="POST" 
+                                        onSubmit={handleFormSubmit}
+                                        acceptCharset="UTF-8"
+                                        className="space-y-5"
+                                    >
+                                        <input type="text" className="hidden" name="xnQsjsdp" value="19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f" readOnly />
+                                        <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+                                        <input type="text" className="hidden" name="xmIwtLD" value="8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee" readOnly />
+                                        <input type="text" className="hidden" name="actionType" value="TGVhZHM=" readOnly />
+                                        <input type="text" className="hidden" name="returnURL" value="https://agsuitetech.com/best-cloud-based-crm/thank-you/" readOnly />
+                                        {/* Do not remove this code. */}
+                                        <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
+                                        <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
 
-                                            <div>
-                                                <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                            <div className="space-y-1.5">
+                                                <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
+                                                    Full Name <span className="text-blue-600">*</span>
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    name="Last Name"
+                                                    required
+                                                    placeholder="John Doe"
+                                                    className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
+                                                />
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
                                                     Business Email <span className="text-blue-600">*</span>
                                                 </label>
                                                 <input
                                                     type="email"
+                                                    name="Email"
                                                     required
                                                     placeholder="john@company.com"
-                                                    value={formData.email}
-                                                    onChange={e => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                                                    className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
+                                                    className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
                                                 />
                                             </div>
+                                        </div>
 
-                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                                <div>
-                                                    <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
-                                                        Phone Number
-                                                    </label>
-                                                    <input
-                                                        type="tel"
-                                                        placeholder="+1 (555) 000-0000"
-                                                        value={formData.phone}
-                                                        onChange={e => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                                                        className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
-                                                        Job Title
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        placeholder="CFO"
-                                                        value={formData.jobTitle}
-                                                        onChange={e => setFormData(prev => ({ ...prev, jobTitle: e.target.value }))}
-                                                        className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
-                                                    Company Name
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                            <div className="space-y-1.5">
+                                                <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
+                                                    Role <span className="text-blue-600">*</span>
                                                 </label>
                                                 <input
                                                     type="text"
-                                                    placeholder="Company Inc."
-                                                    value={formData.company}
-                                                    onChange={e => setFormData(prev => ({ ...prev, company: e.target.value }))}
-                                                    className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
+                                                    name="Designation"
+                                                    required
+                                                    placeholder="CFO / Manager"
+                                                    className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
                                                 />
                                             </div>
+                                            <div className="space-y-1.5">
+                                                <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
+                                                    Mobile <span className="text-blue-600">*</span>
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    name="Mobile"
+                                                    required
+                                                    placeholder="Phone Number"
+                                                    className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
+                                                />
+                                            </div>
+                                        </div>
 
-                                            <div>
-                                                <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
-                                                    Service Interest <span className="text-blue-600">*</span>
+                                        <div className="space-y-1.5">
+                                            <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
+                                                Company Name <span className="text-blue-600">*</span>
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="Company"
+                                                required
+                                                placeholder="Company Inc."
+                                                className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
+                                            />
+                                        </div>
+
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                            <div className="space-y-1.5">
+                                                <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
+                                                    Annual Revenue <span className="text-blue-600">*</span>
                                                 </label>
                                                 <select
-                                                    value={formData.serviceInterest}
-                                                    onChange={e => setFormData(prev => ({ ...prev, serviceInterest: e.target.value }))}
-                                                    className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer"
+                                                    name="Annual Revenue"
+                                                    required
+                                                    className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer"
                                                 >
-                                                    <option value="">Select Service Interest</option>
-                                                    <option value="ERP Implementation">ERP Implementation</option>
-                                                    <option value="System Audit">System Audit</option>
-                                                    <option value="Customization">Customization</option>
-                                                    <option value="Integration">Integration</option>
+                                                    <option value="">Select Revenue</option>
+                                                    <option value='Under&#x20;&#x24;500K'>Under &#x24;500K</option>
+                                                    <option value='&#x24;500k&#x20;to&#x20;&#x24;1M'>&#x24;500k to &#x24;1M</option>
+                                                    <option value='&#x24;1M&#x20;to&#x20;&#x24;2M'>&#x24;1M to &#x24;2M</option>
+                                                    <option value='&#x24;2M&#x20;to&#x20;&#x24;5M'>&#x24;2M to &#x24;5M</option>
+                                                    <option value='&#x24;5M&#x20;to&#x20;&#x24;10M'>&#x24;5M to &#x24;10M</option>
+                                                    <option value='&#x24;10M+'>&#x24;10M+</option>
                                                 </select>
                                             </div>
-
-                                            <div>
-                                                <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider mb-2">
-                                                    How can we help?
-                                                </label>
-                                                <textarea
-                                                    rows={3}
-                                                    placeholder="Share your project details, goals, or challenges…"
-                                                    value={formData.message}
-                                                    onChange={e => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                                                    className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none resize-none placeholder-gray-400"
-                                                />
+                                            <div className="space-y-1.5">
+                                                <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">How did you hear about us?</label>
+                                                <select name="Lead Source" className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer">
+                                                    <option value="">Select Option</option>
+                                                    <option value='-None-'>-None-</option>
+                                                    <option value='Client&#x20;Referral'>Client Referral</option>
+                                                    <option value='Database'>Database</option>
+                                                    <option value='Email'>Email</option>
+                                                    <option value='Email&#x20;Campaign'>Email Campaign</option>
+                                                    <option value='Employee&#x20;Referral'>Employee Referral</option>
+                                                    <option value='Event'>Event</option>
+                                                    <option value='External&#x20;Referral'>External Referral</option>
+                                                    <option value='Google&#x20;Ads&#x20;&#x28;Chat&#x29;'>Google Ads &#x28;Chat&#x29;</option>
+                                                    <option value='Google&#x20;Ads&#x20;&#x28;Form&#x29;'>Google Ads &#x28;Form&#x29;</option>
+                                                    <option value='Lead&#x20;Gen&#x20;Agency'>Lead Gen Agency</option>
+                                                    <option value='LinkedIn'>LinkedIn</option>
+                                                    <option value='Linkedlin'>Linkedlin</option>
+                                                    <option value='Online&#x20;Store'>Online Store</option>
+                                                    <option value='Oracle&#x20;Database'>Oracle Database</option>
+                                                    <option value='Oracle&#x20;Partner'>Oracle Partner</option>
+                                                    <option value='Oracle&#x20;Referral'>Oracle Referral</option>
+                                                    <option value='Others'>Others</option>
+                                                    <option value='Phone'>Phone</option>
+                                                    <option value='Purchased&#x20;Leads'>Purchased Leads</option>
+                                                    <option value='Sales&#x20;Email&#x20;Alias'>Sales Email Alias</option>
+                                                    <option value='Sales&#x20;Person&#x20;Contact'>Sales Person Contact</option>
+                                                    <option value='Seminar&#x20;Partner'>Seminar Partner</option>
+                                                    <option value='Trade&#x20;Show'>Trade Show</option>
+                                                    <option value='TSL&#x20;Lead&#x20;-&#x20;Accepted'>TSL Lead - Accepted</option>
+                                                    <option value='TSL&#x20;Lead&#x20;-&#x20;Rejected'>TSL Lead - Rejected</option>
+                                                    <option value='Twitter'>Twitter</option>
+                                                    <option value='Web&#x20;Cases'>Web Cases</option>
+                                                    <option value='Web&#x20;Download'>Web Download</option>
+                                                    <option value='Web&#x20;Mail'>Web Mail</option>
+                                                    <option value='Web&#x20;Research'>Web Research</option>
+                                                    <option value='Webinar'>Webinar</option>
+                                                    <option value='Website'>Website</option>
+                                                    <option value='Website&#x20;&#x28;Chat&#x29;'>Website &#x28;Chat&#x29;</option>
+                                                    <option value='Website&#x20;&#x28;Form&#x29;'>Website &#x28;Form&#x29;</option>
+                                                    <option value='WebSite&#x20;Visit'>WebSite Visit</option>
+                                                    <option value='Zoho&#x20;Partner'>Zoho Partner</option>
+                                                    <option value='Zoho&#x20;Partner&#x20;Portal'>Zoho Partner Portal</option>
+                                                    <option value='Zoho&#x20;Portal&#x20;Listing'>Zoho Portal Listing</option>
+                                                    <option value='Zoho&#x20;Referral'>Zoho Referral</option>
+                                                </select>
                                             </div>
+                                        </div>
 
-                                            <button
-                                                type="submit"
-                                                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semimedium rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/30 hover:scale-[1.02] text-sm"
-                                            >
-                                                <Send size={18} />
-                                                Book My Free Consultation
-                                            </button>
-                                        </form>
-                                    )}
+                                        <div className="space-y-1.5">
+                                            <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
+                                                Type Message <span className="text-blue-600">*</span>
+                                            </label>
+                                            <textarea
+                                                name="Description"
+                                                required
+                                                rows={3}
+                                                placeholder="Share your project details, goals, or challenges…"
+                                                className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none resize-none placeholder-gray-400"
+                                            />
+                                        </div>
+
+                                        {/* Captcha Section */}
+                                        <div className="flex flex-col gap-2">
+                                            <div className='g-recaptcha' data-sitekey='6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3' data-theme='light' data-callback='rccallback409531000026445204_ns' captcha-verified='false' id='recap409531000026445204_ns'></div>
+                                            <div id='recapErr409531000026445204_ns' style={{ display: 'none', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
+                                        </div>
+
+                                        <button
+                                            type="submit"
+                                            className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semimedium rounded-xl transition-all duration-300 shadow-lg hover:shadow-blue-500/30 hover:scale-[1.02] text-sm"
+                                        >
+                                            <Send size={18} />
+                                            Book My Free Consultation
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </motion.div>
@@ -402,6 +513,22 @@ export default function FreeConsultationTopLevel() {
                     </div>
                 </div>
             </section>
+            
+            <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
+            <Script id="zoho-salesiq-ns-consult" strategy="afterInteractive">
+                {`
+                    var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.in/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
+                    function rccallback409531000026445204_ns() {
+                        if(document.getElementById('recap409531000026445204_ns')!=undefined){
+                            document.getElementById('recap409531000026445204_ns').setAttribute('captcha-verified',true);
+                        }
+                        if(document.getElementById('recapErr409531000026445204_ns')!=undefined && document.getElementById('recapErr409531000026445204_ns').style.visibility == 'visible' ){
+                            document.getElementById('recapErr409531000026445204_ns').style.visibility='hidden';
+                        }
+                    }
+                `}
+            </Script>
+            <Script id="wf_anal_ns_consult" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=0da8e2cc66918e4dd02485e36ac2951cc4bcb3d793c12d90fddb19da10f81a2e3f33ebfe28ac1201804c2243b488b148gide78f4a7aa21f61a0e7f1d4d707f57ac5020ab4976395accfade900cdaeb0c714gid0eedbd135dabbb2832b664a9948ee55fa1e6e8c6c2a8c2dea386b01c923ae74cgid29640dbeee89a534ab4e485b49b04442fe41fd069a7f5d762412c9a3a9b26938&tw=76b91257e40af88ff824ca118456bbb493f8897aa0c100c8dd996d392184cc52" />
         </div>
     );
 }

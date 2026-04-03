@@ -5,18 +5,6 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 
 // Define global functions for the form
-declare global {
-  interface Window {
-    addAriaSelected409531000026445204: () => void;
-    rccallback409531000026445204: () => void;
-    reCaptchaAlert409531000026445204: () => boolean;
-    validateEmail409531000026445204: () => boolean;
-    checkMandatory409531000026445204: () => boolean;
-    validateNumber?: (e: KeyboardEvent) => boolean;
-    sendEmail?: () => void;
-    trackVisitor409531000026445204: () => void;
-  }
-}
 
 export default function NetSuiteContactFormGradient() {
   useEffect(() => {
@@ -247,9 +235,9 @@ export default function NetSuiteContactFormGradient() {
                       __html: `
 <div id="crmWebToEntityForm" class="zcwf_lblLeft crmWebToEntityForm">
 <form id="webform409531000026445204" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000026445204" method="POST" onSubmit="javascript:document.charset='UTF-8'; return checkMandatory409531000026445204()" accept-charset="UTF-8">
- <input type="text" class="dsp" name="xnQsjsdp" value="d350d5f190b98a73788f37a928249b0c103447cddd32d7b43650abefe9008176">
+ <input type="text" class="dsp" name="xnQsjsdp" value="19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f">
  <input type="hidden" name="zc_gad" id="zc_gad" value="">
- <input type="text" class="dsp" name="xmIwtLD" value="0c89f378a8fa7adc2a64861fb7484f215a635922aa35616269ed9654a77c1423e1e3996b799ddf35ab0dd58d601aac7e">
+ <input type="text" class="dsp" name="xmIwtLD" value="8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee">
  <input type="text" class="dsp" name="actionType" value="TGVhZHM=">
  <input type="text" class="dsp" name="returnURL" value="https://agsuitetech.com/best-cloud-based-crm/thank-you/">
 <input type="text" class="dsp" id="ldeskuid" name="ldeskuid">
@@ -401,21 +389,21 @@ select option {
     <label class="field-label">ANNUAL REVENUE *</label>
     <select class="zcwf_col_fld_slt" id="Annual_Revenue" name="Annual Revenue" onChange="addAriaSelected409531000026445204()">
       <option value="" disabled selected>Select revenue range</option>
-      <option value="Under&#x20;&#x24;500K">Under $500K</option>
-      <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">$500k to $1M</option>
-      <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">$1M to $2M</option>
-      <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">$2M to $5M</option>
-      <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">$5M to $10M</option>
-      <option value="&#x24;10M+">$10M+</option>
-    </select>
-  </div>
-  
-  <div class="agsuite_column-large">
-    <label class="field-label">SERVICE INTEREST *</label>
-    <select class="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5" onChange="addAriaSelected409531000026445204()">
-      <option value="" disabled selected>Select a service</option>
-      <option value="NetSuite&#x20;Product&#x20;&#x2f;Services">Oracle NetSuite</option>
-      <option value="Zoho&#x20;Products&#x2f;Services">Zoho Suite</option>
+      <option value="Under&#x20;&#x24;500K">Under &#x24;500K</option>
+      <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">&#x24;500k to &#x24;1M</option>
+      <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">&#x24;1M to &#x24;2M</option>
+      <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">&#x24;2M to &#x24;5M</option>
+      <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">&#x24;5M to &#x24;10M</option>
+      <option value='&#x24;10M&#x20;to&#x20;&#x24;20M'>&#x24;10M to &#x24;20M</option>
+      <option value='&#x24;20M&#x20;to&#x20;&#x24;30M'>&#x24;20M to &#x24;30M</option>
+      <option value='&#x24;30M&#x20;to&#x20;&#x24;50M'>&#x24;30M to &#x24;50M</option>
+      <option value='&#x24;50M&#x20;to&#x20;&#x24;100M'>&#x24;50M to &#x24;100M</option>
+      <option value='&#x24;100M&#x20;to&#x20;&#x24;150M'>&#x24;100M to &#x24;150M</option>
+      <option value='&#x24;150M&#x20;to&#x20;&#x24;200M'>&#x24;150M to &#x24;200M</option>
+      <option value='&#x24;200M&#x20;to&#x20;&#x24;250M'>&#x24;200M to &#x24;250M</option>
+      <option value='&#x24;250M&#x20;to&#x20;&#x24;300M'>&#x24;250M to &#x24;300M</option>
+      <option value='&#x24;300M&#x20;to&#x20;&#x24;400M'>&#x24;300M to &#x24;400M</option>
+      <option value='&#x24;400M&#x20;to&#x20;&#x24;500M'>&#x24;400M to &#x24;500M</option>
     </select>
   </div>
   

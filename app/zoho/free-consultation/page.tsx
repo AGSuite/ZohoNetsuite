@@ -3,21 +3,8 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Mail, CheckCircle, Sparkles, ShieldCheck } from 'lucide-react';
+import Script from 'next/script';
 
-// Define global types for Zoho
-declare global {
-  interface Window {
-    $zoho?: any;
-    addAriaSelected409531000000398076?: (event: Event) => void;
-    rccallback409531000000398076?: () => void;
-    reCaptchaAlert409531000000398076?: () => boolean;
-    validateEmail409531000000398076?: () => boolean;
-    checkMandatory409531000000398076?: () => boolean;
-    validateNumber?: (e: KeyboardEvent) => boolean;
-    sendEmail?: () => void;
-    trackVisitor409531000000398076?: () => void;
-  }
-}
 
 export default function ZohoFreeConsultation() {
   const [isClient, setIsClient] = useState(false);
@@ -25,44 +12,7 @@ export default function ZohoFreeConsultation() {
   useEffect(() => {
     setIsClient(true);
 
-    const loadRecaptcha = () => {
-      const script = document.createElement('script');
-      script.src = 'https://www.google.com/recaptcha/api.js';
-      script.async = true;
-      script.defer = true;
-      document.head.appendChild(script);
-    };
-
-    const loadSalesIQ = () => {
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.id = 'zsiqscript';
-      script.defer = true;
-      script.src = 'https://salesiq.zoho.in/widget';
-      document.head.appendChild(script);
-    };
-
-    const loadAnalytics = () => {
-      const script = document.createElement('script');
-      script.id = 'wf_anal';
-      script.src = 'https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=e9afb9e35a2bbd47add959e56e33e0879319b2c30faae93144ceb41c12088615d10f6ceab6f573426dacb17b83561b72gidc4904c4c6a88fccfccdba12a96a9253ab1e43e0ff3c4202a2713cd70980714b0gidf9df2680fefedb48bf61611dd8257371d95c724209cd7e51551844c331b447d3gid670a6f27d1ba095ba42cef1e786b991f3bb06a823459ffd6f12a9e48fce97bba&tw=255e274a3d4071d2619df92ea60a0ab44be6cb0d7910b47114703256f4e9e7c7';
-      document.head.appendChild(script);
-    };
-
-    loadRecaptcha();
-    loadSalesIQ();
-    loadAnalytics();
-
-    if (typeof window !== 'undefined') {
-      window.$zoho = window.$zoho || {};
-      window.$zoho.salesiq = window.$zoho.salesiq || {
-        widgetcode: 'siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19',
-        values: {},
-        ready: function () { }
-      };
-    }
-
-    window.addAriaSelected409531000000398076 = function (event: Event) {
+    window.addAriaSelected409531000026445204 = function (event?: any) {
       const optionElem = event.target as HTMLSelectElement;
       const previousSelectedOption = optionElem.querySelector('[aria-selected="true"]');
       if (previousSelectedOption) {
@@ -73,29 +23,19 @@ export default function ZohoFreeConsultation() {
       }
     };
 
-    window.rccallback409531000000398076 = function () {
-      const recap = document.getElementById('recap409531000000398076');
+    window.rccallback409531000026445204 = function () {
+      const recap = document.getElementById('recap409531000026445204');
       if (recap) { recap.setAttribute('captcha-verified', 'true'); }
-      const errorElement = document.getElementById('recapErr409531000000398076');
+      const errorElement = document.getElementById('recapErr409531000026445204');
       if (errorElement && errorElement.style.visibility === 'visible') {
         errorElement.style.visibility = 'hidden';
       }
     };
 
-    window.reCaptchaAlert409531000000398076 = function () {
-      const recap = document.getElementById('recap409531000000398076');
-      if (recap && recap.getAttribute('captcha-verified') === 'false') {
-        const errorElement = document.getElementById('recapErr409531000000398076');
-        if (errorElement) { errorElement.style.visibility = 'visible'; }
-        return false;
-      }
-      return true;
-    };
-
-    window.validateEmail409531000000398076 = function () {
-      const form = document.forms.namedItem('WebToLeads409531000000398076');
+    window.validateEmail409531000026445204 = function () {
+      const form = document.forms.namedItem('WebToLeads409531000026445204');
       if (!form) return true;
-      const emailFld = form.querySelectorAll('[ftype="email"]');
+      const emailFld = form.querySelectorAll('input[type="email"], [ftype="email"]');
       for (let i = 0; i < emailFld.length; i++) {
         const emailVal = (emailFld[i] as HTMLInputElement).value;
         if ((emailVal.replace(/^\s+|\s+$/g, '')).length !== 0) {
@@ -106,42 +46,50 @@ export default function ZohoFreeConsultation() {
             (emailFld[i] as HTMLInputElement).focus();
             return false;
           }
-          const restrictedDomains = /(gmail\.com|yahoo\.com|outlook\.com|live\.com)$/i;
-          if (restrictedDomains.test(emailVal)) {
-            alert('Gmail, Yahoo, Outlook, and Live email addresses are not allowed.');
-            (emailFld[i] as HTMLInputElement).focus();
-            return false;
-          }
         }
       }
       return true;
     };
 
-    window.validateNumber = function (e: KeyboardEvent) {
-      const pattern = /^[0-9]$/;
-      return pattern.test(e.key);
+    window.checkMandatory409531000026445204 = function (e?: any) {
+      const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Annual Revenue', 'Description'];
+      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Annual Revenue', 'Type Message'];
+      const form = document.forms.namedItem('WebToLeads409531000026445204');
+      if (!form) return false;
+      for (let i = 0; i < mndFileds.length; i++) {
+        const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+        if (fieldObj) {
+          if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length === 0) {
+            alert(fldLangVal[i] + ' cannot be empty.');
+            fieldObj.focus();
+            return false;
+          } else if (fieldObj.nodeName === 'SELECT' && (((fieldObj as HTMLSelectElement).value === '-None-') || ((fieldObj as HTMLSelectElement).value === ''))) {
+            alert(fldLangVal[i] + ' cannot be none.');
+            fieldObj.focus();
+            return false;
+          }
+        }
+      }
+      
+      const recap = document.getElementById('recap409531000026445204');
+      if (recap && recap.getAttribute('captcha-verified') === 'false') {
+          const recapErr = document.getElementById('recapErr409531000026445204');
+          if (recapErr) recapErr.style.visibility = 'visible';
+          return false;
+      }
+
+      window.trackVisitor409531000026445204?.();
+      if (!window.validateEmail409531000026445204?.()) return false;
+      
+      const submitButton = document.querySelector('.crmWebToEntityForm .formsubmit') as HTMLInputElement;
+      if (submitButton) { submitButton.disabled = true; }
+      return true;
     };
 
-    window.sendEmail = function () {
-      const form = document.forms.namedItem('WebToLeads409531000000398076');
-      if (!form) return;
-      const formData = new FormData(form);
-      fetch('https://agsuitetech.com/pricing/consultation_process.php', {
-        method: 'POST',
-        body: formData
-      })
-        .then(response => response.json())
-        .then(data => {
-          if (data.status === 'success') { console.log('Email sent successfully.'); }
-          else { console.error('Failed to send email:', data.error); }
-        })
-        .catch(error => { console.error('Error while sending email:', error); });
-    };
-
-    window.trackVisitor409531000000398076 = function () {
+    window.trackVisitor409531000026445204 = function () {
       try {
         if (window.$zoho?.salesiq?.visitor) {
-          const form = document.forms.namedItem('WebToLeads409531000000398076');
+          const form = document.forms.namedItem('WebToLeads409531000026445204');
           if (form) {
             const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
             if (LDTuvidObj) { LDTuvidObj.value = window.$zoho.salesiq.visitor.uniqueid() || ''; }
@@ -153,42 +101,14 @@ export default function ZohoFreeConsultation() {
         }
       } catch (e) { console.log('Zoho tracking error:', e); }
     };
-
-    window.checkMandatory409531000000398076 = function () {
-      const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Description', 'LEADCF5', 'Annual_Revenue'];
-      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Tell Us How We Can Help', 'Product / Services', 'Annual Revenue'];
-      const form = document.forms.namedItem('WebToLeads409531000000398076');
-      if (!form) return false;
-      for (let i = 0; i < mndFileds.length; i++) {
-        const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
-        if (fieldObj) {
-          if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length === 0) {
-            alert(fldLangVal[i] + ' cannot be empty.');
-            fieldObj.focus();
-            return false;
-          } else if (fieldObj.nodeName === 'SELECT' && ((fieldObj as HTMLSelectElement).value === '-None-' || (fieldObj as HTMLSelectElement).value === '')) {
-            alert(fldLangVal[i] + ' cannot be none.');
-            fieldObj.focus();
-            return false;
-          }
-        }
-      }
-      window.trackVisitor409531000000398076?.();
-      if (!window.validateEmail409531000000398076?.()) return false;
-      if (!window.reCaptchaAlert409531000000398076?.()) return false;
-      window.sendEmail?.();
-      const submitButton = document.querySelector('.crmWebToEntityForm .formsubmit') as HTMLInputElement;
-      if (submitButton) { submitButton.disabled = true; }
-      return true;
-    };
   }, []);
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (window.checkMandatory409531000000398076) {
-      return window.checkMandatory409531000000398076();
+    if (window.checkMandatory409531000026445204 && !window.checkMandatory409531000026445204()) {
+      e.preventDefault();
+      return false;
     }
-    return false;
+    return true;
   };
 
   if (!isClient) {
@@ -196,7 +116,7 @@ export default function ZohoFreeConsultation() {
   }
 
   return (
-    <section
+    <section 
       className="relative min-h-screen flex items-center justify-center py-24 px-6 lg:px-10 overflow-hidden"
       style={{
         backgroundImage: "url('/images/contact/girlcontact.jpg')",
@@ -255,50 +175,119 @@ export default function ZohoFreeConsultation() {
             </div>
 
             <form
-              id="webform409531000000398076"
+              id="webform409531000026445204"
               action="https://crm.zoho.in/crm/WebToLeadForm"
-              name="WebToLeads409531000000398076"
+              name="WebToLeads409531000026445204"
               method="POST"
               onSubmit={handleFormSubmit}
               acceptCharset="UTF-8"
               className="space-y-5"
             >
               {/* Mandatory Hidden Fields */}
-              <input type="text" className="hidden" name="xnQsjsdp" value="c8ca8ae9d9a028ad1829d7b6672a73889deb8a8363ec4697c92f3db46344ff6b" readOnly />
+              <input type="text" className="hidden" name="xnQsjsdp" value="19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f" readOnly />
               <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-              <input type="text" className="hidden" name="xmIwtLD" value="2f6fbcbccdbab984b5b2558389fe0f6d28bf60ce7e3964b2b6210b4f5a840a2a0047f993325f425b93837214b9dbeabb" readOnly />
+              <input type="text" className="hidden" name="xmIwtLD" value="8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee" readOnly />
               <input type="text" className="hidden" name="actionType" value="TGVhZHM=" readOnly />
-              <input type="text" className="hidden" name="returnURL" value="https://agsuitetech.com/free-consultation-now/thank-you.php" readOnly />
-              <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" />
-              <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" />
+              <input type="text" className="hidden" name="returnURL" value="https://agsuitetech.com/best-cloud-based-crm/thank-you/" readOnly />
+              {/* Do not remove this code. */}
+              <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
+              <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="text" name="Last Name" placeholder="Full Name*" className="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all placeholder:text-gray-400 font-medium" />
-                <input type="email" name="Email" placeholder="Business Email*" className="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all placeholder:text-gray-400 font-medium" />
-                <input type="text" name="Designation" placeholder="Job Role*" className="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all placeholder:text-gray-400 font-medium" />
-                <input type="text" name="Mobile" placeholder="Phone Number*" className="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all placeholder:text-gray-400 font-medium" />
-                <input type="text" name="Company" placeholder="Company Name*" className="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl md:col-span-2 focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all placeholder:text-gray-400 font-medium" />
+                <div className="space-y-1.5">
+                  <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Name *</label>
+                  <input type="text" name="Last Name" required placeholder="John Doe" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all placeholder:text-gray-400 font-medium" />
+                </div>
+                <div className="space-y-1.5">
+                  <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Business Email *</label>
+                  <input type="email" name="Email" required placeholder="john@company.com" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all placeholder:text-gray-400 font-medium" />
+                </div>
+                <div className="space-y-1.5">
+                  <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Role *</label>
+                  <input type="text" name="Designation" required placeholder="Job Role" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all placeholder:text-gray-400 font-medium" />
+                </div>
+                <div className="space-y-1.5">
+                  <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Mobile *</label>
+                  <input type="text" name="Mobile" required placeholder="Phone Number" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all placeholder:text-gray-400 font-medium" />
+                </div>
+                <div className="space-y-1.5 md:col-span-2">
+                  <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Company Name *</label>
+                  <input type="text" name="Company" required placeholder="Company Inc." className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all placeholder:text-gray-400 font-medium" />
+                </div>
 
-                <select name="LEADCF5" className="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all font-medium text-gray-700">
-                  <option value="" disabled selected>Service Interest*</option>
-                  <option value="Oracle NetSuite">Oracle NetSuite</option>
-                  <option value="Zoho">Zoho</option>
-                </select>
+                <div className="space-y-1.5">
+                  <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Annual Revenue *</label>
+                  <select name="Annual Revenue" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all font-medium text-gray-700 appearance-none cursor-pointer">
+                    <option value="" disabled selected>Select Revenue</option>
+                    <option value="Under&#x20;&#x24;500K">Under &#x24;500K</option>
+                    <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">&#x24;500k to &#x24;1M</option>
+                    <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">&#x24;1M to &#x24;2M</option>
+                    <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">&#x24;2M to &#x24;5M</option>
+                    <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">&#x24;5M to &#x24;10M</option>
+                    <option value='&#x24;10M&#x20;to&#x20;&#x24;20M'>&#x24;10M to &#x24;20M</option>
+                    <option value='&#x24;20M&#x20;to&#x20;&#x24;30M'>&#x24;20M to &#x24;30M</option>
+                    <option value='&#x24;30M&#x20;to&#x20;&#x24;50M'>&#x24;30M to &#x24;50M</option>
+                    <option value='&#x24;50M&#x20;to&#x20;&#x24;100M'>&#x24;50M to &#x24;100M</option>
+                  </select>
+                </div>
 
-                <select name="Annual_Revenue" className="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all font-medium text-gray-700">
-                  <option value="" disabled selected>Annual Revenue*</option>
-                  <option value="Under $500K">Under $500K</option>
-                  <option value="$500k to $1M">$500k to $1M</option>
-                  <option value="$1M to $2M">$1M to $2M</option>
-                  <option value="$10M+">$10M+</option>
-                </select>
+
+                <div className="space-y-1.5">
+                  <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">How did you hear about us?</label>
+                  <select name="Lead Source" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all font-medium text-gray-700 appearance-none cursor-pointer">
+                    <option value="" disabled selected>Select Option</option>
+                    <option value='-None-'>-None-</option>
+                    <option value='Client&#x20;Referral'>Client Referral</option>
+                    <option value='Database'>Database</option>
+                    <option value='Email'>Email</option>
+                    <option value='Email&#x20;Campaign'>Email Campaign</option>
+                    <option value='Employee&#x20;Referral'>Employee Referral</option>
+                    <option value='Event'>Event</option>
+                    <option value='External&#x20;Referral'>External Referral</option>
+                    <option value='Google&#x20;Ads&#x20;&#x28;Chat&#x29;'>Google Ads &#x28;Chat&#x29;</option>
+                    <option value='Google&#x20;Ads&#x20;&#x28;Form&#x29;'>Google Ads &#x28;Form&#x29;</option>
+                    <option value='Lead&#x20;Gen&#x20;Agency'>Lead Gen Agency</option>
+                    <option value='LinkedIn'>LinkedIn</option>
+                    <option value='Linkedlin'>Linkedlin</option>
+                    <option value='Online&#x20;Store'>Online Store</option>
+                    <option value='Oracle&#x20;Database'>Oracle Database</option>
+                    <option value='Oracle&#x20;Partner'>Oracle Partner</option>
+                    <option value='Oracle&#x20;Referral'>Oracle Referral</option>
+                    <option value='Others'>Others</option>
+                    <option value='Phone'>Phone</option>
+                    <option value='Purchased&#x20;Leads'>Purchased Leads</option>
+                    <option value='Sales&#x20;Email&#x20;Alias'>Sales Email Alias</option>
+                    <option value='Sales&#x20;Person&#x20;Contact'>Sales Person Contact</option>
+                    <option value='Seminar&#x20;Partner'>Seminar Partner</option>
+                    <option value='Trade&#x20;Show'>Trade Show</option>
+                    <option value='TSL&#x20;Lead&#x20;-&#x20;Accepted'>TSL Lead - Accepted</option>
+                    <option value='TSL&#x20;Lead&#x20;-&#x20;Rejected'>TSL Lead - Rejected</option>
+                    <option value='Twitter'>Twitter</option>
+                    <option value='Web&#x20;Cases'>Web Cases</option>
+                    <option value='Web&#x20;Download'>Web Download</option>
+                    <option value='Web&#x20;Mail'>Web Mail</option>
+                    <option value='Web&#x20;Research'>Web Research</option>
+                    <option value='Webinar'>Webinar</option>
+                    <option value='Website'>Website</option>
+                    <option value='Website&#x20;&#x28;Chat&#x29;'>Website &#x28;Chat&#x29;</option>
+                    <option value='Website&#x20;&#x28;Form&#x29;'>Website &#x28;Form&#x29;</option>
+                    <option value='WebSite&#x20;Visit'>WebSite Visit</option>
+                    <option value='Zoho&#x20;Partner'>Zoho Partner</option>
+                    <option value='Zoho&#x20;Partner&#x20;Portal'>Zoho Partner Portal</option>
+                    <option value='Zoho&#x20;Portal&#x20;Listing'>Zoho Portal Listing</option>
+                    <option value='Zoho&#x20;Referral'>Zoho Referral</option>
+                  </select>
+                </div>
               </div>
 
-              <textarea name="Description" placeholder="How can we help?*" rows={4} className="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all placeholder:text-gray-400 font-medium resize-none" />
+              <div className="space-y-1.5">
+                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Type Message *</label>
+                <textarea name="Description" required placeholder="How can we help?*" rows={4} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-4 focus:ring-red-500/5 focus:border-red-500 outline-none transition-all placeholder:text-gray-400 font-medium resize-none" />
+              </div>
 
               <div className="space-y-4">
-                <div id="recap409531000000398076" className="g-recaptcha flex justify-center" data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-captcha-verified="false" />
-                <p id="recapErr409531000000398076" className="text-xs text-red-600 invisible text-center">Please verify that you are not a robot.</p>
+                <div id="recap409531000026445204" className="g-recaptcha flex justify-center" data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-captcha-verified="false" />
+                <p id="recapErr409531000026445204" className="text-xs text-red-600 invisible text-center">Please verify that you are not a robot.</p>
                 <button type="submit" id="formsubmit" className="formsubmit w-full py-4 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-2xl font-bold uppercase tracking-widest text-sm shadow-xl hover:shadow-red-600/20 hover:-translate-y-1 transition-all">
                   Request Free Consultation
                 </button>
@@ -307,6 +296,22 @@ export default function ZohoFreeConsultation() {
           </div>
         </div>
       </div>
+
+      <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
+      <Script id="zoho-salesiq" strategy="afterInteractive">
+        {`
+          var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.in/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
+          function rccallback409531000026445204() {
+            if(document.getElementById('recap409531000026445204')!=undefined){
+              document.getElementById('recap409531000026445204').setAttribute('captcha-verified',true);
+            }
+            if(document.getElementById('recapErr409531000026445204')!=undefined && document.getElementById('recapErr409531000026445204').style.visibility == 'visible' ){
+              document.getElementById('recapErr409531000026445204').style.visibility='hidden';
+            }
+          }
+        `}
+      </Script>
+      <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=0da8e2cc66918e4dd02485e36ac2951cc4bcb3d793c12d90fddb19da10f81a2e3f33ebfe28ac1201804c2243b488b148gide78f4a7aa21f61a0e7f1d4d707f57ac5020ab4976395accfade900cdaeb0c714gid0eedbd135dabbb2832b664a9948ee55fa1e6e8c6c2a8c2dea386b01c923ae74cgid29640dbeee89a534ab4e485b49b04442fe41fd069a7f5d762412c9a3a9b26938&tw=76b91257e40af88ff824ca118456bbb493f8897aa0c100c8dd996d392184cc52" />
     </section>
   );
 }

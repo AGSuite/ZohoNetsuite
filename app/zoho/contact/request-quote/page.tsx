@@ -30,12 +30,6 @@ const PARTICLES = [
     { w: 2.5, h: 2.5, top: 85, left: 30, dur: 5.5, delay: 1.5 },
 ];
 
-declare global {
-  interface Window {
-    validateEmailZQuote?: () => boolean;
-    checkMandatoryZQuote?: (e: any) => boolean;
-  }
-}
 
 export default function ZohoRequestQuotePage() {
     const [isClient, setIsClient] = useState(false);
@@ -291,13 +285,14 @@ export default function ZohoRequestQuotePage() {
                                         acceptCharset="UTF-8"
                                         className="space-y-5"
                                     >
-                                        <input type="text" className="hidden" name="xnQsjsdp" defaultValue="25b67a18495a38c26c4529cef55d54f6bace20476d7a4d5e2bb7d894c19c7f2e" readOnly />
+                                        <input type="text" className="hidden" name="xnQsjsdp" defaultValue="19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f" readOnly />
                                         <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                                        <input type="text" className="hidden" name="xmIwtLD" defaultValue="95d875217118008a2ecf7947f0648d183623cabaa0a94862090253d05e14a18ca712257b6dee380bd8eefbc51a4a6a91" readOnly />
+                                        <input type="text" className="hidden" name="xmIwtLD" defaultValue="8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee" readOnly />
                                         <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
-                                        <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/thankyou.php" readOnly />
+                                        <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/best-cloud-based-crm/thank-you/" readOnly />
                                         <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
                                         <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
+
 
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                             <div>
@@ -332,13 +327,13 @@ export default function ZohoRequestQuotePage() {
                                             </div>
                                             <div>
                                                 <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Annual Revenue *</label>
-                                                <select name="LEADCF40" id="LEADCF40" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer">
+                                                <select name="Annual Revenue" id="Annual_Revenue" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer">
                                                     <option value="">Select Revenue</option>
-                                                    <option value='Under&#x20;&#x24;500K'>Under &#x24;500K</option>
-                                                    <option value='&#x24;500k&#x20;to&#x20;&#x24;1M'>&#x24;500k to &#x24;1M</option>
-                                                    <option value='&#x24;1M&#x20;to&#x20;&#x24;2M'>&#x24;1M to &#x24;2M</option>
-                                                    <option value='&#x24;2M&#x20;to&#x20;&#x24;5M'>&#x24;2M to &#x24;5M</option>
-                                                    <option value='&#x24;5M&#x20;to&#x20;&#x24;10M'>&#x24;5M to &#x24;10M</option>
+                                                    <option value="Under&#x20;&#x24;500K">Under &#x24;500K</option>
+                                                    <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">&#x24;500k to &#x24;1M</option>
+                                                    <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">&#x24;1M to &#x24;2M</option>
+                                                    <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">&#x24;2M to &#x24;5M</option>
+                                                    <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">&#x24;5M to &#x24;10M</option>
                                                     <option value='&#x24;10M&#x20;to&#x20;&#x24;20M'>&#x24;10M to &#x24;20M</option>
                                                     <option value='&#x24;20M&#x20;to&#x20;&#x24;30M'>&#x24;20M to &#x24;30M</option>
                                                     <option value='&#x24;30M&#x20;to&#x20;&#x24;50M'>&#x24;30M to &#x24;50M</option>
