@@ -8,21 +8,21 @@ import { Mail, Phone, MapPin } from "lucide-react";
 // Define global functions for the form
 declare global {
   interface Window {
-    addAriaSelected409531000000325116: () => void;
-    rccallback409531000000325116: () => void;
-    reCaptchaAlert409531000000325116: () => boolean;
-    validateEmail409531000000325116: () => boolean;
-    checkMandatory409531000000325116: () => boolean;
+    addAriaSelected409531000026445204: () => void;
+    rccallback409531000026445204: () => void;
+    reCaptchaAlert409531000026445204: () => boolean;
+    validateEmail409531000026445204: () => boolean;
+    checkMandatory409531000026445204: () => boolean;
     validateNumber?: (e: KeyboardEvent) => boolean;
     sendEmail?: () => void;
-    trackVisitor409531000000325116: () => void;
+    trackVisitor409531000026445204: () => void;
   }
 }
 
 export default function NetSuiteContactFormModern() {
   useEffect(() => {
     // Define all form validation functions globally
-    window.addAriaSelected409531000000325116 = function () {
+    window.addAriaSelected409531000026445204 = function () {
       const optionElem = (event as Event & { target: HTMLSelectElement }).target;
       const previousSelectedOption = optionElem.querySelector('[aria-selected=true]');
       if (previousSelectedOption) {
@@ -31,20 +31,20 @@ export default function NetSuiteContactFormModern() {
       optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
     };
 
-    window.rccallback409531000000325116 = function () {
-      if (document.getElementById('recap409531000000325116')) {
-        document.getElementById('recap409531000000325116')?.setAttribute('captcha-verified', 'true');
+    window.rccallback409531000026445204 = function () {
+      if (document.getElementById('recap409531000026445204')) {
+        document.getElementById('recap409531000026445204')?.setAttribute('captcha-verified', 'true');
       }
-      const errorElement = document.getElementById('recapErr409531000000325116');
+      const errorElement = document.getElementById('recapErr409531000026445204');
       if (errorElement && errorElement.style.visibility === 'visible') {
         errorElement.style.visibility = 'hidden';
       }
     };
 
-    window.reCaptchaAlert409531000000325116 = function () {
-      const recap = document.getElementById('recap409531000000325116');
+    window.reCaptchaAlert409531000026445204 = function () {
+      const recap = document.getElementById('recap409531000026445204');
       if (recap && recap.getAttribute('captcha-verified') === 'false') {
-        const errorElement = document.getElementById('recapErr409531000000325116');
+        const errorElement = document.getElementById('recapErr409531000026445204');
         if (errorElement) {
           errorElement.style.visibility = 'visible';
         }
@@ -53,8 +53,8 @@ export default function NetSuiteContactFormModern() {
       return true;
     };
 
-    window.validateEmail409531000000325116 = function () {
-      const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
+    window.validateEmail409531000026445204 = function () {
+      const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
       if (!form) return true;
       const emailFld = form.querySelectorAll('[ftype=email]');
       for (let i = 0; i < emailFld.length; i++) {
@@ -78,10 +78,10 @@ export default function NetSuiteContactFormModern() {
       return true;
     };
 
-    window.checkMandatory409531000000325116 = function () {
-      const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Description', 'LEADCF5', 'LEADCF40'];
-      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Tell Us How We Can Help', 'Product / Services', 'Annual Revenue'];
-      const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
+    window.checkMandatory409531000026445204 = function () {
+      const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Annual Revenue', 'Description'];
+      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Annual Revenue', 'Tell Us How We Can Help'];
+      const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
       if (!form) return false;
 
       for (let i = 0; i < mndFileds.length; i++) {
@@ -101,9 +101,9 @@ export default function NetSuiteContactFormModern() {
           }
         }
       }
-      window.trackVisitor409531000000325116?.();
-      if (window.validateEmail409531000000325116 && !window.validateEmail409531000000325116()) return false;
-      if (window.reCaptchaAlert409531000000325116 && !window.reCaptchaAlert409531000000325116()) return false;
+      window.trackVisitor409531000026445204?.();
+      if (window.validateEmail409531000026445204 && !window.validateEmail409531000026445204()) return false;
+      if (window.reCaptchaAlert409531000026445204 && !window.reCaptchaAlert409531000026445204()) return false;
 
       window.sendEmail?.();
       const submitButton = document.querySelector('.crmWebToEntityForm .formsubmit') as HTMLInputElement;
@@ -119,7 +119,7 @@ export default function NetSuiteContactFormModern() {
     };
 
     window.sendEmail = function () {
-      const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
+      const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
       if (!form) return;
       const formData = new FormData(form);
 
@@ -140,11 +140,11 @@ export default function NetSuiteContactFormModern() {
         });
     };
 
-    window.trackVisitor409531000000325116 = function () {
+    window.trackVisitor409531000026445204 = function () {
       try {
         const zoho = (window as { $zoho?: { salesiq: { visitor: { uniqueid: () => string; email: (email: string) => void } } } }).$zoho;
         if (zoho) {
-          const form = document.forms.namedItem('WebToLeads409531000000325116') as HTMLFormElement;
+          const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
           if (form) {
             const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
             if (LDTuvidObj) {
@@ -196,7 +196,7 @@ export default function NetSuiteContactFormModern() {
 
       <Script
         id="wf_anal_footer"
-        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=2ad153905083cc4b4058fa27687055376e156f7ad6e9fc52d9895986981cb6172bddf27a9051f3745fcf3d24b09fb012gidcf736cc89d868a9fa6150881def27ffe802f94e956bff6513de684e48d8b35c1gid0596f309f4dca6fd5d8b7704fd1d37b52bdbc54dd97c1957c613be2d12dd943agid1b08a4436f8cfc10239cf5e2aa7cda0a23e1cf9ad370739723a113c3f7318e99&tw=d44cee7b494604b05833cee35187d02e3ccf139f17b3bef4604b84b3f02bded7"
+        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=c6bd15ef499e015212f7cfd1d94a36257616906db3378b7d58e9666a0cb004ad04cae4b2ad4b40f407ea1df9509ddfc3gid4d54f02188dbd1a4f4c8582e1cc6829be5ddd9b1ad3710ed7207deccba2aa858giddeda7992accaf02590572b916d20ede01298921dbc555b8a938ff90fe2bc82f4gid28710435a2d0ea931303f1f01e1b730e6517c1be20b1776d1746edb3c9f1c653&tw=8b4a96a610c92f39fdbddebeaa5a00b371fd965c61608708d088c2ca4821d30d"
         strategy="lazyOnload"
       />
 
@@ -288,12 +288,12 @@ export default function NetSuiteContactFormModern() {
                   dangerouslySetInnerHTML={{
                     __html: `
 <div id="crmWebToEntityForm" class="zcwf_lblLeft crmWebToEntityForm">
-<form id="webform409531000000325116" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000000325116" method="POST" onSubmit="javascript:document.charset='UTF-8'; return checkMandatory409531000000325116()" accept-charset="UTF-8">
- <input type="text" class="dsp" name="xnQsjsdp" value="cae9ae065232fde2e40c34423041df835a4066ff2103c546e198d684b35e9861">
+<form id="webform409531000026445204" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000026445204" method="POST" onSubmit="javascript:document.charset='UTF-8'; return checkMandatory409531000026445204()" accept-charset="UTF-8">
+ <input type="text" class="dsp" name="xnQsjsdp" value="d350d5f190b98a73788f37a928249b0c103447cddd32d7b43650abefe9008176">
  <input type="hidden" name="zc_gad" id="zc_gad" value="">
- <input type="text" class="dsp" name="xmIwtLD" value="3820b2b7a84f952a9adb8f71d02ba0d6e9247f59314524fd5d4528cf4dff99b516b0d501ae4661e854a71c2dfb2b5263">
+ <input type="text" class="dsp" name="xmIwtLD" value="0c89f378a8fa7adc2a64861fb7484f215a635922aa35616269ed9654a77c1423e1e3996b799ddf35ab0dd58d601aac7e">
  <input type="text" class="dsp" name="actionType" value="TGVhZHM=">
- <input type="text" class="dsp" name="returnURL" value="https&#x3a;&#x2f;&#x2f;agsuitetech.com&#x2f;contact-us&#x2f;thank-you.php">
+ <input type="text" class="dsp" name="returnURL" value="https://agsuitetech.com/best-cloud-based-crm/thank-you/">
 <input type="text" class="dsp" id="ldeskuid" name="ldeskuid">
 <input type="text" class="dsp" id="LDTuvid" name="LDTuvid">
 
@@ -380,7 +380,7 @@ select option {
 }
 
 .g-recaptcha { margin-top: 16px; display: flex; justify-content: flex-start; }
-#recapErr409531000000325116 { font-size: 12px; color: #ef4444; margin-top: 10px; visibility: hidden; }
+#recapErr409531000026445204 { font-size: 12px; color: #ef4444; margin-top: 10px; visibility: hidden; }
 .dsp { display: none; }
 
 @media (max-width: 640px) {
@@ -413,7 +413,7 @@ select option {
   </div>
   
   <div class="agsuite_column">
-    <select class="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5" onChange="addAriaSelected409531000000325116()">
+    <select class="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5" onChange="addAriaSelected409531000026445204()">
       <option value="" disabled selected>Service Interest*</option>
       <option value="NetSuite&#x20;Product&#x20;&#x2f;Services">Oracle NetSuite</option>
       <option value="Zoho&#x20;Products&#x2f;Services">Zoho Suite</option>
@@ -421,10 +421,13 @@ select option {
   </div>
   
   <div class="agsuite_column">
-    <select class="zcwf_col_fld_slt" id="LEADCF40" name="LEADCF40" onChange="addAriaSelected409531000000325116()">
+    <select class="zcwf_col_fld_slt" id="Annual_Revenue" name="Annual Revenue" onChange="addAriaSelected409531000026445204()">
       <option value="" disabled selected>Annual Revenue*</option>
       <option value="Under&#x20;&#x24;500K">Under $500K</option>
-      <option value="&#x24;1M+">$1M+</option>
+      <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">$500k to $1M</option>
+      <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">$1M to $2M</option>
+      <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">$2M to $5M</option>
+      <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">$5M to $10M</option>
       <option value="&#x24;10M+">$10M+</option>
     </select>
   </div>
@@ -434,8 +437,8 @@ select option {
   </div>
   
   <div class="agsuite_column-large">
-    <div class="g-recaptcha" data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="dark" data-callback="rccallback409531000000325116" captcha-verified="false" id="recap409531000000325116"></div>
-    <div id="recapErr409531000000325116">Please verify you are not a robot.</div>
+    <div class="g-recaptcha" data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="dark" data-callback="rccallback409531000026445204" captcha-verified="false" id="recap409531000026445204"></div>
+    <div id="recapErr409531000026445204">Please verify you are not a robot.</div>
     <input type="submit" id="formsubmit" class="zcwf_button" value="Submit" aria-label="Submit Form">
   </div>
 </div>

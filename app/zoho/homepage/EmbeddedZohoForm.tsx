@@ -5,12 +5,12 @@ import React from "react";
 export default function EmbeddedZohoForm() {
     return (
         <div id="crmWebToEntityForm" className="zcwf_lblLeft crmWebToEntityForm">
-            <form id="webform409531000000325116" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000000325116" method="POST" acceptCharset="UTF-8">
-                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="cae9ae065232fde2e40c34423041df835a4066ff2103c546e198d684b35e9861" readOnly />
+            <form id="webform409531000026445204" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000026445204" method="POST" acceptCharset="UTF-8">
+                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="d350d5f190b98a73788f37a928249b0c103447cddd32d7b43650abefe9008176" readOnly />
                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                <input type="text" className="hidden" name="xmIwtLD" defaultValue="3820b2b7a84f952a9adb8f71d02ba0d6e9247f59314524fd5d4528cf4dff99b516b0d501ae4661e854a71c2dfb2b5263" readOnly />
+                <input type="text" className="hidden" name="xmIwtLD" defaultValue="0c89f378a8fa7adc2a64861fb7484f215a635922aa35616269ed9654a77c1423e1e3996b799ddf35ab0dd58d601aac7e" readOnly />
                 <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
-                <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/contact-us/thank-you.php" readOnly />
+                <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/best-cloud-based-crm/thank-you/" readOnly />
                 <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" />
                 <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" />
 
@@ -84,7 +84,7 @@ export default function EmbeddedZohoForm() {
                     }
                     
                     .g-recaptcha { margin-top: 15px; display: flex; justify-content: flex-start; }
-                    #recapErr409531000000325116 { font-size: 12px; color: #ef4444; margin-top: 10px; visibility: hidden; }
+                    #recapErr409531000026445204 { font-size: 12px; color: #ef4444; margin-top: 10px; visibility: hidden; }
                     
                     @media (max-width: 640px) {
                       .agsuite_column { width: 100%; padding: 0; }
@@ -123,11 +123,14 @@ export default function EmbeddedZohoForm() {
                     </div>
 
                     <div className="agsuite_column">
-                        <select className="zcwf_col_fld_slt" id="LEADCF40" name="LEADCF40" defaultValue="">
+                        <select className="zcwf_col_fld_slt" id="Annual_Revenue" name="Annual Revenue" defaultValue="">
                             <option value="" disabled>Annual Revenue*</option>
                             <option value="Under $500K">Under $500K</option>
-                            <option value="1M+">$1M+</option>
-                            <option value="10M+">$10M+</option>
+                            <option value="$500k to $1M">$500k to $1M</option>
+                            <option value="$1M to $2M">$1M to $2M</option>
+                            <option value="$2M to $5M">$2M to $5M</option>
+                            <option value="$5M to $10M">$5M to $10M</option>
+                            <option value="$10M+">$10M+</option>
                         </select>
                     </div>
 
@@ -136,8 +139,8 @@ export default function EmbeddedZohoForm() {
                     </div>
 
                     <div className="agsuite_column-large">
-                        <div className="g-recaptcha" data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="light" id="recap409531000000325116"></div>
-                        <div id="recapErr409531000000325116">Please verify you are not a robot.</div>
+                        <div className="g-recaptcha" data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="light" id="recap409531000026445204"></div>
+                        <div id="recapErr409531000026445204">Please verify you are not a robot.</div>
                         <input type="submit" id="formsubmit" className="zcwf_button" value="Send Request" aria-label="Submit Form" />
                     </div>
                 </div>
