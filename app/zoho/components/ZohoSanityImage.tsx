@@ -1,4 +1,4 @@
-'use client'
+import Image from 'next/image'
 import { urlForZohoImage } from '../../../sanity/lib/zohoImage'
 import { CSSProperties } from 'react'
 
@@ -21,6 +21,7 @@ export default function ZohoSanityImage({
     fill = false,
     className = '',
     priority = false,
+    sizes,
     fallback = '/images/placeholder.webp',
     style,
     width,
@@ -28,29 +29,21 @@ export default function ZohoSanityImage({
 }: ZohoSanityImageProps) {
     const src = urlForZohoImage(image) || fallback
 
-    if (fill) {
-        return (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-                src={src}
-                alt={alt}
-                loading={priority ? 'eager' : 'lazy'}
-                className={`absolute inset-0 w-full h-full ${className}`}
-                style={{ objectFit: 'cover', ...style }}
-            />
-        )
-    }
-
     return (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
+        <Image
             src={src}
             alt={alt}
-            width={width}
-            height={height}
+            fill={fill}
+            width={!fill ? (width || 800) : undefined}
+            height={!fill ? (height || 600) : undefined}
+            priority={priority}
             loading={priority ? 'eager' : 'lazy'}
             className={className}
-            style={style}
+            sizes={sizes || (fill ? '100vw' : undefined)}
+            style={{ 
+                objectFit: fill ? 'cover' : undefined,
+                ...style 
+            }}
         />
     )
 }
