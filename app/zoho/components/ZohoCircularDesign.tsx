@@ -227,18 +227,29 @@ export const ZohoCircularDesign = () => {
                 </div>
 
                 <div className="absolute inset-0 z-50 pointer-events-none">
+                    <style>{`
+                        @keyframes revolve {
+                            from { transform: rotate(0deg); }
+                            to { transform: rotate(360deg); }
+                        }
+                        @keyframes counter-revolve {
+                            from { transform: rotate(0deg); }
+                            to { transform: rotate(-360deg); }
+                        }
+                        .animate-revolve {
+                            animation: revolve 60s linear infinite;
+                            will-change: transform;
+                        }
+                        .animate-counter-revolve {
+                            animation: counter-revolve 60s linear infinite;
+                            will-change: transform;
+                        }
+                    `}</style>
                     {STAKEHOLDERS.map((stakeholder, idx) => {
                         return (
-                            <motion.div
+                            <div
                                 key={idx}
-                                animate={{ rotate: 360 }}
-                                transition={{
-                                    duration: 60,
-                                    repeat: Infinity,
-                                    ease: "linear",
-                                    delay: 0
-                                }}
-                                className="absolute inset-0 flex items-center justify-center"
+                                className="absolute inset-0 flex items-center justify-center animate-revolve"
                             >
                                 <div
                                     className="absolute pointer-events-auto flex flex-col items-center"
@@ -246,28 +257,18 @@ export const ZohoCircularDesign = () => {
                                         transform: `rotate(${stakeholder.angle}deg) translateY(-${280}px) rotate(-${stakeholder.angle}deg)`
                                     }}
                                 >
-                                    <motion.div
-                                        animate={{ rotate: -360 }}
-                                        transition={{
-                                            duration: 60,
-                                            repeat: Infinity,
-                                            ease: "linear",
-                                            delay: 0
-                                        }}
-                                        className="relative flex flex-col items-center"
-                                    >
+                                    <div className="relative flex flex-col items-center animate-counter-revolve">
                                         <div className="w-10 h-10 xl:w-12 xl:h-12 rounded-full bg-white flex items-center justify-center text-rose-600 text-lg shadow-[0_4px_12px_rgba(233,30,99,0.3)] border-2 border-rose-200">
                                             <stakeholder.Icon />
                                         </div>
-
                                         <div className="mt-2 text-center">
                                             <span className="text-[10px] font-bold text-rose-900 uppercase tracking-wide whitespace-nowrap bg-white px-2 py-1 rounded-lg border border-rose-200 shadow-sm">
                                                 {stakeholder.name}
                                             </span>
                                         </div>
-                                    </motion.div>
+                                    </div>
                                 </div>
-                            </motion.div>
+                            </div>
                         );
                     })}
                 </div>

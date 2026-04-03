@@ -72,13 +72,8 @@ export default function SocialSidebar() {
                     animate="rest"
                 >
                     {/* Brand Color Background (Now always visible) */}
-                    <motion.div
-                        variants={{
-                            rest: { width: "40px", borderTopRightRadius: "8px", borderBottomRightRadius: "8px" },
-                            hover: { width: "150px", borderTopRightRadius: "25px", borderBottomRightRadius: "25px" }
-                        }}
-                        transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                        className={`absolute left-0 inset-y-0 shadow-lg z-0 ${social.color}`}
+                    <div
+                        className={`absolute left-0 inset-y-0 shadow-lg z-0 transition-all duration-300 ease-in-out group-hover:w-[150px] group-hover:rounded-r-[25px] w-[40px] rounded-r-[8px] ${social.color}`}
                     />
 
                     {/* Icon Container (White icons on brand background) */}

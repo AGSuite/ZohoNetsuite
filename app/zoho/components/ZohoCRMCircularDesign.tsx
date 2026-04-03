@@ -41,27 +41,41 @@ const NODES = [
 
 export const ZohoCRMCircularDesign = () => {
     return (
-        <div className="relative w-full h-full flex items-center justify-center">
+        <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+            <style>{`
+                @keyframes orbit-revolve {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+                @keyframes hub-pulse {
+                    0%, 100% { opacity: 0.15; transform: scale(1); }
+                    50% { opacity: 0.25; transform: scale(1.05); }
+                }
+                .animate-orbit-revolve {
+                    animation: orbit-revolve var(--duration) linear infinite;
+                    will-change: transform;
+                }
+                .animate-hub-pulse {
+                    animation: hub-pulse 4s ease-in-out infinite;
+                    will-change: transform, opacity;
+                }
+            `}</style>
+            
             {/* ── Background Glow ────────────────────────────────────────────────── */}
-            <div className="absolute w-[450px] h-[450px] bg-blue-600/20 rounded-full blur-[100px] animate-pulse" />
+            <div className="absolute w-[450px] h-[450px] bg-blue-600/20 rounded-full blur-[100px] animate-hub-pulse" />
 
             {/* ── Orbits ──────────────────────────────────────────────────────────── */}
             {ORBITS.map((orbit, i) => (
-                <motion.div
+                <div
                     key={i}
-                    className="absolute border rounded-full pointer-events-none"
+                    className="absolute border rounded-full pointer-events-none animate-orbit-revolve"
                     style={{
                         width: orbit.radius * 2,
                         height: orbit.radius * 2,
                         borderColor: orbit.color,
                         borderWidth: "1px",
-                    }}
-                    animate={{ rotate: 360 }}
-                    transition={{
-                        duration: orbit.duration,
-                        repeat: Infinity,
-                        ease: "linear",
-                    }}
+                        '--duration': `${orbit.duration}s`
+                    } as any}
                 />
             ))}
 
@@ -71,28 +85,21 @@ export const ZohoCRMCircularDesign = () => {
                 const duration = ORBITS[node.orbit].duration;
 
                 return (
-                    <motion.div
+                    <div
                         key={i}
-                        className="absolute"
-                        animate={{ rotate: 360 }}
-                        transition={{
-                            duration: duration,
-                            repeat: Infinity,
-                            ease: "linear",
-                        }}
+                        className="absolute animate-orbit-revolve"
                         style={{
                             width: radius * 2,
                             height: radius * 2,
-                        }}
+                            '--duration': `${duration}s`
+                        } as any}
                     >
-                        <motion.div
+                        <div
                             className="absolute flex flex-col items-center justify-center"
                             style={{
                                 left: "50%",
                                 top: 0,
-                                x: "-50%",
-                                y: "-50%",
-                                rotate: 0, // Keeps node upright
+                                transform: "translate(-50%, -50%)",
                             }}
                         >
                             {/* Node Core */}
@@ -101,7 +108,7 @@ export const ZohoCRMCircularDesign = () => {
                                 className="w-12 h-12 rounded-2xl bg-slate-900 border border-white/20 flex items-center justify-center shadow-2xl backdrop-blur-md relative group cursor-pointer"
                             >
                                 <node.icon
-                                    className="w-5 h-5"
+                                    className="w-5 h-5 transition-transform group-hover:scale-110"
                                     style={{ color: node.color }}
                                 />
 
@@ -116,8 +123,8 @@ export const ZohoCRMCircularDesign = () => {
                                     style={{ backgroundColor: node.color }}
                                 />
                             </motion.div>
-                        </motion.div>
-                    </motion.div>
+                        </div>
+                    </div>
                 );
             })}
 
@@ -137,10 +144,9 @@ export const ZohoCRMCircularDesign = () => {
                 </div>
 
                 {/* Rotating Hub Ring */}
-                <motion.div
-                    className="absolute inset-2 border-t-2 border-r-2 border-blue-400/30 rounded-full"
-                    animate={{ rotate: -360 }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                <div
+                    className="absolute inset-2 border-t-2 border-r-2 border-blue-400/30 rounded-full animate-orbit-revolve"
+                    style={{ '--duration': '10s' } as any}
                 />
             </motion.div>
         </div>
