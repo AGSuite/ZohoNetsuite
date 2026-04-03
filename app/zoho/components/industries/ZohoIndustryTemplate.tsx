@@ -782,63 +782,48 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
         </div>
       </section>
 
-      {/* ══════ PRICING ══════ */}
-      <section id="pricing" className="py-24 bg-white scroll-mt-20">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* ── Pricing Section ───────────────────────────────────────────────── */}
+      <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.7 }}
+            className="rounded-3xl overflow-hidden shadow-2xl"
+            style={{ backgroundColor: '#06303f' }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Zoho Business Software for {data.industry}
-            </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              {data.pricingIntro || "Choose the right plan to scale your industry operations."}
-            </p>
-          </motion.div>
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
+              {/* Left Side */}
+              <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
+                <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
+                   How Much Does Zoho Cost?
+                </h2>
+                <p className="text-white/75 text-base leading-relaxed mb-8">
+                  From rising startups to global enterprises, Zoho scales alongside your ambition. Your investment is tailored to your business size and requirements, staying flexible through discounts and volume incentives as you grow. Simply adjust your license and user count without infrastructure worries—a seamless, cloud-powered foundation that grows exactly as you do.
+                </p>
+                <div>
+                  <Link
+                    href="#contact-form"
+                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-yellow-400 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg"
+                  >
+                     Talk to a Pricing Specialist <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {data.pricingTiers.map((tier, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={`relative p-8 rounded-3xl border ${tier.popular ? "border-blue-600 shadow-2xl scale-105 z-10" : "border-gray-200 shadow-xl"} flex flex-col bg-white`}
-              >
-                {tier.popular && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-                    Most Popular
-                  </div>
-                )}
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{tier.name}</h3>
-                <p className="text-gray-500 text-sm mb-6">{tier.description}</p>
-                <div className="mb-8">
-                  <span className="text-4xl font-bold text-gray-900">{tier.price}</span>
-                  {tier.price !== "Custom" && <span className="text-gray-500 text-base font-medium">/month</span>}
+              {/* Right Side — Organic Visual */}
+              <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
+                <div className="absolute inset-0 bg-[#052838]" />
+                <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
+                <div className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#0a5060]" style={{ borderRadius: '45% 55% 50% 50% / 50% 50% 50% 50%' }} />
+                <div className="absolute bottom-8 left-6 w-14 h-14 bg-[#1a8fa0]/60 z-10" style={{ borderRadius: '40% 60% 50% 50% / 50% 40% 60% 50%', transform: 'rotate(20deg)' }} />
+                <div className="absolute bottom-16 left-14 w-3 h-3 bg-yellow-400/60 rounded-full z-10" />
+                <div className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl" style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}>
+                  <Image src={data.heroImage} alt="Pricing Visual" fill className="object-cover object-top" />
                 </div>
-                <div className="flex-1 space-y-4 mb-8">
-                  {tier.features.map((feat, fi) => (
-                    <div key={fi} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
-                        <Check size={12} className="text-blue-600" />
-                      </div>
-                      <span className="text-sm text-gray-600">{feat}</span>
-                    </div>
-                  ))}
-                </div>
-                <Link
-                  href="#contact-form"
-                  className={`w-full py-4 rounded-xl font-bold text-sm uppercase tracking-widest transition-all ${tier.popular ? "bg-blue-600 text-white shadow-lg hover:bg-blue-700" : "bg-gray-900 text-white hover:bg-black shadow-md"} text-center`}
-                >
-                  Select Plan
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

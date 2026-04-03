@@ -164,6 +164,7 @@ export default function ZohoCRMPlusPage() {
       title="Zoho CRM Plus — The Unified Customer Experience Platform"
       subtitle="Better Client Relationships, One Unified Platform."
       description="Zoho CRM Plus brings together your sales, marketing, and help desk teams on one unified platform to deliver a consistently great customer experience at every touchpoint."
+      introDescription2="Zoho CRM Plus provides a unified platform for every customer-facing team, ensuring your marketing, sales, and support departments operate in perfect sync."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

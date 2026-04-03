@@ -163,7 +163,8 @@ export default function ZohoProjectsPage() {
     <ZohoSolutionTemplate
       title="Zoho Projects — Cloud-Based Project Management"
       subtitle="Deliver Projects On Time, Every Time."
-      description="Zoho Projects is an online project management software that helps you plan, track, and collaborate on your projects with ease and efficiency."
+      description="Zoho Projects is a cloud-based project management software that helps you plan your work, track it efficiently, and collaborate with your team, no matter where they are."
+      introDescription2="With powerful Gantt charts, task dependencies, and seamless collaboration tools, Zoho Projects ensures your teams stay aligned and your projects remain on track and within budget."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

@@ -164,6 +164,7 @@ export default function ZohoMailPage() {
       title="Zoho Mail — Secure Business Email"
       subtitle="The Inbox Built for Business Collaboration."
       description="Zoho Mail is a secure, encrypted, ad-free, and privacy-guaranteed email service that helps you communicate professionally and collaborate effectively."
+      introDescription2="Zoho Mail provides a secure, ad-free business email platform that combines a clean interface with powerful admin controls and seamless collaboration across your entire organization."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

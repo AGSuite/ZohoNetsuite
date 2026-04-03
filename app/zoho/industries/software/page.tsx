@@ -10,7 +10,7 @@ const data: IndustryPageData = {
   heroTitle: "Accelerate Your SaaS Growth with Zoho",
   heroDescription:
     "Automate complex subscription billing, revenue recognition, and global financial consolidations with the unified Zoho cloud suite tailored for high-growth tech companies.",
-  heroImage: "/images/industries/logistics-means-transport-together-with-technological-futuristic-holograms (2)_11zon.jpg",
+  heroImage: "/images/people/fourteam.webp",
   heroCardTitle: "Subscription Management",
   heroCardSub: "Billing · Revenue Recognition · SaaS Metrics",
   heroTopCardTitle: "Trusted by 500+ Tech Firms",

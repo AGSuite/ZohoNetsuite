@@ -10,7 +10,7 @@ const data: IndustryPageData = {
   heroTitle: "Drive Operational Excellence with Zoho",
   heroDescription:
     "Gain complete visibility across your global shipments, fleet management, and logistics financials with the unified Zoho cloud suite tailored for the transportation industry.",
-  heroImage: "/images/lap/lap4.webp",
+  heroImage: "/images/industries/logistics-means-transport-together-with-technological-futuristic-holograms (2)_11zon.jpg",
   heroCardTitle: "Fleet & Asset Control",
   heroCardSub: "Dispatch · Logistics · Billing · Financials",
   heroTopCardTitle: "Trusted by 350+ Logistics Firms",

@@ -164,7 +164,8 @@ export default function ZohoAnalyticsPage() {
     <ZohoSolutionTemplate
       title="Zoho Analytics — Modern BI & Data Analytics"
       subtitle="Transform Your Raw Data into Actionable Insights."
-      description="Zoho Analytics is a self-service BI and data analytics software that allows you to create visually appealing data visualizations and insightful dashboards in minutes."
+      description="A self-service business intelligence and data analytics software that lets you create visually appealing data visualizations and insightful dashboards in minutes."
+      introDescription2="Zoho Analytics turns your raw data into actionable insights through stunning visualizations and AI-powered dashboards that tell the real story of your business performance."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

@@ -111,7 +111,8 @@ export default function ZohoPeoplePlusPage() {
     <ZohoSolutionTemplate
       title="Zoho People Plus — Unified HR Suite"
       subtitle="Deliver Exceptional Employee Experiences."
-      description="Zoho People Plus is an integrated HR platform that brings talent acquisition, core HR, employee engagement, and performance management into one unified suite."
+      description="Zoho People Plus is an integrated employee experience platform that brings together HR, recruitment, payroll, and performance management to help you build and nurture a high-performing team."
+      introDescription2="Zoho People Plus provides an integrated employee experience platform that covers everything from talent acquisition and core HR to employee engagement and payroll."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

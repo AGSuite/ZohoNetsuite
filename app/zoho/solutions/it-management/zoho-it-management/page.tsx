@@ -164,6 +164,7 @@ export default function ZohoITManagementPage() {
       title="Zoho IT Management — Secure, Efficient, Scalable"
       subtitle="The Command Center for Modern IT Operations."
       description="Zoho IT Management provides a comprehensive suite of tools to monitor, manage, and secure your entire IT infrastructure from a single, unified platform."
+      introDescription2="Empower your IT team with comprehensive monitoring, patch management, and help desk tools designed to keep your entire digital infrastructure running at peak performance."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

@@ -164,6 +164,7 @@ export default function ZohoCommercePage() {
       title="Zoho Commerce — The Complete E-Commerce Platform"
       subtitle="Build Your Store, Sell Your Way, Scale Your Brand."
       description="Zoho Commerce is a world-class e-commerce platform that handles every aspect of your online business — from store design and inventory to orders, shipping, and finances."
+      introDescription2="Launch your online store with everything you need out of the box — from professional product listings and secure checkout to integrated inventory and order management."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

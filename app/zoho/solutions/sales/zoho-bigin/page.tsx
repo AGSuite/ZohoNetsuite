@@ -164,6 +164,7 @@ export default function ZohoBiginPage() {
       title="Zoho Bigin — Pipeline-Centric CRM for Small Teams"
       subtitle="Small Teams, Big Results."
       description="Zoho Bigin is a simple, effective, and small-business-focused CRM that helps you manage pipelines, track deals, and grow. It's the simple way to move beyond spreadsheets."
+      introDescription2="Built specifically for small businesses, Bigin takes the complexity out of pipeline management, making it incredibly easy to manage leads and close deals from a single, visual interface."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

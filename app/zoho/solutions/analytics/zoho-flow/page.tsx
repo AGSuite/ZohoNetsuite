@@ -165,7 +165,8 @@ export default function ZohoFlowPage() {
     <ZohoSolutionTemplate
       title="Zoho Flow — The Smart Integration Platform"
       subtitle="Connect Your Apps, Automate Your Growth."
-      description="Zoho Flow is an integration platform that helps you connect your apps and automate complex business workflows. Move data across apps effortlessly with an intuitive, no-code builder."
+      description="Next-gen workflow automation software that connects your apps and synchronizes your data across different systems for a more efficient business."
+      introDescription2="Connect your entire business suite without writing code. Zoho Flow automates workflows across 500+ apps, ensuring your data moves exactly where it's needed in real-time."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

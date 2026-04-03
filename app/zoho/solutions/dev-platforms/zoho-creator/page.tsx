@@ -163,7 +163,8 @@ export default function ZohoCreatorPage() {
     <ZohoSolutionTemplate
       title="Zoho Creator — Low-Code Application Platform"
       subtitle="The Future of Custom Business Applications."
-      description="Zoho Creator is a low-code application development platform that empowers businesses to build custom applications and automate processes with absolute speed and reliability."
+      description="Zoho Creator is a low-code application development platform that allows you to build custom business applications with an easy-to-use, drag-and-drop builder."
+      introDescription2="Build custom business applications in minutes, not months. Zoho Creator's low-code platform empowers your team to digitize unique processes with secure, scalable solutions."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

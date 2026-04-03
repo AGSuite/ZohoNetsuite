@@ -170,6 +170,7 @@ export default function ZohoFsmPage() {
       title="Zoho FSM — Field Service Management Software"
       subtitle="Better Scheduling, Faster Service, Higher Profits."
       description="Zoho FSM is a comprehensive cloud-based platform to manage your entire field operations — from scheduling and dispatching to invoicing and customer management."
+      introDescription2="Zoho FSM empowers your field technicians with mobile-first job management, real-time schedule optimization, and seamless invoicing directly from the field."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

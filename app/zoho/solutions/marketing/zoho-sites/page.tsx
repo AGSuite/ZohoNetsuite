@@ -164,6 +164,7 @@ export default function ZohoSitesPage() {
       title="Zoho Sites — The Professional Website Builder"
       subtitle="Your Brand's Digital Home, Built with Precision."
       description="Zoho Sites is a zero-code website builder that provides everything you need to build, launch, and manage professional websites that drive business growth."
+      introDescription2="Create a stunning professionally-designed website for your business in minutes with Zoho Sites' intuitive drag-and-drop builder and extensive library of ready-made sections."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

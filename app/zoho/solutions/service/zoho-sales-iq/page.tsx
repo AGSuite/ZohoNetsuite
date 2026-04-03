@@ -168,6 +168,7 @@ export default function ZohoSalesIqPage() {
       title="Zoho SalesIQ — Live Chat & Visitor Tracking"
       subtitle="Engage Your Visitors, Convert Your Leads, Scale Your Sales."
       description="Zoho SalesIQ is a customer engagement platform that combines visitor tracking and live chat to help you identify, engage, and convert website prospects into customers."
+      introDescription2="Bridge the gap between your website visitors and your support team. SalesIQ provides live chat, visitor tracking, and AI-driven engagement to convert prospects into loyal customers."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

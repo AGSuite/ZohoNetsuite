@@ -114,6 +114,7 @@ export interface SolutionProps {
   };
   heroCard1?: { title: string; subtitle: string; icon?: any };
   heroCard2?: { title: string; subtitle: string; icon?: any };
+  introDescription2?: string;
 }
 
 export default function ZohoSolutionTemplate({
@@ -129,6 +130,7 @@ export default function ZohoSolutionTemplate({
   pricingInfo,
   heroCard1,
   heroCard2,
+  introDescription2,
 }: SolutionProps) {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
@@ -398,6 +400,11 @@ export default function ZohoSolutionTemplate({
               <p className="text-lg text-gray-600 leading-relaxed">
                 {description}
               </p>
+              {introDescription2 && (
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  {introDescription2}
+                </p>
+              )}
               <div className="pt-4">
                 <Link
                   href="#contact-form"
@@ -621,19 +628,11 @@ export default function ZohoSolutionTemplate({
               <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
                 <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
-                   {title.split('—')[0]} Pricing & Plans
+                   How Much Does Zoho Cost?
                 </h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
-                   {pricingInfo.description}
+                  From rising startups to global enterprises, Zoho scales alongside your ambition. Your investment is tailored to your business size and requirements, staying flexible through discounts and volume incentives as you grow. Simply adjust your license and user count without infrastructure worries—a seamless, cloud-powered foundation that scales exactly as you do.
                 </p>
-                <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                   {pricingInfo.plans.map((p, i) => (
-                      <div key={i} className="flex items-center gap-3 text-white/90">
-                         <CheckCircle2 size={16} className="text-yellow-400 shrink-0" />
-                         <span className="text-sm font-medium">{p}</span>
-                      </div>
-                   ))}
-                </div>
                 <div>
                   <Link
                     href="#contact-form"

@@ -164,6 +164,7 @@ export default function ZohoPeoplePage() {
       title="Zoho People — Complete HR Management Software"
       subtitle="The Modern Way to Manage Your Workforce."
       description="Zoho People is a cloud-based HRMS that simplifies your HR operations, fosters employee development, and builds a better workplace environment."
+      introDescription2="Zoho People transforms HR from a back-office function into a strategic asset, providing the tools needed to nurture talent, manage performance, and build a high-performance culture."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

@@ -197,6 +197,7 @@ export default function ZohoCRMPage() {
       title="Zoho CRM — Modern Customer Relationship Management"
       subtitle="Unified Relationships, Accelerated Growth."
       description="A comprehensive CRM platform that empowers over 250,000 businesses globally to build lasting customer relationships and drive revenue growth through better experiences."
+      introDescription2="By centralizing customer data and automating routine sales tasks, Zoho CRM empowers your team to focus on building meaningful relationships rather than managing spreadsheets."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

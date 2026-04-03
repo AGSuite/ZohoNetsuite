@@ -165,6 +165,7 @@ export default function ZohoOnePage() {
       title="Zoho One — The Operating System for Business"
       subtitle="Run Your Entire Business on One Integrated Platform."
       description="Zoho One is a comprehensive suite of over 45+ integrated web and mobile applications to help you run all aspects of your business in the cloud."
+      introDescription2="With a unified data model and single sign-on across more than 45 applications, Zoho One eliminates departmental silos and provides a single source of truth for your entire organization."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

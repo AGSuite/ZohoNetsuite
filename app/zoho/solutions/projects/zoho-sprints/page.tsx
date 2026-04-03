@@ -165,6 +165,7 @@ export default function ZohoSprintsPage() {
       title="Zoho Sprints — The Agile Project Management Tool"
       subtitle="Better Planning, Smarter Execution, Faster Releases."
       description="Zoho Sprints is a lightweight, agile project management tool that helps scrum teams plan, track, and release great software iteratively."
+      introDescription2="Designed for agile teams, Zoho Sprints provides the structure and flexibility needed to manage backlogs, plan sprints, and track velocity with intuitive boards and reporting."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

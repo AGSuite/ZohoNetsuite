@@ -163,7 +163,8 @@ export default function ZohoBooksPage() {
     <ZohoSolutionTemplate
       title="Zoho Books — Online Accounting Software"
       subtitle="Comprehensive Finance Management for Modern Businesses."
-      description="Zoho Books is an online accounting software that manages your finances, keeps you GST compliant, automates business workflows, and helps you work collectively across departments."
+      description="A comprehensive accounting software for businesses to manage their finances, automate business workflows, and help them work collectively across departments."
+      introDescription2="From automated bank feeds to GST-compliant invoicing, Zoho Books simplifies complex accounting tasks, ensuring your financial data is always accurate and audit-ready."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

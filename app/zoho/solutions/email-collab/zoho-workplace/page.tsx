@@ -164,6 +164,7 @@ export default function ZohoWorkplacePage() {
       title="Zoho Workplace — Unified Collaboration Suite"
       subtitle="Better Collaboration Starts with a Unified Workplace."
       description="Zoho Workplace is an integrated suite of applications that includes email, document management, team chat, and more — designed to help your team work together more effectively."
+      introDescription2="Zoho Workplace provides a unified communications and collaboration suite where your team can chat, meet, write documents, and share files in a single, secure ecosystem."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

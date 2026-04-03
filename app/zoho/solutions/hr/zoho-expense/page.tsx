@@ -170,6 +170,7 @@ export default function ZohoExpensePage() {
       title="Zoho Expense — Online Expense Management Software"
       subtitle="The Easiest Way to Manage Your Business Spending."
       description="Zoho Expense is a cloud-based expense management software that automates reporting, streamlines travel management, and empowers teams to work together efficiently."
+      introDescription2="Transform how your organization manages expenses. Zoho Expense automates expense reporting, provides real-time policy checks, and speeds up reimbursement cycles."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

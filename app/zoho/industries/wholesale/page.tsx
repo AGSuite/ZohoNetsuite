@@ -10,12 +10,12 @@ const data: IndustryPageData = {
   heroTitle: "Maximize Supply Chain Efficiency with Zoho",
   heroDescription:
     "Run your entire distribution business on a unified cloud suite. Automate procurement, optimize warehouse operations, and improve order fulfillment to scale globally.",
-  heroImage: "/images/lap/lap5.webp",
+  heroImage: "/images/industries/Wholesale-Distribution-compressed.webp",
   heroCardTitle: "Warehouse Ops Control",
   heroCardSub: "Procurement · Orders · Inventory · Logistics",
   heroTopCardTitle: "Trusted by 400+ Distributors",
   heroTopCardSub: "B2B · Logistics-Ready · High-Volume",
-  introImage: "/images/lap/lap2.webp",
+  introImage: "/images/industries/Wholesale-Distribution-compressed.webp",
   introTitle: "Purpose-Built Zoho Tools for Distributors",
   introDescription:
     "Wholesale distributors face a constant juggle between supplier management and customer demand. Zoho's distribution ecosystem provides a single source of truth that connects your purchasing (Zoho Inventory), sales (Zoho CRM), and financials (Zoho Books).",

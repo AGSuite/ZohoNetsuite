@@ -163,7 +163,8 @@ export default function ZohoRecruitPage() {
     <ZohoSolutionTemplate
       title="Zoho Recruit — Powerful Talent Acquisition System"
       subtitle="Find the Right Talent, Faster."
-      description="Zoho Recruit is a cloud-based applicant tracking system (ATS) and recruitment software that unifies your entire hiring process, from sourcing to onboarding."
+      description="A comprehensive applicant tracking system and recruitment software that streamlines the entire hiring process for both internal teams and agencies."
+      introDescription2="Designed for both staffing agencies and internal teams, Zoho Recruit automates the entire sourcing-to-hiring pipeline, letting you focus on the best-fit talent for your organization."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

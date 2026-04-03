@@ -163,7 +163,8 @@ export default function ZohoDeskPage() {
     <ZohoSolutionTemplate
       title="Zoho Desk — Omnichannel Help Desk Software"
       subtitle="Better Service, Happier Customers, Stronger Brand."
-      description="Zoho Desk is an industry-standard help desk software that helps you focus on customer success and build lasting relationships through excellence in service."
+      description="A contextual help desk software that helps you focus on the customer and build relationships that last."
+      introDescription2="Zoho Desk provides the context and AI-driven tools your support agents need to deliver fast, personalized, and high-quality service across every customer touchpoint."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

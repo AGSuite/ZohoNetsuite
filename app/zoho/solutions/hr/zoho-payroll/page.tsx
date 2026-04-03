@@ -166,6 +166,7 @@ export default function ZohoPayrollPage() {
       title="Zoho Payroll — Cloud-Based Payroll Software"
       subtitle="The Payroll System That Works as Hard as You Do."
       description="Zoho Payroll is an automated payroll software that manages salary processing, statutory compliance, and employee benefits — ensuring your team is paid accurately and on time."
+      introDescription2="Simplify your payroll processing with automated calculations, statutory compliance tracking, and direct deposit capabilities that ensure your team is paid on time."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

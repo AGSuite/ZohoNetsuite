@@ -167,6 +167,7 @@ export default function ZohoFinancePlusPage() {
       title="Zoho Finance Plus — The Unified Finance Suite"
       subtitle="Complete Back-Office Automation, One Integrated Suite."
       description="Zoho Finance Plus offers an end-to-end back-office platform for your business. From invoicing to order management and accounting, it unifies all your financial operations."
+      introDescription2="The ultimate finance suite for businesses, Finance Plus integrates accounting, invoicing, order management, and multi-currency support into one streamlined financial operating system."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

@@ -168,6 +168,7 @@ export default function ZohoSocialPage() {
       title="Zoho Social — The Complete Social Media Marketing Platform"
       subtitle="Better Social Engagement, Stronger Brand Presence."
       description="Zoho Social is the world's most comprehensive social media management tool for businesses and agencies, helping you build your brand and grow your presence across all major networks."
+      introDescription2="Manage your entire social media presence from one dashboard. Plan, schedule, and analyze your content across all global networks to build a stronger brand community."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

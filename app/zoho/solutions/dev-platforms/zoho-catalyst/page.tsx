@@ -165,6 +165,7 @@ export default function ZohoCatalystPage() {
       title="Zoho Catalyst — The Serverless Full-Stack Platform"
       subtitle="The Modern Way to Build and Scale Full-Stack Apps."
       description="Zoho Catalyst is a pro-code serverless platform that allows you to build, deploy, and scale high-performance applications without worrying about infrastructure."
+      introDescription2="Zoho Catalyst is a pro-code platform that lets you build and deploy powerful serverless microservices and applications with zero infrastructure management overhead."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

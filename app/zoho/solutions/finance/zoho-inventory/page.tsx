@@ -163,7 +163,8 @@ export default function ZohoInventoryPage() {
     <ZohoSolutionTemplate
       title="Zoho Inventory — Smart Multi-Channel Inventory Management"
       subtitle="The Command Center for Your Stock."
-      description="Zoho Inventory is a cloud-based inventory management software that helps you manage orders, track stock across channels, and fulfill shipments — all in real-time."
+      description="Scalable inventory management software that optimizes your order management, from purchases to shipments and beyond."
+      introDescription2="Zoho Inventory provides the real-time visibility you need across multiple channels and warehouses, ensuring you never miss a sale or overstock on slow-moving items."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
