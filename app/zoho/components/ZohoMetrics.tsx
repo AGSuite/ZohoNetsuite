@@ -83,30 +83,19 @@ const ZohoMetrics = () => {
                         </span>
                     </motion.div>
 
-                    {/* Headline with Word-by-Word Animation */}
+                    {/* Headline with Simpler Animation */}
                     <motion.h2
                         ref={headlineRef}
+                        initial={{ opacity: 0, y: 18 }}
+                        animate={headlineInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.65, ease: "easeOut" }}
                         className="text-4xl md:text-6xl lg:text-5xl font-semibold text-white mb-6 tracking-tight leading-tight"
+                        style={{ willChange: 'transform, opacity' }}
                     >
-                        {words.map((word, index) => (
-                            <motion.span
-                                key={index}
-                                initial={{ opacity: 0, y: 18 }}
-                                animate={headlineInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.1 }}
-                                className="inline-block mr-[0.3em]"
-                            >
-                                {word}
-                            </motion.span>
-                        ))}
-                        <motion.span
-                            initial={{ opacity: 0, y: 18 }}
-                            animate={headlineInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.35, ease: "easeOut", delay: words.length * 0.07 }}
-                            className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-red-400"
-                        >
+                        {headlineText}{" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-red-400">
                             {highlightText}
-                        </motion.span>
+                        </span>
                     </motion.h2>
 
                     {/* Subtext */}

@@ -6,7 +6,9 @@ export async function getZohoPosts() {
     if (!zohoProjectId || !zohoDataset) {
         return []
     }
-    return zohoClient.fetch(POSTS_QUERY)
+    return zohoClient.fetch(POSTS_QUERY, {}, {
+        next: { revalidate: 3600 }
+    })
 }
 
 export async function getZohoPostBySlug(slug: string) {

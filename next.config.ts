@@ -35,6 +35,7 @@ const nextConfig: NextConfig = {
     ],
     serverSourceMaps: false,
   },
+  transpilePackages: ["swiper", "framer-motion", "gsap", "lucide-react"],
   compiler: {
     styledComponents: true,
     removeConsole: process.env.NODE_ENV === 'production',

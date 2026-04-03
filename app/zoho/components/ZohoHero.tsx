@@ -22,12 +22,9 @@ interface ZohoHeroProps {
 export const ZohoHero: React.FC<ZohoHeroProps> = () => {
   const [isMounted, setIsMounted] = React.useState(false);
   const [activeIndex, setActiveIndex] = React.useState(0);
-  const [skipFirstAnimation, setSkipFirstAnimation] = React.useState(true);
 
   React.useEffect(() => {
     setIsMounted(true);
-    const timer = setTimeout(() => setSkipFirstAnimation(false), 1000);
-    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -106,7 +103,6 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                   image="/images/Dashboard/zohodash.webp"
                   priority={true}
                   multiColorShadow={true}
-                  skipEntranceAnimation={skipFirstAnimation}
                   showOverlay={false}
                   textColor="dark"
                 />
@@ -441,7 +437,6 @@ const HeroSlide = ({
   priority = false,
   isActive = false,
   multiColorShadow = false,
-  skipEntranceAnimation = false,
 }: any) => {
   return (
     <div className="relative h-full w-full flex items-center">
@@ -474,7 +469,7 @@ const HeroSlide = ({
           <AnimatePresence mode="wait">
             {isActive && (
               <motion.div
-                initial={skipEntranceAnimation ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
