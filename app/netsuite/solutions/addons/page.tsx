@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, useSpring, useTransform } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useSpring, useTransform, useScroll } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
@@ -10,8 +10,12 @@ import {
   DollarSign, CheckCircle2, Layers, Database, Star, Code, HeartHandshake,
   Users, TrendingUp, IndianRupee, WifiOff, ShoppingBag, ShoppingCart
 } from "lucide-react";
+import dynamic from 'next/dynamic';
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+
+const ScrollFloat = dynamic(() => import('../components/ScrollFloat'), { ssr: false }) as any;
+const RotatingText = dynamic(() => import('../components/RotatingText'), { ssr: false }) as any;
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
@@ -23,6 +27,16 @@ function Counter({ value }: { value: number }) {
 
 export default function AddonsPage() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
+  const [rotatingIdx, setRotatingIdx] = useState(0);
+
+  // Per-word accent colours (text · pill-bg · pill-border)
+  const wordColors = [
+    { text: '#ffffff', bg: '#1e3a8a', border: '#1e40af' },
+    { text: '#ffffff', bg: '#1e3a8a', border: '#1e40af' },
+    { text: '#ffffff', bg: '#1e3a8a', border: '#1e40af' },
+    { text: '#ffffff', bg: '#1e3a8a', border: '#1e40af' },
+  ];
+  const currentColor = wordColors[rotatingIdx] ?? wordColors[0];
 
   const stats = [
     { label: "Native SuiteApps", value: 3, suffix: "+", icon: Package },
@@ -30,6 +44,39 @@ export default function AddonsPage() {
     { label: "Integration Accuracy", value: 100, suffix: "%", icon: CheckCircle2 },
     { label: "Avg Time Saved", value: 40, suffix: "hrs/mo", icon: Zap },
   ];
+
+  const imageBgGradients = [
+    'linear-gradient(135deg, #1e3a8aff, #2563ebff, #1e40af)', // Blue
+    'linear-gradient(135deg, #3e8698ff, #2b504fff)', // Teal
+    'linear-gradient(135deg, #232222ff, #736f6fff)', // Gray/Dark
+    'linear-gradient(135deg, #3f628eff, #37353cff)', // Indigo/Dark
+    'linear-gradient(135deg, #eff1c4ff, #d39934ff)', // Gold/Amber
+    'linear-gradient(135deg, #3e8698ff, #2b504fff)', // Teal
+    'linear-gradient(135deg, #eff1c4ff, #d39934ff)', // Amber
+    'linear-gradient(135deg, #35a99dff, #4d58b8ff)', // Indigo/Cyan
+    'linear-gradient(135deg, #232222ff, #736f6fff)', // Rose
+    'linear-gradient(135deg, #740d94ff, #252a29ff)', // Purple
+  ];
+
+  const introRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: introScrollProgress } = useScroll({
+    target: introRef,
+    offset: ["start start", "end start"]
+  });
+
+  const introRadius = useTransform(introScrollProgress, [0, 0.3], ["0px", "48px"]);
+  const introMargin = useTransform(introScrollProgress, [0, 0.3], ["0px", "32px"]);
+  const introScale = useTransform(introScrollProgress, [0, 0.3], [1, 0.99]);
+
+  const solutionsRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: solutionsRef,
+    offset: ["start end", "start start"]
+  });
+
+  const cardRadius = useTransform(scrollYProgress, [0.3, 0.95], ["0px", "48px"]);
+  const cardMargin = useTransform(scrollYProgress, [0.3, 0.95], ["0px", "32px"]);
+  const cardScale = useTransform(scrollYProgress, [0.3, 0.95], [1, 0.99]);
 
   // All Add-Ons & Connectors with full detail
   const addons = [
@@ -175,8 +222,34 @@ export default function AddonsPage() {
           </motion.nav>
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6" style={{ minHeight: 'calc(100vh - 150px)' }}>
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15]">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">NetSuite Add-Ons & Connectors</span>
+              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.3]">
+                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400 mb-2">Experience a smarter<br /> way to manage your{' '}</span>
+
+                {/* Pill card — bg + border animate with each word */}
+                <motion.span
+                  className="inline-flex items-center align-middle rounded-2xl px-3 py-1 ml-1"
+                  style={{
+                    background: currentColor.bg,
+                    border: `1.5px solid ${currentColor.border}`,
+                    color: currentColor.text,
+                    transition: 'background 0.5s ease, border-color 0.5s ease',
+                  }}
+                >
+                  <RotatingText
+                    texts={['Localization', 'Commission', 'Backup', 'Connectors']}
+                    onNext={(idx: number) => setRotatingIdx(idx)}
+                    mainClassName="text-2xl sm:text-3xl md:text-4xl font-extrabold"
+                    splitBy="characters"
+                    staggerDuration={0.03}
+                    staggerFrom="first"
+                    rotationInterval={2200}
+                    transition={{ type: 'spring', damping: 22, stiffness: 280 }}
+                    initial={{ y: '110%', opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: '-110%', opacity: 0 }}
+                    style={{ color: '#ffffff' }}
+                  />
+                </motion.span>
               </motion.h1>
               <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }} className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full" />
               <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }} className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8">
@@ -220,88 +293,167 @@ export default function AddonsPage() {
       </section>
 
       {/* ─────────────── INTRO ─────────────── */}
-      <section className="pt-10 pb-14 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="flex items-center justify-center rounded-2xl" style={{ minHeight: 340 }}>
-              <Image src="/images/netsuiteimages/solutions/NetsuiteSRP.webp" alt="NetSuite Add-Ons" width={560} height={380} className="w-full h-auto rounded-xl object-contain" />
-            </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="space-y-6">
-              <h3 className="text-3xl md:text-4xl lg:text-4xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">Supercharge NetSuite with Purpose-Built Add-Ons.</h3>
-              <p className="text-lg text-gray-600 leading-relaxed">AGSuite's NetSuite Add-Ons and Connectors extend your NetSuite ERP with automation for the capabilities NetSuite doesn't include out of the box — commission management, disaster recovery, and multi-channel commerce integration.</p>
-              <p className="text-lg text-gray-600 leading-relaxed">Every Add-On is built as a native SuiteApp — running inside your NetSuite account with no middleware, no data lag, and no separate login required.</p>
-              <div className="pt-4">
-                <Link href="#addons" className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest text-white transition-all" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}>
-                  See All Add-Ons <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 1.2, repeat: Infinity }}><ArrowRight size={17} /></motion.span>
-                </Link>
-              </div>
-            </motion.div>
+      <section ref={introRef} className="py-10 bg-gray-100 overflow-hidden relative">
+        <motion.div
+          style={{
+            borderRadius: introRadius,
+            margin: introMargin,
+            scale: introScale,
+          }}
+          className="bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 overflow-hidden"
+        >
+          <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-24">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="flex items-center justify-center rounded-2xl" style={{ minHeight: 340 }}>
+                <Image src="/images/netsuiteimages/solutions/NetsuiteSRP.webp" alt="NetSuite Add-Ons" width={560} height={380} className="w-full h-auto rounded-xl object-contain" />
+              </motion.div>
+              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="space-y-6">
+                <ScrollFloat
+                  containerClassName="text-3xl md:text-4xl lg:text-4xl font-medium leading-[1.25]"
+                  fromColor="#111827"
+                  toColor="#2563eb"
+                >
+                  Supercharge NetSuite with Purpose-Built Add-Ons.
+                </ScrollFloat>
+                <p className="text-lg text-gray-600 leading-relaxed">AGSuite's NetSuite Add-Ons and Connectors extend your NetSuite ERP with automation for the capabilities NetSuite doesn't include out of the box — commission management, disaster recovery, and multi-channel commerce integration.</p>
+                <p className="text-lg text-gray-600 leading-relaxed">Every Add-On is built as a native SuiteApp — running inside your NetSuite account with no middleware, no data lag, and no separate login required.</p>
+                <div className="pt-4">
+                  <Link href="#addons" className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest text-white transition-all shadow-lg hover:shadow-xl hover:scale-105" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}>
+                    See All Add-Ons <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 1.2, repeat: Infinity }}><ArrowRight size={17} /></motion.span>
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* ─────────────── ALL ADD-ONS — ALTERNATING ROWS ─────────────── */}
-      <section id="addons" className="py-16 bg-white scroll-mt-20">
+      <section id="addons" className="py-18 relative overflow-hidden bg-gray-100">
+        {/* Decorative Background Orbs */}
+        <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-100/40 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+        <div className="absolute bottom-1/3 right-0 w-[600px] h-[600px] bg-indigo-100/40 rounded-full blur-[100px] translate-x-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-cyan-100/30 rounded-full blur-[80px] translate-y-1/2 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <span className="bg-blue-600/10 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Add-Ons Portfolio</span>
-            <h2 className="text-4xl lg:text-5xl font-bold mt-6 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#1e3a8a] via-blue-600 to-black">All Add-Ons &amp; Connectors</h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-600 leading-tight">All Add-Ons & Connectors</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
               Native NetSuite extensions built for commissions, data protection, Indian compliance, and multi-channel commerce.
             </p>
-
           </motion.div>
+        </div>
 
-          <div className="flex flex-col">
-            {addons.map((addon, index) => {
-              const isEven = index % 2 === 0;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-12 lg:py-16 ${index < addons.length - 1 ? 'border-b border-gray-200' : ''}`}
-                >
-                  {/* IMAGE SIDE */}
-                  <div className={`relative ${isEven ? 'order-1' : 'order-1 lg:order-2'}`}>
-                    <div className="relative h-64 sm:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-md">
-                      <Image src={addon.image} alt={addon.title} fill className="object-cover" />
-                    </div>
-                  </div>
+        <div className="w-full px-2 sm:px-4 lg:px-6">
+          <motion.div
+            ref={solutionsRef}
+            style={{
+              borderRadius: cardRadius,
+              margin: cardMargin,
+              scale: cardScale,
+            }}
+            className="bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden relative"
+          >
+            <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4">
+              <div className="flex flex-col">
+                {addons.map((addon, index) => {
+                  const isEven = index % 2 === 0;
+                  const currentGradient = imageBgGradients[index % imageBgGradients.length];
+                  // Extract a base color for accents
+                  const accentColor = currentGradient.split(',')[2].trim().replace(')', '');
 
-                  {/* TEXT SIDE */}
-                  <div className={`${isEven ? 'order-2' : 'order-2 lg:order-1'}`}>
-                    <h3 className="text-2xl lg:text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-black via-[#1e3a8a] to-blue-600 leading-tight mb-3">
-                      {addon.title}
-                    </h3>
-                    <p className="text-gray-500 text-base leading-relaxed mb-3">
-                      {addon.description}
-                    </p>
-                    <p className="text-gray-500 text-base leading-relaxed mb-5">
-                      {addon.description2}
-                    </p>
-                    <Link
-                      href={addon.link}
-                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300 group shadow-sm hover:shadow-md"
-                      style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = '#fff'; (e.currentTarget as HTMLAnchorElement).style.color = '#1e3a8a'; (e.currentTarget as HTMLAnchorElement).style.border = '1.5px solid #1e3a8a'; }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg,#1e3a8a,#2563eb)'; (e.currentTarget as HTMLAnchorElement).style.color = '#fff'; (e.currentTarget as HTMLAnchorElement).style.border = 'none'; }}
+                  return (
+                    <div
+                      key={index}
+                      className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-16 lg:py-20 relative`}
                     >
-                      View Details
-                      <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                    </Link>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+                      {/* IMAGE SIDE */}
+                      <div className={`relative px-6 py-6 ${isEven ? 'order-1' : 'order-1 lg:order-2'}`}>
+                        {/* Background Card (Fast, First entrance) */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 60, scale: 0.95 }}
+                          whileInView={{ opacity: 0.8, y: 0, scale: 1 }}
+                          viewport={{ once: true, margin: "-80px" }}
+                          transition={{ duration: 0.5, ease: "easeOut" }}
+                          className="absolute inset-2 sm:inset-0 rounded-[2.5rem] shadow-lg"
+                          style={{
+                            background: currentGradient,
+                            zIndex: 0
+                          }}
+                        />
+
+                        {/* Image Container (Slower, Delayed entrance) */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 60 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, margin: "-80px" }}
+                          transition={{ duration: 0.5, ease: "easeOut" }}
+                          className="relative h-64 sm:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-2xl z-10 transform transition-transform group-hover:scale-[1.02]"
+                        >
+                          <Image
+                            src={addon.image}
+                            alt={addon.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                        </motion.div>
+                      </div>
+
+                      {/* TEXT SIDE */}
+                      <motion.div
+                        initial={{ opacity: 0, x: isEven ? 80 : -80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98], delay: 0.1 }}
+                        className={`relative z-10 ${isEven ? 'order-2' : 'order-2 lg:order-1'}`}
+                      >
+                        <span
+                          className="inline-block text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 leading-tight shadow-sm"
+                          style={{
+                            backgroundColor: `${accentColor}15`,
+                            color: accentColor,
+                            border: `1px solid ${accentColor}30`
+                          }}
+                        >
+                          {addon.tag}
+                        </span>
+                        <h3 className="text-2xl lg:text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-black via-gray-800 to-gray-600 leading-tight mb-4">
+                          {addon.title}
+                        </h3>
+                        <p className="text-gray-500 text-base leading-relaxed mb-4">
+                          {addon.description}
+                        </p>
+                        <p className="text-gray-500 text-base leading-relaxed mb-7">
+                          {addon.description2}
+                        </p>
+                        <Link
+                          href={addon.link}
+                          className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-bold text-white transition-all duration-300 group shadow-lg hover:shadow-xl hover:scale-105"
+                          style={{ background: currentGradient }}
+                          onMouseEnter={e => {
+                            (e.currentTarget as HTMLAnchorElement).style.filter = 'brightness(1.1)';
+                            (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 10px 25px -5px ${accentColor}40`;
+                          }}
+                          onMouseLeave={e => {
+                            (e.currentTarget as HTMLAnchorElement).style.filter = 'none';
+                            (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
+                          }}
+                        >
+                          View Details
+                          <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                      </motion.div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

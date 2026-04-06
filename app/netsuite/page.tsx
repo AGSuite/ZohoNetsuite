@@ -20,6 +20,7 @@ const NSMetrics = dynamic(() => import('./components/NSMetrics').then(mod => mod
 const NSKeyCapabilities = dynamic(() => import('./components/NSKeyCapabilities').then(mod => mod.default));
 const NSCaseStudiesSlider = dynamic(() => import('./components/NSCaseStudiesSlider').then(mod => mod.default));
 const NSDashboardHero = dynamic(() => import('./components/NSDashboardHero').then(mod => mod.default));
+const NSIntegrationDesign = dynamic(() => import('./components/NSIntegrationDesign').then(mod => mod.default));
 
 const NSIndustries = dynamic(() => import('./components/NSIndustries').then(mod => mod.default));
 const Testimonials = dynamic(() => import('../components/home/Testimonials').then(mod => mod.Testimonials));
@@ -50,8 +51,10 @@ export default async function NetSuitePage() {
       <NSMetrics />
       <NSCustomerSuccess />
       <NSCaseStudiesSlider />
+      <NSIntegrationDesign />
 
       <NSKeyCapabilities />
+
       {/* <NSDashboardHero /> */}
 
       {/* Key Solutions Grid (Existing) */}
