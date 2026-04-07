@@ -7,7 +7,7 @@ export async function getZohoPosts() {
         return []
     }
     return zohoClient.fetch(POSTS_QUERY, {}, {
-        next: { revalidate: 3600 }
+        next: { revalidate: 0 }
     })
 }
 

@@ -16,6 +16,8 @@ interface Blog {
     publishedAt: string
     mainImage: any
     excerpt: string
+    _createdAt: string
+    _updatedAt: string
     author: string
     categories: string[]
 }
@@ -108,21 +110,29 @@ export default function ZohoBlogsGrid({ blogs }: ZohoBlogsGridProps) {
     const [searchQuery, setSearchQuery] = useState('')
     const [activeCategory, setActiveCategory] = useState('All')
 
-    const categories = useMemo(() => {
-        const all = blogs.flatMap(b => b.categories || [])
-        return ['All', ...Array.from(new Set(all))]
+    const sortedBlogs = useMemo(() => {
+        return [...blogs].sort((a, b) => {
+            const dateA = new Date(a.publishedAt || a._createdAt || 0).getTime()
+            const dateB = new Date(b.publishedAt || b._createdAt || 0).getTime()
+            return dateB - dateA
+        })
     }, [blogs])
 
+    const categories = useMemo(() => {
+        const all = sortedBlogs.flatMap(b => b.categories || [])
+        return ['All', ...Array.from(new Set(all))]
+    }, [sortedBlogs])
+
     const filteredBlogs = useMemo(() => {
-        return blogs.filter(blog => {
+        return sortedBlogs.filter(blog => {
             const matchSearch = blog.title.toLowerCase().includes(searchQuery.toLowerCase()) || (blog.excerpt || '').toLowerCase().includes(searchQuery.toLowerCase())
             const matchCat = activeCategory === 'All' || (blog.categories || []).includes(activeCategory)
             return matchSearch && matchCat
         })
-    }, [blogs, searchQuery, activeCategory])
+    }, [sortedBlogs, searchQuery, activeCategory])
 
-    const featuredPost = blogs[0]
-    const editorPicks = blogs.slice(1, 4)
+    const featuredPost = sortedBlogs[0]
+    const editorPicks = sortedBlogs.slice(1, 4)
     const gridBlogs = filteredBlogs.filter(b => b._id !== featuredPost?._id)
     const showHero = !searchQuery && activeCategory === 'All'
 

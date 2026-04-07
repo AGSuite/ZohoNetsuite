@@ -10,6 +10,10 @@ export const metadata: Metadata = {
 
 export default async function ZohoBlogsPage() {
     const blogs = await getZohoPosts();
+    console.log('DEBUG: TOTAL BLOGS FETCHED =', blogs.length);
+    if (blogs.length > 0) {
+        console.log('DEBUG: NEWEST BLOG IN LIST =', blogs[0].title, 'PUBLISHED AT =', blogs[0].publishedAt);
+    }
 
     return (
         <main>
