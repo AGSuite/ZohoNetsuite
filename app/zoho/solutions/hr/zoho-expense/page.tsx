@@ -181,7 +181,7 @@ export default function ZohoExpensePage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/people/laptopmen.webp"
-      whatIsImage="/images/zoho Dashboards/zoho expense.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-expense.webp"
       heroCard1={{
         title: "98% Compliance Rate",
         subtitle: "Automated policy and workflow audit.",

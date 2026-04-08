@@ -174,8 +174,8 @@ export default function ZohoBiginPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lapgirl.webp"
-      whatIsImage="/images/zoho Dashboards/zoho bigin.webp"
+      heroImage="/images/people/laptopgirl.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-bigin.webp"
       heroCard1={{
         title: "Built for Small Teams",
         subtitle: "Simple, visual, and effective CRM.",

@@ -175,7 +175,7 @@ export default function ZohoRecruitPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/people/fourteam.webp"
-      whatIsImage="/images/zoho Dashboards/zoho recruit.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-recruit.webp"
       heroCard1={{
         title: "Top Talent Acquisition",
         subtitle: "Unify sourcing and applicant tracking.",

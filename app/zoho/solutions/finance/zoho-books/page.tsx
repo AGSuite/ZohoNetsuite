@@ -175,7 +175,7 @@ export default function ZohoBooksPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap2.webp"
-      whatIsImage="/images/zoho Dashboards/zoho books.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-books.webp"
       heroCard1={{
         title: "GST & Tax Compliant",
         subtitle: "Automated tax calculation and filing.",

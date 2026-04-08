@@ -271,7 +271,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                       </div>
                       <div className="relative w-full h-full flex items-center justify-center p-4">
                         <Image
-                          src="/images/zoho Dashboards/zoho books.webp"
+                          src="/images/zoho-dashboards/zoho-books.webp"
                           alt="Zoho Finance Automation"
                           width={1200}
                           height={1000}

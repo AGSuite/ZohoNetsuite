@@ -123,7 +123,7 @@ export default function ZohoPeoplePlusPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/people/laptopgirl.webp"
-      whatIsImage="/images/zoho Dashboards/zoho people.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-people.webp"
       heroCard1={{
         title: "Unified Suite",
         subtitle: "One bundle for all your HR needs.",

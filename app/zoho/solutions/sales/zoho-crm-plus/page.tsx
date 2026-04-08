@@ -175,7 +175,7 @@ export default function ZohoCRMPlusPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap2.webp"
-      whatIsImage="/images/zoho Dashboards/zoho crm-plus.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-crm-plus.webp"
       heroCard1={{
         title: "8 Powerful Apps",
         subtitle: "One unified customer experience suite.",

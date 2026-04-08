@@ -105,13 +105,13 @@ export default function ContactFormDesign4() {
         method: 'POST',
         body: formData
       })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Internal processing successful');
-      })
-      .catch(error => {
-        console.error('Error in internal processing:', error);
-      });
+        .then(response => response.json())
+        .then(data => {
+          console.log('Internal processing successful');
+        })
+        .catch(error => {
+          console.error('Error in internal processing:', error);
+        });
     };
 
     (window as any).trackVisitor409531000026445204 = function () {
@@ -182,18 +182,12 @@ export default function ContactFormDesign4() {
                 {/* Background Grid and Illustration */}
                 <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/Background/grid-white.svg')] opacity-[0.05] pointer-events-none z-10"></div>
                 <div className="absolute inset-0 z-0 opacity-40">
-                  <Image 
-                      src="/images/netsuiteimages/background/netsuite-expert-guidance.png" 
-                      alt="NetSuite Professional Expertise" 
-                      fill
-                      className="object-cover object-center mix-blend-screen"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
+
                   <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a]/90 via-transparent to-blue-900/60"></div>
                 </div>
 
                 <div className="relative z-20">
-                  <motion.h2 
+                  <motion.h2
                     variants={{
                       hidden: { opacity: 0, y: 20 },
                       visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -206,7 +200,7 @@ export default function ContactFormDesign4() {
                     </span>
                   </motion.h2>
 
-                  <motion.div 
+                  <motion.div
                     variants={{
                       hidden: { opacity: 0, y: 20 },
                       visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -216,25 +210,25 @@ export default function ContactFormDesign4() {
                     <p className="text-lg">Take the first step towards streamlined operations and accelerated growth with Oracle NetSuite.</p>
                   </motion.div>
 
-                  <motion.div 
+                  <motion.div
                     variants={{
                       hidden: { opacity: 0, y: 20 },
                       visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
                     }}
                     className="mb-10"
                   >
-                    <Image 
-                      src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" 
-                      alt="NetSuite Partner" 
-                      width={220} 
-                      height={70} 
+                    <Image
+                      src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
+                      alt="NetSuite Partner"
+                      width={220}
+                      height={70}
                       className="h-16 w-auto object-contain"
                       sizes="(max-width: 768px) 100vw, 220px"
                     />
                   </motion.div>
 
                   <div className="grid grid-cols-2 gap-4 mb-8 text-white">
-                    <motion.div 
+                    <motion.div
                       variants={{
                         hidden: { opacity: 0, scale: 0.95, y: 20 },
                         visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5 } }
@@ -244,7 +238,7 @@ export default function ContactFormDesign4() {
                       <p className="text-3xl font-bold text-blue-400 mb-1">180+</p>
                       <p className="text-gray-400 text-sm">Successful Implementations</p>
                     </motion.div>
-                    <motion.div 
+                    <motion.div
                       variants={{
                         hidden: { opacity: 0, scale: 0.95, y: 20 },
                         visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5, delay: 0.1 } }
@@ -341,46 +335,46 @@ export default function ContactFormDesign4() {
                       <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Referral Source</label>
                       <select name="Lead Source" defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000026445204?.(); }} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all">
                         <option value="" disabled>Select Option</option>
-							<option value = '-None-'>-None-</option>
-							<option value = 'Client&#x20;Referral'>Client Referral</option>
-							<option value = 'Database'>Database</option>
-							<option value = 'Email'>Email</option>
-							<option value = 'Email&#x20;Campaign'>Email Campaign</option>
-							<option value = 'Employee&#x20;Referral'>Employee Referral</option>
-							<option value = 'Event'>Event</option>
-							<option value = 'External&#x20;Referral'>External Referral</option>
-							<option value = 'Google&#x20;Ads&#x20;&#x28;Chat&#x29;'>Google Ads &#x28;Chat&#x29;</option>
-							<option value = 'Google&#x20;Ads&#x20;&#x28;Form&#x29;'>Google Ads &#x28;Form&#x29;</option>
-							<option value = 'Lead&#x20;Gen&#x20;Agency'>Lead Gen Agency</option>
-							<option value = 'LinkedIn'>LinkedIn</option>
-							<option value = 'Linkedlin'>Linkedlin</option>
-							<option value = 'Online&#x20;Store'>Online Store</option>
-							<option value = 'Oracle&#x20;Database'>Oracle Database</option>
-							<option value = 'Oracle&#x20;Partner'>Oracle Partner</option>
-							<option value = 'Oracle&#x20;Referral'>Oracle Referral</option>
-							<option value = 'Others'>Others</option>
-							<option value = 'Phone'>Phone</option>
-							<option value = 'Purchased&#x20;Leads'>Purchased Leads</option>
-							<option value = 'Sales&#x20;Email&#x20;Alias'>Sales Email Alias</option>
-							<option value = 'Sales&#x20;Person&#x20;Contact'>Sales Person Contact</option>
-							<option value = 'Seminar&#x20;Partner'>Seminar Partner</option>
-							<option value = 'Trade&#x20;Show'>Trade Show</option>
-							<option value = 'TSL&#x20;Lead&#x20;-&#x20;Accepted'>TSL Lead - Accepted</option>
-							<option value = 'TSL&#x20;Lead&#x20;-&#x20;Rejected'>TSL Lead - Rejected</option>
-							<option value = 'Twitter'>Twitter</option>
-							<option value = 'Web&#x20;Cases'>Web Cases</option>
-							<option value = 'Web&#x20;Download'>Web Download</option>
-							<option value = 'Web&#x20;Mail'>Web Mail</option>
-							<option value = 'Web&#x20;Research'>Web Research</option>
-							<option value = 'Webinar'>Webinar</option>
-							<option value = 'Website'>Website</option>
-							<option value = 'Website&#x20;&#x28;Chat&#x29;'>Website &#x28;Chat&#x29;</option>
-							<option value = 'Website&#x20;&#x28;Form&#x29;'>Website &#x28;Form&#x29;</option>
-							<option value = 'WebSite&#x20;Visit'>WebSite Visit</option>
-							<option value = 'Zoho&#x20;Partner'>Zoho Partner</option>
-							<option value = 'Zoho&#x20;Partner&#x20;Portal'>Zoho Partner Portal</option>
-							<option value = 'Zoho&#x20;Portal&#x20;Listing'>Zoho Portal Listing</option>
-							<option value = 'Zoho&#x20;Referral'>Zoho Referral</option>
+                        <option value='-None-'>-None-</option>
+                        <option value='Client&#x20;Referral'>Client Referral</option>
+                        <option value='Database'>Database</option>
+                        <option value='Email'>Email</option>
+                        <option value='Email&#x20;Campaign'>Email Campaign</option>
+                        <option value='Employee&#x20;Referral'>Employee Referral</option>
+                        <option value='Event'>Event</option>
+                        <option value='External&#x20;Referral'>External Referral</option>
+                        <option value='Google&#x20;Ads&#x20;&#x28;Chat&#x29;'>Google Ads &#x28;Chat&#x29;</option>
+                        <option value='Google&#x20;Ads&#x20;&#x28;Form&#x29;'>Google Ads &#x28;Form&#x29;</option>
+                        <option value='Lead&#x20;Gen&#x20;Agency'>Lead Gen Agency</option>
+                        <option value='LinkedIn'>LinkedIn</option>
+                        <option value='Linkedlin'>Linkedlin</option>
+                        <option value='Online&#x20;Store'>Online Store</option>
+                        <option value='Oracle&#x20;Database'>Oracle Database</option>
+                        <option value='Oracle&#x20;Partner'>Oracle Partner</option>
+                        <option value='Oracle&#x20;Referral'>Oracle Referral</option>
+                        <option value='Others'>Others</option>
+                        <option value='Phone'>Phone</option>
+                        <option value='Purchased&#x20;Leads'>Purchased Leads</option>
+                        <option value='Sales&#x20;Email&#x20;Alias'>Sales Email Alias</option>
+                        <option value='Sales&#x20;Person&#x20;Contact'>Sales Person Contact</option>
+                        <option value='Seminar&#x20;Partner'>Seminar Partner</option>
+                        <option value='Trade&#x20;Show'>Trade Show</option>
+                        <option value='TSL&#x20;Lead&#x20;-&#x20;Accepted'>TSL Lead - Accepted</option>
+                        <option value='TSL&#x20;Lead&#x20;-&#x20;Rejected'>TSL Lead - Rejected</option>
+                        <option value='Twitter'>Twitter</option>
+                        <option value='Web&#x20;Cases'>Web Cases</option>
+                        <option value='Web&#x20;Download'>Web Download</option>
+                        <option value='Web&#x20;Mail'>Web Mail</option>
+                        <option value='Web&#x20;Research'>Web Research</option>
+                        <option value='Webinar'>Webinar</option>
+                        <option value='Website'>Website</option>
+                        <option value='Website&#x20;&#x28;Chat&#x29;'>Website &#x28;Chat&#x29;</option>
+                        <option value='Website&#x20;&#x28;Form&#x29;'>Website &#x28;Form&#x29;</option>
+                        <option value='WebSite&#x20;Visit'>WebSite Visit</option>
+                        <option value='Zoho&#x20;Partner'>Zoho Partner</option>
+                        <option value='Zoho&#x20;Partner&#x20;Portal'>Zoho Partner Portal</option>
+                        <option value='Zoho&#x20;Portal&#x20;Listing'>Zoho Portal Listing</option>
+                        <option value='Zoho&#x20;Referral'>Zoho Referral</option>
                       </select>
                     </div>
                   </div>

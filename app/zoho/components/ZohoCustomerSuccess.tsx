@@ -32,7 +32,7 @@ const customers: CustomerSuccess[] = [
     {
         id: 2,
         companyName: "AgriApp Technologies Pvt Ltd",
-        logo: "/images/assets/Agrilogo.jfif",
+        logo: "/images/assets/Agrilogo.jpg",
         personName: "Business Analyst",
         personRole: "Strategic Operations",
         personAvatar: "/images/people/laptopgirl.webp",

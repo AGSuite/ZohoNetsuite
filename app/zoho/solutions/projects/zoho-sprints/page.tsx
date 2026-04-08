@@ -176,7 +176,7 @@ export default function ZohoSprintsPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap2.webp"
-      whatIsImage="/images/zoho Dashboards/zoho sprints.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-sprints.webp"
       heroCard1={{
         title: "Agile Power",
         subtitle: "Built for high-velocity scrum teams.",
