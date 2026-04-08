@@ -177,9 +177,22 @@ export default function ContactFormDesign4() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
-                className="flex flex-col h-full justify-between p-8 lg:p-14"
+                className="flex flex-col h-full justify-between p-8 lg:p-14 relative overflow-hidden"
               >
-                <div>
+                {/* Background Grid and Illustration */}
+                <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/Background/grid-white.svg')] opacity-[0.05] pointer-events-none z-10"></div>
+                <div className="absolute inset-0 z-0 opacity-40">
+                  <Image 
+                      src="/images/netsuiteimages/background/netsuite-expert-guidance.png" 
+                      alt="NetSuite Professional Expertise" 
+                      fill
+                      className="object-cover object-center mix-blend-screen"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a]/90 via-transparent to-blue-900/60"></div>
+                </div>
+
+                <div className="relative z-20">
                   <motion.h2 
                     variants={{
                       hidden: { opacity: 0, y: 20 },
@@ -210,7 +223,14 @@ export default function ContactFormDesign4() {
                     }}
                     className="mb-10"
                   >
-                    <Image src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" alt="NetSuite Partner" width={220} height={70} className="h-16 w-auto object-contain" />
+                    <Image 
+                      src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" 
+                      alt="NetSuite Partner" 
+                      width={220} 
+                      height={70} 
+                      className="h-16 w-auto object-contain"
+                      sizes="(max-width: 768px) 100vw, 220px"
+                    />
                   </motion.div>
 
                   <div className="grid grid-cols-2 gap-4 mb-8 text-white">

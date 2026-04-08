@@ -374,6 +374,7 @@ function WhoWeAreSection() {
                 height={900}
                 className="w-full h-auto object-cover"
                 priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -476,6 +477,7 @@ function StrategicPartnersSection() {
                   width={320}
                   height={120}
                   className="w-full h-auto object-contain"
+                  sizes="(max-width: 768px) 100vw, 320px"
                 />
               </div>
             </motion.div>
@@ -553,6 +555,7 @@ function ClientsSection() {
                   width={180}
                   height={60}
                   className="h-18 w-auto object-contain"
+                  sizes="180px"
                 />
               </div>
             ))}
@@ -734,6 +737,7 @@ export default function AboutClient() {
                     width={700}
                     height={300}
                     className="object-cover w-full h-100"
+                    sizes="(max-width: 1024px) 100vw, 500px"
                   />
                 </div>
 
@@ -844,6 +848,7 @@ export default function AboutClient() {
                   width={500}
                   height={400}
                   className="object-cover w-full h-full rounded-2xl"
+                  sizes="(max-width: 1024px) 100vw, 400px"
                 />
               </div>
 
@@ -890,6 +895,7 @@ export default function AboutClient() {
                   width={600}
                   height={400}
                   className="object-cover w-full h-100 rounded-2xl"
+                  sizes="(max-width: 1024px) 100vw, 500px"
                 />
               </div>
 
@@ -900,6 +906,7 @@ export default function AboutClient() {
                   width={400}
                   height={300}
                   className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                  sizes="(max-width: 1024px) 50vw, 290px"
                 />
               </div>
             </motion.div>
@@ -1013,6 +1020,7 @@ export default function AboutClient() {
                     width={400}
                     height={260}
                     className="rounded-2xl w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                   />
 
                   <div className="absolute bottom-1 left-4 bg-white group-hover:bg-blue-600 border border-gray-200 group-hover:border-blue-900 p-3 rounded-xl shadow-sm transition-all duration-500">
@@ -1117,6 +1125,7 @@ export default function AboutClient() {
                 alt="Global Presence Map"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="100vw"
               />
             </div>
           </motion.div>
@@ -1227,6 +1236,7 @@ function OurLeaders({ themeColor }: { themeColor: 'blue' | 'rose' }) {
                 alt={leader.name}
                 fill
                 className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 310px"
               />
             </div>
           </div>

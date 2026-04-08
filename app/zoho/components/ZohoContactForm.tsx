@@ -214,9 +214,21 @@ export default function ZohoContactForm() {
                             viewport={{ once: true, amount: 0.2 }}
                             className="lg:w-1/2 p-10 lg:p-14 flex flex-col justify-between bg-gradient-to-br from-blue-950 via-[#0d0d0d] to-[#0a0a0a] relative overflow-hidden"
                         >
-                            <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/Background/grid-white.svg')] opacity-[0.03] pointer-events-none"></div>
+                            <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/Background/grid-white.svg')] opacity-[0.05] pointer-events-none z-10"></div>
                             
-                            <div className="relative z-10 text-left">
+                            {/* Expert Guidance Illustration */}
+                            <div className="absolute inset-0 z-0 opacity-40">
+                                <Image 
+                                    src="/images/zohoimages/background/zoho-expert-guidance.png" 
+                                    alt="Professional Expertise" 
+                                    fill
+                                    className="object-cover object-center mix-blend-screen"
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-br from-blue-950/80 via-transparent to-[#0a0a0a]/90"></div>
+                            </div>
+                            
+                            <div className="relative z-20 text-left">
                                 <motion.div 
                                     variants={{
                                         hidden: { opacity: 0, y: 20 },
@@ -264,6 +276,7 @@ export default function ZohoContactForm() {
                                         width={360} 
                                         height={120} 
                                         className="w-64 h-auto object-contain transition-all hover:scale-105 duration-500 rounded-2xl p-3 bg-white/10 backdrop-blur-md border border-white/10" 
+                                        sizes="(max-width: 768px) 100vw, 360px"
                                     />
                                 </motion.div>
 
