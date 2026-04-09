@@ -47,18 +47,18 @@ export default function NetSuiteAIPage() {
   ];
 
   const modules = [
-    { title: "Intelligent Insights", description: "Surface hidden patterns and anomalies across your entire ERP dataset automatically — no data scientist required.", image: "/images/lap/lap1.webp", color: "#1e8a9e", rgb: "14,108,130" },
-    { title: "Cash Flow Forecasting", description: "Predict 30, 60, and 90-day cash positions using historical trends, open AR, and payment behaviour models.", image: "/images/lap/lap2.webp", color: "#3b5299", rgb: "40,65,145" },
-    { title: "Supply Chain AI", description: "Anticipate demand fluctuations, supplier delays, and reorder points before they impact your operations.", image: "/images/lap/lap3.webp", color: "#7b3a8a", rgb: "123,58,138" },
-    { title: "Smart Automation", description: "Automate approvals, journal entries, and dunning sequences with AI-driven workflow triggers.", image: "/images/lap/lap4.webp", color: "#1a7a55", rgb: "18,108,72" },
-    { title: "Predictive Analytics", description: "AI-powered scenario modelling for revenue forecasting, headcount planning, and budget variance detection.", image: "/images/people/laptopgirl1.webp", color: "#a05a18", rgb: "145,75,18" },
-    { title: "Anomaly Detection", description: "Real-time detection of outliers in financial transactions, inventory records, and operational KPIs.", image: "/images/lap/lap5.webp", color: "#4a3a8a", rgb: "65,45,130" },
-    { title: "Personalised Recommendations", description: "AI-driven product, upsell, and cross-sell recommendations for e-commerce and customer service teams.", image: "/images/people/laptopgirl.webp", color: "#1a6080", rgb: "20,88,115" },
-    { title: "Generative AI Assistant", description: "Ask questions in plain English and receive instant answers, summaries, and report generation from your NetSuite data.", image: "/images/lap/lap7_11zon.webp", color: "#6a2575", rgb: "95,30,105" },
-    { title: "AI-Driven Financials", description: "Smart Financials automates period close, reconciliation, and journal creation based on machine learning patterns.", image: "/images/people/laptopmen2.webp", color: "#154e8a", rgb: "18,68,130" },
-    { title: "Customer Behaviour AI", description: "Predict churn risk, segment customers by lifetime value, and determine next best action for each account.", image: "/images/people/threeteam.webp", color: "#1a6545", rgb: "20,95,60" },
-    { title: "Demand Sensing", description: "Combine internal sales trends with external signals to build more accurate demand forecasts at SKU level.", image: "/images/lap/lap8_11zon.webp", color: "#8a2a3a", rgb: "130,35,48" },
-    { title: "AI Risk Scoring", description: "Score every customer, supplier, and transaction for risk — enabling proactive decisions before problems occur.", image: "/images/people/fourteam.webp", color: "#0f4e8a", rgb: "12,68,130" },
+    { title: "Intelligent Insights", description: "Surface hidden patterns and anomalies across your entire ERP dataset automatically — no data scientist required.", image: "/images/modules/dashboard module.webp", color: "#1e8a9e", rgb: "14,108,130" },
+    { title: "Cash Flow Forecasting", description: "Predict 30, 60, and 90-day cash positions using historical trends, open AR, and payment behaviour models.", image: "/images/modules/account modules.webp", color: "#3b5299", rgb: "40,65,145" },
+    { title: "Supply Chain AI", description: "Anticipate demand fluctuations, supplier delays, and reorder points before they impact your operations.", image: "/images/modules/working module.webp", color: "#7b3a8a", rgb: "123,58,138" },
+    { title: "Smart Automation", description: "Automate approvals, journal entries, and dunning sequences with AI-driven workflow triggers.", image: "/images/modules/dashbord module.webp", color: "#1a7a55", rgb: "18,108,72" },
+    { title: "Predictive Analytics", description: "AI-powered scenario modelling for revenue forecasting, headcount planning, and budget variance detection.", image: "/images/modules/any module.webp", color: "#a05a18", rgb: "145,75,18" },
+    { title: "Anomaly Detection", description: "Real-time detection of outliers in financial transactions, inventory records, and operational KPIs.", image: "/images/modules/sheet module.webp", color: "#4a3a8a", rgb: "65,45,130" },
+    { title: "Personalised Recommendations", description: "AI-driven product, upsell, and cross-sell recommendations for e-commerce and customer service teams.", image: "/images/modules/csm modules.webp", color: "#1a6080", rgb: "20,88,115" },
+    { title: "Generative AI Assistant", description: "Ask questions in plain English and receive instant answers, summaries, and report generation from your NetSuite data.", image: "/images/modules/chatt mdoule.webp", color: "#6a2575", rgb: "95,30,105" },
+    { title: "AI-Driven Financials", description: "Smart Financials automates period close, reconciliation, and journal creation based on machine learning patterns.", image: "/images/modules/module8.webp", color: "#154e8a", rgb: "18,68,130" },
+    { title: "Customer Behaviour AI", description: "Predict churn risk, segment customers by lifetime value, and determine next best action for each account.", image: "/images/modules/managging together module.webp", color: "#1a6545", rgb: "20,95,60" },
+    { title: "Demand Sensing", description: "Combine internal sales trends with external signals to build more accurate demand forecasts at SKU level.", image: "/images/modules/any modules.webp", color: "#8a2a3a", rgb: "130,35,48" },
+    { title: "AI Risk Scoring", description: "Score every customer, supplier, and transaction for risk — enabling proactive decisions before problems occur.", image: "/images/modules/mobile module.webp", color: "#0f4e8a", rgb: "12,68,130" },
   ];
 
   const benefits = [

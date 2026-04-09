@@ -62,18 +62,18 @@ export default function AccountingSoftwarePage() {
   ];
 
   const modules = [
-    { title: "General Ledger", description: "Real-time P&L, balance sheets, multi-dimensional chart of accounts, and automated journal entries for a single source of financial truth.", image: "/images/lap/lap1.webp", color: "#1e8a9e", rgb: "14,108,130" },
-    { title: "Accounts Payable", description: "Automate purchase invoices, vendor payments, and approval workflows — eliminating manual processing and reducing payment errors.", image: "/images/lap/lap2.webp", color: "#3b5299", rgb: "40,65,145" },
-    { title: "Accounts Receivable", description: "Accelerate cash collection with automated billing, dunning, and payment matching from a single dashboard.", image: "/images/people/laptopgirl.webp", color: "#1a7a55", rgb: "18,108,72" },
-    { title: "Fixed Asset Management", description: "Track asset lifecycle with automated depreciation schedules, revaluations, and disposal with full audit trails.", image: "/images/lap/lap3.webp", color: "#8b3a6a", rgb: "125,42,88" },
-    { title: "Tax Management", description: "Handle multi-jurisdiction tax automatically — VAT, GST, sales tax — with built-in compliance and filing-ready reports.", image: "/images/lap/lap4.webp", color: "#a05a18", rgb: "145,75,18" },
-    { title: "Financial Reporting", description: "Generate real-time P&L, cash flow, and balance sheet statements. Schedule reports to be delivered automatically to stakeholders.", image: "/images/people/laptopgirl1.webp", color: "#4a3a8a", rgb: "65,45,130" },
-    { title: "Bank Reconciliation", description: "Auto-match bank transactions with NetSuite records, flag discrepancies, and close the books faster every period.", image: "/images/lap/lap5.webp", color: "#1a6080", rgb: "20,88,115" },
-    { title: "Multi-Currency", description: "Transact in 190+ currencies with live exchange rates, automated revaluations, and consolidated multi-entity reporting.", image: "/images/people/laptopmen.webp", color: "#6a2575", rgb: "95,30,105" },
-    { title: "Revenue Recognition", description: "Automate ASC 606 / IFRS 15 compliant revenue recognition schedules tied directly to contracts and delivery milestones.", image: "/images/people/laptopmen2.webp", color: "#154e8a", rgb: "18,68,130" },
-    { title: "Budgeting & Planning", description: "Build rolling forecasts, compare actuals vs. budget in real time, and drill into variances at any level of the organisation.", image: "/images/lap/lap7_11zon.webp", color: "#1a6545", rgb: "20,95,60" },
-    { title: "Expense Management", description: "Capture, approve, and reimburse employee expenses with policy controls, receipt capture, and automatic GL coding.", image: "/images/people/threeteam.webp", color: "#8a2a3a", rgb: "130,35,48" },
-    { title: "Period Close Checklist", description: "Standardise and automate month-end tasks with role-based checklists, status tracking, and one-click period locking.", image: "/images/people/fourteam.webp", color: "#0f4e8a", rgb: "12,68,130" },
+    { title: "General Ledger", description: "Real-time P&L, balance sheets, multi-dimensional chart of accounts, and automated journal entries for a single source of financial truth.", image: "/images/modules/sheet module.webp", color: "#1e8a9e", rgb: "14,108,130" },
+    { title: "Accounts Payable", description: "Automate purchase invoices, vendor payments, and approval workflows — eliminating manual processing and reducing payment errors.", image: "/images/modules/account modules.webp", color: "#3b5299", rgb: "40,65,145" },
+    { title: "Accounts Receivable", description: "Accelerate cash collection with automated billing, dunning, and payment matching from a single dashboard.", image: "/images/modules/dashbord module.webp", color: "#1a7a55", rgb: "18,108,72" },
+    { title: "Fixed Asset Management", description: "Track asset lifecycle with automated depreciation schedules, revaluations, and disposal with full audit trails.", image: "/images/modules/working module.webp", color: "#8b3a6a", rgb: "125,42,88" },
+    { title: "Tax Management", description: "Handle multi-jurisdiction tax automatically — VAT, GST, sales tax — with built-in compliance and filing-ready reports.", image: "/images/modules/csm modules.webp", color: "#a05a18", rgb: "145,75,18" },
+    { title: "Financial Reporting", description: "Generate real-time P&L, cash flow, and balance sheet statements. Schedule reports to be delivered automatically to stakeholders.", image: "/images/modules/dashboard module.webp", color: "#4a3a8a", rgb: "65,45,130" },
+    { title: "Bank Reconciliation", description: "Auto-match bank transactions with NetSuite records, flag discrepancies, and close the books faster every period.", image: "/images/modules/any module.webp", color: "#1a6080", rgb: "20,88,115" },
+    { title: "Multi-Currency", description: "Transact in 190+ currencies with live exchange rates, automated revaluations, and consolidated multi-entity reporting.", image: "/images/modules/module8.webp", color: "#6a2575", rgb: "95,30,105" },
+    { title: "Revenue Recognition", description: "Automate ASC 606 / IFRS 15 compliant revenue recognition schedules tied directly to contracts and delivery milestones.", image: "/images/modules/managging together module.webp", color: "#154e8a", rgb: "18,68,130" },
+    { title: "Budgeting & Planning", description: "Build rolling forecasts, compare actuals vs. budget in real time, and drill into variances at any level of the organisation.", image: "/images/modules/any modules.webp", color: "#1a6545", rgb: "20,95,60" },
+    { title: "Expense Management", description: "Capture, approve, and reimburse employee expenses with policy controls, receipt capture, and automatic GL coding.", image: "/images/modules/chatt mdoule.webp", color: "#8a2a3a", rgb: "130,35,48" },
+    { title: "Period Close Checklist", description: "Standardise and automate month-end tasks with role-based checklists, status tracking, and one-click period locking.", image: "/images/modules/mobile module.webp", color: "#0f4e8a", rgb: "12,68,130" },
   ];
 
   const benefits = [

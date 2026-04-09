@@ -47,18 +47,18 @@ export default function WhyNetsuitePage() {
   ];
 
   const modules = [
-    { title: "Financial Management", description: "Real-time financials with multi-currency, multi-entity, and global reporting built in from day one.", image: "/images/lap/lap1.webp", color: "#1e3fa8", rgb: "30,63,168" },
-    { title: "ERP & Operations", description: "Unified order management, procurement, manufacturing, and supply chain on one platform.", image: "/images/lap/lap2.webp", color: "#3b5299", rgb: "59,82,153" },
-    { title: "CRM & Sales", description: "Complete customer management from lead to cash with pipeline visibility and marketing automation.", image: "/images/lap/lap3.webp", color: "#1a7a55", rgb: "26,122,85" },
-    { title: "Ecommerce", description: "B2B and B2C storefronts natively connected to your ERP, inventory, and customer data.", image: "/images/lap/lap4.webp", color: "#7b3a8a", rgb: "123,58,138" },
-    { title: "Project Management", description: "End-to-end project delivery with resource planning, billing, and profitability tracking.", image: "/images/lap/lap5.webp", color: "#a05a18", rgb: "160,90,24" },
-    { title: "Analytics & BI", description: "Role-based dashboards and ad-hoc reports powered by real-time data across every module.", image: "/images/people/laptopgirl1.webp", color: "#4a3a8a", rgb: "74,58,138" },
-    { title: "HR & Payroll", description: "Manage your people from hire to retire with payroll, performance, and benefits management.", image: "/images/lap/lap7_11zon.webp", color: "#1a6080", rgb: "26,96,128" },
-    { title: "Planning & Budgeting", description: "Collaborative FP&A with rolling forecasts, scenario modeling, and live ERP actuals.", image: "/images/people/laptopmen2.webp", color: "#6a2575", rgb: "106,37,117" },
-    { title: "Warehouse Management", description: "Optimize pick, pack, ship with advanced warehouse management and real-time inventory.", image: "/images/people/threeteam.webp", color: "#154e8a", rgb: "21,78,138" },
-    { title: "Manufacturing", description: "Demand-driven production planning, shop floor control, and material requirements planning.", image: "/images/lap/lap8_11zon.webp", color: "#1a6545", rgb: "26,101,69" },
-    { title: "Global Business", description: "Multi-subsidiary management with consolidation, intercompany reporting, and local compliance.", image: "/images/people/fourteam.webp", color: "#8a2a3a", rgb: "138,42,58" },
-    { title: "AI & Automation", description: "Machine learning and AI embedded into every module — predict, automate, and detect smarter.", image: "/images/people/laptopgirl.webp", color: "#0f4e8a", rgb: "15,78,138" },
+    { title: "Financial Management", description: "Real-time financials with multi-currency, multi-entity, and global reporting built in from day one.", image: "/images/modules/dashboard module.webp", color: "#1e3fa8", rgb: "30,63,168" },
+    { title: "ERP & Operations", description: "Unified order management, procurement, manufacturing, and supply chain on one platform.", image: "/images/modules/working module.webp", color: "#3b5299", rgb: "59,82,153" },
+    { title: "CRM & Sales", description: "Complete customer management from lead to cash with pipeline visibility and marketing automation.", image: "/images/modules/csm modules.webp", color: "#1a7a55", rgb: "26,122,85" },
+    { title: "Ecommerce", description: "B2B and B2C storefronts natively connected to your ERP, inventory, and customer data.", image: "/images/modules/any module.webp", color: "#7b3a8a", rgb: "123,58,138" },
+    { title: "Project Management", description: "End-to-end project delivery with resource planning, billing, and profitability tracking.", image: "/images/modules/managging together module.webp", color: "#a05a18", rgb: "160,90,24" },
+    { title: "Analytics & BI", description: "Role-based dashboards and ad-hoc reports powered by real-time data across every module.", image: "/images/modules/dashbord module.webp", color: "#4a3a8a", rgb: "74,58,138" },
+    { title: "HR & Payroll", description: "Manage your people from hire to retire with payroll, performance, and benefits management.", image: "/images/modules/sheet module.webp", color: "#1a6080", rgb: "26,96,128" },
+    { title: "Planning & Budgeting", description: "Collaborative FP&A with rolling forecasts, scenario modeling, and live ERP actuals.", image: "/images/modules/account modules.webp", color: "#6a2575", rgb: "106,37,117" },
+    { title: "Warehouse Management", description: "Optimize pick, pack, ship with advanced warehouse management and real-time inventory.", image: "/images/modules/working module.webp", color: "#154e8a", rgb: "21,78,138" },
+    { title: "Manufacturing", description: "Demand-driven production planning, shop floor control, and material requirements planning.", image: "/images/modules/any modules.webp", color: "#1a6545", rgb: "26,101,69" },
+    { title: "Global Business", description: "Multi-subsidiary management with consolidation, intercompany reporting, and local compliance.", image: "/images/modules/mobile module.webp", color: "#8a2a3a", rgb: "138,42,58" },
+    { title: "AI & Automation", description: "Machine learning and AI embedded into every module — predict, automate, and detect smarter.", image: "/images/modules/module8.webp", color: "#0f4e8a", rgb: "15,78,138" },
   ];
 
   const benefits = [

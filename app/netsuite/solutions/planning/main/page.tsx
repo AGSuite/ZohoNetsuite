@@ -47,18 +47,18 @@ export default function PlanningPage() {
   ];
 
   const modules = [
-    { title: "Financial Budgeting", description: "Collaborative, driver-based budgeting that aligns finance and department heads in real time.", image: "/images/lap/lap1.webp", color: "#0f6e8a", rgb: "15,110,138" },
-    { title: "Revenue Planning", description: "Model revenue scenarios from pipeline, bookings, and renewal data for accurate top-line forecasts.", image: "/images/lap/lap2.webp", color: "#3b5299", rgb: "59,82,153" },
-    { title: "Workforce Planning", description: "Plan headcount, costs, and productivity across departments with forward-looking workforce models.", image: "/images/lap/lap3.webp", color: "#1a7a55", rgb: "26,122,85" },
-    { title: "Capital Planning", description: "Track and forecast capex, project spend, and asset investments across the entire enterprise.", image: "/images/lap/lap4.webp", color: "#7b3a8a", rgb: "123,58,138" },
-    { title: "Rolling Forecasts", description: "Replace static annual budgets with dynamic rolling forecasts updated throughout the year.", image: "/images/lap/lap5.webp", color: "#a05a18", rgb: "160,90,24" },
-    { title: "Scenario Modeling", description: "Run best-case, worst-case, and base-case what-if scenarios to evaluate strategic alternatives.", image: "/images/people/laptopgirl1.webp", color: "#4a3a8a", rgb: "74,58,138" },
-    { title: "Cash Flow Planning", description: "Project cash position, timing of inflows and outflows, and liquidity across all entities.", image: "/images/lap/lap7_11zon.webp", color: "#1a6080", rgb: "26,96,128" },
-    { title: "Reporting & Analytics", description: "Pre-built dashboards and ad-hoc reports for variance analysis and management reporting.", image: "/images/people/laptopmen2.webp", color: "#6a2575", rgb: "106,37,117" },
-    { title: "Multi-Entity Consolidation", description: "Automatically consolidate financial plans from multiple entities with currency translation.", image: "/images/people/threeteam.webp", color: "#154e8a", rgb: "21,78,138" },
-    { title: "KPI Scorecards", description: "Monitor plan vs actual with automated KPI scorecards pushed to the right stakeholders.", image: "/images/lap/lap8_11zon.webp", color: "#1a6545", rgb: "26,101,69" },
-    { title: "Version Control", description: "Maintain versioned budget histories so you can compare plans and understand every change.", image: "/images/people/fourteam.webp", color: "#8a2a3a", rgb: "138,42,58" },
-    { title: "ERP Actuals Integration", description: "Live actuals from NetSuite ERP flow automatically into plans — no manual exports ever.", image: "/images/people/laptopgirl.webp", color: "#0f4e8a", rgb: "15,78,138" },
+    { title: "Financial Budgeting", description: "Collaborative, driver-based budgeting that aligns finance and department heads in real time.", image: "/images/modules/dashboard module.webp", color: "#0f6e8a", rgb: "15,110,138" },
+    { title: "Revenue Planning", description: "Model revenue scenarios from pipeline, bookings, and renewal data for accurate top-line forecasts.", image: "/images/modules/account modules.webp", color: "#3b5299", rgb: "59,82,153" },
+    { title: "Workforce Planning", description: "Plan headcount, costs, and productivity across departments with forward-looking workforce models.", image: "/images/modules/managging together module.webp", color: "#1a7a55", rgb: "26,122,85" },
+    { title: "Capital Planning", description: "Track and forecast capex, project spend, and asset investments across the entire enterprise.", image: "/images/modules/sheet module.webp", color: "#7b3a8a", rgb: "123,58,138" },
+    { title: "Rolling Forecasts", description: "Replace static annual budgets with dynamic rolling forecasts updated throughout the year.", image: "/images/modules/dashbord module.webp", color: "#a05a18", rgb: "160,90,24" },
+    { title: "Scenario Modeling", description: "Run best-case, worst-case, and base-case what-if scenarios to evaluate strategic alternatives.", image: "/images/modules/any module.webp", color: "#4a3a8a", rgb: "74,58,138" },
+    { title: "Cash Flow Planning", description: "Project cash position, timing of inflows and outflows, and liquidity across all entities.", image: "/images/modules/working module.webp", color: "#1a6080", rgb: "26,96,128" },
+    { title: "Reporting & Analytics", description: "Pre-built dashboards and ad-hoc reports for variance analysis and management reporting.", image: "/images/modules/module8.webp", color: "#6a2575", rgb: "106,37,117" },
+    { title: "Multi-Entity Consolidation", description: "Automatically consolidate financial plans from multiple entities with currency translation.", image: "/images/modules/any modules.webp", color: "#154e8a", rgb: "21,78,138" },
+    { title: "KPI Scorecards", description: "Monitor plan vs actual with automated KPI scorecards pushed to the right stakeholders.", image: "/images/modules/chatt mdoule.webp", color: "#1a6545", rgb: "26,101,69" },
+    { title: "Version Control", description: "Maintain versioned budget histories so you can compare plans and understand every change.", image: "/images/modules/mobile module.webp", color: "#8a2a3a", rgb: "138,42,58" },
+    { title: "ERP Actuals Integration", description: "Live actuals from NetSuite ERP flow automatically into plans — no manual exports ever.", image: "/images/modules/csm modules.webp", color: "#0f4e8a", rgb: "15,78,138" },
   ];
 
   const benefits = [

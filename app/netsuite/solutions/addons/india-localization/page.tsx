@@ -34,18 +34,18 @@ export default function IndiaLocalizationPage() {
   ];
 
   const modules = [
-    { title: "GST Computation", description: "Automatic CGST, SGST, IGST, and UTGST calculation on every transaction based on state and supply type.", image: "/images/lap/lap1.webp", color: "#1e3a8a", rgb: "30,58,138" },
-    { title: "E-Invoicing (IRP)", description: "Auto-generate and submit e-invoices to the Invoice Registration Portal with IRN and QR code generation.", image: "/images/lap/lap2.webp", color: "#065f46", rgb: "6,95,70" },
-    { title: "E-Way Bill Generation", description: "Seamless e-Way Bill generation for goods movement above ₹50,000 directly from NetSuite transactions.", image: "/images/lap/lap3.webp", color: "#7c2d12", rgb: "124,45,18" },
-    { title: "GSTR Filing Reports", description: "Ready-to-file GSTR-1, GSTR-2A, GSTR-2B, GSTR-3B, and annual GSTR-9 reports generated automatically.", image: "/images/lap/lap4.webp", color: "#4c1d95", rgb: "76,29,149" },
-    { title: "TDS Management", description: "Automated Tax Deducted at Source calculation, deduction, certificate generation, and filing reports for all payments.", image: "/images/lap/lap5.webp", color: "#0c4a6e", rgb: "12,74,110" },
-    { title: "TCS Management", description: "Tax Collected at Source tracking for e-commerce and specified transactions as per Income Tax Act requirements.", image: "/images/people/laptopgirl1.webp", color: "#713f12", rgb: "113,63,18" },
-    { title: "HSN/SAC Codes", description: "Automated HSN code assignment for goods and SAC code assignment for services on all NetSuite transactions.", image: "/images/lap/lap7_11zon.webp", color: "#134e4a", rgb: "19,78,74" },
-    { title: "Reverse Charge Mechanism", description: "RCM auto-identification and tax posting for specified categories of supply from unregistered vendors.", image: "/images/people/laptopmen2.webp", color: "#831843", rgb: "131,24,67" },
-    { title: "Input Tax Credit", description: "Complete ITC register, reconciliation with GSTR-2B, and tracking of eligible vs ineligible credits.", image: "/images/people/threeteam.webp", color: "#1e3a8a", rgb: "30,58,138" },
-    { title: "Multi-State Compliance", description: "Manage operations across all 28 Indian states and 8 UTs with state-wise GST registration and compliance.", image: "/images/lap/lap8_11zon.webp", color: "#064e3b", rgb: "6,78,59" },
-    { title: "Audit Trail & Reports", description: "Complete audit-ready tax ledger, reconciliation reports, and transaction logs for GST assessments.", image: "/images/people/fourteam.webp", color: "#78350f", rgb: "120,53,15" },
-    { title: "Multi-Currency INR", description: "Full Indian Rupee support with FEMA-compliant foreign currency transaction handling for import/export.", image: "/images/people/laptopgirl.webp", color: "#3b0764", rgb: "59,7,100" },
+    { title: "GST Computation", description: "Automatic CGST, SGST, IGST, and UTGST calculation on every transaction based on state and supply type.", image: "/images/modules/dashboard module.webp", color: "#1e3a8a", rgb: "30,58,138" },
+    { title: "E-Invoicing (IRP)", description: "Auto-generate and submit e-invoices to the Invoice Registration Portal with IRN and QR code generation.", image: "/images/modules/dashbord module.webp", color: "#065f46", rgb: "6,95,70" },
+    { title: "E-Way Bill Generation", description: "Seamless e-Way Bill generation for goods movement above ₹50,000 directly from NetSuite transactions.", image: "/images/modules/working module.webp", color: "#7c2d12", rgb: "124,45,18" },
+    { title: "GSTR Filing Reports", description: "Ready-to-file GSTR-1, GSTR-2A, GSTR-2B, GSTR-3B, and annual GSTR-9 reports generated automatically.", image: "/images/modules/any module.webp", color: "#4c1d95", rgb: "76,29,149" },
+    { title: "TDS Management", description: "Automated Tax Deducted at Source calculation, deduction, certificate generation, and filing reports for all payments.", image: "/images/modules/any modules.webp", color: "#0c4a6e", rgb: "12,74,110" },
+    { title: "TCS Management", description: "Tax Collected at Source tracking for e-commerce and specified transactions as per Income Tax Act requirements.", image: "/images/modules/module8.webp", color: "#713f12", rgb: "113,63,18" },
+    { title: "HSN/SAC Codes", description: "Automated HSN code assignment for goods and SAC code assignment for services on all NetSuite transactions.", image: "/images/modules/sheet module.webp", color: "#134e4a", rgb: "19,78,74" },
+    { title: "Reverse Charge Mechanism", description: "RCM auto-identification and tax posting for specified categories of supply from unregistered vendors.", image: "/images/modules/csm modules.webp", color: "#831843", rgb: "131,24,67" },
+    { title: "Input Tax Credit", description: "Complete ITC register, reconciliation with GSTR-2B, and tracking of eligible vs ineligible credits.", image: "/images/modules/managging together module.webp", color: "#1e3a8a", rgb: "30,58,138" },
+    { title: "Multi-State Compliance", description: "Manage operations across all 28 Indian states and 8 UTs with state-wise GST registration and compliance.", image: "/images/modules/account modules.webp", color: "#064e3b", rgb: "6,78,59" },
+    { title: "Audit Trail & Reports", description: "Complete audit-ready tax ledger, reconciliation reports, and transaction logs for GST assessments.", image: "/images/modules/chatt mdoule.webp", color: "#78350f", rgb: "120,53,15" },
+    { title: "Multi-Currency INR", description: "Full Indian Rupee support with FEMA-compliant foreign currency transaction handling for import/export.", image: "/images/modules/mobile module.webp", color: "#3b0764", rgb: "59,7,100" },
   ];
 
   const benefits = [

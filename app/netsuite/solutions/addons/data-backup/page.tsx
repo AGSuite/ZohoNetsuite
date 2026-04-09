@@ -51,18 +51,18 @@ export default function DataBackupPage() {
   ];
 
   const modules = [
-    { title: "Automated Daily Backups", description: "Full environment snapshots captured every day without any manual intervention or scheduling.", image: "/images/lap/lap1.webp", color: "#1e3a8a", rgb: "30,58,138" },
-    { title: "Point-in-Time Recovery", description: "Restore your data to any exact moment in time — undo accidental deletions or bulk errors instantly.", image: "/images/lap/lap2.webp", color: "#065f46", rgb: "6,95,70" },
-    { title: "Granular Restore", description: "Restore individual records or entire parent-child hierarchies without touching unaffected data.", image: "/images/lap/lap3.webp", color: "#7c2d12", rgb: "124,45,18" },
-    { title: "Ransomware Protection", description: "Immutable, air-gapped backups that safeguard your critical business records from external threats.", image: "/images/lap/lap4.webp", color: "#4c1d95", rgb: "76,29,149" },
-    { title: "Multi-Cloud Storage", description: "Choose storage on AWS, Azure, or Google Cloud with geographic redundancy for ultimate data safety.", image: "/images/lap/lap5.webp", color: "#0c4a6e", rgb: "12,74,110" },
-    { title: "Off-Site Redundancy", description: "Maintain an independent copy of your NetSuite data in a secure, geographically separate cloud.", image: "/images/people/laptopgirl1.webp", color: "#713f12", rgb: "113,63,18" },
-    { title: "Version History", description: "Maintain a deep history of record changes for historical analysis and regulatory audit purposes.", image: "/images/lap/lap7_11zon.webp", color: "#134e4a", rgb: "19,78,74" },
-    { title: "Audit Log Tracking", description: "Complete visibility into who accessed or restored what data, when, and from what IP address.", image: "/images/people/laptopmen2.webp", color: "#831843", rgb: "131,24,67" },
-    { title: "Sandbox Restore", description: "Restore production data into any of your NetSuite Sandbox accounts for testing or development.", image: "/images/people/threeteam.webp", color: "#1e3a8a", rgb: "30,58,138" },
-    { title: "Statutory Reporting", description: "Export data in formats ready for legal discovery, regulatory audits, and compliance reporting.", image: "/images/lap/lap8_11zon.webp", color: "#064e3b", rgb: "6,78,59" },
-    { title: "Script & Config Backup", description: "Back up all SuiteScript, custom records, and system configurations — not just transactional data.", image: "/images/people/fourteam.webp", color: "#78350f", rgb: "120,53,15" },
-    { title: "Compliance Ready", description: "AES-256 encryption, GDPR and HIPAA controls, and complete audit trails for all major standards.", image: "/images/people/laptopgirl.webp", color: "#3b0764", rgb: "59,7,100" },
+    { title: "Automated Daily Backups", description: "Full environment snapshots captured every day without any manual intervention or scheduling.", image: "/images/modules/dashboard module.webp", color: "#1e3a8a", rgb: "30,58,138" },
+    { title: "Point-in-Time Recovery", description: "Restore your data to any exact moment in time — undo accidental deletions or bulk errors instantly.", image: "/images/modules/dashbord module.webp", color: "#065f46", rgb: "6,95,70" },
+    { title: "Granular Restore", description: "Restore individual records or entire parent-child hierarchies without touching unaffected data.", image: "/images/modules/working module.webp", color: "#7c2d12", rgb: "124,45,18" },
+    { title: "Ransomware Protection", description: "Immutable, air-gapped backups that safeguard your critical business records from external threats.", image: "/images/modules/any module.webp", color: "#4c1d95", rgb: "76,29,149" },
+    { title: "Multi-Cloud Storage", description: "Choose storage on AWS, Azure, or Google Cloud with geographic redundancy for ultimate data safety.", image: "/images/modules/any modules.webp", color: "#0c4a6e", rgb: "12,74,110" },
+    { title: "Off-Site Redundancy", description: "Maintain an independent copy of your NetSuite data in a secure, geographically separate cloud.", image: "/images/modules/module8.webp", color: "#713f12", rgb: "113,63,18" },
+    { title: "Version History", description: "Maintain a deep history of record changes for historical analysis and regulatory audit purposes.", image: "/images/modules/sheet module.webp", color: "#134e4a", rgb: "19,78,74" },
+    { title: "Audit Log Tracking", description: "Complete visibility into who accessed or restored what data, when, and from what IP address.", image: "/images/modules/csm modules.webp", color: "#831843", rgb: "131,24,67" },
+    { title: "Sandbox Restore", description: "Restore production data into any of your NetSuite Sandbox accounts for testing or development.", image: "/images/modules/managging together module.webp", color: "#1e3a8a", rgb: "30,58,138" },
+    { title: "Statutory Reporting", description: "Export data in formats ready for legal discovery, regulatory audits, and compliance reporting.", image: "/images/modules/account modules.webp", color: "#064e3b", rgb: "6,78,59" },
+    { title: "Script & Config Backup", description: "Back up all SuiteScript, custom records, and system configurations — not just transactional data.", image: "/images/modules/chatt mdoule.webp", color: "#78350f", rgb: "120,53,15" },
+    { title: "Compliance Ready", description: "AES-256 encryption, GDPR and HIPAA controls, and complete audit trails for all major standards.", image: "/images/modules/mobile module.webp", color: "#3b0764", rgb: "59,7,100" },
   ];
 
   const benefits = [

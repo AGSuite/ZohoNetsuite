@@ -78,7 +78,7 @@ export default function NetSuiteBIPage() {
       title: "Real-Time Dashboards",
       description:
         "Fully customizable role-based dashboards with live KPI tiles, charts, and reminders — updated in real time without any manual refresh.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/modules/dashboard module.webp",
       color: "#1e8a9e",
       rgb: "14,108,130",
     },
@@ -86,7 +86,7 @@ export default function NetSuiteBIPage() {
       title: "Advanced Reporting",
       description:
         "Drag-and-drop report builder with 200+ pre-built financial, sales, and operational templates ready to use out of the box.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/modules/account modules.webp",
       color: "#3b5299",
       rgb: "40,65,145",
     },
@@ -94,7 +94,7 @@ export default function NetSuiteBIPage() {
       title: "SuiteAnalytics Workbench",
       description:
         "Explore and analyze data with an interactive pivot table engine, visual chart builder, and saved dataset queries.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/modules/sheet module.webp",
       color: "#8b3a6a",
       rgb: "125,42,88",
     },
@@ -102,7 +102,7 @@ export default function NetSuiteBIPage() {
       title: "KPI Tracking",
       description:
         "Define and monitor key performance indicators with automated threshold alerts and color-coded scorecards for every team.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/modules/dashbord module.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -110,7 +110,7 @@ export default function NetSuiteBIPage() {
       title: "Predictive Analytics",
       description:
         "AI-powered forecasting and trend analysis — anticipate revenue changes, inventory shortfalls, and cash flow requirements before they happen.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/modules/any module.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -118,7 +118,7 @@ export default function NetSuiteBIPage() {
       title: "Financial Reporting",
       description:
         "Generate audit-ready P&L, balance sheet, and cash flow reports with multi-entity consolidation and drill-down capabilities.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/modules/module8.webp",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
@@ -126,7 +126,7 @@ export default function NetSuiteBIPage() {
       title: "Sales Analytics",
       description:
         "Track pipeline, quota attainment, and win rates by rep, region, or product with live CRM-connected analytics.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/modules/csm modules.webp",
       color: "#1a6080",
       rgb: "20,88,115",
     },
@@ -134,7 +134,7 @@ export default function NetSuiteBIPage() {
       title: "Mobile Analytics",
       description:
         "Access dashboards, reports, and KPI alerts on any iOS or Android device — stay connected to business performance from anywhere.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/modules/mobile module.webp",
       color: "#6a2575",
       rgb: "95,30,105",
     },
@@ -142,7 +142,7 @@ export default function NetSuiteBIPage() {
       title: "Inventory Analytics",
       description:
         "Monitor stock levels, reorder points, slow-movers, and carrying costs in real time across all warehouse locations.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/modules/working module.webp",
       color: "#154e8a",
       rgb: "18,68,130",
     },
@@ -150,7 +150,7 @@ export default function NetSuiteBIPage() {
       title: "Operational Reports",
       description:
         "Combine data from multiple NetSuite modules into a single operational view — projects, HR, purchasing, and logistics together.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/modules/managging together module.webp",
       color: "#1a6545",
       rgb: "20,95,60",
     },
@@ -158,7 +158,7 @@ export default function NetSuiteBIPage() {
       title: "Scheduled Reporting",
       description:
         "Schedule any report or snapshot to be automatically generated and emailed to stakeholders daily, weekly, or monthly.",
-      image: "/images/lap/lap8_11zon.webp",
+      image: "/images/modules/chatt mdoule.webp",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
@@ -166,7 +166,7 @@ export default function NetSuiteBIPage() {
       title: "Custom Visualizations",
       description:
         "Create bespoke bar, line, funnel, scatter, and heat-map charts — then embed them on any dashboard or report layout.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/modules/any modules.webp",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },

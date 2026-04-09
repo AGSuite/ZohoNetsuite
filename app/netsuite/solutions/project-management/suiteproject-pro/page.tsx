@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useSpring, useTransform } from 'framer-motion';
@@ -40,17 +40,17 @@ export default function SuiteprojectProPage() {
   ];
 
   const benefits = [
-    { title: "Global Resource Mgmt", description: "Optimize resource utilization across global teams, skills, and time zones.", image: "/images/people/fourteam.webp" },
-    { title: "Complex Billing", description: "Handle the most complex billing scenarios including outcome-based and recurring.", image: "/images/lap/lap2.webp" },
-    { title: "Adv. Revenue Recognition", description: "Automate revenue recognition compliant with ASC 606 and IFRS 15.", image: "/images/lap/lap3.webp" },
-    { title: "Global Operations", description: "One system for all your entities, currencies, taxation, and languages.", image: "/images/people/laptopgirl3.webp" }
+    { title: "Global Resource Mgmt", description: "Optimize resource utilization across global teams, skills, and time zones.", image: "/images/modules/managging together module.webp" },
+    { title: "Complex Billing", description: "Handle the most complex billing scenarios including outcome-based and recurring.", image: "/images/modules/account modules.webp" },
+    { title: "Adv. Revenue Recognition", description: "Automate revenue recognition compliant with ASC 606 and IFRS 15.", image: "/images/modules/dashbord module.webp" },
+    { title: "Global Operations", description: "One system for all your entities, currencies, taxation, and languages.", image: "/images/modules/dashboard module.webp" }
   ];
 
   const challenges = [
-    { title: "Distributed Teams", description: "Unify project delivery across disjointed global teams and regions.", image: "/images/people/twopeople.webp" },
-    { title: "Multi-Currency Chaos", description: "Eliminate spreadsheet conversions and currency risks.", image: "/images/lap/lap5.webp" },
-    { title: "Compliance Risk", description: "Ensure compliance with diverse local regulations and accounting standards.", image: "/images/lap/lap1.webp" },
-    { title: "Suboptimal Utilization", description: "Stop leaving money on the table with poor resource planning.", image: "/images/people/laptopmen2.webp" }
+    { title: "Distributed Teams", description: "Unify project delivery across disjointed global teams and regions.", image: "/images/modules/managging together module.webp" },
+    { title: "Multi-Currency Chaos", description: "Eliminate spreadsheet conversions and currency risks.", image: "/images/modules/any module.webp" },
+    { title: "Compliance Risk", description: "Ensure compliance with diverse local regulations and accounting standards.", image: "/images/modules/sheet module.webp" },
+    { title: "Suboptimal Utilization", description: "Stop leaving money on the table with poor resource planning.", image: "/images/modules/working module.webp" }
   ];
 
   const openairModules = [

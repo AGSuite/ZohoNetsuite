@@ -48,18 +48,18 @@ export default function AmazonConnectorPage() {
   ];
 
   const modules = [
-    { title: "FBA Order Sync", description: "Automatic import of Fulfillment by Amazon orders into NetSuite as Sales Orders.", image: "/images/lap/lap1.webp", color: "#1e3a8a", rgb: "30,58,138" },
-    { title: "FBM Order Sync", description: "Manage Fulfillment by Merchant orders from NetSuite with push-to-Amazon tracking.", image: "/images/lap/lap2.webp", color: "#065f46", rgb: "6,95,70" },
-    { title: "Settlement Reconciliation", description: "Automated parsing of Amazon Settlement Reports — fees, commissions, refunds posted to NetSuite.", image: "/images/lap/lap3.webp", color: "#7c2d12", rgb: "124,45,18" },
-    { title: "Inventory Sync", description: "Keep FBM inventory in sync with NetSuite to prevent overselling across all channels.", image: "/images/lap/lap4.webp", color: "#4c1d95", rgb: "76,29,149" },
-    { title: "Customer Sync", description: "Create or update customer records in NetSuite based on each Amazon order automatically.", image: "/images/lap/lap5.webp", color: "#0c4a6e", rgb: "12,74,110" },
-    { title: "Shipment Tracking", description: "Push tracking numbers from NetSuite to Amazon automatically when FBM orders ship.", image: "/images/people/laptopgirl1.webp", color: "#713f12", rgb: "113,63,18" },
-    { title: "Multi-Marketplace", description: "Connect Amazon US, UK, EU, and JP marketplaces to a single NetSuite account.", image: "/images/lap/lap7_11zon.webp", color: "#134e4a", rgb: "19,78,74" },
-    { title: "Multi-Currency", description: "Automatic currency conversion for international marketplace settlements and orders.", image: "/images/people/laptopmen2.webp", color: "#831843", rgb: "131,24,67" },
-    { title: "Amazon Business (B2B)", description: "Supports Amazon Business orders with B2B customer mapping in NetSuite.", image: "/images/people/threeteam.webp", color: "#1e3a8a", rgb: "30,58,138" },
-    { title: "Refund Processing", description: "Automatic refund and return creation in NetSuite when Amazon processes returns.", image: "/images/lap/lap8_11zon.webp", color: "#064e3b", rgb: "6,78,59" },
-    { title: "Prime Order Flagging", description: "Flag Prime orders in NetSuite so your warehouse team prioritizes them for shipping.", image: "/images/people/fourteam.webp", color: "#78350f", rgb: "120,53,15" },
-    { title: "FBA Fee Tracking", description: "Capture all FBA storage, referral, and fulfillment fees as expense lines in NetSuite.", image: "/images/people/laptopgirl.webp", color: "#3b0764", rgb: "59,7,100" },
+    { title: "FBA Order Sync", description: "Automatic import of Fulfillment by Amazon orders into NetSuite as Sales Orders.", image: "/images/modules/dashboard module.webp", color: "#1e3a8a", rgb: "30,58,138" },
+    { title: "FBM Order Sync", description: "Manage Fulfillment by Merchant orders from NetSuite with push-to-Amazon tracking.", image: "/images/modules/dashbord module.webp", color: "#065f46", rgb: "6,95,70" },
+    { title: "Settlement Reconciliation", description: "Automated parsing of Amazon Settlement Reports — fees, commissions, refunds posted to NetSuite.", image: "/images/modules/working module.webp", color: "#7c2d12", rgb: "124,45,18" },
+    { title: "Inventory Sync", description: "Keep FBM inventory in sync with NetSuite to prevent overselling across all channels.", image: "/images/modules/any module.webp", color: "#4c1d95", rgb: "76,29,149" },
+    { title: "Customer Sync", description: "Create or update customer records in NetSuite based on each Amazon order automatically.", image: "/images/modules/any modules.webp", color: "#0c4a6e", rgb: "12,74,110" },
+    { title: "Shipment Tracking", description: "Push tracking numbers from NetSuite to Amazon automatically when FBM orders ship.", image: "/images/modules/module8.webp", color: "#713f12", rgb: "113,63,18" },
+    { title: "Multi-Marketplace", description: "Connect Amazon US, UK, EU, and JP marketplaces to a single NetSuite account.", image: "/images/modules/sheet module.webp", color: "#134e4a", rgb: "19,78,74" },
+    { title: "Multi-Currency", description: "Automatic currency conversion for international marketplace settlements and orders.", image: "/images/modules/csm modules.webp", color: "#831843", rgb: "131,24,67" },
+    { title: "Amazon Business (B2B)", description: "Supports Amazon Business orders with B2B customer mapping in NetSuite.", image: "/images/modules/managging together module.webp", color: "#1e3a8a", rgb: "30,58,138" },
+    { title: "Refund Processing", description: "Automatic refund and return creation in NetSuite when Amazon processes returns.", image: "/images/modules/account modules.webp", color: "#064e3b", rgb: "6,78,59" },
+    { title: "Prime Order Flagging", description: "Flag Prime orders in NetSuite so your warehouse team prioritizes them for shipping.", image: "/images/modules/chatt mdoule.webp", color: "#78350f", rgb: "120,53,15" },
+    { title: "FBA Fee Tracking", description: "Capture all FBA storage, referral, and fulfillment fees as expense lines in NetSuite.", image: "/images/modules/mobile module.webp", color: "#3b0764", rgb: "59,7,100" },
   ];
 
   const benefits = [

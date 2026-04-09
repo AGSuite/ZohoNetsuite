@@ -68,7 +68,7 @@ export default function NetSuiteSRPPage() {
       title: "Project Management",
       description:
         "Manage projects from inception to completion with real-time visibility into status, budgets, and milestones.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/modules/dashboard module.webp",
       color: "#1e8a9e",
       rgb: "14,108,130",
     },
@@ -76,7 +76,7 @@ export default function NetSuiteSRPPage() {
       title: "Resource Management",
       description:
         "Optimize utilization by assigning the right people to the right projects based on skills and availability.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/modules/managging together module.webp",
       color: "#3b5299",
       rgb: "40,65,145",
     },
@@ -84,7 +84,7 @@ export default function NetSuiteSRPPage() {
       title: "Project Accounting",
       description:
         "Connect project activities directly to the financials for accurate cost tracking and margin analysis.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/modules/sheet module.webp",
       color: "#8b3a6a",
       rgb: "125,42,88",
     },
@@ -92,7 +92,7 @@ export default function NetSuiteSRPPage() {
       title: "Billing & Invoicing",
       description:
         "Automate complex billing rules including fixed-bid, time-and-materials, and milestone-based invoicing.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/modules/account modules.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -100,7 +100,7 @@ export default function NetSuiteSRPPage() {
       title: "Time & Expense",
       description:
         "Capture time and expenses easily from any device to ensure accurate project costing and billing.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/modules/working module.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -108,7 +108,7 @@ export default function NetSuiteSRPPage() {
       title: "Revenue Recognition",
       description:
         "Comply with ASC 606 and IFRS 15 standards with automated revenue schedules tied to project progress.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/modules/dashbord module.webp",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
@@ -116,7 +116,7 @@ export default function NetSuiteSRPPage() {
       title: "Project Analytics",
       description:
         "Gain deep insights into project performance, resource capacity, and profitability with real-time reports.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/modules/module8.webp",
       color: "#1a6080",
       rgb: "20,88,115",
     },
@@ -124,7 +124,7 @@ export default function NetSuiteSRPPage() {
       title: "Collaboration Portals",
       description:
         "Empower clients and partners with secure portals to track project progress and approve time/milestones.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/modules/chatt mdoule.webp",
       color: "#6a2575",
       rgb: "95,30,105",
     },
@@ -132,7 +132,7 @@ export default function NetSuiteSRPPage() {
       title: "Capacity Planning",
       description:
         "Forecast future resource needs based on the sales pipeline and current project commitments.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/modules/any module.webp",
       color: "#154e8a",
       rgb: "18,68,130",
     },
@@ -140,7 +140,7 @@ export default function NetSuiteSRPPage() {
       title: "Global Projects",
       description:
         "Manage international projects with multi-currency and multi-language support in a single system.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/modules/mobile module.webp",
       color: "#1a6545",
       rgb: "20,95,60",
     },
@@ -148,7 +148,7 @@ export default function NetSuiteSRPPage() {
       title: "Opportunity Management",
       description:
         "Link CRM opportunities directly to project delivery for early insight into upcoming resource needs.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/modules/csm modules.webp",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
@@ -156,7 +156,7 @@ export default function NetSuiteSRPPage() {
       title: "Project Dashboards",
       description:
         "Role-based dashboards for project managers, executives, and resources to monitor what matters most.",
-      image: "/images/lap/lap8_11zon.webp",
+      image: "/images/modules/any modules.webp",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },

@@ -55,18 +55,18 @@ export default function SmartCommissionPage() {
   ];
 
   const modules = [
-    { title: "Multi-Tier Plans", description: "Build unlimited commission plan types — flat, tiered, split, residual — for every sales role.", image: "/images/lap/lap1.webp", color: "#1e3a8a", rgb: "30,58,138" },
-    { title: "Real-Time Calculations", description: "Commissions calculated instantly as sales close — no waiting for month-end batch runs.", image: "/images/lap/lap2.webp", color: "#065f46", rgb: "6,95,70" },
-    { title: "Quota Management", description: "Set, track, and report on individual and team quotas with live attainment dashboards.", image: "/images/lap/lap3.webp", color: "#7c2d12", rgb: "124,45,18" },
-    { title: "Manager Approvals", description: "Route commission statements for manager review and approval before payout processing.", image: "/images/lap/lap4.webp", color: "#4c1d95", rgb: "76,29,149" },
-    { title: "Rep Self-Service", description: "Give every sales rep a personal portal to track their earnings, quota, and pipeline impact.", image: "/images/lap/lap5.webp", color: "#0c4a6e", rgb: "12,74,110" },
-    { title: "ERP Integration", description: "Commission data flows directly from NetSuite sales orders — no manual imports or exports.", image: "/images/people/laptopgirl1.webp", color: "#713f12", rgb: "113,63,18" },
-    { title: "Retroactive Adjustments", description: "Easily handle returns, contract amendments, and adjustments with full audit trail.", image: "/images/lap/lap7_11zon.webp", color: "#134e4a", rgb: "19,78,74" },
-    { title: "Analytics & Reporting", description: "Built-in dashboards show plan performance, payout trends, and top-earner rankings.", image: "/images/people/laptopmen2.webp", color: "#831843", rgb: "131,24,67" },
-    { title: "Split Commissions", description: "Handle overlapping territories, team splits, and channel partner commissions automatically.", image: "/images/people/threeteam.webp", color: "#1e3a8a", rgb: "30,58,138" },
-    { title: "Clawbacks & Holds", description: "Automatically claw back commissions on cancelled deals or non-payments based on your rules.", image: "/images/lap/lap8_11zon.webp", color: "#064e3b", rgb: "6,78,59" },
-    { title: "Multi-Currency", description: "Pay reps in their local currency with automatic exchange rate application at the payout date.", image: "/images/people/fourteam.webp", color: "#78350f", rgb: "120,53,15" },
-    { title: "Payroll Export", description: "One-click export of finalized commission amounts to your payroll or HR system of choice.", image: "/images/people/laptopgirl.webp", color: "#3b0764", rgb: "59,7,100" },
+    { title: "Multi-Tier Plans", description: "Build unlimited commission plan types — flat, tiered, split, residual — for every sales role.", image: "/images/modules/dashboard module.webp", color: "#1e3a8a", rgb: "30,58,138" },
+    { title: "Real-Time Calculations", description: "Commissions calculated instantly as sales close — no waiting for month-end batch runs.", image: "/images/modules/dashbord module.webp", color: "#065f46", rgb: "6,95,70" },
+    { title: "Quota Management", description: "Set, track, and report on individual and team quotas with live attainment dashboards.", image: "/images/modules/working module.webp", color: "#7c2d12", rgb: "124,45,18" },
+    { title: "Manager Approvals", description: "Route commission statements for manager review and approval before payout processing.", image: "/images/modules/any module.webp", color: "#4c1d95", rgb: "76,29,149" },
+    { title: "Rep Self-Service", description: "Give every sales rep a personal portal to track their earnings, quota, and pipeline impact.", image: "/images/modules/any modules.webp", color: "#0c4a6e", rgb: "12,74,110" },
+    { title: "ERP Integration", description: "Commission data flows directly from NetSuite sales orders — no manual imports or exports.", image: "/images/modules/module8.webp", color: "#713f12", rgb: "113,63,18" },
+    { title: "Retroactive Adjustments", description: "Easily handle returns, contract amendments, and adjustments with full audit trail.", image: "/images/modules/sheet module.webp", color: "#134e4a", rgb: "19,78,74" },
+    { title: "Analytics & Reporting", description: "Built-in dashboards show plan performance, payout trends, and top-earner rankings.", image: "/images/modules/csm modules.webp", color: "#831843", rgb: "131,24,67" },
+    { title: "Split Commissions", description: "Handle overlapping territories, team splits, and channel partner commissions automatically.", image: "/images/modules/managging together module.webp", color: "#1e3a8a", rgb: "30,58,138" },
+    { title: "Clawbacks & Holds", description: "Automatically claw back commissions on cancelled deals or non-payments based on your rules.", image: "/images/modules/account modules.webp", color: "#064e3b", rgb: "6,78,59" },
+    { title: "Multi-Currency", description: "Pay reps in their local currency with automatic exchange rate application at the payout date.", image: "/images/modules/chatt mdoule.webp", color: "#78350f", rgb: "120,53,15" },
+    { title: "Payroll Export", description: "One-click export of finalized commission amounts to your payroll or HR system of choice.", image: "/images/modules/mobile module.webp", color: "#3b0764", rgb: "59,7,100" },
   ];
 
   const benefits = [

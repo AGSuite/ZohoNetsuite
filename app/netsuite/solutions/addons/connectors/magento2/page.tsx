@@ -43,18 +43,18 @@ export default function MagentoConnectorPage() {
   ];
 
   const modules = [
-    { title: "Order Management", description: "Automated order flow from Adobe Commerce to NetSuite including all customer data and line items.", image: "/images/lap/lap1.webp", color: "#1e3a8a", rgb: "30,58,138" },
-    { title: "Inventory Sync", description: "Real-time inventory updates for single or multi-source inventory across all warehouse locations.", image: "/images/lap/lap2.webp", color: "#065f46", rgb: "6,95,70" },
-    { title: "Customer Sync", description: "Sync customer groups, company accounts, addresses, and credit limits for B2B operations.", image: "/images/lap/lap3.webp", color: "#7c2d12", rgb: "124,45,18" },
-    { title: "Shipment Tracking", description: "Push tracking information from NetSuite back to Adobe Commerce the moment orders ship.", image: "/images/lap/lap4.webp", color: "#4c1d95", rgb: "76,29,149" },
-    { title: "Price List Sync", description: "Sync complex NetSuite price levels and customer group pricing directly to Adobe Commerce.", image: "/images/lap/lap5.webp", color: "#0c4a6e", rgb: "12,74,110" },
-    { title: "Tier Pricing", description: "Support for volume-based pricing structures defined in NetSuite and synced to catalog rules.", image: "/images/people/laptopgirl1.webp", color: "#713f12", rgb: "113,63,18" },
-    { title: "Product Catalog Sync", description: "Manage thousands of SKUs and product variants from NetSuite and publish to Adobe Commerce.", image: "/images/lap/lap7_11zon.webp", color: "#134e4a", rgb: "19,78,74" },
-    { title: "Multi-Source Inventory", description: "Full support for Adobe Commerce MSI and NetSuite Multi-Location Inventory per warehouse.", image: "/images/people/laptopmen2.webp", color: "#831843", rgb: "131,24,67" },
-    { title: "B2B Company Accounts", description: "Sync company accounts, credit limits, and purchase order workflows for B2B buyers.", image: "/images/people/threeteam.webp", color: "#1e3a8a", rgb: "30,58,138" },
-    { title: "Omnichannel Returns", description: "Manage returns and refunds seamlessly across online and offline channels from NetSuite.", image: "/images/lap/lap8_11zon.webp", color: "#064e3b", rgb: "6,78,59" },
-    { title: "Configurable Products", description: "Handle simple, configurable, bundled, and grouped products with full variant relationship sync.", image: "/images/people/fourteam.webp", color: "#78350f", rgb: "120,53,15" },
-    { title: "Tax Compliance", description: "Accurate tax calculation and reporting for domestic and global Adobe Commerce sales.", image: "/images/people/laptopgirl.webp", color: "#3b0764", rgb: "59,7,100" },
+    { title: "Order Management", description: "Automated order flow from Adobe Commerce to NetSuite including all customer data and line items.", image: "/images/modules/dashboard module.webp", color: "#1e3a8a", rgb: "30,58,138" },
+    { title: "Inventory Sync", description: "Real-time inventory updates for single or multi-source inventory across all warehouse locations.", image: "/images/modules/dashbord module.webp", color: "#065f46", rgb: "6,95,70" },
+    { title: "Customer Sync", description: "Sync customer groups, company accounts, addresses, and credit limits for B2B operations.", image: "/images/modules/working module.webp", color: "#7c2d12", rgb: "124,45,18" },
+    { title: "Shipment Tracking", description: "Push tracking information from NetSuite back to Adobe Commerce the moment orders ship.", image: "/images/modules/any module.webp", color: "#4c1d95", rgb: "76,29,149" },
+    { title: "Price List Sync", description: "Sync complex NetSuite price levels and customer group pricing directly to Adobe Commerce.", image: "/images/modules/any modules.webp", color: "#0c4a6e", rgb: "12,74,110" },
+    { title: "Tier Pricing", description: "Support for volume-based pricing structures defined in NetSuite and synced to catalog rules.", image: "/images/modules/module8.webp", color: "#713f12", rgb: "113,63,18" },
+    { title: "Product Catalog Sync", description: "Manage thousands of SKUs and product variants from NetSuite and publish to Adobe Commerce.", image: "/images/modules/sheet module.webp", color: "#134e4a", rgb: "19,78,74" },
+    { title: "Multi-Source Inventory", description: "Full support for Adobe Commerce MSI and NetSuite Multi-Location Inventory per warehouse.", image: "/images/modules/csm modules.webp", color: "#831843", rgb: "131,24,67" },
+    { title: "B2B Company Accounts", description: "Sync company accounts, credit limits, and purchase order workflows for B2B buyers.", image: "/images/modules/managging together module.webp", color: "#1e3a8a", rgb: "30,58,138" },
+    { title: "Omnichannel Returns", description: "Manage returns and refunds seamlessly across online and offline channels from NetSuite.", image: "/images/modules/account modules.webp", color: "#064e3b", rgb: "6,78,59" },
+    { title: "Configurable Products", description: "Handle simple, configurable, bundled, and grouped products with full variant relationship sync.", image: "/images/modules/chatt mdoule.webp", color: "#78350f", rgb: "120,53,15" },
+    { title: "Tax Compliance", description: "Accurate tax calculation and reporting for domestic and global Adobe Commerce sales.", image: "/images/modules/mobile module.webp", color: "#3b0764", rgb: "59,7,100" },
   ];
 
   const benefits = [
