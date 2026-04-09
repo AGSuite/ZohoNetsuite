@@ -55,7 +55,7 @@ export const DesktopDropdown: React.FC<DesktopDropdownProps> = ({ item, setOpenD
                                         </p>
                                     </div>
                                     <Link
-                                        href={item.title === 'Services' ? '/zoho/services' : item.title === 'Industries' ? '/zoho/industries' : item.title === 'Insights' ? '/zoho/insights' : item.title === 'Contact' ? '/zoho/contact/careers' : '/zoho/about-us'}
+                                        href={item.title === 'Services' ? '/zoho/services' : item.title === 'Industries' ? '/zoho/industries' : item.title === 'Insights' ? '/zoho/insights' : item.title === 'Contact' ? '/zoho/contact' : '/zoho/about-us'}
                                         className="px-4 py-2 bg-white text-gray-900 text-xs font-bold rounded-lg hover:bg-gray-100 transition-colors"
                                         onClick={() => setOpenDropdown(null)}
                                     >
