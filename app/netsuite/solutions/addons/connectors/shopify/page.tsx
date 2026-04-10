@@ -8,6 +8,7 @@ import { useInView } from "react-intersection-observer";
 import { ShoppingBag, Package, Truck, Globe, Users, Zap, ArrowRight, Check, ChevronRight, BarChart3, RefreshCw, CheckCircle2, TrendingUp, Repeat } from "lucide-react";
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
 
 const PARTICLES = [{ w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 }, { w: 1.4, h: 2.1, top: 28, left: 22, dur: 4.1, delay: 1.2 }, { w: 2.8, h: 1.2, top: 45, left: 37, dur: 6.3, delay: 0.8 }, { w: 2.3, h: 1.8, top: 78, left: 70, dur: 5.5, delay: 0.3 }, { w: 2.6, h: 2.0, top: 5, left: 50, dur: 3.5, delay: 0.6 }, { w: 1.9, h: 1.3, top: 33, left: 72, dur: 6.1, delay: 1.4 }];
 
@@ -130,7 +131,7 @@ export default function ShopifyConnectorPage() {
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto py-4">
-            {[["What is it?", "#what-is"], ["Capabilities", "#modules"], ["Benefits", "#benefits"], ["Pricing", "#pricing"], ["FAQ", "#faq"]].map(([label, href]) => (
+            {[["What is it?", "#what-is"], ["Capabilities", "#modules"], ["Benefits", "#benefits"], ["Services", "#services"], ["Pricing", "#pricing"], ["FAQ", "#faq"]].map(([label, href]) => (
               <a key={href} href={href} className="px-4 py-2 text-base font-semibold hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-500">{label}</span>
               </a>
@@ -226,6 +227,8 @@ export default function ShopifyConnectorPage() {
           </div>
         </div>
       </section>
+
+      <NSServicesSection />
 
       {/* PRICING */}
       <section id="pricing" className="py-12 bg-gray-50 scroll-mt-36">

@@ -1,5 +1,5 @@
 "use client";
-
+ 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useSpring, useTransform } from "framer-motion";
 import Link from "next/link";
@@ -12,7 +12,7 @@ import {
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
 import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
-
+ 
 const CTA_PARTICLES = [
   { w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 },
   { w: 1.4, h: 2.1, top: 28, left: 22, dur: 4.1, delay: 1.2 },
@@ -23,7 +23,7 @@ const CTA_PARTICLES = [
   { w: 2.6, h: 2.0, top: 5, left: 50, dur: 3.5, delay: 0.6 },
   { w: 1.9, h: 1.3, top: 33, left: 72, dur: 6.1, delay: 1.4 },
 ];
-
+ 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
   const spring = useSpring(0, { mass: 0.8, stiffness: 75, damping: 15 });
@@ -34,18 +34,18 @@ function Counter({ value }: { value: number }) {
   }, [inView, spring, value]);
   return <span ref={ref}><motion.span>{display}</motion.span></span>;
 }
-
+ 
 export default function PlanningPage() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
-
+ 
   const stats = [
     { label: "Faster Planning Cycle", value: 40, suffix: "%", icon: Zap },
     { label: "Forecast Accuracy", value: 92, suffix: "%", icon: Target },
     { label: "Data Sources Unified", value: 50, suffix: "+", icon: Database },
     { label: "Budget Variance Reduced", value: 30, suffix: "%", icon: TrendingUp },
   ];
-
+ 
   const modules = [
     { title: "Financial Budgeting", description: "Collaborative, driver-based budgeting that aligns finance and department heads in real time.", image: "/images/modules/dashboard module.webp", color: "#0f6e8a", rgb: "15,110,138" },
     { title: "Revenue Planning", description: "Model revenue scenarios from pipeline, bookings, and renewal data for accurate top-line forecasts.", image: "/images/modules/account modules.webp", color: "#3b5299", rgb: "59,82,153" },
@@ -60,7 +60,7 @@ export default function PlanningPage() {
     { title: "Version Control", description: "Maintain versioned budget histories so you can compare plans and understand every change.", image: "/images/modules/mobile module.webp", color: "#8a2a3a", rgb: "138,42,58" },
     { title: "ERP Actuals Integration", description: "Live actuals from NetSuite ERP flow automatically into plans — no manual exports ever.", image: "/images/modules/csm modules.webp", color: "#0f4e8a", rgb: "15,78,138" },
   ];
-
+ 
   const benefits = [
     { title: "Driver-Based Planning", description: "Move beyond spreadsheets to driver-based models that automatically recalculate plans when assumptions change — saving hours of manual re-work and eliminating version confusion.", image: "/images/lap/lap3.webp", points: ["Automatic plan recalculation", "Business driver templates", "Integrated assumptions library", "Scenario comparison tools"] },
     { title: "Real-Time Actuals from ERP", description: "Because NetSuite Planning & Budgeting is connected to core ERP, you see live actuals against your plan the moment a transaction is entered — no waiting for month-end exports.", image: "/images/people/laptopmen2.webp", points: ["Live ERP actuals feed", "Instant variance reporting", "Auto-updated dashboards", "Period-close acceleration"] },
@@ -69,16 +69,16 @@ export default function PlanningPage() {
     { title: "Advanced Scenario Modeling", description: "Run unlimited what-if scenarios side-by-side — best case, downside, and mid case — so you can stress-test your financial plans and prepare for every eventuality in advance.", image: "/images/lap/lap2.webp", points: ["Unlimited scenario creation", "Side-by-side comparison", "Waterfall and bridge charts", "Key assumption sensitivity analysis"] },
     { title: "Finance as a Strategic Partner", description: "NSPB gives your finance team the tools to move beyond backward-looking reporting to forward-looking business partnership — from budget cop to strategic co-pilot.", image: "/images/lap/lap5.webp", points: ["Forward-looking management packs", "Board-ready financial presentations", "Integrated narrative and commentary", "Self-service reporting for all managers"] },
   ];
-
+ 
   return (
     <div className="min-h-screen selection:bg-teal-900 selection:text-white bg-white">
-
+ 
       {/* Hero */}
       <section className="relative min-h-screen overflow-hidden flex flex-col bg-gradient-to-br from-[#000a10] via-[#000f1a] to-[#001828]">
         <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-teal-600/10 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-800/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '70px 70px' }} />
-
+ 
         <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-8">
           <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
             className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20">
@@ -88,7 +88,7 @@ export default function PlanningPage() {
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/80">Planning & Budgeting</span>
           </motion.nav>
-
+ 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
@@ -112,7 +112,7 @@ export default function PlanningPage() {
                 </Link>
               </motion.div>
             </motion.div>
-
+ 
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }}
               className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
@@ -143,7 +143,7 @@ export default function PlanningPage() {
               </div>
             </motion.div>
           </div>
-
+ 
           <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.8 }}
             className="border-t border-white/15 pt-5 sm:pt-6">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
@@ -164,12 +164,12 @@ export default function PlanningPage() {
           </motion.div>
         </div>
       </section>
-
+ 
       {/* Sticky Nav */}
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
-            {[{ label: "What is NSPB?", href: "#what-is" }, { label: "Modules", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
+            {[{ label: "What is Planning?", href: "#what-is" }, { label: "Capabilities", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Services", href: "#services" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
               <a key={l.href} href={l.href} className="px-4 py-2 text-base font-semibold hover:bg-teal-50 rounded-lg transition-all whitespace-nowrap">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-700 via-cyan-600 to-teal-500">{l.label}</span>
               </a>
@@ -177,7 +177,7 @@ export default function PlanningPage() {
           </div>
         </div>
       </nav>
-
+ 
       {/* What is */}
       <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
@@ -211,7 +211,7 @@ export default function PlanningPage() {
           </div>
         </div>
       </section>
-
+ 
       {/* Modules Grid */}
       <section id="modules" className="py-16 bg-white relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
@@ -245,7 +245,7 @@ export default function PlanningPage() {
           </div>
         </div>
       </section>
-
+ 
       {/* Benefits */}
       <section id="benefits" className="py-24 relative overflow-hidden scroll-mt-36"
         style={{ background: "linear-gradient(135deg, #000a10 0%, #001018 25%, #001822 55%, #000c14 80%, #000810 100%)" }}>
@@ -291,7 +291,9 @@ export default function PlanningPage() {
           </div>
         </div>
       </section>
-
+ 
+      <NSServicesSection />
+ 
       {/* Pricing */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
@@ -322,7 +324,7 @@ export default function PlanningPage() {
           </motion.div>
         </div>
       </section>
-
+ 
       <FAQ
         variant="netsuite"
         id="faq"
@@ -338,7 +340,7 @@ export default function PlanningPage() {
           { q: "How long does a NetSuite Planning & Budgeting implementation take?", a: "A standard NSPB implementation covering annual budget, one rolling forecast model, and management reporting packs typically takes 6 to 10 weeks. Implementations with headcount planning, multi-entity consolidation, or custom driver models take 10 to 16 weeks depending on complexity and data quality." },
         ]}
       />
-
+ 
       {/* CTA */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -364,8 +366,7 @@ export default function PlanningPage() {
           </motion.div>
         </div>
       </section>
-      <NSServicesSection />
-
+ 
       <ContactFormDesign4 />
     </div>
   );

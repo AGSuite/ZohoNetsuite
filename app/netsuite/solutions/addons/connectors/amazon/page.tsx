@@ -8,6 +8,7 @@ import { useInView } from "react-intersection-observer";
 import { ShoppingBag, Package, Truck, Globe, DollarSign, Users, Zap, ArrowRight, Check, ChevronRight, BarChart3, RefreshCw, CheckCircle2, Layers, TrendingUp } from "lucide-react";
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
 
 const CTA_PARTICLES = [
   { w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 }, { w: 1.4, h: 2.1, top: 28, left: 22, dur: 4.1, delay: 1.2 },
@@ -154,7 +155,7 @@ export default function AmazonConnectorPage() {
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
-            {[{ label: "What is it?", href: "#what-is" }, { label: "Capabilities", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
+            {[{ label: "What is it?", href: "#what-is" }, { label: "Capabilities", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Services", href: "#services" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
               <a key={l.href} href={l.href} className="px-4 py-2 text-base font-semibold hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-500">{l.label}</span>
               </a>
@@ -262,6 +263,8 @@ export default function AmazonConnectorPage() {
           </div>
         </div>
       </section>
+
+      <NSServicesSection />
 
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">

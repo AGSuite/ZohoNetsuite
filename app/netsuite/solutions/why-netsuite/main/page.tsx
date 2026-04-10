@@ -1,5 +1,5 @@
 "use client";
-
+ 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useSpring, useTransform } from "framer-motion";
 import Link from "next/link";
@@ -12,7 +12,7 @@ import {
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
 import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
-
+ 
 const CTA_PARTICLES = [
   { w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 },
   { w: 1.4, h: 2.1, top: 28, left: 22, dur: 4.1, delay: 1.2 },
@@ -23,7 +23,7 @@ const CTA_PARTICLES = [
   { w: 2.6, h: 2.0, top: 5, left: 50, dur: 3.5, delay: 0.6 },
   { w: 1.9, h: 1.3, top: 33, left: 72, dur: 6.1, delay: 1.4 },
 ];
-
+ 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
   const spring = useSpring(0, { mass: 0.8, stiffness: 75, damping: 15 });
@@ -34,18 +34,18 @@ function Counter({ value }: { value: number }) {
   }, [inView, spring, value]);
   return <span ref={ref}><motion.span>{display}</motion.span></span>;
 }
-
+ 
 export default function WhyNetsuitePage() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
-
+ 
   const stats = [
     { label: "Customer Satisfaction", value: 93, suffix: "%", icon: Star },
     { label: "Countries Supported", value: 219, suffix: "+", icon: Globe },
     { label: "Years Cloud ERP", value: 25, suffix: "+", icon: Cloud },
     { label: "Companies Worldwide", value: 40, suffix: "k+", icon: Users },
   ];
-
+ 
   const modules = [
     { title: "Financial Management", description: "Real-time financials with multi-currency, multi-entity, and global reporting built in from day one.", image: "/images/modules/dashboard module.webp", color: "#1e3fa8", rgb: "30,63,168" },
     { title: "ERP & Operations", description: "Unified order management, procurement, manufacturing, and supply chain on one platform.", image: "/images/modules/working module.webp", color: "#3b5299", rgb: "59,82,153" },
@@ -60,7 +60,7 @@ export default function WhyNetsuitePage() {
     { title: "Global Business", description: "Multi-subsidiary management with consolidation, intercompany reporting, and local compliance.", image: "/images/modules/mobile module.webp", color: "#8a2a3a", rgb: "138,42,58" },
     { title: "AI & Automation", description: "Machine learning and AI embedded into every module — predict, automate, and detect smarter.", image: "/images/modules/module8.webp", color: "#0f4e8a", rgb: "15,78,138" },
   ];
-
+ 
   const benefits = [
     { title: "One Unified Platform", description: "Unlike disjointed software stacks, NetSuite unifies every business function — finance, operations, CRM, ecommerce, HR — in a single cloud suite with one source of truth and one login for everyone.", image: "/images/people/group5.webp", points: ["No integration overhead", "One login for every function", "Consistent UI across all modules", "Real-time data everywhere, always"] },
     { title: "Cloud-Native Since 1998", description: "NetSuite was born in the cloud in 1998 and has never looked back. There is no on-premise version — it is purpose-built for cloud scale, reliability, and continuous delivery from the ground up.", image: "/images/lap/lap2.webp", points: ["No hardware or servers to manage", "Built for cloud-native scalability", "Automatic bi-annual upgrades", "99.99% uptime on Oracle Cloud Infrastructure"] },
@@ -69,16 +69,16 @@ export default function WhyNetsuitePage() {
     { title: "Industry-Specific Solutions", description: "SuiteSuccess industry editions deliver pre-configured NetSuite for your specific vertical — with the KPIs, workflows, and chart of accounts that your industry lives by, ready from day one.", image: "/images/people/laptopmen2.webp", points: ["30+ industry editions available", "Pre-built KPIs and dashboards", "Industry-specific chart of accounts", "Best-practice workflows built in"] },
     { title: "Largest ERP Partner Ecosystem", description: "With thousands of global implementation partners, SuiteApps in the marketplace, and a vast community of NetSuite professionals, you are never alone on your NetSuite journey.", image: "/images/people/fourteam.webp", points: ["1,000+ SuiteApps in the marketplace", "Global implementation partner network", "SuiteSuccess customer community", "NetSuite Professional Services"] },
   ];
-
+ 
   return (
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
-
+ 
       {/* Hero */}
       <section className="relative min-h-screen overflow-hidden flex flex-col bg-gradient-to-br from-[#080414] via-[#0d0928] to-[#160840]">
         <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-yellow-500/8 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-800/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '70px 70px' }} />
-
+ 
         <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-8">
           <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
             className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20">
@@ -88,7 +88,7 @@ export default function WhyNetsuitePage() {
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/80">Why NetSuite</span>
           </motion.nav>
-
+ 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
@@ -112,7 +112,7 @@ export default function WhyNetsuitePage() {
                 </Link>
               </motion.div>
             </motion.div>
-
+ 
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }}
               className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
@@ -143,7 +143,7 @@ export default function WhyNetsuitePage() {
               </div>
             </motion.div>
           </div>
-
+ 
           <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.8 }}
             className="border-t border-white/15 pt-5 sm:pt-6">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
@@ -164,12 +164,12 @@ export default function WhyNetsuitePage() {
           </motion.div>
         </div>
       </section>
-
+ 
       {/* Sticky Nav */}
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
-            {[{ label: "Why NetSuite?", href: "#what-is" }, { label: "Suite Overview", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
+            {[{ label: "Why NetSuite?", href: "#what-is" }, { label: "Suite Overview", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Services", href: "#services" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
               <a key={l.href} href={l.href} className="px-4 py-2 text-base font-semibold hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-yellow-600 to-blue-500">{l.label}</span>
               </a>
@@ -177,7 +177,7 @@ export default function WhyNetsuitePage() {
           </div>
         </div>
       </nav>
-
+ 
       {/* What is */}
       <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
@@ -211,7 +211,7 @@ export default function WhyNetsuitePage() {
           </div>
         </div>
       </section>
-
+ 
       {/* Modules Grid */}
       <section id="modules" className="py-16 bg-white relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
@@ -245,7 +245,7 @@ export default function WhyNetsuitePage() {
           </div>
         </div>
       </section>
-
+ 
       {/* Benefits */}
       <section id="benefits" className="py-24 relative overflow-hidden scroll-mt-36"
         style={{ background: "linear-gradient(135deg, #0a0614 0%, #130a2e 25%, #1a1040 55%, #0d0820 80%, #08050e 100%)" }}>
@@ -291,7 +291,9 @@ export default function WhyNetsuitePage() {
           </div>
         </div>
       </section>
-
+ 
+      <NSServicesSection />
+ 
       {/* Pricing */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
@@ -322,23 +324,18 @@ export default function WhyNetsuitePage() {
           </motion.div>
         </div>
       </section>
-
+ 
       <FAQ
         variant="netsuite"
         id="faq"
         customSubtitle="Everything you need to know about why businesses choose NetSuite — cloud ERP benefits, migration from legacy systems, and TCO."
         customFaqs={[
-          { q: "Why do businesses choose NetSuite over other ERP systems?", a: "NetSuite is the world's #1 cloud ERP, trusted by 43,000+ organisations across 219 countries. Businesses choose it for its single unified platform covering financials, CRM, ecommerce, inventory, HR, and analytics — eliminating the integration complexity of best-of-breed systems. Oracle-backed reliability, continuous innovation with 2 upgrades per year, and a lower total cost of ownership make it the platform of choice for growth-stage businesses and enterprises alike." },
-          { q: "Is NetSuite suitable for mid-size and enterprise businesses?", a: "Yes. NetSuite scales from early-stage businesses with 10 users to global enterprises with 10,000+ users and dozens of subsidiaries. The same platform handles multi-currency, multi-subsidiary, multi-language, and multi-tax operations — and as your business grows, you activate additional NetSuite modules without changing platforms." },
-          { q: "How does NetSuite's cloud model reduce IT overhead?", a: "NetSuite is delivered as a true multi-tenant SaaS platform — Oracle manages all infrastructure, security patches, performance scaling, and platform upgrades. Your IT team has zero hardware to maintain, zero upgrade projects, and zero database administration. This typically reduces IT infrastructure costs by 50-70% compared to on-premise ERP." },
-          { q: "How does NetSuite handle multiple subsidiaries and currencies?", a: "NetSuite OneWorld is purpose-built for multi-entity operations — supporting 190+ currencies, automated intercompany elimination, localised tax compliance for 100+ countries, consolidated group reporting, and entity-specific financial statements. All of this is managed from a single NetSuite account with no separate system per country." },
-          { q: "What is the typical total cost of ownership (TCO) for NetSuite vs SAP or Oracle EBS?", a: "NetSuite's subscription model eliminates the capital expenditure of on-premise ERP. Studies consistently show NetSuite's 5-year TCO is 50-65% lower than SAP or Oracle EBS when accounting for licence, implementation, infrastructure, and ongoing maintenance costs. Businesses also go live 3-4x faster — accelerating ROI." },
-          { q: "Can NetSuite replace multiple legacy systems?", a: "Yes. Most businesses implementing NetSuite replace 5-10 disconnected systems — including QuickBooks or Sage for accounting, Salesforce or HubSpot for CRM, Magento or Shopify for ecommerce, and spreadsheets for planning. A single NetSuite subscription covers all of these functions in one integrated platform." },
-          { q: "How does NetSuite ensure data security and uptime?", a: "NetSuite is built on Oracle Cloud Infrastructure with 99.99% uptime SLA, AES-256 data encryption at rest and in transit, SOC 1 and SOC 2 Type II certification, ISO 27001, and GDPR compliance. Role-based access control ensures every user sees only the data their role permits." },
-          { q: "How does AGSuite help businesses move to NetSuite?", a: "AGSuite is a NetSuite Solution Provider specialising in end-to-end NetSuite implementations across Finance, Supply Chain, ecommerce, and Analytics. We handle everything from scoping and data migration to configuration, training, and go-live — backed by a dedicated support desk post-launch to ensure your business gets maximum value from the platform." },
+          { q: "What is the typical total cost of ownership (TCO) for NetSuite?", a: "NetSuite's subscription model eliminates the capital expenditure of on-premise ERP. Studies consistently show NetSuite's 5-year TCO is 50-65% lower than SAP or Oracle EBS when accounting for licence, implementation, infrastructure, and ongoing maintenance costs." },
+          { q: "How long does a NetSuite implementation take?", a: "Using SuiteSuccess methodology, most NetSuite implementations take between 100 days and 6 months, depending on complexity and modules activated." },
+          { q: "Is NetSuite easy to integrate with other business tools?", a: "Yes, NetSuite has an open API and ecosystem (SuiteTalk, SuiteScript) that allows for seamless integration with CRM, Ecommerce, Banking, and other business-critical tools." }
         ]}
       />
-
+ 
       {/* CTA */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -364,8 +361,7 @@ export default function WhyNetsuitePage() {
           </motion.div>
         </div>
       </section>
-      <NSServicesSection />
-
+ 
       <ContactFormDesign4 />
     </div>
   );

@@ -38,10 +38,12 @@ export default function NetSuiteSolutionsClient() {
   const currentColor = wordColors[rotatingIdx] ?? wordColors[0];
 
   const stats = [
-    { label: 'Enterprises Served', value: 180, suffix: '+', icon: Trophy },
-    { label: 'NetSuite Experts', value: 50, suffix: '+', icon: Users },
-    { label: 'Global Roll-outs', value: 50, suffix: '+', icon: Globe2 },
-    { label: 'Years Experience', value: 15, suffix: '+', icon: Rocket },
+    { label: 'Customers', value: 200, suffix: '+', icon: Users },
+    { label: 'Projects', value: 500, suffix: '+', icon: Rocket },
+    { label: 'Industry Expertise', value: 10, suffix: '+', icon: Trophy },
+    { label: 'Customer Retention', value: 84, suffix: '%', icon: HeartHandshake },
+    { label: 'Years Experience', value: 15, suffix: '+', icon: GraduationCap },
+    { label: 'Countries Serving Customers', value: 10, suffix: '+', icon: Globe2 },
   ];
 
   const imageBgGradients = [
@@ -304,7 +306,7 @@ export default function NetSuiteSolutionsClient() {
             </motion.div>
           </div>
           <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="border-t border-white/15 pt-5 sm:pt-6">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 md:gap-8">
               {stats.map((s, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 + i * 0.12 }} className="text-center group">
                   <div className="flex justify-center mb-2 sm:mb-3"><div className="p-2 sm:p-3 bg-blue-700/20 rounded-xl group-hover:bg-blue-700/30 transition-colors"><s.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 group-hover:scale-110 transition-transform" /></div></div>

@@ -420,6 +420,7 @@ export default function NetSuiteCRMPage() {
               { label: "What is NetSuite CRM?", href: "#what-is-crm" },
               { label: "Modules", href: "#modules" },
               { label: "Benefits", href: "#benefits" },
+              { label: "Services", href: "#services" },
               { label: "Pricing", href: "#pricing" },
               { label: "FAQ", href: "#faq" },
             ].map((link) => (
@@ -774,6 +775,10 @@ export default function NetSuiteCRMPage() {
         </div>
       </section>
 
+      <div id="services">
+        <NSServicesSection />
+      </div>
+
       {/* -- Pricing ------------------------------------------------------------- */}
       <section
         id="pricing"
@@ -923,7 +928,6 @@ export default function NetSuiteCRMPage() {
       </section>
 
       {/* -- Contact Form -------------------------------------------------------- */}
-      <NSServicesSection />
       <ContactFormDesign4 />
     </div>
   );

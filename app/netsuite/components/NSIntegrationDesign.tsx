@@ -58,20 +58,25 @@ const NSIntegrationDesign = () => {
                             >
                                 Unified Architecture
                             </motion.span>
-                            <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-indigo-900 to-indigo-600 leading-[1.1]">
-                                Seamless NetSuite Integration Design
+                            <h2 className="text-4xl md:text-4xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-indigo-900 to-indigo-600 leading-[1.1]">
+                                Smart & Scalable NetSuite ERP Integrations That Power Your Business
                             </h2>
-                            <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
-                                Connect NetSuite to your entire tech stack with high-performance integration patterns. Our designs ensure data consistency, security, and scalability across all enterprise functions.
-                            </p>
+                            <div className="space-y-4">
+                                <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
+                                    At AGSuite Technologies, we deliver end-to-end NetSuite integrations that unify your entire business ecosystem—from banking and CRM to eCommerce, payments, and logistics—ensuring seamless data flow across all functions.
+                                </p>
+                                <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
+                                    We have integrated NetSuite with platforms like Salesforce, Shopify, PayPal, and Amazon, enabling businesses to automate workflows, eliminate data silos, and gain real-time visibility to drive smarter decisions and scalable growth.
+                                </p>
+                            </div>
                         </div>
 
                         <div className="grid sm:grid-cols-2 gap-6">
                             {[
-                                { title: "API-First Approach", desc: "Robust REST/SOAP endpoint architecture." },
-                                { title: "Cloud Integration", desc: "Native cloud-to-cloud synchronization." },
-                                { title: "Real-time Processing", desc: "Zero-latency business intelligence flow." },
-                                { title: "Secure Data Tunnel", desc: "Enterprise-grade encryption protocols." }
+                                { title: "API-First Approach", desc: "Flexible and scalable integrations built for evolving business needs." },
+                                { title: "Cloud Integration", desc: "Seamless connectivity across all enterprise systems." },
+                                { title: "Real-Time Processing", desc: "Instant insights for faster financial decision-making." },
+                                { title: "Secure Data Tunnel", desc: "Enterprise-grade security for safe and compliant data exchange." }
                             ].map((info, i) => (
                                 <motion.div
                                     key={i}

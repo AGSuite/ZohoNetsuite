@@ -35,6 +35,7 @@ import ContactFormDesign4 from '../components/ContactFormDesign4';
 import NSCustomerSuccess from '../components/NSCustomerSuccess';
 import { AnimatePresence } from 'framer-motion';
 import { ChevronRight, Sparkles } from 'lucide-react';
+import GlobalOfficeMap from '../components/GlobalOfficeMap';
 
 
 
@@ -731,12 +732,12 @@ export default function AboutClient() {
         {/* Background Video Container */}
         <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center translate-z-0">
           <motion.div
-             style={{
-               scale,
-               borderRadius,
-               padding,
-             }}
-             className="relative w-full h-full overflow-hidden z-0 flex items-center justify-center bg-white"
+            style={{
+              scale,
+              borderRadius,
+              padding,
+            }}
+            className="relative w-full h-full overflow-hidden z-0 flex items-center justify-center bg-white"
           >
             <video
               key={videoSrc}
@@ -1197,17 +1198,12 @@ export default function AboutClient() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative w-full max-w-6xl overflow-hidden group"
+            className="relative w-full max-w-9xl overflow-hidden"
           >
-            <div className="relative w-full h-[45vh] sm:h-[60vh] lg:h-[85vh] overflow-hidden rounded-3xl">
-              <Image
-                src="/images/Dashboard/Presence.webp"
-                alt="Global Presence Map"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
+            <GlobalOfficeMap />
           </motion.div>
+
+
         </div>
       </section>
 
@@ -1275,114 +1271,6 @@ export default function AboutClient() {
   );
 }
 
-function OfficeDisplay({ themeColor }: { themeColor: 'blue' | 'rose' }) {
-  const [activeTab, setActiveTab] = useState('INDIA');
-
-  const colorConfig = {
-    blue: {
-      primary: 'bg-blue-600',
-      secondary: 'text-blue-600',
-      hover: 'hover:bg-blue-700',
-      border: 'border-blue-600/30',
-      light: 'bg-blue-500/10',
-      activeTab: 'bg-blue-600',
-    },
-    rose: {
-      primary: 'bg-rose-600',
-      secondary: 'text-rose-600',
-      hover: 'hover:bg-rose-700',
-      border: 'border-rose-600/30',
-      light: 'bg-rose-500/10',
-      activeTab: 'bg-rose-600',
-    },
-  };
-
-  const config = colorConfig[themeColor];
-
-  return (
-    <div className="w-full mt-20">
-      {/* Tabs */}
-      <div className="flex justify-center mb-12">
-        <div className="flex bg-white/5 backdrop-blur-md p-1.5 rounded-2xl border border-white/10 shadow-2xl">
-          {Object.keys(officeData).map((country) => (
-            <button
-              key={country}
-              onClick={() => setActiveTab(country)}
-              className={`px-8 py-3 rounded-xl text-sm md:text-base font-semibold transition-all duration-300 ${activeTab === country
-                ? `${config.activeTab} text-white shadow-lg`
-                : 'text-gray-400 hover:text-white hover:bg-white/5'
-                }`}
-              suppressHydrationWarning={true}
-            >
-              {country}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="min-h-[300px] w-full">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left"
-          >
-            {officeData[activeTab].map((office, index) => (
-              <motion.div
-                key={office.label + index}
-                className="group relative bg-white rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100"
-              >
-                {/* Subtle light gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br from-white via-white to-${themeColor === 'blue' ? 'blue' : 'rose'}-50/30 opacity-100`} />
-
-                <div className={`absolute top-0 right-0 w-32 h-32 ${config.primary} opacity-[0.03] rounded-bl-full -mr-10 -mt-10 transition-all duration-500 group-hover:scale-150 group-hover:opacity-[0.08]`} />
-
-                <div className="relative z-10">
-                  <div className={`w-14 h-14 ${config.light} rounded-2xl flex items-center justify-center mb-6 border border-${themeColor === 'blue' ? 'blue' : 'rose'}-100 transition-transform duration-500 group-hover:rotate-6`}>
-                    <Building2 className={`w-7 h-7 ${config.secondary}`} />
-                  </div>
-
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 truncate">
-                    {office.label}
-                  </h3>
-                  <div className="flex items-center gap-2 text-gray-500 font-medium mb-6">
-                    <MapPin className={`w-4 h-4 ${config.secondary}`} />
-                    <span className="text-sm">{office.city}, {office.state}</span>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-4">
-                      <div className={`mt-1.5 w-2 h-2 rounded-full ${config.primary} flex-shrink-0 animate-pulse`} />
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {office.address}
-                      </p>
-                    </div>
-
-                    {office.email && (
-                      <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
-                        <Mail className={`w-5 h-5 ${config.secondary}`} />
-                        <a
-                          href={`mailto:${office.email}`}
-                          className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium"
-                        >
-                          {office.email}
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
-      </div>
-    </div>
-  );
-}
 
 const leadersData = [
   {

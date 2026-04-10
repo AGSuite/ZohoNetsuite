@@ -294,6 +294,7 @@ export default function GlobalBusinessPage() {
               { label: "What is NetSuite Global Business?", href: "#what-is-global" },
               { label: "Modules", href: "#modules" },
               { label: "Benefits", href: "#benefits" },
+              { label: "Services", href: "#services" },
               { label: "Pricing", href: "#pricing" },
               { label: "FAQ", href: "#faq" },
             ].map(link => (
@@ -504,6 +505,8 @@ export default function GlobalBusinessPage() {
         </div>
       </section>
 
+      <NSServicesSection />
+
       {/* ── Pricing Section ───────────────────────────────────────────────── */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
@@ -596,7 +599,6 @@ export default function GlobalBusinessPage() {
       </section>
 
       {/* ── Contact Form ─────────────────────────────────────────────────── */}
-      <NSServicesSection />
       <ContactFormDesign4 />
 
     </div>

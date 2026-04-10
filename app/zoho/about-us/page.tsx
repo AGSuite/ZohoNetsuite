@@ -33,6 +33,7 @@ import { useInView } from 'react-intersection-observer';
 import FlipNumbers from 'react-flip-numbers';
 import { motion, useAnimation, type Variants, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import GlobalOfficeMap from '../components/GlobalOfficeMap';
 
 const ZohoContactForm = dynamic(() => import('../components/ZohoContactForm'), { ssr: false });
 const ZohoTestimonialSection = dynamic(() => import('../components/ZohoTestimonialSection'), { ssr: false });
@@ -653,12 +654,12 @@ export default function AboutClient() {
         {/* Background Video Container */}
         <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center translate-z-0">
           <motion.div
-             style={{
-               scale,
-               borderRadius,
-               padding,
-             }}
-             className="relative w-full h-full overflow-hidden z-0 flex items-center justify-center bg-white"
+            style={{
+              scale,
+              borderRadius,
+              padding,
+            }}
+            className="relative w-full h-full overflow-hidden z-0 flex items-center justify-center bg-white"
           >
             <video
               key={videoSrc}
@@ -1117,17 +1118,9 @@ export default function AboutClient() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative w-full max-w-6xl overflow-hidden group"
+            className="relative w-full overflow-hidden group"
           >
-            <div className="relative w-full h-[45vh] sm:h-[60vh] lg:h-[85vh] overflow-hidden rounded-3xl">
-              <Image
-                src="/images/Dashboard/Presence.webp"
-                alt="Global Presence Map"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="100vw"
-              />
-            </div>
+            <GlobalOfficeMap />
           </motion.div>
         </div>
       </section>
@@ -1273,3 +1266,4 @@ function OurLeaders({ themeColor }: { themeColor: 'blue' | 'rose' }) {
     </div>
   );
 }
+

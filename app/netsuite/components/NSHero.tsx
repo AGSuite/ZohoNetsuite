@@ -131,8 +131,8 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                       />
                     </div>
                   }
-                  title="Streamlining IT Operations with NetSuite"
-                  desc="Simplify project management, resource planning, and financial tracking with a centralized Oracle NetSuite ERP system."
+                  title="Empowering CFOs with Real-Time Insights, Control, and Scalable Growth"
+                  desc="Give your finance leaders a single, unified platform to monitor cash flow, close books faster, and drive confident decision-making — all while scaling seamlessly as your business evolves."
                   cta="Book a Demo"
                   link="/netsuite/contact"
                   customVisual={<NSCircularDesign />}

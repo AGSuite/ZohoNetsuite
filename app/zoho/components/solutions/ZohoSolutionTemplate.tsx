@@ -31,6 +31,7 @@ import {
 } from "lucide-react";
 import { FAQ } from "@/app/components/home/FAQ";
 import ZohoContactForm from "../ZohoContactForm";
+import ZohoServices from "../ZohoServices";
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
@@ -351,6 +352,7 @@ export default function ZohoSolutionTemplate({
               { label: "What is " + title.split('—')[0] + "?", href: "#what-is" },
               { label: "Modules", href: "#modules" },
               { label: "Benefits", href: "#benefits" },
+              { label: "Services", href: "#services" },
               { label: "Pricing", href: "#pricing" },
               { label: "FAQ", href: "#faq" },
             ].map((link) => (
@@ -613,7 +615,11 @@ export default function ZohoSolutionTemplate({
           </div>
         </div>
       </section>
-
+ 
+      <div id="services" className="scroll-mt-36">
+        <ZohoServices />
+      </div>
+ 
       {/* ── Pricing Section ───────────────────────────────────────────────── */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">

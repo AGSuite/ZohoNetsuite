@@ -13,6 +13,7 @@ import {
 import dynamic from 'next/dynamic';
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
 
 const ScrollFloat = dynamic(() => import('../components/ScrollFloat'), { ssr: false }) as any;
 const RotatingText = dynamic(() => import('../components/RotatingText'), { ssr: false }) as any;
@@ -292,8 +293,21 @@ export default function AddonsPage() {
         </div>
       </section>
 
+      {/* ─────────────── STICKY NAV ─────────────── */}
+      <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
+            {[{ label: "What is it?", href: "#what-is" }, { label: "Catalog", href: "#addons" }, { label: "Services", href: "#services" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
+              <a key={l.href} href={l.href} className="px-4 py-2 text-base font-semibold hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-500">{l.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
+
       {/* ─────────────── INTRO ─────────────── */}
-      <section ref={introRef} className="py-10 bg-gray-100 overflow-hidden relative">
+      <section id="what-is" ref={introRef} className="py-10 bg-gray-100 overflow-hidden relative scroll-mt-36">
         <motion.div
           style={{
             borderRadius: introRadius,
@@ -457,8 +471,10 @@ export default function AddonsPage() {
         </div>
       </section>
 
+      <NSServicesSection />
+
       {/* ─────────────── PRICING ─────────────── */}
-      <section id="pricing" className="py-12 bg-gray-50">
+      <section id="pricing" className="py-12 bg-gray-50 scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-3xl overflow-hidden shadow-2xl" style={{ backgroundColor: '#000d1a' }}>
             <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">

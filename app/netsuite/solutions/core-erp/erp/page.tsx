@@ -269,6 +269,7 @@ export default function NetSuiteERPPage() {
               { label: "What is NetSuite ERP?", href: "#what-is-erp" },
               { label: "Modules", href: "#modules" },
               { label: "Benefits", href: "#benefits" },
+              { label: "Services", href: "#services" },
               { label: "Pricing", href: "#pricing" },
               { label: "FAQ", href: "#faq" },
             ].map(link => (
@@ -299,8 +300,8 @@ export default function NetSuiteERPPage() {
               <div className="space-y-4">
                 <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">Turn Complexity into Clarity with NetSuite ERP.</h3>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">NetSuite ERP is a comprehensive cloud-based business management solution that unifies all your core processes.</p>
-              <p className="text-lg text-gray-600 leading-relaxed">With real-time visibility and a single source of truth, NetSuite ERP empowers organizations to make faster decisions and scale efficiently.</p>
+              <p className="text-lg text-gray-600 leading-relaxed">NetSuite ERP is a comprehensive cloud-based business management solution that unifies all your core processes. This powerful ERP application operates on a single-source system with a flexible pay-per-use model.</p>
+              <p className="text-lg text-gray-600 leading-relaxed">NetSuite ERP offers real-time insights into your financials and operations, allowing for quicker, data-driven decisions. With its advanced financial services and tailored industry features, it meets compliance requirements and addresses complex financial needs—empowering both startups and established enterprises to enhance efficiency, agility, and achieve long-term success.</p>
               <div className="pt-4">
                 <Link
                   href="#contact-form"
@@ -572,6 +573,7 @@ export default function NetSuiteERPPage() {
         </div>
       </section>
 
+      <NSServicesSection />
 
       {/* Pricing Section — New Design */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
@@ -717,7 +719,6 @@ export default function NetSuiteERPPage() {
       </section>
 
       {/* Contact Form */}
-      <NSServicesSection />
       <ContactFormDesign4 />
 
     </div>

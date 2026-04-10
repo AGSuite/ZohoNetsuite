@@ -169,7 +169,7 @@ export default function IndiaLocalizationPage() {
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
-            {[{ label: "What is India Localization?", href: "#what-is" }, { label: "Capabilities", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
+            {[{ label: "What is India Localization?", href: "#what-is" }, { label: "Features", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Services", href: "#services" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
               <a key={l.href} href={l.href} className="px-4 py-2 text-base font-semibold hover:bg-orange-50 rounded-lg transition-all whitespace-nowrap">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-700 via-red-600 to-amber-500">{l.label}</span>
               </a>
@@ -292,6 +292,8 @@ export default function IndiaLocalizationPage() {
         </div>
       </section>
 
+      <NSServicesSection />
+
       {/* Pricing */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
@@ -364,7 +366,6 @@ export default function IndiaLocalizationPage() {
           </motion.div>
         </div>
       </section>
-      <NSServicesSection />
 
       <ContactFormDesign4 />
     </div>

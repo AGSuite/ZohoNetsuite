@@ -52,7 +52,12 @@ const services = [
 
 export default function NSServicesSection() {
   return (
-    <section className="py-20 bg-gray-50 relative overflow-hidden">
+    <section 
+      id={`services`} 
+      className={`py-20 bg-gray-50 relative overflow-hidden scroll-mt-32`}
+      suppressHydrationWarning
+    >
+      {/* v2.1.0 - Standardized anchor navigation */}
       <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -33,6 +33,7 @@ import {
 import { SRPCircularDesign } from "@/app/netsuite/components/SRPCircularDesign";
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -368,6 +369,7 @@ export default function NetSuiteSRPPage() {
               { label: "What is SRP?", href: "#what-is-srp" },
               { label: "Modules", href: "#modules" },
               { label: "Benefits", href: "#benefits" },
+              { label: "Services", href: "#services" },
               { label: "Pricing", href: "#pricing" },
               { label: "FAQ", href: "#faq" },
             ].map(link => (
@@ -617,6 +619,8 @@ export default function NetSuiteSRPPage() {
           </div>
         </div>
       </section>
+
+      <NSServicesSection />
 
       {/* ── Pricing Section ─────────────────────────────────────────────────── */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">

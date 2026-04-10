@@ -129,20 +129,40 @@ export const NSCircularDesign = () => {
 
                     {/* Outer Ring Text Paths */}
                     {OUTER_LABELS.map((label, idx) => {
-                        const startRad = (label.startAngle * Math.PI) / 180;
-                        const endRad = (label.endAngle * Math.PI) / 180;
                         const r = 265; // Position for text path
 
-                        const x1 = 300 + r * Math.cos(startRad);
-                        const y1 = 300 + r * Math.sin(startRad);
-                        const x2 = 300 + r * Math.cos(endRad);
-                        const y2 = 300 + r * Math.sin(endRad);
+                        // Determine if this segment sits in the bottom half of the circle.
+                        // For bottom-half arcs (mid-angle roughly 45°–225° clockwise) the
+                        // text would render upside-down when following the clockwise arc, so
+                        // we reverse the path direction (draw counter-clockwise, sweep=0).
+                        const midAngle = (label.startAngle + label.endAngle) / 2;
+                        const isBottomHalf = midAngle > 45 && midAngle < 225;
+
+                        let d: string;
+                        if (isBottomHalf) {
+                            // Reversed: start from endAngle → startAngle (counter-clockwise)
+                            const startRad = (label.endAngle * Math.PI) / 180;
+                            const endRad = (label.startAngle * Math.PI) / 180;
+                            const x1 = 300 + r * Math.cos(startRad);
+                            const y1 = 300 + r * Math.sin(startRad);
+                            const x2 = 300 + r * Math.cos(endRad);
+                            const y2 = 300 + r * Math.sin(endRad);
+                            d = `M ${x1} ${y1} A ${r} ${r} 0 0 0 ${x2} ${y2}`;
+                        } else {
+                            const startRad = (label.startAngle * Math.PI) / 180;
+                            const endRad = (label.endAngle * Math.PI) / 180;
+                            const x1 = 300 + r * Math.cos(startRad);
+                            const y1 = 300 + r * Math.sin(startRad);
+                            const x2 = 300 + r * Math.cos(endRad);
+                            const y2 = 300 + r * Math.sin(endRad);
+                            d = `M ${x1} ${y1} A ${r} ${r} 0 0 1 ${x2} ${y2}`;
+                        }
 
                         return (
                             <path
                                 key={idx}
                                 id={`outer-text-path-${idx}`}
-                                d={`M ${x1} ${y1} A ${r} ${r} 0 0 1 ${x2} ${y2}`}
+                                d={d}
                                 fill="none"
                             />
                         );
