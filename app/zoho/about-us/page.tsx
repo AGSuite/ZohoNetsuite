@@ -33,7 +33,7 @@ import { useInView } from 'react-intersection-observer';
 import FlipNumbers from 'react-flip-numbers';
 import { motion, useAnimation, type Variants, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import GlobalOfficeMap from '../components/GlobalOfficeMap';
+import GlobalOfficeMap from '../../netsuite/components/GlobalOfficeMap';
 
 const ZohoContactForm = dynamic(() => import('../components/ZohoContactForm'), { ssr: false });
 const ZohoTestimonialSection = dynamic(() => import('../components/ZohoTestimonialSection'), { ssr: false });
