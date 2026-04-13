@@ -184,7 +184,7 @@ export default function NetSuiteAIPage() {
           <div className="grid lg:grid-cols-2 gap-6 items-stretch">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
               className="flex items-center justify-center rounded-2xl p-4 mt-15" style={{ minHeight: 340 }}>
-              <Image src="/images/netsuiteimages/solutions/NetsuiteSRP.webp" alt="NetSuite AI" width={560} height={380} className="w-full h-auto rounded-xl object-contain" />
+              <Image src="/images/lap/lap3.webp" alt="NetSuite AI" width={560} height={380} className="w-full h-auto rounded-xl object-contain" />
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="space-y-6 mt-15">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">

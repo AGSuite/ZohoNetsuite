@@ -117,28 +117,28 @@ const GlobalOfficeMap = () => {
           </Geographies>
 
           {/* Static Name Labels (from reference image) */}
-          <Marker coordinates={[-2, 53]}>
+          <Marker coordinates={[-4.7915, 50.3392]}>
             <g
               onMouseEnter={() => handleMouseEnter(officeData.UK[0])}
               onMouseLeave={handleMouseLeave}
               className="cursor-pointer"
             >
-              <line x1="0" y1="0" x2="20" y2="-30" stroke="#4B89FF" strokeWidth={1} opacity={0.5} />
-              <foreignObject x={10} y={-45} width={50} height={25}>
-                <div className="px-2 py-0.5 border border-blue-200 bg-white text-[9px] font-bold text-blue-600 shadow-sm hover:bg-blue-50 transition-colors text-center">UK</div>
+              <line x1="0" y1="0" x2="25" y2="-35" stroke="#4B89FF" strokeWidth={1.5} opacity={0.6} />
+              <foreignObject x={15} y={-52} width={50} height={25}>
+                <div className="px-2 py-0.5 border border-blue-200 bg-white text-[9px] font-bold text-blue-600 shadow-sm hover:bg-blue-50 transition-colors text-center rounded-sm">UK</div>
               </foreignObject>
             </g>
           </Marker>
 
-          <Marker coordinates={[-95, 38]}>
+          <Marker coordinates={[-81.8723, 26.6406]}>
             <g
               onMouseEnter={() => handleMouseEnter(officeData.USA[0])}
               onMouseLeave={handleMouseLeave}
               className="cursor-pointer"
             >
-              <line x1="0" y1="0" x2="30" y2="-30" stroke="#10B981" strokeWidth={1} opacity={0.5} />
-              <foreignObject x={20} y={-45} width={50} height={25}>
-                <div className="px-2 py-0.5 border border-green-200 bg-white text-[9px] font-bold text-green-600 shadow-sm hover:bg-green-50 transition-colors text-center">USA</div>
+              <line x1="0" y1="0" x2="-35" y2="-35" stroke="#10B981" strokeWidth={1.5} opacity={0.6} />
+              <foreignObject x={-60} y={-50} width={50} height={25}>
+                <div className="px-2 py-0.5 border border-green-200 bg-white text-[9px] font-bold text-green-600 shadow-sm hover:bg-green-50 transition-colors text-center rounded-sm">USA</div>
               </foreignObject>
             </g>
           </Marker>

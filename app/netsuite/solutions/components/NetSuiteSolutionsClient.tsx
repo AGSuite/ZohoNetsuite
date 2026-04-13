@@ -176,7 +176,7 @@ export default function NetSuiteSolutionsClient() {
       passage1: "NetSuite's natively embedded AI and machine learning capabilities bring predictive intelligence directly into your day-to-day ERP workflows — no separate AI tool, no data export, no complex integration required. It leverages the vast amounts of data within your system to provide meaningful forecasts and identify patterns that human analysis might miss.",
       passage2: "From AI-driven cash flow forecasting and anomaly detection in accounts payable to intelligent dunning recommendations and demand sensing for inventory, NetSuite AI helps your team spot issues before they escalate. As the volume of data in your NetSuite grows, the AI models get smarter — continuously improving the accuracy of their predictions and the relevance of their recommendations.",
       link: "/netsuite/solutions/analytics/ai",
-      image: "/images/netsuiteimages/solutions/netsuite_ai_ml.png",
+      image: "/images/lap/lap3.webp",
       icon: Star,
       tag: "AI",
     },
