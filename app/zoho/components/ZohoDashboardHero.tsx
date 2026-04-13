@@ -10,16 +10,16 @@ import { motion, useInView } from "framer-motion";
 type Logo = { id: string; logo: string; name: string; link?: string };
 
 const logos: Logo[] = [
-  { id: "affle", logo: "/images/assets/affle tech.webp", name: "Affle", link: "https://www.affle.com" },
-  { id: "tyfone", logo: "/images/assets/tyfone tech.webp", name: "Tyfone", link: "https://www.tyfone.com" },
-  { id: "airling", logo: "/images/assets/airling tech.webp", name: "Airling", link: "#" },
-  { id: "videoverse", logo: "/images/assets/video verse tech.webp", name: "VideoVerse", link: "https://www.videoverse.com" },
-  { id: "quickheal", logo: "/images/assets/quickheal tech.webp", name: "Quick Heal", link: "https://www.quickheal.com" },
-  { id: "controlservice", logo: "/images/assets/control service.webp", name: "Control Service", link: "#" },
-  { id: "uniacco", logo: "/images/assets/uniacco service.webp", name: "UniAcco", link: "https://www.uniacco.com" },
-  { id: "dlz", logo: "/images/assets/dlz service.webp", name: "DLZ", link: "#" },
-  { id: "indovance", logo: "/images/assets/indovance service.webp", name: "Indovance", link: "https://www.indovance.com" },
-  { id: "pace", logo: "/images/assets/pace services.webp", name: "Pace", link: "#" },
+  { id: "affle", logo: "/images/assets/affle%20tech.webp", name: "Affle", link: "https://www.affle.com" },
+  { id: "tyfone", logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone", link: "https://www.tyfone.com" },
+  { id: "airling", logo: "/images/assets/airling%20tech.webp", name: "Airling", link: "#" },
+  { id: "videoverse", logo: "/images/assets/video%20verse%20tech.webp", name: "VideoVerse", link: "https://www.videoverse.com" },
+  { id: "quickheal", logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal", link: "https://www.quickheal.com" },
+  { id: "controlservice", logo: "/images/assets/control%20service.webp", name: "Control Service", link: "#" },
+  { id: "uniacco", logo: "/images/assets/uniAcco%20service.webp", name: "UniAcco", link: "https://www.uniacco.com" },
+  { id: "dlz", logo: "/images/assets/dlz%20service.webp", name: "DLZ", link: "#" },
+  { id: "indovance", logo: "/images/assets/indovance%20service.webp", name: "Indovance", link: "https://www.indovance.com" },
+  { id: "pace", logo: "/images/assets/pace%20services.webp", name: "Pace", link: "#" },
 ];
 
 /* ------------ Main hero images (keep same paths) ------------ */
@@ -215,7 +215,7 @@ const ZohoDashboardHero: React.FC = () => {
                     href={logo.link || "#"}
                     target={logo.link ? "_blank" : undefined}
                     rel={logo.link ? "noopener noreferrer" : undefined}
-                    className="flex h-14 w-38 sm:h-26 sm:w-42 rounded-2xl shadow-rose-100 items-center justify-center bg-white hover:shadow-md transition"
+                    className="flex h-14 w-38 sm:h-26 sm:w-42 items-center justify-center bg-white rounded-2xl shadow-sm transition p-2"
                     aria-label={logo.name}
                   >
                     <Image
@@ -223,7 +223,7 @@ const ZohoDashboardHero: React.FC = () => {
                       alt={`${logo.name} logo`}
                       width={190}
                       height={96}
-                      className="h-9 sm:h-28 w-auto object-contain"
+                      className={`h-9 sm:h-28 w-auto object-contain transition-all duration-300 ${logo.id === 'quickheal' ? 'px-4' : 'px-1'}`}
                     />
                   </a>
                 </div>

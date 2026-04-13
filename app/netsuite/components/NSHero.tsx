@@ -160,11 +160,11 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                         </div>
                       </div>
                       <Image
-                        src="/images/lap/netsuitelap.png"
+                        src="/images/lap/netsuitelap2.png"
                         alt="CFO Automation"
-                        width={1800}
+                        width={100}
                         height={1600}
-                        className="w-[280%] max-w-none object-contain drop-shadow-[0_40px_80px_rgba(37,99,235,0.45)] -mr-[18%] transition-transform duration-700 hover:scale-[1.02]"
+                        className="w-[150%] max-w-none object-contain drop-shadow-[0_40px_80px_rgba(37,99,235,0.45)] -mr-[18%] transition-transform duration-700 hover:scale-[1.02]"
                         sizes="(max-width: 1024px) 100vw, 60vw"
                       />
                     </div>

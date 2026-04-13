@@ -18,16 +18,16 @@ const IMAGES = {
 } as const;
 
 const logos = [
-  { id: "affle", logo: "/images/assets/affle tech.webp", name: "Affle", link: "https://www.affle.com" },
-  { id: "tyfone", logo: "/images/assets/tyfone tech.webp", name: "Tyfone", link: "https://www.tyfone.com" },
-  { id: "airling", logo: "/images/assets/airling tech.webp", name: "Airling", link: "#" },
-  { id: "videoverse", logo: "/images/assets/video verse tech.webp", name: "VideoVerse", link: "https://www.videoverse.com" },
-  { id: "quickheal", logo: "/images/assets/quickheal tech.webp", name: "Quick Heal", link: "https://www.quickheal.com" },
-  { id: "controlservice", logo: "/images/assets/control service.webp", name: "Control Service", link: "#" },
-  { id: "uniacco", logo: "/images/assets/uniacco service.webp", name: "UniAcco", link: "https://www.uniacco.com" },
-  { id: "dlz", logo: "/images/assets/dlz service.webp", name: "DLZ", link: "#" },
-  { id: "indovance", logo: "/images/assets/indovance service.webp", name: "Indovance", link: "https://www.indovance.com" },
-  { id: "pace", logo: "/images/assets/pace services.webp", name: "Pace", link: "#" },
+  { id: "affle", logo: "/images/assets/affle%20tech.webp", name: "Affle", link: "https://www.affle.com" },
+  { id: "tyfone", logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone", link: "https://www.tyfone.com" },
+  { id: "airling", logo: "/images/assets/airling%20tech.webp", name: "Airling", link: "#" },
+  { id: "videoverse", logo: "/images/assets/video%20verse%20tech.webp", name: "VideoVerse", link: "https://www.videoverse.com" },
+  { id: "quickheal", logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal", link: "https://www.quickheal.com" },
+  { id: "controlservice", logo: "/images/assets/control%20service.webp", name: "Control Service", link: "#" },
+  { id: "uniacco", logo: "/images/assets/uniAcco%20service.webp", name: "UniAcco", link: "https://www.uniacco.com" },
+  { id: "dlz", logo: "/images/assets/dlz%20service.webp", name: "DLZ", link: "#" },
+  { id: "indovance", logo: "/images/assets/indovance%20service.webp", name: "Indovance", link: "https://www.indovance.com" },
+  { id: "pace", logo: "/images/assets/pace%20services.webp", name: "Pace", link: "#" },
 ];
 
 const NSDashboardHero: React.FC = () => {
@@ -224,7 +224,7 @@ const NSDashboardHero: React.FC = () => {
                     href={logo.link || "#"}
                     target={logo.link !== "#" ? "_blank" : undefined}
                     rel={logo.link !== "#" ? "noopener noreferrer" : undefined}
-                    className="flex h-12 w-40 sm:h-16 sm:w-44 rounded-2xl items-center justify-center bg-white hover:shadow-xl transition-all duration-300 border border-gray-100"
+                    className="flex h-12 w-40 sm:h-16 sm:w-44 items-center justify-center bg-white rounded-2xl shadow-sm transition-all duration-300 p-2"
                     aria-label={logo.name}
                   >
                     <Image
@@ -232,7 +232,7 @@ const NSDashboardHero: React.FC = () => {
                       alt={`${logo.name} logo`}
                       width={160}
                       height={50}
-                      className="h-8 sm:h-13 w-auto object-contain"
+                      className={`h-8 sm:h-13 w-auto object-contain transition-all duration-300 ${logo.id === 'quickheal' ? 'px-4' : 'px-1'}`}
                     />
                   </a>
                 </div>

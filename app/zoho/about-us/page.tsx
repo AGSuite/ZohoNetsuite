@@ -386,12 +386,12 @@ function WhoWeAreSection() {
 }
 
 const partnerLogos = [
-  { logo: "/images/assets/affle tech.webp", name: "Affle" },
-  { logo: "/images/assets/tyfone tech.webp", name: "Tyfone" },
-  { logo: "/images/assets/airling tech.webp", name: "Airling" },
-  { logo: "/images/assets/video verse tech.webp", name: "VideoVerse" },
-  { logo: "/images/assets/quickheal tech.webp", name: "Quick Heal" },
-  { logo: "/images/assets/uniAcco service.webp", name: "UniAcco" },
+  { logo: "/images/assets/affle%20tech.webp", name: "Affle" },
+  { logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone" },
+  { logo: "/images/assets/airling%20tech.webp", name: "Airling" },
+  { logo: "/images/assets/video%20verse%20tech.webp", name: "VideoVerse" },
+  { logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal" },
+  { logo: "/images/assets/uniAcco%20service.webp", name: "UniAcco" },
 ];
 
 function StrategicPartnersSection() {

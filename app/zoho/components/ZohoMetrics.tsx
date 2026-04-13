@@ -298,7 +298,7 @@ const ZohoMetrics = () => {
                                             href={logo.link || "#"}
                                             target={logo.link !== "#" ? "_blank" : undefined}
                                             rel={logo.link !== "#" ? "noopener noreferrer" : undefined}
-                                            className="flex h-16 w-36 sm:h-18 sm:w-44 items-center justify-center bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 p-2"
+                                            className="flex h-16 w-36 sm:h-18 sm:w-44 items-center justify-center bg-white rounded-2xl shadow-sm transition-all duration-300 p-2"
                                             aria-label={logo.name}
                                         >
                                             <Image
@@ -307,7 +307,7 @@ const ZohoMetrics = () => {
                                                 width={200}
                                                 height={65}
                                                 sizes="200px"
-                                                className="max-h-full w-auto object-contain transition-all duration-300"
+                                                className={`max-h-full w-auto object-contain transition-all duration-300 ${logo.id === 'quickheal' ? 'px-4' : 'px-2'}`}
                                             />
                                         </a>
                                     </div>
