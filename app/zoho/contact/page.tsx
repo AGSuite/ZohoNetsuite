@@ -185,6 +185,45 @@ export default function ZohoContactPage() {
 
       return true;
     };
+
+    // Handle reCAPTCHA rendering for SPA navigation
+    const renderRecaptcha = () => {
+      const container = document.getElementById('recap409531000026445204');
+      if ((window as any).grecaptcha && container) {
+        try {
+          // Check if already rendered
+          if (container.children.length > 0) return;
+
+          (window as any).grecaptcha.render('recap409531000026445204', {
+            'sitekey': '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
+            'theme': 'light',
+            'callback': (window as any).rccallback409531000026445204
+          });
+        } catch (e) {
+          console.error("reCAPTCHA render error:", e);
+        }
+      }
+    };
+
+    if ((window as any).grecaptcha) {
+      if ((window as any).grecaptcha.ready) {
+        (window as any).grecaptcha.ready(renderRecaptcha);
+      } else {
+        renderRecaptcha();
+      }
+    } else {
+      const interval = setInterval(() => {
+        if ((window as any).grecaptcha) {
+          if ((window as any).grecaptcha.ready) {
+            (window as any).grecaptcha.ready(renderRecaptcha);
+          } else {
+            renderRecaptcha();
+          }
+          clearInterval(interval);
+        }
+      }, 300);
+      setTimeout(() => clearInterval(interval), 5000);
+    }
   }, []);
 
   const sendEmail = async (form: HTMLFormElement) => {
@@ -497,8 +536,8 @@ export default function ZohoContactPage() {
 
                     {/* Captcha Section */}
                     <div className="flex flex-col gap-2">
-                      <div className='g-recaptcha' data-sitekey='6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3' data-theme='light' data-callback='rccallback409531000026445204' captcha-verified='false' id='recap409531000026445204'></div>
-                      <div id='recapErr409531000026445204' style={{ display: 'none', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
+                      <div data-sitekey='6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3' data-theme='light' data-callback='rccallback409531000026445204' captcha-verified='false' id='recap409531000026445204'></div>
+                      <div id='recapErr409531000026445204' style={{ visibility: 'hidden', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
                     </div>
 
                     {/* Privacy + Submit Row */}

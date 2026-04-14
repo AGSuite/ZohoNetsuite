@@ -1,11 +1,75 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+import Script from "next/script";
 
 export default function EmbeddedZohoForm() {
+    useEffect(() => {
+        (window as any).rccallback409531000026445204 = function () {
+            if (document.getElementById('recap409531000026445204')) {
+                document.getElementById('recap409531000026445204')?.setAttribute('captcha-verified', 'true');
+            }
+            const errorElement = document.getElementById('recapErr409531000026445204');
+            if (errorElement && errorElement.style.visibility === 'visible') {
+                errorElement.style.visibility = 'hidden';
+            }
+        };
+
+        const renderRecaptcha = () => {
+            const container = document.getElementById('recap409531000026445204');
+            if ((window as any).grecaptcha && container) {
+                try {
+                    // Check if already rendered
+                    if (container.children.length > 0) return;
+
+                    (window as any).grecaptcha.render('recap409531000026445204', {
+                        'sitekey': '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
+                        'theme': 'light',
+                        'callback': (window as any).rccallback409531000026445204
+                    });
+                } catch (e) {
+                    console.error("reCAPTCHA render error:", e);
+                }
+            }
+        };
+
+        if ((window as any).grecaptcha) {
+            if ((window as any).grecaptcha.ready) {
+                (window as any).grecaptcha.ready(renderRecaptcha);
+            } else {
+                renderRecaptcha();
+            }
+        } else {
+            const interval = setInterval(() => {
+                if ((window as any).grecaptcha) {
+                    if ((window as any).grecaptcha.ready) {
+                        (window as any).grecaptcha.ready(renderRecaptcha);
+                    } else {
+                        renderRecaptcha();
+                    }
+                    clearInterval(interval);
+                }
+            }, 300);
+            setTimeout(() => clearInterval(interval), 5000);
+        }
+    }, []);
+
+    const handleFormSubmit = (e: any) => {
+        const recap = document.getElementById('recap409531000026445204');
+        if (recap && recap.getAttribute('captcha-verified') === 'false') {
+            const errorElement = document.getElementById('recapErr409531000026445204');
+            if (errorElement) {
+                errorElement.style.visibility = 'visible';
+            }
+            e.preventDefault();
+            return false;
+        }
+        return true;
+    };
     return (
         <div id="crmWebToEntityForm" className="zcwf_lblLeft crmWebToEntityForm">
-            <form id="webform409531000026445204" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000026445204" method="POST" acceptCharset="UTF-8">
+            <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
+            <form id="webform409531000026445204" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000026445204" method="POST" onSubmit={handleFormSubmit} acceptCharset="UTF-8">
                 <input type="text" className="hidden" name="xnQsjsdp" defaultValue="19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f" readOnly />
                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
                 <input type="text" className="hidden" name="xmIwtLD" defaultValue="8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee" readOnly />
@@ -144,7 +208,7 @@ export default function EmbeddedZohoForm() {
                     </div>
 
                     <div className="agsuite_column-large">
-                        <div className="g-recaptcha" data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="light" id="recap409531000026445204"></div>
+                        <div data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="light" id="recap409531000026445204"></div>
                         <div id="recapErr409531000026445204">Please verify you are not a robot.</div>
                         <input type="submit" id="formsubmit" className="zcwf_button" value="Send Request" aria-label="Submit Form" />
                     </div>

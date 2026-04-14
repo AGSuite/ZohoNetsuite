@@ -148,6 +148,33 @@ export default function NetSuiteContactFormModern() {
         console.log('Zoho tracking error:', e);
       }
     };
+
+    // Handle reCAPTCHA rendering for SPA navigation
+    const renderRecaptcha = () => {
+      if ((window as any).grecaptcha && document.getElementById('recap409531000026445204')) {
+        try {
+          (window as any).grecaptcha.render('recap409531000026445204', {
+            'sitekey': '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
+            'theme': 'dark',
+            'callback': (window as any).rccallback409531000026445204
+          });
+        } catch (e) {
+          // Already rendered
+        }
+      }
+    };
+
+    if ((window as any).grecaptcha) {
+      renderRecaptcha();
+    } else {
+      const interval = setInterval(() => {
+        if ((window as any).grecaptcha) {
+          renderRecaptcha();
+          clearInterval(interval);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(interval), 5000);
+    }
   }, []);
 
   return (

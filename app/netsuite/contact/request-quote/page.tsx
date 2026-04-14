@@ -34,15 +34,44 @@ export default function RequestQuotePremium() {
     useEffect(() => {
         setIsClient(true);
 
-        // Load external scripts
-        const loadRecaptcha = () => {
-            if (!document.getElementById('recaptcha-script')) {
-                const script = document.createElement('script');
-                script.id = 'recaptcha-script';
-                script.src = 'https://www.google.com/recaptcha/api.js';
-                script.async = true;
-                script.defer = true;
-                document.head.appendChild(script);
+        // Handle reCAPTCHA rendering for SPA navigation
+        const renderRecaptcha = () => {
+            const container = document.getElementById('recap409531000000398090');
+            if ((window as any).grecaptcha && container) {
+                try {
+                    // Check if already rendered
+                    if (container.children.length > 0) return;
+
+                    (window as any).grecaptcha.render('recap409531000000398090', {
+                        'sitekey': '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
+                        'theme': 'light',
+                        'callback': (window as any).rccallback409531000000398090
+                    });
+                } catch (e) {
+                    console.error("reCAPTCHA render error:", e);
+                }
+            }
+        };
+
+        const checkAndRenderRecaptcha = () => {
+            if ((window as any).grecaptcha) {
+                if ((window as any).grecaptcha.ready) {
+                    (window as any).grecaptcha.ready(renderRecaptcha);
+                } else {
+                    renderRecaptcha();
+                }
+            } else {
+                const interval = setInterval(() => {
+                    if ((window as any).grecaptcha) {
+                        if ((window as any).grecaptcha.ready) {
+                            (window as any).grecaptcha.ready(renderRecaptcha);
+                        } else {
+                            renderRecaptcha();
+                        }
+                        clearInterval(interval);
+                    }
+                }, 300);
+                setTimeout(() => clearInterval(interval), 5000);
             }
         };
 
@@ -66,9 +95,9 @@ export default function RequestQuotePremium() {
             }
         };
 
-        loadRecaptcha();
         loadSalesIQ();
         loadAnalytics();
+        checkAndRenderRecaptcha();
 
         // Initialize Zoho
         if (typeof window !== 'undefined') {

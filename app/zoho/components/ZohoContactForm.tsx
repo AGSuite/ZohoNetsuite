@@ -27,7 +27,7 @@ export default function ZohoContactForm() {
                 document.getElementById('recap409531000026445204')?.setAttribute('captcha-verified', 'true');
             }
             const errorElement = document.getElementById('recapErr409531000026445204');
-            if (errorElement && errorElement.style.visibility === 'visible') {
+            if (errorElement) {
                 errorElement.style.visibility = 'hidden';
             }
         };
@@ -43,6 +43,46 @@ export default function ZohoContactForm() {
             }
             return true;
         };
+
+        // Handle reCAPTCHA rendering for SPA navigation
+        const renderRecaptcha = () => {
+            const container = document.getElementById('recap409531000026445204');
+            if ((window as any).grecaptcha && container) {
+                try {
+                    // Check if already rendered
+                    if (container.children.length > 0) return;
+
+                    (window as any).grecaptcha.render('recap409531000026445204', {
+                        'sitekey': '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
+                        'theme': 'light',
+                        'callback': (window as any).rccallback409531000026445204
+                    });
+                } catch (e) {
+                    console.error("reCAPTCHA render error:", e);
+                }
+            }
+        };
+
+        if ((window as any).grecaptcha) {
+            if ((window as any).grecaptcha.ready) {
+                (window as any).grecaptcha.ready(renderRecaptcha);
+            } else {
+                renderRecaptcha();
+            }
+        } else {
+            // Wait for script to load if not already there
+            const interval = setInterval(() => {
+                if ((window as any).grecaptcha) {
+                    if ((window as any).grecaptcha.ready) {
+                        (window as any).grecaptcha.ready(renderRecaptcha);
+                    } else {
+                        renderRecaptcha();
+                    }
+                    clearInterval(interval);
+                }
+            }, 300);
+            setTimeout(() => clearInterval(interval), 5000);
+        }
 
         (window as any).validateEmail409531000026445204 = function () {
             const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
@@ -186,7 +226,7 @@ export default function ZohoContactForm() {
         <>
             <Script
                 src="https://www.google.com/recaptcha/api.js"
-                strategy="lazyOnload"
+                strategy="afterInteractive"
             />
             {/* Zoho CRM Web-to-Lead Analytics */}
             <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=c6bd15ef499e015212f7cfd1d94a36257616906db3378b7d58e9666a0cb004ad04cae4b2ad4b40f407ea1df9509ddfc3gid4d54f02188dbd1a4f4c8582e1cc6829be5ddd9b1ad3710ed7207deccba2aa858giddeda7992accaf02590572b916d20ede01298921dbc555b8a938ff90fe2bc82f4gid28710435a2d0ea931303f1f01e1b730e6517c1be20b1776d1746edb3c9f1c653&tw=8b4a96a610c92f39fdbddebeaa5a00b371fd965c61608708d088c2ca4821d30d" />
@@ -461,7 +501,7 @@ export default function ZohoContactForm() {
 
                                 <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-between gap-8 pt-2">
                                     <div className="captcha-area transform scale-90 origin-left">
-                                        <div className="g-recaptcha" data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="light" data-callback="rccallback409531000026445204" captcha-verified="false" id="recap409531000026445204"></div>
+                                        <div data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="light" data-callback="rccallback409531000026445204" captcha-verified="false" id="recap409531000026445204"></div>
                                         <div id="recapErr409531000026445204" style={{ fontSize: '11px', color: '#dc2626', marginTop: '6px', fontWeight: '600', visibility: 'hidden' }}>Security verification required.</div>
                                     </div>
 

@@ -90,6 +90,33 @@ export default function ZohoRequestQuotePage() {
 
             return true;
         };
+
+        // Handle reCAPTCHA rendering for SPA navigation
+        const renderRecaptcha = () => {
+            if ((window as any).grecaptcha && document.getElementById('recap409531000000398090')) {
+                try {
+                    (window as any).grecaptcha.render('recap409531000000398090', {
+                        'sitekey': '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
+                        'theme': 'light',
+                        'callback': (window as any).rccallback409531000000398090
+                    });
+                } catch (e) {
+                    // Already rendered
+                }
+            }
+        };
+
+        if ((window as any).grecaptcha) {
+            renderRecaptcha();
+        } else {
+            const interval = setInterval(() => {
+                if ((window as any).grecaptcha) {
+                    renderRecaptcha();
+                    clearInterval(interval);
+                }
+            }, 500);
+            setTimeout(() => clearInterval(interval), 5000);
+        }
     }, []);
 
     const sendEmail = async (form: HTMLFormElement) => {

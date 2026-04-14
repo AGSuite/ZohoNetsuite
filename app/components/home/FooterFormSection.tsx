@@ -131,8 +131,47 @@ export default function FooterFormSection() {
             }
           }
         }
-      } catch (err) { }
+      return true;
     };
+
+    // Handle reCAPTCHA rendering for SPA navigation
+    const renderRecaptcha = () => {
+      const container = document.getElementById('recap409531000026445204');
+      if ((window as any).grecaptcha && container) {
+        try {
+          // Check if already rendered
+          if (container.children.length > 0) return;
+
+          (window as any).grecaptcha.render('recap409531000026445204', {
+            'sitekey': '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
+            'theme': 'light',
+            'callback': (window as any).rccallback409531000026445204
+          });
+        } catch (e) {
+          console.error("reCAPTCHA render error:", e);
+        }
+      }
+    };
+
+    if ((window as any).grecaptcha) {
+      if ((window as any).grecaptcha.ready) {
+        (window as any).grecaptcha.ready(renderRecaptcha);
+      } else {
+        renderRecaptcha();
+      }
+    } else {
+      const interval = setInterval(() => {
+        if ((window as any).grecaptcha) {
+          if ((window as any).grecaptcha.ready) {
+            (window as any).grecaptcha.ready(renderRecaptcha);
+          } else {
+            renderRecaptcha();
+          }
+          clearInterval(interval);
+        }
+      }, 300);
+      setTimeout(() => clearInterval(interval), 5000);
+    }
   }, []);
 
   if (!mounted) return null;
@@ -359,7 +398,7 @@ export default function FooterFormSection() {
 
                 {/* Google reCAPTCHA */}
                 <div className="captcha-area transform scale-[0.9] origin-left">
-                  <div className="g-recaptcha" data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="light" data-callback="rccallback409531000026445204" captcha-verified="false" id="recap409531000026445204"></div>
+                  <div data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="light" data-callback="rccallback409531000026445204" captcha-verified="false" id="recap409531000026445204"></div>
                   <div id="recapErr409531000026445204" style={{ fontSize: '10px', color: 'red', marginTop: '4px', visibility: 'hidden' }}>Please verify that you are not a robot.</div>
                 </div>
 
