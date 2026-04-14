@@ -131,6 +131,9 @@ export default function FooterFormSection() {
             }
           }
         }
+      } catch (e) {
+        console.error('Zoho Tracking Error:', e);
+      }
       return true;
     };
 
