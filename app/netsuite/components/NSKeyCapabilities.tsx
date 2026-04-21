@@ -110,6 +110,7 @@ const NSKeyCapabilities = () => {
                                 className="absolute inset-0 h-full w-full"
                             >
                                 <Image
+                                    key={activeCapability.title}
                                     src={activeCapability.image}
                                     alt={activeCapability.title}
                                     fill
@@ -117,7 +118,7 @@ const NSKeyCapabilities = () => {
                                     sizes="50vw"
                                     priority
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/20 to-transparent z-10" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
                                 <div className="absolute inset-0 z-20 flex flex-col justify-end p-8">
                                     <motion.div
                                         initial={{ opacity: 0, y: 20 }}
@@ -182,14 +183,14 @@ const NSKeyCapabilities = () => {
                                 className="absolute inset-0 h-full w-full"
                             >
                                 <Image
+                                    key={activeCapability.title}
                                     src={activeCapability.image}
                                     alt={activeCapability.title}
                                     fill
                                     className="object-cover"
                                     sizes="100vw"
-                                    priority
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent z-10" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10" />
                                 <div className="absolute inset-0 z-20 flex flex-col justify-end p-5">
                                     <motion.div
                                         initial={{ opacity: 0, y: 10 }}

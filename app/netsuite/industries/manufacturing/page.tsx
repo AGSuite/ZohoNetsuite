@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import IndustryTemplate, {
   IndustryPageData,
 } from "../_template/IndustryTemplate";
@@ -51,6 +51,18 @@ const data: IndustryPageData = {
         "Connect with suppliers, manage purchase orders, track deliveries, and get real-time landed cost visibility across your entire supply chain.",
       image: "/images/lap/lap9_11zon.webp",
     },
+    {
+      title: "Shop Floor Mobility",
+      description:
+        "Give your team real-time access to work orders and quality checklists via mobile. Capture production data instantly and reduce paper-based errors on the factory floor.",
+      image: "/images/people/laptopmen2.webp",
+    },
+    {
+      title: "Lean Manufacturing Support",
+      description:
+        "Optimize your production processes with built-in lean manufacturing tools. Reduce waste, improve lead times, and increase overall equipment effectiveness (OEE).",
+      image: "/images/lap/lap8_11zon.webp",
+    },
   ],
   challenges: [
     {
@@ -76,6 +88,30 @@ const data: IndustryPageData = {
       description:
         "NetSuite's job costing and cost accounting module tracks materials, labour, and overhead per work order — giving you true product margins in real time.",
       image: "/images/people/global.webp",
+    },
+    {
+      title: "Rising Material Costs",
+      description:
+        "Fluctuating material costs impact your margins. NetSuite's real-time costing provides instant visibility into procurement price changes.",
+      image: "/images/lap/lap2.webp",
+    },
+    {
+      title: "Supply Chain Volatility",
+      description:
+        "Fragmented supply chain visibility leads to production delays. NetSuite provides global visibility into vendor performance and lead times.",
+      image: "/images/people/laptopgirl3.webp",
+    },
+    {
+      title: "Manual Compliance Reporting",
+      description:
+        "Inconsistent compliance data poses audit risks. NetSuite automates safety and quality reporting for seamless regulatory compliance.",
+      image: "/images/lap/lap7_11zon.webp",
+    },
+    {
+      title: "Inefficient Production Capacity",
+      description:
+        "Poor visibility into machine and labor capacity leads to bottlenecks. NetSuite provides real-time shop floor scheduling and capacity planning.",
+      image: "/images/lap/lap9_11zon.webp",
     },
   ],
   pricingTiers: [

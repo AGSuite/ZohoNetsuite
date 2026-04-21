@@ -66,6 +66,18 @@ const data: IndustryPageData = {
         "Manage complex customer-specific pricing, volume discounts, contract pricing, rebates, and trade promotions — with margin visibility at every level.",
       image: "/images/people/laptopgirl.webp",
     },
+    {
+      title: "Lot & Serial Number Tracking",
+      description:
+        "Ensure full traceability with automated lot and serial number tracking. Manage expiration dates and handle recalls with precision and speed.",
+      image: "/images/lap/lap5.webp",
+    },
+    {
+      title: "Vendor Portal & EDI Automation",
+      description:
+        "Streamline supplier communication with a self-service vendor portal and automated EDI document exchange, reducing manual data entry and errors.",
+      image: "/images/people/threeteam.webp",
+    },
   ],
   challenges: [
     {
@@ -91,6 +103,30 @@ const data: IndustryPageData = {
       description:
         "NetSuite's automated order management processes customer orders — from entry to pick/pack/ship to invoice — without manual handoffs, reducing fulfilment time by up to 40%.",
       image: "/images/people/fourteam.webp",
+    },
+    {
+      title: "Disconnected Purchasing & Sales",
+      description:
+        "Siloed internal departments lead to stockouts or overordering. NetSuite unifies the entire supply chain from demand to fulfillment.",
+      image: "/images/people/laptopgirl3.webp",
+    },
+    {
+      title: "Excess Inventory Costs",
+      description:
+        "Carrying slow-moving stock ties up critical capital. NetSuite's demand planning optimizes stock levels to reduce carrying costs.",
+      image: "/images/lap/lap2.webp",
+    },
+    {
+      title: "Paper-Based Operations",
+      description:
+        "Manual warehouse processing is slow and error-prone. NetSuite WMS digitizes all warehouse tasks via mobile scanning.",
+      image: "/images/lap/lap7_11zon.webp",
+    },
+    {
+      title: "Fragmented Supply Chain Data",
+      description:
+        "Lack of real-time insights into supplier performance impacts reliability. NetSuite provides vendor scorecards and global visibility.",
+      image: "/images/people/global.webp",
     },
   ],
   pricingTiers: [

@@ -101,7 +101,7 @@ export default function PlanningPage() {
                 className="h-[3px] bg-gradient-to-r from-teal-500 to-cyan-300 mb-5 rounded-full" />
               <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8">
-                Unified FP&A connected to your ERP — collaborate on budgets, build rolling forecasts, and analyze performance against live actuals in a single cloud platform.
+                Unified Financial Planning and Analysis connected to your ERP — collaborate on budgets, build rolling forecasts, and analyze performance against live actuals in a single cloud platform.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-teal-600 hover:border-teal-500 transition-all duration-300 shadow-xl hover:scale-105">
@@ -125,7 +125,7 @@ export default function PlanningPage() {
                       <BarChart3 className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <p className="text-gray-900 text-sm font-bold leading-tight">Connected FP&A Platform</p>
+                      <p className="text-gray-900 text-sm font-bold leading-tight">Connected Financial Planning and Analysis Platform</p>
                       <p className="text-gray-500 text-xs mt-0.5">Budgeting · Forecasting · Actuals · Scenarios · Consolidation</p>
                     </div>
                   </motion.div>
@@ -188,7 +188,7 @@ export default function PlanningPage() {
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="space-y-6 mt-15">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-teal-500 leading-tight">
-                Replace Spreadsheets with Intelligent, Connected FP&A.
+                Replace Spreadsheets with Intelligent, Connected Financial Planning and Analysis.
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed">
                 NetSuite Planning & Budgeting (NSPB) is a cloud-based financial planning and analysis platform that enables finance teams to build budgets, produce rolling forecasts, and analyze performance — all with live actuals flowing in automatically from NetSuite ERP.
@@ -217,7 +217,7 @@ export default function PlanningPage() {
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-medium text-gray-900 text-center">Planning & Budgeting Modules</motion.h2>
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-600 text-lg max-w-2xl text-center">
-            12 FP&A capabilities natively connected to your NetSuite ERP — covering every dimension of financial management
+            12 Financial Planning and Analysis capabilities natively connected to your NetSuite ERP — covering every dimension of financial management
           </motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {modules.map((mod, index) => (
@@ -308,7 +308,7 @@ export default function PlanningPage() {
                 </p>
                 <div>
                   <Link href="#contact-form" className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-teal-400 hover:text-white transition-all duration-200 shadow-md">
-                    Talk to an FP&A Expert <ArrowRight size={16} />
+                    Talk to a Financial Planning and Analysis Expert <ArrowRight size={16} />
                   </Link>
                 </div>
               </div>
@@ -330,13 +330,13 @@ export default function PlanningPage() {
         id="faq"
         customSubtitle="Everything you need to know about NetSuite Planning & Budgeting — NSPB, scenario modeling, driver-based forecasting, and implementation."
         customFaqs={[
-          { q: "What is NetSuite Planning & Budgeting (NSPB)?", a: "NetSuite Planning & Budgeting (NSPB) is a cloud-native FP&A module embedded in NetSuite, built on Oracle's Hyperion planning technology. It enables finance teams to build detailed budgets, rolling forecasts, and scenario models — all connected to live NetSuite actuals without spreadsheet exports or manual reconciliation." },
+          { q: "What is NetSuite Planning & Budgeting (NSPB)?", a: "NetSuite Planning & Budgeting (NSPB) is a cloud-native Financial Planning and Analysis module embedded in NetSuite, built on Oracle's Hyperion planning technology. It enables finance teams to build detailed budgets, rolling forecasts, and scenario models — all connected to live NetSuite actuals without spreadsheet exports or manual reconciliation." },
           { q: "How is NSPB different from budgeting in Excel?", a: "NSPB replaces error-prone, version-controlled Excel budget models with a centralised, multi-user planning environment. Multiple contributors input data simultaneously, approvals follow a structured workflow, version history is maintained automatically, and actuals from NetSuite reconcile instantly — eliminating consolidation errors and month-end delays." },
           { q: "What types of planning does NSPB support?", a: "NSPB supports driver-based financial planning, headcount planning, capital expenditure planning, project-level budgeting, revenue planning by product or region, and rolling forecasts. Planning models can be built at any level of granularity — from consolidated group to department, cost centre, or individual project." },
           { q: "How does NSPB connect to NetSuite actuals?", a: "NSPB is embedded within your NetSuite account and syncs actuals automatically — there is no manual export or import required. Your finance team compares budget versus actual in real time, with drill-through capability to the underlying NetSuite transactions supporting any variance." },
           { q: "Can we model multiple financial scenarios in NSPB?", a: "Yes. NSPB supports unlimited plan versions — base case, upside, downside, and custom scenarios — all built from the same driver-based model. Scenario comparison reports allow finance and executive teams to evaluate the impact of different assumptions on P&L, cash flow, and balance sheet simultaneously." },
           { q: "Does NSPB support consolidation for multi-entity organisations?", a: "Yes. NSPB natively supports multi-subsidiary consolidation including intercompany eliminations, currency translation, and minority interest — producing consolidated financial plans and forecasts at group level while maintaining entity-level detail for local management reporting." },
-          { q: "Who can use NSPB — is it just for finance?", a: "NSPB supports distributed planning across the organisation. Finance controls the model and approval workflow, while department managers, cost centre owners, and business unit leaders input their plans through a guided interface with validation rules — ensuring data quality without requiring FP&A expertise." },
+          { q: "Who can use NSPB — is it just for finance?", a: "NSPB supports distributed planning across the organisation. Finance controls the model and approval workflow, while department managers, cost centre owners, and business unit leaders input their plans through a guided interface with validation rules — ensuring data quality without requiring Financial Planning and Analysis expertise." },
           { q: "How long does a NetSuite Planning & Budgeting implementation take?", a: "A standard NSPB implementation covering annual budget, one rolling forecast model, and management reporting packs typically takes 6 to 10 weeks. Implementations with headcount planning, multi-entity consolidation, or custom driver models take 10 to 16 weeks depending on complexity and data quality." },
         ]}
       />
@@ -356,7 +356,7 @@ export default function PlanningPage() {
             </div>
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Replace Spreadsheets with Intelligent FP&A — <span className="text-cyan-200">Start Today.</span></h2>
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Replace Spreadsheets with Intelligent Financial Planning and Analysis — <span className="text-cyan-200">Start Today.</span></h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">Join finance teams worldwide using NetSuite Planning & Budgeting to forecast faster, plan smarter, and partner more strategically with the business.</p>
               </div>
               <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-teal-800 hover:bg-teal-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">

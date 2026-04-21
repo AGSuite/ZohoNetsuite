@@ -13,6 +13,7 @@ interface CaseStudy {
     company: string;
     industry: string;
     tags: string[];
+    recipientEmail: string; // Respective email for each case study
 }
 
 const allCaseStudies: CaseStudy[] = [
@@ -23,7 +24,8 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/lap/lap3.webp",
         company: "Software and Technology",
         industry: "Software and Technology",
-        tags: ["NetSuite", "Software and Technology"]
+        tags: ["NetSuite", "Software and Technology"],
+        recipientEmail: "shivam@agsuitetech.com"
     },
     {
         id: 2,
@@ -32,7 +34,8 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/lap/lap6_11zon.webp",
         company: "Software and Technology",
         industry: "Software and Technology",
-        tags: ["NetSuite", "Software and Technology"]
+        tags: ["NetSuite", "Software and Technology"],
+        recipientEmail: "shivam@agsuitetech.com"
     },
     {
         id: 3,
@@ -41,7 +44,8 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/lap/lap9_11zon.webp",
         company: "Software and Technology",
         industry: "Software and Technology",
-        tags: ["NetSuite", "Software and Technology"]
+        tags: ["NetSuite", "Software and Technology"],
+        recipientEmail: "shivam@agsuitetech.com"
     },
     {
         id: 4,
@@ -50,7 +54,8 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/lap/lap7_11zon.webp",
         company: "IT & Professional Services",
         industry: "IT & Professional Services",
-        tags: ["IT & Professional Services", "NetSuite"]
+        tags: ["IT & Professional Services", "NetSuite"],
+        recipientEmail: "shivam@agsuitetech.com"
     },
     {
         id: 5,
@@ -59,7 +64,8 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/people/global.webp",
         company: "Wholesale Distribution",
         industry: "Wholesale Distribution",
-        tags: ["NetSuite", "Wholesale Distribution"]
+        tags: ["NetSuite", "Wholesale Distribution"],
+        recipientEmail: "shivam@agsuitetech.com"
     },
     {
         id: 6,
@@ -68,7 +74,8 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/people/laptopgirl.webp",
         company: "Wholesale Distribution",
         industry: "Wholesale Distribution",
-        tags: ["NetSuite", "Wholesale Distribution"]
+        tags: ["NetSuite", "Wholesale Distribution"],
+        recipientEmail: "shivam@agsuitetech.com"
     },
     {
         id: 7,
@@ -77,7 +84,8 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/people/laptopmen.webp",
         company: "Advertising",
         industry: "Advertising and Digital Marketing Agencies",
-        tags: ["Advertising and Digital Marketing Agencies", "NetSuite"]
+        tags: ["Advertising and Digital Marketing Agencies", "NetSuite"],
+        recipientEmail: "shivam@agsuitetech.com"
     },
     {
         id: 8,
@@ -86,7 +94,8 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/people/laptopgirl1.webp",
         company: "Retail & E-Commerce",
         industry: "Retail & E-Commerce",
-        tags: ["NetSuite", "Retail & E-Commerce"]
+        tags: ["NetSuite", "Retail & E-Commerce"],
+        recipientEmail: "shivam@agsuitetech.com"
     },
     {
         id: 9,
@@ -95,7 +104,8 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/lap/lap3.webp",
         company: "Manufacturing",
         industry: "Manufacturing",
-        tags: ["Manufacturing", "NetSuite"]
+        tags: ["Manufacturing", "NetSuite"],
+        recipientEmail: "shivam@agsuitetech.com"
     },
     {
         id: 10,
@@ -104,7 +114,8 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/lap/lap6_11zon.webp",
         company: "Services",
         industry: "Services",
-        tags: ["NetSuite", "Services"]
+        tags: ["NetSuite", "Services"],
+        recipientEmail: "shivam@agsuitetech.com"
     },
     {
         id: 11,
@@ -113,7 +124,8 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/lap/lap9_11zon.webp",
         company: "Food & Beverage",
         industry: "Services",
-        tags: ["NetSuite", "Services"]
+        tags: ["NetSuite", "Services"],
+        recipientEmail: "shivam@agsuitetech.com"
     },
     {
         id: 12,
@@ -122,7 +134,8 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/lap/lap7_11zon.webp",
         company: "Civil Engineering",
         industry: "Services",
-        tags: ["NetSuite", "Services"]
+        tags: ["NetSuite", "Services"],
+        recipientEmail: "shivam@agsuitetech.com"
     },
     {
         id: 13,
@@ -131,7 +144,8 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/people/global.webp",
         company: "CAD Services",
         industry: "Services",
-        tags: ["NetSuite", "Services"]
+        tags: ["NetSuite", "Services"],
+        recipientEmail: "shivam@agsuitetech.com"
     }
 ];
 
@@ -145,14 +159,34 @@ const NSCaseStudiesGrid = () => {
     const [selectedStudy, setSelectedStudy] = useState<CaseStudy | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [formData, setFormData] = useState({ 'Last Name': '', 'Designation': '', 'Mobile': '', 'Email': '', 'Company': '' });
+    const [formData, setFormData] = useState({ 'Last Name': '', 'Designation': '', 'Mobile': '', 'Email': '', 'Company': '', 'countryCode': '+91' });
+
+    const COUNTRY_CODES = [
+        { code: '+91', label: 'IN (+91)' },
+        { code: '+1', label: 'US (+1)' },
+        { code: '+44', label: 'UK (+44)' },
+        { code: '+971', label: 'UAE (+971)' },
+        { code: '+966', label: 'KSA (+966)' },
+        { code: '+974', label: 'QA (+974)' },
+        { code: '+965', label: 'KW (+965)' },
+        { code: '+968', label: 'OM (+968)' },
+        { code: '+973', label: 'BH (+973)' },
+        { code: '+65', label: 'SG (+65)' },
+        { code: '+61', label: 'AU (+61)' },
+        { code: '+31', label: 'NL (+31)' },
+        { code: '+353', label: 'IE (+353)' },
+        { code: '+49', label: 'DE (+49)' },
+        { code: '+33', label: 'FR (+33)' },
+        { code: '+27', label: 'ZA (+27)' },
+        { code: '+852', label: 'HK (+852)' },
+    ];
 
     const handleReadClick = (e: React.MouseEvent, study: CaseStudy) => {
         e.preventDefault();
         setSelectedStudy(study);
         setIsModalOpen(true);
         setIsSubmitted(false);
-        setFormData({ 'Last Name': '', 'Designation': '', 'Mobile': '', 'Email': '', 'Company': '' });
+        setFormData({ 'Last Name': '', 'Designation': '', 'Mobile': '', 'Email': '', 'Company': '', 'countryCode': '+91' });
     };
 
     const closeModal = () => {
@@ -163,13 +197,42 @@ const NSCaseStudiesGrid = () => {
         }, 300);
     };
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
+        if (name === 'Mobile') {
+            const digits = value.replace(/\D/g, '').slice(0, 10);
+            setFormData(prev => ({ ...prev, [name]: digits }));
+        } else {
+            setFormData(prev => ({ ...prev, [name]: value }));
+        }
     };
 
-    const handleSubmit = () => {
-        setIsSubmitted(true);
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        
+        if (formData.Mobile.length !== 10) {
+            alert('Please enter a valid 10-digit mobile number.');
+            return;
+        }
+
+        const response = await fetch('/api/contact/case-study', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                ...formData,
+                Mobile: `${formData.countryCode} ${formData.Mobile}`,
+                caseStudyTitle: selectedStudy?.title,
+                caseStudyId: selectedStudy?.id,
+                recipientEmail: selectedStudy?.recipientEmail,
+                platform: 'NetSuite'
+            }),
+        });
+
+        if (response.ok) {
+            setIsSubmitted(true);
+        } else {
+            alert('Something went wrong. Please try again.');
+        }
     };
 
     const filteredStudies = useMemo(() => {
@@ -358,12 +421,103 @@ const NSCaseStudiesGrid = () => {
 
                                 {/* Modal Body (Form / Success) */}
                                 <div className="p-6 md:p-8 text-left text-slate-800">
-                                    <iframe 
-                                        src="https://crm.zoho.in/crm/WebFormServeServlet?rid=bb4b0617c340619de1172c4e88a6168efcd072362b1960f18710725b4a562d7f779e62a2f104e2e43439fe2010aaf9d1gid6c22d9b2008ecf3fcfeff53f1607c09e903786de4923a2f7bac9742fed07c2b5"
-                                        className="w-full h-[500px]"
-                                        frameBorder="0"
-                                        title="Read Case Study Form"
-                                    />
+                                    {isSubmitted ? (
+                                        <div className="text-center py-12">
+                                            <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                                                <CheckCircle2 className="w-10 h-10" />
+                                            </div>
+                                            <h4 className="text-2xl font-bold text-slate-900 mb-2">Thank You!</h4>
+                                            <p className="text-slate-600">Your request has been received. We'll send the case study to your email shortly.</p>
+                                            <button
+                                                onClick={closeModal}
+                                                className="mt-8 px-8 py-3 bg-[#001f5c] text-white font-bold rounded-xl hover:bg-black transition-colors"
+                                            >
+                                                Close
+                                            </button>
+                                        </div>
+                                    ) : (
+                                        <form onSubmit={handleSubmit} className="space-y-4">
+                                            <div>
+                                                <label className="block text-sm font-bold text-slate-700 mb-1">Full Name *</label>
+                                                <input
+                                                    type="text"
+                                                    name="Last Name"
+                                                    required
+                                                    value={formData['Last Name']}
+                                                    onChange={handleInputChange}
+                                                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                                                    placeholder="John Doe"
+                                                />
+                                            </div>
+                                            <div className="grid grid-cols-2 gap-4">
+                                                <div>
+                                                    <label className="block text-sm font-bold text-slate-700 mb-1">Designation *</label>
+                                                    <input
+                                                        type="text"
+                                                        name="Designation"
+                                                        required
+                                                        value={formData['Designation']}
+                                                        onChange={handleInputChange}
+                                                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                                                        placeholder="Manager"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label className="block text-sm font-bold text-slate-700 mb-1">Mobile *</label>
+                                                    <div className="flex gap-1.5">
+                                                        <select
+                                                            name="countryCode"
+                                                            value={formData.countryCode}
+                                                            onChange={handleInputChange}
+                                                            className="w-[85px] px-2 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-xs font-semibold"
+                                                        >
+                                                            {COUNTRY_CODES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
+                                                        </select>
+                                                        <input
+                                                            type="tel"
+                                                            name="Mobile"
+                                                            required
+                                                            value={formData['Mobile']}
+                                                            onChange={handleInputChange}
+                                                            className="flex-1 px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-400"
+                                                            placeholder="9876543210"
+                                                            maxLength={10}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label className="block text-sm font-bold text-slate-700 mb-1">Business Email *</label>
+                                                <input
+                                                    type="email"
+                                                    name="Email"
+                                                    required
+                                                    value={formData['Email']}
+                                                    onChange={handleInputChange}
+                                                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                                                    placeholder="john@company.com"
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className="block text-sm font-bold text-slate-700 mb-1">Company *</label>
+                                                <input
+                                                    type="text"
+                                                    name="Company"
+                                                    required
+                                                    value={formData['Company']}
+                                                    onChange={handleInputChange}
+                                                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                                                    placeholder="Company Name"
+                                                />
+                                            </div>
+                                            <button
+                                                type="submit"
+                                                className="w-full py-4 bg-gradient-to-r from-[#001f5c] to-[#0a0a0a] text-white font-bold rounded-xl hover:shadow-lg transition-all mt-4"
+                                            >
+                                                Get Case Study
+                                            </button>
+                                        </form>
+                                    )}
                                 </div>
                             </div>
                         </motion.div>

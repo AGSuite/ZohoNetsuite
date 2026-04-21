@@ -61,6 +61,18 @@ const data: IndustryPageData = {
         "Support global customers with 190+ currency handling, automated FX revaluation, and multi-subsidiary consolidation — ideal for tech companies expanding internationally.",
       image: "/images/people/global.webp",
     },
+    {
+      title: "Unified CRM & ERP",
+      description:
+        "Seamlessly connect sales with finance. From lead-to-quote to order-to-cash, everything lives in one system, eliminating manual data re-entry and sync errors.",
+      image: "/images/people/threeteam.webp",
+    },
+    {
+      title: "Automated Financial Reporting",
+      description:
+        "Generate real-time financial statements, board packs, and SaaS-specific metrics instantly. No more waiting weeks for the month-end close.",
+      image: "/images/lap/lap2.webp",
+    },
   ],
   challenges: [
     {
@@ -86,6 +98,30 @@ const data: IndustryPageData = {
       description:
         "NetSuite's built-in CRM and ERP eliminates the CRM-to-ERP sync problem — sales, renewals, and billing all live in one system with zero integration lag.",
       image: "/images/people/threeteam.webp",
+    },
+    {
+      title: "Scale-up Friction",
+      description:
+        "Legacy systems can't keep up with rapid international expansion. NetSuite OneWorld handles multiple countries and currencies in a single instance.",
+      image: "/images/people/global.webp",
+    },
+    {
+      title: "Fragmented Customer Data",
+      description:
+        "Siloed data prevents a 360-degree view of the customer. NetSuite unifies all touchpoints from first contact to ongoing support.",
+      image: "/images/people/laptopgirl.webp",
+    },
+    {
+      title: "Manual Consolidation",
+      description:
+        "Consolidating multiple entities manually is slow and error-prone. NetSuite automates intercompany eliminations and real-time consolidation.",
+      image: "/images/lap/lap5.webp",
+    },
+    {
+      title: "Audit Preparedness",
+      description:
+        "Manual processes make audits a nightmare. NetSuite's robust audit trails and automated compliance reduce audit time and stress.",
+      image: "/images/lap/lap7_11zon.webp",
     },
   ],
   pricingTiers: [

@@ -61,6 +61,18 @@ const data: IndustryPageData = {
         "Automate complex revenue recognition schedules natively in NetSuite, ensuring ASC 606 and IFRS 15 compliance without manual spreadsheets.",
       image: "/images/people/global.webp",
     },
+    {
+      title: "Time & Expense Automation",
+      description:
+        "Enable consultants to submit time and expenses on-the-go via mobile. Automated approval workflows ensure faster reimbursement and quicker client billing cycles.",
+      image: "/images/people/laptopgirl.webp",
+    },
+    {
+      title: "360-Degree Client Visibility",
+      description:
+        "Gain a unified view of your clients — from initial lead to project history, support cases, and financial records. Make informed decisions and improve client retention.",
+      image: "/images/people/threeteam.webp",
+    },
   ],
   challenges: [
     {
@@ -86,6 +98,30 @@ const data: IndustryPageData = {
       description:
         "With project actuals flowing directly into NetSuite financials, month-end close is automated — no more manual journal entries or spreadsheet reconciliation.",
       image: "/images/people/fourteam.webp",
+    },
+    {
+      title: "Poor Resource Visibility",
+      description:
+        "Lack of visibility into resource availability leads to overbooking or underutilization. NetSuite provides real-time heat maps for smarter resource planning.",
+      image: "/images/people/laptopgirl3.webp",
+    },
+    {
+      title: "Manual Billing Errors",
+      description:
+        "Manually compiling timesheets for billing is slow and error-prone. NetSuite automates the entire invoice generation process from approved time.",
+      image: "/images/lap/lap2.webp",
+    },
+    {
+      title: "Spreadsheet-Based Tracking",
+      description:
+        "Running projects on spreadsheets leads to data silos and lack of control. NetSuite replaces spreadsheets with a unified project management platform.",
+      image: "/images/lap/lap5.webp",
+    },
+    {
+      title: "Siloed Communication",
+      description:
+        "Fragmented communication leads to project delays. NetSuite unifies all communications, project documentation, and task records in one place.",
+      image: "/images/people/laptopmen2.webp",
     },
   ],
   pricingTiers: [

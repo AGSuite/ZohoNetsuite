@@ -30,6 +30,27 @@ const PARTICLES = [
 
 export default function RequestQuotePremium() {
     const [isClient, setIsClient] = useState(false);
+    const [selectedCode, setSelectedCode] = useState('+91');
+
+    const COUNTRY_CODES = [
+        { code: '+91', label: 'IN (+91)' },
+        { code: '+1', label: 'US (+1)' },
+        { code: '+44', label: 'UK (+44)' },
+        { code: '+971', label: 'UAE (+971)' },
+        { code: '+966', label: 'KSA (+966)' },
+        { code: '+974', label: 'QA (+974)' },
+        { code: '+965', label: 'KW (+965)' },
+        { code: '+968', label: 'OM (+968)' },
+        { code: '+973', label: 'BH (+973)' },
+        { code: '+65', label: 'SG (+65)' },
+        { code: '+61', label: 'AU (+61)' },
+        { code: '+31', label: 'NL (+31)' },
+        { code: '+353', label: 'IE (+353)' },
+        { code: '+49', label: 'DE (+49)' },
+        { code: '+33', label: 'FR (+33)' },
+        { code: '+27', label: 'ZA (+27)' },
+        { code: '+852', label: 'HK (+852)' },
+    ];
 
     useEffect(() => {
         setIsClient(true);
@@ -251,6 +272,10 @@ export default function RequestQuotePremium() {
                             fieldObj.focus();
                             return false;
                         }
+                    } else if (fieldObj.name === 'Mobile' && fieldObj.value.replace(/\D/g, '').length !== 10) {
+                        alert('Please enter a valid 10-digit mobile number.');
+                        fieldObj.focus();
+                        return false;
                     }
                 }
             }
@@ -272,6 +297,13 @@ export default function RequestQuotePremium() {
         if (window.checkMandatory409531000000398090 && !window.checkMandatory409531000000398090(e.nativeEvent)) {
             e.preventDefault();
             return;
+        }
+
+        // Combine code and mobile
+        const form = e.currentTarget;
+        const mobileField = form.elements.namedItem('Mobile') as HTMLInputElement;
+        if (mobileField) {
+            mobileField.value = `${selectedCode} ${mobileField.value}`;
         }
 
         // Visitor Tracking
@@ -486,16 +518,28 @@ export default function RequestQuotePremium() {
                                                     maxLength={100}
                                                     className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
                                                 />
-                                                <input
-                                                    type='text'
-                                                    id='Mobile'
-                                                    placeholder='Mobile *'
-                                                    required
-                                                    name='Mobile'
-                                                    maxLength={30}
-                                                    onKeyPress={handleKeyPress}
-                                                    className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
-                                                />
+                                                <div className="space-y-1">
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Mobile (10 Digits) *</label>
+                                                    <div className="flex gap-2">
+                                                        <select
+                                                            value={selectedCode}
+                                                            onChange={(e) => setSelectedCode(e.target.value)}
+                                                            className="w-24 bg-blue-50/50 border border-blue-100 focus:border-blue-500 rounded-xl px-2 py-3 text-xs font-semibold outline-none transition-all"
+                                                        >
+                                                            {COUNTRY_CODES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
+                                                        </select>
+                                                        <input
+                                                            type='text'
+                                                            id='Mobile'
+                                                            placeholder='9876543210'
+                                                            required
+                                                            name='Mobile'
+                                                            maxLength={10}
+                                                            onChange={(e) => e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10)}
+                                                            className="flex-1 bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
+                                                        />
+                                                    </div>
+                                                </div>
                                                 <input
                                                     type='text'
                                                     id='Designation'

@@ -195,12 +195,12 @@ export default function NetSuiteSolutionsClient() {
       category: "Planning",
       title: "NetSuite Planning & Budgeting",
       subtitle: "Smarter Financial Planning",
-      passage1: "NetSuite Planning and Budgeting (PBCS) replaces the inefficiency of spreadsheet-based FP&A with a purpose-built, cloud-native planning platform that connects directly to your NetSuite actuals in real time. It enables collaborative budgeting and rolling forecasts, ensuring that your financial plans are always grounded in the latest operational reality.",
+      passage1: "NetSuite Planning and Budgeting (PBCS) replaces the inefficiency of spreadsheet-based Financial Planning and Analysis with a purpose-built, cloud-native planning platform that connects directly to your NetSuite actuals in real time. It enables collaborative budgeting and rolling forecasts, ensuring that your financial plans are always grounded in the latest operational reality.",
       passage2: "Build sophisticated scenario models across every business unit with driver-based planning logic and workflow-managed approvals. By eliminating the version control chaos of Excel-based planning, PBCS lets your finance team spend less time building models and more time generating the strategic insights that drive business growth and long-term stability.",
       link: "/netsuite/solutions/planning/main",
       image: "/images/lap/lap5.webp",
       icon: TrendingUp,
-      tag: "FP&A",
+      tag: "Financial Planning and Analysis",
     },
     {
       category: "Specialised",
@@ -340,7 +340,7 @@ export default function NetSuiteSolutionsClient() {
                   fromColor="#111827"
                   toColor="#2563eb"
                 >
-                  The #1 Cloud ERP for Growing Businesses
+                  The #1 Cloud ERP for Growing   Businesses
                 </ScrollFloat>
                 <p className="text-lg text-gray-600 leading-relaxed">Oracle NetSuite is the world&apos;s most deployed cloud Enterprise Resource Planning (ERP) solution. Built from the ground up for the cloud, it provides a single, unified platform to manage every aspect of your business — from financials and CRM to inventory and e-commerce.</p>
                 <p className="text-lg text-gray-600 leading-relaxed">Every solution is purpose-built for cloud — running inside your NetSuite account with real-time data, no silos, and unified reporting across every department.</p>

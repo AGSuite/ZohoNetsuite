@@ -15,7 +15,7 @@ const netsuiteFaqs = [
   },
   {
     q: "Is NetSuite ERP suitable for mid-sized and growing businesses?",
-    a: "Yes. NetSuite is purpose-built for scale — from 10-person startups to multi-entity global enterprises. Its modular architecture means you only activate and pay for what you need today, then expand seamlessly as your business grows.",
+    a: "Yes. NetSuite is purpose-built for scale — mid-sized (100 to 500 employees), and large enterprises (500+ employees). Its modular architecture means you only activate and pay for what you need today, then expand seamlessly as your business grows.",
   },
   {
     q: "How long does a NetSuite ERP implementation take?",

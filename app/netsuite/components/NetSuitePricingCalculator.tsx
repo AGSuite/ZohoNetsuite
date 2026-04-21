@@ -77,6 +77,29 @@ const NetSuitePricingCalculator = () => {
     const revenueRanges = ['Under $1M', '$1M to $10M', '$10M to $50M', '$50M to $100M', '$100M to $500M', '$500M+'];
     const stepTitles = ['Industry', 'Geo', 'Solutions', 'Finish'];
 
+    const COUNTRY_CODES = [
+        { code: '+91', label: 'IN (+91)' },
+        { code: '+1', label: 'US (+1)' },
+        { code: '+44', label: 'UK (+44)' },
+        { code: '+971', label: 'UAE (+971)' },
+        { code: '+966', label: 'KSA (+966)' },
+        { code: '+974', label: 'QA (+974)' },
+        { code: '+965', label: 'KW (+965)' },
+        { code: '+968', label: 'OM (+968)' },
+        { code: '+973', label: 'BH (+973)' },
+        { code: '+65', label: 'SG (+65)' },
+        { code: '+61', label: 'AU (+61)' },
+        { code: '+1-C', label: 'CA (+1)' },
+        { code: '+31', label: 'NL (+31)' },
+        { code: '+353', label: 'IE (+353)' },
+        { code: '+49', label: 'DE (+49)' },
+        { code: '+33', label: 'FR (+33)' },
+        { code: '+64', label: 'NZ (+64)' },
+        { code: '+27', label: 'ZA (+27)' },
+        { code: '+852', label: 'HK (+852)' },
+        { code: '+60', label: 'MY (+60)' },
+    ];
+
     const updateFormData = <K extends keyof CalculatorFormData>(field: K, value: CalculatorFormData[K]) => {
         setFormData(prev => ({ ...prev, [field]: value }));
         if (errors[field]) setErrors(prev => { const n = { ...prev }; delete n[field]; return n; });
@@ -95,9 +118,11 @@ const NetSuitePricingCalculator = () => {
         if (step === 2 && Object.keys(formData.countryEntities).length === 0) n.countryEntities = 'Required';
         if (step === 3 && formData.modules.length === 0) n.modules = 'Required';
         if (step === 4) {
-            if (!formData.name.trim()) n.name = 'Req';
-            if (!formData.email.trim()) n.email = 'Req';
-            if (!formData.phone.trim()) n.phone = 'Req';
+            if (!formData.name.trim()) n.name = 'Full name is required';
+            if (!formData.email.trim()) n.email = 'Business email is required';
+            if (!/^\d{10}$/.test(formData.phone.replace(/\D/g, ''))) {
+                n.phone = 'Please enter exactly 10 digits';
+            }
         }
         setErrors(n);
         return Object.keys(n).length === 0;
@@ -118,8 +143,16 @@ const NetSuitePricingCalculator = () => {
         setSubmitting(true);
         try {
             const res = await submitPricingQuote(formData);
-            if (res?.ok) setShowSuccess(true);
-        } finally { setSubmitting(false); }
+            if (res?.ok) {
+                setShowSuccess(true);
+            } else {
+                alert(`Error: ${res?.error || 'Failed to send quote'}`);
+            }
+        } catch (err) {
+            alert('Something went wrong. Please check your connection.');
+        } finally { 
+            setSubmitting(false); 
+        }
     };
 
     const aggregatedRecommendations = useMemo(() => {
@@ -290,19 +323,16 @@ const NetSuitePricingCalculator = () => {
                                 {aggregatedRecommendations.length > 0 && (
                                     <div>
                                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 mb-3 md:mb-5">Tailored Recommendations</p>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+                                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-3">
                                             {aggregatedRecommendations.map(m => (
                                                 <button
                                                     key={m} type="button"
                                                     onClick={() => updateFormData('modules', formData.modules.includes(m) ? formData.modules.filter(x => x !== m) : [...formData.modules, m])}
-                                                    className={`p-4 md:p-6 rounded-2xl md:rounded-[2rem] border-2 transition-all flex items-center gap-3 md:gap-5 text-left h-16 md:h-24 ${formData.modules.includes(m)
-                                                        ? 'bg-blue-600 border-blue-400 text-white shadow-xl translate-y-[-2px]'
-                                                        : 'bg-gradient-to-br from-white to-blue-50 border-white text-slate-900 hover:border-blue-100'}`}
+                                                    className={`p-3 md:p-4 rounded-xl border-2 text-[10px] md:text-[11px] font-medium transition-all text-center ${formData.modules.includes(m)
+                                                        ? 'bg-[#0033ad] border-[#2563eb] text-white shadow-lg'
+                                                        : 'bg-white border-white text-slate-900 hover:border-blue-50'}`}
                                                 >
-                                                    <div className={`w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center shadow-inner shrink-0 ${formData.modules.includes(m) ? 'bg-white/20' : 'bg-blue-100'}`}>
-                                                        <Settings size={16} className={formData.modules.includes(m) ? 'text-white' : 'text-blue-600'} />
-                                                    </div>
-                                                    <span className="text-sm md:text-[17px] font-medium transition-colors leading-tight">{m}</span>
+                                                    {m}
                                                 </button>
                                             ))}
                                         </div>
@@ -316,7 +346,7 @@ const NetSuitePricingCalculator = () => {
                                                 key={m} type="button"
                                                 onClick={() => updateFormData('modules', formData.modules.includes(m) ? formData.modules.filter(x => x !== m) : [...formData.modules, m])}
                                                 className={`p-3 md:p-4 rounded-xl border-2 text-[10px] md:text-[11px] font-medium transition-all text-center ${formData.modules.includes(m)
-                                                    ? 'bg-slate-700 border-slate-600 text-white shadow-lg'
+                                                    ? 'bg-[#0033ad] border-[#2563eb] text-white shadow-lg'
                                                     : 'bg-white border-white text-slate-900 hover:border-blue-50'}`}
                                             >
                                                 {m}
@@ -368,13 +398,24 @@ const NetSuitePricingCalculator = () => {
                                 </div>
                                 {/* Phone */}
                                 <div className="space-y-1 md:space-y-2">
-                                    <label className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-0.5">Phone</label>
-                                    <input
-                                        type="tel" value={formData.phone}
-                                        onChange={e => updateFormData('phone', e.target.value)}
-                                        placeholder="+91 00000 00000"
-                                        className="w-full bg-white border border-white/20 px-3 py-2.5 md:p-5 rounded-lg md:rounded-2xl text-sm md:text-lg font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm"
-                                    />
+                                    <label className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-0.5">Phone (10 Digits)</label>
+                                    <div className="flex gap-2">
+                                        <select
+                                            value={formData.countryCode}
+                                            onChange={e => updateFormData('countryCode', e.target.value)}
+                                            className="w-24 bg-white border border-white/20 px-2 py-2.5 md:p-5 rounded-lg md:rounded-2xl text-xs md:text-sm font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm"
+                                        >
+                                            {COUNTRY_CODES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
+                                        </select>
+                                        <input
+                                            type="tel" value={formData.phone}
+                                            onChange={e => updateFormData('phone', e.target.value.replace(/\D/g, '').slice(0, 10))}
+                                            placeholder="9876543210"
+                                            maxLength={10}
+                                            className={`flex-1 bg-white border ${errors.phone ? 'border-red-500' : 'border-white/20'} px-3 py-2.5 md:p-5 rounded-lg md:rounded-2xl text-sm md:text-lg font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm`}
+                                        />
+                                    </div>
+                                    {errors.phone && <p className="text-[10px] text-red-500 mt-1 pl-1 font-bold">{errors.phone}</p>}
                                 </div>
                                 {/* Revenue — full width */}
                                 <div className="col-span-2 space-y-1 md:space-y-2">

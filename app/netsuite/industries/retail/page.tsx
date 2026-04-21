@@ -56,6 +56,18 @@ const data: IndustryPageData = {
         "Full 360° customer view across channels. Manage loyalty programmes, personalised promotions, and customer purchase history in one system.",
       image: "/images/lap/lap5.webp",
     },
+    {
+      title: "Personalized Promotions & Marketing",
+      description:
+        "Leverage unified customer data to create targeted promotions and personalized marketing campaigns. Drive repeat purchases and increase customer lifetime value.",
+      image: "/images/people/laptopgirl.webp",
+    },
+    {
+      title: "Seamless POS Integration",
+      description:
+        "Connect your physical stores with your online operations. NetSuite POS provides real-time access to inventory, customer history, and unified financial reporting.",
+      image: "/images/lap/lap2.webp",
+    },
   ],
   challenges: [
     {
@@ -81,6 +93,30 @@ const data: IndustryPageData = {
       description:
         "SuiteCommerce displays real-time stock levels from NetSuite, eliminating out-of-stock surprises and improving conversion rates significantly.",
       image: "/images/people/global.webp",
+    },
+    {
+      title: "Slow Order Processing",
+      description:
+        "Manual data entry between your webstore and ERP causes delays. NetSuite automates the entire order-to-fulfillment cycle for faster delivery.",
+      image: "/images/people/laptopmen2.webp",
+    },
+    {
+      title: "Inconsistent Customer Data",
+      description:
+        "Siloed customer data prevents a unified shopping experience. NetSuite unifies all customer touchpoints across both digital and physical stores.",
+      image: "/images/people/laptopgirl3.webp",
+    },
+    {
+      title: "Manual Reconciliations",
+      description:
+        "Reconciling sales from multiple channels and payment gateways is slow and error-prone. NetSuite automates financial reconciliation for all transactions.",
+      image: "/images/lap/lap7_11zon.webp",
+    },
+    {
+      title: "Peak Season Stress",
+      description:
+        "High volumes during BFCM can crash legacy systems. NetSuite's cloud infrastructure scales elastically to handle your heaviest traffic spikes.",
+      image: "/images/lap/lap6_11zon.webp",
     },
   ],
   pricingTiers: [

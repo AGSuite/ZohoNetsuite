@@ -125,7 +125,7 @@ const ZohoCustomerSuccess = () => {
                         viewport={{ once: true }}
                         className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-rose-600 tracking-tight"
                     >
-                        Empowering success,<br />one Zoho solution at a time
+                        Proven Experiences Where Results Speak
                     </motion.h2>
                 </div>
 

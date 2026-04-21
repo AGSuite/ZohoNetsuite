@@ -114,7 +114,7 @@ const NSCustomerSuccess = () => {
                         viewport={{ once: true }}
                         className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 tracking-tight"
                     >
-                        Transforming businesses,<br />one customer at a time
+                        Proven Experiences Where Results Speak
                     </motion.h2>
                 </div>
 

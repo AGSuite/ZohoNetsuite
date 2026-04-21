@@ -9,6 +9,27 @@ import { Send, Users, Rocket, Target, Award } from "lucide-react";
 
 export default function ZohoContactForm() {
     const [isClient, setIsClient] = useState(false);
+    const [selectedCode, setSelectedCode] = useState('+91');
+
+    const COUNTRY_CODES = [
+        { code: '+91', label: 'IN (+91)' },
+        { code: '+1', label: 'US (+1)' },
+        { code: '+44', label: 'UK (+44)' },
+        { code: '+971', label: 'UAE (+971)' },
+        { code: '+966', label: 'KSA (+966)' },
+        { code: '+974', label: 'QA (+974)' },
+        { code: '+965', label: 'KW (+965)' },
+        { code: '+968', label: 'OM (+968)' },
+        { code: '+973', label: 'BH (+973)' },
+        { code: '+65', label: 'SG (+65)' },
+        { code: '+61', label: 'AU (+61)' },
+        { code: '+31', label: 'NL (+31)' },
+        { code: '+353', label: 'IE (+353)' },
+        { code: '+49', label: 'DE (+49)' },
+        { code: '+33', label: 'FR (+33)' },
+        { code: '+27', label: 'ZA (+27)' },
+        { code: '+852', label: 'HK (+852)' },
+    ];
 
     useEffect(() => {
         setIsClient(true);
@@ -123,6 +144,10 @@ export default function ZohoContactForm() {
                             fieldObj.focus();
                             return false;
                         }
+                    } else if (fieldObj.name === 'Mobile' && fieldObj.value.replace(/\D/g, '').length !== 10) {
+                        alert('Please enter a valid 10-digit mobile number.');
+                        fieldObj.focus();
+                        return false;
                     }
                 }
             }
@@ -182,6 +207,13 @@ export default function ZohoContactForm() {
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         if ((window as any).checkMandatory409531000026445204 && !(window as any).checkMandatory409531000026445204()) {
             e.preventDefault();
+            return;
+        }
+        // Combine code and mobile
+        const form = e.currentTarget;
+        const mobileField = form.elements.namedItem('Mobile') as HTMLInputElement;
+        if (mobileField) {
+            mobileField.value = `${selectedCode} ${mobileField.value}`;
         }
     };
 
@@ -392,8 +424,25 @@ export default function ZohoContactForm() {
                                         <input type="text" name="Designation" required className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="Manager" />
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Direct Contact *</motion.label>
-                                        <input type="tel" name="Mobile" required className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="+91 00000 00000" />
+                                        <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Direct Contact (10 Digits) *</motion.label>
+                                        <div className="flex gap-2">
+                                            <select
+                                                value={selectedCode}
+                                                onChange={(e) => setSelectedCode(e.target.value)}
+                                                className="w-24 bg-blue-50/30 border-2 border-blue-100/50 focus:border-blue-700 rounded-2xl px-2 py-3.5 text-xs font-semibold outline-none transition-all shadow-sm"
+                                            >
+                                                {COUNTRY_CODES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
+                                            </select>
+                                            <input
+                                                type="tel"
+                                                name="Mobile"
+                                                required
+                                                maxLength={10}
+                                                onChange={(e) => e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10)}
+                                                className="flex-1 bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm"
+                                                placeholder="9876543210"
+                                            />
+                                        </div>
                                     </motion.div>
                                 </div>
 

@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import { motion, AnimatePresence } from "framer-motion";
 
+import { TrendingUp, ShieldCheck, FileCheck, Zap } from "lucide-react";
 import "swiper/css";
 import "swiper/css/pagination";
 import dynamic from "next/dynamic";
@@ -286,6 +287,169 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   textColor="dark"
                 />
               </SwiperSlide>
+              <SwiperSlide>
+                <HeroSlide
+                  isActive={activeIndex === 4}
+                  gridClass="lg:grid-cols-[45%_55%]"
+                  customBg={
+                    <div className="absolute inset-0 overflow-hidden bg-white">
+                      {/* Dynamic Background: Data Constellation */}
+                      <div className="absolute inset-0">
+                        {Array.from({ length: 15 }).map((_, i) => (
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0 }}
+                            animate={{ 
+                              x: [Math.random() * 1000, Math.random() * 1000],
+                              y: [Math.random() * 800, Math.random() * 800],
+                              opacity: [0, 0.3, 0],
+                              scale: [0.5, 0.8, 0.5]
+                            }}
+                            transition={{ duration: 12 + i, repeat: Infinity, ease: "linear" }}
+                            className="absolute w-1 h-1 bg-blue-400 rounded-full blur-[1px]"
+                          />
+                        ))}
+                      </div>
+
+                      {/* Moving Scanning Beams */}
+                      <motion.div 
+                        animate={{ x: [-200, 1600] }}
+                        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-y-0 w-32 bg-linear-to-r from-transparent via-blue-600/5 to-transparent skew-x-12 pointer-events-none"
+                      />
+
+                      {/* Strategic Graph Line Background */}
+                      <svg className="absolute inset-x-0 bottom-0 w-full h-[300px] opacity-[0.1]" viewBox="0 0 1440 300">
+                        <motion.path 
+                          initial={{ pathLength: 0 }}
+                          animate={{ pathLength: 1 }}
+                          transition={{ duration: 12, repeat: Infinity, repeatType: "reverse" }}
+                          d="M0 250C200 230 400 270 600 200C800 130 1000 150 1200 70C1400 0 1600 20 1800 -20" 
+                          stroke="#2563eb" strokeWidth="2" fill="none" 
+                        />
+                      </svg>
+                    </div>
+                  }
+                  title="The CFO Strategic Command Center"
+                  desc="Drive corporate strategy with unparalleled financial intelligence. NetSuite provides the single source of truth needed to navigate complex markets and scale with confidence."
+                  cta="Strategic CFO Suite"
+                  link="/netsuite-accounting-services"
+                  customVisual={
+                    <div className="relative w-full h-full flex items-center justify-center p-4">
+                      {/* Medium Balanced Scale (155%) */}
+                      <div className="relative z-10 w-[155%] max-w-none">
+                        <Image
+                          src="/images/lap/group1.webp"
+                          alt="Global Command Dashboards"
+                          width={1900}
+                          height={1400}
+                          className="w-full h-auto object-contain filter drop-shadow-[0_25px_45px_rgba(37,99,235,0.25)] -mr-[13%] transition-transform duration-700 hover:scale-[1.01]" 
+                          sizes="(max-width: 1024px) 100vw, 60vw"
+                        />
+                        
+                        {/* Interactive Data Nodes */}
+                        <motion.div animate={{ scale: [1, 1.4, 1], opacity: [0.4, 0.7, 0.4] }} transition={{ duration: 3.5, repeat: Infinity }} className="absolute top-[35%] left-[25%] w-6 h-6 bg-blue-400 rounded-full blur-md" />
+                        <motion.div animate={{ scale: [1, 1.4, 1], opacity: [0.4, 0.7, 0.4] }} transition={{ duration: 4.5, repeat: Infinity, delay: 1 }} className="absolute bottom-[35%] right-[25%] w-6 h-6 bg-indigo-500 rounded-full blur-md" />
+                      </div>
+
+                      {/* Top Corner Card (Commerce Style) */}
+                      <motion.div
+                        initial={{ opacity: 0, x: -30, y: -20 }}
+                        animate={{ opacity: 1, x: 0, y: 0 }}
+                        transition={{ duration: 0.7, delay: 0.8 }}
+                        className="absolute -top-6 -left-8 bg-white p-3.5 rounded-xl shadow-2xl z-40 flex items-center gap-4 border border-gray-100 min-w-[280px]"
+                      >
+                        <div className="w-11 h-11 rounded-lg bg-linear-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white shadow-lg">
+                          <TrendingUp className="w-6 h-6" />
+                        </div>
+                        <span className="text-[15px] font-bold text-gray-800 leading-tight">Strategic Intelligence Platform</span>
+                      </motion.div>
+
+                      {/* Bottom-Center Power Card (Commerce Style) */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 1.1 }}
+                        className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[115%] bg-white p-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-40 flex items-center gap-5 border border-gray-50"
+                      >
+                        <div className="flex-shrink-0 w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center shadow-inner">
+                          <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C20.1216 16 21.017 16.8954 21.017 18V21C21.017 22.1046 20.1216 23 19.017 23H16.017C14.9124 23 14.017 22.1046 14.017 21ZM14.017 11L14.017 8C14.017 6.89543 14.9124 6 16.017 6H19.017C20.1216 6 21.017 6.89543 21.017 8V11C21.017 12.1046 20.1216 13 19.017 13H16.017C14.9124 13 14.017 12.1046 14.017 11ZM3.017 21L3.017 18C3.017 16.8954 3.91243 16 5.01699 16H8.01699C9.12156 16 10.017 16.8954 10.017 18V21C10.017 22.1046 9.12156 23 8.01699 23H5.01699C3.91243 23 3.017 22.1046 3.017 21ZM3.017 11L3.017 8C3.017 6.89543 3.91243 6 5.01699 6H8.01699C9.12156 6 10.017 6.89543 10.017 8V11C10.017 12.1046 9.12156 13 8.01699 13H5.01699C3.91243 13 3.017 12.1046 3.017 11Z" />
+                          </svg>
+                        </div>
+                        <p className="text-[17px] font-medium text-[#1e3a5f] leading-snug">
+                          &quot;NetSuite is the central source of strategic truth, empowering modern CFOs to lead with precision.&quot;
+                        </p>
+                      </motion.div>
+                    </div>
+                  }
+                  showOverlay={false}
+                  textColor="dark"
+                />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <HeroSlide
+                  isActive={activeIndex === 5}
+                  gridClass="lg:grid-cols-[45%_55%]"
+                  customBg={
+                    <div className="absolute inset-0 overflow-hidden bg-white">
+                      <div className="absolute inset-0 opacity-[0.05]" 
+                        style={{ backgroundImage: 'linear-gradient(#2563eb 1.5px, transparent 1.5px), linear-gradient(90deg, #2563eb 1.5px, transparent 1.5px)', backgroundSize: '64px 64px' }} />
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-linear-to-tr from-blue-50/50 via-transparent to-indigo-50/50" />
+                    </div>
+                  }
+                  title="Automated Precision in Every Transaction"
+                  desc="Eliminate accounting bottlenecks and ensure 100% compliance. NetSuite's automated financial suite handles the complexity so you can focus on performance."
+                  cta="Accounting Excellence"
+                  link="/netsuite-erp-solution"
+                  customVisual={
+                    <div className="relative w-full h-full flex items-center justify-center p-4">
+                      {/* Cinematic Boost Scale (165%) */}
+                      <div className="relative z-10 w-[165%] max-w-none">
+                        <Image
+                          src="/images/lap/lap6_11zon.webp"
+                          alt="Financial Operations"
+                          width={1800}
+                          height={1600}
+                          className="w-full h-auto object-contain filter drop-shadow-[0_25px_45px_rgba(79,70,229,0.2)] -mr-[15%] transition-transform duration-700 hover:scale-[1.01]" 
+                          sizes="(max-width: 1024px) 100vw, 60vw"
+                        />
+                      </div>
+                      
+                      {/* Top Corner Card (Commerce Style) */}
+                      <motion.div
+                        initial={{ opacity: 0, x: -30, y: -20 }}
+                        animate={{ opacity: 1, x: 0, y: 0 }}
+                        transition={{ duration: 0.7, delay: 0.8 }}
+                        className="absolute -top-6 -left-8 bg-white p-3.5 rounded-xl shadow-2xl z-40 flex items-center gap-4 border border-gray-100 min-w-[280px]"
+                      >
+                        <div className="w-11 h-11 rounded-lg bg-linear-to-br from-indigo-600 to-blue-700 flex items-center justify-center text-white shadow-lg">
+                          <Zap className="w-6 h-6" />
+                        </div>
+                        <span className="text-[15px] font-bold text-gray-800 leading-tight">Automated Accounting Engine</span>
+                      </motion.div>
+
+                      {/* Bottom-Center Power Card (Commerce Style) */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 1.1 }}
+                        className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[115%] bg-white p-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-40 flex items-center gap-5 border border-gray-50"
+                      >
+                        <div className="flex-shrink-0 w-14 h-14 rounded-full bg-indigo-50 flex items-center justify-center shadow-inner">
+                          <FileCheck className="w-8 h-8 text-indigo-600" />
+                        </div>
+                        <p className="text-[17px] font-medium text-[#1e3a5f] leading-snug">
+                          &quot;Eliminate your accounting bottlenecks and ensure 100% compliance with automated financials.&quot;
+                        </p>
+                      </motion.div>
+                    </div>
+                  }
+                  showOverlay={false}
+                  textColor="dark"
+                />
+              </SwiperSlide>
             </Swiper>
           )}
         </div>
@@ -310,7 +474,14 @@ const HeroSlide = ({
   isActive = false,
   multiColorShadow = false,
   skipEntranceAnimation = false,
+  textColumnClass = "lg:-ml-12",
+  textWidthClass = "max-w-2xl",
+  containerClass = "px-4 sm:px-6 lg:px-8",
+  gridClass = "",
 }: any) => {
+  const defaultGridClass = image || customVisual ? 'lg:grid-cols-[52%_46%]' : 'lg:grid-cols-2';
+  const activeGridClass = gridClass || defaultGridClass;
+
   return (
     <div className="relative h-full w-full flex items-center">
       <div className="absolute inset-0 top-0 -z-10">
@@ -337,8 +508,8 @@ const HeroSlide = ({
         <div className="absolute inset-0 bg-linear-to-r from-black/55 via-black/55 to-transparent" />
       )}
 
-      <div className={`relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 ${image || customVisual ? 'lg:grid-cols-[52%_46%]' : 'lg:grid-cols-2'} gap-10 lg:gap-27 items-center`}>
-        <div className="max-w-2xl text-left lg:-ml-12">
+      <div className={`relative z-10 mx-auto max-w-6xl ${containerClass} w-full grid grid-cols-1 ${activeGridClass} gap-10 lg:gap-27 items-center`}>
+        <div className={`${textWidthClass} text-left ${textColumnClass}`}>
           <AnimatePresence mode="wait">
             {isActive && (
               <motion.div

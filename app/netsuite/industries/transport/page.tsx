@@ -56,6 +56,18 @@ const data: IndustryPageData = {
         "Accurate gross margin by shipment, lane, and customer. Automated AP for carrier invoices, multi-entity consolidation, and real-time financial dashboards.",
       image: "/images/people/global.webp",
     },
+    {
+      title: "Route Density & Optimization",
+      description:
+        "Optimize your transport network to increase route density and reduce empty miles. Gain visibility into lane profitability and make data-driven decisions on network expansion.",
+      image: "/images/lap/lap8_11zon.webp",
+    },
+    {
+      title: "Automated Compliance Tracking",
+      description:
+        "Manage driver manifests, vehicle inspections, and safety compliance docs and renewals automatically. Reduce risk and ensure your fleet is always road-ready.",
+      image: "/images/people/threeteam.webp",
+    },
   ],
   challenges: [
     {
@@ -81,6 +93,30 @@ const data: IndustryPageData = {
       description:
         "NetSuite's asset management module tracks vehicle maintenance, fuel, and depreciation per asset — automatically allocated to job costing for true cost visibility.",
       image: "/images/people/fourteam.webp",
+    },
+    {
+      title: "Inefficient Fuel Management",
+      description:
+        "Lack of visibility into fuel consumption leads to waste and high costs. NetSuite unifies fuel transaction data with vehicle performance metrics.",
+      image: "/images/lap/lap2.webp",
+    },
+    {
+      title: "Disconnected Driver Data",
+      description:
+        "Siloed driver records make it hard to manage performance and compliance. NetSuite consolidates driver data with operational and financial records.",
+      image: "/images/people/laptopgirl3.webp",
+    },
+    {
+      title: "Manual Proof of Delivery",
+      description:
+        "Slow POD processing delays client billing. NetSuite's mobile tools enable instant POD capture and automated billing triggers.",
+      image: "/images/lap/lap7_11zon.webp",
+    },
+    {
+      title: "Lack of Real-Time Tracking",
+      description:
+        "Fragmeted visibility into carrier location impacts customer service. NetSuite integrates with GPS and TMS for real-time shipment visibility.",
+      image: "/images/people/global.webp",
     },
   ],
   pricingTiers: [

@@ -61,6 +61,18 @@ const data: IndustryPageData = {
         "Automate deferred revenue recognition for multi-period subscriptions, bundled licences, and event revenue — fully compliant with ASC 606 / IFRS 15.",
       image: "/images/people/global.webp",
     },
+    {
+      title: "Multi-Channel Revenue Consolidation",
+      description:
+        "Unify revenue from subscriptions, digital ads, and physical sales in one place. Gain a holistic view of your audience's lifetime value across all platforms.",
+      image: "/images/people/laptopgirl3.webp",
+    },
+    {
+      title: "Automated Royalty Statements",
+      description:
+        "Eliminate the manual grind of calculating royalties. NetSuite generates accurate, branded statements for content creators and handles payments automatically.",
+      image: "/images/people/laptopgirl.webp",
+    },
   ],
   challenges: [
     {
@@ -86,6 +98,30 @@ const data: IndustryPageData = {
       description:
         "With all revenue streams flowing into a single NetSuite general ledger, financial close is automated — reducing close time by up to 50% each month.",
       image: "/images/people/fourteam.webp",
+    },
+    {
+      title: "Complex Licensing Terms",
+      description:
+        "Manually tracking complex usage rights and licensing agreements leads to compliance risks. NetSuite unifies rights management with financial data.",
+      image: "/images/people/laptopmen2.webp",
+    },
+    {
+      title: "Inaccurate Churn Analytics",
+      description:
+        "Siloed subscription data makes it hard to predict churn. NetSuite provides real-time churn metrics and cohort analysis for proactive retention.",
+      image: "/images/lap/lap2.webp",
+    },
+    {
+      title: "Fragmented Audience Data",
+      description:
+        "Disconnected audience insights prevent effective monetization. NetSuite integrates audience data to drive personalized content and ad targeting.",
+      image: "/images/lap/lap7_11zon.webp",
+    },
+    {
+      title: "Delayed Rights Management",
+      description:
+        "Slow processing of content rights impacts your ability to monetize. NetSuite speeds up rights management with automated workflows and real-time visibility.",
+      image: "/images/people/laptopgirl1.webp",
     },
   ],
   pricingTiers: [

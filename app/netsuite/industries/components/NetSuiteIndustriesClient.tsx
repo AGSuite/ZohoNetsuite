@@ -72,25 +72,8 @@ export default function NetSuiteIndustriesClient() {
 
   const industries = [
     {
-      category: "Manufacturing",
-      title: "Manufacturing",
-      subtitle: "Optimize Production & Supply Chain",
-      description:
-        "NetSuite provides a unified manufacturing solution that connects floor operations with core business processes. Streamline production, optimize inventory, and improve quality control to accelerate time-to-market.",
-      highlights: [
-        "Production & routing management",
-        "WIP & routing tracking",
-        "Quality assurance & control",
-        "Advanced inventory management",
-      ],
-      link: "/netsuite/industries/manufacturing",
-      image: "/images/industries/manufacture-compressed-1.webp",
-      icon: Package,
-      tag: "Manufacturing",
-    },
-    {
       category: "Software & Tech",
-      title: "Software & Tech Companies",
+      title: "Software & Technology",
       subtitle: "Accelerate Growth & Scale Globally",
       description:
         "Automate complex billing, revenue recognition, and financial consolidations. NetSuite gives software companies real-time visibility into subscription metrics, helping you navigate rapid growth and prepare for IPO.",
@@ -101,27 +84,26 @@ export default function NetSuiteIndustriesClient() {
         "SaaS metrics & reporting",
       ],
       link: "/netsuite/industries/software",
-      image:
-        "/images/industries/logistics-means-transport-together-with-technological-futuristic-holograms (2)_11zon.jpg",
+      image: "/images/industries/software-tech-main.png",
       icon: Code,
       tag: "Technology",
     },
     {
-      category: "Retail",
-      title: "Retail",
-      subtitle: "Deliver Seamless Omnichannel Experiences",
+      category: "Professional Services",
+      title: "IT & Professional Services",
+      subtitle: "Streamline Project Delivery & Billing",
       description:
-        "Connect your ecommerce, POS, and order management with financial and inventory systems. NetSuite empowers retailers to provide consistent, personalized shopping experiences across every customer touchpoint.",
+        "Maximize resource utilization, streamline project accounting, and automate billing. NetSuite helps IT services firms deliver projects on time and on budget while ensuring accurate revenue recognition.",
       highlights: [
-        "Unified omnichannel commerce",
-        "Real-time inventory visibility",
-        "Intelligent order routing",
-        "Customer 360 profile",
+        "Resource management & scheduling",
+        "Project accounting & billing",
+        "Time & expense tracking",
+        "Services profitability reporting",
       ],
-      link: "/netsuite/industries/retail",
-      image: "/images/industries/ecommerce.webp",
-      icon: ShoppingCart,
-      tag: "Omnichannel",
+      link: "/netsuite/industries/it-services",
+      image: "/images/industries/it-services-main.png",
+      icon: Briefcase,
+      tag: "Services",
     },
     {
       category: "Wholesale Distribution",
@@ -141,21 +123,21 @@ export default function NetSuiteIndustriesClient() {
       tag: "Distribution",
     },
     {
-      category: "Professional Services",
-      title: "IT Services",
-      subtitle: "Streamline Project Delivery & Billing",
+      category: "Advertising",
+      title: "Advertising & Marketing",
+      subtitle: "Manage Campaigns & Margins Effectively",
       description:
-        "Maximize resource utilization, streamline project accounting, and automate billing. NetSuite helps IT services firms deliver projects on time and on budget while ensuring accurate revenue recognition.",
+        "Integrate your project management and financials to gain real-time visibility into campaign profitability. NetSuite helps agencies optimize resource allocation and improve cash flow.",
       highlights: [
-        "Resource management & scheduling",
-        "Project accounting & billing",
-        "Time & expense tracking",
-        "Services profitability reporting",
+        "Campaign profitability tracking",
+        "Resource utilization",
+        "Client and vendor billing",
+        "Financial reporting & analysis",
       ],
-      link: "/netsuite/industries/it-services",
-      image: "/images/industries/Professional-Services-compressed-1 (1).webp",
-      icon: Briefcase,
-      tag: "Services",
+      link: "/netsuite/industries/advertising-marketing",
+      image: "/images/industries/marketing.jpg",
+      icon: Megaphone,
+      tag: "Agencies",
     },
     {
       category: "Media & Publishing",
@@ -175,21 +157,21 @@ export default function NetSuiteIndustriesClient() {
       tag: "Media",
     },
     {
-      category: "Advertising",
-      title: "Advertising & Digital Marketing",
-      subtitle: "Manage Campaigns & Margins Effectively",
+      category: "Retail",
+      title: "Retail & E-Commerce",
+      subtitle: "Deliver Seamless Omnichannel Experiences",
       description:
-        "Integrate your project management and financials to gain real-time visibility into campaign profitability. NetSuite helps agencies optimize resource allocation and improve cash flow.",
+        "Connect your ecommerce, POS, and order management with financial and inventory systems. NetSuite empowers retailers to provide consistent, personalized shopping experiences across every customer touchpoint.",
       highlights: [
-        "Campaign profitability tracking",
-        "Resource utilization",
-        "Client and vendor billing",
-        "Financial reporting & analysis",
+        "Unified omnichannel commerce",
+        "Real-time inventory visibility",
+        "Intelligent order routing",
+        "Customer 360 profile",
       ],
-      link: "/netsuite/industries/advertising-marketing",
-      image: "/images/industries/marketing.jpg",
-      icon: Megaphone,
-      tag: "Agencies",
+      link: "/netsuite/industries/retail",
+      image: "/images/industries/ecommerce.webp",
+      icon: ShoppingCart,
+      tag: "Omnichannel",
     },
     {
       category: "Transportation",
@@ -204,9 +186,27 @@ export default function NetSuiteIndustriesClient() {
         "Real-time financial visibility",
       ],
       link: "/netsuite/industries/transport",
-      image: "/images/lap/lap4.webp",
+      image:
+        "/images/industries/logistics-means-transport-together-with-technological-futuristic-holograms (2)_11zon.jpg",
       icon: Map,
       tag: "Logistics",
+    },
+    {
+      category: "Manufacturing",
+      title: "Manufacturing",
+      subtitle: "Optimize Production & Supply Chain",
+      description:
+        "NetSuite provides a unified manufacturing solution that connects floor operations with core business processes. Streamline production, optimize inventory, and improve quality control to accelerate time-to-market.",
+      highlights: [
+        "Production & routing management",
+        "WIP & routing tracking",
+        "Quality assurance & control",
+        "Advanced inventory management",
+      ],
+      link: "/netsuite/industries/manufacturing",
+      image: "/images/industries/manufacture-compressed-1.webp",
+      icon: Package,
+      tag: "Manufacturing",
     },
   ];
 
@@ -293,7 +293,7 @@ export default function NetSuiteIndustriesClient() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15]"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  Oracle NetSuite Industries
+                  Expert Oracle NetSuite Services for Your Industry
                 </span>
               </motion.h1>
               <motion.div
@@ -308,10 +308,7 @@ export default function NetSuiteIndustriesClient() {
                 transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8"
               >
-                NetSuite delivers unified business management solutions tailored
-                for specific industries. Discover how we can help your
-                organization overcome sector-specific challenges and accelerate
-                growth.
+                At AGSuite, we provide comprehensive NetSuite services tailored to the specific needs of diverse sectors. From rapid implementation to complex integrations, we help industries like Software, Manufacturing, and Retail scale with the world's leading cloud ERP.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 15 }}

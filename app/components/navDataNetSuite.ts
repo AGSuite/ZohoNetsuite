@@ -98,55 +98,55 @@ export const navItemsNetSuite: NavSection[] = [
                         {
                             title: 'Core ERP',
                             items: [
-                                { label: 'NetSuite ERP', href: '/netsuite/solutions/core-erp/erp' },
-                                { label: 'NetSuite Accounting Software', href: '/netsuite/solutions/core-erp/accounting' },
-                                { label: 'Global Business Management', href: '/netsuite/solutions/core-erp/global-business' },
+                                { label: 'NetSuite ERP', href: '/netsuite-erp-solution' },
+                                { label: 'NetSuite Accounting Software', href: '/netsuite-accounting-services' },
+                                { label: 'Global Business Management', href: '/global-business-management' },
                             ]
                         },
                         {
                             title: 'Customer Management',
                             items: [
-                                { label: 'NetSuite CRM', href: '/netsuite/solutions/customer-management/crm' },
+                                { label: 'NetSuite CRM', href: '/netsuite-crm-solutions' },
                             ]
                         },
                         {
                             title: 'Project Management',
                             items: [
-                                { label: 'NetSuite SRP', href: '/netsuite/solutions/project-management/srp' },
-                                { label: 'SuiteProject Pro (OpenAir)', href: '/netsuite/solutions/project-management/openair' },
+                                { label: 'NetSuite SRP', href: '/service-resource-planning' },
+                                { label: 'SuiteProject Pro (OpenAir)', href: '/netsuite-open-air-solution' },
                             ]
                         },
                         {
                             title: 'Analytics & Intelligence',
                             items: [
-                                { label: 'NetSuite Business Intelligence', href: '/netsuite/solutions/analytics/bi' },
-                                { label: 'NetSuite Analytics Warehouse', href: '/netsuite/solutions/analytics/warehouse' },
-                                { label: 'Artificial Intelligence in NetSuite', href: '/netsuite/solutions/analytics/ai' },
+                                { label: 'NetSuite Business Intelligence', href: '/netsuite-business-intelligence' },
+                                { label: 'NetSuite Analytics Warehouse', href: '/netsuite-analytics-warehouse' },
+                                { label: 'Artificial Intelligence in NetSuite', href: '/artificial-intelligence-ai' },
                             ]
                         },
                         {
                             title: 'E-Commerce',
                             items: [
-                                { label: 'NetSuite E-Commerce', href: '/netsuite/solutions/ecommerce/main' },
+                                { label: 'NetSuite E-Commerce', href: '/netsuite-suite-commerce-site-builder' },
                             ]
                         },
                         {
                             title: 'Specialized Solutions',
                             items: [
-                                { label: 'SuiteSuccess', href: '/netsuite/solutions/specialized/suitesuccess' },
-                                { label: 'India Localization for NetSuite', href: '/netsuite/solutions/specialized/india-localization' },
+                                { label: 'SuiteSuccess', href: '/netsuite-suitesuccess' },
+                                { label: 'India Localization for NetSuite', href: '/india-localization-for-netsuite' },
                             ]
                         },
                         {
                             title: 'Planning & Budgeting',
                             items: [
-                                { label: 'NetSuite Planning and Budgeting', href: '/netsuite/solutions/planning/main' },
+                                { label: 'NetSuite Planning and Budgeting', href: '/netsuite-planning-and-budgeting' },
                             ]
                         },
                         {
                             title: 'Why Choose NetSuite',
                             items: [
-                                { label: 'Why NetSuite', href: '/netsuite/solutions/why-netsuite/main' },
+                                { label: 'Why NetSuite', href: '/why-netsuite' },
                             ]
                         },
                     ],

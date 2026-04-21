@@ -100,85 +100,90 @@ export const navItemsZoho: NavSection[] = [
                         {
                             title: "Sales",
                             items: [
-                                { label: "Zoho CRM", href: "/zoho/solutions/sales/zoho-crm" },
-                                { label: "Zoho CRM Plus", href: "/zoho/solutions/sales/zoho-crm-plus" },
-                                { label: "Zoho Bigin", href: "/zoho/solutions/sales/zoho-bigin" },
+                                { label: "Zoho CRM", href: "/zoho-crm" },
+                                { label: "Zoho CRM Plus", href: "/zoho-crm-plus" },
+                                { label: "Zoho Bigin", href: "/zoho-bigin" },
                             ]
                         },
                         {
                             title: "HR",
                             items: [
-                                { label: "Zoho People", href: "/zoho/solutions/hr/zoho-people" },
-                                { label: "Zoho Recruit", href: "/zoho/solutions/hr/zoho-recruit" },
-                                { label: "Zoho People Plus", href: "/zoho/solutions/hr/zoho-people-plus" },
-                                { label: "Zoho Payroll", href: "/zoho/solutions/hr/zoho-payroll" },
-                                { label: "Zoho Expense", href: "/zoho/solutions/hr/zoho-expense" },
+                                { label: "Zoho People", href: "/zoho-people" },
+                                { label: "Zoho Recruit", href: "/zoho-recruit-hiring-software" },
+                                { label: "Zoho People Plus", href: "/zoho-people-plus" },
+                                { label: "Zoho Payroll", href: "/zoho-payroll" },
+                                { label: "Zoho Expense", href: "/zoho-expense" },
                             ]
                         },
                         {
                             title: "Finance",
                             items: [
-                                { label: "Zoho Books", href: "/zoho/solutions/finance/zoho-books" },
-                                { label: "Zoho Inventory", href: "/zoho/solutions/finance/zoho-inventory" },
-                                { label: "Zoho Finance Plus", href: "/zoho/solutions/finance/zoho-finance-plus" },
+                                { label: "Zoho Books", href: "/zoho-books-accounting-software" },
+                                { label: "Zoho Inventory", href: "/zoho-inventory-software" },
+                                { label: "Zoho Payroll", href: "/zoho-payroll" },
+                                { label: "Zoho Finance Plus", href: "/zoho-finance-plus" },
+                                { label: "Zoho Expense", href: "/zoho-expense" },
                             ]
                         },
                         {
                             title: "Projects",
                             items: [
-                                { label: "Zoho Projects", href: "/zoho/solutions/projects/zoho-projects" },
-                                { label: "Zoho Sprints", href: "/zoho/solutions/projects/zoho-sprints" },
+                                { label: "Zoho Projects", href: "/zoho-projects" },
+                                { label: "Zoho Sprints", href: "/zoho-sprint" },
                             ]
                         },
                         {
                             title: "Service",
                             items: [
-                                { label: "Zoho Desk", href: "/zoho/solutions/service/zoho-desk" },
-                                { label: "Zoho SalesIQ", href: "/zoho/solutions/service/zoho-sales-iq" },
-                                { label: "Zoho FSM", href: "/zoho/solutions/service/zoho-fsm" },
+                                { label: "Zoho Desk", href: "/zoho-desk" },
+                                { label: "Zoho SalesIQ", href: "/zoho-salesiq-implementation" },
+                                { label: "Zoho FSM", href: "/zoho-fsm" },
                             ]
                         },
                         {
                             title: "Email & Collaboration",
                             items: [
-                                { label: "Zoho Mail", href: "/zoho/solutions/email-collab/zoho-mail" },
-                                { label: "Zoho Workplace", href: "/zoho/solutions/email-collab/zoho-workplace" },
+                                { label: "Zoho Mail", href: "/zoho-mail" },
+                                { label: "Zoho Workplace", href: "/zoho-workplace" },
                             ]
                         },
                         {
                             title: "Marketing",
                             items: [
-                                { label: "Zoho Sites", href: "/zoho/solutions/marketing/zoho-sites" },
-                                { label: "Zoho Social", href: "/zoho/solutions/marketing/zoho-social" },
-                                { label: "Zoho Commerce", href: "/zoho/solutions/marketing/zoho-commerce" },
-                                { label: "Zoho Marketing Automation", href: "/zoho/solutions/marketing/zoho-marketing-automation" },
-                                { label: "Zoho Marketing Plus", href: "/zoho/solutions/marketing/zoho-marketing-plus" },
+                                { label: "Zoho Sites", href: "/zoho-sites" },
+                                { label: "Zoho Social", href: "/zoho-social-media-management" },
+                                { label: "Zoho Commerce", href: "/zoho-commerce" },
+                                { label: "Zoho Marketing Automation", href: "/zoho-marketing-automation" },
+                                { label: "Zoho Marketing Plus", href: "/zoho-marketing-plus" },
+                                { label: "Zoho SalesIQ", href: "/zoho-salesiq-implementation" },
                             ]
                         },
                         {
                             title: "BI & Analytics",
                             items: [
-                                { label: "Zoho Analytics", href: "/zoho/solutions/analytics/zoho-analytics" },
-                                { label: "Zoho Flow", href: "/zoho/solutions/analytics/zoho-flow" },
+                                { label: "Zoho Analytics", href: "/zoho-analytics" },
+                                { label: "Zoho Flow", href: "/zoho-flow" },
                             ]
                         },
                         {
                             title: "Dev Platforms",
                             items: [
-                                { label: "Zoho Creator", href: "/zoho/solutions/dev-platforms/zoho-creator" },
-                                { label: "Zoho Catalyst", href: "/zoho/solutions/dev-platforms/zoho-catalyst" },
+                                { label: "Zoho Creator", href: "/zoho-creator" },
+                                { label: "Zoho Catalyst", href: "/zoho-catalyst" },
                             ]
                         },
                         {
                             title: "IT Management",
                             items: [
-                                { label: "Zoho IT Management", href: "/zoho/solutions/it-management/zoho-it-management" },
+                                { label: "Zoho Creator", href: "/zoho-creator" },
+                                { label: "Zoho IT Management", href: "/zoho-it-management" },
                             ]
                         },
                         {
                             title: "Complete Suite",
                             items: [
-                                { label: "Zoho One", href: "/zoho/solutions/it-management/zoho-one" },
+                                { label: "Zoho One", href: "/zoho-one" },
+                                { label: "Zoho ERP", href: "/zoho-erp" },
                             ]
                         }
                     ]

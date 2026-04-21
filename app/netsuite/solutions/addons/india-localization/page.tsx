@@ -9,11 +9,18 @@ import {
   FileText, ShieldCheck, Globe, BarChart3, Zap, Users, ArrowRight, Check,
   ChevronRight, CheckCircle2, TrendingUp, Layers, Receipt, Building2,
 } from "lucide-react";
+import dynamic from "next/dynamic";
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
 import NSServicesSection from "@/app/netsuite/components/NSServicesSection";
 
+const IndiaComplianceCircle = dynamic(() => import("./components/IndiaComplianceCircle"), {
+  ssr: false,
+});
+
 const PARTICLES = [{ w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 }, { w: 1.4, h: 2.1, top: 28, left: 22, dur: 4.1, delay: 1.2 }, { w: 2.8, h: 1.2, top: 45, left: 37, dur: 6.3, delay: 0.8 }, { w: 2.3, h: 1.8, top: 78, left: 70, dur: 5.5, delay: 0.3 }, { w: 2.6, h: 2.0, top: 5, left: 50, dur: 3.5, delay: 0.6 }, { w: 1.9, h: 1.3, top: 33, left: 72, dur: 6.1, delay: 1.4 }];
+
+
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
@@ -51,40 +58,28 @@ export default function IndiaLocalizationPage() {
 
   const benefits = [
     {
-      title: "GST Automation End-to-End",
-      description: "From transaction creation to GSTR filing — every GST step is automated inside NetSuite. CGST/SGST/IGST is calculated correctly on every invoice and credit note, ITC is tracked automatically, and GSTR reports are generated ready for filing without any manual data entry.",
+      title: "Compliance Confidence",
+      description: "Stay aligned with Indian GST regulations and IRP mandates. Our solution ensures every transaction is GST-correct and audit-ready, keeping your business fully compliant with the latest GSTN and Income Tax regulations.",
       image: "/images/lap/lap4.webp",
-      points: ["Auto CGST/SGST/IGST computation", "ITC ledger and reconciliation", "GSTR-1, 3B, 9 filing reports", "Real-time GST liability dashboard"],
+      points: ["100% GST Regulation compliance", "Real-time IRP integration", "Mandatory e-invoicing support", "Error-free tax computation"],
     },
     {
-      title: "E-Invoicing & IRP Compliance",
-      description: "Stay ahead of GSTN's mandatory e-invoicing requirements. Our solution auto-generates the JSON payload, submits to the IRP, retrieves the signed e-invoice with IRN and QR code, and embeds it directly on your NetSuite PDF invoice — all in under 30 seconds.",
+      title: "Automation & Accuracy",
+      description: "Reduce manual errors in tax computation and filings. Automate complex GST state-wise tax logic, TDS deduction cycles, and e-Way Bill distance calculations directly within your NetSuite environment.",
       image: "/images/lap/lap2.webp",
-      points: ["IRP API integration", "IRN generation and embedding", "QR code on invoice PDF", "Cancellation and amendment support"],
+      points: ["Automated GSTR-1, 3B reporting", "Error-free TDS/TCS calculation", "Eliminate manual data entry", "Real-time compliance validation"],
     },
     {
-      title: "TDS/TCS Automation",
-      description: "Automate the complete TDS and TCS lifecycle — section-wise rate application, threshold tracking, deduction, certificate generation (Form 16/16A), and quarterly filing returns — eliminating the risk of non-compliance penalties.",
+      title: "Operational Efficiency",
+      description: "Accelerate invoicing and month-end closure. Speed up your supply chain with instant e-Way Bill generation and automated tax posting that keeps your finance team focused on growth, not paperwork.",
       image: "/images/people/laptopmen2.webp",
-      points: ["Section-wise TDS rates", "Threshold-based deduction logic", "Form 16 & 16A generation", "26Q/27Q filing reports"],
+      points: ["Fast e-invoice IRN retrieval", "Batch e-Way Bill generation", "Seamless period-end closing", "Optimized finance workflows"],
     },
     {
-      title: "E-Way Bill Management",
-      description: "Generate e-Way Bills directly from NetSuite delivery orders and invoices. Our solution validates transporter details, calculates distance-based validity, supports Part-B updates, and provides bulk generation for high-volume dispatches.",
-      image: "/images/lap/lap3.webp",
-      points: ["Direct NIC portal integration", "Transporter detail sync", "Part-B update support", "Bulk e-Way Bill generation"],
-    },
-    {
-      title: "Multi-State & Multi-GSTIN",
-      description: "Manage multiple GSTIN registrations across different Indian states from a single NetSuite account. Each state entity maintains its own GST ledger, ITC register, and filing calendar — with consolidated group reporting at the holding company level.",
-      image: "/images/people/fourteam.webp",
-      points: ["Unlimited GSTIN registrations", "State-wise ITC separation", "Inter-state transaction handling", "Consolidated group compliance reports"],
-    },
-    {
-      title: "Audit-Ready Documentation",
-      description: "Every GST transaction creates a tamper-proof audit trail with full details of tax computation, applicable rate, HSN/SAC code, and the responsible user — giving you complete confidence during GST assessments, scrutiny notices, and annual audits.",
+      title: "Audit Transparency",
+      description: "Generate structured, drill-down reports instantly. Access a complete, tamper-proof audit trail of every tax posting, HSN/SAC code application, and tax rate history for complete internal and external transparency.",
       image: "/images/lap/lap5.webp",
-      points: ["Transaction-level audit trail", "HSN/SAC code validation", "Tax rate change history", "Notice response data export"],
+      points: ["Transaction-level drill-down", "Complete audit trail logs", "Ready-to-use tax ledgers", "Instantly exportable reports"],
     },
   ];
 
@@ -125,21 +120,15 @@ export default function IndiaLocalizationPage() {
               </motion.div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
-              <div className="relative w-[88%] ml-auto">
-                <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/lap/lap5.webp" alt="NetSuite India Localization" fill className="object-cover object-center" priority />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }} className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}><FileText className="w-5 h-5 text-white" /></div>
-                    <div><p className="text-gray-900 text-sm font-bold">India Tax Compliance Suite</p><p className="text-gray-500 text-xs mt-0.5">GST · TDS · E-Invoice · E-Way Bill · GSTR</p></div>
-                  </motion.div>
-                </div>
-                <motion.div initial={{ opacity: 0, x: -20, y: -10 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ delay: 0.8 }} className="absolute -top-5 -left-10 flex items-center gap-3.5 bg-white rounded-2xl px-4 py-3 shadow-2xl border border-gray-100">
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}><Building2 className="w-5 h-5 text-white" /></div>
-                  <div><p className="text-gray-900 text-[13px] font-bold whitespace-nowrap">Made for India · Built for NetSuite</p><p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">GST · GSTN · IRP · NIC · Income Tax</p></div>
-                </motion.div>
-              </div>
+            {/* Hero Right — India Compliance Circular Diagram */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.0, delay: 0.4 }}
+              className="relative hidden lg:flex items-center justify-center"
+              style={{ minHeight: 460 }}
+            >
+              <IndiaComplianceCircle />
             </motion.div>
           </div>
 
@@ -246,7 +235,7 @@ export default function IndiaLocalizationPage() {
                   className={`group w-full flex flex-col px-5 py-4 text-left rounded-xl transition-all duration-300 outline-none ${activeBenefit === index ? 'bg-white shadow-xl border-l-4 border-blue-600' : 'bg-white/5 border-l-4 border-transparent hover:bg-white/10'}`}>
                   <div className="flex items-center gap-4 w-full">
                     <div className={`shrink-0 transition-colors ${activeBenefit === index ? 'text-blue-600' : 'text-gray-400 group-hover:text-gray-200'}`}>
-                      {index === 0 ? <FileText size={20} /> : index === 1 ? <ShieldCheck size={20} /> : index === 2 ? <Receipt size={20} /> : index === 3 ? <Layers size={20} /> : index === 4 ? <Globe size={20} /> : <BarChart3 size={20} />}
+                      {index === 0 ? <ShieldCheck size={20} /> : index === 1 ? <Zap size={20} /> : index === 2 ? <TrendingUp size={20} /> : <BarChart3 size={20} />}
                     </div>
                     <span className={`text-base md:text-lg flex-1 font-semibold ${activeBenefit === index ? 'text-gray-900' : 'text-gray-300'}`}>{item.title}</span>
                     <ChevronRight className={`w-4 h-4 shrink-0 ${activeBenefit === index ? 'text-blue-600 rotate-90' : 'text-gray-500 opacity-0 group-hover:opacity-60'}`} />

@@ -84,7 +84,7 @@ export default function DigitalTransformationPage() {
 
   const services = [
     {
-      title: "ERP Modernization",
+      title: "ERP Integration",
       description:
         "Replace siloed legacy ERPs with NetSuite's unified cloud-native platform — eliminating data silos, manual reconciliations, and costly custom code.",
       image: "/images/lap/lap1.webp",
@@ -776,11 +776,10 @@ export default function DigitalTransformationPage() {
                 <button
                   key={index}
                   onClick={() => setActiveBenefit(index)}
-                  className={`group relative w-full flex flex-col justify-center px-5 py-4 text-left rounded-xl transition-all duration-300 outline-none ${
-                    activeBenefit === index
-                      ? "bg-white shadow-xl border-l-4 border-blue-600"
-                      : "bg-white/5 border-l-4 border-transparent hover:bg-white/10"
-                  }`}
+                  className={`group relative w-full flex flex-col justify-center px-5 py-4 text-left rounded-xl transition-all duration-300 outline-none ${activeBenefit === index
+                    ? "bg-white shadow-xl border-l-4 border-blue-600"
+                    : "bg-white/5 border-l-4 border-transparent hover:bg-white/10"
+                    }`}
                   suppressHydrationWarning
                 >
                   <div className="flex items-center gap-4 w-full">

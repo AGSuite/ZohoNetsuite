@@ -245,9 +245,9 @@ type CounterItem = {
 };
 
 const counters: CounterItem[] = [
-  { label: 'Projects Completed', value: 500, icon: Target, suffix: "+" },
+  { label: 'Projects Completed', value: 600, icon: Target, suffix: "+" },
   { label: 'Global Customers', value: 200, icon: Building2, suffix: "+" },
-  { label: 'Industry Expertise', value: 10, icon: UserCog, suffix: "+" },
+  { label: 'Industry Expertise', value: 40, icon: UserCog, suffix: "+" },
   { label: 'Customer Retention', value: 84, icon: Heart, suffix: "%" },
   { label: 'Years Experience', value: 15, icon: Rocket, suffix: "+" },
   { label: 'Countries Serving', value: 10, icon: Globe2, suffix: "+" },
@@ -486,7 +486,7 @@ function StrategicPartnersSection() {
             >
               <div className="bg-transparent p-4 rounded-2xl border border-white/10 shadow-2xl">
                 <Image
-                  src="/images/netsuiteimages/netsuitelogos/netsuitepartner.webp"
+                  src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
                   alt="Oracle NetSuite Partner Logo"
                   width={400}
                   height={150}

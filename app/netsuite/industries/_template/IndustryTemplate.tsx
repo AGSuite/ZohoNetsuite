@@ -301,10 +301,10 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                   </motion.span>
                 </Link>
                 <Link
-                  href="#benefits"
+                  href="#challenges"
                   className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-medium rounded-full border border-white/15 text-white/70 hover:text-white hover:border-white/40 transition-all duration-300"
                 >
-                  Explore Benefits
+                  View Challenges
                 </Link>
               </motion.div>
             </motion.div>
@@ -421,8 +421,8 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
             {[
               { label: "Overview", href: "#overview" },
-              { label: "Benefits", href: "#benefits" },
               { label: "Challenges", href: "#challenges" },
+              { label: "Benefits", href: "#benefits" },
               { label: "Services", href: "#services" },
               { label: "Pricing", href: "#pricing" },
               { label: "FAQ", href: "#faq" },
@@ -511,6 +511,155 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                 </Link>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════ CHALLENGES AND SOLUTIONS ══════ */}
+      <section
+        id="challenges"
+        className="py-24 bg-gray-50 relative overflow-hidden scroll-mt-36"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="bg-blue-600/10 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+              Challenges &amp; Solutions
+            </span>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-6 mb-4">
+              Overcome {data.industry} Challenges
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              See how NetSuite turns your biggest operational hurdles into
+              competitive advantages.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8 items-start">
+            {data.challenges.map((item, index) => {
+              const isOpen = openChallenge === index;
+              const fallbackColors = [
+                "14,108,130", // Teal
+                "40,65,145", // Royal Blue
+                "125,42,88", // Berry/Purple
+                "18,108,72", // Green
+                "145,75,18", // Orange/Brown
+                "65,45,130", // Deep Purple
+                "20,88,115", // Ocean Blue
+                "95,30,105", // Magenta
+              ];
+              const rgb =
+                item.rgb || fallbackColors[index % fallbackColors.length];
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.06,
+                    ease: "easeOut",
+                  }}
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
+                >
+                  <div
+                    className="relative h-44 shrink-0 overflow-hidden cursor-pointer"
+                    onClick={() => setOpenChallenge(isOpen ? null : index)}
+                  >
+                    <Image
+                      src={item.image || "/images/lap/lap1.webp"}
+                      alt={item.title}
+                      fill
+                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background: `linear-gradient(to bottom, transparent 0%, rgba(${rgb},0.4) 70%, rgba(${rgb},1) 100%)`,
+                      }}
+                    />
+                  </div>
+                  <div
+                    className="flex-1 flex flex-col relative transition-colors duration-500"
+                    style={{
+                      backgroundColor: isOpen ? "white" : `rgb(${rgb})`,
+                    }}
+                  >
+                    <div
+                      className="p-5 pb-3 cursor-pointer"
+                      onClick={() => setOpenChallenge(isOpen ? null : index)}
+                      style={{ backgroundColor: `rgb(${rgb})` }}
+                    >
+                      <span className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-1 block">
+                        Challenge
+                      </span>
+                      <h4 className="text-white font-bold text-lg tracking-wide leading-tight">
+                        {item.title}
+                      </h4>
+                    </div>
+
+                    <div className="flex-1 flex flex-col px-5 relative bg-transparent">
+                      <AnimatePresence mode="wait">
+                        {!isOpen ? (
+                          <motion.div
+                            key="challenge"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="px-5 pb-6 pt-2 cursor-pointer"
+                            onClick={() => setOpenChallenge(index)}
+                          >
+                            <span className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase tracking-widest text-[10px] px-5 py-2.5 rounded-full shadow-md hover:bg-gray-100 transition-all">
+                              See Solution{" "}
+                              <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                            </span>
+                          </motion.div>
+                        ) : (
+                          <motion.div
+                            key="solution"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.2 }}
+                            className="px-5 pb-7 pt-2 cursor-pointer flex flex-col"
+                            onClick={() => setOpenChallenge(null)}
+                          >
+                            <div className="mt-3">
+                              <span className="text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-1 block">
+                                Solution
+                              </span>
+                              <p className="text-gray-700 text-sm leading-relaxed">
+                                {item.solution || item.description}
+                              </p>
+                            </div>
+                            <div
+                              className="mt-5"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <Link
+                                href={item.link || "#contact-form"}
+                                className="inline-flex items-center gap-2 bg-blue-600 text-white font-bold uppercase tracking-widest text-[10px] px-5 py-2.5 rounded-full shadow-md hover:bg-blue-700 transition-all"
+                              >
+                                {item.link ? "Know More" : "Ask Us"}{" "}
+                                <ArrowRight size={10} />
+                              </Link>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 z-10" />
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -669,155 +818,6 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                 );
               })}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════ CHALLENGES AND SOLUTIONS ══════ */}
-      <section
-        id="challenges"
-        className="py-24 bg-gray-50 relative overflow-hidden scroll-mt-36"
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="bg-blue-600/10 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
-              Challenges &amp; Solutions
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-6 mb-4">
-              Overcome {data.industry} Challenges
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              See how NetSuite turns your biggest operational hurdles into
-              competitive advantages.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8 items-start">
-            {data.challenges.map((item, index) => {
-              const isOpen = openChallenge === index;
-              const fallbackColors = [
-                "14,108,130", // Teal
-                "40,65,145", // Royal Blue
-                "125,42,88", // Berry/Purple
-                "18,108,72", // Green
-                "145,75,18", // Orange/Brown
-                "65,45,130", // Deep Purple
-                "20,88,115", // Ocean Blue
-                "95,30,105", // Magenta
-              ];
-              const rgb =
-                item.rgb || fallbackColors[index % fallbackColors.length];
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.6,
-                    delay: index * 0.06,
-                    ease: "easeOut",
-                  }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
-                >
-                  <div
-                    className="relative h-44 shrink-0 overflow-hidden cursor-pointer"
-                    onClick={() => setOpenChallenge(isOpen ? null : index)}
-                  >
-                    <Image
-                      src={item.image || "/images/lap/lap1.webp"}
-                      alt={item.title}
-                      fill
-                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div
-                      className="absolute inset-0"
-                      style={{
-                        background: `linear-gradient(to bottom, transparent 0%, rgba(${rgb},0.4) 70%, rgba(${rgb},1) 100%)`,
-                      }}
-                    />
-                  </div>
-                  <div
-                    className="flex-1 flex flex-col relative transition-colors duration-500"
-                    style={{
-                      backgroundColor: isOpen ? "white" : `rgb(${rgb})`,
-                    }}
-                  >
-                    <div
-                      className="p-5 pb-3 cursor-pointer"
-                      onClick={() => setOpenChallenge(isOpen ? null : index)}
-                      style={{ backgroundColor: `rgb(${rgb})` }}
-                    >
-                      <span className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-1 block">
-                        Challenge
-                      </span>
-                      <h4 className="text-white font-bold text-lg tracking-wide leading-tight">
-                        {item.title}
-                      </h4>
-                    </div>
-
-                    <div className="flex-1 flex flex-col px-5 relative bg-transparent">
-                      <AnimatePresence mode="wait">
-                        {!isOpen ? (
-                          <motion.div
-                            key="challenge"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="px-5 pb-6 pt-2 cursor-pointer"
-                            onClick={() => setOpenChallenge(index)}
-                          >
-                            <span className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase tracking-widest text-[10px] px-5 py-2.5 rounded-full shadow-md hover:bg-gray-100 transition-all">
-                              See Solution{" "}
-                              <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                            </span>
-                          </motion.div>
-                        ) : (
-                          <motion.div
-                            key="solution"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.2 }}
-                            className="px-5 pb-7 pt-2 cursor-pointer flex flex-col"
-                            onClick={() => setOpenChallenge(null)}
-                          >
-                            <div className="mt-3">
-                              <span className="text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-1 block">
-                                Solution
-                              </span>
-                              <p className="text-gray-700 text-sm leading-relaxed">
-                                {item.solution || item.description}
-                              </p>
-                            </div>
-                            <div
-                              className="mt-5"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              <Link
-                                href={item.link || "#contact-form"}
-                                className="inline-flex items-center gap-2 bg-blue-600 text-white font-bold uppercase tracking-widest text-[10px] px-5 py-2.5 rounded-full shadow-md hover:bg-blue-700 transition-all"
-                              >
-                                {item.link ? "Know More" : "Ask Us"}{" "}
-                                <ArrowRight size={10} />
-                              </Link>
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 z-10" />
-                  </div>
-                </motion.div>
-              );
-            })}
           </div>
         </div>
       </section>

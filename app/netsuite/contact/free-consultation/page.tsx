@@ -37,6 +37,27 @@ declare global {
 
 export default function FreeConsultation() {
     const [isClient, setIsClient] = useState(false);
+    const [selectedCode, setSelectedCode] = useState('+91');
+
+    const COUNTRY_CODES = [
+        { code: '+91', label: 'IN (+91)' },
+        { code: '+1', label: 'US (+1)' },
+        { code: '+44', label: 'UK (+44)' },
+        { code: '+971', label: 'UAE (+971)' },
+        { code: '+966', label: 'KSA (+966)' },
+        { code: '+974', label: 'QA (+974)' },
+        { code: '+965', label: 'KW (+965)' },
+        { code: '+968', label: 'OM (+968)' },
+        { code: '+973', label: 'BH (+973)' },
+        { code: '+65', label: 'SG (+65)' },
+        { code: '+61', label: 'AU (+61)' },
+        { code: '+31', label: 'NL (+31)' },
+        { code: '+353', label: 'IE (+353)' },
+        { code: '+49', label: 'DE (+49)' },
+        { code: '+33', label: 'FR (+33)' },
+        { code: '+27', label: 'ZA (+27)' },
+        { code: '+852', label: 'HK (+852)' },
+    ];
 
     useEffect(() => {
         setIsClient(true);
@@ -69,6 +90,11 @@ export default function FreeConsultation() {
                 const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
                 if (fieldObj && fieldObj.value.replace(/^\s+|\s+$/g, '').length === 0) {
                     alert(fldLangVal[i] + ' cannot be empty.');
+                    fieldObj.focus();
+                    return false;
+                }
+                if (fieldObj && fieldObj.name === 'Mobile' && fieldObj.value.replace(/\D/g, '').length !== 10) {
+                    alert('Please enter a valid 10-digit mobile number.');
                     fieldObj.focus();
                     return false;
                 }
@@ -149,6 +175,12 @@ export default function FreeConsultation() {
         if (window.checkMandatory409531000026445204_nsc && !window.checkMandatory409531000026445204_nsc(e.nativeEvent)) {
             e.preventDefault();
             return;
+        }
+        // Prefill country code to mobile field before final submit
+        const form = e.currentTarget;
+        const mobileField = form.elements.namedItem('Mobile') as HTMLInputElement;
+        if (mobileField) {
+            mobileField.value = `${selectedCode} ${mobileField.value}`;
         }
     };
 
@@ -321,8 +353,25 @@ export default function FreeConsultation() {
                                                 <input type="text" name="Designation" required placeholder="CFO / Manager" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                             </div>
                                             <div className="space-y-1.5">
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Mobile *</label>
-                                                <input type="tel" name="Mobile" required placeholder="Phone Number" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Mobile (10 Digits) *</label>
+                                                <div className="flex gap-2">
+                                                    <select 
+                                                        value={selectedCode}
+                                                        onChange={(e) => setSelectedCode(e.target.value)}
+                                                        className="w-24 bg-blue-50/50 border-2 border-blue-100 focus:border-blue-600 rounded-xl px-2 py-3.5 text-xs font-semibold outline-none"
+                                                    >
+                                                        {COUNTRY_CODES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
+                                                    </select>
+                                                    <input 
+                                                        type="tel" 
+                                                        name="Mobile" 
+                                                        required 
+                                                        maxLength={10}
+                                                        onChange={(e) => e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10)}
+                                                        placeholder="9876543210" 
+                                                        className="flex-1 bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" 
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
 
