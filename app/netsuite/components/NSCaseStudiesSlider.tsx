@@ -315,27 +315,27 @@ const NSCaseStudiesSlider = () => {
                                                     placeholder="John Doe"
                                                 />
                                             </div>
-                                            <div className="grid grid-cols-2 gap-4">
+                                            <div className="grid grid-cols-[1.2fr_0.8fr] gap-2">
                                                 <div>
-                                                    <label className="block text-sm font-bold text-slate-700 mb-1">Designation *</label>
+                                                    <label className="block text-xs font-bold text-slate-700 mb-1">Designation *</label>
                                                     <input
                                                         type="text"
                                                         name="Designation"
                                                         required
                                                         value={formData['Designation']}
                                                         onChange={handleInputChange}
-                                                        className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                                                        className="w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm"
                                                         placeholder="Manager"
                                                     />
                                                 </div>
                                                 <div>
-                                                    <label className="block text-sm font-bold text-slate-700 mb-1">Mobile *</label>
-                                                    <div className="flex gap-1.5">
+                                                    <label className="block text-xs font-bold text-slate-700 mb-1">Mobile *</label>
+                                                    <div className="flex gap-1">
                                                         <select
                                                             name="countryCode"
                                                             value={formData.countryCode}
                                                             onChange={handleInputChange}
-                                                            className="w-[85px] px-2 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-xs font-semibold"
+                                                            className="w-[70px] px-1 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-[10px] font-bold"
                                                         >
                                                             {COUNTRY_CODES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
                                                         </select>
@@ -345,7 +345,7 @@ const NSCaseStudiesSlider = () => {
                                                             required
                                                             value={formData['Mobile']}
                                                             onChange={handleInputChange}
-                                                            className="flex-1 px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-400"
+                                                            className="flex-1 px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-400 text-sm"
                                                             placeholder="9876543210"
                                                             maxLength={10}
                                                         />
