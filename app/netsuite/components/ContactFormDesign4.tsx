@@ -353,8 +353,13 @@ export default function ContactFormDesign4() {
                       <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Solution *</label>
                       <select name="LEADCF5" defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000026445204?.(); }} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all">
                         <option value="" disabled>Select Solution</option>
-                        <option value="NetSuite&#x20;Product&#x20;&#x2f;Services">Oracle NetSuite</option>
-                        <option value="Zoho&#x20;Products&#x2f;Services">Zoho Suite</option>
+                        <option value="NetSuite ERP">NetSuite ERP</option>
+                        <option value="NetSuite CRM">NetSuite CRM</option>
+                        <option value="NetSuite OneWorld">NetSuite OneWorld</option>
+                        <option value="NetSuite SuiteCommerce">NetSuite SuiteCommerce</option>
+                        <option value="NetSuite Planning & Budgeting">NetSuite Planning & Budgeting</option>
+                        <option value="NetSuite OpenAir">NetSuite OpenAir</option>
+                        <option value="NetSuite Analytics Warehouse">NetSuite Analytics Warehouse</option>
                       </select>
                     </div>
                   </div>

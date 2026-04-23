@@ -295,8 +295,13 @@ export default function FooterFormSectionDark() {
                     <div className="relative">
                       <select name="LEADCF5" defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000026445204?.(); }} className="w-full bg-white/5 border-2 border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-xl px-4 py-3 text-white transition-all outline-none appearance-none cursor-pointer text-sm">
                         <option value="" disabled>Select Solution</option>
-                        <option value="NetSuite&#x20;Product&#x20;&#x2f;Services">Oracle NetSuite</option>
-                        <option value="Zoho&#x20;Products&#x2f;Services">Zoho Suite</option>
+                        <option value="NetSuite&#x20;ERP">NetSuite ERP</option>
+                        <option value="NetSuite&#x20;CRM">NetSuite CRM</option>
+                        <option value="NetSuite&#x20;OneWorld">NetSuite OneWorld</option>
+                        <option value="NetSuite&#x20;SuiteCommerce">NetSuite SuiteCommerce</option>
+                        <option value="NetSuite&#x20;Planning&#x20;&&#x20;Budgeting">NetSuite Planning & Budgeting</option>
+                        <option value="NetSuite&#x20;OpenAir">NetSuite OpenAir</option>
+                        <option value="NetSuite&#x20;Analytics&#x20;Warehouse">NetSuite Analytics Warehouse</option>
                       </select>
                       <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>

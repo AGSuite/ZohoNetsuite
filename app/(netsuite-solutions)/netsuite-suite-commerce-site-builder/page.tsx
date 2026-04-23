@@ -1,5 +1,5 @@
 "use client";
- 
+
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useSpring, useTransform } from "framer-motion";
 import Link from "next/link";
@@ -12,7 +12,7 @@ import {
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
 import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
- 
+
 const CTA_PARTICLES = [
   { w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 },
   { w: 1.4, h: 2.1, top: 28, left: 22, dur: 4.1, delay: 1.2 },
@@ -23,7 +23,7 @@ const CTA_PARTICLES = [
   { w: 2.6, h: 2.0, top: 5, left: 50, dur: 3.5, delay: 0.6 },
   { w: 1.9, h: 1.3, top: 33, left: 72, dur: 6.1, delay: 1.4 },
 ];
- 
+
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
   const spring = useSpring(0, { mass: 0.8, stiffness: 75, damping: 15 });
@@ -34,18 +34,18 @@ function Counter({ value }: { value: number }) {
   }, [inView, spring, value]);
   return <span ref={ref}><motion.span>{display}</motion.span></span>;
 }
- 
+
 export default function NetSuiteEcommercePage() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
- 
+
   const stats = [
     { label: "Conversion Increase", value: 25, suffix: "%", icon: TrendingUp },
     { label: "Order Processing Faster", value: 50, suffix: "%", icon: Zap },
     { label: "Customer Retention", value: 90, suffix: "%", icon: Users },
     { label: "Platform Uptime", value: 99, suffix: "%", icon: ShieldCheck },
   ];
- 
+
   const modules = [
     { title: "Order Management", description: "Centralize orders from all sales channels into a single, real-time fulfillment workflow without manual data entry.", image: "/images/modules/dashboard module.webp", color: "#1e6fa8", rgb: "30,111,168" },
     { title: "Product Catalog", description: "Manage rich product data, images, pricing rules, and variants all from one centralized location.", image: "/images/modules/sheet module.webp", color: "#3b5299", rgb: "59,82,153" },
@@ -60,7 +60,7 @@ export default function NetSuiteEcommercePage() {
     { title: "Multi-Site Management", description: "Run multiple brands and regional storefronts from one account with centralized management.", image: "/images/modules/managging together module.webp", color: "#8a2a3a", rgb: "138,42,58" },
     { title: "Global Commerce", description: "Multi-currency, multi-language, and multi-tax support so you can sell anywhere in the world.", image: "/images/modules/any modules.webp", color: "#0f4e8a", rgb: "15,78,138" },
   ];
- 
+
   const benefits = [
     { title: "Unified Commerce & ERP", description: "SuiteCommerce connects your storefront directly to your ERP, eliminating manual data entry and ensuring real-time accuracy across inventory, orders, and financials.", image: "/images/lap/lap4.webp", points: ["Real-time inventory on web store", "Orders flow straight into NetSuite", "No middleware or integrations needed", "Single source of truth for all data"] },
     { title: "B2B & B2C on One Platform", description: "Serve both wholesale buyers and retail customers from a single platform with tailored experiences, pricing rules, and workflows for each customer type.", image: "/images/people/laptopmen2.webp", points: ["Negotiated pricing per customer", "Quote-to-order for B2B buyers", "Guest checkout for B2C shoppers", "Self-service account portals"] },
@@ -69,16 +69,16 @@ export default function NetSuiteEcommercePage() {
     { title: "Marketing & Personalization", description: "Drive repeat purchases with targeted promotions, personalized recommendations, and intelligent email campaigns powered by your ERP data.", image: "/images/lap/lap5.webp", points: ["Behavior-based email campaigns", "Dynamic product recommendations", "Coupon and promotion engine", "A/B testing for conversion optimization"] },
     { title: "Enterprise Security & Scale", description: "Hosted on Oracle Cloud Infrastructure — enterprise-grade uptime, security, and scalability without any IT overhead on your side.", image: "/images/people/laptopgirl1.webp", points: ["99.99% uptime SLA", "PCI DSS Level 1 compliant", "DDoS and fraud protection", "Auto-scaling for peak seasons"] },
   ];
- 
+
   return (
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
- 
+
       {/* Hero */}
       <section className="relative min-h-screen overflow-hidden flex flex-col bg-gradient-to-br from-[#010d1a] via-[#031428] to-[#052040]">
         <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-800/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '70px 70px' }} />
- 
+
         <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-8">
           <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
             className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20">
@@ -88,7 +88,7 @@ export default function NetSuiteEcommercePage() {
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/80">E-Commerce</span>
           </motion.nav>
- 
+
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
@@ -112,7 +112,7 @@ export default function NetSuiteEcommercePage() {
                 </Link>
               </motion.div>
             </motion.div>
- 
+
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }}
               className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
@@ -143,7 +143,7 @@ export default function NetSuiteEcommercePage() {
               </div>
             </motion.div>
           </div>
- 
+
           <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.8 }}
             className="border-t border-white/15 pt-5 sm:pt-6">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
@@ -164,7 +164,7 @@ export default function NetSuiteEcommercePage() {
           </motion.div>
         </div>
       </section>
- 
+
       {/* Sticky Nav */}
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
@@ -177,7 +177,7 @@ export default function NetSuiteEcommercePage() {
           </div>
         </div>
       </nav>
- 
+
       {/* What is */}
       <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
@@ -211,7 +211,7 @@ export default function NetSuiteEcommercePage() {
           </div>
         </div>
       </section>
- 
+
       {/* Modules Grid */}
       <section id="modules" className="py-16 bg-white relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
@@ -245,7 +245,7 @@ export default function NetSuiteEcommercePage() {
           </div>
         </div>
       </section>
- 
+
       {/* Benefits */}
       <section id="benefits" className="py-24 relative overflow-hidden scroll-mt-36"
         style={{ background: "linear-gradient(135deg, #010d1a 0%, #021830 25%, #031e45 55%, #041228 80%, #010810 100%)" }}>
@@ -291,9 +291,9 @@ export default function NetSuiteEcommercePage() {
           </div>
         </div>
       </section>
- 
+
       <NSServicesSection />
- 
+
       {/* Pricing */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
@@ -324,7 +324,7 @@ export default function NetSuiteEcommercePage() {
           </motion.div>
         </div>
       </section>
- 
+
       <FAQ
         variant="netsuite"
         id="faq"
@@ -340,7 +340,7 @@ export default function NetSuiteEcommercePage() {
           { q: "How long does a NetSuite eCommerce implementation take?", a: "A standard SuiteCommerce B2C implementation typically takes 10 to 16 weeks covering store configuration, theme customisation, product catalog migration, payment gateway integration, and launch testing. B2B implementations with customer portals and complex pricing typically take 14 to 20 weeks." },
         ]}
       />
- 
+
       {/* CTA */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -366,7 +366,7 @@ export default function NetSuiteEcommercePage() {
           </motion.div>
         </div>
       </section>
- 
+
       <ContactFormDesign4 />
     </div>
   );

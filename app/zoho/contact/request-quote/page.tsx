@@ -347,9 +347,15 @@ export default function ZohoRequestQuotePage() {
                                             <div>
                                                 <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Service Interest *</label>
                                                 <select name="LEADCF5" id="LEADCF5" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer">
-                                                    <option value="">Select Service</option>
-                                                    <option value='NetSuite&#x20;Product&#x20;&#x2f;Services'>Oracle NetSuite</option>
-                                                    <option value='Zoho&#x20;Products&#x2f;Services'>Zoho</option>
+                                                    <option value="">Select Zoho Solution *</option>
+                                                    <option value='Zoho&#x20;CRM&#x20;&amp;&#x20;Sales'>Zoho CRM &amp; Sales</option>
+                                                    <option value='Zoho&#x20;Finance&#x20;&amp;&#x20;Accounting'>Zoho Finance &amp; Accounting</option>
+                                                    <option value='Zoho&#x20;HR&#x20;&amp;&#x20;People'>Zoho HR &amp; People</option>
+                                                    <option value='Zoho&#x20;Marketing&#x20;&amp;&#x20;Automation'>Zoho Marketing &amp; Automation</option>
+                                                    <option value='Zoho&#x20;IT&#x20;&amp;&#x20;Support'>Zoho IT &amp; Support</option>
+                                                    <option value='Zoho&#x20;BI&#x20;&amp;&#x20;Analytics'>Zoho BI &amp; Analytics</option>
+                                                    <option value='Zoho&#x20;Developer&#x20;Platforms'>Zoho Developer Platforms</option>
+                                                    <option value='Zoho&#x20;One&#x20;&#x28;Complete&#x20;Suite&#x29;'>Zoho One (Complete Suite)</option>
                                                 </select>
                                             </div>
                                             <div>

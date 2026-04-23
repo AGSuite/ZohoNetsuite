@@ -252,11 +252,11 @@ export default function IndiaLocalizationPage() {
           </div>
         </div>
       </section>
- 
+
       <div id="services">
         <NSServicesSection />
       </div>
- 
+
       {/* PRICING */}
       <section id="pricing" className="py-12 bg-gray-50 scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">

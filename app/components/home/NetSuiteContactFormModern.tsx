@@ -429,9 +429,14 @@ select option {
   
   <div class="agsuite_column">
     <select class="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5" onChange="addAriaSelected409531000026445204()">
-      <option value="" disabled selected>Service Interest*</option>
-      <option value="NetSuite&#x20;Product&#x20;&#x2f;Services">Oracle NetSuite</option>
-      <option value="Zoho&#x20;Products&#x2f;Services">Zoho Suite</option>
+      <option value="" disabled selected>NetSuite Solution*</option>
+      <option value="NetSuite&#x20;ERP">NetSuite ERP</option>
+      <option value="NetSuite&#x20;CRM">NetSuite CRM</option>
+      <option value="NetSuite&#x20;OneWorld">NetSuite OneWorld</option>
+      <option value="NetSuite&#x20;SuiteCommerce">NetSuite SuiteCommerce</option>
+      <option value="NetSuite&#x20;Planning&#x20;&&#x20;Budgeting">NetSuite Planning & Budgeting</option>
+      <option value="NetSuite&#x20;OpenAir">NetSuite OpenAir</option>
+      <option value="NetSuite&#x20;Analytics&#x20;Warehouse">NetSuite Analytics Warehouse</option>
     </select>
   </div>
   

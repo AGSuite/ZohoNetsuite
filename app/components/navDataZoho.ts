@@ -120,9 +120,9 @@ export const navItemsZoho: NavSection[] = [
                             items: [
                                 { label: "Zoho Books", href: "/zoho-books-accounting-software" },
                                 { label: "Zoho Inventory", href: "/zoho-inventory-software" },
-                                { label: "Zoho Payroll", href: "/zoho-payroll" },
+                                { label: "Zoho Payroll", href: "/zoho-payroll-finance" },
                                 { label: "Zoho Finance Plus", href: "/zoho-finance-plus" },
-                                { label: "Zoho Expense", href: "/zoho-expense" },
+                                { label: "Zoho Expense", href: "/zoho-expense-finance" },
                             ]
                         },
                         {
@@ -155,7 +155,7 @@ export const navItemsZoho: NavSection[] = [
                                 { label: "Zoho Commerce", href: "/zoho-commerce" },
                                 { label: "Zoho Marketing Automation", href: "/zoho-marketing-automation" },
                                 { label: "Zoho Marketing Plus", href: "/zoho-marketing-plus" },
-                                { label: "Zoho SalesIQ", href: "/zoho-salesiq-implementation" },
+                                { label: "Zoho SalesIQ", href: "/zoho-salesiq-marketing" },
                             ]
                         },
                         {
@@ -175,7 +175,7 @@ export const navItemsZoho: NavSection[] = [
                         {
                             title: "IT Management",
                             items: [
-                                { label: "Zoho Creator", href: "/zoho-creator" },
+                                { label: "Zoho Creator", href: "/zoho-creator-it-management" },
                                 { label: "Zoho IT Management", href: "/zoho-it-management" },
                             ]
                         },

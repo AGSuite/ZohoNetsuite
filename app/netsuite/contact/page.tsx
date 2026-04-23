@@ -538,9 +538,14 @@ export default function ContactPage() {
                             name="LEADCF5"
                             className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer"
                           >
-                            <option value="">Select Service</option>
-                            <option value='NetSuite&#x20;Product&#x20;&#x2f;Services'>Oracle NetSuite</option>
-                            <option value='Zoho&#x20;Products&#x2f;Services'>Zoho</option>
+                            <option value="">Select NetSuite Solution *</option>
+                            <option value='NetSuite&#x20;ERP'>NetSuite ERP</option>
+                            <option value='NetSuite&#x20;CRM'>NetSuite CRM</option>
+                            <option value='NetSuite&#x20;OneWorld'>NetSuite OneWorld</option>
+                            <option value='NetSuite&#x20;SuiteCommerce'>NetSuite SuiteCommerce</option>
+                            <option value='NetSuite&#x20;Planning&#x20;&amp;&#x20;Budgeting'>NetSuite Planning &amp; Budgeting</option>
+                            <option value='NetSuite&#x20;OpenAir'>NetSuite OpenAir</option>
+                            <option value='NetSuite&#x20;Analytics&#x20;Warehouse'>NetSuite Analytics Warehouse</option>
                           </select>
                         </div>
                         <div>

@@ -181,9 +181,15 @@ export default function EmbeddedZohoForm() {
 
                     <div className="agsuite_column">
                         <select className="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5" defaultValue="">
-                            <option value="" disabled>Service Interest*</option>
-                            <option value="NetSuite Product /Services">Oracle NetSuite</option>
-                            <option value="Zoho Products/Services">Zoho Suite</option>
+                            <option value="" disabled>Select Zoho Solution*</option>
+                            <option value='Zoho&#x20;CRM&#x20;&amp;&#x20;Sales'>Zoho CRM &amp; Sales</option>
+                            <option value='Zoho&#x20;Finance&#x20;&amp;&#x20;Accounting'>Zoho Finance &amp; Accounting</option>
+                            <option value='Zoho&#x20;HR&#x20;&amp;&#x20;People'>Zoho HR &amp; People</option>
+                            <option value='Zoho&#x20;Marketing&#x20;&amp;&#x20;Automation'>Zoho Marketing &amp; Automation</option>
+                            <option value='Zoho&#x20;IT&#x20;&amp;&#x20;Support'>Zoho IT &amp; Support</option>
+                            <option value='Zoho&#x20;BI&#x20;&amp;&#x20;Analytics'>Zoho BI &amp; Analytics</option>
+                            <option value='Zoho&#x20;Developer&#x20;Platforms'>Zoho Developer Platforms</option>
+                            <option value='Zoho&#x20;One&#x20;&#x28;Complete&#x20;Suite&#x29;'>Zoho One (Complete Suite)</option>
                         </select>
                     </div>
 

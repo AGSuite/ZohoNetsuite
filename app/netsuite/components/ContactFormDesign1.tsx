@@ -95,8 +95,13 @@ export default function ContactFormDesign1() {
                      <label className="block text-gray-500 text-sm mb-2 group-focus-within:text-white transition-colors">Service Interest</label>
                      <select name="LEADCF5" className="w-full bg-transparent border-b border-white/10 text-white pb-2 focus:border-white/50 focus:outline-none transition-all appearance-none cursor-pointer">
                         <option value="" className="bg-[#0f1115]">Select Service</option>
-                        <option value="NetSuite Product/Services" className="bg-[#0f1115]">Oracle NetSuite</option>
-                        <option value="Zoho Products/Services" className="bg-[#0f1115]">Zoho Suite</option>
+                        <option value="NetSuite ERP" className="bg-[#0f1115]">NetSuite ERP</option>
+                        <option value="NetSuite CRM" className="bg-[#0f1115]">NetSuite CRM</option>
+                        <option value="NetSuite OneWorld" className="bg-[#0f1115]">NetSuite OneWorld</option>
+                        <option value="NetSuite SuiteCommerce" className="bg-[#0f1115]">NetSuite SuiteCommerce</option>
+                        <option value="NetSuite Planning & Budgeting" className="bg-[#0f1115]">NetSuite Planning & Budgeting</option>
+                        <option value="NetSuite OpenAir" className="bg-[#0f1115]">NetSuite OpenAir</option>
+                        <option value="NetSuite Analytics Warehouse" className="bg-[#0f1115]">NetSuite Analytics Warehouse</option>
                      </select>
                   </div>
                   <div className="group">

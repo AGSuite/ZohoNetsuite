@@ -557,9 +557,14 @@ export default function RequestQuotePremium() {
                                                     name='LEADCF5'
                                                     defaultValue=""
                                                 >
-                                                    <option value="" disabled>Select Product/Services *</option>
-                                                    <option value='NetSuite&#x20;Product&#x20;&#x2f;Services'>Oracle NetSuite</option>
-                                                    <option value='Zoho&#x20;Products&#x2f;Services'>Zoho</option>
+                                                    <option value="" disabled>Select NetSuite Solution *</option>
+                                                    <option value='NetSuite&#x20;ERP'>NetSuite ERP</option>
+                                                    <option value='NetSuite&#x20;CRM'>NetSuite CRM</option>
+                                                    <option value='NetSuite&#x20;OneWorld'>NetSuite OneWorld</option>
+                                                    <option value='NetSuite&#x20;SuiteCommerce'>NetSuite SuiteCommerce</option>
+                                                    <option value='NetSuite&#x20;Planning&#x20;&amp;&#x20;Budgeting'>NetSuite Planning &amp; Budgeting</option>
+                                                    <option value='NetSuite&#x20;OpenAir'>NetSuite OpenAir</option>
+                                                    <option value='NetSuite&#x20;Analytics&#x20;Warehouse'>NetSuite Analytics Warehouse</option>
                                                 </select>
 
                                                 {/* Lead Source (Hidden defaultValue Website) */}

@@ -220,7 +220,7 @@ export default function FooterFormLight() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
-                    Service Interest <span className="text-blue-500">*</span>
+                    NetSuite Solution <span className="text-blue-500">*</span>
                   </label>
                   <div className="relative">
                     <select
@@ -228,9 +228,14 @@ export default function FooterFormLight() {
                       className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none appearance-none cursor-pointer shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                       suppressHydrationWarning
                     >
-                      <option value="">Select Service</option>
-                      <option value="NetSuite Product/Services">Oracle NetSuite</option>
-                      <option value="Zoho Products/Services">Zoho Suite</option>
+                      <option value="">Select NetSuite Solution</option>
+                      <option value="NetSuite ERP">NetSuite ERP</option>
+                      <option value="NetSuite CRM">NetSuite CRM</option>
+                      <option value="NetSuite OneWorld">NetSuite OneWorld</option>
+                      <option value="NetSuite SuiteCommerce">NetSuite SuiteCommerce</option>
+                      <option value="NetSuite Planning & Budgeting">NetSuite Planning & Budgeting</option>
+                      <option value="NetSuite OpenAir">NetSuite OpenAir</option>
+                      <option value="NetSuite Analytics Warehouse">NetSuite Analytics Warehouse</option>
                     </select>
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

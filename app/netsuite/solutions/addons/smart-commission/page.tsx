@@ -271,11 +271,11 @@ export default function SmartCommissionPage() {
           </div>
         </div>
       </section>
- 
+
       <div id="services">
         <NSServicesSection />
       </div>
- 
+
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
