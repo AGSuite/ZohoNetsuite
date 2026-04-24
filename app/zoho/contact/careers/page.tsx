@@ -25,10 +25,9 @@ import Image from "next/image";
 
 // ------ DATA ------
 const jobs = [
-  { title: "Zoho Functional Consultant", type: "full-time", location: "remote", locationName: "Remote" },
-  { title: "Zoho Developer", type: "full-time", location: "pune", locationName: "Pune" },
-  { title: "Zoho Sales Executive", type: "full-time", location: "pune", locationName: "Pune" },
-  { title: "Business Development Manager", type: "full-time", location: "pune", locationName: "Pune" },
+  { title: "Zoho Functional Consultant", type: "full-time", location: "remote", locationName: "Remote", experience: "3-5 Years", description: "Lead end-to-end Zoho implementations, gather client requirements, and architect scalable cloud solutions for enterprise businesses." },
+  { title: "Zoho Developer", type: "full-time", location: "pune", locationName: "Pune", experience: "2-4 Years", description: "Develop custom applications on Zoho Creator, write complex Deluge scripts, and build seamless integrations via REST APIs." },
+  { title: "Zoho Sales Executive", type: "full-time", location: "pune", locationName: "Pune", experience: "1-3 Years", description: "Drive Zoho solution sales, build strong client relationships, manage the complete sales cycle, and identify new business opportunities globally." },
 ];
 
 const locations = [
@@ -62,6 +61,7 @@ function Counter({ value }: { value: number }) {
 export default function ZohoCareersPage() {
   const [type, setType] = useState('all');
   const [location, setLocation] = useState('all');
+  const [highlightForm, setHighlightForm] = useState(false);
 
   const filteredJobs = jobs.filter(
     (job) =>
@@ -289,7 +289,7 @@ export default function ZohoCareersPage() {
       </section>
 
       {/* ── Open Positions ─────────────────────────────────────────────────── */}
-      <section id="open-positions" className="py-32 relative overflow-hidden bg-white scroll-mt-20">
+      <section id="open-positions" className="pt-16 pb-32 relative overflow-hidden bg-white scroll-mt-20">
 
         {/* Dashed Grid Background */}
         <div
@@ -419,9 +419,9 @@ export default function ZohoCareersPage() {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.3, delay: idx * 0.05 }}
-                        className="group bg-gradient-to-br from-white via-blue-50/60 to-indigo-50/40 p-6 sm:p-8 rounded-[2rem] border border-white/90 shadow-[0_8px_32px_rgba(0,13,46,0.10)] hover:shadow-[0_16px_48px_rgba(0,13,46,0.18)] hover:border-blue-200 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-8"
+                        className="group relative z-10 hover:z-50 bg-gradient-to-br from-white via-blue-50/60 to-indigo-50/40 p-6 sm:p-8 rounded-[2rem] border border-white/90 shadow-[0_8px_32px_rgba(0,13,46,0.10)] hover:shadow-[0_16px_48px_rgba(0,13,46,0.18)] hover:border-blue-200 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-8"
                       >
-                        <div className="flex items-center gap-6">
+                        <div className="flex items-center gap-6 relative z-10">
                           <div
                             className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 text-blue-300 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg"
                             style={{ background: "linear-gradient(135deg, #0a1f5c, #1d4ed8)" }}
@@ -437,15 +437,48 @@ export default function ZohoCareersPage() {
                                 <MapPin size={14} className="text-blue-500" /> {job.locationName}
                               </span>
                               <span className="w-1.5 h-1.5 rounded-full bg-blue-300" />
-                              <span className="capitalize text-[#0a1f5c] font-bold">{job.type.replace('-', ' ')}</span>
+                              <span className="capitalize text-[#0a1f5c] font-bold">
+                                {job.type.replace('-', ' ')}
+                              </span>
                             </div>
                           </div>
                         </div>
+
+                        {/* Hover card */}
+                        <div className="absolute z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl left-0 top-full mt-2 w-full translate-y-4 group-hover:translate-y-0">
+                          <div className="bg-white rounded-3xl border border-blue-100 p-6 relative overflow-hidden shadow-2xl ring-1 ring-black/5">
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+                            <div className="absolute -top-2 left-10 w-4 h-4 bg-white border-t border-l border-blue-100 rotate-45" />
+                            <h4 className="text-[#0a1f5c] font-bold text-xl mb-3 pr-4 tracking-tight">{job.title}</h4>
+                            <div className="flex flex-wrap items-center gap-2 mb-4">
+                              <span className="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-bold rounded-xl border border-blue-100">Exp: {job.experience}</span>
+                              <span className="px-3 py-1.5 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-xl border border-indigo-100 capitalize">{job.type.replace('-', ' ')}</span>
+                              <span className="px-3 py-1.5 bg-orange-50 text-orange-700 text-xs font-bold rounded-xl border border-orange-100">{job.locationName}</span>
+                            </div>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-6 font-medium">
+                              {job.description}
+                            </p>
+                            <button
+                              onClick={() => {
+                                document.getElementById('open-positions')?.scrollIntoView({ behavior: 'smooth' });
+                                setHighlightForm(true);
+                                setTimeout(() => setHighlightForm(false), 2000);
+                              }}
+                              className="w-full py-3.5 rounded-2xl text-white font-bold text-sm shadow-xl shadow-blue-500/30 flex items-center justify-center gap-2 hover:bg-blue-600 transition-all hover:scale-[1.02]"
+                              style={{ background: "linear-gradient(135deg, #0a1f5c, #1d4ed8)" }}
+                            >
+                              Apply For This Role <ArrowRight size={16} />
+                            </button>
+                          </div>
+                        </div>
+
                         <button
                           onClick={() => {
-                            document.getElementById('apply-form')?.scrollIntoView({ behavior: 'smooth' });
+                            document.getElementById('open-positions')?.scrollIntoView({ behavior: 'smooth' });
+                            setHighlightForm(true);
+                            setTimeout(() => setHighlightForm(false), 2000);
                           }}
-                          className="sm:w-auto w-full px-8 py-4 rounded-2xl text-white font-bold text-sm hover:shadow-xl hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-2 group-hover:translate-x-1"
+                          className="sm:w-auto w-full px-8 py-4 rounded-2xl text-white font-bold text-sm hover:shadow-xl hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-2 group-hover:translate-x-1 relative z-10"
                           style={{ background: "linear-gradient(135deg, #0a1f5c, #1d4ed8)" }}
                           onMouseEnter={(e) => {
                             (e.currentTarget as HTMLButtonElement).style.background = "linear-gradient(135deg, #1d4ed8, #3b82f6)";
@@ -472,9 +505,9 @@ export default function ZohoCareersPage() {
             </div>
 
             {/* RIGHT: Form Sticky */}
-            <div id="apply-form" className="w-full lg:w-[450px] xl:w-[500px] shrink-0">
+            <div id="apply-form" className="w-full lg:w-[500px] xl:w-[550px] shrink-0 scroll-mt-32">
               <div className="sticky top-32">
-                <div className="bg-white rounded-[3rem] border border-gray-100 overflow-hidden shadow-[0_32px_80px_-15px_rgba(0,0,0,0.1)] transition-all hover:shadow-[0_32px_80px_-15px_rgba(29,78,216,0.15)]">
+                <div className={`bg-white rounded-[3rem] border overflow-hidden transition-all duration-500 ${highlightForm ? 'border-green-500 shadow-[0_0_40px_rgba(34,197,94,0.4)] scale-[1.02]' : 'border-gray-100 shadow-[0_32px_80px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_32px_80px_-15px_rgba(29,78,216,0.15)]'}`}>
                   <div className="bg-gradient-to-br from-[#000814] to-[#001a4d] p-10 text-white relative overflow-hidden">
                     <div className="relative z-10">
                       <h3 className="text-3xl font-bold mb-3 tracking-tight">Express Interest</h3>
@@ -488,7 +521,7 @@ export default function ZohoCareersPage() {
                     <iframe
                       title="AGSuite Zoho Application Form"
                       frameBorder={0}
-                      className="w-full h-[1500px] rounded-[3rem]"
+                      className="w-full h-[1350px] rounded-[3rem]"
                       src="https://agsuitetech.zohorecruit.in/forms/58f06577622ce45d508407aae11148ceb8899baae51685ee90b1efbe959f4f75"
                       allow="fullscreen"
                       scrolling="no"

@@ -734,62 +734,6 @@ export default function ZohoLifeAtAGSuite() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────
-          ACHIEVEMENTS / AWARDS
-      ────────────────────────────────────────────────────────── */}
-      <section className="py-24 bg-white relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <div className="lg:w-1/3 text-center lg:text-left">
-              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[10px] font-medium uppercase tracking-widest mb-4 border border-blue-100/50 w-max">
-                Milestones
-              </div>
-              <h2 className="text-3xl md:text-5xl font-medium text-gray-900 mb-6">
-                Our Achievements
-              </h2>
-              <p className="text-lg text-gray-600 mb-8">
-                Proof that when you focus on people and processes, success
-                naturally follows. We are proud to be recognized by the
-                industry's best as a leading Zoho partner.
-              </p>
-              <Link
-                href="/zoho/contact"
-                className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 font-medium px-8 py-4 rounded-full border border-blue-100 hover:bg-blue-600 hover:text-white transition-all"
-              >
-                Partner With Us <ArrowRight size={18} />
-              </Link>
-            </div>
-
-            <div className="lg:w-2/3 grid sm:grid-cols-2 gap-6 w-full">
-              {achievements.map((ach, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.15 }}
-                  className={`relative bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 overflow-hidden group ${i === 2 ? "sm:col-span-2 sm:w-1/2 justify-self-center" : ""}`}
-                >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-500" />
-                  <ach.icon className="w-10 h-10 text-blue-500 mb-6 relative z-10" />
-                  <div className="flex items-center gap-3 mb-3 relative z-10">
-                    <h3 className="text-xl font-medium text-gray-900">
-                      {ach.title}
-                    </h3>
-                    <span className="bg-gray-100 text-gray-600 text-xs font-medium px-2.5 py-1 rounded-full">
-                      {ach.year}
-                    </span>
-                  </div>
-                  <p className="text-gray-600 text-sm leading-relaxed relative z-10">
-                    {ach.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────
           CONTACT SECTION (CTA)
       ────────────────────────────────────────────────────────── */}
       <ZohoContactForm />

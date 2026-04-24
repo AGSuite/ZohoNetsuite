@@ -291,12 +291,26 @@ export default function NetSuiteERPPage() {
       {/* What is NetSuite ERP Section with Light Gradient */}
       <section id="what-is-erp" className="pt-5 pb-14 bg-linear-to-br from-white via-white to-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-6 items-stretch">
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative min-h-[400px] lg:min-h-[490px] -mt-4 rounded-3xl overflow-hidden ">
-              <Image src="/images/netsuiteimages/solutions/NetsuiteERP.webp" alt="What is NetSuite ERP" fill className="object-cover object-top" />
-              <div className="absolute inset-0 bg-white mix-blend-multiply" />
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="flex items-center justify-center rounded-2xl overflow-hidden"
+              style={{ minHeight: 480 }}
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/Dashboard/ERP Dashboard_11zon.jpg"
+                  alt="NetSuite ERP Dashboard"
+                  width={900}
+                  height={600}
+                  className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20"
+                />
+              </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="space-y-6 mt-15">
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="flex flex-col justify-center space-y-6">
               <div className="space-y-4">
                 <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">Turn Complexity into Clarity with NetSuite ERP.</h3>
               </div>

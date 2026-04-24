@@ -441,23 +441,25 @@ export default function NetSuiteCRMPage() {
       {/* -- What is NetSuite CRM ----------------------------------------------- */}
       <section id="what-is-crm" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* LEFT — Dashboard Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="flex items-center justify-center rounded-2xl overflow-hidden p-4 mt-15"
-              style={{ minHeight: 340 }}
+              className="flex items-center justify-center rounded-2xl overflow-hidden"
+              style={{ minHeight: 480 }}
             >
-              <Image
-                src="/images/netsuiteimages/solutions/netsuitecrm.webp"
-                alt="NetSuite CRM Dashboard"
-                width={560}
-                height={380}
-                className="w-full h-auto rounded-xl object-contain"
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/Dashboard/CRM Dashbaord 2_11zon.jpg"
+                  alt="NetSuite CRM Dashboard"
+                  width={900}
+                  height={600}
+                  className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20"
+                />
+              </div>
             </motion.div>
 
             {/* RIGHT */}
@@ -466,7 +468,7 @@ export default function NetSuiteCRMPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="space-y-6 mt-15"
+              className="flex flex-col justify-center space-y-6"
             >
               <div className="space-y-4">
                 <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">

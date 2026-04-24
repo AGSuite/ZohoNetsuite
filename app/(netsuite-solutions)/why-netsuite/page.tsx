@@ -117,7 +117,7 @@ export default function WhyNetsuitePage() {
               className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/people/laptopmen2.webp" alt="Why NetSuite" fill className="object-cover object-center" priority />
+                  <Image src="/images/lap/lap6_11zon.webp" alt="Why NetSuite" fill className="object-cover object-center" priority />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.6 }}
                     className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
@@ -181,15 +181,25 @@ export default function WhyNetsuitePage() {
       {/* What is */}
       <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-              className="flex items-center justify-center rounded-2xl p-4 mt-15" style={{ minHeight: 340 }}>
-              <Image src="/images/netsuiteimages/solutions/NetsuiteSRP.webp" alt="Why NetSuite" width={560} height={380} className="w-full h-auto rounded-xl object-contain" />
+              className="flex items-center justify-center rounded-2xl overflow-hidden" style={{ minHeight: 480 }}>
+              <div className="relative w-full h-full">
+                <Image src="/images/Dashboard/NetsuiteDashboard.webp" alt="Why NetSuite Dashboard" width={900} height={600} className="w-full h-auto rounded-xl object-contain border-4 border-blue-200 shadow-2xl shadow-blue-900/20" />
+              </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="space-y-6 mt-15">
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="flex flex-col justify-center space-y-6">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
                 The World's #1 Cloud ERP — Built for Every Business.
               </h3>
+              <div className="flex items-center gap-5 p-5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-100 my-2 shadow-sm">
+                <div className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-indigo-700">77%</div>
+                <div className="flex-1">
+                  <p className="text-sm md:text-base text-gray-800 font-semibold leading-snug">
+                    of companies in the Forbes Cloud 100 list are NetSuite customers.
+                  </p>
+                </div>
+              </div>
               <p className="text-lg text-gray-600 leading-relaxed">
                 NetSuite is the world's most deployed cloud ERP — trusted by over 43,000 organizations across 219 countries. Born in the cloud in 1998, it is the most experienced cloud ERP platform on earth.
               </p>

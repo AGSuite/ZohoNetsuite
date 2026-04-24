@@ -62,7 +62,7 @@ export default function SuiteSuccessPage() {
   ];
 
   const benefits = [
-    { title: "Rapid 100-Day Go-Live", description: "SuiteSuccess enables go-live in as little as 100 days — compared to 12–18 months with traditional ERP — using pre-configured, industry-specific setups that drastically reduce risk.", image: "/images/people/group5.webp", points: ["100-day go-live methodology", "Industry-preset configurations", "Reduced project risk", "Faster time to value"] },
+    { title: "Rapid 100-Day Go-Live", description: "SuiteSuccess enables go-live in as little as 100 days — compared to 12–18 months with traditional ERP — using pre-configured, industry-specific setups that drastically reduce risk.", image: "/images/people/people5_11zon.webp", points: ["100-day go-live methodology", "Industry-preset configurations", "Reduced project risk", "Faster time to value"] },
     { title: "Industry Best Practices Built In", description: "Built on the experience of thousands of global deployments — the KPIs, workflows, and dashboards that matter most in your industry are already configured and ready from day one.", image: "/images/lap/lap2.webp", points: ["300+ pre-built KPIs", "Industry-specific workflows", "Pre-defined chart of accounts", "Role-based dashboards for every function"] },
     { title: "Lower Implementation Cost", description: "Starting from an industry-matched baseline slashes implementation consulting hours, reducing total cost of ownership and avoiding expensive scope creep throughout the project.", image: "/images/lap/lap4.webp", points: ["18% average cost reduction", "Fixed-scope engagement model", "Fewer custom configurations needed", "Predictable implementation budget"] },
     { title: "Scalable Stairway to Growth", description: "Start with what you need now and scale on the same platform — the SuiteSuccess Stairway guides you from Build to Engage to Optimize in clear structured phases.", image: "/images/people/laptopmen2.webp", points: ["Phased adoption model", "No re-implementation ever", "Add modules as you scale", "Continuous platform improvement"] },
@@ -181,12 +181,14 @@ export default function SuiteSuccessPage() {
       {/* What is */}
       <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-              className="flex items-center justify-center rounded-2xl p-4 mt-15" style={{ minHeight: 340 }}>
-              <Image src="/images/netsuiteimages/solutions/NetsuiteSRP.webp" alt="NetSuite SuiteSuccess" width={560} height={380} className="w-full h-auto rounded-xl object-contain" />
+              className="flex items-center justify-center rounded-2xl overflow-hidden" style={{ minHeight: 480 }}>
+              <div className="relative w-full h-full">
+                <Image src="/images/Dashboard/suitesuccess 2 dashboard.jpg" alt="NetSuite SuiteSuccess Dashboard" width={900} height={600} className="w-full h-auto rounded-xl object-contain border-4 border-blue-200 shadow-2xl shadow-blue-900/20" />
+              </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="space-y-6 mt-15">
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="flex flex-col justify-center space-y-6">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
                 Go Live Faster with Industry Best Practices Built Right In.
               </h3>
