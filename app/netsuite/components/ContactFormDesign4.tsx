@@ -75,7 +75,7 @@ export default function ContactFormDesign4() {
       return true;
     };
 
-    // Setup jQuery AJAX submission
+    // jQuery AJAX submission
     const setupSubmit = () => {
       const $ = (window as any).$;
       if (!$) return false;
@@ -107,13 +107,13 @@ export default function ContactFormDesign4() {
     const jqInterval = setInterval(() => { if (setupSubmit()) clearInterval(jqInterval); }, 300);
     setTimeout(() => clearInterval(jqInterval), 10000);
 
-    // reCAPTCHA rendering
+    // reCAPTCHA v2 checkbox rendering
     const renderRecaptcha = () => {
       const el = document.getElementById('recap409531000042578178');
       if ((window as any).grecaptcha && el && el.children.length === 0) {
         try {
           (window as any).grecaptcha.render('recap409531000042578178', {
-            sitekey: '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
+            sitekey: '6LeO48wsAAAAAAZdvHkRW9w9KW2Klz-P1P-prH8U',
             theme: 'light',
             callback: (window as any).rccallback409531000042578178
           });
@@ -142,7 +142,7 @@ export default function ContactFormDesign4() {
       <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="afterInteractive" />
       <Script
         id="wf_anal"
-        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=1c0e9fb598855f0b7f7f12dd83a7407f769b7e8476d557883dbb3fd3608a23286093de1b816ce975ec1656ab00d3734cgid21954b68de2078b01bf360e6901e77fc3170f81ddb9c070ee8b3145050b8b575gid93e32b48b2ca91da87af118c14eae6fe37089b6655f4cad47b31d3837bb2e4c2gidbc8ef81d1c070a3c0e3712482a396f17ed4ead5490e091d31c46f9cdea1e19f7&tw=e404cac3a0ba922c12cf50b2b5a7ae301afd088c7c79a65785ca40e53477b241"
+        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=0e34b7e72b49187adc1c4d32b2a54afde43da9bf22467bddb40aafb1d363a25fda02f85c73759103b728660f8763d2e1gid8a0a269bfc797e4b6176613b4e9fb75dc801ae1e500cc5a5d88e22ae4cbbc751gidcf8abca5e0798c6bf0af86bc60756c4c7588c37b96956a6db7c196b03a6ff9begid9e0a1bdf6fbdadd7ca8c70805143666def6f952b7774d25c202a75517eea1d01&tw=9cf40e9e74d2fff569f6f151d68d00949ba4c65dfbb211f64ed9a9b981293818"
         strategy="afterInteractive"
       />
 
@@ -218,17 +218,15 @@ export default function ContactFormDesign4() {
                   <span id="wf_splash_info" />
                 </div>
 
-                {/* The Zoho Form */}
                 <div id="crmWebToEntityForm" className="crmWebToEntityForm">
                   <form id="webform409531000042578178" name="WebToLeads409531000042578178" acceptCharset="UTF-8" className="space-y-4">
-                    <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue="7f930edb0714ad81f5565562bfd51c17505e00ce9d39950d20f40ec602e6c0e4" readOnly />
+                    <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue="527ed8d990eb21753f0e9e248b6b7d28b7a88a30cfdb2abc1d5d63516a6d03c5" readOnly />
                     <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                    <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue="913b422b8376192e3906910528f43a1cb4fce44105d16960bccc498e0d1dcb5cb58d2855298d394f02ffdf7cf52efd04" readOnly />
+                    <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue="1d73c6684cb17a053e2c89078a9da4bdb554cfdffaa052761bb448c57fbd8089c6358e87c4ca85af73dd46bbf6c0a332" readOnly />
                     <input type="text" style={{ display: 'none' }} name="actionType" defaultValue="TGVhZHM=" readOnly />
                     <input type="text" style={{ display: 'none' }} name="returnURL" defaultValue="null" readOnly />
                     <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" defaultValue="" readOnly />
 
-                    {/* Row 1: Name + Company Email */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="Last_Name" className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Name <span className="text-red-500">*</span></label>
@@ -240,7 +238,6 @@ export default function ContactFormDesign4() {
                       </div>
                     </div>
 
-                    {/* Row 2: Role + Mobile */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="Designation" className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Role</label>
@@ -252,7 +249,6 @@ export default function ContactFormDesign4() {
                       </div>
                     </div>
 
-                    {/* Row 3: Company + Service */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="Company" className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Company Name <span className="text-red-500">*</span></label>
@@ -268,7 +264,6 @@ export default function ContactFormDesign4() {
                       </div>
                     </div>
 
-                    {/* Row 4: Annual Revenue + How did you hear */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="LEADCF19" className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Annual Revenue <span className="text-red-500">*</span></label>
@@ -300,19 +295,17 @@ export default function ContactFormDesign4() {
                       </div>
                     </div>
 
-                    {/* How We Can Help */}
                     <div>
                       <label htmlFor="LEADCF123" className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">How We Can Help You <span className="text-red-500">*</span></label>
                       <textarea id="LEADCF123" name="LEADCF123" rows={2} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all" placeholder="Share your requirements..." />
                     </div>
 
-                    {/* reCAPTCHA */}
+                    {/* reCAPTCHA v2 Checkbox */}
                     <div>
-                      <div className="g-recaptcha" data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
+                      <div className="g-recaptcha" data-sitekey="6LeO48wsAAAAAAZdvHkRW9w9KW2Klz-P1P-prH8U" data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
                       <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
                     </div>
 
-                    {/* Buttons */}
                     <div className="flex gap-3 pt-1">
                       <input type="submit" id="formsubmit" className="formsubmit flex-1 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm cursor-pointer" value="Submit" />
                       <input type="reset" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-all text-sm cursor-pointer" value="Reset" />
