@@ -113,7 +113,7 @@ export default function ContactFormDesign4() {
       if ((window as any).grecaptcha && el && el.children.length === 0) {
         try {
           (window as any).grecaptcha.render('recap409531000042578178', {
-            sitekey: '6Lc4fscsAAAAAHvCrxU3Ak37hP392lkPoKs2m2ID',
+            sitekey: '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
             theme: 'light',
             callback: (window as any).rccallback409531000042578178
           });
@@ -308,7 +308,7 @@ export default function ContactFormDesign4() {
 
                     {/* reCAPTCHA */}
                     <div>
-                      <div className="g-recaptcha" data-sitekey="6Lc4fscsAAAAAHvCrxU3Ak37hP392lkPoKs2m2ID" data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
+                      <div className="g-recaptcha" data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
                       <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
                     </div>
 
