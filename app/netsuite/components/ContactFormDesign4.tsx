@@ -107,14 +107,13 @@ export default function ContactFormDesign4() {
     const jqInterval = setInterval(() => { if (setupSubmit()) clearInterval(jqInterval); }, 300);
     setTimeout(() => clearInterval(jqInterval), 10000);
 
-    // reCAPTCHA Enterprise v2 checkbox rendering
+    // reCAPTCHA v2 checkbox rendering
     const renderRecaptcha = () => {
       const el = document.getElementById('recap409531000042578178');
-      const enterprise = (window as any).grecaptcha?.enterprise;
-      if (enterprise && el && el.children.length === 0) {
+      if ((window as any).grecaptcha && el && el.children.length === 0) {
         try {
-          enterprise.render('recap409531000042578178', {
-            sitekey: '6LeO48wsAAAAAAZdvHkRW9w9KW2Klz-P1P-prH8U',
+          (window as any).grecaptcha.render('recap409531000042578178', {
+            sitekey: '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
             theme: 'light',
             callback: (window as any).rccallback409531000042578178
           });
@@ -122,14 +121,12 @@ export default function ContactFormDesign4() {
       }
     };
 
-    const ent = (window as any).grecaptcha?.enterprise;
-    if (ent?.ready) {
-      ent.ready(renderRecaptcha);
+    if ((window as any).grecaptcha?.ready) {
+      (window as any).grecaptcha.ready(renderRecaptcha);
     } else {
       const rcInt = setInterval(() => {
-        const e2 = (window as any).grecaptcha?.enterprise;
-        if (e2) {
-          e2.ready ? e2.ready(renderRecaptcha) : renderRecaptcha();
+        if ((window as any).grecaptcha) {
+          (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
           clearInterval(rcInt);
         }
       }, 300);
@@ -141,7 +138,7 @@ export default function ContactFormDesign4() {
 
   return (
     <>
-      <Script src="https://www.google.com/recaptcha/enterprise.js" strategy="afterInteractive" />
+      <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
       <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="afterInteractive" />
       <Script
         id="wf_anal"
@@ -305,7 +302,7 @@ export default function ContactFormDesign4() {
 
                     {/* reCAPTCHA v2 Checkbox */}
                     <div>
-                      <div className="g-recaptcha" data-sitekey="6LeO48wsAAAAAAZdvHkRW9w9KW2Klz-P1P-prH8U" data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
+                      <div className="g-recaptcha" data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
                       <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
                     </div>
 
