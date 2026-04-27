@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Script from "next/script";
 
-const SITE_KEY = '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3';
+// Updated Site Key from User's latest source code
+const SITE_KEY = '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y';
 
 export default function ContactFormDesign4() {
   const [isClient, setIsClient] = useState(false);
@@ -140,7 +141,7 @@ export default function ContactFormDesign4() {
       <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="afterInteractive" />
       <Script
         id="wf_anal"
-        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=0e34b7e72b49187adc1c4d32b2a54afde43da9bf22467bddb40aafb1d363a25fda02f85c73759103b728660f8763d2e1gid8a0a269bfc797e4b6176613b4e9fb75dc801ae1e500cc5a5d88e22ae4cbbc751gidcf8abca5e0798c6bf0af86bc60756c4c7588c37b96956a6db7c196b03a6ff9begid9e0a1bdf6fbdadd7ca8c70805143666def6f952b7774d25c202a75517eea1d01&tw=9cf40e9e74d2fff569f6f151d68d00949ba4c65dfbb211f64ed9a9b981293818"
+        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=069e092375575a1e16cff3709212ca48b1dee364b5e258d07e2825eb3a8f979960011550a5cf722bfe0baab2ee0b42e0gide1f9a8778d9bbe722bfd3dd9d6871544609c210a5c71bd6723a8bd56cd54b44bgidad3c0985806665d32e537489d04a70f46fb69c481bf46d036ef2a0463d7dbc3dgid6b5a7c9f7266316b8a40a1fe46bc95787d06941b759046068de31f96621a5255&tw=3be8f3a0538b8f1813b3b1f3d9ef5839d9a254acbafc102c58ed0ac42ec862b5"
         strategy="afterInteractive"
       />
 
@@ -236,9 +237,9 @@ export default function ContactFormDesign4() {
 
                 <div id="crmWebToEntityForm" className="crmWebToEntityForm">
                   <form id="webform409531000042578178" name="WebToLeads409531000042578178" acceptCharset="UTF-8" className="space-y-4">
-                    <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue="527ed8d990eb21753f0e9e248b6b7d28b7a88a30cfdb2abc1d5d63516a6d03c5" readOnly />
+                    <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue="9e5e3c8bd8dbe33b3ebd8beeff15bfc7a999e539b0f1dfe9df8bc9129fdcbcfc" readOnly />
                     <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                    <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue="1d73c6684cb17a053e2c89078a9da4bdb554cfdffaa052761bb448c57fbd8089c6358e87c4ca85af73dd46bbf6c0a332" readOnly />
+                    <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue="9abbe069f15c156742400c19b48c3e97c607c2c14cb77d221e1d84dbba11348392d15fd7a164fe674db90188648c7b56" readOnly />
                     <input type="text" style={{ display: 'none' }} name="actionType" defaultValue="TGVhZHM=" readOnly />
                     <input type="text" style={{ display: 'none' }} name="returnURL" defaultValue="null" readOnly />
                     <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" defaultValue="" readOnly />
