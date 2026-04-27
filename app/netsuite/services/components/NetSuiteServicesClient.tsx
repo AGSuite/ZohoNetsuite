@@ -73,7 +73,7 @@ export default function NetSuiteServicesClient() {
       description:
         "Go live on NetSuite faster, cleaner, and with zero surprises. Our proven implementation methodology covers everything from discovery workshops to hypercare — delivering a fully configured, user-adopted NetSuite system that works from day one.",
       link: "/netsuite/services/implementation",
-      image: "/images/netsuiteimages/Servicesimg/finamce.webp",
+      image: "/images/lap/lap10_11zon.webp",
       icon: Rocket,
     },
     {
@@ -81,7 +81,7 @@ export default function NetSuiteServicesClient() {
       description:
         "Elevate your NetSuite environment with mission-critical support. Our team handles everything from complex troubleshooting to bi-annual upgrade readiness and continuous system fine-tuning, ensuring maximum uptime and efficiency.",
       link: "/netsuite/services/managed-services",
-      image: "/images/netsuiteimages/Servicesimg/managedservices.webp",
+      image: "/images/Services/managed.webp",
       icon: ShieldCheck,
     },
     {
@@ -89,7 +89,7 @@ export default function NetSuiteServicesClient() {
       description:
         "Move beyond simple ERP setup. We help you rethink your business workflows, automate manual processes, and migrate legacy data into a unified, high-performance cloud ecosystem that drives real business value.",
       link: "/netsuite/services/digital-transformation",
-      image: "/images/netsuiteimages/Servicesimg/Digital transformation.webp",
+      image: "/images/Services/digitaltrans.webp",
       icon: Zap,
     },
     {
@@ -97,7 +97,7 @@ export default function NetSuiteServicesClient() {
       description:
         "Eliminate data silos by connecting NetSuite with your CRM, e-commerce, payroll, and third-party logistics systems. We build robust, API-led integrations that ensure real-time data flow across your entire tech stack.",
       link: "/netsuite/services/integration",
-      image: "/images/netsuiteimages/Servicesimg/integration.webp",
+      image: "/images/Services/integration2.webp",
       icon: Share2,
     },
     {
@@ -105,7 +105,7 @@ export default function NetSuiteServicesClient() {
       description:
         "Extend NetSuite's capabilities with specialized SuiteScripts and custom forms. We build industry-specific features within the native framework to solve your most complex operational challenges and unique business requirements.",
       link: "/netsuite/services/customization",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/Services/lowcodeservices.webp",
       icon: Code,
     },
     {
@@ -117,11 +117,11 @@ export default function NetSuiteServicesClient() {
       icon: Users,
     },
     {
-       title: "Low-Code Development",
-       description: "Build bespoke SuiteApps and automations within NetSuite's native SuiteCloud platform. We deliver functional tools in weeks, not months, with zero compromise on quality or upgrade safety.",
-       link: "/netsuite/services/low-code",
-       image: "/images/netsuiteimages/Servicesimg/low code.webp",
-       icon: Code,
+      title: "Low-Code Development",
+      description: "Build bespoke SuiteApps and automations within NetSuite's native SuiteCloud platform. We deliver functional tools in weeks, not months, with zero compromise on quality or upgrade safety.",
+      link: "/netsuite/services/low-code",
+      image: "/images/Services/lowcode.webp",
+      icon: Code,
     },
     {
       title: "NetSuite Consulting",
@@ -379,11 +379,12 @@ export default function NetSuiteServicesClient() {
               style={{ minHeight: 340 }}
             >
               <Image
-                src="/images/netsuiteimages/background/netsuiteaccounting.webp"
+                src="/images/netsuiteimages/background/netsuite-expert-guidance.png"
                 alt="NetSuite Services"
-                width={560}
-                height={380}
-                className="w-full h-auto rounded-xl object-contain"
+                width={1400}
+                height={900}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20"
               />
             </motion.div>
             <motion.div
@@ -399,13 +400,13 @@ export default function NetSuiteServicesClient() {
               <p className="text-lg text-gray-600 leading-relaxed">
                 As a specialized Oracle NetSuite partner, AGSuite provides the
                 technical expertise and strategic vision needed to maximize
-                your ERP investment. From global rollouts to complex 
+                your ERP investment. From global rollouts to complex
                 automations, we ensure your system scales with your business.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our approach combines industry best practices with deep 
-                technical knowledge in SuiteScript, SuiteFlow, and API-led 
-                integrations. We help you eliminate operational silos and 
+                Our approach combines industry best practices with deep
+                technical knowledge in SuiteScript, SuiteFlow, and API-led
+                integrations. We help you eliminate operational silos and
                 drive predictable growth in a unified cloud environment.
               </p>
               <div className="pt-4">
@@ -540,7 +541,7 @@ export default function NetSuiteServicesClient() {
               Industries We Serve
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Tailored NetSuite solutions for every sector. Discover how we 
+              Tailored NetSuite solutions for every sector. Discover how we
               optimize operations for your specific industry.
             </p>
           </motion.div>
@@ -637,7 +638,7 @@ export default function NetSuiteServicesClient() {
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />
             <div className="relative z-10 max-w-2xl">
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                Scale your vision with the world's #1 Cloud ERP. 
+                Scale your vision with the world's #1 Cloud ERP.
                 Ready to get started?
               </h2>
               <div className="flex justify-start">

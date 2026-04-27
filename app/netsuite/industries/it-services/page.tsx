@@ -9,7 +9,7 @@ const data: IndustryPageData = {
   heroTitle: "Scale Your IT Services Business Without Limits",
   heroDescription:
     "Optimize billable utilization, accelerate project delivery, and automate complex billing with the #1 cloud ERP built for IT and consulting firms.",
-  heroImage: "/images/industries/Professional-Services-compressed-1 (1).webp",
+  heroImage: "/images/people/people4.webp",
   heroCardTitle: "Project Profitability",
   heroCardSub: "Projects · Resources · Billing · Revenue Recognition",
   heroTopCardTitle: "Trusted by 500+ Services Firms",
