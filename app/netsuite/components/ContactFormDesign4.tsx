@@ -289,45 +289,45 @@ export default function ContactFormDesign4() {
                       <textarea id="LEADCF123" name="LEADCF123" rows={2} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all" placeholder="Share your requirements..." />
                     </div>
 
-                    {/* reCAPTCHA v3 is invisible — score verified on submit */}
-                    <p className="text-xs text-gray-400">
-                      This site is protected by reCAPTCHA and the Google{' '}
-                      <a href="https://policies.google.com/privacy" className="underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a>{' '}and{' '}
-                      <a href="https://policies.google.com/terms" className="underline" target="_blank" rel="noopener noreferrer">Terms of Service</a>{' '}apply.
-                    </p>
+                    {/* Agreement Checkbox (The "Tick") */}
+                    <div className="space-y-4 pt-2">
+                      <label className="flex items-start gap-3 cursor-pointer select-none group">
+                        <div
+                          onClick={() => setAgreed(a => !a)}
+                          className={`mt-0.5 w-5 h-5 shrink-0 rounded border-2 flex items-center justify-center transition-all ${agreed ? 'bg-blue-600 border-blue-600' : 'border-gray-300 group-hover:border-blue-400'}`}
+                        >
+                          {agreed && (
+                            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                            </svg>
+                          )}
+                        </div>
+                        <span className="text-xs text-gray-500 leading-relaxed" onClick={() => setAgreed(a => !a)}>
+                          I confirm that I am not a robot and I agree to the processing of my personal data by AGSuite Technologies.
+                        </span>
+                      </label>
 
-                    {/* Agreement Checkbox */}
-                    <label className="flex items-start gap-3 cursor-pointer select-none group">
-                      <div
-                        onClick={() => setAgreed(a => !a)}
-                        className={`mt-0.5 w-5 h-5 shrink-0 rounded border-2 flex items-center justify-center transition-all ${agreed ? 'bg-blue-600 border-blue-600' : 'border-gray-300 group-hover:border-blue-400'}`}
-                      >
-                        {agreed && (
-                          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                          </svg>
-                        )}
+                      <p className="text-[10px] text-gray-400 leading-tight">
+                        This site is protected by reCAPTCHA Enterprise and the Google{' '}
+                        <a href="https://policies.google.com/privacy" className="underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and{' '}
+                        <a href="https://policies.google.com/terms" className="underline" target="_blank" rel="noopener noreferrer">Terms of Service</a> apply.
+                      </p>
+
+                      <div className="flex gap-3 pt-2">
+                        <input
+                          type="submit"
+                          id="formsubmit"
+                          disabled={!agreed}
+                          className={`formsubmit flex-1 py-3.5 font-bold rounded-xl transition-all shadow-lg text-sm ${agreed ? 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white hover:scale-[1.02] cursor-pointer' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
+                          value="Submit Request"
+                        />
+                        <input 
+                          type="reset" 
+                          onClick={() => setAgreed(false)} 
+                          className="px-6 py-3.5 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-all text-sm cursor-pointer" 
+                          value="Reset" 
+                        />
                       </div>
-                      <span className="text-xs text-gray-500 leading-relaxed" onClick={() => setAgreed(a => !a)}>
-                        I confirm that the information provided is accurate and I agree to be contacted by AGSuite Technologies regarding my enquiry.
-                      </span>
-                    </label>
-
-                    <p className="text-xs text-gray-400">
-                      This site is protected by reCAPTCHA and the Google{' '}
-                      <a href="https://policies.google.com/privacy" className="underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a>{' '}and{' '}
-                      <a href="https://policies.google.com/terms" className="underline" target="_blank" rel="noopener noreferrer">Terms of Service</a>{' '}apply.
-                    </p>
-
-                    <div className="flex gap-3 pt-1">
-                      <input
-                        type="submit"
-                        id="formsubmit"
-                        disabled={!agreed}
-                        className={`formsubmit flex-1 py-3 font-bold rounded-xl transition-all shadow-lg text-sm ${agreed ? 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white hover:scale-[1.02] cursor-pointer' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
-                        value="Submit"
-                      />
-                      <input type="reset" onClick={() => setAgreed(false)} className="px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-all text-sm cursor-pointer" value="Reset" />
                     </div>
                   </form>
                 </div>
