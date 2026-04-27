@@ -5,12 +5,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Script from "next/script";
 
-const SITE_KEY = '6LeO48wsAAAAAAZdvHkRW9w9KW2Klz-P1P-prH8U';
+const SITE_KEY = '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3';
 
 export default function ContactFormDesign4() {
   const [isClient, setIsClient] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [agreed, setAgreed] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -20,6 +19,23 @@ export default function ContactFormDesign4() {
       const prev = optionElem.querySelector('[aria-selected=true]');
       if (prev) prev.removeAttribute('aria-selected');
       optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
+    };
+
+    (window as any).rccallback409531000042578178 = function () {
+      const recap = document.getElementById('recap409531000042578178');
+      if (recap) recap.setAttribute('captcha-verified', 'true');
+      const err = document.getElementById('recapErr409531000042578178') as HTMLElement;
+      if (err && err.style.visibility === 'visible') err.style.visibility = 'hidden';
+    };
+
+    (window as any).reCaptchaAlert409531000042578178 = function () {
+      const recap = document.getElementById('recap409531000042578178');
+      if (recap && recap.getAttribute('captcha-verified') === 'false') {
+        const err = document.getElementById('recapErr409531000042578178') as HTMLElement;
+        if (err) err.style.visibility = 'visible';
+        return false;
+      }
+      return true;
     };
 
     (window as any).validateEmail409531000042578178 = function () {
@@ -56,6 +72,7 @@ export default function ContactFormDesign4() {
         }
       }
       if (!(window as any).validateEmail409531000042578178()) return false;
+      if (!(window as any).reCaptchaAlert409531000042578178()) return false;
       return true;
     };
 
@@ -68,37 +85,47 @@ export default function ContactFormDesign4() {
         const btn = document.querySelector('.crmWebToEntityForm .formsubmit');
         if (btn) btn.setAttribute('disabled', 'true');
 
-        (window as any).grecaptcha.enterprise.ready(async () => {
-          try {
-            const token = await (window as any).grecaptcha.enterprise.execute(SITE_KEY, { action: 'SUBMIT' });
-            let inp = document.getElementById('g-rc-token') as HTMLInputElement;
-            if (!inp) {
-              inp = document.createElement('input');
-              inp.type = 'hidden'; inp.name = 'g-recaptcha-response'; inp.id = 'g-rc-token';
-              e.target.appendChild(inp);
-            }
-            inp.value = token;
-            const formData = new FormData(e.target);
-            $.ajax({
-              url: 'https://crm.zoho.in/crm/WebToLeadForm',
-              type: 'POST', data: formData, cache: false, contentType: false, processData: false,
-              success: function () {
-                window.dispatchEvent(new CustomEvent('zohoFormSuccess'));
-                if (btn) btn.removeAttribute('disabled');
-              },
-              error: function () { alert('An error occurred. Please try again.'); if (btn) btn.removeAttribute('disabled'); }
-            });
-          } catch (err) {
-            console.error('reCAPTCHA error:', err);
+        const formData = new FormData(e.target);
+        $.ajax({
+          url: 'https://crm.zoho.in/crm/WebToLeadForm',
+          type: 'POST', data: formData, cache: false, contentType: false, processData: false,
+          success: function () {
+            window.dispatchEvent(new CustomEvent('zohoFormSuccess'));
             if (btn) btn.removeAttribute('disabled');
-          }
+          },
+          error: function () { alert('An error occurred. Please try again.'); if (btn) btn.removeAttribute('disabled'); }
         });
       });
       return true;
     };
 
+    const renderRecaptcha = () => {
+      const el = document.getElementById('recap409531000042578178');
+      if ((window as any).grecaptcha && el && el.children.length === 0) {
+        try {
+          (window as any).grecaptcha.render('recap409531000042578178', {
+            sitekey: SITE_KEY,
+            theme: 'light',
+            callback: (window as any).rccallback409531000042578178
+          });
+        } catch (e) { /* already rendered */ }
+      }
+    };
+
     const jqInterval = setInterval(() => { if (setupSubmit()) clearInterval(jqInterval); }, 300);
     setTimeout(() => clearInterval(jqInterval), 10000);
+
+    if ((window as any).grecaptcha?.ready) {
+      (window as any).grecaptcha.ready(renderRecaptcha);
+    } else {
+      const rcInt = setInterval(() => {
+        if ((window as any).grecaptcha) {
+          (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
+          clearInterval(rcInt);
+        }
+      }, 300);
+      setTimeout(() => clearInterval(rcInt), 5000);
+    }
 
     const onSuccess = () => setSubmitted(true);
     window.addEventListener('zohoFormSuccess', onSuccess);
@@ -109,7 +136,7 @@ export default function ContactFormDesign4() {
 
   return (
     <>
-      <Script src={`https://www.google.com/recaptcha/enterprise.js?render=${SITE_KEY}`} strategy="afterInteractive" />
+      <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
       <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="afterInteractive" />
       <Script
         id="wf_anal"
@@ -193,7 +220,7 @@ export default function ContactFormDesign4() {
                       <p className="text-gray-500 text-sm max-w-xs mx-auto">Your enquiry has been submitted successfully. Our team will reach out to you within 24 hours.</p>
                     </div>
                     <button
-                      onClick={() => { setSubmitted(false); setAgreed(false); }}
+                      onClick={() => setSubmitted(false)}
                       className="mt-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm"
                     >
                       Submit Another Enquiry
@@ -289,45 +316,24 @@ export default function ContactFormDesign4() {
                       <textarea id="LEADCF123" name="LEADCF123" rows={2} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all" placeholder="Share your requirements..." />
                     </div>
 
-                    {/* Agreement Checkbox (The "Tick") */}
-                    <div className="space-y-4 pt-2">
-                      <label className="flex items-start gap-3 cursor-pointer select-none group">
-                        <div
-                          onClick={() => setAgreed(a => !a)}
-                          className={`mt-0.5 w-5 h-5 shrink-0 rounded border-2 flex items-center justify-center transition-all ${agreed ? 'bg-blue-600 border-blue-600' : 'border-gray-300 group-hover:border-blue-400'}`}
-                        >
-                          {agreed && (
-                            <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                            </svg>
-                          )}
-                        </div>
-                        <span className="text-xs text-gray-500 leading-relaxed" onClick={() => setAgreed(a => !a)}>
-                          I confirm that I am not a robot and I agree to the processing of my personal data by AGSuite Technologies.
-                        </span>
-                      </label>
+                    {/* reCAPTCHA v2 Checkbox Widget */}
+                    <div className="pt-2">
+                      <div className="g-recaptcha" data-sitekey={SITE_KEY} data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
+                      <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
+                    </div>
 
-                      <p className="text-[10px] text-gray-400 leading-tight">
-                        This site is protected by reCAPTCHA Enterprise and the Google{' '}
-                        <a href="https://policies.google.com/privacy" className="underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and{' '}
-                        <a href="https://policies.google.com/terms" className="underline" target="_blank" rel="noopener noreferrer">Terms of Service</a> apply.
-                      </p>
-
-                      <div className="flex gap-3 pt-2">
-                        <input
-                          type="submit"
-                          id="formsubmit"
-                          disabled={!agreed}
-                          className={`formsubmit flex-1 py-3.5 font-bold rounded-xl transition-all shadow-lg text-sm ${agreed ? 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white hover:scale-[1.02] cursor-pointer' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
-                          value="Submit Request"
-                        />
-                        <input 
-                          type="reset" 
-                          onClick={() => setAgreed(false)} 
-                          className="px-6 py-3.5 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-all text-sm cursor-pointer" 
-                          value="Reset" 
-                        />
-                      </div>
+                    <div className="flex gap-3 pt-2">
+                      <input
+                        type="submit"
+                        id="formsubmit"
+                        className="formsubmit flex-1 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm cursor-pointer"
+                        value="Submit Request"
+                      />
+                      <input 
+                        type="reset" 
+                        className="px-6 py-3.5 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-all text-sm cursor-pointer" 
+                        value="Reset" 
+                      />
                     </div>
                   </form>
                 </div>
@@ -341,4 +347,3 @@ export default function ContactFormDesign4() {
     </>
   );
 }
-
