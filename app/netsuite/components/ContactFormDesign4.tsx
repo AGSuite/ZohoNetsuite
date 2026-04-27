@@ -38,7 +38,7 @@ export default function ContactFormDesign4() {
     (window as any).validateEmail409531000042578178 = function () {
       const form = (document.forms as any)['WebToLeads409531000042578178'];
       if (!form) return true;
-      const emailFld = form.querySelectorAll('[ftype=email]');
+      const emailFld = form.querySelectorAll('[data-ftype=email]');
       for (let i = 0; i < emailFld.length; i++) {
         const v = emailFld[i].value;
         if (v.replace(/^\s+|\s+$/g, '').length !== 0) {
@@ -236,7 +236,7 @@ export default function ContactFormDesign4() {
                       </div>
                       <div>
                         <label htmlFor="LEADCF8" className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Company Email <span className="text-red-500">*</span></label>
-                        <input type="text" ftype="email" id="LEADCF8" name="LEADCF8" maxLength={100} autoComplete="off" required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all" placeholder="john@company.com" />
+                        <input type="text" data-ftype="email" id="LEADCF8" name="LEADCF8" maxLength={100} autoComplete="off" required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all" placeholder="john@company.com" />
                       </div>
                     </div>
 
