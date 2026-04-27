@@ -9,6 +9,8 @@ const SITE_KEY = '6LeO48wsAAAAAAZdvHkRW9w9KW2Klz-P1P-prH8U';
 
 export default function ContactFormDesign4() {
   const [isClient, setIsClient] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [agreed, setAgreed] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -80,13 +82,8 @@ export default function ContactFormDesign4() {
             $.ajax({
               url: 'https://crm.zoho.in/crm/WebToLeadForm',
               type: 'POST', data: formData, cache: false, contentType: false, processData: false,
-              success: function (data: any) {
-                const info = document.getElementById('wf_splash_info');
-                if (info) info.innerText = data.actionvalue;
-                const splash = document.getElementById('wf_splash');
-                const reset = document.querySelector('#webform409531000042578178 [name="reset"]') as HTMLInputElement;
-                if (reset) reset.click();
-                if (splash) { splash.style.display = ''; setTimeout(() => { splash.style.display = 'none'; }, 5000); }
+              success: function () {
+                window.dispatchEvent(new CustomEvent('zohoFormSuccess'));
                 if (btn) btn.removeAttribute('disabled');
               },
               error: function () { alert('An error occurred. Please try again.'); if (btn) btn.removeAttribute('disabled'); }
@@ -102,6 +99,10 @@ export default function ContactFormDesign4() {
 
     const jqInterval = setInterval(() => { if (setupSubmit()) clearInterval(jqInterval); }, 300);
     setTimeout(() => clearInterval(jqInterval), 10000);
+
+    const onSuccess = () => setSubmitted(true);
+    window.addEventListener('zohoFormSuccess', onSuccess);
+    return () => window.removeEventListener('zohoFormSuccess', onSuccess);
   }, []);
 
   if (!isClient) return null;
@@ -172,20 +173,39 @@ export default function ContactFormDesign4() {
               <motion.div
                 initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative bg-white rounded-r-[40px] p-8 lg:p-12 h-full"
+                className="relative bg-white rounded-r-[40px] p-8 lg:p-12 h-full flex flex-col justify-center"
               >
-                <div className="mb-6">
-                  <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Get Expert Guidance</h3>
-                  <p className="text-gray-500 text-sm">Fill in your details and we'll reach out within 24 hours</p>
-                </div>
-
-                {/* Success Toast */}
-                <div id="wf_splash" style={{ display: 'none' }} className="fixed top-5 left-1/2 -translate-x-1/2 z-[11000] flex items-center gap-2 bg-[#F5FAF5] border border-[#A9D3AB] text-[#132C14] rounded-lg px-4 py-3 shadow-md text-sm">
-                  <span className="w-5 h-5 bg-[#12AA67] rounded-full flex items-center justify-center shrink-0">
-                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
-                  </span>
-                  <span id="wf_splash_info" />
-                </div>
+                {submitted ? (
+                  /* ── Thank You Card ── */
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="flex flex-col items-center justify-center text-center py-8 gap-6"
+                  >
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-xl">
+                      <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-3xl font-bold text-gray-900 mb-2">Thank You!</h3>
+                      <p className="text-gray-500 text-sm max-w-xs mx-auto">Your enquiry has been submitted successfully. Our team will reach out to you within 24 hours.</p>
+                    </div>
+                    <button
+                      onClick={() => { setSubmitted(false); setAgreed(false); }}
+                      className="mt-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm"
+                    >
+                      Submit Another Enquiry
+                    </button>
+                  </motion.div>
+                ) : (
+                  /* ── Form ── */
+                  <>
+                    <div className="mb-6">
+                      <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Get Expert Guidance</h3>
+                      <p className="text-gray-500 text-sm">Fill in your details and we'll reach out within 24 hours</p>
+                    </div>
 
                 <div id="crmWebToEntityForm" className="crmWebToEntityForm">
                   <form id="webform409531000042578178" name="WebToLeads409531000042578178" acceptCharset="UTF-8" className="space-y-4">
@@ -276,12 +296,43 @@ export default function ContactFormDesign4() {
                       <a href="https://policies.google.com/terms" className="underline" target="_blank" rel="noopener noreferrer">Terms of Service</a>{' '}apply.
                     </p>
 
+                    {/* Agreement Checkbox */}
+                    <label className="flex items-start gap-3 cursor-pointer select-none group">
+                      <div
+                        onClick={() => setAgreed(a => !a)}
+                        className={`mt-0.5 w-5 h-5 shrink-0 rounded border-2 flex items-center justify-center transition-all ${agreed ? 'bg-blue-600 border-blue-600' : 'border-gray-300 group-hover:border-blue-400'}`}
+                      >
+                        {agreed && (
+                          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        )}
+                      </div>
+                      <span className="text-xs text-gray-500 leading-relaxed" onClick={() => setAgreed(a => !a)}>
+                        I confirm that the information provided is accurate and I agree to be contacted by AGSuite Technologies regarding my enquiry.
+                      </span>
+                    </label>
+
+                    <p className="text-xs text-gray-400">
+                      This site is protected by reCAPTCHA and the Google{' '}
+                      <a href="https://policies.google.com/privacy" className="underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a>{' '}and{' '}
+                      <a href="https://policies.google.com/terms" className="underline" target="_blank" rel="noopener noreferrer">Terms of Service</a>{' '}apply.
+                    </p>
+
                     <div className="flex gap-3 pt-1">
-                      <input type="submit" id="formsubmit" className="formsubmit flex-1 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm cursor-pointer" value="Submit" />
-                      <input type="reset" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-all text-sm cursor-pointer" value="Reset" />
+                      <input
+                        type="submit"
+                        id="formsubmit"
+                        disabled={!agreed}
+                        className={`formsubmit flex-1 py-3 font-bold rounded-xl transition-all shadow-lg text-sm ${agreed ? 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white hover:scale-[1.02] cursor-pointer' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
+                        value="Submit"
+                      />
+                      <input type="reset" onClick={() => setAgreed(false)} className="px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-all text-sm cursor-pointer" value="Reset" />
                     </div>
                   </form>
                 </div>
+                  </>
+                )}
               </motion.div>
             </div>
           </div>
@@ -290,3 +341,4 @@ export default function ContactFormDesign4() {
     </>
   );
 }
+
