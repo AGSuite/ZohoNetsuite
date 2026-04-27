@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Script from "next/script";
 
+const SITE_KEY = '6LeO48wsAAAAAAZdvHkRW9w9KW2Klz-P1P-prH8U';
+
 export default function ContactFormDesign4() {
   const [isClient, setIsClient] = useState(false);
 
@@ -16,23 +18,6 @@ export default function ContactFormDesign4() {
       const prev = optionElem.querySelector('[aria-selected=true]');
       if (prev) prev.removeAttribute('aria-selected');
       optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
-    };
-
-    (window as any).rccallback409531000042578178 = function () {
-      const recap = document.getElementById('recap409531000042578178');
-      if (recap) recap.setAttribute('captcha-verified', 'true');
-      const err = document.getElementById('recapErr409531000042578178') as HTMLElement;
-      if (err && err.style.visibility === 'visible') err.style.visibility = 'hidden';
-    };
-
-    (window as any).reCaptchaAlert409531000042578178 = function () {
-      const recap = document.getElementById('recap409531000042578178');
-      if (recap && recap.getAttribute('captcha-verified') === 'false') {
-        const err = document.getElementById('recapErr409531000042578178') as HTMLElement;
-        if (err) err.style.visibility = 'visible';
-        return false;
-      }
-      return true;
     };
 
     (window as any).validateEmail409531000042578178 = function () {
@@ -69,76 +54,61 @@ export default function ContactFormDesign4() {
         }
       }
       if (!(window as any).validateEmail409531000042578178()) return false;
-      if (!(window as any).reCaptchaAlert409531000042578178()) return false;
-      const btn = document.querySelector('.crmWebToEntityForm .formsubmit');
-      if (btn) btn.setAttribute('disabled', 'true');
       return true;
     };
 
-    // jQuery AJAX submission
     const setupSubmit = () => {
       const $ = (window as any).$;
       if (!$) return false;
       $('#webform409531000042578178').off('submit').on('submit', function (e: any) {
-        const ok = (window as any).checkMandatory409531000042578178();
         e.preventDefault();
-        if (ok) {
-          const formData = new FormData(e.target);
-          $.ajax({
-            url: 'https://crm.zoho.in/crm/WebToLeadForm',
-            type: 'POST', data: formData, cache: false, contentType: false, processData: false,
-            success: function (data: any) {
-              const info = document.getElementById('wf_splash_info');
-              if (info) info.innerText = data.actionvalue;
-              const splash = document.getElementById('wf_splash');
-              const resetBtn = document.querySelector('#webform409531000042578178 [name="reset"]') as HTMLInputElement;
-              if (resetBtn) resetBtn.click();
-              if (splash) { splash.style.display = ''; setTimeout(() => { splash.style.display = 'none'; }, 5000); }
-              const btn = document.querySelector('.crmWebToEntityForm .formsubmit');
-              if (btn) btn.removeAttribute('disabled');
-            },
-            error: function () { alert('An error occurred. Please try again.'); }
-          });
-        }
+        if (!(window as any).checkMandatory409531000042578178()) return;
+        const btn = document.querySelector('.crmWebToEntityForm .formsubmit');
+        if (btn) btn.setAttribute('disabled', 'true');
+
+        (window as any).grecaptcha.enterprise.ready(async () => {
+          try {
+            const token = await (window as any).grecaptcha.enterprise.execute(SITE_KEY, { action: 'SUBMIT' });
+            let inp = document.getElementById('g-rc-token') as HTMLInputElement;
+            if (!inp) {
+              inp = document.createElement('input');
+              inp.type = 'hidden'; inp.name = 'g-recaptcha-response'; inp.id = 'g-rc-token';
+              e.target.appendChild(inp);
+            }
+            inp.value = token;
+            const formData = new FormData(e.target);
+            $.ajax({
+              url: 'https://crm.zoho.in/crm/WebToLeadForm',
+              type: 'POST', data: formData, cache: false, contentType: false, processData: false,
+              success: function (data: any) {
+                const info = document.getElementById('wf_splash_info');
+                if (info) info.innerText = data.actionvalue;
+                const splash = document.getElementById('wf_splash');
+                const reset = document.querySelector('#webform409531000042578178 [name="reset"]') as HTMLInputElement;
+                if (reset) reset.click();
+                if (splash) { splash.style.display = ''; setTimeout(() => { splash.style.display = 'none'; }, 5000); }
+                if (btn) btn.removeAttribute('disabled');
+              },
+              error: function () { alert('An error occurred. Please try again.'); if (btn) btn.removeAttribute('disabled'); }
+            });
+          } catch (err) {
+            console.error('reCAPTCHA error:', err);
+            if (btn) btn.removeAttribute('disabled');
+          }
+        });
       });
       return true;
     };
 
     const jqInterval = setInterval(() => { if (setupSubmit()) clearInterval(jqInterval); }, 300);
     setTimeout(() => clearInterval(jqInterval), 10000);
-
-    // reCAPTCHA v2 checkbox rendering
-    const renderRecaptcha = () => {
-      const el = document.getElementById('recap409531000042578178');
-      if ((window as any).grecaptcha && el && el.children.length === 0) {
-        try {
-          (window as any).grecaptcha.render('recap409531000042578178', {
-            sitekey: '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
-            theme: 'light',
-            callback: (window as any).rccallback409531000042578178
-          });
-        } catch (e) { /* already rendered */ }
-      }
-    };
-
-    if ((window as any).grecaptcha?.ready) {
-      (window as any).grecaptcha.ready(renderRecaptcha);
-    } else {
-      const rcInt = setInterval(() => {
-        if ((window as any).grecaptcha) {
-          (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
-          clearInterval(rcInt);
-        }
-      }, 300);
-      setTimeout(() => clearInterval(rcInt), 5000);
-    }
   }, []);
 
   if (!isClient) return null;
 
   return (
     <>
-      <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
+      <Script src={`https://www.google.com/recaptcha/enterprise.js?render=${SITE_KEY}`} strategy="afterInteractive" />
       <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="afterInteractive" />
       <Script
         id="wf_anal"
@@ -153,7 +123,6 @@ export default function ContactFormDesign4() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="rounded-[40px] bg-[#0d0d0d]/70 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden">
             <div className="absolute inset-0 bg-white/5 rounded-[40px]" />
-
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
 
               {/* Left Side */}
@@ -210,7 +179,7 @@ export default function ContactFormDesign4() {
                   <p className="text-gray-500 text-sm">Fill in your details and we'll reach out within 24 hours</p>
                 </div>
 
-                {/* Success Splash */}
+                {/* Success Toast */}
                 <div id="wf_splash" style={{ display: 'none' }} className="fixed top-5 left-1/2 -translate-x-1/2 z-[11000] flex items-center gap-2 bg-[#F5FAF5] border border-[#A9D3AB] text-[#132C14] rounded-lg px-4 py-3 shadow-md text-sm">
                   <span className="w-5 h-5 bg-[#12AA67] rounded-full flex items-center justify-center shrink-0">
                     <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
@@ -300,11 +269,12 @@ export default function ContactFormDesign4() {
                       <textarea id="LEADCF123" name="LEADCF123" rows={2} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all" placeholder="Share your requirements..." />
                     </div>
 
-                    {/* reCAPTCHA v2 Checkbox */}
-                    <div>
-                      <div className="g-recaptcha" data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
-                      <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
-                    </div>
+                    {/* reCAPTCHA v3 is invisible — score verified on submit */}
+                    <p className="text-xs text-gray-400">
+                      This site is protected by reCAPTCHA and the Google{' '}
+                      <a href="https://policies.google.com/privacy" className="underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a>{' '}and{' '}
+                      <a href="https://policies.google.com/terms" className="underline" target="_blank" rel="noopener noreferrer">Terms of Service</a>{' '}apply.
+                    </p>
 
                     <div className="flex gap-3 pt-1">
                       <input type="submit" id="formsubmit" className="formsubmit flex-1 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm cursor-pointer" value="Submit" />
