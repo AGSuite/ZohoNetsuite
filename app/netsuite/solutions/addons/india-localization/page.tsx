@@ -165,17 +165,12 @@ export default function IndiaLocalizationPage() {
         <div className="max-w-8xl mx-auto px-16">
           <div className="grid lg:grid-cols-2 gap-6 items-stretch">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="flex items-center justify-center rounded-2xl p-4 mt-15" style={{ minHeight: 340 }}>
-              <Image src="/images/netsuiteimages/solutions/NetsuiteSRP.webp" alt="NetSuite India Localization" width={560} height={380} className="w-full h-auto rounded-xl object-contain" />
+              <Image src="/images/Dashboard/indian localization 2 dashboard.jpg" alt="NetSuite India Localization" width={1400} height={900} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20" />
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="space-y-6 mt-15">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">Full Indian Tax Compliance — Inside NetSuite.</h3>
               <p className="text-lg text-gray-600 leading-relaxed">The NetSuite India Localization Add-On extends NetSuite ERP with complete Indian statutory compliance — GST computation, e-invoicing with IRP integration, TDS and TCS automation, e-Way Bill generation, and GSTR filing reports — all running natively inside your NetSuite account.</p>
               <p className="text-lg text-gray-600 leading-relaxed">Whether you're a domestic Indian company, a subsidiary of a multinational, or an exporter, our India Localization solution ensures every transaction is GST-correct, audit-ready, and compliant with the latest GSTN and Income Tax regulations.</p>
-              <div className="grid sm:grid-cols-2 gap-3 pt-2">
-                {["Mandatory e-invoicing (IRP)", "GST registered multi-state", "TDS/TCS depletion cycles", "GSTR-1, 3B, 9 filing", "E-Way Bill generation", "RCM & ITC management"].map((feat, i) => (
-                  <div key={i} className="flex items-center gap-2 text-[15px] text-gray-700"><Check className="w-4 h-4 text-blue-600 shrink-0" />{feat}</div>
-                ))}
-              </div>
               <div className="pt-4">
                 <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest text-white transition-all" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}>
                   Get India Localization <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 1.2, repeat: Infinity }}><ArrowRight size={17} /></motion.span>

@@ -319,7 +319,7 @@ export default function AddonsPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-24">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="flex items-center justify-center rounded-2xl" style={{ minHeight: 340 }}>
-                <Image src="/images/netsuiteimages/solutions/NetsuiteSRP.webp" alt="NetSuite Add-Ons" width={560} height={380} className="w-full h-auto rounded-xl object-contain" />
+                <Image src="/images/Dashboard/ERP Dashboard_11zon.jpg" alt="NetSuite Add-Ons" width={1400} height={900} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20" />
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="space-y-6">
                 <ScrollFloat

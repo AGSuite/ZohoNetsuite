@@ -396,16 +396,16 @@ export default function NetSuiteSRPPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="flex items-center justify-center rounded-2xl overflow-hidden"
-              style={{ minHeight: 650 }}
+              className="flex items-center justify-center rounded-2xl overflow-hidden p-4 md:p-8"
             >
-              <div className="relative w-full h-full">
+              <div className="relative w-full">
                 <Image
                   src="/images/Dashboard/suiteproject dashboard 2.jpg"
                   alt="NetSuite SRP Dashboard"
                   width={1400}
                   height={900}
-                  className="w-full h-auto rounded-xl object-contain scale-120 border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                  className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20"
                 />
               </div>
             </motion.div>
