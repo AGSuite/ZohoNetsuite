@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Script from "next/script";
@@ -9,6 +10,7 @@ import Script from "next/script";
 const SITE_KEY = '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y';
 
 export default function ContactFormDesign4() {
+  const router = useRouter();
   const [isClient, setIsClient] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -157,7 +159,12 @@ export default function ContactFormDesign4() {
       setTimeout(() => clearInterval(rcInt), 5000);
     }
 
-    const onSuccess = () => setSubmitted(true);
+    const onSuccess = () => {
+      setSubmitted(true);
+      setTimeout(() => {
+        router.push('/thank-you');
+      }, 1000);
+    };
     window.addEventListener('zohoFormSuccess', onSuccess);
     return () => window.removeEventListener('zohoFormSuccess', onSuccess);
   }, []);
