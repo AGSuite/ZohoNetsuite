@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter, DM_Sans } from "next/font/google";
 import "./globals.css";
@@ -48,6 +49,7 @@ export default function RootLayout({
 
         {/* Global Scroll to Top Button */}
         <ScrollToTopWrapper />
+        <SpeedInsights />
       </body>
     </html>
   );

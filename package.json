@@ -20,6 +20,7 @@
     "@types/d3-scale": "^4.0.9",
     "@types/nodemailer": "^8.0.0",
     "@types/three": "^0.183.1",
+    "@vercel/speed-insights": "^2.0.0",
     "clsx": "^2.1.1",
     "d3-scale": "^4.0.2",
     "framer-motion": "^12.23.26",
