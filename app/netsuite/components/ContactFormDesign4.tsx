@@ -87,14 +87,43 @@ export default function ContactFormDesign4() {
         if (btn) btn.setAttribute('disabled', 'true');
 
         const formData = new FormData(e.target);
+        
+        // 1. Send Email Notification First
+        const emailData = {
+          name: formData.get('Last Name'),
+          email: formData.get('LEADCF8'),
+          role: formData.get('Designation'),
+          mobile: formData.get('Mobile'),
+          company: formData.get('Company'),
+          service: formData.get('LEADCF5'),
+          revenue: formData.get('LEADCF19'),
+          hearAboutUs: formData.get('LEADCF127'),
+          requirements: formData.get('LEADCF123'),
+          platform: 'NetSuite'
+        };
+
+        fetch('/api/contact/netsuite', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(emailData)
+        }).catch(err => console.error('Email error:', err));
+
+        // 2. Submit to Zoho CRM
         $.ajax({
           url: 'https://crm.zoho.in/crm/WebToLeadForm',
-          type: 'POST', data: formData, cache: false, contentType: false, processData: false,
+          type: 'POST',
+          data: formData,
+          cache: false,
+          contentType: false,
+          processData: false,
           success: function () {
             window.dispatchEvent(new CustomEvent('zohoFormSuccess'));
             if (btn) btn.removeAttribute('disabled');
           },
-          error: function () { alert('An error occurred. Please try again.'); if (btn) btn.removeAttribute('disabled'); }
+          error: function () {
+            alert('An error occurred. Please try again.');
+            if (btn) btn.removeAttribute('disabled');
+          }
         });
       });
       return true;
@@ -141,7 +170,7 @@ export default function ContactFormDesign4() {
       <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="afterInteractive" />
       <Script
         id="wf_anal"
-        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=069e092375575a1e16cff3709212ca48b1dee364b5e258d07e2825eb3a8f979960011550a5cf722bfe0baab2ee0b42e0gide1f9a8778d9bbe722bfd3dd9d6871544609c210a5c71bd6723a8bd56cd54b44bgidad3c0985806665d32e537489d04a70f46fb69c481bf46d036ef2a0463d7dbc3dgid6b5a7c9f7266316b8a40a1fe46bc95787d06941b759046068de31f96621a5255&tw=3be8f3a0538b8f1813b3b1f3d9ef5839d9a254acbafc102c58ed0ac42ec862b5"
+        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=ffa911f519bdac1fd37141e7458859338a4c0807209e53fcd9161a4ef8002b597777f2d47c34393e74912d83270ec629gid2020ff77b8590645f6909775bceb1dfe9b354b521b7d31a381183051979950afgidc32afce85ab5735ae0662898fbed0b63bef845d0ee34535ca4044be79f94eb16gidc20f47455171d038199ce12255d9fb14618138cdb451a0053d17b76b5cbc594d&tw=a5bf274d720cc51e70d06319b934b2ae14a201bb6424c6ca86bd81d126e9d37e"
         strategy="afterInteractive"
       />
 
@@ -237,11 +266,11 @@ export default function ContactFormDesign4() {
 
                 <div id="crmWebToEntityForm" className="crmWebToEntityForm">
                   <form id="webform409531000042578178" name="WebToLeads409531000042578178" acceptCharset="UTF-8" className="space-y-4">
-                    <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue="9e5e3c8bd8dbe33b3ebd8beeff15bfc7a999e539b0f1dfe9df8bc9129fdcbcfc" readOnly />
+                    <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue="e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82" readOnly />
                     <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                    <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue="9abbe069f15c156742400c19b48c3e97c607c2c14cb77d221e1d84dbba11348392d15fd7a164fe674db90188648c7b56" readOnly />
+                    <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue="7ce425cbc5576979cf8d2dfa7bcaeeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a" readOnly />
                     <input type="text" style={{ display: 'none' }} name="actionType" defaultValue="TGVhZHM=" readOnly />
-                    <input type="text" style={{ display: 'none' }} name="returnURL" defaultValue="null" readOnly />
+                    <input type="text" style={{ display: 'none' }} name="returnURL" defaultValue="https://zoho-netsuite.vercel.app/thank-you" readOnly />
                     <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" defaultValue="" readOnly />
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
