@@ -33,13 +33,6 @@ const PARTICLES = [
     { w: 2.5, h: 2.5, top: 85, left: 30, dur: 5.5, delay: 1.5 },
 ];
 
-declare global {
-  interface Window {
-    zsValidateMandatoryFields?: () => boolean;
-    zsRegenerateCaptcha?: () => void;
-  }
-}
-
 export default function ZohoSupportPage() {
     const [isClient, setIsClient] = useState(false);
     const [captchaUrl, setCaptchaUrl] = useState("");

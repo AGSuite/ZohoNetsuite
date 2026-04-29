@@ -27,14 +27,6 @@ const PARTICLES = [
     { w: 2.5, h: 2.5, top: 85, left: 30, dur: 5.5, delay: 1.5 },
 ];
 
-declare global {
-  interface Window {
-    validateEmail409531000042578178?: () => boolean;
-    checkMandatory409531000042578178?: (e: any) => boolean;
-    trackVisitor409531000042578178?: () => void;
-  }
-}
-
 export default function FreeConsultation() {
     const [isClient, setIsClient] = useState(false);
     const [selectedCode, setSelectedCode] = useState('+91');

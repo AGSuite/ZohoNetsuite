@@ -43,5 +43,13 @@ declare global {
     // ── Shared utilities ───────────────────────────────────────────────
     validateNumber: (e: any) => boolean;
     sendEmail: () => void;
+
+    // ── Zoho contact page helpers ──────────────────────────────────────
+    validateEmailContactZoho: () => boolean;
+    checkMandatoryContactZoho: (e?: any) => boolean;
+
+    // ── Zoho Desk support page helpers ─────────────────────────────────
+    zsValidateMandatoryFields: () => boolean;
+    zsRegenerateCaptcha: () => void;
   }
 }
