@@ -54,12 +54,28 @@ export default function NetSuiteContactFormGradient() {
             (emailFld[i] as HTMLInputElement).focus();
             return false;
           }
-          const restrictedDomains = /(gmail\.com|yahoo\.com|outlook\.com|live\.com)$/i;
-          if (restrictedDomains.test(emailVal)) {
-            alert('Gmail, Yahoo, Outlook, and Live email addresses are not allowed.');
+          const domain = emailVal.split('@')[1].toLowerCase();
+          const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
+          if (forbidden.includes(domain)) {
+            alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
             (emailFld[i] as HTMLInputElement).focus();
             return false;
           }
+        }
+      }
+      return true;
+    };
+
+    window.validateMobile409531000026445204 = function () {
+      const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
+      if (!form) return true;
+      const mobileFld = form.elements.namedItem('Mobile') as HTMLInputElement;
+      if (mobileFld) {
+        const v = mobileFld.value.replace(/\D/g, '');
+        if (v.length !== 10) {
+          alert('Mobile number must be exactly 10 digits.');
+          mobileFld.focus();
+          return false;
         }
       }
       return true;
@@ -90,6 +106,7 @@ export default function NetSuiteContactFormGradient() {
       }
       window.trackVisitor409531000026445204?.();
       if (window.validateEmail409531000026445204 && !window.validateEmail409531000026445204()) return false;
+      if ((window as any).validateMobile409531000026445204 && !(window as any).validateMobile409531000026445204()) return false;
       if (window.reCaptchaAlert409531000026445204 && !window.reCaptchaAlert409531000026445204()) return false;
 
       window.sendEmail?.();

@@ -43,7 +43,7 @@ export default function ContactFormDesign4() {
     };
 
     (window as any).validateEmail409531000042578178 = function () {
-      const form = (document.forms as any)['WebToLeads409531000042578178'];
+      const form = (document.forms as any).WebToLeads409531000042578178;
       if (!form) return true;
       const emailFld = form.querySelectorAll('[data-ftype=email]');
       for (let i = 0; i < emailFld.length; i++) {
@@ -55,6 +55,28 @@ export default function ContactFormDesign4() {
             emailFld[i].focus();
             return false;
           }
+          const domain = v.split('@')[1].toLowerCase();
+          const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
+          if (forbidden.includes(domain)) {
+            alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
+            emailFld[i].focus();
+            return false;
+          }
+        }
+      }
+      return true;
+    };
+
+    (window as any).validateMobile409531000042578178 = function () {
+      const form = (document.forms as any).WebToLeads409531000042578178;
+      if (!form) return true;
+      const mobileFld = form.querySelector('input[name="Mobile"]');
+      if (mobileFld) {
+        const v = mobileFld.value.replace(/\D/g, '');
+        if (v.length !== 10) {
+          alert('Mobile number must be exactly 10 digits.');
+          mobileFld.focus();
+          return false;
         }
       }
       return true;
@@ -76,6 +98,7 @@ export default function ContactFormDesign4() {
         }
       }
       if (!(window as any).validateEmail409531000042578178()) return false;
+      if (!(window as any).validateMobile409531000042578178()) return false;
       if (!(window as any).reCaptchaAlert409531000042578178()) return false;
       return true;
     };
@@ -301,8 +324,8 @@ export default function ContactFormDesign4() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="Designation" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Role</label>
-                        <input type="text" id="Designation" name="Designation" maxLength={100} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Manager" />
+                        <label htmlFor="Designation" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Role <span className="text-red-500">*</span></label>
+                        <input type="text" id="Designation" name="Designation" maxLength={100} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Manager" />
                       </div>
                       <div>
                         <label htmlFor="Mobile" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">POC's Mobile <span className="text-red-500">*</span></label>

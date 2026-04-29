@@ -78,6 +78,28 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
             emailFld[i].focus();
             return false;
           }
+          const domain = v.split('@')[1].toLowerCase();
+          const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
+          if (forbidden.includes(domain)) {
+            alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
+            emailFld[i].focus();
+            return false;
+          }
+        }
+      }
+      return true;
+    };
+
+    (window as any)[`validateMobile${suffix}`] = function () {
+      const form = (document.forms as any)[formName];
+      if (!form) return true;
+      const mobileFld = form.querySelector('input[name="Mobile"]');
+      if (mobileFld) {
+        const v = mobileFld.value.replace(/\D/g, '');
+        if (v.length !== 10) {
+          alert('Mobile number must be exactly 10 digits.');
+          mobileFld.focus();
+          return false;
         }
       }
       return true;
@@ -112,6 +134,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
         }
       }
       if (!(window as any)[`validateEmail${suffix}`]()) return false;
+      if (!(window as any)[`validateMobile${suffix}`]()) return false;
       if (!(window as any)[`reCaptchaAlert${suffix}`]()) return false;
       return true;
     };
@@ -369,10 +392,9 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Role</label>
-                        <input type="text" name="Designation" maxLength={100} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Manager" suppressHydrationWarning />
+                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Role <span className="text-red-500">*</span></label>
+                        <input type="text" name="Designation" maxLength={100} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Manager" suppressHydrationWarning />
                       </div>
                       <div>
                         <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">POC's Mobile <span className="text-red-500">*</span></label>

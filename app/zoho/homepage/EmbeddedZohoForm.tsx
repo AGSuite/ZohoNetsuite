@@ -54,21 +54,89 @@ export default function EmbeddedZohoForm() {
         }
     }, []);
 
-    const handleFormSubmit = (e: any) => {
-        const recap = document.getElementById('recap409531000026445204');
-        if (recap && recap.getAttribute('captcha-verified') === 'false') {
-            const errorElement = document.getElementById('recapErr409531000026445204');
-            if (errorElement) {
-                errorElement.style.visibility = 'visible';
+    const handleFormSubmit = async (e: any) => {
+        const form = e.target;
+        
+        // 1. Mandatory Checks
+        const mnd = ['Last Name', 'Email', 'Mobile', 'Company', 'LEADCF5', 'Annual Revenue', 'Description'];
+        const labels = ['Name', 'Business Email', 'Mobile', 'Company Name', 'Zoho Solution', 'Annual Revenue', 'Requirements'];
+        
+        for (let i = 0; i < mnd.length; i++) {
+            const fld = form[mnd[i]];
+            if (!fld || !fld.value.trim()) {
+                alert(labels[i] + ' cannot be empty.');
+                fld?.focus();
+                e.preventDefault();
+                return false;
             }
+        }
+
+        // 2. Email Validation (Business only)
+        const email = form['Email'].value;
+        const domain = email.split('@')[1]?.toLowerCase();
+        const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
+        if (forbidden.includes(domain)) {
+            alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
+            form['Email'].focus();
             e.preventDefault();
             return false;
         }
+
+        // 3. Mobile Validation (10 digits)
+        const mobile = form['Mobile'].value.replace(/\D/g, '');
+        if (mobile.length !== 10) {
+            alert('Mobile number must be exactly 10 digits.');
+            form['Mobile'].focus();
+            e.preventDefault();
+            return false;
+        }
+
+        // 4. Captcha
+        const recap = document.getElementById('recap409531000026445204');
+        if (recap && recap.getAttribute('captcha-verified') === 'false') {
+            const errorElement = document.getElementById('recapErr409531000026445204');
+            if (errorElement) errorElement.style.visibility = 'visible';
+            e.preventDefault();
+            return false;
+        }
+
+        // 5. Email Notification
+        const formData = new FormData(form);
+        const emailData = {
+            name: formData.get('Last Name'),
+            email: formData.get('Email'),
+            role: formData.get('Designation'),
+            mobile: formData.get('Mobile'),
+            company: formData.get('Company'),
+            service: formData.get('LEADCF5'),
+            revenue: formData.get('Annual Revenue'),
+            requirements: formData.get('Description'),
+            platform: 'Zoho'
+        };
+
+        fetch('/api/contact/netsuite', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(emailData)
+        }).catch(err => console.error('Email error:', err));
+
+        // 6. Submit via iframe
+        form.target = 'zoho_iframe_embedded';
+        
+        const btn = document.getElementById('formsubmit') as HTMLInputElement;
+        if (btn) btn.disabled = true;
+
+        setTimeout(() => {
+            alert('Your request has been submitted successfully.');
+            if (btn) btn.disabled = false;
+        }, 2000);
+
         return true;
     };
     return (
         <div id="crmWebToEntityForm" className="zcwf_lblLeft crmWebToEntityForm">
             <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
+            <iframe name="zoho_iframe_embedded" style={{ display: 'none' }}></iframe>
             <form id="webform409531000026445204" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000026445204" method="POST" onSubmit={handleFormSubmit} acceptCharset="UTF-8">
                 <input type="text" className="hidden" name="xnQsjsdp" defaultValue="19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f" readOnly />
                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
@@ -168,7 +236,7 @@ export default function EmbeddedZohoForm() {
                     </div>
 
                     <div className="agsuite_column">
-                        <input type="text" id="Designation" name="Designation" placeholder="Job Title" maxLength={100} />
+                        <input type="text" id="Designation" name="Designation" placeholder="Job Title*" maxLength={100} />
                     </div>
 
                     <div className="agsuite_column">
