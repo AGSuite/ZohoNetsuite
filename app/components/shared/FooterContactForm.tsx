@@ -7,7 +7,7 @@ import Image from "next/image";
 import Script from "next/script";
 import { Briefcase, Globe2, HeartHandshake, Rocket } from "lucide-react";
 
-const SITE_KEY = "6LcjvYsqAAAAAD4f1Wk_k2R8o9wV0N1s5d_qH_fT";
+const SITE_KEY = "6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y";
 
 interface FooterContactFormProps {
   platform: 'NetSuite' | 'Zoho';
@@ -20,26 +20,20 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
 
   const isNetSuite = platform === 'NetSuite';
 
-  // CRM Configs
-  const crmConfig = isNetSuite ? {
+  // Standardized CRM Config (Unified for both platforms)
+  const crmConfig = {
     xnQsjsdp: "e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82",
     xmIwtLD: "7ce425cbc5576979cf8d2dfa7bcaeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a",
     returnURL: "https://zoho-netsuite.vercel.app/thank-you",
     rid: "ffa911f519bdac1fd37141e7458859338a4c0807209e53fcd9161a4ef8002b597777f2d47c34393e74912d83270ec629gid2020ff77b8590645f6909775bceb1dfe9b354b521b7d31a381183051979950afgidc32afce85ab5735ae0662898fbed0b63bef845d0ee34535ca4044be79f94eb16gidc20f47455171d038199ce12255d9fb14618138cdb451a0053d17b76b5cbc594d",
     tw: "a5bf274d720cc51e70d06319b934b2ae14a201bb6424c6ca86bd81d126e9d37e"
-  } : {
-    xnQsjsdp: "e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82",
-    xmIwtLD: "7ce425cbc5576979cf8d2dfa7bcaeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a",
-    returnURL: "https://agsuitetech.com/best-cloud-based-crm/thank-you/",
-    rid: "c6bd15ef499e015212f7cfd1d94a36257616906db3378b7d58e9666a0cb004ad04cae4b2ad4b40f407ea1df9509ddfc3gid4d54f02188dbd1a4f4c8582e1cc6829be5ddd9b1ad3710ed7207deccba2aa858giddeda7992accaf02590572b916d20ede01298921dbc555b8a938ff90fe2bc82f4gid28710435a2d0ea931303f1f01e1b730e6517c1be20b1776d1746edb3c9f1c653",
-    tw: "8b4a96a610c92f39fdbddebeaa5a00b371fd965c61608708d088c2ca4821d30d"
   };
 
   useEffect(() => {
     setIsClient(true);
 
-    const suffix = isNetSuite ? '409531000042578178' : '409531000026445204';
-    const formName = isNetSuite ? 'WebToLeads409531000042578178' : 'WebToLeads409531000026445204';
+    const suffix = '409531000042578178';
+    const formName = 'WebToLeads409531000042578178';
 
     (window as any)[`addAriaSelected${suffix}`] = function () {
       const optionElem = (event as any).target;
@@ -106,11 +100,8 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
     };
 
     (window as any)[`checkMandatory${suffix}`] = function () {
-      // Standardized fields and labels for both platforms to match NetSuite Homepage requirements
-      const fields = isNetSuite 
-        ? ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123']
-        : ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'Email', 'Annual Revenue', 'Description'];
-      
+      // Standardized fields and labels for both platforms
+      const fields = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
       const labels = [
         'Company Name', 
         'Name', 
@@ -144,14 +135,14 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
       if (!$) return false;
       $(`#shared_webform_${platform}`).off('submit').on('submit', function (e: any) {
         // e.preventDefault(); // Removed to allow standard submission to hidden iframe
-        if (!(window as any)[`checkMandatory${suffix}`]()) return;
+        if (!(window as any).checkMandatory409531000042578178()) return;
         const btn = document.querySelector(`.crmWebToEntityForm .formsubmit-${platform}`);
         if (btn) btn.setAttribute('disabled', 'true');
 
         const formData = new FormData(e.target);
         
         // 1. Send Email Notification
-        const emailData = isNetSuite ? {
+        const emailData = {
           name: formData.get('Last Name'),
           email: formData.get('LEADCF8'),
           role: formData.get('Designation'),
@@ -161,18 +152,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
           revenue: formData.get('LEADCF19'),
           hearAboutUs: formData.get('LEADCF127'),
           requirements: formData.get('LEADCF123'),
-          platform: 'NetSuite'
-        } : {
-          name: formData.get('Last Name'),
-          email: formData.get('Email'),
-          role: formData.get('Designation'),
-          mobile: formData.get('Mobile'),
-          company: formData.get('Company'),
-          service: formData.get('LEADCF5'),
-          revenue: formData.get('Annual Revenue'),
-          hearAboutUs: formData.get('Lead Source'),
-          requirements: formData.get('Description'),
-          platform: 'Zoho'
+          platform: platform
         };
 
         fetch('/api/contact/netsuite', { 
@@ -206,7 +186,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
           (window as any).grecaptcha.render(`recap${suffix}`, {
             sitekey: SITE_KEY,
             theme: 'light',
-            callback: (window as any)[`rccallback${suffix}`]
+            callback: (window as any).rccallback409531000042578178
           });
         } catch (e) { /* already rendered */ }
       }
@@ -367,7 +347,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                     </div>
 
                 <div id="crmWebToEntityForm" className="crmWebToEntityForm">
-                  <form id={`shared_webform_${platform}`} name="WebToLeads409531000042578178" acceptCharset="UTF-8" className="space-y-4">
+                  <form id={`shared_webform_${platform}`} name="WebToLeads409531000042578178" action="https://crm.zoho.in/crm/WebToLeadForm" method="POST" target={`zoho_iframe_${platform}`} acceptCharset="UTF-8" className="space-y-4">
                     <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue={crmConfig.xnQsjsdp} readOnly />
                     <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
                     <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue={crmConfig.xmIwtLD} readOnly />
@@ -483,6 +463,11 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
           </div>
         </div>
       </section>
+      <Script 
+        id="wf_anal" 
+        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=ffa911f519bdac1fd37141e7458859338a4c0807209e53fcd9161a4ef8002b597777f2d47c34393e74912d83270ec629gid2020ff77b8590645f6909775bceb1dfe9b354b521b7d31a381183051979950afgidc32afce85ab5735ae0662898fbed0b63bef845d0ee34535ca4044be79f94eb16gidc20f47455171d038199ce12255d9fb14618138cdb451a0053d17b76b5cbc594d&tw=a5bf274d720cc51e70d06319b934b2ae14a201bb6424c6ca86bd81d126e9d37e"
+        strategy="lazyOnload"
+      />
     </>
   );
 }

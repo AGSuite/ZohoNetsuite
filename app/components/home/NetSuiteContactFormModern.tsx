@@ -10,7 +10,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export default function NetSuiteContactFormModern() {
   useEffect(() => {
     // Define all form validation functions globally
-    (window as any).addAriaSelected409531000026445204 = function () {
+    (window as any).addAriaSelected409531000042578178 = function () {
       const optionElem = (event as Event & { target: HTMLSelectElement }).target;
       const previousSelectedOption = optionElem.querySelector('[aria-selected=true]');
       if (previousSelectedOption) {
@@ -19,7 +19,7 @@ export default function NetSuiteContactFormModern() {
       optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
     };
 
-    (window as any).rccallback409531000026445204 = function () {
+    (window as any).rccallback409531000042578178 = function () {
       if (document.getElementById('recap409531000026445204')) {
         document.getElementById('recap409531000026445204')?.setAttribute('captcha-verified', 'true');
       }
@@ -29,7 +29,7 @@ export default function NetSuiteContactFormModern() {
       }
     };
 
-    (window as any).reCaptchaAlert409531000026445204 = function () {
+    (window as any).reCaptchaAlert409531000042578178 = function () {
       const recap = document.getElementById('recap409531000026445204');
       if (recap && recap.getAttribute('captcha-verified') === 'false') {
         const errorElement = document.getElementById('recapErr409531000026445204');
@@ -41,8 +41,8 @@ export default function NetSuiteContactFormModern() {
       return true;
     };
 
-    (window as any).validateEmail409531000026445204 = function () {
-      const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
+    (window as any).validateEmail409531000042578178 = function () {
+      const form = document.forms.namedItem('WebToLeads409531000042578178') as HTMLFormElement;
       if (!form) return true;
       const emailFld = form.querySelectorAll('[ftype=email]');
       for (let i = 0; i < emailFld.length; i++) {
@@ -67,8 +67,8 @@ export default function NetSuiteContactFormModern() {
       return true;
     };
 
-    (window as any).validateMobile409531000026445204 = function () {
-      const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
+    (window as any).validateMobile409531000042578178 = function () {
+      const form = document.forms.namedItem('WebToLeads409531000042578178') as HTMLFormElement;
       if (!form) return true;
       const mobileFld = form.elements.namedItem('Mobile') as HTMLInputElement;
       if (mobileFld) {
@@ -82,10 +82,10 @@ export default function NetSuiteContactFormModern() {
       return true;
     };
 
-    (window as any).checkMandatory409531000026445204 = function () {
-      const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Annual Revenue', 'Description'];
-      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Annual Revenue', 'Tell Us How We Can Help'];
-      const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
+    (window as any).checkMandatory409531000042578178 = function () {
+      const mndFileds = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
+      const fldLangVal = ['Company Name', 'Name', 'POC\'s Mobile', 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
+      const form = document.forms.namedItem('WebToLeads409531000042578178') as HTMLFormElement;
       if (!form) return false;
 
       for (let i = 0; i < mndFileds.length; i++) {
@@ -105,10 +105,10 @@ export default function NetSuiteContactFormModern() {
           }
         }
       }
-      (window as any).trackVisitor409531000026445204?.();
-      if ((window as any).validateEmail409531000026445204 && !(window as any).validateEmail409531000026445204()) return false;
-      if ((window as any).validateMobile409531000026445204 && !(window as any).validateMobile409531000026445204()) return false;
-      if ((window as any).reCaptchaAlert409531000026445204 && !(window as any).reCaptchaAlert409531000026445204()) return false;
+      (window as any).trackVisitor409531000042578178?.();
+      if ((window as any).validateEmail409531000042578178 && !(window as any).validateEmail409531000042578178()) return false;
+      if ((window as any).validateMobile409531000042578178 && !(window as any).validateMobile409531000042578178()) return false;
+      if ((window as any).reCaptchaAlert409531000042578178 && !(window as any).reCaptchaAlert409531000042578178()) return false;
 
       (window as any).sendEmail?.();
       const submitButton = document.querySelector('.crmWebToEntityForm .formsubmit') as HTMLInputElement;
@@ -124,28 +124,32 @@ export default function NetSuiteContactFormModern() {
     };
 
     (window as any).sendEmail = function () {
-      const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
+      const form = document.forms.namedItem('WebToLeads409531000042578178') as HTMLFormElement;
       if (!form) return;
       const formData = new FormData(form);
 
-      fetch('https://agsuitetech.com/pricing/form_process.php', {
+      const emailData = {
+        name: formData.get('Last Name'),
+        email: formData.get('LEADCF8'),
+        role: formData.get('Designation'),
+        mobile: formData.get('Mobile'),
+        company: formData.get('Company'),
+        service: formData.get('LEADCF5'),
+        revenue: formData.get('LEADCF19'),
+        requirements: formData.get('LEADCF123'),
+        platform: 'Home-Modern'
+      };
+
+      fetch('/api/contact/netsuite', {
         method: 'POST',
-        body: formData
-      })
-        .then(response => response.json())
-        .then(data => {
-          if (data.status === 'success') {
-            console.log('Email sent successfully.');
-          } else {
-            console.error('Failed to send email:', data.error);
-          }
-        })
-        .catch(error => {
-          console.error('Error while sending email:', error);
-        });
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(emailData)
+      }).catch(error => {
+        console.error('Error while sending email:', error);
+      });
     };
 
-    (window as any).trackVisitor409531000026445204 = function () {
+    (window as any).trackVisitor409531000042578178 = function () {
       try {
         const zoho = (window as { $zoho?: { salesiq: { visitor: { uniqueid: () => string; email: (email: string) => void } } } }).$zoho;
         if (zoho) {
@@ -320,7 +324,7 @@ export default function NetSuiteContactFormModern() {
                   dangerouslySetInnerHTML={{
                     __html: `
 <div id="crmWebToEntityForm" class="zcwf_lblLeft crmWebToEntityForm">
-<form id="webform409531000026445204" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000026445204" method="POST" onSubmit="javascript:document.charset='UTF-8'; return checkMandatory409531000026445204()" accept-charset="UTF-8">
+<form id="webform409531000042578178" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000042578178" method="POST" onSubmit="javascript:document.charset='UTF-8'; return checkMandatory409531000042578178()" accept-charset="UTF-8">
  <input type="text" class="dsp" name="xnQsjsdp" value="e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82">
  <input type="hidden" name="zc_gad" id="zc_gad" value="">
  <input type="text" class="dsp" name="xmIwtLD" value="7ce425cbc5576979cf8d2dfa7bcaeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a">
@@ -445,42 +449,39 @@ select option {
   </div>
   
   <div class="agsuite_column">
-    <select class="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5" onChange="addAriaSelected409531000026445204()">
-      <option value="" disabled selected>NetSuite Solution*</option>
-      <option value="NetSuite&#x20;ERP">NetSuite ERP</option>
-      <option value="NetSuite&#x20;CRM">NetSuite CRM</option>
-      <option value="NetSuite&#x20;OneWorld">NetSuite OneWorld</option>
-      <option value="NetSuite&#x20;SuiteCommerce">NetSuite SuiteCommerce</option>
-      <option value="NetSuite&#x20;Planning&#x20;&&#x20;Budgeting">NetSuite Planning & Budgeting</option>
-      <option value="NetSuite&#x20;OpenAir">NetSuite OpenAir</option>
-      <option value="NetSuite&#x20;Analytics&#x20;Warehouse">NetSuite Analytics Warehouse</option>
+    <select class="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5" onChange="addAriaSelected409531000042578178()">
+      <option value="" disabled selected>Service*</option>
+      <option value="Licenses">Licenses</option>
+      <option value="AMC">AMC</option>
     </select>
   </div>
   
   <div class="agsuite_column">
-    <select class="zcwf_col_fld_slt" id="Annual_Revenue" name="Annual Revenue" onChange="addAriaSelected409531000026445204()">
+    <select class="zcwf_col_fld_slt" id="LEADCF19" name="LEADCF19" onChange="addAriaSelected409531000042578178()">
       <option value="" disabled selected>Annual Revenue*</option>
-      <option value="Under&#x20;&#x24;500K">Under &#x24;500K</option>
-      <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">&#x24;500k to &#x24;1M</option>
-      <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">&#x24;1M to &#x24;20M</option>
-      <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">&#x24;2M to &#x24;5M</option>
-      <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">&#x24;5M to &#x24;10M</option>
-      <option value='&#x24;10M&#x20;to&#x20;&#x24;20M'>&#x24;10M to &#x24;20M</option>
-      <option value='&#x24;20M&#x20;to&#x20;&#x24;30M'>&#x24;20M to &#x24;30M</option>
-      <option value='&#x24;30M&#x20;to&#x20;&#x24;50M'>&#x24;30M to &#x24;50M</option>
-      <option value='&#x24;50M&#x20;to&#x20;&#x24;100M'>&#x24;50M to &#x24;100M</option>
+      <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
+      <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
+      <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
+      <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
+      <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
+      <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
+      <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
+      <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
+      <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
+      <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
     </select>
   </div>
   
   <div class="agsuite_column-large">
-    <textarea id="Description" name="Description" placeholder="Tell us about your project"></textarea>
+    <textarea id="LEADCF123" name="LEADCF123" placeholder="Tell us about your project"></textarea>
   </div>
   
   <div class="agsuite_column-large">
-    <div class="g-recaptcha" data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="dark" data-callback="rccallback409531000026445204" captcha-verified="false" id="recap409531000026445204"></div>
-    <div id="recapErr409531000026445204">Please verify you are not a robot.</div>
+    <div class="g-recaptcha" data-sitekey="6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y" data-theme="dark" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178"></div>
+    <div id="recapErr409531000042578178">Please verify you are not a robot.</div>
     <input type="submit" id="formsubmit" class="zcwf_button" value="Submit" aria-label="Submit Form">
   </div>
+</div>
 </div>
 </form>
 </div>
