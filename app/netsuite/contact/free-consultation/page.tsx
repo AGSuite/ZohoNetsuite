@@ -29,11 +29,9 @@ const PARTICLES = [
 
 declare global {
   interface Window {
-    interface Window {
     validateEmail409531000042578178?: () => boolean;
     checkMandatory409531000042578178?: (e: any) => boolean;
     trackVisitor409531000042578178?: () => void;
-  }
   }
 }
 

@@ -23,7 +23,9 @@ const PARTICLES = [
     { w: 1.5, h: 1.5, top: 25, left: 70, dur: 4.2, delay: 1.1 },
     { w: 3, h: 3, top: 55, left: 8, dur: 6, delay: 0.7 },
     { w: 2, h: 2, top: 75, left: 88, dur: 4.8, delay: 2.0 },
-  declare global {
+];
+
+declare global {
   interface Window {
     validateEmail409531000042578178_ns?: () => boolean;
     checkMandatory409531000042578178_ns?: (e: any) => boolean;
