@@ -84,7 +84,7 @@ export default function ContactFormDesign4() {
       const $ = (window as any).$;
       if (!$) return false;
       $('#webform409531000042578178').off('submit').on('submit', function (e: any) {
-        e.preventDefault();
+        // e.preventDefault(); // Removed to allow standard submission to hidden iframe
         if (!(window as any).checkMandatory409531000042578178()) return;
         const btn = document.querySelector('.crmWebToEntityForm .formsubmit');
         if (btn) btn.setAttribute('disabled', 'true');
@@ -111,23 +111,20 @@ export default function ContactFormDesign4() {
           body: JSON.stringify(emailData)
         }).catch(err => console.error('Email error:', err));
 
-        // 2. Submit to Zoho CRM
-        $.ajax({
-          url: 'https://crm.zoho.in/crm/WebToLeadForm',
-          type: 'POST',
-          data: formData,
-          cache: false,
-          contentType: false,
-          processData: false,
-          success: function () {
-            window.dispatchEvent(new CustomEvent('zohoFormSuccess'));
-            if (btn) btn.removeAttribute('disabled');
-          },
-          error: function () {
-            alert('An error occurred. Please try again.');
-            if (btn) btn.removeAttribute('disabled');
-          }
-        });
+        // 2. Submit via hidden iframe to avoid CORS issues
+        const form = e.target;
+        form.action = 'https://crm.zoho.in/crm/WebToLeadForm';
+        form.method = 'POST';
+        form.target = 'zoho_iframe_netsuite_design4';
+        
+        // Trigger success UI after a short delay
+        setTimeout(() => {
+          setSubmitted(true);
+          if (btn) btn.removeAttribute('disabled');
+          setTimeout(() => router.push('/thank-you'), 2000);
+        }, 2000);
+
+        return true;
       });
       return true;
     };
@@ -159,15 +156,6 @@ export default function ContactFormDesign4() {
       }, 300);
       setTimeout(() => clearInterval(rcInt), 5000);
     }
-
-    const onSuccess = () => {
-      setSubmitted(true);
-      setTimeout(() => {
-        router.push('/thank-you');
-      }, 1000);
-    };
-    window.addEventListener('zohoFormSuccess', onSuccess);
-    return () => window.removeEventListener('zohoFormSuccess', onSuccess);
   }, []);
 
   if (!isClient) return null;
@@ -177,10 +165,11 @@ export default function ContactFormDesign4() {
       <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
       <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="afterInteractive" />
       <Script
-        id="wf_anal"
+        id="wf_anal_netsuite_4"
         src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=ffa911f519bdac1fd37141e7458859338a4c0807209e53fcd9161a4ef8002b597777f2d47c34393e74912d83270ec629gid2020ff77b8590645f6909775bceb1dfe9b354b521b7d31a381183051979950afgidc32afce85ab5735ae0662898fbed0b63bef845d0ee34535ca4044be79f94eb16gidc20f47455171d038199ce12255d9fb14618138cdb451a0053d17b76b5cbc594d&tw=a5bf274d720cc51e70d06319b934b2ae14a201bb6424c6ca86bd81d126e9d37e"
         strategy="afterInteractive"
       />
+      <iframe name="zoho_iframe_netsuite_design4" style={{ display: 'none' }}></iframe>
 
       <section id="contact-form" className="relative py-24 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
         <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-blue-500/30 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3" />

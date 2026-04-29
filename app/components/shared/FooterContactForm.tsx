@@ -120,7 +120,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
       const $ = (window as any).$;
       if (!$) return false;
       $(`#shared_webform_${platform}`).off('submit').on('submit', function (e: any) {
-        e.preventDefault();
+        // e.preventDefault(); // Removed to allow standard submission to hidden iframe
         if (!(window as any)[`checkMandatory${suffix}`]()) return;
         const btn = document.querySelector(`.crmWebToEntityForm .formsubmit-${platform}`);
         if (btn) btn.setAttribute('disabled', 'true');
@@ -158,23 +158,20 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
           body: JSON.stringify(emailData)
         }).catch(err => console.error('Email error:', err));
 
-        // 2. Submit to Zoho CRM
-        $.ajax({
-          url: 'https://crm.zoho.in/crm/WebToLeadForm',
-          type: 'POST',
-          data: formData,
-          cache: false,
-          contentType: false,
-          processData: false,
-          success: function () {
-            window.dispatchEvent(new CustomEvent('zohoFormSuccess'));
-            if (btn) btn.removeAttribute('disabled');
-          },
-          error: function () {
-            alert('An error occurred. Please try again.');
-            if (btn) btn.removeAttribute('disabled');
-          }
-        });
+        // 2. Submit via hidden iframe to avoid CORS issues
+        const form = e.target;
+        form.action = isNetSuite ? 'https://crm.zoho.in/crm/WebToLeadForm' : 'https://crm.zoho.in/crm/WebToLeadForm';
+        form.method = 'POST';
+        form.target = `zoho_iframe_${platform}`;
+        
+        // Trigger success UI after a short delay (enough for the browser to initiate the post)
+        setTimeout(() => {
+          window.dispatchEvent(new CustomEvent('zohoFormSuccess'));
+          if (btn) btn.removeAttribute('disabled');
+        }, 2000);
+
+        // Standard submission to iframe will happen after this returns
+        return true;
       });
       return true;
     };
@@ -228,6 +225,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
         src={`https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=${crmConfig.rid}&tw=${crmConfig.tw}`}
         strategy="afterInteractive"
       />
+      <iframe name={`zoho_iframe_${platform}`} style={{ display: 'none' }}></iframe>
 
       <section id="contact-form" className="relative py-24 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
         <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-blue-500/30 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3" />
