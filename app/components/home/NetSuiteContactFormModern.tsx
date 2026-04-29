@@ -321,11 +321,11 @@ export default function NetSuiteContactFormModern() {
                     __html: `
 <div id="crmWebToEntityForm" class="zcwf_lblLeft crmWebToEntityForm">
 <form id="webform409531000026445204" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000026445204" method="POST" onSubmit="javascript:document.charset='UTF-8'; return checkMandatory409531000026445204()" accept-charset="UTF-8">
- <input type="text" class="dsp" name="xnQsjsdp" value="19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f">
+ <input type="text" class="dsp" name="xnQsjsdp" value="e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82">
  <input type="hidden" name="zc_gad" id="zc_gad" value="">
- <input type="text" class="dsp" name="xmIwtLD" value="8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee">
+ <input type="text" class="dsp" name="xmIwtLD" value="7ce425cbc5576979cf8d2dfa7bcaeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a">
  <input type="text" class="dsp" name="actionType" value="TGVhZHM=">
- <input type="text" class="dsp" name="returnURL" value="https://agsuitetech.com/best-cloud-based-crm/thank-you/">
+ <input type="text" class="dsp" name="returnURL" value="https://zoho-netsuite.vercel.app/thank-you">
 <input type="text" class="dsp" id="ldeskuid" name="ldeskuid">
 <input type="text" class="dsp" id="LDTuvid" name="LDTuvid">
 
@@ -429,7 +429,7 @@ select option {
   </div>
   
   <div class="agsuite_column">
-    <input type="text" ftype="email" id="Email" name="Email" placeholder="Your email address" maxlength="100">
+    <input type="text" ftype="email" id="LEADCF8" name="LEADCF8" placeholder="Your email address" maxlength="100">
   </div>
   
   <div class="agsuite_column">

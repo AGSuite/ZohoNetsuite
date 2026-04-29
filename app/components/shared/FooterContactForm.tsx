@@ -7,7 +7,7 @@ import Image from "next/image";
 import Script from "next/script";
 import { Briefcase, Globe2, HeartHandshake, Rocket } from "lucide-react";
 
-const SITE_KEY = '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y';
+const SITE_KEY = "6LcjvYsqAAAAAD4f1Wk_k2R8o9wV0N1s5d_qH_fT";
 
 interface FooterContactFormProps {
   platform: 'NetSuite' | 'Zoho';
@@ -23,13 +23,13 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
   // CRM Configs
   const crmConfig = isNetSuite ? {
     xnQsjsdp: "e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82",
-    xmIwtLD: "7ce425cbc5576979cf8d2dfa7bcaeeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a",
+    xmIwtLD: "7ce425cbc5576979cf8d2dfa7bcaeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a",
     returnURL: "https://zoho-netsuite.vercel.app/thank-you",
     rid: "ffa911f519bdac1fd37141e7458859338a4c0807209e53fcd9161a4ef8002b597777f2d47c34393e74912d83270ec629gid2020ff77b8590645f6909775bceb1dfe9b354b521b7d31a381183051979950afgidc32afce85ab5735ae0662898fbed0b63bef845d0ee34535ca4044be79f94eb16gidc20f47455171d038199ce12255d9fb14618138cdb451a0053d17b76b5cbc594d",
     tw: "a5bf274d720cc51e70d06319b934b2ae14a201bb6424c6ca86bd81d126e9d37e"
   } : {
-    xnQsjsdp: "19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f",
-    xmIwtLD: "8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee",
+    xnQsjsdp: "e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82",
+    xmIwtLD: "7ce425cbc5576979cf8d2dfa7bcaeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a",
     returnURL: "https://agsuitetech.com/best-cloud-based-crm/thank-you/",
     rid: "c6bd15ef499e015212f7cfd1d94a36257616906db3378b7d58e9666a0cb004ad04cae4b2ad4b40f407ea1df9509ddfc3gid4d54f02188dbd1a4f4c8582e1cc6829be5ddd9b1ad3710ed7207deccba2aa858giddeda7992accaf02590572b916d20ede01298921dbc555b8a938ff90fe2bc82f4gid28710435a2d0ea931303f1f01e1b730e6517c1be20b1776d1746edb3c9f1c653",
     tw: "8b4a96a610c92f39fdbddebeaa5a00b371fd965c61608708d088c2ca4821d30d"
@@ -367,7 +367,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                     </div>
 
                 <div id="crmWebToEntityForm" className="crmWebToEntityForm">
-                  <form id={`shared_webform_${platform}`} name={isNetSuite ? 'WebToLeads409531000042578178' : 'WebToLeads409531000026445204'} acceptCharset="UTF-8" className="space-y-4">
+                  <form id={`shared_webform_${platform}`} name="WebToLeads409531000042578178" acceptCharset="UTF-8" className="space-y-4">
                     <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue={crmConfig.xnQsjsdp} readOnly />
                     <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
                     <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue={crmConfig.xmIwtLD} readOnly />
@@ -388,7 +388,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                       </div>
                       <div>
                         <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Email <span className="text-red-500">*</span></label>
-                        <input type="text" data-ftype="email" name={isNetSuite ? "LEADCF8" : "Email"} maxLength={100} autoComplete="off" required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="john@company.com" suppressHydrationWarning />
+                        <input type="text" data-ftype="email" name="LEADCF8" maxLength={100} autoComplete="off" required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="john@company.com" suppressHydrationWarning />
                       </div>
                     </div>
 
@@ -421,7 +421,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Annual Revenue <span className="text-red-500">*</span></label>
-                        <select name={isNetSuite ? "LEADCF19" : "Annual Revenue"} onChange={() => (window as any)[`addAriaSelected${isNetSuite ? '409531000042578178' : '409531000026445204'}`]?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
+                        <select name="LEADCF19" onChange={() => (window as any)[`addAriaSelected${isNetSuite ? '409531000042578178' : '409531000026445204'}`]?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
                           <option value="-None-">-None-</option>
                           <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
                           <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
@@ -436,8 +436,8 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                         </select>
                       </div>
                       <div>
-                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">{isNetSuite ? "How did you hear about us" : "Referral Path"}</label>
-                        <select name={isNetSuite ? "LEADCF127" : "Lead Source"} onChange={() => (window as any)[`addAriaSelected${isNetSuite ? '409531000042578178' : '409531000026445204'}`]?.()} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
+                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How did you hear about us.</label>
+                        <select name="LEADCF127" onChange={() => (window as any)[`addAriaSelected${isNetSuite ? '409531000042578178' : '409531000026445204'}`]?.()} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
                           <option value="-None-">-None-</option>
                           <option value="Email">Email</option>
                           <option value="Event">Event</option>
@@ -451,7 +451,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
 
                     <div>
                       <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How We Can Help You <span className="text-red-500">*</span></label>
-                      <textarea name={isNetSuite ? "LEADCF123" : "Description"} rows={2} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all shadow-sm" placeholder="Share your requirements..." suppressHydrationWarning />
+                      <textarea name="LEADCF123" rows={2} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all shadow-sm" placeholder="Share your requirements..." suppressHydrationWarning />
                     </div>
 
                     {/* reCAPTCHA v2 Checkbox Widget */}

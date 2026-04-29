@@ -138,11 +138,11 @@ export default function EmbeddedZohoForm() {
             <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
             <iframe name="zoho_iframe_embedded" style={{ display: 'none' }}></iframe>
             <form id="webform409531000026445204" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000026445204" method="POST" onSubmit={handleFormSubmit} acceptCharset="UTF-8">
-                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f" readOnly />
+                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82" readOnly />
                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                <input type="text" className="hidden" name="xmIwtLD" defaultValue="8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee" readOnly />
+                <input type="text" className="hidden" name="xmIwtLD" defaultValue="7ce425cbc5576979cf8d2dfa7bcaeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a" readOnly />
                 <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
-                <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/best-cloud-based-crm/thank-you/" readOnly />
+                <input type="text" className="hidden" name="returnURL" defaultValue="https://zoho-netsuite.vercel.app/thank-you" readOnly />
                 <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
                 <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
 
@@ -232,7 +232,7 @@ export default function EmbeddedZohoForm() {
                     </div>
 
                     <div className="agsuite_column">
-                        <input type="text" id="Email" name="Email" placeholder="Business Email*" maxLength={100} />
+                        <input type="text" id="LEADCF8" name="LEADCF8" placeholder="Business Email*" maxLength={100} />
                     </div>
 
                     <div className="agsuite_column">
@@ -249,36 +249,31 @@ export default function EmbeddedZohoForm() {
 
                     <div className="agsuite_column">
                         <select className="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5" defaultValue="">
-                            <option value="" disabled>Select Zoho Solution*</option>
-                            <option value='Zoho&#x20;CRM&#x20;&amp;&#x20;Sales'>Zoho CRM &amp; Sales</option>
-                            <option value='Zoho&#x20;Finance&#x20;&amp;&#x20;Accounting'>Zoho Finance &amp; Accounting</option>
-                            <option value='Zoho&#x20;HR&#x20;&amp;&#x20;People'>Zoho HR &amp; People</option>
-                            <option value='Zoho&#x20;Marketing&#x20;&amp;&#x20;Automation'>Zoho Marketing &amp; Automation</option>
-                            <option value='Zoho&#x20;IT&#x20;&amp;&#x20;Support'>Zoho IT &amp; Support</option>
-                            <option value='Zoho&#x20;BI&#x20;&amp;&#x20;Analytics'>Zoho BI &amp; Analytics</option>
-                            <option value='Zoho&#x20;Developer&#x20;Platforms'>Zoho Developer Platforms</option>
-                            <option value='Zoho&#x20;One&#x20;&#x28;Complete&#x20;Suite&#x29;'>Zoho One (Complete Suite)</option>
+                            <option value="" disabled>Select Service*</option>
+                            <option value="Licenses">Licenses</option>
+                            <option value="AMC">AMC</option>
                         </select>
                     </div>
 
                     <div className="agsuite_column">
-                        <select className="zcwf_col_fld_slt" id="Annual_Revenue" name="Annual Revenue" defaultValue="">
+                        <select className="zcwf_col_fld_slt" id="LEADCF19" name="LEADCF19" defaultValue="">
                             <option value="" disabled>Annual Revenue*</option>
-                            <option value="Under&#x20;&#x24;500K">Under &#x24;500K</option>
-                            <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">&#x24;500k to &#x24;1M</option>
-                            <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">&#x24;1M to &#x24;2M</option>
-                            <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">&#x24;2M to &#x24;5M</option>
-                            <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">&#x24;5M to &#x24;10M</option>
-                            <option value='&#x24;10M&#x20;to&#x20;&#x24;20M'>&#x24;10M to &#x24;20M</option>
-                            <option value='&#x24;20M&#x20;to&#x20;&#x24;30M'>&#x24;20M to &#x24;30M</option>
-                            <option value='&#x24;30M&#x20;to&#x20;&#x24;50M'>&#x24;30M to &#x24;50M</option>
-                            <option value='&#x24;50M&#x20;to&#x20;&#x24;100M'>&#x24;50M to &#x24;100M</option>
+                            <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
+                            <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
+                            <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
+                            <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
+                            <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
+                            <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
+                            <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
+                            <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
+                            <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
+                            <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
                         </select>
                     </div>
 
 
                     <div className="agsuite_column-large">
-                        <textarea id="Description" name="Description" placeholder="Tell us about your requirements*"></textarea>
+                        <textarea id="LEADCF123" name="LEADCF123" placeholder="Tell us about your requirements*"></textarea>
                     </div>
 
                     <div className="agsuite_column-large">

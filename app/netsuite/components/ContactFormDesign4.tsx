@@ -8,7 +8,7 @@ import Script from "next/script";
 import { Briefcase, Globe2, HeartHandshake, Rocket } from "lucide-react";
 
 // Updated Site Key from User's latest source code
-const SITE_KEY = '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y';
+const SITE_KEY = "6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y";
 
 export default function ContactFormDesign4() {
   const router = useRouter();
@@ -366,7 +366,7 @@ export default function ContactFormDesign4() {
                         </select>
                       </div>
                       <div>
-                        <label htmlFor="LEADCF127" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How did you hear about us</label>
+                        <label htmlFor="LEADCF127" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How did you hear about us.</label>
                         <select id="LEADCF127" name="LEADCF127" onChange={() => (window as any).addAriaSelected409531000042578178?.()} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm">
                           <option value="-None-">-None-</option>
                           <option value="Email">Email</option>
