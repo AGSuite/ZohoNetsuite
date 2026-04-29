@@ -73,27 +73,27 @@ export default function NetSuiteFooter() {
                         <h4 className="text-lg font-bold mb-4 text-blue-400">NetSuite Services</h4>
                         <ul className="space-y-3">
                             <li>
-                                <Link href="/netsuite#implementation" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/services/implementation" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Implementation
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/netsuite#customization" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/services/customization" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Customization
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/netsuite#integration" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/services/integration" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Integration
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/netsuite#support" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/services/managed-services" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Managed Support
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/netsuite#training" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/services/training-services" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Training & Consulting
                                 </Link>
                             </li>
@@ -110,7 +110,7 @@ export default function NetSuiteFooter() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/about" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/about-us" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     About Us
                                 </Link>
                             </li>
@@ -120,12 +120,12 @@ export default function NetSuiteFooter() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/careers" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/life-at-agsuite" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Careers
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/blog" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/blogs" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Blog
                                 </Link>
                             </li>

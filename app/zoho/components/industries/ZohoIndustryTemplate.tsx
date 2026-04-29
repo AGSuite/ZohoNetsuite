@@ -32,7 +32,7 @@ import {
   Settings,
   GraduationCap,
 } from "lucide-react";
-import ZohoContactForm from "@/app/zoho/components/ZohoContactForm";
+import FooterContactForm from "@/app/components/shared/FooterContactForm";
 import { FAQ } from "@/app/components/home/FAQ";
 
 /* ─── Animated Counter ─── */
@@ -843,7 +843,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
 
       {/* ══════ CONTACT FORM ══════ */}
       <section id="contact-form">
-        <ZohoContactForm />
+        <FooterContactForm platform="Zoho" />
       </section>
     </div>
   );

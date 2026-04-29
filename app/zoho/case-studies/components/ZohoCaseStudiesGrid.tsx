@@ -256,6 +256,7 @@ const ZohoCaseStudiesGrid = () => {
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all shadow-inner font-medium"
+                            suppressHydrationWarning
                         />
                     </div>
 
@@ -272,6 +273,7 @@ const ZohoCaseStudiesGrid = () => {
                                     ? 'bg-[#eab308] text-white shadow-md'
                                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
                                     }`}
+                                suppressHydrationWarning
                             >
                                 {industry}
                             </button>
@@ -296,6 +298,7 @@ const ZohoCaseStudiesGrid = () => {
                         <button
                             onClick={() => { setSearchQuery(""); setSelectedIndustry("All"); }}
                             className="mt-6 text-red-600 font-bold hover:text-red-800 transition-colors underline underline-offset-4"
+                            suppressHydrationWarning
                         >
                             Clear all filters
                         </button>
@@ -317,16 +320,6 @@ const ZohoCaseStudiesGrid = () => {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent opacity-60" />
 
-                                    {/* Zoho Logo (Top Right) */}
-                                    <div className="absolute top-4 right-4 bg-white shadow-lg p-2 px-3 rounded-lg flex items-center justify-center" style={{ backdropFilter: 'blur(4px)' }}>
-                                        <Image
-                                            src="/images/zoho logos/zoho premium.png"
-                                            alt="Zoho Logo"
-                                            width={110}
-                                            height={30}
-                                            className="h-6 sm:h-8 w-auto object-contain"
-                                        />
-                                    </div>
 
                                     {/* Industry Tag (Bottom Left) */}
                                     <div className="absolute bottom-4 left-4 bg-[#0a0a0a] text-white px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-md">
@@ -357,6 +350,7 @@ const ZohoCaseStudiesGrid = () => {
                                     <button
                                         onClick={(e) => handleReadClick(e, study)}
                                         className="mt-auto flex items-center font-bold text-[#0a0a0a] group-hover:text-[#eab308] transition-colors bg-transparent border-none p-0 cursor-pointer"
+                                        suppressHydrationWarning
                                     >
                                         <span className="border-b-2 border-transparent group-hover:border-[#eab308] pb-0.5 transition-all text-sm uppercase tracking-wide">
                                             Read Full Story
@@ -421,6 +415,7 @@ const ZohoCaseStudiesGrid = () => {
                                             <button
                                                 onClick={closeModal}
                                                 className="mt-8 px-8 py-3 bg-[#eab308] text-white font-bold rounded-xl hover:bg-black transition-colors"
+                                                suppressHydrationWarning
                                             >
                                                 Close
                                             </button>
@@ -437,6 +432,7 @@ const ZohoCaseStudiesGrid = () => {
                                                     onChange={handleInputChange}
                                                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all"
                                                     placeholder="John Doe"
+                                                    suppressHydrationWarning
                                                 />
                                             </div>
                                             <div className="grid grid-cols-[1.2fr_0.8fr] gap-2">
@@ -450,6 +446,7 @@ const ZohoCaseStudiesGrid = () => {
                                                         onChange={handleInputChange}
                                                         className="w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all text-sm"
                                                         placeholder="Manager"
+                                                        suppressHydrationWarning
                                                     />
                                                 </div>
                                                 <div>
@@ -460,6 +457,7 @@ const ZohoCaseStudiesGrid = () => {
                                                             value={formData.countryCode}
                                                             onChange={handleInputChange}
                                                             className="w-[70px] px-1 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-[10px] font-bold"
+                                                            suppressHydrationWarning
                                                         >
                                                             {COUNTRY_CODES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
                                                         </select>
@@ -472,6 +470,7 @@ const ZohoCaseStudiesGrid = () => {
                                                             className="flex-1 px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-400 text-sm"
                                                             placeholder="9876543210"
                                                             maxLength={10}
+                                                            suppressHydrationWarning
                                                         />
                                                     </div>
                                                 </div>
@@ -486,6 +485,7 @@ const ZohoCaseStudiesGrid = () => {
                                                     onChange={handleInputChange}
                                                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all"
                                                     placeholder="john@company.com"
+                                                    suppressHydrationWarning
                                                 />
                                             </div>
                                             <div>
@@ -498,11 +498,13 @@ const ZohoCaseStudiesGrid = () => {
                                                     onChange={handleInputChange}
                                                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all"
                                                     placeholder="Company Name"
+                                                    suppressHydrationWarning
                                                 />
                                             </div>
                                             <button
                                                 type="submit"
                                                 className="w-full py-4 bg-gradient-to-r from-[#eab308] to-[#b91c1c] text-white font-bold rounded-xl hover:shadow-lg transition-all mt-4"
+                                                suppressHydrationWarning
                                             >
                                                 Get Case Study
                                             </button>

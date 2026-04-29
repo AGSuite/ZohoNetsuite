@@ -13,6 +13,7 @@ import Image from 'next/image';
 import {
   Rocket,
   Globe2,
+  Briefcase,
   Pause,
   Play,
   Target,
@@ -35,7 +36,7 @@ import { motion, useAnimation, type Variants, AnimatePresence, useScroll, useTra
 import dynamic from 'next/dynamic';
 import GlobalOfficeMap from '../../netsuite/components/GlobalOfficeMap';
 
-const ZohoContactForm = dynamic(() => import('../components/ZohoContactForm'), { ssr: false });
+const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
 const ZohoTestimonialSection = dynamic(() => import('../components/ZohoTestimonialSection'), { ssr: false });
 
 // ---------------- Address Data ----------------
@@ -243,12 +244,10 @@ type CounterItem = {
 };
 
 const counters: CounterItem[] = [
-  { label: 'Happy Clients', value: 500, icon: Users, suffix: "+" },
-  { label: 'Zoho Experts', value: 50, icon: UserCog, suffix: "+" },
-  { label: 'Industry Expertise', value: 12, icon: Building2, suffix: "+" },
+  { label: 'Projects Completed', value: 600, icon: Briefcase, suffix: "+" },
+  { label: 'Global Customers', value: 200, icon: Globe2, suffix: "+" },
   { label: 'Customer Retention', value: 84, icon: Heart, suffix: "%" },
   { label: 'Years Experience', value: 15, icon: Rocket, suffix: "+" },
-  { label: 'Countries Serving', value: 10, icon: Globe2, suffix: "+" },
 ];
 
 const fadeInUp: Variants = {
@@ -1174,7 +1173,7 @@ export default function AboutClient() {
         </motion.div>
       </section>
 
-      <ZohoContactForm />
+      <FooterContactForm platform="Zoho" />
     </main>
   );
 }

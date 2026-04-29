@@ -32,7 +32,7 @@ const NSWhyChooseUs = dynamic(() => import('./components/NSWhyChooseUs').then(mo
 const NSBlogsSlider = dynamic(() => import('./components/NSBlogsSlider').then(mod => mod.default));
 const NSTestimonialSection = dynamic(() => import('./components/NSTestimonialSection').then(mod => mod.default));
 const NSCustomerSuccess = dynamic(() => import('./components/NSCustomerSuccess').then(mod => mod.default));
-const ContactFormDesign4 = dynamic(() => import('./components/ContactFormDesign4').then(mod => mod.default));
+const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm').then(mod => mod.default));
 
 
 export default async function NetSuitePage() {
@@ -80,7 +80,7 @@ export default async function NetSuitePage() {
 
       <FAQ variant="netsuite" />
 
-      <ContactFormDesign4 />
+      <FooterContactForm platform="NetSuite" />
     </div>
   );
 }

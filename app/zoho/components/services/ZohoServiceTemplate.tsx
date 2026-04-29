@@ -30,7 +30,7 @@ import {
   ClipboardList,
 } from "lucide-react";
 import { FAQ } from "@/app/components/home/FAQ";
-import ZohoContactForm from "@/app/zoho/components/ZohoContactForm";
+import FooterContactForm from "@/app/components/shared/FooterContactForm";
 
 interface Stat {
   label: string;
@@ -614,7 +614,7 @@ export default function ZohoServiceTemplate({
 
       {/* ── Contact Section ─────────────────────────────────────────── */}
       <section id="contact-form" className="scroll-mt-36">
-        <ZohoContactForm />
+        <FooterContactForm platform="Zoho" />
       </section>
     </div>
   );

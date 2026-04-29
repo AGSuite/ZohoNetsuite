@@ -36,10 +36,10 @@ const ZohoMetrics = () => {
     const words = headlineText.split(" ");
 
     const stats = [
-        { value: "500+", label: "Happy Clients" },
-        { value: "50+", label: "Zoho Experts" },
-        { value: "28%", label: "Reduction in IT costs" },
-        { value: "150%", label: "Average ROI on Zoho One" },
+        { value: "600+", label: "Projects Completed" },
+        { value: "200+", label: "Global Customers" },
+        { value: "84%", label: "Customer Retention" },
+        { value: "15+", label: "Years Experience" },
     ];
 
     return (

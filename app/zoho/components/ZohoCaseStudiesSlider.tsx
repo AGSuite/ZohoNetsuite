@@ -156,15 +156,6 @@ const ZohoCaseStudiesSlider = () => {
                                 <div className="relative h-56 md:h-64 w-full overflow-hidden">
                                     <Image src={study.image} alt={study.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent opacity-60" />
-                                    <div className="absolute top-4 right-4 bg-white shadow-lg p-2 px-3 rounded-lg flex items-center justify-center" style={{ backdropFilter: 'blur(4px)' }}>
-                                        <Image
-                                            src="/images/zoho logos/zoho premium.png"
-                                            alt="Zoho Logo"
-                                            width={110}
-                                            height={30}
-                                            className="h-6 sm:h-8 w-auto object-contain"
-                                        />
-                                    </div>
                                     <div className="absolute bottom-4 left-4 bg-blue-600 text-white px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider backdrop-blur-md">
                                         {study.industry}
                                     </div>
@@ -173,7 +164,7 @@ const ZohoCaseStudiesSlider = () => {
                                     <p className="text-[13px] font-extrabold text-[#2563eb] uppercase tracking-widest mb-2 border-l-2 border-[#2563eb] pl-2">{study.company}</p>
                                     <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 group-hover:text-[#2563eb] transition-colors leading-tight">{study.title}</h3>
                                     <p className="text-slate-600 mb-6 flex-grow line-clamp-3 leading-relaxed">{study.description}</p>
-                                    <button onClick={(e) => handleReadClick(e, study)} className="mt-auto flex items-center font-bold text-[#0a0a0a] group-hover:text-[#2563eb] transition-colors bg-transparent border-none p-0 cursor-pointer text-sm">
+                                    <button onClick={(e) => handleReadClick(e, study)} className="mt-auto flex items-center font-bold text-[#0a0a0a] group-hover:text-[#2563eb] transition-colors bg-transparent border-none p-0 cursor-pointer text-sm" suppressHydrationWarning>
                                         <span className="border-b-2 border-transparent group-hover:border-[#2563eb] pb-0.5 transition-all">Read Case Study</span>
                                         <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                                     </button>
@@ -196,7 +187,7 @@ const ZohoCaseStudiesSlider = () => {
                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={closeModal} className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100]" />
                         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white rounded-3xl shadow-2xl z-[101] overflow-hidden">
                             <div className="relative">
-                                <button onClick={closeModal} className="absolute top-4 right-4 p-2 bg-white/20 hover:bg-black/20 rounded-full text-white z-10"><X className="w-5 h-5" /></button>
+                                <button onClick={closeModal} className="absolute top-4 right-4 p-2 bg-white/20 hover:bg-black/20 rounded-full text-white z-10" suppressHydrationWarning><X className="w-5 h-5" /></button>
                                 <div className="bg-gradient-to-r from-[#001f5c] to-[#0a0a0a] p-6 text-white"><h2 className="text-xl font-bold mb-2 pr-8 leading-tight">Access Zoho Case Study</h2><p className="text-blue-100/90 text-sm pr-4">{selectedStudy?.title}</p></div>
                                 <div className="p-6 md:p-8 text-left text-slate-800">
                                     {isSubmitted ? (
@@ -209,6 +200,7 @@ const ZohoCaseStudiesSlider = () => {
                                             <button
                                                 onClick={closeModal}
                                                 className="mt-8 px-8 py-3 bg-[#001f5c] text-white font-bold rounded-xl hover:bg-black transition-colors"
+                                                suppressHydrationWarning
                                             >
                                                 Close
                                             </button>
@@ -225,6 +217,7 @@ const ZohoCaseStudiesSlider = () => {
                                                     onChange={handleInputChange}
                                                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                                                     placeholder="John Doe"
+                                                    suppressHydrationWarning
                                                 />
                                             </div>
                                             <div className="grid grid-cols-[1.2fr_0.8fr] gap-2">
@@ -238,6 +231,7 @@ const ZohoCaseStudiesSlider = () => {
                                                         onChange={handleInputChange}
                                                         className="w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm"
                                                         placeholder="Manager"
+                                                        suppressHydrationWarning
                                                     />
                                                 </div>
                                                 <div>
@@ -248,6 +242,7 @@ const ZohoCaseStudiesSlider = () => {
                                                             value={formData.countryCode}
                                                             onChange={handleInputChange}
                                                             className="w-[70px] px-1 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#f59e0b] outline-none text-[10px] font-bold"
+                                                            suppressHydrationWarning
                                                         >
                                                             {COUNTRY_CODES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
                                                         </select>
@@ -260,6 +255,7 @@ const ZohoCaseStudiesSlider = () => {
                                                             className="flex-1 px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#f59e0b] outline-none transition-all placeholder:text-slate-400 text-sm"
                                                             placeholder="9876543210"
                                                             maxLength={10}
+                                                            suppressHydrationWarning
                                                         />
                                                     </div>
                                                 </div>
@@ -274,6 +270,7 @@ const ZohoCaseStudiesSlider = () => {
                                                     onChange={handleInputChange}
                                                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                                                     placeholder="john@company.com"
+                                                    suppressHydrationWarning
                                                 />
                                             </div>
                                             <div>
@@ -286,11 +283,13 @@ const ZohoCaseStudiesSlider = () => {
                                                     onChange={handleInputChange}
                                                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                                                     placeholder="Company Name"
+                                                    suppressHydrationWarning
                                                 />
                                             </div>
                                             <button
                                                 type="submit"
                                                 className="w-full py-4 bg-gradient-to-r from-[#001f5c] to-[#0a0a0a] text-white font-bold rounded-xl hover:shadow-lg transition-all mt-4"
+                                                suppressHydrationWarning
                                             >
                                                 Get Case Study
                                             </button>

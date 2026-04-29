@@ -13,6 +13,7 @@ import Image from 'next/image';
 import {
   Rocket,
   Globe2,
+  Briefcase,
   Pause,
   Play,
   Target,
@@ -31,7 +32,7 @@ import {
 import { useInView } from 'react-intersection-observer';
 import FlipNumbers from 'react-flip-numbers';
 import { motion, useAnimation, type Variants, useScroll, useTransform } from 'framer-motion';
-import ContactFormDesign4 from '../components/ContactFormDesign4';
+import FooterContactForm from '@/app/components/shared/FooterContactForm';
 import NSCustomerSuccess from '../components/NSCustomerSuccess';
 import { AnimatePresence } from 'framer-motion';
 import { ChevronRight, Sparkles } from 'lucide-react';
@@ -245,12 +246,10 @@ type CounterItem = {
 };
 
 const counters: CounterItem[] = [
-  { label: 'Projects Completed', value: 600, icon: Target, suffix: "+" },
-  { label: 'Global Customers', value: 200, icon: Building2, suffix: "+" },
-  { label: 'Industry Expertise', value: 40, icon: UserCog, suffix: "+" },
+  { label: 'Projects Completed', value: 600, icon: Briefcase, suffix: "+" },
+  { label: 'Global Customers', value: 200, icon: Globe2, suffix: "+" },
   { label: 'Customer Retention', value: 84, icon: Heart, suffix: "%" },
   { label: 'Years Experience', value: 15, icon: Rocket, suffix: "+" },
-  { label: 'Countries Serving', value: 10, icon: Globe2, suffix: "+" },
 ];
 
 const fadeInUp: Variants = {
@@ -1211,7 +1210,7 @@ export default function AboutClient() {
       <AwardsAndRecognitionSection />
 
       {/* <section id="contact" className=" bg-white">
-        <ContactFormDesign4 />
+        <FooterContactForm platform="NetSuite" />
       </section> */}
 
       {/* Premium CTA Section */}
@@ -1265,7 +1264,7 @@ export default function AboutClient() {
       </section>
 
       <section className="bg-white">
-        <ContactFormDesign4 />
+        <FooterContactForm platform="NetSuite" />
       </section>
     </main>
   );

@@ -30,7 +30,7 @@ import {
   Phone
 } from "lucide-react";
 import { FAQ } from "@/app/components/home/FAQ";
-import ZohoContactForm from "../ZohoContactForm";
+import FooterContactForm from "@/app/components/shared/FooterContactForm";
 import ZohoServices from "../ZohoServices";
 
 function Counter({ value }: { value: number }) {
@@ -715,7 +715,7 @@ export default function ZohoSolutionTemplate({
 
       {/* ── Contact Form ─────────────────────────────────────────────────── */}
       <div id="contact-form">
-        <ZohoContactForm />
+        <FooterContactForm platform="Zoho" />
       </div>
 
     </div>

@@ -7,43 +7,66 @@ import Image from "next/image";
 import Script from "next/script";
 import { Briefcase, Globe2, HeartHandshake, Rocket } from "lucide-react";
 
-// Updated Site Key from User's latest source code
 const SITE_KEY = '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y';
 
-export default function ContactFormDesign4() {
+interface FooterContactFormProps {
+  platform: 'NetSuite' | 'Zoho';
+}
+
+export default function FooterContactForm({ platform }: FooterContactFormProps) {
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  const isNetSuite = platform === 'NetSuite';
+
+  // CRM Configs
+  const crmConfig = isNetSuite ? {
+    xnQsjsdp: "e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82",
+    xmIwtLD: "7ce425cbc5576979cf8d2dfa7bcaeeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a",
+    returnURL: "https://zoho-netsuite.vercel.app/thank-you",
+    rid: "ffa911f519bdac1fd37141e7458859338a4c0807209e53fcd9161a4ef8002b597777f2d47c34393e74912d83270ec629gid2020ff77b8590645f6909775bceb1dfe9b354b521b7d31a381183051979950afgidc32afce85ab5735ae0662898fbed0b63bef845d0ee34535ca4044be79f94eb16gidc20f47455171d038199ce12255d9fb14618138cdb451a0053d17b76b5cbc594d",
+    tw: "a5bf274d720cc51e70d06319b934b2ae14a201bb6424c6ca86bd81d126e9d37e"
+  } : {
+    xnQsjsdp: "19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f",
+    xmIwtLD: "8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee",
+    returnURL: "https://agsuitetech.com/best-cloud-based-crm/thank-you/",
+    rid: "c6bd15ef499e015212f7cfd1d94a36257616906db3378b7d58e9666a0cb004ad04cae4b2ad4b40f407ea1df9509ddfc3gid4d54f02188dbd1a4f4c8582e1cc6829be5ddd9b1ad3710ed7207deccba2aa858giddeda7992accaf02590572b916d20ede01298921dbc555b8a938ff90fe2bc82f4gid28710435a2d0ea931303f1f01e1b730e6517c1be20b1776d1746edb3c9f1c653",
+    tw: "8b4a96a610c92f39fdbddebeaa5a00b371fd965c61608708d088c2ca4821d30d"
+  };
+
   useEffect(() => {
     setIsClient(true);
 
-    (window as any).addAriaSelected409531000042578178 = function () {
+    const suffix = isNetSuite ? '409531000042578178' : '409531000026445204';
+    const formName = isNetSuite ? 'WebToLeads409531000042578178' : 'WebToLeads409531000026445204';
+
+    (window as any)[`addAriaSelected${suffix}`] = function () {
       const optionElem = (event as any).target;
       const prev = optionElem.querySelector('[aria-selected=true]');
       if (prev) prev.removeAttribute('aria-selected');
       optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
     };
 
-    (window as any).rccallback409531000042578178 = function () {
-      const recap = document.getElementById('recap409531000042578178');
+    (window as any)[`rccallback${suffix}`] = function () {
+      const recap = document.getElementById(`recap${suffix}`);
       if (recap) recap.setAttribute('captcha-verified', 'true');
-      const err = document.getElementById('recapErr409531000042578178') as HTMLElement;
+      const err = document.getElementById(`recapErr${suffix}`) as HTMLElement;
       if (err && err.style.visibility === 'visible') err.style.visibility = 'hidden';
     };
 
-    (window as any).reCaptchaAlert409531000042578178 = function () {
-      const recap = document.getElementById('recap409531000042578178');
+    (window as any)[`reCaptchaAlert${suffix}`] = function () {
+      const recap = document.getElementById(`recap${suffix}`);
       if (recap && recap.getAttribute('captcha-verified') === 'false') {
-        const err = document.getElementById('recapErr409531000042578178') as HTMLElement;
+        const err = document.getElementById(`recapErr${suffix}`) as HTMLElement;
         if (err) err.style.visibility = 'visible';
         return false;
       }
       return true;
     };
 
-    (window as any).validateEmail409531000042578178 = function () {
-      const form = (document.forms as any)['WebToLeads409531000042578178'];
+    (window as any)[`validateEmail${suffix}`] = function () {
+      const form = (document.forms as any)[formName];
       if (!form) return true;
       const emailFld = form.querySelectorAll('[data-ftype=email]');
       for (let i = 0; i < emailFld.length; i++) {
@@ -60,10 +83,23 @@ export default function ContactFormDesign4() {
       return true;
     };
 
-    (window as any).checkMandatory409531000042578178 = function () {
-      const fields = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
-      const labels = ['Company Name', 'Name', "POC's Mobile", 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
-      const form = (document.forms as any)['WebToLeads409531000042578178'];
+    (window as any)[`checkMandatory${suffix}`] = function () {
+      // Standardized fields and labels for both platforms to match NetSuite Homepage requirements
+      const fields = isNetSuite 
+        ? ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123']
+        : ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'Email', 'Annual Revenue', 'Description'];
+      
+      const labels = [
+        'Company Name', 
+        'Name', 
+        "POC's Mobile", 
+        'Service', 
+        'Company Email', 
+        'Annual Revenue', 
+        'How We Can Help You'
+      ];
+
+      const form = (document.forms as any)[formName];
       if (!form) return false;
       for (let i = 0; i < fields.length; i++) {
         const f = form[fields[i]];
@@ -75,24 +111,24 @@ export default function ContactFormDesign4() {
           }
         }
       }
-      if (!(window as any).validateEmail409531000042578178()) return false;
-      if (!(window as any).reCaptchaAlert409531000042578178()) return false;
+      if (!(window as any)[`validateEmail${suffix}`]()) return false;
+      if (!(window as any)[`reCaptchaAlert${suffix}`]()) return false;
       return true;
     };
 
     const setupSubmit = () => {
       const $ = (window as any).$;
       if (!$) return false;
-      $('#webform409531000042578178').off('submit').on('submit', function (e: any) {
+      $(`#shared_webform_${platform}`).off('submit').on('submit', function (e: any) {
         e.preventDefault();
-        if (!(window as any).checkMandatory409531000042578178()) return;
-        const btn = document.querySelector('.crmWebToEntityForm .formsubmit');
+        if (!(window as any)[`checkMandatory${suffix}`]()) return;
+        const btn = document.querySelector(`.crmWebToEntityForm .formsubmit-${platform}`);
         if (btn) btn.setAttribute('disabled', 'true');
 
         const formData = new FormData(e.target);
         
-        // 1. Send Email Notification First
-        const emailData = {
+        // 1. Send Email Notification
+        const emailData = isNetSuite ? {
           name: formData.get('Last Name'),
           email: formData.get('LEADCF8'),
           role: formData.get('Designation'),
@@ -103,9 +139,20 @@ export default function ContactFormDesign4() {
           hearAboutUs: formData.get('LEADCF127'),
           requirements: formData.get('LEADCF123'),
           platform: 'NetSuite'
+        } : {
+          name: formData.get('Last Name'),
+          email: formData.get('Email'),
+          role: formData.get('Designation'),
+          mobile: formData.get('Mobile'),
+          company: formData.get('Company'),
+          service: formData.get('LEADCF5'),
+          revenue: formData.get('Annual Revenue'),
+          hearAboutUs: formData.get('Lead Source'),
+          requirements: formData.get('Description'),
+          platform: 'Zoho'
         };
 
-        fetch('/api/contact/netsuite', {
+        fetch('/api/contact/netsuite', { 
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(emailData)
@@ -133,13 +180,13 @@ export default function ContactFormDesign4() {
     };
 
     const renderRecaptcha = () => {
-      const el = document.getElementById('recap409531000042578178');
+      const el = document.getElementById(`recap${suffix}`);
       if ((window as any).grecaptcha && el && el.children.length === 0) {
         try {
-          (window as any).grecaptcha.render('recap409531000042578178', {
+          (window as any).grecaptcha.render(`recap${suffix}`, {
             sitekey: SITE_KEY,
             theme: 'light',
-            callback: (window as any).rccallback409531000042578178
+            callback: (window as any)[`rccallback${suffix}`]
           });
         } catch (e) { /* already rendered */ }
       }
@@ -168,7 +215,7 @@ export default function ContactFormDesign4() {
     };
     window.addEventListener('zohoFormSuccess', onSuccess);
     return () => window.removeEventListener('zohoFormSuccess', onSuccess);
-  }, []);
+  }, [platform, isNetSuite, router]);
 
   if (!isClient) return null;
 
@@ -177,8 +224,8 @@ export default function ContactFormDesign4() {
       <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
       <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="afterInteractive" />
       <Script
-        id="wf_anal"
-        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=ffa911f519bdac1fd37141e7458859338a4c0807209e53fcd9161a4ef8002b597777f2d47c34393e74912d83270ec629gid2020ff77b8590645f6909775bceb1dfe9b354b521b7d31a381183051979950afgidc32afce85ab5735ae0662898fbed0b63bef845d0ee34535ca4044be79f94eb16gidc20f47455171d038199ce12255d9fb14618138cdb451a0053d17b76b5cbc594d&tw=a5bf274d720cc51e70d06319b934b2ae14a201bb6424c6ca86bd81d126e9d37e"
+        id={`wf_anal_${platform}`}
+        src={`https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=${crmConfig.rid}&tw=${crmConfig.tw}`}
         strategy="afterInteractive"
       />
 
@@ -191,7 +238,7 @@ export default function ContactFormDesign4() {
             <div className="absolute inset-0 bg-white/5 rounded-[40px]" />
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
 
-              {/* Left Side */}
+              {/* Left Side - Standardized platform-specific content */}
               <motion.div
                 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.2 } } }}
                 initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
@@ -213,13 +260,23 @@ export default function ContactFormDesign4() {
                     variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
                     className="space-y-4 mb-10 text-gray-300"
                   >
-                    <p className="text-lg">Take the first step towards streamlined operations and accelerated growth with Oracle NetSuite.</p>
+                    <p className="text-lg">
+                      {isNetSuite 
+                        ? "Take the first step towards streamlined operations and accelerated growth with Oracle NetSuite."
+                        : "Empower your team and drive exceptional growth with Zoho's integrated suite of business applications."}
+                    </p>
                   </motion.div>
                   <motion.div
                     variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
                     className="mb-10"
                   >
-                    <Image src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" alt="NetSuite Partner" width={220} height={70} className="h-16 w-auto object-contain" sizes="(max-width: 768px) 100vw, 220px" />
+                    <Image 
+                      src={isNetSuite ? "/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" : "/images/zoho logos/zoho premium.png"} 
+                      alt={isNetSuite ? "NetSuite Partner" : "Zoho Partner"} 
+                      width={220} height={70} 
+                      className="h-16 w-auto object-contain" 
+                      sizes="(max-width: 768px) 100vw, 220px" 
+                    />
                   </motion.div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                     {[
@@ -252,14 +309,13 @@ export default function ContactFormDesign4() {
                 </div>
               </motion.div>
 
-              {/* Right Side - Zoho Form */}
+              {/* Right Side - Standardized form (NetSuite style for both) */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative bg-white rounded-r-[40px] p-8 lg:p-12 h-full flex flex-col justify-center"
               >
                 {submitted ? (
-                  /* ── Thank You Card ── */
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -283,7 +339,6 @@ export default function ContactFormDesign4() {
                     </button>
                   </motion.div>
                 ) : (
-                  /* ── Form ── */
                   <>
                     <div className="mb-8">
                       <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-3 tracking-tight">Get Expert Guidance</h3>
@@ -291,44 +346,50 @@ export default function ContactFormDesign4() {
                     </div>
 
                 <div id="crmWebToEntityForm" className="crmWebToEntityForm">
-                  <form id="webform409531000042578178" name="WebToLeads409531000042578178" acceptCharset="UTF-8" className="space-y-4">
-                    <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue="e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82" readOnly />
+                  <form id={`shared_webform_${platform}`} name={isNetSuite ? 'WebToLeads409531000042578178' : 'WebToLeads409531000026445204'} acceptCharset="UTF-8" className="space-y-4">
+                    <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue={crmConfig.xnQsjsdp} readOnly />
                     <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                    <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue="7ce425cbc5576979cf8d2dfa7bcaeeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a" readOnly />
+                    <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue={crmConfig.xmIwtLD} readOnly />
                     <input type="text" style={{ display: 'none' }} name="actionType" defaultValue="TGVhZHM=" readOnly />
-                    <input type="text" style={{ display: 'none' }} name="returnURL" defaultValue="https://zoho-netsuite.vercel.app/thank-you" readOnly />
+                    <input type="text" style={{ display: 'none' }} name="returnURL" defaultValue={crmConfig.returnURL} readOnly />
                     <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" defaultValue="" readOnly />
+                    {!isNetSuite && (
+                      <>
+                        <input type="text" style={{ display: 'none' }} id="ldeskuid" name="ldeskuid" readOnly />
+                        <input type="text" style={{ display: 'none' }} id="LDTuvid" name="LDTuvid" readOnly />
+                      </>
+                    )}
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="Last_Name" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Name <span className="text-red-500">*</span></label>
-                        <input type="text" id="Last_Name" name="Last Name" maxLength={80} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="John Doe" />
+                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Name <span className="text-red-500">*</span></label>
+                        <input type="text" name="Last Name" maxLength={80} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="John Doe" suppressHydrationWarning />
                       </div>
                       <div>
-                        <label htmlFor="LEADCF8" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Email <span className="text-red-500">*</span></label>
-                        <input type="text" data-ftype="email" id="LEADCF8" name="LEADCF8" maxLength={100} autoComplete="off" required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="john@company.com" />
+                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Email <span className="text-red-500">*</span></label>
+                        <input type="text" data-ftype="email" name={isNetSuite ? "LEADCF8" : "Email"} maxLength={100} autoComplete="off" required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="john@company.com" suppressHydrationWarning />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="Designation" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Role</label>
-                        <input type="text" id="Designation" name="Designation" maxLength={100} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Manager" />
+                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Role</label>
+                        <input type="text" name="Designation" maxLength={100} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Manager" suppressHydrationWarning />
                       </div>
                       <div>
-                        <label htmlFor="Mobile" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">POC's Mobile <span className="text-red-500">*</span></label>
-                        <input type="text" id="Mobile" name="Mobile" maxLength={30} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="+91 00000 00000" />
+                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">POC's Mobile <span className="text-red-500">*</span></label>
+                        <input type="text" name="Mobile" maxLength={30} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="+91 00000 00000" suppressHydrationWarning />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="Company" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Name <span className="text-red-500">*</span></label>
-                        <input type="text" id="Company" name="Company" maxLength={200} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Company Inc." />
+                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Name <span className="text-red-500">*</span></label>
+                        <input type="text" name="Company" maxLength={200} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Company Inc." suppressHydrationWarning />
                       </div>
                       <div>
-                        <label htmlFor="LEADCF5" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Service <span className="text-red-500">*</span></label>
-                        <select id="LEADCF5" name="LEADCF5" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm">
+                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Service <span className="text-red-500">*</span></label>
+                        <select name="LEADCF5" onChange={() => (window as any)[`addAriaSelected${isNetSuite ? '409531000042578178' : '409531000026445204'}`]?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
                           <option value="-None-">-None-</option>
                           <option value="Licenses">Licenses</option>
                           <option value="AMC">AMC</option>
@@ -338,24 +399,24 @@ export default function ContactFormDesign4() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="LEADCF19" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Annual Revenue <span className="text-red-500">*</span></label>
-                        <select id="LEADCF19" name="LEADCF19" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm">
+                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Annual Revenue <span className="text-red-500">*</span></label>
+                        <select name={isNetSuite ? "LEADCF19" : "Annual Revenue"} onChange={() => (window as any)[`addAriaSelected${isNetSuite ? '409531000042578178' : '409531000026445204'}`]?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
                           <option value="-None-">-None-</option>
-                          <option value="Less&#x20;than&#x20;8&#x20;Cr&#x20;&#x28;&#x24;&#x20;1M&#x29;">Less than 8 Cr ($ 1M)</option>
-                          <option value="8&#x20;-&#x20;20&#x20;Cr&#x20;&#x28;&#x24;&#x20;1M&#x20;-&#x20;2.5M&#x29;">8 - 20 Cr ($ 1M - 2.5M)</option>
-                          <option value="20&#x20;-&#x20;40&#x20;Cr&#x20;&#x28;&#x24;&#x20;2.5M&#x20;-&#x20;5M&#x29;">20 - 40 Cr ($ 2.5M - 5M)</option>
-                          <option value="40&#x20;-&#x20;80&#x20;Cr&#x20;&#x28;&#x24;&#x20;5M&#x20;-&#x20;10M&#x29;">40 - 80 Cr ($ 5M - 10M)</option>
-                          <option value="80&#x20;-&#x20;120&#x20;Cr&#x20;&#x28;&#x24;&#x20;10M&#x20;-&#x20;15M&#x29;">80 - 120 Cr ($ 10M - 15M)</option>
-                          <option value="120&#x20;-&#x20;200&#x20;Cr&#x20;&#x28;&#x24;&#x20;15M&#x20;-&#x20;25M&#x29;">120 - 200 Cr ($ 15M - 25M)</option>
-                          <option value="200&#x20;-&#x20;400&#x20;Cr&#x20;&#x28;&#x24;&#x20;25M&#x20;-&#x20;50M&#x29;">200 - 400 Cr ($ 25M - 50M)</option>
-                          <option value="400&#x20;-&#x20;800&#x20;Cr&#x20;&#x28;&#x24;&#x20;50M&#x20;-&#x20;100M&#x29;">400 - 800 Cr ($ 50M - 100M)</option>
-                          <option value="800&#x20;-&#x20;2000&#x20;Cr&#x20;&#x28;&#x24;&#x20;100M&#x20;-&#x20;250M&#x29;">800 - 2000 Cr ($ 100M - 250M)</option>
-                          <option value="More&#x20;than&#x20;2000&#x20;Cr&#x20;&#x28;&#x24;&#x20;250M&#x2b;&#x29;">More than 2000 Cr ($ 250M+)</option>
+                          <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
+                          <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
+                          <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
+                          <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
+                          <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
+                          <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
+                          <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
+                          <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
+                          <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
+                          <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
                         </select>
                       </div>
                       <div>
-                        <label htmlFor="LEADCF127" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How did you hear about us</label>
-                        <select id="LEADCF127" name="LEADCF127" onChange={() => (window as any).addAriaSelected409531000042578178?.()} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm">
+                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">{isNetSuite ? "How did you hear about us" : "Referral Path"}</label>
+                        <select name={isNetSuite ? "LEADCF127" : "Lead Source"} onChange={() => (window as any)[`addAriaSelected${isNetSuite ? '409531000042578178' : '409531000026445204'}`]?.()} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
                           <option value="-None-">-None-</option>
                           <option value="Email">Email</option>
                           <option value="Event">Event</option>
@@ -368,27 +429,28 @@ export default function ContactFormDesign4() {
                     </div>
 
                     <div>
-                      <label htmlFor="LEADCF123" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How We Can Help You <span className="text-red-500">*</span></label>
-                      <textarea id="LEADCF123" name="LEADCF123" rows={2} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all shadow-sm" placeholder="Share your requirements..." />
+                      <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How We Can Help You <span className="text-red-500">*</span></label>
+                      <textarea name={isNetSuite ? "LEADCF123" : "Description"} rows={2} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all shadow-sm" placeholder="Share your requirements..." suppressHydrationWarning />
                     </div>
 
                     {/* reCAPTCHA v2 Checkbox Widget */}
                     <div className="pt-2">
-                      <div className="g-recaptcha" data-sitekey={SITE_KEY} data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
-                      <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
+                      <div className="g-recaptcha" data-sitekey={SITE_KEY} data-theme="light" data-callback={`rccallback${isNetSuite ? '409531000042578178' : '409531000026445204'}`} captcha-verified="false" id={`recap${isNetSuite ? '409531000042578178' : '409531000026445204'}`} />
+                      <div id={`recapErr${isNetSuite ? '409531000042578178' : '409531000026445204'}`} style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
                     </div>
 
                     <div className="flex gap-3 pt-2">
                       <input
                         type="submit"
-                        id="formsubmit"
-                        className="formsubmit flex-1 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm cursor-pointer"
+                        className={`formsubmit-${platform} flex-1 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm cursor-pointer`}
                         value="Submit Request"
+                        suppressHydrationWarning
                       />
                       <input 
                         type="reset" 
-                        className="px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-all text-sm cursor-pointer" 
+                        className="px-6 py-3.5 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-all text-sm cursor-pointer" 
                         value="Reset" 
+                        suppressHydrationWarning
                       />
                     </div>
                   </form>

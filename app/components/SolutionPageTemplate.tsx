@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import FlipNumbers from 'react-flip-numbers';
 import { ArrowRight, CheckCircle2, ExternalLink, LucideIcon } from 'lucide-react';
-import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
+import FooterContactForm from '@/app/components/shared/FooterContactForm';
 import ServiceExploreSection from './ServiceExploreSection';
 
 interface HeroData {
@@ -589,7 +589,7 @@ export default function SolutionPageTemplate({
         </div>
       </section>
 
-      <ContactFormDesign4 />
+      <FooterContactForm platform="NetSuite" />
     </div>
   );
 }

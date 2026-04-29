@@ -6,12 +6,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import {
-  Trophy, Users, Globe2, Rocket, Layout, Database, Share2, Code, ShieldCheck,
+  Trophy, Users, Globe2, Rocket, Briefcase, Layout, Database, Share2, Code, ShieldCheck,
   HeartHandshake, ArrowRight, CheckCircle2, BarChart3, ShoppingCart, Globe,
   TrendingUp, Package, Layers, DollarSign, BookOpen, Star, ChevronDown, ChevronRight, GraduationCap, Wrench, Settings
 } from 'lucide-react';
 import dynamic from 'next/dynamic';
-import ContactFormDesign4 from '../../components/ContactFormDesign4';
+import FooterContactForm from '@/app/components/shared/FooterContactForm';
 
 const ScrollFloat = dynamic(() => import('./ScrollFloat'), { ssr: false }) as any;
 const RotatingText = dynamic(() => import('./RotatingText'), { ssr: false }) as any;
@@ -38,12 +38,10 @@ export default function NetSuiteSolutionsClient() {
   const currentColor = wordColors[rotatingIdx] ?? wordColors[0];
 
   const stats = [
-    { label: 'Customers', value: 200, suffix: '+', icon: Users },
-    { label: 'Projects', value: 500, suffix: '+', icon: Rocket },
-    { label: 'Industry Expertise', value: 10, suffix: '+', icon: Trophy },
-    { label: 'Customer Retention', value: 84, suffix: '%', icon: HeartHandshake },
-    { label: 'Years Experience', value: 15, suffix: '+', icon: GraduationCap },
-    { label: 'Countries Serving Customers', value: 10, suffix: '+', icon: Globe2 },
+    { label: "Projects Completed", value: 600, suffix: "+", icon: Briefcase },
+    { label: "Global Customers", value: 200, suffix: "+", icon: Globe2 },
+    { label: "Customer Retention", value: 84, suffix: "%", icon: HeartHandshake },
+    { label: "Years Experience", value: 15, suffix: "+", icon: Rocket },
   ];
 
   const imageBgGradients = [
@@ -559,7 +557,7 @@ export default function NetSuiteSolutionsClient() {
         </div>
       </section>
 
-      <ContactFormDesign4 />
+      <FooterContactForm platform="NetSuite" />
     </div>
   );
 }

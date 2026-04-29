@@ -37,7 +37,7 @@ import {
   Map,
   Zap,
 } from "lucide-react";
-import ContactFormDesign4 from "../../components/ContactFormDesign4";
+import FooterContactForm from "@/app/components/shared/FooterContactForm";
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
@@ -61,9 +61,9 @@ export default function NetSuiteServicesClient() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
 
   const stats = [
-    { label: "Enterprises Served", value: 180, suffix: "+", icon: Trophy },
-    { label: "NetSuite Experts", value: 50, suffix: "+", icon: Users },
-    { label: "Technical Integrations", value: 300, suffix: "+", icon: Share2 },
+    { label: "Projects Completed", value: 600, suffix: "+", icon: Briefcase },
+    { label: "Global Customers", value: 200, suffix: "+", icon: Globe2 },
+    { label: "Customer Retention", value: 84, suffix: "%", icon: HeartHandshake },
     { label: "Years Experience", value: 15, suffix: "+", icon: Rocket },
   ];
 
@@ -654,7 +654,7 @@ export default function NetSuiteServicesClient() {
         </div>
       </section>
 
-      <ContactFormDesign4 />
+      <FooterContactForm platform="NetSuite" />
     </div>
   );
 }

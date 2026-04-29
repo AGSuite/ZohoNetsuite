@@ -36,7 +36,7 @@ import {
   Zap,
   GraduationCap
 } from "lucide-react";
-import ZohoContactForm from "../../components/ZohoContactForm";
+import FooterContactForm from "@/app/components/shared/FooterContactForm";
 import { FAQ } from "@/app/components/home/FAQ";
 
 function Counter({ value }: { value: number }) {
@@ -61,9 +61,9 @@ export default function ZohoServicesClient() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
 
   const stats = [
-    { label: "Happy Clients", value: 500, suffix: "+", icon: Trophy },
-    { label: "Zoho Experts", value: 50, suffix: "+", icon: Users },
-    { label: "Technical Integrations", value: 300, suffix: "+", icon: Share2 },
+    { label: "Projects Completed", value: 600, suffix: "+", icon: Briefcase },
+    { label: "Global Customers", value: 200, suffix: "+", icon: Globe2 },
+    { label: "Customer Retention", value: 84, suffix: "%", icon: HeartHandshake },
     { label: "Years Experience", value: 15, suffix: "+", icon: Rocket },
   ];
 
@@ -636,7 +636,7 @@ export default function ZohoServicesClient() {
         <FAQ variant="zoho" layout="sidebar" />
       </section>
 
-      <ZohoContactForm />
+      <FooterContactForm platform="Zoho" />
     </div>
   );
 }

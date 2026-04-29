@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Search, Calendar, User, ArrowRight, ChevronRight, BookOpen, Filter, Star } from 'lucide-react'
 import ZohoSanityImage from '../../components/ZohoSanityImage'
 
-import ZohoContactForm from '../../components/ZohoContactForm'
+import FooterContactForm from '@/app/components/shared/FooterContactForm'
 
 interface Blog {
     _id: string
@@ -190,7 +190,7 @@ export default function ZohoBlogsGrid({ blogs }: ZohoBlogsGridProps) {
                     )}
                 </AnimatePresence>
             </div>
-            <div id="contact"><ZohoContactForm /></div>
+            <div id="contact"><FooterContactForm platform="Zoho" /></div>
         </div>
     )
 }

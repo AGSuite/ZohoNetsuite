@@ -43,7 +43,7 @@ import {
 } from "lucide-react";
 import dynamic from "next/dynamic";
 
-const ZohoContactForm = dynamic(() => import("../../components/ZohoContactForm"), { ssr: false });
+const FooterContactForm = dynamic(() => import("@/app/components/shared/FooterContactForm"), { ssr: false });
 const FAQ = dynamic(() => import("@/app/components/home/FAQ").then(mod => mod.FAQ), { ssr: false });
 
 function Counter({ value }: { value: number }) {
@@ -68,9 +68,9 @@ export default function ZohoIndustriesClient() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
 
   const stats = [
-    { label: "Happy Clients", value: 500, suffix: "+", icon: Trophy },
-    { label: "Zoho Experts", value: 50, suffix: "+", icon: Users },
-    { label: "Global Roll-outs", value: 50, suffix: "+", icon: Globe2 },
+    { label: "Projects Completed", value: 600, suffix: "+", icon: Briefcase },
+    { label: "Global Customers", value: 200, suffix: "+", icon: Globe2 },
+    { label: "Customer Retention", value: 84, suffix: "%", icon: HeartHandshake },
     { label: "Years Experience", value: 15, suffix: "+", icon: Rocket },
   ];
 
@@ -735,7 +735,7 @@ export default function ZohoIndustriesClient() {
         <FAQ variant="zoho" layout="sidebar" />
       </section>
 
-      <ZohoContactForm />
+      <FooterContactForm platform="Zoho" />
     </div>
   );
 }

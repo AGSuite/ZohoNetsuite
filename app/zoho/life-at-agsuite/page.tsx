@@ -24,7 +24,7 @@ import {
   Calendar,
   Linkedin,
 } from "lucide-react";
-import ZohoContactForm from "../components/ZohoContactForm";
+import FooterContactForm from "@/app/components/shared/FooterContactForm";
 
 export default function ZohoLifeAtAGSuite() {
   const [isMounted, setIsMounted] = useState(false);
@@ -736,7 +736,7 @@ export default function ZohoLifeAtAGSuite() {
       {/* ─────────────────────────────────────────────────────────
           CONTACT SECTION (CTA)
       ────────────────────────────────────────────────────────── */}
-      <ZohoContactForm />
+      <FooterContactForm platform="Zoho" />
     </div>
   );
 }

@@ -6,13 +6,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import {
-    Trophy, Rocket, FolderCheck,
+    Trophy, Rocket, FolderCheck, Briefcase, Globe2, HeartHandshake,
     ArrowRight, CheckCircle2, ChevronRight, Activity, BookOpen,
     Calendar, MapPin, Clock, Users, ExternalLink, Zap, Star
 } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
-const ZohoContactForm = dynamic(() => import('../../components/ZohoContactForm'), { ssr: false });
+const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
 const ZohoCaseStudiesSlider = dynamic(() => import('../../components/ZohoCaseStudiesSlider'), { ssr: false });
 const ZohoBlogsSlider = dynamic(() => import('../../components/ZohoBlogsSlider'), { ssr: false });
 
@@ -166,10 +166,10 @@ export default function ZohoInsightsClient({ blogs }: { blogs: any[] }) {
     const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
 
     const stats = [
-        { label: 'Resources Available', value: 150, suffix: '+', icon: BookOpen },
-        { label: 'Success Stories', value: 85, suffix: '+', icon: FolderCheck },
-        { label: 'Zoho Experts', value: 50, suffix: '+', icon: Trophy },
-        { label: 'Years Experience', value: 10, suffix: '+', icon: Rocket },
+        { label: 'Projects Completed', value: 600, suffix: '+', icon: Briefcase },
+        { label: 'Global Customers', value: 200, suffix: '+', icon: Globe2 },
+        { label: 'Customer Retention', value: 84, suffix: '%', icon: HeartHandshake },
+        { label: 'Years Experience', value: 15, suffix: '+', icon: Rocket },
     ];
 
     return (
@@ -241,7 +241,7 @@ export default function ZohoInsightsClient({ blogs }: { blogs: any[] }) {
             </div>
 
             <div id="contact" className="scroll-mt-24">
-                <ZohoContactForm />
+                <FooterContactForm platform="Zoho" />
             </div>
         </div>
     );

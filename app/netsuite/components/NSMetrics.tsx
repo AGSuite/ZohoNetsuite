@@ -48,10 +48,10 @@ const NSMetrics = () => {
     const words = headlineText.split(" ");
 
     const stats = [
-        { value: "2.5X", label: "Average lift in productivity" },
-        { value: "31%", label: "Average cost reduction" },
-        { value: "25%", label: "Revenue growth rate" },
-        { value: "129%", label: "Average ROI increase" },
+        { value: "600+", label: "Projects Completed" },
+        { value: "200+", label: "Global Customers" },
+        { value: "84%", label: "Customer Retention" },
+        { value: "15+", label: "Years Experience" },
     ];
 
     return (

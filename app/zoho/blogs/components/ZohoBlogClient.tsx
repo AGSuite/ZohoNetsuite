@@ -7,7 +7,7 @@ import { Calendar, User, Tag, Clock, ChevronRight, ArrowLeft } from 'lucide-reac
 import { PortableText } from '@portabletext/react';
 import dynamic from 'next/dynamic';
 
-const ZohoContactForm = dynamic(() => import('../../components/ZohoContactForm'), { ssr: false });
+const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
 
 import { urlForZohoImage } from '../../../../sanity/lib/zohoImage';
 
@@ -177,7 +177,7 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
                     </div>
                 </motion.div>
                 <div id="contact" className="mt-20">
-                    <ZohoContactForm />
+                    <FooterContactForm platform="Zoho" />
                 </div>
             </div>
         </article>

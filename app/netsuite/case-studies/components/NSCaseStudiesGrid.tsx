@@ -266,6 +266,7 @@ const NSCaseStudiesGrid = () => {
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all shadow-inner font-medium"
+                            suppressHydrationWarning
                         />
                     </div>
 
@@ -282,6 +283,7 @@ const NSCaseStudiesGrid = () => {
                                     ? 'bg-[#001f5c] text-white shadow-md'
                                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
                                     }`}
+                                suppressHydrationWarning
                             >
                                 {industry}
                             </button>
@@ -306,6 +308,7 @@ const NSCaseStudiesGrid = () => {
                         <button
                             onClick={() => { setSearchQuery(""); setSelectedIndustry("All"); }}
                             className="mt-6 text-blue-600 font-bold hover:text-blue-800 transition-colors underline underline-offset-4"
+                            suppressHydrationWarning
                         >
                             Clear all filters
                         </button>
@@ -327,16 +330,6 @@ const NSCaseStudiesGrid = () => {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent opacity-60" />
 
-                                    {/* NetSuite Logo (Top Right) */}
-                                    <div className="absolute top-4 right-4 bg-white shadow-lg p-2 px-3 rounded-lg flex items-center justify-center" style={{ backdropFilter: 'blur(4px)' }}>
-                                        <Image
-                                            src="/images/logos/oracle netsuite logo.png"
-                                            alt="Oracle NetSuite Logo"
-                                            width={110}
-                                            height={30}
-                                            className="h-5 sm:h-6 w-auto object-contain"
-                                        />
-                                    </div>
 
                                     {/* Industry Tag (Bottom Left) */}
                                     <div className="absolute bottom-4 left-4 bg-[#0a0a0a] text-white px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-md">
@@ -367,6 +360,7 @@ const NSCaseStudiesGrid = () => {
                                     <button
                                         onClick={(e) => handleReadClick(e, study)}
                                         className="mt-auto flex items-center font-bold text-[#0a0a0a] group-hover:text-[#2563eb] transition-colors bg-transparent border-none p-0 cursor-pointer"
+                                        suppressHydrationWarning
                                     >
                                         <span className="border-b-2 border-transparent group-hover:border-[#2563eb] pb-0.5 transition-all text-sm uppercase tracking-wide">
                                             Read Full Story
@@ -431,6 +425,7 @@ const NSCaseStudiesGrid = () => {
                                             <button
                                                 onClick={closeModal}
                                                 className="mt-8 px-8 py-3 bg-[#001f5c] text-white font-bold rounded-xl hover:bg-black transition-colors"
+                                                suppressHydrationWarning
                                             >
                                                 Close
                                             </button>
@@ -447,6 +442,7 @@ const NSCaseStudiesGrid = () => {
                                                     onChange={handleInputChange}
                                                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                                                     placeholder="John Doe"
+                                                    suppressHydrationWarning
                                                 />
                                             </div>
                                             <div className="grid grid-cols-[1.2fr_0.8fr] gap-2">
@@ -460,6 +456,7 @@ const NSCaseStudiesGrid = () => {
                                                         onChange={handleInputChange}
                                                         className="w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm"
                                                         placeholder="Manager"
+                                                        suppressHydrationWarning
                                                     />
                                                 </div>
                                                 <div>
@@ -470,6 +467,7 @@ const NSCaseStudiesGrid = () => {
                                                             value={formData.countryCode}
                                                             onChange={handleInputChange}
                                                             className="w-[70px] px-1 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-[10px] font-bold"
+                                                            suppressHydrationWarning
                                                         >
                                                             {COUNTRY_CODES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
                                                         </select>
@@ -482,6 +480,7 @@ const NSCaseStudiesGrid = () => {
                                                             className="flex-1 px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-400 text-sm"
                                                             placeholder="9876543210"
                                                             maxLength={10}
+                                                            suppressHydrationWarning
                                                         />
                                                     </div>
                                                 </div>
@@ -496,6 +495,7 @@ const NSCaseStudiesGrid = () => {
                                                     onChange={handleInputChange}
                                                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                                                     placeholder="john@company.com"
+                                                    suppressHydrationWarning
                                                 />
                                             </div>
                                             <div>
@@ -508,11 +508,13 @@ const NSCaseStudiesGrid = () => {
                                                     onChange={handleInputChange}
                                                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                                                     placeholder="Company Name"
+                                                    suppressHydrationWarning
                                                 />
                                             </div>
                                             <button
                                                 type="submit"
                                                 className="w-full py-4 bg-gradient-to-r from-[#001f5c] to-[#0a0a0a] text-white font-bold rounded-xl hover:shadow-lg transition-all mt-4"
+                                                suppressHydrationWarning
                                             >
                                                 Get Case Study
                                             </button>

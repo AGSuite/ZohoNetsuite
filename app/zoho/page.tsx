@@ -27,7 +27,7 @@ const ZohoCTA = dynamic(() => import('./components/ZohoCTA').then(mod => mod.def
 const ZohoWhyChooseUs = dynamic(() => import('./components/ZohoWhyChooseUs').then(mod => mod.default));
 const ZohoBlogsSlider = dynamic(() => import('./components/ZohoBlogsSlider').then(mod => mod.default));
 const FAQ = dynamic(() => import('../components/home/FAQ').then(mod => mod.FAQ));
-const ZohoContactForm = dynamic(() => import('./components/ZohoContactForm').then(mod => mod.default));
+const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm').then(mod => mod.default));
 
 export default async function ZohoPage() {
   const blogs = await getZohoPosts();
@@ -63,7 +63,7 @@ export default async function ZohoPage() {
 
       <FAQ variant="zoho" layout="sidebar" />
 
-      <ZohoContactForm />
+      <FooterContactForm platform="Zoho" />
     </div>
   );
 }

@@ -173,16 +173,6 @@ const NSCaseStudiesSlider = () => {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent opacity-60" />
 
-                                    {/* NetSuite Logo (Top Right) */}
-                                    <div className="absolute top-4 right-4 bg-white shadow-lg p-2 px-3 rounded-lg flex items-center justify-center" style={{ backdropFilter: 'blur(4px)' }}>
-                                        <Image
-                                            src="/images/logos/oracle netsuite logo.png"
-                                            alt="Oracle NetSuite Logo"
-                                            width={110}
-                                            height={30}
-                                            className="h-6 w-auto object-contain"
-                                        />
-                                    </div>
 
                                     {/* Industry Tag (Bottom Left) */}
                                     <div className="absolute bottom-4 left-4 bg-blue-600 text-white px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider backdrop-blur-md">
@@ -271,6 +261,7 @@ const NSCaseStudiesSlider = () => {
                                 <button
                                     onClick={closeModal}
                                     className="absolute top-4 right-4 p-2 bg-white/20 hover:bg-black/20 rounded-full text-white transition-colors z-10"
+                                    suppressHydrationWarning
                                 >
                                     <X className="w-5 h-5" />
                                 </button>
@@ -297,6 +288,7 @@ const NSCaseStudiesSlider = () => {
                                             <button
                                                 onClick={closeModal}
                                                 className="mt-8 px-8 py-3 bg-[#001f5c] text-white font-bold rounded-xl hover:bg-black transition-colors"
+                                                suppressHydrationWarning
                                             >
                                                 Close
                                             </button>
@@ -313,6 +305,7 @@ const NSCaseStudiesSlider = () => {
                                                     onChange={handleInputChange}
                                                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                                                     placeholder="John Doe"
+                                                    suppressHydrationWarning
                                                 />
                                             </div>
                                             <div className="grid grid-cols-[1.2fr_0.8fr] gap-2">
@@ -326,6 +319,7 @@ const NSCaseStudiesSlider = () => {
                                                         onChange={handleInputChange}
                                                         className="w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm"
                                                         placeholder="Manager"
+                                                        suppressHydrationWarning
                                                     />
                                                 </div>
                                                 <div>
@@ -336,6 +330,7 @@ const NSCaseStudiesSlider = () => {
                                                             value={formData.countryCode}
                                                             onChange={handleInputChange}
                                                             className="w-[70px] px-1 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-[10px] font-bold"
+                                                            suppressHydrationWarning
                                                         >
                                                             {COUNTRY_CODES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
                                                         </select>
@@ -348,6 +343,7 @@ const NSCaseStudiesSlider = () => {
                                                             className="flex-1 px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-400 text-sm"
                                                             placeholder="9876543210"
                                                             maxLength={10}
+                                                            suppressHydrationWarning
                                                         />
                                                     </div>
                                                 </div>
@@ -362,6 +358,7 @@ const NSCaseStudiesSlider = () => {
                                                     onChange={handleInputChange}
                                                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                                                     placeholder="john@company.com"
+                                                    suppressHydrationWarning
                                                 />
                                             </div>
                                             <div>
@@ -374,11 +371,13 @@ const NSCaseStudiesSlider = () => {
                                                     onChange={handleInputChange}
                                                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                                                     placeholder="Company Name"
+                                                    suppressHydrationWarning
                                                 />
                                             </div>
                                             <button
                                                 type="submit"
                                                 className="w-full py-4 bg-gradient-to-r from-[#001f5c] to-[#0a0a0a] text-white font-bold rounded-xl hover:shadow-lg transition-all mt-4"
+                                                suppressHydrationWarning
                                             >
                                                 Get Case Study
                                             </button>

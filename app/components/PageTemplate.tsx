@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
+import FooterContactForm from '@/app/components/shared/FooterContactForm';
 
 interface Feature {
   title: string;
@@ -345,7 +345,7 @@ const PageTemplate: React.FC<PageTemplateProps> = ({
         </div>
       </section>
 
-      <ContactFormDesign4 />
+      <FooterContactForm platform="NetSuite" />
     </div>
   );
 };
