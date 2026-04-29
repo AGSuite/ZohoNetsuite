@@ -10,7 +10,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export default function NetSuiteContactFormModern() {
   useEffect(() => {
     // Define all form validation functions globally
-    window.addAriaSelected409531000026445204 = function () {
+    (window as any).addAriaSelected409531000026445204 = function () {
       const optionElem = (event as Event & { target: HTMLSelectElement }).target;
       const previousSelectedOption = optionElem.querySelector('[aria-selected=true]');
       if (previousSelectedOption) {
@@ -19,7 +19,7 @@ export default function NetSuiteContactFormModern() {
       optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
     };
 
-    window.rccallback409531000026445204 = function () {
+    (window as any).rccallback409531000026445204 = function () {
       if (document.getElementById('recap409531000026445204')) {
         document.getElementById('recap409531000026445204')?.setAttribute('captcha-verified', 'true');
       }
@@ -29,7 +29,7 @@ export default function NetSuiteContactFormModern() {
       }
     };
 
-    window.reCaptchaAlert409531000026445204 = function () {
+    (window as any).reCaptchaAlert409531000026445204 = function () {
       const recap = document.getElementById('recap409531000026445204');
       if (recap && recap.getAttribute('captcha-verified') === 'false') {
         const errorElement = document.getElementById('recapErr409531000026445204');
@@ -41,7 +41,7 @@ export default function NetSuiteContactFormModern() {
       return true;
     };
 
-    window.validateEmail409531000026445204 = function () {
+    (window as any).validateEmail409531000026445204 = function () {
       const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
       if (!form) return true;
       const emailFld = form.querySelectorAll('[ftype=email]');
@@ -67,7 +67,7 @@ export default function NetSuiteContactFormModern() {
       return true;
     };
 
-    window.validateMobile409531000026445204 = function () {
+    (window as any).validateMobile409531000026445204 = function () {
       const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
       if (!form) return true;
       const mobileFld = form.elements.namedItem('Mobile') as HTMLInputElement;
@@ -82,7 +82,7 @@ export default function NetSuiteContactFormModern() {
       return true;
     };
 
-    window.checkMandatory409531000026445204 = function () {
+    (window as any).checkMandatory409531000026445204 = function () {
       const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Annual Revenue', 'Description'];
       const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Annual Revenue', 'Tell Us How We Can Help'];
       const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
@@ -105,12 +105,12 @@ export default function NetSuiteContactFormModern() {
           }
         }
       }
-      window.trackVisitor409531000026445204?.();
-      if (window.validateEmail409531000026445204 && !window.validateEmail409531000026445204()) return false;
+      (window as any).trackVisitor409531000026445204?.();
+      if ((window as any).validateEmail409531000026445204 && !(window as any).validateEmail409531000026445204()) return false;
       if ((window as any).validateMobile409531000026445204 && !(window as any).validateMobile409531000026445204()) return false;
-      if (window.reCaptchaAlert409531000026445204 && !window.reCaptchaAlert409531000026445204()) return false;
+      if ((window as any).reCaptchaAlert409531000026445204 && !(window as any).reCaptchaAlert409531000026445204()) return false;
 
-      window.sendEmail?.();
+      (window as any).sendEmail?.();
       const submitButton = document.querySelector('.crmWebToEntityForm .formsubmit') as HTMLInputElement;
       if (submitButton) {
         submitButton.setAttribute('disabled', 'true');
@@ -118,12 +118,12 @@ export default function NetSuiteContactFormModern() {
       return true;
     };
 
-    window.validateNumber = function (e: KeyboardEvent) {
+    (window as any).validateNumber = function (e: KeyboardEvent) {
       const pattern = /^[0-9]$/;
       return pattern.test(e.key);
     };
 
-    window.sendEmail = function () {
+    (window as any).sendEmail = function () {
       const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
       if (!form) return;
       const formData = new FormData(form);
@@ -145,7 +145,7 @@ export default function NetSuiteContactFormModern() {
         });
     };
 
-    window.trackVisitor409531000026445204 = function () {
+    (window as any).trackVisitor409531000026445204 = function () {
       try {
         const zoho = (window as { $zoho?: { salesiq: { visitor: { uniqueid: () => string; email: (email: string) => void } } } }).$zoho;
         if (zoho) {
