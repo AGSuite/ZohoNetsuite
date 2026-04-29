@@ -119,7 +119,15 @@ const NetSuitePricingCalculator = () => {
         if (step === 3 && formData.modules.length === 0) n.modules = 'Required';
         if (step === 4) {
             if (!formData.name.trim()) n.name = 'Full name is required';
-            if (!formData.email.trim()) n.email = 'Business email is required';
+            if (!formData.email.trim()) {
+                n.email = 'Business email is required';
+            } else {
+                const domain = formData.email.split('@')[1]?.toLowerCase();
+                const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
+                if (forbidden.includes(domain)) {
+                    n.email = `Business email only (@${domain} not allowed)`;
+                }
+            }
             if (!/^\d{10}$/.test(formData.phone.replace(/\D/g, ''))) {
                 n.phone = 'Please enter exactly 10 digits';
             }

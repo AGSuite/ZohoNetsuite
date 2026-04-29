@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Script from "next/script";
 
 export default function EmbeddedZohoForm() {
+    const router = useRouter();
     useEffect(() => {
         (window as any).rccallback409531000042578178 = function () {
             if (document.getElementById('recap409531000042578178')) {
@@ -58,8 +60,8 @@ export default function EmbeddedZohoForm() {
         const form = e.target;
         
         // 1. Mandatory Checks
-        const mnd = ['Last Name', 'Email', 'Mobile', 'Company', 'LEADCF5', 'Annual Revenue', 'Description'];
-        const labels = ['Name', 'Business Email', 'Mobile', 'Company Name', 'Zoho Solution', 'Annual Revenue', 'Requirements'];
+        const mnd = ['Last Name', 'LEADCF8', 'Mobile', 'Company', 'LEADCF5', 'LEADCF19', 'LEADCF123'];
+        const labels = ['Name', 'Business Email', 'POC\'s Mobile', 'Company Name', 'Service', 'Annual Revenue', 'How We Can Help You'];
         
         for (let i = 0; i < mnd.length; i++) {
             const fld = form[mnd[i]];
@@ -72,12 +74,12 @@ export default function EmbeddedZohoForm() {
         }
 
         // 2. Email Validation (Business only)
-        const email = form['Email'].value;
+        const email = form['LEADCF8'].value;
         const domain = email.split('@')[1]?.toLowerCase();
         const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
         if (forbidden.includes(domain)) {
             alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
-            form['Email'].focus();
+            form['LEADCF8'].focus();
             e.preventDefault();
             return false;
         }
@@ -127,7 +129,7 @@ export default function EmbeddedZohoForm() {
         if (btn) btn.disabled = true;
 
         setTimeout(() => {
-            alert('Your request has been submitted successfully.');
+            router.push('/thank-you');
             if (btn) btn.disabled = false;
         }, 2000);
 
@@ -217,7 +219,7 @@ export default function EmbeddedZohoForm() {
                     }
                     
                     .g-recaptcha { margin-top: 15px; display: flex; justify-content: flex-start; }
-                    #recapErr409531000026445204 { font-size: 12px; color: #ef4444; margin-top: 10px; visibility: hidden; }
+                    #recapErr409531000042578178 { font-size: 12px; color: #ef4444; margin-top: 10px; visibility: hidden; }
                     
                     @media (max-width: 640px) {
                       .agsuite_column { width: 100%; padding: 0; }
@@ -277,7 +279,7 @@ export default function EmbeddedZohoForm() {
                     </div>
 
                     <div className="agsuite_column-large">
-                        <div data-sitekey="6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y" data-theme="light" id="recap409531000042578178"></div>
+                        <div data-sitekey="6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y" data-theme="light" captcha-verified="false" id="recap409531000042578178"></div>
                         <div id="recapErr409531000042578178">Please verify you are not a robot.</div>
                         <input type="submit" id="formsubmit" className="zcwf_button" value="Send Request" aria-label="Submit Form" />
                     </div>

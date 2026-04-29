@@ -34,7 +34,7 @@ export default function ZohoContactForm() {
     useEffect(() => {
         setIsClient(true);
 
-        (window as any).addAriaSelected409531000026445204 = function () {
+        (window as any).addAriaSelected409531000042578178 = function () {
             const optionElem = (event as any).target;
             const previousSelectedOption = optionElem.querySelector('[aria-selected=true]');
             if (previousSelectedOption) {
@@ -43,20 +43,20 @@ export default function ZohoContactForm() {
             optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
         };
 
-        (window as any).rccallback409531000026445204 = function () {
-            if (document.getElementById('recap409531000026445204')) {
-                document.getElementById('recap409531000026445204')?.setAttribute('captcha-verified', 'true');
+        (window as any).rccallback409531000042578178 = function () {
+            if (document.getElementById('recap409531000042578178')) {
+                document.getElementById('recap409531000042578178')?.setAttribute('captcha-verified', 'true');
             }
-            const errorElement = document.getElementById('recapErr409531000026445204');
+            const errorElement = document.getElementById('recapErr409531000042578178');
             if (errorElement) {
                 errorElement.style.visibility = 'hidden';
             }
         };
 
-        (window as any).reCaptchaAlert409531000026445204 = function () {
-            const recap = document.getElementById('recap409531000026445204');
+        (window as any).reCaptchaAlert409531000042578178 = function () {
+            const recap = document.getElementById('recap409531000042578178');
             if (recap && recap.getAttribute('captcha-verified') === 'false') {
-                const errorElement = document.getElementById('recapErr409531000026445204');
+                const errorElement = document.getElementById('recapErr409531000042578178');
                 if (errorElement) {
                     errorElement.style.visibility = 'visible';
                 }
@@ -67,48 +67,35 @@ export default function ZohoContactForm() {
 
         // Handle reCAPTCHA rendering for SPA navigation
         const renderRecaptcha = () => {
-            const container = document.getElementById('recap409531000026445204');
+            const container = document.getElementById('recap409531000042578178');
             if ((window as any).grecaptcha && container) {
                 try {
-                    // Check if already rendered
                     if (container.children.length > 0) return;
-
-                    (window as any).grecaptcha.render('recap409531000026445204', {
-                        'sitekey': '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
+                    (window as any).grecaptcha.render('recap409531000042578178', {
+                        'sitekey': '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y',
                         'theme': 'light',
-                        'callback': (window as any).rccallback409531000026445204
+                        'callback': (window as any).rccallback409531000042578178
                     });
-                } catch (e) {
-                    console.error("reCAPTCHA render error:", e);
-                }
+                } catch (e) {}
             }
         };
 
         if ((window as any).grecaptcha) {
-            if ((window as any).grecaptcha.ready) {
-                (window as any).grecaptcha.ready(renderRecaptcha);
-            } else {
-                renderRecaptcha();
-            }
+            (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
         } else {
-            // Wait for script to load if not already there
             const interval = setInterval(() => {
                 if ((window as any).grecaptcha) {
-                    if ((window as any).grecaptcha.ready) {
-                        (window as any).grecaptcha.ready(renderRecaptcha);
-                    } else {
-                        renderRecaptcha();
-                    }
+                    (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
                     clearInterval(interval);
                 }
             }, 300);
             setTimeout(() => clearInterval(interval), 5000);
         }
 
-        (window as any).validateEmail409531000026445204 = function () {
-            const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
+        (window as any).validateEmail409531000042578178 = function () {
+            const form = document.forms.namedItem('WebToLeads409531000042578178') as HTMLFormElement;
             if (!form) return true;
-            const emailFld = form.querySelectorAll('[data-ftype=email]');
+            const emailFld = form.querySelectorAll('[name="LEADCF8"]');
             for (let i = 0; i < emailFld.length; i++) {
                 const emailVal = (emailFld[i] as HTMLInputElement).value;
                 if ((emailVal.replace(/^\s+|\s+$/g, '')).length !== 0) {
@@ -119,15 +106,22 @@ export default function ZohoContactForm() {
                         (emailFld[i] as HTMLInputElement).focus();
                         return false;
                     }
+                    const domain = emailVal.split('@')[1].toLowerCase();
+                    const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
+                    if (forbidden.includes(domain)) {
+                        alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
+                        (emailFld[i] as HTMLInputElement).focus();
+                        return false;
+                    }
                 }
             }
             return true;
         };
 
-        (window as any).checkMandatory409531000026445204 = function () {
-            const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Annual Revenue', 'Description'];
-            const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Annual Revenue', 'Type Message'];
-            const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
+        (window as any).checkMandatory409531000042578178 = function () {
+            const mndFileds = ['Company', 'Last Name', 'LEADCF8', 'Mobile', 'LEADCF5', 'LEADCF19', 'LEADCF123'];
+            const fldLangVal = ['Company Name', 'Name', 'Business Email', 'Mobile', 'Zoho Solution', 'Annual Revenue', 'Requirements'];
+            const form = document.forms.namedItem('WebToLeads409531000042578178') as HTMLFormElement;
             if (!form) return false;
 
             for (let i = 0; i < mndFileds.length; i++) {
@@ -151,10 +145,10 @@ export default function ZohoContactForm() {
                     }
                 }
             }
-            if ((window as any).validateEmail409531000026445204 && !(window as any).validateEmail409531000026445204()) return false;
-            if ((window as any).reCaptchaAlert409531000026445204 && !(window as any).reCaptchaAlert409531000026445204()) return false;
+            if ((window as any).validateEmail409531000042578178 && !(window as any).validateEmail409531000042578178()) return false;
+            if ((window as any).reCaptchaAlert409531000042578178 && !(window as any).reCaptchaAlert409531000042578178()) return false;
 
-            (window as any).trackVisitor409531000026445204?.();
+            (window as any).trackVisitor409531000042578178?.();
             (window as any).sendEmail?.();
             const submitButton = document.querySelector('.formsubmit-zoho') as HTMLButtonElement;
             if (submitButton) {
@@ -164,7 +158,7 @@ export default function ZohoContactForm() {
         };
 
         (window as any).sendEmail = function () {
-            const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
+            const form = document.forms.namedItem('WebToLeads409531000042578178') as HTMLFormElement;
             if (!form) return;
             const formData = new FormData(form);
 
@@ -181,17 +175,17 @@ export default function ZohoContactForm() {
                 });
         };
 
-        (window as any).trackVisitor409531000026445204 = function () {
+        (window as any).trackVisitor409531000042578178 = function () {
             try {
                 if ((window as any).$zoho && (window as any).$zoho.salesiq) {
-                    const form = document.forms.namedItem('WebToLeads409531000026445204') as HTMLFormElement;
+                    const form = document.forms.namedItem('WebToLeads409531000042578178') as HTMLFormElement;
                     if (form) {
                         const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
                         if (LDTuvidObj) {
                             LDTuvidObj.value = (window as any).$zoho.salesiq.visitor.uniqueid();
                         }
                         const nameObj = form.elements.namedItem('Last Name') as HTMLInputElement;
-                        const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
+                        const emailObj = form.elements.namedItem('LEADCF8') as HTMLInputElement;
                         if (nameObj) {
                             (window as any).$zoho.salesiq.visitor.name(nameObj.value);
                         }
@@ -205,7 +199,7 @@ export default function ZohoContactForm() {
     }, []);
 
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        if ((window as any).checkMandatory409531000026445204 && !(window as any).checkMandatory409531000026445204()) {
+        if ((window as any).checkMandatory409531000042578178 && !(window as any).checkMandatory409531000042578178()) {
             e.preventDefault();
             return;
         }
@@ -389,7 +383,8 @@ export default function ZohoContactForm() {
 
                             <motion.form
                                 action="https://crm.zoho.in/crm/WebToLeadForm"
-                                name="WebToLeads409531000026445204"
+                                id="WebToLeads409531000042578178"
+                                name="WebToLeads409531000042578178"
                                 method="POST"
                                 onSubmit={handleFormSubmit}
                                 acceptCharset="UTF-8"
@@ -399,11 +394,11 @@ export default function ZohoContactForm() {
                                 variants={containerVariants}
                                 className="space-y-6"
                             >
-                                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f" readOnly />
+                                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82" readOnly />
                                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                                <input type="text" className="hidden" name="xmIwtLD" defaultValue="8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee" readOnly />
+                                <input type="text" className="hidden" name="xmIwtLD" defaultValue="7ce425cbc5576979cf8d2dfa7bcaeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a" readOnly />
                                 <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
-                                <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/best-cloud-based-crm/thank-you/" readOnly />
+                                <input type="text" className="hidden" name="returnURL" defaultValue="https://zoho-netsuite.vercel.app/thank-you" readOnly />
                                 <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
                                 <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
 
@@ -414,7 +409,7 @@ export default function ZohoContactForm() {
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="flex flex-col">
                                         <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Work Email *</motion.label>
-                                        <input type="email" data-ftype="email" name="Email" required className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="john@enterprise.com" />
+                                        <input type="email" name="LEADCF8" required className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="john@enterprise.com" />
                                     </motion.div>
                                 </div>
 
@@ -454,7 +449,7 @@ export default function ZohoContactForm() {
                                     <motion.div variants={itemVariants} className="flex flex-col">
                                         <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Solution Area</motion.label>
                                         <div className="relative group">
-                                            <select name="LEADCF5" defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000026445204?.(); }} className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md pr-10">
+                                            <select name="LEADCF5" defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000042578178?.(); }} className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md pr-10">
                                                 <option value="" disabled>Select Zoho Solution *</option>
                                                 <option value='Zoho&#x20;CRM&#x20;&amp;&#x20;Sales'>Zoho CRM &amp; Sales</option>
                                                 <option value='Zoho&#x20;Finance&#x20;&amp;&#x20;Accounting'>Zoho Finance &amp; Accounting</option>
@@ -476,17 +471,18 @@ export default function ZohoContactForm() {
                                     <motion.div variants={itemVariants} className="flex flex-col">
                                         <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Revenue *</motion.label>
                                         <div className="relative group">
-                                            <select name="Annual Revenue" required defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000026445204?.(); }} className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md pr-10">
+                                            <select name="LEADCF19" required defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000042578178?.(); }} className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md pr-10">
                                                 <option value="" disabled>Select Yearly Revenue</option>
-                                                <option value="Under&#x20;&#x24;500K">Under &#x24;500K</option>
-                                                <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">&#x24;500k to &#x24;1M</option>
-                                                <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">&#x24;1M to &#x24;2M</option>
-                                                <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">&#x24;2M to &#x24;5M</option>
-                                                <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">&#x24;5M to &#x24;10M</option>
-                                                <option value='&#x24;10M&#x20;to&#x20;&#x24;20M'>&#x24;10M to &#x24;20M</option>
-                                                <option value='&#x24;20M&#x20;to&#x20;&#x24;30M'>&#x24;20M to &#x24;30M</option>
-                                                <option value='&#x24;30M&#x20;to&#x20;&#x24;50M'>&#x24;30M to &#x24;50M</option>
-                                                <option value='&#x24;50M&#x20;to&#x20;&#x24;100M'>&#x24;50M to &#x24;100M</option>
+                                                <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
+                                                <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
+                                                <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
+                                                <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
+                                                <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
+                                                <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
+                                                <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
+                                                <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
+                                                <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
+                                                <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
                                             </select>
                                             <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-blue-600">
                                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" /></svg>
@@ -496,48 +492,15 @@ export default function ZohoContactForm() {
                                     <motion.div variants={itemVariants} className="flex flex-col">
                                         <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Referral Path</motion.label>
                                         <div className="relative group">
-                                            <select name="Lead Source" defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000026445204?.(); }} className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md pr-10">
+                                            <select name="LEADCF127" defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000042578178?.(); }} className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md pr-10">
                                                 <option value="" disabled>How did you find us?</option>
-												<option value = '-None-'>-None-</option>
-												<option value = 'Client&#x20;Referral'>Client Referral</option>
-												<option value = 'Database'>Database</option>
-												<option value = 'Email'>Email</option>
-												<option value = 'Email&#x20;Campaign'>Email Campaign</option>
-												<option value = 'Employee&#x20;Referral'>Employee Referral</option>
-												<option value = 'Event'>Event</option>
-												<option value = 'External&#x20;Referral'>External Referral</option>
-												<option value = 'Google&#x20;Ads&#x20;&#x28;Chat&#x29;'>Google Ads &#x28;Chat&#x29;</option>
-												<option value = 'Google&#x20;Ads&#x20;&#x28;Form&#x29;'>Google Ads &#x28;Form&#x29;</option>
-												<option value = 'Lead&#x20;Gen&#x20;Agency'>Lead Gen Agency</option>
-												<option value = 'LinkedIn'>LinkedIn</option>
-												<option value = 'Linkedlin'>Linkedlin</option>
-												<option value = 'Online&#x20;Store'>Online Store</option>
-												<option value = 'Oracle&#x20;Database'>Oracle Database</option>
-												<option value = 'Oracle&#x20;Partner'>Oracle Partner</option>
-												<option value = 'Oracle&#x20;Referral'>Oracle Referral</option>
-												<option value = 'Others'>Others</option>
-												<option value = 'Phone'>Phone</option>
-												<option value = 'Purchased&#x20;Leads'>Purchased Leads</option>
-												<option value = 'Sales&#x20;Email&#x20;Alias'>Sales Email Alias</option>
-												<option value = 'Sales&#x20;Person&#x20;Contact'>Sales Person Contact</option>
-												<option value = 'Seminar&#x20;Partner'>Seminar Partner</option>
-												<option value = 'Trade&#x20;Show'>Trade Show</option>
-												<option value = 'TSL&#x20;Lead&#x20;-&#x20;Accepted'>TSL Lead - Accepted</option>
-												<option value = 'TSL&#x20;Lead&#x20;-&#x20;Rejected'>TSL Lead - Rejected</option>
-												<option value = 'Twitter'>Twitter</option>
-												<option value = 'Web&#x20;Cases'>Web Cases</option>
-												<option value = 'Web&#x20;Download'>Web Download</option>
-												<option value = 'Web&#x20;Mail'>Web Mail</option>
-												<option value = 'Web&#x20;Research'>Web Research</option>
-												<option value = 'Webinar'>Webinar</option>
-												<option value = 'Website'>Website</option>
-												<option value = 'Website&#x20;&#x28;Chat&#x29;'>Website &#x28;Chat&#x29;</option>
-												<option value = 'Website&#x20;&#x28;Form&#x29;'>Website &#x28;Form&#x29;</option>
-												<option value = 'WebSite&#x20;Visit'>WebSite Visit</option>
-												<option value = 'Zoho&#x20;Partner'>Zoho Partner</option>
-												<option value = 'Zoho&#x20;Partner&#x20;Portal'>Zoho Partner Portal</option>
-												<option value = 'Zoho&#x20;Portal&#x20;Listing'>Zoho Portal Listing</option>
-												<option value = 'Zoho&#x20;Referral'>Zoho Referral</option>
+                                                <option value="-None-">-None-</option>
+                                                <option value="Email">Email</option>
+                                                <option value="Event">Event</option>
+                                                <option value="Friend&#x2f;Associate">Friend/Associate</option>
+                                                <option value="Search">Search</option>
+                                                <option value="Social&#x20;Media">Social Media</option>
+                                                <option value="Referral">Referral</option>
                                             </select>
                                             <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-blue-600">
                                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" /></svg>
@@ -551,13 +514,13 @@ export default function ZohoContactForm() {
 
                                 <motion.div variants={itemVariants} className="flex flex-col">
                                     <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Requirements *</motion.label>
-                                    <textarea name="Description" required rows={3} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 resize-none shadow-sm focus:shadow-md text-sm" placeholder="Tell us about your project goals..." />
+                                    <textarea name="LEADCF123" required rows={3} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 resize-none shadow-sm focus:shadow-md text-sm" placeholder="Tell us about your project goals..." />
                                 </motion.div>
 
                                 <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-between gap-8 pt-2">
                                     <div className="captcha-area transform scale-90 origin-left">
-                                        <div data-sitekey="6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3" data-theme="light" data-callback="rccallback409531000026445204" captcha-verified="false" id="recap409531000026445204"></div>
-                                        <div id="recapErr409531000026445204" style={{ fontSize: '11px', color: '#dc2626', marginTop: '6px', fontWeight: '600', visibility: 'hidden' }}>Security verification required.</div>
+                                        <div data-sitekey="6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y" data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178"></div>
+                                        <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#dc2626', marginTop: '6px', fontWeight: '600', visibility: 'hidden' }}>Security verification required.</div>
                                     </div>
 
                                     <button type="submit" className="w-full sm:w-auto px-12 py-4 bg-gradient-to-r from-blue-700 to-gray-900 hover:from-blue-800 hover:to-black text-white font-bold rounded-2xl transition-all shadow-[0_15px_30px_-5px_rgba(30,58,138,0.3)] hover:shadow-[0_20px_40px_-5px_rgba(30,58,138,0.4)] hover:scale-[1.03] active:scale-95 formsubmit-zoho text-sm uppercase tracking-widest">

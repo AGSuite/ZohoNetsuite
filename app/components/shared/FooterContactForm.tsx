@@ -42,18 +42,23 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
       optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
     };
 
-    (window as any)[`rccallback${suffix}`] = function () {
-      const recap = document.getElementById(`recap${suffix}`);
-      if (recap) recap.setAttribute('captcha-verified', 'true');
-      const err = document.getElementById(`recapErr${suffix}`) as HTMLElement;
-      if (err && err.style.visibility === 'visible') err.style.visibility = 'hidden';
+    (window as any).rccallback409531000042578178 = function () {
+      if (document.getElementById('recap409531000042578178')) {
+        document.getElementById('recap409531000042578178')?.setAttribute('captcha-verified', 'true');
+      }
+      const errorElement = document.getElementById('recapErr409531000042578178');
+      if (errorElement && errorElement.style.visibility === 'visible') {
+        errorElement.style.visibility = 'hidden';
+      }
     };
 
-    (window as any)[`reCaptchaAlert${suffix}`] = function () {
-      const recap = document.getElementById(`recap${suffix}`);
+    (window as any).reCaptchaAlert409531000042578178 = function () {
+      const recap = document.getElementById('recap409531000042578178');
       if (recap && recap.getAttribute('captcha-verified') === 'false') {
-        const err = document.getElementById(`recapErr${suffix}`) as HTMLElement;
-        if (err) err.style.visibility = 'visible';
+        const errorElement = document.getElementById('recapErr409531000042578178');
+        if (errorElement) {
+          errorElement.style.visibility = 'visible';
+        }
         return false;
       }
       return true;
@@ -100,7 +105,6 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
     };
 
     (window as any)[`checkMandatory${suffix}`] = function () {
-      // Standardized fields and labels for both platforms
       const fields = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
       const labels = [
         'Company Name', 
@@ -126,7 +130,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
       }
       if (!(window as any)[`validateEmail${suffix}`]()) return false;
       if (!(window as any)[`validateMobile${suffix}`]()) return false;
-      if (!(window as any)[`reCaptchaAlert${suffix}`]()) return false;
+      if ((window as any).reCaptchaAlert409531000042578178 && !(window as any).reCaptchaAlert409531000042578178()) return false;
       return true;
     };
 
@@ -134,14 +138,12 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
       const $ = (window as any).$;
       if (!$) return false;
       $(`#shared_webform_${platform}`).off('submit').on('submit', function (e: any) {
-        // e.preventDefault(); // Removed to allow standard submission to hidden iframe
         if (!(window as any).checkMandatory409531000042578178()) return;
         const btn = document.querySelector(`.crmWebToEntityForm .formsubmit-${platform}`);
         if (btn) btn.setAttribute('disabled', 'true');
 
         const formData = new FormData(e.target);
         
-        // 1. Send Email Notification
         const emailData = {
           name: formData.get('Last Name'),
           email: formData.get('LEADCF8'),
@@ -161,34 +163,32 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
           body: JSON.stringify(emailData)
         }).catch(err => console.error('Email error:', err));
 
-        // 2. Submit via hidden iframe to avoid CORS issues
         const form = e.target;
         form.action = isNetSuite ? 'https://crm.zoho.in/crm/WebToLeadForm' : 'https://crm.zoho.in/crm/WebToLeadForm';
         form.method = 'POST';
         form.target = `zoho_iframe_${platform}`;
         
-        // Trigger success UI after a short delay (enough for the browser to initiate the post)
         setTimeout(() => {
           window.dispatchEvent(new CustomEvent('zohoFormSuccess'));
           if (btn) btn.removeAttribute('disabled');
         }, 2000);
 
-        // Standard submission to iframe will happen after this returns
         return true;
       });
       return true;
     };
 
     const renderRecaptcha = () => {
-      const el = document.getElementById(`recap${suffix}`);
-      if ((window as any).grecaptcha && el && el.children.length === 0) {
+      if ((window as any).grecaptcha && document.getElementById('recap409531000042578178')) {
         try {
-          (window as any).grecaptcha.render(`recap${suffix}`, {
-            sitekey: SITE_KEY,
-            theme: 'light',
-            callback: (window as any).rccallback409531000042578178
+          (window as any).grecaptcha.render('recap409531000042578178', {
+            'sitekey': SITE_KEY,
+            'theme': 'light',
+            'callback': (window as any).rccallback409531000042578178
           });
-        } catch (e) { /* already rendered */ }
+        } catch (e) {
+          // Already rendered
+        }
       }
     };
 
@@ -390,7 +390,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                       </div>
                       <div>
                         <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Service <span className="text-red-500">*</span></label>
-                        <select name="LEADCF5" onChange={() => (window as any)[`addAriaSelected${isNetSuite ? '409531000042578178' : '409531000026445204'}`]?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
+                        <select name="LEADCF5" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
                           <option value="-None-">-None-</option>
                           <option value="Licenses">Licenses</option>
                           <option value="AMC">AMC</option>
@@ -401,7 +401,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Annual Revenue <span className="text-red-500">*</span></label>
-                        <select name="LEADCF19" onChange={() => (window as any)[`addAriaSelected${isNetSuite ? '409531000042578178' : '409531000026445204'}`]?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
+                        <select name="LEADCF19" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
                           <option value="-None-">-None-</option>
                           <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
                           <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
@@ -417,7 +417,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                       </div>
                       <div>
                         <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How did you hear about us.</label>
-                        <select name="LEADCF127" onChange={() => (window as any)[`addAriaSelected${isNetSuite ? '409531000042578178' : '409531000026445204'}`]?.()} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
+                        <select name="LEADCF127" onChange={() => (window as any).addAriaSelected409531000042578178?.()} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
                           <option value="-None-">-None-</option>
                           <option value="Email">Email</option>
                           <option value="Event">Event</option>
@@ -436,8 +436,8 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
 
                     {/* reCAPTCHA v2 Checkbox Widget */}
                     <div className="pt-2">
-                      <div className="g-recaptcha" data-sitekey={SITE_KEY} data-theme="light" data-callback={`rccallback${isNetSuite ? '409531000042578178' : '409531000026445204'}`} captcha-verified="false" id={`recap${isNetSuite ? '409531000042578178' : '409531000026445204'}`} />
-                      <div id={`recapErr${isNetSuite ? '409531000042578178' : '409531000026445204'}`} style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
+                      <div className="g-recaptcha" data-sitekey={SITE_KEY} data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
+                      <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
                     </div>
 
                     <div className="flex gap-3 pt-2">

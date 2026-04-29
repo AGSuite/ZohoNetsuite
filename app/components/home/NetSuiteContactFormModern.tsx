@@ -20,19 +20,19 @@ export default function NetSuiteContactFormModern() {
     };
 
     (window as any).rccallback409531000042578178 = function () {
-      if (document.getElementById('recap409531000026445204')) {
-        document.getElementById('recap409531000026445204')?.setAttribute('captcha-verified', 'true');
+      if (document.getElementById('recap409531000042578178')) {
+        document.getElementById('recap409531000042578178')?.setAttribute('captcha-verified', 'true');
       }
-      const errorElement = document.getElementById('recapErr409531000026445204');
+      const errorElement = document.getElementById('recapErr409531000042578178');
       if (errorElement && errorElement.style.visibility === 'visible') {
         errorElement.style.visibility = 'hidden';
       }
     };
 
     (window as any).reCaptchaAlert409531000042578178 = function () {
-      const recap = document.getElementById('recap409531000026445204');
+      const recap = document.getElementById('recap409531000042578178');
       if (recap && recap.getAttribute('captcha-verified') === 'false') {
-        const errorElement = document.getElementById('recapErr409531000026445204');
+        const errorElement = document.getElementById('recapErr409531000042578178');
         if (errorElement) {
           errorElement.style.visibility = 'visible';
         }
@@ -416,7 +416,7 @@ select option {
 }
 
 .g-recaptcha { margin-top: 16px; display: flex; justify-content: flex-start; }
-#recapErr409531000026445204 { font-size: 12px; color: #ef4444; margin-top: 10px; visibility: hidden; }
+#recapErr409531000042578178 { font-size: 12px; color: #ef4444; margin-top: 10px; visibility: hidden; }
 .dsp { display: none; }
 
 @media (max-width: 640px) {

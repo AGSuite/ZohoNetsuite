@@ -39,9 +39,9 @@ export default function ZohoRequestQuotePage() {
 
         // Global Validation Logic for Zoho Quote Form
         window.validateEmailZQuote = function () {
-            const form = document.forms.namedItem('WebToLeadsQuoteZoho');
+            const form = document.forms.namedItem('WebToLeads409531000042578178');
             if (!form) return true;
-            const emailFld = form.querySelectorAll('input[type="email"]');
+            const emailFld = form.querySelectorAll('[name="LEADCF8"]');
             for (let i = 0; i < emailFld.length; i++) {
                 const emailVal = (emailFld[i] as HTMLInputElement).value;
                 if (emailVal.replace(/^\s+|\s+$/g, '').length !== 0) {
@@ -52,9 +52,10 @@ export default function ZohoRequestQuotePage() {
                         (emailFld[i] as HTMLInputElement).focus();
                         return false;
                     }
-                    const restrictedDomains = /(gmail\.com|yahoo\.com|outlook\.com|live\.com)$/i;
-                    if (restrictedDomains.test(emailVal)) {
-                        alert('Gmail, Yahoo, Outlook, and Live email addresses are not allowed.');
+                    const domain = emailVal.split('@')[1].toLowerCase();
+                    const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
+                    if (forbidden.includes(domain)) {
+                        alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
                         (emailFld[i] as HTMLInputElement).focus();
                         return false;
                     }
@@ -65,11 +66,11 @@ export default function ZohoRequestQuotePage() {
 
         window.checkMandatoryZQuote = function (e: any) {
             const form = e.target as HTMLFormElement;
-            const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Description', 'LEADCF5', 'LEADCF40'];
-            const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Tell Us How We Can Help', 'Product/Services', 'Annual Revenue'];
+            const mndFileds = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
+            const fldLangVal = ['Company Name', 'Name', 'POC\'s Mobile', 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
 
             for (let i = 0; i < mndFileds.length; i++) {
-                const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement;
+                const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
                 if (fieldObj && fieldObj.value.replace(/^\s+|\s+$/g, '').length === 0) {
                     alert(fldLangVal[i] + ' cannot be empty.');
                     fieldObj.focus();
@@ -77,9 +78,19 @@ export default function ZohoRequestQuotePage() {
                 }
             }
 
-            const recap = document.getElementById('recap409531000000398090');
+            const mobileFld = form.elements.namedItem('Mobile') as HTMLInputElement;
+            if (mobileFld) {
+                const v = mobileFld.value.replace(/\D/g, '');
+                if (v.length !== 10) {
+                    alert('Mobile number must be exactly 10 digits.');
+                    mobileFld.focus();
+                    return false;
+                }
+            }
+
+            const recap = document.getElementById('recap409531000042578178');
             if (recap && recap.getAttribute('captcha-verified') === 'false') {
-                const recapErr = document.getElementById('recapErr409531000000398090');
+                const recapErr = document.getElementById('recapErr409531000042578178');
                 if (recapErr) recapErr.style.visibility = 'visible';
                 return false;
             }
@@ -91,18 +102,28 @@ export default function ZohoRequestQuotePage() {
             return true;
         };
 
+        // reCAPTCHA callback — marks captcha as verified
+        window.rccallback409531000042578178 = function () {
+            const recap = document.getElementById('recap409531000042578178');
+            if (recap) recap.setAttribute('captcha-verified', 'true');
+            const recapErr = document.getElementById('recapErr409531000042578178');
+            if (recapErr && recapErr.style.visibility === 'visible') {
+                recapErr.style.visibility = 'hidden';
+            }
+        };
+
         // Handle reCAPTCHA rendering for SPA navigation
         const renderRecaptcha = () => {
-            if ((window as any).grecaptcha && document.getElementById('recap409531000000398090')) {
+            const container = document.getElementById('recap409531000042578178');
+            if ((window as any).grecaptcha && container) {
                 try {
-                    (window as any).grecaptcha.render('recap409531000000398090', {
-                        'sitekey': '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
+                    if (container.children.length > 0) return;
+                    (window as any).grecaptcha.render('recap409531000042578178', {
+                        'sitekey': '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y',
                         'theme': 'light',
-                        'callback': (window as any).rccallback409531000000398090
+                        'callback': window.rccallback409531000042578178
                     });
-                } catch (e) {
-                    // Already rendered
-                }
+                } catch (e) {}
             }
         };
 
@@ -154,7 +175,7 @@ export default function ZohoRequestQuotePage() {
                     LDTuvidObj.value = window.$zoho.salesiq.visitor.uniqueid();
                 }
                 const nameObj = form.elements.namedItem('Last Name') as HTMLInputElement;
-                const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
+                const emailObj = form.elements.namedItem('LEADCF8') as HTMLInputElement;
                 if (nameObj) {
                     // @ts-ignore
                     window.$zoho.salesiq.visitor.name(nameObj.value);
@@ -304,19 +325,19 @@ export default function ZohoRequestQuotePage() {
                                     </div>
 
                                     <form 
-                                        id="webform409531000000398090"
+                                        id="webform409531000042578178"
                                         action="https://crm.zoho.in/crm/WebToLeadForm" 
-                                        name="WebToLeadsQuoteZoho" 
+                                        name="WebToLeads409531000042578178" 
                                         method="POST" 
                                         onSubmit={handleFormSubmit}
                                         acceptCharset="UTF-8"
                                         className="space-y-5"
                                     >
-                                        <input type="text" className="hidden" name="xnQsjsdp" defaultValue="19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f" readOnly />
+                                        <input type="text" className="hidden" name="xnQsjsdp" defaultValue="e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82" readOnly />
                                         <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                                        <input type="text" className="hidden" name="xmIwtLD" defaultValue="8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee" readOnly />
+                                        <input type="text" className="hidden" name="xmIwtLD" defaultValue="7ce425cbc5576979cf8d2dfa7bcaeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a" readOnly />
                                         <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
-                                        <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/best-cloud-based-crm/thank-you/" readOnly />
+                                        <input type="text" className="hidden" name="returnURL" defaultValue="https://zoho-netsuite.vercel.app/thank-you" readOnly />
                                         <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
                                         <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
 
@@ -328,13 +349,13 @@ export default function ZohoRequestQuotePage() {
                                             </div>
                                             <div>
                                                 <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Business Email *</label>
-                                                <input type="email" name="Email" required placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
+                                                <input type="email" name="LEADCF8" required placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                             </div>
                                         </div>
 
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                             <div>
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Mobile Number *</label>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">POC's Mobile *</label>
                                                 <input type="tel" name="Mobile" required placeholder="+91 00000 00000" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                             </div>
                                             <div>
@@ -345,38 +366,27 @@ export default function ZohoRequestQuotePage() {
 
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                             <div>
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Service Interest *</label>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Service *</label>
                                                 <select name="LEADCF5" id="LEADCF5" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer">
-                                                    <option value="">Select Zoho Solution *</option>
-                                                    <option value='Zoho&#x20;CRM&#x20;&amp;&#x20;Sales'>Zoho CRM &amp; Sales</option>
-                                                    <option value='Zoho&#x20;Finance&#x20;&amp;&#x20;Accounting'>Zoho Finance &amp; Accounting</option>
-                                                    <option value='Zoho&#x20;HR&#x20;&amp;&#x20;People'>Zoho HR &amp; People</option>
-                                                    <option value='Zoho&#x20;Marketing&#x20;&amp;&#x20;Automation'>Zoho Marketing &amp; Automation</option>
-                                                    <option value='Zoho&#x20;IT&#x20;&amp;&#x20;Support'>Zoho IT &amp; Support</option>
-                                                    <option value='Zoho&#x20;BI&#x20;&amp;&#x20;Analytics'>Zoho BI &amp; Analytics</option>
-                                                    <option value='Zoho&#x20;Developer&#x20;Platforms'>Zoho Developer Platforms</option>
-                                                    <option value='Zoho&#x20;One&#x20;&#x28;Complete&#x20;Suite&#x29;'>Zoho One (Complete Suite)</option>
+                                                    <option value="-None-">-None-</option>
+                                                    <option value="Licenses">Licenses</option>
+                                                    <option value="AMC">AMC</option>
                                                 </select>
                                             </div>
                                             <div>
                                                 <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Annual Revenue *</label>
-                                                <select name="Annual Revenue" id="Annual_Revenue" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer">
+                                                <select name="LEADCF19" id="LEADCF19" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer">
                                                     <option value="">Select Revenue</option>
-                                                    <option value="Under&#x20;&#x24;500K">Under &#x24;500K</option>
-                                                    <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">&#x24;500k to &#x24;1M</option>
-                                                    <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">&#x24;1M to &#x24;2M</option>
-                                                    <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">&#x24;2M to &#x24;5M</option>
-                                                    <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">&#x24;5M to &#x24;10M</option>
-                                                    <option value='&#x24;10M&#x20;to&#x20;&#x24;20M'>&#x24;10M to &#x24;20M</option>
-                                                    <option value='&#x24;20M&#x20;to&#x20;&#x24;30M'>&#x24;20M to &#x24;30M</option>
-                                                    <option value='&#x24;30M&#x20;to&#x20;&#x24;50M'>&#x24;30M to &#x24;50M</option>
-                                                    <option value='&#x24;50M&#x20;to&#x20;&#x24;100M'>&#x24;50M to &#x24;100M</option>
-                                                    <option value='&#x24;100M&#x20;to&#x20;&#x24;150M'>&#x24;100M to &#x24;150M</option>
-                                                    <option value='&#x24;150M&#x20;to&#x20;&#x24;200M'>&#x24;150M to &#x24;200M</option>
-                                                    <option value='&#x24;200M&#x20;to&#x20;&#x24;250M'>&#x24;200M to &#x24;250M</option>
-                                                    <option value='&#x24;250M&#x20;to&#x20;&#x24;300M'>&#x24;250M to &#x24;300M</option>
-                                                    <option value='&#x24;300M&#x20;to&#x20;&#x24;400M'>&#x24;300M to &#x24;400M</option>
-                                                    <option value='&#x24;400M&#x20;to&#x20;&#x24;500M'>&#x24;400M to &#x24;500M</option>
+                                                    <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
+                                                    <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
+                                                    <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
+                                                    <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
+                                                    <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
+                                                    <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
+                                                    <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
+                                                    <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
+                                                    <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
+                                                    <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -384,14 +394,15 @@ export default function ZohoRequestQuotePage() {
                                         {/* How did you hear about us Row */}
                                         <div>
                                             <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">How did you hear about us?</label>
-                                            <select name="LEADCF41" id="LEADCF41" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
+                                            <select name="LEADCF127" id="LEADCF127" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
                                                 <option value="">Select Option</option>
-                                                <option value='Email'>Email</option>
-                                                <option value='Event'>Event</option>
-                                                <option value='Friend&#x2f;Associate'>Friend&#x2f;Associate</option>
-                                                <option value='Search'>Search</option>
-                                                <option value='Social&#x20;Media'>Social Media</option>
-                                                <option value='Referral'>Referral</option>
+                                                <option value="-None-">-None-</option>
+                                                <option value="Email">Email</option>
+                                                <option value="Event">Event</option>
+                                                <option value="Friend&#x2f;Associate">Friend/Associate</option>
+                                                <option value="Search">Search</option>
+                                                <option value="Social&#x20;Media">Social Media</option>
+                                                <option value="Referral">Referral</option>
                                             </select>
                                         </div>
 
@@ -401,14 +412,14 @@ export default function ZohoRequestQuotePage() {
                                         </select>
 
                                         <div>
-                                            <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Project Scope & Requirements *</label>
-                                            <textarea id="Description" name="Description" required rows={3} placeholder="Tell us about your current operational challenges and desired Zoho outcomes..." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400" />
+                                            <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">How We Can Help You *</label>
+                                            <textarea id="LEADCF123" name="LEADCF123" required rows={3} placeholder="How We Can Help You*" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400" />
                                         </div>
 
                                         {/* Captcha Section */}
                                         <div className="flex flex-col gap-2">
-                                            <div className='g-recaptcha' data-sitekey='6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3' data-theme='light' data-callback='rccallback409531000000398090' captcha-verified='false' id='recap409531000000398090'></div>
-                                            <div id='recapErr409531000000398090' style={{ display: 'none', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
+                                            <div className='g-recaptcha' data-sitekey='6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y' data-theme='light' data-callback='rccallback409531000042578178' captcha-verified='false' id='recap409531000042578178'></div>
+                                            <div id='recapErr409531000042578178' style={{ visibility: 'hidden', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
                                         </div>
 
                                         <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm">
@@ -493,17 +504,17 @@ export default function ZohoRequestQuotePage() {
             <Script id="zoho-salesiq-quote" strategy="afterInteractive">
                 {`
                     var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.in/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
-                    function rccallback409531000000398090() {
-                        if(document.getElementById('recap409531000000398090')!=undefined){
-                            document.getElementById('recap409531000000398090').setAttribute('captcha-verified',true);
+                    function rccallback409531000042578178() {
+                        if(document.getElementById('recap409531000042578178')!=undefined){
+                            document.getElementById('recap409531000042578178').setAttribute('captcha-verified',true);
                         }
-                        if(document.getElementById('recapErr409531000000398090')!=undefined && document.getElementById('recapErr409531000000398090').style.visibility == 'visible' ){
-                            document.getElementById('recapErr409531000000398090').style.visibility='hidden';
+                        if(document.getElementById('recapErr409531000042578178')!=undefined && document.getElementById('recapErr409531000042578178').style.visibility == 'visible' ){
+                            document.getElementById('recapErr409531000042578178').style.visibility='hidden';
                         }
                     }
                 `}
             </Script>
-            <Script id="wf_anal_quote" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=9b4e135304e9be638a1f47c876676fe86f7080bae6ad5e0f70e64b1ed1b7ee450c16578ea3e63d59b0a9373bf5340bc5gidb84668d7c18f732c82d293fd5b16ce2107d3b2faca982bdc298a717fd9d64c8egid8c707b008447a37a966e62b59dcc55c96f5c4b8f390e94001cd789db19502461gid5294a7a20acb0bb8042cf78bbce3e07bdfe0390a9935bdf3cea7e18c3a74e15e&tw=2177b616f01ae88c8460bdcecb9f7c8d6befe0a7304ac5e0aaf2450199a9e9be" />
+            <Script id="wf_anal_quote" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=ffa911f519bdac1fd37141e7458859338a4c0807209e53fcd9161a4ef8002b597777f2d47c34393e74912d83270ec629gid2020ff77b8590645f6909775bceb1dfe9b354b521b7d31a381183051979950afgidc32afce85ab5735ae0662898fbed0b63bef845d0ee34535ca4044be79f94eb16gidc20f47455171d038199ce12255d9fb14618138cdb451a0053d17b76b5cbc594d&tw=a5bf274d720cc51e70d06319b934b2ae14a201bb6424c6ca86bd81d126e9d37e" />
         </div>
     );
 }

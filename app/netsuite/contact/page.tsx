@@ -136,11 +136,10 @@ export default function ContactPage() {
     setIsClient(true);
     
     // Global functions for Zoho CRM Form
-    // @ts-ignore
-    window.validateEmailContactNetSuite = function () {
+    (window as any).validateEmail409531000042578178_ns = function () {
       const form = document.forms.namedItem('WebToLeadsContactNetSuite');
       if (!form) return true;
-      const emailFld = form.querySelectorAll('input[type="email"]');
+      const emailFld = form.querySelectorAll('[name="LEADCF8"]');
       for (let i = 0; i < emailFld.length; i++) {
         const emailVal = (emailFld[i] as HTMLInputElement).value;
         if (emailVal.replace(/^\s+|\s+$/g, '').length !== 0) {
@@ -151,9 +150,10 @@ export default function ContactPage() {
             (emailFld[i] as HTMLInputElement).focus();
             return false;
           }
-          const restrictedDomains = /(gmail\.com|yahoo\.com|outlook\.com|live\.com)$/i;
-          if (restrictedDomains.test(emailVal)) {
-            alert('Gmail, Yahoo, Outlook, and Live email addresses are not allowed.');
+          const domain = emailVal.split('@')[1].toLowerCase();
+          const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
+          if (forbidden.includes(domain)) {
+            alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
             (emailFld[i] as HTMLInputElement).focus();
             return false;
           }
@@ -162,11 +162,10 @@ export default function ContactPage() {
       return true;
     };
 
-    // @ts-ignore
-    window.checkMandatoryContactNetSuite = function (e: any) {
+    (window as any).checkMandatory409531000042578178_ns = function (e: any) {
       const form = e.target as HTMLFormElement;
-      const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Annual Revenue', 'Description'];
-      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Annual Revenue', 'Tell Us How We Can Help'];
+      const mndFileds = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
+      const fldLangVal = ['Company Name', 'Name', 'POC\'s Mobile', 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
 
       for (let i = 0; i < mndFileds.length; i++) {
         const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement;
@@ -177,15 +176,24 @@ export default function ContactPage() {
         }
       }
 
-      const recap = document.getElementById('recap409531000026445204_ns');
+      const mobileFld = form.elements.namedItem('Mobile') as HTMLInputElement;
+      if (mobileFld) {
+        const v = mobileFld.value.replace(/\D/g, '');
+        if (v.length !== 10) {
+          alert('Mobile number must be exactly 10 digits.');
+          mobileFld.focus();
+          return false;
+        }
+      }
+
+      const recap = document.getElementById('recap409531000042578178_ns');
       if (recap && recap.getAttribute('captcha-verified') === 'false') {
-        const recapErr = document.getElementById('recapErr409531000026445204_ns');
+        const recapErr = document.getElementById('recapErr409531000042578178_ns');
         if (recapErr) recapErr.style.visibility = 'visible';
         return false;
       }
 
-      // @ts-ignore
-      if (window.validateEmailContactNetSuite && !window.validateEmailContactNetSuite()) {
+      if ((window as any).validateEmail409531000042578178_ns && !(window as any).validateEmail409531000042578178_ns()) {
         return false;
       }
 
@@ -194,37 +202,32 @@ export default function ContactPage() {
 
     // Handle reCAPTCHA rendering for SPA navigation
     const renderRecaptcha = () => {
-      const container = document.getElementById('recap409531000026445204_ns');
+      const container = document.getElementById('recap409531000042578178_ns');
       if ((window as any).grecaptcha && container) {
         try {
-          // Check if already rendered
           if (container.children.length > 0) return;
-
-          (window as any).grecaptcha.render('recap409531000026445204_ns', {
-            'sitekey': '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
+          (window as any).grecaptcha.render('recap409531000042578178_ns', {
+            'sitekey': '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y',
             'theme': 'light',
-            'callback': (window as any).rccallback409531000026445204_ns
+            'callback': (window as any).rccallback409531000042578178_ns
           });
-        } catch (e) {
-          console.error("reCAPTCHA render error:", e);
-        }
+        } catch (e) {}
       }
     };
 
+    (window as any).rccallback409531000042578178_ns = function() {
+      const recap = document.getElementById('recap409531000042578178_ns');
+      if (recap) recap.setAttribute('captcha-verified', 'true');
+      const recapErr = document.getElementById('recapErr409531000042578178_ns');
+      if (recapErr) recapErr.style.visibility = 'hidden';
+    };
+
     if ((window as any).grecaptcha) {
-      if ((window as any).grecaptcha.ready) {
-        (window as any).grecaptcha.ready(renderRecaptcha);
-      } else {
-        renderRecaptcha();
-      }
+      (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
     } else {
       const interval = setInterval(() => {
         if ((window as any).grecaptcha) {
-          if ((window as any).grecaptcha.ready) {
-            (window as any).grecaptcha.ready(renderRecaptcha);
-          } else {
-            renderRecaptcha();
-          }
+          (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
           clearInterval(interval);
         }
       }, 300);
@@ -251,8 +254,7 @@ export default function ContactPage() {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    // @ts-ignore
-    if (window.checkMandatoryContactNetSuite && !window.checkMandatoryContactNetSuite(e.nativeEvent)) {
+    if ((window as any).checkMandatory409531000042578178_ns && !(window as any).checkMandatory409531000042578178_ns(e.nativeEvent)) {
       e.preventDefault();
       return;
     }
@@ -268,7 +270,7 @@ export default function ContactPage() {
           LDTuvidObj.value = window.$zoho.salesiq.visitor.uniqueid();
         }
         const nameObj = form.elements.namedItem('Last Name') as HTMLInputElement;
-        const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
+        const emailObj = form.elements.namedItem('LEADCF8') as HTMLInputElement;
         if (nameObj) {
           // @ts-ignore
           window.$zoho.salesiq.visitor.name(nameObj.value);
@@ -444,17 +446,18 @@ export default function ContactPage() {
                   ) : (
                     <form 
                       action="https://crm.zoho.in/crm/WebToLeadForm" 
+                      id="WebToLeads409531000042578178"
                       name="WebToLeadsContactNetSuite" 
                       method="POST" 
                       onSubmit={handleSubmit}
                       acceptCharset="UTF-8"
                       className="space-y-5"
                     >
-                      <input type="text" className="hidden" name="xnQsjsdp" defaultValue="19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f" readOnly />
+                      <input type="text" className="hidden" name="xnQsjsdp" defaultValue="e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82" readOnly />
                       <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                      <input type="text" className="hidden" name="xmIwtLD" defaultValue="8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee" readOnly />
+                      <input type="text" className="hidden" name="xmIwtLD" defaultValue="7ce425cbc5576979cf8d2dfa7bcaeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a" readOnly />
                       <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
-                      <input type="text" className="hidden" name="returnURL" defaultValue="https://agsuitetech.com/best-cloud-based-crm/thank-you/" readOnly />
+                      <input type="text" className="hidden" name="returnURL" defaultValue="https://zoho-netsuite.vercel.app/thank-you" readOnly />
                       <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
                       <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
 
@@ -483,7 +486,7 @@ export default function ContactPage() {
                         <input
                           type="email"
                           required
-                          name="Email"
+                          name="LEADCF8"
                           placeholder="john@company.com"
                           className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
                         />
@@ -493,12 +496,12 @@ export default function ContactPage() {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                           <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
-                            Mobile Number <span className="text-blue-600">*</span>
+                            POC's Mobile <span className="text-blue-600">*</span>
                           </label>
                           <input
                             type="tel"
                             name="Mobile"
-                            placeholder="+1 (555) 000-0000"
+                            placeholder="+91 00000 00000"
                             className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
                           />
                         </div>
@@ -538,14 +541,9 @@ export default function ContactPage() {
                             name="LEADCF5"
                             className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer"
                           >
-                            <option value="">Select NetSuite Solution *</option>
-                            <option value='NetSuite&#x20;ERP'>NetSuite ERP</option>
-                            <option value='NetSuite&#x20;CRM'>NetSuite CRM</option>
-                            <option value='NetSuite&#x20;OneWorld'>NetSuite OneWorld</option>
-                            <option value='NetSuite&#x20;SuiteCommerce'>NetSuite SuiteCommerce</option>
-                            <option value='NetSuite&#x20;Planning&#x20;&amp;&#x20;Budgeting'>NetSuite Planning &amp; Budgeting</option>
-                            <option value='NetSuite&#x20;OpenAir'>NetSuite OpenAir</option>
-                            <option value='NetSuite&#x20;Analytics&#x20;Warehouse'>NetSuite Analytics Warehouse</option>
+                            <option value="-None-">-None-</option>
+                            <option value="Licenses">Licenses</option>
+                            <option value="AMC">AMC</option>
                           </select>
                         </div>
                         <div>
@@ -553,94 +551,56 @@ export default function ContactPage() {
                             Annual Revenue <span className="text-blue-600">*</span>
                           </label>
                           <select
-                            name="Annual Revenue"
+                            name="LEADCF19"
                             className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer"
                           >
                             <option value="">Select Revenue</option>
-                            <option value="Under&#x20;&#x24;500K">Under &#x24;500K</option>
-                            <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">&#x24;500k to &#x24;1M</option>
-                            <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">&#x24;1M to &#x24;2M</option>
-                            <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">&#x24;2M to &#x24;5M</option>
-                            <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">&#x24;5M to &#x24;10M</option>
-                            <option value='&#x24;10M&#x20;to&#x20;&#x24;20M'>&#x24;10M to &#x24;20M</option>
-                            <option value='&#x24;20M&#x20;to&#x20;&#x24;30M'>&#x24;20M to &#x24;30M</option>
-                            <option value='&#x24;30M&#x20;to&#x20;&#x24;50M'>&#x24;30M to &#x24;50M</option>
-                            <option value='&#x24;50M&#x20;to&#x20;&#x24;100M'>&#x24;50M to &#x24;100M</option>
+                            <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
+                            <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
+                            <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
+                            <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
+                            <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
+                            <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
+                            <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
+                            <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
+                            <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
+                            <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
                           </select>
                         </div>
                       </div>
 
-                      {/* Lead Source (Hidden defaultValue Website) */}
-                      <select className='hidden' id='Lead_Source' name='Lead Source' defaultValue='Website'>
-                        <option value='Website'>Website</option>
-                      </select>
-
                       {/* How did you hear about us? */}
                       <div>
                         <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">How did you hear about us?</label>
-                        <select name="Lead Source" className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer">
-                          <option value="">Select Option</option>
-							<option value = '-None-'>-None-</option>
-							<option value = 'Client&#x20;Referral'>Client Referral</option>
-							<option value = 'Database'>Database</option>
-							<option value = 'Email'>Email</option>
-							<option value = 'Email&#x20;Campaign'>Email Campaign</option>
-							<option value = 'Employee&#x20;Referral'>Employee Referral</option>
-							<option value = 'Event'>Event</option>
-							<option value = 'External&#x20;Referral'>External Referral</option>
-							<option value = 'Google&#x20;Ads&#x20;&#x28;Chat&#x29;'>Google Ads &#x28;Chat&#x29;</option>
-							<option value = 'Google&#x20;Ads&#x20;&#x28;Form&#x29;'>Google Ads &#x28;Form&#x29;</option>
-							<option value = 'Lead&#x20;Gen&#x20;Agency'>Lead Gen Agency</option>
-							<option value = 'LinkedIn'>LinkedIn</option>
-							<option value = 'Linkedlin'>Linkedlin</option>
-							<option value = 'Online&#x20;Store'>Online Store</option>
-							<option value = 'Oracle&#x20;Database'>Oracle Database</option>
-							<option value = 'Oracle&#x20;Partner'>Oracle Partner</option>
-							<option value = 'Oracle&#x20;Referral'>Oracle Referral</option>
-							<option value = 'Others'>Others</option>
-							<option value = 'Phone'>Phone</option>
-							<option value = 'Purchased&#x20;Leads'>Purchased Leads</option>
-							<option value = 'Sales&#x20;Email&#x20;Alias'>Sales Email Alias</option>
-							<option value = 'Sales&#x20;Person&#x20;Contact'>Sales Person Contact</option>
-							<option value = 'Seminar&#x20;Partner'>Seminar Partner</option>
-							<option value = 'Trade&#x20;Show'>Trade Show</option>
-							<option value = 'TSL&#x20;Lead&#x20;-&#x20;Accepted'>TSL Lead - Accepted</option>
-							<option value = 'TSL&#x20;Lead&#x20;-&#x20;Rejected'>TSL Lead - Rejected</option>
-							<option value = 'Twitter'>Twitter</option>
-							<option value = 'Web&#x20;Cases'>Web Cases</option>
-							<option value = 'Web&#x20;Download'>Web Download</option>
-							<option value = 'Web&#x20;Mail'>Web Mail</option>
-							<option value = 'Web&#x20;Research'>Web Research</option>
-							<option value = 'Webinar'>Webinar</option>
-							<option value = 'Website'>Website</option>
-							<option value = 'Website&#x20;&#x28;Chat&#x29;'>Website &#x28;Chat&#x29;</option>
-							<option value = 'Website&#x20;&#x28;Form&#x29;'>Website &#x28;Form&#x29;</option>
-							<option value = 'WebSite&#x20;Visit'>WebSite Visit</option>
-							<option value = 'Zoho&#x20;Partner'>Zoho Partner</option>
-							<option value = 'Zoho&#x20;Partner&#x20;Portal'>Zoho Partner Portal</option>
-							<option value = 'Zoho&#x20;Portal&#x20;Listing'>Zoho Portal Listing</option>
-							<option value = 'Zoho&#x20;Referral'>Zoho Referral</option>
+                        <select name="LEADCF127" className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer">
+                          <option value="-None-">-None-</option>
+                          <option value="Email">Email</option>
+                          <option value="Event">Event</option>
+                          <option value="Friend&#x2f;Associate">Friend/Associate</option>
+                          <option value="Search">Search</option>
+                          <option value="Social&#x20;Media">Social Media</option>
+                          <option value="Referral">Referral</option>
                         </select>
                       </div>
 
                       {/* Message */}
                       <div>
                         <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
-                          Tell Us About Your Requirements
+                          How We Can Help You <span className="text-blue-600">*</span>
                         </label>
                         <textarea
-                          id="Description"
-                          name="Description"
-                          rows={3}
-                          placeholder="Tell Us How We Can Help!*"
-                          className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none resize-none placeholder-gray-400"
+                          required
+                          name="LEADCF123"
+                          rows={4}
+                          placeholder="How We Can Help You*"
+                          className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none resize-none placeholder-gray-400 shadow-sm"
                         />
                       </div>
 
                       {/* Captcha Section */}
                       <div className="flex flex-col gap-2">
-                        <div data-sitekey='6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3' data-theme='light' data-callback='rccallback409531000026445204_ns' captcha-verified='false' id='recap409531000026445204_ns'></div>
-                        <div id='recapErr409531000026445204_ns' style={{ display: 'none', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
+                        <div data-sitekey='6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y' data-theme='light' data-callback='rccallback409531000042578178_ns' captcha-verified='false' id='recap409531000042578178_ns'></div>
+                        <div id='recapErr409531000042578178_ns' style={{ visibility: 'hidden', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
                       </div>
 
                       {/* Privacy + Submit */}
@@ -1067,17 +1027,17 @@ export default function ContactPage() {
       <Script id="zoho-salesiq-ns" strategy="afterInteractive">
         {`
           var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.in/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
-          function rccallback409531000026445204_ns() {
-            if(document.getElementById('recap409531000026445204_ns')!=undefined){
-              document.getElementById('recap409531000026445204_ns').setAttribute('captcha-verified',true);
+          function rccallback409531000042578178_ns() {
+            if(document.getElementById('recap409531000042578178_ns')!=undefined){
+              document.getElementById('recap409531000042578178_ns').setAttribute('captcha-verified',true);
             }
-            if(document.getElementById('recapErr409531000026445204_ns')!=undefined && document.getElementById('recapErr409531000026445204_ns').style.visibility == 'visible' ){
-              document.getElementById('recapErr409531000026445204_ns').style.visibility='hidden';
+            if(document.getElementById('recapErr409531000042578178_ns')!=undefined && document.getElementById('recapErr409531000042578178_ns').style.visibility == 'visible' ){
+              document.getElementById('recapErr409531000042578178_ns').style.visibility='hidden';
             }
           }
         `}
       </Script>
-      <Script id="wf_anal_ns" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=c6bd15ef499e015212f7cfd1d94a36257616906db3378b7d58e9666a0cb004ad04cae4b2ad4b40f407ea1df9509ddfc3gid4d54f02188dbd1a4f4c8582e1cc6829be5ddd9b1ad3710ed7207deccba2aa858giddeda7992accaf02590572b916d20ede01298921dbc555b8a938ff90fe2bc82f4gid28710435a2d0ea931303f1f01e1b730e6517c1be20b1776d1746edb3c9f1c653&tw=8b4a96a610c92f39fdbddebeaa5a00b371fd965c61608708d088c2ca4821d30d" />
+      <Script id="wf_anal_ns" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=ffa911f519bdac1fd37141e7458859338a4c0807209e53fcd9161a4ef8002b597777f2d47c34393e74912d83270ec629gid2020ff77b8590645f6909775bceb1dfe9b354b521b7d31a381183051979950afgidc32afce85ab5735ae0662898fbed0b63bef845d0ee34535ca4044be79f94eb16gidc20f47455171d038199ce12255d9fb14618138cdb451a0053d17b76b5cbc594d&tw=a5bf274d720cc51e70d06319b934b2ae14a201bb6424c6ca86bd81d126e9d37e" />
     </div>
   );
 }

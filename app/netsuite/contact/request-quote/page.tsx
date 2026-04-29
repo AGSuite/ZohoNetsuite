@@ -57,20 +57,16 @@ export default function RequestQuotePremium() {
 
         // Handle reCAPTCHA rendering for SPA navigation
         const renderRecaptcha = () => {
-            const container = document.getElementById('recap409531000000398090');
+            const container = document.getElementById('recap409531000042578178');
             if ((window as any).grecaptcha && container) {
                 try {
-                    // Check if already rendered
                     if (container.children.length > 0) return;
-
-                    (window as any).grecaptcha.render('recap409531000000398090', {
-                        'sitekey': '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
+                    (window as any).grecaptcha.render('recap409531000042578178', {
+                        'sitekey': '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y',
                         'theme': 'light',
-                        'callback': (window as any).rccallback409531000000398090
+                        'callback': (window as any).rccallback409531000042578178
                     });
-                } catch (e) {
-                    console.error("reCAPTCHA render error:", e);
-                }
+                } catch (e) {}
             }
         };
 
@@ -111,7 +107,7 @@ export default function RequestQuotePremium() {
             if (!document.getElementById('wf_anal')) {
                 const script = document.createElement('script');
                 script.id = 'wf_anal';
-                script.src = 'https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=9b4e135304e9be638a1f47c876676fe86f7080bae6ad5e0f70e64b1ed1b7ee450c16578ea3e63d59b0a9373bf5340bc5gidb84668d7c18f732c82d293fd5b16ce2107d3b2faca982bdc298a717fd9d64c8egid8c707b008447a37a966e62b59dcc55c96f5c4b8f390e94001cd789db19502461gid5294a7a20acb0bb8042cf78bbce3e07bdfe0390a9935bdf3cea7e18c3a74e15e&tw=2177b616f01ae88c8460bdcecb9f7c8d6befe0a7304ac5e0aaf2450199a9e9be';
+                script.src = 'https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=ffa911f519bdac1fd37141e7458859338a4c0807209e53fcd9161a4ef8002b597777f2d47c34393e74912d83270ec629gid2020ff77b8590645f6909775bceb1dfe9b354b521b7d31a381183051979950afgidc32afce85ab5735ae0662898fbed0b63bef845d0ee34535ca4044be79f94eb16gidc20f47455171d038199ce12255d9fb14618138cdb451a0053d17b76b5cbc594d&tw=a5bf274d720cc51e70d06319b934b2ae14a201bb6424c6ca86bd81d126e9d37e';
                 document.head.appendChild(script);
             }
         };
@@ -131,7 +127,7 @@ export default function RequestQuotePremium() {
         }
 
         // Define all required global functions
-        window.addAriaSelected409531000000398090 = function (e: any) {
+        window.addAriaSelected409531000042578178 = function (e: any) {
             const optionElem = e.target as HTMLSelectElement;
             const previousSelectedOption = optionElem.querySelector('[aria-selected="true"]');
             if (previousSelectedOption) {
@@ -142,21 +138,21 @@ export default function RequestQuotePremium() {
             }
         };
 
-        window.rccallback409531000000398090 = function () {
-            const recap = document.getElementById('recap409531000000398090');
+        window.rccallback409531000042578178 = function () {
+            const recap = document.getElementById('recap409531000042578178');
             if (recap) {
                 recap.setAttribute('captcha-verified', 'true');
             }
-            const recapErr = document.getElementById('recapErr409531000000398090');
+            const recapErr = document.getElementById('recapErr409531000042578178');
             if (recapErr && recapErr.style.visibility === 'visible') {
                 recapErr.style.visibility = 'hidden';
             }
         };
 
-        window.reCaptchaAlert409531000000398090 = function () {
-            const recap = document.getElementById('recap409531000000398090');
+        window.reCaptchaAlert409531000042578178 = function () {
+            const recap = document.getElementById('recap409531000042578178');
             if (recap && recap.getAttribute('captcha-verified') === 'false') {
-                const recapErr = document.getElementById('recapErr409531000000398090');
+                const recapErr = document.getElementById('recapErr409531000042578178');
                 if (recapErr) {
                     recapErr.style.visibility = 'visible';
                 }
@@ -165,27 +161,24 @@ export default function RequestQuotePremium() {
             return true;
         };
 
-        window.validateEmail409531000000398090 = function () {
-            const form = document.forms.namedItem('WebToLeads409531000000398090');
+        window.validateEmail409531000042578178 = function () {
+            const form = document.forms.namedItem('WebToLeads409531000042578178');
             if (!form) return true;
-
-            const emailFld = form.querySelectorAll('input[type="email"]');
-
+            const emailFld = form.querySelectorAll('[name="LEADCF8"]');
             for (let i = 0; i < emailFld.length; i++) {
                 const emailVal = (emailFld[i] as HTMLInputElement).value;
                 if (emailVal.replace(/^\s+|\s+$/g, '').length !== 0) {
                     const atpos = emailVal.indexOf('@');
                     const dotpos = emailVal.lastIndexOf('.');
-
                     if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
                         alert('Please enter a valid email address.');
                         (emailFld[i] as HTMLInputElement).focus();
                         return false;
                     }
-
-                    const restrictedDomains = /(gmail\.com|yahoo\.com|outlook\.com|live\.com)$/i;
-                    if (restrictedDomains.test(emailVal)) {
-                        alert('Gmail, Yahoo, Outlook, and Live email addresses are not allowed.');
+                    const domain = emailVal.split('@')[1].toLowerCase();
+                    const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
+                    if (forbidden.includes(domain)) {
+                        alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
                         (emailFld[i] as HTMLInputElement).focus();
                         return false;
                     }
@@ -204,7 +197,7 @@ export default function RequestQuotePremium() {
         };
 
         window.sendEmail = function () {
-            const form = document.forms.namedItem('WebToLeads409531000000398090');
+            const form = document.forms.namedItem('WebToLeads409531000042578178');
             if (!form) return;
 
             const formData = new FormData(form);
@@ -226,10 +219,10 @@ export default function RequestQuotePremium() {
                 });
         };
 
-        window.trackVisitor409531000000398090 = function () {
+        window.trackVisitor409531000042578178 = function () {
             try {
                 if (window.$zoho?.salesiq?.visitor) {
-                    const form = document.forms.namedItem('WebToLeads409531000000398090');
+                    const form = document.forms.namedItem('WebToLeads409531000042578178');
                     if (!form) return;
 
                     const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
@@ -243,7 +236,7 @@ export default function RequestQuotePremium() {
                         window.$zoho.salesiq.visitor.name(name);
                     }
 
-                    const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
+                    const emailObj = form.elements.namedItem('LEADCF8') as HTMLInputElement;
                     if (emailObj && emailObj.value) {
                         window.$zoho.salesiq.visitor.email(emailObj.value);
                     }
@@ -253,10 +246,10 @@ export default function RequestQuotePremium() {
             }
         };
 
-        window.checkMandatory409531000000398090 = function (e: any) {
+        window.checkMandatory409531000042578178 = function (e: any) {
             const form = e.target as HTMLFormElement;
-            const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'Description', 'LEADCF5', 'LEADCF40'];
-            const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Tell Us How We Can Help', 'Product / Services', 'Annual Revenue'];
+            const mndFileds = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
+            const fldLangVal = ['Company Name', 'Name', 'POC\'s Mobile', 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
 
             for (let i = 0; i < mndFileds.length; i++) {
                 const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
@@ -265,26 +258,25 @@ export default function RequestQuotePremium() {
                         alert(fldLangVal[i] + ' cannot be empty.');
                         fieldObj.focus();
                         return false;
-                    } else if (fieldObj.tagName === 'SELECT') {
-                        const selectField = fieldObj as HTMLSelectElement;
-                        if (selectField.value === '-None-' || selectField.value === '') {
-                            alert(fldLangVal[i] + ' cannot be none.');
-                            fieldObj.focus();
-                            return false;
-                        }
-                    } else if (fieldObj.name === 'Mobile' && fieldObj.value.replace(/\D/g, '').length !== 10) {
-                        alert('Please enter a valid 10-digit mobile number.');
-                        fieldObj.focus();
-                        return false;
                     }
                 }
             }
 
-            if (window.validateEmail409531000000398090 && !window.validateEmail409531000000398090()) {
+            const mobileFld = form.elements.namedItem('Mobile') as HTMLInputElement;
+            if (mobileFld) {
+                const v = mobileFld.value.replace(/\D/g, '');
+                if (v.length !== 10) {
+                    alert('Mobile number must be exactly 10 digits.');
+                    mobileFld.focus();
+                    return false;
+                }
+            }
+
+            if (window.validateEmail409531000042578178 && !window.validateEmail409531000042578178()) {
                 return false;
             }
 
-            if (window.reCaptchaAlert409531000000398090 && !window.reCaptchaAlert409531000000398090()) {
+            if (window.reCaptchaAlert409531000042578178 && !window.reCaptchaAlert409531000042578178()) {
                 return false;
             }
 
@@ -294,7 +286,7 @@ export default function RequestQuotePremium() {
 
     // Event handlers
     const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        if (window.checkMandatory409531000000398090 && !window.checkMandatory409531000000398090(e.nativeEvent)) {
+        if (window.checkMandatory409531000042578178 && !window.checkMandatory409531000042578178(e.nativeEvent)) {
             e.preventDefault();
             return;
         }
@@ -315,7 +307,7 @@ export default function RequestQuotePremium() {
                     LDTuvidObj.value = window.$zoho.salesiq.visitor.uniqueid() || '';
                 }
                 const nameObj = form.elements.namedItem('Last Name') as HTMLInputElement;
-                const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
+                const emailObj = form.elements.namedItem('LEADCF8') as HTMLInputElement;
                 if (nameObj) window.$zoho.salesiq.visitor.name(nameObj.value);
                 if (emailObj) window.$zoho.salesiq.visitor.email(emailObj.value);
             }
@@ -334,7 +326,7 @@ export default function RequestQuotePremium() {
     };
 
     const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        window.addAriaSelected409531000000398090?.(e.nativeEvent);
+        window.addAriaSelected409531000042578178?.(e.nativeEvent);
     };
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -472,20 +464,20 @@ export default function RequestQuotePremium() {
 
                                     <div id='crmWebToEntityForm' className='zcwf_lblLeft crmWebToEntityForm'>
                                         <form
-                                            id='webform409531000000398090'
+                                            id='webform409531000042578178'
                                             action='https://crm.zoho.in/crm/WebToLeadForm'
-                                            name='WebToLeads409531000000398090'
+                                            name='WebToLeads409531000042578178'
                                             method='POST'
                                             onSubmit={handleFormSubmit}
                                             acceptCharset='UTF-8'
                                             className="space-y-4"
                                         >
                                             {/* Hidden fields */}
-                                            <input type='text' className="hidden" name='xnQsjsdp' value='19335c470c662cf186fc795b18eedf0f9d091f3e89bec0d2ba190d3554f6a65f' readOnly />
+                                            <input type='text' className="hidden" name='xnQsjsdp' value='e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82' readOnly />
                                             <input type='hidden' name='zc_gad' id='zc_gad' value='' />
-                                            <input type='text' className="hidden" name='xmIwtLD' value='8a87fb772b5b40c206ab7214ad4cb2e8221e4900697815a99f037104263d7ba1f19722ed192796b975626af903499aee' readOnly />
+                                            <input type='text' className="hidden" name='xmIwtLD' value='7ce425cbc5576979cf8d2dfa7bcaeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a' readOnly />
                                             <input type='text' className="hidden" name='actionType' value='TGVhZHM=' readOnly />
-                                            <input type='text' className="hidden" name='returnURL' value='https://agsuitetech.com/best-cloud-based-crm/thank-you/' readOnly />
+                                            <input type='text' className="hidden" name='returnURL' value='/thank-you' readOnly />
                                             <input type='text' className="hidden" id='ldeskuid' name='ldeskuid' readOnly />
                                             <input type='text' className="hidden" id='LDTuvid' name='LDTuvid' readOnly />
 
@@ -512,14 +504,14 @@ export default function RequestQuotePremium() {
                                                 <input
                                                     type='email'
                                                     placeholder="Business Email *"
-                                                    id='Email'
+                                                    id='LEADCF8'
                                                     required
-                                                    name='Email'
+                                                    name='LEADCF8'
                                                     maxLength={100}
                                                     className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
                                                 />
                                                 <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Mobile (10 Digits) *</label>
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">POC's Mobile (10 Digits) *</label>
                                                     <div className="flex gap-2">
                                                         <select
                                                             value={selectedCode}
@@ -557,14 +549,9 @@ export default function RequestQuotePremium() {
                                                     name='LEADCF5'
                                                     defaultValue=""
                                                 >
-                                                    <option value="" disabled>Select NetSuite Solution *</option>
-                                                    <option value='NetSuite&#x20;ERP'>NetSuite ERP</option>
-                                                    <option value='NetSuite&#x20;CRM'>NetSuite CRM</option>
-                                                    <option value='NetSuite&#x20;OneWorld'>NetSuite OneWorld</option>
-                                                    <option value='NetSuite&#x20;SuiteCommerce'>NetSuite SuiteCommerce</option>
-                                                    <option value='NetSuite&#x20;Planning&#x20;&amp;&#x20;Budgeting'>NetSuite Planning &amp; Budgeting</option>
-                                                    <option value='NetSuite&#x20;OpenAir'>NetSuite OpenAir</option>
-                                                    <option value='NetSuite&#x20;Analytics&#x20;Warehouse'>NetSuite Analytics Warehouse</option>
+                                                    <option value="-None-">-None-</option>
+                                                    <option value="Licenses">Licenses</option>
+                                                    <option value="AMC">AMC</option>
                                                 </select>
 
                                                 {/* Lead Source (Hidden defaultValue Website) */}
@@ -573,46 +560,48 @@ export default function RequestQuotePremium() {
                                                 </select>
                                                 <select
                                                     className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
-                                                    id='Annual_Revenue'
+                                                    id='LEADCF19'
                                                     onChange={handleSelectChange}
                                                     required
-                                                    name='Annual Revenue'
+                                                    name='LEADCF19'
                                                     defaultValue=""
                                                 >
                                                     <option value="" disabled>Annual Revenue *</option>
-                                                    <option value="Under&#x20;&#x24;500K">Under &#x24;500K</option>
-                                                    <option value="&#x24;500k&#x20;to&#x20;&#x24;1M">&#x24;500k to &#x24;1M</option>
-                                                    <option value="&#x24;1M&#x20;to&#x20;&#x24;2M">&#x24;1M to &#x24;2M</option>
-                                                    <option value="&#x24;2M&#x20;to&#x20;&#x24;5M">&#x24;2M to &#x24;5M</option>
-                                                    <option value="&#x24;5M&#x20;to&#x20;&#x24;10M">&#x24;5M to &#x24;10M</option>
-                                                    <option value='&#x24;10M&#x20;to&#x20;&#x24;20M'>&#x24;10M to &#x24;20M</option>
-                                                    <option value='&#x24;20M&#x20;to&#x20;&#x24;30M'>&#x24;20M to &#x24;30M</option>
-                                                    <option value='&#x24;30M&#x20;to&#x20;&#x24;50M'>&#x24;30M to &#x24;50M</option>
-                                                    <option value='&#x24;50M&#x20;to&#x20;&#x24;100M'>&#x24;50M to &#x24;100M</option>
+                                                    <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
+                                                    <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
+                                                    <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
+                                                    <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
+                                                    <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
+                                                    <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
+                                                    <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
+                                                    <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
+                                                    <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
+                                                    <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
                                                 </select>
 
                                                 <select
                                                     className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
-                                                    id='LEADCF41'
+                                                    id='LEADCF127'
                                                     onChange={handleSelectChange}
-                                                    name='LEADCF41'
+                                                    name='LEADCF127'
                                                     defaultValue=""
                                                 >
                                                     <option value="" disabled>How did you hear about us</option>
-                                                    <option value='Email'>Email</option>
-                                                    <option value='Event'>Event</option>
-                                                    <option value='Friend/Associate/Accountant'>Friend/Associate</option>
-                                                    <option value='Search'>Search</option>
-                                                    <option value='Social Media'>Social Media</option>
-                                                    <option value='Referral'>Referral</option>
+                                                    <option value="-None-">-None-</option>
+                                                    <option value="Email">Email</option>
+                                                    <option value="Event">Event</option>
+                                                    <option value="Friend&#x2f;Associate">Friend/Associate</option>
+                                                    <option value="Search">Search</option>
+                                                    <option value="Social&#x20;Media">Social Media</option>
+                                                    <option value="Referral">Referral</option>
                                                 </select>
                                             </div>
 
                                             <textarea
-                                                id='Description'
+                                                id='LEADCF123'
                                                 required
-                                                name='Description'
-                                                placeholder='Tell Us How We Can Help!*'
+                                                name='LEADCF123'
+                                                placeholder='How We Can Help You*'
                                                 rows={3}
                                                 className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 resize-none"
                                             ></textarea>
@@ -620,14 +609,14 @@ export default function RequestQuotePremium() {
                                             <div className='zcwf_row text-center bg-gray-50 rounded-xl p-4'>
                                                 <div
                                                     className="g-recaptcha flex justify-center scale-90"
-                                                    data-sitekey='6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3'
+                                                    data-sitekey='6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y'
                                                     data-theme='light'
-                                                    data-callback='rccallback409531000000398090'
-                                                    data-captcha-verified='false'
-                                                    id='recap409531000000398090'
+                                                    data-callback='rccallback409531000042578178'
+                                                    captcha-verified='false'
+                                                    id='recap409531000042578178'
                                                 ></div>
-                                                <div id='recapErr409531000000398090' className='text-xs text-red-500 invisible mt-1'>
-                                                    Captcha validation failed. Please try again.
+                                                <div id='recapErr409531000042578178' style={{ visibility: 'hidden', color: 'red', fontSize: '12px', marginTop: '4px' }}>
+                                                    Captcha validation failed. If you are not a robot then please try again.
                                                 </div>
                                             </div>
 

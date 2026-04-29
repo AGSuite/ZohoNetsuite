@@ -399,7 +399,7 @@ select option {
 }
 
 .g-recaptcha { margin-top: 20px; margin-bottom: 4px; display: flex; justify-content: center; }
-#recapErr409531000026445204 { font-size: 13px; color: #fca5a5; margin-top: 12px; text-align: center; visibility: hidden; }
+#recapErr409531000042578178 { font-size: 13px; color: #fca5a5; margin-top: 12px; text-align: center; visibility: hidden; }
 .dsp { display: none; }
 
 @media (max-width: 640px) {
