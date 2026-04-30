@@ -140,9 +140,9 @@ export default function EmbeddedZohoForm() {
             <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
             <iframe name="zoho_iframe_embedded" style={{ display: 'none' }}></iframe>
             <form id="webform409531000042578178" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000042578178" method="POST" onSubmit={handleFormSubmit} acceptCharset="UTF-8">
-                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82" readOnly />
+                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="37dfc49e97f520b044bada4f449a5c5ccdbce92fc11adcbde859370420398c25" readOnly />
                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                <input type="text" className="hidden" name="xmIwtLD" defaultValue="7ce425cbc5576979cf8d2dfa7bcaeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a" readOnly />
+                <input type="text" className="hidden" name="xmIwtLD" defaultValue="12f9e122b2a20e7b120e935f7196c6eb1b4957b3d47254bd86bff874f16310546e1ef014dcf24ff7fdc390003e9608d7" readOnly />
                 <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
                 <input type="text" className="hidden" name="returnURL" defaultValue="https://zoho-netsuite.vercel.app/thank-you" readOnly />
                 <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
@@ -254,6 +254,8 @@ export default function EmbeddedZohoForm() {
                             <option value="" disabled>Select Service*</option>
                             <option value="Licenses">Licenses</option>
                             <option value="AMC">AMC</option>
+                            <option value="NetSuite Product /Services">NetSuite Product /Services</option>
+                            <option value="Zoho Products/Services">Zoho Products/Services</option>
                         </select>
                     </div>
 
@@ -287,7 +289,7 @@ export default function EmbeddedZohoForm() {
             </form>
             <Script 
                 id="wf_anal" 
-                src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=ffa911f519bdac1fd37141e7458859338a4c0807209e53fcd9161a4ef8002b597777f2d47c34393e74912d83270ec629gid2020ff77b8590645f6909775bceb1dfe9b354b521b7d31a381183051979950afgidc32afce85ab5735ae0662898fbed0b63bef845d0ee34535ca4044be79f94eb16gidc20f47455171d038199ce12255d9fb14618138cdb451a0053d17b76b5cbc594d&tw=a5bf274d720cc51e70d06319b934b2ae14a201bb6424c6ca86bd81d126e9d37e"
+                src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=200f842d0dc0f4e7801db792aae6ced7d901985d65eb7fcd23dda6e56700172097a30a3ef869eb06347d3a4bca25bb6fgid9f5592bc44469936204ad4851be9c0dffc44888d04f59693f16e7853eee295cfgid37385f0c9c29469e462007ae410d9ad684100d05f4e169a235f2b84413a975d4gidbf0e0fb6f34ec2f94a391d45ce6b68f60ace7ff29df396e3a70399e1edee5dc5&tw=23f34b37e865b5335ff2a8f585b01a00b88cb9c9a388aa28b4e9e710c025aad4"
                 strategy="lazyOnload"
             />
         </div>

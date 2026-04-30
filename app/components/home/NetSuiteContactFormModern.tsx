@@ -232,7 +232,7 @@ export default function NetSuiteContactFormModern() {
 
       <Script
         id="wf_anal_footer"
-        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=c6bd15ef499e015212f7cfd1d94a36257616906db3378b7d58e9666a0cb004ad04cae4b2ad4b40f407ea1df9509ddfc3gid4d54f02188dbd1a4f4c8582e1cc6829be5ddd9b1ad3710ed7207deccba2aa858giddeda7992accaf02590572b916d20ede01298921dbc555b8a938ff90fe2bc82f4gid28710435a2d0ea931303f1f01e1b730e6517c1be20b1776d1746edb3c9f1c653&tw=8b4a96a610c92f39fdbddebeaa5a00b371fd965c61608708d088c2ca4821d30d"
+        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=200f842d0dc0f4e7801db792aae6ced7d901985d65eb7fcd23dda6e56700172097a30a3ef869eb06347d3a4bca25bb6fgid9f5592bc44469936204ad4851be9c0dffc44888d04f59693f16e7853eee295cfgid37385f0c9c29469e462007ae410d9ad684100d05f4e169a235f2b84413a975d4gidbf0e0fb6f34ec2f94a391d45ce6b68f60ace7ff29df396e3a70399e1edee5dc5&tw=23f34b37e865b5335ff2a8f585b01a00b88cb9c9a388aa28b4e9e710c025aad4"
         strategy="lazyOnload"
       />
 
@@ -325,9 +325,9 @@ export default function NetSuiteContactFormModern() {
                     __html: `
 <div id="crmWebToEntityForm" class="zcwf_lblLeft crmWebToEntityForm">
 <form id="webform409531000042578178" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000042578178" method="POST" onSubmit="javascript:document.charset='UTF-8'; return checkMandatory409531000042578178()" accept-charset="UTF-8">
- <input type="text" class="dsp" name="xnQsjsdp" value="e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82">
+ <input type="text" class="dsp" name="xnQsjsdp" value="37dfc49e97f520b044bada4f449a5c5ccdbce92fc11adcbde859370420398c25">
  <input type="hidden" name="zc_gad" id="zc_gad" value="">
- <input type="text" class="dsp" name="xmIwtLD" value="7ce425cbc5576979cf8d2dfa7bcaeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a">
+ <input type="text" class="dsp" name="xmIwtLD" value="12f9e122b2a20e7b120e935f7196c6eb1b4957b3d47254bd86bff874f16310546e1ef014dcf24ff7fdc390003e9608d7">
  <input type="text" class="dsp" name="actionType" value="TGVhZHM=">
  <input type="text" class="dsp" name="returnURL" value="https://zoho-netsuite.vercel.app/thank-you">
 <input type="text" class="dsp" id="ldeskuid" name="ldeskuid">
@@ -453,6 +453,8 @@ select option {
       <option value="" disabled selected>Service*</option>
       <option value="Licenses">Licenses</option>
       <option value="AMC">AMC</option>
+      <option value="NetSuite Product /Services">NetSuite Product /Services</option>
+      <option value="Zoho Products/Services">Zoho Products/Services</option>
     </select>
   </div>
   
@@ -469,6 +471,19 @@ select option {
       <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
       <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
       <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
+    </select>
+  </div>
+  
+  <div class="agsuite_column">
+    <select class="zcwf_col_fld_slt" id="LEADCF127" name="LEADCF127" onChange="addAriaSelected409531000042578178()">
+      <option value="" disabled selected>Referral Source</option>
+      <option value="-None-">-None-</option>
+      <option value="Email">Email</option>
+      <option value="Event">Event</option>
+      <option value="Friend /Associate">Friend /Associate</option>
+      <option value="Search">Search</option>
+      <option value="Social Media">Social Media</option>
+      <option value="Referral">Referral</option>
     </select>
   </div>
   

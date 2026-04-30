@@ -255,7 +255,7 @@ export default function ZohoContactForm() {
                 strategy="afterInteractive"
             />
             {/* Zoho CRM Web-to-Lead Analytics */}
-            <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=c6bd15ef499e015212f7cfd1d94a36257616906db3378b7d58e9666a0cb004ad04cae4b2ad4b40f407ea1df9509ddfc3gid4d54f02188dbd1a4f4c8582e1cc6829be5ddd9b1ad3710ed7207deccba2aa858giddeda7992accaf02590572b916d20ede01298921dbc555b8a938ff90fe2bc82f4gid28710435a2d0ea931303f1f01e1b730e6517c1be20b1776d1746edb3c9f1c653&tw=8b4a96a610c92f39fdbddebeaa5a00b371fd965c61608708d088c2ca4821d30d" />
+            <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=200f842d0dc0f4e7801db792aae6ced7d901985d65eb7fcd23dda6e56700172097a30a3ef869eb06347d3a4bca25bb6fgid9f5592bc44469936204ad4851be9c0dffc44888d04f59693f16e7853eee295cfgid37385f0c9c29469e462007ae410d9ad684100d05f4e169a235f2b84413a975d4gidbf0e0fb6f34ec2f94a391d45ce6b68f60ace7ff29df396e3a70399e1edee5dc5&tw=23f34b37e865b5335ff2a8f585b01a00b88cb9c9a388aa28b4e9e710c025aad4" />
             <section id="contact-form" className="relative py-28 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
                 {/* Background Decorative Gradients */}
                 <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-blue-500/30 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
@@ -394,9 +394,9 @@ export default function ZohoContactForm() {
                                 variants={containerVariants}
                                 className="space-y-6"
                             >
-                                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="e8dd3e716514c8f9dcd1eb1f2bace3224b829c134dada7edb1257e30d50f8d82" readOnly />
+                                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="37dfc49e97f520b044bada4f449a5c5ccdbce92fc11adcbde859370420398c25" readOnly />
                                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                                <input type="text" className="hidden" name="xmIwtLD" defaultValue="7ce425cbc5576979cf8d2dfa7bcaeb8eb6b6c2507daa5786fd6186f5e9214bce6b94a37008af83711e13228fec1f14a" readOnly />
+                                <input type="text" className="hidden" name="xmIwtLD" defaultValue="12f9e122b2a20e7b120e935f7196c6eb1b4957b3d47254bd86bff874f16310546e1ef014dcf24ff7fdc390003e9608d7" readOnly />
                                 <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
                                 <input type="text" className="hidden" name="returnURL" defaultValue="https://zoho-netsuite.vercel.app/thank-you" readOnly />
                                 <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
@@ -459,6 +459,8 @@ export default function ZohoContactForm() {
                                                 <option value='Zoho&#x20;BI&#x20;&amp;&#x20;Analytics'>Zoho BI &amp; Analytics</option>
                                                 <option value='Zoho&#x20;Developer&#x20;Platforms'>Zoho Developer Platforms</option>
                                                 <option value='Zoho&#x20;One&#x20;&#x28;Complete&#x20;Suite&#x29;'>Zoho One (Complete Suite)</option>
+                                                <option value='NetSuite Product /Services'>NetSuite Product /Services</option>
+                                                <option value='Zoho Products/Services'>Zoho Products/Services</option>
                                             </select>
                                             <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-blue-600 transition-transform group-hover:scale-110">
                                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" /></svg>
@@ -497,9 +499,9 @@ export default function ZohoContactForm() {
                                                 <option value="-None-">-None-</option>
                                                 <option value="Email">Email</option>
                                                 <option value="Event">Event</option>
-                                                <option value="Friend&#x2f;Associate">Friend/Associate</option>
+                                                <option value="Friend /Associate">Friend /Associate</option>
                                                 <option value="Search">Search</option>
-                                                <option value="Social&#x20;Media">Social Media</option>
+                                                <option value="Social Media">Social Media</option>
                                                 <option value="Referral">Referral</option>
                                             </select>
                                             <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-blue-600">
