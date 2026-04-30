@@ -30,27 +30,6 @@ const PARTICLES = [
 
 export default function RequestQuotePremium() {
     const [isClient, setIsClient] = useState(false);
-    const [selectedCode, setSelectedCode] = useState('+91');
-
-    const COUNTRY_CODES = [
-        { code: '+91', label: 'IN (+91)' },
-        { code: '+1', label: 'US (+1)' },
-        { code: '+44', label: 'UK (+44)' },
-        { code: '+971', label: 'UAE (+971)' },
-        { code: '+966', label: 'KSA (+966)' },
-        { code: '+974', label: 'QA (+974)' },
-        { code: '+965', label: 'KW (+965)' },
-        { code: '+968', label: 'OM (+968)' },
-        { code: '+973', label: 'BH (+973)' },
-        { code: '+65', label: 'SG (+65)' },
-        { code: '+61', label: 'AU (+61)' },
-        { code: '+31', label: 'NL (+31)' },
-        { code: '+353', label: 'IE (+353)' },
-        { code: '+49', label: 'DE (+49)' },
-        { code: '+33', label: 'FR (+33)' },
-        { code: '+27', label: 'ZA (+27)' },
-        { code: '+852', label: 'HK (+852)' },
-    ];
 
     useEffect(() => {
         setIsClient(true);
@@ -291,13 +270,6 @@ export default function RequestQuotePremium() {
             return;
         }
 
-        // Combine code and mobile
-        const form = e.currentTarget;
-        const mobileField = form.elements.namedItem('Mobile') as HTMLInputElement;
-        if (mobileField) {
-            mobileField.value = `${selectedCode} ${mobileField.value}`;
-        }
-
         // Visitor Tracking
         try {
             if (window.$zoho?.salesiq?.visitor) {
@@ -483,130 +455,141 @@ export default function RequestQuotePremium() {
 
 
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                <input
-                                                    type='text'
-                                                    id='Last_Name'
-                                                    placeholder='Name *'
-                                                    required
-                                                    name='Last Name'
-                                                    maxLength={80}
-                                                    className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
-                                                />
-                                                <input
-                                                    type='text'
-                                                    id='Company'
-                                                    placeholder='Company Name *'
-                                                    required
-                                                    name='Company'
-                                                    maxLength={200}
-                                                    className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
-                                                />
-                                                <input
-                                                    type='email'
-                                                    placeholder="Business Email *"
-                                                    id='LEADCF8'
-                                                    required
-                                                    name='LEADCF8'
-                                                    maxLength={100}
-                                                    className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
-                                                />
                                                 <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">POC's Mobile (10 Digits) *</label>
-                                                    <div className="flex gap-2">
-                                                        <select
-                                                            value={selectedCode}
-                                                            onChange={(e) => setSelectedCode(e.target.value)}
-                                                            className="w-24 bg-blue-50/50 border border-blue-100 focus:border-blue-500 rounded-xl px-2 py-3 text-xs font-semibold outline-none transition-all"
-                                                        >
-                                                            {COUNTRY_CODES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
-                                                        </select>
-                                                        <input
-                                                            type='text'
-                                                            id='Mobile'
-                                                            placeholder='9876543210'
-                                                            required
-                                                            name='Mobile'
-                                                            maxLength={10}
-                                                            onChange={(e) => e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10)}
-                                                            className="flex-1 bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
-                                                        />
-                                                    </div>
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Name *</label>
+                                                    <input
+                                                        type='text'
+                                                        id='Last_Name'
+                                                        placeholder='John Doe'
+                                                        required
+                                                        name='Last Name'
+                                                        maxLength={80}
+                                                        className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
+                                                    />
                                                 </div>
-                                                <input
-                                                    type='text'
-                                                    id='Designation'
-                                                    required
-                                                    name='Designation'
-                                                    placeholder='Role *'
-                                                    maxLength={100}
-                                                    className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
-                                                />
-                                                <select
-                                                    className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
-                                                    id='LEADCF5'
-                                                    onChange={handleSelectChange}
-                                                    required
-                                                    name='LEADCF5'
-                                                    defaultValue=""
-                                                >
-                                                    <option value="-None-">-None-</option>
-                                                    <option value="Licenses">Licenses</option>
-                                                    <option value="AMC">AMC</option>
-                                                    <option value="NetSuite Product /Services">NetSuite Product /Services</option>
-                                                    <option value="Zoho Products/Services">Zoho Products/Services</option>
-                                                </select>
+                                                <div className="space-y-1">
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Company Name *</label>
+                                                    <input
+                                                        type='text'
+                                                        id='Company'
+                                                        placeholder='Company Inc.'
+                                                        required
+                                                        name='Company'
+                                                        maxLength={200}
+                                                        className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
+                                                    />
+                                                </div>
+                                                <div className="space-y-1">
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Company Email *</label>
+                                                    <input
+                                                        type='email'
+                                                        placeholder="john@company.com"
+                                                        id='LEADCF8'
+                                                        required
+                                                        name='LEADCF8'
+                                                        maxLength={100}
+                                                        className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
+                                                    />
+                                                </div>
+                                                <div className="space-y-1">
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">POC's Mobile *</label>
+                                                    <input
+                                                        type='text'
+                                                        id='Mobile'
+                                                        placeholder='+91 00000 00000'
+                                                        required
+                                                        name='Mobile'
+                                                        maxLength={15}
+                                                        onChange={(e) => e.target.value = e.target.value.replace(/[^\d+ ]/g, '').slice(0, 15)}
+                                                        className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
+                                                    />
+                                                </div>
+                                                <div className="space-y-1">
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Role *</label>
+                                                    <input
+                                                        type='text'
+                                                        id='Designation'
+                                                        required
+                                                        name='Designation'
+                                                        placeholder='Manager'
+                                                        maxLength={100}
+                                                        className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
+                                                    />
+                                                </div>
+                                                <div className="space-y-1">
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Service *</label>
+                                                    <select
+                                                        className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
+                                                        id='LEADCF5'
+                                                        onChange={handleSelectChange}
+                                                        required
+                                                        name='LEADCF5'
+                                                        defaultValue=""
+                                                    >
+                                                        <option value="-None-">-None-</option>
+                                                        <option value="Licenses">Licenses</option>
+                                                        <option value="AMC">AMC</option>
+                                                        <option value="NetSuite Product /Services">NetSuite Product /Services</option>
+                                                        <option value="Zoho Products/Services">Zoho Products/Services</option>
+                                                    </select>
+                                                </div>
 
-                                                {/* Lead Source (Hidden defaultValue Website) */}
-                                                <select className='hidden' id='Lead_Source' name='Lead Source' defaultValue='Website'>
-                                                    <option value='Website'>Website</option>
-                                                </select>
-                                                <select
-                                                    className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
-                                                    id='LEADCF19'
-                                                    onChange={handleSelectChange}
-                                                    required
-                                                    name='LEADCF19'
-                                                    defaultValue=""
-                                                >
-                                                    <option value="" disabled>Annual Revenue *</option>
-                                                    <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
-                                                    <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
-                                                    <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
-                                                    <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
-                                                    <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
-                                                    <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
-                                                    <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
-                                                    <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
-                                                    <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
-                                                    <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
-                                                </select>
+                                                <div className="space-y-1">
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Annual Revenue *</label>
+                                                    <select
+                                                        className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
+                                                        id='LEADCF19'
+                                                        onChange={handleSelectChange}
+                                                        required
+                                                        name='LEADCF19'
+                                                        defaultValue=""
+                                                    >
+                                                        <option value="" disabled>Select Revenue</option>
+                                                        <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
+                                                        <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
+                                                        <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
+                                                        <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
+                                                        <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
+                                                        <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
+                                                        <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
+                                                        <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
+                                                        <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
+                                                        <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
+                                                    </select>
+                                                </div>
 
-                                                <select
-                                                    className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
-                                                    id='LEADCF127'
-                                                    onChange={handleSelectChange}
-                                                    name='LEADCF127'
-                                                    defaultValue=""
-                                                >
-                                                    <option value="" disabled>How did you hear about us</option>
-                                                    <option value="-None-">-None-</option>
-                                                    <option value="Email">Email</option>
-                                                    <option value="Event">Event</option>
-                                                    <option value="Friend /Associate">Friend /Associate</option>
-                                                    <option value="Search">Search</option>
-                                                    <option value="Social Media">Social Media</option>
-                                                    <option value="Referral">Referral</option>
-                                                </select>
+                                                <div className="space-y-1">
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">How did you hear about us?</label>
+                                                    <select
+                                                        className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
+                                                        id='LEADCF127'
+                                                        onChange={handleSelectChange}
+                                                        name='LEADCF127'
+                                                        defaultValue=""
+                                                    >
+                                                        <option value="" disabled>Select Option</option>
+                                                        <option value="-None-">-None-</option>
+                                                        <option value="Email">Email</option>
+                                                        <option value="Event">Event</option>
+                                                        <option value="Friend /Associate">Friend /Associate</option>
+                                                        <option value="Search">Search</option>
+                                                        <option value="Social Media">Social Media</option>
+                                                        <option value="Referral">Referral</option>
+                                                    </select>
+                                                </div>
                                             </div>
 
-                                            <textarea
-                                                id='LEADCF123'
-                                                required
-                                                name='LEADCF123'
-                                                placeholder='How We Can Help You*'
-                                                rows={3}
-                                                className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 resize-none"
-                                            ></textarea>
+                                            <div className="space-y-1">
+                                                <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">How We Can Help You *</label>
+                                                <textarea
+                                                    id='LEADCF123'
+                                                    required
+                                                    name='LEADCF123'
+                                                    placeholder='Share your requirements...'
+                                                    rows={3}
+                                                    className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 resize-none"
+                                                ></textarea>
+                                            </div>
 
                                             <div className='zcwf_row text-center bg-gray-50 rounded-xl p-4'>
                                                 <div

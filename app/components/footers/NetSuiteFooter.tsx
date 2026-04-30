@@ -18,13 +18,15 @@ export default function NetSuiteFooter() {
                     <div className="lg:col-span-1">
                         <div className="mb-6">
                             {/* AGSuite Logo */}
-                            <Image
-                                src="/images/logos/agsuite_logo.webp"
-                                alt="AGSuite Technologies"
-                                width={180}
-                                height={60}
-                                className="h-12 w-auto mb-4"
-                            />
+                            <Link href="/">
+                                <Image
+                                    src="/images/logos/agsuite_logo.webp"
+                                    alt="AGSuite Technologies"
+                                    width={180}
+                                    height={60}
+                                    className="h-12 w-auto mb-4"
+                                />
+                            </Link>
                             <p className="text-gray-400 text-sm leading-relaxed">
                                 Your trusted partner for Oracle NetSuite ERP implementation, customization, and support. Empowering businesses to scale efficiently.
                             </p>
@@ -105,7 +107,7 @@ export default function NetSuiteFooter() {
                         <h4 className="text-lg font-bold mb-4 text-blue-400">Company</h4>
                         <ul className="space-y-3">
                             <li>
-                                <Link href="/" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Home
                                 </Link>
                             </li>
@@ -120,7 +122,7 @@ export default function NetSuiteFooter() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/netsuite/life-at-agsuite" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/contact/careers" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Careers
                                 </Link>
                             </li>

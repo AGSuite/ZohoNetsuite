@@ -18,13 +18,15 @@ export default function ZohoFooter() {
                     <div className="lg:col-span-1">
                         <div className="mb-6">
                             {/* AGSuite Logo */}
-                            <Image
-                                src="/images/logos/agsuite_logo.webp"
-                                alt="AGSuite Technologies"
-                                width={180}
-                                height={60}
-                                className="h-12 w-auto mb-4"
-                            />
+                            <Link href="/">
+                                <Image
+                                    src="/images/logos/agsuite_logo.webp"
+                                    alt="AGSuite Technologies"
+                                    width={180}
+                                    height={60}
+                                    className="h-12 w-auto mb-4"
+                                />
+                            </Link>
                             <p className="text-gray-400 text-sm leading-relaxed">
                                 Your trusted partner for Zoho CRM, Marketing, and Business Solutions. Transform your business operations with intelligent automation.
                             </p>
@@ -73,28 +75,28 @@ export default function ZohoFooter() {
                         <h4 className="text-lg font-bold mb-4 text-orange-400">Zoho Services</h4>
                         <ul className="space-y-3">
                             <li>
-                                <Link href="/zoho#crm" className="text-gray-400 hover:text-white transition-colors text-sm">
-                                    Zoho CRM
+                                <Link href="/zoho/services/implementation" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                    Zoho Implementation
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/zoho#marketing" className="text-gray-400 hover:text-white transition-colors text-sm">
-                                    Marketing Automation
+                                <Link href="/zoho/services/integration-services" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                    Zoho Integration
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/zoho#analytics" className="text-gray-400 hover:text-white transition-colors text-sm">
-                                    Analytics & BI
+                                <Link href="/zoho/services/digital-transformation" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                    Zoho Customization
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/zoho#books" className="text-gray-400 hover:text-white transition-colors text-sm">
-                                    Zoho Books
+                                <Link href="/zoho/services/managed-services" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                    Zoho Managed Support
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/zoho#support" className="text-gray-400 hover:text-white transition-colors text-sm">
-                                    Implementation & Support
+                                <Link href="/zoho/services/training-services" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                    Zoho Training
                                 </Link>
                             </li>
                         </ul>
@@ -105,12 +107,12 @@ export default function ZohoFooter() {
                         <h4 className="text-lg font-bold mb-4 text-orange-400">Company</h4>
                         <ul className="space-y-3">
                             <li>
-                                <Link href="/" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/zoho" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Home
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/about" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/zoho/about-us" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     About Us
                                 </Link>
                             </li>
@@ -120,12 +122,12 @@ export default function ZohoFooter() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/careers" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/zoho/contact/careers" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Careers
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/blog" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/zoho/blogs" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Blog
                                 </Link>
                             </li>
