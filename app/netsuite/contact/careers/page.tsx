@@ -507,7 +507,7 @@ export default function CareersPage() {
             </div>
 
             {/* RIGHT: Form Sticky */}
-            <div id="apply-form" className="w-full lg:w-[550px] xl:w-[600px] shrink-0 scroll-mt-1">
+            <div id="apply-form" className="w-full lg:w-[550px] xl:w-[600px] shrink-0 scroll-mt-36">
               <div className="sticky top-32">
                 <div className={`bg-white rounded-[3rem] border overflow-hidden transition-all duration-500 ${highlightForm ? 'border-green-500 shadow-[0_0_40px_rgba(34,197,94,0.4)] scale-[1.02]' : 'border-gray-100 shadow-[0_32px_80px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_32px_80px_-15px_rgba(29,78,216,0.15)]'}`}>
                   <div className="bg-gradient-to-br from-[#000814] to-[#001a4d] p-10 text-white relative overflow-hidden">

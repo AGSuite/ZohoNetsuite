@@ -349,6 +349,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                 <div id="crmWebToEntityForm" className="crmWebToEntityForm">
                   <form id={`shared_webform_${platform}`} name="WebToLeads409531000042578178" action="https://crm.zoho.in/crm/WebToLeadForm" method="POST" target={`zoho_iframe_${platform}`} acceptCharset="UTF-8" className="space-y-4">
                     <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue={crmConfig.xnQsjsdp} readOnly />
+                    <input type="text" style={{ display: 'none' }} name="Lead Source" value="Web to Leads" readOnly />
                     <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
                     <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue={crmConfig.xmIwtLD} readOnly />
                     <input type="text" style={{ display: 'none' }} name="actionType" defaultValue="TGVhZHM=" readOnly />

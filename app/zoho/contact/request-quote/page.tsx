@@ -117,27 +117,32 @@ export default function ZohoRequestQuotePage() {
             const container = document.getElementById('recap409531000042578178');
             if ((window as any).grecaptcha && container) {
                 try {
-                    if (container.children.length > 0) return;
                     (window as any).grecaptcha.render('recap409531000042578178', {
                         'sitekey': '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y',
                         'theme': 'light',
-                        'callback': window.rccallback409531000042578178
+                        'callback': (window as any).rccallback409531000042578178
                     });
-                } catch (e) {}
+                } catch (e) {
+                    // Already rendered or container missing
+                }
             }
         };
 
-        if ((window as any).grecaptcha) {
-            renderRecaptcha();
-        } else {
-            const interval = setInterval(() => {
-                if ((window as any).grecaptcha) {
-                    renderRecaptcha();
-                    clearInterval(interval);
-                }
-            }, 500);
-            setTimeout(() => clearInterval(interval), 5000);
-        }
+        const checkAndRenderRecaptcha = () => {
+            if ((window as any).grecaptcha?.ready) {
+                (window as any).grecaptcha.ready(renderRecaptcha);
+            } else {
+                const interval = setInterval(() => {
+                    if ((window as any).grecaptcha) {
+                        (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
+                        clearInterval(interval);
+                    }
+                }, 300);
+                setTimeout(() => clearInterval(interval), 6000);
+            }
+        };
+
+        checkAndRenderRecaptcha();
     }, []);
 
     const sendEmail = async (form: HTMLFormElement) => {
@@ -337,6 +342,7 @@ export default function ZohoRequestQuotePage() {
                                             <input type="text" className="hidden" name="xnQsjsdp" defaultValue="37dfc49e97f520b044bada4f449a5c5ccdbce92fc11adcbde859370420398c25" readOnly />
                                             <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
                                             <input type="text" className="hidden" name="xmIwtLD" defaultValue="12f9e122b2a20e7b120e935f7196c6eb1b4957b3d47254bd86bff874f16310546e1ef014dcf24ff7fdc390003e9608d7" readOnly />
+                                            <input type="text" className="hidden" name="Lead Source" value="Web to Leads" readOnly />
                                             <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
                                             <input type="text" className="hidden" name="returnURL" defaultValue="https://zoho-netsuite.vercel.app/thank-you" readOnly />
                                             <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import {
     ChevronRight,
     Calculator,
@@ -34,40 +35,32 @@ export default function RequestQuotePremium() {
     useEffect(() => {
         setIsClient(true);
 
-        // Handle reCAPTCHA rendering for SPA navigation
         const renderRecaptcha = () => {
             const container = document.getElementById('recap409531000042578178');
             if ((window as any).grecaptcha && container) {
                 try {
-                    if (container.children.length > 0) return;
                     (window as any).grecaptcha.render('recap409531000042578178', {
                         'sitekey': '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y',
                         'theme': 'light',
                         'callback': (window as any).rccallback409531000042578178
                     });
-                } catch (e) {}
+                } catch (e) {
+                    // Already rendered or container missing
+                }
             }
         };
 
         const checkAndRenderRecaptcha = () => {
-            if ((window as any).grecaptcha) {
-                if ((window as any).grecaptcha.ready) {
-                    (window as any).grecaptcha.ready(renderRecaptcha);
-                } else {
-                    renderRecaptcha();
-                }
+            if ((window as any).grecaptcha?.ready) {
+                (window as any).grecaptcha.ready(renderRecaptcha);
             } else {
                 const interval = setInterval(() => {
                     if ((window as any).grecaptcha) {
-                        if ((window as any).grecaptcha.ready) {
-                            (window as any).grecaptcha.ready(renderRecaptcha);
-                        } else {
-                            renderRecaptcha();
-                        }
+                        (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
                         clearInterval(interval);
                     }
                 }, 300);
-                setTimeout(() => clearInterval(interval), 5000);
+                setTimeout(() => clearInterval(interval), 6000);
             }
         };
 
@@ -448,6 +441,7 @@ export default function RequestQuotePremium() {
                                             <input type='text' className="hidden" name='xnQsjsdp' value='37dfc49e97f520b044bada4f449a5c5ccdbce92fc11adcbde859370420398c25' readOnly />
                                             <input type='hidden' name='zc_gad' id='zc_gad' value='' />
                                             <input type='text' className="hidden" name='xmIwtLD' value='12f9e122b2a20e7b120e935f7196c6eb1b4957b3d47254bd86bff874f16310546e1ef014dcf24ff7fdc390003e9608d7' readOnly />
+                                            <input type='text' className="hidden" name='Lead Source' value='Web to Leads' readOnly />
                                             <input type='text' className="hidden" name='actionType' value='TGVhZHM=' readOnly />
                                             <input type='text' className="hidden" name='returnURL' value='https://zoho-netsuite.vercel.app/thank-you' readOnly />
                                             <input type='text' className="hidden" id='ldeskuid' name='ldeskuid' readOnly />
@@ -696,6 +690,9 @@ export default function RequestQuotePremium() {
                     </div>
                 </div>
             </section>
+            {/* ── Scripts ─────────────────────────────────────────────────────────── */}
+            <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
+            <Script id="wf_anal_ns_quote" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=200f842d0dc0f4e7801db792aae6ced7d901985d65eb7fcd23dda6e56700172097a30a3ef869eb06347d3a4bca25bb6fgid9f5592bc44469936204ad4851be9c0dffc44888d04f59693f16e7853eee295cfgid37385f0c9c29469e462007ae410d9ad684100d05f4e169a235f2b84413a975d4gidbf0e0fb6f34ec2f94a391d45ce6b68f60ace7ff29df396e3a70399e1edee5dc5&tw=23f34b37e865b5335ff2a8f585b01a00b88cb9c9a388aa28b4e9e710c025aad4" strategy="afterInteractive" />
         </div>
     );
 }
