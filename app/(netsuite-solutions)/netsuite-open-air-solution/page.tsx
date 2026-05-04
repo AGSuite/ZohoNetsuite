@@ -288,7 +288,7 @@ export default function OpenAirPage() {
               >
                 <Link
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-blue-950 hover:border-white transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
                 >
                   Get Started with OpenAir
                   <motion.span
@@ -466,15 +466,15 @@ export default function OpenAirPage() {
               className="flex flex-col justify-center space-y-6"
             >
               <div className="space-y-4">
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  Scale Your Enterprise with NetSuite OpenAir.
-                </h3>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+                  SuiteProjects Pro PSA for Enterprise Project Control and Growth 
+                </h1>
               </div>
               <p className="text-lg text-gray-600 leading-relaxed">
-                SuiteProject Pro (formerly OpenAir) is the leading PSA solution for enterprise services organizations. Built for complex, global businesses, it handles thousands of projects, cross-border resource management, and advanced billing scenarios all in one unified platform.
+                SuiteProjects Pro (formerly NetSuite OpenAir) is a powerful Professional Services Automation (PSA) solution built for large, complex organizations. It enables businesses to manage multiple projects, global resources, and complex billing processes within a single, unified platform.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Eliminate data silos and manual processes. With NetSuite OpenAir, your services organization gains the agility, visibility, and compliance needed to grow profitably across every geography.
+                With seamless integration into NetSuite, it connects project delivery with financial operations, eliminating data silos and manual work. This provides real-time visibility, improves efficiency, and helps organizations optimize performance while driving sustainable, profitable growth.
               </p>
               <div className="pt-4">
                 <Link
@@ -592,9 +592,9 @@ export default function OpenAirPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Why Leaders Choose NetSuite OpenAir
-            </h3>
+            <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+              Key Business Benefits of NetSuite OpenAir
+            </h2>
           </motion.div>
 
           {/* Benefit Content Grid */}

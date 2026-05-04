@@ -1,14 +1,38 @@
-﻿import type { Metadata } from "next";
-import { buildMetadata, NETSUITE_PAGES } from "@/app/lib/seo";
+import type { Metadata } from "next";
 
-const page = NETSUITE_PAGES["/netsuite-suite-commerce-site-builder"];
+export const metadata: Metadata = {
+  title:
+    "NetSuite Suite Commerce Site Builder | NetSuite SuiteSuccess Implementation Partner | AGSuite Technologies",
 
-export const metadata: Metadata = buildMetadata({
-  title: page.title,
-  description: page.description,
-  path: "/netsuite-suite-commerce-site-builder",
-  keywords: page.keywords,
-  category: page.category,
-  publishedTime: page.publishedTime,
-  ogImage: "https://www.agsuitetech.com/images/og/og-netsuite.jpg",
-});
+  description:
+    "AGSuite Provides NetSuite SuiteCommerce services in India & USA. Ecommerce software is complete package for integrating ecommerce websites. It helps to manages all transactions and customer interactions via the Web, mobile and social.",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical: "https://agsuitetech.com/netsuite-suite-commerce-site-builder/",
+  },
+
+  openGraph: {
+    locale: "en_US",
+    type: "article",
+    title:
+      "NetSuite Suite Commerce Site Builder | NetSuite SuiteSuccess Implementation Partner | AGSuite Technologies",
+    description:
+      "AGSuite Provides NetSuite SuiteCommerce services in India & USA. Ecommerce software is complete package for integrating ecommerce websites. It helps to manages all transactions and customer interactions via the Web, mobile and social.",
+    url: "https://agsuitetech.com/netsuite-suite-commerce-site-builder/",
+    siteName: "AGSuite",
+    images: [
+      {
+        url: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+  },
+};

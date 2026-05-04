@@ -301,7 +301,7 @@ export default function NetSuiteSRPPage() {
               >
                 <Link
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-blue-950 hover:border-white transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
                 >
                   Start Scaling Now
                   <motion.span
@@ -419,15 +419,15 @@ export default function NetSuiteSRPPage() {
               className="space-y-6"
             >
               <div className="space-y-4">
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  Maximize Billable Hours with NetSuite SRP.
-                </h3>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+                  NetSuite SRP for Unified Services Lifecycle and Project 
+                </h1>
               </div>
               <p className="text-lg text-gray-600 leading-relaxed">
-                NetSuite SRP is the world&apos;s first and only cloud solution that unites the entire services lifecycle — from opportunity to professional services automation (PSA) to ERP financials — in one unified platform.
+                NetSuite SRP (Service Resource Planning) is a unified cloud solution that manages the full services lifecycle—from opportunity and project delivery to financial recognition—on a single platform. By combining Professional Services Automation (PSA) with core ERP financials, it removes the gap between project teams and back-office operations.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Eliminate siloed teams and manual spreadsheets. With NetSuite SRP, your service organization gains the agility and visibility needed to scale profitably in a global market.
+                With real-time visibility and centralized data, NetSuite SRP helps optimize resource utilization, increase billable hours, and keep projects on budget. Its scalable architecture enables better project delivery and supports consistent, profitable growth in a competitive market.
               </p>
               <div className="pt-4">
                 <Link
@@ -545,9 +545,9 @@ export default function NetSuiteSRPPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Why Leaders Choose NetSuite SRP
-            </h3>
+            <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+              Key Business Benefits of NetSuite SRP
+            </h2>
           </motion.div>
 
           {/* Benefit Content Grid */}

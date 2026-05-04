@@ -104,7 +104,7 @@ export default function SuiteSuccessPage() {
                 Zero to cloud in 100 days. A proven, industry-engineered methodology that delivers NetSuite with best practices built right in — faster, cheaper, and with far less risk.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl hover:scale-105">
+                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-blue-950 hover:border-white transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105">
                   Start Your Journey
                   <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }} className="flex items-center">
                     <ArrowRight className="w-4 h-4" />
@@ -189,14 +189,14 @@ export default function SuiteSuccessPage() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="flex flex-col justify-center space-y-6">
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
-                Go Live Faster with Industry Best Practices Built Right In.
-              </h3>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
+                Accelerate Growth with NetSuite SuiteSuccess Implementation
+              </h1>
               <p className="text-lg text-gray-600 leading-relaxed">
-                SuiteSuccess is not just software. It is a complete, industry-engineered solution built on the accumulated experience of thousands of global NetSuite deployments — delivering faster go-lives, lower costs, and better outcomes.
+                NetSuite SuiteSuccess is a unified industry cloud solution designed for rapid implementation, combining pre-configured workflows, KPIs, and best practices to help businesses achieve faster time-to-value and improved efficiency. Built from proven NetSuite experience, it ensures predictable and scalable business outcomes.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                From pre-built KPIs and role-based dashboards to industry-specific workflows and a structured implementation stairway, SuiteSuccess gives every organization a running start.
+                With NetSuite SuiteSuccess services, organizations benefit from industry-specific functionality, reduced implementation risk, and seamless cloud adoption. This enables faster deployment, optimized performance, and long-term business growth.
               </p>
               <div className="pt-4">
                 <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -254,7 +254,7 @@ export default function SuiteSuccessPage() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3" style={{ background: "radial-gradient(circle, rgba(37,99,235,0.25) 0%, transparent 70%)" }} />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">Why Organizations Choose SuiteSuccess</h3>
+            <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">Key Business Benefits of NetSuite SuiteSuccess</h2>
           </motion.div>
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
             <div className="order-2 lg:order-1 relative min-h-[380px] lg:min-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">

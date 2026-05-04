@@ -1,14 +1,36 @@
-﻿import type { Metadata } from "next";
-import { buildMetadata, NETSUITE_PAGES } from "@/app/lib/seo";
+import type { Metadata } from "next";
 
-const page = NETSUITE_PAGES["/service-resource-planning"];
+export const metadata: Metadata = {
+  title: "Service Resource Planning | AGSuite Technologies",
 
-export const metadata: Metadata = buildMetadata({
-  title: page.title,
-  description: page.description,
-  path: "/service-resource-planning",
-  keywords: page.keywords,
-  category: page.category,
-  publishedTime: page.publishedTime,
-  ogImage: "https://www.agsuitetech.com/images/og/og-netsuite.jpg",
-});
+  description:
+    "AGSuite Technologies -Services Resource Planning (SRP) Solution Tool helps you complete projects more quickly, decrease accounts receivable cycles, and generate invoices accurately and efficiently.",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical: "https://agsuitetech.com/service-resource-planning/",
+  },
+
+  openGraph: {
+    title: "Service Resource Planning | AGSuite Technologies",
+    description:
+      "AGSuite Technologies -Services Resource Planning (SRP) Solution Tool helps you complete projects more quickly, decrease accounts receivable cycles, and generate invoices accurately and efficiently.",
+    url: "https://agsuitetech.com/service-resource-planning/",
+    siteName: "AGSuite",
+    locale: "en_US",
+    type: "article",
+    images: [
+      {
+        url: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+  },
+};

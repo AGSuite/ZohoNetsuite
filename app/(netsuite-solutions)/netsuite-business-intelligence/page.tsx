@@ -278,7 +278,7 @@ export default function NetSuiteBIPage() {
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <Link
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-blue-950 hover:border-white transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
                 >
                   Unlock Your Data
                   <motion.span
@@ -452,15 +452,15 @@ export default function NetSuiteBIPage() {
               className="flex flex-col justify-center space-y-6"
             >
               <div className="space-y-4">
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  Make Faster Decisions with NetSuite BI.
-                </h3>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+                  NetSuite BI for Real-Time Analytics and Data-Driven Growth
+                </h1>
               </div>
               <p className="text-lg text-gray-600 leading-relaxed">
-                NetSuite Business Intelligence provides comprehensive analytics and reporting capabilities built directly into your ERP — no separate BI tool required. Access real-time dashboards, advanced reports, and AI-powered forecasts from a single unified platform.
+                NetSuite Business Intelligence (BI) provides built-in analytics and reporting within your ERP, eliminating the need for third-party tools. With real-time dashboards and AI-powered insights, it turns raw data into clear, actionable information for better decision-making.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Eliminate data silos and manual spreadsheet consolidation. With NetSuite BI, your entire organization gains a single version of the truth, delivered instantly to every role through customizable, role-based dashboards and automated reporting.
+                By centralizing data across all departments, NetSuite BI ensures a single source of truth through customizable dashboards and automated reports. This helps improve visibility, uncover efficiencies, and drive consistent, data-driven growth.
               </p>
               <div className="pt-4">
                 <Link
@@ -580,9 +580,9 @@ export default function NetSuiteBIPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Why Leaders Choose NetSuite BI
-            </h3>
+            <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+              Key Business Benefits of NetSuite BI
+            </h2>
           </motion.div>
 
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">

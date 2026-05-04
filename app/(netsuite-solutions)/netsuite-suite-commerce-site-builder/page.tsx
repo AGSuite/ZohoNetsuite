@@ -104,7 +104,7 @@ export default function NetSuiteEcommercePage() {
                 Unified ecommerce connected directly to your ERP — deliver seamless B2B and B2C shopping experiences with real-time inventory, orders, and financials in one cloud platform.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl hover:scale-105">
+                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-blue-950 hover:border-white transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105">
                   Launch Your Store
                   <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }} className="flex items-center">
                     <ArrowRight className="w-4 h-4" />
@@ -189,14 +189,14 @@ export default function NetSuiteEcommercePage() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="flex flex-col justify-center space-y-6">
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
-                Sell More, Manage Less — Commerce Unified with ERP.
-              </h3>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
+                Scale Your Online Business with NetSuite E-Commerce
+              </h1>
               <p className="text-lg text-gray-600 leading-relaxed">
-                SuiteCommerce seamlessly connects your online store with NetSuite ERP — inventory, orders, customers, and financials are all in a single platform with no integrations, no double data entry, and no lag.
+                NetSuite E-Commerce is a unified platform that connects online sales with inventory management, CRM, order processing, and financials. It enables businesses to manage multiple web stores, deliver personalized shopping experiences, and streamline the entire order-to-cash process.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Unlike standalone ecommerce platforms, SuiteCommerce is native to NetSuite, meaning the moment an order is placed online it flows instantly into your fulfilment workflow, financials, and customer record.
+                With strong omnichannel capabilities, NetSuite E-Commerce integrates online, in-store, and call center operations into one system. It helps manage products, pricing, promotions, and customer interactions efficiently, improving scalability, customer satisfaction, and overall business growth.
               </p>
               <div className="pt-4">
                 <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -254,7 +254,7 @@ export default function NetSuiteEcommercePage() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3" style={{ background: "radial-gradient(circle, rgba(37,99,235,0.25) 0%, transparent 70%)" }} />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">Why Businesses Choose SuiteCommerce</h3>
+            <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">Key Business Benefits of NetSuite E-Commerce</h2>
           </motion.div>
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
             <div className="order-2 lg:order-1 relative min-h-[380px] lg:min-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
