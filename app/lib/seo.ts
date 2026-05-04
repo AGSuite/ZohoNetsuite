@@ -442,13 +442,15 @@ export const NETSUITE_PAGES: Record<
   "/netsuite-erp-solution": {
     title: "NetSuite ERP Solution Provider | ERP Software | ERP System | AGSuite Technologies",
     description:
-      "AGSuite Technologies is a trusted NetSuite ERP Solution Provider offering robust ERP Software, ERP Solutions, and ERP System services.",
+      "AGSuite Technologies is a trusted NetSuite ERP Solution Provider offering robust ERP Software, ERP Solutions, and ERP System services. We specialize in NetSuite ERP and NetSuite Financial Services to streamline your business operations.",
     keywords: [
       "NetSuite ERP",
       "ERP Software",
       "ERP System",
       "NetSuite Implementation",
+      "NetSuite ERP Solution Provider",
       "Cloud ERP Solutions",
+      "NetSuite Financial Services",
       "NetSuite India",
       "ERP Services",
     ],

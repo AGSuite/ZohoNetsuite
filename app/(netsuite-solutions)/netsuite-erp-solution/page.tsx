@@ -13,6 +13,7 @@ import { ERPCircularDesign } from '@/app/netsuite/components/ERPCircularDesign';
 import { FAQ } from '@/app/components/home/FAQ';
 import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
 import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
+import { erpPageJsonLd } from './metadata';
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -124,6 +125,11 @@ export default function NetSuiteERPPage() {
 
   return (
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
+      {/* JSON-LD Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(erpPageJsonLd) }}
+      />
       {/* Hero Section - Dark Gradient, Left Text + Right Image */}
       <section className="relative min-h-screen overflow-hidden flex flex-col bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d]">
         {/* Ambient glow effects */}
@@ -201,7 +207,7 @@ export default function NetSuiteERPPage() {
               >
                 <Link
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-blue-950  hover:border-white transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
                 >
                   Get Started
                   <motion.span
@@ -312,10 +318,10 @@ export default function NetSuiteERPPage() {
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="flex flex-col justify-center space-y-6">
               <div className="space-y-4">
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">Turn Complexity into Clarity with NetSuite ERP.</h3>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">NetSuite ERP: Unifying Core Processes for Strategic Business Growth</h1>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">NetSuite ERP is a comprehensive cloud-based business management solution that unifies all your core processes. This powerful ERP application operates on a single-source system with a flexible pay-per-use model.</p>
-              <p className="text-lg text-gray-600 leading-relaxed">NetSuite ERP offers real-time insights into your financials and operations, allowing for quicker, data-driven decisions. With its advanced financial services and tailored industry features, it meets compliance requirements and addresses complex financial needs—empowering both startups and established enterprises to enhance efficiency, agility, and achieve long-term success.</p>
+              <p className="text-lg text-gray-600 leading-relaxed">NetSuite ERP is a comprehensive, cloud-based platform that unifies core business processes into a single, streamlined system. As a leading NetSuite ERP Solution Provider, we help businesses leverage its scalable subscription model to gain real-time insights into financials and operations for faster, data-driven decisions.</p>
+              <p className="text-lg text-gray-600 leading-relaxed">With advanced financial capabilities and industry-specific features, NetSuite ERP simplifies compliance and manages complex global needs. It empowers both high-growth startups and established enterprises to improve efficiency, increase agility, and achieve long-term success.</p>
               <div className="pt-4">
                 <Link
                   href="#contact-form"
@@ -494,9 +500,9 @@ export default function NetSuiteERPPage() {
             className="text-center mb-16"
           >
 
-            <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Why Leaders Choose NetSuite ERP
-            </h3>
+            <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+              Key Business Benefits of NetSuite ERP
+            </h2>
           </motion.div>
 
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">

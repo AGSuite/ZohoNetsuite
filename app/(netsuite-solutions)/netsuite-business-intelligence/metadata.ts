@@ -10,5 +10,5 @@ export const metadata: Metadata = buildMetadata({
   keywords: page.keywords,
   category: page.category,
   publishedTime: page.publishedTime,
-  ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+  ogImage: "https://www.agsuitetech.com/images/og/og-netsuite.jpg",
 });
