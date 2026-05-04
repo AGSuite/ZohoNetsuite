@@ -1,17 +1,12 @@
+"use client";
+
 import IndustryTemplate, {
   IndustryPageData,
-} from "../_template/IndustryTemplate";
+} from "@/app/netsuite/industries/_template/IndustryTemplate";
 import { ShoppingCart, BarChart3, Package, Globe } from "lucide-react";
-import { buildMetadata, INDUSTRY_PAGES } from "../../lib/seo";
 
-const PAGE_PATH = "/netsuite/industries/retail";
-const pageMetadata = INDUSTRY_PAGES[PAGE_PATH];
 
-export const metadata = pageMetadata ? buildMetadata({
-  ...pageMetadata,
-  path: PAGE_PATH,
-  ogImage: "https://www.agsuitetech.com/images/og/og-netsuite.jpg",
-}) : {};
+
 
 
 const data: IndustryPageData = {
