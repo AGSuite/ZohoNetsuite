@@ -270,7 +270,7 @@ export default function ZohoSolutionTemplate({
                     className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3"
                   >
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #059669, #10b981)' }}>
-                      {heroCard2?.icon ? <heroCard2.icon className="w-5 h-5 text-white" /> : <CheckCircle2 className="w-5 h-5 text-white" /> }
+                      {heroCard2?.icon ? <heroCard2.icon className="w-5 h-5 text-white" /> : <CheckCircle2 className="w-5 h-5 text-white" />}
                     </div>
                     <div>
                       <p className="text-gray-900 text-sm font-bold leading-tight">
@@ -291,7 +291,7 @@ export default function ZohoSolutionTemplate({
                   className="absolute -top-5 -left-10 flex items-center gap-3.5 bg-white rounded-2xl px-4 py-3 shadow-2xl border border-gray-100"
                 >
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #0f4c81, #0ea5e9)' }}>
-                    {heroCard1?.icon ? <heroCard1.icon className="w-5 h-5 text-white" /> : <Landmark className="w-5 h-5 text-white" /> }
+                    {heroCard1?.icon ? <heroCard1.icon className="w-5 h-5 text-white" /> : <Landmark className="w-5 h-5 text-white" />}
                   </div>
                   <div>
                     <p className="text-gray-900 text-[13px] font-bold leading-tight whitespace-nowrap">
@@ -549,7 +549,7 @@ export default function ZohoSolutionTemplate({
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
             <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Why Teams Choose {title.split('—')[0]}
+              Key Business Benefits
             </h3>
           </motion.div>
 
@@ -615,11 +615,11 @@ export default function ZohoSolutionTemplate({
           </div>
         </div>
       </section>
- 
+
       <div id="services" className="scroll-mt-36">
         <ZohoServices />
       </div>
- 
+
       {/* ── Pricing Section ───────────────────────────────────────────────── */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
@@ -634,7 +634,7 @@ export default function ZohoSolutionTemplate({
               <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
                 <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
-                   How Much Does Zoho Cost?
+                  How Much Does Zoho Cost?
                 </h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
                   From rising startups to global enterprises, Zoho scales alongside your ambition. Your investment is tailored to your business size and requirements, staying flexible through discounts and volume incentives as you grow. Simply adjust your license and user count without infrastructure worries—a seamless, cloud-powered foundation that scales exactly as you do.
@@ -644,7 +644,7 @@ export default function ZohoSolutionTemplate({
                     href="#contact-form"
                     className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-yellow-400 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg"
                   >
-                     {pricingInfo.ctaText || "Contact Us Now"} <ArrowRight size={16} />
+                    {pricingInfo.ctaText || "Contact Us Now"} <ArrowRight size={16} />
                   </Link>
                 </div>
               </div>

@@ -94,6 +94,28 @@ export default function ZohoTrainingServicesPage() {
         "Greater system confidence",
       ],
     },
+    {
+      title: "Phased Learning Paths",
+      description: "We design training that scales with your team's comfort level, from basic navigation to advanced automation and AI reporting.",
+      image: "/images/lap/lap2.webp",
+      points: [
+        "Structured curriculum design",
+        "Skill-level assessments",
+        "Progressive complexity",
+        "Certification readiness",
+      ],
+    },
+    {
+      title: "Increased Data Integrity",
+      description: "Trained users enter cleaner data. Our sessions emphasize the importance of data quality for accurate business intelligence.",
+      image: "/images/people/threeteam.webp",
+      points: [
+        "Standardized entry protocols",
+        "Validation rule awareness",
+        "Database health focus",
+        "Reporting accuracy boost",
+      ],
+    },
   ];
 
   const faqs = [
@@ -104,6 +126,14 @@ export default function ZohoTrainingServicesPage() {
     {
       question: "Is remote training available?",
       answer: "Absolutely. We conduct live, interactive remote sessions via Zoho ShowTime or Microsoft Teams, including screenshare and collaborative exercises.",
+    },
+    {
+      question: "Do you offer on-site training sessions?",
+      answer: "Yes, we can arrange for our certified trainers to visit your office for intensive, hands-on workshops tailored to your specific physical workspace and team dynamics.",
+    },
+    {
+      question: "How long is a typical training session?",
+      answer: "Our modules range from 2-hour focused deep-dives to full-day workshops. We customize the duration based on your team's schedule and the complexity of the topic.",
     },
   ];
 

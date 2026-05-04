@@ -1,6 +1,9 @@
 "use client";
 
 import React from "react";
+
+
+
 import { 
   Package, 
   Truck, 
@@ -16,6 +19,8 @@ import {
   ShoppingCart
 } from "lucide-react";
 import ZohoSolutionTemplate from "@/app/zoho/components/solutions/ZohoSolutionTemplate";
+
+
 
 export default function ZohoInventoryPage() {
   const stats = [
@@ -198,3 +203,5 @@ export default function ZohoInventoryPage() {
     />
   );
 }
+
+

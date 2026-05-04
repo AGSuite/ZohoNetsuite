@@ -499,7 +499,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Why Leaders Choose Zoho for {data.industry}
+              Key Business Benefits
             </h2>
           </motion.div>
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
@@ -796,7 +796,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
               <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
                 <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
-                   How Much Does Zoho Cost?
+                  How Much Does Zoho Cost?
                 </h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
                   From rising startups to global enterprises, Zoho scales alongside your ambition. Your investment is tailored to your business size and requirements, staying flexible through discounts and volume incentives as you grow. Simply adjust your license and user count without infrastructure worries—a seamless, cloud-powered foundation that grows exactly as you do.
@@ -806,7 +806,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
                     href="#contact-form"
                     className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-yellow-400 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg"
                   >
-                     Talk to a Pricing Specialist <ArrowRight size={16} />
+                    Talk to a Pricing Specialist <ArrowRight size={16} />
                   </Link>
                 </div>
               </div>
@@ -830,13 +830,13 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
       {/* ══════ FAQ ══════ */}
       {data.faqs.length > 0 && (
         <section id="faq" className="scroll-mt-36">
-          <FAQ 
-            customFaqs={data.faqs.map(f => ({ 
-              q: f.question || f.q || "", 
-              a: f.answer || f.a || "" 
-            }))} 
-            variant="zoho" 
-            layout="sidebar" 
+          <FAQ
+            customFaqs={data.faqs.map(f => ({
+              q: f.question || f.q || "",
+              a: f.answer || f.a || ""
+            }))}
+            variant="zoho"
+            layout="sidebar"
           />
         </section>
       )}

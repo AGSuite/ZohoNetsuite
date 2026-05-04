@@ -94,6 +94,28 @@ export default function ZohoLowCodePage() {
         "Unified user permissions",
       ],
     },
+    {
+      title: "Enterprise Grade Security",
+      description: "Custom apps built on Zoho Creator inherit its robust security framework, including role-based access and data encryption.",
+      image: "/images/lap/lap2.webp",
+      points: [
+        "Role-based access control",
+        "Encrypted data at rest",
+        "Multi-factor authentication",
+        "Full audit trails",
+      ],
+    },
+    {
+      title: "Future-Proof Scalability",
+      description: "Start small with one process and scale your custom app to handle thousands of users and millions of records with no extra server setup.",
+      image: "/images/people/threeteam.webp",
+      points: [
+        "Elastic cloud hosting",
+        "Automated performance tuning",
+        "Limitless record storage",
+        "Global data center access",
+      ],
+    },
   ];
 
   const faqs = [
@@ -104,6 +126,14 @@ export default function ZohoLowCodePage() {
     {
       question: "Is low-code powerful enough for complex logic?",
       answer: "Absolutely. Using the Deluge scripting engine, we can build advanced business rules, complex workflows, and API integrations within the low-code framework.",
+    },
+    {
+      question: "Can we migrate our existing spreadsheet data into the new app?",
+      answer: "Yes, we handle the entire data migration process, including cleaning and mapping your legacy CSV or Excel data into your new Zoho Creator environment.",
+    },
+    {
+      question: "How do we handle app updates and maintenance?",
+      answer: "Since Zoho is a cloud platform, updates are pushed automatically. We also provide managed services to add new features as your business evolves.",
     },
   ];
 

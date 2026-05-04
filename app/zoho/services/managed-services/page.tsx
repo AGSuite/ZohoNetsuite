@@ -94,6 +94,28 @@ export default function ZohoManagedServicesPage() {
         "Best practice guidance",
       ],
     },
+    {
+      title: "Reduced IT Burden",
+      description: "Let our experts handle the day-to-day management of your Zoho environment, freeing up your internal IT team for other strategic initiatives.",
+      image: "/images/people/laptopgirl1.webp",
+      points: [
+        "Focus on core business",
+        "No internal Zoho expertise needed",
+        "Efficient resource allocation",
+        "Expert-led system governance",
+      ],
+    },
+    {
+      title: "Continuous Optimization",
+      description: "We don't just maintain; we improve. Our team regularly reviews your processes to suggest and implement new Zoho features that drive efficiency.",
+      image: "/images/lap/lap2.webp",
+      points: [
+        "New feature activation",
+        "Process efficiency audits",
+        "Performance tuning",
+        "User experience refinement",
+      ],
+    },
   ];
 
   const faqs = [
@@ -104,6 +126,14 @@ export default function ZohoManagedServicesPage() {
     {
       question: "How do we handle system outages?",
       answer: "We have a structured incident response plan with defined SLAs to ensure any system issues are addressed and resolved within hours.",
+    },
+    {
+      question: "Do you provide training as part of managed services?",
+      answer: "Yes, we include ongoing user guidance and short 'how-to' sessions to help your team leverage any new features or optimizations we implement.",
+    },
+    {
+      question: "Can we customize our support plan?",
+      answer: "Absolutely. We offer flexible tiers based on the number of users, the complexity of your Zoho stack, and the required response times for your business operations.",
     },
   ];
 

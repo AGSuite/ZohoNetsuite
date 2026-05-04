@@ -173,6 +173,28 @@ export default function ZohoDigitalTransformationPage() {
         "Automatic regular updates",
       ],
     },
+    {
+      title: "Optimized TCO",
+      description: "Reduce your Total Cost of Ownership by consolidating multiple expensive point solutions into a single Zoho One subscription.",
+      image: "/images/lap/lap2.webp",
+      points: [
+        "Eliminate redundant license costs",
+        "Lower IT maintenance overhead",
+        "Predictable annual cloud spend",
+        "Higher ROI on software investment",
+      ],
+    },
+    {
+      title: "Seamless Compliance",
+      description: "Ensure your digital processes meet global standards automatically with Zoho's built-in security and compliance framework.",
+      image: "/images/people/threeteam.webp",
+      points: [
+        "GDPR & HIPAA ready environments",
+        "Automated data retention policies",
+        "Role-based access & audit trails",
+        "End-to-end data encryption",
+      ],
+    },
   ];
 
   const faqs = [
@@ -187,6 +209,14 @@ export default function ZohoDigitalTransformationPage() {
     {
       question: "Will our data be secure during the transition?",
       answer: "Absolutely. We follow a strict zero-data-loss migration framework with full audit trails and validation tests at every step of the migration process into Zoho.",
+    },
+    {
+      question: "Do you provide post-implementation support?",
+      answer: "Yes, we offer structured hypercare for the first 60 days, followed by managed services and SLA-backed support to ensure your long-term success.",
+    },
+    {
+      question: "Can Zoho integrate with our existing industry-specific tools?",
+      answer: "Yes, we use Zoho Flow and custom API integrations to connect Zoho with your existing niche software, ensuring a unified data flow.",
     },
   ];
 

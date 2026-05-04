@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { buildMetadata, ZOHO_PAGES } from "@/app/lib/seo";
 
 const page = ZOHO_PAGES["/zoho-erp"];

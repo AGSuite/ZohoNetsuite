@@ -1,9 +1,30 @@
-"use client";
 import React from "react";
+import { buildMetadata, INDUSTRY_PAGES } from "../../lib/seo";
+
+const PAGE_PATH = "/zoho/industries/advertising-marketing";
+const pageMetadata = INDUSTRY_PAGES[PAGE_PATH];
+
+export const metadata = pageMetadata ? buildMetadata({
+  ...pageMetadata,
+  path: PAGE_PATH,
+  ogImage: "https://www.agsuitetech.com/images/og/og-zoho.jpg",
+}) : {};
+
 import ZohoIndustryTemplate, {
   IndustryPageData,
 } from "../../components/industries/ZohoIndustryTemplate";
 import { Megaphone, BarChart3, Users, TrendingUp } from "lucide-react";
+import { buildMetadata, INDUSTRY_PAGES } from "../../lib/seo";
+
+const PAGE_PATH = "/zoho/industries/advertising-marketing";
+const pageMetadata = INDUSTRY_PAGES[PAGE_PATH];
+
+export const metadata = pageMetadata ? buildMetadata({
+  ...pageMetadata,
+  path: PAGE_PATH,
+  ogImage: "https://www.agsuitetech.com/images/og/og-zoho.jpg",
+}) : {};
+
 
 const data: IndustryPageData = {
   industry: "Advertising & Marketing",
@@ -144,3 +165,4 @@ const data: IndustryPageData = {
 export default function ZohoAdvertisingMarketingPage() {
   return <ZohoIndustryTemplate data={data} />;
 }
+

@@ -307,7 +307,7 @@ export default function ZohoServiceTemplate({
             {[
               { label: "Overview", href: "#overview" },
               { label: "Our Services", href: "#services-grid" },
-              { label: "Why AGSuite", href: "#benefits" },
+              { label: "Benefits", href: "#benefits" },
               { label: "FAQ", href: "#faq" },
               { label: "Contact", href: "#contact-form" },
             ].map((link) => (
@@ -525,7 +525,7 @@ export default function ZohoServiceTemplate({
             className="text-center mb-16"
           >
             <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              The AGSuite Advantage for Zoho
+              Key Business Benefits
             </h3>
           </motion.div>
 

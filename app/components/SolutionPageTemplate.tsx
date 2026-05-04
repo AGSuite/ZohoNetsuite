@@ -491,7 +491,7 @@ export default function SolutionPageTemplate({
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <span className={`bg-${brandColor}-50 text-${brandColor}-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest`}>{benefits.subtitle}</span>
-              <h3 className="text-4xl md:text-5xl font-black text-gray-900 mt-6">{benefits.title}</h3>
+              <h3 className="text-4xl md:text-5xl font-black text-gray-900 mt-6">Key Business Benefits</h3>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-16 items-stretch">

@@ -1,8 +1,18 @@
-"use client";
 import IndustryTemplate, {
   IndustryPageData,
 } from "../_template/IndustryTemplate";
 import { Users, BarChart3, TrendingUp, Globe } from "lucide-react";
+import { buildMetadata, INDUSTRY_PAGES } from "../../lib/seo";
+
+const PAGE_PATH = "/netsuite/industries/advertising-marketing";
+const pageMetadata = INDUSTRY_PAGES[PAGE_PATH];
+
+export const metadata = pageMetadata ? buildMetadata({
+  ...pageMetadata,
+  path: PAGE_PATH,
+  ogImage: "https://www.agsuitetech.com/images/og/og-netsuite.jpg",
+}) : {};
+
 
 const data: IndustryPageData = {
   industry: "Advertising & Marketing",
@@ -209,3 +219,4 @@ const data: IndustryPageData = {
 export default function AdvertisingMarketingPage() {
   return <IndustryTemplate data={data} />;
 }
+

@@ -1,6 +1,9 @@
 "use client";
 
 import React from "react";
+
+
+
 import { 
   Users, 
   Heart, 
@@ -16,6 +19,8 @@ import {
   Phone
 } from "lucide-react";
 import ZohoSolutionTemplate from "@/app/zoho/components/solutions/ZohoSolutionTemplate";
+
+
 
 export default function ZohoPeoplePage() {
   const stats = [
@@ -199,3 +204,5 @@ export default function ZohoPeoplePage() {
     />
   );
 }
+
+

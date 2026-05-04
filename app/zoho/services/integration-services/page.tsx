@@ -94,6 +94,28 @@ export default function ZohoIntegrationServicesPage() {
         "Phased rollout options",
       ],
     },
+    {
+      title: "Automated Error Handling",
+      description: "Our integrations come with built-in retry mechanisms and alert systems to ensure data consistency even during downtime.",
+      image: "/images/people/threeteam.webp",
+      points: [
+        "Proactive failure alerts",
+        "Automatic retry logic",
+        "Detailed transaction logs",
+        "Conflict resolution tools",
+      ],
+    },
+    {
+      title: "Enhanced Compliance",
+      description: "Maintain a clear audit trail of every data transfer, ensuring your business stays compliant with data governance standards.",
+      image: "/images/lap/lap2.webp",
+      points: [
+        "Secure OAuth2 authentication",
+        "Encrypted data transmission",
+        "Detailed activity monitoring",
+        "GDPR-aligned data flow",
+      ],
+    },
   ];
 
   const faqs = [
@@ -104,6 +126,14 @@ export default function ZohoIntegrationServicesPage() {
     {
       question: "How do you ensure data security during the sync?",
       answer: "We use enterprise-grade encryption and secure authentication methods like OAuth2 to ensure your sensitive data is protected mid-transfer.",
+    },
+    {
+      question: "Is there a limit to how many apps can be connected?",
+      answer: "No, we can connect Zoho to as many third-party or internal applications as your business process requires using a hub-and-spoke integration model.",
+    },
+    {
+      question: "How do we monitor the health of these integrations?",
+      answer: "We provide custom dashboards and automated email/Slack notifications that alert your IT team immediately if any synchronization issue occurs.",
     },
   ];
 

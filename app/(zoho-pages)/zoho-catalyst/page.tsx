@@ -1,6 +1,9 @@
 "use client";
 
 import React from "react";
+
+
+
 import { 
   Cpu, 
   Code2, 
@@ -17,6 +20,8 @@ import {
   Smartphone
 } from "lucide-react";
 import ZohoSolutionTemplate from "@/app/zoho/components/solutions/ZohoSolutionTemplate";
+
+
 
 export default function ZohoCatalystPage() {
   const stats = [
@@ -199,5 +204,7 @@ export default function ZohoCatalystPage() {
     />
   );
 }
+
+
 
 
