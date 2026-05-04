@@ -832,3 +832,216 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-05-10T00:00:00Z",
   },
 };
+
+// ─── Industry page metadata map ───────────────────────────────────────────────
+export const INDUSTRY_PAGES: Record<
+  string,
+  { title: string; description: string; keywords: string[]; category: string; publishedTime: string }
+> = {
+  "/zoho/industries/advertising-marketing": {
+    "title": "Manage Campaigns & Margins Effectively with Zoho | AGSuite",
+    "description": "Integrate your project management and financials to gain real-time visibility into campaign profitability. Zoho helps agencies optimize resource allocation and ",
+    "keywords": [
+      "Advertising & Marketing",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/zoho/industries/it-services": {
+    "title": "Maximize Billable Hours & Delivery with Zoho | AGSuite",
+    "description": "Streamline project accounting, automate resource allocation, and gain real-time visibility with the unified Zoho cloud suite built for modern IT service provide",
+    "keywords": [
+      "IT Services",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/zoho/industries/manufacturing": {
+    "title": "Build the Future of Your Factory Floor with Zoho | AGSuite",
+    "description": "Streamline production cycles, tighten supply chains, and gain real-time visibility with the unified Zoho cloud suite built for modern manufacturers.",
+    "keywords": [
+      "Manufacturing",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/zoho/industries/media": {
+    "title": "Optimize Ad Sales & Subscriptions with Zoho | AGSuite",
+    "description": "Manage the entire content lifecycle—from ad sales to subscriber management—on a single cloud platform. Drive digital transformation for your media house.",
+    "keywords": [
+      "Media & Publishing",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/zoho/industries/retail": {
+    "title": "Deliver Perfect Omnichannel Experiences with Zoho | AGSuite",
+    "description": "Connect your online store, physical POS, and warehouse back-office on a single cloud platform. Deliver unified, personalized customer journeys across every chan",
+    "keywords": [
+      "Retail & E-commerce",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/zoho/industries/software": {
+    "title": "Accelerate Your SaaS Growth with Zoho | AGSuite",
+    "description": "Automate complex subscription billing, revenue recognition, and global financial consolidations with the unified Zoho cloud suite tailored for high-growth tech ",
+    "keywords": [
+      "Software & Technology",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/zoho/industries/transport": {
+    "title": "Drive Operational Excellence with Zoho | AGSuite",
+    "description": "Gain complete visibility across your global shipments, fleet management, and logistics financials with the unified Zoho cloud suite tailored for the transportat",
+    "keywords": [
+      "Transportation & Logistics",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/zoho/industries/wholesale": {
+    "title": "Maximize Supply Chain Efficiency with Zoho | AGSuite",
+    "description": "Run your entire distribution business on a unified cloud suite. Automate procurement, optimize warehouse operations, and improve order fulfillment to scale glob",
+    "keywords": [
+      "Wholesale Distribution",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/netsuite/industries/advertising-marketing": {
+    "title": "NetSuite for Advertising & Marketing Agencies | AGSuite",
+    "description": "Run a more profitable agency with a cloud ERP purpose-built for project-based billing, resource management, and client financial visibility. NetSuite empowers a",
+    "keywords": [
+      "Advertising & Marketing",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/netsuite/industries/it-services": {
+    "title": "Scale Your IT Services Business Without Limits | AGSuite",
+    "description": "Optimize billable utilization, accelerate project delivery, and automate complex billing with the #1 cloud ERP built for IT and consulting firms.",
+    "keywords": [
+      "IT & Professional Services",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/netsuite/industries/manufacturing": {
+    "title": "Build the Future of Your Factory Floor with NetSuite | AGSuite",
+    "description": "Streamline discrete manufacturing, tighten supply chains, and gain real-time visibility with the #1 cloud ERP built for modern manufacturers.",
+    "keywords": [
+      "Manufacturing",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/netsuite/industries/media": {
+    "title": "NetSuite for Media & Publishing Companies | AGSuite",
+    "description": "Manage subscriptions, advertising revenue, content licensing, and royalties on a single cloud ERP. NetSuite gives media and publishing companies the financial a",
+    "keywords": [
+      "Media & Publishing",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/netsuite/industries/retail": {
+    "title": "NetSuite for Retail & E-Commerce | AGSuite",
+    "description": "Power your omnichannel retail operation from a single cloud platform. NetSuite connects your online store, physical locations, inventory, and financials — givin",
+    "keywords": [
+      "Retail & E-Commerce",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/netsuite/industries/software": {
+    "title": "NetSuite for Software & Technology Companies | AGSuite",
+    "description": "Scale your SaaS, software, or tech company with a cloud ERP built for subscription revenue, ASC 606 compliance, and rapid growth. NetSuite is the platform of ch",
+    "keywords": [
+      "Software & Technology",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/netsuite/industries/transport": {
+    "title": "NetSuite for Transportation & Logistics | AGSuite",
+    "description": "Gain end-to-end visibility across your logistics network. NetSuite connects fleet management, freight billing, warehouse operations, and financials in one cloud",
+    "keywords": [
+      "Transportation & Logistics",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/netsuite/industries/wholesale": {
+    "title": "Expand Your Distribution Enterprise Without Limits | AGSuite",
+    "description": "Eliminate supply chain bottlenecks and accelerate order fulfillment with the world’s #1 cloud ERP tailored for wholesale distributors.",
+    "keywords": [
+      "Wholesale Distribution",
+      "ERP Solutions",
+      "Cloud Business Software",
+      "AGSuite Industries"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/netsuite/industries": {
+    "title": "Cloud ERP Industry Solutions | NetSuite | AGSuite",
+    "description": "Explore industry-specific NetSuite cloud ERP solutions for Manufacturing, Retail, Software, Wholesale, and more. AGSuite certified NetSuite partner.",
+    "keywords": ["NetSuite Industries", "ERP Solutions", "Industry Best Practices", "Cloud ERP"],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/zoho/industries": {
+    "title": "Zoho Industry Solutions | CRM & ERP for Every Business | AGSuite",
+    "description": "Discover Zoho cloud solutions tailored for your industry. Advertising, Media, Retail, Manufacturing, and more. Zoho Advanced Partner implementation.",
+    "keywords": ["Zoho Industries", "CRM Solutions", "Industry Automation", "Zoho Partner"],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  }
+};
