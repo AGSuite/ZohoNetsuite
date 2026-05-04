@@ -13,7 +13,6 @@ import { ERPCircularDesign } from '@/app/netsuite/components/ERPCircularDesign';
 import { FAQ } from '@/app/components/home/FAQ';
 import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
 import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
-import { erpPageJsonLd } from './metadata';
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -125,11 +124,6 @@ export default function NetSuiteERPPage() {
 
   return (
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
-      {/* JSON-LD Structured Data for SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(erpPageJsonLd) }}
-      />
       {/* Hero Section - Dark Gradient, Left Text + Right Image */}
       <section className="relative min-h-screen overflow-hidden flex flex-col bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d]">
         {/* Ambient glow effects */}
