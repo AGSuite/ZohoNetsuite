@@ -178,7 +178,7 @@ export default function GlobalBusinessPage() {
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <a
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-blue-950 hover:border-white transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
                 >
                   Go Global Now
                   <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }} className="flex items-center">
@@ -338,9 +338,9 @@ export default function GlobalBusinessPage() {
               viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }}
               className="flex flex-col justify-center space-y-6"
             >
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                Run a Global Business as One Unified Company.
-              </h3>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+                NetSuite OneWorld for Global Business and Multi-Entity Management
+              </h1>
               <p className="text-lg text-gray-600 leading-relaxed">
                 NetSuite Global Business Management — powered by NetSuite OneWorld — is the only cloud ERP built from the ground up for multinational organisations. It unifies multi-subsidiary management, 190+ currencies, 100+ tax jurisdictions, and global consolidation in a single real-time platform.
               </p>
@@ -438,9 +438,9 @@ export default function GlobalBusinessPage() {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Why Global Companies Choose NetSuite
-            </h3>
+            <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+              Key Business Benefits of NetSuite Global Business
+            </h2>
           </motion.div>
 
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">

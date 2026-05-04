@@ -344,7 +344,7 @@ export default function NetSuiteCRMPage() {
               >
                 <Link
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-blue-950 hover:border-white transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
                 >
                   Get Started
                   <motion.span
@@ -471,16 +471,15 @@ export default function NetSuiteCRMPage() {
               className="flex flex-col justify-center space-y-6"
             >
               <div className="space-y-4">
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  Turn Customer Relationships into Revenue — at Scale.
-                </h3>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+                  NetSuite CRM for Unified Customer Lifecycle and Business Growth
+                </h1>
               </div>
               <p className="text-lg text-gray-600 leading-relaxed">
-                NetSuite CRM is the only customer relationship management platform built natively on a unified ERP architecture — providing sales, marketing, and service teams with a single source of truth that spans from initial lead to final invoice without any integration gaps.
+                NetSuite CRM is a customer relationship management platform built natively on a unified ERP architecture. It connects sales, marketing, and service teams, creating a single source of truth across the entire customer lifecycle—from lead generation to final invoicing—without integration gaps.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                By consolidating customer history, order details, and support cases into one real-time dashboard, organizations can make faster decisions, forecast more accurately, and deliver a seamless experience that drives long-term retention and growth.
-              </p>
+                As a trusted NetSuite CRM solution provider, we help businesses move beyond basic contact management to meaningful customer engagement. By centralizing customer data, real-time orders, and support insights in one dashboard, you can improve forecasting, enhance customer experiences, and drive sustainable, data-driven growth.              </p>
               <div className="pt-4">
                 <Link
                   href="#contact-form"
@@ -674,9 +673,9 @@ export default function NetSuiteCRMPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-cyan-300">
-              Why Revenue Teams Choose NetSuite CRM
-            </h3>
+            <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-cyan-300">
+              Key Business Benefits of NetSuite CRM
+            </h2>
           </motion.div>
 
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">

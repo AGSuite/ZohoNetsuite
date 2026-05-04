@@ -177,7 +177,7 @@ export default function AccountingSoftwarePage() {
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <a
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-blue-950 hover:border-white transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
                 >
                   Get Started
                   <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }} className="flex items-center">
@@ -339,14 +339,14 @@ export default function AccountingSoftwarePage() {
               viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }}
               className="flex flex-col justify-center space-y-6"
             >
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                Close the Books Faster with NetSuite Accounting.
-              </h3>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+                NetSuite Cloud Accounting Services for Unified Financial Growth
+              </h1>
               <p className="text-lg text-gray-600 leading-relaxed">
-                NetSuite Cloud Accounting is a comprehensive financial management platform that unifies general ledger, AR, AP, fixed assets, tax, and reporting in a single cloud system — eliminating spreadsheets and disconnected tools.
+                NetSuite Cloud Accounting is a comprehensive financial management platform that unifies your general ledger, AR, AP, fixed assets, and tax into a single cloud-based system—eliminating the chaos of disconnected spreadsheets. When supported by expert NetSuite Accounting Services and trusted implementation partners, businesses can achieve a seamless financial transformation tailored to their unique scale.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                With real-time visibility and a single source of truth, finance teams can close faster, stay compliant globally, and deliver the strategic insight leadership needs to grow with confidence.
+                With real-time visibility and a single source of truth, finance teams can accelerate the close process, ensure global compliance, and deliver the data-driven insights leadership needs. By leveraging professional guidance to optimize system performance, organizations can enhance scalability and confidently support long-term growth.
               </p>
               <div className="pt-4">
                 <a
@@ -439,9 +439,9 @@ export default function AccountingSoftwarePage() {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Why Finance Teams Choose NetSuite Accounting
-            </h3>
+            <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+              Key Business Benefits of NetSuite Accounting
+            </h2>
           </motion.div>
 
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">

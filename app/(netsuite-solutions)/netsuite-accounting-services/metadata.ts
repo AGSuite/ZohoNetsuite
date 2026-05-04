@@ -1,14 +1,37 @@
-﻿import type { Metadata } from "next";
-import { buildMetadata, NETSUITE_PAGES } from "@/app/lib/seo";
+import type { Metadata } from "next";
 
-const page = NETSUITE_PAGES["/netsuite-accounting-services"];
+export const metadata: Metadata = {
+  title: "Netsuite Accounting Services | netsuite implementation partners| AGSuite Technologies",
 
-export const metadata: Metadata = buildMetadata({
-  title: page.title,
-  description: page.description,
-  path: "/netsuite-accounting-services",
-  keywords: page.keywords,
-  category: page.category,
-  publishedTime: page.publishedTime,
-  ogImage: "https://www.agsuitetech.com/images/og/og-netsuite.jpg",
-});
+  description:
+    "AGSuite is a leading Netsuite accounting service providers. NetSuite Financial management Planning is a cloud-based planning application that includes budgeting, forecasting, financial reporting, and analysis.",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical: "https://agsuitetech.com/netsuite-accounting-services/",
+  },
+
+  openGraph: {
+    title:
+      "Netsuite Accounting Services | netsuite implementation partners| AGSuite Technologies",
+    description:
+      "AGSuite is a leading Netsuite accounting service providers. NetSuite Financial management Planning is a cloud-based planning application that includes budgeting, forecasting, financial reporting, and analysis.",
+    url: "https://agsuitetech.com/netsuite-accounting-services/",
+    siteName: "AGSuite",
+    locale: "en_US",
+    type: "article",
+    images: [
+      {
+        url: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+  },
+};

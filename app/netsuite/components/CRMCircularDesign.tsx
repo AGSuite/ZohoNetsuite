@@ -68,8 +68,8 @@ export const CRMCircularDesign = () => {
                 {CRM_MODULES.map((mod, i) => {
                     const angleDeg = (360 / total) * i - 90;
                     const rad = (angleDeg * Math.PI) / 180;
-                    const px = ORBIT_R * Math.cos(rad);
-                    const py = ORBIT_R * Math.sin(rad);
+                    const px = Number((ORBIT_R * Math.cos(rad)).toFixed(3));
+                    const py = Number((ORBIT_R * Math.sin(rad)).toFixed(3));
                     const containerW = 96;
                     const Icon = mod.icon;
 
@@ -140,10 +140,10 @@ export const CRMCircularDesign = () => {
                     {CRM_MODULES.map((_, i) => {
                         const angleDeg = (360 / total) * i - 90;
                         const rad = (angleDeg * Math.PI) / 180;
-                        const x1 = CX + (CTR_R + 20) * Math.cos(rad);
-                        const y1 = CY + (CTR_R + 20) * Math.sin(rad);
-                        const x2 = CX + (ORBIT_R - ICON_D / 2 - 18) * Math.cos(rad);
-                        const y2 = CY + (ORBIT_R - ICON_D / 2 - 18) * Math.sin(rad);
+                        const x1 = Number((CX + (CTR_R + 20) * Math.cos(rad)).toFixed(3));
+                        const y1 = Number((CY + (CTR_R + 20) * Math.sin(rad)).toFixed(3));
+                        const x2 = Number((CX + (ORBIT_R - ICON_D / 2 - 18) * Math.cos(rad)).toFixed(3));
+                        const y2 = Number((CY + (ORBIT_R - ICON_D / 2 - 18) * Math.sin(rad)).toFixed(3));
                         return (
                             <linearGradient
                                 key={`cg-${i}`}
@@ -175,10 +175,10 @@ export const CRMCircularDesign = () => {
                 {CRM_MODULES.map((_, i) => {
                     const angleDeg = (360 / total) * i - 90;
                     const rad = (angleDeg * Math.PI) / 180;
-                    const x1 = CX + (CTR_R + 20) * Math.cos(rad);
-                    const y1 = CY + (CTR_R + 20) * Math.sin(rad);
-                    const x2 = CX + (ORBIT_R - ICON_D / 2 - 18) * Math.cos(rad);
-                    const y2 = CY + (ORBIT_R - ICON_D / 2 - 18) * Math.sin(rad);
+                    const x1 = Number((CX + (CTR_R + 20) * Math.cos(rad)).toFixed(3));
+                    const y1 = Number((CY + (CTR_R + 20) * Math.sin(rad)).toFixed(3));
+                    const x2 = Number((CX + (ORBIT_R - ICON_D / 2 - 18) * Math.cos(rad)).toFixed(3));
+                    const y2 = Number((CY + (ORBIT_R - ICON_D / 2 - 18) * Math.sin(rad)).toFixed(3));
                     return (
                         <line
                             key={i}

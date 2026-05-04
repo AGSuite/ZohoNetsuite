@@ -1,14 +1,37 @@
-﻿import type { Metadata } from "next";
-import { buildMetadata, NETSUITE_PAGES } from "@/app/lib/seo";
+import type { Metadata } from "next";
 
-const page = NETSUITE_PAGES["/global-business-management"];
+export const metadata: Metadata = {
+  title: "NetSuite Global Business Management Software - AGSuite Technologies",
 
-export const metadata: Metadata = buildMetadata({
-  title: page.title,
-  description: page.description,
-  path: "/global-business-management",
-  keywords: page.keywords,
-  category: page.category,
-  publishedTime: page.publishedTime,
-  ogImage: "https://www.agsuitetech.com/images/og/og-netsuite.jpg",
-});
+  description:
+    "Discover NetSuite global business management software at AGSuite Technologies. Expert solutions for your global business management software needs.",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical: "https://agsuitetech.com/global-business-management/",
+  },
+
+  openGraph: {
+    title:
+      "NetSuite Global Business Management Software - AGSuite Technologies",
+    description:
+      "Discover NetSuite global business management software at AGSuite Technologies. Expert solutions for your global business management software needs.",
+    url: "https://agsuitetech.com/global-business-management/",
+    siteName: "AGSuite",
+    locale: "en_US",
+    type: "article",
+    images: [
+      {
+        url: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+  },
+};
