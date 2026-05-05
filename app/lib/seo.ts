@@ -936,6 +936,34 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
+  "/zoho/industries/telecom": {
+    "title": "Zoho for Telecom Industry — Billing, CRM & Analytics | AGSuite",
+    "description": "Modernize your telecom operations with Zoho's unified cloud suite. Automate subscription billing, CRM integration, and real-time analytics. AGSuite Zoho Advanced Partner.",
+    "keywords": [
+      "Zoho Telecom",
+      "Telecom CRM Zoho",
+      "Subscription Billing Zoho",
+      "Telecom Analytics",
+      "Zoho OSS BSS Integration",
+      "AGSuite Zoho Telecom"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/zoho/industries/financial-services": {
+    "title": "Zoho for Financial Services — Compliance, Risk & Reporting | AGSuite",
+    "description": "Streamline financial operations with Zoho's integrated suite. Compliance automation, real-time analytics, multi-entity management, and enterprise-grade security.",
+    "keywords": [
+      "Zoho Financial Services",
+      "Financial Compliance Zoho",
+      "Zoho Books Finance",
+      "Multi-Entity Zoho",
+      "Financial Analytics Zoho",
+      "AGSuite Zoho Finance"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
   "/netsuite/industries/advertising-marketing": {
     "title": "NetSuite for Advertising & Marketing Agencies | AGSuite",
     "description": "Run a more profitable agency with a cloud ERP purpose-built for project-based billing, resource management, and client financial visibility. NetSuite empowers a",

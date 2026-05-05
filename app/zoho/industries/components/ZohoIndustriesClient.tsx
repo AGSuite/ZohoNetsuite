@@ -211,6 +211,40 @@ export default function ZohoIndustriesClient() {
       icon: Map,
       tag: "Logistics",
     },
+    {
+      category: "Telecom",
+      title: "Telecom Industry",
+      subtitle: "Modernize Billing & Streamline Operations",
+      description:
+        "Manage subscription billing, CRM, and multi-entity operations with Zoho's unified cloud suite — purpose-built for high-volume telecom businesses. Zoho Subscriptions, CRM, and Analytics work together to unify your telecom workflows.",
+      highlights: [
+        "Subscription & usage-based billing",
+        "Zoho CRM + Zoho Subscriptions",
+        "OSS/BSS API integrations",
+        "Real-time Zoho Analytics dashboards",
+      ],
+      link: "/zoho/industries/telecom",
+      image: "/images/industries/telecom-industry.webp",
+      icon: Zap,
+      tag: "Telecom",
+    },
+    {
+      category: "Financial Services",
+      title: "Financial Services",
+      subtitle: "Compliance, Risk & Real-Time Insights",
+      description:
+        "Streamline financial operations, ensure regulatory compliance, and gain real-time visibility across your financial institution with Zoho Books, Zoho Finance Plus, and Zoho Analytics — all in one unified cloud suite.",
+      highlights: [
+        "Regulatory compliance (GST/TDS/IFRS)",
+        "Zoho Finance Plus multi-entity",
+        "Risk management & audit controls",
+        "Banking & FinTech integrations",
+      ],
+      link: "/zoho/industries/financial-services",
+      image: "/images/industries/financial-services-industry.webp",
+      icon: DollarSign,
+      tag: "Finance",
+    },
   ];
 
   const services = [
