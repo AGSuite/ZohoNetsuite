@@ -290,7 +290,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
               >
                 <Link
                   href="#contact-form"
-                  className="inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl hover:scale-105"
+                  className="inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:scale-105"
                 >
                   Get a Free Demo
                   <motion.span
@@ -302,7 +302,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                 </Link>
                 <Link
                   href="#challenges"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-medium rounded-full border border-white/15 text-white/70 hover:text-white hover:border-white/40 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 shadow-xl hover:scale-105"
                 >
                   View Challenges
                 </Link>
@@ -467,7 +467,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="space-y-6 flex flex-col justify-center py-6 lg:py-8"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 mb-6">
                 {data.introTitle}
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
@@ -530,8 +530,8 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
             <span className="bg-blue-600/10 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
               Challenges &amp; Solutions
             </span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-6 mb-4">
-              Overcome {data.industry} Challenges
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-gray-900 mt-6 mb-4">
+              Overcome {data.industry} Industry Challenges
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               See how NetSuite turns your biggest operational hurdles into
@@ -734,7 +734,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Why Leaders Choose NetSuite for {data.industry}
+              Why Leaders Choose NetSuite for {data.industry} Industry
             </h2>
           </motion.div>
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
@@ -837,8 +837,8 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
             <span className="bg-blue-600/10 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
               Our Services
             </span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-6 mb-4">
-              NetSuite Services for {data.industry}
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-gray-900 mt-6 mb-4">
+              NetSuite Services for {data.industry} Industry
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               End-to-end services to deploy, optimise, and scale your NetSuite
@@ -919,7 +919,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
               {/* LEFT — text */}
               <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
                 <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
+                <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-white mb-5">
                   How Much Does NetSuite for {data.industry} Cost?
                 </h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">

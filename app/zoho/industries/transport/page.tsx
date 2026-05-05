@@ -26,9 +26,9 @@ const data: IndustryPageData = {
   introImage: "/images/lap/lap2.webp",
   introTitle: "Purpose-Built Zoho Tools for Logistics",
   introDescription:
-    "Transportation and logistics companies face constant pressure—managing complex dispatch schedules, tracking fleet maintenance, and ensuring accurate billing across global borders. Zoho's ecosystem provides a single tool that connects your operations (Zoho Creator) with sales (Zoho CRM) and finance (Zoho Books).",
+    "Transportation and logistics industries face constant pressure—managing complex dispatch schedules, tracking fleet maintenance, and ensuring accurate billing across global borders. Zoho's ecosystem provides a single tool that connects your operations (Zoho Creator) with sales (Zoho CRM) and finance (Zoho Books).",
   introDescription2:
-    "With AGSuite's logistics implementation, brands get real-time visibility into route-wise profitability and fleet utilization. We help logistics companies build scalable, future-ready business structures.",
+    "With AGSuite's logistics implementation, brands get real-time visibility into route-wise profitability and fleet utilization. We help logistics industries build scalable, future-ready business structures.",
   stats: [
     { icon: Map, value: 350, suffix: "+", label: "Logistics firms served" },
     { icon: BarChart3, value: 30, suffix: "%", label: "Avg Cost Reduction" },
@@ -83,7 +83,7 @@ const data: IndustryPageData = {
     {
       title: "Complexity in Multi-Border Ops",
       solution:
-        "Zoho Books supports multi-currency and global taxation compliance, perfect for logistics companies with international routes.",
+        "Zoho Books supports multi-currency and global taxation compliance, perfect for logistics industries with international routes.",
       image: "/images/people/global.webp",
     },
   ],

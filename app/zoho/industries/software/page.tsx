@@ -17,7 +17,7 @@ const data: IndustryPageData = {
   industry: "Software & Technology",
   heroTitle: "Accelerate Your SaaS Growth with Zoho",
   heroDescription:
-    "Automate complex subscription billing, revenue recognition, and global financial consolidations with the unified Zoho cloud suite tailored for high-growth tech companies.",
+    "Automate complex subscription billing, revenue recognition, and global financial consolidations with the unified Zoho cloud suite tailored for high-growth tech industries.",
   heroImage: "/images/people/fourteam.webp",
   heroCardTitle: "Subscription Management",
   heroCardSub: "Billing · Revenue Recognition · SaaS Metrics",
@@ -26,9 +26,9 @@ const data: IndustryPageData = {
   introImage: "/images/lap/lap2.webp",
   introTitle: "Purpose-Built Zoho Tools for SaaS & Tech",
   introDescription:
-    "Software companies face unique challenges — from managing complex recurring billing cycles to tracking real-time SaaS metrics like MRR and churn. Zoho's cloud ecosystem provides a single, unified system that connects your front-office sales with back-office finance.",
+    "Software industries face unique challenges — from managing complex recurring billing cycles to tracking real-time SaaS metrics like MRR and churn. Zoho's cloud ecosystem provides a single, unified system that connects your front-office sales with back-office finance.",
   introDescription2:
-    "With AGSuite's certified Zoho implementation, technology firms get a system that scales as they grow from startup to enterprise. Our team has delivered Zoho for software, SaaS, and platform companies globally.",
+    "With AGSuite's certified Zoho implementation, technology firms get a system that scales as they grow from startup to enterprise. Our team has delivered Zoho for software, SaaS, and platform industries globally.",
   stats: [
     { icon: Code, value: 500, suffix: "+", label: "Tech Firms Served" },
     { icon: BarChart3, value: 30, suffix: "%", label: "SaaS ROI Improvement" },
@@ -77,13 +77,13 @@ const data: IndustryPageData = {
     {
       title: "Scaling with Growth",
       solution:
-        "Zoho's cloud architecture scales effortlessly. Add users, modules, and subsidiaries as your company expands globally.",
+        "Zoho's cloud architecture scales effortlessly. Add users, modules, and subsidiaries as your industry expands globally.",
       image: "/images/people/fourteam.webp",
     },
     {
       title: "Global Financial Consolidation",
       solution:
-        "Zoho Books supports multi-currency, multi-entity accounting and automated consolidations for companies with global footprints.",
+        "Zoho Books supports multi-currency, multi-entity accounting and automated consolidations for industries with global footprints.",
       image: "/images/people/global.webp",
     },
   ],
@@ -103,7 +103,7 @@ const data: IndustryPageData = {
     {
       name: "Professional",
       price: "₹1,20,000",
-      description: "Full suite for growing SaaS companies.",
+      description: "Full suite for growing SaaS industries.",
       features: [
         "Zoho CRM (Enterprise)",
         "Advanced Subscription Billing",
@@ -130,7 +130,7 @@ const data: IndustryPageData = {
   faqs: [
     {
       question: "Does Zoho handle SaaS multi-currency billing?",
-      answer: "Yes. Zoho Subscriptions and Zoho Books support multi-currency billing and automated exchange rate updates — essential for global SaaS companies.",
+      answer: "Yes. Zoho Subscriptions and Zoho Books support multi-currency billing and automated exchange rate updates — essential for global SaaS industries.",
     },
     {
       question: "Can we integrate Zoho with our software portal?",
@@ -138,7 +138,7 @@ const data: IndustryPageData = {
     },
     {
       question: "Does Zoho support ASC 606 revenue recognition?",
-      answer: "Yes, we can configure Zoho Books with custom revenue recognition schedules to help tech companies stay compliant with ASC 606/IFRS 15 standards.",
+      answer: "Yes, we can configure Zoho Books with custom revenue recognition schedules to help tech industries stay compliant with ASC 606/IFRS 15 standards.",
     },
   ],
   relatedIndustries: [

@@ -135,7 +135,7 @@ const data: IndustryPageData = {
     {
       name: "Professional",
       price: "₹2,50,000",
-      description: "Full manufacturing suite for mid-size companies.",
+      description: "Full manufacturing suite for mid-size industries.",
       features: [
         "Advanced Manufacturing (MRP/MPS)",
         "Multi-location Inventory",

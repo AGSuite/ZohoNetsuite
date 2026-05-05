@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useSpring, useTransform, animate, useMotionValue } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
@@ -23,7 +23,71 @@ import {
   HelpCircle,
   Target,
   Users,
+  Heart,
 } from "lucide-react";
+
+
+function StatCard({ item, index }: { item: any; index: number }) {
+  const numericValue = parseInt(item.value.replace(/\D/g, "")) || 0;
+  const suffix = item.value.replace(/\d/g, "");
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const [displayCount, setDisplayCount] = useState(0);
+
+  useEffect(() => {
+    const unsubscribe = rounded.on("change", (v) => setDisplayCount(v));
+    return () => unsubscribe();
+  }, [rounded]);
+
+  const triggerRoll = () => {
+    animate(count, numericValue, {
+      duration: 1.5,
+      ease: "easeOut",
+      from: 0,
+    });
+  };
+
+  useEffect(() => {
+    triggerRoll();
+  }, [numericValue]);
+
+  return (
+    <motion.div
+      onMouseEnter={triggerRoll}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{
+        scale: 1.05,
+        rotateY: 10,
+        rotateX: -5,
+        transition: { duration: 0.4, ease: "easeOut" },
+      }}
+      transition={{ delay: 0.4 + index * 0.1 }}
+      style={{ perspective: 1000 }}
+      className="relative group p-6 rounded-[2rem] bg-gradient-to-br from-white via-white/95 to-blue-50 border border-blue-100/50 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 overflow-hidden"
+    >
+      {/* Decorative faint icon bg */}
+      <div className="absolute -right-4 -bottom-4 opacity-[0.25] group-hover:opacity-[0.45] transition-all duration-500 pointer-events-none">
+        <item.icon className="w-24 h-24 text-blue-900" strokeWidth={1} />
+      </div>
+
+      <div className="relative z-10 flex flex-col items-start text-left">
+        <div className="mb-5 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
+          <item.icon className="w-6 h-6 font-bold" strokeWidth={1.5} />
+        </div>
+        <div className="space-y-1">
+          <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#000d2e] via-blue-900 to-black tracking-tight">
+            {displayCount}
+            {suffix}
+          </div>
+          <p className="text-gray-500 font-semibold text-[10px] sm:text-[11px] group-hover:text-blue-700 transition-colors uppercase tracking-widest leading-tight">
+            {item.label}
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 /* ─── Office Locations Data ──────────────────────────────────────────────────── */
 type Region = "All" | "INDIA" | "USA" | "UK";
@@ -46,7 +110,7 @@ const locations: {
       flag: "🇮🇳",
       address: "Office No. 1110, 11th floor, Gera's Imperium Rise, Hinjewadi Rajiv Gandhi Infotech Park, Hinjewadi, Pune, Maharashtra, INDIA – 411057",
       email: "contact@agsuitetech.com",
-      mapUrl: "https://maps.google.com/?q=Gera+Imperium+Rise+Hinjewadi+Pune",
+      mapUrl: "https://www.google.com/maps/place/AGSuite+Technologies+(Top+NetSuite+Partner)/@18.5964114,73.7182446,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2bbbaf62357d1:0x8b9a4ecd422c8b03!8m2!3d18.5964114!4d73.7182446!16s%2Fg%2F11kjps0bgc?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D",
     },
     {
       region: "INDIA",
@@ -341,7 +405,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="flex flex-col gap-10 lg:sticky lg:top-32"
+              className="flex flex-col gap-6 lg:sticky lg:top-32"
             >
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white backdrop-blur-sm w-fit">
@@ -372,41 +436,33 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {/* Consultation Metrics Cards (Synced from About Us) */}
-              <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6">
-                {[
-                  { label: 'Implementations', value: '180+', icon: Building2 },
-                  { label: 'NS Experts', value: '50+', icon: Users },
-                  { label: 'Countries', value: '6+', icon: Globe2 },
-                  { label: 'Industries', value: '30+', icon: Target },
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    whileHover={{ rotate: 1.5, y: -5 }}
-                    transition={{ delay: 0.4 + i * 0.1 }}
-                    className="relative group p-6 rounded-[2rem] bg-gradient-to-br from-white via-white/95 to-blue-50 border border-blue-100/50 hover:border-blue-400 transition-all duration-500 shadow-xl shadow-blue-900/5 overflow-hidden"
-                  >
-                    {/* Decorative faint icon bg */}
-                    <div className="absolute -right-4 -bottom-4 opacity-[0.25] group-hover:opacity-[0.45] transition-all duration-500 pointer-events-none">
-                      <item.icon className="w-24 h-24 text-blue-900" strokeWidth={1} />
-                    </div>
+              {/* Partner Logo */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="mt-4 mb-2"
+              >
+                <Image
+                  src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
+                  alt="NetSuite Partner"
+                  width={220}
+                  height={70}
+                  className="h-16 w-auto object-contain"
+                />
+              </motion.div>
 
-                    <div className="relative z-10 flex flex-col items-start text-left">
-                      <div className="mb-5 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
-                        <item.icon className="w-6 h-6 font-bold" strokeWidth={1.5} />
-                      </div>
-                      <div className="space-y-1">
-                        <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#000d2e] via-blue-900 to-black tracking-tight">
-                          {item.value}
-                        </div>
-                        <p className="text-gray-500 font-semibold text-[10px] sm:text-[11px] group-hover:text-blue-700 transition-colors uppercase tracking-widest leading-tight">
-                          {item.label}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
+              {/* Consultation Metrics Cards (Synced from About Us) */}
+              <div className="mt-2 grid grid-cols-2 gap-4 sm:gap-6">
+                {[
+                  { label: 'Projects Completed', value: '600+', icon: Briefcase },
+                  { label: 'Global Customers', value: '200+', icon: Building2 },
+                  { label: 'Industry Expertise', value: '30+', icon: Target },
+                  { label: 'Customer Retention', value: '84%', icon: Heart },
+                  { label: 'Years Experience', value: '15+', icon: Rocket },
+                  { label: 'Countries Serving', value: '6+', icon: Globe2 },
+                ].map((item, i) => (
+                  <StatCard key={i} item={item} index={i} />
                 ))}
               </div>
             </motion.div>

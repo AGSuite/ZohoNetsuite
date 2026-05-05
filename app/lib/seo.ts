@@ -1032,6 +1032,36 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
+  "/netsuite/industries/telecom": {
+    "title": "NetSuite ERP for Telecom Industry — Modernize & Streamline Operations | AGSuite",
+    "description": "Empower your telecom business with Oracle NetSuite ERP. Automate subscription billing, revenue recognition, and OSS/BSS integrations. AGSuite certified NetSuite partner.",
+    "keywords": [
+      "NetSuite Telecom",
+      "Telecom ERP",
+      "Subscription Billing ERP",
+      "Telecom Revenue Recognition",
+      "OSS BSS Integration NetSuite",
+      "AGSuite Telecom",
+      "Cloud ERP Telecom"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/netsuite/industries/financial-services": {
+    "title": "NetSuite ERP for Financial Services — Compliance, Risk & Reporting | AGSuite",
+    "description": "Streamline financial operations with Oracle NetSuite ERP for financial services. Built-in compliance, real-time analytics, multi-entity consolidation, and enterprise security.",
+    "keywords": [
+      "NetSuite Financial Services",
+      "Financial Services ERP",
+      "Regulatory Compliance ERP",
+      "Multi-Entity Financial ERP",
+      "NetSuite Banking",
+      "AGSuite Financial Services",
+      "Cloud ERP Finance"
+    ],
+    "category": "Industry Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
   "/netsuite/industries": {
     "title": "Cloud ERP Industry Solutions | NetSuite | AGSuite",
     "description": "Explore industry-specific NetSuite cloud ERP solutions for Manufacturing, Retail, Software, Wholesale, and more. AGSuite certified NetSuite partner.",

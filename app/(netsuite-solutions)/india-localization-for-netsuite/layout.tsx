@@ -2,7 +2,7 @@ import { metadata } from "./metadata";
 
 export { metadata };
 
-export default function PlanningBudgetingLayout({
+export default function IndiaLocalizationLayout({
   children,
 }: {
   children: React.ReactNode;

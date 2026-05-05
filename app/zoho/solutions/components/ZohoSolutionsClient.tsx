@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer';
 import {
   Trophy, Users, Globe2, Rocket, Briefcase, Layout, Database, Share2, Code, ShieldCheck,
   HeartHandshake, ArrowRight, CheckCircle2, BarChart3, ShoppingCart, Globe,
-  TrendingUp, Package, Layers, DollarSign, BookOpen, Star, ChevronDown, ChevronRight, GraduationCap, Wrench, Settings, PieChart, Zap
+  TrendingUp, Package, Layers, DollarSign, BookOpen, Star, ChevronDown, ChevronRight, GraduationCap, Wrench, Settings, PieChart, Zap, Building2, Target
 } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
@@ -40,9 +40,11 @@ export default function ZohoSolutionsClient() {
 
   const stats = [
     { label: 'Projects Completed', value: 600, suffix: '+', icon: Briefcase },
-    { label: 'Global Customers', value: 200, suffix: '+', icon: Globe2 },
+    { label: 'Global Customers', value: 200, suffix: '+', icon: Building2 },
+    { label: 'Industry Expertise', value: 10, suffix: '+', icon: Target },
     { label: 'Customer Retention', value: 84, suffix: '%', icon: HeartHandshake },
     { label: 'Years Experience', value: 15, suffix: '+', icon: Rocket },
+    { label: 'Countries Serving', value: 10, suffix: '+', icon: Globe2 },
   ];
 
   const solutions = [
@@ -320,7 +322,7 @@ export default function ZohoSolutionsClient() {
             </motion.div>
           </div>
           <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="border-t border-white/15 pt-5 sm:pt-6">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 md:gap-8">
               {stats.map((s, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 + i * 0.12 }} className="text-center group">
                   <div className="flex justify-center mb-2 sm:mb-3"><div className="p-2 sm:p-3 bg-blue-700/20 rounded-xl group-hover:bg-blue-700/30 transition-colors"><s.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 group-hover:scale-110 transition-transform" /></div></div>

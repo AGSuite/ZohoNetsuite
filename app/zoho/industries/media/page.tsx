@@ -28,7 +28,7 @@ const data: IndustryPageData = {
   introDescription:
     "Media houses face complex revenue structures—managing diverse ad campaigns, recurring digital subscriptions, and physical circulations. Zoho's ecosystem provides a single tool that connects your front-office sales (Zoho CRM) with back-office finance (Zoho Books).",
   introDescription2:
-    "With AGSuite's media implementation, brands get real-time visibility into ad campaign performance and subscriber churn. We help media companies build scalable, digital-ready business structures.",
+    "With AGSuite's media implementation, brands get real-time visibility into ad campaign performance and subscriber churn. We help media industries build scalable, digital-ready business structures.",
   stats: [
     { icon: MonitorPlay, value: 300, suffix: "+", label: "Media Firms Served" },
     { icon: BarChart3, value: 40, suffix: "%", label: "Avg Churn Reduction" },

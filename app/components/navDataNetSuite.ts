@@ -21,7 +21,9 @@ import {
     Settings,
     Users,
     Building2,
-    Calculator
+    Calculator,
+    Wifi,
+    DollarSign
 } from 'lucide-react';
 
 // Types
@@ -231,6 +233,8 @@ export const navItemsNetSuite: NavSection[] = [
             { label: 'Retail & E-Commerce', href: '/netsuite/industries/retail', description: 'End-to-end retail automation.', icon: Store },
             { label: 'Transportation & Logistics', href: '/netsuite/industries/transport', description: 'Smart logistics solutions.', icon: Truck },
             { label: 'Manufacturing', href: '/netsuite/industries/manufacturing', description: 'Streamline production cycles.', icon: Factory },
+            { label: 'Telecom Industry', href: '/netsuite/industries/telecom', description: 'Modernize billing & telecom operations.', icon: Wifi },
+            { label: 'Financial Services', href: '/netsuite/industries/financial-services', description: 'Compliance, risk & real-time insights.', icon: DollarSign },
         ],
     },
 

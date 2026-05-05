@@ -244,7 +244,7 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
                   }}
                 />
 
-                <h2 className={`text-4xl md:text-5xl font-medium leading-tight ${layout === "centered" ? "text-center" : ""}`}>
+                <h2 className={`text-3xl md:text-5xl font-medium tracking-tight ${layout === "centered" ? "text-center" : ""}`}>
                   <span className="text-white">
                     Frequently{" "}
                   </span>

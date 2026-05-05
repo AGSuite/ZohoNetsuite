@@ -27,12 +27,15 @@ export default function CursorFollower() {
 
     const pathname = usePathname();
     const isStudio = pathname.includes('/studio');
-    const [isMobile, setIsMobile] = React.useState(true);
+    const [isMobile, setIsMobile] = React.useState(false);
+    const [mounted, setMounted] = React.useState(false);
+
     useEffect(() => {
+        setMounted(true);
         setIsMobile(window.innerWidth < 1024);
     }, []);
 
-    if (isMobile || isStudio) return null;
+    if (!mounted || isMobile || isStudio) return null;
 
 
     return (

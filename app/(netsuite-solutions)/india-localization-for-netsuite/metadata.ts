@@ -1,14 +1,48 @@
-﻿import type { Metadata } from "next";
-import { buildMetadata, NETSUITE_PAGES } from "@/app/lib/seo";
+import type { Metadata } from "next";
 
-const page = NETSUITE_PAGES["/india-localization-for-netsuite"];
+export const metadata: Metadata = {
+  title: "India Tax Solution | Accounting & Taxation services - AGSuite Technologies",
+  description:
+    "AGSuite Technologies offers comprehensive tax solutions, India tax solution, and Accounting & Taxation services. Discover expert tax solutions tailored to your needs.",
 
-export const metadata: Metadata = buildMetadata({
-  title: page.title,
-  description: page.description,
-  path: "/india-localization-for-netsuite",
-  keywords: page.keywords,
-  category: page.category,
-  publishedTime: page.publishedTime,
-  ogImage: "https://www.agsuitetech.com/images/og/og-netsuite.jpg",
-});
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  alternates: {
+    canonical: "https://agsuitetech.com/india-localization-for-netsuite/",
+  },
+
+  openGraph: {
+    type: "article",
+    locale: "en_US",
+    url: "https://agsuitetech.com/india-localization-for-netsuite/",
+    title:
+      "India Tax Solution | Accounting & Taxation services - AGSuite Technologies",
+    description:
+      "AGSuite Technologies offers comprehensive tax solutions, India tax solution, and Accounting & Taxation services. Discover expert tax solutions tailored to your needs.",
+    siteName: "AGSuite",
+    images: [
+      {
+        url: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+  },
+
+  other: {
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "27 minutes",
+  },
+};

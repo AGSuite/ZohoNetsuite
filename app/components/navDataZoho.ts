@@ -22,7 +22,9 @@ import {
     Wrench,
     Settings,
     Users,
-    Building2
+    Building2,
+    Wifi,
+    DollarSign
 } from 'lucide-react';
 
 // Types
@@ -216,6 +218,8 @@ export const navItemsZoho: NavSection[] = [
             { label: 'Retail & E-Commerce', href: '/zoho/industries/retail', description: 'Retail automation suite.', icon: Store },
             { label: 'Transportation & Logistics', href: '/zoho/industries/transport', description: 'Smart logistics systems.', icon: Truck },
             { label: 'Manufacturing', href: '/zoho/industries/manufacturing', description: 'Optimize manufacturing cycles.', icon: Factory },
+            { label: 'Telecom Industry', href: '/zoho/industries/telecom', description: 'Modernize billing & telecom operations.', icon: Wifi },
+            { label: 'Financial Services', href: '/zoho/industries/financial-services', description: 'Compliance, risk & real-time insights.', icon: DollarSign },
         ]
     },
 

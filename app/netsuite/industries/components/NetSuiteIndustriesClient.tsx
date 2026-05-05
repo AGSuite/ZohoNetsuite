@@ -39,6 +39,7 @@ import {
   Wrench,
   Settings,
   Layers,
+  Wifi,
 } from "lucide-react";
 import ContactFormDesign4 from "../../components/ContactFormDesign4";
 
@@ -76,7 +77,7 @@ export default function NetSuiteIndustriesClient() {
       title: "Software & Technology",
       subtitle: "Accelerate Growth & Scale Globally",
       description:
-        "Automate complex billing, revenue recognition, and financial consolidations. NetSuite gives software companies real-time visibility into subscription metrics, helping you navigate rapid growth and prepare for IPO.",
+        "Automate complex billing, revenue recognition, and financial consolidations. NetSuite gives software industries real-time visibility into subscription metrics, helping you navigate rapid growth and prepare for IPO.",
       highlights: [
         "Advanced revenue recognition (ASC 606)",
         "Subscription & complex billing",
@@ -178,7 +179,7 @@ export default function NetSuiteIndustriesClient() {
       title: "Transportation & Logistics",
       subtitle: "Drive Operational Excellence",
       description:
-        "Gain complete visibility across your operations and financials. NetSuite helps transportation and logistics companies manage fleets, optimize routes, and streamline billing to improve margins.",
+        "Gain complete visibility across your operations and financials. NetSuite helps transportation and logistics industries manage fleets, optimize routes, and streamline billing to improve margins.",
       highlights: [
         "Fleet & asset management",
         "Route optimization integration",
@@ -207,6 +208,40 @@ export default function NetSuiteIndustriesClient() {
       image: "/images/industries/manufacture-compressed-1.webp",
       icon: Package,
       tag: "Manufacturing",
+    },
+    {
+      category: "Telecom",
+      title: "Telecom Industry",
+      subtitle: "Modernize Billing & Streamline Operations",
+      description:
+        "Manage subscription billing, revenue recognition, and multi-subsidiary operations with a cloud ERP purpose-built for high-volume telecom businesses. NetSuite unifies OSS/BSS, CRM, and financials on a single platform.",
+      highlights: [
+        "Subscription & usage-based billing",
+        "Telecom revenue recognition (ASC 606)",
+        "OSS/BSS & CRM integrations",
+        "Multi-subsidiary global expansion",
+      ],
+      link: "/netsuite/industries/telecom",
+      image: "/images/industries/telecom-industry.webp",
+      icon: Wifi,
+      tag: "Telecom",
+    },
+    {
+      category: "Financial Services",
+      title: "Financial Services",
+      subtitle: "Compliance, Risk & Real-Time Insights",
+      description:
+        "Streamline financial operations, ensure regulatory compliance, and gain real-time visibility across your financial institution. NetSuite's unified platform eliminates data silos and scales with your multi-entity growth.",
+      highlights: [
+        "Regulatory compliance (IFRS/GAAP/GST)",
+        "Multi-entity financial consolidation",
+        "Risk management & audit controls",
+        "Banking & FinTech integrations",
+      ],
+      link: "/netsuite/industries/financial-services",
+      image: "/images/industries/financial-services-industry.webp",
+      icon: DollarSign,
+      tag: "Finance",
     },
   ];
 

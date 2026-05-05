@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer';
 import {
   Trophy, Users, Globe2, Rocket, Briefcase, Layout, Database, Share2, Code, ShieldCheck,
   HeartHandshake, ArrowRight, CheckCircle2, BarChart3, ShoppingCart, Globe,
-  TrendingUp, Package, Layers, DollarSign, BookOpen, Star, ChevronDown, ChevronRight, GraduationCap, Wrench, Settings
+  TrendingUp, Package, Layers, DollarSign, BookOpen, Star, ChevronDown, ChevronRight, GraduationCap, Wrench, Settings, Building2, Target
 } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import FooterContactForm from '@/app/components/shared/FooterContactForm';
@@ -39,9 +39,11 @@ export default function NetSuiteSolutionsClient() {
 
   const stats = [
     { label: "Projects Completed", value: 600, suffix: "+", icon: Briefcase },
-    { label: "Global Customers", value: 200, suffix: "+", icon: Globe2 },
+    { label: "Global Customers", value: 200, suffix: "+", icon: Building2 },
+    { label: "Industry Expertise", value: 30, suffix: "+", icon: Target },
     { label: "Customer Retention", value: 84, suffix: "%", icon: HeartHandshake },
     { label: "Years Experience", value: 15, suffix: "+", icon: Rocket },
+    { label: "Countries Serving", value: 6, suffix: "+", icon: Globe2 },
   ];
 
   const imageBgGradients = [

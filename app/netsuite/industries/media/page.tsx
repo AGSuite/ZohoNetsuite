@@ -11,9 +11,9 @@ import { Globe, BarChart3, TrendingUp, Users } from "lucide-react";
 
 const data: IndustryPageData = {
   industry: "Media & Publishing",
-  heroTitle: "NetSuite for Media & Publishing Companies",
+  heroTitle: "NetSuite for Media & Publishing Industries",
   heroDescription:
-    "Manage subscriptions, advertising revenue, content licensing, and royalties on a single cloud ERP. NetSuite gives media and publishing companies the financial agility to monetise content across every channel.",
+    "Manage subscriptions, advertising revenue, content licensing, and royalties on a single cloud ERP. NetSuite gives media and publishing industries the financial agility to monetise content across every channel.",
   heroImage: "/images/industries/media.webp",
   heroCardTitle: "Media & Publishing ERP",
   heroCardSub: "Subscriptions · Advertising · Royalties · Content",
@@ -22,11 +22,11 @@ const data: IndustryPageData = {
   introImage: "/images/lap/lap10_11zon.webp",
   introTitle: "One Platform for Every Media Revenue Stream",
   introDescription:
-    "Media and publishing companies manage highly complex, multi-revenue-stream businesses — subscriptions, digital advertising, content licensing, events, print, and e-commerce. Managing these on separate systems creates financial chaos.",
+    "Media and publishing industries manage highly complex, multi-revenue-stream businesses — subscriptions, digital advertising, content licensing, events, print, and e-commerce. Managing these on separate systems creates financial chaos.",
   introDescription2:
     "NetSuite unifies subscription management, advertising revenue tracking, royalty calculations, and financial reporting on a single platform — giving media executives real-time visibility into every revenue stream, channel, and audience segment.",
   stats: [
-    { icon: Globe, value: 200, suffix: "+", label: "Media Companies Served" },
+    { icon: Globe, value: 200, suffix: "+", label: "Media Industries Served" },
     {
       icon: BarChart3,
       value: 45,
@@ -133,7 +133,7 @@ const data: IndustryPageData = {
     {
       name: "Starter",
       price: "₹95,000",
-      description: "For independent publishers and small media companies.",
+      description: "For independent publishers and small media industries.",
       features: [
         "Core ERP (Financials, AR/AP)",
         "Subscription Billing",

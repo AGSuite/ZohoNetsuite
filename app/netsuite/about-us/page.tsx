@@ -247,9 +247,11 @@ type CounterItem = {
 
 const counters: CounterItem[] = [
   { label: 'Projects Completed', value: 600, icon: Briefcase, suffix: "+" },
-  { label: 'Global Customers', value: 200, icon: Globe2, suffix: "+" },
+  { label: 'Global Customers', value: 200, icon: Building2, suffix: "+" },
+  { label: 'Industry Expertise', value: 30, icon: Target, suffix: "+" },
   { label: 'Customer Retention', value: 84, icon: Heart, suffix: "%" },
   { label: 'Years Experience', value: 15, icon: Rocket, suffix: "+" },
+  { label: 'Countries Serving', value: 6, icon: Globe2, suffix: "+" },
 ];
 
 const fadeInUp: Variants = {

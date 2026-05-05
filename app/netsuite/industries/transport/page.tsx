@@ -22,11 +22,11 @@ const data: IndustryPageData = {
   introImage: "/images/lap/lap5.webp",
   introTitle: "Real-Time Visibility Across Every Mile",
   introDescription:
-    "Transportation and logistics companies deal with razor-thin margins, complex customer billing, driver management, fleet costs, and compliance requirements. Most rely on disconnected TMS, fleet, and accounting systems that create costly blind spots.",
+    "Transportation and logistics industries deal with razor-thin margins, complex customer billing, driver management, fleet costs, and compliance requirements. Most rely on disconnected TMS, fleet, and accounting systems that create costly blind spots.",
   introDescription2:
     "NetSuite brings your financial management, customer billing, route costing, and operational reporting into one unified cloud platform — giving leadership and operations teams the real-time data they need to run a profitable logistics business.",
   stats: [
-    { icon: Package, value: 250, suffix: "+", label: "Logistics Companies" },
+    { icon: Package, value: 250, suffix: "+", label: "Logistics Industries" },
     {
       icon: BarChart3,
       value: 30,
@@ -128,7 +128,7 @@ const data: IndustryPageData = {
     {
       name: "Starter",
       price: "₹1,00,000",
-      description: "For small freight or courier companies up to 20 users.",
+      description: "For small freight or courier industries up to 20 users.",
       features: [
         "Core ERP (Financials, AR/AP)",
         "Basic Shipment & Job Tracking",

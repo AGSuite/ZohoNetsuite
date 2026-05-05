@@ -11,26 +11,26 @@ import { Zap, BarChart3, TrendingUp, Globe } from "lucide-react";
 
 const data: IndustryPageData = {
   industry: "Software & Technology",
-  heroTitle: "NetSuite for Software & Technology Companies",
+  heroTitle: "NetSuite for Software & Technology Industries",
   heroDescription:
-    "Scale your SaaS, software, or tech company with a cloud ERP built for subscription revenue, ASC 606 compliance, and rapid growth. NetSuite is the platform of choice for 8,000+ software companies worldwide.",
+    "Scale your SaaS, software, or tech industry with a cloud ERP built for subscription revenue, ASC 606 compliance, and rapid growth. NetSuite is the platform of choice for 8,000+ software industries worldwide.",
   heroImage: "/images/Services/trainingservices.webp",
   heroCardTitle: "SaaS & Software ERP Platform",
   heroCardSub: "Subscriptions · ARR · Revenue Recognition · Billing",
-  heroTopCardTitle: "8,000+ Software Companies",
+  heroTopCardTitle: "8,000+ Software Industries",
   heroTopCardSub: "SaaS · ISV · Tech Startups · Scaleups",
   introImage: "/images/lap/lap8_11zon.webp",
-  introTitle: "The ERP Built for High-Growth Tech Companies",
+  introTitle: "The ERP Built for High-Growth Tech Industries",
   introDescription:
-    "Software and technology companies have unique financial complexity — subscription billing models, deferred revenue, complex revenue recognition under ASC 606 / IFRS 15, multi-currency operations, and the need for real-time ARR and MRR dashboards.",
+    "Software and technology industries have unique financial complexity — subscription billing models, deferred revenue, complex revenue recognition under ASC 606 / IFRS 15, multi-currency operations, and the need for real-time ARR and MRR dashboards.",
   introDescription2:
-    "NetSuite's SuiteSuccess for Software edition is pre-configured for ISVs, SaaS companies, and tech firms — with subscription billing, revenue recognition automation, and SaaS metrics built in from day one.",
+    "NetSuite's SuiteSuccess for Software edition is pre-configured for ISVs, SaaS industries, and tech firms — with subscription billing, revenue recognition automation, and SaaS metrics built in from day one.",
   stats: [
     {
       icon: Zap,
       value: 8000,
       suffix: "+",
-      label: "Tech Companies on NetSuite",
+      label: "Tech Industries on NetSuite",
     },
     {
       icon: BarChart3,
@@ -63,7 +63,7 @@ const data: IndustryPageData = {
     {
       title: "Global Multi-Currency Operations",
       description:
-        "Support global customers with 190+ currency handling, automated FX revaluation, and multi-subsidiary consolidation — ideal for tech companies expanding internationally.",
+        "Support global customers with 190+ currency handling, automated FX revaluation, and multi-subsidiary consolidation — ideal for tech industries expanding internationally.",
       image: "/images/people/global.webp",
     },
     {
@@ -145,7 +145,7 @@ const data: IndustryPageData = {
     {
       name: "Professional",
       price: "₹2,10,000",
-      description: "Full SaaS ERP for scaling tech companies.",
+      description: "Full SaaS ERP for scaling tech industries.",
       features: [
         "Advanced Subscription Billing (SuiteBilling)",
         "ASC 606 Revenue Recognition",
@@ -189,7 +189,7 @@ const data: IndustryPageData = {
     {
       question: "Is NetSuite suitable for VC-backed SaaS startups?",
       answer:
-        "Absolutely. Many VC-backed SaaS companies choose NetSuite specifically to clean up financials before Series B/C rounds or M&A. NetSuite's audit trails and investor-grade reporting make due diligence smoother.",
+        "Absolutely. Many VC-backed SaaS industries choose NetSuite specifically to clean up financials before Series B/C rounds or M&A. NetSuite's audit trails and investor-grade reporting make due diligence smoother.",
     },
     {
       question: "Does NetSuite handle equity and stock compensation reporting?",

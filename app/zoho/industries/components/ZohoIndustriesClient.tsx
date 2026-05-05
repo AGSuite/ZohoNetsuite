@@ -94,10 +94,10 @@ export default function ZohoIndustriesClient() {
     },
     {
       category: "Software & Tech",
-      title: "Software & Tech Companies",
+      title: "Software & Tech Industries",
       subtitle: "Accelerate Growth & Scale Globally",
       description:
-        "Automate complex billing, revenue management, and financial consolidations. Zoho gives software companies real-time visibility into subscription metrics through Zoho Subscriptions, helping you navigate rapid growth and manage customers effectively.",
+        "Automate complex billing, revenue management, and financial consolidations. Zoho gives software industries real-time visibility into subscription metrics through Zoho Subscriptions, helping you navigate rapid growth and manage customers effectively.",
       highlights: [
         "Advanced revenue recognition",
         "Subscription & complex billing",
@@ -199,7 +199,7 @@ export default function ZohoIndustriesClient() {
       title: "Transportation & Logistics",
       subtitle: "Drive Operational Excellence",
       description:
-        "Gain complete visibility across your operations and financials with Zoho. Help transportation and logistics companies manage fleets, streamline billing with Zoho Books, and optimize customer relationships through Zoho CRM.",
+        "Gain complete visibility across your operations and financials with Zoho. Help transportation and logistics industries manage fleets, streamline billing with Zoho Books, and optimize customer relationships through Zoho CRM.",
       highlights: [
         "Fleet & asset management",
         "Route optimization integration",
