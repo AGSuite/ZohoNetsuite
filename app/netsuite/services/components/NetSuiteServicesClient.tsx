@@ -36,6 +36,7 @@ import {
   Megaphone,
   Map,
   Zap,
+  Target,
 } from "lucide-react";
 import FooterContactForm from "@/app/components/shared/FooterContactForm";
 
