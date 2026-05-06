@@ -1320,7 +1320,7 @@ const leadersData = [
     name: "Shailesh Punse",
     title: "Head of Sales & Marketing",
     image: "/images/people/Shailesh.jpg",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/shailesh-punse-79771413/",
     bio: "Driving global revenue growth and strategic partnerships with 25+ years of cross-industry expertise."
   },
 ];
