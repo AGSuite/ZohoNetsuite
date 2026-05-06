@@ -62,8 +62,8 @@ export default function NetSuiteServicesClient() {
 
   const stats = [
     { label: "Projects Completed", value: 600, suffix: "+", icon: Briefcase },
-    { label: "Global Customers", value: 200, suffix: "+", icon: Globe2 },
-    { label: "Customer Retention", value: 84, suffix: "%", icon: HeartHandshake },
+    { label: "Industry Expertise", value: 15, suffix: "+", icon: Target },
+    { label: "Countries Serving", value: 10, suffix: "+", icon: Globe2 },
     { label: "Years Experience", value: 15, suffix: "+", icon: Rocket },
   ];
 

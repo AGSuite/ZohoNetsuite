@@ -157,17 +157,17 @@ export const navItemsNetSuite: NavSection[] = [
 
             // --------------- NETSUITE ADD-ONS ---------------
             {
-                label: 'NETSUITE ADD-ONS',
+                label: 'NETSUITE ADD-ONS AND CONNECTORS',
                 href: '/netsuite/solutions/addons',
                 megaMenu: {
                     title: 'NetSuite Add-On Solutions',
                     description: 'Extend NetSuite with connectors & automation tools',
                     categories: [
                         {
-                            title: 'Other Add-ons',
+                            title: 'Add-ons',
                             items: [
                                 {
-                                    label: 'India Localization',
+                                    label: 'Indian Localization for NetSuite',
                                     href: '/netsuite/solutions/addons/india-localization',
                                     description: 'E-invoicing, GST & statutory compliance for India'
                                 },

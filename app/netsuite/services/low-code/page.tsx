@@ -485,7 +485,7 @@ export default function NetSuiteLowCodeServices() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
             {[
-              { label: "What is Low-Code?", href: "#what-is" },
+              { label: "What is NetSuite Low-Code?", href: "#what-is" },
               { label: "Services", href: "#services" },
               { label: "Benefits", href: "#benefits" },
               { label: "Pricing", href: "#pricing" },

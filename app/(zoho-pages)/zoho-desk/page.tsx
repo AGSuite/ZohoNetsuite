@@ -167,9 +167,9 @@ export default function ZohoDeskPage() {
   return (
     <ZohoSolutionTemplate
       title="Zoho Desk — Omnichannel Help Desk Software"
-      subtitle="Better Service, Happier Customers, Stronger Brand."
-      description="A contextual help desk software that helps you focus on the customer and build relationships that last."
-      introDescription2="Zoho Desk provides the context and AI-driven tools your support agents need to deliver fast, personalized, and high-quality service across every customer touchpoint."
+      subtitle="Zoho Desk: The Industry's First Context-Aware Help Desk Platform"
+      description="Zoho Desk is a powerful, omnichannel customer support Solution that empowers your team to deliver fast, personalized, and high-quality service across every touchpoint. As a specialized Zoho Service partner, we help you unify interactions from email, chat, phone, and social media into a single contextual dashboard with AI-driven insights."
+      introDescription2="Zoho Desk provides the context and AI-driven tools your support agents need to deliver fast, personalized, and high-quality service across every customer touchpoint, ensuring higher resolution rates and improved customer satisfaction."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
@@ -204,5 +204,3 @@ export default function ZohoDeskPage() {
     />
   );
 }
-
-

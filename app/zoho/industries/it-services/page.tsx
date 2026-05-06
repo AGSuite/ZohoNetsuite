@@ -5,11 +5,11 @@ import React from "react";
 
 
 
+
 import ZohoIndustryTemplate, {
   IndustryPageData,
 } from "@/app/zoho/components/industries/ZohoIndustryTemplate";
 import { Briefcase, BarChart3, Users, TrendingUp } from "lucide-react";
-
 
 
 
@@ -60,31 +60,64 @@ const data: IndustryPageData = {
         "Instantly see the profitability of every project with Zoho Books — providing detailed insights into material and labour costs.",
       image: "/images/lap/lap9_11zon.webp",
     },
+    {
+      title: "Unified Client Management",
+      description:
+        "Gain a 360-degree view of your clients — from initial inquiry through project delivery and ongoing support with Zoho CRM.",
+      image: "/images/lap/lap8_11zon.webp",
+    },
+  ],
+  features: [
+    {
+      title: "Project and Resource Management",
+      description: "Comprehensive tools in Zoho Projects for task tracking and team collaboration.",
+      image: "/images/lap/lap5.webp",
+    },
+    {
+      title: "Time and Expense Tracking",
+      description: "Easily log time and expenses associated with projects for accurate billing.",
+      image: "/images/people/laptopgirl.webp",
+    },
+    {
+      title: "Project Accounting",
+      description: "Manage project budgets and track profitability in real-time with Zoho Books.",
+      image: "/images/lap/lap3.webp",
+    },
+    {
+      title: "Customer Relationship Management (CRM)",
+      description: "Unify your client data and communication with Zoho CRM.",
+      image: "/images/people/threeteam.webp",
+    },
+    {
+      title: "Financial Management",
+      description: "Automate bookkeeping and gain real-time visibility into your agency's cash flow with Zoho Books.",
+      image: "/images/lap/lap1.webp",
+    },
   ],
   challenges: [
     {
       title: "Manual Billing Cycles",
       solution:
         "Zoho Books automates your client billing based on project milestones or recorded time entries, ensuring faster payments and better cash flow.",
-      image: "/images/people/laptopmen1.jpg",
+      image: "/images/challenges/manual-billing.png",
     },
     {
       title: "Poor Resource Visibility",
       solution:
         "Zoho's centralized resource management gives you a global view of team availability and skillsets across all your active projects.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/challenges/resource-visibility.png",
     },
     {
       title: "Revenue Recognition Delays",
       solution:
         "Zoho Subscriptions and Books automate revenue recognition according to your project delivery cycles and contract terms.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/challenges/compliance.png",
     },
     {
       title: "Complex Multi-Currency Projects",
       solution:
         "Zoho Books handles global projects with multi-currency accounting and automated bank feeds for international clients.",
-      image: "/images/people/global.webp",
+      image: "/images/challenges/supply-chain.png",
     },
   ],
   pricingTiers: [
@@ -152,4 +185,3 @@ const data: IndustryPageData = {
 export default function ZohoITServicesPage() {
   return <ZohoIndustryTemplate data={data} />;
 }
-

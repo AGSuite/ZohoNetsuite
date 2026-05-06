@@ -41,7 +41,7 @@ export default function ZohoSolutionsClient() {
   const stats = [
     { label: 'Projects Completed', value: 600, suffix: '+', icon: Briefcase },
     { label: 'Global Customers', value: 200, suffix: '+', icon: Building2 },
-    { label: 'Industry Expertise', value: 10, suffix: '+', icon: Target },
+    { label: 'Industry Expertise', value: 15, suffix: '+', icon: Target },
     { label: 'Customer Retention', value: 84, suffix: '%', icon: HeartHandshake },
     { label: 'Years Experience', value: 15, suffix: '+', icon: Rocket },
     { label: 'Countries Serving', value: 10, suffix: '+', icon: Globe2 },
@@ -279,7 +279,7 @@ export default function ZohoSolutionsClient() {
                   }}
                 >
                   <RotatingText
-                    texts={['CRM', 'Books', 'Projects', 'People']}
+                    texts={['Zoho CRM', 'Zoho Books', 'Zoho Projects', 'Zoho People']}
                     onNext={(idx) => setRotatingIdx(idx)}
                     mainClassName="text-2xl sm:text-3xl md:text-4xl font-extrabold"
                     splitBy="characters"
@@ -311,7 +311,7 @@ export default function ZohoSolutionsClient() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }} className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,#003580,#0044cc)' }}><Database className="w-5 h-5 text-white" /></div>
-                    <div><p className="text-gray-900 text-sm font-bold">Zoho One Platform</p><p className="text-gray-500 text-xs mt-0.5">ERP · CRM · Finance · HR · Analytics</p></div>
+                    <div><p className="text-gray-900 text-sm font-bold">Zoho One Platform</p><p className="text-gray-500 text-xs mt-0.5">Zoho ERP · Zoho CRM · Zoho Finance · Zoho HR · Zoho Analytics</p></div>
                   </motion.div>
                 </div>
                 <motion.div initial={{ opacity: 0, x: -20, y: -10 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ delay: 0.8 }} className="absolute -top-5 -left-10 flex items-center gap-3.5 bg-white rounded-2xl px-4 py-3 shadow-2xl border border-gray-100">

@@ -167,9 +167,9 @@ export default function ZohoPeoplePage() {
   return (
     <ZohoSolutionTemplate
       title="Zoho People — Complete HR Management Software"
-      subtitle="The Modern Way to Manage Your Workforce."
-      description="Zoho People is a cloud-based HRMS that simplifies your HR operations, fosters employee development, and builds a better workplace environment."
-      introDescription2="Zoho People transforms HR from a back-office function into a strategic asset, providing the tools needed to nurture talent, manage performance, and build a high-performance culture."
+      subtitle="Zoho People: Unified Cloud HRMS for the Modern Global Workforce"
+      description="Zoho People is a comprehensive Human Resource Management System (HRMS) designed to simplify your HR operations, nurture employee development, and foster a high-performance workplace culture. As a specialized Zoho People implementation partner, we help you automate the entire employee lifecycle — from onboarding and attendance tracking to performance appraisals and learning management."
+      introDescription2="Zoho People transforms HR from a back-office function into a strategic asset, providing the tools needed to nurture talent, manage performance, and build a high-performance culture across your entire organization."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
@@ -204,5 +204,3 @@ export default function ZohoPeoplePage() {
     />
   );
 }
-
-

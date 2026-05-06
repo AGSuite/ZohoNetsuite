@@ -60,31 +60,64 @@ const data: IndustryPageData = {
         "Connect with suppliers, manage purchase orders, track deliveries, and get real-time landed cost visibility across your entire supply chain with Zoho Books.",
       image: "/images/lap/lap9_11zon.webp",
     },
+    {
+      title: "Shop Floor Mobility",
+      description:
+        "Give your team real-time access to work orders and quality checklists via mobile with Zoho Creator. Capture production data instantly and reduce errors.",
+      image: "/images/lap/lap8_11zon.webp",
+    },
+  ],
+  features: [
+    {
+      title: "Financial Management",
+      description: "Automate transaction flow and gain real-time access to financial performance with Zoho Books.",
+      image: "/images/lap/lap5.webp",
+    },
+    {
+      title: "Inventory Management",
+      description: "Optimize inventory levels and minimize stockouts with Zoho Inventory.",
+      image: "/images/lap/lap1.webp",
+    },
+    {
+      title: "Customer Relationship Management",
+      description: "Track marketing campaigns and provide real-time customer data with Zoho CRM.",
+      image: "/images/people/laptopgirl.webp",
+    },
+    {
+      title: "E-commerce Integration",
+      description: "Unify e-commerce platforms with backend systems for a seamless online shopping experience.",
+      image: "/images/lap/lap3.webp",
+    },
+    {
+      title: "Supply Chain Management",
+      description: "Optimize procurement and supplier relationships with Zoho's unified supply chain suite.",
+      image: "/images/lap/lap10_11zon.webp",
+    },
   ],
   challenges: [
     {
       title: "Disconnected Systems",
       solution:
         "Zoho One unifies CRM, MRP, and financials on a single platform — eliminating data silos and manual rekeying across disconnected legacy systems.",
-      image: "/images/people/laptopmen1.jpg",
+      image: "/images/challenges/data-silos.png",
     },
     {
       title: "Inventory Blind Spots",
       solution:
         "Zoho's real-time inventory management with demand-driven replenishment ensures you always have the right stock at the right location — no more stockouts.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/challenges/inventory-blind-spots.png",
     },
     {
       title: "Multi-Level BOM Management",
       solution:
         "Zoho Creator supports multi-level BOMs, phantom assemblies, and routing with custom logic management and full version control.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/challenges/profitability.png",
     },
     {
       title: "Inaccurate Job Costing",
       solution:
         "Zoho Books tracks materials, labour, and overhead per work order — giving you true product margins in real time through custom financial reporting.",
-      image: "/images/people/global.webp",
+      image: "/images/challenges/reconciliation.png",
     },
   ],
   pricingTiers: [
@@ -153,4 +186,3 @@ const data: IndustryPageData = {
 export default function ZohoManufacturingPage() {
   return <ZohoIndustryTemplate data={data} />;
 }
-

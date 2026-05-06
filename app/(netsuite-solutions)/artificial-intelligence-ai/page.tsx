@@ -86,7 +86,7 @@ export default function NetSuiteAIPage() {
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/50">Solutions</span>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/80">AI & Machine Learning</span>
+            <span className="text-white/80">NetSuite AI & Machine Learning</span>
           </motion.nav>
 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
@@ -94,7 +94,7 @@ export default function NetSuiteAIPage() {
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15] tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  Artificial Intelligence & Machine Learning in NetSuite
+                  NetSuite Artificial Intelligence & Machine Learning
                 </span>
               </motion.h1>
               <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }}
@@ -104,7 +104,7 @@ export default function NetSuiteAIPage() {
                 Harness AI and machine learning embedded directly into your ERP — predict outcomes, automate decisions, and surface insights automatically across finance, supply chain, and operations.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl hover:scale-105">
+                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
                   Start AI Journey
                   <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }} className="flex items-center">
                     <ArrowRight className="w-4 h-4" />
@@ -169,7 +169,7 @@ export default function NetSuiteAIPage() {
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
-            {[{ label: "What is AI?", href: "#what-is-ai" }, { label: "Capabilities", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Services", href: "#services" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
+            {[{ label: "What is NetSuite Artificial Intelligence?", href: "#what-is-ai" }, { label: "Modules", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Services", href: "#services" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
               <a key={l.href} href={l.href} className="px-4 py-2 text-base font-semibold hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-500">{l.label}</span>
               </a>
@@ -181,30 +181,68 @@ export default function NetSuiteAIPage() {
       {/* What is NetSuite AI */}
       <section id="what-is-ai" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-              className="flex items-center justify-center rounded-2xl overflow-hidden" style={{ minHeight: 480 }}>
-              <div className="relative w-full h-full">
-                <Image src="/images/Dashboard/Artifical Intelligence 2 dashboard.jpg" alt="NetSuite AI Dashboard" width={900} height={600} className="w-full h-auto rounded-xl object-contain border-4 border-blue-200 shadow-2xl shadow-blue-900/20" />
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
+            >
+              <div className="relative w-full h-full p-4 lg:p-6">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/10 border-4 border-blue-100">
+                  <Image
+                    src="/images/Dashboard/Artifical Intelligence 2 dashboard.jpg"
+                    alt="NetSuite Artificial Intelligence and Machine Learning Dashboard"
+                    fill
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
               </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="flex flex-col justify-center space-y-6">
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
-                Work Smarter with AI Built into Your ERP.
-              </h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                NetSuite turns your business data into intelligence with AI and machine learning embedded directly into the platform — no separate AI vendor, no data migration, no data scientists required.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                From predicting cash flow and automating supply chain decisions to generating journal entries and detecting fraud, NetSuite AI works continuously — making every user smarter with every click.
-              </p>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="flex flex-col justify-center space-y-6 py-6"
+            >
+              <div className="space-y-4">
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
+                  NetSuite AI: Harnessing Intelligent Automation and Machine Learning
+                </h2>
+              </div>
+              <div className="space-y-2">
+                <p className="text-base text-gray-600 leading-relaxed">
+                  NetSuite AI and machine learning are embedded natively into the platform, providing actionable insights without the need for external data scientists. As a specialized <strong>NetSuite AI implementation partner</strong>, we help businesses leverage predictive analytics to anticipate market trends, automate complex financial workflows, and enhance operational efficiency.
+                </p>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  From intelligent cash flow forecasting to automated anomaly detection, NetSuite AI empowers your team to make data-driven decisions with confidence. Eliminate manual data processing and focus on strategic initiatives with a platform that continuously learns and optimizes your business processes.
+                </p>
+              </div>
               <div className="pt-4">
-                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
+                <Link
+                  href="#contact-form"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
                   style={{ background: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)', color: '#ffffff' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff'; (e.currentTarget as HTMLAnchorElement).style.color = '#4c1d95'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)'; (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'; }}>
-                  <span>Explore NetSuite AI</span>
-                  <motion.span className="flex items-center" animate={{ x: [0, 5, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}>
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#1e3a8a';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 10px 25px -5px rgba(30, 58, 138, 0.3)';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
+                  }}
+                >
+                  <span>Explore NetSuite AI Advantage</span>
+                  <motion.span
+                    className="flex items-center"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                  >
                     <ArrowRight size={17} strokeWidth={2.5} />
                   </motion.span>
                 </Link>
@@ -360,11 +398,11 @@ export default function NetSuiteAIPage() {
             </div>
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Make Your ERP Intelligent — <span className="text-cyan-200">Start Today.</span></h2>
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Make Your NetSuite ERP Intelligent — <span className="text-cyan-200">Start Today.</span></h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">Join thousands of businesses using NetSuite AI to predict outcomes, automate decisions, and gain a competitive edge — without leaving their ERP.</p>
               </div>
               <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
-                Request AI Demo <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Request a NetSuite AI Demo <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </motion.div>

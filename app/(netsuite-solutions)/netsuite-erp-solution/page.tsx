@@ -110,7 +110,7 @@ export default function NetSuiteERPPage() {
   const pricingPlans = [
     { name: "Starter", description: "Perfect for growing businesses", price: "Contact Us", features: ["Core Financial Management", "Order Management", "Basic Reporting", "Up to 10 Users", "Email Support"] },
     { name: "Professional", description: "For established enterprises", price: "Contact Us", popular: true, features: ["Everything in Starter", "Advanced Analytics", "Multi-Currency", "Unlimited Users", "24/7 Support", "Custom Integrations"] },
-    { name: "Enterprise", description: "For large-scale operations", price: "Contact Us", features: ["Everything in Professional", "Global Business Management", "Advanced Customization", "Dedicated Account Manager", "Priority Support", "Custom SLA"] }
+    { name: "Enterprise", description: "For large-scale operations", price: "Contact Us", features: ["Everything in Professional", "NetSuite Global Business Management", "Advanced Customization", "Dedicated Account Manager", "Priority Support", "Custom SLA"] }
   ];
 
   const faqs = [
@@ -155,7 +155,7 @@ export default function NetSuiteERPPage() {
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/50">Solutions</span>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/80">ERP</span>
+            <span className="text-white/80">NetSuite ERP</span>
           </motion.nav>
 
           {/* Hero Content - Two Column */}
@@ -174,7 +174,7 @@ export default function NetSuiteERPPage() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  NetSuite Enterprise Resource Planning
+                  NetSuite Enterprise Resource Planning (ERP)
                 </span>
               </motion.h1>
 
@@ -201,7 +201,7 @@ export default function NetSuiteERPPage() {
               >
                 <Link
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-blue-950  hover:border-white transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
                 >
                   Get Started
                   <motion.span
@@ -266,11 +266,10 @@ export default function NetSuiteERPPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
             {[
-              { label: "What is NetSuite ERP?", href: "#what-is-erp" },
+              { label: "What is NetSuite Enterprise Resource Planning?", href: "#what-is-erp" },
               { label: "Modules", href: "#modules" },
               { label: "Benefits", href: "#benefits" },
               { label: "Services", href: "#services" },
-              { label: "Pricing", href: "#pricing" },
               { label: "FAQ", href: "#faq" },
             ].map(link => (
               <a
@@ -289,37 +288,51 @@ export default function NetSuiteERPPage() {
 
 
       {/* What is NetSuite ERP Section with Light Gradient */}
-      <section id="what-is-erp" className="pt-5 pb-14 bg-linear-to-br from-white via-white to-white scroll-mt-36">
+      <section id="what-is-erp" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="flex items-center justify-center rounded-2xl overflow-hidden"
-              style={{ minHeight: 480 }}
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
             >
-              <div className="relative w-full h-full">
-                <Image
-                  src="/images/Dashboard/ERP Dashboard_11zon.jpg"
-                  alt="NetSuite ERP Dashboard"
-                  width={900}
-                  height={600}
-                  className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20"
-                />
+              <div className="relative w-full h-full p-4 lg:p-6">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100">
+                  <Image
+                    src="/images/Dashboard/ERP Dashboard_11zon.jpg"
+                    alt="NetSuite ERP Solution Dashboard"
+                    fill
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
               </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="flex flex-col justify-center space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="flex flex-col justify-center space-y-6 py-6"
+            >
               <div className="space-y-4">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">NetSuite ERP: Unifying Core Processes for Strategic Business Growth</h1>
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+                  Turn Complexity into Clarity with NetSuite ERP.
+                </h2>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">NetSuite ERP is a comprehensive, cloud-based platform that unifies core business processes into a single, streamlined system. As a leading NetSuite ERP Solution Provider, we help businesses leverage its scalable subscription model to gain real-time insights into financials and operations for faster, data-driven decisions.</p>
-              <p className="text-lg text-gray-600 leading-relaxed">With advanced financial capabilities and industry-specific features, NetSuite ERP simplifies compliance and manages complex global needs. It empowers both high-growth startups and established enterprises to improve efficiency, increase agility, and achieve long-term success.</p>
+              <div className="space-y-2">
+                <p className="text-base text-gray-600 leading-relaxed">
+                  NetSuite ERP is an all-in-one cloud business management suite that unifies financials, inventory, orders, and CRM. As a premium NetSuite Solution Provider, we help businesses eliminate manual processes and gain real-time visibility into their entire operations through a single, scalable platform.
+                </p>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  From advanced financial reporting to global business management, NetSuite provides the agility required to scale. It empowers organizations to improve efficiency, ensure regulatory compliance, and drive strategic growth with data-driven decision-making.
+                </p>
+              </div>
               <div className="pt-4">
                 <Link
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
                   style={{
                     background: 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)',
                     color: '#ffffff',
@@ -327,10 +340,12 @@ export default function NetSuiteERPPage() {
                   onMouseEnter={e => {
                     (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff';
                     (e.currentTarget as HTMLAnchorElement).style.color = '#0a1f5c';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 10px 25px -5px rgba(10, 31, 92, 0.3)';
                   }}
                   onMouseLeave={e => {
                     (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)';
                     (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
                   }}
                 >
                   <span>Unlock NetSuite Power</span>
@@ -589,83 +604,7 @@ export default function NetSuiteERPPage() {
 
       <NSServicesSection />
 
-      {/* Pricing Section — New Design */}
-      <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
-        <div className="max-w-7xl mx-auto px-4 lg:px-6">
-          {/* Card wrapper */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="rounded-3xl overflow-hidden shadow-2xl"
-            style={{ backgroundColor: '#06303f' }}
-          >
-            <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
-              {/* LEFT — Text + CTA */}
-              <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
-                {/* Gold Underline Accent */}
-                <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
 
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
-                  How Much Does NetSuite ERP Cost?
-                </h2>
-
-                <p className="text-white/75 text-base leading-relaxed mb-8">
-                  Whether you're a pre-revenue startup or a fast-scaling enterprise, NetSuite adapts to your size and ambition. Subscription is billed annually and combines three elements — the core platform, any optional modules you need, and your user count — along with a one-time implementation fee to get you live. The real power? As your business expands into new markets or functions, you simply activate the right modules and add users. No reinstalls, no infrastructure headaches — just seamless, cloud-powered growth.
-                </p>
-
-                <div>
-                  <Link
-                    href="#contact-form"
-                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-yellow-400 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg"
-                  >
-                    Contact Us Now <ArrowRight size={16} />
-                  </Link>
-                </div>
-              </div>
-
-              {/* RIGHT — Organic Blob Image (top-aligned) */}
-              <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
-                {/* Dark bg layer */}
-                <div className="absolute inset-0 bg-[#052838]" />
-
-                {/* Large back blob — anchored top */}
-                <div
-                  className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]"
-                  style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }}
-                />
-                {/* Mid blob */}
-                <div
-                  className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#0a5060]"
-                  style={{ borderRadius: '45% 55% 50% 50% / 50% 50% 50% 50%' }}
-                />
-
-                {/* Small accent blob bottom-left */}
-                <div
-                  className="absolute bottom-8 left-6 w-14 h-14 bg-[#1a8fa0]/60 z-10"
-                  style={{ borderRadius: '40% 60% 50% 50% / 50% 40% 60% 50%', transform: 'rotate(20deg)' }}
-                />
-                {/* Tiny yellow dot */}
-                <div className="absolute bottom-16 left-14 w-3 h-3 bg-yellow-400/60 rounded-full z-10" />
-
-                {/* Main organic image — top aligned */}
-                <div
-                  className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl"
-                  style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}
-                >
-                  <Image
-                    src="/images/people/laptopgirl.webp"
-                    alt="NetSuite ERP Pricing"
-                    fill
-                    className="object-cover object-top"
-                  />
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section >
 
       {/* FAQ Section */}
       <FAQ variant="netsuite" id="faq" />

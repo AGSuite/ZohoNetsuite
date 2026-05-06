@@ -13,7 +13,6 @@ import {
 import dynamic from 'next/dynamic';
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
-import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
 
 const ScrollFloat = dynamic(() => import('../components/ScrollFloat'), { ssr: false }) as any;
 const RotatingText = dynamic(() => import('../components/RotatingText'), { ssr: false }) as any;
@@ -83,7 +82,7 @@ export default function AddonsPage() {
   const addons = [
     {
       category: "Native SuiteApp",
-      title: "India Localization",
+      title: "India Localization for NetSuite",
       subtitle: "GST-Ready Compliance for Indian Businesses",
       description: "Handle the full complexity of Indian taxation natively inside NetSuite. Our certified India Localization suite automates GST, TDS, e-invoicing with IRP integration, E-Way bill generation, and statutory reporting — keeping your business compliant and audit-ready at all times.",
       description2: "Built specifically to mirror the latest compliance mandates, it minimizes manual entry overhead and ensures total alignment with Indian tax laws directly from your unified cloud ERP.",
@@ -297,7 +296,7 @@ export default function AddonsPage() {
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
-            {[{ label: "What is it?", href: "#what-is" }, { label: "Catalog", href: "#addons" }, { label: "Services", href: "#services" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
+            {[{ label: "What is NetSuite Add-Ons?", href: "#what-is" }, { label: "Add-Ons", href: "#addons" }, { label: "FAQ", href: "#faq" }].map(l => (
               <a key={l.href} href={l.href} className="px-4 py-2 text-base font-semibold hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-500">{l.label}</span>
               </a>
@@ -307,14 +306,43 @@ export default function AddonsPage() {
       </nav>
 
       {/* ─────────────── INTRO ─────────────── */}
-      <section id="what-is" ref={introRef} className="py-10 bg-gray-100 overflow-hidden relative scroll-mt-36">
+      <section id="what-is" ref={introRef} className="pb-20 pt-0 bg-[#000d1a] overflow-hidden relative scroll-mt-36">
+        {/* Background Designs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2" />
+          {/* Particles */}
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute bg-white/10 rounded-full"
+              style={{
+                width: Math.random() * 4 + 2,
+                height: Math.random() * 4 + 2,
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [0, -30, 0],
+                opacity: [0.1, 0.3, 0.1],
+              }}
+              transition={{
+                duration: Math.random() * 5 + 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: Math.random() * 5,
+              }}
+            />
+          ))}
+        </div>
+
         <motion.div
           style={{
             borderRadius: introRadius,
             margin: introMargin,
             scale: introScale,
           }}
-          className="bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 overflow-hidden"
+          className="relative z-10 bg-gradient-to-br from-blue-50 via-red-50 to-purple-50 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] border border-white/20 transition-all duration-500 overflow-hidden"
         >
           <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-24">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -342,21 +370,89 @@ export default function AddonsPage() {
         </motion.div>
       </section>
 
-      {/* ─────────────── ALL ADD-ONS — ALTERNATING ROWS ─────────────── */}
-      <section id="addons" className="py-18 relative overflow-hidden bg-gray-100">
-        {/* Decorative Background Orbs */}
-        <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-100/40 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-        <div className="absolute bottom-1/3 right-0 w-[600px] h-[600px] bg-indigo-100/40 rounded-full blur-[100px] translate-x-1/2 pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-cyan-100/30 rounded-full blur-[80px] translate-y-1/2 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section id="addons" className="py-24 relative overflow-hidden bg-gradient-to-br from-[#000d1a] via-[#0f0720] to-[#1a0505]">
+        {/* Background Designs - Cosmic/Nebula Style */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.1)_0%,transparent_50%)]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(147,51,234,0.1)_0%,transparent_50%)]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(220,38,38,0.05)_0%,transparent_50%)]" />
+
+          {/* Moving Orbs */}
+          <motion.div
+            animate={{ x: [0, 100, 0], y: [0, 50, 0] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px]"
+          />
+          <motion.div
+            animate={{ x: [0, -150, 0], y: [0, 100, 0] }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[130px]"
+          />
+          <motion.div
+            animate={{ x: [0, 50, 0], y: [0, -100, 0] }}
+            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+            className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[110px]"
+          />
+
+          {/* Twinkling Stars */}
+          {[...Array(50)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute bg-white rounded-full"
+              style={{
+                width: Math.random() * 2 + 1,
+                height: Math.random() * 2 + 1,
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                opacity: [0.2, 0.8, 0.2],
+                scale: [1, 1.5, 1],
+              }}
+              transition={{
+                duration: Math.random() * 3 + 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: Math.random() * 5,
+              }}
+            />
+          ))}
+
+          {/* Moving Shooting Stars or Designs */}
+          {[...Array(3)].map((_, i) => (
+            <motion.div
+              key={`shooting-${i}`}
+              className="absolute h-px w-20 bg-gradient-to-r from-transparent via-blue-400 to-transparent"
+              style={{
+                top: `${20 + i * 25}%`,
+                left: '-10%',
+                rotate: '-25deg',
+              }}
+              animate={{
+                left: ['-10%', '110%'],
+                opacity: [0, 1, 0],
+              }}
+              transition={{
+                duration: 4 + i,
+                repeat: Infinity,
+                ease: "linear",
+                delay: i * 7,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-600 leading-tight">All Add-Ons & Connectors</h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6 font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-blue-400 leading-tight">
+              All Add-Ons & Connectors
+            </h2>
+            <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
               Native NetSuite extensions built for commissions, data protection, Indian compliance, and multi-channel commerce.
             </p>
           </motion.div>
@@ -370,7 +466,7 @@ export default function AddonsPage() {
               margin: cardMargin,
               scale: cardScale,
             }}
-            className="bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden relative"
+            className="bg-gradient-to-br from-blue-50 via-red-50 to-purple-50 shadow-[0_35px_80px_-15px_rgba(0,0,0,0.4)] border border-white/20 overflow-hidden relative"
           >
             <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4">
               <div className="flex flex-col">
@@ -471,33 +567,8 @@ export default function AddonsPage() {
         </div>
       </section>
 
-      <NSServicesSection />
 
-      {/* ─────────────── PRICING ─────────────── */}
-      <section id="pricing" className="py-12 bg-gray-50 scroll-mt-36">
-        <div className="max-w-7xl mx-auto px-4 lg:px-6">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-3xl overflow-hidden shadow-2xl" style={{ backgroundColor: '#000d1a' }}>
-            <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
-              <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
-                <div className="w-14 h-1 bg-blue-400 mb-5 rounded-full" />
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">How Are Add-Ons Priced?</h2>
-                <p className="text-white/75 text-base leading-relaxed mb-8">All AGSuite Add-Ons and Connectors are priced as monthly or annual SuiteApp subscriptions — with tiers based on usage volume, number of users, or connected stores. There are no per-transaction fees. Because every Add-On runs natively inside NetSuite, your existing NetSuite subscription provides the data foundation. Contact our team for a personalised quote.</p>
-                <Link href="#contact-form" className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-blue-400 hover:text-white transition-all shadow-md">
-                  Get a Custom Quote <ArrowRight size={16} />
-                </Link>
-              </div>
-              <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
-                <div className="absolute inset-0 bg-[#001022]" />
-                <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#002040]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
-                <div className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#003060]" style={{ borderRadius: '45% 55% 50% 50% / 50% 50% 50% 50%' }} />
-                <div className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl" style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}>
-                  <Image src="/images/people/people4.webp" alt="Add-Ons Pricing" fill className="object-cover object-top" />
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+
 
       <FAQ
         variant="netsuite"

@@ -100,6 +100,11 @@ export interface IndustryPricingTier {
   features: string[];
   popular?: boolean;
 }
+export interface IndustryFeature {
+  title: string;
+  description: string;
+  image?: string;
+}
 export interface IndustryFAQ {
   q?: string;
   a?: string;
@@ -121,6 +126,7 @@ export interface IndustryPageData {
   introDescription2?: string;
   stats: IndustryStat[];
   benefits: IndustryBenefit[];
+  features: IndustryFeature[];
   challenges: IndustryChallenge[];
   pricingIntro?: string;
   pricingTiers: IndustryPricingTier[];
@@ -420,11 +426,11 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
             {[
-              { label: "Overview", href: "#overview" },
+              { label: `Why NetSuite for ${data.industry}?`, href: "#overview" },
               { label: "Challenges", href: "#challenges" },
+              { label: "Features", href: "#features" },
               { label: "Benefits", href: "#benefits" },
               { label: "Services", href: "#services" },
-              { label: "Pricing", href: "#pricing" },
               { label: "FAQ", href: "#faq" },
             ].map((link) => (
               <a
@@ -539,7 +545,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8 items-start">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8 items-stretch">
             {data.challenges.map((item, index) => {
               const isOpen = openChallenge === index;
               const fallbackColors = [
@@ -565,17 +571,17 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                     delay: index * 0.06,
                     ease: "easeOut",
                   }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
+                  className="group flex flex-col h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
                 >
                   <div
-                    className="relative h-44 shrink-0 overflow-hidden cursor-pointer"
+                    className="relative h-56 shrink-0 overflow-hidden cursor-pointer"
                     onClick={() => setOpenChallenge(isOpen ? null : index)}
                   >
                     <Image
                       src={item.image || "/images/lap/lap1.webp"}
                       alt={item.title}
                       fill
-                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                      className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
                     />
                     <div
                       className="absolute inset-0"
@@ -664,6 +670,71 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
         </div>
       </section>
 
+      
+      {/* ══════ FEATURES ══════ */}
+      <section
+        id="features"
+        className="py-24 bg-white relative overflow-hidden scroll-mt-36"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="bg-blue-600/10 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+              Core Features
+            </span>
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-gray-900 mt-6 mb-4">
+              Powerful Features for {data.industry}
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Tailored solutions designed to streamline your operations and drive
+              growth.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-12">
+            {data.features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`group relative rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden ${cardBgColors[index % cardBgColors.length]}`}
+              >
+                <div className="relative z-10 h-full flex flex-col">
+                  {feature.image && (
+                    <div className="relative h-48 w-full mb-6 rounded-2xl overflow-hidden shadow-md">
+                      <Image
+                        src={feature.image}
+                        alt={feature.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
+                  )}
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
+                    {feature.description}
+                  </p>
+                  <Link
+                    href="#contact-form"
+                    className="inline-flex items-center gap-2 text-blue-600 font-bold text-[10px] uppercase tracking-widest hover:gap-3 transition-all mt-auto"
+                  >
+                    Learn More <ArrowRight size={12} />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ══════ BENEFITS — ERP dark starfield style ══════ */}
       <section
         id="benefits"
@@ -737,7 +808,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
               Why Leaders Choose NetSuite for {data.industry} Industry
             </h2>
           </motion.div>
-          <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
+          <div className="grid lg:grid-cols-2 gap-10 items-stretch">
             {/* Left — animated image */}
             <div className="order-2 lg:order-1 relative min-h-[380px] lg:min-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
               <AnimatePresence mode="wait">
@@ -901,91 +972,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
         </div>
       </section>
 
-      {/* ══════ PRICING — ERP dark teal card style ══════ */}
-      <section
-        id="pricing"
-        className="py-12 bg-gray-50 overflow-hidden scroll-mt-20"
-      >
-        <div className="max-w-7xl mx-auto px-4 lg:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="rounded-3xl overflow-hidden shadow-2xl"
-            style={{ backgroundColor: "#06303f" }}
-          >
-            <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
-              {/* LEFT — text */}
-              <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
-                <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
-                <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-white mb-5">
-                  How Much Does NetSuite for {data.industry} Cost?
-                </h2>
-                <p className="text-white/75 text-base leading-relaxed mb-8">
-                  {data.pricingIntro ??
-                    `NetSuite pricing for ${data.industry} is tailored to your size, number of users, and the modules you need. It includes the core platform, industry-specific modules, and a one-time implementation fee. As your business grows, you simply add modules and users — no reinstalls, no infrastructure headaches.`}
-                </p>
 
-                <div>
-                  <Link
-                    href="#contact-form"
-                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-yellow-400 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg"
-                  >
-                    Get a Custom Quote <ArrowRight size={16} />
-                  </Link>
-                </div>
-              </div>
-              {/* RIGHT — blob image */}
-              <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
-                <div className="absolute inset-0 bg-[#052838]" />
-                <div
-                  className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]"
-                  style={{ borderRadius: "40% 60% 55% 45% / 45% 55% 45% 55%" }}
-                />
-                <div
-                  className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#0a5060]"
-                  style={{ borderRadius: "45% 55% 50% 50% / 50% 50% 50% 50%" }}
-                />
-                <div
-                  className="absolute bottom-8 left-6 w-14 h-14 bg-[#1a8fa0]/60 z-10"
-                  style={{
-                    borderRadius: "40% 60% 50% 50% / 50% 40% 60% 50%",
-                    transform: "rotate(20deg)",
-                  }}
-                />
-                <div className="absolute bottom-16 left-14 w-3 h-3 bg-yellow-400/60 rounded-full z-10" />
-                <div
-                  className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl"
-                  style={{ borderRadius: "50% 50% 46% 54% / 52% 48% 52% 48%" }}
-                >
-                  <Image
-                    src={data.heroImage}
-                    alt={`NetSuite ${data.industry} Pricing`}
-                    fill
-                    className="object-cover object-top"
-                  />
-                </div>
-              </div>
-            </div>
-          </motion.div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center text-gray-400 text-sm mt-6"
-          >
-            * Prices are indicative starting points. Final cost depends on
-            modules, users, and implementation scope.{" "}
-            <Link
-              href="#contact-form"
-              className="text-blue-600 font-semibold hover:underline"
-            >
-              Get a custom quote →
-            </Link>
-          </motion.p>
-        </div>
-      </section>
 
       {/* ══════ FAQ — FAQ component with custom industry questions ══════ */}
       <FAQ

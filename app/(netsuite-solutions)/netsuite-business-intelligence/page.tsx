@@ -241,7 +241,7 @@ export default function NetSuiteBIPage() {
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/50">Solutions</span>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/80">Business Intelligence</span>
+            <span className="text-white/80">NetSuite Business Intelligence</span>
           </motion.nav>
 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
@@ -278,7 +278,7 @@ export default function NetSuiteBIPage() {
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <Link
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-blue-950 hover:border-white transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
                 >
                   Unlock Your Data
                   <motion.span
@@ -397,7 +397,7 @@ export default function NetSuiteBIPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
             {[
-              { label: "What is NetSuite BI?", href: "#what-is-bi" },
+              { label: "What is NetSuite Business Intelligence?", href: "#what-is-bi" },
               { label: "Modules", href: "#modules" },
               { label: "Benefits", href: "#benefits" },
               { label: "Services", href: "#services" },
@@ -421,59 +421,60 @@ export default function NetSuiteBIPage() {
       {/* ── What is NetSuite BI ──────────────────────────────────────────── */}
       <section id="what-is-bi" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-
-            {/* LEFT — Dashboard image */}
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="flex items-center justify-center rounded-2xl overflow-hidden"
-              style={{ minHeight: 480 }}
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
             >
-              <div className="relative w-full h-full">
-                <Image
-                  src="/images/Dashboard/business intelligence 2.jpg"
-                  alt="NetSuite BI Dashboard"
-                  width={900}
-                  height={600}
-                  className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20"
-                />
+              <div className="relative w-full h-full p-4 lg:p-6">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100">
+                  <Image
+                    src="/images/Dashboard/business intelligence 2.jpg"
+                    alt="NetSuite Business Intelligence Analytics Dashboard"
+                    fill
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
               </div>
             </motion.div>
 
-            {/* RIGHT — Text content */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex flex-col justify-center space-y-6"
+              className="flex flex-col justify-center space-y-6 py-6"
             >
               <div className="space-y-4">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  NetSuite BI for Real-Time Analytics and Data-Driven Growth
-                </h1>
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+                  NetSuite Business Intelligence: Real-Time Analytics and Data-Driven Insights
+                </h2>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                NetSuite Business Intelligence (BI) provides built-in analytics and reporting within your ERP, eliminating the need for third-party tools. With real-time dashboards and AI-powered insights, it turns raw data into clear, actionable information for better decision-making.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                By centralizing data across all departments, NetSuite BI ensures a single source of truth through customizable dashboards and automated reports. This helps improve visibility, uncover efficiencies, and drive consistent, data-driven growth.
-              </p>
+              <div className="space-y-2">
+                <p className="text-base text-gray-600 leading-relaxed">
+                  NetSuite Business Intelligence (BI) provides built-in analytics and reporting within your ERP, eliminating the need for third-party data visualization tools. As a specialized <strong>NetSuite BI partner</strong>, we help you leverage real-time dashboards and AI-powered insights to turn raw operational data into clear, actionable business intelligence.
+                </p>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  By centralizing data across finance, sales, and supply chain, NetSuite ensures a single version of truth. Empower your team with self-service analytics and automated reporting, allowing for faster decision-making and continuous performance optimization across your entire organization.
+                </p>
+              </div>
               <div className="pt-4">
                 <Link
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
                   style={{ background: 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)', color: '#ffffff' }}
                   onMouseEnter={e => {
                     (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff';
                     (e.currentTarget as HTMLAnchorElement).style.color = '#0a1f5c';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 10px 25px -5px rgba(10, 31, 92, 0.3)';
                   }}
                   onMouseLeave={e => {
                     (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)';
                     (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
                   }}
                 >
                   <span>Unlock Your Analytics</span>
@@ -499,7 +500,7 @@ export default function NetSuiteBIPage() {
             viewport={{ once: true }} transition={{ duration: 0.6 }}
             className="text-5xl font-medium text-gray-900 text-center"
           >
-            NetSuite BI Modules
+            NetSuite Business Intelligence Modules
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
@@ -581,7 +582,7 @@ export default function NetSuiteBIPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Key Business Benefits of NetSuite BI
+              Key Business Benefits of NetSuite Business Intelligence
             </h2>
           </motion.div>
 
@@ -674,7 +675,7 @@ export default function NetSuiteBIPage() {
               <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
                 <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
-                  How Much Does NetSuite BI Cost?
+                  How Much Does NetSuite Business Intelligence Cost?
                 </h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
                   NetSuite Business Intelligence is included as a native capability within the NetSuite platform — meaning there&apos;s no separate BI license to purchase. Your investment covers the core NetSuite ERP subscription, user seats, and any advanced analytics add-ons like SuiteAnalytics Connect or the Analytics Workbench. As your organization grows, you can activate richer analytics capabilities without disrupting your existing setup or migrating data.
@@ -749,7 +750,7 @@ export default function NetSuiteBIPage() {
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                  Transform Your Data into Decisions —{" "}
+                  Transform Your NetSuite Data into Decisions —{" "}
                   <span className="text-cyan-300">Start Today.</span>
                 </h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">
@@ -761,7 +762,7 @@ export default function NetSuiteBIPage() {
                 href="#contact-form"
                 className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
               >
-                See BI in Action
+                See NetSuite Business Intelligence in Action
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

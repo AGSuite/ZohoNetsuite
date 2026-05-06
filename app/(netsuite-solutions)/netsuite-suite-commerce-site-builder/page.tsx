@@ -86,7 +86,7 @@ export default function NetSuiteEcommercePage() {
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/50">Solutions</span>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/80">E-Commerce</span>
+            <span className="text-white/80">NetSuite E-Commerce</span>
           </motion.nav>
 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
@@ -94,7 +94,7 @@ export default function NetSuiteEcommercePage() {
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15] tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  NetSuite E-Commerce — SuiteCommerce
+                  NetSuite SuiteCommerce Site Builder
                 </span>
               </motion.h1>
               <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }}
@@ -104,7 +104,7 @@ export default function NetSuiteEcommercePage() {
                 Unified ecommerce connected directly to your ERP — deliver seamless B2B and B2C shopping experiences with real-time inventory, orders, and financials in one cloud platform.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-blue-950 hover:border-white transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105">
+                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
                   Launch Your Store
                   <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }} className="flex items-center">
                     <ArrowRight className="w-4 h-4" />
@@ -169,7 +169,7 @@ export default function NetSuiteEcommercePage() {
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
-            {[{ label: "What is Ecommerce?", href: "#what-is" }, { label: "Capabilities", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Services", href: "#services" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
+            {[{ label: "What is NetSuite SuiteCommerce Site Builder?", href: "#what-is" }, { label: "Modules", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Services", href: "#services" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
               <a key={l.href} href={l.href} className="px-4 py-2 text-base font-semibold hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500">{l.label}</span>
               </a>
@@ -181,30 +181,68 @@ export default function NetSuiteEcommercePage() {
       {/* What is */}
       <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-              className="flex items-center justify-center rounded-2xl overflow-hidden" style={{ minHeight: 480 }}>
-              <div className="relative w-full h-full">
-                <Image src="/images/Dashboard/suitecommerce 2 dashbaord.jpg" alt="NetSuite SuiteCommerce Dashboard" width={900} height={600} className="w-full h-auto rounded-xl object-contain border-4 border-blue-200 shadow-2xl shadow-blue-900/20" />
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
+            >
+              <div className="relative w-full h-full p-4 lg:p-6">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/10 border-4 border-blue-100">
+                  <Image
+                    src="/images/Dashboard/suitecommerce 2 dashbaord.jpg"
+                    alt="NetSuite SuiteCommerce Unified E-Commerce Management Dashboard"
+                    fill
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
               </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="flex flex-col justify-center space-y-6">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
-                Scale Your Online Business with NetSuite E-Commerce
-              </h1>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                NetSuite E-Commerce is a unified platform that connects online sales with inventory management, CRM, order processing, and financials. It enables businesses to manage multiple web stores, deliver personalized shopping experiences, and streamline the entire order-to-cash process.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                With strong omnichannel capabilities, NetSuite E-Commerce integrates online, in-store, and call center operations into one system. It helps manage products, pricing, promotions, and customer interactions efficiently, improving scalability, customer satisfaction, and overall business growth.
-              </p>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="flex flex-col justify-center space-y-6 py-6"
+            >
+              <div className="space-y-4">
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
+                  NetSuite SuiteCommerce: Unified E-Commerce for Seamless Omnichannel Growth
+                </h2>
+              </div>
+              <div className="space-y-2">
+                <p className="text-base text-gray-600 leading-relaxed">
+                  NetSuite SuiteCommerce is a robust, unified ecommerce platform that seamlessly connects your online sales channel with your core ERP system. As a leading NetSuite SuiteCommerce implementation partner, we help businesses eliminate data silos by integrating inventory, CRM, and financials into a single, high-performance web storefront.
+                </p>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  Whether you are scaling B2B wholesale operations or high-volume B2C retail, SuiteCommerce provides the agility to deliver personalized shopping experiences across all devices. Optimize your order-to-cash process and gain real-time visibility into customer behavior to drive sustainable global growth.
+                </p>
+              </div>
               <div className="pt-4">
-                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
+                <Link
+                  href="#contact-form"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
                   style={{ background: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)', color: '#ffffff' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff'; (e.currentTarget as HTMLAnchorElement).style.color = '#1e3a8a'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)'; (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'; }}>
-                  <span>Explore SuiteCommerce</span>
-                  <motion.span className="flex items-center" animate={{ x: [0, 5, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}>
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#1e3a8a';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 10px 25px -5px rgba(30, 58, 138, 0.3)';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
+                  }}
+                >
+                  <span>Explore SuiteCommerce Advantage</span>
+                  <motion.span
+                    className="flex items-center"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                  >
                     <ArrowRight size={17} strokeWidth={2.5} />
                   </motion.span>
                 </Link>
@@ -217,7 +255,7 @@ export default function NetSuiteEcommercePage() {
       {/* Modules Grid */}
       <section id="modules" className="py-16 bg-white relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-medium text-gray-900 text-center">SuiteCommerce Modules</motion.h2>
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-medium text-gray-900 text-center">NetSuite SuiteCommerce Modules</motion.h2>
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-600 text-lg max-w-2xl text-center">
             12 powerful commerce capabilities unified with your NetSuite ERP — covering every customer touchpoint
           </motion.p>
@@ -304,7 +342,7 @@ export default function NetSuiteEcommercePage() {
             <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
               <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
                 <div className="w-14 h-1 bg-blue-400 mb-5 rounded-full" />
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">How Much Does SuiteCommerce Cost?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">How Much Does NetSuite SuiteCommerce Cost?</h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
                   SuiteCommerce is licensed as part of the NetSuite platform — pricing is based on your store edition (Standard or Advanced), number of users, and any optional add-ons such as multi-site or B2B portals. Because it is natively unified with NetSuite ERP, there is no separate ecommerce subscription or integration cost to manage.
                 </p>
@@ -358,11 +396,11 @@ export default function NetSuiteEcommercePage() {
             </div>
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Launch Your Online Store — <span className="text-cyan-300">Start Today.</span></h2>
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Launch Your NetSuite Store — <span className="text-cyan-300">Start Today.</span></h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">Join thousands of businesses growing their revenue with SuiteCommerce — unified commerce that works as hard as your business.</p>
               </div>
               <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-800 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
-                Request a Demo <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Request a NetSuite SuiteCommerce Demo <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </motion.div>

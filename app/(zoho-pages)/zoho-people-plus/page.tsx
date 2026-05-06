@@ -115,9 +115,9 @@ export default function ZohoPeoplePlusPage() {
   return (
     <ZohoSolutionTemplate
       title="Zoho People Plus — Unified HR Suite"
-      subtitle="Deliver Exceptional Employee Experiences."
-      description="Zoho People Plus is an integrated employee experience platform that brings together HR, recruitment, payroll, and performance management to help you build and nurture a high-performing team."
-      introDescription2="Zoho People Plus provides an integrated employee experience platform that covers everything from talent acquisition and core HR to employee engagement and payroll."
+      subtitle="Zoho People Plus: The Unified Employee Experience Platform for Global Enterprises"
+      description="Zoho People Plus is a comprehensive, all-in-one suite that unifies your entire employee lifecycle — from recruitment and onboarding to payroll, performance, and internal communication. As a specialized Zoho People Plus partner, we help you eliminate fragmented HR processes by integrating Zoho People, Recruit, Payroll, Expense, Connect, and Cliq into one seamless employee experience."
+      introDescription2="Zoho People Plus provides an integrated employee experience platform that covers everything from talent acquisition and core HR to employee engagement and payroll, ensuring your workforce remains connected and productive."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
@@ -152,6 +152,3 @@ export default function ZohoPeoplePlusPage() {
     />
   );
 }
-
-
-

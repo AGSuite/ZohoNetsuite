@@ -79,7 +79,7 @@ export default function CareersPage() {
 
   const stats = [
     { label: "Global Professionals", value: 150, suffix: "+", icon: Users },
-    { label: "Countries Presence", value: 5, suffix: "+", icon: Globe },
+    { label: "Countries Presence", value: 10, suffix: "+", icon: Globe },
     { label: "Projects Delivered", value: 500, suffix: "+", icon: Target },
     { label: "Annual Growth", value: 35, suffix: "%", icon: Rocket },
   ];
@@ -226,7 +226,7 @@ export default function CareersPage() {
                       Join a growing global team
                     </p>
                     <p className="text-gray-500 text-xs mt-0.5 leading-snug">
-                      150+ professionals · 5 countries · 500+ projects delivered
+                      150+ professionals · 10+ countries · 500+ projects delivered
                     </p>
                   </div>
                 </motion.div>

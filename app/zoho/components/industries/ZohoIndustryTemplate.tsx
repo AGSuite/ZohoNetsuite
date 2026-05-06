@@ -80,6 +80,11 @@ export interface IndustryPricingTier {
   features: string[];
   popular?: boolean;
 }
+export interface IndustryFeature {
+  title: string;
+  description: string;
+  image?: string;
+}
 export interface IndustryFAQ {
   q?: string;
   a?: string;
@@ -101,6 +106,7 @@ export interface IndustryPageData {
   introDescription2?: string;
   stats: IndustryStat[];
   benefits: IndustryBenefit[];
+  features: IndustryFeature[];
   challenges: IndustryChallenge[];
   pricingIntro?: string;
   pricingTiers: IndustryPricingTier[];
@@ -387,11 +393,11 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
             {[
-              { label: "Overview", href: "#overview" },
-              { label: "Benefits", href: "#benefits" },
+              { label: `Why Zoho for ${data.industry}?`, href: "#overview" },
               { label: "Challenges", href: "#challenges" },
+              { label: "Features", href: "#features" },
+              { label: "Benefits", href: "#benefits" },
               { label: "Services", href: "#services" },
-              { label: "Pricing", href: "#pricing" },
               { label: "FAQ", href: "#faq" },
             ].map((link) => (
               <a
@@ -482,110 +488,6 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
         </div>
       </section>
 
-      {/* ══════ BENEFITS ══════ */}
-      <section
-        id="benefits"
-        className="py-24 relative overflow-hidden scroll-mt-20"
-        style={{
-          background:
-            "linear-gradient(135deg,#060e1f 0%,#0a1e4a 25%,#0f2a57 55%,#091828 80%,#050d1a 100%)",
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Why Leaders Choose Zoho for {data.industry} Industry
-            </h2>
-          </motion.div>
-          <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
-            {/* Left — animated image */}
-            <div className="order-2 lg:order-1 relative min-h-[380px] lg:min-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeBenefit}
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute inset-0 h-full w-full"
-                >
-                  <Image
-                    src={data.benefits[activeBenefit].image}
-                    alt={data.benefits[activeBenefit].title}
-                    fill
-                    className="object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
-                </motion.div>
-              </AnimatePresence>
-            </div>
-            {/* Right — list */}
-            <div className="order-1 lg:order-2 rounded-3xl border border-white/10 bg-white/[0.03] p-4 flex flex-col gap-2 justify-center shadow-inner backdrop-blur-sm">
-              {data.benefits.map((item, index) => {
-                const Icon = benefitIcons[index % benefitIcons.length];
-                return (
-                  <button
-                    key={index}
-                    onClick={() => setActiveBenefit(index)}
-                    className={`group relative w-full flex flex-col justify-center px-5 py-4 text-left rounded-xl transition-all duration-300 outline-none ${activeBenefit === index ? "bg-white shadow-xl border-l-4 border-blue-600" : "bg-white/5 border-l-4 border-transparent hover:bg-white/10"}`}
-                  >
-                    <div className="flex items-center gap-4 w-full">
-                      <div
-                        className={`shrink-0 transition-colors duration-300 ${activeBenefit === index ? "text-blue-600" : "text-gray-400 group-hover:text-gray-200"}`}
-                      >
-                        <Icon size={20} />
-                      </div>
-                      <span
-                        className={`text-base md:text-lg flex-1 font-semibold transition-all duration-300 ${activeBenefit === index ? "text-gray-900" : "text-gray-300 group-hover:text-white"}`}
-                      >
-                        {item.title}
-                      </span>
-                      <ChevronRight
-                        className={`w-4 h-4 shrink-0 transition-all duration-300 ${activeBenefit === index ? "text-blue-600 rotate-90" : "text-gray-500 opacity-0 group-hover:opacity-60"}`}
-                      />
-                    </div>
-                    {activeBenefit === index && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden mt-3 pl-9"
-                      >
-                        <p className="text-gray-500 text-sm leading-relaxed mb-3">
-                          {item.description}
-                        </p>
-                        {item.points && item.points.length > 0 && (
-                          <ul className="space-y-1.5">
-                            {item.points.map((pt, pi) => (
-                              <li
-                                key={pi}
-                                className="flex items-start gap-2 text-sm text-gray-600"
-                              >
-                                <Check
-                                  size={13}
-                                  className="text-blue-600 mt-0.5 shrink-0"
-                                />
-                                {pt}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </motion.div>
-                    )}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ══════ CHALLENGES ══════ */}
       <section
         id="challenges"
@@ -610,7 +512,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8 items-start">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8 items-stretch">
             {data.challenges.map((item, index) => {
               const isOpen = openChallenge === index;
               const fallbackColors = [
@@ -636,17 +538,17 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
                     delay: index * 0.06,
                     ease: "easeOut",
                   }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
+                  className="group flex flex-col h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
                 >
                   <div
-                    className="relative h-44 shrink-0 overflow-hidden cursor-pointer"
+                    className="relative h-56 shrink-0 overflow-hidden cursor-pointer"
                     onClick={() => setOpenChallenge(isOpen ? null : index)}
                   >
                     <Image
                       src={item.image || "/images/lap/lap1.webp"}
                       alt={item.title}
                       fill
-                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                      className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
                     />
                     <div
                       className="absolute inset-0"
@@ -721,6 +623,175 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
         </div>
       </section>
 
+      
+      {/* ══════ FEATURES ══════ */}
+      <section
+        id="features"
+        className="py-24 bg-white relative overflow-hidden scroll-mt-36"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="bg-blue-600/10 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+              Core Features
+            </span>
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-gray-900 mt-6 mb-4">
+              Powerful Features for {data.industry}
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Tailored solutions designed to streamline your operations and drive
+              growth.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-12">
+            {data.features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`group relative rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden ${cardBgColors[index % cardBgColors.length]}`}
+              >
+                <div className="relative z-10 h-full flex flex-col">
+                  {feature.image && (
+                    <div className="relative h-48 w-full mb-6 rounded-2xl overflow-hidden shadow-md">
+                      <Image
+                        src={feature.image}
+                        alt={feature.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
+                  )}
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
+                    {feature.description}
+                  </p>
+                  <Link
+                    href="#contact-form"
+                    className="inline-flex items-center gap-2 text-blue-600 font-bold text-[10px] uppercase tracking-widest hover:gap-3 transition-all mt-auto"
+                  >
+                    Learn More <ArrowRight size={12} />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════ BENEFITS ══════ */}
+      <section
+        id="benefits"
+        className="py-24 relative overflow-hidden scroll-mt-20"
+        style={{
+          background:
+            "linear-gradient(135deg,#060e1f 0%,#0a1e4a 25%,#0f2a57 55%,#091828 80%,#050d1a 100%)",
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+              Why Leaders Choose Zoho for {data.industry} Industry
+            </h2>
+          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-10 items-stretch">
+            {/* Left — animated image */}
+            <div className="order-2 lg:order-1 relative min-h-[380px] lg:min-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeBenefit}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0 h-full w-full"
+                >
+                  <Image
+                    src={data.benefits[activeBenefit].image}
+                    alt={data.benefits[activeBenefit].title}
+                    fill
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+            {/* Right — list */}
+            <div className="order-1 lg:order-2 rounded-3xl border border-white/10 bg-white/[0.03] p-4 flex flex-col gap-2 justify-center shadow-inner backdrop-blur-sm">
+              {data.benefits.map((item, index) => {
+                const Icon = benefitIcons[index % benefitIcons.length];
+                return (
+                  <button
+                    key={index}
+                    onClick={() => setActiveBenefit(index)}
+                    className={`group relative w-full flex flex-col justify-center px-5 py-4 text-left rounded-xl transition-all duration-300 outline-none ${activeBenefit === index ? "bg-white shadow-xl border-l-4 border-blue-600" : "bg-white/5 border-l-4 border-transparent hover:bg-white/10"}`}
+                  >
+                    <div className="flex items-center gap-4 w-full">
+                      <div
+                        className={`shrink-0 transition-colors duration-300 ${activeBenefit === index ? "text-blue-600" : "text-gray-400 group-hover:text-gray-200"}`}
+                      >
+                        <Icon size={20} />
+                      </div>
+                      <span
+                        className={`text-base md:text-lg font-semibold transition-all duration-300 ${activeBenefit === index ? "text-gray-900" : "text-gray-300 group-hover:text-white"}`}
+                      >
+                        {item.title}
+                      </span>
+                      <ChevronRight
+                        className={`w-4 h-4 shrink-0 transition-all duration-300 ${activeBenefit === index ? "text-blue-600 rotate-90" : "text-gray-500 opacity-0 group-hover:opacity-60"}`}
+                      />
+                    </div>
+                    {activeBenefit === index && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden mt-3 pl-9"
+                      >
+                        <p className="text-gray-500 text-sm leading-relaxed mb-3">
+                          {item.description}
+                        </p>
+                        {item.points && item.points.length > 0 && (
+                          <ul className="space-y-1.5">
+                            {item.points.map((pt, pi) => (
+                              <li
+                                key={pi}
+                                className="flex items-start gap-2 text-sm text-gray-600"
+                              >
+                                <Check
+                                  size={13}
+                                  className="text-blue-600 mt-0.5 shrink-0"
+                                />
+                                {pt}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </motion.div>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ══════ SERVICES ══════ */}
       <section id="services" className="py-20 bg-gray-50 relative overflow-hidden scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-5">
@@ -782,50 +853,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
         </div>
       </section>
 
-      {/* ── Pricing Section ───────────────────────────────────────────────── */}
-      <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
-        <div className="max-w-7xl mx-auto px-4 lg:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }} transition={{ duration: 0.7 }}
-            className="rounded-3xl overflow-hidden shadow-2xl"
-            style={{ backgroundColor: '#06303f' }}
-          >
-            <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
-              {/* Left Side */}
-              <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
-                <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
-                <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-white mb-5">
-                  How Much Does Zoho Cost?
-                </h2>
-                <p className="text-white/75 text-base leading-relaxed mb-8">
-                  From rising startups to global enterprises, Zoho scales alongside your ambition. Your investment is tailored to your business size and requirements, staying flexible through discounts and volume incentives as you grow. Simply adjust your license and user count without infrastructure worries—a seamless, cloud-powered foundation that grows exactly as you do.
-                </p>
-                <div>
-                  <Link
-                    href="#contact-form"
-                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-yellow-400 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg"
-                  >
-                    Talk to a Pricing Specialist <ArrowRight size={16} />
-                  </Link>
-                </div>
-              </div>
 
-              {/* Right Side — Organic Visual */}
-              <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
-                <div className="absolute inset-0 bg-[#052838]" />
-                <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
-                <div className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#0a5060]" style={{ borderRadius: '45% 55% 50% 50% / 50% 50% 50% 50%' }} />
-                <div className="absolute bottom-8 left-6 w-14 h-14 bg-[#1a8fa0]/60 z-10" style={{ borderRadius: '40% 60% 50% 50% / 50% 40% 60% 50%', transform: 'rotate(20deg)' }} />
-                <div className="absolute bottom-16 left-14 w-3 h-3 bg-yellow-400/60 rounded-full z-10" />
-                <div className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl" style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}>
-                  <Image src={data.heroImage} alt="Pricing Visual" fill className="object-cover object-top" />
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* ══════ FAQ ══════ */}
       {data.faqs.length > 0 && (

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect } from "react";
 import {
@@ -489,7 +489,7 @@ export default function ImplementationPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
             {[
-              { label: "What is Implementation?", href: "#what-is" },
+              { label: "What is NetSuite Implementation?", href: "#what-is" },
               { label: "Services", href: "#services" },
               { label: "Benefits", href: "#benefits" },
               { label: "Pricing", href: "#pricing" },

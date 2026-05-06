@@ -248,10 +248,10 @@ type CounterItem = {
 const counters: CounterItem[] = [
   { label: 'Projects Completed', value: 600, icon: Briefcase, suffix: "+" },
   { label: 'Global Customers', value: 200, icon: Building2, suffix: "+" },
-  { label: 'Industry Expertise', value: 30, icon: Target, suffix: "+" },
+  { label: 'Industry Expertise', value: 15, icon: Target, suffix: "+" },
   { label: 'Customer Retention', value: 84, icon: Heart, suffix: "%" },
   { label: 'Years Experience', value: 15, icon: Rocket, suffix: "+" },
-  { label: 'Countries Serving', value: 6, icon: Globe2, suffix: "+" },
+  { label: 'Countries Serving', value: 10, icon: Globe2, suffix: "+" },
 ];
 
 const fadeInUp: Variants = {
@@ -406,7 +406,27 @@ const partnerLogos = [
   { logo: "/images/assets/airling%20tech.webp", name: "Airling" },
   { logo: "/images/assets/video%20verse%20tech.webp", name: "VideoVerse" },
   { logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal" },
+  { logo: "/images/assets/control%20service.webp", name: "Control Service" },
   { logo: "/images/assets/uniAcco%20service.webp", name: "UniAcco" },
+  { logo: "/images/assets/dlz%20service.webp", name: "DLZ" },
+  { logo: "/images/assets/indovance%20service.webp", name: "Indovance" },
+  { logo: "/images/assets/pace%20services.webp", name: "Pace" },
+  { logo: "/images/netuite%20client%20images/aidash.png", name: "AiDash" },
+  { logo: "/images/netuite%20client%20images/controlcase.png", name: "ControlCase" },
+  { logo: "/images/netuite%20client%20images/escalent.png", name: "Escalent" },
+  { logo: "/images/netuite%20client%20images/finn.png", name: "Finn" },
+  { logo: "/images/netuite%20client%20images/flatworld.png", name: "Flatworld" },
+  { logo: "/images/netuite%20client%20images/image%20(13).png", name: "Client 13" },
+  { logo: "/images/netuite%20client%20images/kale.png", name: "Kale" },
+  { logo: "/images/netuite%20client%20images/keycraft.png", name: "Keycraft" },
+  { logo: "/images/netuite%20client%20images/logic.png", name: "Logic" },
+  { logo: "/images/netuite%20client%20images/modaxo.png", name: "Modaxo" },
+  { logo: "/images/netuite%20client%20images/prioritytire.png", name: "Priority Tire" },
+  { logo: "/images/netuite%20client%20images/signal.png", name: "Signal" },
+  { logo: "/images/netuite%20client%20images/thread.png", name: "Thread" },
+  { logo: "/images/netuite%20client%20images/traxon.png", name: "Traxon" },
+  { logo: "/images/netuite%20client%20images/uniacco.png", name: "UniAcco" },
+  { logo: "/images/netuite%20client%20images/videoverse.png", name: "VideoVerse" },
 ];
 
 function StrategicPartnersSection() {
@@ -559,16 +579,16 @@ function ClientsSection() {
           </motion.h2>
         </div>
 
-        <div className="relative w-full overflow-hidden py-4">
-          <div className="flex items-center gap-15 animate-marquee-slow whitespace-nowrap">
+        <div className="relative w-full overflow-hidden py-10">
+          <div className="flex items-center animate-marquee-slow whitespace-nowrap">
             {partnerLogos.concat(partnerLogos).map((logo, index) => (
-              <div key={index} className="flex-shrink-0  hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <div key={index} className="flex-shrink-0 px-8 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
                 <Image
                   src={logo.logo}
                   alt={logo.name}
                   width={180}
                   height={60}
-                  className="h-18 w-auto object-contain"
+                  className="h-18 w-auto object-contain px-4"
                 />
               </div>
             ))}
@@ -582,8 +602,9 @@ function ClientsSection() {
           100% { transform: translateX(-50%); }
         }
         .animate-marquee-slow {
-          display: flex;
-          animation: marquee-slow 10s linear infinite;
+          display: inline-flex;
+          animation: marquee-slow 25s linear infinite;
+          will-change: transform;
         }
         .animate-marquee-slow:hover {
           animation-play-state: paused;

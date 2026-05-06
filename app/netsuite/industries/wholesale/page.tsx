@@ -77,11 +77,32 @@ const data: IndustryPageData = {
         "Ensure full traceability with automated lot and serial number tracking. Manage expiration dates and handle recalls with precision and speed.",
       image: "/images/lap/lap5.webp",
     },
+  ],
+  features: [
     {
-      title: "Vendor Portal & EDI Automation",
-      description:
-        "Streamline supplier communication with a self-service vendor portal and automated EDI document exchange, reducing manual data entry and errors.",
-      image: "/images/people/threeteam.webp",
+      title: "Financial Management",
+      description: "Automate transaction flow and gain real-time access to financial and operational performance metrics.",
+      image: "/images/lap/lap2.webp",
+    },
+    {
+      title: "Inventory Management",
+      description: "Optimize inventory levels, minimize stockouts, and boost profitability with company-wide inventory visibility.",
+      image: "/images/lap/lap1.webp",
+    },
+    {
+      title: "Customer Relationship Management",
+      description: "Track and analyze multi-channel marketing campaigns, automate case management, and provide real-time customer data.",
+      image: "/images/lap/lap3.webp",
+    },
+    {
+      title: "E-commerce Integration",
+      description: "Unify e-commerce platforms with backend systems for a seamless online shopping experience.",
+      image: "/images/lap/lap4.webp",
+    },
+    {
+      title: "Order Management",
+      description: "Automate the entire order-to-fulfillment cycle for faster delivery and improved customer satisfaction.",
+      image: "/images/lap/lap6_11zon.webp",
     },
   ],
   challenges: [
@@ -89,49 +110,49 @@ const data: IndustryPageData = {
       title: "Inventory Visibility Gaps",
       description:
         "NetSuite provides real-time, multi-location inventory with automated replenishment alerts, demand-driven reorder points, and forward-looking stock projections.",
-      image: "/images/people/laptopmen1.jpg",
+      image: "/images/challenges/inventory-blind-spots.png",
     },
     {
       title: "Complex Customer Pricing in Spreadsheets",
       description:
         "NetSuite's Advanced Pricing module automates customer-specific pricing, tiered discounts, contract prices, and promotional rules — applied automatically at order entry.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/challenges/data-silos.png",
     },
     {
       title: "Landed Cost Inaccuracies",
       description:
         "NetSuite's landed cost module allocates duties, freight, and other costs to purchase receipts — giving you accurate product costs and true gross margins.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/challenges/profitability.png",
     },
     {
       title: "Slow Order Fulfilment",
       description:
         "NetSuite's automated order management processes customer orders — from entry to pick/pack/ship to invoice — without manual handoffs, reducing fulfilment time by up to 40%.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/challenges/fulfillment-delay.png",
     },
     {
       title: "Disconnected Purchasing & Sales",
       description:
         "Siloed internal departments lead to stockouts or overordering. NetSuite unifies the entire supply chain from demand to fulfillment.",
-      image: "/images/people/laptopgirl3.webp",
+      image: "/images/challenges/ecommerce-sync.png",
     },
     {
       title: "Excess Inventory Costs",
       description:
         "Carrying slow-moving stock ties up critical capital. NetSuite's demand planning optimizes stock levels to reduce carrying costs.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/challenges/revenue-leakage.png",
     },
     {
       title: "Paper-Based Operations",
       description:
         "Manual warehouse processing is slow and error-prone. NetSuite WMS digitizes all warehouse tasks via mobile scanning.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/challenges/manual-billing.png",
     },
     {
       title: "Fragmented Supply Chain Data",
       description:
         "Lack of real-time insights into supplier performance impacts reliability. NetSuite provides vendor scorecards and global visibility.",
-      image: "/images/people/global.webp",
+      image: "/images/challenges/supply-chain.png",
     },
   ],
   pricingTiers: [

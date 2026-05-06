@@ -433,10 +433,10 @@ export default function ZohoContactPage() {
                 {[
                   { label: "Projects Completed", value: "600+", icon: Briefcase },
                   { label: "Global Customers", value: "200+", icon: Building2 },
-                  { label: "Industry Expertise", value: "30+", icon: Target },
-                  { label: "Customer Retention", value: "84%", icon: Heart },
+                  { label: "Industry Expertise", value: "15+", icon: Target },
+                  { label: "Happy Clients", value: "500+", icon: Users },
                   { label: "Years Experience", value: "15+", icon: Rocket },
-                  { label: "Countries Serving", value: "6+", icon: Globe2 },
+                  { label: "Countries Serving", value: "10+", icon: Globe2 },
                 ].map((item, i) => (
                   <StatCard key={i} item={item} index={i} />
                 ))}

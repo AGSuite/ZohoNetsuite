@@ -145,7 +145,7 @@ export default function AccountingSoftwarePage() {
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/50">Solutions</span>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/80">Accounting</span>
+            <span className="text-white/80">NetSuite Accounting</span>
           </motion.nav>
 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
@@ -177,7 +177,7 @@ export default function AccountingSoftwarePage() {
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <a
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-blue-950 hover:border-white transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
                 >
                   Get Started
                   <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }} className="flex items-center">
@@ -292,7 +292,7 @@ export default function AccountingSoftwarePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
             {[
-              { label: "What is NetSuite Accounting?", href: "#what-is-accounting" },
+              { label: "What is NetSuite Accounting Services?", href: "#what-is-accounting" },
               { label: "Modules", href: "#modules" },
               { label: "Benefits", href: "#benefits" },
               { label: "Services", href: "#services" },
@@ -316,51 +316,71 @@ export default function AccountingSoftwarePage() {
       {/* ── What is Accounting Section ───────────────────────────────────── */}
       <section id="what-is-accounting" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }} transition={{ duration: 0.7 }}
-              className="flex items-center justify-center rounded-2xl overflow-hidden"
-              style={{ minHeight: 480 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
             >
-              <div className="relative w-full h-full">
-                <Image
-                  src="/images/Dashboard/accounting and planing dashboard.jpg"
-                  alt="NetSuite Accounting Dashboard"
-                  width={900}
-                  height={600}
-                  className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20"
-                />
+              <div className="relative w-full h-full p-4 lg:p-6">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100">
+                  <Image
+                    src="/images/Dashboard/accounting and planing dashboard.jpg"
+                    alt="NetSuite Cloud Accounting Financial Management Dashboard"
+                    fill
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
               </div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex flex-col justify-center space-y-6"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="flex flex-col justify-center space-y-6 py-6"
             >
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                NetSuite Cloud Accounting Services for Unified Financial Growth
-              </h1>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                NetSuite Cloud Accounting is a comprehensive financial management platform that unifies your general ledger, AR, AP, fixed assets, and tax into a single cloud-based system—eliminating the chaos of disconnected spreadsheets. When supported by expert NetSuite Accounting Services and trusted implementation partners, businesses can achieve a seamless financial transformation tailored to their unique scale.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                With real-time visibility and a single source of truth, finance teams can accelerate the close process, ensure global compliance, and deliver the data-driven insights leadership needs. By leveraging professional guidance to optimize system performance, organizations can enhance scalability and confidently support long-term growth.
-              </p>
+              <div className="space-y-4">
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+                  NetSuite Accounting: Unified Cloud Financial Management for Scalable Growth
+                </h2>
+              </div>
+              <div className="space-y-2">
+                <p className="text-base text-gray-600 leading-relaxed">
+                  NetSuite Cloud Accounting is a robust financial management solution that unifies your general ledger, AR, AP, and tax into a single cloud-based platform. As a trusted <strong>NetSuite implementation partner</strong>, we help organizations eliminate disconnected spreadsheets and achieve a single version of financial truth across their entire enterprise.
+                </p>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  With real-time visibility and automated financial workflows, your team can accelerate the month-end close, ensure global compliance, and deliver audit-ready reporting. Optimize your financial operations with a scalable system designed to support complex business models and international expansion.
+                </p>
+              </div>
               <div className="pt-4">
-                <a
+                <Link
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
                   style={{ background: 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)', color: '#ffffff' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff'; (e.currentTarget as HTMLAnchorElement).style.color = '#0a1f5c'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)'; (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'; }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#0a1f5c';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 10px 25px -5px rgba(10, 31, 92, 0.3)';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
+                  }}
                 >
                   <span>Unlock Accounting Power</span>
-                  <motion.span className="flex items-center" animate={{ x: [0, 5, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}>
+                  <motion.span
+                    className="flex items-center"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                  >
                     <ArrowRight size={17} strokeWidth={2.5} />
                   </motion.span>
-                </a>
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -582,7 +602,7 @@ export default function AccountingSoftwarePage() {
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                  Modernise Your Accounting —{" "}
+                  Modernise Your NetSuite Accounting —{" "}
                   <span className="text-cyan-300">Faster Than You Think.</span>
                 </h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">
@@ -593,7 +613,7 @@ export default function AccountingSoftwarePage() {
                 href="#contact-form"
                 className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
               >
-                Start Your Accounting Journey
+                Start Your NetSuite Accounting Journey
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>

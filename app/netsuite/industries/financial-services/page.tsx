@@ -15,7 +15,7 @@ const data: IndustryPageData = {
   heroCardSub: "Compliance · Risk Management · Reporting · Multi-Entity Consolidation",
   heroTopCardTitle: "Trusted by Financial Leaders",
   heroTopCardSub: "Compliant · Secure · Scalable",
-  introImage: "/images/lap/lap4.webp",
+  introImage: "/images/lap/lap10_11zon.webp",
   introTitle: "Why NetSuite ERP for Financial Services Industry?",
   introDescription:
     "In a rapidly evolving financial landscape, organizations face challenges like regulatory compliance, data security, and operational inefficiencies. To stay competitive, financial institutions require a modern, cloud-based ERP solution that delivers real-time visibility, automation, and scalability.",
@@ -83,16 +83,32 @@ const data: IndustryPageData = {
         "Global & India localization",
       ],
     },
+  ],
+  features: [
     {
-      title: "Seamless Ecosystem Integrations",
-      description:
-        "Connect with CRM, payroll, banking platforms, investment management systems, and third-party financial tools for complete operational visibility and zero manual data entry.",
-      image: "/images/people/laptopgirl3.webp",
-      points: [
-        "Banking & payment gateway APIs",
-        "CRM & investment system integration",
-        "Payroll & HR system connectors",
-      ],
+      title: "Comprehensive Financial Management",
+      description: "Automate accounts payable, receivable, and general ledger operations.",
+      image: "/images/lap/lap1.webp",
+    },
+    {
+      title: "Compliance Automation",
+      description: "Built-in features ensure adherence to international accounting and reporting standards.",
+      image: "/images/lap/lap2.webp",
+    },
+    {
+      title: "Advanced Financial Analytics",
+      description: "Gain accurate, data-driven insights with customizable dashboards and reports.",
+      image: "/images/lap/lap3.webp",
+    },
+    {
+      title: "Workflow Automation",
+      description: "Reduce manual workloads with smart workflows and automated approvals.",
+      image: "/images/lap/lap5.webp",
+    },
+    {
+      title: "Multi-Entity Consolidation",
+      description: "Easily scale your ERP system as your financial organization grows.",
+      image: "/images/lap/lap6_11zon.webp",
     },
   ],
   challenges: [
@@ -102,7 +118,7 @@ const data: IndustryPageData = {
         "Adapting to ever-changing global financial regulations requires accuracy and agility. NetSuite's compliance engine keeps pace with regulatory changes automatically.",
       solution:
         "NetSuite provides built-in compliance frameworks for IFRS, GAAP, GST, and local regulations — with automated rule updates so your team stays compliant without manual effort.",
-      image: "/images/people/laptopmen1.jpg",
+      image: "/images/challenges/compliance.png",
     },
     {
       title: "Data Security & Privacy",
@@ -110,7 +126,7 @@ const data: IndustryPageData = {
         "Protecting sensitive client and company data from cyber threats is a top concern. NetSuite uses enterprise-grade security with role-based access and encryption.",
       solution:
         "NetSuite delivers enterprise-grade cloud security with AES-256 encryption, role-based access controls, two-factor authentication, regular audits, and 24/7 monitoring.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/challenges/security.png",
     },
     {
       title: "Legacy Systems & Integration Gaps",
@@ -118,7 +134,7 @@ const data: IndustryPageData = {
         "Many firms still rely on outdated, fragmented systems — leading to inefficiencies, manual work, and poor data flow across departments and geographies.",
       solution:
         "NetSuite's open API platform integrates with existing banking, trading, and CRM systems — creating a unified data layer that eliminates silos and manual rekeying.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/challenges/data-silos.png",
     },
     {
       title: "Risk Management Complexity",
@@ -126,7 +142,7 @@ const data: IndustryPageData = {
         "Managing credit, market, operational, and liquidity risks while maintaining profitability and stability is increasingly complex in today's volatile environment.",
       solution:
         "NetSuite provides real-time risk dashboards, automated controls, and configurable approval workflows that help financial firms identify and mitigate risks proactively.",
-      image: "/images/people/global.webp",
+      image: "/images/challenges/profitability.png",
     },
     {
       title: "Real-Time Visibility & Forecasting",
@@ -134,7 +150,7 @@ const data: IndustryPageData = {
         "Lack of unified financial and operational data makes accurate forecasting and decision-making challenging. NetSuite consolidates data for instant insights.",
       solution:
         "NetSuite consolidates all financial data in real time, enabling accurate cash flow forecasting, scenario planning, and consolidated reporting across all entities and geographies.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/challenges/revenue-leakage.png",
     },
     {
       title: "Scalability Across Regions",
@@ -142,7 +158,7 @@ const data: IndustryPageData = {
         "Supporting multi-entity, multi-currency, and multi-jurisdiction operations while maintaining consistency and control is a major hurdle for global financial firms.",
       solution:
         "NetSuite OneWorld enables global financial firms to manage multiple subsidiaries, currencies, and tax regimes from a single platform with centralized control and local flexibility.",
-      image: "/images/people/laptopgirl3.webp",
+      image: "/images/people/global.webp",
     },
     {
       title: "Customer Expectations & Digital Experience",
@@ -150,7 +166,7 @@ const data: IndustryPageData = {
         "Clients expect seamless digital experiences, 24/7 access, and personalized financial solutions. Meeting these expectations requires advanced technology and automation.",
       solution:
         "NetSuite's customer portal and CRM integration enable financial firms to deliver transparent, self-service digital experiences with real-time account visibility and communication.",
-      image: "/images/lap/lap9_11zon.webp",
+      image: "/images/challenges/resource-visibility.png",
     },
     {
       title: "Fraud & Financial Crime Prevention",
@@ -158,7 +174,7 @@ const data: IndustryPageData = {
         "Increasing instances of digital fraud, AML requirements, and identity threats require advanced monitoring and automated detection systems.",
       solution:
         "NetSuite's audit trail, role-based access controls, and workflow-based approval processes create a robust internal control environment that reduces fraud risk and supports AML compliance.",
-      image: "/images/lap/lap8_11zon.webp",
+      image: "/images/challenges/manual-billing.png",
     },
   ],
   pricingIntro:

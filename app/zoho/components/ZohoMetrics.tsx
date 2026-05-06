@@ -8,16 +8,23 @@ import Link from "next/link";
 import { useState } from "react";
 
 const logos = [
-    { id: "affle", logo: "/images/assets/affle%20tech.webp", name: "Affle", link: "https://www.affle.com" },
-    { id: "tyfone", logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone", link: "https://www.tyfone.com" },
-    { id: "airling", logo: "/images/assets/airling%20tech.webp", name: "Airling", link: "#" },
-    { id: "videoverse", logo: "/images/assets/video%20verse%20tech.webp", name: "VideoVerse", link: "https://www.videoverse.com" },
-    { id: "quickheal", logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal", link: "https://www.quickheal.com" },
-    { id: "controlservice", logo: "/images/assets/control%20service.webp", name: "Control Service", link: "#" },
-    { id: "uniacco", logo: "/images/assets/uniAcco%20service.webp", name: "UniAcco", link: "https://www.uniacco.com" },
-    { id: "dlz", logo: "/images/assets/dlz%20service.webp", name: "DLZ", link: "#" },
-    { id: "indovance", logo: "/images/assets/indovance%20service.webp", name: "Indovance", link: "https://www.indovance.com" },
-    { id: "pace", logo: "/images/assets/pace%20services.webp", name: "Pace", link: "#" },
+    { id: "allwave", logo: "/images/zoho%20client%20images/all%20wave%20av.png", name: "All Wave AV", link: "#" },
+    { id: "aurionpro", logo: "/images/zoho%20client%20images/aurionpro.png", name: "Aurionpro", link: "#" },
+    { id: "avaso", logo: "/images/zoho%20client%20images/avaso.png", name: "Avaso", link: "#" },
+    { id: "bettinelli", logo: "/images/zoho%20client%20images/Bettinelli.png", name: "Bettinelli", link: "#" },
+    { id: "dahchi", logo: "/images/zoho%20client%20images/dahchi.png", name: "Dahchi", link: "#" },
+    { id: "incuspaze", logo: "/images/zoho%20client%20images/incuspaze.png", name: "Incuspaze", link: "#" },
+    { id: "indialand", logo: "/images/zoho%20client%20images/indialand.png", name: "IndiaLand", link: "#" },
+    { id: "initium", logo: "/images/zoho%20client%20images/initium.png", name: "Initium", link: "#" },
+    { id: "krishgen", logo: "/images/zoho%20client%20images/krishgen.png", name: "Krishgen", link: "#" },
+    { id: "kta", logo: "/images/zoho%20client%20images/KTA.png", name: "KTA", link: "#" },
+    { id: "rentopia", logo: "/images/zoho%20client%20images/rentopia.png", name: "Rentopia", link: "#" },
+    { id: "samson", logo: "/images/zoho%20client%20images/samson.png", name: "Samson", link: "#" },
+    { id: "shaurrya", logo: "/images/zoho%20client%20images/shaurrya.png", name: "Shaurrya", link: "#" },
+    { id: "tardid", logo: "/images/zoho%20client%20images/tardid.png", name: "Tardid", link: "#" },
+    { id: "vsn", logo: "/images/zoho%20client%20images/vsn.png", name: "VSN", link: "#" },
+    { id: "waco", logo: "/images/zoho%20client%20images/Waco.png", name: "Waco", link: "#" },
+    { id: "ziptrip", logo: "/images/zoho%20client%20images/ziptrip.png", name: "Ziptrip", link: "#" },
 ];
 
 const ZohoMetrics = () => {
@@ -37,8 +44,8 @@ const ZohoMetrics = () => {
 
     const stats = [
         { value: "600+", label: "Projects Completed" },
-        { value: "200+", label: "Global Customers" },
-        { value: "84%", label: "Customer Retention" },
+        { value: "15+", label: "Industry Expertise" },
+        { value: "10+", label: "Countries Serving" },
         { value: "15+", label: "Years Experience" },
     ];
 
@@ -291,9 +298,9 @@ const ZohoMetrics = () => {
                         </p>
 
                         <div className="relative w-full overflow-hidden py-10">
-                            <div className="animate-marquee whitespace-nowrap flex items-center gap-8" style={{ willChange: 'transform' }}>
+                            <div className="animate-marquee whitespace-nowrap flex items-center" style={{ willChange: 'transform' }}>
                                 {logos.concat(logos).map((logo, index) => (
-                                    <div key={index} className="inline-flex">
+                                    <div key={index} className="inline-flex px-4">
                                         <a
                                             href={logo.link || "#"}
                                             target={logo.link !== "#" ? "_blank" : undefined}
@@ -322,11 +329,11 @@ const ZohoMetrics = () => {
             <style jsx global>{`
                 @keyframes marquee {
                 0% { transform: translateX(0); }
-                100% { transform: translateX(-50.5%); }
+                100% { transform: translateX(-50%); }
                 }
                 .animate-marquee {
                 display: inline-flex;
-                animation: marquee 30s linear infinite;
+                animation: marquee 20s linear infinite;
                 will-change: transform;
                 }
                 .animate-marquee:hover {

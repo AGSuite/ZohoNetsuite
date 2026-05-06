@@ -67,11 +67,32 @@ const data: IndustryPageData = {
         "Optimize your transport network to increase route density and reduce empty miles. Gain visibility into lane profitability and make data-driven decisions on network expansion.",
       image: "/images/lap/lap8_11zon.webp",
     },
+  ],
+  features: [
     {
-      title: "Automated Compliance Tracking",
-      description:
-        "Manage driver manifests, vehicle inspections, and safety compliance docs and renewals automatically. Reduce risk and ensure your fleet is always road-ready.",
-      image: "/images/people/threeteam.webp",
+      title: "Order and Billing Management",
+      description: "Automate processing for initial and recurring transactions, and streamline billing across multiple revenue streams.",
+      image: "/images/lap/lap1.webp",
+    },
+    {
+      title: "Financial Management",
+      description: "Automate transaction flow and gain real-time access to financial and operational performance metrics.",
+      image: "/images/lap/lap2.webp",
+    },
+    {
+      title: "Inventory and Warehouse Management",
+      description: "Optimize inventory levels, minimize stockouts, and boost profitability with company-wide inventory visibility.",
+      image: "/images/lap/lap3.webp",
+    },
+    {
+      title: "Customer Relationship Management (CRM)",
+      description: "Cloud-based CRM solutions for managing interactions with customers, partners, and suppliers.",
+      image: "/images/people/laptopgirl.webp",
+    },
+    {
+      title: "Order Management",
+      description: "Automate the entire order-to-fulfillment cycle for faster delivery and improved customer satisfaction.",
+      image: "/images/lap/lap6_11zon.webp",
     },
   ],
   challenges: [
@@ -79,49 +100,49 @@ const data: IndustryPageData = {
       title: "Complex Freight Billing Spreadsheets",
       description:
         "NetSuite automates freight billing with configurable rate tables, surcharge rules, and customer-specific contracts — eliminating manual calculations and billing disputes.",
-      image: "/images/people/laptopmen1.jpg",
+      image: "/images/challenges/manual-billing.png",
     },
     {
       title: "No Real-Time Shipment Profitability",
       description:
         "NetSuite's job costing gives real-time margin per shipment, lane, or customer — enabling operations and finance teams to make proactive decisions before the month ends.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/challenges/profitability.png",
     },
     {
       title: "Manual Subcontractor Invoice Reconciliation",
       description:
         "NetSuite automates the 3-way match between carrier invoices, shipment records, and contracted rates — highlighting discrepancies for fast resolution.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/challenges/reconciliation.png",
     },
     {
       title: "Fleet Costs Disconnected from Job Costing",
       description:
         "NetSuite's asset management module tracks vehicle maintenance, fuel, and depreciation per asset — automatically allocated to job costing for true cost visibility.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/challenges/data-silos.png",
     },
     {
       title: "Inefficient Fuel Management",
       description:
         "Lack of visibility into fuel consumption leads to waste and high costs. NetSuite unifies fuel transaction data with vehicle performance metrics.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/challenges/revenue-leakage.png",
     },
     {
       title: "Disconnected Driver Data",
       description:
         "Siloed driver records make it hard to manage performance and compliance. NetSuite consolidates driver data with operational and financial records.",
-      image: "/images/people/laptopgirl3.webp",
+      image: "/images/challenges/resource-visibility.png",
     },
     {
       title: "Manual Proof of Delivery",
       description:
         "Slow POD processing delays client billing. NetSuite's mobile tools enable instant POD capture and automated billing triggers.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/challenges/fulfillment-delay.png",
     },
     {
       title: "Lack of Real-Time Tracking",
       description:
         "Fragmeted visibility into carrier location impacts customer service. NetSuite integrates with GPS and TMS for real-time shipment visibility.",
-      image: "/images/people/global.webp",
+      image: "/images/challenges/supply-chain.png",
     },
   ],
   pricingTiers: [

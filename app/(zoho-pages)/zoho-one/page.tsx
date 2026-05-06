@@ -168,9 +168,9 @@ export default function ZohoOnePage() {
   return (
     <ZohoSolutionTemplate
       title="Zoho One — The Operating System for Business"
-      subtitle="Run Your Entire Business on One Integrated Platform."
-      description="Zoho One is a comprehensive suite of over 45+ integrated web and mobile applications to help you run all aspects of your business in the cloud."
-      introDescription2="With a unified data model and single sign-on across more than 45 applications, Zoho One eliminates departmental silos and provides a single source of truth for your entire organization."
+      subtitle="Zoho One: The Unified Operating System for Modern Global Enterprises"
+      description="Zoho One is a comprehensive, cloud-native suite of over 45+ integrated applications designed to run your entire organization on a single platform. As a specialized Zoho One implementation partner, we help you eliminate fragmented systems and departmental silos with a unified data model that spans sales, finance, HR, and operations."
+      introDescription2="With a unified data model and single sign-on across more than 45 applications, Zoho One eliminates departmental silos and provides a single source of truth for your entire organization, driving unparalleled efficiency and cost savings."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
@@ -204,5 +204,3 @@ export default function ZohoOnePage() {
     />
   );
 }
-
-

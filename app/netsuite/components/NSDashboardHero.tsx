@@ -28,6 +28,22 @@ const logos = [
   { id: "dlz", logo: "/images/assets/dlz%20service.webp", name: "DLZ", link: "#" },
   { id: "indovance", logo: "/images/assets/indovance%20service.webp", name: "Indovance", link: "https://www.indovance.com" },
   { id: "pace", logo: "/images/assets/pace%20services.webp", name: "Pace", link: "#" },
+  { id: "aidash", logo: "/images/netuite%20client%20images/aidash.png", name: "AiDash", link: "#" },
+  { id: "controlcase", logo: "/images/netuite%20client%20images/controlcase.png", name: "ControlCase", link: "#" },
+  { id: "escalent", logo: "/images/netuite%20client%20images/escalent.png", name: "Escalent", link: "#" },
+  { id: "finn", logo: "/images/netuite%20client%20images/finn.png", name: "Finn", link: "#" },
+  { id: "flatworld", logo: "/images/netuite%20client%20images/flatworld.png", name: "Flatworld", link: "#" },
+  { id: "client13", logo: "/images/netuite%20client%20images/image%20(13).png", name: "Client 13", link: "#" },
+  { id: "kale", logo: "/images/netuite%20client%20images/kale.png", name: "Kale", link: "#" },
+  { id: "keycraft", logo: "/images/netuite%20client%20images/keycraft.png", name: "Keycraft", link: "#" },
+  { id: "logic", logo: "/images/netuite%20client%20images/logic.png", name: "Logic", link: "#" },
+  { id: "modaxo", logo: "/images/netuite%20client%20images/modaxo.png", name: "Modaxo", link: "#" },
+  { id: "prioritytire", logo: "/images/netuite%20client%20images/prioritytire.png", name: "Priority Tire", link: "#" },
+  { id: "signal", logo: "/images/netuite%20client%20images/signal.png", name: "Signal", link: "#" },
+  { id: "thread", logo: "/images/netuite%20client%20images/thread.png", name: "Thread", link: "#" },
+  { id: "traxon", logo: "/images/netuite%20client%20images/traxon.png", name: "Traxon", link: "#" },
+  { id: "uniacco", logo: "/images/netuite%20client%20images/uniacco.png", name: "UniAcco", link: "#" },
+  { id: "videoverse", logo: "/images/netuite%20client%20images/videoverse.png", name: "VideoVerse", link: "#" },
 ];
 
 const NSDashboardHero: React.FC = () => {
@@ -217,9 +233,9 @@ const NSDashboardHero: React.FC = () => {
           </p>
 
           <div className="relative w-full overflow-hidden py-6">
-            <div className="animate-marquee whitespace-nowrap flex items-center gap-10">
+            <div className="animate-marquee whitespace-nowrap flex items-center">
               {logos.concat(logos).map((logo, index) => (
-                <div key={index} className="inline-flex">
+                <div key={index} className="inline-flex px-5">
                   <a
                     href={logo.link || "#"}
                     target={logo.link !== "#" ? "_blank" : undefined}
@@ -232,7 +248,7 @@ const NSDashboardHero: React.FC = () => {
                       alt={`${logo.name} logo`}
                       width={160}
                       height={50}
-                      className={`h-8 sm:h-13 w-auto object-contain transition-all duration-300 ${logo.id === 'quickheal' ? 'px-4' : 'px-1'}`}
+                      className="h-8 sm:h-13 w-auto object-contain transition-all duration-300 px-2"
                     />
                   </a>
                 </div>
@@ -246,11 +262,11 @@ const NSDashboardHero: React.FC = () => {
       <style jsx global>{`
         @keyframes marquee {
         0% { transform: translateX(0); }
-        100% { transform: translateX(-50.5%); }
+        100% { transform: translateX(-50%); }
         }
         .animate-marquee {
         display: inline-flex;
-        animation: marquee 30s linear infinite;
+        animation: marquee 25s linear infinite;
         will-change: transform;
         }
         .animate-marquee:hover {

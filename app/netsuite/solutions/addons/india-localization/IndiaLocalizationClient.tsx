@@ -1,237 +1,331 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useSpring, useTransform } from 'framer-motion';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useInView } from 'react-intersection-observer';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence, useSpring, useTransform } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+import { useInView } from "react-intersection-observer";
 import {
-  ShieldCheck, FileText, Zap, Globe, BarChart3,
-  CheckCircle2, ArrowRight, Stamp, Building2,
-  Check, ChevronDown, Calculator, Briefcase,
-  Database, Share2, Code, HeartHandshake, Users
-} from 'lucide-react';
-import ContactFormDesign4 from '@/app/netsuite/components/ContactFormDesign4';
+  FileText, ShieldCheck, Globe, BarChart3, Zap, Users, ArrowRight, Check,
+  ChevronRight, CheckCircle2, TrendingUp, Layers, Receipt, Building2,
+  ChevronDown, Calculator, IndianRupee, Clock, Calendar, Search,
+  UserCheck, Smartphone, Truck, FileSpreadsheet, Briefcase
+} from "lucide-react";
+import dynamic from "next/dynamic";
+import { FAQ } from "@/app/components/home/FAQ";
+import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+import NSServicesSection from "@/app/netsuite/components/NSServicesSection";
+
+const IndiaComplianceCircle = dynamic(() => import("./components/IndiaComplianceCircle"), {
+  ssr: false,
+});
+
+const PARTICLES = [
+  { w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 },
+  { w: 1.4, h: 2.1, top: 28, left: 22, dur: 4.1, delay: 1.2 },
+  { w: 2.8, h: 1.2, top: 45, left: 37, dur: 6.3, delay: 0.8 },
+  { w: 2.3, h: 1.8, top: 78, left: 70, dur: 5.5, delay: 0.3 },
+  { w: 2.6, h: 2.0, top: 5, left: 50, dur: 3.5, delay: 0.6 },
+  { w: 1.9, h: 1.3, top: 33, left: 72, dur: 6.1, delay: 1.4 }
+];
 
 function Counter({ value }: { value: number }) {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
   const spring = useSpring(0, { mass: 0.8, stiffness: 75, damping: 15 });
-  const display = useTransform(spring, (current) => Math.round(current));
-
-  useEffect(() => {
-    if (inView) {
-      spring.set(value);
-    }
-  }, [inView, spring, value]);
-
+  const display = useTransform(spring, (v) => Math.round(v));
+  useEffect(() => { if (inView) spring.set(value); else spring.set(0); }, [inView, spring, value]);
   return <span ref={ref}><motion.span>{display}</motion.span></span>;
 }
 
 export default function IndiaLocalizationClient() {
-  const { ref: statsRef, inView: statsInView } = useInView({ triggerOnce: false, threshold: 0.2 });
+  const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
-  const [activeChallenge, setActiveChallenge] = useState(0);
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const stats = [
-    { label: 'Compliance Rate', value: 100, suffix: '%', icon: ShieldCheck },
-    { label: 'E-Invoice Speed', value: 0.5, suffix: 'sec', icon: Zap },
-    { label: 'Reports Available', value: 50, suffix: '+', icon: FileText },
-    { label: 'Tax Accuracy', value: 100, suffix: '%', icon: Calculator },
+    { label: "GST Compliance Coverage", value: 100, suffix: "%", icon: ShieldCheck },
+    { label: "E-Invoice Automation", value: 99, suffix: "%", icon: FileText },
+    { label: "Tax Types Supported", value: 12, suffix: "+", icon: Receipt },
+    { label: "Compliance Accuracy", value: 100, suffix: "%", icon: CheckCircle2 },
+  ];
+
+  const modules = [
+    { 
+      title: "Efficient GST Management", 
+      description: "Our platform automates GST compliance through customized configuration of location, vendor, customer, and HSN code details. It handles tax calculations and filing for GSTR1, 2, 3B filings, and identifies transaction types. Additionally, the platform also provides separate CGST and SGST accounts to streamline organizational tax management.", 
+      image: "/images/modules/dashboard module.webp", 
+      rgb: "30,58,138" 
+    },
+    { 
+      title: "GST Advanced Features", 
+      description: "GSTIN Validation and GSTR 2B Reconciliation within NetSuite. Ensure your tax filings are accurate and your vendors are compliant with real-time validation and automated reconciliation tools.", 
+      image: "/images/modules/dashboard module.webp", 
+      rgb: "6,95,70" 
+    },
+    { 
+      title: "Streamlined TDS Compliance", 
+      description: "Our platform streamlines TDS management through customized setup of company, subsidiary and vendor details. It automates TDS calculations per government rules and vendor types for accuracy and compliance. The platform manages threshold limits and PAN rules, generates Form 26Q, and enables automatic GL posting to designated accounts.", 
+      image: "/images/modules/working module.webp", 
+      rgb: "124,45,18" 
+    },
+    { 
+      title: "TDS Advanced Features", 
+      description: "TDS on Vendor PrePayment, TDS Challan, TXT File Generation for eTDS Return, 194Q & 206(1H). Handle complex TDS scenarios with automated processes for prepayments and statutory file generation.", 
+      image: "/images/modules/any module.webp", 
+      rgb: "76,29,149" 
+    },
+    { 
+      title: "Auto TCS Calculation", 
+      description: "TCS details setup on company/subsidiary, TCS detail setup on Customer records. Automatic tax calculation of TCS based on government rules, automatic GL posting in specific TCS Accounts. TCS Report: Form 27EQ.", 
+      image: "/images/modules/any module.webp", 
+      rgb: "12,74,110" 
+    },
+    { 
+      title: "E-Invoicing", 
+      description: "Integrates NetSuite with E-invoice Portal via our GSP Partner. Invoices created in NetSuite are validated and sent to E-invoice Portal in JSON Format via APIs. IRN and QR Code is generated and received back to NetSuite automatically. QR code is printed on existing invoice PDF.", 
+      image: "/images/modules/module8.webp", 
+      rgb: "113,63,18" 
+    },
+    { 
+      title: "E-Way Bill", 
+      description: "NetSuite Integration with E-Way Bill Portal. E-Way Bill Registration, EBN Generation, receipt and store on the invoice record in NetSuite. Print E-Way Bill PDF, support B2B, B2C, Export, Error Handling and detailed Reports.", 
+      image: "/images/modules/sheet module.webp", 
+      rgb: "19,78,74" 
+    },
+    { 
+      title: "Vendor Statement", 
+      description: "Easily generate detailed vendor statements, enabling clear visibility into outstanding balances, transaction history, and payment schedules, enhancing transparency and vendor relations.", 
+      image: "/images/modules/dashboard module.webp", 
+      rgb: "131,24,67" 
+    },
+    { 
+      title: "MSME Reporting", 
+      description: "Access streamlined reporting tailored for MSME compliance, facilitating accurate tracking and timely submissions in accordance with regulatory standards for small and medium-sized enterprises.", 
+      image: "/images/modules/working module.webp", 
+      rgb: "30,58,138" 
+    },
+    { 
+      title: "Compliance Calendar and Reminders", 
+      description: "Stay compliant effortlessly with an integrated calendar that schedules key deadlines, providing timely reminders to avoid missed filings and penalties.", 
+      image: "/images/modules/account modules.webp", 
+      rgb: "6,78,59" 
+    },
+    { 
+      title: "Audit Related Reports", 
+      description: "Generate audit-ready reports with ease, ensuring accuracy and completeness in financial documentation, simplifying the audit process and fostering regulatory compliance.", 
+      image: "/images/modules/dashboard module.webp", 
+      rgb: "120,53,15" 
+    },
   ];
 
   const benefits = [
-    { title: "GST & GSTR Automation", description: "Automate GSTR-1, 3B filings and GST calculations directly from your NetSuite transactions.", image: "/images/Solutions/statutory.webp" },
-    { title: "E-Invoicing Excellence", description: "Direct API integration with the IRP portal for real-time IRN and QR code generation.", image: "/images/Solutions/einvoicing-addon.webp" },
-    { title: "TDS/TCS Management", description: "Automated Tax Deducted at Source calculations and instant certificate generation.", image: "/images/Solutions/india-addon.webp" },
-    { title: "Statutory Reporting", description: "Generate Ind-AS compliant financial statements and statutory audit reports with one click.", image: "/images/Solutions/reporting.webp" }
+    {
+      title: "Enhanced Compliance",
+      description: "Automated GST, TDS, and TCS calculations ensure adherence to India’s tax regulations, minimizing compliance risks.",
+      image: "/images/lap/lap4.webp",
+      points: ["100% GST Regulation compliance", "Real-time IRP integration", "Automated TDS/TCS calculation", "Minimize compliance risks"],
+    },
+    {
+      title: "Streamlined Operations",
+      description: "E-invoicing, e-way bill management, and vendor statements simplify transaction processing and reduce administrative workload.",
+      image: "/images/lap/lap2.webp",
+      points: ["Automated e-invoicing", "E-way bill management", "Simplified vendor statements", "Reduced administrative workload"],
+    },
+    {
+      title: "Accurate Reporting",
+      description: "MSME reporting, audit-ready reports, and advanced tax features provide precise, real-time insights to support business decisions.",
+      image: "/images/people/laptopmen2.webp",
+      points: ["MSME compliance reporting", "Audit-ready financial reports", "Real-time business insights", "Precise data tracking"],
+    },
+    {
+      title: "Automated Reminders",
+      description: "Compliance calendar and timely reminders help your team stay on top of regulatory deadlines without manual tracking.",
+      image: "/images/lap/lap5.webp",
+      points: ["Integrated compliance calendar", "Automated deadline reminders", "Avoid missed filings", "No more manual tracking"],
+    },
+    {
+      title: "Seamless Integration",
+      description: "The platform integrates smoothly with NetSuite, allowing your business to achieve efficient operations on a single, unified system.",
+      image: "/images/lap/lap3.webp",
+      points: ["Native NetSuite integration", "Single unified system", "Smooth data flow", "Optimized cloud operations"],
+    },
   ];
 
   const challenges = [
-    { title: "GST Complexity", description: "Navigating the ever-changing landscape of Indian GST laws is a manual nightmare.", image: "/images/people/man.webp" },
-    { title: "Filing Errors", description: "Manual data entry into government portals leads to costly mismatch errors and penalties.", image: "/images/lap/lap1.webp" },
-    { title: "Compliance Lag", description: "Delayed reporting can lead to blocked E-way bills and disrupted logistics.", image: "/images/aboutus/mission.webp" },
-    { title: "Audit Anxiety", description: "Lacking localized audit trails makes Indian statutory audits stressful and slow.", image: "/images/Dashboard/netsuitedash3.webp" }
+    {
+      title: "Compliance Complexity",
+      description: "India Localization for NetSuite simplifies compliance by providing a customizable, cloud-based solution tailored to meet the specific GST and TDS requirements of Indian businesses.",
+      image: "/images/netsuiteimages/india_tax_compliance_complexity.png"
+    },
+    {
+      title: "Data Accuracy and Compliance Risk",
+      description: "India Localization for NetSuite automates tax calculations and transaction identification, reducing the risk of inaccuracies and ensuring compliance with regulatory requirements.",
+      image: "/images/netsuiteimages/data_accuracy_compliance_risk.png"
+    },
+    {
+      title: "Scalability and Adaptability",
+      description: "India Localization for NetSuite offers scalability and flexibility to accommodate the changing needs of businesses, allowing them to seamlessly adjust to new GST and TDS regulations and scale their operations without disruption.",
+      image: "/images/netsuiteimages/scalability_and_adaptability.png"
+    }
   ];
 
-  const localizationFeatures = [
-    { title: "GSTR 1, 2, 3B Reports", description: "Generate ready-to-file JSON and excel reports for all GST requirements.", icon: FileText },
-    { title: "Instant IRN Generation", description: "Click-of-a-button E-invoicing with direct government portal sync.", icon: Zap },
-    { title: "TDS Certificate Prep", description: "Automate Form 16A and Form 27EQ generation for vendors.", icon: Stamp },
-    { title: "E-Way Bill Integration", description: "Seamlessly generate E-way bills for your outbound logistics.", icon: Briefcase },
-    { title: "Ind-AS Financials", description: "Localized Balance Sheets and P&L statements per Indian standards.", icon: Building2 },
-    { title: "Voucher Numbering", description: "India-specific sequence numbering for diverse transaction types.", icon: Calculator },
-  ];
-
-  const services = [
-    { title: "NetSuite Implementation", description: "Expert NetSuite implementation ensuring smooth transition and optimized processes.", icon: Database, href: "/netsuite/services/implementation" },
-    { title: "NetSuite Integration", description: "Connect your apps and workflows seamlessly with API-led integrations.", icon: Share2, href: "/netsuite/services/integration" },
-    { title: "NetSuite Customization", description: "Tailor NetSuite to your unique business needs with SuiteScript and SuiteCloud.", icon: Code, href: "/netsuite/services/suitecloud" },
-    { title: "NetSuite Managed Support", description: "End-to-end support and optimization of your NetSuite environment.", icon: ShieldCheck, href: "/netsuite/services/managed-services" },
-    { title: "NetSuite Training", description: "Comprehensive training programs to maximize system utilization.", icon: Users, href: "/netsuite/services/training-services" },
-    { title: "NetSuite Consulting", description: "Strategic guidance to align NetSuite with your business goals.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
-  ];
-
-  const pricingPlans = [
-    { name: "Compliance", description: "For GST & TDS basics", price: "Contact Us", features: ["GST Calculations", "GSTR Reports", "TDS Management", "Statutory Reports", "Email Support"] },
-    { name: "Accelerator", description: "For high-volume E-Invoicing", price: "Contact Us", popular: true, features: ["Everything in Compliance", "E-Invoicing API", "E-Way Bill API", "HSN/SAC Validation", "Priority Portal Support", "Custom Mapping"] },
-    { name: "Enterprise", description: "Multi-Entity/Localization", price: "Contact Us", features: ["Everything in Accelerator", "Multi-GSTIN Support", "Advanced Audit Trails", "Dedicated Tax Expert", "Custom Statutory Formats", "Quarterly Compliance Audit"] }
-  ];
-
-  const faqs = [
-    { question: "Is this an official NetSuite bundle?", answer: "Our India Localization is a proprietary AGSuite solution built on the NetSuite platform, designed to extend and enhance the standard localization capabilities for complex Indian business needs." },
-    { question: "Does it support multiple GSTINs?", answer: "Yes, our solution is built to handle multi-subsidiary and multi-location setups with different GST registration numbers in one account." },
-    { question: "How does E-Invoicing integration work?", answer: "We use a direct API connection (GSP/ASP) to communicate with the IRP portal. When you approve an invoice in NetSuite, it automatically fetches the IRN and QR code." },
-    { question: "Can we handle TDS on advance payments?", answer: "Absolutely. The system handles TDS calculations for both advance payments and final invoices, ensuring accurate reconciliation." },
-    { question: "Do you provide support for GST law updates?", answer: "Yes, our localization bundle is updated regularly to stay in sync with the latest notifications from the CBIC and GST Council." },
-    { question: "Can I generate my Balance Sheet in Ind-AS format?", answer: "Yes, we providing localized report templates that automatically format your NetSuite chart of accounts into India-specific statutory formats." }
-  ];
+  const CARD_BG = "linear-gradient(135deg, #000814 0%, #000f22 25%, #001535 55%, #000c1a 80%, #000810 100%)";
 
   return (
-    <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
-      {/* Full Screen Hero Section */}
-      <section className="relative min-h-screen overflow-hidden flex flex-col">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/people/threeteam.webp"
-            alt="NetSuite India Localization"
-            fill
-            priority
-            className="object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent z-10" />
+    <div className="min-h-screen bg-white">
 
-        <div className="relative z-20 flex-1 flex flex-col justify-end max-w-7xl mx-auto px-4 sm:px-6 w-full pt-32 sm:pt-40 md:pt-48 pb-12 sm:pb-16">
-          <div className="mb-8 sm:mb-10 lg:mb-12">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-3xl"
-            >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600/20 backdrop-blur-md rounded-full border border-indigo-600/30 mb-6"
-              >
-                <Globe className="w-4 h-4 text-indigo-400" />
-                <span className="text-indigo-400 font-medium text-sm">Strategic India Compliance</span>
-              </motion.div>
+      {/* HERO */}
+      <section className="relative min-h-screen overflow-hidden flex flex-col" style={{ background: "linear-gradient(135deg,#000814,#000f22,#001535)" }}>
+        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px]" />
+        <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px)', backgroundSize: '70px 70px' }} />
+        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-8">
+          
+          {/* Breadcrumb */}
+          <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
+            className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20">
+            <Link href="/netsuite" className="text-blue-300 hover:text-white transition-colors">Home</Link>
+            <ChevronDown className="w-3.5 h-3.5 text-white/30 -rotate-90" />
+            <span className="text-white/50">Solutions</span>
+            <ChevronDown className="w-3.5 h-3.5 text-white/30 -rotate-90" />
+            <span className="text-white/80">India Localization for NetSuite</span>
+          </motion.nav>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-4 sm:mb-6 leading-[1.1] text-white"
-              >
-                NetSuite <span className="text-indigo-500">India Localization</span>
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6" style={{ minHeight: 'calc(100vh - 150px)' }}>
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+                className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15] tracking-tight">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
+                  Streamlined Tax Management With AGSuite India Localization for NetSuite
+                </span>
               </motion.h1>
-
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "120px" }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-                className="h-1 bg-indigo-500 mb-4 sm:mb-6"
-              />
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 md:mb-10 leading-relaxed font-light max-w-2xl"
-              >
-                Master the complexities of Indian taxation. A robust, automated localization suite built for GST, E-Invoicing, and statutory reporting.
+              <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }}
+                className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full" />
+              <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
+                className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8">
+                Full Indian tax compliance inside NetSuite — GST automation, e-invoicing with IRP, TDS/TCS management, e-Way Bills, and GSTR filing reports. Built for Indian businesses running on NetSuite.
               </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
-              >
-                <Link
-                  href="/netsuite/contact"
-                  className="px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-lg font-bold rounded-full transition-all bg-transparent border-2 border-white text-white hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-700 hover:border-transparent shadow-xl shadow-indigo-900/20 hover:shadow-2xl hover:scale-105"
-                >
-                  Get Compliance Ready
+              <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl hover:scale-105">
+                  Get in Touch
+                  <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }} className="flex items-center">
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.span>
                 </Link>
               </motion.div>
             </motion.div>
-          </div>
 
-          {/* Integrated Metrics Section */}
-          <motion.div
-            ref={statsRef}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="border-t border-white/20 pt-8 sm:pt-10 md:pt-12"
-          >
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 1 + (index * 0.15),
-                    duration: 0.6,
-                    ease: "easeOut"
-                  }}
-                  className="text-center group"
-                >
-                  <div className="flex justify-center mb-2 sm:mb-3">
-                    <div className="p-2 sm:p-3 bg-indigo-600/20 rounded-xl sm:rounded-2xl group-hover:bg-indigo-600/30 transition-colors duration-300">
-                      <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-indigo-400 group-hover:scale-110 transition-transform duration-300" />
-                    </div>
-                  </div>
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2 flex items-center justify-center gap-1">
-                    <Counter value={stat.value} />
-                    <span className="text-indigo-500 text-2xl sm:text-3xl md:text-4xl">{stat.suffix}</span>
-                  </div>
-                  <div className="text-gray-400 font-medium text-xs sm:text-sm md:text-base px-2">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
-            className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:block"
-          >
+            {/* Hero Right — India Compliance Circular Diagram */}
             <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              className="flex flex-col items-center gap-2"
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.0, delay: 0.4 }}
+              className="relative hidden lg:flex items-center justify-center"
+              style={{ minHeight: 460 }}
             >
-              <span className="text-white/60 text-sm font-medium">Scroll to explore</span>
-              <ChevronDown className="w-6 h-6 text-white/60" />
+              <IndiaComplianceCircle />
             </motion.div>
+          </div>
+
+          {/* STATS */}
+          <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="border-t border-white/15 pt-5 sm:pt-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+              {stats.map((s, i) => (
+                <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 + i * 0.12 }} className="text-center group">
+                  <div className="flex justify-center mb-2 sm:mb-3"><div className="p-2 sm:p-3 bg-blue-700/20 rounded-xl group-hover:bg-blue-700/30 transition-colors"><s.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 group-hover:scale-110 transition-transform" /></div></div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-1 flex items-center justify-center gap-1"><Counter value={s.value} /><span className="text-blue-400 text-2xl sm:text-3xl md:text-4xl">{s.suffix}</span></div>
+                  <div className="text-gray-400 font-medium text-xs sm:text-sm px-2">{s.label}</div>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-24 bg-white">
+      {/* STICKY NAV */}
+      <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
-              <Image src="/images/Solutions/statutory.webp" alt="India Tax Compliance" fill className="object-cover" />
-              <div className="absolute inset-0 bg-indigo-600/5 mix-blend-multiply" />
+          <div className="flex items-center justify-center gap-1 overflow-x-auto py-4">
+            {[
+              ["What is India Localization for NetSuite?", "#what-is"],
+              ["Modules", "#modules"],
+              ["Benefits", "#benefits"],
+              ["Challenges", "#challenges"],
+              ["Services", "#services"],
+              ["FAQ", "#faq"]
+            ].map(([label, href]) => (
+              <a key={href} href={href} className="px-4 py-2 text-base font-semibold hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-500">{label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
+
+      {/* WHAT IS */}
+      <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
+        <div className="max-w-8xl mx-auto px-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden bg-gray-50/50"
+              style={{ minHeight: 480 }}
+            >
+              <div className="relative w-full h-full flex items-center justify-center p-4">
+                <Image
+                  src="/images/Dashboard/indian localization 2 dashboard.jpg"
+                  alt="NetSuite India Localization Solution Dashboard"
+                  width={900}
+                  height={600}
+                  className="w-full h-auto rounded-2xl object-contain border-4 border-indigo-100 shadow-2xl shadow-indigo-900/10"
+                />
+              </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="flex flex-col justify-center space-y-6 py-6"
+            >
               <div className="space-y-4">
-                <h2 className="text-indigo-600 font-bold uppercase tracking-wider text-sm">Regulatory Power</h2>
-                <h3 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">Native Indian Experience</h3>
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
+                  India Localization for NetSuite: Automated GST and TDS Compliance for Modern Enterprises
+                </h2>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">Operating in India requires more than just standard accounting. Our localization bundle bridges the gap between global ERP power and local statutory necessity.</p>
-              <p className="text-lg text-gray-600 leading-relaxed">From automated GST filings to real-time E-invoicing, we ensure your Indian subsidiary operates with total compliance and efficiency.</p>
+              <div className="space-y-4">
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  India Localization for NetSuite simplifies the complexities of Indian tax regulations, providing a cloud-native solution for GST, TDS, and statutory compliance. As a specialized <strong>India Localization for NetSuite partner</strong>, we help businesses automate e-invoicing via IRP, e-way bills, and GSTR reporting within a single unified platform.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  By integrating seamlessly with your core ERP, our solution ensures accuracy in multi-state GSTIN management and TCS calculations. Stay ahead of regulatory changes with automated compliance reminders and audit-ready reports, allowing your finance team to focus on strategic growth.
+                </p>
+              </div>
               <div className="pt-4">
-                <Link href="/netsuite/contact" className="inline-flex items-center gap-2 text-indigo-600 font-bold hover:gap-4 transition-all uppercase tracking-widest text-sm">
-                  Consult a Tax Expert <ArrowRight size={18} />
+                <Link
+                  href="#contact-form"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
+                  style={{ background: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)', color: '#ffffff' }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#1e3a8a';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 10px 25px -5px rgba(30, 58, 138, 0.3)';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
+                  }}
+                >
+                  <span>Get India Localization for NetSuite</span>
+                  <motion.span
+                    className="flex items-center"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <ArrowRight size={17} strokeWidth={2.5} />
+                  </motion.span>
                 </Link>
               </div>
             </motion.div>
@@ -239,279 +333,159 @@ export default function IndiaLocalizationClient() {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-24 bg-[#000b21] overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[600px] bg-blue-600/10 rounded-full blur-[120px]" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <span className="bg-indigo-600/20 text-indigo-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Advantages</span>
-            <h3 className="text-4xl md:text-5xl font-black text-white mt-6">Why Our Localization?</h3>
-            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">Statutory compliance at the speed of business</p>
-          </motion.div>
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 min-h-[350px] lg:min-h-[450px]">
-              <AnimatePresence mode="wait">
-                <motion.div key={activeBenefit} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.5, ease: "easeOut" }} className="absolute inset-0">
-                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover" />
-                </motion.div>
-              </AnimatePresence>
-            </motion.div>
-            <div className="space-y-4">
-              {benefits.map((item, index) => (
-                <motion.div key={index} initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }}
-                  onClick={() => setActiveBenefit(index)} className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeBenefit === index ? 'bg-white/10 border-indigo-500/50 shadow-lg backdrop-blur-sm' : 'bg-white/5 border-white/10 hover:bg-white/10'}`}>
-                  <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-lg transition-colors ${activeBenefit === index ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/50' : 'bg-white/10 text-indigo-500'}`}>
-                      <CheckCircle2 size={20} />
-                    </div>
-                    <h4 className={`text-xl font-bold transition-colors ${activeBenefit === index ? 'text-white' : 'text-gray-300'}`}>{item.title}</h4>
-                  </div>
-                  <AnimatePresence>
-                    {activeBenefit === index && (
-                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-                        <p className="text-gray-300 mt-4 leading-relaxed pl-12">{item.description}</p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Challenges Section */}
-      <section className="py-24 bg-gradient-to-b from-[#000b21] via-[#000b21] to-[#0a0a0a] overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[600px] bg-blue-600/10 rounded-full blur-[120px]" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <span className="bg-indigo-600/20 text-indigo-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Challenges</span>
-            <h3 className="text-4xl md:text-5xl font-black text-white mt-6">Compliance Risks</h3>
-            <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">Navigating the Indian tax landscape</p>
-          </motion.div>
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
-            <div className="space-y-4 flex flex-col justify-center">
-              {challenges.map((item, index) => (
-                <motion.div key={index} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }}
-                  onClick={() => setActiveChallenge(index)} className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border ${activeChallenge === index ? 'bg-white/10 border-indigo-500/50 shadow-lg backdrop-blur-sm' : 'bg-white/5 border-white/10 hover:bg-white/10'}`}>
-                  <div className="flex items-center gap-4">
-                    <div className={`p-2 rounded-lg transition-colors ${activeChallenge === index ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/50' : 'bg-white/10 text-indigo-500'}`}>
-                      <CheckCircle2 size={20} />
-                    </div>
-                    <h4 className={`text-xl font-bold transition-colors ${activeChallenge === index ? 'text-white' : 'text-gray-300'}`}>{item.title}</h4>
-                  </div>
-                  <AnimatePresence>
-                    {activeChallenge === index && (
-                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-                        <p className="text-gray-300 mt-4 leading-relaxed pl-12">{item.description}</p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))}
-            </div>
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 min-h-[350px] lg:min-h-[450px]">
-              <AnimatePresence mode="wait">
-                <motion.div key={activeChallenge} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.5, ease: "easeOut" }} className="absolute inset-0">
-                  <Image src={challenges[activeChallenge].image} alt={challenges[activeChallenge].title} fill className="object-cover" />
-                </motion.div>
-              </AnimatePresence>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section id="features" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">Localization Capabilities</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">India-specific features for global ERP</p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {localizationFeatures.map((module, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 50, scale: 0.9 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ scale: 1.05, background: "linear-gradient(to bottom right, #ffffff, #ffffff)", transition: { duration: 0.3, ease: "easeInOut" } }}
-                style={{ background: "linear-gradient(to bottom right, #f0f4ff, #f8faff, #e6eeff)" }}
-                className="border border-indigo-500/20 rounded-2xl p-8 hover:border-indigo-500 hover:shadow-2xl transition-all duration-300 group">
-                <div className="p-3 bg-indigo-600 rounded-xl w-fit mb-6 group-hover:bg-black transition-colors">
-                  <module.icon className="w-6 h-6 text-white" />
-                </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3 transition-colors duration-300">{module.title}</h4>
-                <p className="text-gray-600 leading-relaxed text-sm transition-colors duration-300">{module.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-gradient-to-br from-gray-50 via-indigo-50 to-blue-50/20">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <span className="bg-indigo-600/10 text-indigo-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Pricing</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-6 mb-4">Choose Your Plan</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">Scalable compliance for Indian enterprises</p>
-          </motion.div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {pricingPlans.map((plan, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}
-                className={`bg-white rounded-2xl p-8 border-2 ${plan.popular ? 'border-indigo-600 shadow-2xl shadow-indigo-500/20 relative' : 'border-gray-200'}`}>
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Best Value</span>
-                  </div>
-                )}
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{plan.description}</p>
-                  <div className="text-4xl font-bold text-indigo-600">{plan.price}</div>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/netsuite/contact" className={`block text-center px-6 py-3 rounded-xl font-bold transition ${plan.popular ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'bg-gray-100 text-gray-900 hover:bg-gray-200'}`}>
-                  Get Started
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 sm:py-24 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-bold mb-4 sm:mb-6 uppercase tracking-wider">
-              <Zap className="w-4 h-4" />
-              <span>NetSuite Services</span>
-            </motion.div>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-4 sm:mb-6 tracking-tight">
-              Comprehensive NetSuite <span className="text-blue-600">Services</span>
-            </motion.h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {services.map((service, index) => {
-              const cardBgColors = ["bg-linear-to-br from-[#ffffff] to-[#eef0ff]", "bg-linear-to-br from-[#ffffff] to-[#eaf6ff]", "bg-linear-to-br from-[#ffffff] to-[#e8ffef]",
-                "bg-linear-to-br from-[#ffffff] to-[#f9eaff]", "bg-linear-to-br from-[#ffffff] to-[#ffece8]", "bg-linear-to-br from-[#ffffff] to-[#eaf8ff]"];
-              return (
-                <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} className="h-full">
-                  <motion.div whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.3 } }} className={`relative p-8 sm:p-10 rounded-3xl sm:rounded-[2.5rem] border border-gray-100 h-full shadow-2xl shadow-blue-900/5 hover:shadow-blue-900/10 transition-all group overflow-hidden ${cardBgColors[index % cardBgColors.length]}`}>
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-blue-100/50 to-indigo-100/50 rounded-full blur-3xl -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
-                    <div className="w-14 sm:w-16 h-14 sm:h-16 bg-slate-900 rounded-[1.5rem] sm:rounded-[2rem] flex items-center justify-center mb-6 sm:mb-8 shadow-xl group-hover:rotate-12 transition-transform duration-500 relative z-10">
-                      <service.icon className="w-7 sm:w-8 h-7 sm:h-8 text-white" />
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-3 sm:mb-4 group-hover:text-blue-600 transition-colors relative z-10 leading-tight">{service.title}</h3>
-                    <p className="text-slate-600 leading-relaxed mb-6 sm:mb-8 text-base sm:text-lg font-medium relative z-10">{service.description}</p>
-                    <Link href={service.href} className="inline-flex items-center gap-2 text-blue-600 font-bold group/link relative z-10 text-base sm:text-lg">
-                      Explore Service <ArrowRight className="w-5 h-5 group-hover/link:translate-x-2 transition-transform" />
-                    </Link>
-                  </motion.div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-24 bg-gradient-to-br from-white via-gray-50 to-indigo-50/20 relative overflow-hidden">
-        {/* Background Gradients */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px] -z-10" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[120px] -z-10" />
-
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <span className="bg-indigo-600/10 text-indigo-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
-              FAQ
-            </span>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-6 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-slate-600 text-lg">
-              Everything you need to know about Indian Localization
-            </p>
-          </motion.div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className={`group rounded-2xl border transition-all duration-300 ${openFAQ === index
-                  ? 'bg-white border-indigo-500/30 shadow-2xl shadow-indigo-500/10 scale-[1.02] z-10'
-                  : 'bg-white/80 border-white/50 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 hover:border-indigo-500/20 hover:-translate-y-1 hover:bg-white'
-                  }`}
+      {/* MODULES GRID */}
+      <section id="modules" className="py-16 bg-white scroll-mt-36">
+        <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-4xl md:text-5xl font-medium text-gray-900 text-center">India Localization for NetSuite Compliance Modules</motion.h2>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-gray-600 text-lg max-w-2xl text-center">11 compliance modules covering GST, TDS, TCS, e-invoicing, and statutory reporting</motion.p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8 items-start">
+            {modules.map((mod, i) => (
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 40 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }} 
+                transition={{ duration: 0.6, delay: i * 0.06 }} 
+                className="group relative flex flex-col rounded-2xl shadow-lg transition-all duration-300 z-10 hover:z-20 min-h-[380px]"
+                style={{ backgroundColor: `rgb(${mod.rgb})` }}
               >
-                <button
-                  onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-                  className="w-full px-8 py-6 flex items-center justify-between transition-colors cursor-pointer"
-                >
-                  <span className={`text-left font-bold text-lg transition-colors ${openFAQ === index ? 'text-indigo-700' : 'text-slate-900 group-hover:text-indigo-600'
-                    }`}>
-                    {faq.question}
-                  </span>
-                  <div className={`p-2 rounded-full transition-all duration-300 flex-shrink-0 ml-4 ${openFAQ === index
-                    ? 'bg-gradient-to-r from-indigo-600 to-indigo-400 text-white rotate-180 shadow-lg shadow-indigo-500/30'
-                    : 'bg-gray-100 text-gray-500 group-hover:bg-indigo-500/20 group-hover:text-indigo-600'
-                    }`}>
-                    <ChevronDown className="w-5 h-5" />
+                <div className="flex flex-col h-full w-full rounded-2xl overflow-hidden transition-all duration-500 ease-in-out">
+                  <div className="relative h-44 shrink-0 overflow-hidden">
+                    <Image src={mod.image} alt={mod.title} fill className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
+                    <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom,transparent 0%,rgba(${mod.rgb},0.4) 70%,rgba(${mod.rgb},1) 100%)` }} />
                   </div>
-                </button>
-                <AnimatePresence>
-                  {openFAQ === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-8 pb-8 pt-0">
-                        <div className="h-px w-full bg-linear-to-r from-transparent via-gray-200 to-transparent mb-6" />
-                        <p className="text-slate-600 leading-relaxed text-base md:text-lg">
-                          {faq.answer}
-                        </p>
+                  <div className="flex-1 p-5 flex flex-col relative transition-all duration-500">
+                    <h4 className="text-white font-bold text-lg mb-2 line-clamp-2">{mod.title}</h4>
+                    <div className={`relative overflow-hidden transition-all duration-500 group-hover:max-h-[500px] ${mod.title.length > 22 ? 'max-h-[6rem]' : 'max-h-[7.5rem]'}`}>
+                      <p className={`text-white/90 text-sm leading-snug group-hover:line-clamp-none transition-all duration-500 ${mod.title.length > 22 ? 'line-clamp-4' : 'line-clamp-5'}`}>
+                        {mod.description}
+                      </p>
+                    </div>
+                    <div className="mt-auto opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 overflow-hidden max-h-0 group-hover:max-h-[100px]">
+                      <div className="pt-4">
+                        <Link href="#contact-form" className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase text-[10px] px-3 py-1.5 rounded-full shadow-md hover:bg-blue-50 transition-colors">
+                          Learn More <ArrowRight size={10} />
+                        </Link>
                       </div>
+                    </div>
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-600" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CHALLENGES AND SOLUTIONS */}
+      <section id="challenges" className="py-24 bg-gray-50 relative overflow-hidden scroll-mt-36">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+            <span className="bg-blue-600/10 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Global Hurdles</span>
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-gray-900 mt-6 mb-4">Addressing Global Challenges</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">How our India Localization for NetSuite solution solves critical compliance hurdles for growing enterprises.</p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {challenges.map((item, index) => (
+              <motion.div key={index} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group flex flex-col rounded-3xl overflow-hidden shadow-xl bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                <div className="relative h-64 overflow-hidden">
+                  <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-6">
+                    <h4 className="text-white font-bold text-xl">{item.title}</h4>
+                  </div>
+                </div>
+                <div className="p-8">
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BENEFITS */}
+      <section id="benefits" className="py-24 relative overflow-hidden scroll-mt-36" style={{ background: CARD_BG }}>
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3" style={{ background: "radial-gradient(circle,rgba(37,99,235,0.25) 0%,transparent 70%)" }} />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+            <h3 className="text-3xl md:text-5xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+              Key Benefits of India Localization for NetSuite Suite
+            </h3>
+          </motion.div>
+          <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
+            <div className="order-2 lg:order-1 relative min-h-[380px] lg:min-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+              <AnimatePresence mode="wait">
+                <motion.div key={activeBenefit} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} className="absolute inset-0">
+                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover object-center" />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+            <div className="order-1 lg:order-2 rounded-3xl border border-white/10 bg-white/[0.03] p-4 flex flex-col gap-2 justify-center">
+              {benefits.map((item, index) => (
+                <button key={index} onClick={() => setActiveBenefit(index)} suppressHydrationWarning
+                  className={`group w-full flex flex-col px-5 py-4 text-left rounded-xl transition-all duration-300 outline-none ${activeBenefit === index ? 'bg-white shadow-xl border-l-4 border-blue-600' : 'bg-white/5 border-l-4 border-transparent hover:bg-white/10'}`}>
+                  <div className="flex items-center gap-4 w-full">
+                    <div className={`shrink-0 transition-colors ${activeBenefit === index ? 'text-blue-600' : 'text-gray-400 group-hover:text-gray-200'}`}>
+                      {index === 0 ? <ShieldCheck size={20} /> : index === 1 ? <Zap size={20} /> : index === 2 ? <TrendingUp size={20} /> : <BarChart3 size={20} />}
+                    </div>
+                    <span className={`text-base md:text-lg flex-1 font-semibold ${activeBenefit === index ? 'text-gray-900' : 'text-gray-300'}`}>{item.title}</span>
+                    <ChevronRight className={`w-4 h-4 shrink-0 ${activeBenefit === index ? 'text-blue-600 rotate-90' : 'text-gray-500 opacity-0 group-hover:opacity-60'}`} />
+                  </div>
+                  {activeBenefit === index && (
+                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} transition={{ duration: 0.3 }} className="overflow-hidden mt-3 pl-9">
+                      <p className="text-gray-500 text-sm leading-relaxed mb-3">{item.description}</p>
+                      <ul className="space-y-1.5">{item.points.map((pt, pi) => (<li key={pi} className="flex items-start gap-2 text-sm text-gray-600"><Check size={13} className="text-blue-600 mt-0.5 shrink-0" /> {pt}</li>))}</ul>
                     </motion.div>
                   )}
-                </AnimatePresence>
-              </motion.div>
-            ))}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-gray-50">
+      <div id="services">
+        <NSServicesSection />
+      </div>
+
+      {/* FAQ */}
+      <FAQ
+        variant="netsuite"
+        id="faq"
+        customSubtitle="Everything you need to know about NetSuite India Localization — GST, e-invoicing, TDS, e-Way Bills, and compliance timelines."
+        customFaqs={[
+          { q: "How does India Localization for NetSuite simplify GST compliance for businesses?", a: "India Localization for NetSuite automates GST reporting, including GSTR1, GSTR2, and GSTR 3B, and provides configurable GST rules based on factors such as location, customer type, and transaction type. This simplifies GST compliance by streamlining tax calculations and reporting processes." },
+          { q: "Can India Localization for NetSuite integrate with existing accounting systems?", a: "Yes, India Localization for NetSuite can be seamlessly integrated with NetSuite, providing businesses with a comprehensive tax management solution that integrates with their existing accounting systems. This integration ensures smooth data flow and eliminates the need for manual data entry." },
+          { q: "How does India Localization for NetSuite mitigate the risk of TDS non-compliance?", a: "India Localization for NetSuite automates TDS calculations and reporting, including Income Tax Form 26Q, and provides support for threshold management and PAN rule compliance. By automating TDS processes and ensuring accurate tax calculations, India Tax Solution helps businesses mitigate the risk of TDS non-compliance and avoid penalties." },
+          { q: "Does NetSuite support GST natively?", a: "NetSuite has basic tax capabilities, but Indian GST requires specific localization for CGST/SGST/IGST computation, HSN/SAC codes, RCM, ITC registers, and GSTR reports. Our India Localization Add-On extends NetSuite with all these capabilities natively, without any third-party middleware." },
+          { q: "Is e-invoicing mandatory for our business?", a: "E-invoicing is mandatory for GST-registered businesses with aggregate turnover above ₹5 crore (as of 2024). Our solution automatically determines which transactions require e-invoicing, generates the IRP-compliant JSON, submits to the Invoice Registration Portal, and embeds the IRN and QR code on your NetSuite invoice PDF." },
+          { q: "How does TDS automation work inside NetSuite?", a: "When a payment or expense is posted in NetSuite, the India Localization Add-On evaluates whether TDS applies based on the payment category, section, and cumulative threshold. The applicable rate is deducted automatically, a TDS ledger entry is posted, and Form 16/16A certificates and 26Q/27Q filing data are generated at quarter-end." },
+          { q: "Can we manage multiple GSTINs across different states?", a: "Yes. The solution supports unlimited GSTIN registrations within a single NetSuite account — each with its own GST ledger, ITC register, GSTR filing schedule, and inter-state transaction logic. Multi-state organisations can manage all compliance from one NetSuite environment." },
+          { q: "How are e-Way Bills generated?", a: "E-Way Bills are generated directly from NetSuite delivery orders and invoices via NIC API integration. Transporter details, vehicle number, and consignment value are pulled from the NetSuite transaction, and the e-Way Bill number is embedded back into the shipment record. Bulk generation is supported for high-volume dispatches." },
+          { q: "Does the solution handle Input Tax Credit (ITC) reconciliation?", a: "Yes. Our solution maintains a complete ITC register — tracking eligible credits, provisionally claimed credits, and credits to be reversed. Automatic reconciliation with GSTR-2B data identifies mismatches between your purchase register and what's reflected in GSTN records, helping you avoid ITC reversal penalties." },
+          { q: "What GSTR returns does the solution generate?", a: "The solution generates filing-ready data for GSTR-1 (outward supplies), GSTR-3B (monthly summary), GSTR-2A/2B (purchase reconciliation), and GSTR-9 (annual return). Reports are generated in the formats prescribed by GSTN, ready for upload to the GST portal or through a GST Suvidha Provider." },
+          { q: "How long does implementation take?", a: "A standard India Localization implementation takes 4–6 weeks for a single GSTIN entity — covering GST configuration, HSN/SAC code mapping, IRP credentials setup, TDS section configuration, and user training. Multi-GSTIN or multi-subsidiary implementations typically take 6–10 weeks." },
+        ]}
+      />
+
+      {/* CTA BANNER */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative rounded-[3rem] overflow-hidden border border-gray-200">
-            <Image src="/images/aboutus/CTA2.webp" alt="India Compliance Readiness" fill className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
-            <div className="relative z-10 p-12 lg:p-24">
-              <div className="max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Ready for 100% Compliance?</h2>
-                <p className="text-xl text-gray-300 mb-8">Simplify your Indian operations and scale with confidence.</p>
-                <Link href="/netsuite/contact" className="inline-flex items-center gap-2 px-10 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl transition shadow-xl">
-                  Contact Us <ArrowRight size={20} />
-                </Link>
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#0891b2] shadow-2xl">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              {PARTICLES.map((p, i) => (<motion.div key={i} className="absolute bg-white rounded-full" style={{ width: `${p.w}px`, height: `${p.h}px`, top: `${p.top}%`, left: `${p.left}%` }} animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }} transition={{ duration: p.dur, repeat: Infinity, ease: 'easeInOut', delay: p.delay }} />))}
+            </div>
+            <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
+              <div className="text-left max-w-2xl">
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Stay GST Compliant — <span className="text-cyan-200">Automate India Tax in NetSuite.</span></h2>
+                <p className="text-white/80 text-lg md:text-xl">End manual GST calculations, e-invoice filing, and TDS tracking. Our India Localization Add-On keeps your NetSuite environment fully compliant with every GSTN and Income Tax requirement.</p>
               </div>
+              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all group active:scale-95">
+                Get India Compliance <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </motion.div>
         </div>

@@ -1,0 +1,126 @@
+[
+  {
+    "file": "app\\netsuite\\industries\\advertising-marketing\\page.tsx",
+    "benefitCount": 6,
+    "featureCount": 4,
+    "repeats": []
+  },
+  {
+    "file": "app\\netsuite\\industries\\financial-services\\page.tsx",
+    "benefitCount": 6,
+    "featureCount": 6,
+    "repeats": [
+      "/images/lap/lap10_11zon.webp",
+      "/images/lap/lap9_11zon.webp",
+      "/images/lap/lap8_11zon.webp"
+    ]
+  },
+  {
+    "file": "app\\netsuite\\industries\\it-services\\page.tsx",
+    "benefitCount": 6,
+    "featureCount": 4,
+    "repeats": []
+  },
+  {
+    "file": "app\\netsuite\\industries\\manufacturing\\page.tsx",
+    "benefitCount": 6,
+    "featureCount": 4,
+    "repeats": []
+  },
+  {
+    "file": "app\\netsuite\\industries\\media\\page.tsx",
+    "benefitCount": 6,
+    "featureCount": 4,
+    "repeats": []
+  },
+  {
+    "file": "app\\netsuite\\industries\\retail\\page.tsx",
+    "benefitCount": 6,
+    "featureCount": 4,
+    "repeats": []
+  },
+  {
+    "file": "app\\netsuite\\industries\\software\\page.tsx",
+    "benefitCount": 6,
+    "featureCount": 8,
+    "repeats": []
+  },
+  {
+    "file": "app\\netsuite\\industries\\telecom\\page.tsx",
+    "benefitCount": 6,
+    "featureCount": 4,
+    "repeats": []
+  },
+  {
+    "file": "app\\netsuite\\industries\\transport\\page.tsx",
+    "benefitCount": 6,
+    "featureCount": 4,
+    "repeats": []
+  },
+  {
+    "file": "app\\netsuite\\industries\\wholesale\\page.tsx",
+    "benefitCount": 6,
+    "featureCount": 4,
+    "repeats": []
+  },
+  {
+    "file": "app\\zoho\\industries\\advertising-marketing\\page.tsx",
+    "benefitCount": 4,
+    "featureCount": 4,
+    "repeats": []
+  },
+  {
+    "file": "app\\zoho\\industries\\financial-services\\page.tsx",
+    "benefitCount": 6,
+    "featureCount": 6,
+    "repeats": []
+  },
+  {
+    "file": "app\\zoho\\industries\\it-services\\page.tsx",
+    "benefitCount": 4,
+    "featureCount": 4,
+    "repeats": []
+  },
+  {
+    "file": "app\\zoho\\industries\\manufacturing\\page.tsx",
+    "benefitCount": 4,
+    "featureCount": 4,
+    "repeats": []
+  },
+  {
+    "file": "app\\zoho\\industries\\media\\page.tsx",
+    "benefitCount": 4,
+    "featureCount": 4,
+    "repeats": []
+  },
+  {
+    "file": "app\\zoho\\industries\\retail\\page.tsx",
+    "benefitCount": 4,
+    "featureCount": 4,
+    "repeats": []
+  },
+  {
+    "file": "app\\zoho\\industries\\software\\page.tsx",
+    "benefitCount": 4,
+    "featureCount": 8,
+    "repeats": []
+  },
+  {
+    "file": "app\\zoho\\industries\\telecom\\page.tsx",
+    "benefitCount": 4,
+    "featureCount": 4,
+    "repeats": []
+  },
+  {
+    "file": "app\\zoho\\industries\\transport\\page.tsx",
+    "benefitCount": 4,
+    "featureCount": 4,
+    "repeats": []
+  },
+  {
+    "file": "app\\zoho\\industries\\wholesale\\page.tsx",
+    "benefitCount": 4,
+    "featureCount": 4,
+    "repeats": []
+  }
+]

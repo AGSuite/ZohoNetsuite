@@ -257,7 +257,7 @@ export default function NetSuiteSRPPage() {
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/50">Solutions</span>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/80">SRP</span>
+            <span className="text-white/80">NetSuite Service Resource Planning (SRP)</span>
           </motion.nav>
 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8">
@@ -291,7 +291,7 @@ export default function NetSuiteSRPPage() {
                 transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                Scale your service business with the world&apos;s first cloud-native Solution that unites projects, resources, and financials on a single platform.
+                Scale your service business with the world&apos;s first cloud-native NetSuite Solution that unites projects, resources, and financials on a single platform.
               </motion.p>
 
               <motion.div
@@ -301,7 +301,7 @@ export default function NetSuiteSRPPage() {
               >
                 <Link
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-blue-950 hover:border-white transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
                 >
                   Start Scaling Now
                   <motion.span
@@ -366,7 +366,7 @@ export default function NetSuiteSRPPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
             {[
-              { label: "What is SRP?", href: "#what-is-srp" },
+              { label: "What is NetSuite Service Resource Planning?", href: "#what-is-srp" },
               { label: "Modules", href: "#modules" },
               { label: "Benefits", href: "#benefits" },
               { label: "Services", href: "#services" },
@@ -389,61 +389,60 @@ export default function NetSuiteSRPPage() {
 
       <section id="what-is-srp" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            {/* LEFT — Dashboard Image */}
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="flex items-center justify-center rounded-2xl overflow-hidden p-4 md:p-8"
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
             >
-              <div className="relative w-full">
-                <Image
-                  src="/images/Dashboard/suiteproject dashboard 2.jpg"
-                  alt="NetSuite SRP Dashboard"
-                  width={1400}
-                  height={900}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
-                  className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20"
-                />
+              <div className="relative w-full h-full p-4 lg:p-6">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100">
+                  <Image
+                    src="/images/Dashboard/suiteproject dashboard 2.jpg"
+                    alt="NetSuite Service Resource Planning SRP Dashboard"
+                    fill
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
               </div>
             </motion.div>
 
-            {/* RIGHT — Text Content */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="space-y-6"
+              className="flex flex-col justify-center space-y-6 py-6"
             >
               <div className="space-y-4">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  NetSuite SRP for Unified Services Lifecycle and Project 
-                </h1>
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+                  NetSuite SRP: Unified Service Resource Planning for Profitable Project Excellence
+                </h2>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                NetSuite SRP (Service Resource Planning) is a unified cloud solution that manages the full services lifecycle—from opportunity and project delivery to financial recognition—on a single platform. By combining Professional Services Automation (PSA) with core ERP financials, it removes the gap between project teams and back-office operations.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                With real-time visibility and centralized data, NetSuite SRP helps optimize resource utilization, increase billable hours, and keep projects on budget. Its scalable architecture enables better project delivery and supports consistent, profitable growth in a competitive market.
-              </p>
+              <div className="space-y-2">
+                <p className="text-base text-gray-600 leading-relaxed">
+                  NetSuite SRP (Service Resource Planning) is a unified cloud solution designed to manage the entire services lifecycle—from initial opportunity and resource scheduling to project delivery and financial recognition. As a specialized <strong>NetSuite SRP partner</strong>, we help Professional Services organizations eliminate siloed data and bridge the gap between project teams and back-office finance.
+                </p>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  By centralizing Professional Services Automation (PSA) with core ERP financials, NetSuite SRP provides real-time visibility into project health, resource utilization, and billable margins. Optimize your talent pool and ensure project success with a scalable platform that grows alongside your firm&apos;s global ambitions.
+                </p>
+              </div>
               <div className="pt-4">
                 <Link
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
-                  style={{
-                    background: 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)',
-                    color: '#ffffff',
-                  }}
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
+                  style={{ background: 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)', color: '#ffffff' }}
                   onMouseEnter={e => {
                     (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff';
                     (e.currentTarget as HTMLAnchorElement).style.color = '#0a1f5c';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 10px 25px -5px rgba(10, 31, 92, 0.3)';
                   }}
                   onMouseLeave={e => {
                     (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)';
                     (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
                   }}
                 >
                   <span>Empower Your Firm</span>
@@ -725,7 +724,7 @@ export default function NetSuiteSRPPage() {
                 href="#contact-form"
                 className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
               >
-                Go Live on SRP
+                Go Live on NetSuite SRP
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

@@ -5,6 +5,7 @@ import React from "react";
 
 
 
+
 import ZohoIndustryTemplate, {
   IndustryPageData,
 } from "@/app/zoho/components/industries/ZohoIndustryTemplate";
@@ -60,31 +61,64 @@ const data: IndustryPageData = {
         "Instantly see profitability by store, brand, or channel with Zoho Books' automated retail accounting features.",
       image: "/images/lap/lap9_11zon.webp",
     },
+    {
+      title: "Loyalty & Rewards Program",
+      description:
+        "Manage complex customer loyalty and reward programmes through Zoho CRM and custom Creator modules to drive repeat business.",
+      image: "/images/lap/lap8_11zon.webp",
+    },
+  ],
+  features: [
+    {
+      title: "Omnichannel Commerce",
+      description: "Deliver a seamless shopping experience across all channels with Zoho Commerce.",
+      image: "/images/lap/lap5.webp",
+    },
+    {
+      title: "Inventory Management",
+      description: "Optimize inventory levels and minimize stockouts across all locations with Zoho Inventory.",
+      image: "/images/lap/lap1.webp",
+    },
+    {
+      title: "Customer Relationship Management",
+      description: "Centralize customer data and automate personalized marketing with Zoho CRM.",
+      image: "/images/people/laptopgirl.webp",
+    },
+    {
+      title: "Financial Management",
+      description: "Automate bookkeeping and gain real-time visibility into your cash flow with Zoho Books.",
+      image: "/images/lap/lap3.webp",
+    },
+    {
+      title: "Order Management",
+      description: "Automate the entire order-to-fulfillment cycle for faster delivery and improved customer satisfaction.",
+      image: "/images/lap/lap6_11zon.webp",
+    },
   ],
   challenges: [
     {
       title: "Siloed Channel Data",
       solution:
         "Zoho Commerce and Zoho Inventory unify your online and physical data — providing a real-time, global view of your business health.",
-      image: "/images/people/laptopmen1.jpg",
+      image: "/images/challenges/ecommerce-sync.png",
     },
     {
       title: "Inventory Stockouts",
       solution:
         "Automated reorder points and intelligent demand forecasting in Zoho Inventory ensures you're never out of stock on high-velocity items.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/challenges/inventory-blind-spots.png",
     },
     {
       title: "Complex Returns Processes",
       solution:
         "Zoho's automated RMA (Return Merchandise Authorization) workflows streamline refunds and stock replacement for customers.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/challenges/fulfillment-delay.png",
     },
     {
       title: "Manual Financial Reconciliation",
       solution:
         "Zoho Books integrates with popular payment gateways to automate reconciliation — ensuring your books are always current.",
-      image: "/images/people/global.webp",
+      image: "/images/challenges/reconciliation.png",
     },
   ],
   pricingTiers: [
@@ -129,27 +163,26 @@ const data: IndustryPageData = {
   ],
   faqs: [
     {
-      question: "Can Zoho sync with Shopify or Amazon?",
-      answer: "Yes. Zoho Inventory provides native connectors for Shopify, Amazon, eBay, and Etsy — ensuring live stock sync and automated order fulfillment.",
+      question: "Can Zoho integrate with Shopify and Amazon?",
+      answer: "Yes. Zoho Inventory has native, bi-directional connectors for Shopify, Amazon, eBay, and Etsy, syncing orders and stock in real-time.",
     },
     {
-      question: "Do you support offline POS systems?",
-      answer: "Yes. We can integrate your third-party POS or set up Zoho Checkout and custom Zoho Creator POS modules for physical retail stores.",
+      question: "Does Zoho support barcode scanning for retail?",
+      answer: "Yes. Zoho Inventory supports mobile barcode scanning for receiving, picking, and packing, as well as for quick stock takes in-store.",
     },
     {
-      question: "How does Zoho handle gift cards and loyalty programs?",
-      answer: "We use Zoho CRM and custom Deluge scripts to build robust loyalty modules, providing customers with dynamic points and voucher redemptions.",
+      question: "Can we manage loyalty programmes through Zoho?",
+      answer: "Yes. Through Zoho CRM and custom Creator modules, we can build and manage complex customer loyalty and reward programmes.",
     },
   ],
   relatedIndustries: [
     { label: "Wholesale Distribution", href: "/zoho/industries/wholesale" },
-    { label: "Software & Technology", href: "/zoho/industries/software" },
     { label: "Manufacturing", href: "/zoho/industries/manufacturing" },
-    { label: "Transportation", href: "/zoho/industries/transport" },
+    { label: "IT Services", href: "/zoho/industries/it-services" },
+    { label: "Software & Technology", href: "/zoho/industries/software" },
   ],
 };
 
 export default function ZohoRetailPage() {
   return <ZohoIndustryTemplate data={data} />;
 }
-

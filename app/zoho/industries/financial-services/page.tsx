@@ -1,21 +1,29 @@
 "use client";
 
+import React from "react";
+
+
+
+
+
 import ZohoIndustryTemplate, {
   IndustryPageData,
 } from "@/app/zoho/components/industries/ZohoIndustryTemplate";
 import { DollarSign, BarChart3, Shield, TrendingUp } from "lucide-react";
 
+
+
 const data: IndustryPageData = {
   industry: "Financial Services",
-  heroTitle: "Streamline Finance Operations with Zoho's Unified Cloud Suite",
+  heroTitle: "Modernize Financial Operations with Zoho Finance Plus",
   heroDescription:
-    "Empower your financial institution with Zoho's integrated applications — delivering automated compliance, real-time analytics, secure data management, and seamless workflows across finance, CRM, and operations.",
+    "Empower your financial organization with an integrated cloud suite that delivers real-time visibility, automated compliance, and scalable operations — from accounting to analytics.",
   heroImage: "/images/industries/financial-services-industry.webp",
-  heroCardTitle: "Financial Operations Hub",
+  heroCardTitle: "Financial Command Center",
   heroCardSub: "Compliance · Risk · Reporting · Multi-Entity Management",
   heroTopCardTitle: "Trusted by Financial Organizations",
   heroTopCardSub: "Compliant · Secure · Scalable",
-  introImage: "/images/lap/lap4.webp",
+  introImage: "/images/lap/lap10_11zon.webp",
   introTitle: "Why Zoho for Financial Services Industry?",
   introDescription:
     "In a rapidly evolving financial landscape, organizations face challenges like regulatory compliance, data security, and operational inefficiencies. To stay competitive, financial institutions require a modern, cloud-based solution that delivers real-time visibility, automation, and scalability — without the cost and complexity of traditional ERP systems.",
@@ -83,16 +91,32 @@ const data: IndustryPageData = {
         "India localization built-in",
       ],
     },
+  ],
+  features: [
     {
-      title: "Seamless Ecosystem Integrations",
-      description:
-        "Connect Zoho CRM with banking platforms, payment gateways, investment management systems, and third-party financial tools via Zoho Flow — achieving complete operational visibility with zero manual data entry.",
-      image: "/images/people/laptopgirl3.webp",
-      points: [
-        "Banking & payment API integrations",
-        "Zoho CRM client management",
-        "Payroll & HR Zoho People sync",
-      ],
+      title: "Comprehensive Financial Accounting",
+      description: "Manage end-to-end accounting processes from journals to financial statements with Zoho Books.",
+      image: "/images/lap/lap1.webp",
+    },
+    {
+      title: "Automated GST Compliance",
+      description: "Stay compliant with India's GST regulations through automated filing and e-invoicing.",
+      image: "/images/lap/lap2.webp",
+    },
+    {
+      title: "Advanced Financial Analytics",
+      description: "Gain deep insights into financial health and risk metrics with Zoho Analytics.",
+      image: "/images/lap/lap3.webp",
+    },
+    {
+      title: "Customizable Approval Workflows",
+      description: "Ensure operational control with tailored multi-level approval processes in Zoho Creator.",
+      image: "/images/lap/lap5.webp",
+    },
+    {
+      title: "Multi-Entity Management",
+      description: "Consolidate financials across multiple subsidiaries and currencies with Zoho Finance Plus.",
+      image: "/images/lap/lap6_11zon.webp",
     },
   ],
   challenges: [
@@ -100,76 +124,56 @@ const data: IndustryPageData = {
       title: "Regulatory Compliance",
       solution:
         "Zoho Books provides built-in compliance for IFRS, GAAP, GST, and local regulations — with automated rule updates and statutory reporting so your team stays compliant without manual effort.",
-      image: "/images/people/laptopmen1.jpg",
+      image: "/images/challenges/compliance.png",
     },
     {
       title: "Data Security & Privacy",
       solution:
         "Zoho delivers enterprise-grade cloud security with AES-256 encryption, role-based access controls, two-factor authentication, regular security audits, and 24/7 monitoring across all applications.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/challenges/security.png",
     },
     {
       title: "Legacy Systems & Integration Gaps",
       solution:
         "Zoho Flow and Zoho Creator integrate with existing banking, trading, and CRM systems via REST APIs — creating a unified data layer that eliminates silos and reduces manual data entry.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/challenges/data-silos.png",
     },
     {
       title: "Risk Management Complexity",
       solution:
         "Zoho Analytics and Zoho Creator provide real-time risk dashboards, configurable approval workflows, and automated controls that help financial firms identify and mitigate risks proactively.",
-      image: "/images/people/global.webp",
+      image: "/images/challenges/profitability.png",
     },
     {
       title: "Real-Time Visibility & Forecasting",
       solution:
         "Zoho Analytics consolidates all financial data in real time, enabling accurate cash flow forecasting, scenario planning, and consolidated reporting across all entities and geographies.",
-      image: "/images/lap/lap2.webp",
-    },
-    {
-      title: "Scalability Across Regions",
-      solution:
-        "Zoho Finance Plus enables global financial firms to manage multiple subsidiaries, currencies, and tax regimes from a single platform — with centralized control and local flexibility.",
-      image: "/images/people/laptopgirl3.webp",
-    },
-    {
-      title: "Customer Expectations & Digital Experience",
-      solution:
-        "Zoho CRM and Zoho Desk enable financial firms to deliver transparent, personalized client experiences with real-time account visibility, omnichannel communication, and self-service portals.",
-      image: "/images/lap/lap9_11zon.webp",
-    },
-    {
-      title: "Fraud & Financial Crime Prevention",
-      solution:
-        "Zoho's role-based access controls, audit trails, and workflow-based approval processes create a robust internal control environment that reduces fraud risk and supports AML compliance requirements.",
-      image: "/images/lap/lap8_11zon.webp",
+      image: "/images/challenges/resource-visibility.png",
     },
   ],
-  pricingIntro:
-    "Zoho pricing for Financial Services is modular — choose the apps you need (Zoho Books, Zoho Finance Plus, Zoho CRM, Zoho Analytics) or go all-in with Zoho One for a single flat rate per user. No hidden fees, no infrastructure costs, and scales as your organization grows.",
   pricingTiers: [
     {
       name: "Starter",
-      price: "₹60,000",
-      description: "For growing financial firms up to 25 users.",
+      price: "₹80,000",
+      description: "For small financial firms or boutiques.",
       features: [
-        "Zoho Books (Financials & GST)",
-        "Zoho CRM (Client Management)",
-        "Basic Compliance Reporting",
-        "Automated Period-End Close",
+        "Zoho Books (Accounting)",
+        "Zoho Finance Plus (Standard)",
+        "Basic Regulatory Reporting",
+        "Standard Analytics Dashboards",
         "Email Support",
       ],
     },
     {
       name: "Professional",
-      price: "₹1,30,000",
-      description: "Full financial services suite for mid-size institutions.",
+      price: "₹1,60,000",
+      description: "Full finance suite for mid-size firms.",
       features: [
-        "Zoho Finance Plus (Multi-Entity)",
-        "Zoho Analytics (Custom Dashboards)",
-        "Zoho Flow (Workflow Automation)",
-        "Zoho CRM + Zoho Desk",
-        "GST, TDS & e-Invoice Compliance",
+        "Multi-entity Consolidation",
+        "Advanced Regulatory Automation",
+        "Custom Workflow Automation (Zoho Flow)",
+        "Advanced Analytics & KPI Tracking",
+        "India Localization (GST/TDS/e-Invoice)",
         "SLA-backed Support",
       ],
       popular: true,
@@ -177,12 +181,12 @@ const data: IndustryPageData = {
     {
       name: "Enterprise",
       price: "Custom",
-      description: "For large-scale or global financial organizations.",
+      description: "For large-scale or global financial groups.",
       features: [
-        "Zoho One (All 55+ Apps)",
-        "Custom Banking & FinTech Integrations",
-        "Advanced Audit & Risk Reporting",
-        "India Localization + Global Multi-Entity",
+        "Zoho One (Global Org)",
+        "Custom Risk Management Modules",
+        "Banking & Trading API Integrations",
+        "Advanced Scenario Planning",
         "Dedicated Implementation Manager",
         "24/7 Priority Support",
       ],
@@ -190,41 +194,23 @@ const data: IndustryPageData = {
   ],
   faqs: [
     {
-      question: "How does Zoho help Financial Services companies?",
-      answer:
-        "Zoho helps financial services companies modernize operations with a unified suite — Zoho Books for financial management, Zoho CRM for client relationships, Zoho Analytics for insights, and Zoho Flow for automation. Together, these tools streamline compliance, improve decision-making, and reduce operational costs.",
+      question: "Is Zoho compliant with Indian financial regulations?",
+      answer: "Yes. Zoho Books is fully GST-ready and supports e-invoicing, TDS/TCS, and statutory reporting requirements for Indian businesses, including the financial services sector.",
     },
     {
-      question: "Can Zoho integrate with existing banking or financial systems?",
-      answer:
-        "Yes. Zoho Flow and Zoho Creator provide robust REST API integration capabilities that connect with banking platforms, payment gateways, investment management systems, and third-party financial tools. Data flows securely across all platforms without manual entry.",
+      question: "How secure is data in Zoho for financial institutions?",
+      answer: "Zoho maintains high security standards including SOC 2 Type II, ISO 27001, and HIPAA compliance. Data is encrypted at rest (AES-256) and in transit (TLS 1.2/1.3).",
     },
     {
-      question: "Is Zoho secure enough for sensitive financial data?",
-      answer:
-        "Absolutely. Zoho uses enterprise-grade cloud security, including AES-256 encryption, role-based access controls, two-factor authentication, regular security audits, and 24/7 monitoring. Zoho is ISO 27001 certified and GDPR compliant, ensuring your financial data remains safe and private.",
-    },
-    {
-      question: "Does Zoho support India-specific compliance for financial services?",
-      answer:
-        "Yes. Zoho Books includes full GST automation, e-invoicing compliance, TDS/TCS computation, and statutory reporting for Indian businesses. AGSuite's Zoho localization expertise ensures your financial organization remains fully compliant with Indian tax and regulatory requirements.",
-    },
-    {
-      question: "How does Zoho Finance Plus support multi-entity financial management?",
-      answer:
-        "Zoho Finance Plus enables financial firms to manage multiple business entities, currencies, and tax regimes from a single platform. Inter-company transactions, consolidated reports, and entity-level financial statements are all handled within one unified Zoho organization.",
-    },
-    {
-      question: "What is AGSuite's approach to implementing Zoho for Financial Services?",
-      answer:
-        "AGSuite combines deep financial services domain expertise with certified Zoho implementation experience. We offer modular deployments tailored to your specific needs — from core accounting with Zoho Books to full-suite Zoho One implementations — with ongoing support and optimization to ensure long-term value.",
+      question: "Can Zoho consolidate multiple legal entities?",
+      answer: "Yes. Zoho Finance Plus and Zoho One allow you to manage multiple legal entities under a single organization, providing both entity-level and consolidated financial reporting.",
     },
   ],
   relatedIndustries: [
-    { label: "Software & Technology", href: "/zoho/industries/software" },
-    { label: "Telecom Industry", href: "/zoho/industries/telecom" },
     { label: "IT & Professional Services", href: "/zoho/industries/it-services" },
-    { label: "Wholesale Distribution", href: "/zoho/industries/wholesale" },
+    { label: "Software & Technology", href: "/zoho/industries/software" },
+    { label: "Media & Publishing", href: "/zoho/industries/media" },
+    { label: "Advertising & Marketing", href: "/zoho/industries/advertising-marketing" },
   ],
 };
 

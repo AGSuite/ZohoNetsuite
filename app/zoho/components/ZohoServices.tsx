@@ -19,12 +19,12 @@ interface ServiceItem {
 
 const services: ServiceItem[] = [
   {
-    title: "Zoho Implementation",
+    title: "Digital Transformation",
     heading: "",
     description:
-      "Organizations can benefit from professional assistance in implementing Zoho solutions tailored to their specific business requirements.",
-    bgImage: "/images/Services/managedservices.webp",
-    href: "/zoho/services/implementation",
+      "Modernize your business operations and accelerate growth. We help you digitize manual processes, leverage cutting-edge Zoho applications, and build a unified, cloud-first infrastructure for the future.",
+    bgImage: "/images/Services/Digitalservices.webp",
+    href: "/zoho/services/digital-transformation",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -33,10 +33,10 @@ const services: ServiceItem[] = [
     ),
   },
   {
-    title: "Zoho Integration",
+    title: "Integration Services",
     heading: "",
     description:
-      "Expert support is available for seamlessly integrating Zoho applications with existing systems and third-party tools, enhancing operational efficiency.",
+      "Connect your systems effortlessly. Our expert team seamlessly integrates Zoho applications with your existing software stack and third-party tools to eliminate data silos and boost operational efficiency.",
     bgImage: "/images/Services/integrationservices.webp",
     href: "/zoho/services/integration-services",
     icon: (
@@ -46,12 +46,25 @@ const services: ServiceItem[] = [
     ),
   },
   {
-    title: "Zoho Customization",
+    title: "Training Services",
     heading: "",
     description:
-      "Businesses can leverage custom development options to tailor Zoho applications to their unique workflows and operational needs.",
-    bgImage: "/images/Services/Digitalservices.webp",
-    href: "/zoho/services/digital-transformation",
+      "Empower your workforce with expert-led training programs. We provide comprehensive, hands-on training to ensure your team has the skills needed to maximize the full potential of your Zoho applications.",
+    bgImage: "/images/Services/trainingservices.webp",
+    href: "/zoho/services/training-services",
+    icon: (
+      <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Low-Code App Development",
+    heading: "",
+    description:
+      "Build powerful, custom applications faster than ever. Leveraging Zoho Creator's low-code platform, we design and deploy bespoke solutions tailored precisely to your unique business workflows.",
+    bgImage: "/images/Services/lowcodeservices.webp",
+    href: "/zoho/services/low-code",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -59,28 +72,15 @@ const services: ServiceItem[] = [
     ),
   },
   {
-    title: "Zoho Managed Support",
+    title: "Managed Services",
     heading: "",
     description:
-      "Ongoing support and maintenance services ensure the smooth functioning and optimal performance of Zoho solutions, providing peace of mind to organizations.",
-    bgImage: "/images/Services/lowcodeservices.webp",
-    href: "/zoho/services/low-code",
+      "Experience complete IT management and peace of mind. Our proactive ongoing support, system monitoring, and continuous optimization ensure your Zoho environment performs at its absolute best.",
+    bgImage: "/images/Services/managedservices.webp",
+    href: "/zoho/services/managed-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Zoho Training",
-    heading: "",
-    description:
-      "Comprehensive training programs are available to empower teams with the necessary knowledge and skills to effectively utilize Zoho applications, maximizing their potential for business growth.",
-    bgImage: "/images/Services/trainingservices.webp",
-    href: "/zoho/services/training-services",
-    icon: (
-      <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
     ),
   },

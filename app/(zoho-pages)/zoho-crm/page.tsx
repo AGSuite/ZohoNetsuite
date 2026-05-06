@@ -195,9 +195,9 @@ export default function ZohoCRMPage() {
   return (
     <ZohoSolutionTemplate
       title="Zoho CRM — Modern Customer Relationship Management"
-      subtitle="Unified Relationships, Accelerated Growth."
-      description="A comprehensive CRM platform that empowers over 250,000 businesses globally to build lasting customer relationships and drive revenue growth through better experiences."
-      introDescription2="By centralizing customer data and automating routine sales tasks, Zoho CRM empowers your team to focus on building meaningful relationships rather than managing spreadsheets."
+      subtitle="Zoho CRM: The World's Most Popular Customer Relationship Management Platform"
+      description="Zoho CRM is a comprehensive, cloud-native CRM solution that empowers over 250,000 businesses globally to build lasting customer relationships. As a specialized Zoho implementation partner, we help you unify sales, marketing, and support teams with AI-driven insights and automated workflows."
+      introDescription2="By centralizing customer interactions and automating routine sales tasks, Zoho CRM enables your team to focus on strategic relationship building rather than manual data entry. Drive higher conversion rates and maximize customer lifetime value with a single source of truth."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

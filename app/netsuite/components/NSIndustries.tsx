@@ -12,6 +12,8 @@ import {
   ShoppingCart,
   Truck,
   Factory,
+  Building2,
+  Phone,
 } from "lucide-react";
 
 /* ------------------ ICON MAPPING ------------------ */
@@ -24,6 +26,8 @@ const industryIconMap: Record<string, React.ElementType> = {
   "Retail & E-Commerce": ShoppingCart,
   "Transportation and Logistics": Truck,
   "Manufacturing": Factory,
+  "Financial Services": Building2,
+  "Telecom": Phone,
 };
 
 /* ------------------ ROUTES ------------------ */
@@ -36,6 +40,8 @@ const industryRoutes: Record<string, string> = {
   "Retail & E-Commerce": "/netsuite/industries/retail",
   "Transportation and Logistics": "/netsuite/industries/transport",
   "Manufacturing": "/netsuite/industries/manufacturing",
+  "Financial Services": "/netsuite/industries/financial-services",
+  "Telecom": "/netsuite/industries/telecom",
 };
 
 /* ------------------ LIGHT GRADIENTS ------------------ */
@@ -91,6 +97,16 @@ const industries = [
     id: 8,
     title: "Manufacturing",
     description: "End-to-end manufacturing planning and shop floor control systems.",
+  },
+  {
+    id: 9,
+    title: "Financial Services",
+    description: "Automate core accounting and ensure bulletproof compliance.",
+  },
+  {
+    id: 10,
+    title: "Telecom",
+    description: "Manage global networks, subscriptions, and complex billing.",
   },
 ];
 

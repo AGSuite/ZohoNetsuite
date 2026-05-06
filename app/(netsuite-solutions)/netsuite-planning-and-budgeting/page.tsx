@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import {
   Calculator, Target, Zap, ArrowRight, Check, ChevronRight,
-  CheckCircle2, ShieldCheck, PieChart, Users, Eye, Settings, 
+  CheckCircle2, ShieldCheck, PieChart, Users, Eye, Settings,
   Search, FileText, BrainCircuit, TrendingUp, BarChart3,
 } from "lucide-react";
 import { FAQ } from "@/app/components/home/FAQ";
@@ -46,108 +46,108 @@ export default function PlanningPage() {
   ];
 
   const modules = [
-    { 
-      title: "Budgeting and Forecasting", 
-      description: "Automate tedious companywide and departmental budgeting processes. Prebuilt workflows that leverage best practices make it easy to closely track the progress of tasks, such as reviews and approvals.", 
-      image: "/images/modules/dashboard module.webp", 
-      color: "#0f6e8a", 
-      rgb: "15,110,138" 
+    {
+      title: "Budgeting and Forecasting",
+      description: "Automate tedious companywide and departmental budgeting processes. Prebuilt workflows that leverage best practices make it easy to closely track the progress of tasks, such as reviews and approvals.",
+      image: "/images/modules/dashboard module.webp",
+      color: "#0f6e8a",
+      rgb: "15,110,138"
     },
-    { 
-      title: "Scenario Planning and Modeling", 
-      description: "Perform scenario modeling and multidimensional planning with any number of dimensions, such as location, product, customer or expense. Easily model complex calculations.", 
-      image: "/images/modules/account modules.webp", 
-      color: "#3b5299", 
-      rgb: "59,82,153" 
+    {
+      title: "Scenario Planning and Modeling",
+      description: "Perform scenario modeling and multidimensional planning with any number of dimensions, such as location, product, customer or expense. Easily model complex calculations.",
+      image: "/images/modules/account modules.webp",
+      color: "#3b5299",
+      rgb: "59,82,153"
     },
-    { 
-      title: "AI-Powered Predictive Planning", 
-      description: "Leveraging embedded AI, Intelligent Performance Management automates data analysis to improve and accelerate decision making. Prediction algorithms continually monitor and analyze plans.", 
-      image: "/images/modules/managging together module.webp", 
-      color: "#1a7a55", 
-      rgb: "26,122,85" 
+    {
+      title: "AI-Powered Predictive Planning",
+      description: "Leveraging embedded AI, Intelligent Performance Management automates data analysis to improve and accelerate decision making. Prediction algorithms continually monitor and analyze plans.",
+      image: "/images/modules/managging together module.webp",
+      color: "#1a7a55",
+      rgb: "26,122,85"
     },
-    { 
-      title: "Revenue Planning", 
-      description: "Align revenue forecasts and sales plans with corporate objectives. Create driver-based revenue and sales forecasts for all business units in collaboration with teams.", 
-      image: "/images/modules/sheet module.webp", 
-      color: "#7b3a8a", 
-      rgb: "123,58,138" 
+    {
+      title: "Revenue Planning",
+      description: "Align revenue forecasts and sales plans with corporate objectives. Create driver-based revenue and sales forecasts for all business units in collaboration with teams.",
+      image: "/images/modules/sheet module.webp",
+      color: "#7b3a8a",
+      rgb: "123,58,138"
     },
-    { 
-      title: "Operational Expense", 
-      description: "Enable flexible driver-based planning to connect your operational assumptions to financial outcomes. Support a hierarchical planning process encompassing finance and business lines.", 
-      image: "/images/modules/dashbord module.webp", 
-      color: "#a05a18", 
-      rgb: "160,90,24" 
+    {
+      title: "Operational Expense",
+      description: "Enable flexible driver-based planning to connect your operational assumptions to financial outcomes. Support a hierarchical planning process encompassing finance and business lines.",
+      image: "/images/modules/dashbord module.webp",
+      color: "#a05a18",
+      rgb: "160,90,24"
     },
-    { 
-      title: "Workforce Planning", 
-      description: "Simplify workforce planning, headcount, salary and compensation planning by aligning organizational needs with workforce priorities to ensure objectives are met.", 
-      image: "/images/modules/any module.webp", 
-      color: "#4a3a8a", 
-      rgb: "74,58,138" 
+    {
+      title: "Workforce Planning",
+      description: "Simplify workforce planning, headcount, salary and compensation planning by aligning organizational needs with workforce priorities to ensure objectives are met.",
+      image: "/images/modules/any module.webp",
+      color: "#4a3a8a",
+      rgb: "74,58,138"
     },
-    { 
-      title: "Trended Financial Statements", 
-      description: "Fully integrated GAAP-compliant statements mean income, balance sheet and cash flow statements are connected with seamless actual-to-budget trending.", 
-      image: "/images/modules/working module.webp", 
-      color: "#1a6080", 
-      rgb: "26,96,128" 
+    {
+      title: "Trended Financial Statements",
+      description: "Fully integrated GAAP-compliant statements mean income, balance sheet and cash flow statements are connected with seamless actual-to-budget trending.",
+      image: "/images/modules/working module.webp",
+      color: "#1a6080",
+      rgb: "26,96,128"
     },
-    { 
-      title: "Data Synchronization", 
-      description: "Prebuilt data synchronization with NetSuite ERP ensures data accuracy. Up-to-date financial and operational data are automatically reflected in your plans.", 
-      image: "/images/modules/module8.webp", 
-      color: "#6a2575", 
-      rgb: "106,37,117" 
+    {
+      title: "Data Synchronization",
+      description: "Prebuilt data synchronization with NetSuite ERP ensures data accuracy. Up-to-date financial and operational data are automatically reflected in your plans.",
+      image: "/images/modules/module8.webp",
+      color: "#6a2575",
+      rgb: "106,37,117"
     },
-    { 
-      title: "Dashboards", 
-      description: "Easily create dashboards in minutes that display budget and actuals data. Secure, collaborative, process-driven approach makes defining and authoring reports effortless.", 
-      image: "/images/modules/any modules.webp", 
-      color: "#154e8a", 
-      rgb: "21,78,138" 
+    {
+      title: "Dashboards",
+      description: "Easily create dashboards in minutes that display budget and actuals data. Secure, collaborative, process-driven approach makes defining and authoring reports effortless.",
+      image: "/images/modules/any modules.webp",
+      color: "#154e8a",
+      rgb: "21,78,138"
     },
-    { 
-      title: "Microsoft Office Integration", 
-      description: "Smart View for Office enables integration with Outlook, Excel, Word and PowerPoint. Users can add what-if analyses in Excel for customers or items on the fly.", 
-      image: "/images/modules/chatt mdoule.webp", 
-      color: "#1a6545", 
-      rgb: "26,101,69" 
+    {
+      title: "Microsoft Office Integration",
+      description: "Smart View for Office enables integration with Outlook, Excel, Word and PowerPoint. Users can add what-if analyses in Excel for customers or items on the fly.",
+      image: "/images/modules/chatt mdoule.webp",
+      color: "#1a6545",
+      rgb: "26,101,69"
     },
   ];
 
   const benefits = [
-    { 
-      title: "Reduced Planning Cycle Times", 
-      description: "Templates and workflows make it easy to gather inputs and assumptions.", 
-      image: "/images/lap/lap3.webp", 
-      points: ["Gather inputs easily", "Automated assumptions", "Streamlined templates", "Faster cycles"] 
+    {
+      title: "Reduced Planning Cycle Times",
+      description: "Templates and workflows make it easy to gather inputs and assumptions.",
+      image: "/images/lap/lap3.webp",
+      points: ["Gather inputs easily", "Automated assumptions", "Streamlined templates", "Faster cycles"]
     },
-    { 
-      title: "Accurate Information", 
-      description: "Pre-built synchronization with NetSuite ERP ensures real-time, accurate financial and operational data is used.", 
-      image: "/images/people/laptopmen2.webp", 
-      points: ["Real-time synchronization", "ERP data integration", "Eliminated discrepancies", "Reliable datasets"] 
+    {
+      title: "Accurate Information",
+      description: "Pre-built synchronization with NetSuite ERP ensures real-time, accurate financial and operational data is used.",
+      image: "/images/people/laptopmen2.webp",
+      points: ["Real-time synchronization", "ERP data integration", "Eliminated discrepancies", "Reliable datasets"]
     },
-    { 
-      title: "Align the Organization", 
-      description: "All stakeholders are connected in a single environment, eliminating emails and spreadsheets.", 
-      image: "/images/people/fourteam.webp", 
-      points: ["Unified environment", "No disconnected spreadsheets", "Seamless collaboration", "Org-wide visibility"] 
+    {
+      title: "Align the Organization",
+      description: "All stakeholders are connected in a single environment, eliminating emails and spreadsheets.",
+      image: "/images/people/fourteam.webp",
+      points: ["Unified environment", "No disconnected spreadsheets", "Seamless collaboration", "Org-wide visibility"]
     },
-    { 
-      title: "Increased Transparency", 
-      description: "Everyone is entering data consistently and using the same processes, so all changes are tracked.", 
-      image: "/images/lap/lap4.webp", 
-      points: ["Consistent data entry", "Unified processes", "Tracked changes", "Audit readiness"] 
+    {
+      title: "Increased Transparency",
+      description: "Everyone is entering data consistently and using the same processes, so all changes are tracked.",
+      image: "/images/lap/lap4.webp",
+      points: ["Consistent data entry", "Unified processes", "Tracked changes", "Audit readiness"]
     },
-    { 
-      title: "Improved Forecast Accuracy", 
-      description: "Regularly compare and analyze actual versus projected results to refine forecasts.", 
-      image: "/images/lap/lap2.webp", 
-      points: ["Refined forecasting", "Variance analysis", "Actual vs Projected", "Data-driven decisions"] 
+    {
+      title: "Improved Forecast Accuracy",
+      description: "Regularly compare and analyze actual versus projected results to refine forecasts.",
+      image: "/images/lap/lap2.webp",
+      points: ["Refined forecasting", "Variance analysis", "Actual vs Projected", "Data-driven decisions"]
     },
   ];
 
@@ -167,7 +167,7 @@ export default function PlanningPage() {
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/50">Solutions</span>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/80">Planning & Budgeting</span>
+            <span className="text-white/80">NetSuite Planning and Budgeting</span>
           </motion.nav>
 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
@@ -185,7 +185,7 @@ export default function PlanningPage() {
                 Transform Financial Planning with NetSuite’s Automated Budgeting System. Automate labor-intensive planning processes and gain strategic analysis focus.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-teal-950 hover:border-white transition-all duration-300 shadow-xl shadow-teal-900/20 hover:shadow-orange-600/30 hover:scale-105">
+                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
                   Get in Touch
                   <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }} className="flex items-center">
                     <ArrowRight className="w-4 h-4" />
@@ -240,7 +240,7 @@ export default function PlanningPage() {
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
-            {[{ label: "What is Planning?", href: "#what-is" }, { label: "Features", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Challenges", href: "#challenges" }, { label: "Success", href: "#success" }, { label: "FAQ", href: "#faq" }].map(l => (
+            {[{ label: "What is NetSuite Planning and Budgeting?", href: "#what-is" }, { label: "Features", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Services", href: "#services" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
               <a key={l.href} href={l.href} className="px-4 py-2 text-base font-semibold hover:bg-teal-50 rounded-lg transition-all whitespace-nowrap">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-700 via-cyan-600 to-teal-500">{l.label}</span>
               </a>
@@ -252,50 +252,105 @@ export default function PlanningPage() {
       {/* What is */}
       <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-              className="flex items-center justify-center rounded-2xl overflow-hidden" style={{ minHeight: 480 }}>
-              <div className="relative w-full h-full">
-                <Image src="/images/Dashboard/planing and budgeting 2 dashboard.jpg" alt="NetSuite Planning Dashboard" width={900} height={600} className="w-full h-auto rounded-xl object-contain border-4 border-teal-200 shadow-2xl shadow-teal-900/20" />
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
+            >
+              <div className="relative w-full h-full p-4 lg:p-6">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-teal-900/10 border-4 border-teal-100">
+                  <Image
+                    src="/images/Dashboard/planing and budgeting 2 dashboard.jpg"
+                    alt="NetSuite Planning and Budgeting Solution Dashboard"
+                    fill
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
               </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="flex flex-col justify-center space-y-6">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-teal-500 leading-tight">
-                What Is NetSuite Planning and Budgeting?
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                NetSuite Planning and Budgeting automates labor-intensive planning and budgeting processes, enabling finance teams to quickly and easily produce budgets and forecasts, model what-if scenarios, and generate reports—all within one collaborative, scalable solution.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Embedded AI and machine learning automate data analysis to improve and accelerate planning and forecasting cycles. Create detailed AI-generated commentary and narratives. By reducing the time spent on manual data collection, reporting, and data loading, finance teams can shift their focus from data entry and formula maintenance to strategic analysis activities that significantly impact the company’s financial position.
-              </p>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="flex flex-col justify-center space-y-6 py-6"
+            >
+              <div className="space-y-4">
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-teal-500 leading-tight">
+                  NetSuite Planning and Budgeting: Automating FP&amp;A for Strategic Financial Growth
+                </h2>
+              </div>
+              <div className="space-y-2">
+                <p className="text-base text-gray-600 leading-relaxed">
+                  NetSuite Planning and Budgeting (NSPB) automates labor-intensive financial planning processes, enabling finance teams to produce accurate budgets and forecasts with ease. As a specialized NetSuite Planning partner, we help you leverage embedded AI to produce strategic what-if scenarios and data-driven narratives.
+                </p>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  By centralizing your financial data in one collaborative environment, NSPB eliminates the risks of manual spreadsheet maintenance. Shift your focus from data entry to high-impact analysis, ensuring your organization remains agile and responsive to changing market conditions.
+                </p>
+              </div>
+              <div className="pt-4">
+                <Link
+                  href="#contact-form"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
+                  style={{
+                    background: 'linear-gradient(135deg, #0f766e 0%, #14b8a6 100%)',
+                    color: '#ffffff',
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#0f766e';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 10px 25px -5px rgba(15, 118, 110, 0.3)';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #0f766e 0%, #14b8a6 100%)';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
+                  }}
+                >
+                  <span>Optimize Your Budgeting</span>
+                  <motion.span
+                    className="flex items-center"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <ArrowRight size={17} strokeWidth={2.5} />
+                  </motion.span>
+                </Link>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Control, Collaboration, Visibility - Alternating Layout */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 space-y-24">
+      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #000a10 0%, #001018 25%, #001822 55%, #000c14 80%, #000810 100%)" }}>
+        {/* Ambient background glow */}
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2 opacity-20" style={{ background: "radial-gradient(circle, #0f766e 0%, transparent 70%)" }} />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] translate-y-1/2 translate-x-1/2 opacity-10" style={{ background: "radial-gradient(circle, #0891b2 0%, transparent 70%)" }} />
+
+        <div className="max-w-7xl mx-auto px-6 space-y-24 relative z-10">
           {[
-            { 
-              title: "Control", 
-              desc: "Data synchronization with NetSuite ERP ensures automated, ongoing access to up-to-date financial and operational data. Reduced reliance on manual data input and reconciliations means better control.", 
-              image: "/images/Dashboard/planing and budgeting 2 dashboard.jpg",
+            {
+              title: "Control",
+              desc: "Data synchronization with NetSuite ERP ensures automated, ongoing access to up-to-date financial and operational data. Reduced reliance on manual data input and reconciliations means better control.",
+              image: "/images/lap/lap1.webp",
               icon: ShieldCheck,
               color: "teal"
             },
-            { 
-              title: "Collaboration", 
-              desc: "All stakeholders are connected in a single environment, streamlining data collection. Accessibility boosts participation and accountability, making it easier for finance to get meaningful input.", 
+            {
+              title: "Collaboration",
+              desc: "All stakeholders are connected in a single environment, streamlining data collection. Accessibility boosts participation and accountability, making it easier for finance to get meaningful input.",
               image: "/images/people/fourteam.webp",
               icon: Users,
               color: "cyan"
             },
-            { 
-              title: "Visibility", 
-              desc: "Data is entered in one centralized place, creating a single, agreed-upon version of information. Any changes made to numbers in the system are automatically reflected in reports and dashboards.", 
-              image: "/images/Dashboard/planing and budgeting 3 dashboard.jpg",
+            {
+              title: "Visibility",
+              desc: "Data is entered in one centralized place, creating a single, agreed-upon version of information. Any changes made to numbers in the system are automatically reflected in reports and dashboards.",
+              image: "/images/Dashboard/business intelligence 2.jpg",
               icon: Eye,
               color: "emerald"
             },
@@ -303,24 +358,24 @@ export default function PlanningPage() {
             <motion.div key={i} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               className={`flex flex-col ${i % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20`}>
               <div className="flex-1 space-y-6">
-                <div className={`w-14 h-14 rounded-2xl bg-${item.color}-50 flex items-center justify-center`}>
-                  <item.icon className={`w-7 h-7 text-${item.color}-600`} />
+                <div className={`w-14 h-14 rounded-2xl bg-${item.color}-900/30 border border-${item.color}-500/30 flex items-center justify-center backdrop-blur-sm`}>
+                  <item.icon className={`w-7 h-7 text-${item.color}-400`} />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">{item.title}</h3>
-                <div className={`w-16 h-1 bg-${item.color}-500 rounded-full`} />
-                <p className="text-lg text-gray-600 leading-relaxed">{item.desc}</p>
+                <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">{item.title}</h3>
+                <div className={`w-16 h-1 bg-gradient-to-r from-${item.color}-500 to-transparent rounded-full`} />
+                <p className="text-lg text-gray-300 leading-relaxed">{item.desc}</p>
                 <div className="pt-4">
-                  <Link href="#contact-form" className="group inline-flex items-center gap-2 font-bold text-teal-600 hover:text-teal-700 transition-colors">
+                  <Link href="#contact-form" className="group inline-flex items-center gap-2 font-bold text-teal-400 hover:text-teal-300 transition-colors">
                     Explore {item.title} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
-              <div className="flex-1 w-full relative">
-                <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-gray-50">
-                  <Image src={item.image} alt={item.title} fill className="object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-black/10 to-transparent" />
+              <div className="flex-1 w-full relative group">
+                <div className="relative aspect-video rounded-3xl overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] border border-white/10">
+                  <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent" />
                 </div>
-                <div className={`absolute -bottom-6 -${i % 2 === 1 ? 'left' : 'right'}-6 w-32 h-32 bg-${item.color}-500/10 rounded-full blur-3xl`} />
+                <div className={`absolute -bottom-6 -${i % 2 === 1 ? 'left' : 'right'}-6 w-32 h-32 bg-${item.color}-500/20 rounded-full blur-3xl opacity-50`} />
               </div>
             </motion.div>
           ))}
@@ -330,33 +385,38 @@ export default function PlanningPage() {
       {/* Features Grid - Already updated in previous turn */}
       <section id="modules" className="py-24 bg-gray-50 relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-medium text-gray-900 text-center">Features</motion.h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} 
+            className="text-4xl md:text-5xl font-medium text-gray-900 text-center">
+            NetSuite Planning and Budgeting Features
+          </motion.h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8 items-start">
             {modules.map((mod, index) => (
               <div key={index} className="group relative">
-                <motion.div 
-                  initial={{ opacity: 0, y: 40 }} 
-                  whileInView={{ opacity: 1, y: 0 }} 
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
-                  className="relative flex flex-col rounded-3xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-2xl z-10 hover:z-20"
+                  className="relative flex flex-col rounded-3xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-2xl z-10 hover:z-20 min-h-[360px]"
                   style={{ backgroundColor: `rgb(${mod.rgb})` }}
                 >
                   <div className="relative h-44 shrink-0 overflow-hidden">
                     <Image src={mod.image} alt={mod.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
                   </div>
-                  <div className="p-6 flex flex-col flex-1 transition-all duration-500">
-                    <h4 className="text-white font-bold text-xl mb-3 tracking-wide">{mod.title}</h4>
-                    <div className="relative overflow-hidden transition-all duration-500 max-h-[4.5rem] group-hover:max-h-[500px]">
-                      <p className="text-white/90 text-sm leading-relaxed font-medium">
+                  <div className="p-6 flex flex-col transition-all duration-500">
+                    <h4 className="text-white font-bold text-xl mb-3 tracking-wide line-clamp-2">{mod.title}</h4>
+                    <div className={`relative overflow-hidden transition-all duration-500 group-hover:max-h-[500px] ${mod.title.length > 22 ? 'max-h-[6rem]' : 'max-h-[7.5rem]'}`}>
+                      <p className={`text-white/90 text-sm leading-relaxed font-medium group-hover:line-clamp-none transition-all duration-500 ${mod.title.length > 22 ? 'line-clamp-4' : 'line-clamp-5'}`}>
                         {mod.description}
                       </p>
                     </div>
-                    <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                      <Link href="#contact-form" className="inline-flex items-center gap-2 bg-white text-gray-900 text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-md">
-                        Learn More <ArrowRight size={12} />
-                      </Link>
+                    <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 overflow-hidden max-h-0 group-hover:max-h-[100px]">
+                      <div className="pt-6">
+                        <Link href="#contact-form" className="inline-flex items-center gap-2 bg-white text-gray-900 text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-md hover:bg-gray-50 transition-colors">
+                          Learn More <ArrowRight size={12} />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
@@ -374,7 +434,7 @@ export default function PlanningPage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-teal-200">
-              Benefits
+              Key Benefits of NetSuite Planning and Budgeting
             </h2>
           </motion.div>
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
@@ -423,26 +483,26 @@ export default function PlanningPage() {
           </motion.div>
           <div className="grid md:grid-cols-3 gap-10">
             {[
-              { 
-                title: "Manual Processes", 
-                desc: "Prebuilt integration with NetSuite financial data eliminates errors caused by manual transfers.", 
-                image: "/images/lap/lap3.webp",
-                icon: Settings, 
-                color: "teal" 
+              {
+                title: "Manual Processes",
+                desc: "Prebuilt integration with NetSuite financial data eliminates errors caused by manual transfers.",
+                image: "/images/lap/lap8_11zon.webp",
+                icon: Settings,
+                color: "teal"
               },
-              { 
-                title: "Lack of Collaboration", 
-                desc: "Users can enter comments and assumptions for collaborative planning, budgeting and forecasting.", 
-                image: "/images/people/laptopgirl3.webp",
-                icon: Users, 
-                color: "cyan" 
+              {
+                title: "Lack of Collaboration",
+                desc: "Users can enter comments and assumptions for collaborative planning, budgeting and forecasting.",
+                image: "/images/people/threeteam.webp",
+                icon: Users,
+                color: "cyan"
               },
-              { 
-                title: "Poor Decisions", 
-                desc: "Quickly compare budget with actuals to deliver insights more quickly and enable better decision-making.", 
-                image: "/images/Dashboard/planing and budgeting 2 dashboard.jpg",
-                icon: Search, 
-                color: "emerald" 
+              {
+                title: "Poor Decisions",
+                desc: "Quickly compare budget with actuals to deliver insights more quickly and enable better decision-making.",
+                image: "/images/Dashboard/analytic wharehouse 2.jpg",
+                icon: Search,
+                color: "emerald"
               },
             ].map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
@@ -513,7 +573,7 @@ export default function PlanningPage() {
             </div>
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Learn How ERP Can <span className="text-teal-200">Streamline Your Business.</span></h2>
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Learn How NetSuite ERP Can <span className="text-teal-200">Streamline Your Business.</span></h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">Join thousands of businesses growing their revenue with NetSuite — unified planning that works as hard as your business.</p>
               </div>
               <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-teal-800 hover:bg-teal-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">

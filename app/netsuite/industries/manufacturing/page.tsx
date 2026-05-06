@@ -60,13 +60,34 @@ const data: IndustryPageData = {
       title: "Shop Floor Mobility",
       description:
         "Give your team real-time access to work orders and quality checklists via mobile. Capture production data instantly and reduce paper-based errors on the factory floor.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/laptopgirl3.webp",
+    },
+  ],
+  features: [
+    {
+      title: "Financial Management",
+      description: "Automate transaction flow and gain real-time access to financial and operational performance metrics.",
+      image: "/images/lap/lap1.webp",
     },
     {
-      title: "Lean Manufacturing Support",
-      description:
-        "Optimize your production processes with built-in lean manufacturing tools. Reduce waste, improve lead times, and increase overall equipment effectiveness (OEE).",
-      image: "/images/lap/lap8_11zon.webp",
+      title: "Inventory Management",
+      description: "Optimize inventory levels, minimize stockouts, and boost profitability with company-wide inventory visibility.",
+      image: "/images/lap/lap3.webp",
+    },
+    {
+      title: "Customer Relationship Management",
+      description: "Track and analyze multi-channel marketing campaigns, automate case management, and provide real-time customer data.",
+      image: "/images/people/laptopgirl.webp",
+    },
+    {
+      title: "E-commerce Integration",
+      description: "Unify e-commerce platforms with backend systems for a seamless online shopping experience.",
+      image: "/images/lap/lap5.webp",
+    },
+    {
+      title: "Supply Chain Management",
+      description: "Optimize procurement and supplier relationships with NetSuite's unified supply chain suite.",
+      image: "/images/lap/lap10_11zon.webp",
     },
   ],
   challenges: [
@@ -74,13 +95,13 @@ const data: IndustryPageData = {
       title: "Disconnected Systems & Data Silos",
       description:
         "NetSuite unifies ERP, MRP, CRM, and financials on a single platform — eliminating data silos and manual rekeying across disconnected systems.",
-      image: "/images/people/laptopmen1.jpg",
+      image: "/images/challenges/data-silos.png",
     },
     {
       title: "Inventory Blind Spots & Stockouts",
       description:
         "NetSuite's real-time inventory management with demand-driven replenishment ensures you always have the right stock at the right location — no more stockouts or overstock.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/challenges/inventory-blind-spots.png",
     },
     {
       title: "Complex Multi-Level BOM Management",
@@ -92,31 +113,31 @@ const data: IndustryPageData = {
       title: "Inaccurate Job Costing",
       description:
         "NetSuite's job costing and cost accounting module tracks materials, labour, and overhead per work order — giving you true product margins in real time.",
-      image: "/images/people/global.webp",
+      image: "/images/challenges/profitability.png",
     },
     {
       title: "Rising Material Costs",
       description:
         "Fluctuating material costs impact your margins. NetSuite's real-time costing provides instant visibility into procurement price changes.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/lap/lap6_11zon.webp",
     },
     {
       title: "Supply Chain Volatility",
       description:
         "Fragmented supply chain visibility leads to production delays. NetSuite provides global visibility into vendor performance and lead times.",
-      image: "/images/people/laptopgirl3.webp",
+      image: "/images/challenges/supply-chain.png",
     },
     {
       title: "Manual Compliance Reporting",
       description:
         "Inconsistent compliance data poses audit risks. NetSuite automates safety and quality reporting for seamless regulatory compliance.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/challenges/compliance.png",
     },
     {
       title: "Inefficient Production Capacity",
       description:
         "Poor visibility into machine and labor capacity leads to bottlenecks. NetSuite provides real-time shop floor scheduling and capacity planning.",
-      image: "/images/lap/lap9_11zon.webp",
+      image: "/images/challenges/resource-visibility.png",
     },
   ],
   pricingTiers: [

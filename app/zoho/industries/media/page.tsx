@@ -5,110 +5,144 @@ import React from "react";
 
 
 
+
 import ZohoIndustryTemplate, {
   IndustryPageData,
 } from "@/app/zoho/components/industries/ZohoIndustryTemplate";
-import { MonitorPlay, BarChart3, Users, TrendingUp } from "lucide-react";
+import { PlayCircle, BarChart3, Users, TrendingUp } from "lucide-react";
 
 
 
 
 const data: IndustryPageData = {
   industry: "Media & Publishing",
-  heroTitle: "Optimize Ad Sales & Subscriptions with Zoho",
+  heroTitle: "Future-Proof Your Media Business with Zoho",
   heroDescription:
-    "Manage the entire content lifecycle—from ad sales to subscriber management—on a single cloud platform. Drive digital transformation for your media house.",
+    "Monetize content across multiple channels, automate subscription billing, and gain real-time audience insights with the unified Zoho cloud suite for media companies.",
   heroImage: "/images/industries/media.webp",
-  heroCardTitle: "Media Ops Suite",
-  heroCardSub: "Ad Sales · Subs · Rev Rec · Reporting",
+  heroCardTitle: "Media Ops Control",
+  heroCardSub: "Subscriptions · Rights · Billing · Analytics",
   heroTopCardTitle: "Trusted by 300+ Media Firms",
-  heroTopCardSub: "Content-First · Cloud-Native · High-Scale",
+  heroTopCardSub: "Content-First · Scalable · Global",
   introImage: "/images/lap/lap2.webp",
   introTitle: "Purpose-Built Zoho Tools for Media & Publishing",
   introDescription:
-    "Media houses face complex revenue structures—managing diverse ad campaigns, recurring digital subscriptions, and physical circulations. Zoho's ecosystem provides a single tool that connects your front-office sales (Zoho CRM) with back-office finance (Zoho Books).",
+    "Media companies face constant pressure — managing multiple revenue streams, tracking complex content rights, and understanding audience behavior. Zoho's media ecosystem provides a single, unified system that connects your content delivery with your financial performance.",
   introDescription2:
-    "With AGSuite's media implementation, brands get real-time visibility into ad campaign performance and subscriber churn. We help media industries build scalable, digital-ready business structures.",
+    "With AGSuite's media implementation, you get real-time visibility into subscription revenue and content profitability. We help media firms build scalable, digital-first business structures across global markets.",
   stats: [
-    { icon: MonitorPlay, value: 300, suffix: "+", label: "Media Firms Served" },
-    { icon: BarChart3, value: 40, suffix: "%", label: "Avg Churn Reduction" },
-    { icon: Users, value: 94, suffix: "%", label: "Ad Sales Efficiency" },
+    { icon: PlayCircle, value: 300, suffix: "+", label: "Media Firms Served" },
+    { icon: BarChart3, value: 40, suffix: "%", label: "Avg Subscription Growth" },
+    { icon: Users, value: 96, suffix: "%", label: "Audience Retention" },
     { icon: TrendingUp, value: 15, suffix: "+", label: "Years Experience" },
   ],
   benefits: [
     {
-      title: "Ad Sales & Campaign Management",
+      title: "Omnichannel Content Monetization",
       description:
-        "Manage the complete ad sales lifecycle—inventory management, contract pricing, and campaign results—with Zoho CRM and Zoho Analytics.",
+        "Manage multiple revenue streams — including subscriptions, ads, and licensing — from a single, unified Zoho dashboard.",
       image: "/images/lap/lap4.webp",
     },
     {
-      title: "Digital Subscription Automations",
+      title: "Automated Subscription Billing",
       description:
-        "Automate recurring billing, multi-tier pricing, and payment collections for digital readers with Zoho Subscriptions.",
+        "Run your subscription business effortlessly with Zoho Subscriptions — handling proration, renewals, and dunning management automatically.",
       image: "/images/lap/lap7_11zon.webp",
     },
     {
-      title: "Complex Revenue Recognition",
+      title: "Real-time Audience Analytics",
       description:
-        "Automatically recognize revenue according to content delivery or ad impressions natively inside Zoho Books and custom modules.",
+        "Use Zoho Analytics to build deep audience profiles and deliver personalized, segment-based content and marketing.",
       image: "/images/people/laptopmen2.webp",
     },
     {
-      title: "Unified Media Finance",
+      title: "Unified Financial Reporting",
       description:
-        "See the profitability of every publication, brand, or edition with Zoho Books' multi-currency and multi-entity global reporting.",
+        "Instantly see profitability by channel, title, or platform with Zoho Books' automated media accounting features.",
       image: "/images/lap/lap9_11zon.webp",
+    },
+    {
+      title: "Digital Rights Management",
+      description:
+        "Manage content rights, licensing terms, and expiry dates centrally within Zoho Creator, preventing legal risks and revenue loss.",
+      image: "/images/lap/lap8_11zon.webp",
+    },
+  ],
+  features: [
+    {
+      title: "Financial Management",
+      description: "Automate bookkeeping and gain real-time visibility into your cash flow with Zoho Books.",
+      image: "/images/lap/lap6_11zon.webp",
+    },
+    {
+      title: "Inventory Management",
+      description: "Manage stock across multiple locations and automate reordering with Zoho Inventory.",
+      image: "/images/lap/lap1.webp",
+    },
+    {
+      title: "Customer Relationship Management",
+      description: "Centralize your sales and customer data to improve relationships and sales performance with Zoho CRM.",
+      image: "/images/people/laptopgirl.webp",
+    },
+    {
+      title: "E-commerce Integration",
+      description: "Connect your online store with Zoho to automate order fulfillment and inventory updates.",
+      image: "/images/lap/lap3.webp",
+    },
+    {
+      title: "Subscription Analytics",
+      description: "Gain real-time visibility into MRR, Churn, and LTV with Zoho's advanced subscription analytics.",
+      image: "/images/lap/lap5.webp",
     },
   ],
   challenges: [
     {
-      title: "Fragmented Ad Inventory",
+      title: "Disconnected Revenue Streams",
       solution:
-        "Zoho CRM and custom Zoho Creator modules provide a unified view of available ad spots across print, web, and social.",
-      image: "/images/people/laptopmen1.jpg",
+        "Zoho unifies your subscription, advertising, and licensing data — providing a real-time, global view of your media business health.",
+      image: "/images/challenges/data-silos.png",
     },
     {
-      title: "High Subscriber Churn",
+      title: "Manual Royalty Management",
       solution:
-        "Zoho Analytics identifies at-risk subscribers before they lapse, while Zoho Campaigns automates re-engagement loops.",
-      image: "/images/lap/lap1.webp",
+        "Automate complex royalty calculations and payments for authors, creators, and partners using Zoho Creator custom modules.",
+      image: "/images/challenges/manual-billing.png",
     },
     {
-      title: "Manual Subscription Billing",
+      title: "Poor Subscription Analytics",
       solution:
-        "Zoho Subscriptions handles automated recurring billing and dunning (payment recovery) for thousands of subscribers simultaneously.",
-      image: "/images/people/fourteam.webp",
+        "Advanced SaaS-style metrics like MRR, Churn, and LTV are built-in natively with Zoho Subscriptions and Zoho Analytics.",
+      image: "/images/challenges/revenue-leakage.png",
     },
     {
-      title: "Disconnected Front & Back Office",
+      title: "Fragmented Rights Control",
       solution:
-        "Zoho One unifies your ad sales team with your finance department, ensuring accurate billing and commission reporting.",
-      image: "/images/people/global.webp",
+        "Manage digital rights, licensing terms, and expiry dates centrally within Zoho Creator, preventing legal risks and revenue loss.",
+      image: "/images/challenges/security.png",
     },
   ],
   pricingTiers: [
     {
       name: "Starter",
-      price: "₹50,000",
-      description: "For niche publishers or digital-only magazines.",
+      price: "₹55,000",
+      description: "For small publishers or niche content creators.",
       features: [
-        "Zoho Subscriptions (Standard)",
-        "Zoho CRM (Digital Sales)",
-        "Basic Subscription Analytics",
-        "Social Media Ads Manager",
+        "Zoho Books (Accounting)",
+        "Zoho Subscriptions (Basic)",
+        "Social Media Management",
+        "Basic Analytics Reports",
         "Email Support",
       ],
     },
     {
       name: "Professional",
-      price: "₹1,05,000",
-      description: "Full suite for large media houses.",
+      price: "₹1,20,000",
+      description: "Full suite for growing media houses.",
       features: [
-        "Zoho CRM (Enterprise)",
         "Adv. Subscription Billing",
-        "Ad Inventory Management",
-        "SLA-backed Rev Rec",
+        "CRM for Ad Sales",
+        "Campaign Performance Tracking",
+        "Custom Workflow Automation",
         "SLA-backed Support",
       ],
       popular: true,
@@ -116,12 +150,12 @@ const data: IndustryPageData = {
     {
       name: "Enterprise",
       price: "Custom",
-      description: "For multi-brand global media groups.",
+      description: "For large-scale or global media groups.",
       features: [
         "Zoho One (Global Media)",
-        "Advanced Revenue Recognition",
-        "Multi-entity Financials",
-        "Custom Deluge Automations",
+        "Custom Rights Management (Creator)",
+        "High-Volume API Access",
+        "Advanced Audience Segments",
         "Dedicated Success Manager",
         "24/7 Priority Support",
       ],
@@ -129,27 +163,26 @@ const data: IndustryPageData = {
   ],
   faqs: [
     {
-      question: "Can Zoho manage both print and digital subscriptions?",
-      answer: "Yes. Zoho Subscriptions can manage recurring billing for both digital access and physical deliveries, integrated with your logistics suite.",
+      question: "Does Zoho support recurring subscription billing?",
+      answer: "Yes. Zoho Subscriptions is a dedicated module that handles recurring billing, proration, multi-currency payments, and automated renewal reminders.",
     },
     {
-      question: "Do you support ad inventory management?",
-      answer: "Absolutely. We build custom Zoho Creator modules to track ad availability, bookings, and placement status across your media assets.",
+      question: "Can we track content rights in Zoho?",
+      answer: "Yes. Through Zoho Creator, we build custom rights management systems that track licensing terms, expiry dates, and royalty obligations.",
     },
     {
-      question: "Can Zoho handle multi-currency global publishers?",
-      answer: "Yes. Zoho Books supports multi-currency accounting and global taxation compliance, perfect for publishers with international audiences.",
+      question: "How does Zoho handle audience segmentation?",
+      answer: "Zoho CRM and Zoho Campaigns allow you to build deep audience segments based on behavior, demographics, and content consumption patterns.",
     },
   ],
   relatedIndustries: [
     { label: "Advertising & Marketing", href: "/zoho/industries/advertising-marketing" },
     { label: "Software & Technology", href: "/zoho/industries/software" },
     { label: "IT Services", href: "/zoho/industries/it-services" },
-    { label: "Manufacturing", href: "/zoho/industries/manufacturing" },
+    { label: "Retail & E-Commerce", href: "/zoho/industries/retail" },
   ],
 };
 
 export default function ZohoMediaPage() {
   return <ZohoIndustryTemplate data={data} />;
 }
-

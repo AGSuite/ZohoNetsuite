@@ -5,6 +5,7 @@ import React from "react";
 
 
 
+
 import ZohoIndustryTemplate, {
   IndustryPageData,
 } from "@/app/zoho/components/industries/ZohoIndustryTemplate";
@@ -23,7 +24,7 @@ const data: IndustryPageData = {
   heroCardSub: "Procurement · Orders · Inventory · Logistics",
   heroTopCardTitle: "Trusted by 400+ Distributors",
   heroTopCardSub: "B2B · Logistics-Ready · High-Volume",
-  introImage: "/images/industries/Wholesale-Distribution-compressed.webp",
+  introImage: "/images/lap/lap6_11zon.webp",
   introTitle: "Purpose-Built Zoho Tools for Distributors",
   introDescription:
     "Wholesale distributors face a constant juggle between supplier management and customer demand. Zoho's distribution ecosystem provides a single source of truth that connects your purchasing (Zoho Inventory), sales (Zoho CRM), and financials (Zoho Books).",
@@ -60,31 +61,64 @@ const data: IndustryPageData = {
         "Streamline pick-pack-ship sequences and integrate with major global shipping carriers to provide live tracking updates to customers.",
       image: "/images/lap/lap9_11zon.webp",
     },
+    {
+      title: "Demand Planning & Forecasting",
+      description:
+        "Predict future demand and optimize stocking levels using AI-driven analytics and historical sales trends in Zoho Inventory.",
+      image: "/images/lap/lap8_11zon.webp",
+    },
+  ],
+  features: [
+    {
+      title: "Financial Management",
+      description: "Automate bookkeeping and gain real-time visibility into your cash flow with Zoho Books.",
+      image: "/images/lap/lap2.webp",
+    },
+    {
+      title: "Inventory Management",
+      description: "Manage stock across multiple locations and automate reordering with Zoho Inventory.",
+      image: "/images/lap/lap1.webp",
+    },
+    {
+      title: "Customer Relationship Management",
+      description: "Centralize your sales and customer data to improve relationships and sales performance with Zoho CRM.",
+      image: "/images/people/laptopgirl.webp",
+    },
+    {
+      title: "E-commerce Integration",
+      description: "Connect your online store with Zoho to automate order fulfillment and inventory updates.",
+      image: "/images/lap/lap3.webp",
+    },
+    {
+      title: "Order Management",
+      description: "Automate the entire order-to-fulfillment cycle for faster delivery and improved customer satisfaction.",
+      image: "/images/lap/lap5.webp",
+    },
   ],
   challenges: [
     {
       title: "Landed Cost Blindness",
       solution:
         "Zoho Books and Inventory account for every cost—freight, duty, and handling—to provide you with accurate true-product margins.",
-      image: "/images/people/laptopmen1.jpg",
+      image: "/images/challenges/profitability.png",
     },
     {
       title: "Inefficient Picking & Packing",
       solution:
         "Zoho's automated pick-lists and barcode scanning simplify warehouse flow and eliminate human-error in order fulfillment.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/challenges/fulfillment-delay.png",
     },
     {
       title: "Inaccurate Demand Forecasting",
       solution:
         "AI-enhanced reports analyze historical data to provide you with smart reorder points and sales forecasting across your distribution channels.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/challenges/inventory-blind-spots.png",
     },
     {
       title: "Complex B2B Vendor Relations",
       solution:
         "A dedicated B2B Portal within Zoho allows your distributors and vendors to manage their own orders, invoices, and payment statuses.",
-      image: "/images/people/global.webp",
+      image: "/images/challenges/data-silos.png",
     },
   ],
   pricingTiers: [
@@ -129,27 +163,26 @@ const data: IndustryPageData = {
   ],
   faqs: [
     {
-      question: "Does Zoho support E-way bill generation?",
-      answer: "Yes. Zoho Inventory and Zoho Books provide native integrations for Indian E-way bill and E-invoicing, essential for local distributors.",
+      question: "Can Zoho handle multi-currency for international trade?",
+      answer: "Yes. Zoho Books supports 160+ currencies and provides real-time exchange rate updates, making it ideal for global distribution businesses.",
     },
     {
-      question: "Can Zoho track landed costs including customs?",
-      answer: "Yes. We can configure Zoho Books to track all associated costs (freight, duties, insurances) and allocate them to the unit price of items.",
+      question: "Does Zoho integrate with shipping carriers like FedEx or DHL?",
+      answer: "Yes. Zoho Inventory has direct integrations with 30+ global shipping carriers, providing live rates and automated tracking number generation.",
     },
     {
-      question: "How does Zoho handle serial and lot tracking?",
-      answer: "Zoho Inventory provides full lot and serial number tracking across the entire lifecycle — from procurement to final customer delivery.",
+      question: "Can we implement a B2B portal for our bulk customers?",
+      answer: "Absolutely. We can configure a Zoho-powered B2B portal where your bulk clients can browse your catalog, place orders, and pay their invoices online.",
     },
   ],
   relatedIndustries: [
     { label: "Manufacturing", href: "/zoho/industries/manufacturing" },
-    { label: "Retail & E-commerce", href: "/zoho/industries/retail" },
-    { label: "Transportation", href: "/zoho/industries/transport" },
+    { label: "Retail & E-Commerce", href: "/zoho/industries/retail" },
     { label: "IT Services", href: "/zoho/industries/it-services" },
+    { label: "Software & Technology", href: "/zoho/industries/software" },
   ],
 };
 
 export default function ZohoWholesalePage() {
   return <ZohoIndustryTemplate data={data} />;
 }
-

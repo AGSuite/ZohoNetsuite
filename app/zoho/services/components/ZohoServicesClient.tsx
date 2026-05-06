@@ -368,7 +368,7 @@ export default function ZohoServicesClient() {
                 Architecting Your Zoho Success
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed">
-                As a certified Advanced Zoho Partner, AGSuite provides the
+                As a certified Zoho Premium Partner, AGSuite provides the
                 technical expertise and strategic vision needed to maximize
                 your Zoho investment. From global rollouts to complex 
                 automations, we ensure your system scales with your business.

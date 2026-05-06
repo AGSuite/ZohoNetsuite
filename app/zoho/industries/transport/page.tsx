@@ -5,110 +5,144 @@ import React from "react";
 
 
 
+
 import ZohoIndustryTemplate, {
   IndustryPageData,
 } from "@/app/zoho/components/industries/ZohoIndustryTemplate";
-import { Map, BarChart3, Truck, TrendingUp } from "lucide-react";
+import { Truck, BarChart3, Users, TrendingUp } from "lucide-react";
 
 
 
 
 const data: IndustryPageData = {
-  industry: "Transportation & Logistics",
-  heroTitle: "Drive Operational Excellence with Zoho",
+  industry: "Transport & Logistics",
+  heroTitle: "Optimize Your Fleet Operations with Zoho",
   heroDescription:
-    "Gain complete visibility across your global shipments, fleet management, and logistics financials with the unified Zoho cloud suite tailored for the transportation industry.",
+    "Streamline load management, automate freight billing, and gain real-time visibility into fleet costs and shipment profitability with the unified Zoho cloud suite.",
   heroImage: "/images/industries/logistics-means-transport-together-with-technological-futuristic-holograms (2)_11zon.jpg",
-  heroCardTitle: "Fleet & Asset Control",
-  heroCardSub: "Dispatch · Logistics · Billing · Financials",
-  heroTopCardTitle: "Trusted by 350+ Logistics Firms",
-  heroTopCardSub: "Logistics-Ready · Cloud-Native · High-Scale",
+  heroCardTitle: "Logistics Ops Control",
+  heroCardSub: "Fleet · Loads · Billing · Analytics",
+  heroTopCardTitle: "Trusted by 200+ Logistics Firms",
+  heroTopCardSub: "Fleet-First · Scalable · Global",
   introImage: "/images/lap/lap2.webp",
-  introTitle: "Purpose-Built Zoho Tools for Logistics",
+  introTitle: "Purpose-Built Zoho Tools for Transport & Logistics",
   introDescription:
-    "Transportation and logistics industries face constant pressure—managing complex dispatch schedules, tracking fleet maintenance, and ensuring accurate billing across global borders. Zoho's ecosystem provides a single tool that connects your operations (Zoho Creator) with sales (Zoho CRM) and finance (Zoho Books).",
+    "Logistics companies face constant pressure — managing fleet costs, tracking load profitability, and ensuring accurate freight billing. Zoho's logistics ecosystem provides a single, unified system that connects your fleet data with your financial performance.",
   introDescription2:
-    "With AGSuite's logistics implementation, brands get real-time visibility into route-wise profitability and fleet utilization. We help logistics industries build scalable, future-ready business structures.",
+    "With AGSuite's logistics implementation, you get real-time visibility into load margins and fleet utilization. We help transport firms build scalable, efficient business structures across global routes.",
   stats: [
-    { icon: Map, value: 350, suffix: "+", label: "Logistics firms served" },
+    { icon: Truck, value: 200, suffix: "+", label: "Logistics Firms Served" },
     { icon: BarChart3, value: 30, suffix: "%", label: "Avg Cost Reduction" },
-    { icon: Truck, value: 5000, suffix: "+", label: "Assets Tracked" },
+    { icon: Users, value: 92, suffix: "%", label: "Fleet Utilization" },
     { icon: TrendingUp, value: 15, suffix: "+", label: "Years Experience" },
   ],
   benefits: [
     {
-      title: "Real-time Dispatch Management",
+      title: "Load & Dispatch Management",
       description:
-        "Manage dispatch schedules, track driver assignments, and visualize global route progress using custom Zoho Creator modules.",
+        "Manage load assignments, track driver statuses, and visualize route efficiency using Zoho Projects and Zoho Creator.",
       image: "/images/lap/lap4.webp",
     },
     {
-      title: "Automated Fleet Maintenance",
+      title: "Fleet Cost Tracking",
       description:
-        "Ensure your fleet is always safe with automated maintenance alerts, fuel consumption tracking, and vehicle history logs within Zoho.",
+        "Ensure your fleet is running efficiently with real-time tracking of fuel, maintenance, and driver costs within Zoho Books.",
       image: "/images/lap/lap7_11zon.webp",
     },
     {
-      title: "Unified Logistics Accounting",
+      title: "Freight Billing Automation",
       description:
-        "Automate complex freight billing, manage multi-currency accounts, and get real-time bank reconciliation through your Zoho Books environment.",
+        "Capture every load detail and billable expense on-the-go with Zoho's native mobile apps, ensuring zero billing delays.",
       image: "/images/people/laptopmen2.webp",
     },
     {
-      title: "GPS-Enabled Tracking visibility",
+      title: "Route & Lane Profitability",
       description:
-        "Provide your customers with live tracking updates and secure delivery confirmations with Zoho's native mobile app integrations.",
+        "Instantly see which routes and lanes are driving the most profit with Zoho Analytics' custom logistics dashboards.",
       image: "/images/lap/lap9_11zon.webp",
+    },
+    {
+      title: "Compliance & Safety Tracking",
+      description:
+        "Automate tracking of vehicle inspections, driver safety records, and regulatory compliance documents within Zoho Creator.",
+      image: "/images/lap/lap8_11zon.webp",
+    },
+  ],
+  features: [
+    {
+      title: "Order and Billing Management",
+      description: "Automate initial and recurring transactions, and streamline billing across multiple channels.",
+      image: "/images/lap/lap1.webp",
+    },
+    {
+      title: "Financial Management",
+      description: "Automate bookkeeping and gain real-time visibility into your cash flow with Zoho Books.",
+      image: "/images/lap/lap5.webp",
+    },
+    {
+      title: "Inventory and Warehouse Management",
+      description: "Manage stock across multiple locations and automate reordering with Zoho Inventory.",
+      image: "/images/lap/lap3.webp",
+    },
+    {
+      title: "Customer Relationship Management (CRM)",
+      description: "Centralize your sales and customer data to improve relationships and sales performance with Zoho CRM.",
+      image: "/images/people/laptopgirl.webp",
+    },
+    {
+      title: "Order Management",
+      description: "Automate the entire order-to-fulfillment cycle for faster delivery and improved customer satisfaction.",
+      image: "/images/lap/lap6_11zon.webp",
     },
   ],
   challenges: [
     {
-      title: "Disconnected Dispatch & Finance",
+      title: "Manual Freight Invoicing",
       solution:
-        "Zoho One unifies your operations team with your finance department, ensuring accurate billing and payroll based on actual dispatch data.",
-      image: "/images/people/laptopmen1.jpg",
+        "Zoho Books automates your freight invoicing based on load completion or distance traveled, ensuring faster payments and cash flow.",
+      image: "/images/challenges/manual-billing.png",
     },
     {
-      title: "Fuel & Asset Blind Spots",
+      title: "No Real-time Load Profitability",
       solution:
-        "Zoho Analytics identifies fuel efficiency patterns and maintenance gaps across your fleet, helping you reduce operational overhead.",
-      image: "/images/lap/lap1.webp",
+        "Zoho unifies your load data and expense records, providing a real-time view of profitability for every single shipment.",
+      image: "/images/challenges/profitability.png",
     },
     {
-      title: "Manual E-Way Billing",
+      title: "Disconnected Carrier Tracking",
       solution:
-        "Zoho Books and Inventory provide native integrations for Indian E-way bill and E-invoicing, essential for local logistics.",
-      image: "/images/people/fourteam.webp",
+        "Zoho One unifies your fleet operations and financial data, ensuring that your tracking is always in sync with your billing.",
+      image: "/images/challenges/supply-chain.png",
     },
     {
-      title: "Complexity in Multi-Border Ops",
+      title: "High Operational Cost Leaks",
       solution:
-        "Zoho Books supports multi-currency and global taxation compliance, perfect for logistics industries with international routes.",
-      image: "/images/people/global.webp",
+        "Zoho's advanced cost tracking modules help you identify and eliminate leaks in fuel, maintenance, and driver expenses.",
+      image: "/images/challenges/revenue-leakage.png",
     },
   ],
   pricingTiers: [
     {
       name: "Starter",
-      price: "₹50,000",
-      description: "For small local transport businesses.",
+      price: "₹60,000",
+      description: "For small or local transport firms.",
       features: [
-        "Zoho Books (Logs + Sales)",
-        "Basic Dispatch Management",
-        "E-Way bill integration",
-        "GST statutory reporting",
+        "Zoho Books (Fleet Accounting)",
+        "Zoho Projects (Load Tracking)",
+        "Single-user Expense Management",
+        "Standard Logistics Reports",
         "Email Support",
       ],
     },
     {
       name: "Professional",
-      price: "₹1,15,000",
-      description: "Full suite for multi-state logistics units.",
+      price: "₹1,20,000",
+      description: "Full suite for regional logistics operators.",
       features: [
-        "Adv. Dispatch & Scheduling",
-        "Fleet Maintenance Logs",
-        "CRM integration for clients",
-        "Adv. Analytics (Fleet KPIs)",
+        "Adv. Freight Billing",
+        "Fleet Maintenance Tracking",
+        "Advanced Analytics & Profit KPIs",
+        "Custom Workflow Automation",
         "SLA-backed Support",
       ],
       popular: true,
@@ -116,12 +150,11 @@ const data: IndustryPageData = {
     {
       name: "Enterprise",
       price: "Custom",
-      description: "For large-scale global transportation groups.",
+      description: "For national or global logistics groups.",
       features: [
         "Zoho One (Global Logistics)",
-        "Advanced Asset Lifecycle",
-        "WMS + Driver Management",
-        "B2B Order Portals",
+        "Custom Fleet Management (Creator)",
+        "High-Volume API Access",
         "Dedicated Success Manager",
         "24/7 Priority Support",
       ],
@@ -129,27 +162,26 @@ const data: IndustryPageData = {
   ],
   faqs: [
     {
-      question: "Can Zoho track fleet fuel consumption?",
-      answer: "Yes. Using custom Zoho Creator modules, we can build robust logs to track fuel entry, odometer readings, and average consumption per asset.",
+      question: "Can Zoho track fleet maintenance costs?",
+      answer: "Yes. Through Zoho Books and custom Zoho Creator modules, we build comprehensive fleet maintenance tracking systems that link directly to your financials.",
     },
     {
-      question: "Do you support delivery confirmations?",
-      answer: "Yes. Zoho's mobile apps (CRM/Creator) allow drivers to upload photos or signatures upon delivery, syncing instantly with your office back-end.",
+      question: "Does Zoho support multi-currency for global logistics?",
+      answer: "Yes. Zoho Books supports 160+ currencies, making it ideal for transport firms operating across international borders.",
     },
     {
-      question: "How do you handle multi-currency freight rates?",
-      answer: "Zoho Books allows you to define price lists and manage transactions in any currency, updating exchange rates automatically for accurate financial reporting.",
+      question: "Can we integrate Zoho with our GPS tracking systems?",
+      answer: "Absolutely. Zoho's open APIs allow you to connect your GPS and TMS systems directly to Zoho CRM and Projects for real-time shipment visibility.",
     },
   ],
   relatedIndustries: [
     { label: "Wholesale Distribution", href: "/zoho/industries/wholesale" },
     { label: "Manufacturing", href: "/zoho/industries/manufacturing" },
-    { label: "Retail & E-commerce", href: "/zoho/industries/retail" },
     { label: "IT Services", href: "/zoho/industries/it-services" },
+    { label: "Retail & E-Commerce", href: "/zoho/industries/retail" },
   ],
 };
 
 export default function ZohoTransportPage() {
   return <ZohoIndustryTemplate data={data} />;
 }
-

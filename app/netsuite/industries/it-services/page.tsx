@@ -72,11 +72,32 @@ const data: IndustryPageData = {
         "Enable consultants to submit time and expenses on-the-go via mobile. Automated approval workflows ensure faster reimbursement and quicker client billing cycles.",
       image: "/images/people/laptopgirl.webp",
     },
+  ],
+  features: [
     {
-      title: "360-Degree Client Visibility",
-      description:
-        "Gain a unified view of your clients — from initial lead to project history, support cases, and financial records. Make informed decisions and improve client retention.",
-      image: "/images/people/threeteam.webp",
+      title: "Project and Resource Management",
+      description: "Comprehensive solutions for managing projects and optimizing resource utilization.",
+      image: "/images/lap/lap1.webp",
+    },
+    {
+      title: "Time and Expense Tracking",
+      description: "Tools for tracking time and expenses associated with projects, ensuring accurate billing and invoicing.",
+      image: "/images/lap/lap2.webp",
+    },
+    {
+      title: "Project Accounting",
+      description: "Systems for managing project finances, tracking costs, and generating accurate invoices.",
+      image: "/images/lap/lap4.webp",
+    },
+    {
+      title: "Customer Relationship Management (CRM)",
+      description: "Cloud-based CRM solutions for managing interactions with customers, partners, and suppliers.",
+      image: "/images/lap/lap7_11zon.webp",
+    },
+    {
+      title: "Financial Management",
+      description: "Automate bookkeeping and gain real-time visibility into your cash flow with NetSuite.",
+      image: "/images/lap/lap10_11zon.webp",
     },
   ],
   challenges: [
@@ -84,19 +105,19 @@ const data: IndustryPageData = {
       title: "Revenue Leakage from Unbilled Time",
       description:
         "NetSuite SRP automatically captures all billable time and expenses against projects, eliminating leakage with automated billing triggers and approval workflows.",
-      image: "/images/people/laptopmen1.jpg",
+      image: "/images/challenges/revenue-leakage.png",
     },
     {
       title: "Inaccurate Project Profitability",
       description:
         "NetSuite provides real-time project P&L dashboards showing actuals vs. budget by task, resource, and project — enabling proactive margin management.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/challenges/profitability.png",
     },
     {
       title: "Complex Revenue Recognition",
       description:
         "NetSuite's Advanced Revenue Management automates ASC 606 / IFRS 15 compliant recognition schedules directly from project milestones and deliverables.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/lap/lap6_11zon.webp",
     },
     {
       title: "Slow Financial Close",
@@ -108,25 +129,25 @@ const data: IndustryPageData = {
       title: "Poor Resource Visibility",
       description:
         "Lack of visibility into resource availability leads to overbooking or underutilization. NetSuite provides real-time heat maps for smarter resource planning.",
-      image: "/images/people/laptopgirl3.webp",
+      image: "/images/challenges/resource-visibility.png",
     },
     {
       title: "Manual Billing Errors",
       description:
         "Manually compiling timesheets for billing is slow and error-prone. NetSuite automates the entire invoice generation process from approved time.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/challenges/manual-billing.png",
     },
     {
       title: "Spreadsheet-Based Tracking",
       description:
         "Running projects on spreadsheets leads to data silos and lack of control. NetSuite replaces spreadsheets with a unified project management platform.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/challenges/data-silos.png",
     },
     {
       title: "Siloed Communication",
       description:
         "Fragmented communication leads to project delays. NetSuite unifies all communications, project documentation, and task records in one place.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/challenges/siloed-communication.png",
     },
   ],
   pricingTiers: [

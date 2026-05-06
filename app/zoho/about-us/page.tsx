@@ -246,7 +246,7 @@ type CounterItem = {
 const counters: CounterItem[] = [
   { label: 'Projects Completed', value: 600, icon: Briefcase, suffix: "+" },
   { label: 'Global Customers', value: 200, icon: Building2, suffix: "+" },
-  { label: 'Industry Expertise', value: 10, icon: Target, suffix: "+" },
+  { label: 'Industry Expertise', value: 15, icon: Target, suffix: "+" },
   { label: 'Customer Retention', value: 84, icon: Heart, suffix: "%" },
   { label: 'Years Experience', value: 15, icon: Rocket, suffix: "+" },
   { label: 'Countries Serving', value: 10, icon: Globe2, suffix: "+" },
@@ -339,12 +339,12 @@ function WhoWeAreSection() {
 
           {/* Description */}
           <motion.p variants={slideInLeft} className="text-gray-600 text-sm md:text-base leading-relaxed max-w-xl">
-            AGSuite Technologies is a trusted Advanced Zoho Partner helping businesses streamline operations with a unified cloud CRM and business platform. We specialize in Zoho implementation, customization, and integration to improve efficiency and support scalable growth.
+            AGSuite Technologies is a trusted Zoho Premium Partner helping businesses streamline operations with a unified cloud CRM and business platform. We specialize in Zoho implementation, customization, and integration to improve efficiency and support scalable growth.
           </motion.p>
 
           {/* Feature Cards */}
           <motion.div variants={slideInLeft} className="space-y-3 pt-2">
-            {/* Advanced Zoho Partner */}
+            {/* Zoho Premium Partner */}
             <div className="flex items-start gap-3">
               <div className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
                 <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -352,7 +352,7 @@ function WhoWeAreSection() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-gray-900 font-semibold text-base mb-0.5">Certified Advanced Zoho Partner</h3>
+                <h3 className="text-gray-900 font-semibold text-base mb-0.5">Certified Zoho Premium Partner</h3>
                 <p className="text-gray-600 text-xs leading-relaxed">Trusted Solution Provider with 15+ years of expertise in Zoho implementation and optimization.</p>
               </div>
             </div>
@@ -387,12 +387,23 @@ function WhoWeAreSection() {
 }
 
 const partnerLogos = [
-  { logo: "/images/assets/affle%20tech.webp", name: "Affle" },
-  { logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone" },
-  { logo: "/images/assets/airling%20tech.webp", name: "Airling" },
-  { logo: "/images/assets/video%20verse%20tech.webp", name: "VideoVerse" },
-  { logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal" },
-  { logo: "/images/assets/uniAcco%20service.webp", name: "UniAcco" },
+  { logo: "/images/zoho%20client%20images/all%20wave%20av.png", name: "All Wave AV" },
+  { logo: "/images/zoho%20client%20images/aurionpro.png", name: "Aurionpro" },
+  { logo: "/images/zoho%20client%20images/avaso.png", name: "Avaso" },
+  { logo: "/images/zoho%20client%20images/Bettinelli.png", name: "Bettinelli" },
+  { logo: "/images/zoho%20client%20images/dahchi.png", name: "Dahchi" },
+  { logo: "/images/zoho%20client%20images/incuspaze.png", name: "Incuspaze" },
+  { logo: "/images/zoho%20client%20images/indialand.png", name: "IndiaLand" },
+  { logo: "/images/zoho%20client%20images/initium.png", name: "Initium" },
+  { logo: "/images/zoho%20client%20images/krishgen.png", name: "Krishgen" },
+  { logo: "/images/zoho%20client%20images/KTA.png", name: "KTA" },
+  { logo: "/images/zoho%20client%20images/rentopia.png", name: "Rentopia" },
+  { logo: "/images/zoho%20client%20images/samson.png", name: "Samson" },
+  { logo: "/images/zoho%20client%20images/shaurrya.png", name: "Shaurrya" },
+  { logo: "/images/zoho%20client%20images/tardid.png", name: "Tardid" },
+  { logo: "/images/zoho%20client%20images/vsn.png", name: "VSN" },
+  { logo: "/images/zoho%20client%20images/Waco.png", name: "Waco" },
+  { logo: "/images/zoho%20client%20images/ziptrip.png", name: "Ziptrip" },
 ];
 
 function StrategicPartnersSection() {
@@ -475,7 +486,7 @@ function StrategicPartnersSection() {
               <div className="bg-white/100 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl">
                 <Image
                   src="/images/zoho logos/zoho premium.png"
-                  alt="Advanced Zoho Partner"
+                  alt="Zoho Premium Partner"
                   width={320}
                   height={120}
                   className="w-full h-auto object-contain"
@@ -547,10 +558,10 @@ function ClientsSection() {
           </motion.h2>
         </div>
 
-        <div className="relative w-full overflow-hidden py-4">
-          <div className="flex items-center gap-15 animate-marquee-slow whitespace-nowrap">
+        <div className="relative w-full overflow-hidden py-10">
+          <div className="flex items-center animate-marquee-slow whitespace-nowrap">
             {partnerLogos.concat(partnerLogos).map((logo, index) => (
-              <div key={index} className="flex-shrink-0  hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <div key={index} className="flex-shrink-0 px-8 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
                 <Image
                   src={logo.logo}
                   alt={logo.name}
@@ -571,8 +582,9 @@ function ClientsSection() {
           100% { transform: translateX(-50%); }
         }
         .animate-marquee-slow {
-          display: flex;
-          animation: marquee-slow 10s linear infinite;
+          display: inline-flex;
+          animation: marquee-slow 25s linear infinite;
+          will-change: transform;
         }
         .animate-marquee-slow:hover {
           animation-play-state: paused;

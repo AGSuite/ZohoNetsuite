@@ -40,10 +40,10 @@ export default function NetSuiteSolutionsClient() {
   const stats = [
     { label: "Projects Completed", value: 600, suffix: "+", icon: Briefcase },
     { label: "Global Customers", value: 200, suffix: "+", icon: Building2 },
-    { label: "Industry Expertise", value: 30, suffix: "+", icon: Target },
+    { label: "Industry Expertise", value: 15, suffix: "+", icon: Target },
     { label: "Customer Retention", value: 84, suffix: "%", icon: HeartHandshake },
     { label: "Years Experience", value: 15, suffix: "+", icon: Rocket },
-    { label: "Countries Serving", value: 6, suffix: "+", icon: Globe2 },
+    { label: "Countries Serving", value: 10, suffix: "+", icon: Globe2 },
   ];
 
   const imageBgGradients = [
@@ -83,7 +83,7 @@ export default function NetSuiteSolutionsClient() {
   const solutions = [
     {
       category: "Core ERP",
-      title: "Enterprise Resource Planning (ERP)",
+      title: "NetSuite Enterprise Resource Planning (ERP)",
       subtitle: "The Foundation of Your Business",
       passage1: "NetSuite ERP is the world's #1 cloud-based business management solution, trusted by over 43,000 organisations across 219 countries. It unifies your entire business — financials, inventory, order management, manufacturing, HR, and supply chain — onto a single real-time platform, eliminating data silos and manual reconciliation forever.",
       passage2: "Whether you're a fast-growing startup or a global enterprise, NetSuite ERP scales with you, delivering the visibility and control you need to make faster, smarter decisions at every stage. By centralising your operations in the cloud, you can reduce IT costs, improve collaborative workflows, and focus on innovation rather than infrastructure.",
@@ -105,7 +105,7 @@ export default function NetSuiteSolutionsClient() {
     },
     {
       category: "Core ERP",
-      title: "Global Business Management",
+      title: "NetSuite Global Business Management",
       subtitle: "Scale Without Borders",
       passage1: "NetSuite OneWorld is purpose-built for organisations operating across multiple countries, currencies, and legal entities — giving you a single, unified platform to manage your global business with local compliance in every market. It simplifies the complexity of international operations by providing a standardised framework for all subsidiaries.",
       passage2: "Consolidate financials across subsidiaries in real time, manage intercompany transactions with automatic eliminations, and produce local statutory reports while maintaining a single global view. From a two-entity group to a 200-country enterprise, NetSuite OneWorld grows with your international footprint without adding operational complexity or data fragmentation.",
@@ -215,9 +215,9 @@ export default function NetSuiteSolutionsClient() {
     },
     {
       category: "Specialised",
-      title: "NetSuite India Localization",
+      title: "India Localization for NetSuite",
       subtitle: "GST-Ready Cloud ERP",
-      passage1: "AGSuite's NetSuite India Localization is a certified, natively built compliance suite that embeds complete Indian statutory requirements directly into your NetSuite account — covering GST, TDS, e-invoicing, and all prescribed statutory reports. Every transaction automatically generates the correct tax treatment, ensuring that your compliance is always accurate and up-to-date.",
+      passage1: "AGSuite's India Localization for NetSuite is a certified, natively built compliance suite that embeds complete Indian statutory requirements directly into your NetSuite account — covering GST, TDS, e-invoicing, and all prescribed statutory reports. Every transaction automatically generates the correct tax treatment, ensuring that your compliance is always accurate and up-to-date.",
       passage2: "Every invoice is validated and submitted to the government portal in real time, keeping your business audit-ready and penalty-free at all times. Built for Indian businesses running NetSuite, our localization solution is continuously updated to reflect every GST council notification and legal requirement, allowing you to focus on growth while we handle the complexity of compliance.",
       link: "/netsuite/solutions/specialized/india-localization",
       image: "/images/lap/lap3.webp",
@@ -263,7 +263,7 @@ export default function NetSuiteSolutionsClient() {
                   }}
                 >
                   <RotatingText
-                    texts={['ERP', 'CRM', 'SRP', 'PSA']}
+                    texts={['NetSuite ERP', 'NetSuite CRM', 'NetSuite SRP', 'NetSuite PSA']}
                     onNext={(idx: number) => setRotatingIdx(idx)}
                     mainClassName="text-2xl sm:text-3xl md:text-4xl font-extrabold"
                     splitBy="characters"

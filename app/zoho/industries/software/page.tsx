@@ -5,110 +5,144 @@ import React from "react";
 
 
 
+
 import ZohoIndustryTemplate, {
   IndustryPageData,
 } from "@/app/zoho/components/industries/ZohoIndustryTemplate";
-import { Code, BarChart3, Users, TrendingUp } from "lucide-react";
+import { Monitor, BarChart3, Users, TrendingUp } from "lucide-react";
 
 
 
 
 const data: IndustryPageData = {
   industry: "Software & Technology",
-  heroTitle: "Accelerate Your SaaS Growth with Zoho",
+  heroTitle: "Accelerate SaaS Growth with Zoho",
   heroDescription:
-    "Automate complex subscription billing, revenue recognition, and global financial consolidations with the unified Zoho cloud suite tailored for high-growth tech industries.",
-  heroImage: "/images/people/fourteam.webp",
-  heroCardTitle: "Subscription Management",
-  heroCardSub: "Billing · Revenue Recognition · SaaS Metrics",
-  heroTopCardTitle: "Trusted by 500+ Tech Firms",
-  heroTopCardSub: "Cloud-Native · Global · Scalable",
+    "Unify your sales, subscription billing, and customer support on a single cloud platform. Gain real-time visibility into MRR, Churn, and LTV to scale your tech business.",
+  heroImage: "/images/industries/software-tech-main.png",
+  heroCardTitle: "SaaS Ops Control",
+  heroCardSub: "Sales · Subscriptions · Support · Metrics",
+  heroTopCardTitle: "Trusted by 800+ Tech Firms",
+  heroTopCardSub: "Cloud-Native · High-Scale · Global",
   introImage: "/images/lap/lap2.webp",
-  introTitle: "Purpose-Built Zoho Tools for SaaS & Tech",
+  introTitle: "Purpose-Built Zoho Tools for SaaS Companies",
   introDescription:
-    "Software industries face unique challenges — from managing complex recurring billing cycles to tracking real-time SaaS metrics like MRR and churn. Zoho's cloud ecosystem provides a single, unified system that connects your front-office sales with back-office finance.",
+    "Software companies face unique challenges — managing recurring revenue, tracking complex customer success metrics, and ensuring seamless lead-to-cash flows. Zoho's technology ecosystem provides a single, unified system that connects your product usage with your financial performance.",
   introDescription2:
-    "With AGSuite's certified Zoho implementation, technology firms get a system that scales as they grow from startup to enterprise. Our team has delivered Zoho for software, SaaS, and platform industries globally.",
+    "With AGSuite's tech implementation, you get real-time visibility into SaaS KPIs and customer health. We help software firms build scalable, efficient business structures across global markets.",
   stats: [
-    { icon: Code, value: 500, suffix: "+", label: "Tech Firms Served" },
-    { icon: BarChart3, value: 30, suffix: "%", label: "SaaS ROI Improvement" },
-    { icon: Users, value: 92, suffix: "%", label: "Customer Expansion" },
+    { icon: Monitor, value: 800, suffix: "+", label: "Tech Firms Served" },
+    { icon: BarChart3, value: 45, suffix: "%", label: "Avg ARR Growth" },
+    { icon: Users, value: 98, suffix: "%", label: "Customer Retention" },
     { icon: TrendingUp, value: 15, suffix: "+", label: "Years Experience" },
   ],
   benefits: [
     {
-      title: "Subscription Billing & Management",
+      title: "Subscription Lifecycle Management",
       description:
-        "Automate recurring billing, manage renewals, and track subscription lifecycles with Zoho Subscriptions — all integrated with Zoho Books.",
+        "Manage the entire customer lifecycle — from trial to upgrade to renewal — using Zoho Subscriptions and Zoho CRM.",
       image: "/images/lap/lap4.webp",
     },
     {
-      title: "Real-time SaaS Metrics",
+      title: "Real-time SaaS Dashboards",
       description:
-        "Get instant visibility into MRR, ARR, Churn, and LTV with Zoho Analytics dashboards designed specifically for SaaS business models.",
+        "Track MRR, ARR, Churn, and LTV in real-time with Zoho Analytics' built-in SaaS metrics engine.",
       image: "/images/lap/lap7_11zon.webp",
+    },
+    {
+      title: "Customer Success & Support",
+      description:
+        "Deliver world-class support and proactively manage customer health using Zoho Desk and Zoho CRM.",
+      image: "/images/people/laptopmen2.webp",
     },
     {
       title: "Automated Revenue Recognition",
       description:
-        "Simplify compliance (ASC 606/IFRS 15) with automated revenue recognition rules and schedules natively inside Zoho Books and custom modules.",
-      image: "/images/people/laptopmen2.webp",
+        "Ensure compliance with ASC 606 and IFRS 15 using Zoho Books' automated revenue recognition features.",
+      image: "/images/lap/lap9_11zon.webp",
     },
     {
-      title: "Unified CRM & Lead Management",
+      title: "Global Multi-Currency Operations",
       description:
-        "Connect your marketing, sales, and support teams with Zoho CRM — ensuring a 360-degree view of every customer's journey.",
-      image: "/images/lap/lap9_11zon.webp",
+        "Support global customers with 160+ currency handling, automated FX revaluation, and multi-subsidiary consolidation within Zoho Finance Plus.",
+      image: "/images/lap/lap8_11zon.webp",
+    },
+  ],
+  features: [
+    {
+      title: "Customized Solutions",
+      description: "Tailored software and technology services to meet the unique needs and requirements of businesses.",
+      image: "/images/lap/lap6_11zon.webp",
+    },
+    {
+      title: "Integration Features",
+      description: "Ensuring smooth integration with existing systems and platforms to ensure compatibility and seamless operation",
+      image: "/images/lap/lap3.webp",
+    },
+    {
+      title: "Cloud-Based Solutions",
+      description: "Offering cloud-based software and technology solutions that provide flexibility, accessibility, and scalability to businesses.",
+      image: "/images/lap/lap1.webp",
+    },
+    {
+      title: "Global Business Management",
+      description: "Seamlessly manage multiple currencies and reporting as your business expands.",
+      image: "/images/people/laptopgirl.webp",
+    },
+    {
+      title: "Automated Support Workflows",
+      description: "Optimize support ticket routing and resolution with Zoho Desk's intelligent automation.",
+      image: "/images/people/threeteam.webp",
     },
   ],
   challenges: [
     {
-      title: "Complex Billing Structures",
+      title: "Manual Subscription Billing",
       solution:
-        "Zoho Subscriptions handles multi-tier pricing, usage-based billing, and flexible trial periods — eliminating manual billing errors.",
-      image: "/images/people/laptopmen1.jpg",
+        "Zoho Subscriptions automates your recurring billing, proration, and dunning management — eliminating manual spreadsheet work.",
+      image: "/images/challenges/manual-billing.png",
     },
     {
-      title: "Disconnected Customer Data",
+      title: "Poor SaaS Metric Visibility",
       solution:
-        "Zoho One unifies all customer touchpoints — marketing touch, sales follow-up, and support resolution — in a single source of truth.",
-      image: "/images/lap/lap1.webp",
+        "Zoho Analytics provides a single source of truth for your critical growth metrics, from cohort analysis to funnel performance.",
+      image: "/images/challenges/profitability.png",
     },
     {
-      title: "Scaling with Growth",
+      title: "Disconnected CRM and ERP",
       solution:
-        "Zoho's cloud architecture scales effortlessly. Add users, modules, and subsidiaries as your industry expands globally.",
-      image: "/images/people/fourteam.webp",
+        "Zoho One unifies your sales and finance data, ensuring that your books are always in sync with your sales pipeline.",
+      image: "/images/challenges/ecommerce-sync.png",
     },
     {
-      title: "Global Financial Consolidation",
+      title: "Revenue Recognition Complexity",
       solution:
-        "Zoho Books supports multi-currency, multi-entity accounting and automated consolidations for industries with global footprints.",
-      image: "/images/people/global.webp",
+        "Zoho Books handles complex deferred revenue and recognition schedules automatically based on your contract terms.",
+      image: "/images/challenges/compliance.png",
     },
   ],
   pricingTiers: [
     {
       name: "Starter",
-      price: "₹60,000",
+      price: "₹45,000",
       description: "For early-stage tech startups.",
       features: [
-        "Zoho Books (Accounting)",
-        "Zoho CRM (Express)",
+        "Zoho CRM (Standard)",
         "Zoho Subscriptions (Basic)",
+        "Zoho Books (Accounting)",
         "Standard SaaS Reports",
         "Email Support",
       ],
     },
     {
       name: "Professional",
-      price: "₹1,20,000",
-      description: "Full suite for growing SaaS industries.",
+      price: "₹1,10,000",
+      description: "Full suite for scaling SaaS companies.",
       features: [
-        "Zoho CRM (Enterprise)",
-        "Advanced Subscription Billing",
-        "Zoho Analytics (SaaS Dashboards)",
-        "Integration with Support (Desk)",
+        "Adv. Subscription Billing",
+        "Zoho Desk (Enterprise Support)",
+        "Advanced Analytics & KPIs",
+        "Custom Workflow Automation",
         "SLA-backed Support",
       ],
       popular: true,
@@ -116,12 +150,11 @@ const data: IndustryPageData = {
     {
       name: "Enterprise",
       price: "Custom",
-      description: "For large-scale global technology firms.",
+      description: "For high-volume or global tech groups.",
       features: [
-        "Zoho One (Global Org)",
-        "Advanced Revenue Recognition",
-        "Multi-entity Consolidation",
-        "Custom Deluge Automations",
+        "Zoho One (Global SaaS)",
+        "Advanced Rev-Rec Workflows",
+        "High-Volume API Access",
         "Dedicated Success Manager",
         "24/7 Priority Support",
       ],
@@ -129,27 +162,26 @@ const data: IndustryPageData = {
   ],
   faqs: [
     {
-      question: "Does Zoho handle SaaS multi-currency billing?",
-      answer: "Yes. Zoho Subscriptions and Zoho Books support multi-currency billing and automated exchange rate updates — essential for global SaaS industries.",
+      question: "Does Zoho support ASC 606 compliance?",
+      answer: "Yes. Zoho Books has built-in features to help software companies automate revenue recognition in compliance with ASC 606 and IFRS 15 standards.",
     },
     {
-      question: "Can we integrate Zoho with our software portal?",
-      answer: "Absolutely. Zoho's robust REST APIs allow for seamless integration between your user application and Zoho CRM/Subscriptions.",
+      question: "Can we track MRR and Churn in real-time?",
+      answer: "Absolutely. Zoho Analytics and Zoho Subscriptions provide real-time dashboards for all your critical SaaS growth metrics.",
     },
     {
-      question: "Does Zoho support ASC 606 revenue recognition?",
-      answer: "Yes, we can configure Zoho Books with custom revenue recognition schedules to help tech industries stay compliant with ASC 606/IFRS 15 standards.",
+      question: "Can Zoho integrate with our software product?",
+      answer: "Yes. Zoho's open APIs allow you to connect your software product directly to Zoho CRM and Subscriptions for automated provisioning and usage tracking.",
     },
   ],
   relatedIndustries: [
     { label: "IT Services", href: "/zoho/industries/it-services" },
-    { label: "Manufacturing", href: "/zoho/industries/manufacturing" },
     { label: "Media & Publishing", href: "/zoho/industries/media" },
-    { label: "Retail & E-commerce", href: "/zoho/industries/retail" },
+    { label: "Advertising & Marketing", href: "/zoho/industries/advertising-marketing" },
+    { label: "Retail & E-Commerce", href: "/zoho/industries/retail" },
   ],
 };
 
 export default function ZohoSoftwarePage() {
   return <ZohoIndustryTemplate data={data} />;
 }
-

@@ -143,8 +143,7 @@ export default function ZohoAnalyticsPage() {
       points: [
         "Real-time dashboards with live data",
         "Automated report generation and delivery",
-        "Collaborative workflows for team decisions",
-        "Self-service BI for every department"
+        "Collaborative workflows for team decisions",        "Self-service BI for every department"
       ],
     },
     {
@@ -163,9 +162,9 @@ export default function ZohoAnalyticsPage() {
   return (
     <ZohoSolutionTemplate
       title="Zoho Analytics — Modern BI & Data Analytics"
-      subtitle="Transform Your Raw Data into Actionable Insights."
-      description="A self-service business intelligence and data analytics software that lets you create visually appealing data visualizations and insightful dashboards in minutes."
-      introDescription2="Zoho Analytics turns your raw data into actionable insights through stunning visualizations and AI-powered dashboards that tell the real story of your business performance."
+      subtitle="Zoho Analytics: Self-Service Business Intelligence and Advanced Data Analytics"
+      description="Zoho Analytics is a powerful, cloud-native BI platform that enables you to transform raw data into stunning visualizations and actionable insights in minutes. As a specialized Zoho Analytics partner, we help you unify data from over 250 sources to create a single source of truth with AI-powered forecasting and automated decision support."
+      introDescription2="Zoho Analytics turns your raw data into actionable insights through stunning visualizations and AI-powered dashboards that tell the real story of your business performance, driving faster and smarter strategic decisions."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

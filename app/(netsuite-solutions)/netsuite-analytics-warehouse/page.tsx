@@ -65,7 +65,7 @@ export default function AnalyticsWarehousePage() {
   const benefits = [
     { title: "Unified Single Source of Truth", description: "Stop juggling data from multiple systems. Consolidate NetSuite ERP and 100+ external sources into one governed, trusted analytics layer.", image: "/images/lap/lap2.webp", points: ["100+ pre-built external data connectors", "Single dataset across ERP + CRM + Marketing", "No manual data merges or export jobs", "Consistent, governed metrics across all reports"] },
     { title: "Full SQL Access for Data Teams", description: "Give your data analysts the freedom to write custom queries, build views, and explore data at any granularity — no restrictions.", image: "/images/lap/lap3.webp", points: ["Full ANSI SQL support", "Create custom views and materialized queries", "Complex joins across all data sources", "JDBC/ODBC connectivity for BI tools"] },
-    { title: "10x Faster Query Performance", description: "NetSuite Analytics Warehouse is built on a columnar, cloud-native architecture optimised for analytics — not transactional ERP queries.", image: "/images/lap/lap4.webp", points: ["Columnar storage for analytics workloads", "Massively parallel query execution", "Sub-second dashboard load times", "Zero performance impact on ERP operations"] },
+    { title: "10x Faster Query Performance", description: "NetSuite Analytics Warehouse (NSAW) is built on a columnar, cloud-native architecture optimised for analytics — not transactional ERP queries.", image: "/images/lap/lap4.webp", points: ["Columnar storage for analytics workloads", "Massively parallel query execution", "Sub-second dashboard load times", "Zero performance impact on ERP operations"] },
     { title: "Enterprise Data Governance", description: "Ensure every metric, report, and dashboard is built on trusted, governed data — with full lineage, access control, and quality tracking.", image: "/images/lap/lap1.webp", points: ["Field-level data access controls", "Full data lineage and audit trails", "Data quality rules and alerting", "SOC 2 and GDPR compliant processing"] },
     { title: "Connect Your Entire BI Ecosystem", description: "Use your existing BI investments — Tableau, Power BI, Looker — connected directly to NetSuite data without ETL pipelines.", image: "/images/people/laptopgirl1.webp", points: ["JDBC/ODBC connections for any BI tool", "Live and import connection modes", "Pre-certified Tableau and Power BI connectors", "REST API access for custom applications"] },
     { title: "Scalable & Always Available", description: "A fully managed, cloud-native warehouse that scales automatically — no infrastructure to manage and 99% SLA-backed uptime.", image: "/images/lap/lap5.webp", points: ["Auto-scaling compute and storage", "99% uptime SLA guarantee", "Zero maintenance or patching required", "Global data residency options"] },
@@ -87,7 +87,7 @@ export default function AnalyticsWarehousePage() {
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/50">Solutions</span>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/80">Analytics Warehouse</span>
+            <span className="text-white/80">NetSuite Analytics Warehouse (NSAW)</span>
           </motion.nav>
 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
@@ -95,7 +95,7 @@ export default function AnalyticsWarehousePage() {
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15] tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-teal-100 to-teal-400">
-                  NetSuite Analytics Warehouse
+                  NetSuite Analytics Warehouse (NSAW)
                 </span>
               </motion.h1>
               <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }}
@@ -105,7 +105,7 @@ export default function AnalyticsWarehousePage() {
                 Centralise data from NetSuite and 100+ external sources in a cloud-native analytics warehouse — then query, model, and visualise with enterprise BI tools at 10x the performance.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-teal-600 hover:border-teal-500 transition-all duration-300 shadow-xl hover:scale-105">
+                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
                   Explore the Warehouse
                   <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }} className="flex items-center">
                     <ArrowRight className="w-4 h-4" />
@@ -118,7 +118,7 @@ export default function AnalyticsWarehousePage() {
               className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-teal-900/50" style={{ height: 390 }}>
-                  <Image src="/images/lap/lap10_11zon.webp" alt="NetSuite Analytics Warehouse" fill className="object-cover object-center" priority />
+                  <Image src="/images/lap/lap10_11zon.webp" alt="NetSuite Analytics Warehouse (NSAW)" fill className="object-cover object-center" priority />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.6 }}
                     className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
@@ -137,7 +137,7 @@ export default function AnalyticsWarehousePage() {
                     <Database className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-gray-900 text-[13px] font-bold leading-tight whitespace-nowrap">NetSuite Analytics Warehouse</p>
+                    <p className="text-gray-900 text-[13px] font-bold leading-tight whitespace-nowrap">NetSuite Analytics Warehouse (NSAW)</p>
                     <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">Unify · Query · Model · Connect · Govern</p>
                   </div>
                 </motion.div>
@@ -170,7 +170,7 @@ export default function AnalyticsWarehousePage() {
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
-            {[{ label: "What is Analytics Warehouse?", href: "#what-is-warehouse" }, { label: "Modules", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Services", href: "#services" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
+            {[{ label: "What is NetSuite Analytics Warehouse (NSAW)?", href: "#what-is-warehouse" }, { label: "Modules", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Services", href: "#services" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
               <a key={l.href} href={l.href} className="px-4 py-2 text-base font-semibold hover:bg-teal-50 rounded-lg transition-all whitespace-nowrap">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-700 via-cyan-600 to-blue-500">{l.label}</span>
               </a>
@@ -182,30 +182,67 @@ export default function AnalyticsWarehousePage() {
       {/* What is Analytics Warehouse */}
       <section id="what-is-warehouse" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-              className="flex items-center justify-center rounded-2xl overflow-hidden" style={{ minHeight: 480 }}>
-              <div className="relative w-full h-full">
-                <Image src="/images/Dashboard/analytic wharehouse 2.jpg" alt="NetSuite Analytics Warehouse Dashboard" width={900} height={600} className="w-full h-auto rounded-xl object-contain border-4 border-teal-200 shadow-2xl shadow-teal-900/20" />
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
+            >
+              <div className="relative w-full h-full p-4 lg:p-6">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-teal-900/10 border-4 border-teal-100">
+                  <Image
+                    src="/images/Dashboard/analytic wharehouse 2.jpg"
+                    alt="NetSuite Analytics Warehouse (NSAW) Solution Dashboard"
+                    fill
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
               </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="flex flex-col justify-center space-y-6">
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-teal-500 leading-tight">
-                One Warehouse for All Your Business Data.
-              </h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                NetSuite Analytics Warehouse is a cloud-native data warehouse that consolidates all your ERP, CRM, marketing, and operational data into a single governed repository — purpose-built for analytics at enterprise scale.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Connect 100+ external data sources, run full SQL queries, plug in your favourite BI tools, and build the analytics models your business needs — all without separate ETL infrastructure or data engineering overhead.
-              </p>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="flex flex-col justify-center space-y-6 py-6"
+            >
+              <div className="space-y-4">
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-teal-500 leading-tight">
+                  NetSuite Analytics Warehouse (NSAW): Unifying ERP and External Data for 10x Faster Insights
+                </h2>
+              </div>
+              <div className="space-y-2">
+                <p className="text-base text-gray-600 leading-relaxed">
+                  NetSuite Analytics Warehouse (NSAW) is a cloud-native data solution that consolidates NetSuite ERP data with 100+ external sources into a single, governed repository. As a specialized <strong>NetSuite Analytics partner</strong>, we help you eliminate data silos and provide your teams with high-performance querying and modeling capabilities.
+                </p>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  By centralizing your entire business data ecosystem, you can run complex SQL queries and visualize trends across departments without manual exports. Scale your data strategy with a platform designed for enterprise-grade security and sub-second dashboard performance.
+                </p>
+              </div>
               <div className="pt-4">
-                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
+                <Link
+                  href="#contact-form"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
                   style={{ background: 'linear-gradient(135deg, #134e4a 0%, #0d9488 100%)', color: '#ffffff' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff'; (e.currentTarget as HTMLAnchorElement).style.color = '#134e4a'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #134e4a 0%, #0d9488 100%)'; (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'; }}>
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#134e4a';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 10px 25px -5px rgba(19, 78, 74, 0.3)';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #134e4a 0%, #0d9488 100%)';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
+                  }}
+                >
                   <span>Unify Your Data</span>
-                  <motion.span className="flex items-center" animate={{ x: [0, 5, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}>
+                  <motion.span
+                    className="flex items-center"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                  >
                     <ArrowRight size={17} strokeWidth={2.5} />
                   </motion.span>
                 </Link>
@@ -218,7 +255,7 @@ export default function AnalyticsWarehousePage() {
       {/* Modules Grid */}
       <section id="modules" className="py-16 bg-white relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-medium text-gray-900 text-center">Analytics Warehouse Modules</motion.h2>
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-medium text-gray-900 text-center">NetSuite Analytics Warehouse (NSAW) Modules</motion.h2>
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-600 text-lg max-w-2xl text-center">
             12 powerful capabilities to ingest, model, govern, and analyse data at enterprise scale
           </motion.p>
@@ -255,7 +292,7 @@ export default function AnalyticsWarehousePage() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3" style={{ background: "radial-gradient(circle, rgba(13,148,136,0.25) 0%, transparent 70%)" }} />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-            <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-teal-200">Why Enterprises Choose Analytics Warehouse</h3>
+            <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-teal-200">Why Enterprises Choose NetSuite Analytics Warehouse (NSAW)</h3>
           </motion.div>
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
             <div className="order-2 lg:order-1 relative min-h-[380px] lg:min-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
@@ -307,9 +344,9 @@ export default function AnalyticsWarehousePage() {
             <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
               <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
                 <div className="w-14 h-1 bg-teal-400 mb-5 rounded-full" />
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">How Much Does Analytics Warehouse Cost?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">How Much Does NetSuite Analytics Warehouse (NSAW) Cost?</h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
-                  NetSuite Analytics Warehouse is priced based on your data volumes, the number of external connectors, user seats, and refresh frequency. It is licensed separately from the core NetSuite ERP platform. As your data strategy grows, you can add more connectors, increase storage, or activate real-time streaming without any infrastructure changes.
+                  NetSuite Analytics Warehouse (NSAW) is priced based on your data volumes, the number of external connectors, user seats, and refresh frequency. It is licensed separately from the core NetSuite ERP platform. As your data strategy grows, you can add more connectors, increase storage, or activate real-time streaming without any infrastructure changes.
                 </p>
                 <div>
                   <Link href="#contact-form" className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-teal-400 hover:text-white transition-all duration-200 shadow-md">
@@ -322,7 +359,7 @@ export default function AnalyticsWarehousePage() {
                 <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#0a4038]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
                 <div className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#0d5048]" style={{ borderRadius: '45% 55% 50% 50% / 50% 50% 50% 50%' }} />
                 <div className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl" style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}>
-                  <Image src="/images/people/laptopmen.webp" alt="NetSuite Analytics Warehouse Pricing" fill className="object-cover object-top" />
+                  <Image src="/images/people/laptopmen.webp" alt="NetSuite Analytics Warehouse (NSAW) Pricing" fill className="object-cover object-top" />
                 </div>
               </div>
             </div>
@@ -333,16 +370,16 @@ export default function AnalyticsWarehousePage() {
       <FAQ
         variant="netsuite"
         id="faq"
-        customSubtitle="Everything you need to know about NetSuite Analytics Workbench — data consolidation, query performance, external connectors, and go-live timelines."
+        customSubtitle="Everything you need to know about NetSuite Analytics Warehouse (NSAW) — data consolidation, query performance, external connectors, and go-live timelines."
         customFaqs={[
-          { q: "What is NetSuite Analytics Workbench?", a: "NetSuite Analytics Workbench is a cloud-native data warehouse and analytics platform built on Oracle Autonomous Data Warehouse and Oracle Analytics Cloud — embedded within your NetSuite account. It stores your complete historical NetSuite transaction data plus external source data, enabling high-performance analytics that go far beyond standard SuiteAnalytics reporting." },
-          { q: "How is Workbench different from standard NetSuite reporting?", a: "Standard SuiteAnalytics reporting queries live NetSuite records in real time, which can have performance limits with complex joins or large datasets. Workbench stores a pre-processed copy of all your data in a high-performance columnar data warehouse — enabling sub-second queries across billions of records, complex multi-table analysis, and advanced visualizations." },
-          { q: "Can we bring data from outside NetSuite into Workbench?", a: "Yes. Workbench supports data ingestion from 100+ external sources including Salesforce, Shopify, Google Analytics, HubSpot, databases, CSV files, and REST APIs. External data is blended with NetSuite financials and operational data — creating a unified analytics environment with a single version of truth." },
-          { q: "What reporting and visualization tools does Workbench provide?", a: "Workbench is built on Oracle Analytics Cloud, providing enterprise-grade visualization including interactive dashboards, drill-through reports, heat maps, geospatial analytics, and natural language queries. Pre-built NetSuite content packs provide 50+ ready-to-use dashboards for Finance, Sales, Operations, and Supply Chain from day one." },
-          { q: "How does Workbench handle data security and access control?", a: "Workbench inherits NetSuite's role-based access control — users only see data they are authorized to view in NetSuite. Additional row-level security and data masking can be configured for sensitive financial or HR data. All data in Workbench is encrypted at rest and in transit using Oracle's enterprise security infrastructure." },
-          { q: "Does Workbench require a separate data engineering team to maintain?", a: "No. All data pipelines from NetSuite to Workbench run automatically with no manual orchestration. The pre-built content packs and data models are maintained by Oracle. For custom data sources, AGSuite configures the connectors and data mappings at implementation — ongoing maintenance is minimal." },
-          { q: "Is Analytics Workbench a separate purchase from NetSuite?", a: "Yes. Analytics Workbench is available as a premium add-on to your NetSuite subscription, priced based on data volume and the number of users accessing advanced analytics features. Contact AGSuite for a customised pricing proposal based on your data sources and user count." },
-          { q: "How long does Analytics Workbench implementation take?", a: "A standard implementation covering the core NetSuite data feeds and pre-built dashboards typically takes 4 to 6 weeks. Implementations with multiple external data sources, custom data models, or row-level security requirements typically take 8 to 12 weeks depending on source complexity." },
+          { q: "What is NetSuite Analytics Warehouse (NSAW)?", a: "NetSuite Analytics Warehouse (NSAW) is a cloud-native data warehouse and analytics platform built on Oracle Autonomous Data Warehouse and Oracle Analytics Cloud — embedded within your NetSuite account. It stores your complete historical NetSuite transaction data plus external source data, enabling high-performance analytics that go far beyond standard SuiteAnalytics reporting." },
+          { q: "How is NetSuite Analytics Warehouse (NSAW) different from standard NetSuite reporting?", a: "Standard SuiteAnalytics reporting queries live NetSuite records in real time, which can have performance limits with complex joins or large datasets. NetSuite Analytics Warehouse (NSAW) stores a pre-processed copy of all your data in a high-performance columnar data warehouse — enabling sub-second queries across billions of records, complex multi-table analysis, and advanced visualizations." },
+          { q: "Can we bring data from outside NetSuite into NetSuite Analytics Warehouse (NSAW)?", a: "Yes. NetSuite Analytics Warehouse (NSAW) supports data ingestion from 100+ external sources including Salesforce, Shopify, Google Analytics, HubSpot, databases, CSV files, and REST APIs. External data is blended with NetSuite financials and operational data — creating a unified analytics environment with a single version of truth." },
+          { q: "What reporting and visualization tools does NetSuite Analytics Warehouse (NSAW) provide?", a: "NetSuite Analytics Warehouse (NSAW) is built on Oracle Analytics Cloud, providing enterprise-grade visualization including interactive dashboards, drill-through reports, heat maps, geospatial analytics, and natural language queries. Pre-built NetSuite content packs provide 50+ ready-to-use dashboards for Finance, Sales, Operations, and Supply Chain from day one." },
+          { q: "How does NetSuite Analytics Warehouse (NSAW) handle data security and access control?", a: "NetSuite Analytics Warehouse (NSAW) inherits NetSuite's role-based access control — users only see data they are authorized to view in NetSuite. Additional row-level security and data masking can be configured for sensitive financial or HR data. All data in NetSuite Analytics Warehouse (NSAW) is encrypted at rest and in transit using Oracle's enterprise security infrastructure." },
+          { q: "Does NetSuite Analytics Warehouse (NSAW) require a separate data engineering team to maintain?", a: "No. All data pipelines from NetSuite to NetSuite Analytics Warehouse (NSAW) run automatically with no manual orchestration. The pre-built content packs and data models are maintained by Oracle. For custom data sources, AGSuite configures the connectors and data mappings at implementation — ongoing maintenance is minimal." },
+          { q: "Is NetSuite Analytics Warehouse (NSAW) a separate purchase from NetSuite?", a: "Yes. NetSuite Analytics Warehouse (NSAW) is available as a premium add-on to your NetSuite subscription, priced based on data volume and the number of users accessing advanced analytics features. Contact AGSuite for a customised pricing proposal based on your data sources and user count." },
+          { q: "How long does NetSuite Analytics Warehouse (NSAW) implementation take?", a: "A standard implementation covering the core NetSuite data feeds and pre-built dashboards typically takes 4 to 6 weeks. Implementations with multiple external data sources, custom data models, or row-level security requirements typically take 8 to 12 weeks depending on source complexity." },
         ]}
       />
 
@@ -361,11 +398,11 @@ export default function AnalyticsWarehousePage() {
             </div>
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Unify Your Data Strategy — <span className="text-teal-300">Start Today.</span></h2>
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Unify Your Data Strategy with NetSuite — <span className="text-teal-300">Start Today.</span></h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">Stop managing data silos. Connect all your business data in one governed warehouse and give every team the analytics power they need.</p>
               </div>
               <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-[#062520] hover:bg-teal-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
-                See Warehouse Demo <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                See NetSuite Analytics Warehouse Demo <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </motion.div>

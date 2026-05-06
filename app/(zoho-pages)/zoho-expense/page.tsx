@@ -173,9 +173,9 @@ export default function ZohoExpensePage() {
   return (
     <ZohoSolutionTemplate
       title="Zoho Expense — Online Expense Management Software"
-      subtitle="The Easiest Way to Manage Your Business Spending."
-      description="Zoho Expense is a cloud-based expense management software that automates reporting, streamlines travel management, and empowers teams to work together efficiently."
-      introDescription2="Transform how your organization manages expenses. Zoho Expense automates expense reporting, provides real-time policy checks, and speeds up reimbursement cycles."
+      subtitle="Zoho Expense: AI-Powered Travel and Expense Management for Modern Global Teams"
+      description="Zoho Expense is a powerful, cloud-based expense management Solution designed to automate reporting, streamline travel management, and gain total visibility into corporate spend. As a specialized Zoho Finance partner, we help you eliminate manual data entry with AI-driven OCR receipt scanning and enforce granular spending policies across your entire organization."
+      introDescription2="Transform how your organization manages expenses. Zoho Expense automates expense reporting, provides real-time policy checks, and speeds up reimbursement cycles, ensuring absolute financial control and transparency."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
@@ -210,5 +210,3 @@ export default function ZohoExpensePage() {
     />
   );
 }
-
-

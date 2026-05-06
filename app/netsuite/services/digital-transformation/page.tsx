@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect } from "react";
 import {
@@ -491,7 +491,7 @@ export default function DigitalTransformationPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
             {[
-              { label: "What is Digital Transformation?", href: "#what-is-dt" },
+              { label: "What is NetSuite Digital Transformation?", href: "#what-is-dt" },
               { label: "Services", href: "#services" },
               { label: "Benefits", href: "#benefits" },
               { label: "Pricing", href: "#pricing" },

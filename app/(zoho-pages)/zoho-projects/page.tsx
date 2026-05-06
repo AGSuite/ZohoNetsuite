@@ -25,8 +25,7 @@ import ZohoSolutionTemplate from "@/app/zoho/components/solutions/ZohoSolutionTe
 export default function ZohoProjectsPage() {
   const stats = [
     { label: "On-Time Delivery", value: 40, suffix: "% higher", icon: CheckCircle },
-    { label: "Team Productivity", value: 55, suffix: "%", icon: Zap },
-    { label: "Project Cost Savings", value: 30, suffix: "%", icon: TrendingUp },
+    { label: "Team Productivity", value: 55, suffix: "%", icon: Zap },    { label: "Project Cost Savings", value: 30, suffix: "%", icon: TrendingUp },
     { label: "Resource Utilization", value: 92, suffix: "%", icon: Users },
   ];
 
@@ -167,9 +166,9 @@ export default function ZohoProjectsPage() {
   return (
     <ZohoSolutionTemplate
       title="Zoho Projects — Cloud-Based Project Management"
-      subtitle="Deliver Projects On Time, Every Time."
-      description="Zoho Projects is a cloud-based project management software that helps you plan your work, track it efficiently, and collaborate with your team, no matter where they are."
-      introDescription2="With powerful Gantt charts, task dependencies, and seamless collaboration tools, Zoho Projects ensures your teams stay aligned and your projects remain on track and within budget."
+      subtitle="Zoho Projects: Enterprise-Grade Cloud Project Management Software"
+      description="Zoho Projects is a powerful, cloud-based project management Solution designed to help you plan, track, and collaborate on complex tasks with precision. As a specialized Zoho Projects partner, we help you optimize project timelines using advanced Gantt charts, automated task dependencies, and real-time resource utilization tracking to ensure on-time delivery."
+      introDescription2="With powerful Gantt charts, task dependencies, and seamless collaboration tools, Zoho Projects ensures your teams stay aligned and your projects remain on track, within budget, and delivered with excellence."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
@@ -204,5 +203,3 @@ export default function ZohoProjectsPage() {
     />
   );
 }
-
-

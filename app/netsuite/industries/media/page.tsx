@@ -72,11 +72,32 @@ const data: IndustryPageData = {
         "Unify revenue from subscriptions, digital ads, and physical sales in one place. Gain a holistic view of your audience's lifetime value across all platforms.",
       image: "/images/people/laptopgirl3.webp",
     },
+  ],
+  features: [
     {
-      title: "Automated Royalty Statements",
-      description:
-        "Eliminate the manual grind of calculating royalties. NetSuite generates accurate, branded statements for content creators and handles payments automatically.",
-      image: "/images/people/laptopgirl.webp",
+      title: "Financial Management",
+      description: "Automate transaction flow and gain real-time access to financial and operational performance metrics.",
+      image: "/images/lap/lap1.webp",
+    },
+    {
+      title: "Inventory Management",
+      description: "Optimize inventory levels, minimize stockouts, and boost profitability with company-wide inventory visibility.",
+      image: "/images/lap/lap4.webp",
+    },
+    {
+      title: "Customer Relationship Management",
+      description: "Track and analyze multi-channel marketing campaigns, automate case management, and provide real-time customer data.",
+      image: "/images/lap/lap6_11zon.webp",
+    },
+    {
+      title: "E-commerce Integration",
+      description: "Unify e-commerce platforms with backend systems for a seamless online shopping experience.",
+      image: "/images/lap/lap7_11zon.webp",
+    },
+    {
+      title: "Subscription Analytics",
+      description: "Gain real-time visibility into MRR, Churn, and LTV with NetSuite's advanced subscription analytics.",
+      image: "/images/lap/lap8_11zon.webp",
     },
   ],
   challenges: [
@@ -84,49 +105,49 @@ const data: IndustryPageData = {
       title: "Multiple Revenue Streams, No Unified View",
       description:
         "NetSuite consolidates all revenue streams into a single general ledger, with real-time dashboards showing revenue by channel, product, and customer segment.",
-      image: "/images/people/laptopmen1.jpg",
+      image: "/images/challenges/data-silos.png",
     },
     {
       title: "Manual ASC 606 Subscription Recognition",
       description:
         "NetSuite's Advanced Revenue Management automates deferred revenue schedules for all subscription and licensing arrangements — eliminating spreadsheets and audit risk.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/challenges/compliance.png",
     },
     {
       title: "Error-Prone Royalty Calculations",
       description:
         "NetSuite automates royalty calculations from sales and licensing data using configurable royalty schedules, generating accurate statements and payment runs on schedule.",
-      image: "/images/lap/lap8_11zon.webp",
+      image: "/images/challenges/manual-billing.png",
     },
     {
       title: "Long, Painful Financial Close",
       description:
         "With all revenue streams flowing into a single NetSuite general ledger, financial close is automated — reducing close time by up to 50% each month.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/challenges/profitability.png",
     },
     {
       title: "Complex Licensing Terms",
       description:
         "Manually tracking complex usage rights and licensing agreements leads to compliance risks. NetSuite unifies rights management with financial data.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/challenges/security.png",
     },
     {
       title: "Inaccurate Churn Analytics",
       description:
         "Siloed subscription data makes it hard to predict churn. NetSuite provides real-time churn metrics and cohort analysis for proactive retention.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/challenges/revenue-leakage.png",
     },
     {
       title: "Fragmented Audience Data",
       description:
         "Disconnected audience insights prevent effective monetization. NetSuite integrates audience data to drive personalized content and ad targeting.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/challenges/resource-visibility.png",
     },
     {
       title: "Delayed Rights Management",
       description:
         "Slow processing of content rights impacts your ability to monetize. NetSuite speeds up rights management with automated workflows and real-time visibility.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/challenges/fulfillment-delay.png",
     },
   ],
   pricingTiers: [

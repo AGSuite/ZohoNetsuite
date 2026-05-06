@@ -67,16 +67,37 @@ const data: IndustryPageData = {
       image: "/images/people/laptopgirl1.webp",
     },
     {
-      title: "Retainer Billing Management",
-      description:
-        "Manage complex monthly retainer contracts with automated invoicing, usage tracking, and rollover alerts. Never miss a billing cycle or undercharge for overages.",
-      image: "/images/people/laptopgirl3.webp",
-    },
-    {
       title: "Time & Expense Mobile Entry",
       description:
         "Empower your creative team to capture billable time and out-of-pocket expenses instantly via mobile. Speed up your reimbursement and client billing cycles.",
       image: "/images/people/laptopgirl.webp",
+    },
+  ],
+  features: [
+    {
+      title: "Project Management",
+      description: "Comprehensive solutions for managing projects, including task tracking, resource allocation, and budget management.",
+      image: "/images/lap/lap1.webp",
+    },
+    {
+      title: "Resource Management",
+      description: "Maximize resource utilization and ensure on-time project delivery.",
+      image: "/images/lap/lap2.webp",
+    },
+    {
+      title: "Project Accounting",
+      description: "Systems for managing project finances, tracking costs, and generating accurate invoices.",
+      image: "/images/lap/lap4.webp",
+    },
+    {
+      title: "Customer Relationship Management (CRM)",
+      description: "Cloud-based CRM solutions for managing interactions with customers, partners, and suppliers.",
+      image: "/images/lap/lap7_11zon.webp",
+    },
+    {
+      title: "Financial Management",
+      description: "Automate bookkeeping and gain real-time visibility into your cash flow with NetSuite.",
+      image: "/images/lap/lap5.webp",
     },
   ],
   challenges: [
@@ -84,49 +105,49 @@ const data: IndustryPageData = {
       title: "Scope Creep Eroding Fixed-Fee Margins",
       description:
         "NetSuite provides live budget-vs-actuals dashboards per project, with configurable alerts when projects approach 80% of allocated hours — enabling early intervention before margin is lost.",
-      image: "/images/people/laptopmen1.jpg",
+      image: "/images/challenges/profitability.png",
     },
     {
       title: "Slow Error-Prone Client Invoicing",
       description:
         "NetSuite automates invoice generation from approved timesheets and milestones, reducing billing cycles from days to hours and virtually eliminating billing errors.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/challenges/manual-billing.png",
     },
     {
       title: "No Client or Service Profitability Visibility",
       description:
         "NetSuite's client profitability reports break down revenue, direct costs, and margin by client, project type, and team — giving leadership the data to make strategic decisions.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/challenges/revenue-leakage.png",
     },
     {
       title: "Disconnected Vendor & Media Buy Tracking",
       description:
         "NetSuite connects vendor bills to client projects, automates markup or pass-through billing, and ensures every vendor cost is accounted for before client invoices go out.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/challenges/data-silos.png",
     },
     {
       title: "Poor Resource Allocation",
       description:
         "Fragmented visibility leads to overbooked creative teams. NetSuite provides real-time resource availability and skill-mapping for smarter assignments.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/challenges/resource-visibility.png",
     },
     {
       title: "Delayed Expense Reimbursement",
       description:
         "Manual expense processing slows down cash flow and hurts team morale. NetSuite automates expense capture and approval workflows.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/challenges/fulfillment-delay.png",
     },
     {
       title: "Siloed Creative & Finance Data",
       description:
         "Creative teams and finance often work in different worlds. NetSuite unifies campaign and project data with financial records in one system.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/challenges/ecommerce-sync.png",
     },
     {
       title: "Inconsistent Client Reporting",
       description:
         "Generating manual client reports is slow and inconsistent. NetSuite automates custom-branded client reporting with real-time project metrics.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/challenges/reconciliation.png",
     },
   ],
   pricingTiers: [

@@ -12,12 +12,29 @@ const logos = [
     { id: "tyfone", logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone", link: "https://www.tyfone.com" },
     { id: "airling", logo: "/images/assets/airling%20tech.webp", name: "Airling", link: "#" },
     { id: "videoverse", logo: "/images/assets/video%20verse%20tech.webp", name: "VideoVerse", link: "https://www.videoverse.com" },
+
     { id: "quickheal", logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal", link: "https://www.quickheal.com" },
     { id: "controlservice", logo: "/images/assets/control%20service.webp", name: "Control Service", link: "#" },
     { id: "uniacco", logo: "/images/assets/uniAcco%20service.webp", name: "UniAcco", link: "https://www.uniacco.com" },
     { id: "dlz", logo: "/images/assets/dlz%20service.webp", name: "DLZ", link: "#" },
     { id: "indovance", logo: "/images/assets/indovance%20service.webp", name: "Indovance", link: "https://www.indovance.com" },
     { id: "pace", logo: "/images/assets/pace%20services.webp", name: "Pace", link: "#" },
+    { id: "aidash", logo: "/images/netuite%20client%20images/aidash.png", name: "AiDash", link: "#" },
+    { id: "controlcase", logo: "/images/netuite%20client%20images/controlcase.png", name: "ControlCase", link: "#" },
+    { id: "escalent", logo: "/images/netuite%20client%20images/escalent.png", name: "Escalent", link: "#" },
+    { id: "finn", logo: "/images/netuite%20client%20images/finn.png", name: "Finn", link: "#" },
+    { id: "flatworld", logo: "/images/netuite%20client%20images/flatworld.png", name: "Flatworld", link: "#" },
+    { id: "client13", logo: "/images/netuite%20client%20images/image%20(13).png", name: "Client 13", link: "#" },
+    { id: "kale", logo: "/images/netuite%20client%20images/kale.png", name: "Kale", link: "#" },
+    { id: "keycraft", logo: "/images/netuite%20client%20images/keycraft.png", name: "Keycraft", link: "#" },
+    { id: "logic", logo: "/images/netuite%20client%20images/logic.png", name: "Logic", link: "#" },
+    { id: "modaxo", logo: "/images/netuite%20client%20images/modaxo.png", name: "Modaxo", link: "#" },
+    { id: "prioritytire", logo: "/images/netuite%20client%20images/prioritytire.png", name: "Priority Tire", link: "#" },
+    { id: "signal", logo: "/images/netuite%20client%20images/signal.png", name: "Signal", link: "#" },
+    { id: "thread", logo: "/images/netuite%20client%20images/thread.png", name: "Thread", link: "#" },
+    { id: "traxon", logo: "/images/netuite%20client%20images/traxon.png", name: "Traxon", link: "#" },
+    { id: "uniacco", logo: "/images/netuite%20client%20images/uniacco.png", name: "UniAcco", link: "#" },
+    { id: "videoverse", logo: "/images/netuite%20client%20images/videoverse.png", name: "VideoVerse", link: "#" },
 ];
 
 // Reusable fade-up variant
@@ -49,8 +66,8 @@ const NSMetrics = () => {
 
     const stats = [
         { value: "600+", label: "Projects Completed" },
-        { value: "200+", label: "Global Customers" },
-        { value: "84%", label: "Customer Retention" },
+        { value: "15+", label: "Industry Expertise" },
+        { value: "10+", label: "Countries Serving" },
         { value: "15+", label: "Years Experience" },
     ];
 
@@ -145,7 +162,7 @@ const NSMetrics = () => {
                             className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-base transition-all shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40 hover:scale-105 active:scale-100"
                             suppressHydrationWarning={true}
                         >
-                            Start For Free
+                            Get Free Consultation
                         </Link>
                         <Link
                             href="/netsuite/contact"
@@ -317,9 +334,9 @@ const NSMetrics = () => {
                         </p>
 
                         <div className="relative w-full overflow-hidden py-2">
-                            <div className="animate-marquee whitespace-nowrap flex items-center gap-5">
+                            <div className="animate-marquee whitespace-nowrap flex items-center">
                                 {logos.concat(logos).map((logo, index) => (
-                                    <div key={index} className="inline-flex">
+                                    <div key={index} className="inline-flex px-4">
                                         <a
                                             href={logo.link || "#"}
                                             target={logo.link !== "#" ? "_blank" : undefined}
@@ -332,7 +349,7 @@ const NSMetrics = () => {
                                                 alt={`${logo.name} logo`}
                                                 width={190}
                                                 height={60}
-                                                className={`h-15 sm:h-26 w-auto object-contain transition-all duration-300 ${logo.id === 'quickheal' ? 'px-4' : 'px-2'}`}
+                                                className="h-15 sm:h-26 w-auto object-contain transition-all duration-300 px-4"
                                             />
                                         </a>
                                     </div>
@@ -347,11 +364,11 @@ const NSMetrics = () => {
             <style jsx global>{`
                 @keyframes marquee {
                 0% { transform: translateX(0); }
-                100% { transform: translateX(-50.5%); }
+                100% { transform: translateX(-50%); }
                 }
                 .animate-marquee {
                 display: inline-flex;
-                animation: marquee 30s linear infinite;
+                animation: marquee 20s linear infinite;
                 will-change: transform;
                 }
                 .animate-marquee:hover {

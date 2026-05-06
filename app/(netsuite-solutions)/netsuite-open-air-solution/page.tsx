@@ -244,7 +244,7 @@ export default function OpenAirPage() {
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/50">Solutions</span>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/80">OpenAir</span>
+            <span className="text-white/80">NetSuite OpenAir</span>
           </motion.nav>
 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
@@ -288,7 +288,7 @@ export default function OpenAirPage() {
               >
                 <Link
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white hover:text-blue-950 hover:border-white transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
                 >
                   Get Started with OpenAir
                   <motion.span
@@ -358,7 +358,7 @@ export default function OpenAirPage() {
                   </div>
                   <div>
                     <p className="text-gray-900 text-[13px] font-bold leading-tight whitespace-nowrap">
-                      SuiteProject Pro (OpenAir)
+                      NetSuite SuiteProject Pro (OpenAir)
                     </p>
                     <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">
                       PSA · Portfolio · Global Ops · Billing · Rev. Rec.
@@ -412,11 +412,10 @@ export default function OpenAirPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
             {[
-              { label: "What is OpenAir?", href: "#what-is-openair" },
-              { label: "Modules", href: "#modules" },
+              { label: "What is NetSuite SuiteProject Pro (OpenAir)?", href: "#what-is-openair" },
+              { label: "Features", href: "#modules" },
               { label: "Benefits", href: "#benefits" },
               { label: "Services", href: "#services" },
-              { label: "Pricing", href: "#pricing" },
               { label: "FAQ", href: "#faq" },
             ].map(link => (
               <a
@@ -436,24 +435,24 @@ export default function OpenAirPage() {
       {/* ── What is OpenAir Section ─────────────────────────────────────── */}
       <section id="what-is-openair" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             {/* LEFT — Dashboard Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="flex items-center justify-center rounded-2xl overflow-hidden"
-              style={{ minHeight: 480 }}
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
             >
-              <div className="relative w-full h-full">
-                <Image
-                  src="/images/Dashboard/suiteproject dashboard 2.jpg"
-                  alt="NetSuite OpenAir Dashboard"
-                  width={900}
-                  height={600}
-                  className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20"
-                />
+              <div className="relative w-full h-full p-4 lg:p-6">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100">
+                  <Image
+                    src="/images/Dashboard/suiteproject dashboard 2.jpg"
+                    alt="NetSuite OpenAir PSA Solution Dashboard"
+                    fill
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
               </div>
             </motion.div>
 
@@ -463,23 +462,26 @@ export default function OpenAirPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex flex-col justify-center space-y-6"
+              className="flex flex-col justify-center space-y-6 py-6"
             >
               <div className="space-y-4">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  SuiteProjects Pro PSA for Enterprise Project Control and Growth 
-                </h1>
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+                  NetSuite SuiteProject Pro (OpenAir)
+                  : The World&apos;s #1 Cloud PSA for Enterprise Project Control
+                </h2>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                SuiteProjects Pro (formerly NetSuite OpenAir) is a powerful Professional Services Automation (PSA) solution built for large, complex organizations. It enables businesses to manage multiple projects, global resources, and complex billing processes within a single, unified platform.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                With seamless integration into NetSuite, it connects project delivery with financial operations, eliminating data silos and manual work. This provides real-time visibility, improves efficiency, and helps organizations optimize performance while driving sustainable, profitable growth.
-              </p>
+              <div className="space-y-2">
+                <p className="text-base text-gray-600 leading-relaxed">
+                  NetSuite OpenAir (formerly SuiteProjects Pro) is a specialized Professional Services Automation (PSA) platform designed for large-scale, global organizations. As a premier <strong>NetSuite OpenAir partner</strong>, we help businesses manage thousands of resources and complex multi-entity billing workflows within a single, high-performance system.
+                </p>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  By unifying project delivery with financial operations, OpenAir provides deep visibility into global utilization and project margins. Eliminate manual data reconciliation and gain the real-time insights needed to optimize resource allocation and drive enterprise-wide profitability.
+                </p>
+              </div>
               <div className="pt-4">
                 <Link
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
                   style={{
                     background: 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)',
                     color: '#ffffff',
@@ -487,10 +489,12 @@ export default function OpenAirPage() {
                   onMouseEnter={e => {
                     (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff';
                     (e.currentTarget as HTMLAnchorElement).style.color = '#0a1f5c';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 10px 25px -5px rgba(10, 31, 92, 0.3)';
                   }}
                   onMouseLeave={e => {
                     (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)';
                     (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
                   }}
                 >
                   <span>Empower Your Enterprise</span>
@@ -512,7 +516,8 @@ export default function OpenAirPage() {
       <section id="modules" className="py-16 bg-white relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-medium text-gray-900 text-center">
-            NetSuite OpenAir Modules
+            NetSuite SuiteProject Pro (OpenAir)
+            Modules
           </motion.h2>
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-600 text-lg max-w-2xl text-center">
             All integrated modules to manage enterprise project delivery and financial excellence in one unified platform
@@ -593,7 +598,8 @@ export default function OpenAirPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Key Business Benefits of NetSuite OpenAir
+              Key Business Benefits of NetSuite SuiteProject Pro (OpenAir)
+
             </h2>
           </motion.div>
 
@@ -669,53 +675,7 @@ export default function OpenAirPage() {
 
       <NSServicesSection />
 
-      {/* ── Pricing Section ─────────────────────────────────────────────────── */}
-      <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
-        <div className="max-w-7xl mx-auto px-4 lg:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="rounded-3xl overflow-hidden shadow-2xl"
-            style={{ backgroundColor: '#06303f' }}
-          >
-            <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
-              {/* LEFT — Text + CTA */}
-              <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
-                <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
-                  How Much Does NetSuite OpenAir Cost?
-                </h2>
-                <p className="text-white/75 text-base leading-relaxed mb-8">
-                  NetSuite OpenAir pricing is tailored to the size and complexity of your enterprise services organization. Your subscription includes the core platform, the OpenAir PSA module, and user seats — along with a one-time implementation fee. As your organization grows globally, you can easily activate additional modules for multi-entity management, advanced analytics, and custom integrations without any infrastructure downtime.
-                </p>
-                <div>
-                  <Link
-                    href="#contact-form"
-                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-yellow-400 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg"
-                  >
-                    Contact Us Now <ArrowRight size={16} />
-                  </Link>
-                </div>
-              </div>
 
-              {/* RIGHT — Organic Blob Image */}
-              <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
-                <div className="absolute inset-0 bg-[#052838]" />
-                <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
-                <div className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#0a5060]" style={{ borderRadius: '45% 55% 50% 50% / 50% 50% 50% 50%' }} />
-                <div
-                  className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl"
-                  style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}
-                >
-                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite OpenAir Pricing" fill className="object-cover object-top" />
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* ── FAQ Section ──────────────────────────────────────────────────────── */}
       <FAQ
@@ -772,7 +732,7 @@ export default function OpenAirPage() {
                 href="#contact-form"
                 className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
               >
-                Go Live on OpenAir
+                Go Live on NetSuite OpenAir
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

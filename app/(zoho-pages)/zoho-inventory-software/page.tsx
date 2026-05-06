@@ -167,9 +167,9 @@ export default function ZohoInventoryPage() {
   return (
     <ZohoSolutionTemplate
       title="Zoho Inventory — Smart Multi-Channel Inventory Management"
-      subtitle="The Command Center for Your Stock."
-      description="Scalable inventory management software that optimizes your order management, from purchases to shipments and beyond."
-      introDescription2="Zoho Inventory provides the real-time visibility you need across multiple channels and warehouses, ensuring you never miss a sale or overstock on slow-moving items."
+      subtitle="Zoho Inventory: Unified Multi-Channel Inventory Management for Growing Enterprises"
+      description="Zoho Inventory is a powerful cloud-based inventory management Solution that streamlines your entire supply chain — from order management and multi-channel synchronization to warehouse control and automated fulfillment. As a specialized Zoho Finance partner, we help you optimize stock levels and eliminate overselling across global marketplaces."
+      introDescription2="Zoho Inventory provides the real-time visibility you need across multiple channels and warehouses, ensuring you never miss a sale or overstock on slow-moving items with intelligent reorder points and integrated shipping."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
@@ -203,5 +203,3 @@ export default function ZohoInventoryPage() {
     />
   );
 }
-
-

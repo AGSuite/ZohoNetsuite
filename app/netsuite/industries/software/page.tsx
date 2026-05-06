@@ -72,11 +72,32 @@ const data: IndustryPageData = {
         "Seamlessly connect sales with finance. From lead-to-quote to order-to-cash, everything lives in one system, eliminating manual data re-entry and sync errors.",
       image: "/images/people/threeteam.webp",
     },
+  ],
+  features: [
     {
-      title: "Automated Financial Reporting",
-      description:
-        "Generate real-time financial statements, board packs, and SaaS-specific metrics instantly. No more waiting weeks for the month-end close.",
-      image: "/images/lap/lap2.webp",
+      title: "Customized Solutions",
+      description: "Tailored software and technology services to meet the unique needs and requirements of businesses.",
+      image: "/images/lap/lap4.webp",
+    },
+    {
+      title: "Integration Features",
+      description: "Ensuring smooth integration with existing systems and platforms to ensure compatibility and seamless operation",
+      image: "/images/lap/lap10_11zon.webp",
+    },
+    {
+      title: "Cloud-Based Solutions",
+      description: "Offering cloud-based software and technology solutions that provide flexibility, accessibility, and scalability to businesses.",
+      image: "/images/lap/lap1.webp",
+    },
+    {
+      title: "Global Business Management",
+      description: "Seamlessly manage multiple currencies and reporting as your business expands.",
+      image: "/images/lap/lap5.webp",
+    },
+    {
+      title: "Automated Professional Services",
+      description: "Maximize resource allocation, elevate on-time delivery, and streamline project accounting.",
+      image: "/images/lap/lap7_11zon.webp",
     },
   ],
   challenges: [
@@ -84,49 +105,49 @@ const data: IndustryPageData = {
       title: "Manual ASC 606 Spreadsheet Risk",
       description:
         "NetSuite's Advanced Revenue Management automates ASC 606 / IFRS 15 schedules directly from contract terms, eliminating manual journal entries and audit risk.",
-      image: "/images/people/laptopgirl3.webp",
+      image: "/images/challenges/compliance.png",
     },
     {
       title: "Subscription Billing Complexity",
       description:
         "NetSuite SuiteBilling automates proration calculations, upgrade/downgrade triggers, renewal reminders, and invoice generation for all subscription models.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/challenges/manual-billing.png",
     },
     {
       title: "No Real-Time SaaS KPI Visibility",
       description:
         "NetSuite's SaaS metrics dashboards provide real-time ARR/MRR trending, cohort analysis, churn breakdown, and NRR calculations — board-ready at any time.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/challenges/profitability.png",
     },
     {
       title: "Disconnected CRM and ERP Systems",
       description:
         "NetSuite's built-in CRM and ERP eliminates the CRM-to-ERP sync problem — sales, renewals, and billing all live in one system with zero integration lag.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/challenges/ecommerce-sync.png",
     },
     {
       title: "Scale-up Friction",
       description:
         "Legacy systems can't keep up with rapid international expansion. NetSuite OneWorld handles multiple countries and currencies in a single instance.",
-      image: "/images/people/global.webp",
+      image: "/images/challenges/peak-season.png",
     },
     {
       title: "Fragmented Customer Data",
       description:
         "Siloed data prevents a 360-degree view of the customer. NetSuite unifies all touchpoints from first contact to ongoing support.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/challenges/resource-visibility.png",
     },
     {
       title: "Manual Consolidation",
       description:
         "Consolidating multiple entities manually is slow and error-prone. NetSuite automates intercompany eliminations and real-time consolidation.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/challenges/reconciliation.png",
     },
     {
       title: "Audit Preparedness",
       description:
         "Manual processes make audits a nightmare. NetSuite's robust audit trails and automated compliance reduce audit time and stress.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/challenges/security.png",
     },
   ],
   pricingTiers: [

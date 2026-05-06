@@ -218,7 +218,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                             { src: "/images/zoho logos/zoho project logo.png", angle: 90 },
                             { src: "/images/zoho logos/zoho sheets logo.png", angle: 150 },
                             { src: "/images/zoho logos/zoho drive logo.png", angle: 210 },
-                            { src: "/images/zoho logos/zoho-logo.png", angle: 270 },
+                            { src: "/images/zoho logos/zoho Crm logo.png", angle: 270 },
                             { src: "/images/zoho logos/zoho finance logo.png", angle: 330 }
                           ].map((logo, i) => (
                             <motion.div

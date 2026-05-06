@@ -69,10 +69,10 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   <div className="mt-8 relative inline-flex group">
                     <div className="absolute inset-0 rounded-xl bg-linear-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg group-hover:opacity-100 transition duration-700" />
                     <Link
-                      href="/netsuite/solutions/core-erp/erp"
+                      href="/netsuite/contact"
                       className="relative px-10 py-4 rounded-xl bg-gray-950 text-white font-bold shadow-xl flex items-center gap-2 hover:scale-[1.02] transition-transform"
                     >
-                      Experience NetSuite ERP
+                      Book a Demo
                     </Link>
                   </div>
                 </div>
@@ -146,8 +146,8 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                 <HeroSlide
                   isActive={activeIndex === 2}
                   bg="/images/Background/herobg5.png"
-                  title="Simplifying Supply Chains with NetSuite"
-                  desc="Gain complete control over procurement, inventory, and logistics with real-time supply chain insights."
+                  title="Scale Your Tech Empire: NetSuite for IT & ITES"
+                  desc="Ditch the fragmented tools and billing bottlenecks. Unify your project accounting, global financials, and resource management into one high-octane engine built for rapid growth."
                   cta="Book a Demo"
                   link="/netsuite/contact"
                   customVisual={
@@ -162,7 +162,7 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                       </div>
                       <Image
                         src="/images/lap/netsuitelap2.png"
-                        alt="CFO Automation"
+                        alt="NetSuite for IT and ITES"
                         width={100}
                         height={1600}
                         className="w-[150%] max-w-none object-contain drop-shadow-[0_40px_80px_rgba(37,99,235,0.45)] -mr-[18%] transition-transform duration-700 hover:scale-[1.02]"
@@ -222,8 +222,8 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                       />
                     </div>
                   }
-                  title="Powering Seamless Commerce with NetSuite"
-                  desc="Deliver unified retail and eCommerce experiences with integrated order, inventory, and customer management."
+                  title="Precision at Every Decimal: NetSuite for Financial Services"
+                  desc="Transform risk into opportunity. Automate complex global consolidations, ensure bulletproof regulatory compliance, and command your portfolio with a single, real-time source of truth."
                   cta="Book a Demo"
                   link="/netsuite/contact"
                   customVisual={
@@ -332,8 +332,8 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   }
                   title="The CFO Strategic Command Center"
                   desc="Drive corporate strategy with unparalleled financial intelligence. NetSuite provides the single source of truth needed to navigate complex markets and scale with confidence."
-                  cta="Strategic CFO Suite"
-                  link="/netsuite-accounting-services"
+                  cta="Book a Demo"
+                  link="/netsuite/contact"
                   customVisual={
                     <div className="relative w-full h-full flex items-center justify-center p-4">
                       {/* Medium Balanced Scale (155%) */}
@@ -401,8 +401,8 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   }
                   title="Automated Precision in Every Transaction"
                   desc="Eliminate accounting bottlenecks and ensure 100% compliance. NetSuite's automated financial suite handles the complexity so you can focus on performance."
-                  cta="Accounting Excellence"
-                  link="/netsuite-erp-solution"
+                  cta="Book a Demo"
+                  link="/netsuite/contact"
                   customVisual={
                     <div className="relative w-full h-full flex items-center justify-center p-4">
                       {/* Cinematic Boost Scale (165%) */}

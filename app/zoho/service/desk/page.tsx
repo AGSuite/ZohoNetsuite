@@ -82,9 +82,9 @@ export default function ZohoDeskServicePage() {
   return (
     <ZohoSolutionTemplate
       title="Zoho Desk — The Context-Aware Help Desk"
-      subtitle="Better Service, Built on Context."
-      description="Zoho Desk helps your business deliver stellar customer support by giving your agents the context they need to provide personalized and efficient service."
-      introDescription2="With Zoho Desk, you can manage customer conversations across multiple channels, automate workflows, and empower your team to provide a superior customer experience."
+      subtitle="What is Zoho Desk? The Industry-Leading Customer Service Platform"
+      description="Zoho Desk is a context-aware customer service platform that helps you deliver high-quality support across multiple channels. By giving agents a complete view of every customer's history, it ensures that every interaction is personalized, efficient, and resolution-focused."
+      introDescription2="Empower your team with AI-driven insights, automated ticketing, and a robust self-service knowledge base. Zoho Desk unifies your support operations to drive superior customer satisfaction and long-term brand loyalty."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },

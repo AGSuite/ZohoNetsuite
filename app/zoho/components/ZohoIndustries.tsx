@@ -11,6 +11,8 @@ import {
   ShoppingCart,
   Truck,
   Factory,
+  Building2,
+  Phone,
 } from "lucide-react";
 
 /* ------------------ ICON MAPPING ------------------ */
@@ -23,6 +25,8 @@ const industryIconMap: Record<string, React.ElementType> = {
   "Retail & E-Commerce": ShoppingCart,
   "Transportation and Logistics": Truck,
   "Manufacturing": Factory,
+  "Financial Services": Building2,
+  "Telecom": Phone,
 };
 
 /* ------------------ ROUTES ------------------ */
@@ -36,6 +40,8 @@ const industryRoutes: Record<string, string> = {
   "Retail & E-Commerce": "/zoho/industries/retail",
   "Transportation and Logistics": "/zoho/industries/transport",
   "Manufacturing": "/zoho/industries/manufacturing",
+  "Financial Services": "/zoho/industries/financial-services",
+  "Telecom": "/zoho/industries/telecom",
 };
 
 /* ------------------ LIGHT GRADIENTS ------------------ */
@@ -91,6 +97,16 @@ const industries = [
     id: 8,
     title: "Manufacturing",
     description: "Lean manufacturing solutions with inventory and process management.",
+  },
+  {
+    id: 9,
+    title: "Financial Services",
+    description: "Securely manage client portfolios, wealth workflows, and compliance.",
+  },
+  {
+    id: 10,
+    title: "Telecom",
+    description: "Streamline field service ops, helpdesk, and network support.",
   },
 ];
 

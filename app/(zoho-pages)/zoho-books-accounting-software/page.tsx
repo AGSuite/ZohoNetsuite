@@ -167,9 +167,9 @@ export default function ZohoBooksPage() {
   return (
     <ZohoSolutionTemplate
       title="Zoho Books — Online Accounting Software"
-      subtitle="Comprehensive Finance Management for Modern Businesses."
-      description="A comprehensive accounting software for businesses to manage their finances, automate business workflows, and help them work collectively across departments."
-      introDescription2="From automated bank feeds to GST-compliant invoicing, Zoho Books simplifies complex accounting tasks, ensuring your financial data is always accurate and audit-ready."
+      subtitle="Zoho Books: Smart Cloud Accounting Software for Modern Business Excellence"
+      description="Zoho Books is a comprehensive, VAT/GST compliant accounting Solution that automates your business workflows and unites departments on a single financial platform. As a specialized Zoho Finance implementation partner, we help you streamline everything from automated bank feeds and expense tracking to complex multi-currency reporting."
+      introDescription2="From automated bank feeds to GST-compliant invoicing, Zoho Books simplifies complex accounting tasks, ensuring your financial data is always accurate and audit-ready with real-time collaboration."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
@@ -204,5 +204,3 @@ export default function ZohoBooksPage() {
     />
   );
 }
-
-

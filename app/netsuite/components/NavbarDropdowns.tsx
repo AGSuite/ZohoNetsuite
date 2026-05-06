@@ -177,12 +177,12 @@ export const DesktopMegaMenu: React.FC<any> = ({ item, openMegaMenu, setOpenMega
                     </div>
 
                     {/* Content Grid */}
-                    <div className={`flex-1 grid gap-4 auto-rows-max ${openMegaMenu === 'NETSUITE ADD-ONS' ? 'grid-cols-2' : 'grid-cols-4'}`}>
-                        {(openMegaMenu === 'NETSUITE ADD-ONS'
+                    <div className={`flex-1 grid gap-4 auto-rows-max ${openMegaMenu === 'NETSUITE ADD-ONS AND CONNECTORS' ? 'grid-cols-2' : 'grid-cols-4'}`}>
+                        {(openMegaMenu === 'NETSUITE ADD-ONS AND CONNECTORS'
                             ? [...(item.children.find((c: any) => c.label === openMegaMenu)?.megaMenu?.categories || [])].sort((a, b) => a.title === 'Other Add-ons' ? -1 : 1)
                             : item.children.find((c: any) => c.label === openMegaMenu)?.megaMenu?.categories
                         )?.map((cat: any, ci: number) => {
-                            const isAddons = openMegaMenu === 'NETSUITE ADD-ONS';
+                            const isAddons = openMegaMenu === 'NETSUITE ADD-ONS AND CONNECTORS';
                             const isHighlighted = ci === 0;
 
                             return (

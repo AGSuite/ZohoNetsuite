@@ -32,7 +32,7 @@ const data: IndustryPageData = {
       title: "Service Performance Dashboards",
       description:
         "Real-time visibility into ARPU, churn, usage trends, billing performance, and operational metrics — all consolidated in a single executive dashboard for faster, data-driven decisions.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/lap/lap5.webp",
       points: [
         "ARPU & churn rate tracking",
         "Billing performance KPIs",
@@ -83,16 +83,32 @@ const data: IndustryPageData = {
         "Global tax compliance",
       ],
     },
+  ],
+  features: [
     {
-      title: "OSS/BSS & CRM Integrations",
-      description:
-        "Connect seamlessly with provisioning systems, network tools, CRM platforms, and billing engines. NetSuite's open APIs enable real-time data exchange across your entire tech stack.",
-      image: "/images/people/laptopgirl3.webp",
-      points: [
-        "REST/SOAP API integrations",
-        "CRM & customer portal sync",
-        "Network & provisioning connectors",
-      ],
+      title: "Subscription and Usage-Based Billing",
+      description: "Support recurring, consumption, tiered, and flat-rate billing models.",
+      image: "/images/lap/lap1.webp",
+    },
+    {
+      title: "Revenue Recognition",
+      description: "Automate deferred revenue recognition for multi-period subscriptions and bundled licenses.",
+      image: "/images/lap/lap3.webp",
+    },
+    {
+      title: "Financial Management",
+      description: "Automate transaction flow and gain real-time access to financial and operational performance metrics.",
+      image: "/images/lap/lap6_11zon.webp",
+    },
+    {
+      title: "Customer Relationship Management (CRM)",
+      description: "Cloud-based CRM solutions for managing interactions with customers, partners, and suppliers.",
+      image: "/images/people/laptopgirl.webp",
+    },
+    {
+      title: "Order Management",
+      description: "Automate the entire order-to-fulfillment cycle for faster delivery and improved customer satisfaction.",
+      image: "/images/lap/lap4.webp",
     },
   ],
   challenges: [
@@ -102,7 +118,7 @@ const data: IndustryPageData = {
         "Telecom pricing models are dynamic — NetSuite simplifies recurring, usage-based, and hybrid billing with automated invoicing and error-free revenue recognition.",
       solution:
         "NetSuite's advanced billing engine handles tiered, usage-based, and bundled pricing models with automated invoicing, eliminating billing errors and revenue leakage.",
-      image: "/images/people/laptopmen1.jpg",
+      image: "/images/challenges/manual-billing.png",
     },
     {
       title: "Fragmented OSS/BSS Systems",
@@ -110,7 +126,7 @@ const data: IndustryPageData = {
         "Legacy OSS/BSS and billing systems reduce efficiency — NetSuite unifies them on a single cloud platform with open API integrations for real-time data flow.",
       solution:
         "NetSuite integrates with existing OSS/BSS via REST APIs, creating a unified data layer that eliminates silos and manual rekeying between provisioning and financial systems.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/challenges/data-silos.png",
     },
     {
       title: "Regulatory & Compliance Demands",
@@ -118,7 +134,7 @@ const data: IndustryPageData = {
         "Meet regional tax, audit, and regulatory requirements with built-in compliance tools. Manage GST, VAT, telecom-specific levies, and audit trails automatically.",
       solution:
         "NetSuite's compliance engine automates tax calculations, e-invoicing, and audit-ready reporting across multiple jurisdictions — keeping your operations legally sound globally.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/challenges/compliance.png",
     },
     {
       title: "High Service Volumes & Scalability",
@@ -126,7 +142,7 @@ const data: IndustryPageData = {
         "Manage massive service volumes with automated workflows and accurate reporting. NetSuite scales with your subscriber base without performance degradation.",
       solution:
         "NetSuite's cloud-native architecture scales automatically to handle millions of transactions, subscribers, and billing events without infrastructure investments.",
-      image: "/images/people/global.webp",
+      image: "/images/challenges/peak-season.png",
     },
     {
       title: "Need for Real-Time Insights",
@@ -134,7 +150,7 @@ const data: IndustryPageData = {
         "Telecom providers require instant visibility into revenue, usage, and customer metrics. NetSuite provides real-time dashboards and analytics for faster decision-making.",
       solution:
         "NetSuite's built-in analytics and customizable dashboards surface ARPU, churn, usage, and financial metrics in real time — empowering leaders to act fast.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/challenges/profitability.png",
     },
     {
       title: "Revenue Leakage & Recognition Gaps",
@@ -142,7 +158,7 @@ const data: IndustryPageData = {
         "Disconnected billing and revenue recognition processes lead to revenue leakage. NetSuite closes the gap with automated, compliant revenue recognition workflows.",
       solution:
         "NetSuite links billing events directly to revenue recognition schedules, ensuring every dollar is captured, recognized correctly, and reported with full audit trail.",
-      image: "/images/people/laptopgirl3.webp",
+      image: "/images/challenges/revenue-leakage.png",
     },
   ],
   pricingIntro:
