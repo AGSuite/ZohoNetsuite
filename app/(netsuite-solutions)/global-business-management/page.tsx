@@ -349,7 +349,7 @@ export default function GlobalBusinessPage() {
               </div>
               <div className="space-y-2">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite OneWorld is the industry standard for NetSuite Global Business Management, enabling multinational organizations to manage diverse legal entities and subsidiaries from a single platform. As a specialized <strong>NetSuite Global Business partner</strong>, we help you unify operations across 200+ countries with automated intercompany eliminations and consolidated financial reporting.
+                  NetSuite OneWorld is the industry standard for NetSuite Global Business Management, enabling multinational organizations to manage diverse legal entities and subsidiaries from a single platform. As a specialized NetSuite Global Business partner, we help you unify operations across 200+ countries with automated intercompany eliminations and consolidated financial reporting.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
                   With support for 190+ currencies and 100+ tax jurisdictions, OneWorld ensures local compliance while providing real-time global visibility. Eliminate fragmented systems and manual roll-ups, allowing your executive team to make data-driven decisions based on a single, unified version of the truth.

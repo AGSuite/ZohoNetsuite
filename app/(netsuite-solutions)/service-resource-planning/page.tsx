@@ -423,7 +423,7 @@ export default function NetSuiteSRPPage() {
               </div>
               <div className="space-y-2">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite SRP (Service Resource Planning) is a unified cloud solution designed to manage the entire services lifecycle—from initial opportunity and resource scheduling to project delivery and financial recognition. As a specialized <strong>NetSuite SRP partner</strong>, we help Professional Services organizations eliminate siloed data and bridge the gap between project teams and back-office finance.
+                  NetSuite SRP (Service Resource Planning) is a unified cloud solution designed to manage the entire services lifecycle—from initial opportunity and resource scheduling to project delivery and financial recognition. As a specialized NetSuite SRP partner, we help Professional Services organizations eliminate siloed data and bridge the gap between project teams and back-office finance.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
                   By centralizing Professional Services Automation (PSA) with core ERP financials, NetSuite SRP provides real-time visibility into project health, resource utilization, and billable margins. Optimize your talent pool and ensure project success with a scalable platform that grows alongside your firm&apos;s global ambitions.

@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     template: "%s | AGSuite Technologies",
   },
   description:
-    "Explore Zoho's complete business software suite — CRM, Books, People, Desk, Analytics, Inventory, and 40+ more apps. Zoho Advanced Partner — AGSuite Technologies.",
+    "Explore Zoho's complete business software suite — CRM, Books, People, Desk, Analytics, Inventory, and 40+ more apps. Zoho Premium Partner — AGSuite Technologies.",
   keywords: [
     "Zoho CRM India",
     "Zoho Books",
     "Zoho partner",
     "Zoho solutions India",
     "AGSuite Zoho",
-    "Zoho Advanced Partner",
+    "Zoho Premium Partner",
   ],
   openGraph: {
     type: "website",

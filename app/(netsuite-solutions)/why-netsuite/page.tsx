@@ -219,7 +219,8 @@ export default function WhyNetsuitePage() {
               { label: "What is NetSuite ERP?", href: "#what-is" }, 
               { label: "Growth", href: "#growth" }, 
               { label: "Adaptability", href: "#adaptability" }, 
-              { label: "Your Success", href: "#success" }
+              { label: "Your Success", href: "#success" },
+              { label: "Pricing", href: "#pricing" }
             ].map(l => (
               <a key={l.href} href={l.href} className="px-5 py-2 text-base font-semibold hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-yellow-600 to-blue-500">{l.label}</span>
@@ -380,22 +381,47 @@ export default function WhyNetsuitePage() {
         </div>
       </section>
 
-      {/* Section 5: Custom CTA */}
-      <section className="py-16 bg-white relative overflow-hidden">
+      {/* ── CTA Banner ────────────────────────────────────────────────────────── */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-[2rem] bg-gray-900 shadow-2xl">
-            <div className="grid md:grid-cols-[2fr_3fr] items-center">
-              <div className="relative h-64 md:h-full min-h-[250px]">
-                <Image src="/images/lap/lap8_11zon.webp" alt="Streamline Your Business" fill className="object-cover opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-r from-gray-900/40 to-gray-900" />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#002a8c] via-[#0044cc] to-[#0099a3] shadow-2xl"
+          >
+            {/* Particles */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              {CTA_PARTICLES.map((p, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute bg-white rounded-full"
+                  style={{ width: `${p.w}px`, height: `${p.h}px`, top: `${p.top}%`, left: `${p.left}%` }}
+                  animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }}
+                  transition={{ duration: p.dur, repeat: Infinity, ease: 'easeInOut', delay: p.delay }}
+                />
+              ))}
+            </div>
+
+            <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
+              <div className="text-left max-w-2xl">
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                  Start Your NetSuite Journey Today —{" "}
+                  <span className="text-cyan-300">Run Your Entire Business Better.</span>
+                </h2>
+                <p className="text-white/80 text-lg md:text-xl font-medium">
+                  Join 43,000+ organizations that traded complexity for the world&apos;s #1 cloud ERP solution.
+                </p>
               </div>
-              <div className="relative z-10 px-8 py-10 lg:px-12 flex flex-col items-start gap-6">
-                <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">Learn How NetSuite ERP Can Streamline Your Business</h2>
-                <Link href="#contact-form" className="inline-flex items-center justify-center gap-3 bg-blue-600 text-white hover:bg-blue-700 font-bold text-sm px-8 py-3.5 rounded-full shadow-xl transition-all duration-300 hover:scale-105">
-                  Get Free Consultation <ArrowRight className="w-5 h-5" />
-                </Link>
-              </div>
+
+              <Link
+                href="#contact-form"
+                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
+              >
+                Get Started with NetSuite
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -442,6 +468,48 @@ export default function WhyNetsuitePage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Pricing Section ───────────────────────────────────────────────── */}
+      <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.7 }}
+            className="rounded-3xl overflow-hidden shadow-2xl"
+            style={{ backgroundColor: '#06303f' }}
+          >
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
+              <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
+                <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
+                  How Much Does NetSuite Cost?
+                </h2>
+                <p className="text-white/75 text-base leading-relaxed mb-8">
+                  NetSuite pricing is tailored to your business size and requirements. The annual subscription combines the core financial management platform, any additional modules you need, and your user count — plus a one-time implementation fee. As your business grows, activate new modules or add users instantly — no upgrades, no downtime, no infrastructure headaches.
+                </p>
+                <div>
+                  <Link
+                    href="#contact-form"
+                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-yellow-400 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg"
+                  >
+                    Contact Us Now <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </div>
+              <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
+                <div className="absolute inset-0 bg-[#052838]" />
+                <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
+                <div className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#0a5060]" style={{ borderRadius: '45% 55% 50% 50% / 50% 50% 50% 50%' }} />
+                <div className="absolute bottom-8 left-6 w-14 h-14 bg-blue-400/30 z-10" style={{ borderRadius: '40% 60% 50% 50% / 50% 40% 60% 50%', transform: 'rotate(20deg)' }} />
+                <div className="absolute bottom-16 left-14 w-3 h-3 bg-cyan-400/60 rounded-full z-10" />
+                <div className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl" style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}>
+                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite Pricing" fill className="object-cover object-top" />
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

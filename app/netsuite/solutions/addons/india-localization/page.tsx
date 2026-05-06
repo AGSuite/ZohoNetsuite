@@ -296,7 +296,7 @@ export default function IndiaLocalizationPage() {
               </div>
               <div className="space-y-4">
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  India Localization for NetSuite simplifies the complexities of Indian tax regulations, providing a cloud-native solution for GST, TDS, and statutory compliance. As a specialized <strong>India Localization for NetSuite partner</strong>, we help businesses automate e-invoicing via IRP, e-way bills, and GSTR reporting within a single unified platform.
+                  India Localization for NetSuite simplifies the complexities of Indian tax regulations, providing a cloud-native solution for GST, TDS, and statutory compliance. As a specialized India Localization for NetSuite partner, we help businesses automate e-invoicing via IRP, e-way bills, and GSTR reporting within a single unified platform.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   By integrating seamlessly with your core ERP, our solution ensures accuracy in multi-state GSTIN management and TCS calculations. Stay ahead of regulatory changes with automated compliance reminders and audit-ready reports, allowing your finance team to focus on strategic growth.

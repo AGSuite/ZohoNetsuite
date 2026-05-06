@@ -21,13 +21,13 @@ const logos = [
     { id: "pace", logo: "/images/assets/pace%20services.webp", name: "Pace", link: "#" },
     { id: "aidash", logo: "/images/netuite%20client%20images/aidash.png", name: "AiDash", link: "#" },
     { id: "controlcase", logo: "/images/netuite%20client%20images/controlcase.png", name: "ControlCase", link: "#" },
-    { id: "escalent", logo: "/images/netuite%20client%20images/escalent.png", name: "Escalent", link: "#" },
-    { id: "finn", logo: "/images/netuite%20client%20images/finn.png", name: "Finn", link: "#" },
+//    { id: "escalent", logo: "/images/netuite%20client%20images/escalent.png", name: "Escalent", link: "#" },
+//    { id: "finn", logo: "/images/netuite%20client%20images/finn.png", name: "Finn", link: "#" },
     { id: "flatworld", logo: "/images/netuite%20client%20images/flatworld.png", name: "Flatworld", link: "#" },
     { id: "client13", logo: "/images/netuite%20client%20images/image%20(13).png", name: "Client 13", link: "#" },
     { id: "kale", logo: "/images/netuite%20client%20images/kale.png", name: "Kale", link: "#" },
     { id: "keycraft", logo: "/images/netuite%20client%20images/keycraft.png", name: "Keycraft", link: "#" },
-    { id: "logic", logo: "/images/netuite%20client%20images/logic.png", name: "Logic", link: "#" },
+//    { id: "logic", logo: "/images/netuite%20client%20images/logic.png", name: "Logic", link: "#" },
     { id: "modaxo", logo: "/images/netuite%20client%20images/modaxo.png", name: "Modaxo", link: "#" },
     { id: "prioritytire", logo: "/images/netuite%20client%20images/prioritytire.png", name: "Priority Tire", link: "#" },
     { id: "signal", logo: "/images/netuite%20client%20images/signal.png", name: "Signal", link: "#" },
@@ -178,7 +178,7 @@ const NSMetrics = () => {
                         <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12 max-w-6xl mx-auto px-6">
                             {stats.map((stat, index) => (
                                 <motion.div
-                                    key={stat.value}
+                                    key={`${stat.label}-${index}`}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={statsInView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.18 }}
@@ -368,7 +368,7 @@ const NSMetrics = () => {
                 }
                 .animate-marquee {
                 display: inline-flex;
-                animation: marquee 20s linear infinite;
+                animation: marquee 60s linear infinite;
                 will-change: transform;
                 }
                 .animate-marquee:hover {

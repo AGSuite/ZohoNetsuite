@@ -7,7 +7,7 @@ const ZohoWhyChooseUs = () => {
   const points = [
     {
       icon: <Award className="w-12 h-12 text-rose-500 stroke-1" />,
-      title: "Authorized Zoho Advanced Partner",
+      title: "Zoho Premium Partner",
       desc: "Recognized expertise in deploying complex Zoho ecosystems for maximum value.",
     },
     {

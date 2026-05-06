@@ -350,7 +350,7 @@ export default function AccountingSoftwarePage() {
               </div>
               <div className="space-y-2">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite Cloud Accounting is a robust financial management solution that unifies your general ledger, AR, AP, and tax into a single cloud-based platform. As a trusted <strong>NetSuite implementation partner</strong>, we help organizations eliminate disconnected spreadsheets and achieve a single version of financial truth across their entire enterprise.
+                  NetSuite Cloud Accounting is a robust financial management solution that unifies your general ledger, AR, AP, and tax into a single cloud-based platform. As a trusted NetSuite implementation partner, we help organizations eliminate disconnected spreadsheets and achieve a single version of financial truth across their entire enterprise.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
                   With real-time visibility and automated financial workflows, your team can accelerate the month-end close, ensure global compliance, and deliver audit-ready reporting. Optimize your financial operations with a scalable system designed to support complex business models and international expansion.

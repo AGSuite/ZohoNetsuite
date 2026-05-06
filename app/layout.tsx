@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
   // ── Core tags ──────────────────────────────────────────────────────────────
   description:
-    "AGSuite Technologies — Certified Zoho Advanced Partner & Oracle NetSuite Partner. ERP, CRM, HR, Finance, and cloud solutions for growing businesses in India and globally.",
+    "AGSuite Technologies — Zoho Premium Partner & Oracle NetSuite Partner. ERP, CRM, HR, Finance, and cloud solutions for growing businesses in India and globally.",
   keywords: [
     "Zoho partner India",
     "NetSuite partner India",

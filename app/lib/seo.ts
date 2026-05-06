@@ -396,7 +396,7 @@ export const websiteSchema = {
   url: SITE_URL,
   name: SITE_NAME,
   description:
-    "Certified Zoho Advanced Partner & Oracle NetSuite Partner — ERP, CRM, HR, Finance cloud solutions",
+    "Zoho Premium Partner & Oracle NetSuite Partner — ERP, CRM, HR, Finance cloud solutions",
   publisher: { "@type": "Organization", "@id": `${SITE_URL}/#organization` },
   potentialAction: {
     "@type": "SearchAction",
@@ -564,7 +564,7 @@ export const ZOHO_PAGES: Record<
   "/zoho-crm": {
     title: "Zoho CRM — Sales Automation & Customer Management | AGSuite",
     description:
-      "Boost sales by 45% with Zoho CRM. Lead management, AI-powered insights (Zia), omnichannel communication, and workflow automation. AGSuite Zoho Advanced Partner.",
+      "Boost sales by 45% with Zoho CRM. Lead management, AI-powered insights (Zia), omnichannel communication, and workflow automation. AGSuite Zoho Premium Partner.",
     keywords: ["Zoho CRM", "CRM software India", "Zoho CRM implementation", "sales automation", "AGSuite Zoho CRM"],
     category: "CRM Software",
     publishedTime: "2024-01-05T00:00:00Z",
@@ -938,7 +938,7 @@ export const INDUSTRY_PAGES: Record<
   },
   "/zoho/industries/telecom": {
     "title": "Zoho for Telecom Industry — Billing, CRM & Analytics | AGSuite",
-    "description": "Modernize your telecom operations with Zoho's unified cloud suite. Automate subscription billing, CRM integration, and real-time analytics. AGSuite Zoho Advanced Partner.",
+    "description": "Modernize your telecom operations with Zoho's unified cloud suite. Automate subscription billing, CRM integration, and real-time analytics. AGSuite Zoho Premium Partner.",
     "keywords": [
       "Zoho Telecom",
       "Telecom CRM Zoho",
@@ -1099,7 +1099,7 @@ export const INDUSTRY_PAGES: Record<
   },
   "/zoho/industries": {
     "title": "Zoho Industry Solutions | CRM & ERP for Every Business | AGSuite",
-    "description": "Discover Zoho cloud solutions tailored for your industry. Advertising, Media, Retail, Manufacturing, and more. Zoho Advanced Partner implementation.",
+    "description": "Discover Zoho cloud solutions tailored for your industry. Advertising, Media, Retail, Manufacturing, and more. Zoho Premium Partner implementation.",
     "keywords": ["Zoho Industries", "CRM Solutions", "Industry Automation", "Zoho Partner"],
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"

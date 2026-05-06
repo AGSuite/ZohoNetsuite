@@ -215,7 +215,7 @@ export default function AnalyticsWarehousePage() {
               </div>
               <div className="space-y-2">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite Analytics Warehouse (NSAW) is a cloud-native data solution that consolidates NetSuite ERP data with 100+ external sources into a single, governed repository. As a specialized <strong>NetSuite Analytics partner</strong>, we help you eliminate data silos and provide your teams with high-performance querying and modeling capabilities.
+                  NetSuite Analytics Warehouse (NSAW) is a cloud-native data solution that consolidates NetSuite ERP data with 100+ external sources into a single, governed repository. As a specialized NetSuite Analytics partner, we help you eliminate data silos and provide your teams with high-performance querying and modeling capabilities.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
                   By centralizing your entire business data ecosystem, you can run complex SQL queries and visualize trends across departments without manual exports. Scale your data strategy with a platform designed for enterprise-grade security and sub-second dashboard performance.

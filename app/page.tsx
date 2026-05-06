@@ -177,7 +177,7 @@ export default function Home() {
           <div className="absolute top-5 left-6 z-10">
             <Image
               src="/images/zoho logos/zoho premium.png"
-              alt="Zoho Advanced Partner Logo"
+              alt="Zoho Premium Partner Logo"
               width={220}
               height={80}
               className="h-14 w-auto object-contain drop-shadow-lg"

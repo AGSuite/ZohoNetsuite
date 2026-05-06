@@ -477,7 +477,7 @@ export default function NetSuiteCRMPage() {
               </div>
               <div className="space-y-2">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite CRM is the only customer relationship management platform built natively on a unified ERP architecture. As a specialized <strong>NetSuite CRM solution provider</strong>, we help you eliminate data silos by connecting sales, marketing, and service teams through a single source of truth—from lead generation to final invoicing.
+                  NetSuite CRM is the only customer relationship management platform built natively on a unified ERP architecture. As a specialized NetSuite CRM solution provider, we help you eliminate data silos by connecting sales, marketing, and service teams through a single source of truth—from lead generation to final invoicing.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
                   By centralizing customer interactions and real-time orders in one dashboard, NetSuite CRM empowers your team to improve forecasting accuracy and deliver personalized experiences. Drive sustainable, data-driven growth with a platform designed to scale with your business needs.

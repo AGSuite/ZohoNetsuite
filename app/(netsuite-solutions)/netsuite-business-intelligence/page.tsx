@@ -455,7 +455,7 @@ export default function NetSuiteBIPage() {
               </div>
               <div className="space-y-2">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite Business Intelligence (BI) provides built-in analytics and reporting within your ERP, eliminating the need for third-party data visualization tools. As a specialized <strong>NetSuite BI partner</strong>, we help you leverage real-time dashboards and AI-powered insights to turn raw operational data into clear, actionable business intelligence.
+                  NetSuite Business Intelligence (BI) provides built-in analytics and reporting within your ERP, eliminating the need for third-party data visualization tools. As a specialized NetSuite BI partner, we help you leverage real-time dashboards and AI-powered insights to turn raw operational data into clear, actionable business intelligence.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
                   By centralizing data across finance, sales, and supply chain, NetSuite ensures a single version of truth. Empower your team with self-service analytics and automated reporting, allowing for faster decision-making and continuous performance optimization across your entire organization.

@@ -48,7 +48,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
               <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-[52%_46%] gap-10 items-center">
                 <div className="max-w-2xl text-left lg:-ml-12">
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight bg-linear-to-r from-gray-950 via-gray-800 to-red-600 bg-clip-text text-transparent pb-1">
-                    Empower Your Business with Advanced Zoho Cloud Solutions
+                    Empower Your Business with Premium Zoho Cloud Solutions
                   </h1>
 
                   <p className="mt-4 text-base sm:text-lg lg:text-xl font-normal leading-relaxed text-gray-700">
@@ -70,7 +70,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                    <div className="w-full relative">
                       <Image
                         src="/images/Dashboard/zohodash.webp"
-                        alt="Empower Your Business with Advanced Zoho Cloud Solutions"
+                        alt="Empower Your Business with Premium Zoho Cloud Solutions"
                         width={1200}
                         height={1000}
                         priority
@@ -96,7 +96,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                 <HeroSlide
                   isActive={activeIndex === 0}
                   bg="/images/Background/heropinkbg.webp"
-                  title="Empower Your Business with Advanced Zoho Cloud Solutions"
+                  title="Empower Your Business with Premium Zoho Cloud Solutions"
                   desc="Run your entire business operations on a single, unified cloud platform designed for growth and scale."
                   cta="Experience Zoho One"
                   link="/zoho/solutions"

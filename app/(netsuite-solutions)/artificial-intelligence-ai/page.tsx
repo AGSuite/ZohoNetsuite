@@ -215,7 +215,7 @@ export default function NetSuiteAIPage() {
               </div>
               <div className="space-y-2">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite AI and machine learning are embedded natively into the platform, providing actionable insights without the need for external data scientists. As a specialized <strong>NetSuite AI implementation partner</strong>, we help businesses leverage predictive analytics to anticipate market trends, automate complex financial workflows, and enhance operational efficiency.
+                  NetSuite AI and machine learning are embedded natively into the platform, providing actionable insights without the need for external data scientists. As a specialized NetSuite AI implementation partner, we help businesses leverage predictive analytics to anticipate market trends, automate complex financial workflows, and enhance operational efficiency.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
                   From intelligent cash flow forecasting to automated anomaly detection, NetSuite AI empowers your team to make data-driven decisions with confidence. Eliminate manual data processing and focus on strategic initiatives with a platform that continuously learns and optimizes your business processes.

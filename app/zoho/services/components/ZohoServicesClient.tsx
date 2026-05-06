@@ -401,11 +401,12 @@ export default function ZohoServicesClient() {
         </div>
       </section>
 
-      {/* ─────────────── ALL SERVICES — ALTERNATING ROWS ─────────────── */}
-      <section id="services" className="py-24 relative overflow-hidden bg-gradient-to-b from-[#f4f9ff] via-white to-[#f5f8ff]">
+      {/* ─────────────── SERVICES GRID SECTION ─────────────── */}
+      <section id="services" className="py-24 bg-gray-50 relative overflow-hidden">
         {/* Decorative Background Orbs */}
         <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-100/40 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
         <div className="absolute bottom-1/3 right-0 w-[600px] h-[600px] bg-indigo-100/40 rounded-full blur-[100px] translate-x-1/2 pointer-events-none" />
+
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -425,75 +426,74 @@ export default function ZohoServicesClient() {
             </p>
           </motion.div>
 
-          <div className="flex flex-col">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
             {services.map((ind, index) => {
-              const isEven = index % 2 === 0;
+              const cardBgColors = [
+                "bg-gradient-to-br from-white to-[#eef0ff]",
+                "bg-gradient-to-br from-white to-[#eaf6ff]",
+                "bg-gradient-to-br from-white to-[#e8ffef]",
+                "bg-gradient-to-br from-white to-[#f9eaff]",
+                "bg-gradient-to-br from-white to-[#ffece8]",
+              ];
+              
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-12 lg:py-16 ${index < services.length - 1 ? "border-b border-gray-200" : ""}`}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.8,
+                    delay: index * 0.1,
+                    ease: "easeOut",
+                  }}
                 >
-                  {/* IMAGE SIDE */}
-                  <div
-                    className={`relative ${isEven ? "order-1" : "order-1 lg:order-2"}`}
+                  <motion.div
+                    initial="initial"
+                    whileHover="hover"
+                    variants={{
+                      initial: { scale: 1 },
+                      hover: {
+                        scale: 1.04,
+                        transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] },
+                      },
+                    }}
+                    className={`relative group rounded-3xl p-8 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}
                   >
-                    <div className="relative h-64 sm:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/10">
-                      <Image
-                        src={ind.image}
-                        alt={ind.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                    </div>
-                  </div>
-
-                  {/* TEXT SIDE */}
-                  <div
-                    className={`${isEven ? "order-2" : "order-2 lg:order-1"}`}
-                  >
-                    <h3 className="text-2xl lg:text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-black via-[#1e3a8a] to-blue-600 leading-tight mb-3">
+                    <motion.div
+                      variants={{
+                        initial: { rotate: 0, y: 0 },
+                        hover: {
+                          rotate: 360,
+                          y: -6,
+                          transition: {
+                            duration: 0.8,
+                            ease: [0.42, 0, 0.58, 1],
+                          },
+                        },
+                      }}
+                      className="w-14 h-14 bg-black rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:bg-blue-600 transition-colors duration-300"
+                    >
+                      <ind.icon className="w-7 h-7 text-white" />
+                    </motion.div>
+                    
+                    <h3 className="text-xl font-bold text-gray-900 leading-tight mb-4">
                       {ind.title}
                     </h3>
-                    <div className="text-gray-500 text-base leading-relaxed mb-6 space-y-4">
-                      {ind.description.split('\n\n').map((paragraph, i) => (
-                        <p key={i}>{paragraph}</p>
-                      ))}
+                    
+                    <p className="text-gray-600 text-sm leading-relaxed mb-8">
+                      {ind.description}
+                    </p>
+                    
+                    <div className="mt-auto border-t border-gray-200/60 pt-5">
+                      <Link
+                        href={ind.link}
+                        className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-bold text-sm transition-all"
+                      >
+                        Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
                     </div>
-                    <Link
-                      href={ind.link}
-                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300 group shadow-lg hover:shadow-xl hover:scale-105"
-                      style={{
-                        background: "linear-gradient(135deg,#1e3a8a,#2563eb)",
-                      }}
-                      onMouseEnter={(e) => {
-                        (
-                          e.currentTarget as HTMLAnchorElement
-                        ).style.background = "#fff";
-                        (e.currentTarget as HTMLAnchorElement).style.color =
-                          "#1e3a8a";
-                        (e.currentTarget as HTMLAnchorElement).style.border =
-                          "1.5px solid #1e3a8a";
-                      }}
-                      onMouseLeave={(e) => {
-                        (
-                          e.currentTarget as HTMLAnchorElement
-                        ).style.background =
-                          "linear-gradient(135deg,#1e3a8a,#2563eb)";
-                        (e.currentTarget as HTMLAnchorElement).style.color =
-                          "#fff";
-                        (e.currentTarget as HTMLAnchorElement).style.border =
-                          "none";
-                      }}
-                    >
-                      View Details
-                      <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                    </Link>
-                  </div>
+                  </motion.div>
                 </motion.div>
               );
             })}

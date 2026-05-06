@@ -472,7 +472,7 @@ export default function OpenAirPage() {
               </div>
               <div className="space-y-2">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite OpenAir (formerly SuiteProjects Pro) is a specialized Professional Services Automation (PSA) platform designed for large-scale, global organizations. As a premier <strong>NetSuite OpenAir partner</strong>, we help businesses manage thousands of resources and complex multi-entity billing workflows within a single, high-performance system.
+                  NetSuite OpenAir (formerly SuiteProjects Pro) is a specialized Professional Services Automation (PSA) platform designed for large-scale, global organizations. As a premier NetSuite OpenAir partner, we help businesses manage thousands of resources and complex multi-entity billing workflows within a single, high-performance system.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
                   By unifying project delivery with financial operations, OpenAir provides deep visibility into global utilization and project margins. Eliminate manual data reconciliation and gain the real-time insights needed to optimize resource allocation and drive enterprise-wide profitability.
@@ -674,6 +674,49 @@ export default function OpenAirPage() {
       </section>
 
       <NSServicesSection />
+
+      {/* ── Pricing Section ───────────────────────────────────────────────── */}
+      <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.7 }}
+            className="rounded-3xl overflow-hidden shadow-2xl"
+            style={{ backgroundColor: '#06303f' }}
+          >
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
+              <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
+                <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
+                  How Much Does NetSuite OpenAir Cost?
+                </h2>
+                <p className="text-white/75 text-base leading-relaxed mb-8">
+                  NetSuite OpenAir pricing is tailored to your business size and requirements. The annual subscription combines the core professional services automation platform, any additional modules you need, and your user count — plus a one-time implementation fee. As your business grows, activate new modules or add users instantly — no upgrades, no downtime, no infrastructure headaches.
+                </p>
+                <div>
+                  <Link
+                    href="#contact-form"
+                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-yellow-400 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg"
+                  >
+                    Contact Us Now <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </div>
+              <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
+                <div className="absolute inset-0 bg-[#052838]" />
+                <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
+                <div className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#0a5060]" style={{ borderRadius: '45% 55% 50% 50% / 50% 50% 50% 50%' }} />
+                <div className="absolute bottom-8 left-6 w-14 h-14 bg-blue-400/30 z-10" style={{ borderRadius: '40% 60% 50% 50% / 50% 40% 60% 50%', transform: 'rotate(20deg)' }} />
+                <div className="absolute bottom-16 left-14 w-3 h-3 bg-cyan-400/60 rounded-full z-10" />
+                <div className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl" style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}>
+                  <Image src="/images/people/laptopgirl3.webp" alt="NetSuite OpenAir Pricing" fill className="object-cover object-top" />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
 
 
 

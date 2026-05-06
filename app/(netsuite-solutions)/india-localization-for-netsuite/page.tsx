@@ -49,71 +49,71 @@ export default function IndiaLocalizationPage() {
   ];
 
   const modules = [
-    { 
-      title: "Efficient GST Management", 
-      description: "Our platform automates GST compliance through customized configuration of location, vendor, customer, and HSN code details. It handles tax calculations and filing for GSTR1, 2, 3B filings, and identifies transaction types. Additionally, the platform also provides separate CGST and SGST accounts to streamline organizational tax management.", 
-      image: "/images/modules/dashboard module.webp", 
-      rgb: "30,58,138" 
+    {
+      title: "Efficient GST Management",
+      description: "Our platform automates GST compliance through customized configuration of location, vendor, customer, and HSN code details. It handles tax calculations and filing for GSTR1, 2, 3B filings, and identifies transaction types. Additionally, the platform also provides separate CGST and SGST accounts to streamline organizational tax management.",
+      image: "/images/modules/dashboard module.webp",
+      rgb: "30,58,138"
     },
-    { 
-      title: "GST Advanced Features", 
-      description: "GSTIN Validation and GSTR 2B Reconciliation within NetSuite. Ensure your tax filings are accurate and your vendors are compliant with real-time validation and automated reconciliation tools.", 
-      image: "/images/modules/dashboard module.webp", 
-      rgb: "6,95,70" 
+    {
+      title: "GST Advanced Features",
+      description: "GSTIN Validation and GSTR 2B Reconciliation within NetSuite. Ensure your tax filings are accurate and your vendors are compliant with real-time validation and automated reconciliation tools.",
+      image: "/images/modules/dashboard module.webp",
+      rgb: "6,95,70"
     },
-    { 
-      title: "Streamlined TDS Compliance", 
-      description: "Our platform streamlines TDS management through customized setup of company, subsidiary and vendor details. It automates TDS calculations per government rules and vendor types for accuracy and compliance. The platform manages threshold limits and PAN rules, generates Form 26Q, and enables automatic GL posting to designated accounts.", 
-      image: "/images/modules/working module.webp", 
-      rgb: "124,45,18" 
+    {
+      title: "Streamlined TDS Compliance",
+      description: "Our platform streamlines TDS management through customized setup of company, subsidiary and vendor details. It automates TDS calculations per government rules and vendor types for accuracy and compliance. The platform manages threshold limits and PAN rules, generates Form 26Q, and enables automatic GL posting to designated accounts.",
+      image: "/images/modules/working module.webp",
+      rgb: "124,45,18"
     },
-    { 
-      title: "TDS Advanced Features", 
-      description: "TDS on Vendor PrePayment, TDS Challan, TXT File Generation for eTDS Return, 194Q & 206(1H). Handle complex TDS scenarios with automated processes for prepayments and statutory file generation.", 
-      image: "/images/modules/any module.webp", 
-      rgb: "76,29,149" 
+    {
+      title: "TDS Advanced Features",
+      description: "TDS on Vendor PrePayment, TDS Challan, TXT File Generation for eTDS Return, 194Q & 206(1H). Handle complex TDS scenarios with automated processes for prepayments and statutory file generation.",
+      image: "/images/modules/any module.webp",
+      rgb: "76,29,149"
     },
-    { 
-      title: "Auto TCS Calculation", 
-      description: "TCS details setup on company/subsidiary, TCS detail setup on Customer records. Automatic tax calculation of TCS based on government rules, automatic GL posting in specific TCS Accounts. TCS Report: Form 27EQ.", 
-      image: "/images/modules/any module.webp", 
-      rgb: "12,74,110" 
+    {
+      title: "Auto TCS Calculation",
+      description: "TCS details setup on company/subsidiary, TCS detail setup on Customer records. Automatic tax calculation of TCS based on government rules, automatic GL posting in specific TCS Accounts. TCS Report: Form 27EQ.",
+      image: "/images/modules/any module.webp",
+      rgb: "12,74,110"
     },
-    { 
-      title: "E-Invoicing", 
-      description: "Integrates NetSuite with E-invoice Portal via our GSP Partner. Invoices created in NetSuite are validated and sent to E-invoice Portal in JSON Format via APIs. IRN and QR Code is generated and received back to NetSuite automatically. QR code is printed on existing invoice PDF.", 
-      image: "/images/modules/module8.webp", 
-      rgb: "113,63,18" 
+    {
+      title: "E-Invoicing",
+      description: "Integrates NetSuite with E-invoice Portal via our GSP Partner. Invoices created in NetSuite are validated and sent to E-invoice Portal in JSON Format via APIs. IRN and QR Code is generated and received back to NetSuite automatically. QR code is printed on existing invoice PDF.",
+      image: "/images/modules/module8.webp",
+      rgb: "113,63,18"
     },
-    { 
-      title: "E-Way Bill", 
-      description: "NetSuite Integration with E-Way Bill Portal. E-Way Bill Registration, EBN Generation, receipt and store on the invoice record in NetSuite. Print E-Way Bill PDF, support B2B, B2C, Export, Error Handling and detailed Reports.", 
-      image: "/images/modules/sheet module.webp", 
-      rgb: "19,78,74" 
+    {
+      title: "E-Way Bill",
+      description: "NetSuite Integration with E-Way Bill Portal. E-Way Bill Registration, EBN Generation, receipt and store on the invoice record in NetSuite. Print E-Way Bill PDF, support B2B, B2C, Export, Error Handling and detailed Reports.",
+      image: "/images/modules/sheet module.webp",
+      rgb: "19,78,74"
     },
-    { 
-      title: "Vendor Statement", 
-      description: "Easily generate detailed vendor statements, enabling clear visibility into outstanding balances, transaction history, and payment schedules, enhancing transparency and vendor relations.", 
-      image: "/images/modules/dashboard module.webp", 
-      rgb: "131,24,67" 
+    {
+      title: "Vendor Statement",
+      description: "Easily generate detailed vendor statements, enabling clear visibility into outstanding balances, transaction history, and payment schedules, enhancing transparency and vendor relations.",
+      image: "/images/modules/dashboard module.webp",
+      rgb: "131,24,67"
     },
-    { 
-      title: "MSME Reporting", 
-      description: "Access streamlined reporting tailored for MSME compliance, facilitating accurate tracking and timely submissions in accordance with regulatory standards for small and medium-sized enterprises.", 
-      image: "/images/modules/working module.webp", 
-      rgb: "30,58,138" 
+    {
+      title: "MSME Reporting",
+      description: "Access streamlined reporting tailored for MSME compliance, facilitating accurate tracking and timely submissions in accordance with regulatory standards for small and medium-sized enterprises.",
+      image: "/images/modules/working module.webp",
+      rgb: "30,58,138"
     },
-    { 
-      title: "Compliance Calendar and Reminders", 
-      description: "Stay compliant effortlessly with an integrated calendar that schedules key deadlines, providing timely reminders to avoid missed filings and penalties.", 
-      image: "/images/modules/account modules.webp", 
-      rgb: "6,78,59" 
+    {
+      title: "Compliance Calendar and Reminders",
+      description: "Stay compliant effortlessly with an integrated calendar that schedules key deadlines, providing timely reminders to avoid missed filings and penalties.",
+      image: "/images/modules/account modules.webp",
+      rgb: "6,78,59"
     },
-    { 
-      title: "Audit Related Reports", 
-      description: "Generate audit-ready reports with ease, ensuring accuracy and completeness in financial documentation, simplifying the audit process and fostering regulatory compliance.", 
-      image: "/images/modules/dashboard module.webp", 
-      rgb: "120,53,15" 
+    {
+      title: "Audit Related Reports",
+      description: "Generate audit-ready reports with ease, ensuring accuracy and completeness in financial documentation, simplifying the audit process and fostering regulatory compliance.",
+      image: "/images/modules/dashboard module.webp",
+      rgb: "120,53,15"
     },
   ];
 
@@ -178,7 +178,7 @@ export default function IndiaLocalizationPage() {
         <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px]" />
         <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px)', backgroundSize: '70px 70px' }} />
         <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-8">
-          
+
           {/* Breadcrumb */}
           <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
             className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20">
@@ -340,12 +340,12 @@ export default function IndiaLocalizationPage() {
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-gray-600 text-lg max-w-2xl text-center">11 compliance modules covering GST, TDS, TCS, e-invoicing, and statutory reporting</motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8 items-start">
             {modules.map((mod, i) => (
-              <motion.div 
-                key={i} 
-                initial={{ opacity: 0, y: 40 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
-                viewport={{ once: true }} 
-                transition={{ duration: 0.6, delay: i * 0.06 }} 
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.06 }}
                 className="group relative flex flex-col rounded-2xl shadow-lg transition-all duration-300 z-10 hover:z-20 min-h-[380px]"
                 style={{ backgroundColor: `rgb(${mod.rgb})` }}
               >

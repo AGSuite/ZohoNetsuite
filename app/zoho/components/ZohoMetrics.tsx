@@ -86,7 +86,7 @@ const ZohoMetrics = () => {
                             ))}
                         </div>
                         <span className="text-[10px] font-bold text-white uppercase tracking-[0.2em]">
-                            4.9/5 · Advanced Zoho Authorized Partner 2025
+                            4.9/5 · Zoho Premium Partner 2025
                         </span>
                     </motion.div>
 
@@ -143,7 +143,7 @@ const ZohoMetrics = () => {
                         <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12 max-w-6xl mx-auto px-6">
                             {stats.map((stat, index) => (
                                 <motion.div
-                                    key={stat.value}
+                                    key={`${stat.label}-${index}`}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={statsInView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.18 }}
@@ -333,7 +333,7 @@ const ZohoMetrics = () => {
                 }
                 .animate-marquee {
                 display: inline-flex;
-                animation: marquee 20s linear infinite;
+                animation: marquee 60s linear infinite;
                 will-change: transform;
                 }
                 .animate-marquee:hover {

@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 
 export const metadata: Metadata = {
   title: "Zoho Specialist Services | Implementation & Support | AGSuite",
-  description: "Advanced Zoho services including implementation, integration, customization, and 24/7 managed support. Scale your business in the Zoho cloud with AGSuite.",
+  description: "Premium Zoho services including implementation, integration, customization, and 24/7 managed support. Scale your business in the Zoho cloud with AGSuite.",
 };
 
 const ZohoServicesClient = dynamic(() => import('./components/ZohoServicesClient'), {
