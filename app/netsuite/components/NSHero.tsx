@@ -28,12 +28,19 @@ export const NSHero: React.FC<NSHeroProps> = () => {
   const [isMounted, setIsMounted] = React.useState(false);
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [skipFirstAnimation, setSkipFirstAnimation] = React.useState(true);
+  const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
     setIsMounted(true);
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
     // After mount, we allow animations for subsequent slides
     const timer = setTimeout(() => setSkipFirstAnimation(false), 1000);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
 
   return (
@@ -114,22 +121,26 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                       <div className="absolute -bottom-[15%] -right-[10%] w-[70%] h-[70%] rounded-full bg-gradient-to-tl from-emerald-300/50 via-cyan-300/40 to-transparent blur-[140px]" />
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] rounded-full bg-blue-100/60 blur-[100px]" />
 
-                      <motion.div
-                        animate={{
-                          y: [0, -30, 0],
-                          opacity: [0.4, 0.8, 0.4]
-                        }}
-                        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute top-[30%] right-[30%] w-3 h-3 rounded-full bg-blue-500 blur-[2px]"
-                      />
-                      <motion.div
-                        animate={{
-                          y: [0, 30, 0],
-                          opacity: [0.3, 0.6, 0.3]
-                        }}
-                        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                        className="absolute bottom-[20%] left-[40%] w-4 h-4 rounded-full bg-emerald-500 blur-[2px]"
-                      />
+                      {!isMobile && (
+                        <>
+                          <motion.div
+                            animate={{
+                              y: [0, -30, 0],
+                              opacity: [0.4, 0.8, 0.4]
+                            }}
+                            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                            className="absolute top-[30%] right-[30%] w-3 h-3 rounded-full bg-blue-500 blur-[2px]"
+                          />
+                          <motion.div
+                            animate={{
+                              y: [0, 30, 0],
+                              opacity: [0.3, 0.6, 0.3]
+                            }}
+                            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                            className="absolute bottom-[20%] left-[40%] w-4 h-4 rounded-full bg-emerald-500 blur-[2px]"
+                          />
+                        </>
+                      )}
                     </div>
                   }
                   title="Empowering CFOs with Real-Time Insights, Control, and Scalable Growth"
@@ -204,22 +215,26 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                         </defs>
                       </svg>
 
-                      <motion.div
-                        animate={{
-                          y: [0, -30, 0],
-                          opacity: [0.4, 0.8, 0.4]
-                        }}
-                        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute top-[20%] right-[15%] w-3 h-3 rounded-full bg-blue-500 blur-[2px]"
-                      />
-                      <motion.div
-                        animate={{
-                          y: [0, 30, 0],
-                          opacity: [0.3, 0.6, 0.3]
-                        }}
-                        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                        className="absolute bottom-[30%] left-[20%] w-4 h-4 rounded-full bg-purple-500 blur-[2px]"
-                      />
+                      {!isMobile && (
+                        <>
+                          <motion.div
+                            animate={{
+                              y: [0, -30, 0],
+                              opacity: [0.4, 0.8, 0.4]
+                            }}
+                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                            className="absolute top-[20%] right-[15%] w-3 h-3 rounded-full bg-blue-500 blur-[2px]"
+                          />
+                          <motion.div
+                            animate={{
+                              y: [0, 30, 0],
+                              opacity: [0.3, 0.6, 0.3]
+                            }}
+                            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                            className="absolute bottom-[30%] left-[20%] w-4 h-4 rounded-full bg-purple-500 blur-[2px]"
+                          />
+                        </>
+                      )}
                     </div>
                   }
                   title="Precision at Every Decimal: NetSuite for Financial Services"
@@ -294,22 +309,24 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   customBg={
                     <div className="absolute inset-0 overflow-hidden bg-white">
                       {/* Dynamic Background: Data Constellation */}
-                      <div className="absolute inset-0">
-                        {Array.from({ length: 15 }).map((_, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0 }}
-                            animate={{ 
-                              x: [Math.random() * 1000, Math.random() * 1000],
-                              y: [Math.random() * 800, Math.random() * 800],
-                              opacity: [0, 0.3, 0],
-                              scale: [0.5, 0.8, 0.5]
-                            }}
-                            transition={{ duration: 12 + i, repeat: Infinity, ease: "linear" }}
-                            className="absolute w-1 h-1 bg-blue-400 rounded-full blur-[1px]"
-                          />
-                        ))}
-                      </div>
+                      {!isMobile && (
+                        <div className="absolute inset-0">
+                          {Array.from({ length: 15 }).map((_, i) => (
+                            <motion.div
+                              key={i}
+                              initial={{ opacity: 0 }}
+                              animate={{ 
+                                x: [Math.random() * 1000, Math.random() * 1000],
+                                y: [Math.random() * 800, Math.random() * 800],
+                                opacity: [0, 0.3, 0],
+                                scale: [0.5, 0.8, 0.5]
+                              }}
+                              transition={{ duration: 12 + i, repeat: Infinity, ease: "linear" }}
+                              className="absolute w-1 h-1 bg-blue-400 rounded-full blur-[1px]"
+                            />
+                          ))}
+                        </div>
+                      )}
 
                       {/* Moving Scanning Beams */}
                       <motion.div 

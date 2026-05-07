@@ -25,6 +25,14 @@ function Counter({ value }: { value: number }) {
 }
 
 export default function NetSuiteSolutionsClient() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [rotatingIdx, setRotatingIdx] = useState(0);
 
@@ -322,11 +330,11 @@ export default function NetSuiteSolutionsClient() {
       {/* ─────────────── INTRO SECTION ─────────────── */}
       <section ref={introRef} className="py-10 bg-gray-100 overflow-hidden relative">
         <motion.div
-          style={{
+          style={!isMobile ? {
             borderRadius: introRadius,
             margin: introMargin,
             scale: introScale,
-          }}
+          } : {}}
           className="bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 overflow-hidden"
         >
           <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-24">
@@ -378,11 +386,11 @@ export default function NetSuiteSolutionsClient() {
         <div className="w-full px-2 sm:px-4 lg:px-6">
           <motion.div
             ref={solutionsRef}
-            style={{
+            style={!isMobile ? {
               borderRadius: cardRadius,
               margin: cardMargin,
               scale: cardScale,
-            }}
+            } : {}}
             className="bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden relative"
           >
             <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4">

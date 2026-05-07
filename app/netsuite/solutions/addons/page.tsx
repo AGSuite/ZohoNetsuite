@@ -26,6 +26,14 @@ function Counter({ value }: { value: number }) {
 }
 
 export default function AddonsPage() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [rotatingIdx, setRotatingIdx] = useState(0);
 
@@ -337,11 +345,11 @@ export default function AddonsPage() {
         </div>
 
         <motion.div
-          style={{
+          style={!isMobile ? {
             borderRadius: introRadius,
             margin: introMargin,
             scale: introScale,
-          }}
+          } : {}}
           className="relative z-10 bg-gradient-to-br from-blue-50 via-red-50 to-purple-50 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] border border-white/20 transition-all duration-500 overflow-hidden"
         >
           <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-24">
@@ -461,11 +469,11 @@ export default function AddonsPage() {
         <div className="w-full px-2 sm:px-4 lg:px-6">
           <motion.div
             ref={solutionsRef}
-            style={{
+            style={!isMobile ? {
               borderRadius: cardRadius,
               margin: cardMargin,
               scale: cardScale,
-            }}
+            } : {}}
             className="bg-gradient-to-br from-blue-50 via-red-50 to-purple-50 shadow-[0_35px_80px_-15px_rgba(0,0,0,0.4)] border border-white/20 overflow-hidden relative"
           >
             <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4">

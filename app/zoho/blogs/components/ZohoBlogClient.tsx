@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, User, Tag, Clock, ChevronRight, ArrowLeft } from 'lucide-react';
@@ -17,6 +17,17 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
         target: containerRef,
         offset: ["start end", "start start"]
     });
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const bodyComponents = {
         block: {
@@ -79,7 +90,7 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/15 rounded-full blur-[120px] pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
 
-                <div className="relative z-10 max-w-6xl mx-auto px-6 pt-36 pb-48 flex flex-col items-center text-center">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-32 sm:pt-36 sm:pb-48 flex flex-col items-center text-center">
                     <nav className="flex items-center justify-center gap-2 text-[10px] font-medium uppercase tracking-[0.25em] mb-8">
                         <Link href="/zoho" className="text-blue-400 hover:text-white transition-colors">Home</Link>
                         <ChevronRight className="w-3 h-3 text-white/30" />
@@ -98,7 +109,7 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
                         </div>
                     )}
 
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight shadow-sm max-w-5xl leading-tight text-white pb-2 mb-6">
+                    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight shadow-sm max-w-5xl leading-tight text-white pb-2 mb-6">
                         {post.title}
                     </h1>
 
@@ -121,8 +132,8 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
 
             {/* ─── BANNER IMAGE (centered, half overlapping) ─── */}
             {featuredImageUrl && (
-                <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-16 -mt-36 mb-16">
-                    <div className="w-full bg-slate-200 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white aspect-[16/7.5]">
+                <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-16 -mt-24 sm:-mt-36 mb-12 sm:mb-16">
+                    <div className="w-full bg-slate-200 rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white aspect-[16/9] sm:aspect-[16/7.5]">
                         <img
                             src={featuredImageUrl}
                             alt={post.title}
@@ -136,14 +147,14 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
             {/* ─── CONTENT WRAPPER WITH SCROLL ANIMATION ─── */}
             <div ref={containerRef} className="relative z-10 w-full">
                 <motion.div
-                    style={{
+                    style={!isMobile ? {
                         borderRadius: cardRadius,
                         margin: cardMargin,
                         scale: cardScale,
-                    }}
+                    } : {}}
                     className="bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden relative"
                 >
-                    <div className="max-w-5xl mx-auto px-6 py-16">
+                    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
                         {/* ── EXCERPT HIGHLIGHT BOX ── */}
                         {post.excerpt && (
                             <div className="relative mb-16 rounded-3xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #eff6ff, #dbeafe, #e0f2fe)' }}>
@@ -161,9 +172,9 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
 
                         {/* ── MAIN BODY CONTENT ── */}
                         <div className="prose max-w-none text-slate-700 font-medium
-                             [&_h2]:text-3xl [&_h2]:font-black [&_h2]:mt-16 [&_h2]:mb-6 [&_h2]:text-[#001f5c] [&_h2]:border-l-4 [&_h2]:border-blue-500 [&_h2]:pl-4 [&_h2]:uppercase [&_h2]:tracking-snug
-                             [&_h3]:text-xl [&_h3]:font-bold [&_h3]:mt-12 [&_h3]:mb-4 [&_h3]:text-blue-900 [&_h3]:border-l-2 [&_h3]:border-blue-300 [&_h3]:pl-3 [&_h3]:uppercase
-                             [&_p]:text-lg [&_p]:leading-[1.9] [&_p]:mb-8
+                             [&_h2]:text-2xl sm:[&_h2]:text-3xl [&_h2]:font-black [&_h2]:mt-10 sm:[&_h2]:mt-16 [&_h2]:mb-4 sm:[&_h2]:mb-6 [&_h2]:text-[#001f5c] [&_h2]:border-l-4 [&_h2]:border-blue-500 [&_h2]:pl-4 [&_h2]:uppercase [&_h2]:tracking-snug
+                             [&_h3]:text-lg sm:[&_h3]:text-xl [&_h3]:font-bold [&_h3]:mt-8 sm:[&_h3]:mt-12 [&_h3]:mb-3 sm:[&_h3]:mb-4 [&_h3]:text-blue-900 [&_h3]:border-l-2 [&_h3]:border-blue-300 [&_h3]:pl-3 [&_h3]:uppercase
+                             [&_p]:text-base sm:[&_p]:text-lg [&_p]:leading-[1.7] sm:[&_p]:leading-[1.9] [&_p]:mb-6 sm:[&_p]:mb-8
                         ">
                             <PortableText value={post.body} components={bodyComponents} />
                         </div>

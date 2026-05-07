@@ -22,9 +22,14 @@ interface ZohoHeroProps {
 export const ZohoHero: React.FC<ZohoHeroProps> = () => {
   const [isMounted, setIsMounted] = React.useState(false);
   const [activeIndex, setActiveIndex] = React.useState(0);
+  const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
     setIsMounted(true);
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   return (
@@ -117,22 +122,26 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                       <div className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[80%] rounded-full bg-gradient-to-tl from-rose-100/40 via-fuchsia-50/30 to-transparent blur-[140px]" />
 
 
-                      <motion.div
-                        animate={{
-                          y: [0, -40, 0],
-                          opacity: [0.3, 0.6, 0.3]
-                        }}
-                        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute top-[10%] right-[10%] w-3 h-3 rounded-full bg-red-400 blur-[2px]"
-                      />
-                      <motion.div
-                        animate={{
-                          y: [0, 40, 0],
-                          opacity: [0.2, 0.5, 0.2]
-                        }}
-                        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                        className="absolute bottom-[10%] left-[10%] w-4 h-4 rounded-full bg-pink-400 blur-[2px]"
-                      />
+                      {!isMobile && (
+                        <>
+                          <motion.div
+                            animate={{
+                              y: [0, -40, 0],
+                              opacity: [0.3, 0.6, 0.3]
+                            }}
+                            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                            className="absolute top-[10%] right-[10%] w-3 h-3 rounded-full bg-red-400 blur-[2px]"
+                          />
+                          <motion.div
+                            animate={{
+                              y: [0, 40, 0],
+                              opacity: [0.2, 0.5, 0.2]
+                            }}
+                            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                            className="absolute bottom-[10%] left-[10%] w-4 h-4 rounded-full bg-pink-400 blur-[2px]"
+                          />
+                        </>
+                      )}
                     </div>
                   }
                   title="Run Your Entire Business Seamlessly With 50+ Integrated Cloud Apps"
@@ -346,22 +355,26 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                         </defs>
                       </svg>
 
-                      <motion.div
-                        animate={{
-                          y: [0, -30, 0],
-                          opacity: [0.4, 0.8, 0.4]
-                        }}
-                        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute top-[20%] right-[15%] w-3 h-3 rounded-full bg-red-500 blur-[2px]"
-                      />
-                      <motion.div
-                        animate={{
-                          y: [0, 30, 0],
-                          opacity: [0.3, 0.6, 0.3]
-                        }}
-                        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                        className="absolute bottom-[30%] left-[20%] w-4 h-4 rounded-full bg-pink-500 blur-[2px]"
-                      />
+                      {!isMobile && (
+                        <>
+                          <motion.div
+                            animate={{
+                              y: [0, -30, 0],
+                              opacity: [0.4, 0.8, 0.4]
+                            }}
+                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                            className="absolute top-[20%] right-[15%] w-3 h-3 rounded-full bg-red-500 blur-[2px]"
+                          />
+                          <motion.div
+                            animate={{
+                              y: [0, 30, 0],
+                              opacity: [0.3, 0.6, 0.3]
+                            }}
+                            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                            className="absolute bottom-[30%] left-[20%] w-4 h-4 rounded-full bg-pink-500 blur-[2px]"
+                          />
+                        </>
+                      )}
                     </div>
                   }
                   title="Accelerate Your Growth with Expert Zoho Managed Services"

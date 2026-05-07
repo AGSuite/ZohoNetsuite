@@ -221,12 +221,12 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
 
   return (
     <>
-      <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
-      <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="afterInteractive" />
+      <Script src="https://www.google.com/recaptcha/api.js" strategy="lazyOnload" />
+      <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="lazyOnload" />
       <Script
         id={`wf_anal_${platform}`}
         src={`https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=${crmConfig.rid}&tw=${crmConfig.tw}`}
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
       <iframe name={`zoho_iframe_${platform}`} style={{ display: 'none' }}></iframe>
 

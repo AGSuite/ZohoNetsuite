@@ -45,6 +45,15 @@ const OUTER_LABELS = [
 ];
 
 export const NSCircularDesign = () => {
+    const [isMobile, setIsMobile] = React.useState(false);
+
+    React.useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <div className="relative w-full h-[450px] xl:h-[550px] flex items-center justify-center overflow-visible select-none py-6">
             {/* Main Container - Compact to prevent icon clipping */}
@@ -267,7 +276,7 @@ export const NSCircularDesign = () => {
                         return (
                             <motion.div
                                 key={idx}
-                                animate={{ rotate: 360 }}
+                                animate={isMobile ? { rotate: 0 } : { rotate: 360 }}
                                 transition={{
                                     duration: 60,
                                     repeat: Infinity,
@@ -283,7 +292,7 @@ export const NSCircularDesign = () => {
                                     }}
                                 >
                                     <motion.div
-                                        animate={{ rotate: -360 }}
+                                        animate={isMobile ? { rotate: 0 } : { rotate: -360 }}
                                         transition={{
                                             duration: 60,
                                             repeat: Infinity,

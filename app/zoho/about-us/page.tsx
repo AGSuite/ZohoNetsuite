@@ -615,6 +615,14 @@ export default function AboutClient() {
   const [videoSrc, setVideoSrc] = useState('/images/videos/zohoaboutus.mp4');
   const heroRef = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -667,11 +675,11 @@ export default function AboutClient() {
         {/* Background Video Container */}
         <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center translate-z-0">
           <motion.div
-            style={{
+            style={!isMobile ? {
               scale,
               borderRadius,
               padding,
-            }}
+            } : {}}
             className="relative w-full h-full overflow-hidden z-0 flex items-center justify-center bg-white"
           >
             <video

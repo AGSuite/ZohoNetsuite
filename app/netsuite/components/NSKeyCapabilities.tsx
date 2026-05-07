@@ -61,9 +61,14 @@ const capabilities: Capability[] = [
 const NSKeyCapabilities = () => {
     const [activeTab, setActiveTab] = useState(capabilities[0].id);
     const [isMounted, setIsMounted] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         setIsMounted(true);
+        const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
     const activeIndex = capabilities.findIndex(cap => cap.id === activeTab);
@@ -292,7 +297,7 @@ const NSKeyCapabilities = () => {
             >
                 {/* Background particles */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    {isMounted && [...Array(15)].map((_, i) => (
+                    {isMounted && !isMobile && [...Array(15)].map((_, i) => (
                         <motion.div
                             key={i}
                             className="absolute bg-white rounded-full"
@@ -323,7 +328,7 @@ const NSKeyCapabilities = () => {
                         <p className="text-white/90 text-base md:text-xl font-medium">Join 43,000+ businesses running on the world&#39;s #1 Cloud ERP.</p>
                     </div>
                     <Link
-                        href="/netsuite/contact"
+                        href="#contact-form"
                         className="relative z-10 px-8 md:px-10 py-4 md:py-5 bg-white text-[#002a8c] hover:bg-blue-50 rounded-xl font-bold transition-all shadow-xl flex items-center gap-3 group text-lg md:text-xl whitespace-nowrap active:scale-95"
                     >
                         Get Started <ChevronRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />

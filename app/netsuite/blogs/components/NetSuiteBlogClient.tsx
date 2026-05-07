@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, User, Tag, Clock, ChevronRight, ArrowLeft } from 'lucide-react';
@@ -17,6 +17,17 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
         target: containerRef,
         offset: ["start end", "start start"]
     });
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const bodyComponents = {
         types: {
@@ -107,7 +118,7 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/15 rounded-full blur-[120px] pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
 
-                <div className="relative z-10 max-w-6xl mx-auto px-6 pt-36 pb-48 flex flex-col items-center text-center">
+                <div className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-32 sm:pt-36 sm:pb-48 flex flex-col items-center text-center">
                     <nav className="flex items-center justify-center gap-2 text-[10px] font-medium uppercase tracking-[0.25em] mb-8">
                         <Link href="/netsuite" className="text-blue-400 hover:text-white transition-colors">Home</Link>
                         <ChevronRight className="w-3 h-3 text-white/30" />
@@ -126,7 +137,7 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
                         </div>
                     )}
 
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight shadow-sm max-w-5xl leading-tight text-white pb-2 mb-6">
+                    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight shadow-sm max-w-5xl leading-tight text-white pb-2 mb-6">
                         {post.title}
                     </h1>
 
@@ -149,8 +160,8 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
 
             {/* ─── BANNER IMAGE (centered, half overlapping) ─── */}
             {featuredImageUrl && (
-                <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-16 -mt-36 mb-16">
-                    <div className="w-full bg-slate-200 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white aspect-[16/7.5]">
+                <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-16 -mt-24 sm:-mt-36 mb-12 sm:mb-16">
+                    <div className="w-full bg-slate-200 rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white aspect-[16/9] sm:aspect-[16/7.5]">
                         <img
                             src={featuredImageUrl}
                             alt={post.title}
@@ -164,14 +175,14 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
             {/* ─── CONTENT WRAPPER WITH SCROLL ANIMATION ─── */}
             <div ref={containerRef} className="relative z-10 w-full">
                 <motion.div
-                    style={{
+                    style={!isMobile ? {
                         borderRadius: cardRadius,
                         margin: cardMargin,
                         scale: cardScale,
-                    }}
+                    } : {}}
                     className="bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden relative"
                 >
-                    <div className="max-w-5xl mx-auto px-6 py-16">
+                    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
                         {/* ── EXCERPT HIGHLIGHT BOX ── */}
                         {post.excerpt && (
                             <div className="relative mb-16 rounded-3xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #eff6ff, #dbeafe, #e0f2fe)' }}>
@@ -189,21 +200,21 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
 
                         {/* ── MAIN BODY CONTENT ── */}
                         <div className="prose max-w-none
-                                [&_h1]:text-5xl [&_h1]:font-black [&_h1]:tracking-tight [&_h1]:leading-tight [&_h1]:mb-8 [&_h1]:mt-16
+                                [&_h1]:text-3xl sm:[&_h1]:text-5xl [&_h1]:font-black [&_h1]:tracking-tight [&_h1]:leading-tight [&_h1]:mb-6 sm:[&_h1]:mb-8 [&_h1]:mt-10 sm:[&_h1]:mt-16
                                 [&_h1]:bg-gradient-to-r [&_h1]:from-[#000814] [&_h1]:via-[#001f5c] [&_h1]:to-[#1e40af]
                                 [&_h1]:bg-clip-text [&_h1]:text-transparent
     
-                                [&_h2]:text-4xl [&_h2]:font-black [&_h2]:tracking-tight [&_h2]:leading-tight [&_h2]:mb-6 [&_h2]:mt-16
+                                [&_h2]:text-2xl sm:[&_h2]:text-4xl [&_h2]:font-black [&_h2]:tracking-tight [&_h2]:leading-tight [&_h2]:mb-4 sm:[&_h2]:mb-6 [&_h2]:mt-10 sm:[&_h2]:mt-16
                                 [&_h2]:bg-gradient-to-r [&_h2]:from-[#000814] [&_h2]:via-[#001f5c] [&_h2]:to-[#1e40af]
                                 [&_h2]:bg-clip-text [&_h2]:text-transparent
     
-                                [&_h3]:text-2xl [&_h3]:font-black [&_h3]:text-[#001f5c] [&_h3]:mb-4 [&_h3]:mt-12
+                                [&_h3]:text-xl sm:[&_h3]:text-2xl [&_h3]:font-black [&_h3]:text-[#001f5c] [&_h3]:mb-3 sm:[&_h3]:mb-4 [&_h3]:mt-8 sm:[&_h3]:mt-12
                                 [&_h3]:uppercase [&_h3]:tracking-[0.1em]
     
-                                [&_h4]:text-base [&_h4]:font-black [&_h4]:text-blue-600 [&_h4]:mb-3 [&_h4]:mt-8
+                                [&_h4]:text-sm sm:[&_h4]:text-base [&_h4]:font-black [&_h4]:text-blue-600 [&_h4]:mb-2 sm:[&_h4]:mb-3 [&_h4]:mt-6 sm:[&_h4]:mt-8
                                 [&_h4]:uppercase [&_h4]:tracking-[0.2em]
     
-                                [&_p]:text-slate-700 [&_p]:text-lg [&_p]:leading-[1.9] [&_p]:mb-8 [&_p]:font-medium
+                                [&_p]:text-slate-700 [&_p]:text-base sm:[&_p]:text-lg [&_p]:leading-[1.7] sm:[&_p]:leading-[1.9] [&_p]:mb-6 sm:[&_p]:mb-8 [&_p]:font-medium
     
                                 [&_strong]:text-slate-900 [&_strong]:font-black
                                 [&_em]:text-blue-700 [&_em]:font-semibold
@@ -211,19 +222,19 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
                                 [&_a]:text-blue-600 [&_a]:font-bold [&_a]:underline [&_a]:underline-offset-4
                                 [&_a:hover]:text-[#001f5c]
     
-                                [&_ul]:list-none [&_ul]:pl-0 [&_ul]:mb-10 [&_ul]:space-y-3
+                                [&_ul]:list-none [&_ul]:pl-0 [&_ul]:mb-8 sm:[&_ul]:mb-10 [&_ul]:space-y-3
                                 [&_ul_li]:flex [&_ul_li]:items-start [&_ul_li]:gap-3 [&_ul_li]:text-slate-700
-                                [&_ul_li]:text-lg [&_ul_li]:font-medium [&_ul_li]:leading-relaxed
+                                [&_ul_li]:text-base sm:[&_ul_li]:text-lg [&_ul_li]:font-medium [&_ul_li]:leading-relaxed
                                 [&_ul_li]:before:content-['→'] [&_ul_li]:before:text-blue-500
                                 [&_ul_li]:before:font-black [&_ul_li]:before:mt-0.5
     
-                                [&_ol]:list-decimal [&_ol]:pl-8 [&_ol]:mb-10 [&_ol]:space-y-3
-                                [&_ol_li]:text-slate-700 [&_ol_li]:text-lg [&_ol_li]:font-medium [&_ol_li]:leading-relaxed
+                                [&_ol]:list-decimal [&_ol]:pl-6 sm:[&_ol]:pl-8 [&_ol]:mb-8 sm:[&_ol]:mb-10 [&_ol]:space-y-3
+                                [&_ol_li]:text-slate-700 [&_ol_li]:text-base sm:[&_ol_li]:text-lg [&_ol_li]:font-medium [&_ol_li]:leading-relaxed
     
-                                [&_blockquote]:not-italic [&_blockquote]:my-12 [&_blockquote]:py-8 [&_blockquote]:px-10
-                                [&_blockquote]:rounded-3xl [&_blockquote]:border-0
+                                [&_blockquote]:not-italic [&_blockquote]:my-8 sm:[&_blockquote]:my-12 [&_blockquote]:py-6 sm:[&_blockquote]:py-8 [&_blockquote]:px-6 sm:[&_blockquote]:px-10
+                                [&_blockquote]:rounded-2xl sm:[&_blockquote]:rounded-3xl [&_blockquote]:border-0
                                 [&_blockquote]:bg-gradient-to-br [&_blockquote]:from-blue-900 [&_blockquote]:to-[#001535]
-                                [&_blockquote_p]:text-white [&_blockquote_p]:text-xl [&_blockquote_p]:font-bold
+                                [&_blockquote_p]:text-white [&_blockquote_p]:text-lg sm:[&_blockquote_p]:text-xl [&_blockquote_p]:font-bold
                                 [&_blockquote_p]:leading-relaxed [&_blockquote_p]:mb-0
                         ">
                             <PortableText value={post.body} components={bodyComponents} />
