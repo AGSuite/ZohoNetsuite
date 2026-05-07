@@ -188,7 +188,7 @@ const NSCustomerSuccess = () => {
                                     </div>
 
                                     <div className="mt-4 pt-6 border-t border-gray-100">
-                                        <h4 className="text-lg font-bold text-blue-900">{activeCustomer.companyName}</h4>
+                                        <h3 className="text-lg font-bold text-blue-900">{activeCustomer.companyName}</h3>
                                         <p className="text-sm text-gray-500 font-medium uppercase tracking-wide mt-1">{activeCustomer.personRole}</p>
                                     </div>
                                 </div>

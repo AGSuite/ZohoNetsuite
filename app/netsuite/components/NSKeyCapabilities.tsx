@@ -164,7 +164,7 @@ const NSKeyCapabilities = () => {
                                 )}
                                 <span className={`text-lg md:text-xl transition-all duration-300 ${activeTab === capability.id
                                     ? 'text-slate-900 font-bold translate-x-3'
-                                    : 'text-slate-400 group-hover:text-slate-600 group-hover:translate-x-1'
+                                    : 'text-slate-500 group-hover:text-slate-700 group-hover:translate-x-1'
                                     }`}>
                                     {capability.title}
                                 </span>

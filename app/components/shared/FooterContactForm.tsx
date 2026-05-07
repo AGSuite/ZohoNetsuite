@@ -217,17 +217,35 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
     return () => window.removeEventListener('zohoFormSuccess', onSuccess);
   }, [platform, isNetSuite, router]);
 
+  const [loadScripts, setLoadScripts] = useState(false);
+  useEffect(() => {
+    if (!isClient) return;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setLoadScripts(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: '600px' });
+    const target = document.getElementById('contact-form');
+    if (target) observer.observe(target);
+    return () => observer.disconnect();
+  }, [isClient]);
+
   if (!isClient) return null;
 
   return (
     <>
-      <Script src="https://www.google.com/recaptcha/api.js" strategy="lazyOnload" />
-      <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="lazyOnload" />
-      <Script
-        id={`wf_anal_${platform}`}
-        src={`https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=${crmConfig.rid}&tw=${crmConfig.tw}`}
-        strategy="lazyOnload"
-      />
+      {loadScripts && (
+        <>
+          <Script src="https://www.google.com/recaptcha/api.js" strategy="lazyOnload" />
+          <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="lazyOnload" />
+          <Script
+            id={`wf_anal_${platform}`}
+            src={`https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=${crmConfig.rid}&tw=${crmConfig.tw}`}
+            strategy="lazyOnload"
+          />
+        </>
+      )}
       <iframe name={`zoho_iframe_${platform}`} style={{ display: 'none' }}></iframe>
 
       <section id="contact-form" className="relative py-24 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
@@ -390,8 +408,8 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                         <input type="text" name="Company" maxLength={200} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Company Inc." suppressHydrationWarning />
                       </div>
                       <div>
-                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Service <span className="text-red-500">*</span></label>
-                        <select name="LEADCF5" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
+                        <label htmlFor={`service_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Service <span className="text-red-500">*</span></label>
+                        <select id={`service_${platform}`} name="LEADCF5" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
                           <option value="-None-">-None-</option>
                           <option value="Licenses">Licenses</option>
                           <option value="AMC">AMC</option>
@@ -403,8 +421,8 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Annual Revenue <span className="text-red-500">*</span></label>
-                        <select name="LEADCF19" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
+                        <label htmlFor={`revenue_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Annual Revenue <span className="text-red-500">*</span></label>
+                        <select id={`revenue_${platform}`} name="LEADCF19" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
                           <option value="-None-">-None-</option>
                           <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
                           <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
@@ -419,8 +437,8 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                         </select>
                       </div>
                       <div>
-                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How did you hear about us.</label>
-                        <select name="LEADCF127" onChange={() => (window as any).addAriaSelected409531000042578178?.()} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
+                        <label htmlFor={`hear_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How did you hear about us.</label>
+                        <select id={`hear_${platform}`} name="LEADCF127" onChange={() => (window as any).addAriaSelected409531000042578178?.()} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
                           <option value="-None-">-None-</option>
                           <option value="Email">Email</option>
                           <option value="Event">Event</option>

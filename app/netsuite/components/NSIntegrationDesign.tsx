@@ -34,6 +34,7 @@ const NSIntegrationDesign = () => {
                                     fill
                                     className="object-contain transition-transform duration-700 group-hover:scale-105"
                                     priority
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
                                 />
                             </div>
                         </div>
@@ -119,9 +120,9 @@ const NSIntegrationDesign = () => {
                                             <div className={`w-11 h-11 shrink-0 rounded-xl bg-linear-to-br ${info.color} flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-500`}>
                                                 {info.icon}
                                             </div>
-                                            <h4 className="text-lg font-black text-slate-900 group-hover:text-blue-600 transition-colors tracking-tight">
+                                            <h3 className="text-lg font-black text-slate-900 group-hover:text-blue-600 transition-colors tracking-tight">
                                                 {info.title}
-                                            </h4>
+                                            </h3>
                                         </div>
 
                                         <p className="text-lg text-slate-600 leading-relaxed font-medium">

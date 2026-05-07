@@ -76,7 +76,11 @@ export default function ZohoBlogsSlider({ blogs, variant = 'default' }: ZohoBlog
                                             {blog.mainImage ? (
                                                 <ZohoSanityImage
                                                     image={blog.mainImage}
- alt={blog.title} fill className="object-cover transition-transform duration-700 group-hover/item:scale-105" sizes="(max-width: 768px) 320px, 390px" />
+                                                    alt={blog.title}
+                                                    fill
+                                                    className="object-cover transition-transform duration-700 group-hover/item:scale-105"
+                                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                                />
                                             ) : (
                                                 <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-gray-100 to-blue-50">
                                                     <BookOpen className="w-10 h-10 text-gray-300" />
@@ -91,8 +95,8 @@ export default function ZohoBlogsSlider({ blogs, variant = 'default' }: ZohoBlog
                                         </div>
 
                                         <div className="flex flex-col flex-1 p-5 md:p-6 bg-white">
-                                            <div className="flex items-center gap-3 mb-3 text-[11px] text-gray-600 font-medium">
-                                                {blog.author && <span className="text-blue-600 font-bold uppercase tracking-widest text-[10px] border-l-2 border-blue-600 pl-2">{blog.author}</span>}
+                                            <div className="flex items-center gap-3 mb-3 text-[11px] text-slate-700 font-medium">
+                                                {blog.author && <span className="text-blue-700 font-bold uppercase tracking-widest text-[10px] border-l-2 border-blue-700 pl-2">{blog.author}</span>}
                                                 {blog.publishedAt && !isNaN(new Date(blog.publishedAt).getTime()) && (
                                                     <span className="flex items-center gap-1">
                                                         <Calendar className="w-3.5 h-3.5" />
@@ -101,7 +105,7 @@ export default function ZohoBlogsSlider({ blogs, variant = 'default' }: ZohoBlog
                                                 )}
                                             </div>
                                             <h3 className={`${variant === 'small' ? 'text-sm md:text-base font-bold' : 'text-base md:text-lg font-bold'} text-gray-900 group-hover/item:text-blue-600 transition-colors leading-snug line-clamp-2`}>{blog.title}</h3>
-                                            <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-5">{blog.excerpt || 'Read the full story to understand how Zoho can benefit your enterprise...'}</p>
+                                            <p className="text-slate-600 text-sm leading-relaxed line-clamp-3 mb-5">{blog.excerpt || 'Read the full story to understand how Zoho can benefit your enterprise...'}</p>
                                             <div className="mt-auto flex items-center font-bold text-gray-900 text-xs">Read Full Blog <ArrowRight className="w-3.5 h-3.5 ml-1" /></div>
                                         </div>
                                     </div>

@@ -49,3 +49,20 @@ h6 {
     opacity: 0;
   }
 }
+
+/* Improve Touch Targets for Swiper Pagination */
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  margin: 0 8px !important;
+  position: relative;
+}
+
+.swiper-pagination-bullet::after {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+}

@@ -158,7 +158,7 @@ const ZohoKeyCapabilities = () => {
                                 )}
                                 <span className={`text-lg md:text-xl transition-all duration-300 ${activeTab === capability.id
                                     ? 'text-rose-900 font-bold translate-x-3'
-                                    : 'text-slate-400 group-hover:text-rose-600 group-hover:translate-x-1'
+                                    : 'text-slate-500 group-hover:text-rose-700 group-hover:translate-x-1'
                                     }`}>
                                     {capability.title}
                                 </span>
