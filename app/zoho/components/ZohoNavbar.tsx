@@ -30,9 +30,16 @@ const ZohoNavbar = () => {
 
   useEffect(() => {
     setMounted(true);
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-      setScrolled(window.scrollY > 10);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 10);
+          setScrolled(window.scrollY > 10);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 1024);
@@ -88,7 +95,7 @@ const ZohoNavbar = () => {
             width={120}
             height={40}
             priority
-            className="w-auto h-auto"
+            className="w-[120px] h-[40px] object-contain"
           />
         </Link>
 

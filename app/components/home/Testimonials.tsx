@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface TestimonialItem {
   quote: string;
@@ -36,12 +37,15 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
               </p>
               <div className="flex items-center gap-4">
                 {testimonial.image && (
-                   // eslint-disable-next-line @next/next/no-img-element
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.author} 
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                    <Image
+                      src={testimonial.image} 
+                      alt={testimonial.author} 
+                      fill
+                      className="object-cover"
+                      sizes="48px"
+                    />
+                  </div>
                 )}
                 <div>
                   <div className="font-semibold text-gray-900">{testimonial.author}</div>

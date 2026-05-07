@@ -21,7 +21,7 @@ const NSKeyCapabilities = dynamic(() => import('./components/NSKeyCapabilities')
   loading: () => <div className="h-[1000px] lg:h-[700px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
 });
 const NSCaseStudiesSlider = dynamic(() => import('./components/NSCaseStudiesSlider').then(mod => mod.default), {
-  loading: () => <div className="h-[400px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
+  loading: () => <div className="h-[800px] lg:h-[500px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
 });
 const NSDashboardHero = dynamic(() => import('./components/NSDashboardHero').then(mod => mod.default), {
   loading: () => <div className="h-[500px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
@@ -31,22 +31,22 @@ const NSIntegrationDesign = dynamic(() => import('./components/NSIntegrationDesi
 });
 
 const NSIndustries = dynamic(() => import('./components/NSIndustries').then(mod => mod.default), {
-  loading: () => <div className="h-[400px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
+  loading: () => <div className="h-[1400px] lg:h-[600px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
 });
 const Testimonials = dynamic(() => import('../components/home/Testimonials').then(mod => mod.Testimonials), {
-  loading: () => <div className="h-[400px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
+  loading: () => <div className="h-[1000px] lg:h-[600px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
 });
 const FAQ = dynamic(() => import('../components/home/FAQ').then(mod => mod.FAQ), {
-  loading: () => <div className="h-[300px] w-full bg-slate-50/50 animate-pulse rounded-[2rem] mx-auto max-w-7xl my-16" />
+  loading: () => <div className="h-[1000px] lg:h-[600px] w-full bg-slate-50/50 animate-pulse rounded-[2rem] mx-auto max-w-7xl my-16" />
 });
 const NSServices = dynamic(() => import('./components/NSServices').then(mod => mod.default), {
-  loading: () => <div className="h-[600px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
+  loading: () => <div className="h-[2200px] lg:h-[800px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
 });
 const NetsuiteCTA = dynamic(() => import('./components/NetsuiteCTA').then(mod => mod.default), {
   loading: () => <div className="h-[300px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
 });
 const NSWhyChooseUs = dynamic(() => import('./components/NSWhyChooseUs').then(mod => mod.default), {
-  loading: () => <div className="h-[500px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
+  loading: () => <div className="h-[1500px] lg:h-[700px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
 });
 const NSBlogsSlider = dynamic(() => import('./components/NSBlogsSlider').then(mod => mod.default), {
   loading: () => <div className="h-[400px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
@@ -55,7 +55,7 @@ const NSTestimonialSection = dynamic(() => import('./components/NSTestimonialSec
   loading: () => <div className="h-[400px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
 });
 const NSCustomerSuccess = dynamic(() => import('./components/NSCustomerSuccess').then(mod => mod.default), {
-  loading: () => <div className="h-[500px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
+  loading: () => <div className="h-[1200px] lg:h-[600px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
 });
 const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm').then(mod => mod.default), {
   loading: () => <div className="h-[1200px] lg:h-[800px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />

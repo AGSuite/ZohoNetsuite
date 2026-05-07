@@ -92,8 +92,10 @@ export const NSHero: React.FC<NSHeroProps> = () => {
               loop
               autoplay={{ delay: 4500, disableOnInteraction: false }}
               pagination={{ clickable: true }}
-              speed={900}
+              speed={700}
               onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+              watchSlidesProgress={true}
+              touchStartPreventDefault={false}
             >
               <SwiperSlide>
                 <HeroSlide
