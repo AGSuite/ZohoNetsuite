@@ -15,10 +15,10 @@ export const metadata: Metadata = {
 };
 
 const NSMetrics = dynamic(() => import('./components/NSMetrics').then(mod => mod.default), {
-  loading: () => <div className="h-[500px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
+  loading: () => <div className="h-[950px] lg:h-[600px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
 });
 const NSKeyCapabilities = dynamic(() => import('./components/NSKeyCapabilities').then(mod => mod.default), {
-  loading: () => <div className="h-[600px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
+  loading: () => <div className="h-[1000px] lg:h-[700px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
 });
 const NSCaseStudiesSlider = dynamic(() => import('./components/NSCaseStudiesSlider').then(mod => mod.default), {
   loading: () => <div className="h-[400px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
@@ -58,7 +58,7 @@ const NSCustomerSuccess = dynamic(() => import('./components/NSCustomerSuccess')
   loading: () => <div className="h-[500px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
 });
 const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm').then(mod => mod.default), {
-  loading: () => <div className="h-[600px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
+  loading: () => <div className="h-[1200px] lg:h-[800px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
 });
 
 
