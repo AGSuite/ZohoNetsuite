@@ -24,13 +24,42 @@ function Counter({ value }: { value: number }) {
   return <span ref={ref}><motion.span>{display}</motion.span></span>;
 }
 
+type ParticleDatum = { width: number; height: number; top: string; left: string; duration: number; delay: number };
+
 export default function NetSuiteSolutionsClient() {
   const [isMobile, setIsMobile] = useState(false);
+  const [introParticles, setIntroParticles] = useState<ParticleDatum[]>([]);
+  const [sectionStars, setSectionStars] = useState<ParticleDatum[]>([]);
+
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1024);
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    // Generate particle data client-side only to avoid SSR hydration mismatch
+    setIntroParticles(
+      Array.from({ length: 20 }, () => ({
+        width: Math.random() * 4 + 2,
+        height: Math.random() * 4 + 2,
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+        duration: Math.random() * 5 + 5,
+        delay: Math.random() * 5,
+      }))
+    );
+    setSectionStars(
+      Array.from({ length: 50 }, () => ({
+        width: Math.random() * 2 + 1,
+        height: Math.random() * 2 + 1,
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+        duration: Math.random() * 3 + 2,
+        delay: Math.random() * 5,
+      }))
+    );
   }, []);
 
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
@@ -328,27 +357,56 @@ export default function NetSuiteSolutionsClient() {
       </section>
 
       {/* ─────────────── INTRO SECTION ─────────────── */}
-      <section ref={introRef} className="py-10 bg-gray-100 overflow-hidden relative">
+      <section ref={introRef} className="pb-20 pt-0 bg-[#000d1a] overflow-hidden relative">
+        {/* Background Designs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2" />
+          {/* Particles - client-side only to avoid SSR mismatch */}
+          {introParticles.map((p, i) => (
+            <motion.div
+              key={i}
+              className="absolute bg-white/10 rounded-full"
+              style={{ width: p.width, height: p.height, top: p.top, left: p.left }}
+              animate={!isMobile ? { y: [0, -30, 0], opacity: [0.1, 0.3, 0.1] } : { opacity: 0.1 }}
+              transition={{ duration: p.duration, repeat: Infinity, ease: "easeInOut", delay: p.delay }}
+            />
+          ))}
+        </div>
+
         <motion.div
           style={!isMobile ? {
             borderRadius: introRadius,
             margin: introMargin,
             scale: introScale,
           } : {}}
-          className="bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 overflow-hidden"
+          className="relative z-10 bg-gradient-to-br from-blue-50 via-red-50 to-purple-50 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] border border-white/20 transition-all duration-500 overflow-hidden"
         >
           <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-24">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="flex items-center justify-center rounded-2xl" style={{ minHeight: 340 }}>
-                <Image src="/images/lap/group1.webp" alt="Oracle NetSuite Platform" width={560} height={380} className="w-full h-auto rounded-xl object-contain" />
+              <motion.div
+                initial={{ opacity: 0, scale: isMobile ? 1 : 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="flex items-center justify-center rounded-2xl"
+                style={{ minHeight: 340 }}
+              >
+                <Image src="/images/lap/group1.webp" alt="Oracle NetSuite Platform" width={560} height={380} className="w-full h-auto rounded-xl object-contain border-2 border-indigo-100 shadow-xl" priority />
               </motion.div>
-              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0, x: isMobile ? 0 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="space-y-6"
+              >
                 <ScrollFloat
                   containerClassName="text-3xl md:text-4xl lg:text-4xl font-medium leading-[1.25]"
                   fromColor="#111827"
                   toColor="#2563eb"
                 >
-                  The #1 Cloud ERP for Growing   Businesses
+                  The #1 Cloud ERP for Growing Businesses
                 </ScrollFloat>
                 <p className="text-lg text-gray-600 leading-relaxed">Oracle NetSuite is the world&apos;s most deployed cloud Enterprise Resource Planning (ERP) solution. Built from the ground up for the cloud, it provides a single, unified platform to manage every aspect of your business — from financials and CRM to inventory and e-commerce.</p>
                 <p className="text-lg text-gray-600 leading-relaxed">Every solution is purpose-built for cloud — running inside your NetSuite account with real-time data, no silos, and unified reporting across every department.</p>
@@ -364,20 +422,57 @@ export default function NetSuiteSolutionsClient() {
       </section>
 
       {/* ─────────────── ALL SOLUTIONS — ALTERNATING ROWS ─────────────── */}
-      <section id="solutions" className="py-18 relative overflow-hidden bg-gray-100">
-        {/* Decorative Background Orbs */}
-        <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-100/40 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-        <div className="absolute bottom-1/3 right-0 w-[600px] h-[600px] bg-indigo-100/40 rounded-full blur-[100px] translate-x-1/2 pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-cyan-100/30 rounded-full blur-[80px] translate-y-1/2 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section id="solutions" className="py-12 lg:py-24 relative overflow-hidden bg-gradient-to-br from-[#000d1a] via-[#0f0720] to-[#1a0505]">
+        {/* Background Designs - Cosmic/Nebula Style */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.1)_0%,transparent_50%)]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(147,51,234,0.1)_0%,transparent_50%)]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(220,38,38,0.05)_0%,transparent_50%)]" />
+
+          {/* Moving Orbs */}
+          {!isMobile && (
+            <>
+              <motion.div
+                animate={{ x: [0, 100, 0], y: [0, 50, 0] }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px]"
+              />
+              <motion.div
+                animate={{ x: [0, -150, 0], y: [0, 100, 0] }}
+                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[130px]"
+              />
+              <motion.div
+                animate={{ x: [0, 50, 0], y: [0, -100, 0] }}
+                transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+                className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[110px]"
+              />
+            </>
+          )}
+
+          {/* Twinkling Stars - client-side only to avoid SSR mismatch */}
+          {sectionStars.map((s, i) => (
+            <motion.div
+              key={i}
+              className="absolute bg-white rounded-full"
+              style={{ width: s.width, height: s.height, top: s.top, left: s.left }}
+              animate={!isMobile ? { opacity: [0.2, 0.8, 0.2], scale: [1, 1.5, 1] } : { opacity: 0.4 }}
+              transition={{ duration: s.duration, repeat: Infinity, ease: "easeInOut", delay: s.delay }}
+            />
+          ))}
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 0 }}
+            initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-600 leading-tight">All NetSuite Solutions</h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6 font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-blue-400 leading-tight">
+              All NetSuite Solutions
+            </h2>
+            <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
               Comprehensive solutions to power every aspect of your business operations — all on one unified cloud platform.
             </p>
           </motion.div>
@@ -391,28 +486,26 @@ export default function NetSuiteSolutionsClient() {
               margin: cardMargin,
               scale: cardScale,
             } : {}}
-            className="bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden relative"
+            className="bg-gradient-to-br from-blue-50 via-red-50 to-purple-50 shadow-[0_35px_80px_-15px_rgba(0,0,0,0.4)] border border-white/20 overflow-hidden relative"
           >
             <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4">
               <div className="flex flex-col">
                 {solutions.map((solution, index) => {
                   const isEven = index % 2 === 0;
                   const currentGradient = imageBgGradients[index % imageBgGradients.length];
-                  // Extract a base color for accents
                   const accentColor = currentGradient.split(',')[2].trim().replace(')', '');
 
                   return (
                     <div
                       key={index}
-                      className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-16 lg:py-20 relative`}
+                      className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-10 lg:py-20 relative border-b border-indigo-100/50 last:border-0 lg:border-0`}
                     >
-                      {/* IMAGE SIDE */}
-                      <div className={`relative px-6 py-6 ${isEven ? 'order-1' : 'order-1 lg:order-2'}`}>
-                        {/* Background Card (Fast, First entrance) */}
+                      {/* IMAGE SIDE - Always first on mobile */}
+                      <div className={`relative px-4 py-4 lg:px-6 lg:py-6 order-1 ${isEven ? '' : 'lg:order-2'}`}>
                         <motion.div
-                          initial={{ opacity: 0, y: 60, scale: 0.95 }}
+                          initial={{ opacity: 0, y: isMobile ? 0 : 40, scale: isMobile ? 1 : 0.95 }}
                           whileInView={{ opacity: 0.8, y: 0, scale: 1 }}
-                          viewport={{ once: true, margin: "-80px" }}
+                          viewport={{ once: true, margin: "-100px" }}
                           transition={{ duration: 0.5, ease: "easeOut" }}
                           className="absolute inset-2 sm:inset-0 rounded-[2.5rem] shadow-lg"
                           style={{
@@ -421,12 +514,11 @@ export default function NetSuiteSolutionsClient() {
                           }}
                         />
 
-                        {/* Image Container (Slower, Delayed entrance) */}
                         <motion.div
-                          initial={{ opacity: 0, y: 60 }}
+                          initial={{ opacity: 0, y: isMobile ? 0 : 40 }}
                           whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true, margin: "-80px" }}
-                          transition={{ duration: 0.5, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                          transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
                           className="relative h-64 sm:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-2xl z-10 transform transition-transform group-hover:scale-[1.02]"
                         >
                           <Image
@@ -439,13 +531,13 @@ export default function NetSuiteSolutionsClient() {
                         </motion.div>
                       </div>
 
-                      {/* TEXT SIDE */}
+                      {/* TEXT SIDE - Always second on mobile */}
                       <motion.div
-                        initial={{ opacity: 0, x: isEven ? 80 : -80 }}
+                        initial={{ opacity: 0, x: isMobile ? 0 : (isEven ? 40 : -40) }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98], delay: 0.1 }}
-                        className={`relative z-10 ${isEven ? 'order-2' : 'order-2 lg:order-1'}`}
+                        transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+                        className={`relative z-10 order-2 ${isEven ? '' : 'lg:order-1'}`}
                       >
                         <span
                           className="inline-block text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 leading-tight shadow-sm"
@@ -470,14 +562,6 @@ export default function NetSuiteSolutionsClient() {
                           href={solution.link}
                           className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-bold text-white transition-all duration-300 group shadow-lg hover:shadow-xl hover:scale-105"
                           style={{ background: currentGradient }}
-                          onMouseEnter={e => {
-                            (e.currentTarget as HTMLAnchorElement).style.filter = 'brightness(1.1)';
-                            (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 10px 25px -5px ${accentColor}40`;
-                          }}
-                          onMouseLeave={e => {
-                            (e.currentTarget as HTMLAnchorElement).style.filter = 'none';
-                            (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
-                          }}
                         >
                           View Details
                           <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

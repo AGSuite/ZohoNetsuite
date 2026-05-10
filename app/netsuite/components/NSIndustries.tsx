@@ -162,9 +162,9 @@ const ServiceCard = ({
       </motion.div>
 
       {/* TITLE */}
-      <h2 className="text-lg font-semibold text-gray-900 leading-tight">
+      <h3 className="text-lg font-semibold text-gray-900 leading-tight">
         {title}
-      </h2>
+      </h3>
 
       {/* DESCRIPTION */}
       <p className="text-gray-600 text-sm leading-relaxed mt-2">

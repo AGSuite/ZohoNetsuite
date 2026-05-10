@@ -488,8 +488,8 @@ export default function DigitalTransformationPage() {
 
       {/* ── Sticky Nav ───────────────────────────────────────────────────── */}
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-wrap items-center justify-center gap-1 py-2 sm:py-4">
             {[
               { label: "What is NetSuite Digital Transformation?", href: "#what-is-dt" },
               { label: "Services", href: "#services" },

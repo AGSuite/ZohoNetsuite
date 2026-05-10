@@ -422,9 +422,9 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
       </section>
 
       {/* ── Sticky Nav ───────────────────────────────────────────────────── */}
-      <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm hidden md:block">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
+      <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-wrap items-center justify-center gap-1 py-2 sm:py-4">
             {[
               { label: `Why NetSuite for ${data.industry}?`, href: "#overview" },
               { label: "Challenges", href: "#challenges" },
@@ -604,9 +604,9 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                       <span className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-1 block">
                         Challenge
                       </span>
-                      <h4 className="text-white font-bold text-lg tracking-wide leading-tight">
+                      <h3 className="text-white font-bold text-lg tracking-wide leading-tight">
                         {item.title}
-                      </h4>
+                      </h3>
                     </div>
 
                     <div className="flex-1 flex flex-col px-5 relative bg-transparent">

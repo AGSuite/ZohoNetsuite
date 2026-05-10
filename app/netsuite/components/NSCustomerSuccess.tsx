@@ -100,6 +100,15 @@ const NSCustomerSuccess = () => {
 
     return (
         <section className="relative py-24 overflow-hidden font-['DM_Sans',sans-serif] bg-slate-50">
+            {/* Rainbow Glow Background (Exact Zoho Colors) */}
+            <div
+                className="absolute inset-x-0 top-20 h-64 mx-auto w-[90%] rounded-3xl opacity-[0.15] blur-3xl pointer-events-none"
+                style={{
+                    background:
+                        "linear-gradient(90deg, #ef4444 -0.55%, #f97316 22.86%, #facc15 48.36%, #fb923c 73.33%, #dc2626 99.34%)"
+                }}
+            />
+
             {/* Corner Gradient Accents */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-400/10 to-transparent blur-[120px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-indigo-400/10 to-transparent blur-[120px] pointer-events-none" />
@@ -208,18 +217,20 @@ const NSCustomerSuccess = () => {
                 </div>
 
                 {/* Dot Indicators */}
-                <div className="flex items-center justify-center gap-2 mt-8">
+                <div className="flex items-center justify-center gap-1 mt-8">
                     {customers.map((_, idx) => (
                         <button
                             suppressHydrationWarning
                             key={idx}
                             onClick={() => goTo(idx, idx > activeIdx ? 1 : -1)}
                             aria-label={`Go to testimonial ${idx + 1}`}
-                            className={`rounded-full transition-all duration-300 focus:outline-none ${idx === activeIdx
+                            className="w-12 h-12 flex items-center justify-center focus:outline-none"
+                        >
+                             <span className={`rounded-full transition-all duration-300 ${idx === activeIdx
                                 ? 'w-7 h-2.5 bg-blue-600'
                                 : 'w-2.5 h-2.5 bg-gray-300 hover:bg-blue-300'
-                                }`}
-                        />
+                                }`} />
+                        </button>
                     ))}
                 </div>
 

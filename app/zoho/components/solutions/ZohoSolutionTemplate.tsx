@@ -31,7 +31,7 @@ import {
 } from "lucide-react";
 import { FAQ } from "@/app/components/home/FAQ";
 import FooterContactForm from "@/app/components/shared/FooterContactForm";
-import ZohoServices from "../ZohoServices";
+import ZohoServicesCards from "../ZohoServicesCards";
 import { getZohoProductFaqs } from "@/app/zoho/data/zohoProductFaqs";
 
 function Counter({ value }: { value: number }) {
@@ -349,8 +349,8 @@ export default function ZohoSolutionTemplate({
 
       {/* ── Sticky Nav ───────────────────────────────────────────────────────── */}
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-wrap items-center justify-center gap-1 py-2 sm:py-4">
             {[
               { 
                 label: "What is " + (title.split('—')[0].trim().replace(/\bCRM\b/g, "Customer Relationship Management").replace(/\bERP\b/g, "Enterprise Resource Planning").replace(/\bFSM\b/g, "Field Service Management").replace(/\bBI\b/g, "Business Intelligence").replace(/\bIT\b/g, "Information Technology")) + "?", 
@@ -359,6 +359,7 @@ export default function ZohoSolutionTemplate({
               { label: "Modules", href: "#modules" },
               { label: "Benefits", href: "#benefits" },
               { label: "Services", href: "#services" },
+              { label: "Pricing", href: "#pricing" },
               { label: "FAQ", href: "#faq" },
             ].map((link) => (
               <a
@@ -632,10 +633,60 @@ export default function ZohoSolutionTemplate({
       </section>
 
       <div id="services" className="scroll-mt-36">
-        <ZohoServices />
+        <ZohoServicesCards />
       </div>
 
 
+
+      {/* ── Pricing Section ─────────────────────────────────────────────────── */}
+      <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="rounded-3xl overflow-hidden shadow-2xl"
+            style={{ backgroundColor: '#06303f' }}
+          >
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
+              {/* LEFT — Text + CTA */}
+              <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
+                <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
+                  How Much Does {title.split('—')[0].trim()} Cost?
+                </h2>
+                <div className="space-y-6 mb-8">
+                  <p className="text-white/75 text-base leading-relaxed">
+                    Zoho offers a transparent, pay-as-you-go pricing model that scales with your business. The total cost of ownership is dynamic and is primarily influenced by the specific plan edition selected, the total number of users, and any unique customization or integration requirements your business may have. We work closely with your team to audit your requirements and recommend the most cost-effective licensing structure to ensure maximum ROI for your organization.
+                  </p>
+                </div>
+                <div>
+                  <Link
+                    href="#contact-form"
+                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-yellow-400 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg"
+                  >
+                    {pricingInfo.ctaText} <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </div>
+
+              {/* RIGHT — Organic Blob Image */}
+              <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
+                <div className="absolute inset-0 bg-[#052838]" />
+                <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
+                <div className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#0a5060]" style={{ borderRadius: '45% 55% 50% 50% / 50% 50% 50% 50%' }} />
+                <div
+                  className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl"
+                  style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}
+                >
+                  <Image src="/images/people/laptopgirl.webp" alt={`${title} Pricing`} fill className="object-cover object-top" />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────────── */}
       <section id="faq" className="scroll-mt-36">

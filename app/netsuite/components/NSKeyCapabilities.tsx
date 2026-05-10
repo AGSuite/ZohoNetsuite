@@ -224,9 +224,9 @@ const NSKeyCapabilities = () => {
                         <button
                             onClick={goPrev}
                             aria-label="Previous capability"
-                            className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-100 hover:bg-[#2563eb] hover:text-white text-slate-600 flex items-center justify-center transition-all active:scale-95"
+                            className="flex-shrink-0 w-12 h-12 rounded-full bg-slate-100 hover:bg-[#2563eb] hover:text-white text-slate-600 flex items-center justify-center transition-all active:scale-95"
                         >
-                            <ChevronLeft className="w-5 h-5" />
+                            <ChevronLeft className="w-6 h-6" />
                         </button>
 
                         {/* Active title + dots */}
@@ -250,11 +250,13 @@ const NSKeyCapabilities = () => {
                                         key={cap.id}
                                         onClick={() => setActiveTab(cap.id)}
                                         aria-label={`Go to ${cap.title}`}
-                                        className={`rounded-full transition-all duration-300 ${activeTab === cap.id
+                                        className="w-12 h-12 flex items-center justify-center focus:outline-none"
+                                    >
+                                        <span className={`rounded-full transition-all duration-300 ${activeTab === cap.id
                                             ? 'w-5 h-2 bg-[#2563eb]'
                                             : 'w-2 h-2 bg-slate-300 hover:bg-slate-400'
-                                            }`}
-                                    />
+                                            }`} />
+                                    </button>
                                 ))}
                             </div>
                         </div>
@@ -263,9 +265,9 @@ const NSKeyCapabilities = () => {
                         <button
                             onClick={goNext}
                             aria-label="Next capability"
-                            className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-100 hover:bg-[#2563eb] hover:text-white text-slate-600 flex items-center justify-center transition-all active:scale-95"
+                            className="flex-shrink-0 w-12 h-12 rounded-full bg-slate-100 hover:bg-[#2563eb] hover:text-white text-slate-600 flex items-center justify-center transition-all active:scale-95"
                         >
-                            <ChevronRight className="w-5 h-5" />
+                            <ChevronRight className="w-6 h-6" />
                         </button>
                     </div>
 

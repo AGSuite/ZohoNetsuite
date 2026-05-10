@@ -263,13 +263,14 @@ export default function NetSuiteERPPage() {
 
       {/* Secondary Navigation Bar */}
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-wrap items-center justify-center gap-1 py-2 sm:py-4">
             {[
               { label: "What is NetSuite Enterprise Resource Planning?", href: "#what-is-erp" },
               { label: "Modules", href: "#modules" },
               { label: "Benefits", href: "#benefits" },
               { label: "Services", href: "#services" },
+              { label: "Pricing", href: "#pricing" },
               { label: "FAQ", href: "#faq" },
             ].map(link => (
               <a
@@ -605,6 +606,54 @@ export default function NetSuiteERPPage() {
       <NSServicesSection />
 
 
+
+      {/* ── Pricing Section ─────────────────────────────────────────────────── */}
+      <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="rounded-3xl overflow-hidden shadow-2xl"
+            style={{ backgroundColor: '#06303f' }}
+          >
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
+              {/* LEFT — Text + CTA */}
+              <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
+                <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
+                  How Much Does NetSuite ERP Cost?
+                </h2>
+                <p className="text-white/75 text-base leading-relaxed mb-8">
+                  NetSuite ERP pricing is modular and scales with your business. Your annual subscription typically consists of the core platform, specialized modules, and user access. As your business grows, you can easily activate additional modules or add users without any system migration. This flexible model ensures you only pay for what you need today while having the power to expand tomorrow.
+                </p>
+                <div>
+                  <Link
+                    href="#contact-form"
+                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-yellow-400 hover:text-gray-900 transition-all duration-200 shadow-md hover:shadow-lg"
+                  >
+                    Get a Tailored Quote <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </div>
+
+              {/* RIGHT — Organic Blob Image */}
+              <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
+                <div className="absolute inset-0 bg-[#052838]" />
+                <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
+                <div className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#0a5060]" style={{ borderRadius: '45% 55% 50% 50% / 50% 50% 50% 50%' }} />
+                <div
+                  className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl"
+                  style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}
+                >
+                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite ERP Pricing" fill className="object-cover object-top" />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <FAQ variant="netsuite" id="faq" />

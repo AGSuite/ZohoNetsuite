@@ -71,16 +71,16 @@ export const DesktopDropdown: React.FC<DesktopDropdownProps> = ({ item, setOpenD
                                         <Link
                                             key={i}
                                             href={link.href}
-                                            className="group flex items-start gap-3 rounded-xl hover:bg-gray-50 border border-transparent hover:border-gray-100 transition-all font-outfit p-4"
+                                            className="group flex items-start gap-2.5 rounded-xl hover:bg-gray-50 border border-transparent hover:border-gray-100 transition-all font-outfit p-3"
                                             onClick={() => setOpenDropdown(null)}
                                         >
-                                            <div className={`p-2 rounded-lg transition-colors flex-shrink-0 ${item.title === 'Services' ? 'bg-red-50 group-hover:bg-red-100' :
+                                            <div className={`p-1.5 rounded-lg transition-colors flex-shrink-0 ${item.title === 'Services' ? 'bg-red-50 group-hover:bg-red-100' :
                                                 item.title === 'Industries' ? 'bg-rose-50 group-hover:bg-rose-100' :
                                                     item.title === 'Insights' ? 'bg-pink-50 group-hover:bg-pink-100' :
                                                         item.title === 'Contact' ? 'bg-red-50 group-hover:bg-red-100' :
                                                             'bg-gray-100 group-hover:bg-gray-200'
                                                 }`}>
-                                                {link.icon && <link.icon className={`w-5 h-5 ${item.title === 'Services' ? 'text-red-600' :
+                                                {link.icon && <link.icon className={`w-4 h-4 ${item.title === 'Services' ? 'text-red-600' :
                                                     item.title === 'Industries' ? 'text-rose-600' :
                                                         item.title === 'Insights' ? 'text-pink-600' :
                                                             item.title === 'Contact' ? 'text-red-600' :
@@ -88,9 +88,9 @@ export const DesktopDropdown: React.FC<DesktopDropdownProps> = ({ item, setOpenD
                                                     }`} />}
                                             </div>
                                             <div className="flex-1 min-w-0">
-                                                <div className="text-[14px] font-bold text-gray-900 group-hover:text-red-600 transition-colors mb-1">{link.label}</div>
+                                                <div className="text-[14px] font-bold text-gray-900 group-hover:text-red-600 transition-colors mb-0.5">{link.label}</div>
                                                 {link.description && (
-                                                    <p className="text-[12px] text-gray-500 leading-relaxed line-clamp-1">{link.description}</p>
+                                                    <p className="text-[11px] text-gray-500 leading-relaxed line-clamp-1">{link.description}</p>
                                                 )}
                                             </div>
                                         </Link>
@@ -129,6 +129,19 @@ export const DesktopDropdown: React.FC<DesktopDropdownProps> = ({ item, setOpenD
             </div>
         </div>
     );
+};
+
+const COLOR_MAP: Record<string, { bg: string, border: string, text: string, hover: string, iconBg: string, iconText: string }> = {
+    'Sales': { bg: 'from-blue-50/50 to-indigo-50/20', border: 'border-blue-100', text: 'text-blue-950', hover: 'group-hover/link:bg-blue-600', iconBg: 'bg-blue-50', iconText: 'text-blue-600' },
+    'HR': { bg: 'from-purple-50/50 to-violet-50/20', border: 'border-purple-100', text: 'text-purple-950', hover: 'group-hover/link:bg-purple-600', iconBg: 'bg-purple-50', iconText: 'text-purple-600' },
+    'Finance': { bg: 'from-emerald-50/50 to-green-50/20', border: 'border-emerald-100', text: 'text-emerald-950', hover: 'group-hover/link:bg-emerald-600', iconBg: 'bg-emerald-50', iconText: 'text-emerald-600' },
+    'Projects': { bg: 'from-amber-50/50 to-orange-50/20', border: 'border-amber-100', text: 'text-amber-950', hover: 'group-hover/link:bg-amber-600', iconBg: 'bg-amber-50', iconText: 'text-amber-600' },
+    'Service': { bg: 'from-cyan-50/50 to-teal-50/20', border: 'border-cyan-100', text: 'text-cyan-950', hover: 'group-hover/link:bg-cyan-600', iconBg: 'bg-cyan-50', iconText: 'text-cyan-600' },
+    'Collaboration': { bg: 'from-sky-50/50 to-blue-50/20', border: 'border-sky-100', text: 'text-sky-950', hover: 'group-hover/link:bg-sky-600', iconBg: 'bg-sky-50', iconText: 'text-sky-600' },
+    'Marketing': { bg: 'from-rose-50/50 to-pink-50/20', border: 'border-rose-100', text: 'text-rose-950', hover: 'group-hover/link:bg-rose-600', iconBg: 'bg-rose-50', iconText: 'text-rose-600' },
+    'Analytics': { bg: 'from-violet-50/50 to-fuchsia-50/20', border: 'border-violet-100', text: 'text-violet-950', hover: 'group-hover/link:bg-violet-600', iconBg: 'bg-violet-50', iconText: 'text-violet-600' },
+    'Developer & IT': { bg: 'from-slate-50/50 to-gray-50/20', border: 'border-slate-200', text: 'text-slate-950', hover: 'group-hover/link:bg-slate-600', iconBg: 'bg-slate-50', iconText: 'text-slate-600' },
+    'Suites': { bg: 'from-orange-50/50 to-red-50/20', border: 'border-orange-100', text: 'text-orange-950', hover: 'group-hover/link:bg-orange-600', iconBg: 'bg-orange-50', iconText: 'text-orange-600' },
 };
 
 export const DesktopMegaMenu: React.FC<any> = ({ item, openMegaMenu, setOpenMegaMenu, setOpenDropdown }) => {
@@ -179,22 +192,21 @@ export const DesktopMegaMenu: React.FC<any> = ({ item, openMegaMenu, setOpenMega
                     {/* Content Grid */}
                     <div className={`flex-1 grid gap-4 auto-rows-max grid-cols-4 lg:grid-cols-5`}>
                         {item.children.find((c: any) => c.label === openMegaMenu)?.megaMenu?.categories?.map((cat: any, ci: number) => {
+                            const colors = COLOR_MAP[cat.title] || COLOR_MAP['Sales'];
                             const isHighlighted = ci === 0;
 
                             return (
                                 <div
                                     key={ci}
-                                    className={`group/cat relative overflow-hidden bg-linear-to-br from-white via-red-50/40 to-rose-50/20 rounded-xl border transition-all duration-500 shadow-sm hover:shadow-xl hover:scale-[1.01]
-                    ${isHighlighted ? 'border-red-200 border-2' : 'border-red-50 border'}
-                    p-4
+                                    className={`group/cat relative overflow-hidden bg-linear-to-br ${colors.bg} rounded-xl border transition-all duration-500 shadow-sm hover:shadow-xl hover:scale-[1.01]
+                    ${isHighlighted ? `${colors.border} border-2` : `${colors.border} border`}
+                    p-2.5
                   `}
                                 >
-                                    <div className="absolute top-0 right-0 w-24 h-24 bg-red-400/5 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover/cat:scale-150 duration-700 pointer-events-none" />
-                                    <h4 className={`relative z-10 font-bold text-red-950 uppercase mb-4 border-b border-red-100 pb-2 text-[13px] whitespace-nowrap overflow-hidden text-ellipsis`}>{cat.title}</h4>
-                                    <div className="relative z-10 space-y-4">
+                                    <div className={`absolute top-0 right-0 w-24 h-24 ${colors.iconBg}/10 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover/cat:scale-150 duration-700 pointer-events-none`} />
+                                    <h4 className={`relative z-10 font-bold ${colors.text} uppercase mb-3.5 border-b ${colors.border} pb-1.5 text-[12px] whitespace-nowrap overflow-hidden text-ellipsis tracking-wider`}>{cat.title}</h4>
+                                    <div className="relative z-10 space-y-2.5">
                                         {cat.items.map((sub: any, si: number) => {
-                                            const brandColor = 'text-red-600';
-
                                             return (
                                                 <Link
                                                     key={si}
@@ -202,10 +214,12 @@ export const DesktopMegaMenu: React.FC<any> = ({ item, openMegaMenu, setOpenMega
                                                     className="group/link block"
                                                     onClick={() => setOpenDropdown(null)}
                                                 >
-                                                    <div className="flex items-start gap-5">
-                                                        <div className={`flex-1 flex items-center gap-2`}>
-                                                            <div className="w-1.5 h-1.5 rounded-full bg-red-300 group-hover/link:bg-red-600 transition-all shrink-0" />
-                                                            <div className={`font-medium group-hover/link:translate-x-1 transition-all leading-snug text-[12px] text-red-900 group-hover/link:text-red-600`}>{sub.label}</div>
+                                                    <div className="flex items-center gap-2">
+                                                        <div className={`p-1.5 rounded-lg ${colors.iconBg} ${colors.hover} transition-all shrink-0 shadow-sm`}>
+                                                            {sub.icon && <sub.icon className={`w-4 h-4 ${colors.iconText} group-hover/link:text-white transition-colors`} />}
+                                                        </div>
+                                                        <div className={`font-bold group-hover/link:translate-x-1 transition-all leading-tight text-[14px] text-gray-900 group-hover/link:${colors.iconText}`}>
+                                                            {sub.label}
                                                         </div>
                                                     </div>
                                                 </Link>

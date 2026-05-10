@@ -54,9 +54,9 @@ export default function Home() {
           <Image
             src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
             alt="Oracle NetSuite Logo"
-            width={260}
-            height={120}
-            className="mb-6 h-[100px] w-auto object-contain"
+            width={320}
+            height={150}
+            className="mb-6 h-[130px] w-auto object-contain"
             priority
             fetchPriority="high"
           />
@@ -97,9 +97,9 @@ export default function Home() {
             <Image
               src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
               alt="Oracle NetSuite Partner Logo"
-              width={160}
-              height={60}
-              className="h-10 w-auto object-contain drop-shadow-lg brightness-200"
+              width={220}
+              height={80}
+              className="h-16 w-auto object-contain drop-shadow-lg brightness-200"
             />
           </div>
 
@@ -158,6 +158,8 @@ export default function Home() {
             src="/images/zohoimages/background/zohobg.webp"
             alt="Zoho Background"
             fill
+            priority
+            fetchPriority="high"
             className="object-cover group-hover:scale-105 transition-all duration-700"
             sizes="(max-width: 768px) 100vw, 50vw"
             quality={75}
@@ -178,9 +180,11 @@ export default function Home() {
             <Image
               src="/images/zoho logos/zoho premium.png"
               alt="Zoho Premium Partner Logo"
-              width={220}
-              height={80}
-              className="h-14 w-auto object-contain drop-shadow-lg"
+              width={280}
+              height={100}
+              priority
+              fetchPriority="high"
+              className="h-20 w-auto object-contain drop-shadow-lg"
             />
           </div>
 
@@ -201,9 +205,11 @@ export default function Home() {
           <Image
             src="/images/zoho logos/zoho premium.png"
             alt="Zoho Logo"
-            width={191}
-            height={110}
-            className="mb-6 h-[100px] w-auto object-contain"
+            width={260}
+            height={150}
+            priority
+            fetchPriority="high"
+            className="mb-6 h-[130px] w-auto object-contain"
           />
           <button className="px-8 py-3 rounded-lg bg-gray-700 text-white text-lg font-semibold hover:bg-gray-900 transition">
             Visit Zoho →

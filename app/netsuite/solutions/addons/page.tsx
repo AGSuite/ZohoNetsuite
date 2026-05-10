@@ -25,13 +25,42 @@ function Counter({ value }: { value: number }) {
   return <span ref={ref}><motion.span>{display}</motion.span></span>;
 }
 
+type ParticleDatum = { width: number; height: number; top: string; left: string; duration: number; delay: number };
+
 export default function AddonsPage() {
   const [isMobile, setIsMobile] = useState(false);
+  const [introParticles, setIntroParticles] = useState<ParticleDatum[]>([]);
+  const [sectionStars, setSectionStars] = useState<ParticleDatum[]>([]);
+
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1024);
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    // Generate particle data client-side only to avoid SSR hydration mismatch
+    setIntroParticles(
+      Array.from({ length: 20 }, () => ({
+        width: Math.random() * 4 + 2,
+        height: Math.random() * 4 + 2,
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+        duration: Math.random() * 5 + 5,
+        delay: Math.random() * 5,
+      }))
+    );
+    setSectionStars(
+      Array.from({ length: 50 }, () => ({
+        width: Math.random() * 2 + 1,
+        height: Math.random() * 2 + 1,
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+        duration: Math.random() * 3 + 2,
+        delay: Math.random() * 5,
+      }))
+    );
   }, []);
 
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
@@ -302,8 +331,8 @@ export default function AddonsPage() {
 
       {/* ─────────────── STICKY NAV ─────────────── */}
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-wrap items-center justify-center gap-1 py-2 sm:py-4">
             {[{ label: "What is NetSuite Add-Ons?", href: "#what-is" }, { label: "Add-Ons", href: "#addons" }, { label: "FAQ", href: "#faq" }].map(l => (
               <a key={l.href} href={l.href} className="px-4 py-2 text-base font-semibold hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-500">{l.label}</span>
@@ -319,27 +348,14 @@ export default function AddonsPage() {
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2" />
-          {/* Particles */}
-          {[...Array(20)].map((_, i) => (
+          {/* Particles - client-side only to avoid SSR mismatch */}
+          {introParticles.map((p, i) => (
             <motion.div
               key={i}
               className="absolute bg-white/10 rounded-full"
-              style={{
-                width: Math.random() * 4 + 2,
-                height: Math.random() * 4 + 2,
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, -30, 0],
-                opacity: [0.1, 0.3, 0.1],
-              }}
-              transition={{
-                duration: Math.random() * 5 + 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: Math.random() * 5,
-              }}
+              style={{ width: p.width, height: p.height, top: p.top, left: p.left }}
+              animate={!isMobile ? { y: [0, -30, 0], opacity: [0.1, 0.3, 0.1] } : { opacity: 0.1 }}
+              transition={{ duration: p.duration, repeat: Infinity, ease: "easeInOut", delay: p.delay }}
             />
           ))}
         </div>
@@ -354,10 +370,22 @@ export default function AddonsPage() {
         >
           <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-24">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="flex items-center justify-center rounded-2xl" style={{ minHeight: 340 }}>
-                <Image src="/images/Dashboard/ERP Dashboard_11zon.jpg" alt="NetSuite Add-Ons" width={1400} height={900} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20" />
+              <motion.div
+                initial={{ opacity: 0, scale: isMobile ? 1 : 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="flex items-center justify-center rounded-2xl"
+                style={{ minHeight: 340 }}
+              >
+                <Image src="/images/Dashboard/ERP Dashboard_11zon.jpg" alt="NetSuite Add-Ons" width={1400} height={900} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20" priority />
               </motion.div>
-              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0, x: isMobile ? 0 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="space-y-6"
+              >
                 <ScrollFloat
                   containerClassName="text-3xl md:text-4xl lg:text-4xl font-medium leading-[1.25]"
                   fromColor="#111827"
@@ -385,44 +413,35 @@ export default function AddonsPage() {
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(147,51,234,0.1)_0%,transparent_50%)]" />
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(220,38,38,0.05)_0%,transparent_50%)]" />
 
-          {/* Moving Orbs */}
-          <motion.div
-            animate={{ x: [0, 100, 0], y: [0, 50, 0] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px]"
-          />
-          <motion.div
-            animate={{ x: [0, -150, 0], y: [0, 100, 0] }}
-            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[130px]"
-          />
-          <motion.div
-            animate={{ x: [0, 50, 0], y: [0, -100, 0] }}
-            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-            className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[110px]"
-          />
+          {/* Moving Orbs - disabled on mobile for performance */}
+          {!isMobile && (
+            <>
+              <motion.div
+                animate={{ x: [0, 100, 0], y: [0, 50, 0] }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px]"
+              />
+              <motion.div
+                animate={{ x: [0, -150, 0], y: [0, 100, 0] }}
+                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[130px]"
+              />
+              <motion.div
+                animate={{ x: [0, 50, 0], y: [0, -100, 0] }}
+                transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+                className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[110px]"
+              />
+            </>
+          )}
 
-          {/* Twinkling Stars */}
-          {[...Array(50)].map((_, i) => (
+          {/* Twinkling Stars - client-side only to avoid SSR mismatch */}
+          {sectionStars.map((s, i) => (
             <motion.div
               key={i}
               className="absolute bg-white rounded-full"
-              style={{
-                width: Math.random() * 2 + 1,
-                height: Math.random() * 2 + 1,
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                opacity: [0.2, 0.8, 0.2],
-                scale: [1, 1.5, 1],
-              }}
-              transition={{
-                duration: Math.random() * 3 + 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: Math.random() * 5,
-              }}
+              style={{ width: s.width, height: s.height, top: s.top, left: s.left }}
+              animate={!isMobile ? { opacity: [0.2, 0.8, 0.2], scale: [1, 1.5, 1] } : { opacity: 0.4 }}
+              transition={{ duration: s.duration, repeat: Infinity, ease: "easeInOut", delay: s.delay }}
             />
           ))}
 
@@ -452,7 +471,7 @@ export default function AddonsPage() {
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 0 }}
+            initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-16"
@@ -489,13 +508,13 @@ export default function AddonsPage() {
                       key={index}
                       className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-16 lg:py-20 relative`}
                     >
-                      {/* IMAGE SIDE */}
-                      <div className={`relative px-6 py-6 ${isEven ? 'order-1' : 'order-1 lg:order-2'}`}>
-                        {/* Background Card (Fast, First entrance) */}
+                      {/* IMAGE SIDE - Always first on mobile */}
+                      <div className={`relative px-4 py-4 lg:px-6 lg:py-6 order-1 ${isEven ? '' : 'lg:order-2'}`}>
+                        {/* Background Card */}
                         <motion.div
-                          initial={{ opacity: 0, y: 60, scale: 0.95 }}
+                          initial={{ opacity: 0, y: isMobile ? 0 : 40, scale: isMobile ? 1 : 0.95 }}
                           whileInView={{ opacity: 0.8, y: 0, scale: 1 }}
-                          viewport={{ once: true, margin: "-80px" }}
+                          viewport={{ once: true, margin: "-100px" }}
                           transition={{ duration: 0.5, ease: "easeOut" }}
                           className="absolute inset-2 sm:inset-0 rounded-[2.5rem] shadow-lg"
                           style={{
@@ -504,12 +523,12 @@ export default function AddonsPage() {
                           }}
                         />
 
-                        {/* Image Container (Slower, Delayed entrance) */}
+                        {/* Image Container */}
                         <motion.div
-                          initial={{ opacity: 0, y: 60 }}
+                          initial={{ opacity: 0, y: isMobile ? 0 : 40 }}
                           whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true, margin: "-80px" }}
-                          transition={{ duration: 0.5, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                          transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
                           className="relative h-64 sm:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-2xl z-10 transform transition-transform group-hover:scale-[1.02]"
                         >
                           <Image
@@ -522,13 +541,13 @@ export default function AddonsPage() {
                         </motion.div>
                       </div>
 
-                      {/* TEXT SIDE */}
+                      {/* TEXT SIDE - Always second on mobile */}
                       <motion.div
-                        initial={{ opacity: 0, x: isEven ? 80 : -80 }}
+                        initial={{ opacity: 0, x: isMobile ? 0 : (isEven ? 40 : -40) }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98], delay: 0.1 }}
-                        className={`relative z-10 ${isEven ? 'order-2' : 'order-2 lg:order-1'}`}
+                        transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+                        className={`relative z-10 order-2 ${isEven ? '' : 'lg:order-1'}`}
                       >
                         <span
                           className="inline-block text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 leading-tight shadow-sm"

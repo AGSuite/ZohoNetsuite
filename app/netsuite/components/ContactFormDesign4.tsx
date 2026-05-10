@@ -256,7 +256,7 @@ export default function ContactFormDesign4() {
                         </div>
                         <div>
                           <p className="text-3xl font-bold text-white tracking-tight mb-0.5 group-hover:text-blue-950 transition-colors duration-500">{stat.value}</p>
-                          <h4 className="font-bold text-lg leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-cyan-200 group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-500">{stat.label}</h4>
+                          <h3 className="font-bold text-lg leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-cyan-200 group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-500">{stat.label}</h3>
                         </div>
                       </motion.div>
                     ))}
@@ -392,17 +392,12 @@ export default function ContactFormDesign4() {
                       <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
                     </div>
 
-                    <div className="flex gap-3 pt-2">
+                    <div className="flex pt-2">
                       <input
                         type="submit"
                         id="formsubmit"
                         className="formsubmit flex-1 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm cursor-pointer"
                         value="Submit Request"
-                      />
-                      <input 
-                        type="reset" 
-                        className="px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl transition-all text-sm cursor-pointer" 
-                        value="Reset" 
                       />
                     </div>
                   </form>

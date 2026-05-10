@@ -23,7 +23,22 @@ import {
     Building2,
     Calculator,
     Wifi,
-    DollarSign
+    DollarSign,
+    Database,
+    Globe,
+    Puzzle,
+    MapPin,
+    BarChart,
+    Repeat,
+    PieChart,
+    Activity,
+    Cpu,
+    ShoppingCart,
+    Clock,
+    Puzzle as PuzzleIcon,
+    GitMerge,
+    Share2,
+    Coins
 } from 'lucide-react';
 
 // Types
@@ -31,6 +46,7 @@ export interface MegaMenuItem {
     label: string;
     href: string;
     description?: string;
+    icon?: React.ComponentType<any>;
 }
 
 export interface MegaMenuCategory {
@@ -100,55 +116,55 @@ export const navItemsNetSuite: NavSection[] = [
                         {
                             title: 'Core ERP',
                             items: [
-                                { label: 'NetSuite ERP', href: '/netsuite-erp-solution' },
-                                { label: 'NetSuite Accounting Software', href: '/netsuite-accounting-services' },
-                                { label: 'Global Business Management', href: '/global-business-management' },
+                                { label: 'NetSuite ERP', href: '/netsuite-erp-solution', icon: Database },
+                                { label: 'NetSuite Accounting Software', href: '/netsuite-accounting-services', icon: Calculator },
+                                { label: 'Global Business Management', href: '/global-business-management', icon: Globe },
                             ]
                         },
                         {
                             title: 'Customer Management',
                             items: [
-                                { label: 'NetSuite CRM', href: '/netsuite-crm-solutions' },
+                                { label: 'NetSuite CRM', href: '/netsuite-crm-solutions', icon: Users },
                             ]
                         },
                         {
                             title: 'Project Management',
                             items: [
-                                { label: 'NetSuite SRP', href: '/service-resource-planning' },
-                                { label: 'SuiteProject Pro (OpenAir)', href: '/netsuite-open-air-solution' },
+                                { label: 'NetSuite SRP', href: '/service-resource-planning', icon: Briefcase },
+                                { label: 'SuiteProject Pro (OpenAir)', href: '/netsuite-open-air-solution', icon: Clock },
                             ]
                         },
                         {
                             title: 'Analytics & Intelligence',
                             items: [
-                                { label: 'NetSuite Business Intelligence', href: '/netsuite-business-intelligence' },
-                                { label: 'NetSuite Analytics Warehouse', href: '/netsuite-analytics-warehouse' },
-                                { label: 'Artificial Intelligence in NetSuite', href: '/artificial-intelligence-ai' },
+                                { label: 'NetSuite Business Intelligence', href: '/netsuite-business-intelligence', icon: PieChart },
+                                { label: 'NetSuite Analytics Warehouse', href: '/netsuite-analytics-warehouse', icon: Activity },
+                                { label: 'Artificial Intelligence in NetSuite', href: '/artificial-intelligence-ai', icon: Cpu },
                             ]
                         },
                         {
                             title: 'E-Commerce',
                             items: [
-                                { label: 'NetSuite E-Commerce', href: '/netsuite-suite-commerce-site-builder' },
+                                { label: 'NetSuite E-Commerce', href: '/netsuite-suite-commerce-site-builder', icon: ShoppingCart },
                             ]
                         },
                         {
                             title: 'Specialized Solutions',
                             items: [
-                                { label: 'SuiteSuccess', href: '/netsuite-suitesuccess' },
-                                { label: 'India Localization for NetSuite', href: '/india-localization-for-netsuite' },
+                                { label: 'SuiteSuccess', href: '/netsuite-suitesuccess', icon: Trophy },
+                                { label: 'India Localization for NetSuite', href: '/india-localization-for-netsuite', icon: MapPin },
                             ]
                         },
                         {
                             title: 'Planning & Budgeting',
                             items: [
-                                { label: 'NetSuite Planning and Budgeting', href: '/netsuite-planning-and-budgeting' },
+                                { label: 'NetSuite Planning and Budgeting', href: '/netsuite-planning-and-budgeting', icon: BarChart },
                             ]
                         },
                         {
                             title: 'Why Choose NetSuite',
                             items: [
-                                { label: 'Why NetSuite', href: '/why-netsuite' },
+                                { label: 'Why NetSuite', href: '/why-netsuite', icon: HelpCircle },
                             ]
                         },
                     ],
@@ -169,17 +185,20 @@ export const navItemsNetSuite: NavSection[] = [
                                 {
                                     label: 'Indian Localization for NetSuite',
                                     href: '/netsuite/solutions/addons/india-localization',
-                                    description: 'E-invoicing, GST & statutory compliance for India'
+                                    description: 'E-invoicing, GST & statutory compliance for India',
+                                    icon: MapPin
                                 },
                                 {
                                     label: 'Smart Commission App',
                                     href: '/netsuite/solutions/addons/smart-commission',
-                                    description: 'Automate complex partner & sales commission tracking'
+                                    description: 'Automate complex partner & sales commission tracking',
+                                    icon: Coins
                                 },
                                 {
                                     label: 'NetSuite Data Backup',
                                     href: '/netsuite/solutions/addons/data-backup',
-                                    description: 'Secure automated backup for your critical ERP data'
+                                    description: 'Secure automated backup for your critical ERP data',
+                                    icon: Database
                                 },
                             ],
                         },
@@ -189,17 +208,20 @@ export const navItemsNetSuite: NavSection[] = [
                                 {
                                     label: 'Magento 2 NetSuite Connector',
                                     href: '/netsuite/solutions/addons/connectors/magento2',
-                                    description: 'Real-time sync between Magento storefront & NetSuite'
+                                    description: 'Real-time sync between Magento storefront & NetSuite',
+                                    icon: GitMerge
                                 },
                                 {
                                     label: 'Amazon NetSuite Connector',
                                     href: '/netsuite/solutions/addons/connectors/amazon',
-                                    description: 'Automate Amazon FBA/FBM orders & inventory'
+                                    description: 'Automate Amazon FBA/FBM orders & inventory',
+                                    icon: Share2
                                 },
                                 {
                                     label: 'Shopify NetSuite Connector',
                                     href: '/netsuite/solutions/addons/connectors/shopify',
-                                    description: 'Seamless integration for Shopify & Shopify Plus'
+                                    description: 'Seamless integration for Shopify & Shopify Plus',
+                                    icon: Repeat
                                 },
                             ],
                         },

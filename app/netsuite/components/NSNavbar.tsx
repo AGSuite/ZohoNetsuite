@@ -98,10 +98,10 @@ const NavbarNetSuite = () => {
           <Image
             src="/images/logos/agsuite-logo.webp"
             alt="AGSuite Logo"
-            width={120}
-            height={40}
+            width={240}
+            height={80}
             priority
-            className="w-[120px] h-[40px] object-contain"
+            className="w-[240px] h-[80px] object-contain"
           />
         </Link>
 

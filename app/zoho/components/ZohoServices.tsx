@@ -21,23 +21,20 @@ const services: ServiceItem[] = [
   {
     title: "Digital Transformation",
     heading: "",
-    description:
-      "Modernize your business operations and accelerate growth. We help you digitize manual processes, leverage cutting-edge Zoho applications, and build a unified, cloud-first infrastructure for the future.",
+    description: "Modernize your business for the digital age with our strategic transformation roadmap.",
     bgImage: "/images/Services/Digitalservices.webp",
     href: "/zoho/services/digital-transformation",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
   },
   {
     title: "Integration Services",
     heading: "",
-    description:
-      "Connect your systems effortlessly. Our expert team seamlessly integrates Zoho applications with your existing software stack and third-party tools to eliminate data silos and boost operational efficiency.",
-    bgImage: "/images/Services/integrationservices.webp",
+    description: "Seamlessly connect Zoho with your entire ecosystem via robust API-led integrations.",
+    bgImage: "/images/lap/group2.webp",
     href: "/zoho/services/integration-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -48,39 +45,37 @@ const services: ServiceItem[] = [
   {
     title: "Training Services",
     heading: "",
-    description:
-      "Empower your workforce with expert-led training programs. We provide comprehensive, hands-on training to ensure your team has the skills needed to maximize the full potential of your Zoho applications.",
+    description: "Upskill your team with expert-led Zoho training to maximise platform adoption.",
     bgImage: "/images/Services/trainingservices.webp",
     href: "/zoho/services/training-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
       </svg>
     ),
   },
   {
-    title: "Low-Code App Development",
+    title: "Low-Code Application Development",
     heading: "",
-    description:
-      "Build powerful, custom applications faster than ever. Leveraging Zoho Creator's low-code platform, we design and deploy bespoke solutions tailored precisely to your unique business workflows.",
+    description: "Build powerful custom applications with Zoho Creator and extend your business faster.",
     bgImage: "/images/Services/lowcodeservices.webp",
     href: "/zoho/services/low-code",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
       </svg>
     ),
   },
   {
     title: "Managed Services",
     heading: "",
-    description:
-      "Experience complete IT management and peace of mind. Our proactive ongoing support, system monitoring, and continuous optimization ensure your Zoho environment performs at its absolute best.",
+    description: "End-to-end IT management and dedicated support to keep your Zoho operations running smoothly.",
     bgImage: "/images/Services/managedservices.webp",
     href: "/zoho/services/managed-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
     ),
   },
@@ -127,10 +122,10 @@ export default function ZohoServices() {
           trigger: sectionRef.current,
           start: "top center",
           end: "bottom center",
-          onEnter: () => gsap.to(".services-title", { color: "#fff", duration: 0.5 }),
-          onLeave: () => gsap.to(".services-title", { color: "#1f2937", duration: 0.5 }),
-          onEnterBack: () => gsap.to(".services-title", { color: "#fff", duration: 0.5 }),
-          onLeaveBack: () => gsap.to(".services-title", { color: "#1f2937", duration: 0.5 }),
+          onEnter: () => gsap.to(".zoho-services-title", { color: "#fff", duration: 0.5 }),
+          onLeave: () => gsap.to(".zoho-services-title", { color: "#1f2937", duration: 0.5 }),
+          onEnterBack: () => gsap.to(".zoho-services-title", { color: "#fff", duration: 0.5 }),
+          onLeaveBack: () => gsap.to(".zoho-services-title", { color: "#1f2937", duration: 0.5 }),
         });
       }, sectionRef);
 
@@ -139,7 +134,6 @@ export default function ZohoServices() {
 
     return () => {
       mm.revert();
-      ScrollTrigger.killAll();
     };
   }, []);
 
@@ -158,14 +152,14 @@ export default function ZohoServices() {
       <div
         ref={glowRef}
         className="absolute inset-0 opacity-0 z-2
-        bg-[radial-gradient(circle_at_50%_20%,rgba(225,29,72,0.25),transparent_70%)]
+        bg-[radial-gradient(circle_at_50%_20%,rgba(220,38,38,0.2),transparent_70%)]
         pointer-events-none transition-opacity"
       />
 
       {/* DESKTOP VIEW - Single Row */}
       <div className="hidden lg:block relative z-10">
         <div className="text-center mb-12">
-          <h2 className="services-title text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900 transition-colors duration-500">
+          <h2 className="zoho-services-title text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900 transition-colors duration-500">
             Our Zoho Services
           </h2>
         </div>
@@ -173,10 +167,9 @@ export default function ZohoServices() {
         <div className="max-w-[1450px] mx-auto px-8">
           <div className="flex justify-center gap-4">
             {services.map((service, index) => (
-              <Link
-                href={service.href}
+              <div
                 key={service.title}
-                className="block relative w-[260px] h-[480px] rounded-2xl overflow-hidden shadow-xl cursor-pointer shrink-0 transition-all duration-500"
+                className="relative w-[260px] h-[480px] rounded-2xl overflow-hidden shadow-xl cursor-pointer shrink-0 transition-all duration-500"
                 onMouseEnter={() => setActiveIdx(index)}
               >
                 {/* Background Image - Visible by default, hidden when active */}
@@ -188,8 +181,8 @@ export default function ZohoServices() {
                     src={service.bgImage}
                     alt={service.title}
                     fill
-                    sizes="(max-width: 1024px) 50vw, 260px"
                     className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 260px"
                   />
                   {/* Black gradient overlay - transparent top to dark bottom */}
                   <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/50 to-black/90" />
@@ -228,7 +221,7 @@ export default function ZohoServices() {
                 >
                   {/* Icon - Fixed position from bottom, No background */}
                   <div className="absolute bottom-[260px] left-5">
-                    <div className="text-rose-600 w-12 h-12">
+                    <div className="text-red-600 w-12 h-12">
                       {service.icon}
                     </div>
                   </div>
@@ -236,7 +229,7 @@ export default function ZohoServices() {
                   {/* Content - Fixed position from bottom */}
                   <div className="absolute bottom-[100px] left-5 right-5 text-left">
                     {/* Title */}
-                    <h3 className="text-2xl font-medium text-rose-600 mb-3 leading-tight">
+                    <h3 className="text-2xl font-medium text-red-600 mb-3 leading-tight">
                       {service.title}
                     </h3>
 
@@ -248,12 +241,17 @@ export default function ZohoServices() {
 
                   {/* CTA Button - Fixed at bottom */}
                   <div className="absolute bottom-6 left-5">
-                    <button className="px-6 py-3 bg-rose-600 text-white rounded-full font-semibold hover:bg-rose-700 hover:shadow-lg transition-all duration-300 text-sm w-fit">
-                      Know More
-                    </button>
+                    <Link href={service.href}>
+                      <button
+                        suppressHydrationWarning={true}
+                        className="px-6 py-3 bg-red-600 text-white rounded-full font-semibold hover:bg-red-700 hover:shadow-lg transition-all duration-300 text-sm w-fit"
+                      >
+                        Know More
+                      </button>
+                    </Link>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -270,10 +268,9 @@ export default function ZohoServices() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="grid grid-cols-2 gap-5">
             {services.map((service, index) => (
-              <Link
-                href={service.href}
+              <div
                 key={service.title}
-                className="block relative w-full h-[450px] rounded-2xl overflow-hidden shadow-xl cursor-pointer transition-all duration-500"
+                className="relative w-full h-[450px] rounded-2xl overflow-hidden shadow-xl cursor-pointer transition-all duration-500"
                 onMouseEnter={() => setActiveIdx(index)}
               >
                 {/* Background Image - Visible by default, hidden when active */}
@@ -285,8 +282,8 @@ export default function ZohoServices() {
                     src={service.bgImage}
                     alt={service.title}
                     fill
-                    sizes="50vw"
                     className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   {/* Black gradient overlay - transparent top to dark bottom */}
                   <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/50 to-black/90" />
@@ -325,7 +322,7 @@ export default function ZohoServices() {
                 >
                   {/* Icon - Fixed position from bottom, No background */}
                   <div className="absolute bottom-[260px] left-5">
-                    <div className="text-rose-600 w-12 h-12">
+                    <div className="text-red-600 w-12 h-12">
                       {service.icon}
                     </div>
                   </div>
@@ -333,7 +330,7 @@ export default function ZohoServices() {
                   {/* Content - Fixed position from bottom */}
                   <div className="absolute bottom-[100px] left-5 right-5 text-left">
                     {/* Title */}
-                    <h3 className="text-2xl font-medium text-rose-600 mb-3 leading-tight">
+                    <h3 className="text-2xl font-medium text-red-600 mb-3 leading-tight">
                       {service.title}
                     </h3>
 
@@ -345,12 +342,17 @@ export default function ZohoServices() {
 
                   {/* CTA Button - Fixed at bottom */}
                   <div className="absolute bottom-6 left-5">
-                    <button className="px-6 py-3 bg-rose-600 text-white rounded-full font-semibold hover:bg-rose-700 hover:shadow-lg transition-all duration-300 text-sm w-fit">
-                      Know More
-                    </button>
+                    <Link href={service.href}>
+                      <button
+                        suppressHydrationWarning={true}
+                        className="px-6 py-3 bg-red-600 text-white rounded-full font-semibold hover:bg-red-700 hover:shadow-lg transition-all duration-300 text-sm w-fit"
+                      >
+                        Know More
+                      </button>
+                    </Link>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -366,17 +368,16 @@ export default function ZohoServices() {
 
         <div className="space-y-6">
           {services.map((service) => (
-            <Link
-              href={service.href}
+            <div
               key={service.title}
-              className="block relative w-full h-[280px] bg-gray-200 rounded-2xl overflow-hidden"
+              className="relative w-full h-[280px] bg-gray-200 rounded-2xl overflow-hidden"
             >
               <Image
                 src={service.bgImage}
                 alt={service.title}
                 fill
-                sizes="100vw"
                 className="object-cover"
+                sizes="100vw"
               />
 
               {/* Gradient overlay for text visibility */}
@@ -387,12 +388,17 @@ export default function ZohoServices() {
                 <h3 className="text-2xl font-bold">{service.title}</h3>
                 <div className="flex justify-between items-end">
                   <p className="text-base opacity-90 line-clamp-2 max-w-[70%]">{service.description}</p>
-                  <button className="px-5 py-2.5 bg-white text-black text-sm rounded-full font-semibold shrink-0 hover:bg-rose-50 transition-all">
-                    Know More
-                  </button>
+                  <Link href={service.href}>
+                    <button
+                      suppressHydrationWarning={true}
+                      className="px-5 py-2.5 bg-white text-black text-sm rounded-full font-semibold shrink-0 hover:bg-red-50 transition-all"
+                    >
+                      Know More
+                    </button>
+                  </Link>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

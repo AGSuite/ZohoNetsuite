@@ -24,7 +24,33 @@ import {
     Users,
     Building2,
     Wifi,
-    DollarSign
+    DollarSign,
+    Target,
+    Zap,
+    UserPlus,
+    FileSpreadsheet,
+    Wallet,
+    Receipt,
+    Package,
+    CreditCard,
+    Coins,
+    Clock,
+    Activity,
+    Eye,
+    Mail,
+    Layout,
+    Globe,
+    Share2,
+    ShoppingCart,
+    BarChart,
+    PieChart,
+    GitMerge,
+    Code,
+    Cpu,
+    Terminal,
+    Server,
+    Box,
+    Database
 } from 'lucide-react';
 
 // Types
@@ -32,6 +58,7 @@ export interface MegaMenuItem {
     label: string;
     href: string;
     description?: string;
+    icon?: React.ComponentType<any>;
 }
 
 export interface MegaMenuCategory {
@@ -102,90 +129,84 @@ export const navItemsZoho: NavSection[] = [
                         {
                             title: "Sales",
                             items: [
-                                { label: "Zoho CRM", href: "/zoho-crm" },
-                                { label: "Zoho CRM Plus", href: "/zoho-crm-plus" },
-                                { label: "Zoho Bigin", href: "/zoho-bigin" },
+                                { label: "Zoho CRM", href: "/zoho-crm", icon: Database },
+                                { label: "Zoho CRM Plus", href: "/zoho-crm-plus", icon: Zap },
+                                { label: "Zoho Bigin", href: "/zoho-bigin", icon: Target },
                             ]
                         },
                         {
                             title: "HR",
                             items: [
-                                { label: "Zoho People", href: "/zoho-people" },
-                                { label: "Zoho Recruit", href: "/zoho-recruit-hiring-software" },
-                                { label: "Zoho People Plus", href: "/zoho-people-plus" },
-                                { label: "Zoho Payroll", href: "/zoho-payroll" },
-                                { label: "Zoho Expense", href: "/zoho-expense" },
+                                { label: "Zoho People", href: "/zoho-people", icon: Users },
+                                { label: "Zoho Recruit", href: "/zoho-recruit-hiring-software", icon: UserPlus },
+                                { label: "Zoho People Plus", href: "/zoho-people-plus", icon: FileSpreadsheet },
+                                { label: "Zoho Payroll", href: "/zoho-payroll", icon: Wallet },
+                                { label: "Zoho Expense", href: "/zoho-expense", icon: Receipt },
                             ]
                         },
                         {
                             title: "Finance",
                             items: [
-                                { label: "Zoho Books", href: "/zoho-books-accounting-software" },
-                                { label: "Zoho Inventory", href: "/zoho-inventory-software" },
-                                { label: "Zoho Payroll", href: "/zoho-payroll-finance" },
-                                { label: "Zoho Finance Plus", href: "/zoho-finance-plus" },
-                                { label: "Zoho Expense", href: "/zoho-expense-finance" },
+                                { label: "Zoho Books", href: "/zoho-books-accounting-software", icon: BookOpen },
+                                { label: "Zoho Inventory", href: "/zoho-inventory-software", icon: Package },
+                                { label: "Zoho Payroll", href: "/zoho-payroll-finance", icon: CreditCard },
+                                { label: "Zoho Finance Plus", href: "/zoho-finance-plus", icon: Coins },
+                                { label: "Zoho Expense", href: "/zoho-expense-finance", icon: DollarSign },
                             ]
                         },
                         {
                             title: "Projects",
                             items: [
-                                { label: "Zoho Projects", href: "/zoho-projects" },
-                                { label: "Zoho Sprints", href: "/zoho-sprint" },
+                                { label: "Zoho Projects", href: "/zoho-projects", icon: Briefcase },
+                                { label: "Zoho Sprints", href: "/zoho-sprint", icon: Activity },
                             ]
                         },
                         {
                             title: "Service",
                             items: [
-                                { label: "Zoho Desk", href: "/zoho-desk" },
-                                { label: "Zoho SalesIQ", href: "/zoho-salesiq-implementation" },
-                                { label: "Zoho FSM", href: "/zoho-fsm" },
+                                { label: "Zoho Desk", href: "/zoho-desk", icon: Headset },
+                                { label: "Zoho SalesIQ", href: "/zoho-salesiq-implementation", icon: Eye },
+                                { label: "Zoho FSM", href: "/zoho-fsm", icon: Settings },
                             ]
                         },
                         {
-                            title: "Email & Collaboration",
+                            title: "Collaboration",
                             items: [
-                                { label: "Zoho Mail", href: "/zoho-mail" },
-                                { label: "Zoho Workplace", href: "/zoho-workplace" },
+                                { label: "Zoho Mail", href: "/zoho-mail", icon: Mail },
+                                { label: "Zoho Workplace", href: "/zoho-workplace", icon: Layout },
                             ]
                         },
                         {
                             title: "Marketing",
                             items: [
-                                { label: "Zoho Sites", href: "/zoho-sites" },
-                                { label: "Zoho Social", href: "/zoho-social-media-management" },
-                                { label: "Zoho Commerce", href: "/zoho-commerce" },
-                                { label: "Zoho Marketing Automation", href: "/zoho-marketing-automation" },
-                                { label: "Zoho Marketing Plus", href: "/zoho-marketing-plus" },
-                                { label: "Zoho SalesIQ", href: "/zoho-salesiq-marketing" },
+                                { label: "Zoho Sites", href: "/zoho-sites", icon: Globe },
+                                { label: "Zoho Social", href: "/zoho-social-media-management", icon: Share2 },
+                                { label: "Zoho Commerce", href: "/zoho-commerce", icon: ShoppingCart },
+                                { label: "Zoho Marketing Automation", href: "/zoho-marketing-automation", icon: BarChart },
+                                { label: "Zoho Marketing Plus", href: "/zoho-marketing-plus", icon: Megaphone },
+                                { label: "Zoho SalesIQ", href: "/zoho-salesiq-marketing", icon: Eye },
                             ]
                         },
                         {
-                            title: "BI & Analytics",
+                            title: "Analytics",
                             items: [
-                                { label: "Zoho Analytics", href: "/zoho-analytics" },
-                                { label: "Zoho Flow", href: "/zoho-flow" },
+                                { label: "Zoho Analytics", href: "/zoho-analytics", icon: PieChart },
+                                { label: "Zoho Flow", href: "/zoho-flow", icon: GitMerge },
                             ]
                         },
                         {
-                            title: "Dev Platforms",
+                            title: "Developer & IT",
                             items: [
-                                { label: "Zoho Creator", href: "/zoho-creator" },
-                                { label: "Zoho Catalyst", href: "/zoho-catalyst" },
+                                { label: "Zoho Creator", href: "/zoho-creator", icon: Code },
+                                { label: "Zoho Catalyst", href: "/zoho-catalyst", icon: Cpu },
+                                { label: "Zoho IT Management", href: "/zoho-it-management", icon: Server },
                             ]
                         },
                         {
-                            title: "IT Management",
+                            title: "Suites",
                             items: [
-                                { label: "Zoho Creator", href: "/zoho-creator-it-management" },
-                                { label: "Zoho IT Management", href: "/zoho-it-management" },
-                            ]
-                        },
-                        {
-                            title: "Complete Suite",
-                            items: [
-                                { label: "Zoho One", href: "/zoho-one" },
-                                { label: "Zoho ERP", href: "/zoho-erp" },
+                                { label: "Zoho One", href: "/zoho-one", icon: Box },
+                                { label: "Zoho ERP", href: "/zoho-erp", icon: Layers },
                             ]
                         }
                     ]
@@ -198,11 +219,11 @@ export const navItemsZoho: NavSection[] = [
     {
         title: "Services",
         children: [
-            { label: 'Digital Transformation', href: '/zoho/services/digital-transformation', description: 'Modernize your business.', icon: Rocket },
-            { label: 'Integration Services', href: '/zoho/services/integration-services', description: 'Connect systems easily.', icon: Layers },
-            { label: 'Training Services', href: '/zoho/services/training-services', description: 'Expert-led training programs.', icon: GraduationCap },
-            { label: 'Low-Code App Development', href: '/zoho/services/low-code', description: 'Build apps faster.', icon: Wrench },
-            { label: 'Managed Services', href: '/zoho/services/managed-services', description: 'Complete IT management.', icon: Settings },
+            { label: 'Digital Transformation', href: '/zoho/services/digital-transformation', description: 'Modernize your business for the digital age.', icon: Rocket },
+            { label: 'Integration Services', href: '/zoho/services/integration-services', description: 'Seamlessly connect your systems.', icon: Layers },
+            { label: 'Training Services', href: '/zoho/services/training-services', description: 'Upskill your team with expert-led training.', icon: GraduationCap },
+            { label: 'Low-Code Application Development', href: '/zoho/services/low-code', description: 'Build apps faster with minimal coding.', icon: Wrench },
+            { label: 'Managed Services', href: '/zoho/services/managed-services', description: 'End-to-end IT management & support.', icon: Settings },
         ]
     },
 

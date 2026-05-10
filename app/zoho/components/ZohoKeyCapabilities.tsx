@@ -218,9 +218,9 @@ const ZohoKeyCapabilities = () => {
                         <button
                             onClick={goPrev}
                             aria-label="Previous capability"
-                            className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-100 hover:bg-rose-600 hover:text-white text-slate-600 flex items-center justify-center transition-all active:scale-95"
+                            className="flex-shrink-0 w-12 h-12 rounded-full bg-slate-100 hover:bg-rose-600 hover:text-white text-slate-600 flex items-center justify-center transition-all active:scale-95"
                         >
-                            <ChevronLeft className="w-5 h-5" />
+                            <ChevronLeft className="w-6 h-6" />
                         </button>
 
                         {/* Active title + dots */}
@@ -238,13 +238,13 @@ const ZohoKeyCapabilities = () => {
                                 </motion.p>
                             </AnimatePresence>
                             {/* Dot indicators */}
-                            <div className="flex items-center justify-center gap-0 mt-2">
+                            <div className="flex items-center justify-center gap-1 mt-2">
                                 {capabilities.map((cap) => (
                                     <button
                                         key={cap.id}
                                         onClick={() => setActiveTab(cap.id)}
                                         aria-label={`Go to ${cap.title}`}
-                                        className="inline-flex items-center justify-center w-11 h-11 focus:outline-none"
+                                        className="inline-flex items-center justify-center w-12 h-12 focus:outline-none"
                                     >
                                         <span className={`rounded-full transition-all duration-300 block ${activeTab === cap.id
                                             ? 'w-5 h-2 bg-rose-600'
@@ -259,9 +259,9 @@ const ZohoKeyCapabilities = () => {
                         <button
                             onClick={goNext}
                             aria-label="Next capability"
-                            className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-100 hover:bg-rose-600 hover:text-white text-slate-600 flex items-center justify-center transition-all active:scale-95"
+                            className="flex-shrink-0 w-12 h-12 rounded-full bg-slate-100 hover:bg-rose-600 hover:text-white text-slate-600 flex items-center justify-center transition-all active:scale-95"
                         >
-                            <ChevronRight className="w-5 h-5" />
+                            <ChevronRight className="w-6 h-6" />
                         </button>
                     </div>
 

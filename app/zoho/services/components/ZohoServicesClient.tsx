@@ -36,6 +36,7 @@ import {
   Zap,
   GraduationCap
 } from "lucide-react";
+import ZohoServicesCards from "../../components/ZohoServicesCards";
 import FooterContactForm from "@/app/components/shared/FooterContactForm";
 import { FAQ } from "@/app/components/home/FAQ";
 
@@ -67,43 +68,6 @@ export default function ZohoServicesClient() {
     { label: "Years Experience", value: 15, suffix: "+", icon: Rocket },
   ];
 
-  const services = [
-    {
-      title: "Zoho Implementation",
-      description: "Organizations can benefit from professional assistance in implementing Zoho solutions tailored to their specific business requirements.",
-      link: "/zoho/services/implementation",
-      image: "/images/Services/digitaltrans.webp",
-      icon: Rocket,
-    },
-    {
-      title: "Zoho Integration",
-      description: "Expert support is available for seamlessly integrating Zoho applications with existing systems and third-party tools, enhancing operational efficiency.",
-      link: "/zoho/services/integration-services",
-      image: "/images/netsuiteimages/Servicesimg/integration.webp",
-      icon: Share2,
-    },
-    {
-      title: "Zoho Customization",
-      description: "Businesses can leverage custom development options to tailor Zoho applications to their unique workflows and operational needs.",
-      link: "/zoho/services/digital-transformation",
-      image: "/images/people/laptopgirl.webp",
-      icon: Code,
-    },
-    {
-      title: "Zoho Managed Support",
-      description: "Ongoing support and maintenance services ensure the smooth functioning and optimal performance of Zoho solutions, providing peace of mind to organizations.",
-      link: "/zoho/services/managed-services",
-      image: "/images/Services/managedservices.webp",
-      icon: ShieldCheck,
-    },
-    {
-      title: "Zoho Training",
-      description: "Comprehensive training programs are available to empower teams with the necessary knowledge and skills to effectively utilize Zoho applications, maximizing their potential for business growth.",
-      link: "/zoho/services/training-services",
-      image: "/images/Services/trainingservices.webp",
-      icon: Users,
-    },
-  ];
 
   const industries = [
     {
@@ -401,105 +365,7 @@ export default function ZohoServicesClient() {
         </div>
       </section>
 
-      {/* ─────────────── SERVICES GRID SECTION ─────────────── */}
-      <section id="services" className="py-24 bg-gray-50 relative overflow-hidden">
-        {/* Decorative Background Orbs */}
-        <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-100/40 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-        <div className="absolute bottom-1/3 right-0 w-[600px] h-[600px] bg-indigo-100/40 rounded-full blur-[100px] translate-x-1/2 pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="bg-blue-600/10 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
-              Service Portfolio
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-bold mt-6 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#1e3a8a] via-blue-600 to-black">
-              Comprehensive Zoho Expertise
-            </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              We empower global enterprises with end-to-end services that cover
-              every phase of the Zoho lifecycle.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-            {services.map((ind, index) => {
-              const cardBgColors = [
-                "bg-gradient-to-br from-white to-[#eef0ff]",
-                "bg-gradient-to-br from-white to-[#eaf6ff]",
-                "bg-gradient-to-br from-white to-[#e8ffef]",
-                "bg-gradient-to-br from-white to-[#f9eaff]",
-                "bg-gradient-to-br from-white to-[#ffece8]",
-              ];
-              
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.8,
-                    delay: index * 0.1,
-                    ease: "easeOut",
-                  }}
-                >
-                  <motion.div
-                    initial="initial"
-                    whileHover="hover"
-                    variants={{
-                      initial: { scale: 1 },
-                      hover: {
-                        scale: 1.04,
-                        transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] },
-                      },
-                    }}
-                    className={`relative group rounded-3xl p-8 border border-gray-200 transition-all duration-300 h-full shadow-xl hover:shadow-blue-100 ${cardBgColors[index % cardBgColors.length]}`}
-                  >
-                    <motion.div
-                      variants={{
-                        initial: { rotate: 0, y: 0 },
-                        hover: {
-                          rotate: 360,
-                          y: -6,
-                          transition: {
-                            duration: 0.8,
-                            ease: [0.42, 0, 0.58, 1],
-                          },
-                        },
-                      }}
-                      className="w-14 h-14 bg-black rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:bg-blue-600 transition-colors duration-300"
-                    >
-                      <ind.icon className="w-7 h-7 text-white" />
-                    </motion.div>
-                    
-                    <h3 className="text-xl font-bold text-gray-900 leading-tight mb-4">
-                      {ind.title}
-                    </h3>
-                    
-                    <p className="text-gray-600 text-sm leading-relaxed mb-8">
-                      {ind.description}
-                    </p>
-                    
-                    <div className="mt-auto border-t border-gray-200/60 pt-5">
-                      <Link
-                        href={ind.link}
-                        className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-bold text-sm transition-all"
-                      >
-                        Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <ZohoServicesCards />
 
       {/* ─────────────── INDUSTRIES SECTION ─────────────── */}
       <section className="py-20 bg-gray-50 relative overflow-hidden">

@@ -544,49 +544,74 @@ function StrategicPartnersSection() {
 }
 
 function ClientsSection() {
+  const { ref: marqueeRef, inView: marqueeInView } = useInView({ triggerOnce: true, threshold: 0.1 });
+
   return (
-    <section className="py-14 bg-white">
-      <div className="max-w-8xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="text-center mb-16">
+    <section className="relative py-14 overflow-hidden bg-white">
+      {/* Background Decorative Elements */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-50/50 rounded-full blur-[100px]" />
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-indigo-50/50 rounded-full blur-[100px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(249,250,251,0.8)_0%,transparent_100%)]" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+        <div className="text-center mb-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-blue-600 text-2xl md:text-4xl lg:text-5xl font-medium"
+            className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-900 text-3xl md:text-5xl font-medium"
           >
             Trusted by Industry Leaders
           </motion.h2>
+          <motion.div 
+             initial={{ opacity: 0, width: 0 }}
+             whileInView={{ opacity: 1, width: 100 }}
+             viewport={{ once: true }}
+             className="h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-4 rounded-full"
+          />
         </div>
 
-        <div className="relative w-full overflow-hidden py-10">
-          <div className="flex items-center animate-marquee-slow whitespace-nowrap">
+        <motion.div
+          ref={marqueeRef}
+          initial={{ opacity: 0, y: 30 }}
+          animate={marqueeInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="relative w-full overflow-hidden py-8"
+        >
+          <div className="animate-marquee whitespace-nowrap flex items-center" style={{ willChange: 'transform' }}>
             {partnerLogos.concat(partnerLogos).map((logo, index) => (
-              <div key={index} className="flex-shrink-0 px-8 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                <Image
-                  src={logo.logo}
-                  alt={logo.name}
-                  width={180}
-                  height={60}
-                  className="h-18 w-auto object-contain"
-                  sizes="180px"
-                />
+              <div key={index} className="inline-flex px-4">
+                <div
+                  className="flex h-20 w-44 sm:h-24 sm:w-52 items-center justify-center bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 p-4 hover:shadow-xl hover:scale-105 hover:bg-white"
+                >
+                  <Image
+                    src={logo.logo}
+                    alt={`${logo.name} logo`}
+                    width={200}
+                    height={80}
+                    sizes="200px"
+                    className="max-h-full w-auto object-contain"
+                  />
+                </div>
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <style jsx global>{`
-        @keyframes marquee-slow {
+        @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-        .animate-marquee-slow {
+        .animate-marquee {
           display: inline-flex;
-          animation: marquee-slow 25s linear infinite;
+          animation: marquee 50s linear infinite;
           will-change: transform;
         }
-        .animate-marquee-slow:hover {
+        .animate-marquee:hover {
           animation-play-state: paused;
         }
       `}</style>
@@ -990,7 +1015,7 @@ export default function AboutClient() {
 
             <motion.div variants={fadeInUp} className="flex">
               <Link
-                href="/zoho/contact"
+                href="#contact-form"
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-full transition duration-300 shadow-lg shadow-blue-900/40"
               >
                 Get Started
@@ -1187,7 +1212,7 @@ export default function AboutClient() {
           </div>
 
           <Link
-            href="/zoho/contact"
+            href="#contact-form"
             className="relative z-10 px-12 py-5 bg-white text-blue-700 hover:bg-blue-50 rounded-xl font-bold transition-all shadow-xl flex items-center gap-3 group text-xl whitespace-nowrap active:scale-95 shrink-0"
           >
             Get Started <ChevronRight className="w-7 h-7 group-hover:translate-x-1 transition-transform" />

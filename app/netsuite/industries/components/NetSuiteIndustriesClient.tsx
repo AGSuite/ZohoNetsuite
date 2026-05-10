@@ -698,9 +698,9 @@ export default function NetSuiteIndustriesClient() {
                     >
                       <service.icon className="w-6 h-6 text-white" />
                     </motion.div>
-                    <h2 className="text-lg font-bold text-gray-900 leading-tight">
+                    <h3 className="text-lg font-bold text-gray-900 leading-tight">
                       {service.title}
-                    </h2>
+                    </h3>
                     <p className="text-gray-600 text-sm leading-relaxed mt-2">
                       {service.description}
                     </p>

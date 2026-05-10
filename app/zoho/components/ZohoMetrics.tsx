@@ -125,16 +125,16 @@ const ZohoMetrics = () => {
                         className="flex flex-wrap items-center justify-center gap-4"
                     >
                         <Link
-                            href="/zoho/contact"
+                            href="/zoho/contact/free-consultation"
                             className="px-10 py-4 bg-rose-600 hover:bg-rose-700 text-white rounded-xl font-bold text-base transition-all shadow-lg shadow-rose-600/30 hover:shadow-xl hover:shadow-rose-600/40 hover:scale-105 active:scale-100"
                         >
-                            Get Started
+                            Get Free Consultation
                         </Link>
                         <Link
-                            href="/zoho/contact/free-consultation"
+                            href="/zoho/contact"
                             className="px-10 py-4 bg-white/5 border border-white/10 hover:border-white/20 text-white rounded-xl font-bold text-base transition-all backdrop-blur-sm hover:bg-white/10"
                         >
-                            Free Trial
+                            Get Demo
                         </Link>
                     </motion.div>
 

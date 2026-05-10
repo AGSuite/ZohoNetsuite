@@ -129,8 +129,8 @@ export default function MagentoConnectorPage() {
 
       {/* STICKY NAV */}
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-center gap-1 overflow-x-auto py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-wrap items-center justify-center gap-1 py-2 sm:py-4">
             {[["What is it?", "#what-is"], ["Capabilities", "#modules"], ["Benefits", "#benefits"], ["Services", "#services"], ["Pricing", "#pricing"], ["FAQ", "#faq"]].map(([label, href]) => (
               <a key={href} href={href} className="px-4 py-2 text-base font-semibold hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-500">{label}</span>
