@@ -89,7 +89,7 @@ export const navItemsNetSuite: NavSection[] = [
             },
             {
                 label: "Our Offices",
-                href: "/netsuite/about-us#offices",
+                href: "/netsuite/our-offices",
                 description: "Explore our global presence and office locations.",
                 icon: Building2
             },

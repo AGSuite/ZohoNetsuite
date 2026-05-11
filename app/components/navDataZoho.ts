@@ -102,7 +102,7 @@ export const navItemsZoho: NavSection[] = [
             },
             {
                 label: "Our Offices",
-                href: "/zoho/about-us#offices",
+                href: "/zoho/our-offices",
                 description: "Explore our global presence and office locations.",
                 icon: Building2
             },

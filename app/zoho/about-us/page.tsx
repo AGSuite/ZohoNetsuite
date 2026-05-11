@@ -1166,7 +1166,7 @@ export default function AboutClient() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative w-full overflow-hidden group"
           >
-            <GlobalOfficeMap />
+            <GlobalOfficeMap contactPath="/zoho/contact" />
           </motion.div>
         </div>
       </section>

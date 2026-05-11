@@ -50,7 +50,7 @@ const indiaCities = [
   { name: "HYDERABAD", offset: [50, 20], coords: [78.4867, 17.3850] },
 ];
 
-const GlobalOfficeMap = () => {
+const GlobalOfficeMap = ({ contactPath = "/netsuite/contact" }: { contactPath?: string }) => {
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
   const [activeOffice, setActiveOffice] = useState<Office | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -222,7 +222,7 @@ const GlobalOfficeMap = () => {
                     </p>
                     <div className="flex gap-2">
                       <Link
-                        href="/netsuite/contact"
+                        href={contactPath}
                         className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-bold py-1.5 rounded-xl text-center shadow-lg shadow-blue-100 transition-all flex items-center justify-center gap-2"
                       >
                         Contact Us <ArrowUpRight className="w-2.5 h-2.5" />
