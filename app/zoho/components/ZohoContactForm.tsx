@@ -334,7 +334,7 @@ export default function ZohoContactForm() {
                                         hidden: { opacity: 0, y: 20 },
                                         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
                                     }}
-                                    className="mb-12"
+                                    className="mb-6"
                                 >
                                     <Image 
                                         src="/images/zoho logos/zoho premium.png" 
@@ -537,3 +537,7 @@ export default function ZohoContactForm() {
         </>
     );
 }
+
+
+
+

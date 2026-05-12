@@ -4,12 +4,12 @@ import React from "react";
 
 
 
-import { 
-  TrendingUp, 
-  Heart, 
-  Target, 
-  Wallet, 
-  ShieldCheck, 
+import {
+  TrendingUp,
+  Heart,
+  Target,
+  Wallet,
+  ShieldCheck,
   Zap,
   Globe2,
   Clock,
@@ -175,8 +175,7 @@ export default function ZohoPayrollPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "HR", href: "/zoho/solutions/hr" },
-        { label: "Zoho Payroll", href: "/zoho/solutions/hr/zoho-payroll" },
+        { label: "Zoho Payroll", href: "/zoho-payroll" },
       ]}
       stats={stats}
       modules={modules}
@@ -201,10 +200,14 @@ export default function ZohoPayrollPage() {
           "Premium: $7 /employee/month",
           "Ultimate: $10 /employee/month",
         ],
-        ctaText: "Start My Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 

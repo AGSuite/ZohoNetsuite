@@ -378,3 +378,7 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
     </div>
   );
 };
+
+
+
+

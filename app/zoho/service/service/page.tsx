@@ -88,7 +88,7 @@ export default function ZohoServicePage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Service", href: "/zoho/service/service" },
+        { label: "Zoho Service", href: "/zoho/service/service" },
       ]}
       stats={stats}
       modules={modules}
@@ -112,8 +112,12 @@ export default function ZohoServicePage() {
           "Professional: $23 /agent/month",
           "Enterprise: $40 /agent/month",
         ],
-        ctaText: "Start Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+

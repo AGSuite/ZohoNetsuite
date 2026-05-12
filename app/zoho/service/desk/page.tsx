@@ -1,17 +1,17 @@
 "use client";
 
 import React from "react";
-import { 
-  Headphones, 
-  MessageSquare, 
-  Users, 
-  Zap, 
-  Clock, 
-  BarChart3, 
-  ShieldCheck, 
-  CheckCircle2, 
-  Laptop, 
-  Globe2 
+import {
+  Headphones,
+  MessageSquare,
+  Users,
+  Zap,
+  Clock,
+  BarChart3,
+  ShieldCheck,
+  CheckCircle2,
+  Laptop,
+  Globe2
 } from "lucide-react";
 import ZohoSolutionTemplate from "@/app/zoho/components/solutions/ZohoSolutionTemplate";
 
@@ -111,8 +111,12 @@ export default function ZohoDeskServicePage() {
           "Professional: $23 /agent/month",
           "Enterprise: $40 /agent/month",
         ],
-        ctaText: "Start My Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+

@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  TrendingUp, 
-  Heart, 
-  Target, 
+import {
+  TrendingUp,
+  Heart,
+  Target,
   Calendar,
   Users,
   Zap,
@@ -129,7 +129,7 @@ export default function ZohoERPPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap1.webp"
-      whatIsImage="/images/zoho-dashboards/zoho-one.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-erp-ai.png"
       heroCard1={{
         title: "45+ Apps",
         subtitle: "Everything you need in one place.",
@@ -146,10 +146,14 @@ export default function ZohoERPPage() {
           "All Employee Pricing: $37 /employee/month",
           "Flexible User Pricing: $90 /user/month",
         ],
-        ctaText: "Get Started within Minutes",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 

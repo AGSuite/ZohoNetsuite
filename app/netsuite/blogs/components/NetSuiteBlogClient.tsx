@@ -160,7 +160,7 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
 
             {/* ─── BANNER IMAGE (centered, half overlapping) ─── */}
             {featuredImageUrl && (
-                <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-16 -mt-24 sm:-mt-36 mb-12 sm:mb-16">
+                <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-16 -mt-24 sm:-mt-36 mb-16 sm:mb-20">
                     <div className="w-full bg-slate-200 rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white aspect-[16/9] sm:aspect-[16/7.5]">
                         <img
                             src={featuredImageUrl}
@@ -296,3 +296,7 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
         </article>
     );
 }
+
+
+
+

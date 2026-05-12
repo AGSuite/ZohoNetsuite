@@ -4,12 +4,12 @@ import React from "react";
 
 
 
-import { 
-  TrendingUp, 
-  Heart, 
-  Target, 
-  Wallet, 
-  ShieldCheck, 
+import {
+  TrendingUp,
+  Heart,
+  Target,
+  Wallet,
+  ShieldCheck,
   Zap,
   Globe2,
   Clock,
@@ -179,8 +179,7 @@ export default function ZohoFsmPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Service", href: "/zoho/solutions/service" },
-        { label: "Zoho FSM", href: "/zoho/solutions/service/zoho-fsm" },
+        { label: "Zoho FSM", href: "/zoho-fsm" },
       ]}
       stats={stats}
       modules={modules}
@@ -205,10 +204,14 @@ export default function ZohoFsmPage() {
           "Enterprise: $50 /user/month",
           "Yearly discounts available",
         ],
-        ctaText: "Start My Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 

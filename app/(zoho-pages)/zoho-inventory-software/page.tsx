@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  Package, 
-  Truck, 
-  RefreshCcw, 
+import {
+  Package,
+  Truck,
+  RefreshCcw,
   TrendingUp,
   Target,
   BarChart3,
@@ -173,13 +173,13 @@ export default function ZohoInventoryPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Finance", href: "/zoho/solutions/finance" },
-        { label: "Zoho Inventory", href: "/zoho/solutions/finance/zoho-inventory" },
+        { label: "Zoho Inventory", href: "/zoho-inventory-software" },
       ]}
       stats={stats}
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap3.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-inventory-dashboard.png"
       heroCard1={{
         title: "Multi-Channel Sync",
         subtitle: "Sync orders across Amazon, eBay, and Shopify.",
@@ -198,8 +198,12 @@ export default function ZohoInventoryPage() {
           "Premium: $249 /month",
           "Free: Up to 50 orders/month",
         ],
-        ctaText: "Start My Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+

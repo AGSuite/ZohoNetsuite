@@ -185,3 +185,7 @@ const data: IndustryPageData = {
 export default function ZohoTelecomPage() {
   return <ZohoIndustryTemplate data={data} />;
 }
+
+
+
+

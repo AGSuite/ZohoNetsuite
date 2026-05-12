@@ -4,11 +4,11 @@ import React from "react";
 
 
 
-import { 
-  TrendingUp, 
-  Target, 
-  Wallet, 
-  ShieldCheck, 
+import {
+  TrendingUp,
+  Target,
+  Wallet,
+  ShieldCheck,
   Zap,
   Globe2,
   Clock,
@@ -113,7 +113,6 @@ export default function ZohoExpenseFinancePage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Finance", href: "/zoho/solutions/finance" },
         { label: "Zoho Expense", href: "/zoho-expense-finance" },
       ]}
       stats={stats}
@@ -139,10 +138,14 @@ export default function ZohoExpenseFinancePage() {
           "Premium: $8 /user/month",
           "Enterprise: Custom Quote",
         ],
-        ctaText: "Request a Spend Audit",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 

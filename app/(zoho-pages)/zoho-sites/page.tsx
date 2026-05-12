@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  Globe2, 
-  Layout, 
-  Smartphone, 
+import {
+  Globe2,
+  Layout,
+  Smartphone,
   TrendingUp,
   Target,
   BarChart3,
@@ -173,13 +173,13 @@ export default function ZohoSitesPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Marketing", href: "/zoho/solutions/marketing" },
-        { label: "Zoho Sites", href: "/zoho/solutions/marketing/zoho-sites" },
+        { label: "Zoho Sites", href: "/zoho-sites" },
       ]}
       stats={stats}
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap2.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-sites-dashboard.png"
       heroCard1={{
         title: "Zero Coding Required",
         subtitle: "Build premium sites with ease.",
@@ -198,11 +198,15 @@ export default function ZohoSitesPage() {
           "Enterprise: $25 /month",
           "Free Plan Available",
         ],
-        ctaText: "Start Building for Free",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 
 

@@ -132,7 +132,7 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
 
             {/* ─── BANNER IMAGE (centered, half overlapping) ─── */}
             {featuredImageUrl && (
-                <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-16 -mt-24 sm:-mt-36 mb-12 sm:mb-16">
+                <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-16 -mt-24 sm:-mt-36 mb-6 sm:mb-8">
                     <div className="w-full bg-slate-200 rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white aspect-[16/9] sm:aspect-[16/7.5]">
                         <img
                             src={featuredImageUrl}
@@ -157,7 +157,7 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
                     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
                         {/* ── EXCERPT HIGHLIGHT BOX ── */}
                         {post.excerpt && (
-                            <div className="relative mb-16 rounded-3xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #eff6ff, #dbeafe, #e0f2fe)' }}>
+                            <div className="relative mb-8 rounded-3xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #eff6ff, #dbeafe, #e0f2fe)' }}>
                                 <div className="absolute left-0 top-0 bottom-0 w-1.5 rounded-l-3xl" style={{ background: 'linear-gradient(180deg, #1e3a8a, #2563eb, #0ea5e9)' }} />
                                 <div className="px-8 py-8 pl-12">
                                     <p className="text-xs font-black uppercase tracking-[0.3em] text-blue-600 mb-3 flex items-center gap-2">
@@ -194,3 +194,7 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
         </article>
     );
 }
+
+
+
+

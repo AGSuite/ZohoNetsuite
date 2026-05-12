@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { 
-  TrendingUp, 
-  Heart, 
-  Target, 
+import {
+  TrendingUp,
+  Heart,
+  Target,
   Calendar,
   Users,
   Zap,
@@ -201,8 +201,7 @@ export default function ZohoCRMPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Sales", href: "/zoho/solutions/sales" },
-        { label: "Zoho CRM", href: "/zoho/solutions/sales/zoho-crm" },
+        { label: "Zoho CRM", href: "/zoho-crm" },
       ]}
       stats={stats}
       modules={modules}
@@ -227,8 +226,12 @@ export default function ZohoCRMPage() {
           "Enterprise: $40 /user/month",
           "Ultimate: $52 /user/month",
         ],
-        ctaText: "Start 15-Day Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+

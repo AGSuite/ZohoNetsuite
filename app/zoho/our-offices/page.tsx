@@ -134,7 +134,7 @@ export default function ZohoOfficesPage() {
           }}
         />
         
-        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-12">
+        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-[120px] sm:pt-[136px] pb-12">
           {/* Breadcrumb */}
           <motion.nav
             initial={{ opacity: 0, y: -8 }}
@@ -327,7 +327,7 @@ export default function ZohoOfficesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-5">
               <Globe className="w-4 h-4 text-blue-600" />
@@ -373,7 +373,7 @@ export default function ZohoOfficesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-5 shadow-sm">
               <Building2 className="w-4 h-4 text-blue-600" />
@@ -396,7 +396,7 @@ export default function ZohoOfficesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex items-center justify-center gap-2 sm:gap-3 mb-12 flex-wrap"
+            className="flex items-center justify-center gap-2 sm:gap-3 mb-6 flex-wrap"
           >
             {(["All", "INDIA", "USA", "UK"] as Region[]).map(tab => {
               const isActive = locationFilter === tab;
@@ -568,3 +568,7 @@ export default function ZohoOfficesPage() {
     </div>
   );
 }
+
+
+
+

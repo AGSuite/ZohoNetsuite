@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  Megaphone, 
-  Workflow, 
-  Target, 
+import {
+  Megaphone,
+  Workflow,
+  Target,
   TrendingUp,
   BarChart3,
   Calendar,
@@ -169,16 +169,18 @@ export default function ZohoMarketingAutomationPage() {
       title="Zoho Marketing Automation — Unified Success"
       subtitle="The Growth Engine for High-Performance Marketing Teams."
       description="Zoho Marketing Automation is a complete marketing platform that helps you orchestrate customer journeys, score leads, and attribute revenue with absolute precision."
+      introDescription2="Beyond simple email automation, Zoho Marketing Automation empowers your team to build sophisticated omnichannel workflows. From behavioral tracking on your website to automated lead scoring and CRM synchronization, every feature is designed to bridge the gap between marketing and sales, ensuring no lead is left behind."
+      introDescription3="By leveraging advanced attribution modeling and real-time analytics, you gain a 360-degree view of your marketing ROI. This level of insight allows you to optimize your budget allocation, focusing on the channels and campaigns that truly drive business growth and customer loyalty."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Marketing", href: "/zoho/solutions/marketing" },
-        { label: "Marketing Automation", href: "/zoho/solutions/marketing/zoho-marketing-automation" },
+        { label: "Marketing Automation", href: "/zoho-marketing-automation" },
       ]}
       stats={stats}
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap4.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-marketing-automation-ai.png"
       heroCard1={{
         title: "Omnichannel Power",
         subtitle: "Unify every marketing touchpoint.",
@@ -197,11 +199,15 @@ export default function ZohoMarketingAutomationPage() {
           "Enterprise: $75 /month",
           "Free Plan for small teams",
         ],
-        ctaText: "Start My Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 
 

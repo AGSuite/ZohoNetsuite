@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  Heart, 
-  Target, 
-  Clock, 
+import {
+  Heart,
+  Target,
+  Clock,
   TrendingUp,
   Zap,
   Users,
@@ -173,8 +173,7 @@ export default function ZohoDeskPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Service", href: "/zoho/solutions/service" },
-        { label: "Zoho Desk", href: "/zoho/solutions/service/zoho-desk" },
+        { label: "Zoho Desk", href: "/zoho-desk" },
       ]}
       stats={stats}
       modules={modules}
@@ -199,8 +198,12 @@ export default function ZohoDeskPage() {
           "Enterprise: $40 /agent/month",
           "Ultimate: $52 /agent/month",
         ],
-        ctaText: "Start 15-Day Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+

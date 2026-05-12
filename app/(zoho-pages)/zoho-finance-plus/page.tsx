@@ -4,11 +4,11 @@ import React from "react";
 
 
 
-import { 
-  TrendingUp, 
-  Heart, 
-  Target, 
-  Layers, 
+import {
+  TrendingUp,
+  Heart,
+  Target,
+  Layers,
   Wallet,
   Package,
   FileText,
@@ -176,8 +176,7 @@ export default function ZohoFinancePlusPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Finance", href: "/zoho/solutions/finance" },
-        { label: "Zoho Finance Plus", href: "/zoho/solutions/finance/zoho-finance-plus" },
+        { label: "Zoho Finance Plus", href: "/zoho-finance-plus" },
       ]}
       stats={stats}
       modules={modules}
@@ -202,8 +201,12 @@ export default function ZohoFinancePlusPage() {
           "Advanced Inventory Included",
           "Premium Support Included",
         ],
-        ctaText: "Get Started Now",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+

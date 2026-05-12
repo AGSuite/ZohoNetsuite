@@ -233,3 +233,7 @@ export default function SoftwarePage() {
   return <IndustryTemplate data={data} />;
 }
 
+
+
+
+

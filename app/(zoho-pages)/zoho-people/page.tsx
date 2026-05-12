@@ -173,8 +173,7 @@ export default function ZohoPeoplePage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "HR", href: "/zoho/solutions/hr" },
-        { label: "Zoho People", href: "/zoho/solutions/hr/zoho-people" },
+        { label: "Zoho People", href: "/zoho-people" },
       ]}
       stats={stats}
       modules={modules}
@@ -199,8 +198,12 @@ export default function ZohoPeoplePage() {
           "Premium: $3 /user/month",
           "Enterprise: $5 /user/month",
         ],
-        ctaText: "Start 15-Day Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+

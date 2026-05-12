@@ -23,7 +23,7 @@ import {
     Users
 } from "lucide-react";
 
-/* ─── Particles ───────────────────────────────────────────────────────────── */
+/* â”€â”€â”€ Particles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const PARTICLES = [
     { w: 2, h: 2, top: 10, left: 15, dur: 5, delay: 0.3 },
     { w: 1.5, h: 1.5, top: 25, left: 70, dur: 4.2, delay: 1.1 },
@@ -103,7 +103,7 @@ export default function ZohoSupportPage() {
         <div className="min-h-screen bg-white selection:bg-blue-900 selection:text-white">
             <Script src="https://js.zohostatic.in/support/app/js/jqueryandencoder.ef05974972bf3bca1b87.js" strategy="afterInteractive" />
 
-            {/* ── Hero / Form Section ─────────────────────────────────────────────── */}
+            {/* â”€â”€ Hero / Form Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
             <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d] flex items-center">
 
                 {/* Grid lines */}
@@ -132,13 +132,13 @@ export default function ZohoSupportPage() {
                     />
                 ))}
 
-                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-28 pb-20">
+                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-24 pb-12">
 
                     {/* Breadcrumb */}
                     <motion.nav
                         initial={{ opacity: 0, y: -8 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="flex items-center gap-2 text-sm font-medium mb-16"
+                        className="flex items-center gap-2 text-sm font-medium mb-8"
                     >
                         <Link href="/zoho" className="text-blue-300 hover:text-white transition-colors">Home</Link>
                         <ChevronRight className="w-3.5 h-3.5 text-white/30" />
@@ -149,7 +149,7 @@ export default function ZohoSupportPage() {
 
                     <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-start">
 
-                        {/* ── LEFT: Content ─────────────────────────────────────────── */}
+                        {/* â”€â”€ LEFT: Content â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -223,7 +223,7 @@ export default function ZohoSupportPage() {
                             </div>
                         </motion.div>
 
-                        {/* ── RIGHT: Form ───────────────────────────────────────────── */}
+                        {/* â”€â”€ RIGHT: Form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
                         <motion.div
                             initial={{ opacity: 0, x: 30 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -361,7 +361,7 @@ export default function ZohoSupportPage() {
                 </div>
             </section>
 
-            {/* ── Quick Access Sub-Pages (THE 4 CARDS) ───────────────────────────── */}
+            {/* â”€â”€ Quick Access Sub-Pages (THE 4 CARDS) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
             <section className="py-20 bg-white border-y border-gray-100">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -440,3 +440,7 @@ export default function ZohoSupportPage() {
         </div>
     );
 }
+
+
+
+

@@ -249,3 +249,7 @@ const data: IndustryPageData = {
 export default function TelecomPage() {
   return <IndustryTemplate data={data} />;
 }
+
+
+
+

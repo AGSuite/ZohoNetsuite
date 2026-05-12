@@ -17,3 +17,7 @@ export default async function BlogsPage() {
         </main>
     );
 }
+
+
+
+

@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  Cpu, 
-  Code2, 
-  ShieldCheck, 
+import {
+  Cpu,
+  Code2,
+  ShieldCheck,
   Zap,
   Layers,
   Database,
@@ -174,13 +174,13 @@ export default function ZohoCatalystPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Dev Platforms", href: "/zoho/solutions/dev-platforms" },
-        { label: "Zoho Catalyst", href: "/zoho/solutions/dev-platforms/zoho-catalyst" },
+        { label: "Zoho Catalyst", href: "/zoho-catalyst" },
       ]}
       stats={stats}
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap1.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-catalyst-dashboard.png"
       heroCard1={{
         title: "10x Faster Dev",
         subtitle: "Zero server management overhead.",
@@ -199,11 +199,15 @@ export default function ZohoCatalystPage() {
           "DB Storage: $0.20 /GB/month",
           "Pay for exactly what you use",
         ],
-        ctaText: "Start Developing for Free",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 
 

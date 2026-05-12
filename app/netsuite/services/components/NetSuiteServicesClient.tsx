@@ -191,12 +191,12 @@ export default function NetSuiteServicesClient() {
             backgroundSize: "70px 70px",
           }}
         />
-        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-8">
+        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-24 sm:pt-32 pb-8">
           <motion.nav
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20"
+            className="absolute top-20 sm:top-24 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20"
           >
             <Link
               href="/netsuite"
@@ -250,7 +250,7 @@ export default function NetSuiteServicesClient() {
               >
                 <Link
                   href="#services"
-                  className="inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl hover:scale-105"
+                  className="inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:scale-105"
                 >
                   Explore Services{" "}
                   <motion.span
@@ -336,7 +336,7 @@ export default function NetSuiteServicesClient() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="border-t border-white/15 pt-5 sm:pt-6"
+            className="border-t border-white/15 pt-8 sm:pt-10"
           >
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {stats.map((s, i) => (
@@ -659,3 +659,7 @@ export default function NetSuiteServicesClient() {
     </div>
   );
 }
+
+
+
+

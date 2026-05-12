@@ -4,11 +4,11 @@ import React from "react";
 
 
 
-import { 
-  Users, 
-  Heart, 
-  Target, 
-  Layers, 
+import {
+  Users,
+  Heart,
+  Target,
+  Layers,
   TrendingUp,
   Zap,
   ShieldCheck,
@@ -173,13 +173,13 @@ export default function ZohoWorkplacePage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Email & Collab", href: "/zoho/solutions/email-collab" },
-        { label: "Zoho Workplace", href: "/zoho/solutions/email-collab/zoho-workplace" },
+        { label: "Zoho Workplace", href: "/zoho-workplace" },
       ]}
       stats={stats}
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap1.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-workplace-dashboard.png"
       heroCard1={{
         title: "8 Integrated Apps",
         subtitle: "One platform for team collaboration.",
@@ -198,10 +198,14 @@ export default function ZohoWorkplacePage() {
           "Mail Only Plan: $1 /user/month",
           "Custom enterprise options available",
         ],
-        ctaText: "Start 15-Day Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 

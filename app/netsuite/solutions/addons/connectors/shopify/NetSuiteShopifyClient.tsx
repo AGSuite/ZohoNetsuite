@@ -77,7 +77,7 @@ export default function NetSuiteShopifyClient() {
       {/* Services Section */}
       <section id="services" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             <h2 className="text-5xl font-semibold text-gray-900 text-center">NetSuite Shopify Services</h2>
             <p className="text-gray-700 text-lg max-w-2xl mx-auto mt-4">Expert services to help you build and grow your Shopify-NetSuite ecosystem</p>
           </div>
@@ -132,3 +132,8 @@ export default function NetSuiteShopifyClient() {
     </div>
   );
 }
+
+
+
+
+

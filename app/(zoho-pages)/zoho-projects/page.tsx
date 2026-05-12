@@ -4,11 +4,11 @@ import React from "react";
 
 
 
-import { 
-  Calendar, 
-  Heart, 
-  Target, 
-  Clock, 
+import {
+  Calendar,
+  Heart,
+  Target,
+  Clock,
   TrendingUp,
   Zap,
   Users,
@@ -25,7 +25,7 @@ import ZohoSolutionTemplate from "@/app/zoho/components/solutions/ZohoSolutionTe
 export default function ZohoProjectsPage() {
   const stats = [
     { label: "On-Time Delivery", value: 40, suffix: "% higher", icon: CheckCircle },
-    { label: "Team Productivity", value: 55, suffix: "%", icon: Zap },    { label: "Project Cost Savings", value: 30, suffix: "%", icon: TrendingUp },
+    { label: "Team Productivity", value: 55, suffix: "%", icon: Zap }, { label: "Project Cost Savings", value: 30, suffix: "%", icon: TrendingUp },
     { label: "Resource Utilization", value: 92, suffix: "%", icon: Users },
   ];
 
@@ -172,8 +172,7 @@ export default function ZohoProjectsPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Projects", href: "/zoho/solutions/projects" },
-        { label: "Zoho Projects", href: "/zoho/solutions/projects/zoho-projects" },
+        { label: "Zoho Projects", href: "/zoho-projects" },
       ]}
       stats={stats}
       modules={modules}
@@ -198,8 +197,12 @@ export default function ZohoProjectsPage() {
           "Enterprise: $10 /user/month",
           "Yearly discounts available",
         ],
-        ctaText: "Start 10-Day Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+

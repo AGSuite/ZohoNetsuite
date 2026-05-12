@@ -11,3 +11,7 @@ export const metadata: Metadata = {
 export default function IntegrationServicesPage() {
   return <NetSuiteIntegrationClient />;
 }
+
+
+
+

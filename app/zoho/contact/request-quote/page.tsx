@@ -20,7 +20,7 @@ import {
     Globe
 } from "lucide-react";
 
-/* ─── Particles ───────────────────────────────────────────────────────────── */
+/* â”€â”€â”€ Particles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const PARTICLES = [
     { w: 2, h: 2, top: 10, left: 15, dur: 5, delay: 0.3 },
     { w: 1.5, h: 1.5, top: 25, left: 70, dur: 4.2, delay: 1.1 },
@@ -102,7 +102,7 @@ export default function ZohoRequestQuotePage() {
             return true;
         };
 
-        // reCAPTCHA callback — marks captcha as verified
+        // reCAPTCHA callback â€” marks captcha as verified
         window.rccallback409531000042578178 = function () {
             const recap = document.getElementById('recap409531000042578178');
             if (recap) recap.setAttribute('captcha-verified', 'true');
@@ -200,7 +200,7 @@ export default function ZohoRequestQuotePage() {
     return (
         <div className="min-h-screen bg-white selection:bg-blue-900 selection:text-white">
 
-            {/* ── Hero / Form Section ─────────────────────────────────────────────── */}
+            {/* â”€â”€ Hero / Form Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
             <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d] flex items-center">
 
                 {/* Grid lines */}
@@ -229,13 +229,13 @@ export default function ZohoRequestQuotePage() {
                     />
                 ))}
 
-                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-28 pb-20">
+                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-24 pb-12">
 
                     {/* Breadcrumb */}
                     <motion.nav
                         initial={{ opacity: 0, y: -8 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="flex items-center gap-2 text-sm font-medium mb-16"
+                        className="flex items-center gap-2 text-sm font-medium mb-8"
                     >
                         <Link href="/zoho" className="text-blue-300 hover:text-white transition-colors">Home</Link>
                         <ChevronRight className="w-3.5 h-3.5 text-white/30" />
@@ -246,7 +246,7 @@ export default function ZohoRequestQuotePage() {
 
                     <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-start">
 
-                        {/* ── LEFT: Content ─────────────────────────────────────────── */}
+                        {/* â”€â”€ LEFT: Content â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -314,7 +314,7 @@ export default function ZohoRequestQuotePage() {
                             </div>
                         </motion.div>
 
-                        {/* ── RIGHT: Form ───────────────────────────────────────────── */}
+                        {/* â”€â”€ RIGHT: Form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
                         <motion.div
                             initial={{ opacity: 0, x: 30 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -326,7 +326,7 @@ export default function ZohoRequestQuotePage() {
                                 <div className="relative z-10 p-8 lg:p-10">
                                     <div className="mb-8 border-b border-gray-100 pb-6">
                                         <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Request Project Estimate</h2>
-                                        <p className="text-gray-500 text-base">Detail your project requirements — our strategists will connect within 24 hours.</p>
+                                        <p className="text-gray-500 text-base">Detail your project requirements â€” our strategists will connect within 24 hours.</p>
                                     </div>
 
                                     <div id="crmWebToEntityForm" className="crmWebToEntityForm">
@@ -444,7 +444,7 @@ export default function ZohoRequestQuotePage() {
                 </div>
             </section>
 
-            {/* ── Quick Access Sub-Pages (THE 4 CARDS) ───────────────────────────── */}
+            {/* â”€â”€ Quick Access Sub-Pages (THE 4 CARDS) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
             <section className="py-20 bg-white border-y border-gray-100">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -509,7 +509,7 @@ export default function ZohoRequestQuotePage() {
                     </div>
                 </div>
             </section>
-            {/* ── Scripts ─────────────────────────────────────────────────────────── */}
+            {/* â”€â”€ Scripts â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
             <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
             <Script id="zoho-salesiq-quote" strategy="afterInteractive">
                 {`
@@ -528,3 +528,7 @@ export default function ZohoRequestQuotePage() {
         </div>
     );
 }
+
+
+
+

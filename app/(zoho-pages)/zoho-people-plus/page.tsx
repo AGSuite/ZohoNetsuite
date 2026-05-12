@@ -121,8 +121,7 @@ export default function ZohoPeoplePlusPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "HR", href: "/zoho/solutions/hr" },
-        { label: "Zoho People Plus", href: "/zoho/solutions/hr/zoho-people-plus" },
+        { label: "Zoho People Plus", href: "/zoho-people-plus" },
       ]}
       stats={stats}
       modules={modules}
@@ -147,8 +146,12 @@ export default function ZohoPeoplePlusPage() {
           "Includes 6 Integrated HR Apps",
           "Enterprise features included",
         ],
-        ctaText: "Start My Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+

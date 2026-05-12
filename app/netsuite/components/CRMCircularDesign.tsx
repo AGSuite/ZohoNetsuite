@@ -247,3 +247,7 @@ export const CRMCircularDesign = () => {
         </div>
     );
 };
+
+
+
+

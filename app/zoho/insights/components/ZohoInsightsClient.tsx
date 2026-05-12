@@ -24,7 +24,6 @@ const InsightNav = () => (
                     { label: 'Blogs', href: '/zoho/blogs' },
                     { label: 'Case Studies', href: '/zoho/case-studies' },
                     { label: 'Events', id: '#events' },
-                    { label: 'Awards', id: '#awards' },
                     { label: 'Get Started', id: '#contact' },
                 ].map((item: any) => (
                     <Link
@@ -40,54 +39,7 @@ const InsightNav = () => (
     </div>
 );
 
-function AwardsAndRecognitionSection() {
-    return (
-        <section className="relative pt-20 pb-16 bg-white overflow-hidden" id="awards">
-            <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 md:px-12 lg:px-16">
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left">
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="max-w-xl"
-                    >
-                        <h2 className="text-2xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-600 leading-snug tracking-tight">
-                            Recognized Excellence in Zoho Solutions
-                        </h2>
-                        <p className="mt-4 text-gray-500">
-                            Partnering with Zoho to deliver best-in-class digital transformation for global enterprises.
-                        </p>
-                    </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.3 }}
-                        className="flex flex-row items-center justify-center gap-10"
-                    >
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.5 }}
-                            className="hover:-translate-y-2 transition-transform duration-300"
-                        >
-                            <Image
-                                src="/images/awards/partnerofyear.png"
-                                alt="Partner of the Year"
-                                width={180}
-                                height={180}
-                                className="w-56 h-56 object-contain"
-                            />
-                        </motion.div>
-                    </motion.div>
-                </div>
-            </div>
-        </section>
-    );
-}
 
 function EventsSection() {
     return (
@@ -176,12 +128,12 @@ export default function ZohoInsightsClient({ blogs }: { blogs: any[] }) {
         <div className="min-h-screen bg-white">
             <section className="relative min-h-screen overflow-hidden flex flex-col" style={{ background: "linear-gradient(135deg,#000814,#000f22,#001535)" }}>
                 <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px]" />
-                <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-8">
-                    <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20">
+                <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-[120px] sm:pt-[136px] pb-8">
+                    <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="absolute top-[96px] sm:top-24 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20">
                         <Link href="/zoho" className="text-blue-300 hover:text-white transition-colors">Home</Link>
                         <ChevronRight className="w-3.5 h-3.5 text-white/30" /><span className="text-white/80">Zoho Insights</span>
                     </motion.nav>
-                    <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6" style={{ minHeight: 'calc(100vh - 150px)' }}>
+                    <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6" style={{ minHeight: '500px' }}>
                         <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
                             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15]">
                                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">Knowledge, Expertise &amp; Digital Success</span>
@@ -191,10 +143,10 @@ export default function ZohoInsightsClient({ blogs }: { blogs: any[] }) {
                                 Dive into our Zoho Resource Center. From expert-led blogs to deep-dive case studies, we provide the insights you need to scale your business with Zoho.
                             </motion.p>
                             <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="flex flex-wrap gap-3">
-                                <Link href="/zoho/blogs" className="inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl hover:scale-105">
+                                <Link href="/zoho/blogs" className="inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:scale-105">
                                     Explore Blogs <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity }}><ArrowRight className="w-4 h-4" /></motion.span>
                                 </Link>
-                                <Link href="#events" className="inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium rounded-full bg-blue-600/20 backdrop-blur-md border border-blue-400/30 text-blue-200 hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl hover:scale-105">
+                                <Link href="#events" className="inline-flex items-center gap-3 px-7 py-3.5 text-sm font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:scale-105">
                                     View Events <Calendar className="w-4 h-4" />
                                 </Link>
                             </motion.div>
@@ -208,7 +160,7 @@ export default function ZohoInsightsClient({ blogs }: { blogs: any[] }) {
                             </div>
                         </motion.div>
                     </div>
-                    <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="border-t border-white/15 pt-5 sm:pt-6">
+                    <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="border-t border-white/15 pt-8 sm:pt-10">
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
                             {stats.map((s, i) => (
                                 <motion.div key={i} className="text-center group">
@@ -236,9 +188,7 @@ export default function ZohoInsightsClient({ blogs }: { blogs: any[] }) {
                 <EventsSection />
             </div>
 
-            <div id="awards" className="scroll-mt-24">
-                <AwardsAndRecognitionSection />
-            </div>
+
 
             <div id="contact" className="scroll-mt-24">
                 <FooterContactForm platform="Zoho" />
@@ -246,3 +196,7 @@ export default function ZohoInsightsClient({ blogs }: { blogs: any[] }) {
         </div>
     );
 }
+
+
+
+

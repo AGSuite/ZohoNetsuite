@@ -229,3 +229,7 @@ export default function RetailPage() {
   return <IndustryTemplate data={data} />;
 }
 
+
+
+
+

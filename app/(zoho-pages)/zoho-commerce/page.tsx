@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  ShoppingBag, 
-  ShoppingCart, 
-  Target, 
+import {
+  ShoppingBag,
+  ShoppingCart,
+  Target,
   TrendingUp,
   BarChart3,
   Calendar,
@@ -173,13 +173,13 @@ export default function ZohoCommercePage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Marketing", href: "/zoho/solutions/marketing" },
-        { label: "Zoho Commerce", href: "/zoho/solutions/marketing/zoho-commerce" },
+        { label: "Zoho Commerce", href: "/zoho-commerce" },
       ]}
       stats={stats}
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap3.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-commerce-dashboard.png"
       heroCard1={{
         title: "Omnichannel Selling",
         subtitle: "Sync with Amazon and eBay instantly.",
@@ -198,11 +198,15 @@ export default function ZohoCommercePage() {
           "Advanced: $140 /month",
           "Custom enterprise options available",
         ],
-        ctaText: "Start Building My Store",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 
 

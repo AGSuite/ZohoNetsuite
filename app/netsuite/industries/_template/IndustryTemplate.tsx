@@ -308,7 +308,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                 </Link>
                 <Link
                   href="#challenges"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 shadow-xl hover:scale-105"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:scale-105"
                 >
                   View Challenges
                 </Link>
@@ -389,7 +389,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="border-t border-white/15 pt-5 sm:pt-6"
+            className="border-t border-white/15 pt-8 sm:pt-10"
           >
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {data.stats.map((s, i) => (
@@ -545,7 +545,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8 items-stretch">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8 items-start">
             {data.challenges.map((item, index) => {
               const isOpen = openChallenge === index;
               const fallbackColors = [
@@ -571,7 +571,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                     delay: index * 0.06,
                     ease: "easeOut",
                   }}
-                  className="group flex flex-col h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
+                  className="group flex flex-col min-h-[420px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
                 >
                   <div
                     className="relative h-56 shrink-0 overflow-hidden cursor-pointer"

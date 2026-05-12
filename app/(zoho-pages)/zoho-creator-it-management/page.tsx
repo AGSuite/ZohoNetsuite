@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  Cpu, 
-  Target, 
-  Layers, 
+import {
+  Cpu,
+  Target,
+  Layers,
   TrendingUp,
   Zap,
   ShieldCheck,
@@ -109,7 +109,6 @@ export default function ZohoCreatorITManagementPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "IT Management", href: "/zoho/solutions/it-management" },
         { label: "Zoho Creator", href: "/zoho-creator-it-management" },
       ]}
       stats={stats}
@@ -134,10 +133,14 @@ export default function ZohoCreatorITManagementPage() {
           "Enterprise: $25 /user/month",
           "Specialized IT Bundles Available",
         ],
-        ctaText: "Start Building IT Tools",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 

@@ -259,12 +259,12 @@ export default function NetSuiteConsultingPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
         </div>
 
-        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10">
+        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-24 sm:pt-32 pb-8 sm:pb-10">
           <motion.nav
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.5 }}
-            className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20"
+            className="absolute top-20 sm:top-24 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20"
             aria-label="Breadcrumb"
           >
             <Link href="/netsuite" className="text-blue-300 hover:text-white transition-colors duration-200">Home</Link>
@@ -306,7 +306,7 @@ export default function NetSuiteConsultingPage() {
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <a
                   href="#contact-form"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
                 >
                   Talk to a Consultant
                   <motion.span
@@ -371,7 +371,7 @@ export default function NetSuiteConsultingPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="border-t border-white/15 pt-5 sm:pt-6"
+            className="border-t border-white/15 pt-8 sm:pt-10"
           >
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {stats.map((stat, index) => (
@@ -593,9 +593,8 @@ export default function NetSuiteConsultingPage() {
                 <button
                   key={index}
                   onClick={() => setActiveBenefit(index)}
-                  className={`group relative w-full flex flex-col justify-center px-5 py-4 text-left rounded-xl transition-all duration-300 outline-none ${
-                    activeBenefit === index ? "bg-white shadow-xl border-l-4 border-blue-600" : "bg-white/5 border-l-4 border-transparent hover:bg-white/10"
-                  }`}
+                  className={`group relative w-full flex flex-col justify-center px-5 py-4 text-left rounded-xl transition-all duration-300 outline-none ${activeBenefit === index ? "bg-white shadow-xl border-l-4 border-blue-600" : "bg-white/5 border-l-4 border-transparent hover:bg-white/10"
+                    }`}
                   suppressHydrationWarning
                 >
                   <div className="flex items-center gap-4 w-full">
@@ -737,3 +736,7 @@ export default function NetSuiteConsultingPage() {
     </div>
   );
 }
+
+
+
+

@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  Zap, 
-  Workflow, 
-  Target, 
+import {
+  Zap,
+  Workflow,
+  Target,
   TrendingUp,
   Clock,
   Layout,
@@ -174,8 +174,7 @@ export default function ZohoSprintsPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Projects", href: "/zoho/solutions/projects" },
-        { label: "Zoho Sprints", href: "/zoho/solutions/projects/zoho-sprints" },
+        { label: "Zoho Sprints", href: "/zoho-sprint" },
       ]}
       stats={stats}
       modules={modules}
@@ -200,11 +199,15 @@ export default function ZohoSprintsPage() {
           "Enterprise: $25 /user/month",
           "Free tier available for up to 5 users",
         ],
-        ctaText: "Start My Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 
 

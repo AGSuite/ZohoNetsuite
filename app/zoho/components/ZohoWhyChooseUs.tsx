@@ -63,7 +63,7 @@ const ZohoWhyChooseUs = () => {
                   whileInView={{ x: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white leading-tight mb-12 ml-5"
+                  className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white leading-tight mb-6 ml-5"
                 >
                   Why Partner with AGSuite?
                 </motion.h2>
@@ -111,3 +111,7 @@ const ZohoWhyChooseUs = () => {
 };
 
 export default ZohoWhyChooseUs;
+
+
+
+

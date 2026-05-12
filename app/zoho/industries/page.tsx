@@ -12,3 +12,7 @@ const ZohoIndustriesClient = dynamic(() => import("./components/ZohoIndustriesCl
 export default function IndustriesPage() {
   return <ZohoIndustriesClient />;
 }
+
+
+
+

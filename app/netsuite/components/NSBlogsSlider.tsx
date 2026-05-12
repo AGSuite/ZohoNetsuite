@@ -174,3 +174,7 @@ export default function NSBlogsSlider({ blogs, variant = 'default' }: NSBlogsSli
         </section>
     )
 }
+
+
+
+

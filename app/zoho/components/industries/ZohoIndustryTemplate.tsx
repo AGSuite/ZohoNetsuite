@@ -27,10 +27,6 @@ import {
   DollarSign,
   Zap,
   Shield,
-  Rocket,
-  Wrench,
-  Settings,
-  GraduationCap,
 } from "lucide-react";
 import FooterContactForm from "@/app/components/shared/FooterContactForm";
 import { FAQ } from "@/app/components/home/FAQ";
@@ -115,6 +111,7 @@ export interface IndustryPageData {
   relatedIndustries: { label: string; href: string }[];
 }
 
+/* ─── Benefit Icon Map ─── */
 const benefitIcons = [
   Layers,
   BarChart3,
@@ -126,6 +123,7 @@ const benefitIcons = [
   Users,
 ];
 
+/* ─── Card Colors ─── */
 const cardBgColors = [
   "bg-gradient-to-br from-white to-[#eef0ff]",
   "bg-gradient-to-br from-white to-[#eaf6ff]",
@@ -138,6 +136,30 @@ const cardBgColors = [
 export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData }) {
   const [activeBenefit, setActiveBenefit] = useState(0);
   const [openChallenge, setOpenChallenge] = useState<number | null>(null);
+
+  // Static CTA particles to avoid SSR mismatch
+  const CTA_PARTICLES = [
+    { w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 },
+    { w: 1.4, h: 2.1, top: 28, left: 22, dur: 4.1, delay: 1.2 },
+    { w: 2.8, h: 1.2, top: 45, left: 37, dur: 6.3, delay: 0.8 },
+    { w: 1.7, h: 2.4, top: 62, left: 55, dur: 3.8, delay: 2.1 },
+    { w: 2.3, h: 1.8, top: 78, left: 70, dur: 5.5, delay: 0.3 },
+    { w: 1.2, h: 1.5, top: 90, left: 85, dur: 4.7, delay: 1.9 },
+    { w: 2.6, h: 2.0, top: 5, left: 50, dur: 3.5, delay: 0.6 },
+    { w: 1.9, h: 1.3, top: 33, left: 72, dur: 6.1, delay: 1.4 },
+    { w: 2.4, h: 2.7, top: 55, left: 15, dur: 4.4, delay: 0.9 },
+    { w: 1.5, h: 1.9, top: 70, left: 40, dur: 5.8, delay: 2.5 },
+    { w: 2.0, h: 1.4, top: 18, left: 63, dur: 3.9, delay: 1.7 },
+    { w: 2.9, h: 2.2, top: 42, left: 88, dur: 5.0, delay: 0.2 },
+    { w: 1.6, h: 2.5, top: 85, left: 25, dur: 4.2, delay: 3.0 },
+    { w: 2.2, h: 1.1, top: 22, left: 92, dur: 6.5, delay: 1.0 },
+    { w: 1.8, h: 2.8, top: 50, left: 5, dur: 3.6, delay: 2.3 },
+    { w: 2.5, h: 1.7, top: 95, left: 48, dur: 4.9, delay: 0.4 },
+    { w: 1.3, h: 2.3, top: 38, left: 60, dur: 5.3, delay: 1.5 },
+    { w: 2.7, h: 1.9, top: 67, left: 32, dur: 4.6, delay: 2.8 },
+    { w: 1.1, h: 1.6, top: 10, left: 78, dur: 3.3, delay: 0.7 },
+    { w: 2.4, h: 2.1, top: 75, left: 93, dur: 5.6, delay: 1.8 },
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -243,7 +265,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
                 </Link>
                 <Link
                   href="#challenges"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 shadow-xl hover:scale-105"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:scale-105"
                 >
                   View Challenges
                 </Link>
@@ -324,7 +346,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="border-t border-white/15 pt-5 sm:pt-6"
+            className="border-t border-white/15 pt-8 sm:pt-10"
           >
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {data.stats.map((s, i) => (
@@ -456,8 +478,11 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
         </div>
       </section>
 
-      {/* ── Features Section ────────────────────────────────────────────── */}
-      <section id="features" className="py-24 bg-white relative overflow-hidden scroll-mt-36">
+      {/* ══════ CHALLENGES AND SOLUTIONS ══════ */}
+      <section
+        id="challenges"
+        className="py-24 bg-gray-50 relative overflow-hidden scroll-mt-36"
+      >
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -466,86 +491,288 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
             className="text-center mb-16"
           >
             <span className="bg-blue-600/10 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
-              Industry Features
+              Challenges &amp; Solutions
             </span>
             <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-gray-900 mt-6 mb-4">
-              Comprehensive Features for {data.industry}
+              Overcome {data.industry} Industry Challenges
             </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              See how Zoho turns your biggest operational hurdles into
+              competitive advantages.
+            </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8 items-start">
+            {data.challenges.map((item, index) => {
+              const isOpen = openChallenge === index;
+              const fallbackColors = [
+                "14,108,130", // Teal
+                "40,65,145", // Royal Blue
+                "125,42,88", // Berry/Purple
+                "18,108,72", // Green
+                "145,75,18", // Orange/Brown
+                "65,45,130", // Deep Purple
+                "20,88,115", // Ocean Blue
+                "95,30,105", // Magenta
+              ];
+              const rgb =
+                item.rgb || fallbackColors[index % fallbackColors.length];
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.06,
+                    ease: "easeOut",
+                  }}
+                  className="group flex flex-col min-h-[420px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
+                >
+                  <div
+                    className="relative h-56 shrink-0 overflow-hidden cursor-pointer"
+                    onClick={() => setOpenChallenge(isOpen ? null : index)}
+                  >
+                    <Image
+                      src={item.image || "/images/lap/lap1.webp"}
+                      alt={item.title}
+                      fill
+                      className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background: `linear-gradient(to bottom, transparent 0%, rgba(${rgb},0.4) 70%, rgba(${rgb},1) 100%)`,
+                      }}
+                    />
+                  </div>
+                  <div
+                    className="flex-1 flex flex-col relative transition-colors duration-500"
+                    style={{
+                      backgroundColor: isOpen ? "white" : `rgb(${rgb})`,
+                    }}
+                  >
+                    <div
+                      className="p-5 pb-3 cursor-pointer"
+                      onClick={() => setOpenChallenge(isOpen ? null : index)}
+                      style={{ backgroundColor: `rgb(${rgb})` }}
+                    >
+                      <span className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-1 block">
+                        Challenge
+                      </span>
+                      <h3 className="text-white font-bold text-lg tracking-wide leading-tight">
+                        {item.title}
+                      </h3>
+                    </div>
+
+                    <div className="flex-1 flex flex-col px-5 relative bg-transparent">
+                      <AnimatePresence mode="wait">
+                        {!isOpen ? (
+                          <motion.div
+                            key="challenge"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="px-5 pb-6 pt-2 cursor-pointer"
+                            onClick={() => setOpenChallenge(index)}
+                          >
+                            <span className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase tracking-widest text-[10px] px-5 py-2.5 rounded-full shadow-md hover:bg-gray-100 transition-all">
+                              See Solution{" "}
+                              <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                            </span>
+                          </motion.div>
+                        ) : (
+                          <motion.div
+                            key="solution"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.2 }}
+                            className="px-5 pb-7 pt-2 cursor-pointer flex flex-col"
+                            onClick={() => setOpenChallenge(null)}
+                          >
+                            <div className="mt-3">
+                              <span className="text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-1 block">
+                                Solution
+                              </span>
+                              <p className="text-gray-700 text-sm leading-relaxed">
+                                {item.solution || item.description}
+                              </p>
+                            </div>
+                            <div
+                              className="mt-5"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <Link
+                                href={item.link || "#contact-form"}
+                                className="inline-flex items-center gap-2 bg-blue-600 text-white font-bold uppercase tracking-widest text-[10px] px-5 py-2.5 rounded-full shadow-md hover:bg-blue-700 transition-all"
+                              >
+                                {item.link ? "Know More" : "Ask Us"}{" "}
+                                <ArrowRight size={10} />
+                              </Link>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 z-10" />
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════ FEATURES ══════ */}
+      <section
+        id="features"
+        className="py-24 bg-white relative overflow-hidden scroll-mt-36"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="bg-blue-600/10 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
+              Core Features
+            </span>
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-gray-900 mt-6 mb-4">
+              Powerful Features for {data.industry}
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Tailored solutions designed to streamline your operations and drive
+              growth.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-12">
             {data.features.map((feature, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group p-8 rounded-2xl border border-gray-100 bg-gray-50/50 hover:bg-white hover:shadow-xl transition-all duration-300"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`group relative rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden ${cardBgColors[index % cardBgColors.length]}`}
               >
-                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-200">
-                  <Check className="w-6 h-6 text-white" />
+                <div className="relative z-10 h-full flex flex-col">
+                  {feature.image && (
+                    <div className="relative h-48 w-full mb-6 rounded-2xl overflow-hidden shadow-md">
+                      <Image
+                        src={feature.image}
+                        alt={feature.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
+                  )}
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
+                    {feature.description}
+                  </p>
+                  <Link
+                    href="#contact-form"
+                    className="inline-flex items-center gap-2 text-blue-600 font-bold text-[10px] uppercase tracking-widest hover:gap-3 transition-all mt-auto"
+                  >
+                    Learn More <ArrowRight size={12} />
+                  </Link>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Benefits Section ────────────────────────────────────────────── */}
-      <section id="benefits" className="py-24 bg-gray-950 relative overflow-hidden scroll-mt-36">
-        <div className="absolute inset-0 bg-blue-600/5" />
+      {/* ══════ BENEFITS — Starfield style ══════ */}
+      <section
+        id="benefits"
+        className="py-24 relative overflow-hidden scroll-mt-20"
+        style={{
+          background:
+            "linear-gradient(135deg,#060e1f 0%,#0a1e4a 25%,#0f2a57 55%,#091828 80%,#050d1a 100%)",
+        }}
+      >
+        {/* Stars */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <style>{`
+            @keyframes twinkle{0%,100%{opacity:0.1;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+            @keyframes drift{0%{transform:translateY(0px) translateX(0px)}50%{transform:translateY(-12px) translateX(6px)}100%{transform:translateY(0px) translateX(0px)}}
+            .indstar{position:absolute;border-radius:9999px;background:white;animation:twinkle var(--tw-dur,3s) ease-in-out infinite var(--tw-delay,0s),drift calc(var(--tw-dur,3s)*2) ease-in-out infinite var(--tw-delay,0s)}
+          `}</style>
+          {[
+            { w: 2, h: 2, top: "8%", left: "12%", dur: "2.5s", dly: "0s" },
+            { w: 1, h: 1, top: "15%", left: "28%", dur: "3.2s", dly: "0.5s" },
+            { w: 3, h: 3, top: "22%", left: "45%", dur: "4s", dly: "1s" },
+            { w: 1, h: 1, top: "5%", left: "62%", dur: "2.8s", dly: "0.3s" },
+            { w: 2, h: 2, top: "30%", left: "78%", dur: "3.5s", dly: "1.5s" },
+            { w: 1, h: 1, top: "55%", left: "8%", dur: "2.1s", dly: "0.7s" },
+            { w: 2, h: 2, top: "70%", left: "22%", dur: "3.8s", dly: "0.2s" },
+            { w: 1, h: 1, top: "42%", left: "35%", dur: "2.6s", dly: "1.2s" },
+            { w: 3, h: 3, top: "80%", left: "55%", dur: "4.2s", dly: "0.9s" },
+            { w: 1, h: 1, top: "60%", left: "72%", dur: "2.9s", dly: "0.4s" },
+            { w: 2, h: 2, top: "18%", left: "88%", dur: "3.1s", dly: "1.8s" },
+            { w: 2, h: 2, top: "48%", left: "93%", dur: "3.7s", dly: "1.1s" },
+          ].map((s, i) => (
+            <div
+              key={i}
+              className="indstar"
+              style={
+                {
+                  width: `${s.w}px`,
+                  height: `${s.h}px`,
+                  top: s.top,
+                  left: s.left,
+                  "--tw-dur": s.dur,
+                  "--tw-delay": s.dly,
+                } as React.CSSProperties
+              }
+            />
+          ))}
+          <div
+            className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3"
+            style={{
+              background:
+                "radial-gradient(circle,rgba(59,130,246,0.25) 0%,transparent 70%)",
+            }}
+          />
+          <div
+            className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3"
+            style={{
+              background:
+                "radial-gradient(circle,rgba(99,179,237,0.18) 0%,transparent 70%)",
+            }}
+          />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full border border-white/[0.03]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] rounded-full border border-white/[0.04]" />
+        </div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <motion.span
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                className="text-blue-400 font-bold uppercase tracking-widest text-xs"
-              >
-                Key Benefits
-              </motion.span>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                className="text-3xl md:text-5xl font-medium text-white mt-4 mb-8"
-              >
-                Transforming Your {data.industry} Business
-              </motion.h2>
-              <div className="space-y-4">
-                {data.benefits.map((benefit, index) => (
-                  <motion.button
-                    key={index}
-                    onClick={() => setActiveBenefit(index)}
-                    className={`w-full text-left p-6 rounded-xl transition-all duration-300 border ${
-                      activeBenefit === index
-                        ? "bg-blue-600 border-blue-500 shadow-xl"
-                        : "bg-white/5 border-white/10 hover:bg-white/10"
-                    }`}
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className={`p-2 rounded-lg ${activeBenefit === index ? "bg-white/20" : "bg-blue-600/20"}`}>
-                        {React.createElement(benefitIcons[index % benefitIcons.length], {
-                          className: `w-5 h-5 ${activeBenefit === index ? "text-white" : "text-blue-400"}`
-                        })}
-                      </div>
-                      <span className={`font-bold text-lg ${activeBenefit === index ? "text-white" : "text-gray-300"}`}>
-                        {benefit.title}
-                      </span>
-                    </div>
-                  </motion.button>
-                ))}
-              </div>
-            </div>
-            <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8"
+          >
+            <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+              Why Teams Choose Zoho
+            </h3>
+          </motion.div>
+          <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
+            <div className="order-2 lg:order-1 relative min-h-[380px] lg:min-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeBenefit}
-                  initial={{ opacity: 0, scale: 1.1 }}
+                  initial={{ opacity: 0, scale: 1.05 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
                   className="absolute inset-0"
                 >
@@ -553,83 +780,231 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
                     src={data.benefits[activeBenefit].image}
                     alt={data.benefits[activeBenefit].title}
                     fill
-                    className="object-cover"
+                    className="object-cover object-center"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent" />
-                  <div className="absolute bottom-10 left-10 right-10">
-                    <p className="text-white text-lg leading-relaxed font-medium">
-                      {data.benefits[activeBenefit].description}
-                    </p>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                 </motion.div>
               </AnimatePresence>
+            </div>
+            <div className="order-1 lg:order-2 rounded-3xl border border-white/10 bg-white/[0.03] p-4 flex flex-col gap-2 justify-center backdrop-blur-sm">
+              {data.benefits.map((item, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveBenefit(index)}
+                  className={`group w-full flex flex-col justify-center px-5 py-4 text-left rounded-xl transition-all duration-300 outline-none ${
+                    activeBenefit === index
+                      ? "bg-white shadow-xl border-l-4 border-blue-600"
+                      : "bg-white/5 border-l-4 border-transparent hover:bg-white/10"
+                  }`}
+                >
+                  <div className="flex items-center gap-4 w-full">
+                    <div
+                      className={`shrink-0 transition-colors ${
+                        activeBenefit === index
+                          ? "text-blue-600"
+                          : "text-gray-400 group-hover:text-gray-200"
+                      }`}
+                    >
+                      {React.createElement(
+                        benefitIcons[index % benefitIcons.length],
+                        { size: 20 }
+                      )}
+                    </div>
+                    <span
+                      className={`text-base md:text-lg flex-1 font-semibold transition-all ${
+                        activeBenefit === index
+                          ? "text-gray-900"
+                          : "text-gray-300 group-hover:text-white"
+                      }`}
+                    >
+                      {item.title}
+                    </span>
+                    <ChevronRight
+                      className={`w-4 h-4 shrink-0 transition-all ${
+                        activeBenefit === index
+                          ? "text-blue-600 rotate-90"
+                          : "text-gray-500 opacity-0 group-hover:opacity-60"
+                      }`}
+                    />
+                  </div>
+                  {activeBenefit === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden mt-3 pl-9"
+                    >
+                      <p className="text-gray-500 text-sm leading-relaxed mb-3">
+                        {item.description}
+                      </p>
+                      <ul className="space-y-1.5">
+                        {item.points?.map((pt, pi) => (
+                          <li
+                            key={pi}
+                            className="flex items-start gap-2 text-sm text-gray-600"
+                          >
+                            <Check
+                              size={13}
+                              className="text-blue-600 mt-0.5 shrink-0"
+                            />{" "}
+                            {pt}
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  )}
+                </button>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── CHALLENGES ─── */}
-      <section id="challenges" className="py-24 bg-gray-50 scroll-mt-36">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-gray-900 mb-4">
-              Overcome Industry Challenges
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              See how Zoho turns your biggest operational hurdles into competitive advantages.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {data.challenges.map((item, index) => {
-               const isOpen = openChallenge === index;
-               const rgb = item.rgb || "40,65,145";
-               return (
-                <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg group">
-                  <div className="relative h-48">
-                    <Image src={item.image || "/images/lap/lap1.webp"} alt={item.title} fill className="object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                    <h3 className="absolute bottom-4 left-4 right-4 text-white font-bold text-lg">{item.title}</h3>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                      {isOpen ? item.solution || item.description : item.challenge || item.description?.substring(0, 100) + "..."}
-                    </p>
-                    <button 
-                      onClick={() => setOpenChallenge(isOpen ? null : index)}
-                      className="text-blue-600 font-bold text-sm hover:text-blue-700 transition-colors"
-                    >
-                      {isOpen ? "Show Less" : "View Solution"}
-                    </button>
-                  </div>
+      {/* ─── SERVICES ─── */}
+      <div id="services">
+        <ZohoServicesCards />
+      </div>
+
+      {/* ─── PRICING ─── */}
+      <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="rounded-3xl overflow-hidden shadow-2xl"
+            style={{ backgroundColor: "#000d1a" }}
+          >
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
+              <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
+                <div className="w-14 h-1 bg-blue-400 mb-5 rounded-full" />
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
+                  Zoho {data.industry} Pricing & Value
+                </h2>
+                <p className="text-white/75 text-base leading-relaxed mb-8">
+                  {data.pricingIntro || `Zoho offers a transparent, scalable pricing model for the ${data.industry} industry. Unlike traditional legacy systems, our flexible subscription-based approach ensures you only pay for what you use, with zero hidden maintenance fees or expensive hardware costs.`}
+                </p>
+                <div>
+                  <Link
+                    href="#contact-form"
+                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-blue-400 hover:text-white transition-all duration-200 shadow-md"
+                  >
+                    Talk to a Zoho Expert <ArrowRight size={16} />
+                  </Link>
                 </div>
-               );
-            })}
+              </div>
+              <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
+                <div className="absolute inset-0 bg-[#001022]" />
+                <div
+                  className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#002040]"
+                  style={{ borderRadius: "40% 60% 55% 45% / 45% 55% 45% 55%" }}
+                />
+                <div
+                  className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#003060]"
+                  style={{ borderRadius: "45% 55% 50% 50% / 50% 50% 50% 50%" }}
+                />
+                <div
+                  className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl"
+                  style={{ borderRadius: "50% 50% 46% 54% / 52% 48% 52% 48%" }}
+                >
+                  <Image
+                    src="/images/people/laptopgirl.webp"
+                    alt="Zoho Pricing"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── FAQ ─── */}
+      <FAQ
+        variant="zoho"
+        id="faq"
+        customSubtitle={`Everything you need to know about Zoho for ${data.industry}.`}
+        customFaqs={data.faqs.map((f) => ({
+          q: f.q || f.question || "",
+          a: f.a || f.answer || "",
+        }))}
+      />
+
+      {/* ── Related Industries ────────────────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <h3 className="text-2xl font-bold text-gray-900 mb-8">Explore Other Industries</h3>
+          <div className="flex flex-wrap gap-4">
+            {data.relatedIndustries.map((ind, idx) => (
+              <Link
+                key={idx}
+                href={ind.href}
+                className="px-6 py-3 rounded-full border border-gray-200 text-gray-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300 font-medium shadow-sm"
+              >
+                {ind.label}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="services" className="scroll-mt-36">
-        <ZohoServicesCards />
+      {/* ─── CTA BANNER ─── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0a1f5c] via-[#1d4ed8] to-[#2563eb] shadow-2xl"
+          >
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              {CTA_PARTICLES.map((p, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute bg-white rounded-full"
+                  style={{
+                    width: `${p.w}px`,
+                    height: `${p.h}px`,
+                    top: `${p.top}%`,
+                    left: `${p.left}%`,
+                  }}
+                  animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }}
+                  transition={{
+                    duration: p.dur,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: p.delay,
+                  }}
+                />
+              ))}
+            </div>
+            <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
+              <div className="text-left max-w-2xl">
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                  Ready to Transform Your <span className="text-blue-200">{data.industry}</span>?
+                </h2>
+                <p className="text-white/80 text-lg md:text-xl font-medium">
+                  Join thousands of businesses using Zoho to streamline their operations and scale globally.
+                </p>
+              </div>
+              <Link
+                href="#contact-form"
+                className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
+              >
+                Request a Demo{" "}
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
-      {/* ══════ FAQ ══════ */}
-      {data.faqs.length > 0 && (
-        <section id="faq" className="scroll-mt-36">
-          <FAQ
-            customFaqs={data.faqs.map(f => ({
-              q: f.question || f.q || "",
-              a: f.answer || f.a || ""
-            }))}
-            variant="zoho"
-            layout="sidebar"
-          />
-        </section>
-      )}
-
-      {/* ══════ CONTACT FORM ══════ */}
-      <section id="contact-form">
+      <div id="contact-form">
         <FooterContactForm platform="Zoho" />
-      </section>
+      </div>
     </div>
   );
 }

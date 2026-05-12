@@ -241,3 +241,7 @@ export default function MediaPage() {
   return <IndustryTemplate data={data} />;
 }
 
+
+
+
+

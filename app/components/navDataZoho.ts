@@ -251,7 +251,7 @@ export const navItemsZoho: NavSection[] = [
             { label: 'Blogs', href: '/zoho/blogs', description: 'Latest articles & updates.', icon: MessageSquare },
             { label: 'Case Studies', href: '/zoho/case-studies', description: 'Our success stories.', icon: BookOpen },
             { label: 'Events', href: '/zoho/insights#events', description: 'Workshops & webinars.', icon: Calendar },
-            { label: 'Awards & Achievements', href: '/zoho/insights#awards', description: 'Recognition & milestones.', icon: Trophy },
+
         ]
     },
 

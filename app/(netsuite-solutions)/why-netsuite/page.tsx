@@ -137,17 +137,17 @@ export default function WhyNetsuitePage() {
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-800/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '70px 70px' }} />
 
-        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-8">
+        <div className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-40 pb-20">
           <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
             className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20">
             <Link href="/netsuite" className="text-blue-300 hover:text-white transition-colors">Home</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/50">Solutions</span>
+            <Link href="/netsuite/solutions" className="text-blue-300 hover:text-white transition-colors">Solutions</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/80">Why Choose NetSuite?</span>
           </motion.nav>
 
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-16 sm:mb-20">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
                 className="inline-flex items-center gap-2 bg-blue-600/20 border border-blue-500/30 rounded-full px-4 py-1.5 text-blue-300 text-xs font-bold uppercase tracking-widest mb-4">
@@ -182,7 +182,7 @@ export default function WhyNetsuitePage() {
                     </div>
                     <div>
                       <p className="text-gray-900 text-sm font-bold leading-tight">#1 Cloud ERP for 25+ Years</p>
-                      <p className="text-gray-500 text-xs mt-0.5">Finance · CRM · Ecommerce · HR · Planning · AI</p>
+                      <p className="text-gray-500 text-xs mt-0.5">Finance Â· CRM Â· Ecommerce Â· HR Â· Planning Â· AI</p>
                     </div>
                   </motion.div>
                 </div>
@@ -191,7 +191,7 @@ export default function WhyNetsuitePage() {
           </div>
 
           <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.8 }}
-            className="border-t border-white/15 pt-5 sm:pt-6">
+            className="border-t border-white/15 pt-8 sm:pt-10">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {stats.map((s, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 + i * 0.12 }} className="text-center group">
@@ -216,9 +216,9 @@ export default function WhyNetsuitePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-wrap items-center justify-center gap-1 py-2 sm:py-4">
             {[
-              { label: "What is NetSuite ERP?", href: "#what-is" }, 
-              { label: "Growth", href: "#growth" }, 
-              { label: "Adaptability", href: "#adaptability" }, 
+              { label: "What is NetSuite ERP?", href: "#what-is" },
+              { label: "Growth", href: "#growth" },
+              { label: "Adaptability", href: "#adaptability" },
               { label: "Your Success", href: "#success" },
               { label: "Pricing", href: "#pricing" }
             ].map(l => (
@@ -262,7 +262,7 @@ export default function WhyNetsuitePage() {
                   What Is NetSuite ERP?
                 </h2>
               </div>
-              
+
               <div className="space-y-6">
                 <p className="text-lg text-gray-600 leading-relaxed">
                   NetSuite is a cloud-based enterprise resource planning (ERP) suite that gives organizations everything they need to run their businesses efficiently and accelerate growth.
@@ -299,7 +299,7 @@ export default function WhyNetsuitePage() {
       {/* Section 3: Helping You Grow Your Business */}
       <section id="growth" className="py-24 bg-gray-50 relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8">
             <span className="bg-blue-600/10 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">Growth Framework</span>
             <h2 className="text-4xl md:text-5xl font-medium text-gray-900">Helping You Grow Your Business with NetSuite</h2>
           </motion.div>
@@ -343,7 +343,7 @@ export default function WhyNetsuitePage() {
       <section id="adaptability" className="py-24 relative overflow-hidden scroll-mt-36"
         style={{ background: "linear-gradient(135deg, #0a0614 0%, #130a2e 25%, #1a1040 55%, #0d0820 80%, #08050e 100%)" }}>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8">
             <h2 className="text-3xl md:text-5xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">Harness the Power of Adaptability</h2>
           </motion.div>
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
@@ -381,7 +381,7 @@ export default function WhyNetsuitePage() {
         </div>
       </section>
 
-      {/* ── CTA Banner ────────────────────────────────────────────────────────── */}
+      {/* â”€â”€ CTA Banner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -407,7 +407,7 @@ export default function WhyNetsuitePage() {
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                  Start Your NetSuite Journey Today —{" "}
+                  Start Your NetSuite Journey Today â€”{" "}
                   <span className="text-cyan-300">Run Your Entire Business Better.</span>
                 </h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">
@@ -430,7 +430,7 @@ export default function WhyNetsuitePage() {
       {/* Section 6: Your Success Is Our Top Priority */}
       <section id="success" className="py-24 bg-gray-50 relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-gray-900 mb-4">Your Success Is Our Top Priority</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">Partner with experts who are dedicated to your long-term growth and operational excellence.</p>
           </motion.div>
@@ -447,14 +447,14 @@ export default function WhyNetsuitePage() {
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
-                
+
                 {/* Content Overlay */}
                 <div className="absolute inset-0 flex flex-col justify-end p-8 transition-all duration-500">
                   <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
                     <item.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">{item.title}</h3>
-                  
+
                   {/* Expandable Info */}
                   <div className="h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-500 overflow-hidden">
                     <p className="text-white/90 text-sm leading-relaxed mb-6 mt-2">
@@ -471,7 +471,7 @@ export default function WhyNetsuitePage() {
         </div>
       </section>
 
-      {/* ── Pricing Section ───────────────────────────────────────────────── */}
+      {/* â”€â”€ Pricing Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <motion.div
@@ -487,7 +487,7 @@ export default function WhyNetsuitePage() {
                   How Much Does NetSuite Cost?
                 </h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
-                  NetSuite pricing is tailored to your business size and requirements. The annual subscription combines the core financial management platform, any additional modules you need, and your user count — plus a one-time implementation fee. As your business grows, activate new modules or add users instantly — no upgrades, no downtime, no infrastructure headaches.
+                  NetSuite pricing is tailored to your business size and requirements. The annual subscription combines the core financial management platform, any additional modules you need, and your user count â€” plus a one-time implementation fee. As your business grows, activate new modules or add users instantly â€” no upgrades, no downtime, no infrastructure headaches.
                 </p>
                 <div>
                   <Link
@@ -517,3 +517,7 @@ export default function WhyNetsuitePage() {
     </div>
   );
 }
+
+
+
+

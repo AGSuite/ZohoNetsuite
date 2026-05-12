@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  TrendingUp, 
-  Heart, 
-  Target, 
+import {
+  TrendingUp,
+  Heart,
+  Target,
   Calendar,
   FileText,
   CreditCard,
@@ -173,8 +173,7 @@ export default function ZohoBooksPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Finance", href: "/zoho/solutions/finance" },
-        { label: "Zoho Books", href: "/zoho/solutions/finance/zoho-books" },
+        { label: "Zoho Books", href: "/zoho-books-accounting-software" },
       ]}
       stats={stats}
       modules={modules}
@@ -199,8 +198,12 @@ export default function ZohoBooksPage() {
           "Premium: $50 /month",
           "Elite: $100 /month",
         ],
-        ctaText: "Start 14-Day Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+

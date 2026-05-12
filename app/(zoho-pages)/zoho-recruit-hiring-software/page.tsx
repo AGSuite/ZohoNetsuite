@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  Users, 
-  Search, 
-  Zap, 
+import {
+  Users,
+  Search,
+  Zap,
   TrendingUp,
   Briefcase,
   Target,
@@ -173,8 +173,7 @@ export default function ZohoRecruitPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "HR", href: "/zoho/solutions/hr" },
-        { label: "Zoho Recruit", href: "/zoho/solutions/hr/zoho-recruit" },
+        { label: "Zoho Recruit", href: "/zoho-recruit-hiring-software" },
       ]}
       stats={stats}
       modules={modules}
@@ -199,10 +198,14 @@ export default function ZohoRecruitPage() {
           "Enterprise: $75 /user/month",
           "Free plan available for 1 recruiter",
         ],
-        ctaText: "Start 15-Day Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 

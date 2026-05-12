@@ -4,12 +4,12 @@ import React from "react";
 
 
 
-import { 
-  TrendingUp, 
-  Heart, 
-  Target, 
-  Wallet, 
-  ShieldCheck, 
+import {
+  TrendingUp,
+  Heart,
+  Target,
+  Wallet,
+  ShieldCheck,
   Zap,
   Globe2,
   Clock,
@@ -177,8 +177,7 @@ export default function ZohoSalesIqPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Service", href: "/zoho/solutions/service" },
-        { label: "Zoho SalesIQ", href: "/zoho/solutions/service/zoho-sales-iq" },
+        { label: "Zoho SalesIQ", href: "/zoho-salesiq-implementation" },
       ]}
       stats={stats}
       modules={modules}
@@ -203,7 +202,7 @@ export default function ZohoSalesIqPage() {
           "Professional: $15 /operator/month",
           "Enterprise: $25 /operator/month",
         ],
-        ctaText: "Start My Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
@@ -230,5 +229,9 @@ const MousePointerClick = (props: any) => (
     <path d="M5.19 5.19l2.12 2.12" />
   </svg>
 )
+
+
+
+
 
 

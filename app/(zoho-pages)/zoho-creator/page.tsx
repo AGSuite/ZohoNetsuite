@@ -4,11 +4,11 @@ import React from "react";
 
 
 
-import { 
-  Cpu, 
-  Heart, 
-  Target, 
-  Layers, 
+import {
+  Cpu,
+  Heart,
+  Target,
+  Layers,
   TrendingUp,
   Zap,
   Users,
@@ -173,13 +173,13 @@ export default function ZohoCreatorPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Dev Platforms", href: "/zoho/solutions/dev-platforms" },
-        { label: "Zoho Creator", href: "/zoho/solutions/dev-platforms/zoho-creator" },
+        { label: "Zoho Creator", href: "/zoho-creator" },
       ]}
       stats={stats}
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap4.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-creator-dashboard.png"
       pricingInfo={{
         description: "Choose a plan that fits your development scale and user base. Unleash the power of custom applications today.",
         plans: [
@@ -188,10 +188,14 @@ export default function ZohoCreatorPage() {
           "Enterprise: $25 /user/month",
           "Annual discounts available",
         ],
-        ctaText: "Start 15-Day Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 

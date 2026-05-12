@@ -4,11 +4,11 @@ import React from "react";
 
 
 
-import { 
-  Zap, 
-  Heart, 
-  Target, 
-  Layers, 
+import {
+  Zap,
+  Heart,
+  Target,
+  Layers,
   TrendingUp,
   Users,
   ShieldCheck,
@@ -173,8 +173,7 @@ export default function ZohoCRMPlusPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Sales", href: "/zoho/solutions/sales" },
-        { label: "Zoho CRM Plus", href: "/zoho/solutions/sales/zoho-crm-plus" },
+        { label: "Zoho CRM Plus", href: "/zoho-crm-plus" },
       ]}
       stats={stats}
       modules={modules}
@@ -199,8 +198,12 @@ export default function ZohoCRMPlusPage() {
           "All 8 Customer Apps Included",
           "Enterprise Support Included",
         ],
-        ctaText: "Start My Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+

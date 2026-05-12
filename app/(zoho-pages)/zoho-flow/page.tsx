@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  Zap, 
-  RefreshCcw, 
-  Layers, 
+import {
+  Zap,
+  RefreshCcw,
+  Layers,
   TrendingUp,
   Target,
   BarChart3,
@@ -175,13 +175,13 @@ export default function ZohoFlowPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Analytics", href: "/zoho/solutions/analytics" },
-        { label: "Zoho Flow", href: "/zoho/solutions/analytics/zoho-flow" },
+        { label: "Zoho Flow", href: "/zoho-flow" },
       ]}
       stats={stats}
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap2.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-flow-dashboard.png"
       heroCard1={{
         title: "800+ Integrations",
         subtitle: "Connect all your business apps.",
@@ -200,11 +200,15 @@ export default function ZohoFlowPage() {
           "Premium: $50 /month (10,000 tasks)",
           "Enterprise: $100 /month (30,000 tasks)",
         ],
-        ctaText: "Start My Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 
 

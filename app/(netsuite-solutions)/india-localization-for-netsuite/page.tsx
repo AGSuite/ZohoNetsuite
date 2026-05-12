@@ -120,7 +120,7 @@ export default function IndiaLocalizationPage() {
   const benefits = [
     {
       title: "Enhanced Compliance",
-      description: "Automated GST, TDS, and TCS calculations ensure adherence to India’s tax regulations, minimizing compliance risks.",
+      description: "Automated GST, TDS, and TCS calculations ensure adherence to Indiaâ€™s tax regulations, minimizing compliance risks.",
       image: "/images/lap/lap4.webp",
       points: ["100% GST Regulation compliance", "Real-time IRP integration", "Automated TDS/TCS calculation", "Minimize compliance risks"],
     },
@@ -177,19 +177,19 @@ export default function IndiaLocalizationPage() {
       <section className="relative min-h-screen overflow-hidden flex flex-col" style={{ background: "linear-gradient(135deg,#000814,#000f22,#001535)" }}>
         <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px]" />
         <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px)', backgroundSize: '70px 70px' }} />
-        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-8">
+        <div className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-40 pb-20">
 
-          {/* Breadcrumb */}
+          {/* Breadcrumb â€” absolutely positioned so it doesn't affect centering */}
           <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
             className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20">
             <Link href="/netsuite" className="text-blue-300 hover:text-white transition-colors">Home</Link>
-            <ChevronDown className="w-3.5 h-3.5 text-white/30 -rotate-90" />
-            <span className="text-white/50">Solutions</span>
-            <ChevronDown className="w-3.5 h-3.5 text-white/30 -rotate-90" />
+            <ChevronRight className="w-3.5 h-3.5 text-white/30" />
+            <Link href="/netsuite/solutions" className="text-blue-300 hover:text-white transition-colors">Solutions</Link>
+            <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/80">India Localization for NetSuite</span>
           </motion.nav>
 
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6" style={{ minHeight: 'calc(100vh - 150px)' }}>
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6" style={{ minHeight: '500px' }}>
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15] tracking-tight">
@@ -201,7 +201,7 @@ export default function IndiaLocalizationPage() {
                 className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full" />
               <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8">
-                Full Indian tax compliance inside NetSuite — GST automation, e-invoicing with IRP, TDS/TCS management, e-Way Bills, and GSTR filing reports. Built for Indian businesses running on NetSuite.
+                Full Indian tax compliance inside NetSuite â€” GST automation, e-invoicing with IRP, TDS/TCS management, e-Way Bills, and GSTR filing reports. Built for Indian businesses running on NetSuite.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
@@ -213,7 +213,7 @@ export default function IndiaLocalizationPage() {
               </motion.div>
             </motion.div>
 
-            {/* Hero Right — India Compliance Circular Diagram */}
+            {/* Hero Right â€” India Compliance Circular Diagram */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -226,7 +226,7 @@ export default function IndiaLocalizationPage() {
           </div>
 
           {/* STATS */}
-          <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="border-t border-white/15 pt-5 sm:pt-6">
+          <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="border-t border-white/15 pt-8 sm:pt-10">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {stats.map((s, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 + i * 0.12 }} className="text-center group">
@@ -380,7 +380,7 @@ export default function IndiaLocalizationPage() {
       {/* CHALLENGES AND SOLUTIONS */}
       <section id="challenges" className="py-24 bg-gray-50 relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
             <span className="bg-blue-600/10 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Global Hurdles</span>
             <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-gray-900 mt-6 mb-4">Addressing Global Challenges</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">How our India Localization solution solves critical compliance hurdles for growing enterprises.</p>
@@ -410,7 +410,7 @@ export default function IndiaLocalizationPage() {
       <section id="benefits" className="py-24 relative overflow-hidden scroll-mt-36" style={{ background: CARD_BG }}>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3" style={{ background: "radial-gradient(circle,rgba(37,99,235,0.25) 0%,transparent 70%)" }} />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
             <h3 className="text-3xl md:text-5xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
               Key Benefits of India Localization for NetSuite Suite
             </h3>
@@ -457,19 +457,19 @@ export default function IndiaLocalizationPage() {
       <FAQ
         variant="netsuite"
         id="faq"
-        customSubtitle="Everything you need to know about NetSuite India Localization — GST, e-invoicing, TDS, e-Way Bills, and compliance timelines."
+        customSubtitle="Everything you need to know about NetSuite India Localization â€” GST, e-invoicing, TDS, e-Way Bills, and compliance timelines."
         customFaqs={[
           { q: "How does India Localization for NetSuite simplify GST compliance for businesses?", a: "India Localization for NetSuite automates GST reporting, including GSTR1, GSTR2, and GSTR 3B, and provides configurable GST rules based on factors such as location, customer type, and transaction type. This simplifies GST compliance by streamlining tax calculations and reporting processes." },
           { q: "Can India Localization for NetSuite integrate with existing accounting systems?", a: "Yes, India Localization for NetSuite can be seamlessly integrated with NetSuite, providing businesses with a comprehensive tax management solution that integrates with their existing accounting systems. This integration ensures smooth data flow and eliminates the need for manual data entry." },
           { q: "How does India Localization for NetSuite mitigate the risk of TDS non-compliance?", a: "India Localization for NetSuite automates TDS calculations and reporting, including Income Tax Form 26Q, and provides support for threshold management and PAN rule compliance. By automating TDS processes and ensuring accurate tax calculations, India Tax Solution helps businesses mitigate the risk of TDS non-compliance and avoid penalties." },
           { q: "Does NetSuite support GST natively?", a: "NetSuite has basic tax capabilities, but Indian GST requires specific localization for CGST/SGST/IGST computation, HSN/SAC codes, RCM, ITC registers, and GSTR reports. Our India Localization Add-On extends NetSuite with all these capabilities natively, without any third-party middleware." },
-          { q: "Is e-invoicing mandatory for our business?", a: "E-invoicing is mandatory for GST-registered businesses with aggregate turnover above ₹5 crore (as of 2024). Our solution automatically determines which transactions require e-invoicing, generates the IRP-compliant JSON, submits to the Invoice Registration Portal, and embeds the IRN and QR code on your NetSuite invoice PDF." },
+          { q: "Is e-invoicing mandatory for our business?", a: "E-invoicing is mandatory for GST-registered businesses with aggregate turnover above â‚¹5 crore (as of 2024). Our solution automatically determines which transactions require e-invoicing, generates the IRP-compliant JSON, submits to the Invoice Registration Portal, and embeds the IRN and QR code on your NetSuite invoice PDF." },
           { q: "How does TDS automation work inside NetSuite?", a: "When a payment or expense is posted in NetSuite, the India Localization Add-On evaluates whether TDS applies based on the payment category, section, and cumulative threshold. The applicable rate is deducted automatically, a TDS ledger entry is posted, and Form 16/16A certificates and 26Q/27Q filing data are generated at quarter-end." },
-          { q: "Can we manage multiple GSTINs across different states?", a: "Yes. The solution supports unlimited GSTIN registrations within a single NetSuite account — each with its own GST ledger, ITC register, GSTR filing schedule, and inter-state transaction logic. Multi-state organisations can manage all compliance from one NetSuite environment." },
+          { q: "Can we manage multiple GSTINs across different states?", a: "Yes. The solution supports unlimited GSTIN registrations within a single NetSuite account â€” each with its own GST ledger, ITC register, GSTR filing schedule, and inter-state transaction logic. Multi-state organisations can manage all compliance from one NetSuite environment." },
           { q: "How are e-Way Bills generated?", a: "E-Way Bills are generated directly from NetSuite delivery orders and invoices via NIC API integration. Transporter details, vehicle number, and consignment value are pulled from the NetSuite transaction, and the e-Way Bill number is embedded back into the shipment record. Bulk generation is supported for high-volume dispatches." },
-          { q: "Does the solution handle Input Tax Credit (ITC) reconciliation?", a: "Yes. Our solution maintains a complete ITC register — tracking eligible credits, provisionally claimed credits, and credits to be reversed. Automatic reconciliation with GSTR-2B data identifies mismatches between your purchase register and what's reflected in GSTN records, helping you avoid ITC reversal penalties." },
+          { q: "Does the solution handle Input Tax Credit (ITC) reconciliation?", a: "Yes. Our solution maintains a complete ITC register â€” tracking eligible credits, provisionally claimed credits, and credits to be reversed. Automatic reconciliation with GSTR-2B data identifies mismatches between your purchase register and what's reflected in GSTN records, helping you avoid ITC reversal penalties." },
           { q: "What GSTR returns does the solution generate?", a: "The solution generates filing-ready data for GSTR-1 (outward supplies), GSTR-3B (monthly summary), GSTR-2A/2B (purchase reconciliation), and GSTR-9 (annual return). Reports are generated in the formats prescribed by GSTN, ready for upload to the GST portal or through a GST Suvidha Provider." },
-          { q: "How long does implementation take?", a: "A standard India Localization implementation takes 4–6 weeks for a single GSTIN entity — covering GST configuration, HSN/SAC code mapping, IRP credentials setup, TDS section configuration, and user training. Multi-GSTIN or multi-subsidiary implementations typically take 6–10 weeks." },
+          { q: "How long does implementation take?", a: "A standard India Localization implementation takes 4â€“6 weeks for a single GSTIN entity â€” covering GST configuration, HSN/SAC code mapping, IRP credentials setup, TDS section configuration, and user training. Multi-GSTIN or multi-subsidiary implementations typically take 6â€“10 weeks." },
         ]}
       />
 
@@ -482,7 +482,7 @@ export default function IndiaLocalizationPage() {
             </div>
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Stay GST Compliant — <span className="text-cyan-200">Automate India Tax with India Localization for NetSuite.</span></h2>
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Stay GST Compliant â€” <span className="text-cyan-200">Automate India Tax with India Localization for NetSuite.</span></h2>
                 <p className="text-white/80 text-lg md:text-xl">End manual GST calculations, e-invoice filing, and TDS tracking. Our India Localization Add-On keeps your NetSuite environment fully compliant with every GSTN and Income Tax requirement.</p>
               </div>
               <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all group active:scale-95">
@@ -497,3 +497,7 @@ export default function IndiaLocalizationPage() {
     </div>
   );
 }
+
+
+
+

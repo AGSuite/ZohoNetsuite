@@ -154,7 +154,7 @@ export default function ZohoBlogsGrid({ blogs }: ZohoBlogsGridProps) {
 
             <div className="max-w-7xl mx-auto px-6 py-10">
                 {showHero && featuredPost && (
-                    <div className="grid lg:grid-cols-[3fr_2fr] gap-6 mb-12">
+                    <div className="grid lg:grid-cols-[3fr_2fr] gap-6 mb-6">
                         <div>
                             <div className="flex items-center gap-2 mb-4"><div className="w-1 h-5 rounded-full bg-blue-600" /><span className="text-xs font-bold uppercase tracking-widest text-gray-500">Latest Post</span></div>
                             <FeaturedPost blog={featuredPost} />
@@ -194,3 +194,7 @@ export default function ZohoBlogsGrid({ blogs }: ZohoBlogsGridProps) {
         </div>
     )
 }
+
+
+
+

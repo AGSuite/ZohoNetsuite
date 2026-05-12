@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { 
-  BarChart3, 
-  TrendingUp, 
-  Target, 
+import {
+  BarChart3,
+  TrendingUp,
+  Target,
   Zap,
   PieChart,
   Search,
@@ -143,7 +143,7 @@ export default function ZohoAnalyticsPage() {
       points: [
         "Real-time dashboards with live data",
         "Automated report generation and delivery",
-        "Collaborative workflows for team decisions",        "Self-service BI for every department"
+        "Collaborative workflows for team decisions", "Self-service BI for every department"
       ],
     },
     {
@@ -168,13 +168,13 @@ export default function ZohoAnalyticsPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Analytics", href: "/zoho/solutions/analytics" },
-        { label: "Zoho Analytics", href: "/zoho/solutions/analytics/zoho-analytics" },
+        { label: "Zoho Analytics", href: "/zoho-analytics" },
       ]}
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap2.webp" 
+      heroImage="/images/lap/lap2.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-analytics-dashboard.png"
       heroCard1={{
         title: "250+ Data Sources",
         subtitle: "Unify data from popular cloud apps.",
@@ -193,8 +193,12 @@ export default function ZohoAnalyticsPage() {
           "Premium: $112 /month",
           "Enterprise: $445 /month",
         ],
-        ctaText: "Start 15-Day Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+

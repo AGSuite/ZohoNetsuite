@@ -220,7 +220,7 @@ export default function NetSuiteSRPPage() {
 
   return (
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
-      {/* ── Hero Section ─────────────────────────────────────────────────── */}
+      {/* â”€â”€ Hero Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="relative min-h-screen overflow-hidden flex flex-col">
         <div className="absolute inset-0 z-0">
           <Image
@@ -242,8 +242,8 @@ export default function NetSuiteSRPPage() {
           }}
         />
 
-        <div className="relative z-20 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10">
-          {/* Breadcrumb */}
+        <div className="relative z-20 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-28 sm:pt-36 pb-12">
+          {/* Breadcrumb â€” absolutely positioned so it doesn't affect centering */}
           <motion.nav
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -255,13 +255,13 @@ export default function NetSuiteSRPPage() {
               Home
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/50">Solutions</span>
+            <Link href="/netsuite/solutions" className="text-blue-300 hover:text-white transition-colors">Solutions</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/80">NetSuite Service Resource Planning (SRP)</span>
           </motion.nav>
 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8">
-            {/* LEFT — Headline + Content */}
+            {/* LEFT â€” Headline + Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -274,7 +274,7 @@ export default function NetSuiteSRPPage() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  NetSuite SRP — Services Resource Planning
+                  NetSuite SRP â€” Services Resource Planning
                 </span>
               </motion.h1>
 
@@ -315,7 +315,7 @@ export default function NetSuiteSRPPage() {
               </motion.div>
             </motion.div>
 
-            {/* RIGHT — SRP Cloud Design */}
+            {/* RIGHT â€” SRP Cloud Design */}
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -333,7 +333,7 @@ export default function NetSuiteSRPPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="border-t border-white/15 pt-5 sm:pt-6"
+            className="border-t border-white/15 pt-8 sm:pt-10"
           >
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {stats.map((stat, index) => (
@@ -361,7 +361,7 @@ export default function NetSuiteSRPPage() {
         </div>
       </section>
 
-      {/* ── Secondary Nav ─────────────────────────────────────────────────── */}
+      {/* â”€â”€ Secondary Nav â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
@@ -423,7 +423,7 @@ export default function NetSuiteSRPPage() {
               </div>
               <div className="space-y-2">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite SRP (Service Resource Planning) is a unified cloud solution designed to manage the entire services lifecycle—from initial opportunity and resource scheduling to project delivery and financial recognition. As a specialized NetSuite SRP partner, we help Professional Services organizations eliminate siloed data and bridge the gap between project teams and back-office finance.
+                  NetSuite SRP (Service Resource Planning) is a unified cloud solution designed to manage the entire services lifecycleâ€”from initial opportunity and resource scheduling to project delivery and financial recognition. As a specialized NetSuite SRP partner, we help Professional Services organizations eliminate siloed data and bridge the gap between project teams and back-office finance.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
                   By centralizing Professional Services Automation (PSA) with core ERP financials, NetSuite SRP provides real-time visibility into project health, resource utilization, and billable margins. Optimize your talent pool and ensure project success with a scalable platform that grows alongside your firm&apos;s global ambitions.
@@ -460,7 +460,7 @@ export default function NetSuiteSRPPage() {
         </div>
       </section>
 
-      {/* ── SRP Modules Grid ─────────────────────────────────────────────────── */}
+      {/* â”€â”€ SRP Modules Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section id="modules" className="py-16 bg-white relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-medium text-gray-900 text-center">
@@ -526,7 +526,7 @@ export default function NetSuiteSRPPage() {
         </div>
       </section>
 
-      {/* ── Benefits Section ─────────────────────────────────────────────── */}
+      {/* â”€â”€ Benefits Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         id="benefits"
         className="py-24 relative overflow-hidden scroll-mt-36"
@@ -542,7 +542,7 @@ export default function NetSuiteSRPPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
             <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
               Key Business Benefits of NetSuite SRP
@@ -621,7 +621,7 @@ export default function NetSuiteSRPPage() {
 
       <NSServicesSection />
 
-      {/* ── Pricing Section ─────────────────────────────────────────────────── */}
+      {/* â”€â”€ Pricing Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <motion.div
@@ -633,14 +633,14 @@ export default function NetSuiteSRPPage() {
             style={{ backgroundColor: '#06303f' }}
           >
             <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
-              {/* LEFT — Text + CTA */}
+              {/* LEFT â€” Text + CTA */}
               <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
                 <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
                   How Much Does NetSuite SRP Cost?
                 </h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
-                  NetSuite SRP pricing is tailored to the size and complexity of your service organization. Your annual subscription includes the core platform, the SRP module (PSA), and user seats — along with a one-time implementation fee. As your firm grows, you can easily add users or activate additional modules for global management or advanced analytics without infrastructure downtime.
+                  NetSuite SRP pricing is tailored to the size and complexity of your service organization. Your annual subscription includes the core platform, the SRP module (PSA), and user seats â€” along with a one-time implementation fee. As your firm grows, you can easily add users or activate additional modules for global management or advanced analytics without infrastructure downtime.
                 </p>
                 <div>
                   <Link
@@ -652,7 +652,7 @@ export default function NetSuiteSRPPage() {
                 </div>
               </div>
 
-              {/* RIGHT — Organic Blob Image */}
+              {/* RIGHT â€” Organic Blob Image */}
               <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
                 <div className="absolute inset-0 bg-[#052838]" />
                 <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
@@ -669,24 +669,24 @@ export default function NetSuiteSRPPage() {
         </div>
       </section>
 
-      {/* ── FAQ Section ──────────────────────────────────────────────────────── */}
+      {/* â”€â”€ FAQ Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <FAQ
         variant="netsuite"
         id="faq"
-        customSubtitle="Everything you need to know about NetSuite SRP — services resource planning, project costing, revenue recognition, and utilisation reporting."
+        customSubtitle="Everything you need to know about NetSuite SRP â€” services resource planning, project costing, revenue recognition, and utilisation reporting."
         customFaqs={[
-          { q: "What is NetSuite SRP (Services Resource Planning)?", a: "NetSuite SRP is NetSuite's native solution for professional services and project-based businesses — integrating project management, resource scheduling, time and expense capture, project billing, contract management, and real-time revenue recognition within the core NetSuite ERP. Unlike OpenAir (a separate product), SRP is fully embedded in NetSuite with no integration layer required." },
-          { q: "How does SRP differ from NetSuite OpenAir?", a: "SRP is the project management module built natively into NetSuite ERP — ideal for businesses where project billing and financial management need to be tightly integrated without a separate system. OpenAir is a dedicated, more feature-rich PSA platform suited for large professional services organisations with complex resource management, multi-currency billing, and advanced project analytics needs." },
-          { q: "How does SRP handle project budgets and cost tracking?", a: "SRP allows project managers to define detailed budgets by task, resource type, and cost category. Actual time and expense entries are tracked against budget in real time — with budget vs actual variance reports, cost overrun alerts, and project profitability dashboards visible to both project managers and finance teams." },
+          { q: "What is NetSuite SRP (Services Resource Planning)?", a: "NetSuite SRP is NetSuite's native solution for professional services and project-based businesses â€” integrating project management, resource scheduling, time and expense capture, project billing, contract management, and real-time revenue recognition within the core NetSuite ERP. Unlike OpenAir (a separate product), SRP is fully embedded in NetSuite with no integration layer required." },
+          { q: "How does SRP differ from NetSuite OpenAir?", a: "SRP is the project management module built natively into NetSuite ERP â€” ideal for businesses where project billing and financial management need to be tightly integrated without a separate system. OpenAir is a dedicated, more feature-rich PSA platform suited for large professional services organisations with complex resource management, multi-currency billing, and advanced project analytics needs." },
+          { q: "How does SRP handle project budgets and cost tracking?", a: "SRP allows project managers to define detailed budgets by task, resource type, and cost category. Actual time and expense entries are tracked against budget in real time â€” with budget vs actual variance reports, cost overrun alerts, and project profitability dashboards visible to both project managers and finance teams." },
           { q: "What billing types does NetSuite SRP support?", a: "SRP supports time and materials (T&M), fixed fee, milestone billing, retainer, and hybrid billing models. Billing schedules are defined at project or task level. Approved timesheets automatically populate draft invoices, with project managers reviewing billable hours before invoices are released to accounts receivable." },
-          { q: "How does SRP handle revenue recognition for services contracts?", a: "SRP includes ASC 606 / IFRS 15 compliant revenue recognition — supporting percentage of completion, milestone, and straight-line methods. Revenue schedules are generated automatically based on project delivery progress and contract terms, and post directly to the NetSuite general ledger for financial reporting." },
-          { q: "Can SRP manage resource availability and utilisation targets?", a: "Yes. SRP provides a resource availability view across all active projects — showing current bookings, remaining capacity, and utilisation rates by resource, team, and department. Utilisation targets can be set at role or individual level, with variance reporting to identify under or over-allocated resources." },
-          { q: "How does time and expense capture work for project teams using SRP?", a: "Team members submit weekly timesheets against specific projects and tasks through the NetSuite interface or mobile app. Expense reports with receipt capture are submitted similarly. Approval workflows route entries to project managers for billable time review, and to finance for expense reimbursement — all tracked in NetSuite." },
+          { q: "How does SRP handle revenue recognition for services contracts?", a: "SRP includes ASC 606 / IFRS 15 compliant revenue recognition â€” supporting percentage of completion, milestone, and straight-line methods. Revenue schedules are generated automatically based on project delivery progress and contract terms, and post directly to the NetSuite general ledger for financial reporting." },
+          { q: "Can SRP manage resource availability and utilisation targets?", a: "Yes. SRP provides a resource availability view across all active projects â€” showing current bookings, remaining capacity, and utilisation rates by resource, team, and department. Utilisation targets can be set at role or individual level, with variance reporting to identify under or over-allocated resources." },
+          { q: "How does time and expense capture work for project teams using SRP?", a: "Team members submit weekly timesheets against specific projects and tasks through the NetSuite interface or mobile app. Expense reports with receipt capture are submitted similarly. Approval workflows route entries to project managers for billable time review, and to finance for expense reimbursement â€” all tracked in NetSuite." },
           { q: "How long does a NetSuite SRP implementation take?", a: "A standard NetSuite SRP implementation covering project setup, billing rules, resource management, timesheet workflows, and revenue recognition typically takes 6 to 10 weeks for a single-entity professional services organisation. Multi-entity or multi-currency implementations with complex revenue recognition rules may take 10 to 16 weeks." },
         ]}
       />
 
-      {/* ── CTA Banner ────────────────────────────────────────────────────────── */}
+      {/* â”€â”€ CTA Banner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -712,7 +712,7 @@ export default function NetSuiteSRPPage() {
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                  Optimize Your Firm on NetSuite SRP —{" "}
+                  Optimize Your Firm on NetSuite SRP â€”{" "}
                   <span className="text-cyan-300">Scale Globally.</span>
                 </h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">
@@ -732,8 +732,12 @@ export default function NetSuiteSRPPage() {
         </div>
       </section>
 
-      {/* ── Contact Form ─────────────────────────────────────────────────────── */}
+      {/* â”€â”€ Contact Form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <ContactFormDesign4 />
     </div>
   );
 }
+
+
+
+

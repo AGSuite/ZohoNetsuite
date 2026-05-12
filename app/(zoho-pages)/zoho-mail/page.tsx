@@ -4,11 +4,11 @@ import React from "react";
 
 
 
-import { 
-  Mail, 
-  Heart, 
-  Target, 
-  ShieldCheck, 
+import {
+  Mail,
+  Heart,
+  Target,
+  ShieldCheck,
   TrendingUp,
   Zap,
   Lock,
@@ -173,8 +173,7 @@ export default function ZohoMailPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Email & Collab", href: "/zoho/solutions/email-collab" },
-        { label: "Zoho Mail", href: "/zoho/solutions/email-collab/zoho-mail" },
+        { label: "Zoho Mail", href: "/zoho-mail" },
       ]}
       stats={stats}
       modules={modules}
@@ -199,10 +198,14 @@ export default function ZohoMailPage() {
           "Workplace: $3 /user/month",
           "Forever Free Plan available",
         ],
-        ctaText: "Start My Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 

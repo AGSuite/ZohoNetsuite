@@ -186,3 +186,7 @@ const data: IndustryPageData = {
 export default function ZohoRetailPage() {
   return <ZohoIndustryTemplate data={data} />;
 }
+
+
+
+

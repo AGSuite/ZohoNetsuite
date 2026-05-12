@@ -4,11 +4,11 @@ import React from "react";
 
 
 
-import { 
-  Rocket, 
-  Heart, 
-  Target, 
-  Clock, 
+import {
+  Rocket,
+  Heart,
+  Target,
+  Clock,
   TrendingUp,
   Zap,
   Users,
@@ -173,8 +173,7 @@ export default function ZohoBiginPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Sales", href: "/zoho/solutions/sales" },
-        { label: "Zoho Bigin", href: "/zoho/solutions/sales/zoho-bigin" },
+        { label: "Zoho Bigin", href: "/zoho-bigin" },
       ]}
       stats={stats}
       modules={modules}
@@ -199,10 +198,14 @@ export default function ZohoBiginPage() {
           "Premier: $12 /user/month",
           "Annual discounts available",
         ],
-        ctaText: "Start My Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 

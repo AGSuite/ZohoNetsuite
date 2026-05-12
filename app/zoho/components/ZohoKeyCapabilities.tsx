@@ -84,7 +84,7 @@ const ZohoKeyCapabilities = () => {
             <div className="relative z-10 max-w-[1240px] mx-auto px-4 md:px-6">
 
                 {/* Heading */}
-                <div className="text-center mb-10 md:mb-12">
+                <div className="text-center mb-10 md:mb-6">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -329,3 +329,7 @@ const ZohoKeyCapabilities = () => {
 };
 
 export default ZohoKeyCapabilities;
+
+
+
+

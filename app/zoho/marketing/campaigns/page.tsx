@@ -1,17 +1,17 @@
 "use client";
 
 import React from "react";
-import { 
-  Send, 
-  Target, 
-  Zap, 
-  BarChart3, 
-  Users, 
-  Mail, 
-  CheckCircle2, 
-  TrendingUp, 
-  Globe2, 
-  Layers 
+import {
+  Send,
+  Target,
+  Zap,
+  BarChart3,
+  Users,
+  Mail,
+  CheckCircle2,
+  TrendingUp,
+  Globe2,
+  Layers
 } from "lucide-react";
 import ZohoSolutionTemplate from "@/app/zoho/components/solutions/ZohoSolutionTemplate";
 
@@ -112,8 +112,12 @@ export default function ZohoCampaignsPage() {
           "Standard: $3 /month (Billed annually)",
           "Professional: $4.50 /month (Billed annually)",
         ],
-        ctaText: "Start My Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+

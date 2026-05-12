@@ -117,6 +117,7 @@ export interface SolutionProps {
   heroCard1?: { title: string; subtitle: string; icon?: any };
   heroCard2?: { title: string; subtitle: string; icon?: any };
   introDescription2?: string;
+  introDescription3?: string;
 }
 
 export default function ZohoSolutionTemplate({
@@ -133,6 +134,7 @@ export default function ZohoSolutionTemplate({
   heroCard1,
   heroCard2,
   introDescription2,
+  introDescription3,
 }: SolutionProps) {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
@@ -143,7 +145,7 @@ export default function ZohoSolutionTemplate({
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
       {/* ── Hero ─────────────────────────────────────────────────────────────── */}
       <section
-        className="relative min-h-screen overflow-hidden flex flex-col pt-20"
+        className="relative min-h-screen overflow-hidden flex flex-col"
         style={{
           background:
             "linear-gradient(135deg, #000814 0%, #000d2e 25%, #001a4d 55%, #000d2e 80%, #000814 100%)",
@@ -162,7 +164,7 @@ export default function ZohoSolutionTemplate({
           }}
         />
 
-        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10">
+        <div className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-40 pb-20">
           {/* Breadcrumb */}
           <motion.nav
             initial={{ opacity: 0, y: -8 }}
@@ -187,7 +189,7 @@ export default function ZohoSolutionTemplate({
           </motion.nav>
 
           {/* Two-column hero */}
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-16 sm:mb-20">
             {/* LEFT */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -315,7 +317,7 @@ export default function ZohoSolutionTemplate({
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="border-t border-white/15 pt-5 sm:pt-6"
+            className="border-t border-white/15 pt-8 sm:pt-10"
           >
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {stats.map((stat, index) => (
@@ -419,6 +421,11 @@ export default function ZohoSolutionTemplate({
               {introDescription2 && (
                 <p className="text-base text-gray-600 leading-relaxed">
                   {introDescription2}
+                </p>
+              )}
+              {introDescription3 && (
+                <p className="text-base text-gray-600 leading-relaxed">
+                  {introDescription3}
                 </p>
               )}
               <div className="pt-4">
@@ -563,7 +570,7 @@ export default function ZohoSolutionTemplate({
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8">
             <h3 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
               Key Business Benefits
             </h3>

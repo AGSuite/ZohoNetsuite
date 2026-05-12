@@ -102,7 +102,7 @@ export default function SmartCommissionClient() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent z-10" />
 
         <div className="relative z-20 flex-1 flex flex-col justify-end max-w-7xl mx-auto px-4 sm:px-6 w-full pt-32 sm:pt-40 md:pt-48 pb-12 sm:pb-16">
-          <div className="mb-8 sm:mb-10 lg:mb-12">
+          <div className="mb-8 sm:mb-10 lg:mb-6">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -243,7 +243,7 @@ export default function SmartCommissionClient() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-600/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[600px] bg-blue-600/10 rounded-full blur-[120px]" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8">
             <span className="bg-emerald-600/20 text-emerald-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Advantages</span>
             <h3 className="text-4xl md:text-5xl font-black text-white mt-6">Why Smart Commission?</h3>
             <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">Scale your sales motivation strategy</p>
@@ -285,7 +285,7 @@ export default function SmartCommissionClient() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-600/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[600px] bg-blue-600/10 rounded-full blur-[120px]" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8">
             <span className="bg-emerald-600/20 text-emerald-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Challenges</span>
             <h3 className="text-4xl md:text-5xl font-black text-white mt-6">Administrative Friction</h3>
             <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">Why manual commission tracking fails</p>
@@ -324,7 +324,7 @@ export default function SmartCommissionClient() {
 
       <section id="features" className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">Core Module Capabilities</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">Built for the modern, high-growth sales organization</p>
           </motion.div>
@@ -382,7 +382,7 @@ export default function SmartCommissionClient() {
 
       <section className="py-24 bg-gradient-to-br from-gray-50 via-emerald-50 to-blue-50/20">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8">
             <span className="bg-emerald-600/10 text-emerald-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">Pricing</span>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-6 mb-4">Optimization Plans</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">Scalable solutions for teams of all sizes</p>
@@ -430,7 +430,7 @@ export default function SmartCommissionClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
             <span className="bg-emerald-600/10 text-emerald-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest">
               FAQ
@@ -517,3 +517,8 @@ export default function SmartCommissionClient() {
     </div>
   );
 }
+
+
+
+
+

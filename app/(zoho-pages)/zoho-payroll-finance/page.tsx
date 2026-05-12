@@ -4,11 +4,11 @@ import React from "react";
 
 
 
-import { 
-  TrendingUp, 
-  Target, 
-  Wallet, 
-  ShieldCheck, 
+import {
+  TrendingUp,
+  Target,
+  Wallet,
+  ShieldCheck,
   Zap,
   Globe2,
   Clock,
@@ -111,7 +111,6 @@ export default function ZohoPayrollFinancePage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Finance", href: "/zoho/solutions/finance" },
         { label: "Zoho Payroll", href: "/zoho-payroll-finance" },
       ]}
       stats={stats}
@@ -137,10 +136,14 @@ export default function ZohoPayrollFinancePage() {
           "Professional: $6 /employee/month",
           "Enterprise: Custom Pricing",
         ],
-        ctaText: "Request a Finance Demo",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 

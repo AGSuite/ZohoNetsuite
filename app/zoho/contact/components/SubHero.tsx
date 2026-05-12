@@ -52,7 +52,7 @@ export default function SubHero({ title, subtitle, breadcrumb, gradientText }: S
                 <motion.nav
                     initial={{ opacity: 0, y: -8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center justify-center lg:justify-start gap-2 text-sm font-medium mb-12"
+                    className="flex items-center justify-center lg:justify-start gap-2 text-sm font-medium mb-6"
                 >
                     <Link href="/zoho" className="text-red-300 hover:text-white transition-colors">Home</Link>
                     <ChevronRight className="w-3.5 h-3.5 text-white/30" />
@@ -85,3 +85,7 @@ export default function SubHero({ title, subtitle, breadcrumb, gradientText }: S
         </section>
     );
 }
+
+
+
+

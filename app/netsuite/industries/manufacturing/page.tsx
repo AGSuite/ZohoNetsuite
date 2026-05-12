@@ -231,3 +231,7 @@ export default function ManufacturingPage() {
   return <IndustryTemplate data={data} />;
 }
 
+
+
+
+

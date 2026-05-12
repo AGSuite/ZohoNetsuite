@@ -104,3 +104,7 @@ const NSHowItWorks: React.FC<NSHowItWorksProps> = ({ steps = defaultSteps }) => 
 };
 
 export default NSHowItWorks;
+
+
+
+

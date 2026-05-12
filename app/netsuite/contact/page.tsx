@@ -843,7 +843,7 @@ export default function ContactPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-5">
               <Globe className="w-4 h-4 text-blue-600" />
-              <span className="text-blue-700 text-xs font-semimedium tracking-widest uppercase">Our Global Offices</span>
+              <span className="text-blue-700 text-xs font-medium tracking-widest uppercase">Our Global Offices</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 mb-4 tracking-tight">
               We're Where{" "}
@@ -866,19 +866,29 @@ export default function ContactPage() {
           >
             {(["All", "INDIA", "USA", "UK"] as Region[]).map(tab => {
               const isActive = locationFilter === tab;
-              const flags: Record<Region, string> = { All: "🌐", INDIA: "🇮🇳", USA: "🇺🇸", UK: "🇬🇧" };
+
               const labels: Record<Region, string> = { All: "Our Offices", INDIA: "INDIA", USA: "USA", UK: "UK" };
               return (
                 <button
                   key={tab}
                   onClick={() => setLocationFilter(tab)}
                   suppressHydrationWarning
-                  className={`relative inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semimedium transition-all duration-300 border ${isActive
+                  className={`relative inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 border ${isActive
                     ? "bg-gradient-to-r from-[#0a1f5c] to-[#1d4ed8] text-white border-transparent shadow-lg shadow-blue-600/25 scale-[1.03]"
                     : "bg-white text-gray-600 border-gray-200 hover:border-blue-300 hover:text-blue-700 hover:bg-blue-50"
                     }`}
                 >
-                  <span className="text-base leading-none">{flags[tab]}</span>
+                  <span className="text-base leading-none" suppressHydrationWarning>
+                    {tab === "All" ? (
+                      "🌐"
+                    ) : (
+                      <img 
+                        src={`https://flagcdn.com/${tab === "INDIA" ? "in" : tab === "USA" ? "us" : "gb"}.svg`}
+                        alt={tab}
+                        className="w-5 h-3.5 rounded-sm object-cover inline-block"
+                      />
+                    )}
+                  </span>
                   {labels[tab]}
                   {isActive && (
                     <motion.span
@@ -922,10 +932,16 @@ export default function ContactPage() {
                     {/* Flag + City */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <span className="text-2xl">{loc.flag}</span>
+                        <div className="relative w-10 h-7 rounded-md overflow-hidden shadow-sm border border-gray-100 shrink-0">
+                          <img 
+                            src={`https://flagcdn.com/${loc.region === "INDIA" ? "in" : loc.region === "USA" ? "us" : "gb"}.svg`}
+                            alt={loc.region}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                         <div>
                           <h3 className="text-base font-medium text-gray-900 leading-tight">{loc.city}</h3>
-                          <p className="text-xs text-blue-600 font-semimedium mt-0.5">{loc.state}</p>
+                          <p className="text-xs text-blue-600 font-medium mt-0.5">{loc.state}</p>
                         </div>
                       </div>
                       <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-blue-50 border border-blue-100 shrink-0">
@@ -984,7 +1000,7 @@ export default function ContactPage() {
                       href={loc.mapUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-auto inline-flex items-center justify-center gap-2 w-full py-2.5 px-5 rounded-xl font-semimedium text-sm text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg group/btn"
+                      className="mt-auto inline-flex items-center justify-center gap-2 w-full py-2.5 px-5 rounded-xl font-medium text-sm text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg group/btn"
                       style={{ background: "linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)" }}
                       onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%)"; }}
                       onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)"; }}
@@ -1045,7 +1061,7 @@ export default function ContactPage() {
               <div className="max-w-2xl">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm mb-4">
                   <Globe className="w-4 h-4 text-cyan-400" />
-                  <span className="text-cyan-300 text-xs font-semimedium tracking-wider uppercase">Anywhere You Are</span>
+                  <span className="text-cyan-300 text-xs font-medium tracking-wider uppercase">Anywhere You Are</span>
                 </div>
                 <h3 className="text-3xl sm:text-4xl font-medium text-white mb-3 leading-tight">
                   No Matter Your{" "}
@@ -1069,7 +1085,7 @@ export default function ContactPage() {
                 </a>
                 <Link
                   href="/netsuite/contact/free-consultation"
-                  className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semimedium rounded-xl hover:bg-white/15 hover:border-white/60 backdrop-blur-sm transition-all duration-200 text-sm"
+                  className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-medium rounded-xl hover:bg-white/15 hover:border-white/60 backdrop-blur-sm transition-all duration-200 text-sm"
                 >
                   Free Consultation
                   <ArrowRight className="w-4 h-4" />
@@ -1101,3 +1117,7 @@ export default function ContactPage() {
     </div>
   );
 }
+
+
+
+

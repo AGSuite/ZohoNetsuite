@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/thank-you/", "/_next/"],
+        disallow: ["/api/", "/thank-you/", "/_next/", "/web_form_data/", "/ZohoNetsuite/", "/netsuite/", "/contact/", "/web-form-data/", "/netsuite/components", "/zoho/components"],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

@@ -105,8 +105,8 @@ export default function NetSuiteAddonsClient() {
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-800/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '70px 70px' }} />
 
-        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-8">
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
+        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-[120px] sm:pt-[136px] pb-8">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-16 sm:mb-20">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15] tracking-tight">
@@ -117,7 +117,7 @@ export default function NetSuiteAddonsClient() {
                 Extend the core power of NetSuite with certified connectors and applications — built for high-growth businesses on SuiteCloud.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                <Link href="/netsuite/contact" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl hover:scale-105">
+                <Link href="/netsuite/contact" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:scale-105">
                   Explore Add-Ons
                   <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }} className="flex items-center"><ArrowRight className="w-4 h-4" /></motion.span>
                 </Link>
@@ -154,7 +154,7 @@ export default function NetSuiteAddonsClient() {
             </motion.div>
           </div>
 
-          <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.8 }} className="border-t border-white/15 pt-5 sm:pt-6">
+          <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.8 }} className="border-t border-white/15 pt-8 sm:pt-10">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {heroStats.map((s, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 + i * 0.12 }} className="text-center group">
@@ -429,7 +429,7 @@ export default function NetSuiteAddonsClient() {
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest">Benefits</span>
             <h3 className="text-4xl lg:text-5xl font-bold text-white mt-6">Key Advantages of NetSuite Add-ons</h3>
             <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg sm:text-xl font-medium">Discover how extensions transform your NetSuite operations and drive growth</p>
@@ -517,7 +517,7 @@ export default function NetSuiteAddonsClient() {
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <span className="bg-blue-600/20 text-blue-300 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest">Challenges</span>
             <h3 className="text-4xl lg:text-5xl font-bold text-white mt-6">Common Business Challenges</h3>
             <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg sm:text-xl font-medium">Understanding the obstacles that NetSuite Add-ons help you overcome</p>
@@ -643,3 +643,7 @@ export default function NetSuiteAddonsClient() {
     </div>
   );
 }
+
+
+
+

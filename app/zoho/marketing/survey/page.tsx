@@ -1,17 +1,17 @@
 "use client";
 
 import React from "react";
-import { 
-  ClipboardCheck, 
-  BarChart3, 
-  Target, 
-  Zap, 
-  Users, 
-  MessageSquare, 
-  CheckCircle2, 
-  Heart, 
-  Globe2, 
-  ShieldCheck 
+import {
+  ClipboardCheck,
+  BarChart3,
+  Target,
+  Zap,
+  Users,
+  MessageSquare,
+  CheckCircle2,
+  Heart,
+  Globe2,
+  ShieldCheck
 } from "lucide-react";
 import ZohoSolutionTemplate from "@/app/zoho/components/solutions/ZohoSolutionTemplate";
 
@@ -112,8 +112,12 @@ export default function ZohoSurveyPage() {
           "Plus: $20 /month (Billed annually)",
           "Enterprise: $60 /month (Billed annually)",
         ],
-        ctaText: "Get Started Free",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+

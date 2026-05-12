@@ -158,7 +158,7 @@ export default function ZohoServices() {
 
       {/* DESKTOP VIEW - Single Row */}
       <div className="hidden lg:block relative z-10">
-        <div className="text-center mb-12">
+        <div className="text-center mb-6">
           <h2 className="zoho-services-title text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900 transition-colors duration-500">
             Our Zoho Services
           </h2>
@@ -259,7 +259,7 @@ export default function ZohoServices() {
 
       {/* TABLET VIEW - 2 columns */}
       <div className="hidden md:block lg:hidden relative z-10">
-        <div className="text-center mb-12">
+        <div className="text-center mb-6">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900">
             Our Zoho Services
           </h2>
@@ -405,3 +405,7 @@ export default function ZohoServices() {
     </section>
   );
 }
+
+
+
+

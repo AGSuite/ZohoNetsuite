@@ -13,3 +13,7 @@ export const metadata: Metadata = buildMetadata({
 export default function Layout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
+
+
+
+

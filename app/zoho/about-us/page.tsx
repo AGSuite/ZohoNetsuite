@@ -1154,7 +1154,7 @@ export default function AboutClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="max-w-2xl text-gray-500 mb-12 text-base md:text-lg leading-relaxed"
+            className="max-w-2xl text-gray-500 mb-6 text-base md:text-lg leading-relaxed"
           >
             Delivering excellence across continents with a strong and growing worldwide footprint.
           </motion.p>
@@ -1312,4 +1312,8 @@ function OurLeaders({ themeColor }: { themeColor: 'blue' | 'rose' }) {
     </div>
   );
 }
+
+
+
+
 

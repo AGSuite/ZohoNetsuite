@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 
+import Image from "next/image";
+
 // Light White/Blue Gradient Theme with Full Image on Left
 export default function FooterFormLight() {
   return (
@@ -24,10 +26,12 @@ export default function FooterFormLight() {
           >
             {/* Full Background Image */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/images/Background/teambg.webp"
               alt="Team Collaboration"
-              className="absolute inset-0 w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
 
             {/* Black Overlay - Stronger as requested */}
@@ -74,7 +78,13 @@ export default function FooterFormLight() {
                 transition={{ duration: 0.6, delay: 0.45 }}
                 className="mb-10"
               >
-                <img src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" alt="NetSuite Partner" className="h-16 w-auto brightness-0 invert" />
+                <Image 
+                  src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" 
+                  alt="NetSuite Partner" 
+                  width={200}
+                  height={64}
+                  className="h-16 w-auto brightness-0 invert object-contain" 
+                />
               </motion.div>
 
               {/* Stats Row */}
@@ -314,3 +324,7 @@ export default function FooterFormLight() {
     </section>
   );
 }
+
+
+
+

@@ -163,7 +163,7 @@ export default function ZohoLifeAtAGSuite() {
             >
               <Link
                 href="#team"
-                className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 shadow-xl shadow-blue-900/20 hover:shadow-blue-600/30 hover:scale-105"
+                className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 Discover Our Culture
                 <motion.span
@@ -247,24 +247,31 @@ export default function ZohoLifeAtAGSuite() {
           <div className="absolute inset-0 bg-black/20 pointer-events-none" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-20 flex flex-col items-center">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            <motion.h2
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-20 flex flex-col items-center justify-end" style={{ minHeight: 'calc(100vh - 120px)' }}>
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center mt-auto">
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-100 via-blue-200 to-indigo-400 sm:text-4xl md:text-5xl font-medium mb-6 leading-tight drop-shadow-lg"
+              className="relative overflow-hidden rounded-3xl bg-white/95 backdrop-blur-sm border border-white/60 px-10 py-7 mb-8 shadow-2xl w-full max-w-3xl mx-auto"
             >
-              Together We Build Better Solutions
-            </motion.h2>
+              {/* Corner circles */}
+              <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-blue-200/40" />
+              <div className="absolute top-4 -right-2 w-8 h-8 rounded-full bg-red-200/30" />
+              <div className="absolute -bottom-5 -left-5 w-16 h-16 rounded-full bg-green-200/40" />
+              <div className="absolute bottom-3 left-8 w-6 h-6 rounded-full bg-blue-200/30" />
+              <h2 className="relative z-10 text-2xl sm:text-3xl md:text-4xl font-medium leading-none text-gray-900 whitespace-nowrap">
+                Together We Build Better Solutions
+              </h2>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-wrap gap-4 justify-center"
+              className="flex flex-wrap gap-4 justify-center mt-4"
             >
               <Link
                 href="#leaders"
@@ -473,7 +480,7 @@ export default function ZohoLifeAtAGSuite() {
       ────────────────────────────────────────────────────────── */}
       <section id="environment" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8">
             <div className="max-w-2xl">
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[10px] font-medium uppercase tracking-widest mb-4 border border-blue-100/50 w-max">
                 Headquarters
@@ -619,7 +626,7 @@ export default function ZohoLifeAtAGSuite() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-2xl text-blue-200 mb-12 text-base md:text-lg leading-relaxed"
+            className="max-w-2xl text-blue-200 mb-6 text-base md:text-lg leading-relaxed"
           >
             Driving innovation and excellence with a passion for transformative technology.
           </motion.p>
@@ -682,7 +689,7 @@ export default function ZohoLifeAtAGSuite() {
           OFFICE EVENTS & CELEBRATIONS
       ────────────────────────────────────────────────────────── */}
       <section className="py-24 bg-gray-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
+        <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
           <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[10px] font-medium uppercase tracking-widest mb-4 border border-blue-100/50 mx-auto">
             Life Beyond Work
           </div>
@@ -740,3 +747,7 @@ export default function ZohoLifeAtAGSuite() {
     </div>
   );
 }
+
+
+
+

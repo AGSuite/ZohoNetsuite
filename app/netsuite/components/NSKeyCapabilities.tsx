@@ -342,3 +342,7 @@ const NSKeyCapabilities = () => {
 };
 
 export default NSKeyCapabilities;
+
+
+
+

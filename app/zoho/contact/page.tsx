@@ -88,7 +88,7 @@ function StatCard({ item, index }: { item: any; index: number }) {
   );
 }
 
-/* ─── Office Locations Data (Zoho Values) ─────────────────────────────────── */
+/* ─── Office Locations Data (Zoho Values) ────────────────────────────────── */
 type Region = "All" | "INDIA" | "USA" | "UK";
 
 const locations: {
@@ -175,7 +175,7 @@ const locations: {
     },
   ];
 
-/* ─── Particles ───────────────────────────────────────────────────────────── */
+/* ─── Particles ──────────────────────────────────────────────────────────── */
 const PARTICLES = [
   { w: 2, h: 2, top: 10, left: 15, dur: 5, delay: 0.3 },
   { w: 1.5, h: 1.5, top: 25, left: 70, dur: 4.2, delay: 1.1 },
@@ -365,13 +365,13 @@ export default function ZohoContactPage() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4 pointer-events-none" />
         <div className="absolute bottom-0 left-1/2 w-[800px] h-[400px] bg-cyan-700/10 rounded-full blur-[150px] -translate-x-1/2 translate-y-1/3 pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-28 pb-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-24 pb-12">
 
           {/* Breadcrumb */}
           <motion.nav
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-2 text-sm font-medium mb-16"
+            className="flex items-center gap-2 text-sm font-medium mb-8"
           >
             <Link href="/zoho" className="text-blue-300 hover:text-white transition-colors">Home</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
@@ -595,7 +595,7 @@ export default function ZohoContactPage() {
         </div>
       </section>
 
-      {/* ── Quick Access Sub-Pages (THE 4 CARDS) ───────────────────────────── */}
+      {/* ── Quick Access Sub-Pages (THE 4 CARDS) ─────────────────────────── */}
       <section className="py-20 bg-white border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -661,7 +661,7 @@ export default function ZohoContactPage() {
         </div>
       </section>
 
-      {/* ── Office Locations Section ─────────────────────────────────────────── */}
+      {/* ── Office Locations Section ─────────────────────────────────────── */}
       <section className="py-24 relative overflow-hidden bg-white">
         <div
           className="absolute inset-0 z-0 pointer-events-none opacity-40"
@@ -722,7 +722,7 @@ export default function ZohoContactPage() {
           >
             {(["All", "INDIA", "USA", "UK"] as Region[]).map(tab => {
               const isActive = locationFilter === tab;
-              const flags: Record<Region, string> = { All: "🌐", INDIA: "🇮🇳", USA: "🇺🇸", UK: "🇬🇧" };
+
               const labels: Record<Region, string> = { All: "Global Offices", INDIA: "INDIA", USA: "USA", UK: "UK" };
               return (
                 <button
@@ -733,7 +733,17 @@ export default function ZohoContactPage() {
                     : "bg-white text-gray-600 border-gray-200 hover:border-blue-300 hover:text-blue-700 hover:bg-blue-50 shadow-sm"
                     }`}
                 >
-                  <span className="text-base leading-none">{flags[tab]}</span>
+                  <span className="text-base leading-none" suppressHydrationWarning>
+                    {tab === "All" ? (
+                      "🌐"
+                    ) : (
+                      <img 
+                        src={`https://flagcdn.com/${tab === "INDIA" ? "in" : tab === "USA" ? "us" : "gb"}.svg`}
+                        alt={tab}
+                        className="w-5 h-3.5 rounded-sm object-cover inline-block"
+                      />
+                    )}
+                  </span>
                   {labels[tab]}
                 </button>
               );
@@ -763,7 +773,13 @@ export default function ZohoContactPage() {
                   <div className="relative z-10 p-6 flex flex-col flex-1 gap-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <span className="text-2xl">{loc.flag}</span>
+                        <div className="relative w-10 h-7 rounded-md overflow-hidden shadow-sm border border-gray-100 shrink-0">
+                          <img 
+                            src={`https://flagcdn.com/${loc.region === "INDIA" ? "in" : loc.region === "USA" ? "us" : "gb"}.svg`}
+                            alt={loc.region}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                         <div>
                           <h3 className="text-base font-medium text-gray-900 leading-tight">{loc.city}</h3>
                           <p className="text-xs text-blue-600 font-semibold mt-0.5">{loc.state}</p>
@@ -809,7 +825,7 @@ export default function ZohoContactPage() {
         </div>
       </section>
 
-      {/* ── Bottom Global CTA ────────────────────────────────────────────────── */}
+      {/* ── Bottom Global CTA ─────────────────────────────────────────────── */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -873,9 +889,8 @@ export default function ZohoContactPage() {
         </div>
       </section>
 
-      {/* ── Scripts ─────────────────────────────────────────────────────────── */}
+      {/* ── Scripts ───────────────────────────────────────────────────────────── */}
       <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
-      <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=200f842d0dc0f4e7801db792aae6ced7d901985d65eb7fcd23dda6e56700172097a30a3ef869eb06347d3a4bca25bb6fgid9f5592bc44469936204ad4851be9c0dffc44888d04f59693f16e7853eee295cfgid37385f0c9c29469e462007ae410d9ad684100d05f4e169a235f2b84413a975d4gidbf0e0fb6f34ec2f94a391d45ce6b68f60ace7ff29df396e3a70399e1edee5dc5&tw=23f34b37e865b5335ff2a8f585b01a00b88cb9c9a388aa28b4e9e710c025aad4" strategy="afterInteractive" />
       <Script id="zoho-salesiq" strategy="afterInteractive">
         {`
           var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.in/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
@@ -889,7 +904,6 @@ export default function ZohoContactPage() {
           }
         `}
       </Script>
-      <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=200f842d0dc0f4e7801db792aae6ced7d901985d65eb7fcd23dda6e56700172097a30a3ef869eb06347d3a4bca25bb6fgid9f5592bc44469936204ad4851be9c0dffc44888d04f59693f16e7853eee295cfgid37385f0c9c29469e462007ae410d9ad684100d05f4e169a235f2b84413a975d4gidbf0e0fb6f34ec2f94a391d45ce6b68f60ace7ff29df396e3a70399e1edee5dc5&tw=23f34b37e865b5335ff2a8f585b01a00b88cb9c9a388aa28b4e9e710c025aad4" />
     </div>
   );
 }

@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  TrendingUp, 
-  Target, 
-  ShieldCheck, 
+import {
+  TrendingUp,
+  Target,
+  ShieldCheck,
   Zap,
   Clock,
   Eye,
@@ -110,7 +110,6 @@ export default function ZohoSalesIqMarketingPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Marketing", href: "/zoho/solutions/marketing" },
         { label: "Zoho SalesIQ", href: "/zoho-salesiq-marketing" },
       ]}
       stats={stats}
@@ -136,10 +135,14 @@ export default function ZohoSalesIqMarketingPage() {
           "Professional: $15 /month",
           "Enterprise: $25 /month",
         ],
-        ctaText: "Start My Marketing Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 

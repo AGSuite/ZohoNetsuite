@@ -53,21 +53,21 @@ export default function SuiteSuccessPage() {
     { title: "Optimize", description: "Leverage advanced analytics, AI insights, and business intelligence for smarter decisions.", image: "/images/modules/dashbord module.webp", color: "#7b3a8a", rgb: "123,58,138" },
     { title: "Dominate", description: "Innovate and disrupt your market with a future-proof, continuously updated cloud platform.", image: "/images/modules/any module.webp", color: "#a05a18", rgb: "160,90,24" },
     { title: "Quick Implementation", description: "Pre-configured industry setups drastically reduce time-to-value and implementation risk.", image: "/images/modules/chatt mdoule.webp", color: "#4a3a8a", rgb: "74,58,138" },
-    { title: "Role-Based Dashboards", description: "300+ pre-built KPIs and dashboards for every function — from CFO to warehouse manager.", image: "/images/modules/module8.webp", color: "#1a6080", rgb: "26,96,128" },
+    { title: "Role-Based Dashboards", description: "300+ pre-built KPIs and dashboards for every function â€” from CFO to warehouse manager.", image: "/images/modules/module8.webp", color: "#1a6080", rgb: "26,96,128" },
     { title: "Industry Best Practices", description: "Built-in workflows and processes based on thousands of successful global deployments.", image: "/images/modules/any modules.webp", color: "#6a2575", rgb: "106,37,117" },
-    { title: "Continuous Updates", description: "Two automatic platform upgrades per year — with all your customizations preserved.", image: "/images/modules/account modules.webp", color: "#154e8a", rgb: "21,78,138" },
+    { title: "Continuous Updates", description: "Two automatic platform upgrades per year â€” with all your customizations preserved.", image: "/images/modules/account modules.webp", color: "#154e8a", rgb: "21,78,138" },
     { title: "Phased Approach", description: "A structured, agile methodology that delivers business value at every single stage.", image: "/images/modules/managging together module.webp", color: "#1a6545", rgb: "26,101,69" },
     { title: "Training & Adoption", description: "Built-in training pathways ensure rapid user adoption from the first day of go-live.", image: "/images/modules/sheet module.webp", color: "#8a2a3a", rgb: "138,42,58" },
     { title: "Ongoing Innovation", description: "NetSuite continuously innovates the SuiteSuccess editions based on real customer feedback and market trends.", image: "/images/modules/mobile module.webp", color: "#0f4e8a", rgb: "15,78,138" },
   ];
 
   const benefits = [
-    { title: "Rapid 100-Day Go-Live", description: "SuiteSuccess enables go-live in as little as 100 days — compared to 12–18 months with traditional ERP — using pre-configured, industry-specific setups that drastically reduce risk.", image: "/images/people/people5_11zon.webp", points: ["100-day go-live methodology", "Industry-preset configurations", "Reduced project risk", "Faster time to value"] },
-    { title: "Industry Best Practices Built In", description: "Built on the experience of thousands of global deployments — the KPIs, workflows, and dashboards that matter most in your industry are already configured and ready from day one.", image: "/images/lap/lap2.webp", points: ["300+ pre-built KPIs", "Industry-specific workflows", "Pre-defined chart of accounts", "Role-based dashboards for every function"] },
+    { title: "Rapid 100-Day Go-Live", description: "SuiteSuccess enables go-live in as little as 100 days â€” compared to 12â€“18 months with traditional ERP â€” using pre-configured, industry-specific setups that drastically reduce risk.", image: "/images/people/people5_11zon.webp", points: ["100-day go-live methodology", "Industry-preset configurations", "Reduced project risk", "Faster time to value"] },
+    { title: "Industry Best Practices Built In", description: "Built on the experience of thousands of global deployments â€” the KPIs, workflows, and dashboards that matter most in your industry are already configured and ready from day one.", image: "/images/lap/lap2.webp", points: ["300+ pre-built KPIs", "Industry-specific workflows", "Pre-defined chart of accounts", "Role-based dashboards for every function"] },
     { title: "Lower Implementation Cost", description: "Starting from an industry-matched baseline slashes implementation consulting hours, reducing total cost of ownership and avoiding expensive scope creep throughout the project.", image: "/images/lap/lap4.webp", points: ["18% average cost reduction", "Fixed-scope engagement model", "Fewer custom configurations needed", "Predictable implementation budget"] },
-    { title: "Scalable Stairway to Growth", description: "Start with what you need now and scale on the same platform — the SuiteSuccess Stairway guides you from Build to Engage to Optimize in clear structured phases.", image: "/images/people/laptopmen2.webp", points: ["Phased adoption model", "No re-implementation ever", "Add modules as you scale", "Continuous platform improvement"] },
+    { title: "Scalable Stairway to Growth", description: "Start with what you need now and scale on the same platform â€” the SuiteSuccess Stairway guides you from Build to Engage to Optimize in clear structured phases.", image: "/images/people/laptopmen2.webp", points: ["Phased adoption model", "No re-implementation ever", "Add modules as you scale", "Continuous platform improvement"] },
     { title: "Built-In Training & Adoption", description: "SuiteSuccess includes role-based training pathways for every functional user, dramatically accelerating adoption and reducing change management challenges from day one.", image: "/images/people/fourteam.webp", points: ["Role-specific training content", "Learning paths for every function", "In-app guidance and walkthroughs", "Rapid user proficiency from go-live"] },
-    { title: "Continuous Platform Innovation", description: "Two automatic NetSuite upgrades per year — no re-implementation required, all your customizations are preserved, and you continuously benefit from new capabilities.", image: "/images/lap/lap3.webp", points: ["Bi-annual automatic upgrades", "Customizations preserved", "Early access to new features", "Ongoing access to NetSuite innovations"] },
+    { title: "Continuous Platform Innovation", description: "Two automatic NetSuite upgrades per year â€” no re-implementation required, all your customizations are preserved, and you continuously benefit from new capabilities.", image: "/images/lap/lap3.webp", points: ["Bi-annual automatic upgrades", "Customizations preserved", "Early access to new features", "Ongoing access to NetSuite innovations"] },
   ];
 
   return (
@@ -79,17 +79,17 @@ export default function SuiteSuccessPage() {
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-800/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '70px 70px' }} />
 
-        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-8">
+        <div className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-40 pb-20">
           <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
             className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20">
             <Link href="/netsuite" className="text-blue-300 hover:text-white transition-colors">Home</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/50">Solutions</span>
+            <Link href="/netsuite/solutions" className="text-blue-300 hover:text-white transition-colors">Solutions</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/80">NetSuite SuiteSuccess</span>
           </motion.nav>
 
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-16 sm:mb-20">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15] tracking-tight">
@@ -101,7 +101,7 @@ export default function SuiteSuccessPage() {
                 className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full" />
               <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8">
-                Zero to cloud in 100 days. A proven, industry-engineered methodology that delivers NetSuite with best practices built right in — faster, cheaper, and with far less risk.
+                Zero to cloud in 100 days. A proven, industry-engineered methodology that delivers NetSuite with best practices built right in â€” faster, cheaper, and with far less risk.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
@@ -126,7 +126,7 @@ export default function SuiteSuccessPage() {
                     </div>
                     <div>
                       <p className="text-gray-900 text-sm font-bold leading-tight">Fastest Path to Cloud ERP</p>
-                      <p className="text-gray-500 text-xs mt-0.5">100-Day Go-Live · Industry KPIs · Zero Re-Implementation · Lower Cost</p>
+                      <p className="text-gray-500 text-xs mt-0.5">100-Day Go-Live Â· Industry KPIs Â· Zero Re-Implementation Â· Lower Cost</p>
                     </div>
                   </motion.div>
                 </div>
@@ -137,7 +137,7 @@ export default function SuiteSuccessPage() {
                   </div>
                   <div>
                     <p className="text-gray-900 text-[13px] font-bold leading-tight whitespace-nowrap">NetSuite SuiteSuccess</p>
-                    <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">Build · Engage · Consume · Optimize · Dominate</p>
+                    <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">Build Â· Engage Â· Consume Â· Optimize Â· Dominate</p>
                   </div>
                 </motion.div>
               </div>
@@ -145,7 +145,7 @@ export default function SuiteSuccessPage() {
           </div>
 
           <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.8 }}
-            className="border-t border-white/15 pt-5 sm:pt-6">
+            className="border-t border-white/15 pt-8 sm:pt-10">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {stats.map((s, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 + i * 0.12 }} className="text-center group">
@@ -256,7 +256,7 @@ export default function SuiteSuccessPage() {
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-medium text-gray-900 text-center">The Stairway to Success</motion.h2>
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-600 text-lg max-w-2xl text-center">
-            A proven, phased path from implementation to complete business value — built on thousands of successful deployments
+            A proven, phased path from implementation to complete business value â€” built on thousands of successful deployments
           </motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {modules.map((mod, index) => (
@@ -290,7 +290,7 @@ export default function SuiteSuccessPage() {
         style={{ background: "linear-gradient(135deg, #000814 0%, #000f22 25%, #001535 55%, #000c1a 80%, #000810 100%)" }}>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3" style={{ background: "radial-gradient(circle, rgba(37,99,235,0.25) 0%, transparent 70%)" }} />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8">
             <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">Key Business Benefits of NetSuite SuiteSuccess</h2>
           </motion.div>
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
@@ -343,7 +343,7 @@ export default function SuiteSuccessPage() {
                 <div className="w-14 h-1 bg-blue-400 mb-5 rounded-full" />
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">How Much Does NetSuite SuiteSuccess Cost?</h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
-                  SuiteSuccess editions are included within NetSuite subscription pricing — there is no additional fee for the SuiteSuccess methodology, pre-built KPIs, or industry configurations. Pricing is based on the specific SuiteSuccess edition, the number of users, and any additional modules you activate. Speak to our team for a tailored investment analysis.
+                  SuiteSuccess editions are included within NetSuite subscription pricing â€” there is no additional fee for the SuiteSuccess methodology, pre-built KPIs, or industry configurations. Pricing is based on the specific SuiteSuccess edition, the number of users, and any additional modules you activate. Speak to our team for a tailored investment analysis.
                 </p>
                 <div>
                   <Link href="#contact-form" className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-blue-400 hover:text-white transition-all duration-200 shadow-md">
@@ -367,16 +367,16 @@ export default function SuiteSuccessPage() {
       <FAQ
         variant="netsuite"
         id="faq"
-        customSubtitle="Everything you need to know about NetSuite SuiteSuccess — fast implementation, industry editions, pre-built KPIs, and go-live timelines."
+        customSubtitle="Everything you need to know about NetSuite SuiteSuccess â€” fast implementation, industry editions, pre-built KPIs, and go-live timelines."
         customFaqs={[
-          { q: "What is NetSuite SuiteSuccess?", a: "SuiteSuccess is Oracle NetSuite's pre-configured implementation methodology and industry-edition programme. It bundles the core NetSuite ERP with industry-specific best practices, pre-built dashboards, workflows, KPIs, and a structured phased go-live approach — dramatically reducing implementation time and risk for businesses in Manufacturing, Retail, Professional Services, Software, and 10+ other sectors." },
-          { q: "How fast can we go live with SuiteSuccess?", a: "SuiteSuccess implementations typically go live in 60 to 100 days for standard configurations — compared to 6 to 18 months for traditional ERP implementations. This speed is achieved through industry-specific pre-configuration, fixed-scope foundation phases, and AGSuite's certified delivery methodology." },
+          { q: "What is NetSuite SuiteSuccess?", a: "SuiteSuccess is Oracle NetSuite's pre-configured implementation methodology and industry-edition programme. It bundles the core NetSuite ERP with industry-specific best practices, pre-built dashboards, workflows, KPIs, and a structured phased go-live approach â€” dramatically reducing implementation time and risk for businesses in Manufacturing, Retail, Professional Services, Software, and 10+ other sectors." },
+          { q: "How fast can we go live with SuiteSuccess?", a: "SuiteSuccess implementations typically go live in 60 to 100 days for standard configurations â€” compared to 6 to 18 months for traditional ERP implementations. This speed is achieved through industry-specific pre-configuration, fixed-scope foundation phases, and AGSuite's certified delivery methodology." },
           { q: "Which industries does SuiteSuccess support?", a: "NetSuite offers SuiteSuccess industry editions for Software/SaaS, Manufacturing, Wholesale Distribution, Professional Services, Retail, Food & Beverage, Nonprofit, Healthcare, Financial Services, Advertising/Media, and Apparel. Each edition comes with pre-configured workflows, chart of accounts, and role-based dashboards specific to that industry." },
           { q: "What are the five stages of SuiteSuccess?", a: "SuiteSuccess follows a Build-Engage-Consume-Optimize-Dominate framework. Build establishes the financial and ERP foundation. Engage adds CRM and ecommerce. Consume expands with project management, WMS, and industry capabilities. Optimize leverages BI and AI. Dominate unlocks continuous innovation with each platform upgrade." },
-          { q: "How many pre-built KPIs and dashboards does SuiteSuccess include?", a: "SuiteSuccess includes 300+ pre-built KPIs and role-based dashboards covering every business function — CFO cash flow dashboards, sales pipeline views, operations scoreboards, and HR analytics. All dashboards are configured for your industry from day one, eliminating months of BI configuration." },
+          { q: "How many pre-built KPIs and dashboards does SuiteSuccess include?", a: "SuiteSuccess includes 300+ pre-built KPIs and role-based dashboards covering every business function â€” CFO cash flow dashboards, sales pipeline views, operations scoreboards, and HR analytics. All dashboards are configured for your industry from day one, eliminating months of BI configuration." },
           { q: "Can we customise SuiteSuccess for our specific business needs?", a: "Yes. SuiteSuccess provides the foundation, but every configuration, workflow, custom field, and report can be tailored to your specific processes. AGSuite's implementation team works within the SuiteSuccess framework while configuring NetSuite to your exact requirements." },
-          { q: "How does SuiteSuccess handle platform upgrades?", a: "NetSuite releases two major platform upgrades per year. SuiteSuccess is designed so all customisations, workflows, and configurations are carried forward automatically during upgrades — eliminating the upgrade freeze and regression testing overhead typical of on-premise ERP systems." },
-          { q: "What ongoing support does AGSuite provide for SuiteSuccess customers?", a: "AGSuite offers post-go-live managed services including quarterly health checks, user training, process optimisation workshops, new module implementations, report and dashboard development, and a dedicated support desk — ensuring your SuiteSuccess environment keeps pace with your business as it grows." },
+          { q: "How does SuiteSuccess handle platform upgrades?", a: "NetSuite releases two major platform upgrades per year. SuiteSuccess is designed so all customisations, workflows, and configurations are carried forward automatically during upgrades â€” eliminating the upgrade freeze and regression testing overhead typical of on-premise ERP systems." },
+          { q: "What ongoing support does AGSuite provide for SuiteSuccess customers?", a: "AGSuite offers post-go-live managed services including quarterly health checks, user training, process optimisation workshops, new module implementations, report and dashboard development, and a dedicated support desk â€” ensuring your SuiteSuccess environment keeps pace with your business as it grows." },
         ]}
       />
 
@@ -395,7 +395,7 @@ export default function SuiteSuccessPage() {
             </div>
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Go Live with NetSuite in 100 Days — <span className="text-cyan-200">Start Today.</span></h2>
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Go Live with NetSuite in 100 Days â€” <span className="text-cyan-200">Start Today.</span></h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">Join thousands of businesses that chose SuiteSuccess for faster, lower-risk ERP implementations with industry best practices built right in.</p>
               </div>
               <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
@@ -410,3 +410,7 @@ export default function SuiteSuccessPage() {
     </div>
   );
 }
+
+
+
+

@@ -12,3 +12,7 @@ export default async function ZohoInsightsPage() {
   const blogs = await getZohoPosts();
   return <ZohoInsightsClient blogs={blogs} />;
 }
+
+
+
+

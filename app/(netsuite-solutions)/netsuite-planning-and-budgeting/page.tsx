@@ -160,17 +160,17 @@ export default function PlanningPage() {
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-800/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '70px 70px' }} />
 
-        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-8">
+        <div className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-40 pb-20">
           <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
             className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20">
             <Link href="/netsuite" className="text-teal-300 hover:text-white transition-colors">Home</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/50">Solutions</span>
+            <Link href="/netsuite/solutions" className="text-blue-300 hover:text-white transition-colors">Solutions</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/80">NetSuite Planning and Budgeting</span>
           </motion.nav>
 
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-16 sm:mb-20">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15] tracking-tight">
@@ -182,7 +182,7 @@ export default function PlanningPage() {
                 className="h-[3px] bg-gradient-to-r from-teal-500 to-cyan-300 mb-5 rounded-full" />
               <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8">
-                Transform Financial Planning with NetSuite’s Automated Budgeting System. Automate labor-intensive planning processes and gain strategic analysis focus.
+                Transform Financial Planning with NetSuiteâ€™s Automated Budgeting System. Automate labor-intensive planning processes and gain strategic analysis focus.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
@@ -207,7 +207,7 @@ export default function PlanningPage() {
                     </div>
                     <div>
                       <p className="text-gray-900 text-sm font-bold leading-tight">Automated Budgeting System</p>
-                      <p className="text-gray-500 text-xs mt-0.5">Budget · Forecast · Scenarios · AI Narratives</p>
+                      <p className="text-gray-500 text-xs mt-0.5">Budget Â· Forecast Â· Scenarios Â· AI Narratives</p>
                     </div>
                   </motion.div>
                 </div>
@@ -216,7 +216,7 @@ export default function PlanningPage() {
           </div>
 
           <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.8 }}
-            className="border-t border-white/15 pt-5 sm:pt-6">
+            className="border-t border-white/15 pt-8 sm:pt-10">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {stats.map((s, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 + i * 0.12 }} className="text-center group">
@@ -385,7 +385,7 @@ export default function PlanningPage() {
       {/* Features Grid - Already updated in previous turn */}
       <section id="modules" className="py-24 bg-gray-50 relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} 
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-medium text-gray-900 text-center">
             NetSuite Planning and Budgeting Features
           </motion.h2>
@@ -432,7 +432,7 @@ export default function PlanningPage() {
         style={{ background: "linear-gradient(135deg, #000a10 0%, #001018 25%, #001822 55%, #000c14 80%, #000810 100%)" }}>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3" style={{ background: "radial-gradient(circle, rgba(20,184,166,0.25) 0%, transparent 70%)" }} />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8">
             <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-teal-200">
               Key Benefits of NetSuite Planning and Budgeting
             </h2>
@@ -478,7 +478,7 @@ export default function PlanningPage() {
       {/* Challenges Section with Updated Images */}
       <section id="challenges" className="py-24 bg-white scroll-mt-36">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
             <h2 className="text-3xl md:text-5xl font-medium text-gray-900">Addressing Global Challenges</h2>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-10">
@@ -535,7 +535,7 @@ export default function PlanningPage() {
                 <p className="text-white/75 text-base leading-relaxed mb-8">
                   Companies of every size, from pre-revenue startups to fast-growing businesses, have made the move to NetSuite. Looking for a better way to run your business but wondering about the cost?
                   <br /><br />
-                  Users subscribe to NetSuite for an annual license fee. Your license is made up of three main components: core platform, optional modules and the number of users. There is also a one-time implementation fee for the initial set up. As your business grows, you can easily activate new modules and add users — that’s the beauty of cloud software.
+                  Users subscribe to NetSuite for an annual license fee. Your license is made up of three main components: core platform, optional modules and the number of users. There is also a one-time implementation fee for the initial set up. As your business grows, you can easily activate new modules and add users â€” thatâ€™s the beauty of cloud software.
                   <br /><br />
                   NetSuite Planning and Budgeting is available as add-on module.
                 </p>
@@ -574,7 +574,7 @@ export default function PlanningPage() {
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Learn How NetSuite ERP Can <span className="text-teal-200">Streamline Your Business.</span></h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">Join thousands of businesses growing their revenue with NetSuite — unified planning that works as hard as your business.</p>
+                <p className="text-white/80 text-lg md:text-xl font-medium">Join thousands of businesses growing their revenue with NetSuite â€” unified planning that works as hard as your business.</p>
               </div>
               <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-teal-800 hover:bg-teal-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
                 Get Free Consultation <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -590,9 +590,9 @@ export default function PlanningPage() {
         customSubtitle="Common questions about NetSuite Planning and Budgeting."
         customFaqs={[
           { q: "What is NetSuite Planning and Budgeting?", a: "NetSuite Planning and Budgeting is a cloud-based solution that helps businesses streamline financial planning, budgeting, and forecasting. It allows teams to collaborate in real-time, automate manual processes, and make data-driven decisions by integrating financial data from across the organization." },
-          { q: "How does NetSuite Planning and Budgeting improve forecasting accuracy?", a: "NetSuite enables businesses to create detailed, driver-based models that reflect real-world scenarios. Its powerful data integration capabilities provide accurate, up-to-date financial data, and the platform’s built-in analytics help generate accurate forecasts based on historical trends and real-time data." },
-          { q: "What level of customization does NetSuite Planning and Budgeting offer?", a: "NetSuite offers a high degree of customization, allowing users to tailor budgeting, forecasting, and reporting models to meet specific business needs. You can create custom dashboards, reports, and workflows to reflect your organization’s unique financial structure and goals." },
-          { q: "How does NetSuite Planning and Budgeting integrate with other systems?", a: "NetSuite seamlessly integrates with various ERP, CRM, and financial systems, including its own suite of applications, ensuring that all data is up-to-date and consistent. This integration eliminates the need for manual data entry, reduces errors, and ensures a unified view of your business’s financial health." },
+          { q: "How does NetSuite Planning and Budgeting improve forecasting accuracy?", a: "NetSuite enables businesses to create detailed, driver-based models that reflect real-world scenarios. Its powerful data integration capabilities provide accurate, up-to-date financial data, and the platformâ€™s built-in analytics help generate accurate forecasts based on historical trends and real-time data." },
+          { q: "What level of customization does NetSuite Planning and Budgeting offer?", a: "NetSuite offers a high degree of customization, allowing users to tailor budgeting, forecasting, and reporting models to meet specific business needs. You can create custom dashboards, reports, and workflows to reflect your organizationâ€™s unique financial structure and goals." },
+          { q: "How does NetSuite Planning and Budgeting integrate with other systems?", a: "NetSuite seamlessly integrates with various ERP, CRM, and financial systems, including its own suite of applications, ensuring that all data is up-to-date and consistent. This integration eliminates the need for manual data entry, reduces errors, and ensures a unified view of your businessâ€™s financial health." },
         ]}
       />
 

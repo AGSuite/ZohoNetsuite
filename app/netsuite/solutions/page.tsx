@@ -10,3 +10,7 @@ export const metadata: Metadata = {
 export default function NetSuiteSolutionsPage() {
   return <NetSuiteSolutionsClient />;
 }
+
+
+
+

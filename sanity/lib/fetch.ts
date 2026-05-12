@@ -7,7 +7,7 @@ export async function getPosts() {
         return []
     }
     return client.fetch(POSTS_QUERY, {}, {
-        next: { revalidate: 0 }
+        next: { revalidate: 3600 }
     })
 }
 
@@ -16,6 +16,6 @@ export async function getPostBySlug(slug: string) {
         return null
     }
     return client.fetch(POST_BY_SLUG_QUERY, { slug }, {
-        next: { revalidate: 0 }
+        next: { revalidate: 3600 }
     })
 }

@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  Share2, 
-  MessageSquare, 
-  TrendingUp, 
+import {
+  Share2,
+  MessageSquare,
+  TrendingUp,
   Zap,
   Target,
   BarChart3,
@@ -177,13 +177,13 @@ export default function ZohoSocialPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Marketing", href: "/zoho/solutions/marketing" },
-        { label: "Zoho Social", href: "/zoho/solutions/marketing/zoho-social" },
+        { label: "Zoho Social", href: "/zoho-social-media-management" },
       ]}
       stats={stats}
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap2.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-social-dashboard.png"
       heroCard1={{
         title: "All Networks Unified",
         subtitle: "One calendar for FB, IG, LI, and TW.",
@@ -202,10 +202,14 @@ export default function ZohoSocialPage() {
           "Premium: $55 /month",
           "Agency: $300 /month (10 brands)",
         ],
-        ctaText: "Start 15-Day Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 

@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  Zap, 
-  TrendingUp, 
-  Heart, 
+import {
+  Zap,
+  TrendingUp,
+  Heart,
   Target,
   ShieldCheck,
   Globe2,
@@ -174,13 +174,13 @@ export default function ZohoOnePage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "Zoho One", href: "/zoho/solutions/it-management/zoho-one" },
+        { label: "Zoho One", href: "/zoho-one" },
       ]}
       stats={stats}
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap2.webp"
-      whatIsImage="/images/zoho-dashboards/zoho-one.webp" 
+      whatIsImage="/images/zoho-dashboards/zoho-one.webp"
       heroCard1={{
         title: "45+ Integrated Apps",
         subtitle: "One platform for all business needs.",
@@ -199,8 +199,12 @@ export default function ZohoOnePage() {
           "Scale Edition: Contact for pricing",
           "Includes 45+ Full Featured Apps",
         ],
-        ctaText: "Start My Free Trial",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+

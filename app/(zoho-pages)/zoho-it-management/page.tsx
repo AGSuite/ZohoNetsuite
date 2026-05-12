@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  ShieldCheck, 
-  Cpu, 
-  Lock, 
+import {
+  ShieldCheck,
+  Cpu,
+  Lock,
   TrendingUp,
   Target,
   BarChart3,
@@ -173,13 +173,13 @@ export default function ZohoITManagementPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
-        { label: "IT Management", href: "/zoho/solutions/it-management" },
-        { label: "Zoho IT Management", href: "/zoho/solutions/it-management/zoho-it-management" },
+        { label: "Zoho IT Management", href: "/zoho-it-management" },
       ]}
       stats={stats}
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap2.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-it-mgmt-dashboard.png"
       heroCard1={{
         title: "100% Security",
         subtitle: "Integrated compliance and protection.",
@@ -198,11 +198,15 @@ export default function ZohoITManagementPage() {
           "Enterprise: Custom solutions",
           "Free tier available for exploration",
         ],
-        ctaText: "Contact Sales for a Quote",
+        ctaText: "Get a Quote",
       }}
     />
   );
 }
+
+
+
+
 
 
 

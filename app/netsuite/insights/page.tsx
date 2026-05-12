@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Metadata } from 'next';
 import { getPosts } from '../../../sanity/lib/fetch';
 import NetSuiteInsightsClient from './components/NetSuiteInsightsClient';
@@ -12,4 +12,8 @@ export default async function InsightsPage() {
   const blogs = await getPosts();
   return <NetSuiteInsightsClient blogs={blogs} />;
 }
+
+
+
+
 

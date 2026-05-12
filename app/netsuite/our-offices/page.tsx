@@ -135,7 +135,7 @@ export default function NetSuiteOfficesPage() {
           }}
         />
         
-        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-12">
+        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-[120px] sm:pt-[136px] pb-12">
           {/* Breadcrumb */}
           <motion.nav
             initial={{ opacity: 0, y: -8 }}
@@ -569,3 +569,7 @@ export default function NetSuiteOfficesPage() {
     </div>
   );
 }
+
+
+
+

@@ -49,14 +49,14 @@ export default function NetSuiteEcommercePage() {
   const modules = [
     { title: "Order Management", description: "Centralize orders from all sales channels into a single, real-time fulfillment workflow without manual data entry.", image: "/images/modules/dashboard module.webp", color: "#1e6fa8", rgb: "30,111,168" },
     { title: "Product Catalog", description: "Manage rich product data, images, pricing rules, and variants all from one centralized location.", image: "/images/modules/sheet module.webp", color: "#3b5299", rgb: "59,82,153" },
-    { title: "Site Management", description: "Drag-and-drop tools to manage promotions, landing pages, and navigation — no developer required.", image: "/images/modules/dashbord module.webp", color: "#1a7a55", rgb: "26,122,85" },
+    { title: "Site Management", description: "Drag-and-drop tools to manage promotions, landing pages, and navigation â€” no developer required.", image: "/images/modules/dashbord module.webp", color: "#1a7a55", rgb: "26,122,85" },
     { title: "CRM Integration", description: "360-degree customer view with purchase history, preferences, and support tickets in one profile.", image: "/images/modules/csm modules.webp", color: "#7b3a8a", rgb: "123,58,138" },
     { title: "B2B Commerce", description: "Negotiated pricing, quote-to-order workflows, and self-service portals built for wholesale buyers.", image: "/images/modules/account modules.webp", color: "#a05a18", rgb: "160,90,24" },
     { title: "Marketing Engine", description: "Targeted email campaigns, dynamic promotions, and A/B testing powered by your own ERP data.", image: "/images/modules/any module.webp", color: "#4a3a8a", rgb: "74,58,138" },
     { title: "Mobile Commerce", description: "Fully responsive storefronts that deliver seamless shopping on any device, anywhere in the world.", image: "/images/modules/mobile module.webp", color: "#1a6080", rgb: "26,96,128" },
     { title: "Analytics & Reports", description: "Real-time insight into sales performance, customer behavior, and inventory across all channels.", image: "/images/modules/module8.webp", color: "#6a2575", rgb: "106,37,117" },
     { title: "Payment Processing", description: "Accept all major payment methods with built-in fraud detection and PCI DSS Level 1 compliance.", image: "/images/modules/chatt mdoule.webp", color: "#154e8a", rgb: "21,78,138" },
-    { title: "Inventory Sync", description: "Real-time inventory on your web store — no overselling, no stockouts, always accurate.", image: "/images/modules/working module.webp", color: "#1a6545", rgb: "26,101,69" },
+    { title: "Inventory Sync", description: "Real-time inventory on your web store â€” no overselling, no stockouts, always accurate.", image: "/images/modules/working module.webp", color: "#1a6545", rgb: "26,101,69" },
     { title: "Multi-Site Management", description: "Run multiple brands and regional storefronts from one account with centralized management.", image: "/images/modules/managging together module.webp", color: "#8a2a3a", rgb: "138,42,58" },
     { title: "Global Commerce", description: "Multi-currency, multi-language, and multi-tax support so you can sell anywhere in the world.", image: "/images/modules/any modules.webp", color: "#0f4e8a", rgb: "15,78,138" },
   ];
@@ -64,10 +64,10 @@ export default function NetSuiteEcommercePage() {
   const benefits = [
     { title: "Unified Commerce & ERP", description: "SuiteCommerce connects your storefront directly to your ERP, eliminating manual data entry and ensuring real-time accuracy across inventory, orders, and financials.", image: "/images/lap/lap4.webp", points: ["Real-time inventory on web store", "Orders flow straight into NetSuite", "No middleware or integrations needed", "Single source of truth for all data"] },
     { title: "B2B & B2C on One Platform", description: "Serve both wholesale buyers and retail customers from a single platform with tailored experiences, pricing rules, and workflows for each customer type.", image: "/images/people/laptopmen2.webp", points: ["Negotiated pricing per customer", "Quote-to-order for B2B buyers", "Guest checkout for B2C shoppers", "Self-service account portals"] },
-    { title: "Global Expansion Ready", description: "Launch new storefronts in new markets without adding complexity — multi-currency, multi-language, and local tax rules are all built in.", image: "/images/lap/lap3.webp", points: ["Multiple currencies and exchange rates", "Localized storefronts and languages", "Automated tax calculation by region", "Country-specific payment methods"] },
+    { title: "Global Expansion Ready", description: "Launch new storefronts in new markets without adding complexity â€” multi-currency, multi-language, and local tax rules are all built in.", image: "/images/lap/lap3.webp", points: ["Multiple currencies and exchange rates", "Localized storefronts and languages", "Automated tax calculation by region", "Country-specific payment methods"] },
     { title: "Omnichannel Experience", description: "Unify your web store, POS, and back office so customers receive a consistent experience whether they shop online, in-store, or via mobile.", image: "/images/lap/lap2.webp", points: ["In-store POS connected to ERP", "Click-and-collect and ship-from-store", "Unified customer profile and history", "Seamless returns across all channels"] },
     { title: "Marketing & Personalization", description: "Drive repeat purchases with targeted promotions, personalized recommendations, and intelligent email campaigns powered by your ERP data.", image: "/images/lap/lap5.webp", points: ["Behavior-based email campaigns", "Dynamic product recommendations", "Coupon and promotion engine", "A/B testing for conversion optimization"] },
-    { title: "Enterprise Security & Scale", description: "Hosted on Oracle Cloud Infrastructure — enterprise-grade uptime, security, and scalability without any IT overhead on your side.", image: "/images/people/laptopgirl1.webp", points: ["99.99% uptime SLA", "PCI DSS Level 1 compliant", "DDoS and fraud protection", "Auto-scaling for peak seasons"] },
+    { title: "Enterprise Security & Scale", description: "Hosted on Oracle Cloud Infrastructure â€” enterprise-grade uptime, security, and scalability without any IT overhead on your side.", image: "/images/people/laptopgirl1.webp", points: ["99.99% uptime SLA", "PCI DSS Level 1 compliant", "DDoS and fraud protection", "Auto-scaling for peak seasons"] },
   ];
 
   return (
@@ -79,17 +79,17 @@ export default function NetSuiteEcommercePage() {
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-800/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '70px 70px' }} />
 
-        <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 sm:pt-28 pb-8">
+        <div className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-40 pb-20">
           <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
             className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20">
             <Link href="/netsuite" className="text-blue-300 hover:text-white transition-colors">Home</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/50">Solutions</span>
+            <Link href="/netsuite/solutions" className="text-blue-300 hover:text-white transition-colors">Solutions</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/80">NetSuite E-Commerce</span>
           </motion.nav>
 
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8" style={{ minHeight: 'calc(100vh - 150px)' }}>
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-16 sm:mb-20">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15] tracking-tight">
@@ -101,7 +101,7 @@ export default function NetSuiteEcommercePage() {
                 className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full" />
               <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8">
-                Unified ecommerce connected directly to your ERP — deliver seamless B2B and B2C shopping experiences with real-time inventory, orders, and financials in one cloud platform.
+                Unified ecommerce connected directly to your ERP â€” deliver seamless B2B and B2C shopping experiences with real-time inventory, orders, and financials in one cloud platform.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
@@ -126,7 +126,7 @@ export default function NetSuiteEcommercePage() {
                     </div>
                     <div>
                       <p className="text-gray-900 text-sm font-bold leading-tight">Unified Commerce Platform</p>
-                      <p className="text-gray-500 text-xs mt-0.5">B2B · B2C · Omnichannel · Real-Time Inventory · Global</p>
+                      <p className="text-gray-500 text-xs mt-0.5">B2B Â· B2C Â· Omnichannel Â· Real-Time Inventory Â· Global</p>
                     </div>
                   </motion.div>
                 </div>
@@ -137,7 +137,7 @@ export default function NetSuiteEcommercePage() {
                   </div>
                   <div>
                     <p className="text-gray-900 text-[13px] font-bold leading-tight whitespace-nowrap">NetSuite SuiteCommerce</p>
-                    <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">Orders · Catalog · Payments · Analytics · Channels</p>
+                    <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">Orders Â· Catalog Â· Payments Â· Analytics Â· Channels</p>
                   </div>
                 </motion.div>
               </div>
@@ -145,7 +145,7 @@ export default function NetSuiteEcommercePage() {
           </div>
 
           <motion.div ref={statsRef} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.8 }}
-            className="border-t border-white/15 pt-5 sm:pt-6">
+            className="border-t border-white/15 pt-8 sm:pt-10">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {stats.map((s, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 + i * 0.12 }} className="text-center group">
@@ -257,7 +257,7 @@ export default function NetSuiteEcommercePage() {
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-medium text-gray-900 text-center">NetSuite SuiteCommerce Modules</motion.h2>
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-600 text-lg max-w-2xl text-center">
-            12 powerful commerce capabilities unified with your NetSuite ERP — covering every customer touchpoint
+            12 powerful commerce capabilities unified with your NetSuite ERP â€” covering every customer touchpoint
           </motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {modules.map((mod, index) => (
@@ -291,7 +291,7 @@ export default function NetSuiteEcommercePage() {
         style={{ background: "linear-gradient(135deg, #010d1a 0%, #021830 25%, #031e45 55%, #041228 80%, #010810 100%)" }}>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3" style={{ background: "radial-gradient(circle, rgba(37,99,235,0.25) 0%, transparent 70%)" }} />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8">
             <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">Key Business Benefits of NetSuite E-Commerce</h2>
           </motion.div>
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
@@ -344,7 +344,7 @@ export default function NetSuiteEcommercePage() {
                 <div className="w-14 h-1 bg-blue-400 mb-5 rounded-full" />
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">How Much Does NetSuite SuiteCommerce Cost?</h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
-                  SuiteCommerce is licensed as part of the NetSuite platform — pricing is based on your store edition (Standard or Advanced), number of users, and any optional add-ons such as multi-site or B2B portals. Because it is natively unified with NetSuite ERP, there is no separate ecommerce subscription or integration cost to manage.
+                  SuiteCommerce is licensed as part of the NetSuite platform â€” pricing is based on your store edition (Standard or Advanced), number of users, and any optional add-ons such as multi-site or B2B portals. Because it is natively unified with NetSuite ERP, there is no separate ecommerce subscription or integration cost to manage.
                 </p>
                 <div>
                   <Link href="#contact-form" className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-blue-400 hover:text-white transition-all duration-200 shadow-md">
@@ -368,14 +368,14 @@ export default function NetSuiteEcommercePage() {
       <FAQ
         variant="netsuite"
         id="faq"
-        customSubtitle="Everything you need to know about NetSuite eCommerce — SuiteCommerce, multi-channel management, inventory sync, and implementation."
+        customSubtitle="Everything you need to know about NetSuite eCommerce â€” SuiteCommerce, multi-channel management, inventory sync, and implementation."
         customFaqs={[
-          { q: "What is NetSuite SuiteCommerce?", a: "SuiteCommerce is NetSuite's native B2C and B2B ecommerce platform — built directly into the NetSuite ERP so your online store, inventory, orders, financials, and customer data all operate from a single database. There is no integration between your webstore and back-office; they are the same system." },
-          { q: "How does NetSuite handle multi-channel ecommerce?", a: "NetSuite centralises orders from all channels — your own SuiteCommerce site, Amazon, Shopify, eBay, and in-store POS — into a single order management system. Inventory is updated in real time across all channels, preventing overselling. Fulfillment, returns, and financial recognition all flow through one ERP workflow." },
-          { q: "Does NetSuite support B2B ecommerce with customer portals?", a: "Yes. SuiteCommerce Advanced and the Customer Center module provide full B2B capabilities — customer-specific pricing, credit limits, purchase order workflows, account-level catalogs, and self-service order status and invoice payment. B2B customers log in to a branded portal and see their specific contract pricing and entitlements." },
-          { q: "How does inventory sync work across ecommerce and physical locations?", a: "NetSuite inventory is a single real-time record across all sales channels and warehouse locations. When an item sells online, stock is decremented immediately. Reorder points, transfer orders, and multi-location fulfillment rules all apply — preventing stockouts and ensuring the right stock is fulfilled from the optimal location." },
+          { q: "What is NetSuite SuiteCommerce?", a: "SuiteCommerce is NetSuite's native B2C and B2B ecommerce platform â€” built directly into the NetSuite ERP so your online store, inventory, orders, financials, and customer data all operate from a single database. There is no integration between your webstore and back-office; they are the same system." },
+          { q: "How does NetSuite handle multi-channel ecommerce?", a: "NetSuite centralises orders from all channels â€” your own SuiteCommerce site, Amazon, Shopify, eBay, and in-store POS â€” into a single order management system. Inventory is updated in real time across all channels, preventing overselling. Fulfillment, returns, and financial recognition all flow through one ERP workflow." },
+          { q: "Does NetSuite support B2B ecommerce with customer portals?", a: "Yes. SuiteCommerce Advanced and the Customer Center module provide full B2B capabilities â€” customer-specific pricing, credit limits, purchase order workflows, account-level catalogs, and self-service order status and invoice payment. B2B customers log in to a branded portal and see their specific contract pricing and entitlements." },
+          { q: "How does inventory sync work across ecommerce and physical locations?", a: "NetSuite inventory is a single real-time record across all sales channels and warehouse locations. When an item sells online, stock is decremented immediately. Reorder points, transfer orders, and multi-location fulfillment rules all apply â€” preventing stockouts and ensuring the right stock is fulfilled from the optimal location." },
           { q: "Can NetSuite handle personalisation and product recommendations?", a: "Yes. SuiteCommerce integrates with NetSuite's AI layer for personalised product recommendations based on purchase history, browsing behaviour, and customer segment. Promotional pricing, discount rules, bundle offers, and upsell/cross-sell logic can all be configured without custom development." },
-          { q: "How does NetSuite handle returns and ecommerce refunds?", a: "Returns initiated online flow directly into NetSuite as return authorizations — triggering restocking, quality inspection workflows, credit memo generation, and payment refund processing automatically. Online and offline returns are handled in the same system with full audit trails." },
+          { q: "How does NetSuite handle returns and ecommerce refunds?", a: "Returns initiated online flow directly into NetSuite as return authorizations â€” triggering restocking, quality inspection workflows, credit memo generation, and payment refund processing automatically. Online and offline returns are handled in the same system with full audit trails." },
           { q: "Does SuiteCommerce support SEO and mobile-first design?", a: "Yes. SuiteCommerce is built on a responsive, mobile-first architecture with SEO-friendly URL structures, meta tag management, schema markup, and page speed optimization. Content management, landing pages, and promotion banners can all be managed by marketing teams without developer involvement." },
           { q: "How long does a NetSuite eCommerce implementation take?", a: "A standard SuiteCommerce B2C implementation typically takes 10 to 16 weeks covering store configuration, theme customisation, product catalog migration, payment gateway integration, and launch testing. B2B implementations with customer portals and complex pricing typically take 14 to 20 weeks." },
         ]}
@@ -396,8 +396,8 @@ export default function NetSuiteEcommercePage() {
             </div>
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Launch Your NetSuite Store — <span className="text-cyan-300">Start Today.</span></h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">Join thousands of businesses growing their revenue with SuiteCommerce — unified commerce that works as hard as your business.</p>
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Launch Your NetSuite Store â€” <span className="text-cyan-300">Start Today.</span></h2>
+                <p className="text-white/80 text-lg md:text-xl font-medium">Join thousands of businesses growing their revenue with SuiteCommerce â€” unified commerce that works as hard as your business.</p>
               </div>
               <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-800 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
                 Request a NetSuite SuiteCommerce Demo <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -411,3 +411,7 @@ export default function NetSuiteEcommercePage() {
     </div>
   );
 }
+
+
+
+

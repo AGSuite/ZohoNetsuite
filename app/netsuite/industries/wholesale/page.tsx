@@ -242,3 +242,7 @@ export default function WholesalePage() {
   return <IndustryTemplate data={data} />;
 }
 
+
+
+
+

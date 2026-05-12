@@ -118,3 +118,7 @@ export default function ZohoBlogsSlider({ blogs, variant = 'default' }: ZohoBlog
         </section>
     )
 }
+
+
+
+
