@@ -216,7 +216,7 @@ export default function OpenAirPage() {
 
   return (
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
-      {/* â”€â”€ Hero Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Hero Section ─────────────────────────────────────────────────── */}
       <section className="relative min-h-screen overflow-hidden flex flex-col bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d]">
         <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-800/10 rounded-full blur-[100px] pointer-events-none" />
@@ -230,7 +230,7 @@ export default function OpenAirPage() {
         />
 
         <div className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-40 pb-20">
-          {/* Breadcrumb â€” absolutely positioned so it doesn't affect centering */}
+          {/* Breadcrumb — absolutely positioned so it doesn't affect centering */}
           <motion.nav
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -248,7 +248,7 @@ export default function OpenAirPage() {
           </motion.nav>
 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-16 sm:mb-20">
-            {/* LEFT â€” Headline + Content */}
+            {/* LEFT — Headline + Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -278,7 +278,7 @@ export default function OpenAirPage() {
                 transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                Enterprise professional services automation built for global organizations â€” managing thousands of projects, resources, and complex billing scenarios with ease.
+                Enterprise professional services automation built for global organizations — managing thousands of projects, resources, and complex billing scenarios with ease.
               </motion.p>
 
               <motion.div
@@ -302,7 +302,7 @@ export default function OpenAirPage() {
               </motion.div>
             </motion.div>
 
-            {/* RIGHT â€” Accounting-style: image + floating cards */}
+            {/* RIGHT — Accounting-style: image + floating cards */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -310,10 +310,10 @@ export default function OpenAirPage() {
               className="relative hidden lg:flex items-center justify-center"
               style={{ minHeight: 460 }}
             >
-              {/* Outer wrapper â€” leaves room for the top-left card to peek out */}
+              {/* Outer wrapper — leaves room for the top-left card to peek out */}
               <div className="relative w-[88%] ml-auto">
 
-                {/* Main image â€” smaller, rounded */}
+                {/* Main image — smaller, rounded */}
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
                   <Image
                     src="/images/lap/lap9_11zon.webp"
@@ -325,7 +325,7 @@ export default function OpenAirPage() {
                   {/* Bottom scrim */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
 
-                  {/* Bottom white card â€” inside image at bottom */}
+                  {/* Bottom white card — inside image at bottom */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -340,13 +340,13 @@ export default function OpenAirPage() {
                         Manage 1,000s of projects globally
                       </p>
                       <p className="text-gray-500 text-xs mt-0.5 leading-snug">
-                        Real-time PSA Â· Global Resources Â· ASC 606 Revenue Rec.
+                        Real-time PSA · Global Resources · ASC 606 Revenue Rec.
                       </p>
                     </div>
                   </motion.div>
                 </div>
 
-                {/* Top-left white card â€” peeking outside image on the left */}
+                {/* Top-left white card — peeking outside image on the left */}
                 <motion.div
                   initial={{ opacity: 0, x: -20, y: -10 }}
                   animate={{ opacity: 1, x: 0, y: 0 }}
@@ -361,7 +361,7 @@ export default function OpenAirPage() {
                       NetSuite SuiteProject Pro (OpenAir)
                     </p>
                     <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">
-                      PSA Â· Portfolio Â· Global Ops Â· Billing Â· Rev. Rec.
+                      PSA · Portfolio · Global Ops · Billing · Rev. Rec.
                     </p>
                   </div>
                 </motion.div>
@@ -407,7 +407,7 @@ export default function OpenAirPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Secondary Nav â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Secondary Nav ─────────────────────────────────────────────────── */}
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
@@ -432,11 +432,11 @@ export default function OpenAirPage() {
         </div>
       </nav>
 
-      {/* â”€â”€ What is OpenAir Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── What is OpenAir Section ─────────────────────────────────────── */}
       <section id="what-is-openair" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch">
-            {/* LEFT â€” Dashboard Image */}
+            {/* LEFT — Dashboard Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -456,7 +456,7 @@ export default function OpenAirPage() {
               </div>
             </motion.div>
 
-            {/* RIGHT â€” Text Content */}
+            {/* RIGHT — Text Content */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -512,7 +512,7 @@ export default function OpenAirPage() {
         </div>
       </section>
 
-      {/* â”€â”€ OpenAir Modules Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── OpenAir Modules Grid ──────────────────────────────────────────── */}
       <section id="modules" className="py-16 bg-white relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-medium text-gray-900 text-center">
@@ -579,7 +579,7 @@ export default function OpenAirPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Benefits Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Benefits Section ─────────────────────────────────────────────── */}
       <section
         id="benefits"
         className="py-24 relative overflow-hidden scroll-mt-36"
@@ -675,7 +675,7 @@ export default function OpenAirPage() {
 
       <NSServicesSection />
 
-      {/* â”€â”€ Pricing Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Pricing Section ───────────────────────────────────────────────── */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <motion.div
@@ -691,7 +691,7 @@ export default function OpenAirPage() {
                   How Much Does NetSuite OpenAir Cost?
                 </h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
-                  NetSuite OpenAir pricing is tailored to your business size and requirements. The annual subscription combines the core professional services automation platform, any additional modules you need, and your user count â€” plus a one-time implementation fee. As your business grows, activate new modules or add users instantly â€” no upgrades, no downtime, no infrastructure headaches.
+                  NetSuite OpenAir pricing is tailored to your business size and requirements. The annual subscription combines the core professional services automation platform, any additional modules you need, and your user count — plus a one-time implementation fee. As your business grows, activate new modules or add users instantly — no upgrades, no downtime, no infrastructure headaches.
                 </p>
                 <div>
                   <Link
@@ -720,24 +720,24 @@ export default function OpenAirPage() {
 
 
 
-      {/* â”€â”€ FAQ Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── FAQ Section ──────────────────────────────────────────────────────── */}
       <FAQ
         variant="netsuite"
         id="faq"
-        customSubtitle="Everything you need to know about NetSuite OpenAir & SuiteProject Pro â€” PSA, project billing, resource management, and implementation timelines."
+        customSubtitle="Everything you need to know about NetSuite OpenAir & SuiteProject Pro — PSA, project billing, resource management, and implementation timelines."
         customFaqs={[
-          { q: "What is NetSuite OpenAir / SuiteProject Pro?", a: "NetSuite OpenAir is a purpose-built Professional Services Automation (PSA) platform for project-based businesses â€” covering project management, resource planning, time and expense tracking, project billing, and real-time utilisation analytics. SuiteProject Pro brings similar capabilities natively within NetSuite ERP for organisations that want project management embedded directly in their financial system." },
-          { q: "What types of businesses benefit most from OpenAir?", a: "OpenAir is designed for professional and managed services organisations â€” consulting firms, IT services companies, marketing agencies, engineering firms, staffing businesses, and any organisation that delivers projects, tracks billable hours, and invoices clients based on time, milestones, or fixed fees." },
-          { q: "How does OpenAir handle project billing?", a: "OpenAir supports all standard professional services billing models â€” time and materials (T&M), fixed fee, milestone-based, retainer, and hybrid. Approved timesheets feed directly into invoicing workflows, with project managers approving billable hours before invoices are generated. Revenue recognition rules are applied automatically based on contract type and delivery completion." },
-          { q: "How does resource management work in OpenAir?", a: "OpenAir provides a real-time resource capacity and demand view across all projects â€” showing which resources are available, overallocated, or underutilised. Project managers can search resources by skill, certification, location, and availability, then book them to projects directly. Utilisation targets and forecasts are tracked at individual, team, and department levels." },
-          { q: "How does time and expense capture work for project teams?", a: "OpenAir provides a mobile-first timesheet and expense capture interface for project teams. Time is submitted against specific projects and tasks, with configurable approval workflows for manager review. Expense receipts are captured by photo on mobile devices, categorised, and routed for approval â€” then automatically processed into reimbursement and client billing." },
-          { q: "Can OpenAir integrate with NetSuite financials?", a: "Yes. OpenAir integrates natively with NetSuite financials â€” approved project revenue, billing, and cost data sync automatically to NetSuite for financial reporting, revenue recognition, and cash collection. Project profitability is visible in real time within both OpenAir and NetSuite dashboards." },
-          { q: "Does OpenAir support revenue recognition for long-term contracts?", a: "Yes. OpenAir includes ASC 606 / IFRS 15 compliant revenue recognition â€” supporting percentage-of-completion, milestone, and straight-line recognition methods. Revenue schedules are generated automatically based on project delivery progress and contract terms, flowing into NetSuite for financial statement reporting." },
-          { q: "How long does an OpenAir implementation take?", a: "A standard NetSuite OpenAir implementation for a professional services firm â€” covering project setup, resource management, timesheet workflows, billing rules, and integration with NetSuite financials â€” typically takes 8 to 14 weeks. Larger implementations with complex billing arrangements, multi-entity structures, or custom integrations may take 14 to 20 weeks." },
+          { q: "What is NetSuite OpenAir / SuiteProject Pro?", a: "NetSuite OpenAir is a purpose-built Professional Services Automation (PSA) platform for project-based businesses — covering project management, resource planning, time and expense tracking, project billing, and real-time utilisation analytics. SuiteProject Pro brings similar capabilities natively within NetSuite ERP for organisations that want project management embedded directly in their financial system." },
+          { q: "What types of businesses benefit most from OpenAir?", a: "OpenAir is designed for professional and managed services organisations — consulting firms, IT services companies, marketing agencies, engineering firms, staffing businesses, and any organisation that delivers projects, tracks billable hours, and invoices clients based on time, milestones, or fixed fees." },
+          { q: "How does OpenAir handle project billing?", a: "OpenAir supports all standard professional services billing models — time and materials (T&M), fixed fee, milestone-based, retainer, and hybrid. Approved timesheets feed directly into invoicing workflows, with project managers approving billable hours before invoices are generated. Revenue recognition rules are applied automatically based on contract type and delivery completion." },
+          { q: "How does resource management work in OpenAir?", a: "OpenAir provides a real-time resource capacity and demand view across all projects — showing which resources are available, overallocated, or underutilised. Project managers can search resources by skill, certification, location, and availability, then book them to projects directly. Utilisation targets and forecasts are tracked at individual, team, and department levels." },
+          { q: "How does time and expense capture work for project teams?", a: "OpenAir provides a mobile-first timesheet and expense capture interface for project teams. Time is submitted against specific projects and tasks, with configurable approval workflows for manager review. Expense receipts are captured by photo on mobile devices, categorised, and routed for approval — then automatically processed into reimbursement and client billing." },
+          { q: "Can OpenAir integrate with NetSuite financials?", a: "Yes. OpenAir integrates natively with NetSuite financials — approved project revenue, billing, and cost data sync automatically to NetSuite for financial reporting, revenue recognition, and cash collection. Project profitability is visible in real time within both OpenAir and NetSuite dashboards." },
+          { q: "Does OpenAir support revenue recognition for long-term contracts?", a: "Yes. OpenAir includes ASC 606 / IFRS 15 compliant revenue recognition — supporting percentage-of-completion, milestone, and straight-line recognition methods. Revenue schedules are generated automatically based on project delivery progress and contract terms, flowing into NetSuite for financial statement reporting." },
+          { q: "How long does an OpenAir implementation take?", a: "A standard NetSuite OpenAir implementation for a professional services firm — covering project setup, resource management, timesheet workflows, billing rules, and integration with NetSuite financials — typically takes 8 to 14 weeks. Larger implementations with complex billing arrangements, multi-entity structures, or custom integrations may take 14 to 20 weeks." },
         ]}
       />
 
-      {/* â”€â”€ CTA Banner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── CTA Banner ────────────────────────────────────────────────────────── */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -763,7 +763,7 @@ export default function OpenAirPage() {
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                  Transform Your Enterprise on NetSuite OpenAir â€”{" "}
+                  Transform Your Enterprise on NetSuite OpenAir —{" "}
                   <span className="text-cyan-300">Scale Globally.</span>
                 </h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">
@@ -783,7 +783,7 @@ export default function OpenAirPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Contact Form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Contact Form ─────────────────────────────────────────────────────── */}
       <ContactFormDesign4 />
     </div>
   );

@@ -65,28 +65,28 @@ export default function GlobalBusinessPage() {
   const modules = [
     { title: "Multi-Subsidiary Management", description: "Manage multiple legal entities, business units, and subsidiaries from a single unified platform with real-time consolidated reporting.", image: "/images/modules/managging together module.webp", color: "#1e5e9e", rgb: "14,78,130" },
     { title: "Multi-Currency Support", description: "Transact in 190+ currencies with live exchange rate updates, automated revaluations, and consolidated cross-entity financial reporting.", image: "/images/modules/dashboard module.webp", color: "#1a7a55", rgb: "18,108,72" },
-    { title: "Global Tax Management", description: "Stay compliant with local tax regulations across 100+ jurisdictions â€” VAT, GST, withholding tax â€” with automated calculation and filing-ready reports.", image: "/images/modules/sheet module.webp", color: "#8b3a6a", rgb: "125,42,88" },
+    { title: "Global Tax Management", description: "Stay compliant with local tax regulations across 100+ jurisdictions — VAT, GST, withholding tax — with automated calculation and filing-ready reports.", image: "/images/modules/sheet module.webp", color: "#8b3a6a", rgb: "125,42,88" },
     { title: "Localization & Compliance", description: "Built-in country-specific accounting standards, statutory reporting formats, and regulatory requirements for key global markets.", image: "/images/modules/working module.webp", color: "#a05a18", rgb: "145,75,18" },
-    { title: "Global Consolidation", description: "Automate financial consolidation across all subsidiaries â€” eliminating intercompany eliminations, currency translations, and manual roll-ups.", image: "/images/modules/dashbord module.webp", color: "#3b5299", rgb: "40,65,145" },
+    { title: "Global Consolidation", description: "Automate financial consolidation across all subsidiaries — eliminating intercompany eliminations, currency translations, and manual roll-ups.", image: "/images/modules/dashbord module.webp", color: "#3b5299", rgb: "40,65,145" },
     { title: "Intercompany Transactions", description: "Automatically create matched intercompany journal entries and elimination postings to ensure accurate group-level financial statements.", image: "/images/modules/account modules.webp", color: "#1a6545", rgb: "20,95,60" },
     { title: "Multi-GAAP Reporting", description: "Maintain multiple accounting books (IFRS, US GAAP, local GAAP) simultaneously for each entity and consolidate under a single group standard.", image: "/images/modules/module8.webp", color: "#4a3a8a", rgb: "65,45,130" },
     { title: "Global Financial Reporting", description: "Generate real-time consolidated P&L, balance sheets, and cash flows segmented by subsidiary, region, or business unit with one click.", image: "/images/modules/csm modules.webp", color: "#1a6080", rgb: "20,88,115" },
-    { title: "NetSuite OneWorld", description: "The purpose-built solution for multinational companies â€” manage 200+ subsidiaries across 190+ currencies and 100+ tax jurisdictions from one system.", image: "/images/modules/any modules.webp", color: "#6a2575", rgb: "95,30,105" },
+    { title: "NetSuite OneWorld", description: "The purpose-built solution for multinational companies — manage 200+ subsidiaries across 190+ currencies and 100+ tax jurisdictions from one system.", image: "/images/modules/any modules.webp", color: "#6a2575", rgb: "95,30,105" },
     { title: "Foreign Currency Revaluation", description: "Automate period-end foreign currency revaluation of open balances and report unrealised gains/losses in full compliance with IFRS and US GAAP.", image: "/images/modules/any module.webp", color: "#154e8a", rgb: "18,68,130" },
-    { title: "Global Payroll Integration", description: "Connect NetSuite with leading global payroll providers â€” synchronise headcount, salary costs, and journal entries across 200+ countries.", image: "/images/modules/chatt mdoule.webp", color: "#8a2a3a", rgb: "130,35,48" },
-    { title: "Subsidiary Quick-Launch", description: "Spin up a new legal entity in days â€” copy chart of accounts, tax rules, and workflows from a parent or sister subsidiary with zero re-implementation.", image: "/images/modules/mobile module.webp", color: "#0f4e8a", rgb: "12,68,130" },
+    { title: "Global Payroll Integration", description: "Connect NetSuite with leading global payroll providers — synchronise headcount, salary costs, and journal entries across 200+ countries.", image: "/images/modules/chatt mdoule.webp", color: "#8a2a3a", rgb: "130,35,48" },
+    { title: "Subsidiary Quick-Launch", description: "Spin up a new legal entity in days — copy chart of accounts, tax rules, and workflows from a parent or sister subsidiary with zero re-implementation.", image: "/images/modules/mobile module.webp", color: "#0f4e8a", rgb: "12,68,130" },
   ];
 
   const benefits = [
     {
       title: "One Platform for All Subsidiaries",
-      description: "Consolidate financials, operations, and reporting across every global entity from a single NetSuite environment â€” eliminating disconnected systems and manual roll-ups.",
+      description: "Consolidate financials, operations, and reporting across every global entity from a single NetSuite environment — eliminating disconnected systems and manual roll-ups.",
       image: "/images/lap/lap1.webp",
       points: ["Real-time consolidated reporting", "Automated intercompany eliminations", "Single chart of accounts across all entities", "Drill-down from group to subsidiary to transaction"]
     },
     {
       title: "Multi-Currency & FX Management",
-      description: "Operate in 190+ currencies with live exchange rates, automated revaluations, and reporting in any currency â€” so your global numbers are always accurate and audit-ready.",
+      description: "Operate in 190+ currencies with live exchange rates, automated revaluations, and reporting in any currency — so your global numbers are always accurate and audit-ready.",
       image: "/images/people/laptopgirl.webp",
       points: ["190+ currencies supported natively", "Automated period-end revaluation", "Realised & unrealised FX gain/loss reporting", "Dynamic exchange rate feeds"]
     },
@@ -98,13 +98,13 @@ export default function GlobalBusinessPage() {
     },
     {
       title: "Rapid Subsidiary Expansion",
-      description: "Launch a new legal entity in days â€” copy configuration from an existing subsidiary, apply the appropriate localisation pack, and go live without a re-implementation.",
+      description: "Launch a new legal entity in days — copy configuration from an existing subsidiary, apply the appropriate localisation pack, and go live without a re-implementation.",
       image: "/images/people/laptopmen2.webp",
       points: ["New subsidiary in days, not months", "Pre-built localization packs for key markets", "Automated role and permission inheritance", "Template-driven chart of accounts setup"]
     },
     {
       title: "Global Financial Visibility",
-      description: "Access real-time P&L, cash flow, and balance sheet data consolidated across all regions from any device â€” with drill-down to the individual transaction level.",
+      description: "Access real-time P&L, cash flow, and balance sheet data consolidated across all regions from any device — with drill-down to the individual transaction level.",
       image: "/images/lap/lap2.webp",
       points: ["CFO & group finance dashboards", "Segment reporting by region or business unit", "Live KPIs without manual data extracts", "Scheduled reports delivered to inboxes"]
     },
@@ -119,7 +119,7 @@ export default function GlobalBusinessPage() {
   return (
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
 
-      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen overflow-hidden flex flex-col bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d]">
         <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
         <div className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-40 pb-20">
@@ -163,7 +163,7 @@ export default function GlobalBusinessPage() {
                 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                Manage multiple subsidiaries, currencies, and tax regulations from a single cloud platform â€” with real-time visibility across 200+ countries and 190+ currencies.
+                Manage multiple subsidiaries, currencies, and tax regulations from a single cloud platform — with real-time visibility across 200+ countries and 190+ currencies.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
@@ -179,7 +179,7 @@ export default function GlobalBusinessPage() {
               </motion.div>
             </motion.div>
 
-            {/* RIGHT â€” Image + floating cards */}
+            {/* RIGHT — Image + floating cards */}
             <motion.div
               initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.4 }}
@@ -201,7 +201,7 @@ export default function GlobalBusinessPage() {
                   {/* Bottom scrim */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
 
-                  {/* Bottom white card â€” inside image at bottom */}
+                  {/* Bottom white card — inside image at bottom */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -216,13 +216,13 @@ export default function GlobalBusinessPage() {
                         Operate across 200+ countries
                       </p>
                       <p className="text-gray-500 text-xs mt-0.5 leading-snug">
-                        Multi-currency Â· Multi-subsidiary Â· Local tax compliance built-in.
+                        Multi-currency · Multi-subsidiary · Local tax compliance built-in.
                       </p>
                     </div>
                   </motion.div>
                 </div>
 
-                {/* Top-left white card â€” peeking outside image */}
+                {/* Top-left white card — peeking outside image */}
                 <motion.div
                   initial={{ opacity: 0, x: -20, y: -10 }}
                   animate={{ opacity: 1, x: 0, y: 0 }}
@@ -237,7 +237,7 @@ export default function GlobalBusinessPage() {
                       NetSuite OneWorld
                     </p>
                     <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">
-                      Subsidiaries Â· Currencies Â· Tax Â· Consolidation
+                      Subsidiaries · Currencies · Tax · Consolidation
                     </p>
                   </div>
                 </motion.div>
@@ -277,7 +277,7 @@ export default function GlobalBusinessPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Sticky Nav â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Sticky Nav ───────────────────────────────────────────────────── */}
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-wrap items-center justify-center gap-1 py-2 sm:py-4">
@@ -303,7 +303,7 @@ export default function GlobalBusinessPage() {
         </div>
       </nav>
 
-      {/* â”€â”€ What is Global Business Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── What is Global Business Section ──────────────────────────────── */}
       <section id="what-is-global" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch">
@@ -377,7 +377,7 @@ export default function GlobalBusinessPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Global Business Modules Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Global Business Modules Grid ─────────────────────────────────── */}
       <section id="modules" className="py-16 bg-white relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
@@ -422,7 +422,7 @@ export default function GlobalBusinessPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Benefits Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Benefits Section ─────────────────────────────────────────────── */}
       <section
         id="benefits"
         className="py-24 relative overflow-hidden scroll-mt-36"
@@ -520,7 +520,7 @@ export default function GlobalBusinessPage() {
 
       <NSServicesSection />
 
-      {/* â”€â”€ Pricing Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Pricing Section ───────────────────────────────────────────────── */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <motion.div
@@ -537,7 +537,7 @@ export default function GlobalBusinessPage() {
                   How Much Does NetSuite Global Business Management Cost?
                 </h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
-                  NetSuite Global Business Management pricing is tailored to your number of subsidiaries, countries, currencies, and user count. The annual subscription combines the NetSuite OneWorld platform, any add-on modules required, and a one-time implementation fee. Launch new subsidiaries or activate new markets at any time â€” no hardware, no upgrades, no downtime.
+                  NetSuite Global Business Management pricing is tailored to your number of subsidiaries, countries, currencies, and user count. The annual subscription combines the NetSuite OneWorld platform, any add-on modules required, and a one-time implementation fee. Launch new subsidiaries or activate new markets at any time — no hardware, no upgrades, no downtime.
                 </p>
                 <div>
                   <a
@@ -549,7 +549,7 @@ export default function GlobalBusinessPage() {
                 </div>
               </div>
 
-              {/* Right â€” organic image */}
+              {/* Right — organic image */}
               <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
                 <div className="absolute inset-0 bg-[#052838]" />
                 <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
@@ -565,10 +565,10 @@ export default function GlobalBusinessPage() {
         </div>
       </section>
 
-      {/* â”€â”€ FAQ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── FAQ ───────────────────────────────────────────────────────────── */}
       <FAQ variant="netsuite-global-business" id="faq" />
 
-      {/* â”€â”€ CTA Banner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── CTA Banner ────────────────────────────────────────────────────── */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -592,11 +592,11 @@ export default function GlobalBusinessPage() {
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                  Scale Your Global Business with NetSuite â€”{" "}
+                  Scale Your Global Business with NetSuite —{" "}
                   <span className="text-cyan-300">From One Unified Platform.</span>
                 </h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">
-                  Join 43,000+ businesses that run global operations on NetSuite. Manage every subsidiary, currency, and compliance requirement from a single cloud system â€” your global transformation starts with one conversation.
+                  Join 43,000+ businesses that run global operations on NetSuite. Manage every subsidiary, currency, and compliance requirement from a single cloud system — your global transformation starts with one conversation.
                 </p>
               </div>
               <a
@@ -611,7 +611,7 @@ export default function GlobalBusinessPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Contact Form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Contact Form ─────────────────────────────────────────────────── */}
       <ContactFormDesign4 />
 
     </div>

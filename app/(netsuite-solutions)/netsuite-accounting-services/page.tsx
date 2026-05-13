@@ -63,10 +63,10 @@ export default function AccountingSoftwarePage() {
 
   const modules = [
     { title: "General Ledger", description: "Real-time P&L, balance sheets, multi-dimensional chart of accounts, and automated journal entries for a single source of financial truth.", image: "/images/modules/sheet module.webp", color: "#1e8a9e", rgb: "14,108,130" },
-    { title: "Accounts Payable", description: "Automate purchase invoices, vendor payments, and approval workflows â€” eliminating manual processing and reducing payment errors.", image: "/images/modules/account modules.webp", color: "#3b5299", rgb: "40,65,145" },
+    { title: "Accounts Payable", description: "Automate purchase invoices, vendor payments, and approval workflows — eliminating manual processing and reducing payment errors.", image: "/images/modules/account modules.webp", color: "#3b5299", rgb: "40,65,145" },
     { title: "Accounts Receivable", description: "Accelerate cash collection with automated billing, dunning, and payment matching from a single dashboard.", image: "/images/modules/dashbord module.webp", color: "#1a7a55", rgb: "18,108,72" },
     { title: "Fixed Asset Management", description: "Track asset lifecycle with automated depreciation schedules, revaluations, and disposal with full audit trails.", image: "/images/modules/working module.webp", color: "#8b3a6a", rgb: "125,42,88" },
-    { title: "Tax Management", description: "Handle multi-jurisdiction tax automatically â€” VAT, GST, sales tax â€” with built-in compliance and filing-ready reports.", image: "/images/modules/csm modules.webp", color: "#a05a18", rgb: "145,75,18" },
+    { title: "Tax Management", description: "Handle multi-jurisdiction tax automatically — VAT, GST, sales tax — with built-in compliance and filing-ready reports.", image: "/images/modules/csm modules.webp", color: "#a05a18", rgb: "145,75,18" },
     { title: "Financial Reporting", description: "Generate real-time P&L, cash flow, and balance sheet statements. Schedule reports to be delivered automatically to stakeholders.", image: "/images/modules/dashboard module.webp", color: "#4a3a8a", rgb: "65,45,130" },
     { title: "Bank Reconciliation", description: "Auto-match bank transactions with NetSuite records, flag discrepancies, and close the books faster every period.", image: "/images/modules/any module.webp", color: "#1a6080", rgb: "20,88,115" },
     { title: "Multi-Currency", description: "Transact in 190+ currencies with live exchange rates, automated revaluations, and consolidated multi-entity reporting.", image: "/images/modules/module8.webp", color: "#6a2575", rgb: "95,30,105" },
@@ -85,7 +85,7 @@ export default function AccountingSoftwarePage() {
     },
     {
       title: "Real-Time Financial Visibility",
-      description: "Access live P&L, balance sheet, and cash flow data from any device â€” no more waiting for batch reports or manual spreadsheet consolidation.",
+      description: "Access live P&L, balance sheet, and cash flow data from any device — no more waiting for batch reports or manual spreadsheet consolidation.",
       image: "/images/people/laptopgirl.webp",
       points: ["Configurable CFO & finance dashboards", "Live KPIs without manual data pulls", "Drill-down from summary to transaction", "Scheduled reports delivered to inboxes"]
     },
@@ -97,13 +97,13 @@ export default function AccountingSoftwarePage() {
     },
     {
       title: "Intelligent Automation",
-      description: "Take humans out of the loop for repetitive, rules-based accounting tasks â€” freeing your finance team to focus on analysis and strategy.",
+      description: "Take humans out of the loop for repetitive, rules-based accounting tasks — freeing your finance team to focus on analysis and strategy.",
       image: "/images/people/laptopmen2.webp",
       points: ["Automated AP/AR matching and posting", "Rules-based journal entries and allocations", "Revenue recognition on auto-pilot (ASC 606)", "AI-driven anomaly detection in transactions"]
     },
     {
       title: "Scalable Chart of Accounts",
-      description: "Start with your current structure and grow without limits â€” add subsidiaries, segments, and new dimensions in minutes without any re-implementation.",
+      description: "Start with your current structure and grow without limits — add subsidiaries, segments, and new dimensions in minutes without any re-implementation.",
       image: "/images/lap/lap2.webp",
       points: ["Unlimited segments and custom dimensions", "Multi-entity consolidation built-in", "Add new subsidiaries in minutes", "Handles millions of transactions seamlessly"]
     },
@@ -118,7 +118,7 @@ export default function AccountingSoftwarePage() {
   return (
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
 
-      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen overflow-hidden flex flex-col bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d]">
         <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-800/10 rounded-full blur-[100px] pointer-events-none" />
@@ -131,7 +131,7 @@ export default function AccountingSoftwarePage() {
         />
 
         <div className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-40 pb-20">
-          {/* Breadcrumb â€” absolutely positioned so it doesn't affect centering */}
+          {/* Breadcrumb — absolutely positioned so it doesn't affect centering */}
           <motion.nav
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -171,7 +171,7 @@ export default function AccountingSoftwarePage() {
                 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                Close the books faster, eliminate manual errors, and gain real-time financial visibility â€” all from the world&apos;s #1 cloud accounting platform trusted by 43,000+ businesses.
+                Close the books faster, eliminate manual errors, and gain real-time financial visibility — all from the world&apos;s #1 cloud accounting platform trusted by 43,000+ businesses.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
@@ -187,17 +187,17 @@ export default function AccountingSoftwarePage() {
               </motion.div>
             </motion.div>
 
-            {/* RIGHT â€” Smaller image + two white cards (reference style) */}
+            {/* RIGHT — Smaller image + two white cards (reference style) */}
             <motion.div
               initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.4 }}
               className="relative hidden lg:flex items-center justify-center"
               style={{ minHeight: 460 }}
             >
-              {/* Outer wrapper â€” leaves room for the top-left card to peek out */}
+              {/* Outer wrapper — leaves room for the top-left card to peek out */}
               <div className="relative w-[88%] ml-auto">
 
-                {/* Main image â€” smaller, rounded */}
+                {/* Main image — smaller, rounded */}
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
                   <Image
                     src="/images/lap/lap2.webp"
@@ -209,7 +209,7 @@ export default function AccountingSoftwarePage() {
                   {/* Bottom scrim for card readability */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
 
-                  {/* Bottom white card â€” inside image at bottom */}
+                  {/* Bottom white card — inside image at bottom */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -225,20 +225,20 @@ export default function AccountingSoftwarePage() {
                         Close the books up to 50% faster
                       </p>
                       <p className="text-gray-500 text-xs mt-0.5 leading-snug">
-                        Real-time GL, AR &amp; AP â€” always audit-ready, always accurate.
+                        Real-time GL, AR &amp; AP — always audit-ready, always accurate.
                       </p>
                     </div>
                   </motion.div>
                 </div>
 
-                {/* Top-left white card â€” peeking outside image on the left */}
+                {/* Top-left white card — peeking outside image on the left */}
                 <motion.div
                   initial={{ opacity: 0, x: -20, y: -10 }}
                   animate={{ opacity: 1, x: 0, y: 0 }}
                   transition={{ delay: 0.8, duration: 0.6, ease: "easeOut" }}
                   className="absolute -top-5 -left-10 flex items-center gap-3.5 bg-white rounded-2xl px-4 py-3 shadow-2xl border border-gray-100"
                 >
-                  {/* Landmark (bank) icon â€” teal-to-blue gradient */}
+                  {/* Landmark (bank) icon — teal-to-blue gradient */}
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #0f4c81, #0ea5e9)' }}>
                     <Landmark className="w-5 h-5 text-white" />
                   </div>
@@ -247,7 +247,7 @@ export default function AccountingSoftwarePage() {
                       NetSuite Cloud Accounting
                     </p>
                     <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">
-                      GL Â· AR/AP Â· Tax Â· Fixed Assets Â· Reporting
+                      GL · AR/AP · Tax · Fixed Assets · Reporting
                     </p>
                   </div>
                 </motion.div>
@@ -287,7 +287,7 @@ export default function AccountingSoftwarePage() {
         </div>
       </section>
 
-      {/* â”€â”€ Sticky Nav â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Sticky Nav ───────────────────────────────────────────────────── */}
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-wrap items-center justify-center gap-1 py-2 sm:py-4">
@@ -313,7 +313,7 @@ export default function AccountingSoftwarePage() {
         </div>
       </nav>
 
-      {/* â”€â”€ What is Accounting Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── What is Accounting Section ───────────────────────────────────── */}
       <section id="what-is-accounting" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch">
@@ -387,7 +387,7 @@ export default function AccountingSoftwarePage() {
         </div>
       </section>
 
-      {/* â”€â”€ Accounting Modules Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Accounting Modules Grid ──────────────────────────────────────── */}
       <section id="modules" className="py-16 bg-white relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
@@ -432,7 +432,7 @@ export default function AccountingSoftwarePage() {
         </div>
       </section>
 
-      {/* â”€â”€ Benefits Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Benefits Section ─────────────────────────────────────────────── */}
       <section
         id="benefits"
         className="py-24 relative overflow-hidden scroll-mt-36"
@@ -530,7 +530,7 @@ export default function AccountingSoftwarePage() {
 
       <NSServicesSection />
 
-      {/* â”€â”€ Pricing Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Pricing Section ───────────────────────────────────────────────── */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <motion.div
@@ -547,7 +547,7 @@ export default function AccountingSoftwarePage() {
                   How Much Does NetSuite Accounting Cost?
                 </h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
-                  NetSuite Accounting pricing is tailored to your business size and requirements. The annual subscription combines the core financial management platform, any additional modules you need, and your user count â€” plus a one-time implementation fee. As your business grows, activate new modules or add users instantly â€” no upgrades, no downtime, no infrastructure headaches.
+                  NetSuite Accounting pricing is tailored to your business size and requirements. The annual subscription combines the core financial management platform, any additional modules you need, and your user count — plus a one-time implementation fee. As your business grows, activate new modules or add users instantly — no upgrades, no downtime, no infrastructure headaches.
                 </p>
                 <div>
                   <a
@@ -559,7 +559,7 @@ export default function AccountingSoftwarePage() {
                 </div>
               </div>
 
-              {/* Right â€” organic image */}
+              {/* Right — organic image */}
               <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
                 <div className="absolute inset-0 bg-[#052838]" />
                 <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
@@ -575,10 +575,10 @@ export default function AccountingSoftwarePage() {
         </div>
       </section>
 
-      {/* â”€â”€ FAQ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── FAQ ───────────────────────────────────────────────────────────── */}
       <FAQ variant="netsuite-accounting" id="faq" />
 
-      {/* â”€â”€ CTA Banner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── CTA Banner ────────────────────────────────────────────────────── */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -602,7 +602,7 @@ export default function AccountingSoftwarePage() {
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                  Modernise Your NetSuite Accounting â€”{" "}
+                  Modernise Your NetSuite Accounting —{" "}
                   <span className="text-cyan-300">Faster Than You Think.</span>
                 </h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">
@@ -621,7 +621,7 @@ export default function AccountingSoftwarePage() {
         </div>
       </section>
 
-      {/* â”€â”€ Contact Form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Contact Form ─────────────────────────────────────────────────── */}
       <ContactFormDesign4 />
 
     </div>

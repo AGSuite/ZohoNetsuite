@@ -66,7 +66,7 @@ export default function AddonsPage() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [rotatingIdx, setRotatingIdx] = useState(0);
 
-  // Per-word accent colours (text Â· pill-bg Â· pill-border)
+  // Per-word accent colours (text · pill-bg · pill-border)
   const wordColors = [
     { text: '#ffffff', bg: '#1e3a8a', border: '#1e40af' },
     { text: '#ffffff', bg: '#1e3a8a', border: '#1e40af' },
@@ -121,7 +121,7 @@ export default function AddonsPage() {
       category: "Native SuiteApp",
       title: "India Localization for NetSuite",
       subtitle: "GST-Ready Compliance for Indian Businesses",
-      description: "Handle the full complexity of Indian taxation natively inside NetSuite. Our certified India Localization suite automates GST, TDS, e-invoicing with IRP integration, E-Way bill generation, and statutory reporting â€” keeping your business compliant and audit-ready at all times.",
+      description: "Handle the full complexity of Indian taxation natively inside NetSuite. Our certified India Localization suite automates GST, TDS, e-invoicing with IRP integration, E-Way bill generation, and statutory reporting — keeping your business compliant and audit-ready at all times.",
       description2: "Built specifically to mirror the latest compliance mandates, it minimizes manual entry overhead and ensures total alignment with Indian tax laws directly from your unified cloud ERP.",
       highlights: [
         "Automated GST & GSTR filings",
@@ -139,7 +139,7 @@ export default function AddonsPage() {
       category: "Native SuiteApp",
       title: "Smart Commission",
       subtitle: "Automated Sales Commission Management",
-      description: "Eliminate spreadsheets and manual commission calculations forever. Smart Commission automates multi-tier commission plans, quota tracking, clawback rules, manager approvals, and payroll export â€” all running 100% inside your NetSuite account with real-time visibility for reps and managers.",
+      description: "Eliminate spreadsheets and manual commission calculations forever. Smart Commission automates multi-tier commission plans, quota tracking, clawback rules, manager approvals, and payroll export — all running 100% inside your NetSuite account with real-time visibility for reps and managers.",
       description2: "Enhance your sales motivation securely with transparent, error-free automated payout structures that can be tailored precisely to match the unique compensation plans of your global teams.",
       highlights: [
         "Multi-tier commission plan automation",
@@ -157,7 +157,7 @@ export default function AddonsPage() {
       category: "Native SuiteApp",
       title: "Data Backup & Recovery",
       subtitle: "Enterprise-Grade NetSuite Data Protection",
-      description: "Protect your critical NetSuite data with automated, encrypted, off-site backups. Our Data Backup solution provides granular point-in-time record recovery, SuiteScript backup, and compliance-ready audit trails â€” so your data is always safe and recoverable no matter what happens.",
+      description: "Protect your critical NetSuite data with automated, encrypted, off-site backups. Our Data Backup solution provides granular point-in-time record recovery, SuiteScript backup, and compliance-ready audit trails — so your data is always safe and recoverable no matter what happens.",
       description2: "Maintain complete peace of mind knowing your enterprise financial records are continuously secured against accidental deletion, malicious attacks, or unforeseen system interruptions without sacrificing performance.",
       highlights: [
         "Automated daily off-site backups",
@@ -174,8 +174,8 @@ export default function AddonsPage() {
     {
       category: "E-Commerce Connector",
       title: "Amazon Connector",
-      subtitle: "NetSuite â†” Amazon Full Sync",
-      description: "Eliminate manual Amazon order management with a bi-directional connector that syncs FBA and FBM orders, inventory, settlements, customers, and shipment tracking across all Amazon marketplaces directly into NetSuite â€” fully automated, with no middleware required.",
+      subtitle: "NetSuite ↔ Amazon Full Sync",
+      description: "Eliminate manual Amazon order management with a bi-directional connector that syncs FBA and FBM orders, inventory, settlements, customers, and shipment tracking across all Amazon marketplaces directly into NetSuite — fully automated, with no middleware required.",
       description2: "Streamline your multi-channel retail operations by effortlessly managing massive enterprise order volumes without the burdensome risk of manual data entry errors or missed reconciliation targets.",
       highlights: [
         "FBA & FBM order sync",
@@ -192,8 +192,8 @@ export default function AddonsPage() {
     {
       category: "E-Commerce Connector",
       title: "Shopify Connector",
-      subtitle: "NetSuite â†” Shopify Bi-Directional Sync",
-      description: "Connect your Shopify store and NetSuite ERP with a powerful bi-directional connector. Sync orders, products, inventory, fulfilments, and refunds in real time â€” with multi-store, multi-currency, and multi-location inventory support built in.",
+      subtitle: "NetSuite ↔ Shopify Bi-Directional Sync",
+      description: "Connect your Shopify store and NetSuite ERP with a powerful bi-directional connector. Sync orders, products, inventory, fulfilments, and refunds in real time — with multi-store, multi-currency, and multi-location inventory support built in.",
       description2: "Deliver a flawlessly responsive customer experience by guaranteeing that your front-end web storefront always remains in perfect synchronization with your back-office fulfilment and financial ledgers.",
       highlights: [
         "Bi-directional order & product sync",
@@ -210,8 +210,8 @@ export default function AddonsPage() {
     {
       category: "E-Commerce Connector",
       title: "Magento (Adobe Commerce) Connector",
-      subtitle: "NetSuite â†” Adobe Commerce Full Integration",
-      description: "Bridge your Adobe Commerce (Magento) store with NetSuite for a unified B2B and B2C commerce operation. Sync orders, multi-source inventory, customer groups, tier pricing, and configurable products â€” with enterprise-grade reliability and real-time data flow.",
+      subtitle: "NetSuite ↔ Adobe Commerce Full Integration",
+      description: "Bridge your Adobe Commerce (Magento) store with NetSuite for a unified B2B and B2C commerce operation. Sync orders, multi-source inventory, customer groups, tier pricing, and configurable products — with enterprise-grade reliability and real-time data flow.",
       description2: "Unify your complex omnichannel growth strategies with a brilliantly robust backend architecture explicitly designed to handle high-frequency transaction throughput flawlessly across modern storefronts.",
       highlights: [
         "B2B & B2C order management",
@@ -229,7 +229,7 @@ export default function AddonsPage() {
       category: "Custom Integration",
       title: "Custom Connectors & Integrations",
       subtitle: "Connect Any Platform to NetSuite",
-      description: "Need a connector for a platform not listed? Our NetSuite-certified integration team builds custom connections for ERP systems, logistics providers, payment gateways, WMS platforms, and any API-enabled service â€” using NetSuite SuiteTalk, REST APIs, and SuiteScript.",
+      description: "Need a connector for a platform not listed? Our NetSuite-certified integration team builds custom connections for ERP systems, logistics providers, payment gateways, WMS platforms, and any API-enabled service — using NetSuite SuiteTalk, REST APIs, and SuiteScript.",
       description2: "Unlock true digital agility and transformation by seamlessly linking your entire enterprise technology stack, ensuring smooth data continuity, and eliminating operational friction across all specialized departments.",
       highlights: [
         "Custom API & webhook integrations",
@@ -248,7 +248,7 @@ export default function AddonsPage() {
   return (
     <div className="min-h-screen bg-white">
 
-      {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ─────────────── HERO ─────────────── */}
       <section className="relative min-h-screen overflow-hidden flex flex-col" style={{ background: "linear-gradient(135deg,#000814,#000f22,#001535)" }}>
         <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px]" />
         <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px)', backgroundSize: '70px 70px' }} />
@@ -263,7 +263,7 @@ export default function AddonsPage() {
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.3]">
                 <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400 mb-2">Experience a smarter<br /> way to manage your{' '}</span>
 
-                {/* Pill card â€” bg + border animate with each word */}
+                {/* Pill card — bg + border animate with each word */}
                 <motion.span
                   className="inline-flex items-center align-middle rounded-2xl px-3 py-1 ml-1"
                   style={{
@@ -291,7 +291,7 @@ export default function AddonsPage() {
               </motion.h1>
               <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }} className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full" />
               <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }} className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8">
-                Extend NetSuite with purpose-built automation â€” commission management, data protection, and marketplace integrations that run natively inside your NetSuite account.
+                Extend NetSuite with purpose-built automation — commission management, data protection, and marketplace integrations that run natively inside your NetSuite account.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <Link href="#addons" className="inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:scale-105">
@@ -306,12 +306,12 @@ export default function AddonsPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }} className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}><Layers className="w-5 h-5 text-white" /></div>
-                    <div><p className="text-gray-900 text-sm font-bold">NetSuite Add-Ons & Connectors</p><p className="text-gray-500 text-xs mt-0.5">Commission Â· Backup Â· Amazon Â· Shopify Â· Magento</p></div>
+                    <div><p className="text-gray-900 text-sm font-bold">NetSuite Add-Ons & Connectors</p><p className="text-gray-500 text-xs mt-0.5">Commission · Backup · Amazon · Shopify · Magento</p></div>
                   </motion.div>
                 </div>
                 <motion.div initial={{ opacity: 0, x: -20, y: -10 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ delay: 0.8 }} className="absolute -top-5 -left-10 flex items-center gap-3.5 bg-white rounded-2xl px-4 py-3 shadow-2xl border border-gray-100">
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}><Database className="w-5 h-5 text-white" /></div>
-                  <div><p className="text-gray-900 text-[13px] font-bold whitespace-nowrap">Native NetSuite Extensions</p><p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">SuiteCloud Â· No Middleware Â· Certified</p></div>
+                  <div><p className="text-gray-900 text-[13px] font-bold whitespace-nowrap">Native NetSuite Extensions</p><p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">SuiteCloud · No Middleware · Certified</p></div>
                 </motion.div>
               </div>
             </motion.div>
@@ -330,7 +330,7 @@ export default function AddonsPage() {
         </div>
       </section>
 
-      {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ STICKY NAV â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ─────────────── STICKY NAV ─────────────── */}
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-wrap items-center justify-center gap-1 py-2 sm:py-4">
@@ -343,7 +343,7 @@ export default function AddonsPage() {
         </div>
       </nav>
 
-      {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ INTRO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ─────────────── INTRO ─────────────── */}
       <section id="what-is" ref={introRef} className="pb-20 pt-0 bg-[#000d1a] overflow-hidden relative scroll-mt-36">
         {/* Background Designs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -394,8 +394,8 @@ export default function AddonsPage() {
                 >
                   Supercharge NetSuite with Purpose-Built Add-Ons.
                 </ScrollFloat>
-                <p className="text-lg text-gray-600 leading-relaxed">AGSuite's NetSuite Add-Ons and Connectors extend your NetSuite ERP with automation for the capabilities NetSuite doesn't include out of the box â€” commission management, disaster recovery, and multi-channel commerce integration.</p>
-                <p className="text-lg text-gray-600 leading-relaxed">Every Add-On is built as a native SuiteApp â€” running inside your NetSuite account with no middleware, no data lag, and no separate login required.</p>
+                <p className="text-lg text-gray-600 leading-relaxed">AGSuite's NetSuite Add-Ons and Connectors extend your NetSuite ERP with automation for the capabilities NetSuite doesn't include out of the box — commission management, disaster recovery, and multi-channel commerce integration.</p>
+                <p className="text-lg text-gray-600 leading-relaxed">Every Add-On is built as a native SuiteApp — running inside your NetSuite account with no middleware, no data lag, and no separate login required.</p>
                 <div className="pt-4">
                   <Link href="#addons" className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest text-white transition-all shadow-lg hover:shadow-xl hover:scale-105" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}>
                     See All Add-Ons <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 1.2, repeat: Infinity }}><ArrowRight size={17} /></motion.span>
@@ -601,27 +601,27 @@ export default function AddonsPage() {
       <FAQ
         variant="netsuite"
         id="faq"
-        customSubtitle="Common questions about NetSuite Add-Ons and Connectors â€” what they do, how they're priced, and how quickly you can go live."
+        customSubtitle="Common questions about NetSuite Add-Ons and Connectors — what they do, how they're priced, and how quickly you can go live."
         customFaqs={[
-          { q: "Do the Add-Ons require any external middleware or separate login?", a: "No. All AGSuite Add-Ons are built as native NetSuite SuiteApps and run entirely inside your existing NetSuite account. There is no external system to log into, no middleware to manage, and no API polling delay â€” everything reads and writes directly from your live NetSuite data." },
+          { q: "Do the Add-Ons require any external middleware or separate login?", a: "No. All AGSuite Add-Ons are built as native NetSuite SuiteApps and run entirely inside your existing NetSuite account. There is no external system to log into, no middleware to manage, and no API polling delay — everything reads and writes directly from your live NetSuite data." },
           { q: "Can I use multiple Add-Ons together on the same NetSuite account?", a: "Yes. All Add-Ons are designed to coexist on the same NetSuite account and are compatible with each other. For example, you can run Smart Commission, Data Backup, and the Shopify Connector simultaneously with no conflicts." },
           { q: "Are the Add-Ons compatible with all NetSuite editions?", a: "Yes. All Add-Ons support NetSuite OneWorld (multi-subsidiary) and single-entity accounts. They are compatible with NetSuite SuiteSuccess industry editions and work with all standard and custom NetSuite modules." },
           { q: "What is included in the implementation?", a: "Every Add-On implementation includes full configuration by our NetSuite-certified team, integration testing, UAT support, and end-user training. You also receive dedicated project management and a structured go-live plan to minimize disruption." },
           { q: "Is ongoing support included after go-live?", a: "Yes. All Add-Ons include access to our NetSuite support team post-go-live for troubleshooting and questions. Professional and Enterprise plans include priority SLA, proactive monitoring, and quarterly optimization reviews." },
           { q: "How are Add-Ons priced?", a: "All Add-Ons are sold as monthly or annual SuiteApp subscriptions. Pricing is per-instance (not per-user) and is based on usage volume or store count depending on the product. Contact our team for a custom quote based on your requirements." },
           { q: "Can AGSuite build a custom connector for a platform not listed?", a: "Yes. In addition to the standard marketplace connectors (Amazon, Shopify, Magento), our team builds custom NetSuite integrations for ERP systems, logistics providers, payment gateways, WMS platforms, and any API-enabled service." },
-          { q: "What is the typical timeline from purchase to go-live?", a: "Most Add-Ons go live within 3â€“6 weeks of project kickoff depending on complexity. Connector integrations with simple setups can go live in 3â€“4 weeks; enterprise-grade B2B implementations or multi-entity setups may take 6â€“8 weeks." },
+          { q: "What is the typical timeline from purchase to go-live?", a: "Most Add-Ons go live within 3–6 weeks of project kickoff depending on complexity. Connector integrations with simple setups can go live in 3–4 weeks; enterprise-grade B2B implementations or multi-entity setups may take 6–8 weeks." },
         ]}
       />
 
-      {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ─────────────── CTA ─────────────── */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#0891b2] shadow-2xl">
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Extend NetSuite â€” <span className="text-cyan-200">Start with an Add-On Today.</span></h2>
-                <p className="text-white/80 text-lg md:text-xl">Let our certified team help you automate commissions, protect your data, and connect your commerce channels â€” all inside NetSuite.</p>
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Extend NetSuite — <span className="text-cyan-200">Start with an Add-On Today.</span></h2>
+                <p className="text-white/80 text-lg md:text-xl">Let our certified team help you automate commissions, protect your data, and connect your commerce channels — all inside NetSuite.</p>
               </div>
               <Link href="/netsuite/contact" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all group active:scale-95">
                 Request a Demo <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

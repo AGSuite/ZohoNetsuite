@@ -30,7 +30,7 @@ function Counter({ value }: { value: number }) {
 
 export default function NetSuiteERPPage() {
 
-  // Static particle data â€” defined outside render to prevent SSR/client mismatch
+  // Static particle data — defined outside render to prevent SSR/client mismatch
   const CTA_PARTICLES = [
     { w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 },
     { w: 1.4, h: 2.1, top: 28, left: 22, dur: 4.1, delay: 1.2 },
@@ -81,7 +81,7 @@ export default function NetSuiteERPPage() {
     },
     {
       title: "Scalable Architecture",
-      description: "Start lean and grow without limits â€” NetSuite scales with your headcount, geography, and transaction volume.",
+      description: "Start lean and grow without limits — NetSuite scales with your headcount, geography, and transaction volume.",
       image: "/images/lap/lap3.webp",
       points: ["Add subsidiaries and currencies in minutes", "Multi-entity consolidation built-in", "No infrastructure upgrades required", "Handles millions of transactions seamlessly"]
     },
@@ -93,7 +93,7 @@ export default function NetSuiteERPPage() {
     },
     {
       title: "Intelligent Automation",
-      description: "Take humans out of the loop for repetitive, rules-based tasks â€” freeing your team for strategic work.",
+      description: "Take humans out of the loop for repetitive, rules-based tasks — freeing your team for strategic work.",
       image: "/images/lap/lap2.webp",
       points: ["Automated AP/AR, invoicing & purchase orders", "Workflow rules for approvals and escalations", "Revenue recognition on auto-pilot", "AI-driven demand forecasting"]
     },
@@ -141,7 +141,7 @@ export default function NetSuiteERPPage() {
 
         {/* Main Content Container */}
         <div className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-28 sm:pt-36 pb-12">
-          {/* Breadcrumb â€” absolutely positioned so it doesn't affect centering */}
+          {/* Breadcrumb — absolutely positioned so it doesn't affect centering */}
           <motion.nav
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -491,7 +491,7 @@ export default function NetSuiteERPPage() {
             } as React.CSSProperties} />
           ))}
 
-          {/* Glow Orbs â€” vibrant blue tones to match the new gradient */}
+          {/* Glow Orbs — vibrant blue tones to match the new gradient */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3" style={{ background: "radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%)" }} />
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3" style={{ background: "radial-gradient(circle, rgba(99,179,237,0.18) 0%, transparent 70%)" }} />
 
@@ -533,7 +533,7 @@ export default function NetSuiteERPPage() {
                     fill
                     className="object-cover object-center"
                   />
-                  {/* Simple dark vignette only â€” no text */}
+                  {/* Simple dark vignette only — no text */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
                 </motion.div>
               </AnimatePresence>
@@ -607,7 +607,7 @@ export default function NetSuiteERPPage() {
 
 
 
-      {/* â”€â”€ Pricing Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Pricing Section ─────────────────────────────────────────────────── */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <motion.div
@@ -619,7 +619,7 @@ export default function NetSuiteERPPage() {
             style={{ backgroundColor: '#06303f' }}
           >
             <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
-              {/* LEFT â€” Text + CTA */}
+              {/* LEFT — Text + CTA */}
               <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
                 <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
@@ -638,7 +638,7 @@ export default function NetSuiteERPPage() {
                 </div>
               </div>
 
-              {/* RIGHT â€” Organic Blob Image */}
+              {/* RIGHT — Organic Blob Image */}
               <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
                 <div className="absolute inset-0 bg-[#052838]" />
                 <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
@@ -658,7 +658,7 @@ export default function NetSuiteERPPage() {
       {/* FAQ Section */}
       <FAQ variant="netsuite" id="faq" />
 
-      {/* CTA Section â€” Premium Blue Gradient */}
+      {/* CTA Section — Premium Blue Gradient */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -696,10 +696,10 @@ export default function NetSuiteERPPage() {
             <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl" />
 
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
-              {/* Left â€” Text */}
+              {/* Left — Text */}
               <div className="text-left max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                  Go Live on NetSuite ERP â€”{" "}
+                  Go Live on NetSuite ERP —{" "}
                   <span className="text-cyan-300">Faster Than You Think.</span>
                 </h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">
@@ -707,7 +707,7 @@ export default function NetSuiteERPPage() {
                 </p>
               </div>
 
-              {/* Right â€” CTA Button (scrolls to form below) */}
+              {/* Right — CTA Button (scrolls to form below) */}
               <a
                 href="#contact-form"
                 className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"

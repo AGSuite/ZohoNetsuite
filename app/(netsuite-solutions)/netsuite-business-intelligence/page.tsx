@@ -35,7 +35,7 @@ import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
 import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
 
-// Static CTA particles â€” avoids SSR mismatch
+// Static CTA particles — avoids SSR mismatch
 const CTA_PARTICLES = [
   { w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 },
   { w: 1.4, h: 2.1, top: 28, left: 22, dur: 4.1, delay: 1.2 },
@@ -77,7 +77,7 @@ export default function NetSuiteBIPage() {
     {
       title: "Real-Time Dashboards",
       description:
-        "Fully customizable role-based dashboards with live KPI tiles, charts, and reminders â€” updated in real time without any manual refresh.",
+        "Fully customizable role-based dashboards with live KPI tiles, charts, and reminders — updated in real time without any manual refresh.",
       image: "/images/modules/dashboard module.webp",
       color: "#1e8a9e",
       rgb: "14,108,130",
@@ -109,7 +109,7 @@ export default function NetSuiteBIPage() {
     {
       title: "Predictive Analytics",
       description:
-        "AI-powered forecasting and trend analysis â€” anticipate revenue changes, inventory shortfalls, and cash flow requirements before they happen.",
+        "AI-powered forecasting and trend analysis — anticipate revenue changes, inventory shortfalls, and cash flow requirements before they happen.",
       image: "/images/modules/any module.webp",
       color: "#a05a18",
       rgb: "145,75,18",
@@ -133,7 +133,7 @@ export default function NetSuiteBIPage() {
     {
       title: "Mobile Analytics",
       description:
-        "Access dashboards, reports, and KPI alerts on any iOS or Android device â€” stay connected to business performance from anywhere.",
+        "Access dashboards, reports, and KPI alerts on any iOS or Android device — stay connected to business performance from anywhere.",
       image: "/images/modules/mobile module.webp",
       color: "#6a2575",
       rgb: "95,30,105",
@@ -149,7 +149,7 @@ export default function NetSuiteBIPage() {
     {
       title: "Operational Reports",
       description:
-        "Combine data from multiple NetSuite modules into a single operational view â€” projects, HR, purchasing, and logistics together.",
+        "Combine data from multiple NetSuite modules into a single operational view — projects, HR, purchasing, and logistics together.",
       image: "/images/modules/managging together module.webp",
       color: "#1a6545",
       rgb: "20,95,60",
@@ -165,7 +165,7 @@ export default function NetSuiteBIPage() {
     {
       title: "Custom Visualizations",
       description:
-        "Create bespoke bar, line, funnel, scatter, and heat-map charts â€” then embed them on any dashboard or report layout.",
+        "Create bespoke bar, line, funnel, scatter, and heat-map charts — then embed them on any dashboard or report layout.",
       image: "/images/modules/any modules.webp",
       color: "#0f4e8a",
       rgb: "12,68,130",
@@ -175,13 +175,13 @@ export default function NetSuiteBIPage() {
   const benefits = [
     {
       title: "Real-Time Business Insights",
-      description: "Monitor KPIs and financial metrics live â€” without waiting for batch reports or manual data pulls from disconnected systems.",
+      description: "Monitor KPIs and financial metrics live — without waiting for batch reports or manual data pulls from disconnected systems.",
       image: "/images/lap/lap2.webp",
       points: ["Live KPI tile dashboards", "Instant drill-down to transactions", "Role-specific access for every team", "Scheduled report delivery to inbox"],
     },
     {
       title: "Self-Service Analytics",
-      description: "Empower every business user to build their own reports and visualizations â€” no IT ticket required.",
+      description: "Empower every business user to build their own reports and visualizations — no IT ticket required.",
       image: "/images/lap/lap3.webp",
       points: ["Drag-and-drop report builder", "200+ pre-built templates", "Pivot tables and chart builder", "Shareable saved views across teams"],
     },
@@ -195,11 +195,11 @@ export default function NetSuiteBIPage() {
       title: "Unified Data Platform",
       description: "Eliminate data silos by connecting finance, sales, inventory, and HR in a single analytics source of truth.",
       image: "/images/lap/lap1.webp",
-      points: ["Single source of truth across modules", "Cross-functional consolidated reports", "Eliminate manual spreadsheet merges", "Real-time sync â€” no data lag"],
+      points: ["Single source of truth across modules", "Cross-functional consolidated reports", "Eliminate manual spreadsheet merges", "Real-time sync — no data lag"],
     },
     {
       title: "Mobile & Remote Access",
-      description: "Stay connected to business performance from any device â€” get notified when critical KPIs breach thresholds.",
+      description: "Stay connected to business performance from any device — get notified when critical KPIs breach thresholds.",
       image: "/images/lap/lap5.webp",
       points: ["Full dashboard access on iOS & Android", "Push alerts for KPI thresholds", "Offline report caching", "Responsive design for all screens"],
     },
@@ -214,7 +214,7 @@ export default function NetSuiteBIPage() {
   return (
     <div className="min-h-screen selection:bg-blue-900 selection:text-white bg-white">
 
-      {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen overflow-hidden flex flex-col bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d]">
         <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-800/10 rounded-full blur-[100px] pointer-events-none" />
@@ -229,7 +229,7 @@ export default function NetSuiteBIPage() {
 
         <div className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-40 pb-20">
 
-          {/* Breadcrumb â€” absolutely positioned so it doesn't affect centering */}
+          {/* Breadcrumb — absolutely positioned so it doesn't affect centering */}
           <motion.nav
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -246,7 +246,7 @@ export default function NetSuiteBIPage() {
 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-16 sm:mb-20">
 
-            {/* LEFT â€” Headline + CTA */}
+            {/* LEFT — Headline + CTA */}
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -272,7 +272,7 @@ export default function NetSuiteBIPage() {
                 transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                Turn your ERP data into a competitive advantage â€” real-time dashboards, AI-powered forecasting, and self-service analytics built directly into your NetSuite platform.
+                Turn your ERP data into a competitive advantage — real-time dashboards, AI-powered forecasting, and self-service analytics built directly into your NetSuite platform.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
@@ -292,7 +292,7 @@ export default function NetSuiteBIPage() {
               </motion.div>
             </motion.div>
 
-            {/* RIGHT â€” Accounting-style: image + floating cards */}
+            {/* RIGHT — Accounting-style: image + floating cards */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -328,7 +328,7 @@ export default function NetSuiteBIPage() {
                         Insights in seconds, not days
                       </p>
                       <p className="text-gray-500 text-xs mt-0.5 leading-snug">
-                        Live dashboards Â· AI Forecasting Â· 200+ Reports Â· Mobile Access
+                        Live dashboards · AI Forecasting · 200+ Reports · Mobile Access
                       </p>
                     </div>
                   </motion.div>
@@ -349,7 +349,7 @@ export default function NetSuiteBIPage() {
                       NetSuite Business Intelligence
                     </p>
                     <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">
-                      Dashboards Â· Analytics Â· AI Â· Reporting Â· KPIs
+                      Dashboards · Analytics · AI · Reporting · KPIs
                     </p>
                   </div>
                 </motion.div>
@@ -392,7 +392,7 @@ export default function NetSuiteBIPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Sticky Nav â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Sticky Nav ───────────────────────────────────────────────────── */}
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-wrap items-center justify-center gap-1 py-2 sm:py-4">
@@ -418,7 +418,7 @@ export default function NetSuiteBIPage() {
         </div>
       </nav>
 
-      {/* â”€â”€ What is NetSuite BI â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── What is NetSuite BI ──────────────────────────────────────────── */}
       <section id="what-is-bi" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch">
@@ -492,7 +492,7 @@ export default function NetSuiteBIPage() {
         </div>
       </section>
 
-      {/* â”€â”€ BI Modules Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── BI Modules Grid ───────────────────────────────────────────────── */}
       <section id="modules" className="py-16 bg-white relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
           <motion.h2
@@ -563,7 +563,7 @@ export default function NetSuiteBIPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Benefits Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Benefits Section ─────────────────────────────────────────────── */}
       <section
         id="benefits"
         className="py-24 relative overflow-hidden scroll-mt-36"
@@ -658,7 +658,7 @@ export default function NetSuiteBIPage() {
 
       <NSServicesSection />
 
-      {/* â”€â”€ Pricing Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Pricing Section ──────────────────────────────────────────────── */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <motion.div
@@ -671,14 +671,14 @@ export default function NetSuiteBIPage() {
           >
             <div className="grid lg:grid-cols-[3fr_2fr] gap-0 items-stretch">
 
-              {/* LEFT â€” Text + CTA */}
+              {/* LEFT — Text + CTA */}
               <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
                 <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
                   How Much Does NetSuite Business Intelligence Cost?
                 </h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
-                  NetSuite Business Intelligence is included as a native capability within the NetSuite platform â€” meaning there&apos;s no separate BI license to purchase. Your investment covers the core NetSuite ERP subscription, user seats, and any advanced analytics add-ons like SuiteAnalytics Connect or the Analytics Workbench. As your organization grows, you can activate richer analytics capabilities without disrupting your existing setup or migrating data.
+                  NetSuite Business Intelligence is included as a native capability within the NetSuite platform — meaning there&apos;s no separate BI license to purchase. Your investment covers the core NetSuite ERP subscription, user seats, and any advanced analytics add-ons like SuiteAnalytics Connect or the Analytics Workbench. As your organization grows, you can activate richer analytics capabilities without disrupting your existing setup or migrating data.
                 </p>
                 <div>
                   <Link
@@ -690,7 +690,7 @@ export default function NetSuiteBIPage() {
                 </div>
               </div>
 
-              {/* RIGHT â€” Blob image */}
+              {/* RIGHT — Blob image */}
               <div className="relative flex items-start justify-center min-h-[340px] overflow-hidden">
                 <div className="absolute inset-0 bg-[#052838]" />
                 <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#07404f]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
@@ -707,24 +707,24 @@ export default function NetSuiteBIPage() {
         </div>
       </section>
 
-      {/* â”€â”€ FAQ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── FAQ ─────────────────────────────────────────────────────────── */}
       <FAQ
         variant="netsuite"
         id="faq"
-        customSubtitle="Everything you need to know about NetSuite Business Intelligence â€” dashboards, SuiteAnalytics, reporting, and implementation."
+        customSubtitle="Everything you need to know about NetSuite Business Intelligence — dashboards, SuiteAnalytics, reporting, and implementation."
         customFaqs={[
-          { q: "What is NetSuite Business Intelligence (BI)?", a: "NetSuite BI is the embedded analytics and business intelligence layer within the NetSuite platform â€” powered by SuiteAnalytics. It provides real-time dashboards, saved searches, pivot reports, financial snapshots, and Analytics Workbench for advanced data exploration â€” all operating directly on live ERP data without any data export or BI tool sync." },
-          { q: "How is NetSuite BI different from a separate BI tool like Power BI or Tableau?", a: "Unlike standalone BI tools, NetSuite BI accesses your live transaction data in real time â€” no ETL, no data warehouse refresh delays, no data duplication. Every dashboard reflects the current state of your business. For advanced cross-system analytics, NetSuite Analytics Workbench can ingest data from external sources while keeping NetSuite as the primary layer." },
-          { q: "What is SuiteAnalytics and what can it do?", a: "SuiteAnalytics is NetSuite's native reporting and data exploration tool. It enables creation of custom saved searches, formula-based reports, pivot tables, charts, and scheduled report delivery by email â€” all configurable by business users without coding. It also powers the Report Builder and dashboard KPI tiles used across dashboards." },
-          { q: "What is Analytics Workbench and who needs it?", a: "Analytics Workbench is NetSuite's premium data warehousing layer â€” a separate, high-performance analytics environment that stores full historical transaction data, supports joins across multiple record types, and allows complex SQL-style queries. It's designed for organisations with advanced reporting requirements or those needing to combine NetSuite data with external sources." },
-          { q: "Can we build role-based dashboards for different users?", a: "Yes. NetSuite allows you to create unlimited custom dashboards with role-based access â€” so your CFO sees cash flow, AR aging, and FX exposure; your sales manager sees pipeline and quota attainment; and your warehouse team sees pick efficiency and stock levels. Each dashboard pulls live data specific to that user's permissions." },
-          { q: "Does NetSuite BI support scheduling and automated report distribution?", a: "Yes. Saved searches and reports can be scheduled to run automatically and distributed by email to specific users, roles, or external recipients on hourly, daily, weekly, or monthly cadences â€” keeping stakeholders informed without manual effort." },
-          { q: "Can NetSuite BI connect to data from outside NetSuite?", a: "With Analytics Workbench, NetSuite can ingest data from external sources such as Salesforce, Shopify, Google Analytics, databases, and flat files â€” allowing blended analytics that combine ERP financials with marketing, operations, and customer data in a unified view." },
+          { q: "What is NetSuite Business Intelligence (BI)?", a: "NetSuite BI is the embedded analytics and business intelligence layer within the NetSuite platform — powered by SuiteAnalytics. It provides real-time dashboards, saved searches, pivot reports, financial snapshots, and Analytics Workbench for advanced data exploration — all operating directly on live ERP data without any data export or BI tool sync." },
+          { q: "How is NetSuite BI different from a separate BI tool like Power BI or Tableau?", a: "Unlike standalone BI tools, NetSuite BI accesses your live transaction data in real time — no ETL, no data warehouse refresh delays, no data duplication. Every dashboard reflects the current state of your business. For advanced cross-system analytics, NetSuite Analytics Workbench can ingest data from external sources while keeping NetSuite as the primary layer." },
+          { q: "What is SuiteAnalytics and what can it do?", a: "SuiteAnalytics is NetSuite's native reporting and data exploration tool. It enables creation of custom saved searches, formula-based reports, pivot tables, charts, and scheduled report delivery by email — all configurable by business users without coding. It also powers the Report Builder and dashboard KPI tiles used across dashboards." },
+          { q: "What is Analytics Workbench and who needs it?", a: "Analytics Workbench is NetSuite's premium data warehousing layer — a separate, high-performance analytics environment that stores full historical transaction data, supports joins across multiple record types, and allows complex SQL-style queries. It's designed for organisations with advanced reporting requirements or those needing to combine NetSuite data with external sources." },
+          { q: "Can we build role-based dashboards for different users?", a: "Yes. NetSuite allows you to create unlimited custom dashboards with role-based access — so your CFO sees cash flow, AR aging, and FX exposure; your sales manager sees pipeline and quota attainment; and your warehouse team sees pick efficiency and stock levels. Each dashboard pulls live data specific to that user's permissions." },
+          { q: "Does NetSuite BI support scheduling and automated report distribution?", a: "Yes. Saved searches and reports can be scheduled to run automatically and distributed by email to specific users, roles, or external recipients on hourly, daily, weekly, or monthly cadences — keeping stakeholders informed without manual effort." },
+          { q: "Can NetSuite BI connect to data from outside NetSuite?", a: "With Analytics Workbench, NetSuite can ingest data from external sources such as Salesforce, Shopify, Google Analytics, databases, and flat files — allowing blended analytics that combine ERP financials with marketing, operations, and customer data in a unified view." },
           { q: "How long does a NetSuite BI implementation take?", a: "Core dashboard and saved search setup is typically done within the first 4 to 8 weeks of a NetSuite implementation. Analytics Workbench configuration for complex cross-system analytics takes an additional 4 to 6 weeks depending on the number of data sources and custom report requirements." },
         ]}
       />
 
-      {/* â”€â”€ CTA Banner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── CTA Banner ──────────────────────────────────────────────────── */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -750,7 +750,7 @@ export default function NetSuiteBIPage() {
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                  Transform Your NetSuite Data into Decisions â€”{" "}
+                  Transform Your NetSuite Data into Decisions —{" "}
                   <span className="text-cyan-300">Start Today.</span>
                 </h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">
@@ -770,7 +770,7 @@ export default function NetSuiteBIPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Contact Form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Contact Form ─────────────────────────────────────────────────── */}
       <ContactFormDesign4 />
     </div>
   );

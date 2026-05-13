@@ -10,6 +10,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 
   alternates: {
@@ -34,5 +41,10 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
+  },
+
+  other: {
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "28 minutes",
   },
 };

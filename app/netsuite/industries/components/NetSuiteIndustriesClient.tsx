@@ -727,7 +727,7 @@ export default function NetSuiteIndustriesClient() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="border border-gray-200 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
+            className="border border-gray-200 rounded-[3rem] p-10 lg:p-16 relative overflow-hidden"
           >
             <Image
               src="/images/lap/group1.webp"
@@ -739,14 +739,14 @@ export default function NetSuiteIndustriesClient() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-3xl -mr-32 -mt-32" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />
             <div className="relative z-10 max-w-2xl">
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                Scale your industry operations with the world's #1 Cloud ERP.
-                Ready to started?
+              <h2 className="text-xl md:text-3xl font-bold text-white mb-6 leading-tight">
+                Scale your industry operations with the world&apos;s #1 Cloud ERP.<br />
+                Ready to get started?
               </h2>
               <div className="flex justify-start">
                 <Link
                   href="/netsuite/contact"
-                  className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition shadow-xl"
+                  className="px-8 py-3 bg-white hover:bg-gray-100 text-blue-900 font-bold rounded-xl transition shadow-xl text-sm md:text-base"
                 >
                   Talk to an Expert
                 </Link>

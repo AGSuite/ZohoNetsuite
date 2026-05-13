@@ -1,14 +1,48 @@
-﻿import type { Metadata } from "next";
-import { buildMetadata, NETSUITE_PAGES } from "@/app/lib/seo";
+import type { Metadata } from "next";
 
-const page = NETSUITE_PAGES["/netsuite-analytics-warehouse"];
+export const metadata: Metadata = {
+  title: "NetSuite Analytics Warehouse (NSAW) | AGSuite Technologies",
 
-export const metadata: Metadata = buildMetadata({
-  title: page.title,
-  description: page.description,
-  path: "/netsuite-analytics-warehouse",
-  keywords: page.keywords,
-  category: page.category,
-  publishedTime: page.publishedTime,
-  ogImage: "https://www.agsuitetech.com/images/og/og-netsuite.jpg",
-});
+  description:
+    "Unlock the power of the NetSuite Analytics Warehouse (NSAW) for comprehensive data management, seamless integration, and in-depth reporting. Centralize your business data for better insights and decision-making.",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  alternates: {
+    canonical: "https://agsuitetech.com/netsuite-analytics-warehouse/",
+  },
+
+  openGraph: {
+    locale: "en_US",
+    type: "article",
+    title: "NetSuite Analytics Warehouse (NSAW) | AGSuite Technologies",
+    description:
+      "Unlock the power of the NetSuite Analytics Warehouse (NSAW) for comprehensive data management, seamless integration, and in-depth reporting. Centralize your business data for better insights and decision-making.",
+    url: "https://agsuitetech.com/netsuite-analytics-warehouse/",
+    siteName: "AGSuite",
+    images: [
+      {
+        url: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+  },
+
+  other: {
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "34 minutes",
+  },
+};

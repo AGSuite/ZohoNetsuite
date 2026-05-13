@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "India Tax Solution | Accounting & Taxation services - AGSuite Technologies",
+  title:
+    "India Tax Solution | Accounting & Taxation services - AGSuite Technologies",
+
   description:
     "AGSuite Technologies offers comprehensive tax solutions, India tax solution, and Accounting & Taxation services. Discover expert tax solutions tailored to your needs.",
 
@@ -18,17 +20,19 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://agsuitetech.com/india-localization-for-netsuite/",
+    canonical:
+      "https://agsuitetech.com/india-localization-for-netsuite/",
   },
 
   openGraph: {
-    type: "article",
     locale: "en_US",
-    url: "https://agsuitetech.com/india-localization-for-netsuite/",
+    type: "article",
     title:
       "India Tax Solution | Accounting & Taxation services - AGSuite Technologies",
     description:
       "AGSuite Technologies offers comprehensive tax solutions, India tax solution, and Accounting & Taxation services. Discover expert tax solutions tailored to your needs.",
+    url:
+      "https://agsuitetech.com/india-localization-for-netsuite/",
     siteName: "AGSuite",
     images: [
       {

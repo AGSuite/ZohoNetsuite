@@ -182,7 +182,7 @@ export default function WhyNetsuitePage() {
                     </div>
                     <div>
                       <p className="text-gray-900 text-sm font-bold leading-tight">#1 Cloud ERP for 25+ Years</p>
-                      <p className="text-gray-500 text-xs mt-0.5">Finance Â· CRM Â· Ecommerce Â· HR Â· Planning Â· AI</p>
+                      <p className="text-gray-500 text-xs mt-0.5">Finance · CRM · Ecommerce · HR · Planning · AI</p>
                     </div>
                   </motion.div>
                 </div>
@@ -381,7 +381,7 @@ export default function WhyNetsuitePage() {
         </div>
       </section>
 
-      {/* â”€â”€ CTA Banner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── CTA Banner ────────────────────────────────────────────────────────── */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -407,7 +407,7 @@ export default function WhyNetsuitePage() {
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                  Start Your NetSuite Journey Today â€”{" "}
+                  Start Your NetSuite Journey Today —{" "}
                   <span className="text-cyan-300">Run Your Entire Business Better.</span>
                 </h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">
@@ -471,7 +471,7 @@ export default function WhyNetsuitePage() {
         </div>
       </section>
 
-      {/* â”€â”€ Pricing Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Pricing Section ───────────────────────────────────────────────── */}
       <section id="pricing" className="py-12 bg-gray-50 overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <motion.div
@@ -487,7 +487,7 @@ export default function WhyNetsuitePage() {
                   How Much Does NetSuite Cost?
                 </h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
-                  NetSuite pricing is tailored to your business size and requirements. The annual subscription combines the core financial management platform, any additional modules you need, and your user count â€” plus a one-time implementation fee. As your business grows, activate new modules or add users instantly â€” no upgrades, no downtime, no infrastructure headaches.
+                  NetSuite pricing is tailored to your business size and requirements. The annual subscription combines the core financial management platform, any additional modules you need, and your user count — plus a one-time implementation fee. As your business grows, activate new modules or add users instantly — no upgrades, no downtime, no infrastructure headaches.
                 </p>
                 <div>
                   <Link

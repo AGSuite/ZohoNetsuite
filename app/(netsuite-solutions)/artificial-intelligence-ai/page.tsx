@@ -47,7 +47,7 @@ export default function NetSuiteAIPage() {
   ];
 
   const modules = [
-    { title: "Intelligent Insights", description: "Surface hidden patterns and anomalies across your entire ERP dataset automatically â€” no data scientist required.", image: "/images/modules/dashboard module.webp", color: "#1e8a9e", rgb: "14,108,130" },
+    { title: "Intelligent Insights", description: "Surface hidden patterns and anomalies across your entire ERP dataset automatically — no data scientist required.", image: "/images/modules/dashboard module.webp", color: "#1e8a9e", rgb: "14,108,130" },
     { title: "Cash Flow Forecasting", description: "Predict 30, 60, and 90-day cash positions using historical trends, open AR, and payment behaviour models.", image: "/images/modules/account modules.webp", color: "#3b5299", rgb: "40,65,145" },
     { title: "Supply Chain AI", description: "Anticipate demand fluctuations, supplier delays, and reorder points before they impact your operations.", image: "/images/modules/working module.webp", color: "#7b3a8a", rgb: "123,58,138" },
     { title: "Smart Automation", description: "Automate approvals, journal entries, and dunning sequences with AI-driven workflow triggers.", image: "/images/modules/dashbord module.webp", color: "#1a7a55", rgb: "18,108,72" },
@@ -58,16 +58,16 @@ export default function NetSuiteAIPage() {
     { title: "AI-Driven Financials", description: "Smart Financials automates period close, reconciliation, and journal creation based on machine learning patterns.", image: "/images/modules/module8.webp", color: "#154e8a", rgb: "18,68,130" },
     { title: "Customer Behaviour AI", description: "Predict churn risk, segment customers by lifetime value, and determine next best action for each account.", image: "/images/modules/managging together module.webp", color: "#1a6545", rgb: "20,95,60" },
     { title: "Demand Sensing", description: "Combine internal sales trends with external signals to build more accurate demand forecasts at SKU level.", image: "/images/modules/any modules.webp", color: "#8a2a3a", rgb: "130,35,48" },
-    { title: "AI Risk Scoring", description: "Score every customer, supplier, and transaction for risk â€” enabling proactive decisions before problems occur.", image: "/images/modules/mobile module.webp", color: "#0f4e8a", rgb: "12,68,130" },
+    { title: "AI Risk Scoring", description: "Score every customer, supplier, and transaction for risk — enabling proactive decisions before problems occur.", image: "/images/modules/mobile module.webp", color: "#0f4e8a", rgb: "12,68,130" },
   ];
 
   const benefits = [
     { title: "Intelligent Business Insights", description: "AI automatically identifies patterns, surfaces anomalies, and recommends actions across your entire ERP data set.", image: "/images/people/laptopgirl1.webp", points: ["Auto-detected trends and anomalies", "Natural language Q&A on live data", "Proactive alerts before KPIs breach", "AI-curated insights on your dashboard"] },
     { title: "Accurate Demand & Cash Forecasting", description: "ML models trained on your historical data deliver more accurate revenue, cash flow, and demand forecasts.", image: "/images/lap/lap4.webp", points: ["30/60/90-day cash flow predictions", "SKU-level demand sensing", "Budget vs actuals variance detection", "Seasonal and trend-adjusted forecasting"] },
     { title: "Smart Supply Chain Optimisation", description: "Proactively manage supply chain risk with AI models that predict delays, stockouts, and supplier issues.", image: "/images/lap/lap3.webp", points: ["Predictive reorder point optimisation", "Supplier risk scoring", "Dynamic safety stock recommendations", "Demand-driven procurement triggers"] },
-    { title: "Intelligent Automation", description: "Remove humans from repetitive, rules-based work â€” let AI handle approvals, reconciliations, and data entry.", image: "/images/lap/lap2.webp", points: ["AI-triggered workflow approvals", "Automated journal entries", "Smart dunning sequences", "Self-healing data quality corrections"] },
-    { title: "Embedded Across the Entire Suite", description: "NetSuite's intelligence is woven into every module â€” finance, supply chain, HR, CRM, and more.", image: "/images/lap/lap1.webp", points: ["No separate AI tool or licence needed", "Works with existing NetSuite data", "AI insights in every module natively", "Continuously improves with usage"] },
-    { title: "Enterprise-Grade AI Governance", description: "Your data is yours. NetSuite's AI uses tenant-specific models â€” never trains public AI models.", image: "/images/people/laptopmen2.webp", points: ["Tenant-isolated ML models", "GDPR and SOC 2 compliant", "Full audit trails on AI-driven actions", "Configurable AI confidence thresholds"] },
+    { title: "Intelligent Automation", description: "Remove humans from repetitive, rules-based work — let AI handle approvals, reconciliations, and data entry.", image: "/images/lap/lap2.webp", points: ["AI-triggered workflow approvals", "Automated journal entries", "Smart dunning sequences", "Self-healing data quality corrections"] },
+    { title: "Embedded Across the Entire Suite", description: "NetSuite's intelligence is woven into every module — finance, supply chain, HR, CRM, and more.", image: "/images/lap/lap1.webp", points: ["No separate AI tool or licence needed", "Works with existing NetSuite data", "AI insights in every module natively", "Continuously improves with usage"] },
+    { title: "Enterprise-Grade AI Governance", description: "Your data is yours. NetSuite's AI uses tenant-specific models — never trains public AI models.", image: "/images/people/laptopmen2.webp", points: ["Tenant-isolated ML models", "GDPR and SOC 2 compliant", "Full audit trails on AI-driven actions", "Configurable AI confidence thresholds"] },
   ];
 
   return (
@@ -101,7 +101,7 @@ export default function NetSuiteAIPage() {
                 className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full" />
               <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8">
-                Harness AI and machine learning embedded directly into your ERP â€” predict outcomes, automate decisions, and surface insights automatically across finance, supply chain, and operations.
+                Harness AI and machine learning embedded directly into your ERP — predict outcomes, automate decisions, and surface insights automatically across finance, supply chain, and operations.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
@@ -126,7 +126,7 @@ export default function NetSuiteAIPage() {
                     </div>
                     <div>
                       <p className="text-gray-900 text-sm font-bold leading-tight">Now with Generative AI</p>
-                      <p className="text-gray-500 text-xs mt-0.5">Forecasting Â· Anomaly Detection Â· Smart Automation Â· NL Queries</p>
+                      <p className="text-gray-500 text-xs mt-0.5">Forecasting · Anomaly Detection · Smart Automation · NL Queries</p>
                     </div>
                   </motion.div>
                 </div>
@@ -137,7 +137,7 @@ export default function NetSuiteAIPage() {
                   </div>
                   <div>
                     <p className="text-gray-900 text-[13px] font-bold leading-tight whitespace-nowrap">NetSuite AI & Machine Learning</p>
-                    <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">Predict Â· Automate Â· Detect Â· Recommend Â· Generate</p>
+                    <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">Predict · Automate · Detect · Recommend · Generate</p>
                   </div>
                 </motion.div>
               </div>
@@ -346,7 +346,7 @@ export default function NetSuiteAIPage() {
                 <div className="w-14 h-1 bg-blue-400 mb-5 rounded-full" />
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">How Much Does NetSuite AI Cost?</h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
-                  NetSuite&apos;s core AI and machine learning capabilities â€” including Intelligent Insights, Smart Financials, and Supply Chain AI â€” are included within the standard NetSuite Platform licence. Advanced add-ons such as Analytics Workbench and custom ML model development carry additional investment based on your data volumes and use cases.
+                  NetSuite&apos;s core AI and machine learning capabilities — including Intelligent Insights, Smart Financials, and Supply Chain AI — are included within the standard NetSuite Platform licence. Advanced add-ons such as Analytics Workbench and custom ML model development carry additional investment based on your data volumes and use cases.
                 </p>
                 <div>
                   <Link href="#contact-form" className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold text-sm px-8 py-3 rounded hover:bg-blue-400 hover:text-white transition-all duration-200 shadow-md">
@@ -370,16 +370,16 @@ export default function NetSuiteAIPage() {
       <FAQ
         variant="netsuite"
         id="faq"
-        customSubtitle="Everything you need to know about NetSuite AI & Machine Learning â€” what it does, how it's priced, and what outcomes to expect."
+        customSubtitle="Everything you need to know about NetSuite AI & Machine Learning — what it does, how it's priced, and what outcomes to expect."
         customFaqs={[
-          { q: "What AI capabilities are built into NetSuite?", a: "NetSuite includes AI-powered Intelligent Insights (predictive analytics for financial and inventory decisions), Smart Financials (anomaly detection and GL coding), Supply Chain AI (demand forecasting and reorder suggestions), and Text Enhancement (AI-generated content for item descriptions and customer communications) â€” all embedded directly in the platform." },
-          { q: "Do we need data scientists to use NetSuite AI?", a: "No. NetSuite AI capabilities are designed for business users â€” not data scientists. Insights, recommendations, and automated decisions are surfaced directly in the workflows users already use, with no model training, no data pipelines, and no external AI vendor required." },
-          { q: "How does NetSuite AI improve financial management?", a: "NetSuite's Smart Financials uses machine learning to automatically suggest GL coding for AP invoices, detect unusual journal entries for fraud prevention, predict cash flow based on historical patterns, and flag variance anomalies in P&L â€” helping finance teams close faster and audit more confidently." },
-          { q: "Can NetSuite AI help with inventory and supply chain?", a: "Yes. NetSuite Supply Chain AI analyses historical demand, lead times, seasonality, and supplier performance to recommend optimal reorder points and quantities â€” reducing stockouts by up to 40% and overstock by up to 30% without manual forecasting work." },
-          { q: "What is NetSuite Analytics Workbench and how does AI use it?", a: "Analytics Workbench is NetSuite's embedded data warehousing and BI layer. It combines your full transaction history with AI-powered trend detection, predictive dashboards, and natural language queries â€” allowing executives to ask questions in plain English and get instant data-driven answers." },
-          { q: "How does NetSuite handle AI for ecommerce and customer experience?", a: "NetSuite AI powers personalized product recommendations, customer lifetime value scoring, churn prediction, and automated upsell/cross-sell triggers â€” integrated with SuiteCommerce and CRM so sales and marketing teams act on AI signals without switching tools." },
+          { q: "What AI capabilities are built into NetSuite?", a: "NetSuite includes AI-powered Intelligent Insights (predictive analytics for financial and inventory decisions), Smart Financials (anomaly detection and GL coding), Supply Chain AI (demand forecasting and reorder suggestions), and Text Enhancement (AI-generated content for item descriptions and customer communications) — all embedded directly in the platform." },
+          { q: "Do we need data scientists to use NetSuite AI?", a: "No. NetSuite AI capabilities are designed for business users — not data scientists. Insights, recommendations, and automated decisions are surfaced directly in the workflows users already use, with no model training, no data pipelines, and no external AI vendor required." },
+          { q: "How does NetSuite AI improve financial management?", a: "NetSuite's Smart Financials uses machine learning to automatically suggest GL coding for AP invoices, detect unusual journal entries for fraud prevention, predict cash flow based on historical patterns, and flag variance anomalies in P&L — helping finance teams close faster and audit more confidently." },
+          { q: "Can NetSuite AI help with inventory and supply chain?", a: "Yes. NetSuite Supply Chain AI analyses historical demand, lead times, seasonality, and supplier performance to recommend optimal reorder points and quantities — reducing stockouts by up to 40% and overstock by up to 30% without manual forecasting work." },
+          { q: "What is NetSuite Analytics Workbench and how does AI use it?", a: "Analytics Workbench is NetSuite's embedded data warehousing and BI layer. It combines your full transaction history with AI-powered trend detection, predictive dashboards, and natural language queries — allowing executives to ask questions in plain English and get instant data-driven answers." },
+          { q: "How does NetSuite handle AI for ecommerce and customer experience?", a: "NetSuite AI powers personalized product recommendations, customer lifetime value scoring, churn prediction, and automated upsell/cross-sell triggers — integrated with SuiteCommerce and CRM so sales and marketing teams act on AI signals without switching tools." },
           { q: "Is NetSuite AI available in all NetSuite editions?", a: "Core AI features like Intelligent Insights and Smart Financials are included in standard NetSuite licences. Advanced capabilities such as Analytics Workbench, custom ML models, and AI-powered Text Enhancement may require add-on licensing. AGSuite can advise on what's included in your specific edition." },
-          { q: "How long does it take to start seeing value from NetSuite AI?", a: "For customers already live on NetSuite, AI insights begin generating recommendations within days of activation â€” as soon as sufficient transaction history exists. New implementations using AGSuite's SuiteSuccess methodology typically see their first AI-driven forecasts and anomaly alerts within 4â€“6 weeks of go-live." },
+          { q: "How long does it take to start seeing value from NetSuite AI?", a: "For customers already live on NetSuite, AI insights begin generating recommendations within days of activation — as soon as sufficient transaction history exists. New implementations using AGSuite's SuiteSuccess methodology typically see their first AI-driven forecasts and anomaly alerts within 4–6 weeks of go-live." },
         ]}
       />
 
@@ -398,8 +398,8 @@ export default function NetSuiteAIPage() {
             </div>
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Make Your NetSuite ERP Intelligent â€” <span className="text-cyan-200">Start Today.</span></h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">Join thousands of businesses using NetSuite AI to predict outcomes, automate decisions, and gain a competitive edge â€” without leaving their ERP.</p>
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Make Your NetSuite ERP Intelligent — <span className="text-cyan-200">Start Today.</span></h2>
+                <p className="text-white/80 text-lg md:text-xl font-medium">Join thousands of businesses using NetSuite AI to predict outcomes, automate decisions, and gain a competitive edge — without leaving their ERP.</p>
               </div>
               <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
                 Request a NetSuite AI Demo <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

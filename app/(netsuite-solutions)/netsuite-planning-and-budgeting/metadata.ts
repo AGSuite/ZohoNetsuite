@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "NetSuite Planning and Budgeting | Automated Budgeting System | AGSuite Technologies",
+  title:
+    "NetSuite Planning and Budgeting | NetSuite Financial Services| AGSuite Technologies",
 
   description:
-    "Automate labor-intensive planning and budgeting processes with NetSuite. Produce budgets, forecasts, and model what-if scenarios within one collaborative, scalable solution.",
+    "Streamline your planning and budgeting processes and enhance forecast precision with NetSuite Planning and Budgeting. Leverage scenario planning and conduct what-if analyses to make informed decisions.",
 
   robots: {
     index: true,
@@ -19,16 +20,18 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://agsuitetech.com/netsuite-planning-and-budgeting/",
+    canonical:
+      "https://agsuitetech.com/netsuite-planning-and-budgeting/",
   },
 
   openGraph: {
-    type: "article",
     locale: "en_US",
-    url: "https://agsuitetech.com/netsuite-planning-and-budgeting/",
-    title: "NetSuite Planning and Budgeting | Automated Budgeting System | AGSuite Technologies",
+    type: "article",
+    title:
+      "NetSuite Planning and Budgeting | NetSuite Financial Services| AGSuite Technologies",
     description:
-      "Automate labor-intensive planning and budgeting processes with NetSuite. Produce budgets, forecasts, and model what-if scenarios within one collaborative, scalable solution.",
+      "Streamline your planning and budgeting processes and enhance forecast precision with NetSuite Planning and Budgeting. Leverage scenario planning and conduct what-if analyses to make informed decisions.",
+    url: "https://agsuitetech.com/netsuite-planning-and-budgeting/",
     siteName: "AGSuite",
     images: [
       {
@@ -39,5 +42,10 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
+  },
+
+  other: {
+    "twitter:label1": "Est. reading time",
+    "twitter:data1": "37 minutes",
   },
 };

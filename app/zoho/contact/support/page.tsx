@@ -23,7 +23,7 @@ import {
     Users
 } from "lucide-react";
 
-/* â”€â”€â”€ Particles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── Particles ───────────────────────────────────────────────────────────── */
 const PARTICLES = [
     { w: 2, h: 2, top: 10, left: 15, dur: 5, delay: 0.3 },
     { w: 1.5, h: 1.5, top: 25, left: 70, dur: 4.2, delay: 1.1 },
@@ -103,7 +103,7 @@ export default function ZohoSupportPage() {
         <div className="min-h-screen bg-white selection:bg-blue-900 selection:text-white">
             <Script src="https://js.zohostatic.in/support/app/js/jqueryandencoder.ef05974972bf3bca1b87.js" strategy="afterInteractive" />
 
-            {/* â”€â”€ Hero / Form Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+            {/* ── Hero / Form Section ─────────────────────────────────────────────── */}
             <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d] flex items-center">
 
                 {/* Grid lines */}
@@ -149,7 +149,7 @@ export default function ZohoSupportPage() {
 
                     <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-start">
 
-                        {/* â”€â”€ LEFT: Content â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+                        {/* ── LEFT: Content ─────────────────────────────────────────── */}
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -223,7 +223,7 @@ export default function ZohoSupportPage() {
                             </div>
                         </motion.div>
 
-                        {/* â”€â”€ RIGHT: Form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+                        {/* ── RIGHT: Form ───────────────────────────────────────────── */}
                         <motion.div
                             initial={{ opacity: 0, x: 30 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -361,7 +361,7 @@ export default function ZohoSupportPage() {
                 </div>
             </section>
 
-            {/* â”€â”€ Quick Access Sub-Pages (THE 4 CARDS) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+            {/* ── Quick Access Sub-Pages (THE 4 CARDS) ───────────────────────────── */}
             <section className="py-20 bg-white border-y border-gray-100">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

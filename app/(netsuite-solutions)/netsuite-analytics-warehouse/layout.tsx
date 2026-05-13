@@ -2,7 +2,7 @@ import { metadata } from "./metadata";
 
 export { metadata };
 
-export default function IndiaLocalizationLayout({
+export default function NSAWLayout({
   children,
 }: {
   children: React.ReactNode;
