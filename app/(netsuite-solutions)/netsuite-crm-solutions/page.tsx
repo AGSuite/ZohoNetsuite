@@ -457,6 +457,7 @@ export default function NetSuiteCRMPage() {
                     src="/images/Dashboard/CRM Dashbaord 2_11zon.jpg"
                     alt="NetSuite CRM Solution Dashboard"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
                   />
                 </div>
@@ -570,6 +571,7 @@ export default function NetSuiteCRMPage() {
                       src={mod.image}
                       alt={mod.title}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                     />
                     <div

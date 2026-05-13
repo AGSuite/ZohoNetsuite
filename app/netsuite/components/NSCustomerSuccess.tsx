@@ -159,6 +159,7 @@ const NSCustomerSuccess = () => {
                                         src={activeCustomer.bgImage}
                                         alt={activeCustomer.companyName}
                                         fill
+                                        sizes="(max-width: 768px) 100vw, 40vw"
                                         className="object-cover brightness-110 contrast-110"
                                     />
                                     {/* Color Overlay */}
@@ -172,6 +173,7 @@ const NSCustomerSuccess = () => {
                                                     src={activeCustomer.logo}
                                                     alt={activeCustomer.companyName}
                                                     fill
+                                                    sizes="200px"
                                                     className="object-contain"
                                                 />
                                             </div>
