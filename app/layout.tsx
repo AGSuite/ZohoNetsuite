@@ -1,4 +1,5 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { Inter, DM_Sans } from "next/font/google";
 import "./globals.css";
@@ -187,6 +188,7 @@ export default function RootLayout({
         <CursorFollower />
         <ScrollToTopWrapper />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
