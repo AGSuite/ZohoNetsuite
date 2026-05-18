@@ -114,7 +114,7 @@ const ZohoKeyCapabilities = () => {
                                     alt={activeCapability.title}
                                     fill
                                     className="object-cover"
-                                    sizes="50vw"
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
                                     priority
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/20 to-transparent z-10" />
@@ -186,7 +186,7 @@ const ZohoKeyCapabilities = () => {
                                     alt={activeCapability.title}
                                     fill
                                     className="object-cover"
-                                    sizes="100vw"
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
                                     priority
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent z-10" />

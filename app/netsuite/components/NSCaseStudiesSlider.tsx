@@ -170,6 +170,7 @@ const NSCaseStudiesSlider = () => {
                                         alt={study.title}
                                         fill
                                         className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent opacity-60" />
 

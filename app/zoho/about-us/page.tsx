@@ -491,6 +491,7 @@ function StrategicPartnersSection() {
                   height={120}
                   className="w-full h-auto object-contain"
                   sizes="(max-width: 768px) 100vw, 320px"
+                  style={{ width: 'auto', height: 'auto' }}
                 />
               </div>
             </motion.div>
@@ -783,8 +784,9 @@ export default function AboutClient() {
                     alt="AGSuite Mission 1"
                     width={700}
                     height={300}
-                    className="object-cover w-full h-100"
+                    className="object-cover w-full h-auto"
                     sizes="(max-width: 1024px) 100vw, 500px"
+                    style={{ height: 'auto' }}
                   />
                 </div>
 
@@ -894,8 +896,9 @@ export default function AboutClient() {
                   alt="AGSuite Vision"
                   width={500}
                   height={400}
-                  className="object-cover w-full h-full rounded-2xl"
+                  className="object-cover w-full h-auto rounded-2xl"
                   sizes="(max-width: 1024px) 100vw, 400px"
+                  style={{ height: 'auto' }}
                 />
               </div>
 
@@ -941,8 +944,9 @@ export default function AboutClient() {
                   alt="AGSuite Niche 1"
                   width={600}
                   height={400}
-                  className="object-cover w-full h-100 rounded-2xl"
+                  className="object-cover w-full h-auto rounded-2xl"
                   sizes="(max-width: 1024px) 100vw, 500px"
+                  style={{ height: 'auto' }}
                 />
               </div>
 
@@ -952,8 +956,9 @@ export default function AboutClient() {
                   alt="AGSuite Niche 2"
                   width={400}
                   height={300}
-                  className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                  className="object-cover w-full h-auto transition-transform duration-500 hover:scale-105"
                   sizes="(max-width: 1024px) 50vw, 290px"
+                  style={{ height: 'auto' }}
                 />
               </div>
             </motion.div>

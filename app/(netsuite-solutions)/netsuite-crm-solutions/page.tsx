@@ -458,7 +458,6 @@ export default function NetSuiteCRMPage() {
                     alt="NetSuite CRM Solution Dashboard"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
                   />
                 </div>
               </div>
@@ -572,7 +571,6 @@ export default function NetSuiteCRMPage() {
                       alt={mod.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                     />
                     <div
                       className="absolute inset-0"
@@ -698,6 +696,7 @@ export default function NetSuiteCRMPage() {
                     src={benefits[activeBenefit].image}
                     alt={benefits[activeBenefit].title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
@@ -855,6 +854,7 @@ export default function NetSuiteCRMPage() {
                     src="/images/people/laptopmen.webp"
                     alt="NetSuite CRM Pricing"
                     fill
+                    sizes="(max-width: 768px) 100vw, 20vw"
                     className="object-cover object-top"
                   />
                 </div>

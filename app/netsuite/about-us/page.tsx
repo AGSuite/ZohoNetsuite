@@ -391,6 +391,7 @@ function WhoWeAreSection() {
                 height={900}
                 className="w-full h-auto object-cover"
                 priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -512,6 +513,7 @@ function StrategicPartnersSection() {
                   width={400}
                   height={150}
                   className="w-full h-auto object-contain"
+                  sizes="(max-width: 768px) 100vw, 400px"
                 />
               </div>
             </motion.div>
@@ -681,6 +683,7 @@ function AwardsAndRecognitionSection() {
                 height={400}
                 className="w-64 h-64 md:w-[320px] md:h-[320px] object-contain"
                 priority
+                sizes="(max-width: 768px) 100vw, 320px"
               />
             </motion.div>
           </motion.div>
@@ -1361,6 +1364,7 @@ function OurLeaders({ themeColor }: { themeColor: 'blue' | 'rose' }) {
                 alt={leader.name}
                 fill
                 className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 310px"
               />
             </div>
           </div>

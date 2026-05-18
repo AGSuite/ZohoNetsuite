@@ -266,6 +266,7 @@ export const NSCircularDesign = () => {
                             alt="Oracle NetSuite"
                             fill
                             className="object-contain"
+                            sizes="100px"
                         />
                     </div>
                 </div>

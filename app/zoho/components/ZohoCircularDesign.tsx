@@ -221,6 +221,7 @@ export const ZohoCircularDesign = () => {
                             alt="Zoho Premium Partner"
                             fill
                             className="object-contain"
+                            sizes="100px"
                         />
 
                     </div>

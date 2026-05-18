@@ -278,6 +278,7 @@ export default function ManagedServicesPage() {
             src="/images/netsuiteimages/Servicesimg/managedservices.webp"
             alt="Managed Services Background"
             fill
+            sizes="100vw"
             className="object-cover object-center"
             priority
           />
@@ -385,6 +386,7 @@ export default function ManagedServicesPage() {
                     src="/images/Services/managed.webp"
                     alt="NetSuite Managed Services"
                     fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover object-center"
                     priority
                   />
@@ -636,6 +638,7 @@ export default function ManagedServicesPage() {
                       src={svc.image}
                       alt={svc.title}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                     />
                     <div
@@ -755,6 +758,7 @@ export default function ManagedServicesPage() {
                     src={benefits[activeBenefit].image}
                     alt={benefits[activeBenefit].title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />

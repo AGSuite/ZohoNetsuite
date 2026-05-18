@@ -195,6 +195,7 @@ export default function GlobalBusinessPage() {
                     src="/images/lap/group2.webp"
                     alt="NetSuite Global Business Management"
                     fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover object-center"
                     priority
                   />
@@ -320,6 +321,7 @@ export default function GlobalBusinessPage() {
                     src="/images/Dashboard/global business managemnet dashboard.jpg"
                     alt="NetSuite Global Business Management OneWorld Dashboard"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
                   />
                 </div>
@@ -400,7 +402,7 @@ export default function GlobalBusinessPage() {
                   style={{ minHeight: 340 }}
                 >
                   <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
+                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${mod.rgb})` }}>
@@ -464,7 +466,7 @@ export default function GlobalBusinessPage() {
                   transition={{ duration: 0.5 }}
                   className="absolute inset-0 h-full w-full"
                 >
-                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover object-center" />
+                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
                 </motion.div>
               </AnimatePresence>
@@ -557,7 +559,7 @@ export default function GlobalBusinessPage() {
                 <div className="absolute bottom-8 left-6 w-14 h-14 bg-[#1a8fa0]/60 z-10" style={{ borderRadius: '40% 60% 50% 50% / 50% 40% 60% 50%', transform: 'rotate(20deg)' }} />
                 <div className="absolute bottom-16 left-14 w-3 h-3 bg-yellow-400/60 rounded-full z-10" />
                 <div className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl" style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}>
-                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite Global Business Pricing" fill className="object-cover object-top" />
+                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite Global Business Pricing" fill sizes="(max-width: 768px) 100vw, 20vw" className="object-cover object-top" />
                 </div>
               </div>
             </div>

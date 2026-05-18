@@ -264,6 +264,7 @@ export default function ZohoSolutionTemplate({
                     fill
                     className="object-cover object-center"
                     priority
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
 
@@ -396,6 +397,7 @@ export default function ZohoSolutionTemplate({
                     alt={title}
                     fill
                     className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   {/* Decorative Gradient Border Overlay */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-red-100/50 via-transparent to-rose-50/50 pointer-events-none" />
@@ -510,6 +512,7 @@ export default function ZohoSolutionTemplate({
                       alt={mod.title}
                       fill
                       className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                     <div
                       className="absolute inset-0"
@@ -586,7 +589,7 @@ export default function ZohoSolutionTemplate({
                   transition={{ duration: 0.5 }}
                   className="absolute inset-0 h-full w-full"
                 >
-                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover object-center" />
+                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 40vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
                 </motion.div>
               </AnimatePresence>
@@ -687,7 +690,7 @@ export default function ZohoSolutionTemplate({
                   className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl"
                   style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}
                 >
-                  <Image src="/images/people/laptopgirl.webp" alt={`${title} Pricing`} fill className="object-cover object-top" />
+                  <Image src="/images/people/laptopgirl.webp" alt={`${title} Pricing`} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 300px" />
                 </div>
               </div>
             </div>

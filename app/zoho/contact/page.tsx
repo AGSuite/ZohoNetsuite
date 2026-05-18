@@ -424,7 +424,8 @@ export default function ZohoContactPage() {
                   alt="Zoho Partner"
                   width={220}
                   height={70}
-                  className="h-16 w-auto object-contain"
+                  className="h-16 object-contain"
+                  style={{ width: 'auto' }}
                 />
               </motion.div>
 
@@ -637,9 +638,9 @@ export default function ZohoContactPage() {
                 <Image
                   src={item.image}
                   alt={item.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="transition-transform duration-700 group-hover:scale-110"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
                 <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-blue-900/0 transition-colors" />

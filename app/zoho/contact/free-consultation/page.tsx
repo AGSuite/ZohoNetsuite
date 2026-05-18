@@ -444,9 +444,9 @@ export default function ZohoContactFreeConsultation() {
                                 <Image
                                     src={item.image}
                                     alt={item.title}
-                                    layout="fill"
-                                    objectFit="cover"
-                                    className="transition-transform duration-700 group-hover:scale-110"
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
                                 <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-blue-900/0 transition-colors" />

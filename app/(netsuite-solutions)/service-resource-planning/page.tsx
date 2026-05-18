@@ -228,6 +228,7 @@ export default function NetSuiteSRPPage() {
             alt="NetSuite SRP Background"
             fill
             priority
+            sizes="100vw"
             className="object-cover"
           />
         </div>
@@ -403,6 +404,7 @@ export default function NetSuiteSRPPage() {
                     src="/images/Dashboard/suiteproject dashboard 2.jpg"
                     alt="NetSuite Service Resource Planning SRP Dashboard"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
                   />
                 </div>
@@ -487,6 +489,7 @@ export default function NetSuiteSRPPage() {
                       src={mod.image}
                       alt={mod.title}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                     />
                     <div
@@ -562,7 +565,7 @@ export default function NetSuiteSRPPage() {
                   transition={{ duration: 0.5 }}
                   className="absolute inset-0 h-full w-full"
                 >
-                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover object-center" />
+                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10" />
                 </motion.div>
               </AnimatePresence>
@@ -661,7 +664,7 @@ export default function NetSuiteSRPPage() {
                   className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl"
                   style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}
                 >
-                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite SRP Pricing" fill className="object-cover object-top" />
+                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite SRP Pricing" fill sizes="(max-width: 768px) 100vw, 20vw" className="object-cover object-top" />
                 </div>
               </div>
             </div>

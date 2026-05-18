@@ -1,7 +1,7 @@
-import imageUrlBuilder from '@sanity/image-url'
+import { createImageUrlBuilder } from '@sanity/image-url'
 import { zohoDataset, zohoProjectId } from '../env'
 
-const imageBuilder = imageUrlBuilder({
+const imageBuilder = createImageUrlBuilder({
     projectId: zohoProjectId || '',
     dataset: zohoDataset || '',
 })

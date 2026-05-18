@@ -198,7 +198,7 @@ export default function PlanningPage() {
               className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-teal-900/50" style={{ height: 390 }}>
-                  <Image src="/images/lap/lap3.webp" alt="NetSuite Planning" fill className="object-cover object-center" priority />
+                  <Image src="/images/lap/lap3.webp" alt="NetSuite Planning" fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" priority />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.6 }}
                     className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
@@ -266,6 +266,7 @@ export default function PlanningPage() {
                     src="/images/Dashboard/planing and budgeting 2 dashboard.jpg"
                     alt="NetSuite Planning and Budgeting Solution Dashboard"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
                   />
                 </div>
@@ -372,7 +373,7 @@ export default function PlanningPage() {
               </div>
               <div className="flex-1 w-full relative group">
                 <div className="relative aspect-video rounded-3xl overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] border border-white/10">
-                  <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <Image src={item.image} alt={item.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent" />
                 </div>
                 <div className={`absolute -bottom-6 -${i % 2 === 1 ? 'left' : 'right'}-6 w-32 h-32 bg-${item.color}-500/20 rounded-full blur-3xl opacity-50`} />
@@ -401,7 +402,7 @@ export default function PlanningPage() {
                   style={{ backgroundColor: `rgb(${mod.rgb})` }}
                 >
                   <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="p-6 flex flex-col transition-all duration-500">
@@ -441,7 +442,7 @@ export default function PlanningPage() {
             <div className="order-2 lg:order-1 relative min-h-[380px] lg:min-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
               <AnimatePresence mode="wait">
                 <motion.div key={activeBenefit} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} className="absolute inset-0">
-                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover object-center" />
+                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                 </motion.div>
               </AnimatePresence>
@@ -508,7 +509,7 @@ export default function PlanningPage() {
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all">
                 <div className="relative h-48 overflow-hidden">
-                  <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={item.image} alt={item.title} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className={`absolute top-4 left-4 p-3 bg-white rounded-xl shadow-lg`}>
                     <item.icon className={`w-6 h-6 text-${item.color}-600`} />
                   </div>
@@ -550,7 +551,7 @@ export default function PlanningPage() {
                 <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#002030]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
                 <div className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#003040]" style={{ borderRadius: '45% 55% 50% 50% / 50% 50% 50% 50%' }} />
                 <div className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl" style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}>
-                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite Planning Pricing" fill className="object-cover object-top" />
+                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite Planning Pricing" fill sizes="(max-width: 768px) 100vw, 30vw" className="object-cover object-top" />
                 </div>
               </div>
             </div>

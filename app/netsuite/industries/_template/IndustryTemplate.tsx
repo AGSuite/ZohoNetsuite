@@ -331,6 +331,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                     src={data.heroImage}
                     alt={data.industry}
                     fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover object-center"
                     priority
                   />
@@ -462,6 +463,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                 src={data.introImage}
                 alt={data.introTitle}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-white/5 mix-blend-multiply" />
@@ -581,6 +583,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                       src={item.image || "/images/lap/lap1.webp"}
                       alt={item.title}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
                     />
                     <div
@@ -712,6 +715,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                         src={feature.image}
                         alt={feature.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                     </div>
@@ -824,6 +828,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                     src={data.benefits[activeBenefit].image}
                     alt={data.benefits[activeBenefit].title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />

@@ -195,6 +195,7 @@ export default function LifeAtAGSuite() {
                 fill
                 className="object-cover object-center"
                 priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
 
@@ -245,6 +246,7 @@ export default function LifeAtAGSuite() {
             fill
             className="object-cover object-center"
             priority
+            sizes="100vw"
           />
           {/* Black overlay with opacity */}
           <div className="absolute inset-0 bg-black/20 pointer-events-none" />
@@ -328,6 +330,7 @@ export default function LifeAtAGSuite() {
                       alt="5th Anniversary"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="384px"
                     />
                   </div>
                 ))}
@@ -408,6 +411,7 @@ export default function LifeAtAGSuite() {
                       alt="NetSuite Event"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="384px"
                     />
                   </div>
                 ))}
@@ -448,6 +452,7 @@ export default function LifeAtAGSuite() {
                       alt="Indian Taxation Summit"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="384px"
                     />
                   </div>
                 ))}
@@ -519,6 +524,7 @@ export default function LifeAtAGSuite() {
                 alt="Office Space"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 100vw, 66vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
                 <p className="text-white font-medium text-2xl flex items-center gap-3">
@@ -539,6 +545,7 @@ export default function LifeAtAGSuite() {
                 alt="Pantry"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <p className="text-white font-medium text-lg flex items-center gap-2">
@@ -559,6 +566,7 @@ export default function LifeAtAGSuite() {
                 alt="Meeting Room"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <p className="text-white font-medium text-lg flex items-center gap-2">
@@ -651,6 +659,7 @@ export default function LifeAtAGSuite() {
                       alt={leader.name}
                       fill
                       className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                      sizes="310px"
                     />
                   </div>
                 </div>
@@ -736,6 +745,7 @@ export default function LifeAtAGSuite() {
                   alt={`AGSuite Celebration ${i + 1}`}
                   fill
                   className="object-cover"
+                  sizes="450px"
                 />
               </div>
             ))}

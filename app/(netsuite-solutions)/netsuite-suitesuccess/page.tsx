@@ -117,7 +117,7 @@ export default function SuiteSuccessPage() {
               className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/people/fourteam.webp" alt="NetSuite SuiteSuccess" fill className="object-cover object-center" priority />
+                  <Image src="/images/people/fourteam.webp" alt="NetSuite SuiteSuccess" fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" priority />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.6 }}
                     className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
@@ -195,6 +195,7 @@ export default function SuiteSuccessPage() {
                     src="/images/Dashboard/suitesuccess 2 dashboard.jpg"
                     alt="NetSuite SuiteSuccess Solution Dashboard"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
                   />
                 </div>
@@ -265,7 +266,7 @@ export default function SuiteSuccessPage() {
                   transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }} whileHover={{ y: -10, transition: { duration: 0.3 } }}
                   className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white" style={{ minHeight: 340 }}>
                   <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
+                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${mod.rgb})` }}>
@@ -297,7 +298,7 @@ export default function SuiteSuccessPage() {
             <div className="order-2 lg:order-1 relative min-h-[380px] lg:min-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
               <AnimatePresence mode="wait">
                 <motion.div key={activeBenefit} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} className="absolute inset-0">
-                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover object-center" />
+                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                 </motion.div>
               </AnimatePresence>
@@ -356,7 +357,7 @@ export default function SuiteSuccessPage() {
                 <div className="absolute top-[-40px] right-[-40px] w-[400px] h-[380px] bg-[#2d1060]" style={{ borderRadius: '40% 60% 55% 45% / 45% 55% 45% 55%' }} />
                 <div className="absolute top-[-20px] right-[-10px] w-[340px] h-[320px] bg-[#3d1580]" style={{ borderRadius: '45% 55% 50% 50% / 50% 50% 50% 50%' }} />
                 <div className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl" style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}>
-                  <Image src="/images/people/laptopgirl1.webp" alt="SuiteSuccess Pricing" fill className="object-cover object-top" />
+                  <Image src="/images/people/laptopgirl1.webp" alt="SuiteSuccess Pricing" fill sizes="(max-width: 768px) 100vw, 20vw" className="object-cover object-top" />
                 </div>
               </div>
             </div>

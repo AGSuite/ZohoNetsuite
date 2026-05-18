@@ -327,6 +327,7 @@ const NSCaseStudiesGrid = () => {
                                         alt={study.title}
                                         fill
                                         className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent opacity-60" />
 

@@ -498,9 +498,9 @@ export default function FreeConsultationTopLevel() {
                                 <Image
                                     src={item.image}
                                     alt={item.title}
-                                    layout="fill"
-                                    objectFit="cover"
-                                    className="transition-transform duration-700 group-hover:scale-110"
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                                 />
 
                                 {/* Gradient Overlays */}

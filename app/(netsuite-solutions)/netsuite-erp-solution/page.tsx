@@ -305,6 +305,7 @@ export default function NetSuiteERPPage() {
                     src="/images/Dashboard/ERP Dashboard_11zon.jpg"
                     alt="NetSuite ERP Solution Dashboard"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
                   />
                 </div>
@@ -406,6 +407,7 @@ export default function NetSuiteERPPage() {
                       src={mod.image}
                       alt={mod.title}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                     />
                     <div
@@ -531,6 +533,7 @@ export default function NetSuiteERPPage() {
                     src={benefits[activeBenefit].image}
                     alt={benefits[activeBenefit].title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover object-center"
                   />
                   {/* Simple dark vignette only — no text */}
@@ -647,7 +650,7 @@ export default function NetSuiteERPPage() {
                   className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl"
                   style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}
                 >
-                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite ERP Pricing" fill className="object-cover object-top" />
+                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite ERP Pricing" fill sizes="(max-width: 768px) 100vw, 20vw" className="object-cover object-top" />
                 </div>
               </div>
             </div>

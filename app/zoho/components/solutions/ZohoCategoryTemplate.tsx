@@ -52,6 +52,7 @@ export default function ZohoCategoryTemplate({
             fill
             className="object-cover opacity-40"
             priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#000814] via-[#000814]/80 to-transparent" />
         </div>
@@ -204,6 +205,7 @@ export default function ZohoCategoryTemplate({
                     alt={solution.title}
                     fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-blue-600/10" />
                 </div>

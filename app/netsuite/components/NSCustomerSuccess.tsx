@@ -160,7 +160,6 @@ const NSCustomerSuccess = () => {
                                         alt={activeCustomer.companyName}
                                         fill
                                         sizes="(max-width: 768px) 100vw, 40vw"
-                                        className="object-cover brightness-110 contrast-110"
                                     />
                                     {/* Color Overlay */}
                                     <div className={`absolute inset-0 bg-gradient-to-t ${activeCustomer.overlayColor} z-10 transition-all duration-700`} />
@@ -173,8 +172,7 @@ const NSCustomerSuccess = () => {
                                                     src={activeCustomer.logo}
                                                     alt={activeCustomer.companyName}
                                                     fill
-                                                    sizes="200px"
-                                                    className="object-contain"
+                                                    sizes="(max-width: 768px) 100vw, 15vw"
                                                 />
                                             </div>
                                         ) : (

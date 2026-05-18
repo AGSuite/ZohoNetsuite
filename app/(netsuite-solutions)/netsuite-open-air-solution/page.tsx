@@ -319,6 +319,7 @@ export default function OpenAirPage() {
                     src="/images/lap/lap9_11zon.webp"
                     alt="NetSuite SuiteProject Pro OpenAir"
                     fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover object-center"
                     priority
                   />
@@ -450,6 +451,7 @@ export default function OpenAirPage() {
                     src="/images/Dashboard/suiteproject dashboard 2.jpg"
                     alt="NetSuite OpenAir PSA Solution Dashboard"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
                   />
                 </div>
@@ -540,6 +542,7 @@ export default function OpenAirPage() {
                       src={mod.image}
                       alt={mod.title}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                     />
                     <div
@@ -616,7 +619,13 @@ export default function OpenAirPage() {
                   transition={{ duration: 0.5 }}
                   className="absolute inset-0 h-full w-full"
                 >
-                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover object-center" />
+                  <Image
+                    src={benefits[activeBenefit].image}
+                    alt={benefits[activeBenefit].title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    className="object-cover object-center"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10" />
                 </motion.div>
               </AnimatePresence>
@@ -709,7 +718,13 @@ export default function OpenAirPage() {
                 <div className="absolute bottom-8 left-6 w-14 h-14 bg-blue-400/30 z-10" style={{ borderRadius: '40% 60% 50% 50% / 50% 40% 60% 50%', transform: 'rotate(20deg)' }} />
                 <div className="absolute bottom-16 left-14 w-3 h-3 bg-cyan-400/60 rounded-full z-10" />
                 <div className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl" style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}>
-                  <Image src="/images/people/laptopgirl3.webp" alt="NetSuite OpenAir Pricing" fill className="object-cover object-top" />
+                  <Image
+                    src="/images/people/laptopgirl3.webp"
+                    alt="NetSuite OpenAir Pricing"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 30vw"
+                    className="object-cover object-top"
+                  />
                 </div>
               </div>
             </div>

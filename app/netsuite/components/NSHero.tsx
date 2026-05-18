@@ -281,6 +281,7 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                               width={28}
                               height={28}
                               className="object-contain brightness-0 invert"
+                              style={{ width: 'auto', height: 'auto' }}
                             />
                           </div>
                           <div className="w-11 h-11 rounded-lg bg-[#007b7b] flex items-center justify-center text-white shadow-lg ring-2 ring-white z-10">

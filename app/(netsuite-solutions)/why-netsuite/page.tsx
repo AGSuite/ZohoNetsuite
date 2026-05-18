@@ -173,7 +173,7 @@ export default function WhyNetsuitePage() {
               className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/hero/netsuite_hero_v2.png" alt="Why NetSuite" fill className="object-cover object-center" priority />
+                  <Image src="/images/hero/netsuite_hero_v2.png" alt="Why NetSuite" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-center" priority />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.6 }}
                     className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
@@ -241,10 +241,11 @@ export default function WhyNetsuitePage() {
               transition={{ duration: 0.7 }}
               className="relative flex items-center justify-center rounded-3xl overflow-hidden shadow-2xl border border-gray-100 min-h-[400px]"
             >
-              <Image
+                <Image
                 src="/images/Dashboard/netsuite_erp_dashboard_realistic.png"
                 alt="What Is NetSuite Dashboard"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
               />
             </motion.div>
@@ -316,6 +317,7 @@ export default function WhyNetsuitePage() {
                         src={mod.image}
                         alt={mod.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                     </div>
@@ -350,7 +352,7 @@ export default function WhyNetsuitePage() {
             <div className="order-2 lg:order-1 relative min-h-[450px] lg:min-h-[550px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
               <AnimatePresence mode="wait">
                 <motion.div key={activeAdaptability} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} className="absolute inset-0">
-                  <Image src={adaptability[activeAdaptability].image} alt={adaptability[activeAdaptability].title} fill className="object-cover object-center" />
+                  <Image src={adaptability[activeAdaptability].image} alt={adaptability[activeAdaptability].title} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </motion.div>
               </AnimatePresence>
@@ -444,6 +446,7 @@ export default function WhyNetsuitePage() {
                   src={item.image}
                   alt={item.title}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
@@ -505,7 +508,7 @@ export default function WhyNetsuitePage() {
                 <div className="absolute bottom-8 left-6 w-14 h-14 bg-blue-400/30 z-10" style={{ borderRadius: '40% 60% 50% 50% / 50% 40% 60% 50%', transform: 'rotate(20deg)' }} />
                 <div className="absolute bottom-16 left-14 w-3 h-3 bg-cyan-400/60 rounded-full z-10" />
                 <div className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl" style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}>
-                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite Pricing" fill className="object-cover object-top" />
+                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite Pricing" fill sizes="(max-width: 768px) 100vw, 20vw" className="object-cover object-top" />
                 </div>
               </div>
             </div>

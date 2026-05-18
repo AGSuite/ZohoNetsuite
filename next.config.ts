@@ -34,7 +34,7 @@ const nextConfig: NextConfig = {
       "react-icons",
       "gsap",
     ],
-    serverSourceMaps: false,
+    serverSourceMaps: true,
   },
   transpilePackages: ["swiper", "framer-motion", "gsap", "lucide-react"],
   compiler: {

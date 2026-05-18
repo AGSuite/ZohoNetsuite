@@ -121,6 +121,7 @@ export default function ZohoServiceTemplate({
             fill
             className="object-cover object-center opacity-30 select-none pointer-events-none"
             priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#000814] via-transparent to-[#000814]/80" />
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
@@ -231,6 +232,7 @@ export default function ZohoServiceTemplate({
                     fill
                     className="object-cover object-center"
                     priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                 </div>
@@ -341,6 +343,7 @@ export default function ZohoServiceTemplate({
                 alt="Overview"
                 fill
                 className="object-cover rounded-3xl shadow-2xl transition-transform duration-700 hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </motion.div>
 
@@ -437,6 +440,7 @@ export default function ZohoServiceTemplate({
                       alt={svc.title}
                       fill
                       className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                     <div
                       className="absolute inset-0"
@@ -545,6 +549,7 @@ export default function ZohoServiceTemplate({
                     alt={benefits[activeBenefit].title}
                     fill
                     className="object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
                 </motion.div>
