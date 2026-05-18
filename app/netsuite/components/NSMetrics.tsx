@@ -350,6 +350,7 @@ const NSMetrics = () => {
                                                 width={190}
                                                 height={60}
                                                 className="h-15 sm:h-26 w-auto object-contain transition-all duration-300 px-4"
+                                                style={{ width: 'auto', height: 'auto' }}
                                             />
                                         </a>
                                     </div>

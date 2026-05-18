@@ -139,6 +139,7 @@ function EventsSection() {
                                         src={src}
                                         alt="5th Anniversary"
                                         fill
+                                        sizes="384px"
                                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
                                 </div>
@@ -219,6 +220,7 @@ function EventsSection() {
                                         src={src}
                                         alt="NetSuite Event"
                                         fill
+                                        sizes="384px"
                                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
                                 </div>
@@ -259,6 +261,7 @@ function EventsSection() {
                                         src={src}
                                         alt="Indian Taxation Summit"
                                         fill
+                                        sizes="384px"
                                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
                                 </div>
@@ -375,7 +378,7 @@ export default function NetSuiteInsightsClient({ blogs }: { blogs: any[] }) {
                         <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
                             <div className="relative w-[88%] ml-auto">
                                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                                    <Image src="/images/people/fourteam.webp" alt="NetSuite Insights" fill className="object-cover object-center" priority />
+                                    <Image src="/images/people/fourteam.webp" alt="NetSuite Insights" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center" priority />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }} className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
                                         <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}><Activity className="w-5 h-5 text-white" /></div>

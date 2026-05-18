@@ -223,7 +223,7 @@ export default function NSBlogsGrid({ blogs }: NSBlogsGridProps) {
                         fill
                         className="object-cover opacity-20 mix-blend-luminosity"
                         priority
-                    />
+                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/50" />
                 </div>
                 {/* Grid overlay */}

@@ -741,13 +741,12 @@ export default function ContactPage() {
                 href={item.link}
                 className="group relative h-[420px] rounded-3xl overflow-hidden border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/20 hover:-translate-y-2 flex flex-col justify-end"
               >
-                {/* Background Image */}
                 <Image
                   src={item.image}
                   alt={item.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="transition-transform duration-700 group-hover:scale-110"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
                 {/* Gradient Overlays */}

@@ -127,7 +127,7 @@ export default function NetSuiteAddonsClient() {
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/people/fourteam.webp" alt="NetSuite Add-Ons" fill className="object-cover object-center" priority />
+                  <Image src="/images/people/fourteam.webp" alt="NetSuite Add-Ons" fill className="object-cover object-center" priority  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.6 }}
                     className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
@@ -248,7 +248,7 @@ export default function NetSuiteAddonsClient() {
                 alt="NetSuite Extensions"
                 fill
                 className="object-cover"
-              />
+               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
               <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply" />
             </motion.div>
           </div>
@@ -271,7 +271,7 @@ export default function NetSuiteAddonsClient() {
                 alt="Why Choose NetSuite Add-ons for Business Growth"
                 fill
                 className="object-cover"
-              />
+               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
               <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply" />
             </motion.div>
 
@@ -457,7 +457,7 @@ export default function NetSuiteAddonsClient() {
                     alt={benefits[activeBenefit].title}
                     fill
                     className="object-cover"
-                  />
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-linear-to-t from-transparent to-transparent" />
                 </motion.div>
               </AnimatePresence>
@@ -590,7 +590,7 @@ export default function NetSuiteAddonsClient() {
                     alt={challenges[activeChallenge].title}
                     fill
                     className="object-cover"
-                  />
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-linear-to-t from-transparent to-transparent" />
                 </motion.div>
               </AnimatePresence>
@@ -614,7 +614,7 @@ export default function NetSuiteAddonsClient() {
               alt="NetSuite Add-ons Background"
               fill
               className="object-cover"
-            />
+             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
 
             {/* Gradient Overlay - Dark left to transparent right */}
             <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/80 to-transparent" />

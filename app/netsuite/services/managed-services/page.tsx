@@ -896,7 +896,7 @@ export default function ManagedServicesPage() {
                     alt="Managed Services Pricing"
                     fill
                     className="object-cover object-top"
-                  />
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
               </div>
             </div>

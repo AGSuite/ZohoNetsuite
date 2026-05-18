@@ -254,7 +254,7 @@ export default function NetSuiteConsultingPage() {
             fill
             className="object-cover object-center"
             priority
-          />
+           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
         </div>
@@ -329,7 +329,7 @@ export default function NetSuiteConsultingPage() {
             >
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/people/fourteam.webp" alt="NetSuite Consulting" fill className="object-cover object-center" priority />
+                  <Image src="/images/people/fourteam.webp" alt="NetSuite Consulting" fill className="object-cover object-center" priority  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                 </div>
 
@@ -440,7 +440,7 @@ export default function NetSuiteConsultingPage() {
                 alt="NetSuite Consulting"
                 fill
                 className="object-cover object-center"
-              />
+               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </motion.div>
 
@@ -514,7 +514,7 @@ export default function NetSuiteConsultingPage() {
                   style={{ minHeight: 340 }}
                 >
                   <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={svc.image} alt={svc.title} fill className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
+                    <Image src={svc.image} alt={svc.title} fill className="object-cover object-top group-hover:scale-110 transition-transform duration-700"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${svc.rgb},0.4) 70%, rgba(${svc.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${svc.rgb})` }}>
@@ -582,7 +582,7 @@ export default function NetSuiteConsultingPage() {
                   transition={{ duration: 0.5 }}
                   className="absolute inset-0 h-full w-full"
                 >
-                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover object-center" />
+                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover object-center"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
                 </motion.div>
               </AnimatePresence>
@@ -674,7 +674,7 @@ export default function NetSuiteConsultingPage() {
                 <div className="absolute bottom-8 left-6 w-14 h-14 bg-[#1a8fa0]/60 z-10" style={{ borderRadius: "40% 60% 50% 50% / 50% 40% 60% 50%", transform: "rotate(20deg)" }} />
                 <div className="absolute bottom-16 left-14 w-3 h-3 bg-yellow-400/60 rounded-full z-10" />
                 <div className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl" style={{ borderRadius: "50% 50% 46% 54% / 52% 48% 52% 48%" }}>
-                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite Consulting Pricing" fill className="object-cover object-top" />
+                  <Image src="/images/people/laptopgirl.webp" alt="NetSuite Consulting Pricing" fill className="object-cover object-top"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
               </div>
             </div>

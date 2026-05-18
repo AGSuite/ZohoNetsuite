@@ -144,7 +144,7 @@ const PageTemplate: React.FC<PageTemplateProps> = ({
                     fill
                     priority
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className={`absolute inset-0 bg-linear-to-t ${isNetSuite ? 'from-[#000b21]/60' : 'from-[#1a0000]/60'} to-transparent`} />
                 </div>
 
@@ -212,7 +212,7 @@ const PageTemplate: React.FC<PageTemplateProps> = ({
                           alt={feature.title}
                           fill
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
+                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-blue-400/30">
                           <svg className="w-24 h-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -290,7 +290,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
                     fill
                     className="object-cover object-center"
                     priority
-                  />
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -420,7 +420,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
                 alt={data.introTitle}
                 fill
                 className="object-cover object-center"
-              />
+               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
               <div className="absolute inset-0 bg-white/5 mix-blend-multiply" />
             </motion.div>
             <motion.div
@@ -539,7 +539,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
                       alt={item.title}
                       fill
                       className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
-                    />
+                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     <div
                       className="absolute inset-0"
                       style={{
@@ -669,7 +669,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
                         alt={feature.title}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     </div>
                   )}
                   <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
@@ -781,7 +781,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
                     alt={data.benefits[activeBenefit].title}
                     fill
                     className="object-cover object-center"
-                  />
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                 </motion.div>
               </AnimatePresence>
@@ -913,7 +913,7 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
                     alt="Zoho Pricing"
                     fill
                     className="object-cover object-top"
-                  />
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
               </div>
             </div>

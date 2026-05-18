@@ -784,9 +784,8 @@ export default function AboutClient() {
                     alt="AGSuite Mission 1"
                     width={700}
                     height={300}
-                    className="object-cover w-full h-auto"
+                    className="object-cover w-full h-[300px] lg:h-[350px]"
                     sizes="(max-width: 1024px) 100vw, 500px"
-                    style={{ height: 'auto' }}
                   />
                 </div>
 
@@ -896,9 +895,8 @@ export default function AboutClient() {
                   alt="AGSuite Vision"
                   width={500}
                   height={400}
-                  className="object-cover w-full h-auto rounded-2xl"
+                  className="object-cover w-full h-[300px] lg:h-[350px] rounded-2xl"
                   sizes="(max-width: 1024px) 100vw, 400px"
-                  style={{ height: 'auto' }}
                 />
               </div>
 
@@ -944,9 +942,8 @@ export default function AboutClient() {
                   alt="AGSuite Niche 1"
                   width={600}
                   height={400}
-                  className="object-cover w-full h-auto rounded-2xl"
+                  className="object-cover w-full h-[300px] lg:h-[350px] rounded-2xl"
                   sizes="(max-width: 1024px) 100vw, 500px"
-                  style={{ height: 'auto' }}
                 />
               </div>
 

@@ -309,7 +309,7 @@ export default function NetSuiteSolutionsClient() {
                     rotationInterval={2200}
                     transition={{ type: 'spring', damping: 22, stiffness: 280 }}
                     initial={{ y: '110%', opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
+                    animate={{ y: '0%', opacity: 1 }}
                     exit={{ y: '-110%', opacity: 0 }}
                     style={{ color: '#ffffff' }}
                   />
@@ -328,7 +328,7 @@ export default function NetSuiteSolutionsClient() {
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/people/fourteam.webp" alt="Oracle NetSuite Solutions" fill className="object-cover object-center" priority />
+                  <Image src="/images/people/fourteam.webp" alt="Oracle NetSuite Solutions" fill className="object-cover object-center" priority  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }} className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}><Database className="w-5 h-5 text-white" /></div>
@@ -633,12 +633,12 @@ export default function NetSuiteSolutionsClient() {
             viewport={{ once: true }}
             className="border border-gray-200 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
           >
-            <Image src="/images/lap/group1.webp" alt="NetSuite Solutions" fill className="object-cover" />
+            <Image src="/images/lap/group1.webp" alt="NetSuite Solutions" fill className="object-cover"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-3xl -mr-32 -mt-32" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />
             <div className="relative z-10 max-w-2xl">
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-8 leading-tight">
                 Scale your business with the world's #1 Cloud ERP. Ready to get started?
               </h2>
               <div className="flex justify-start">

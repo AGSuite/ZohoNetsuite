@@ -66,7 +66,7 @@ export default function NetSuiteShopifyClient() {
                   alt="Shopify Connector"
                   fill
                   className="object-cover"
-                />
+                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 <div className="absolute inset-0 bg-linear-to-t from-[#000b21]/60 to-transparent" />
               </div>
             </motion.div>

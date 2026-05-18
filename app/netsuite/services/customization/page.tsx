@@ -285,7 +285,7 @@ export default function CustomizationPage() {
             fill
             className="object-cover object-center"
             priority
-          />
+           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
         </div>
@@ -392,7 +392,7 @@ export default function CustomizationPage() {
                     fill
                     className="object-cover object-center"
                     priority
-                  />
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                 </div>
 
@@ -643,7 +643,7 @@ export default function CustomizationPage() {
                       alt={svc.title}
                       fill
                       className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
-                    />
+                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     <div
                       className="absolute inset-0"
                       style={{
@@ -762,7 +762,7 @@ export default function CustomizationPage() {
                     alt={benefits[activeBenefit].title}
                     fill
                     className="object-cover object-center"
-                  />
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
                 </motion.div>
               </AnimatePresence>
@@ -898,7 +898,7 @@ export default function CustomizationPage() {
                     alt="Customization Pricing"
                     fill
                     className="object-cover object-top"
-                  />
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
               </div>
             </div>

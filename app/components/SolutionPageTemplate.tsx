@@ -184,7 +184,7 @@ export default function SolutionPageTemplate({
                   fill
                   priority
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
+                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 <div className={`absolute inset-0 bg-linear-to-t ${isNetSuite ? 'from-[#000b21]/60' : 'from-[#fff5f5]/60'} to-transparent`} />
               </div>
 
@@ -274,7 +274,7 @@ export default function SolutionPageTemplate({
                   alt={intro.title}
                   fill
                   className="object-cover"
-                />
+                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 <div className={`absolute inset-0 ${isNetSuite ? 'bg-blue-600/10' : 'bg-red-600/10'} mix-blend-multiply`} />
               </motion.div>
             </div>
@@ -379,7 +379,7 @@ export default function SolutionPageTemplate({
                       alt={feature.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     <div className={`absolute inset-0 bg-linear-to-t ${isNetSuite ? 'from-blue-900/60' : 'from-red-900/60'} to-transparent`} />
                   </div>
 
@@ -475,7 +475,7 @@ export default function SolutionPageTemplate({
                       alt={challenges.items[activeChallenge].title}
                       fill
                       className="object-cover"
-                    />
+                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
                   </motion.div>
                 </AnimatePresence>
@@ -510,7 +510,7 @@ export default function SolutionPageTemplate({
                       alt={benefits.items[activeBenefit].title}
                       fill
                       className="object-cover"
-                    />
+                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
                   </motion.div>
                 </AnimatePresence>

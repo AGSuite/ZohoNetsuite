@@ -97,7 +97,7 @@ export default function SmartCommissionClient() {
             fill
             priority
             className="object-cover"
-          />
+           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent z-10" />
 
@@ -218,7 +218,7 @@ export default function SmartCommissionClient() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
-              <Image src="/images/lap/lap3.webp" alt="Commission Dashboards" fill className="object-cover" />
+              <Image src="/images/lap/lap3.webp" alt="Commission Dashboards" fill className="object-cover"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
               <div className="absolute inset-0 bg-emerald-600/5 mix-blend-multiply" />
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="space-y-6">
@@ -252,7 +252,7 @@ export default function SmartCommissionClient() {
             <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 min-h-[350px] lg:min-h-[450px]">
               <AnimatePresence mode="wait">
                 <motion.div key={activeBenefit} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.5, ease: "easeOut" }} className="absolute inset-0">
-                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover" />
+                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </motion.div>
               </AnimatePresence>
             </motion.div>
@@ -314,7 +314,7 @@ export default function SmartCommissionClient() {
             <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 min-h-[350px] lg:min-h-[450px]">
               <AnimatePresence mode="wait">
                 <motion.div key={activeChallenge} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.5, ease: "easeOut" }} className="absolute inset-0">
-                  <Image src={challenges[activeChallenge].image} alt={challenges[activeChallenge].title} fill className="object-cover" />
+                  <Image src={challenges[activeChallenge].image} alt={challenges[activeChallenge].title} fill className="object-cover"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </motion.div>
               </AnimatePresence>
             </motion.div>
@@ -498,7 +498,7 @@ export default function SmartCommissionClient() {
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative rounded-[3rem] overflow-hidden border border-gray-200">
-            <Image src="/images/lap/lap3.webp" alt="Scale Your Sales" fill className="object-cover" />
+            <Image src="/images/lap/lap3.webp" alt="Scale Your Sales" fill className="object-cover"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
             <div className="relative z-10 p-12 lg:p-24">
               <div className="max-w-2xl">

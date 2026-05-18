@@ -98,7 +98,7 @@ export default function CareersPage() {
             fill
             className="object-cover object-center"
             priority
-          />
+           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
         </div>
@@ -204,7 +204,7 @@ export default function CareersPage() {
                     fill
                     className="object-cover object-center"
                     priority
-                  />
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                 </div>
 

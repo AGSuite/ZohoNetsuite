@@ -353,7 +353,7 @@ export default function IndiaLocalizationPage() {
               >
                 <div className="flex flex-col h-full w-full rounded-2xl overflow-hidden transition-all duration-500 ease-in-out">
                   <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
+                    <Image src={mod.image} alt={mod.title} fill className="object-cover object-top group-hover:scale-110 transition-transform duration-700"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom,transparent 0%,rgba(${mod.rgb},0.4) 70%,rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 flex flex-col relative transition-all duration-500">
@@ -393,7 +393,7 @@ export default function IndiaLocalizationPage() {
               <motion.div key={index} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group flex flex-col rounded-3xl overflow-hidden shadow-xl bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300">
                 <div className="relative h-64 overflow-hidden">
-                  <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-6">
                     <h4 className="text-white font-bold text-xl">{item.title}</h4>
@@ -421,7 +421,7 @@ export default function IndiaLocalizationPage() {
             <div className="order-2 lg:order-1 relative min-h-[380px] lg:min-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
               <AnimatePresence mode="wait">
                 <motion.div key={activeBenefit} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} className="absolute inset-0">
-                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover object-center" />
+                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover object-center"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </motion.div>
               </AnimatePresence>
             </div>

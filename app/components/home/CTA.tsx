@@ -40,7 +40,7 @@ export const CTA: React.FC<CTAProps> = ({
               fill
               className="object-cover"
               priority
-            />
+             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
           </div>
           <div className={`absolute inset-0 opacity-90 ${bgClass} mix-blend-multiply`} />
           <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />

@@ -382,7 +382,7 @@ export default function NetSuiteIndustriesClient() {
                     fill
                     className="object-cover object-center"
                     priority
-                  />
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -576,7 +576,7 @@ export default function NetSuiteIndustriesClient() {
                         alt={ind.title}
                         fill
                         className="object-cover"
-                      />
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     </div>
                   </div>
 
@@ -734,7 +734,7 @@ export default function NetSuiteIndustriesClient() {
               alt="NetSuite Industries"
               fill
               className="object-cover"
-            />
+             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-3xl -mr-32 -mt-32" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />
