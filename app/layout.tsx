@@ -165,9 +165,8 @@ export default function RootLayout({
     <html lang="en" dir="ltr">
       <head>
         {/* Performance: preconnect & DNS prefetch */}
+        {/* Performance: preconnect & DNS prefetch */}
         <link rel="dns-prefetch" href="https://cdn.sanity.io" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* JSON-LD — Organisation (rich knowledge panel & brand signals) */}
         <script

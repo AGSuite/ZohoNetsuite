@@ -80,7 +80,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                         height={1000}
                         priority
                         fetchPriority="high"
-                        className="w-[140%] h-auto max-w-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.2)] -ml-[25%]"
+                        className="w-[140%] max-lg:h-auto max-w-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.2)] -ml-[25%]"
                         sizes="(max-width: 1024px) 100vw, 60vw"
                       />
                    </div>
@@ -160,7 +160,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                           transition={{ duration: 0.8, ease: "easeOut" }}
                           className="relative z-20 w-28 h-28 md:w-36 md:h-36 bg-white rounded-[2rem] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.18)] flex items-center justify-center p-6 border border-white/60"
                         >
-                          <Image src="/images/zoho logos/zoho-logo.png" alt="Zoho Original" width={100} height={100} className="object-contain w-auto h-auto max-w-full max-h-full" sizes="100px" />
+                          <Image src="/images/zoho logos/zoho-logo.png" alt="Zoho Original" width={100} height={100} className="object-contain max-lg:w-auto max-lg:h-auto max-lg:max-w-full max-lg:max-h-full" style={{ width: 'auto', height: 'auto' }} sizes="100px" />
                         </motion.div>
 
                         {/* Connection Lines Decor - Moving Orbits */}
@@ -211,7 +211,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                                 transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
                                 className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-xl flex items-center justify-center p-4 border border-white/80"
                               >
-                                <Image src={logo.src} alt="logo" width={48} height={48} className="object-contain w-auto h-auto max-w-full max-h-full" sizes="48px" />
+                                <Image src={logo.src} alt="logo" width={48} height={48} className="object-contain max-lg:w-auto max-lg:h-auto max-lg:max-w-full max-lg:max-h-full" style={{ width: 'auto', height: 'auto' }} sizes="48px" />
                               </motion.div>
                             </motion.div>
                           ))}
@@ -249,7 +249,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                                 transition={{ duration: 65, repeat: Infinity, ease: "linear" }}
                                 className="w-12 h-12 md:w-16 md:h-16 bg-white/70 backdrop-blur-md rounded-xl shadow-lg flex items-center justify-center p-3 border border-white/50"
                               >
-                                <Image src={logo.src} alt="logo" width={38} height={38} className="object-contain w-auto h-auto max-w-full max-h-full" sizes="38px" />
+                                <Image src={logo.src} alt="logo" width={38} height={38} className="object-contain max-lg:w-auto max-lg:h-auto max-lg:max-w-full max-lg:max-h-full" style={{ width: 'auto', height: 'auto' }} sizes="38px" />
                               </motion.div>
                             </motion.div>
                           ))}
@@ -286,7 +286,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                           alt="Zoho Finance Automation"
                           width={1200}
                           height={1000}
-                          className="w-[135%] h-auto max-w-none object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.2)] drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] -mr-[1%] transition-transform duration-700 hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 60vw"
+                          className="w-[135%] max-lg:h-auto max-w-none object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.2)] drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] -mr-[1%] transition-transform duration-700 hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 60vw"
                         />
 
                         <motion.div
@@ -390,7 +390,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                         alt="Zoho Dashboard"
                         width={1200}
                         height={1000}
-                        className="w-[135%] h-auto max-w-none object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.2)] drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] -mr-[1%] transition-transform duration-700 hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 60vw"
+                        className="w-[135%] max-lg:h-auto max-w-none object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.2)] drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] -mr-[1%] transition-transform duration-700 hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 60vw"
                       />
 
                       <motion.div
@@ -545,7 +545,7 @@ const HeroSlide = ({
                       width={1200}
                       height={1000}
                       priority={priority}
-                      className="w-[140%] h-auto max-w-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.2)] -ml-[25%] transition-transform duration-700 hover:scale-[1.02]"
+                      className="w-[140%] max-lg:h-auto max-w-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.2)] -ml-[25%] transition-transform duration-700 hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 60vw"
                     />
                   )}
