@@ -436,23 +436,23 @@ export default function OpenAirPage() {
       {/* ── What is OpenAir Section ─────────────────────────────────────── */}
       <section id="what-is-openair" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center">
             {/* LEFT — Dashboard Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
+              className="relative flex items-center justify-center rounded-3xl w-full"
             >
-              <div className="relative w-full h-full p-4 lg:p-6">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100">
+              <div className="relative w-full p-2 lg:p-4">
+                <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100 transition-transform duration-500 hover:scale-[1.03]">
                   <Image
                     src="/images/Dashboard/suiteproject dashboard 2.jpg"
                     alt="NetSuite OpenAir PSA Solution Dashboard"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                    width={800}
+                    height={500}
+                    className="w-full h-auto object-contain rounded-xl block"
                   />
                 </div>
               </div>
@@ -532,8 +532,8 @@ export default function OpenAirPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
-                  whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white"
+                  whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white"
                   style={{ minHeight: 340 }}
                 >
                   {/* Top: Image Section with Color Overlay */}
@@ -543,7 +543,7 @@ export default function OpenAirPage() {
                       alt={mod.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                      className="object-cover object-top"
                     />
                     <div
                       className="absolute inset-0"

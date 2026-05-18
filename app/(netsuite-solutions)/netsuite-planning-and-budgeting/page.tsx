@@ -252,22 +252,22 @@ export default function PlanningPage() {
       {/* What is */}
       <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
+              className="relative flex items-center justify-center rounded-3xl w-full"
             >
-              <div className="relative w-full h-full p-4 lg:p-6">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-teal-900/10 border-4 border-teal-100">
+              <div className="relative w-full p-2 lg:p-4">
+                <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-teal-900/10 border-4 border-teal-100 transition-transform duration-500 hover:scale-[1.03]">
                   <Image
                     src="/images/Dashboard/planing and budgeting 2 dashboard.jpg"
                     alt="NetSuite Planning and Budgeting Solution Dashboard"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                    width={800}
+                    height={500}
+                    className="w-full h-auto object-contain rounded-xl block"
                   />
                 </div>
               </div>
@@ -398,11 +398,12 @@ export default function PlanningPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
-                  className="relative flex flex-col rounded-3xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-2xl z-10 hover:z-20 min-h-[360px]"
+                  whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
+                  className="relative flex flex-col rounded-3xl overflow-hidden shadow-lg transition-all duration-500 z-10 hover:z-20 min-h-[360px]"
                   style={{ backgroundColor: `rgb(${mod.rgb})` }}
                 >
                   <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="p-6 flex flex-col transition-all duration-500">
