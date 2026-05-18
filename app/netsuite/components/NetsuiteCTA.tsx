@@ -108,7 +108,7 @@ const NetsuiteCTA = () => {
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className="relative w-full max-w-6xl rounded-[3rem] shadow-2xl overflow-hidden bg-[#020617]"
+              className="relative w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden bg-[#020617]"
             >
               <button
                 onClick={() => setIsCalculatorOpen(false)}
