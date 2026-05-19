@@ -4,6 +4,8 @@ import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, ArrowRight, X, CheckCircle2 } from 'lucide-react';
+import IntlTelInput from '@intl-tel-input/react/with-utils';
+import 'intl-tel-input/styles';
 
 interface CaseStudy {
     id: number;
@@ -149,7 +151,8 @@ const ZohoCaseStudiesGrid = () => {
     const [selectedStudy, setSelectedStudy] = useState<CaseStudy | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [formData, setFormData] = useState({ 'Last Name': '', 'Designation': '', 'Mobile': '', 'Email': '', 'Company': '', 'countryCode': '+91' });
+    const [formData, setFormData] = useState({ 'Last Name': '', 'Designation': '', 'Mobile': '', 'Email': '', 'Company': '', 'countryCode': '' });
+    const [isMobileValid, setIsMobileValid] = useState(false);
 
     const COUNTRY_CODES = [
         { code: '+91', label: 'IN (+91)' },
@@ -176,7 +179,8 @@ const ZohoCaseStudiesGrid = () => {
         setSelectedStudy(study);
         setIsModalOpen(true);
         setIsSubmitted(false);
-        setFormData({ 'Last Name': '', 'Designation': '', 'Mobile': '', 'Email': '', 'Company': '', 'countryCode': '+91' });
+        setFormData({ 'Last Name': '', 'Designation': '', 'Mobile': '', 'Email': '', 'Company': '', 'countryCode': '' });
+        setIsMobileValid(false);
     };
 
     const closeModal = () => {
@@ -200,8 +204,8 @@ const ZohoCaseStudiesGrid = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         
-        if (formData.Mobile.length !== 10) {
-            alert('Please enter a valid 10-digit mobile number.');
+        if (!isMobileValid) {
+            alert('Please enter a valid mobile number.');
             return;
         }
 
@@ -210,7 +214,7 @@ const ZohoCaseStudiesGrid = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 ...formData,
-                Mobile: `${formData.countryCode} ${formData.Mobile}`,
+                Mobile: formData.Mobile,
                 caseStudyTitle: selectedStudy?.title,
                 caseStudyId: selectedStudy?.id,
                 recipientEmail: selectedStudy?.recipientEmail,
@@ -375,7 +379,7 @@ const ZohoCaseStudiesGrid = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={closeModal}
-                            className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100]"
+                            className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[1000]"
                         />
 
                         {/* Modal Content */}
@@ -383,7 +387,7 @@ const ZohoCaseStudiesGrid = () => {
                             initial={{ opacity: 0, scale: 0.95, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white rounded-3xl shadow-2xl z-[101] overflow-hidden"
+                            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] sm:w-full max-w-md bg-white rounded-3xl shadow-2xl z-[1001] overflow-y-auto max-h-[90vh]"
                         >
                             <div className="relative">
                                 {/* Close Button */}
@@ -423,20 +427,20 @@ const ZohoCaseStudiesGrid = () => {
                                         </div>
                                     ) : (
                                         <form onSubmit={handleSubmit} className="space-y-4">
-                                            <div>
-                                                <label className="block text-sm font-bold text-slate-700 mb-1">Full Name *</label>
-                                                <input
-                                                    type="text"
-                                                    name="Last Name"
-                                                    required
-                                                    value={formData['Last Name']}
-                                                    onChange={handleInputChange}
-                                                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all"
-                                                    placeholder="John Doe"
-                                                    suppressHydrationWarning
-                                                />
-                                            </div>
-                                            <div className="grid grid-cols-[1.2fr_0.8fr] gap-2">
+                                            <div className="grid grid-cols-2 gap-3">
+                                                <div>
+                                                    <label className="block text-xs font-bold text-slate-700 mb-1">Full Name *</label>
+                                                    <input
+                                                        type="text"
+                                                        name="Last Name"
+                                                        required
+                                                        value={formData['Last Name']}
+                                                        onChange={handleInputChange}
+                                                        className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all text-sm"
+                                                        placeholder="John Doe"
+                                                        suppressHydrationWarning
+                                                    />
+                                                </div>
                                                 <div>
                                                     <label className="block text-xs font-bold text-slate-700 mb-1">Designation *</label>
                                                     <input
@@ -445,62 +449,62 @@ const ZohoCaseStudiesGrid = () => {
                                                         required
                                                         value={formData['Designation']}
                                                         onChange={handleInputChange}
-                                                        className="w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all text-sm"
+                                                        className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all text-sm"
                                                         placeholder="Manager"
                                                         suppressHydrationWarning
                                                     />
                                                 </div>
-                                                <div>
-                                                    <label className="block text-xs font-bold text-slate-700 mb-1">Mobile *</label>
-                                                    <div className="flex gap-1">
-                                                        <select
-                                                            name="countryCode"
-                                                            value={formData.countryCode}
-                                                            onChange={handleInputChange}
-                                                            className="w-[70px] px-1 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none text-[10px] font-bold"
-                                                            suppressHydrationWarning
-                                                        >
-                                                            {COUNTRY_CODES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
-                                                        </select>
-                                                        <input
-                                                            type="tel"
-                                                            name="Mobile"
-                                                            required
-                                                            value={formData['Mobile']}
-                                                            onChange={handleInputChange}
-                                                            className="flex-1 px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-400 text-sm"
-                                                            placeholder="9876543210"
-                                                            maxLength={10}
-                                                            suppressHydrationWarning
-                                                        />
-                                                    </div>
+                                            </div>
+                                            <div>
+                                                <label className="block text-xs font-bold text-slate-700 mb-1">Mobile *</label>
+                                                <div className="w-full text-slate-900">
+                                                    <IntlTelInput
+                                                        value={formData.Mobile}
+                                                        onChangeNumber={(val) => {
+                                                            setFormData(prev => ({ ...prev, Mobile: val }));
+                                                        }}
+                                                        onChangeValidity={(isValid) => {
+                                                            setIsMobileValid(isValid);
+                                                        }}
+                                                        initialCountry="in"
+                                                        separateDialCode={true}
+                                                        strictMode={true}
+                                                        countryOrder={["in", "us", "gb", "ae"]}
+                                                        inputProps={{
+                                                            className: "w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all text-sm",
+                                                            placeholder: "Enter mobile number",
+                                                            required: true
+                                                        }}
+                                                    />
                                                 </div>
                                             </div>
-                                            <div>
-                                                <label className="block text-sm font-bold text-slate-700 mb-1">Business Email *</label>
-                                                <input
-                                                    type="email"
-                                                    name="Email"
-                                                    required
-                                                    value={formData['Email']}
-                                                    onChange={handleInputChange}
-                                                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all"
-                                                    placeholder="john@company.com"
-                                                    suppressHydrationWarning
-                                                />
-                                            </div>
-                                            <div>
-                                                <label className="block text-sm font-bold text-slate-700 mb-1">Company *</label>
-                                                <input
-                                                    type="text"
-                                                    name="Company"
-                                                    required
-                                                    value={formData['Company']}
-                                                    onChange={handleInputChange}
-                                                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all"
-                                                    placeholder="Company Name"
-                                                    suppressHydrationWarning
-                                                />
+                                            <div className="grid grid-cols-2 gap-3">
+                                                <div>
+                                                    <label className="block text-xs font-bold text-slate-700 mb-1">Business Email *</label>
+                                                    <input
+                                                        type="email"
+                                                        name="Email"
+                                                        required
+                                                        value={formData['Email']}
+                                                        onChange={handleInputChange}
+                                                        className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all text-sm"
+                                                        placeholder="john@company.com"
+                                                        suppressHydrationWarning
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label className="block text-xs font-bold text-slate-700 mb-1">Company *</label>
+                                                    <input
+                                                        type="text"
+                                                        name="Company"
+                                                        required
+                                                        value={formData['Company']}
+                                                        onChange={handleInputChange}
+                                                        className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent outline-none transition-all text-sm"
+                                                        placeholder="Company Name"
+                                                        suppressHydrationWarning
+                                                    />
+                                                </div>
                                             </div>
                                             <button
                                                 type="submit"
@@ -524,6 +528,10 @@ const ZohoCaseStudiesGrid = () => {
                     display: none;
                 }
             `}</style>
+            <style dangerouslySetInnerHTML={{__html: `
+                .iti { display: block !important; width: 100% !important; }
+                .iti__country-list { color: #000000 !important; }
+            `}} />
         </div>
     );
 };

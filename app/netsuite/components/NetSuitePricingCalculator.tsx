@@ -13,6 +13,8 @@ import {
     Minus
 } from 'lucide-react';
 import { submitPricingQuote } from '@/app/api/actions/submitPricingQuote';
+import IntlTelInput from '@intl-tel-input/react/with-utils';
+import 'intl-tel-input/styles';
 
 // --- INTERFACES ---
 interface CalculatorFormData {
@@ -46,7 +48,7 @@ const NetSuitePricingCalculator = () => {
         companyname: '',
         email: '',
         phone: '',
-        countryCode: '+1',
+        countryCode: '',
         role: '',
         revenue: '',
         aboutus: '',
@@ -55,6 +57,7 @@ const NetSuitePricingCalculator = () => {
     const [errors, setErrors] = useState<FormErrors>({});
     const [submitting, setSubmitting] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
+    const [isPhoneValid, setIsPhoneValid] = useState(false);
 
     const totalSteps = 4;
 
@@ -128,8 +131,10 @@ const NetSuitePricingCalculator = () => {
                     n.email = `Business email only (@${domain} not allowed)`;
                 }
             }
-            if (!/^\d{10}$/.test(formData.phone.replace(/\D/g, ''))) {
-                n.phone = 'Please enter exactly 10 digits';
+            if (!formData.phone.trim()) {
+                n.phone = 'Phone number is required';
+            } else if (!isPhoneValid) {
+                n.phone = 'Please enter a valid phone number';
             }
         }
         setErrors(n);
@@ -413,21 +418,24 @@ const NetSuitePricingCalculator = () => {
                                 </div>
                                 {/* Phone */}
                                 <div className="space-y-1">
-                                    <label className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-0.5">Phone (10 Digits)</label>
-                                    <div className="flex gap-2">
-                                        <select
-                                            value={formData.countryCode}
-                                            onChange={e => updateFormData('countryCode', e.target.value)}
-                                            className="w-20 md:w-24 bg-white border border-white/20 px-2 py-2.5 md:py-3 md:px-3 rounded-lg md:rounded-xl text-xs md:text-sm font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm"
-                                        >
-                                            {COUNTRY_CODES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
-                                        </select>
-                                        <input
-                                            type="tel" value={formData.phone}
-                                            onChange={e => updateFormData('phone', e.target.value.replace(/\D/g, '').slice(0, 10))}
-                                            placeholder="9876543210"
-                                            maxLength={10}
-                                            className={`flex-1 bg-white border ${errors.phone ? 'border-red-500' : 'border-white/20'} px-3 py-2.5 md:py-3 md:px-4 rounded-lg md:rounded-xl text-sm md:text-base font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm`}
+                                    <label className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-blue-400 pl-0.5">Phone Number</label>
+                                    <div className="w-full text-slate-900">
+                                        <IntlTelInput
+                                            value={formData.phone}
+                                            onChangeNumber={(val) => {
+                                                updateFormData('phone', val);
+                                            }}
+                                            onChangeValidity={(isValid) => {
+                                                setIsPhoneValid(isValid);
+                                            }}
+                                            initialCountry="in"
+                                            separateDialCode={true}
+                                            strictMode={true}
+                                            countryOrder={["in", "us", "gb", "ae"]}
+                                            inputProps={{
+                                                className: `w-full bg-white border ${errors.phone ? 'border-red-500' : 'border-white/20'} px-3 py-2.5 md:py-3 md:px-4 rounded-lg md:rounded-xl text-sm md:text-base font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm`,
+                                                placeholder: "Enter phone number"
+                                            }}
                                         />
                                     </div>
                                     {errors.phone && <p className="text-[10px] text-red-500 mt-1 pl-1 font-bold">{errors.phone}</p>}
@@ -490,6 +498,8 @@ const NetSuitePricingCalculator = () => {
                 .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
                 .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 20px; }
                 .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+                .iti { display: block !important; width: 100% !important; }
+                .iti__country-list { color: #000000 !important; }
             `}</style>
         </div>
     );
