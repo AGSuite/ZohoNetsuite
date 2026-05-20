@@ -190,7 +190,7 @@ export default function ZohoRequestQuotePage() {
                     window.$zoho.salesiq.visitor.email(emailObj.value);
                 }
             }
-        } catch (err) {}
+        } catch (err) { }
 
         await sendEmail(e.currentTarget);
     };
@@ -322,7 +322,7 @@ export default function ZohoRequestQuotePage() {
                         >
                             <div className="relative bg-white rounded-[2.5rem] shadow-[0_32px_80px_rgba(0,0,0,0.5)] overflow-hidden">
                                 <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600" />
-                                
+
                                 <div className="relative z-10 p-8 lg:p-10">
                                     <div className="mb-8 border-b border-gray-100 pb-6">
                                         <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Request Project Estimate</h2>
@@ -330,11 +330,11 @@ export default function ZohoRequestQuotePage() {
                                     </div>
 
                                     <div id="crmWebToEntityForm" className="crmWebToEntityForm">
-                                        <form 
+                                        <form
                                             id="webform409531000042578178"
-                                            action="https://crm.zoho.in/crm/WebToLeadForm" 
-                                            name="WebToLeads409531000042578178" 
-                                            method="POST" 
+                                            action="https://crm.zoho.in/crm/WebToLeadForm"
+                                            name="WebToLeads409531000042578178"
+                                            method="POST"
                                             onSubmit={handleFormSubmit}
                                             acceptCharset="UTF-8"
                                             className="space-y-5"

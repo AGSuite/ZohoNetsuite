@@ -198,7 +198,7 @@ export default function ContactPage() {
 
   useEffect(() => {
     setIsClient(true);
-    
+
     // Global functions for Zoho CRM Form
     (window as any).validateEmail409531000042578178_ns = function () {
       const form = document.forms.namedItem('WebToLeadsContactNetSuite');
@@ -275,11 +275,11 @@ export default function ContactPage() {
             'theme': 'light',
             'callback': (window as any).rccallback409531000042578178_ns
           });
-        } catch (e) {}
+        } catch (e) { }
       }
     };
 
-    (window as any).rccallback409531000042578178_ns = function() {
+    (window as any).rccallback409531000042578178_ns = function () {
       const recap = document.getElementById('recap409531000042578178_ns');
       if (recap) recap.setAttribute('captcha-verified', 'true');
       const recapErr = document.getElementById('recapErr409531000042578178_ns');
@@ -344,7 +344,7 @@ export default function ContactPage() {
           window.$zoho.salesiq.visitor.email(emailObj.value);
         }
       }
-    } catch (err) {}
+    } catch (err) { }
 
     await sendEmail(e.currentTarget);
   };
@@ -500,11 +500,11 @@ export default function ContactPage() {
                       <p className="text-gray-500 max-w-xs">Thank you for reaching out. Our team will connect with you within 24 hours.</p>
                     </motion.div>
                   ) : (
-                    <form 
-                      action="https://crm.zoho.in/crm/WebToLeadForm" 
+                    <form
+                      action="https://crm.zoho.in/crm/WebToLeadForm"
                       id="WebToLeads409531000042578178"
-                      name="WebToLeadsContactNetSuite" 
-                      method="POST" 
+                      name="WebToLeadsContactNetSuite"
+                      method="POST"
                       onSubmit={handleSubmit}
                       acceptCharset="UTF-8"
                       className="space-y-5"
@@ -881,7 +881,7 @@ export default function ContactPage() {
                     {tab === "All" ? (
                       "🌐"
                     ) : (
-                      <img 
+                      <img
                         src={`https://flagcdn.com/${tab === "INDIA" ? "in" : tab === "USA" ? "us" : "gb"}.svg`}
                         alt={tab}
                         className="w-5 h-3.5 rounded-sm object-cover inline-block"
@@ -932,7 +932,7 @@ export default function ContactPage() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div className="relative w-10 h-7 rounded-md overflow-hidden shadow-sm border border-gray-100 shrink-0">
-                          <img 
+                          <img
                             src={`https://flagcdn.com/${loc.region === "INDIA" ? "in" : loc.region === "USA" ? "us" : "gb"}.svg`}
                             alt={loc.region}
                             className="w-full h-full object-cover"

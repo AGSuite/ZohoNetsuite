@@ -305,7 +305,8 @@ const ZohoCaseStudiesSlider = () => {
                     </>
                 )}
             </AnimatePresence>
-            <style dangerouslySetInnerHTML={{__html: `
+            <style dangerouslySetInnerHTML={{
+                __html: `
                 .iti { display: block !important; width: 100% !important; }
                 .iti__country-list { color: #000000 !important; }
             `}} />

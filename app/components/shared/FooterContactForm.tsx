@@ -107,12 +107,12 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
     (window as any)[`checkMandatory${suffix}`] = function () {
       const fields = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
       const labels = [
-        'Company Name', 
-        'Name', 
-        "POC's Mobile", 
-        'Service', 
-        'Company Email', 
-        'Annual Revenue', 
+        'Company Name',
+        'Name',
+        "POC's Mobile",
+        'Service',
+        'Company Email',
+        'Annual Revenue',
         'How We Can Help You'
       ];
 
@@ -143,7 +143,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
         if (btn) btn.setAttribute('disabled', 'true');
 
         const formData = new FormData(e.target);
-        
+
         const emailData = {
           name: formData.get('Last Name'),
           email: formData.get('LEADCF8'),
@@ -157,7 +157,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
           platform: platform
         };
 
-        fetch('/api/contact/netsuite', { 
+        fetch('/api/contact/netsuite', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(emailData)
@@ -167,7 +167,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
         form.action = isNetSuite ? 'https://crm.zoho.in/crm/WebToLeadForm' : 'https://crm.zoho.in/crm/WebToLeadForm';
         form.method = 'POST';
         form.target = `zoho_iframe_${platform}`;
-        
+
         setTimeout(() => {
           window.dispatchEvent(new CustomEvent('zohoFormSuccess'));
           if (btn) btn.removeAttribute('disabled');
@@ -280,7 +280,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                     className="space-y-4 mb-10 text-gray-300"
                   >
                     <p className="text-lg">
-                      {isNetSuite 
+                      {isNetSuite
                         ? "Take the first step towards streamlined operations and accelerated growth with Oracle NetSuite."
                         : "Empower your team and drive exceptional growth with Zoho's integrated suite of business applications."}
                     </p>
@@ -289,12 +289,12 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                     variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
                     className="mb-10"
                   >
-                    <Image 
-                      src={isNetSuite ? "/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" : "/images/zoho logos/zoho premium.png"} 
-                      alt={isNetSuite ? "NetSuite Partner" : "Zoho Partner"} 
-                      width={220} height={70} 
-                      className="h-16 w-auto object-contain" 
-                      sizes="(max-width: 768px) 100vw, 220px" 
+                    <Image
+                      src={isNetSuite ? "/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" : "/images/zoho logos/zoho premium.png"}
+                      alt={isNetSuite ? "NetSuite Partner" : "Zoho Partner"}
+                      width={220} height={70}
+                      className="h-16 w-auto object-contain"
+                      sizes="(max-width: 768px) 100vw, 220px"
                     />
                   </motion.div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -306,9 +306,9 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                     ].map((stat, i) => (
                       <motion.div
                         key={i}
-                        variants={{ 
-                          hidden: { opacity: 0, y: 20 }, 
-                          visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1 } } 
+                        variants={{
+                          hidden: { opacity: 0, y: 20 },
+                          visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1 } }
                         }}
                         className="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-blue-600/10 to-indigo-600/10 backdrop-blur-md shadow-2xl hover:bg-white hover:border-white hover:-translate-y-1 transition-all duration-500 group"
                       >
@@ -364,113 +364,113 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                       <p className="text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500">Fill in your details and our team will reach out within 24 hours.</p>
                     </div>
 
-                <div id="crmWebToEntityForm" className="crmWebToEntityForm">
-                  <form id={`shared_webform_${platform}`} name="WebToLeads409531000042578178" action="https://crm.zoho.in/crm/WebToLeadForm" method="POST" target={`zoho_iframe_${platform}`} acceptCharset="UTF-8" className="space-y-4">
-                    <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue={crmConfig.xnQsjsdp} readOnly />
-                    <input type="text" style={{ display: 'none' }} name="Lead Source" value="Web to Leads" readOnly />
-                    <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                    <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue={crmConfig.xmIwtLD} readOnly />
-                    <input type="text" style={{ display: 'none' }} name="actionType" defaultValue="TGVhZHM=" readOnly />
-                    <input type="text" style={{ display: 'none' }} name="returnURL" defaultValue={crmConfig.returnURL} readOnly />
-                    <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" defaultValue="" readOnly />
-                    {!isNetSuite && (
-                      <>
-                        <input type="text" style={{ display: 'none' }} id="ldeskuid" name="ldeskuid" readOnly />
-                        <input type="text" style={{ display: 'none' }} id="LDTuvid" name="LDTuvid" readOnly />
-                      </>
-                    )}
+                    <div id="crmWebToEntityForm" className="crmWebToEntityForm">
+                      <form id={`shared_webform_${platform}`} name="WebToLeads409531000042578178" action="https://crm.zoho.in/crm/WebToLeadForm" method="POST" target={`zoho_iframe_${platform}`} acceptCharset="UTF-8" className="space-y-4">
+                        <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue={crmConfig.xnQsjsdp} readOnly />
+                        <input type="text" style={{ display: 'none' }} name="Lead Source" value="Web to Leads" readOnly />
+                        <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
+                        <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue={crmConfig.xmIwtLD} readOnly />
+                        <input type="text" style={{ display: 'none' }} name="actionType" defaultValue="TGVhZHM=" readOnly />
+                        <input type="text" style={{ display: 'none' }} name="returnURL" defaultValue={crmConfig.returnURL} readOnly />
+                        <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" defaultValue="" readOnly />
+                        {!isNetSuite && (
+                          <>
+                            <input type="text" style={{ display: 'none' }} id="ldeskuid" name="ldeskuid" readOnly />
+                            <input type="text" style={{ display: 'none' }} id="LDTuvid" name="LDTuvid" readOnly />
+                          </>
+                        )}
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Name <span className="text-red-500">*</span></label>
-                        <input type="text" name="Last Name" maxLength={80} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="John Doe" suppressHydrationWarning />
-                      </div>
-                      <div>
-                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Email <span className="text-red-500">*</span></label>
-                        <input type="text" data-ftype="email" name="LEADCF8" maxLength={100} autoComplete="off" required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="john@company.com" suppressHydrationWarning />
-                      </div>
-                    </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Name <span className="text-red-500">*</span></label>
+                            <input type="text" name="Last Name" maxLength={80} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="John Doe" suppressHydrationWarning />
+                          </div>
+                          <div>
+                            <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Email <span className="text-red-500">*</span></label>
+                            <input type="text" data-ftype="email" name="LEADCF8" maxLength={100} autoComplete="off" required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="john@company.com" suppressHydrationWarning />
+                          </div>
+                        </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Role <span className="text-red-500">*</span></label>
-                        <input type="text" name="Designation" maxLength={100} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Manager" suppressHydrationWarning />
-                      </div>
-                      <div>
-                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">POC's Mobile <span className="text-red-500">*</span></label>
-                        <input type="text" name="Mobile" maxLength={30} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="+91 00000 00000" suppressHydrationWarning />
-                      </div>
-                    </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Role <span className="text-red-500">*</span></label>
+                            <input type="text" name="Designation" maxLength={100} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Manager" suppressHydrationWarning />
+                          </div>
+                          <div>
+                            <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">POC's Mobile <span className="text-red-500">*</span></label>
+                            <input type="text" name="Mobile" maxLength={30} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="+91 00000 00000" suppressHydrationWarning />
+                          </div>
+                        </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Name <span className="text-red-500">*</span></label>
-                        <input type="text" name="Company" maxLength={200} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Company Inc." suppressHydrationWarning />
-                      </div>
-                      <div>
-                        <label htmlFor={`service_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Service <span className="text-red-500">*</span></label>
-                        <select id={`service_${platform}`} name="LEADCF5" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
-                          <option value="-None-">-None-</option>
-                          <option value="Licenses">Licenses</option>
-                          <option value="AMC">AMC</option>
-                          <option value="NetSuite Product /Services">NetSuite Product /Services</option>
-                          <option value="Zoho Products/Services">Zoho Products/Services</option>
-                        </select>
-                      </div>
-                    </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Name <span className="text-red-500">*</span></label>
+                            <input type="text" name="Company" maxLength={200} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Company Inc." suppressHydrationWarning />
+                          </div>
+                          <div>
+                            <label htmlFor={`service_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Service <span className="text-red-500">*</span></label>
+                            <select id={`service_${platform}`} name="LEADCF5" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
+                              <option value="-None-">-None-</option>
+                              <option value="Licenses">Licenses</option>
+                              <option value="AMC">AMC</option>
+                              <option value="NetSuite Product /Services">NetSuite Product /Services</option>
+                              <option value="Zoho Products/Services">Zoho Products/Services</option>
+                            </select>
+                          </div>
+                        </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor={`revenue_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Annual Revenue <span className="text-red-500">*</span></label>
-                        <select id={`revenue_${platform}`} name="LEADCF19" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
-                          <option value="-None-">-None-</option>
-                          <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
-                          <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
-                          <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
-                          <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
-                          <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
-                          <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
-                          <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
-                          <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
-                          <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
-                          <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label htmlFor={`hear_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How did you hear about us.</label>
-                        <select id={`hear_${platform}`} name="LEADCF127" onChange={() => (window as any).addAriaSelected409531000042578178?.()} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
-                          <option value="-None-">-None-</option>
-                          <option value="Email">Email</option>
-                          <option value="Event">Event</option>
-                          <option value="Friend /Associate">Friend /Associate</option>
-                          <option value="Search">Search</option>
-                          <option value="Social Media">Social Media</option>
-                          <option value="Referral">Referral</option>
-                        </select>
-                      </div>
-                    </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label htmlFor={`revenue_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Annual Revenue <span className="text-red-500">*</span></label>
+                            <select id={`revenue_${platform}`} name="LEADCF19" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
+                              <option value="-None-">-None-</option>
+                              <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
+                              <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
+                              <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
+                              <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
+                              <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
+                              <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
+                              <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
+                              <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
+                              <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
+                              <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label htmlFor={`hear_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How did you hear about us.</label>
+                            <select id={`hear_${platform}`} name="LEADCF127" onChange={() => (window as any).addAriaSelected409531000042578178?.()} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
+                              <option value="-None-">-None-</option>
+                              <option value="Email">Email</option>
+                              <option value="Event">Event</option>
+                              <option value="Friend /Associate">Friend /Associate</option>
+                              <option value="Search">Search</option>
+                              <option value="Social Media">Social Media</option>
+                              <option value="Referral">Referral</option>
+                            </select>
+                          </div>
+                        </div>
 
-                    <div>
-                      <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How We Can Help You <span className="text-red-500">*</span></label>
-                      <textarea name="LEADCF123" rows={2} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all shadow-sm" placeholder="Share your requirements..." suppressHydrationWarning />
-                    </div>
+                        <div>
+                          <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How We Can Help You <span className="text-red-500">*</span></label>
+                          <textarea name="LEADCF123" rows={2} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all shadow-sm" placeholder="Share your requirements..." suppressHydrationWarning />
+                        </div>
 
-                    {/* reCAPTCHA v2 Checkbox Widget */}
-                    <div className="pt-2">
-                      <div className="g-recaptcha" data-sitekey={SITE_KEY} data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
-                      <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
-                    </div>
+                        {/* reCAPTCHA v2 Checkbox Widget */}
+                        <div className="pt-2">
+                          <div className="g-recaptcha" data-sitekey={SITE_KEY} data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
+                          <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
+                        </div>
 
-                    <div className="flex pt-2">
-                      <input
-                        type="submit"
-                        className={`formsubmit-${platform} flex-1 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm cursor-pointer`}
-                        value="Submit Request"
-                        suppressHydrationWarning
-                      />
+                        <div className="flex pt-2">
+                          <input
+                            type="submit"
+                            className={`formsubmit-${platform} flex-1 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm cursor-pointer`}
+                            value="Submit Request"
+                            suppressHydrationWarning
+                          />
+                        </div>
+                      </form>
                     </div>
-                  </form>
-                </div>
                   </>
                 )}
               </motion.div>
@@ -478,8 +478,8 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
           </div>
         </div>
       </section>
-      <Script 
-        id="wf_anal" 
+      <Script
+        id="wf_anal"
         src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=ffa911f519bdac1fd37141e7458859338a4c0807209e53fcd9161a4ef8002b597777f2d47c34393e74912d83270ec629gid2020ff77b8590645f6909775bceb1dfe9b354b521b7d31a381183051979950afgidc32afce85ab5735ae0662898fbed0b63bef845d0ee34535ca4044be79f94eb16gidc20f47455171d038199ce12255d9fb14618138cdb451a0053d17b76b5cbc594d&tw=a5bf274d720cc51e70d06319b934b2ae14a201bb6424c6ca86bd81d126e9d37e"
         strategy="lazyOnload"
       />

@@ -213,7 +213,7 @@ const NSCaseStudiesGrid = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        
+
         if (!isMobileValid) {
             alert('Please enter a valid mobile number.');
             return;
@@ -538,7 +538,8 @@ const NSCaseStudiesGrid = () => {
                     display: none;
                 }
             `}</style>
-            <style dangerouslySetInnerHTML={{__html: `
+            <style dangerouslySetInnerHTML={{
+                __html: `
                 .iti { display: block !important; width: 100% !important; }
                 .iti__country-list { color: #000000 !important; }
             `}} />

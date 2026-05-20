@@ -76,7 +76,7 @@ export default function ZohoContactForm() {
                         'theme': 'light',
                         'callback': (window as any).rccallback409531000042578178
                     });
-                } catch (e) {}
+                } catch (e) { }
             }
         };
 
@@ -226,25 +226,25 @@ export default function ZohoContactForm() {
 
     const itemVariants = {
         hidden: { opacity: 0, y: 30 },
-        visible: { 
-            opacity: 1, 
-            y: 0, 
-            transition: { 
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
                 duration: 0.6,
                 ease: "easeOut"
-            } 
+            }
         }
     } as any;
 
     const labelVariants = {
         hidden: { opacity: 0, x: 30 },
-        visible: { 
-            opacity: 1, 
-            x: 0, 
-            transition: { 
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: {
                 duration: 0.6,
                 ease: "easeOut"
-            } 
+            }
         }
     } as any;
 
@@ -264,7 +264,7 @@ export default function ZohoContactForm() {
                 <div className="relative z-10 max-w-7xl mx-auto px-6">
                     <div className="rounded-[40px] bg-[#0d0d0d]/80 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden min-h-[720px] flex flex-col lg:flex-row">
                         {/* Left Side: Brand Narrative */}
-                        <motion.div 
+                        <motion.div
                             variants={{
                                 hidden: { opacity: 0 },
                                 visible: {
@@ -281,21 +281,21 @@ export default function ZohoContactForm() {
                             className="lg:w-1/2 p-10 lg:p-14 flex flex-col justify-between bg-gradient-to-br from-blue-950 via-[#0d0d0d] to-[#0a0a0a] relative overflow-hidden"
                         >
                             <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/Background/grid-white.svg')] opacity-[0.05] pointer-events-none z-10"></div>
-                            
+
                             {/* Expert Guidance Illustration */}
                             <div className="absolute inset-0 z-0 opacity-40">
-                                <Image 
-                                    src="/images/zohoimages/background/zoho-expert-guidance.png" 
-                                    alt="Professional Expertise" 
+                                <Image
+                                    src="/images/zohoimages/background/zoho-expert-guidance.png"
+                                    alt="Professional Expertise"
                                     fill
                                     className="object-cover object-center mix-blend-screen"
                                     sizes="(max-width: 1024px) 100vw, 50vw"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-br from-blue-950/80 via-transparent to-[#0a0a0a]/90"></div>
                             </div>
-                            
+
                             <div className="relative z-20 text-left">
-                                <motion.div 
+                                <motion.div
                                     variants={{
                                         hidden: { opacity: 0, y: 20 },
                                         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -306,7 +306,7 @@ export default function ZohoContactForm() {
                                     <span className="text-blue-100 text-[10px] font-bold tracking-widest uppercase">Global Excellence</span>
                                 </motion.div>
 
-                                <motion.h2 
+                                <motion.h2
                                     variants={{
                                         hidden: { opacity: 0, y: 20 },
                                         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -319,7 +319,7 @@ export default function ZohoContactForm() {
                                     </span>
                                 </motion.h2>
 
-                                <motion.p 
+                                <motion.p
                                     variants={{
                                         hidden: { opacity: 0, y: 20 },
                                         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -329,19 +329,19 @@ export default function ZohoContactForm() {
                                     Join 500+ enterprises that have optimized their operations with our certified Zoho implementation expertise and custom industrial automation.
                                 </motion.p>
 
-                                <motion.div 
+                                <motion.div
                                     variants={{
                                         hidden: { opacity: 0, y: 20 },
                                         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
                                     }}
                                     className="mb-6"
                                 >
-                                    <Image 
-                                        src="/images/zoho logos/zoho premium.png" 
-                                        alt="Zoho Premium Partner" 
-                                        width={360} 
-                                        height={120} 
-                                        className="w-64 h-auto object-contain transition-all hover:scale-105 duration-500 rounded-2xl p-3 bg-white/10 backdrop-blur-md border border-white/10" 
+                                    <Image
+                                        src="/images/zoho logos/zoho premium.png"
+                                        alt="Zoho Premium Partner"
+                                        width={360}
+                                        height={120}
+                                        className="w-64 h-auto object-contain transition-all hover:scale-105 duration-500 rounded-2xl p-3 bg-white/10 backdrop-blur-md border border-white/10"
                                         sizes="(max-width: 768px) 100vw, 360px"
                                     />
                                 </motion.div>
@@ -353,7 +353,7 @@ export default function ZohoContactForm() {
                                         { icon: Target, label: "Experience", val: "15+ Yrs", color: "blue", lightColor: "blue" },
                                         { icon: Users, label: "Consultants", val: "50+", color: "indigo", lightColor: "indigo" }
                                     ].map((card, i) => (
-                                        <motion.div 
+                                        <motion.div
                                             key={i}
                                             variants={{
                                                 hidden: { opacity: 0, scale: 0.95, y: 20 },

@@ -100,7 +100,7 @@ const NSCaseStudiesSlider = () => {
             alert('Please enter a valid mobile number.');
             return;
         }
-        
+
         const response = await fetch('/api/contact/case-study', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -394,7 +394,8 @@ const NSCaseStudiesSlider = () => {
                     </>
                 )}
             </AnimatePresence>
-            <style dangerouslySetInnerHTML={{__html: `
+            <style dangerouslySetInnerHTML={{
+                __html: `
                 .iti { display: block !important; width: 100% !important; }
                 .iti__country-list { color: #000000 !important; }
             `}} />

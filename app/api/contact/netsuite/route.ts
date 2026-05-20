@@ -85,7 +85,7 @@ export async function POST(request: Request) {
 
         if (process.env.SMTP_USER && process.env.SMTP_PASS) {
             await transporter.sendMail(mailOptions);
-            
+
             // Auto-reply to Lead
             const autoReplyOptions = {
                 from: defaultSender,

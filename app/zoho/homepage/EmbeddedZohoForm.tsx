@@ -58,11 +58,11 @@ export default function EmbeddedZohoForm() {
 
     const handleFormSubmit = async (e: any) => {
         const form = e.target;
-        
+
         // 1. Mandatory Checks
         const mnd = ['Last Name', 'LEADCF8', 'Mobile', 'Company', 'LEADCF5', 'LEADCF19', 'LEADCF123'];
         const labels = ['Name', 'Business Email', 'POC\'s Mobile', 'Company Name', 'Service', 'Annual Revenue', 'How We Can Help You'];
-        
+
         for (let i = 0; i < mnd.length; i++) {
             const fld = form[mnd[i]];
             if (!fld || !fld.value.trim()) {
@@ -124,7 +124,7 @@ export default function EmbeddedZohoForm() {
 
         // 6. Submit via iframe
         form.target = 'zoho_iframe_embedded';
-        
+
         const btn = document.getElementById('formsubmit') as HTMLInputElement;
         if (btn) btn.disabled = true;
 
@@ -287,8 +287,8 @@ export default function EmbeddedZohoForm() {
                     </div>
                 </div>
             </form>
-            <Script 
-                id="wf_anal" 
+            <Script
+                id="wf_anal"
                 src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=200f842d0dc0f4e7801db792aae6ced7d901985d65eb7fcd23dda6e56700172097a30a3ef869eb06347d3a4bca25bb6fgid9f5592bc44469936204ad4851be9c0dffc44888d04f59693f16e7853eee295cfgid37385f0c9c29469e462007ae410d9ad684100d05f4e169a235f2b84413a975d4gidbf0e0fb6f34ec2f94a391d45ce6b68f60ace7ff29df396e3a70399e1edee5dc5&tw=23f34b37e865b5335ff2a8f585b01a00b88cb9c9a388aa28b4e9e710c025aad4"
                 strategy="lazyOnload"
             />

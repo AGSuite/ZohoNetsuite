@@ -113,7 +113,7 @@ export default function ContactFormDesign4() {
         if (btn) btn.setAttribute('disabled', 'true');
 
         const formData = new FormData(e.target);
-        
+
         // 1. Send Email Notification First
         const emailData = {
           name: formData.get('Last Name'),
@@ -139,7 +139,7 @@ export default function ContactFormDesign4() {
         form.action = 'https://crm.zoho.in/crm/WebToLeadForm';
         form.method = 'POST';
         form.target = 'zoho_iframe_netsuite_design4';
-        
+
         // Trigger success UI after a short delay
         setTimeout(() => {
           setSubmitted(true);
@@ -242,9 +242,9 @@ export default function ContactFormDesign4() {
                     ].map((stat, i) => (
                       <motion.div
                         key={i}
-                        variants={{ 
-                          hidden: { opacity: 0, y: 20 }, 
-                          visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1 } } 
+                        variants={{
+                          hidden: { opacity: 0, y: 20 },
+                          visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1 } }
                         }}
                         className="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-blue-600/10 to-indigo-600/10 backdrop-blur-md shadow-2xl hover:bg-white hover:border-white hover:-translate-y-1 transition-all duration-500 group"
                       >
@@ -302,106 +302,106 @@ export default function ContactFormDesign4() {
                       <p className="text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500">Fill in your details and our team will reach out within 24 hours.</p>
                     </div>
 
-                <div id="crmWebToEntityForm" className="crmWebToEntityForm">
-                  <form id="webform409531000042578178" name="WebToLeads409531000042578178" acceptCharset="UTF-8" className="space-y-4">
-                    <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue="37dfc49e97f520b044bada4f449a5c5ccdbce92fc11adcbde859370420398c25" readOnly />
-                    <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                    <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue="12f9e122b2a20e7b120e935f7196c6eb1b4957b3d47254bd86bff874f16310546e1ef014dcf24ff7fdc390003e9608d7" readOnly />
-                    <input type="text" style={{ display: 'none' }} name="actionType" defaultValue="TGVhZHM=" readOnly />
-                    <input type="text" style={{ display: 'none' }} name="returnURL" defaultValue="https://zoho-netsuite.vercel.app/thank-you" readOnly />
-                    <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" defaultValue="" readOnly />
+                    <div id="crmWebToEntityForm" className="crmWebToEntityForm">
+                      <form id="webform409531000042578178" name="WebToLeads409531000042578178" acceptCharset="UTF-8" className="space-y-4">
+                        <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue="37dfc49e97f520b044bada4f449a5c5ccdbce92fc11adcbde859370420398c25" readOnly />
+                        <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
+                        <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue="12f9e122b2a20e7b120e935f7196c6eb1b4957b3d47254bd86bff874f16310546e1ef014dcf24ff7fdc390003e9608d7" readOnly />
+                        <input type="text" style={{ display: 'none' }} name="actionType" defaultValue="TGVhZHM=" readOnly />
+                        <input type="text" style={{ display: 'none' }} name="returnURL" defaultValue="https://zoho-netsuite.vercel.app/thank-you" readOnly />
+                        <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" defaultValue="" readOnly />
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="Last_Name" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Name <span className="text-red-500">*</span></label>
-                        <input type="text" id="Last_Name" name="Last Name" maxLength={80} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="John Doe" />
-                      </div>
-                      <div>
-                        <label htmlFor="LEADCF8" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Email <span className="text-red-500">*</span></label>
-                        <input type="text" data-ftype="email" id="LEADCF8" name="LEADCF8" maxLength={100} autoComplete="off" required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="john@company.com" />
-                      </div>
-                    </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label htmlFor="Last_Name" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Name <span className="text-red-500">*</span></label>
+                            <input type="text" id="Last_Name" name="Last Name" maxLength={80} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="John Doe" />
+                          </div>
+                          <div>
+                            <label htmlFor="LEADCF8" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Email <span className="text-red-500">*</span></label>
+                            <input type="text" data-ftype="email" id="LEADCF8" name="LEADCF8" maxLength={100} autoComplete="off" required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="john@company.com" />
+                          </div>
+                        </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="Designation" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Role <span className="text-red-500">*</span></label>
-                        <input type="text" id="Designation" name="Designation" maxLength={100} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Manager" />
-                      </div>
-                      <div>
-                        <label htmlFor="Mobile" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">POC's Mobile <span className="text-red-500">*</span></label>
-                        <input type="text" id="Mobile" name="Mobile" maxLength={30} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="+91 00000 00000" />
-                      </div>
-                    </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label htmlFor="Designation" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Role <span className="text-red-500">*</span></label>
+                            <input type="text" id="Designation" name="Designation" maxLength={100} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Manager" />
+                          </div>
+                          <div>
+                            <label htmlFor="Mobile" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">POC's Mobile <span className="text-red-500">*</span></label>
+                            <input type="text" id="Mobile" name="Mobile" maxLength={30} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="+91 00000 00000" />
+                          </div>
+                        </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="Company" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Name <span className="text-red-500">*</span></label>
-                        <input type="text" id="Company" name="Company" maxLength={200} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Company Inc." />
-                      </div>
-                      <div>
-                        <label htmlFor="LEADCF5" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Service <span className="text-red-500">*</span></label>
-                        <select id="LEADCF5" name="LEADCF5" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm">
-                          <option value="-None-">-None-</option>
-                          <option value="Licenses">Licenses</option>
-                          <option value="AMC">AMC</option>
-                          <option value="NetSuite Product /Services">NetSuite Product /Services</option>
-                          <option value="Zoho Products/Services">Zoho Products/Services</option>
-                        </select>
-                      </div>
-                    </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label htmlFor="Company" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Name <span className="text-red-500">*</span></label>
+                            <input type="text" id="Company" name="Company" maxLength={200} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Company Inc." />
+                          </div>
+                          <div>
+                            <label htmlFor="LEADCF5" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Service <span className="text-red-500">*</span></label>
+                            <select id="LEADCF5" name="LEADCF5" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm">
+                              <option value="-None-">-None-</option>
+                              <option value="Licenses">Licenses</option>
+                              <option value="AMC">AMC</option>
+                              <option value="NetSuite Product /Services">NetSuite Product /Services</option>
+                              <option value="Zoho Products/Services">Zoho Products/Services</option>
+                            </select>
+                          </div>
+                        </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="LEADCF19" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Annual Revenue <span className="text-red-500">*</span></label>
-                        <select id="LEADCF19" name="LEADCF19" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm">
-                          <option value="-None-">-None-</option>
-                          <option value="Less&#x20;than&#x20;8&#x20;Cr&#x20;&#x28;&#x24;&#x20;1M&#x29;">Less than 8 Cr ($ 1M)</option>
-                          <option value="8&#x20;-&#x20;20&#x20;Cr&#x20;&#x28;&#x24;&#x20;1M&#x20;-&#x20;2.5M&#x29;">8 - 20 Cr ($ 1M - 2.5M)</option>
-                          <option value="20&#x20;-&#x20;40&#x20;Cr&#x20;&#x28;&#x24;&#x20;2.5M&#x20;-&#x20;5M&#x29;">20 - 40 Cr ($ 2.5M - 5M)</option>
-                          <option value="40&#x20;-&#x20;80&#x20;Cr&#x20;&#x28;&#x24;&#x20;5M&#x20;-&#x20;10M&#x29;">40 - 80 Cr ($ 5M - 10M)</option>
-                          <option value="80&#x20;-&#x20;120&#x20;Cr&#x20;&#x28;&#x24;&#x20;10M&#x20;-&#x20;15M&#x29;">80 - 120 Cr ($ 10M - 15M)</option>
-                          <option value="120&#x20;-&#x20;200&#x20;Cr&#x20;&#x28;&#x24;&#x20;15M&#x20;-&#x20;25M&#x29;">120 - 200 Cr ($ 15M - 25M)</option>
-                          <option value="200&#x20;-&#x20;400&#x20;Cr&#x20;&#x28;&#x24;&#x20;25M&#x20;-&#x20;50M&#x29;">200 - 400 Cr ($ 25M - 50M)</option>
-                          <option value="400&#x20;-&#x20;800&#x20;Cr&#x20;&#x28;&#x24;&#x20;50M&#x20;-&#x20;100M&#x29;">400 - 800 Cr ($ 50M - 100M)</option>
-                          <option value="800&#x20;-&#x20;2000&#x20;Cr&#x20;&#x28;&#x24;&#x20;100M&#x20;-&#x20;250M&#x29;">800 - 2000 Cr ($ 100M - 250M)</option>
-                          <option value="More&#x20;than&#x20;2000&#x20;Cr&#x20;&#x28;&#x24;&#x20;250M&#x2b;&#x29;">More than 2000 Cr ($ 250M+)</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label htmlFor="LEADCF127" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How did you hear about us.</label>
-                        <select id="LEADCF127" name="LEADCF127" onChange={() => (window as any).addAriaSelected409531000042578178?.()} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm">
-                          <option value="-None-">-None-</option>
-                          <option value="Email">Email</option>
-                          <option value="Event">Event</option>
-                          <option value="Friend /Associate">Friend /Associate</option>
-                          <option value="Search">Search</option>
-                          <option value="Social Media">Social Media</option>
-                          <option value="Referral">Referral</option>
-                        </select>
-                      </div>
-                    </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label htmlFor="LEADCF19" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Annual Revenue <span className="text-red-500">*</span></label>
+                            <select id="LEADCF19" name="LEADCF19" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm">
+                              <option value="-None-">-None-</option>
+                              <option value="Less&#x20;than&#x20;8&#x20;Cr&#x20;&#x28;&#x24;&#x20;1M&#x29;">Less than 8 Cr ($ 1M)</option>
+                              <option value="8&#x20;-&#x20;20&#x20;Cr&#x20;&#x28;&#x24;&#x20;1M&#x20;-&#x20;2.5M&#x29;">8 - 20 Cr ($ 1M - 2.5M)</option>
+                              <option value="20&#x20;-&#x20;40&#x20;Cr&#x20;&#x28;&#x24;&#x20;2.5M&#x20;-&#x20;5M&#x29;">20 - 40 Cr ($ 2.5M - 5M)</option>
+                              <option value="40&#x20;-&#x20;80&#x20;Cr&#x20;&#x28;&#x24;&#x20;5M&#x20;-&#x20;10M&#x29;">40 - 80 Cr ($ 5M - 10M)</option>
+                              <option value="80&#x20;-&#x20;120&#x20;Cr&#x20;&#x28;&#x24;&#x20;10M&#x20;-&#x20;15M&#x29;">80 - 120 Cr ($ 10M - 15M)</option>
+                              <option value="120&#x20;-&#x20;200&#x20;Cr&#x20;&#x28;&#x24;&#x20;15M&#x20;-&#x20;25M&#x29;">120 - 200 Cr ($ 15M - 25M)</option>
+                              <option value="200&#x20;-&#x20;400&#x20;Cr&#x20;&#x28;&#x24;&#x20;25M&#x20;-&#x20;50M&#x29;">200 - 400 Cr ($ 25M - 50M)</option>
+                              <option value="400&#x20;-&#x20;800&#x20;Cr&#x20;&#x28;&#x24;&#x20;50M&#x20;-&#x20;100M&#x29;">400 - 800 Cr ($ 50M - 100M)</option>
+                              <option value="800&#x20;-&#x20;2000&#x20;Cr&#x20;&#x28;&#x24;&#x20;100M&#x20;-&#x20;250M&#x29;">800 - 2000 Cr ($ 100M - 250M)</option>
+                              <option value="More&#x20;than&#x20;2000&#x20;Cr&#x20;&#x28;&#x24;&#x20;250M&#x2b;&#x29;">More than 2000 Cr ($ 250M+)</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label htmlFor="LEADCF127" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How did you hear about us.</label>
+                            <select id="LEADCF127" name="LEADCF127" onChange={() => (window as any).addAriaSelected409531000042578178?.()} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm">
+                              <option value="-None-">-None-</option>
+                              <option value="Email">Email</option>
+                              <option value="Event">Event</option>
+                              <option value="Friend /Associate">Friend /Associate</option>
+                              <option value="Search">Search</option>
+                              <option value="Social Media">Social Media</option>
+                              <option value="Referral">Referral</option>
+                            </select>
+                          </div>
+                        </div>
 
-                    <div>
-                      <label htmlFor="LEADCF123" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How We Can Help You <span className="text-red-500">*</span></label>
-                      <textarea id="LEADCF123" name="LEADCF123" rows={2} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all shadow-sm" placeholder="Share your requirements..." />
-                    </div>
+                        <div>
+                          <label htmlFor="LEADCF123" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How We Can Help You <span className="text-red-500">*</span></label>
+                          <textarea id="LEADCF123" name="LEADCF123" rows={2} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all shadow-sm" placeholder="Share your requirements..." />
+                        </div>
 
-                    {/* reCAPTCHA v2 Checkbox Widget */}
-                    <div className="pt-2">
-                      <div className="g-recaptcha" data-sitekey={SITE_KEY} data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
-                      <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
-                    </div>
+                        {/* reCAPTCHA v2 Checkbox Widget */}
+                        <div className="pt-2">
+                          <div className="g-recaptcha" data-sitekey={SITE_KEY} data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
+                          <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
+                        </div>
 
-                    <div className="flex pt-2">
-                      <input
-                        type="submit"
-                        id="formsubmit"
-                        className="formsubmit flex-1 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm cursor-pointer"
-                        value="Submit Request"
-                      />
+                        <div className="flex pt-2">
+                          <input
+                            type="submit"
+                            id="formsubmit"
+                            className="formsubmit flex-1 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm cursor-pointer"
+                            value="Submit Request"
+                          />
+                        </div>
+                      </form>
                     </div>
-                  </form>
-                </div>
                   </>
                 )}
               </motion.div>
@@ -409,8 +409,8 @@ export default function ContactFormDesign4() {
           </div>
         </div>
       </section>
-      <Script 
-        id="wf_anal" 
+      <Script
+        id="wf_anal"
         src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=200f842d0dc0f4e7801db792aae6ced7d901985d65eb7fcd23dda6e56700172097a30a3ef869eb06347d3a4bca25bb6fgid9f5592bc44469936204ad4851be9c0dffc44888d04f59693f16e7853eee295cfgid37385f0c9c29469e462007ae410d9ad684100d05f4e169a235f2b84413a975d4gidbf0e0fb6f34ec2f94a391d45ce6b68f60ace7ff29df396e3a70399e1edee5dc5&tw=23f34b37e865b5335ff2a8f585b01a00b88cb9c9a388aa28b4e9e710c025aad4"
         strategy="lazyOnload"
       />

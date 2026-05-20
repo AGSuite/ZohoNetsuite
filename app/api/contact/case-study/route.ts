@@ -71,7 +71,7 @@ export async function POST(request: Request) {
         if (process.env.SMTP_USER && process.env.SMTP_PASS) {
             try {
                 await transporter.sendMail(mailOptions);
-                
+
                 // --- AUTO-REPLY TO USER ---
                 const autoReplyOptions = {
                     from: defaultSender,
@@ -92,7 +92,7 @@ export async function POST(request: Request) {
                     `
                 };
                 await transporter.sendMail(autoReplyOptions);
-                
+
                 console.log('✅ Emails (Notification + Auto-reply) sent successfully!');
             } catch (mailError: any) {
                 console.error('❌ SMTP Error:', mailError.message);

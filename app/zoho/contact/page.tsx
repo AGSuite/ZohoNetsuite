@@ -191,7 +191,7 @@ export default function ZohoContactPage() {
 
   useEffect(() => {
     setIsClient(true);
-    
+
     // Global functions for Zoho CRM Form
     (window as any).validateEmail409531000042578178 = function () {
       const form = document.forms.namedItem('WebToLeads409531000042578178');
@@ -268,11 +268,11 @@ export default function ZohoContactPage() {
             'theme': 'light',
             'callback': (window as any).rccallback409531000042578178
           });
-        } catch (e) {}
+        } catch (e) { }
       }
     };
 
-    (window as any).rccallback409531000042578178 = function() {
+    (window as any).rccallback409531000042578178 = function () {
       const recap = document.getElementById('recap409531000042578178');
       if (recap) recap.setAttribute('captcha-verified', 'true');
       const recapErr = document.getElementById('recapErr409531000042578178');
@@ -315,7 +315,7 @@ export default function ZohoContactPage() {
       e.preventDefault();
       return;
     }
-    
+
     // Visitor Tracking update
     try {
       if ((window as any).$zoho && (window as any).$zoho.salesiq) {
@@ -333,7 +333,7 @@ export default function ZohoContactPage() {
           (window as any).$zoho.salesiq.visitor.email(emailObj.value);
         }
       }
-    } catch (err) {}
+    } catch (err) { }
 
     await sendEmail(e.currentTarget);
     const submitButton = document.querySelector('.formsubmit-contact') as HTMLButtonElement;
@@ -452,18 +452,18 @@ export default function ZohoContactPage() {
             >
               <div className="relative bg-white rounded-[2.5rem] shadow-[0_32px_80px_rgba(0,0,0,0.5)] overflow-hidden">
                 <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600" />
-                
+
                 <div className="relative z-10 p-8 lg:p-10">
                   <div className="mb-8 border-b border-gray-100 pb-6">
                     <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Get Expert Guidance</h2>
                     <p className="text-gray-500 text-base">Fill in your details — we'll respond within 24 hours.</p>
                   </div>
 
-                  <form 
-                    action="https://crm.zoho.in/crm/WebToLeadForm" 
+                  <form
+                    action="https://crm.zoho.in/crm/WebToLeadForm"
                     id="WebToLeads409531000042578178"
-                    name="WebToLeads409531000042578178" 
-                    method="POST" 
+                    name="WebToLeads409531000042578178"
+                    method="POST"
                     onSubmit={handleFormSubmit}
                     acceptCharset="UTF-8"
                     className="space-y-5"
@@ -496,7 +496,7 @@ export default function ZohoContactPage() {
                       <div>
                         <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Mobile Number *</label>
                         <input type="tel" name="Mobile" required placeholder="+91 00000 00000" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
-                       </div>
+                      </div>
                       <div>
                         <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Job Title *</label>
                         <input type="text" name="Designation" required placeholder="CTO" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
@@ -738,7 +738,7 @@ export default function ZohoContactPage() {
                     {tab === "All" ? (
                       "🌐"
                     ) : (
-                      <img 
+                      <img
                         src={`https://flagcdn.com/${tab === "INDIA" ? "in" : tab === "USA" ? "us" : "gb"}.svg`}
                         alt={tab}
                         className="w-5 h-3.5 rounded-sm object-cover inline-block"
@@ -775,7 +775,7 @@ export default function ZohoContactPage() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div className="relative w-10 h-7 rounded-md overflow-hidden shadow-sm border border-gray-100 shrink-0">
-                          <img 
+                          <img
                             src={`https://flagcdn.com/${loc.region === "INDIA" ? "in" : loc.region === "USA" ? "us" : "gb"}.svg`}
                             alt={loc.region}
                             className="w-full h-full object-cover"
@@ -847,7 +847,7 @@ export default function ZohoContactPage() {
                 backgroundSize: "50px 50px",
               }}
             />
-            
+
             <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[100px] -translate-x-1/3 -translate-y-1/3 pointer-events-none" />
             <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-indigo-600/25 rounded-full blur-[90px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
             <div className="absolute bottom-0 left-1/2 w-[500px] h-[250px] bg-cyan-700/15 rounded-full blur-[80px] -translate-x-1/2 translate-y-1/2 pointer-events-none" />
