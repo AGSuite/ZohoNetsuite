@@ -61,20 +61,110 @@ const NetSuitePricingCalculator = () => {
 
     const totalSteps = 4;
 
-    const industries = ['Software and Technology', 'Manufacturing', 'Retail & E-Commerce', 'Wholesale Distribution', 'Professional Services', 'Media and Publishing', 'Transport & Logistics', 'Ads & Marketing', 'Other'];
+    const industries = [
+        'Software and Technology',
+        'IT and Professional Services',
+        'Financial Services',
+        'Wholesale Distribution',
+        'Advertising and Digital Marketing Agencies',
+        'Media and Publishing',
+        'Retail & E-Commerce',
+        'Transportation and Logistics',
+        'Manufacturing',
+        'Telecom Industry',
+        'Other'
+    ];
     const countries = ['India', 'USA', 'UK', 'Canada', 'Australia', 'UAE', 'Singapore', 'Japan', 'France', 'Germany', 'Dubai', 'Malaysia'];
-    const commonModules = ['Accounting / Financials', 'CRM', 'Fixed Asset Management', 'Inventory Management', 'Project Management'];
+    const commonModules = [
+        'Accounting / Financials',
+        'CRM',
+        'Inventory Management',
+        'Project Management',
+        'Supply Chain Management',
+        'Warehouse Management',
+        'Planning & Budgeting',
+        'Order Management',
+        'Procurement',
+        'Analytics & Reporting'
+    ];
 
     const industryModules: Record<string, string[]> = {
-        'Software and Technology': ['Subscription Billing', 'Revenue Recognition', 'Planning & Budgeting'],
-        'Manufacturing': ['Work Orders', 'Assembly Management', 'Advanced Manufacturing'],
-        'Retail & E-Commerce': ['Point of Sale (POS)', 'Order Management', 'SCIS'],
-        'Wholesale Distribution': ['Warehouse (WMS)', 'Demand Planning', 'Shipping Integration'],
-        'Professional Services': ['Project Management', 'Resource Planning', 'Time & Expense'],
-        'Media and Publishing': ['Advanced Financials', 'Revenue Recognition'],
-        'Transport & Logistics': ['Inventory Visibility', 'Inbound Logistics'],
-        'Ads & Marketing': ['Job Costing', 'Resource Planning'],
-        'Other': ['Advanced Financials', 'Procurement']
+        'Software and Technology': [
+            'Subscription Billing',
+            'Revenue Recognition',
+            'Planning & Budgeting',
+            'SuiteAnalytics',
+            'CRM'
+        ],
+        'IT and Professional Services': [
+            'Project Management',
+            'Resource Planning',
+            'Time & Expense Management',
+            'CRM',
+            'SuiteProjects'
+        ],
+        'Financial Services': [
+            'Advanced Financials',
+            'Revenue Management',
+            'Fixed Asset Management',
+            'Planning & Budgeting',
+            'Multi-Book Accounting'
+        ],
+        'Wholesale Distribution': [
+            'Warehouse Management System (WMS)',
+            'Demand Planning',
+            'Order Management',
+            'Supply Chain Management',
+            'Procurement'
+        ],
+        'Advertising and Digital Marketing Agencies': [
+            'Project Management',
+            'Resource Planning',
+            'Job Costing',
+            'CRM',
+            'Marketing Automation'
+        ],
+        'Media and Publishing': [
+            'Revenue Recognition',
+            'Subscription Billing',
+            'CRM',
+            'SuiteAnalytics',
+            'Advertising Management'
+        ],
+        'Retail & E-Commerce': [
+            'SuiteCommerce',
+            'Point of Sale (POS)',
+            'Inventory Management',
+            'Order Management',
+            'Customer Management'
+        ],
+        'Transportation and Logistics': [
+            'Supply Chain Management',
+            'Inventory Visibility',
+            'Warehouse Management System (WMS)',
+            'Transportation Management',
+            'Demand Planning'
+        ],
+        'Manufacturing': [
+            'Advanced Manufacturing',
+            'Work Orders & Assemblies',
+            'Quality Management',
+            'Supply Chain Management',
+            'Production Control'
+        ],
+        'Telecom Industry': [
+            'Subscription Billing',
+            'Revenue Management',
+            'CRM',
+            'Customer Support Management',
+            'Analytics & Reporting'
+        ],
+        'Other': [
+            'Accounting / Financials',
+            'CRM',
+            'Inventory Management',
+            'Project Management'
+        ]
     };
 
     const revenueRanges = ['Under $1M', '$1M to $10M', '$10M to $50M', '$50M to $100M', '$100M to $500M', '$500M+'];
@@ -125,10 +215,16 @@ const NetSuitePricingCalculator = () => {
             if (!formData.email.trim()) {
                 n.email = 'Business email is required';
             } else {
-                const domain = formData.email.split('@')[1]?.toLowerCase();
-                const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
-                if (forbidden.includes(domain)) {
-                    n.email = `Business email only (@${domain} not allowed)`;
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(formData.email)) {
+                    n.email = 'Please enter a valid email address';
+                } else {
+                    const domain = formData.email.split('@')[1]?.toLowerCase() || '';
+                    const forbiddenSubstrings = ['gmail.', 'yahoo.', 'outlook.', 'hotmail.', 'live.', 'icloud.', 'aol.', 'protonmail.', 'yandex.', 'mail.ru'];
+                    const isForbidden = forbiddenSubstrings.some(sub => domain.includes(sub));
+                    if (isForbidden) {
+                        n.email = 'Business email only (public domains not allowed)';
+                    }
                 }
             }
             if (!formData.phone.trim()) {
@@ -361,7 +457,7 @@ const NetSuitePricingCalculator = () => {
                                 <div>
                                     <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-3 md:mb-4">General Modules</p>
                                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-3">
-                                        {commonModules.map(m => (
+                                        {commonModules.filter(m => !aggregatedRecommendations.includes(m)).map(m => (
                                             <button
                                                 key={m} type="button"
                                                 onClick={() => updateFormData('modules', formData.modules.includes(m) ? formData.modules.filter(x => x !== m) : [...formData.modules, m])}
@@ -393,8 +489,9 @@ const NetSuitePricingCalculator = () => {
                                         type="text" value={formData.name}
                                         onChange={e => updateFormData('name', e.target.value)}
                                         placeholder="John Doe"
-                                        className="w-full bg-white border border-white/20 px-3 py-2.5 md:py-3 md:px-4 rounded-lg md:rounded-xl text-sm md:text-base font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm"
+                                        className={`w-full bg-white border ${errors.name ? 'border-red-500' : 'border-white/20'} px-3 py-2.5 md:py-3 md:px-4 rounded-lg md:rounded-xl text-sm md:text-base font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm`}
                                     />
+                                    {errors.name && <p className="text-[10px] text-red-500 mt-1 pl-1 font-bold">{errors.name}</p>}
                                 </div>
                                 {/* Company Name */}
                                 <div className="space-y-1">
@@ -413,8 +510,9 @@ const NetSuitePricingCalculator = () => {
                                         type="email" value={formData.email}
                                         onChange={e => updateFormData('email', e.target.value)}
                                         placeholder="email@company.com"
-                                        className="w-full bg-white border border-white/20 px-3 py-2.5 md:py-3 md:px-4 rounded-lg md:rounded-xl text-sm md:text-base font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm"
+                                        className={`w-full bg-white border ${errors.email ? 'border-red-500' : 'border-white/20'} px-3 py-2.5 md:py-3 md:px-4 rounded-lg md:rounded-xl text-sm md:text-base font-medium text-slate-900 focus:border-blue-500 outline-none transition-all shadow-sm`}
                                     />
+                                    {errors.email && <p className="text-[10px] text-red-500 mt-1 pl-1 font-bold">{errors.email}</p>}
                                 </div>
                                 {/* Phone */}
                                 <div className="space-y-1">
