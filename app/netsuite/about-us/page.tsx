@@ -401,34 +401,35 @@ function WhoWeAreSection() {
   );
 }
 
+// pad: extra inner padding (0–12) to visually balance logos
+// unopt: true = skip Next.js optimisation for tiny/low-res PNGs
 const partnerLogos = [
-  { logo: "/images/assets/affle%20tech.webp", name: "Affle" },
-  { logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone" },
-  { logo: "/images/assets/airling%20tech.webp", name: "Airling" },
-  { logo: "/images/assets/video%20verse%20tech.webp", name: "VideoVerse" },
-  { logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal" },
-  { logo: "/images/assets/control%20service.webp", name: "Control Service" },
-  { logo: "/images/assets/uniAcco%20service.webp", name: "UniAcco" },
-  { logo: "/images/assets/dlz%20service.webp", name: "DLZ" },
-  { logo: "/images/assets/indovance%20service.webp", name: "Indovance" },
-  { logo: "/images/assets/pace%20services.webp", name: "Pace" },
-  { logo: "/images/netuite%20client%20images/aidash.png", name: "AiDash" },
-  { logo: "/images/netuite%20client%20images/controlcase.png", name: "ControlCase" },
-  { logo: "/images/netuite%20client%20images/escalent.png", name: "Escalent" },
-  { logo: "/images/netuite%20client%20images/finn.png", name: "Finn" },
-  { logo: "/images/netuite%20client%20images/flatworld.png", name: "Flatworld" },
-  { logo: "/images/netuite%20client%20images/image%20(13).png", name: "Client 13" },
-  { logo: "/images/netuite%20client%20images/kale.png", name: "Kale" },
-  { logo: "/images/netuite%20client%20images/keycraft.png", name: "Keycraft" },
-  { logo: "/images/netuite%20client%20images/logic.png", name: "Logic" },
-  { logo: "/images/netuite%20client%20images/modaxo.png", name: "Modaxo" },
-  { logo: "/images/netuite%20client%20images/prioritytire.png", name: "Priority Tire" },
-  { logo: "/images/netuite%20client%20images/signal.png", name: "Signal" },
-  { logo: "/images/netuite%20client%20images/thread.png", name: "Thread" },
-  { logo: "/images/netuite%20client%20images/traxon.png", name: "Traxon" },
-  { logo: "/images/netuite%20client%20images/uniacco.png", name: "UniAcco" },
-  { logo: "/images/netuite%20client%20images/videoverse.png", name: "VideoVerse" },
+  { logo: "/images/assets/affle%20tech.webp",                          name: "Affle",         pad: 4               },
+  { logo: "/images/assets/tyfone%20tech.webp",                         name: "Tyfone",        pad: 4               },
+  { logo: "/images/assets/airling%20tech.webp",                        name: "Airling",       pad: 4               },
+  { logo: "/images/netuite%20client%20images/videoverse.png",          name: "VideoVerse",    pad: 1, unopt: true  },  // 318×159 low-res
+  { logo: "/images/assets/quickheal%20tech.webp",                      name: "Quick Heal",    pad: 7               },
+  { logo: "/images/assets/control%20service.webp",                     name: "Control Svc",   pad: 4               },
+  { logo: "/images/netuite%20client%20images/uniacco.png",             name: "UniAcco",       pad: 4               },
+  { logo: "/images/assets/dlz%20service.webp",                         name: "DLZ",           pad: 4               },
+  { logo: "/images/netuite%20client%20images/Indovance-new-logo.webp", name: "Indovance",     pad: 5               },
+  { logo: "/images/assets/pace%20services.webp",                       name: "Pace",          pad: 4               },
+  { logo: "/images/netuite%20client%20images/aidashlogo.png",          name: "AiDash",        pad: 4, unopt: true  },  // 200×100 low-res
+  { logo: "/images/netuite%20client%20images/controlcase.png",         name: "ControlCase",   pad: 4               },
+  { logo: "/images/netuite%20client%20images/escalent.webp",           name: "Escalent",      pad: 5               },
+  { logo: "/images/netuite%20client%20images/FINN-Logo(1).jpg",        name: "Finn",          pad: 4               },
+  { logo: "/images/netuite%20client%20images/flatworld.png",           name: "Flatworld",     pad: 9               },  // aspect 3.51 — large orb icon
+  { logo: "/images/netuite%20client%20images/image%20(13).png",        name: "Coastal",       pad: 4               },
+  { logo: "/images/netuite%20client%20images/kale.png",                name: "Kale",          pad: 8               },  // aspect 3.11 — has tagline
+  { logo: "/images/netuite%20client%20images/keycraft.png",            name: "Keycraft",      pad: 8               },  // aspect 2.82 — tall & wide
+  { logo: "/images/netuite%20client%20images/modaxo.png",              name: "Modaxo",        pad: 5               },
+  { logo: "/images/netuite%20client%20images/prioritytire.png",        name: "Priority Tire", pad: 5               },
+  { logo: "/images/netuite%20client%20images/signal.png",              name: "Signal",        pad: 5, unopt: true  },  // 244×58 low-res
+  { logo: "/images/netuite%20client%20images/traxon.png",              name: "Traxon",        pad: 4               },
+  { logo: "/images/netuite%20client%20images/tsi-logo.png",            name: "TSI",           pad: 4               },
+  { logo: "/images/netuite%20client%20images/loylogic.png",            name: "LoyLogic",      pad: 2               },  // aspect 0.96 SQUARE — minimal pad
 ];
+
 
 function StrategicPartnersSection() {
   const controls = useAnimation();
@@ -604,22 +605,28 @@ function ClientsSection() {
           className="relative w-full overflow-hidden py-8"
         >
           <div className="animate-marquee whitespace-nowrap flex items-center" style={{ willChange: 'transform' }}>
-            {partnerLogos.concat(partnerLogos).map((logo, index) => (
-              <div key={index} className="inline-flex px-4">
-                <div
-                  className="flex h-20 w-44 sm:h-24 sm:w-52 items-center justify-center bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 p-4 hover:shadow-xl hover:scale-105 hover:bg-white"
-                >
-                  <Image
-                    src={logo.logo}
-                    alt={`${logo.name} logo`}
-                    width={200}
-                    height={80}
-                    sizes="200px"
-                    className="max-h-full w-auto object-contain"
-                  />
+            {partnerLogos.concat(partnerLogos).map((logo, index) => {
+              const p = logo.pad ?? 4;
+              return (
+                <div key={index} className="inline-flex px-4">
+                  <div
+                    className="flex h-20 w-44 sm:h-24 sm:w-52 items-center justify-center bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:bg-white"
+                    style={{ padding: `${p * 2}px ${p * 3}px` }}
+                  >
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={logo.logo}
+                        alt={`${logo.name} logo`}
+                        fill
+                        sizes="(max-width: 640px) 176px, 208px"
+                        className="object-contain transition-all duration-300"
+                        unoptimized={logo.unopt === true}
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </motion.div>
       </div>

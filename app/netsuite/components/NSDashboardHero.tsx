@@ -17,34 +17,36 @@ const IMAGES = {
   right2: "/images/people/laptopgirl.webp",
 } as const;
 
+// pad: extra inner padding (0–12) to visually balance logos with unusual aspect ratios
+// unopt: true = skip Next.js image optimisation (for tiny/low-res PNGs)
 const logos = [
-  { id: "affle", logo: "/images/assets/affle%20tech.webp", name: "Affle", link: "https://www.affle.com" },
-  { id: "tyfone", logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone", link: "https://www.tyfone.com" },
-  { id: "airling", logo: "/images/assets/airling%20tech.webp", name: "Airling", link: "#" },
-  { id: "videoverse", logo: "/images/assets/video%20verse%20tech.webp", name: "VideoVerse", link: "https://www.videoverse.com" },
-  { id: "quickheal", logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal", link: "https://www.quickheal.com" },
-  { id: "controlservice", logo: "/images/assets/control%20service.webp", name: "Control Service", link: "#" },
-  { id: "uniacco", logo: "/images/assets/uniAcco%20service.webp", name: "UniAcco", link: "https://www.uniacco.com" },
-  { id: "dlz", logo: "/images/assets/dlz%20service.webp", name: "DLZ", link: "#" },
-  { id: "indovance", logo: "/images/assets/indovance%20service.webp", name: "Indovance", link: "https://www.indovance.com" },
-  { id: "pace", logo: "/images/assets/pace%20services.webp", name: "Pace", link: "#" },
-  { id: "aidash", logo: "/images/netuite%20client%20images/aidash.png", name: "AiDash", link: "#" },
-  { id: "controlcase", logo: "/images/netuite%20client%20images/controlcase.png", name: "ControlCase", link: "#" },
-  { id: "escalent", logo: "/images/netuite%20client%20images/escalent.png", name: "Escalent", link: "#" },
-  { id: "finn", logo: "/images/netuite%20client%20images/finn.png", name: "Finn", link: "#" },
-  { id: "flatworld", logo: "/images/netuite%20client%20images/flatworld.png", name: "Flatworld", link: "#" },
-  { id: "client13", logo: "/images/netuite%20client%20images/image%20(13).png", name: "Client 13", link: "#" },
-  { id: "kale", logo: "/images/netuite%20client%20images/kale.png", name: "Kale", link: "#" },
-  { id: "keycraft", logo: "/images/netuite%20client%20images/keycraft.png", name: "Keycraft", link: "#" },
-  { id: "logic", logo: "/images/netuite%20client%20images/logic.png", name: "Logic", link: "#" },
-  { id: "modaxo", logo: "/images/netuite%20client%20images/modaxo.png", name: "Modaxo", link: "#" },
-  { id: "prioritytire", logo: "/images/netuite%20client%20images/prioritytire.png", name: "Priority Tire", link: "#" },
-  { id: "signal", logo: "/images/netuite%20client%20images/signal.png", name: "Signal", link: "#" },
-  { id: "thread", logo: "/images/netuite%20client%20images/thread.png", name: "Thread", link: "#" },
-  { id: "traxon", logo: "/images/netuite%20client%20images/traxon.png", name: "Traxon", link: "#" },
-  { id: "uniacco", logo: "/images/netuite%20client%20images/uniacco.png", name: "UniAcco", link: "#" },
-  { id: "videoverse", logo: "/images/netuite%20client%20images/videoverse.png", name: "VideoVerse", link: "#" },
+  { id: "affle",          logo: "/images/assets/affle%20tech.webp",                          name: "Affle",         link: "https://www.affle.com",          pad: 4               },
+  { id: "tyfone",         logo: "/images/assets/tyfone%20tech.webp",                         name: "Tyfone",        link: "https://www.tyfone.com",         pad: 4               },
+  { id: "airling",        logo: "/images/assets/airling%20tech.webp",                        name: "Airling",       link: "#",                             pad: 4               },
+  { id: "videoverse",     logo: "/images/netuite%20client%20images/videoverse.png",          name: "VideoVerse",    link: "https://www.videoverse.com",     pad: 1, unopt: true  },  // 318×159 low-res
+  { id: "quickheal",      logo: "/images/assets/quickheal%20tech.webp",                      name: "Quick Heal",    link: "https://www.quickheal.com",      pad: 7               },
+  { id: "controlservice", logo: "/images/assets/control%20service.webp",                     name: "Control Svc",   link: "#",                             pad: 4               },
+  { id: "uniacco",        logo: "/images/netuite%20client%20images/uniacco.png",             name: "UniAcco",       link: "https://www.uniacco.com",        pad: 4               },
+  { id: "dlz",            logo: "/images/assets/dlz%20service.webp",                         name: "DLZ",           link: "#",                             pad: 4               },
+  { id: "indovance",      logo: "/images/netuite%20client%20images/Indovance-new-logo.webp", name: "Indovance",     link: "https://www.indovance.com",      pad: 5               },
+  { id: "pace",           logo: "/images/assets/pace%20services.webp",                       name: "Pace",          link: "#",                             pad: 4               },
+  { id: "aidash",         logo: "/images/netuite%20client%20images/aidashlogo.png",          name: "AiDash",        link: "#",                             pad: 4, unopt: true  },  // 200×100 low-res
+  { id: "controlcase",    logo: "/images/netuite%20client%20images/controlcase.png",         name: "ControlCase",   link: "#",                             pad: 4               },
+  { id: "escalent",       logo: "/images/netuite%20client%20images/escalent.webp",           name: "Escalent",      link: "#",                             pad: 5               },
+  { id: "finn",           logo: "/images/netuite%20client%20images/FINN-Logo(1).jpg",        name: "Finn",          link: "#",                             pad: 4               },
+  { id: "flatworld",      logo: "/images/netuite%20client%20images/flatworld.png",           name: "Flatworld",     link: "#",                             pad: 9               },  // aspect 3.51 — large orb icon
+  { id: "coastal",        logo: "/images/netuite%20client%20images/image%20(13).png",        name: "Coastal",       link: "#",                             pad: 4               },
+  { id: "kale",           logo: "/images/netuite%20client%20images/kale.png",                name: "Kale",          link: "#",                             pad: 8               },  // aspect 3.11 — has tagline
+  { id: "keycraft",       logo: "/images/netuite%20client%20images/keycraft.png",            name: "Keycraft",      link: "#",                             pad: 8               },  // aspect 2.82 — tall & wide
+  { id: "modaxo",         logo: "/images/netuite%20client%20images/modaxo.png",              name: "Modaxo",        link: "#",                             pad: 5               },
+  { id: "prioritytire",   logo: "/images/netuite%20client%20images/prioritytire.png",        name: "Priority Tire", link: "#",                             pad: 5               },
+  { id: "signal",         logo: "/images/netuite%20client%20images/signal.png",              name: "Signal",        link: "#",                             pad: 5, unopt: true  },  // 244×58 low-res
+  { id: "traxon",         logo: "/images/netuite%20client%20images/traxon.png",              name: "Traxon",        link: "#",                             pad: 4               },
+  { id: "tsi",            logo: "/images/netuite%20client%20images/tsi-logo.png",            name: "TSI",           link: "#",                             pad: 4               },
+  { id: "loylogic",       logo: "/images/netuite%20client%20images/loylogic.png",            name: "LoyLogic",      link: "#",                             pad: 2               },  // aspect 0.96 SQUARE — minimal pad
 ];
+
+
 
 const NSDashboardHero: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -234,25 +236,32 @@ const NSDashboardHero: React.FC = () => {
 
           <div className="relative w-full overflow-hidden py-6">
             <div className="animate-marquee whitespace-nowrap flex items-center">
-              {logos.concat(logos).map((logo, index) => (
-                <div key={index} className="inline-flex px-5">
-                  <a
-                    href={logo.link || "#"}
-                    target={logo.link !== "#" ? "_blank" : undefined}
-                    rel={logo.link !== "#" ? "noopener noreferrer" : undefined}
-                    className="flex h-12 w-40 sm:h-16 sm:w-44 items-center justify-center bg-white rounded-2xl shadow-sm transition-all duration-300 p-2"
-                    aria-label={logo.name}
-                  >
-                    <Image
-                      src={logo.logo}
-                      alt={`${logo.name} logo`}
-                      width={160}
-                      height={50}
-                      className="h-8 sm:h-13 w-auto object-contain transition-all duration-300 px-2"
-                    />
-                  </a>
-                </div>
-              ))}
+              {logos.concat(logos).map((logo, index) => {
+                const p = logo.pad ?? 4;
+                return (
+                  <div key={index} className="inline-flex px-5">
+                    <a
+                      href={logo.link || "#"}
+                      target={logo.link !== "#" ? "_blank" : undefined}
+                      rel={logo.link !== "#" ? "noopener noreferrer" : undefined}
+                      className="flex h-16 w-44 sm:h-20 sm:w-52 items-center justify-center bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
+                      style={{ padding: `${p * 2}px ${p * 3}px` }}
+                      aria-label={logo.name}
+                    >
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={logo.logo}
+                          alt={`${logo.name} logo`}
+                          fill
+                          sizes="(max-width: 640px) 176px, 208px"
+                          className="object-contain transition-all duration-300"
+                          unoptimized={logo.unopt === true}
+                        />
+                      </div>
+                    </a>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </motion.div>
