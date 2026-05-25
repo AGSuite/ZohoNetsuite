@@ -316,22 +316,22 @@ export default function NetSuiteERPPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex flex-col justify-center space-y-6 py-6"
+              className="flex flex-col justify-between py-6 h-full"
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
                   Turn Complexity into Clarity with NetSuite ERP.
                 </h2>
               </div>
-              <div className="space-y-2">
-                <p className="text-base text-gray-600 leading-relaxed">
+              <div className="space-y-2 my-auto">
+                <p className="text-base text-gray-600 leading-relaxed line-clamp-4">
                   NetSuite ERP is an all-in-one cloud business management suite that unifies financials, inventory, orders, and CRM. As a premium NetSuite Solution Provider, we help businesses eliminate manual processes and gain real-time visibility into their entire operations through a single, scalable platform.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed">
+                <p className="text-base text-gray-600 leading-relaxed line-clamp-3">
                   From advanced financial reporting to global business management, NetSuite provides the agility required to scale. It empowers organizations to improve efficiency, ensure regulatory compliance, and drive strategic growth with data-driven decision-making.
                 </p>
               </div>
-              <div className="pt-4">
+              <div className="pt-4 mt-auto">
                 <Link
                   href="#contact-form"
                   className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"

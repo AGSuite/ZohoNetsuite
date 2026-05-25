@@ -23,7 +23,7 @@ const caseStudies: CaseStudy[] = [
         id: 2,
         title: "NetSuite for Software Technology",
         description: "The company is an investment and wealth management organization.",
-        image: "/images/lap/lap6_11zon.webp",
+        image: "/images/Netsuite Latest Images/Case study/Netsute for Software technology and deployment services.webp",
         company: "Software and Technology",
         industry: "Software and Technology",
         recipientEmail: "shivam@agsuitetech.com"
@@ -32,7 +32,7 @@ const caseStudies: CaseStudy[] = [
         id: 3,
         title: "NetSuite for Professional Services",
         description: "The Company is a comprehensive biopharmaceutical consulting organization.",
-        image: "/images/lap/lap7_11zon.webp",
+        image: "/images/Netsuite Latest Images/Case study/Netsuite for IT and profesionals services.webp",
         company: "IT & Professional Services",
         industry: "IT & Professional Services",
         recipientEmail: "shivam@agsuitetech.com"

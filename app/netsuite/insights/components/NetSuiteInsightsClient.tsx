@@ -72,15 +72,13 @@ function AwardsAndRecognitionSection() {
                             className="hover:-translate-y-2 transition-transform duration-300"
                         >
                             <Image
-                                src="/images/awards/Netsuitepartneraward.png"
-                                alt="NetSuite Partner Award"
+                                src="/images/awards/Partner of the Year.png"
+                                alt="NetSuite Partner of the Year Award"
                                 width={280}
                                 height={280}
                                 className="w-64 h-64 object-contain"
                             />
                         </motion.div>
-
-
                     </motion.div>
                 </div>
             </div>

@@ -333,22 +333,22 @@ export default function GlobalBusinessPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex flex-col justify-center space-y-6 py-6"
+              className="flex flex-col justify-between py-6 h-full"
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
                   NetSuite OneWorld: Unified NetSuite Global Business Management for Multinational Operations
                 </h2>
               </div>
-              <div className="space-y-2">
-                <p className="text-base text-gray-600 leading-relaxed">
+              <div className="space-y-2 my-auto">
+                <p className="text-base text-gray-600 leading-relaxed line-clamp-4">
                   NetSuite OneWorld is the industry standard for NetSuite Global Business Management, enabling multinational organizations to manage diverse legal entities and subsidiaries from a single platform. As a specialized NetSuite Global Business partner, we help you unify operations across 200+ countries with automated intercompany eliminations and consolidated financial reporting.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed">
+                <p className="text-base text-gray-600 leading-relaxed line-clamp-3">
                   With support for 190+ currencies and 100+ tax jurisdictions, OneWorld ensures local compliance while providing real-time global visibility. Eliminate fragmented systems and manual roll-ups, allowing your executive team to make data-driven decisions based on a single, unified version of the truth.
                 </p>
               </div>
-              <div className="pt-4">
+              <div className="pt-4 mt-auto">
                 <a
                   href="#contact-form"
                   className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"

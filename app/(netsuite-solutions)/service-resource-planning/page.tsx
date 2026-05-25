@@ -416,22 +416,22 @@ export default function NetSuiteSRPPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex flex-col justify-center space-y-6 py-6"
+              className="flex flex-col justify-between py-6 h-full"
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
                   NetSuite SRP: Unified Service Resource Planning for Profitable Project Excellence
                 </h2>
               </div>
-              <div className="space-y-2">
-                <p className="text-base text-gray-600 leading-relaxed">
+              <div className="space-y-2 my-auto">
+                <p className="text-base text-gray-600 leading-relaxed line-clamp-4">
                   NetSuite SRP (Service Resource Planning) is a unified cloud solution designed to manage the entire services lifecycle—from initial opportunity and resource scheduling to project delivery and financial recognition. As a specialized NetSuite SRP partner, we help Professional Services organizations eliminate siloed data and bridge the gap between project teams and back-office finance.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed">
+                <p className="text-base text-gray-600 leading-relaxed line-clamp-3">
                   By centralizing Professional Services Automation (PSA) with core ERP financials, NetSuite SRP provides real-time visibility into project health, resource utilization, and billable margins. Optimize your talent pool and ensure project success with a scalable platform that grows alongside your firm&apos;s global ambitions.
                 </p>
               </div>
-              <div className="pt-4">
+              <div className="pt-4 mt-auto">
                 <Link
                   href="#contact-form"
                   className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,12 +26,27 @@ import {
 } from "lucide-react";
 import FooterContactForm from "@/app/components/shared/FooterContactForm";
 
-export default function ZohoLifeAtAGSuite() {
-  const [isMounted, setIsMounted] = useState(false);
+const STATIC_STARS = Array.from({ length: 40 }, (_, i) => {
+  const w = ((i * 7 + 1) % 2) + 1; // 1px or 2px
+  const top = (i * 17) % 100;
+  const left = (i * 23) % 100;
+  const opacity = 0.1 + ((i * 3) % 5) / 10;
+  const duration = 5 + ((i * 11) % 6);
+  const delay = (i * 13) % 5;
+  const xRange = ((i * 19) % 30) - 15;
+  return {
+    width: `${w}px`,
+    height: `${w}px`,
+    top: `${top}%`,
+    left: `${left}%`,
+    opacity,
+    duration,
+    delay,
+    xRange,
+  };
+});
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+export default function ZohoLifeAtAGSuite() {
 
   const leadersData = [
     {
@@ -62,6 +77,13 @@ export default function ZohoLifeAtAGSuite() {
       linkedin: "https://www.linkedin.com/in/shailesh-punse-79771413/",
       bio: "Driving global revenue growth and strategic partnerships with 25+ years of cross-industry expertise."
     },
+    {
+      name: "Mayuri",
+      title: "Project Delivery Manager",
+      image: "/images/people/mayuri.webp",
+      linkedin: "#",
+      bio: "Over 12 years of experience leading complex cloud migrations and delivery frameworks with agile execution."
+    }
   ];
 
   const achievements = [
@@ -581,27 +603,27 @@ export default function ZohoLifeAtAGSuite() {
       <section id="leaders" className="relative py-24 bg-gradient-to-br from-[#000814] via-[#001535] to-[#000814] overflow-hidden">
         {/* Moving Stars Effect */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {isMounted && [...Array(40)].map((_, i) => (
+          {STATIC_STARS.map((star, i) => (
             <motion.div
               key={i}
               className="absolute bg-white rounded-full"
               style={{
-                width: Math.random() * 2 + 1 + 'px',
-                height: Math.random() * 2 + 1 + 'px',
-                top: Math.random() * 100 + '%',
-                left: Math.random() * 100 + '%',
-                opacity: Math.random() * 0.5 + 0.1,
+                width: star.width,
+                height: star.height,
+                top: star.top,
+                left: star.left,
+                opacity: star.opacity,
               }}
               animate={{
                 y: [0, -40, 0],
-                x: [0, Math.random() * 30 - 15, 0],
+                x: [0, star.xRange, 0],
                 opacity: [0.1, 0.8, 0.1],
               }}
               transition={{
-                duration: Math.random() * 5 + 5,
+                duration: star.duration,
                 repeat: Infinity,
                 ease: "easeInOut",
-                delay: Math.random() * 5,
+                delay: star.delay,
               }}
             />
           ))}
@@ -639,7 +661,7 @@ export default function ZohoLifeAtAGSuite() {
             Driving innovation and excellence with a passion for transformative technology.
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-6 w-full max-w-7xl mx-auto">
             {leadersData.map((leader, index) => (
               <motion.div
                 key={index}
@@ -648,15 +670,15 @@ export default function ZohoLifeAtAGSuite() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group relative bg-gradient-to-br from-[#e6f0ff] to-[#f0f5ff] rounded-[2rem] p-4 hover:bg-gradient-to-br hover:from-[#001535] hover:to-[#002b6b] transition-all duration-500 overflow-hidden flex flex-col shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-900/40 text-left max-w-[310px] mx-auto w-full"
               >
-                {/* Inner Image Container - No Background, Rounded Image */}
-                <div className="relative w-full h-48 md:h-52 mb-6 overflow-hidden flex items-end justify-center">
-                  <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden group-hover:bg-white/50 transition-colors duration-500">
+                {/* Inner Image Container - Circular Background */}
+                <div className="relative w-40 h-40 mx-auto mb-6 rounded-full p-2 border-2 border-slate-800/80 group-hover:border-blue-300 transition-all duration-500 flex items-center justify-center">
+                  <div className="relative w-full h-full rounded-full overflow-hidden">
                     <Image
                       src={leader.image}
                       alt={leader.name}
                       fill
                       className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
-                      sizes="(max-width: 768px) 100vw, 25vw"
+                      sizes="160px"
                     />
                   </div>
                 </div>
@@ -664,7 +686,7 @@ export default function ZohoLifeAtAGSuite() {
                 <div className="px-2 flex-grow flex flex-col pt-2">
                   {/* Name and LinkedIn Inline */}
                   <div className="flex items-center justify-between mb-1">
-                    <h3 className="text-xl md:text-2xl font-medium bg-gradient-to-r from-[#001535] to-[#004e9a] bg-clip-text text-transparent group-hover:from-white group-hover:to-white transition-all duration-500">
+                    <h3 className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-[#001535] to-[#004e9a] bg-clip-text text-transparent group-hover:from-white group-hover:to-white transition-all duration-500">
                       {leader.name}
                     </h3>
                     <a
@@ -680,7 +702,7 @@ export default function ZohoLifeAtAGSuite() {
 
                   {/* Title & Bio combined */}
                   <div className="mb-2 flex-grow">
-                    <span className="block text-sm font-medium bg-gradient-to-r from-[#001535] to-[#004e9a] bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:to-cyan-300 transition-all duration-500 mb-3 border-b border-gray-300 group-hover:border-blue-400/30 pb-3 w-max pr-6">
+                    <span className="block text-sm font-semibold bg-gradient-to-r from-[#001535] to-[#004e9a] bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:to-cyan-300 transition-all duration-500 mb-3 border-b border-gray-300 group-hover:border-blue-400/30 pb-3 w-max pr-6">
                       {leader.title}
                     </span>
                     <p className="text-[13px] md:text-[14px] font-medium bg-gradient-to-r from-[#1e293b] to-[#334155] bg-clip-text text-transparent group-hover:from-white/80 group-hover:to-white/80 transition-all duration-500 leading-relaxed">

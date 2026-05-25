@@ -442,7 +442,7 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                       {/* Cinematic Boost Scale (165%) */}
                       <div className="relative z-10 w-[165%] max-w-none">
                         <Image
-                          src="/images/lap/lap6_11zon.webp"
+                          src="/images/Netsuite Latest Images/Case study/Netsute for Software technology and deployment services.webp"
                           alt="Financial Operations"
                           width={1800}
                           height={1600}

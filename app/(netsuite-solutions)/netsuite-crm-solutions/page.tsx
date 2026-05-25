@@ -469,22 +469,22 @@ export default function NetSuiteCRMPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex flex-col justify-center space-y-6 py-6"
+              className="flex flex-col justify-between py-6 h-full"
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
                   NetSuite CRM: The Industry&apos;s Best Unified Cloud CRM and ERP Solution
                 </h2>
               </div>
-              <div className="space-y-2">
-                <p className="text-base text-gray-600 leading-relaxed">
+              <div className="space-y-2 my-auto">
+                <p className="text-base text-gray-600 leading-relaxed line-clamp-4">
                   NetSuite CRM is the only customer relationship management platform built natively on a unified ERP architecture. As a specialized NetSuite CRM solution provider, we help you eliminate data silos by connecting sales, marketing, and service teams through a single source of truth—from lead generation to final invoicing.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed">
+                <p className="text-base text-gray-600 leading-relaxed line-clamp-3">
                   By centralizing customer interactions and real-time orders in one dashboard, NetSuite CRM empowers your team to improve forecasting accuracy and deliver personalized experiences. Drive sustainable, data-driven growth with a platform designed to scale with your business needs.
                 </p>
               </div>
-              <div className="pt-4">
+              <div className="pt-4 mt-auto">
                 <Link
                   href="#contact-form"
                   className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"

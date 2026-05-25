@@ -29,12 +29,28 @@ function processDirectory(directory) {
               lines[i] = lines[i].replace('className="space-y-4 my-auto"', 'className="space-y-4"');
               replaced = true;
             }
+            if (lines[i].includes('className="space-y-2 my-auto"')) {
+              lines[i] = lines[i].replace('className="space-y-2 my-auto"', 'className="space-y-2"');
+              replaced = true;
+            }
+            if (lines[i].includes('className="space-y-6 my-auto"')) {
+              lines[i] = lines[i].replace('className="space-y-6 my-auto"', 'className="space-y-6"');
+              replaced = true;
+            }
             if (lines[i].includes('className="text-lg text-gray-600 leading-relaxed line-clamp-4"')) {
               lines[i] = lines[i].replace('className="text-lg text-gray-600 leading-relaxed line-clamp-4"', 'className="text-lg text-gray-600 leading-relaxed"');
               replaced = true;
             }
             if (lines[i].includes('className="text-lg text-gray-600 leading-relaxed line-clamp-3"')) {
               lines[i] = lines[i].replace('className="text-lg text-gray-600 leading-relaxed line-clamp-3"', 'className="text-lg text-gray-600 leading-relaxed"');
+              replaced = true;
+            }
+            if (lines[i].includes('className="text-base text-gray-600 leading-relaxed line-clamp-4"')) {
+              lines[i] = lines[i].replace('className="text-base text-gray-600 leading-relaxed line-clamp-4"', 'className="text-base text-gray-600 leading-relaxed"');
+              replaced = true;
+            }
+            if (lines[i].includes('className="text-base text-gray-600 leading-relaxed line-clamp-3"')) {
+              lines[i] = lines[i].replace('className="text-base text-gray-600 leading-relaxed line-clamp-3"', 'className="text-base text-gray-600 leading-relaxed"');
               replaced = true;
             }
             if (lines[i].includes('className="pt-4 mt-auto"')) {

@@ -214,22 +214,22 @@ export default function AnalyticsWarehousePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex flex-col justify-center space-y-6 py-6"
+              className="flex flex-col justify-between py-6 h-full"
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-teal-500 leading-tight">
                   NetSuite Analytics Warehouse (NSAW): Unifying ERP and External Data for 10x Faster Insights
                 </h2>
               </div>
-              <div className="space-y-2">
-                <p className="text-base text-gray-600 leading-relaxed">
+              <div className="space-y-2 my-auto">
+                <p className="text-base text-gray-600 leading-relaxed line-clamp-4">
                   NetSuite Analytics Warehouse (NSAW) is a cloud-native data solution that consolidates NetSuite ERP data with 100+ external sources into a single, governed repository. As a specialized NetSuite Analytics partner, we help you eliminate data silos and provide your teams with high-performance querying and modeling capabilities.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed">
+                <p className="text-base text-gray-600 leading-relaxed line-clamp-3">
                   By centralizing your entire business data ecosystem, you can run complex SQL queries and visualize trends across departments without manual exports. Scale your data strategy with a platform designed for enterprise-grade security and sub-second dashboard performance.
                 </p>
               </div>
-              <div className="pt-4">
+              <div className="pt-4 mt-auto">
                 <Link
                   href="#contact-form"
                   className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"

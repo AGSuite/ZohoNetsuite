@@ -12,30 +12,29 @@ import { useState } from "react";
 const logos = [
     // aspect ratios measured from actual files — pad tunes how much the logo shrinks inside the card
     // Card inner area (h-16 w-44 = 64×176px): inner_h = 64-(pad*4), inner_w = 176-(pad*6)
-    { id: "affle",          logo: "/images/assets/affle%20tech.webp",                          name: "Affle",         link: "https://www.affle.com",          pad: 4                },  // aspect 2.4
-    { id: "tyfone",         logo: "/images/assets/tyfone%20tech.webp",                         name: "Tyfone",        link: "https://www.tyfone.com",         pad: 4                },  // aspect 2.3
-    { id: "airling",        logo: "/images/assets/airling%20tech.webp",                        name: "Airling",       link: "#",                             pad: 4                },
-    { id: "videoverse",     logo: "/images/netuite%20client%20images/videoverse.png",          name: "VideoVerse",    link: "https://www.videoverse.com",     pad: 1, unopt: true   },  // 318×159 low-res
-    { id: "quickheal",      logo: "/images/assets/quickheal%20tech.webp",                      name: "Quick Heal",    link: "https://www.quickheal.com",      pad: 7                },
-    { id: "controlservice", logo: "/images/assets/control%20service.webp",                     name: "Control Svc",   link: "#",                             pad: 4                },
-    { id: "uniacco",        logo: "/images/netuite%20client%20images/uniacco.png",             name: "UniAcco",       link: "https://www.uniacco.com",        pad: 4                },  // aspect 4.27
-    { id: "dlz",            logo: "/images/assets/dlz%20service.webp",                         name: "DLZ",           link: "#",                             pad: 4                },
-    { id: "indovance",      logo: "/images/netuite%20client%20images/Indovance-new-logo.webp", name: "Indovance",     link: "https://www.indovance.com",      pad: 5                },  // very wide thin text
-    { id: "pace",           logo: "/images/assets/pace%20services.webp",                       name: "Pace",          link: "#",                             pad: 4                },
-    { id: "aidash",         logo: "/images/netuite%20client%20images/aidashlogo.png",          name: "AiDash",        link: "#",                             pad: 4, unopt: true   },  // 200×100 low-res
-    { id: "controlcase",    logo: "/images/netuite%20client%20images/controlcase.png",         name: "ControlCase",   link: "#",                             pad: 4                },  // aspect 4.72
-    { id: "escalent",       logo: "/images/netuite%20client%20images/escalent.webp",           name: "Escalent",      link: "#",                             pad: 5                },  // aspect 3.5
-    { id: "finn",           logo: "/images/netuite%20client%20images/FINN-Logo(1).jpg",        name: "Finn",          link: "#",                             pad: 4                },  // aspect 2 — has whitespace
-    { id: "flatworld",      logo: "/images/netuite%20client%20images/flatworld.png",           name: "Flatworld",     link: "#",                             pad: 9                },  // aspect 3.51 — large orb icon
-    { id: "coastal",        logo: "/images/netuite%20client%20images/image%20(13).png",        name: "Coastal",       link: "#",                             pad: 4                },  // aspect 3.55
-    { id: "kale",           logo: "/images/netuite%20client%20images/kale.png",                name: "Kale",          link: "#",                             pad: 8                },  // aspect 3.11 — has tagline
-    { id: "keycraft",       logo: "/images/netuite%20client%20images/keycraft.png",            name: "Keycraft",      link: "#",                             pad: 8                },  // aspect 2.82 — tall & wide
-    { id: "modaxo",         logo: "/images/netuite%20client%20images/modaxo.png",              name: "Modaxo",        link: "#",                             pad: 5                },  // aspect 3.47
-    { id: "prioritytire",   logo: "/images/netuite%20client%20images/prioritytire.png",        name: "Priority Tire", link: "#",                             pad: 5                },  // aspect 5.43
-    { id: "signal",         logo: "/images/netuite%20client%20images/signal.png",              name: "Signal",        link: "#",                             pad: 5, unopt: true   },  // 244×58 low-res
-    { id: "traxon",         logo: "/images/netuite%20client%20images/traxon.png",              name: "Traxon",        link: "#",                             pad: 4                },  // aspect 3.96
-    { id: "tsi",            logo: "/images/netuite%20client%20images/tsi-logo.png",            name: "TSI",           link: "#",                             pad: 4                },  // aspect 6.48 — very wide
-    { id: "loylogic",       logo: "/images/netuite%20client%20images/loylogic.png",            name: "LoyLogic",      link: "#",                             pad: 2                },  // aspect 0.96 SQUARE — minimal pad
+    { id: "affle", logo: "/images/assets/affle%20tech.webp", name: "Affle", link: "https://www.affle.com", pad: 4 },  // aspect 2.4
+    { id: "tyfone", logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone", link: "https://www.tyfone.com", pad: 4 },  // aspect 2.3
+    { id: "airling", logo: "/images/assets/airling%20tech.webp", name: "Airling", link: "#", pad: 4 },
+    { id: "videoverse", logo: "/images/netuite%20client%20images/videoverse.png", name: "VideoVerse", link: "https://www.videoverse.com", pad: 1, unopt: true },  // 318×159 low-res
+    { id: "quickheal", logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal", link: "https://www.quickheal.com", pad: 7 },
+    { id: "uniacco", logo: "/images/netuite%20client%20images/uniacco.png", name: "UniAcco", link: "https://www.uniacco.com", pad: 4 },  // aspect 4.27
+    { id: "dlz", logo: "/images/assets/dlz%20service.webp", name: "DLZ", link: "#", pad: 4 },
+    { id: "indovance", logo: "/images/netuite%20client%20images/Indovance-new-logo.webp", name: "Indovance", link: "https://www.indovance.com", pad: 5 },  // very wide thin text
+    { id: "pace", logo: "/images/assets/pace%20services.webp", name: "Pace", link: "#", pad: 4 },
+    { id: "aidash", logo: "/images/netuite%20client%20images/aidashlogo.png", name: "AiDash", link: "#", pad: 4, unopt: true },  // 200×100 low-res
+    { id: "controlcase", logo: "/images/netuite%20client%20images/controlcase.png", name: "ControlCase", link: "#", pad: 4 },  // aspect 4.72
+    { id: "escalent", logo: "/images/netuite%20client%20images/escalent.webp", name: "Escalent", link: "#", pad: 5 },  // aspect 3.5
+    { id: "finn", logo: "/images/netuite%20client%20images/FINN-Logo(1).jpg", name: "Finn", link: "#", pad: 4 },  // aspect 2 — has whitespace
+    { id: "flatworld", logo: "/images/netuite%20client%20images/flatworld.png", name: "Flatworld", link: "#", pad: 9 },  // aspect 3.51 — large orb icon
+    { id: "coastal", logo: "/images/netuite%20client%20images/image%20(13).png", name: "Coastal", link: "#", pad: 4 },  // aspect 3.55
+    { id: "kale", logo: "/images/netuite%20client%20images/kale.png", name: "Kale", link: "#", pad: 8 },  // aspect 3.11 — has tagline
+    { id: "keycraft", logo: "/images/netuite%20client%20images/keycraft.png", name: "Keycraft", link: "#", pad: 8 },  // aspect 2.82 — tall & wide
+    { id: "modaxo", logo: "/images/netuite%20client%20images/modaxo.png", name: "Modaxo", link: "#", pad: 5 },  // aspect 3.47
+    { id: "prioritytire", logo: "/images/netuite%20client%20images/prioritytire.png", name: "Priority Tire", link: "#", pad: 5 },  // aspect 5.43
+    { id: "signal", logo: "/images/netuite%20client%20images/signal.png", name: "Signal", link: "#", pad: 5, unopt: true },  // 244×58 low-res
+    { id: "traxon", logo: "/images/netuite%20client%20images/traxon.png", name: "Traxon", link: "#", pad: 4 },  // aspect 3.96
+    { id: "tsi", logo: "/images/netuite%20client%20images/tsi-logo.png", name: "TSI", link: "#", pad: 4 },  // aspect 6.48 — very wide
+    { id: "loylogic", logo: "/images/netuite%20client%20images/loylogic.png", name: "LoyLogic", link: "#", pad: 2 },  // aspect 0.96 SQUARE — minimal pad
 ];
 
 

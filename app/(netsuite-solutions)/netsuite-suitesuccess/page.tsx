@@ -206,22 +206,22 @@ export default function SuiteSuccessPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex flex-col justify-center space-y-6 py-6"
+              className="flex flex-col justify-between py-6 h-full"
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
                   NetSuite SuiteSuccess: Accelerated Cloud ERP Implementation for Faster Time-to-Value
                 </h2>
               </div>
-              <div className="space-y-2">
-                <p className="text-base text-gray-600 leading-relaxed">
+              <div className="space-y-2 my-auto">
+                <p className="text-base text-gray-600 leading-relaxed line-clamp-4">
                   NetSuite SuiteSuccess is a purpose-built industry cloud solution designed for rapid deployment. As a leading NetSuite SuiteSuccess partner, we provide pre-configured workflows, role-based dashboards, and industry KPIs that allow you to go live in as little as 100 days.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed">
+                <p className="text-base text-gray-600 leading-relaxed line-clamp-3">
                   By leveraging thousands of successful global deployments, SuiteSuccess eliminates implementation risk and ensures your business follows industry best practices from day one. Scale your operations on a unified platform that evolves with your growth strategy.
                 </p>
               </div>
-              <div className="pt-4">
+              <div className="pt-4 mt-auto">
                 <Link
                   href="#contact-form"
                   className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"

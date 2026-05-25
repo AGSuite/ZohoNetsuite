@@ -288,22 +288,22 @@ export default function IndiaLocalizationPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex flex-col justify-center space-y-6 py-6"
+              className="flex flex-col justify-between py-6 h-full"
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
                   India Localization for NetSuite: Automated GST and TDS Compliance for Modern Enterprises
                 </h2>
               </div>
-              <div className="space-y-2">
-                <p className="text-base text-gray-600 leading-relaxed">
+              <div className="space-y-2 my-auto">
+                <p className="text-base text-gray-600 leading-relaxed line-clamp-4">
                   India Localization for NetSuite simplifies the complexities of Indian tax regulations, providing a cloud-native solution for GST, TDS, and statutory compliance. As a specialized NetSuite India localization partner, we help businesses automate e-invoicing via IRP, e-way bills, and GSTR reporting within a single unified platform.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed">
+                <p className="text-base text-gray-600 leading-relaxed line-clamp-3">
                   By integrating seamlessly with your core ERP, our solution ensures accuracy in multi-state GSTIN management and TCS calculations. Stay ahead of regulatory changes with automated compliance reminders and audit-ready reports, allowing your finance team to focus on strategic growth.
                 </p>
               </div>
-              <div className="pt-4">
+              <div className="pt-4 mt-auto">
                 <Link
                   href="#contact-form"
                   className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
