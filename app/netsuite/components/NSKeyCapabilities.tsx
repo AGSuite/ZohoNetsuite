@@ -21,7 +21,7 @@ const capabilities: Capability[] = [
         title: "Built for Rapid Scaling",
         subline: "Grow without system limitations",
         description: "NetSuite supports increasing transactions, users, subsidiaries, and global expansion without requiring costly system replacements.",
-        image: "/images/lap/lap3.webp",
+        image: "/images/netsuiteimages/ns_rapid_scaling.png",
         link: "/netsuite/solutions"
     },
     {
@@ -29,7 +29,7 @@ const capabilities: Capability[] = [
         title: "Real-Time Business Visibility",
         subline: "Make faster, smarter decisions",
         description: "Enterprise leaders gain live dashboards, reporting, and analytics to monitor performance and act quickly.",
-        image: "/images/lap/lap7_11zon.webp",
+        image: "/images/netsuiteimages/ns_realtime_visibility.png",
         link: "/netsuite/solutions"
     },
     {
@@ -37,7 +37,7 @@ const capabilities: Capability[] = [
         title: "End-to-End Business Management",
         subline: "One platform for all operations",
         description: "Finance, CRM, inventory, procurement, and HR are managed in a single unified system.",
-        image: "/images/lap/lap9_11zon.webp",
+        image: "/images/netsuiteimages/ns_endtoend_management.png",
         link: "/netsuite/solutions"
     },
     {
@@ -45,7 +45,7 @@ const capabilities: Capability[] = [
         title: "Automation & Operational Efficiency",
         subline: "Reduce manual work",
         description: "Automate workflows like billing, approvals, reporting, and financial close processes.",
-        image: "/images/lap/lap6_11zon.webp",
+        image: "/images/netsuiteimages/ns_automation_efficiency.png",
         link: "/netsuite/solutions"
     },
     {
@@ -53,7 +53,7 @@ const capabilities: Capability[] = [
         title: "Global Business Ready",
         subline: "Expand confidently across regions",
         description: "Multi-currency, multi-tax, and multi-subsidiary management enables international growth.",
-        image: "/images/people/global.webp",
+        image: "/images/netsuiteimages/ns_global_business.png",
         link: "/netsuite/solutions"
     }
 ];

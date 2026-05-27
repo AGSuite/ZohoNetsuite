@@ -22,7 +22,7 @@ const services: ServiceItem[] = [
     title: "Digital Transformation",
     heading: "",
     description: "Modernize your business for the digital age with our strategic transformation roadmap.",
-    bgImage: "/images/Services/Digitalservices.webp",
+    bgImage: "/images/Services/ns_service_digital_transformation_new.png",
     href: "/netsuite/services/digital-transformation",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -34,7 +34,7 @@ const services: ServiceItem[] = [
     title: "Integration Services",
     heading: "",
     description: "Seamlessly connect NetSuite with your entire ecosystem via robust API-led integrations.",
-    bgImage: "/images/lap/group2.webp",
+    bgImage: "/images/Services/ns_service_integration_new.png",
     href: "/netsuite/services/integration-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -46,7 +46,7 @@ const services: ServiceItem[] = [
     title: "Training Services",
     heading: "",
     description: "Upskill your team with expert-led NetSuite training to maximise platform adoption.",
-    bgImage: "/images/Services/trainingservices.webp",
+    bgImage: "/images/Services/ns_service_training_new.png",
     href: "/netsuite/services/training-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -59,7 +59,7 @@ const services: ServiceItem[] = [
     title: "Low-Code Development",
     heading: "",
     description: "Build powerful custom SuiteApps and extend your ERP faster with minimal coding.",
-    bgImage: "/images/Services/lowcodeservices.webp",
+    bgImage: "/images/Services/ns_service_low_code_new.png",
     href: "/netsuite/services/low-code",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -71,7 +71,7 @@ const services: ServiceItem[] = [
     title: "Managed Services",
     heading: "",
     description: "End-to-end IT management and dedicated support to keep your NetSuite operations running smoothly.",
-    bgImage: "/images/Services/managedservices.webp",
+    bgImage: "/images/Services/ns_service_managed_new.png",
     href: "/netsuite/services/managed-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -186,7 +186,7 @@ export default function NSServices() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 260px"
                   />
                   {/* Black gradient overlay - transparent top to dark bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/50 to-black/90" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 </div>
 
                 {/* Default State - Image with Left-Aligned Content */}
@@ -287,7 +287,7 @@ export default function NSServices() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   {/* Black gradient overlay - transparent top to dark bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/50 to-black/90" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 </div>
 
                 {/* Default State - Image with Left-Aligned Content */}
@@ -382,7 +382,7 @@ export default function NSServices() {
               />
 
               {/* Gradient overlay for text visibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
 
               {/* Title + Button always visible on mobile */}
               <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-3 text-white">
