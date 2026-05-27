@@ -262,7 +262,7 @@ export default function IndiaLocalizationClient() {
 
       {/* WHAT IS */}
       <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
-        <div className="max-w-8xl mx-auto px-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}

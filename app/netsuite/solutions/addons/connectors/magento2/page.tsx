@@ -143,12 +143,12 @@ export default function MagentoConnectorPage() {
 
       {/* WHAT IS */}
       <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
-        <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="flex items-center justify-center rounded-2xl p-4 mt-15" style={{ minHeight: 340 }}>
               <Image src="/images/Dashboard/Magento Connector Dashboard.jpg" alt="Magento Connector" width={1400} height={900} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20" />
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="space-y-6 mt-15">
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="space-y-6">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">Unify Adobe Commerce and NetSuite — B2B & B2C Together.</h3>
               <p className="text-lg text-gray-600 leading-relaxed">The NetSuite Magento Connector bridges your Adobe Commerce storefront with NetSuite ERP — handling the complexity of B2B accounts, multi-source inventory, tiered pricing, and high-volume order processing automatically.</p>
               <p className="text-lg text-gray-600 leading-relaxed">Whether you run B2C, B2B, or both, our connector keeps every product, price, order, customer, and inventory record in sync with no manual intervention required.</p>

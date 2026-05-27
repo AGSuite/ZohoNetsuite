@@ -458,6 +458,7 @@ export default function NetSuiteCRMPage() {
                     alt="NetSuite CRM Solution Dashboard"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
                   />
                 </div>
               </div>
@@ -473,14 +474,14 @@ export default function NetSuiteCRMPage() {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  NetSuite CRM: The Industry&apos;s Best Unified Cloud CRM and ERP Solution
+                  Drive Customer Success with NetSuite CRM.
                 </h2>
               </div>
-              <div className="space-y-2 my-auto">
-                <p className="text-base text-gray-600 leading-relaxed line-clamp-4">
+              <div className="space-y-2 my-auto pt-2 md:pt-4">
+                <p className="text-base text-gray-600 leading-relaxed">
                   NetSuite CRM is the only customer relationship management platform built natively on a unified ERP architecture. As a specialized NetSuite CRM solution provider, we help you eliminate data silos by connecting sales, marketing, and service teams through a single source of truth—from lead generation to final invoicing.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed line-clamp-3">
+                <p className="text-base text-gray-600 leading-relaxed">
                   By centralizing customer interactions and real-time orders in one dashboard, NetSuite CRM empowers your team to improve forecasting accuracy and deliver personalized experiences. Drive sustainable, data-driven growth with a platform designed to scale with your business needs.
                 </p>
               </div>

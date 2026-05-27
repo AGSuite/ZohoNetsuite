@@ -390,22 +390,22 @@ export default function NetSuiteSRPPage() {
 
       <section id="what-is-srp" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative flex items-center justify-center rounded-3xl w-full"
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
             >
-              <div className="relative w-full p-2 lg:p-4">
-                <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100 transition-transform duration-500 hover:scale-[1.03]">
+              <div className="relative w-full h-full p-4 lg:p-6">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100">
                   <Image
                     src="/images/Dashboard/suiteproject dashboard 2.jpg"
                     alt="NetSuite Service Resource Planning SRP Dashboard"
-                    width={800}
-                    height={500}
-                    className="w-full h-auto object-contain rounded-xl block"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
                   />
                 </div>
               </div>
@@ -420,14 +420,14 @@ export default function NetSuiteSRPPage() {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  NetSuite SRP: Unified Service Resource Planning for Profitable Project Excellence
+                  Optimize Projects with NetSuite Service Resource Planning.
                 </h2>
               </div>
-              <div className="space-y-2 my-auto">
-                <p className="text-base text-gray-600 leading-relaxed line-clamp-4">
+              <div className="space-y-2 my-auto pt-2 md:pt-4">
+                <p className="text-base text-gray-600 leading-relaxed">
                   NetSuite SRP (Service Resource Planning) is a unified cloud solution designed to manage the entire services lifecycle—from initial opportunity and resource scheduling to project delivery and financial recognition. As a specialized NetSuite SRP partner, we help Professional Services organizations eliminate siloed data and bridge the gap between project teams and back-office finance.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed line-clamp-3">
+                <p className="text-base text-gray-600 leading-relaxed">
                   By centralizing Professional Services Automation (PSA) with core ERP financials, NetSuite SRP provides real-time visibility into project health, resource utilization, and billable margins. Optimize your talent pool and ensure project success with a scalable platform that grows alongside your firm&apos;s global ambitions.
                 </p>
               </div>

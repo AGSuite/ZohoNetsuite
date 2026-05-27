@@ -927,7 +927,7 @@ export default function AboutClient() {
               <div className="relative rounded-2xl w-full max-w-[500px]">
                 <div className="rounded-2xl overflow-hidden shadow-md">
                   <Image
-                    src="/images/aboutus/mission3.webp"
+                    src="/images/aboutus/ns_mission.png"
                     alt="AGSuite Mission 1"
                     width={700}
                     height={300}
@@ -1037,7 +1037,7 @@ export default function AboutClient() {
 
               <div className="rounded-2xl overflow-hidden shadow-md w-full max-w-[400px] relative z-10">
                 <Image
-                  src="/images/aboutus/visiongirl.webp"
+                  src="/images/aboutus/ns_vision.png"
                   alt="AGSuite Vision"
                   width={500}
                   height={400}
@@ -1083,7 +1083,7 @@ export default function AboutClient() {
             >
               <div className="rounded-2xl overflow-hidden shadow-md w-full max-w-[500px]">
                 <Image
-                  src="/images/aboutus/mission2.webp"
+                  src="/images/aboutus/ns_niche1.png"
                   alt="AGSuite Niche 1"
                   width={600}
                   height={400}
@@ -1093,7 +1093,7 @@ export default function AboutClient() {
 
               <div className="hidden lg:block absolute w-[55%] max-w-[290px] top-1/2 right-[-6%] transform -translate-y-1/2 rounded-2xl border-16 border-white overflow-hidden">
                 <Image
-                  src="/images/aboutus/vision.webp"
+                  src="/images/aboutus/ns_niche2.png"
                   alt="AGSuite Niche 2"
                   width={400}
                   height={300}
@@ -1265,7 +1265,7 @@ export default function AboutClient() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 md:px-12 lg:px-16 flex flex-col items-center text-center"
+          className="relative z-10 max-w-[1500px] mx-auto px-6 sm:px-10 md:px-12 lg:px-16 flex flex-col items-center text-center"
         >
           <motion.h2
             variants={fadeInUp}
@@ -1427,26 +1427,27 @@ const leadersData = [
 
 function OurLeaders({ themeColor: _themeColor }: { themeColor: 'blue' | 'rose' }) {
   return (
-    <div className="flex flex-wrap justify-center gap-6 w-full max-w-7xl mx-auto">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full">
       {leadersData.map((leader, index) => (
         <motion.div
           key={index}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="group relative bg-gradient-to-br from-[#e6f0ff] to-[#f0f5ff] rounded-[2rem] p-4 hover:bg-gradient-to-br hover:from-[#001535] hover:to-[#002b6b] transition-all duration-500 overflow-hidden flex flex-col shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-900/40 text-left max-w-[310px] mx-auto w-full"
+          className="group relative bg-gradient-to-br from-[#e6f0ff] to-[#f0f5ff] rounded-[2rem] p-5 hover:bg-gradient-to-br hover:from-[#001535] hover:to-[#002b6b] transition-all duration-500 overflow-hidden flex flex-col shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-900/40 text-left w-full"
         >
           {/* Inner Image Container - Circular Background */}
-          <div className="relative w-40 h-40 mx-auto mb-6 rounded-full p-2 border-2 border-slate-800/80 group-hover:border-blue-300 transition-all duration-500 flex items-center justify-center">
-            <div className="relative w-full h-full rounded-full overflow-hidden">
+          <div className="relative w-48 h-48 mx-auto mb-5 rounded-full border-4 border-slate-700 group-hover:border-blue-300 transition-all duration-500 flex items-center justify-center overflow-hidden">
+            <div className="relative w-full h-full">
               <Image
                 src={leader.image}
                 alt={leader.name}
                 fill
-                className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
                 sizes="160px"
               />
             </div>
+
           </div>
 
           <div className="px-2 flex-grow flex flex-col pt-2">
@@ -1471,7 +1472,7 @@ function OurLeaders({ themeColor: _themeColor }: { themeColor: 'blue' | 'rose' }
               <span className="block text-sm font-semibold bg-gradient-to-r from-[#001535] to-[#004e9a] bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:to-cyan-300 transition-all duration-500 mb-3 border-b border-gray-300 group-hover:border-blue-400/30 pb-3 w-max pr-6">
                 {leader.title}
               </span>
-              <p className="text-[13px] md:text-[14px] font-medium bg-gradient-to-r from-[#1e293b] to-[#334155] bg-clip-text text-transparent group-hover:from-white/80 group-hover:to-white/80 transition-all duration-500 leading-relaxed">
+              <p className="text-[11px] md:text-[12px] font-medium bg-gradient-to-r from-[#1e293b] to-[#334155] bg-clip-text text-transparent group-hover:from-white/80 group-hover:to-white/80 transition-all duration-500 leading-relaxed">
                 {leader.bio}
               </p>
             </div>

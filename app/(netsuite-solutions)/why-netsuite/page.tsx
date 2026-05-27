@@ -233,7 +233,7 @@ export default function WhyNetsuitePage() {
       {/* Section 2: What Is NetSuite? */}
       <section id="what-is" className="pt-20 pb-20 bg-white scroll-mt-36">
         <div className="max-w-[85rem] mx-auto px-8 lg:px-14">
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -264,11 +264,11 @@ export default function WhyNetsuitePage() {
                 </h2>
               </div>
 
-              <div className="space-y-6">
-                <p className="text-lg text-gray-600 leading-relaxed line-clamp-4">
+              <div className="space-y-6 pt-2 md:pt-4">
+                <p className="text-lg text-gray-600 leading-relaxed">
                   NetSuite is a cloud-based enterprise resource planning (ERP) suite that gives organizations everything they need to run their businesses efficiently and accelerate growth.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed line-clamp-3">
+                <p className="text-lg text-gray-600 leading-relaxed">
                   By making data readily available, automating core processes, and ensuring proper controls, NetSuite lets business leaders respond quickly to changing conditions.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed font-medium">

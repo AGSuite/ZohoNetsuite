@@ -189,22 +189,22 @@ export default function AnalyticsWarehousePage() {
       {/* What is Analytics Warehouse */}
       <section id="what-is-warehouse" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative flex items-center justify-center rounded-3xl w-full"
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
             >
-              <div className="relative w-full p-2 lg:p-4">
-                <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-teal-900/10 border-4 border-teal-100 transition-transform duration-500 hover:scale-[1.03]">
+              <div className="relative w-full h-full p-4 lg:p-6">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-teal-900/10 border-4 border-teal-100">
                   <Image
                     src="/images/Dashboard/analytic wharehouse 2.jpg"
                     alt="NetSuite Analytics Warehouse (NSAW) Solution Dashboard"
-                    width={800}
-                    height={500}
-                    className="w-full h-auto object-contain rounded-xl block"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
                   />
                 </div>
               </div>
@@ -218,14 +218,14 @@ export default function AnalyticsWarehousePage() {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-teal-500 leading-tight">
-                  NetSuite Analytics Warehouse (NSAW): Unifying ERP and External Data for 10x Faster Insights
+                  Unify Your Data with NetSuite Analytics Warehouse.
                 </h2>
               </div>
-              <div className="space-y-2 my-auto">
-                <p className="text-base text-gray-600 leading-relaxed line-clamp-4">
+              <div className="space-y-2 my-auto pt-2 md:pt-4">
+                <p className="text-base text-gray-600 leading-relaxed">
                   NetSuite Analytics Warehouse (NSAW) is a cloud-native data solution that consolidates NetSuite ERP data with 100+ external sources into a single, governed repository. As a specialized NetSuite Analytics partner, we help you eliminate data silos and provide your teams with high-performance querying and modeling capabilities.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed line-clamp-3">
+                <p className="text-base text-gray-600 leading-relaxed">
                   By centralizing your entire business data ecosystem, you can run complex SQL queries and visualize trends across departments without manual exports. Scale your data strategy with a platform designed for enterprise-grade security and sub-second dashboard performance.
                 </p>
               </div>

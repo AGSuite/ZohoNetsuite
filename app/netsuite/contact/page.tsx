@@ -101,6 +101,7 @@ const locations: {
   email: string;
   phone?: string;
   mapUrl: string;
+  image: string;
 }[] = [
     // ── INDIA ──────────────────────────────────────────────────────────────────
     {
@@ -111,6 +112,7 @@ const locations: {
       address: "Office No. 1110, 11th floor, Gera's Imperium Rise, Hinjewadi Rajiv Gandhi Infotech Park, Hinjewadi, Pune, Maharashtra, INDIA – 411057",
       email: "contact@agsuitetech.com",
       mapUrl: "https://www.google.com/maps/place/AGSuite+Technologies+(Top+NetSuite+Partner)/@18.5964114,73.7182446,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2bbbaf62357d1:0x8b9a4ecd422c8b03!8m2!3d18.5964114!4d73.7182446!16s%2Fg%2F11kjps0bgc?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+      image: "/images/offices images/pune_city.png",
     },
     {
       region: "INDIA",
@@ -120,6 +122,7 @@ const locations: {
       address: "3rd Floor, Unit no. 4, Inspire, Main Road, G Block BKC, Bandra Kurla Complex, Mumbai, Maharashtra INDIA – 400051",
       email: "contact@agsuitetech.com",
       mapUrl: "https://maps.google.com/?q=Inspire+BKC+Bandra+Kurla+Complex+Mumbai",
+      image: "/images/offices images/mumbai_city.png",
     },
     {
       region: "INDIA",
@@ -129,6 +132,7 @@ const locations: {
       address: "Whitefield, Survey No. 192, Whitefield Main Road, B Narayanapura, Mahadevapura, Bangalore, KA, INDIA – 560001",
       email: "contact@agsuitetech.com",
       mapUrl: "https://maps.google.com/?q=Whitefield+Main+Road+Mahadevapura+Bangalore",
+      image: "/images/offices images/bangalore_city.png",
     },
     {
       region: "INDIA",
@@ -138,6 +142,7 @@ const locations: {
       address: "6th Floor, N Heights, Plot No 38, Phase 2 Hitec City, Siddiq Nagar, Hyderabad, Telangana, INDIA – 500081",
       email: "contact@agsuitetech.com",
       mapUrl: "https://maps.google.com/?q=N+Heights+Hitec+City+Hyderabad",
+      image: "/images/offices images/hyderabad_city.png",
     },
     {
       region: "INDIA",
@@ -147,6 +152,7 @@ const locations: {
       address: "07th Floor, Gate No. 03 & Gate No. 04, Ambience Island, NH 48, Gurugram, Haryana, INDIA – 122002",
       email: "contact@agsuitetech.com",
       mapUrl: "https://maps.google.com/?q=Ambience+Island+NH48+Gurugram",
+      image: "/images/offices images/gurugram_city.png",
     },
     {
       region: "INDIA",
@@ -156,6 +162,7 @@ const locations: {
       address: "F-18 Subcity Center, Opp. Income Tax Office, Udaipur, Rajasthan INDIA – 313001",
       email: "contact@agsuitetech.com",
       mapUrl: "https://maps.google.com/?q=Subcity+Center+Udaipur+Rajasthan",
+      image: "/images/offices images/udaipur_city.png",
     },
     // ── USA ────────────────────────────────────────────────────────────────────
     {
@@ -166,6 +173,7 @@ const locations: {
       address: "6421-1 Metro Plantation Road, Fort Myers, FL, US – 33966",
       email: "contact@agsuitetech.com",
       mapUrl: "https://maps.google.com/?q=6421+Metro+Plantation+Road+Fort+Myers+FL",
+      image: "/images/offices images/florida_city.png",
     },
     // ── UK ─────────────────────────────────────────────────────────────────────
     {
@@ -176,6 +184,7 @@ const locations: {
       address: "The Old Dairy, Drummers Hill, St Austell, Cornwall, PL26 8XR",
       email: "contact@agsuitetech.com",
       mapUrl: "https://maps.google.com/?q=Drummers+Hill+St+Austell+Cornwall",
+      image: "/images/offices images/uk_city.png",
     },
   ];
 
@@ -919,29 +928,32 @@ export default function ContactPage() {
                   whileHover={{ y: -5, transition: { duration: 0.22 } }}
                   className="group relative bg-white rounded-2xl overflow-hidden flex flex-col border border-gray-200 shadow-md hover:shadow-xl hover:border-blue-200 transition-all duration-300"
                 >
-                  {/* Top gradient accent line */}
-                  <div
-                    className="h-[3px] w-full shrink-0"
-                    style={{ background: "linear-gradient(90deg, #0a1f5c, #1d4ed8, #60a5fa)" }}
-                  />
+                  {/* Office Image */}
+                  <div className="relative h-40 w-full overflow-hidden shrink-0">
+                    <img
+                      src={loc.image}
+                      alt={`${loc.city} Office`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    {/* Floating flag and region */}
+                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-sm border border-white/20">
+                      <img 
+                        src={`https://flagcdn.com/${loc.region === "INDIA" ? "in" : loc.region === "USA" ? "us" : "gb"}.svg`}
+                        alt={loc.region}
+                        className="w-4 h-3 object-cover rounded-sm"
+                      />
+                      <span className="text-gray-800 font-bold text-[9px] tracking-wider uppercase">{loc.region}</span>
+                    </div>
+                  </div>
 
                   {/* Card body */}
                   <div className="relative z-10 p-6 flex flex-col flex-1 gap-4">
-
                     {/* Flag + City */}
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="relative w-10 h-7 rounded-md overflow-hidden shadow-sm border border-gray-100 shrink-0">
-                          <img
-                            src={`https://flagcdn.com/${loc.region === "INDIA" ? "in" : loc.region === "USA" ? "us" : "gb"}.svg`}
-                            alt={loc.region}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div>
-                          <h3 className="text-base font-medium text-gray-900 leading-tight">{loc.city}</h3>
-                          <p className="text-xs text-blue-600 font-medium mt-0.5">{loc.state}</p>
-                        </div>
+                      <div>
+                        <h3 className="text-base font-semibold text-gray-900 leading-tight">{loc.city}</h3>
+                        <p className="text-xs text-blue-600 font-semibold mt-0.5">{loc.state}</p>
                       </div>
                       <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-blue-50 border border-blue-100 shrink-0">
                         <Building2 className="w-4 h-4 text-blue-600" />
@@ -964,18 +976,6 @@ export default function ContactPage() {
                           className="text-gray-600 text-sm leading-relaxed hover:text-blue-600 hover:underline transition-colors cursor-pointer"
                         >
                           {loc.address}
-                        </a>
-                      </div>
-
-                      <div className="flex items-center gap-2.5">
-                        <div className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0 bg-blue-50 border border-blue-100">
-                          <Mail className="w-3 h-3 text-blue-600" />
-                        </div>
-                        <a
-                          href={`mailto:${loc.email}`}
-                          className="text-gray-700 text-sm font-medium hover:text-blue-600 transition-colors"
-                        >
-                          {loc.email}
                         </a>
                       </div>
 
@@ -1012,71 +1012,59 @@ export default function ContactPage() {
               ))}
           </motion.div>
 
-          {/* Bottom global CTA */}
+          {/* Bottom Global CTA */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-14 rounded-3xl overflow-hidden relative"
-            style={{
-              background: "linear-gradient(135deg, #000814 0%, #001240 20%, #0a2472 45%, #1d4ed8 65%, #0e1b6e 80%, #000d2e 100%)",
-            }}
+            transition={{ duration: 0.6 }}
+            className="mt-14 rounded-3xl overflow-hidden relative py-10 px-8 sm:px-12 text-left border border-gray-800"
           >
-            {/* Grid overlay */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                backgroundImage:
-                  "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
-                backgroundSize: "50px 50px",
-              }}
-            />
-
-            {/* Glow blobs */}
-            <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[100px] -translate-x-1/3 -translate-y-1/3 pointer-events-none" />
-            <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-indigo-600/25 rounded-full blur-[90px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
-            <div className="absolute bottom-0 left-1/2 w-[500px] h-[250px] bg-cyan-700/15 rounded-full blur-[80px] -translate-x-1/2 translate-y-1/2 pointer-events-none" />
-
-            {/* Floating particles */}
-            {[
-              { w: 2, h: 2, top: 15, left: 10, dur: 4.5, delay: 0 },
-              { w: 1.5, h: 1.5, top: 70, left: 25, dur: 3.8, delay: 0.8 },
-              { w: 2.5, h: 2.5, top: 30, left: 80, dur: 5.2, delay: 0.3 },
-              { w: 1, h: 1, top: 80, left: 60, dur: 4.0, delay: 1.5 },
-              { w: 2, h: 2, top: 50, left: 45, dur: 3.5, delay: 0.6 },
-              { w: 1.5, h: 1.5, top: 20, left: 55, dur: 5.5, delay: 1.2 },
-            ].map((p, i) => (
-              <motion.div
-                key={i}
-                className="absolute rounded-full bg-white/50 pointer-events-none"
-                style={{ width: p.w, height: p.h, top: `${p.top}%`, left: `${p.left}%` }}
-                animate={{ y: [0, -18, 0], opacity: [0.2, 0.8, 0.2] }}
-                transition={{ duration: p.dur, repeat: Infinity, ease: "easeInOut", delay: p.delay }}
+            {/* Background Image with Dark Opacity */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/images/office/building.webp"
+                alt="Office Building"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 80vw"
               />
-            ))}
+              <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/85 to-blue-950/90" />
+            </div>
 
-            <div className="relative z-10 px-10 py-14 flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="max-w-2xl">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm mb-4">
-                  <Globe className="w-4 h-4 text-cyan-400" />
-                  <span className="text-cyan-300 text-xs font-medium tracking-wider uppercase">Anywhere You Are</span>
-                </div>
-                <h3 className="text-3xl sm:text-4xl font-medium text-white mb-3 leading-tight">
-                  No Matter Your{" "}
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-blue-300 to-indigo-300">
-                    Location
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+              {/* Left Side: Content & Contacts */}
+              <div className="flex flex-col items-start gap-4 max-w-2xl">
+                
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-medium text-white leading-tight">
+                  Ready to transform your business{" "}
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-blue-300 to-indigo-300 font-bold">
+                    from any location?
                   </span>
-                  {" "}— We're Ready to Help
                 </h3>
-                <p className="text-blue-100/70 text-base leading-relaxed">
-                  Our global team of NetSuite certified consultants delivers world-class ERP implementations, 24/7 support, and tailored NetSuite solutions wherever you operate.
-                </p>
+
+                {/* Horizontal Stack for Direct Contact Info */}
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-2 text-white/90">
+                  <a href="mailto:contact@agsuitetech.com" className="flex items-center gap-2.5 hover:text-cyan-400 transition-colors group">
+                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
+                      <Mail className="w-3.5 h-3.5 text-cyan-400" />
+                    </div>
+                    <span className="text-xs sm:text-sm font-semibold tracking-wide">contact@agsuitetech.com</span>
+                  </a>
+                  <a href="tel:+919096012100" className="flex items-center gap-2.5 hover:text-cyan-400 transition-colors group">
+                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
+                      <Phone className="w-3.5 h-3.5 text-cyan-400" />
+                    </div>
+                    <span className="text-xs sm:text-sm font-semibold tracking-wide">+91 909 601 2100</span>
+                  </a>
+                </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+
+              {/* Right Side: Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#0a1f5c] font-medium rounded-xl hover:bg-cyan-50 transition-all duration-200 shadow-2xl shadow-blue-900/40 hover:scale-[1.02] text-sm"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold rounded-xl bg-white text-gray-900 hover:bg-gray-100 transition-all duration-200 shadow-lg hover:scale-105"
                   onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                 >
                   <Send className="w-4 h-4" />
@@ -1084,7 +1072,7 @@ export default function ContactPage() {
                 </a>
                 <Link
                   href="/netsuite/contact/free-consultation"
-                  className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-medium rounded-xl hover:bg-white/15 hover:border-white/60 backdrop-blur-sm transition-all duration-200 text-sm"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold border border-white/30 text-white rounded-xl hover:bg-white/15 hover:border-white/60 backdrop-blur-sm transition-all duration-200 hover:scale-105"
                 >
                   Free Consultation
                   <ArrowRight className="w-4 h-4" />

@@ -317,22 +317,22 @@ export default function AccountingSoftwarePage() {
       {/* ── What is Accounting Section ───────────────────────────────────── */}
       <section id="what-is-accounting" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative flex items-center justify-center rounded-3xl overflow-hidden w-full"
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
             >
-              <div className="relative w-full aspect-video p-2 lg:p-4">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100 transition-transform duration-500 hover:scale-[1.03]">
+              <div className="relative w-full h-full p-4 lg:p-6">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100">
                   <Image
                     src="/images/Dashboard/accounting and planing dashboard.jpg"
                     alt="NetSuite Cloud Accounting Financial Management Dashboard"
                     fill
-                    sizes="(max-width: 768px) 100vw, 60vw"
-                    className="object-cover rounded-xl"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
                   />
                 </div>
               </div>
@@ -350,11 +350,11 @@ export default function AccountingSoftwarePage() {
                   NetSuite Accounting: Unified Cloud Financial Management for Scalable Growth
                 </h2>
               </div>
-              <div className="space-y-2 my-auto">
-                <p className="text-base text-gray-600 leading-relaxed line-clamp-4">
+              <div className="space-y-2 my-auto pt-2 md:pt-4">
+                <p className="text-base text-gray-600 leading-relaxed">
                   NetSuite Cloud Accounting is a robust financial management solution that unifies your general ledger, AR, AP, and tax into a single cloud-based platform. As a trusted NetSuite implementation partner, we help organizations eliminate disconnected spreadsheets and achieve a single version of financial truth across their entire enterprise.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed line-clamp-3">
+                <p className="text-base text-gray-600 leading-relaxed">
                   With real-time visibility and automated financial workflows, your team can accelerate the month-end close, ensure global compliance, and deliver audit-ready reporting. Optimize your financial operations with a scalable system designed to support complex business models and international expansion.
                 </p>
               </div>
@@ -362,7 +362,10 @@ export default function AccountingSoftwarePage() {
                 <Link
                   href="#contact-form"
                   className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
-                  style={{ background: 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)', color: '#ffffff' }}
+                  style={{
+                    background: 'linear-gradient(135deg, #0a1f5c 0%, #1d4ed8 100%)',
+                    color: '#ffffff',
+                  }}
                   onMouseEnter={e => {
                     (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff';
                     (e.currentTarget as HTMLAnchorElement).style.color = '#0a1f5c';

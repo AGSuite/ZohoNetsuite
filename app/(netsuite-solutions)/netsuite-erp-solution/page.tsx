@@ -323,11 +323,11 @@ export default function NetSuiteERPPage() {
                   Turn Complexity into Clarity with NetSuite ERP.
                 </h2>
               </div>
-              <div className="space-y-2 my-auto">
-                <p className="text-base text-gray-600 leading-relaxed line-clamp-4">
+              <div className="space-y-2 my-auto pt-2 md:pt-4">
+                <p className="text-base text-gray-600 leading-relaxed">
                   NetSuite ERP is an all-in-one cloud business management suite that unifies financials, inventory, orders, and CRM. As a premium NetSuite Solution Provider, we help businesses eliminate manual processes and gain real-time visibility into their entire operations through a single, scalable platform.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed line-clamp-3">
+                <p className="text-base text-gray-600 leading-relaxed">
                   From advanced financial reporting to global business management, NetSuite provides the agility required to scale. It empowers organizations to improve efficiency, ensure regulatory compliance, and drive strategic growth with data-driven decision-making.
                 </p>
               </div>
@@ -373,7 +373,7 @@ export default function NetSuiteERPPage() {
             NetSuite ERP Modules
           </motion.h2>
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-600 text-lg max-w-2xl text-center">
-            All 13 integrated modules to manage every dimension of your business in one unified platform
+            All in one integrated modules to manage every dimension of your business under single unified platform.
           </motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {[

@@ -181,22 +181,22 @@ export default function NetSuiteAIPage() {
       {/* What is NetSuite AI */}
       <section id="what-is-ai" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative flex items-center justify-center rounded-3xl w-full"
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
             >
-              <div className="relative w-full p-2 lg:p-4">
-                <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/10 border-4 border-blue-100 transition-transform duration-500 hover:scale-[1.03]">
+              <div className="relative w-full h-full p-4 lg:p-6">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/10 border-4 border-blue-100">
                   <Image
                     src="/images/Dashboard/Artifical Intelligence 2 dashboard.jpg"
                     alt="NetSuite Artificial Intelligence and Machine Learning Dashboard"
-                    width={800}
-                    height={500}
-                    className="w-full h-auto object-contain rounded-xl block"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
                   />
                 </div>
               </div>
@@ -211,14 +211,14 @@ export default function NetSuiteAIPage() {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
-                  NetSuite AI: Harnessing Intelligent Automation and Machine Learning
+                  Work Smarter with NetSuite Artificial Intelligence.
                 </h2>
               </div>
-              <div className="space-y-2 my-auto">
-                <p className="text-base text-gray-600 leading-relaxed line-clamp-4">
+              <div className="space-y-2 my-auto pt-2 md:pt-4">
+                <p className="text-base text-gray-600 leading-relaxed">
                   NetSuite AI and machine learning are embedded natively into the platform, providing actionable insights without the need for external data scientists. As a specialized NetSuite AI implementation partner, we help businesses leverage predictive analytics to anticipate market trends, automate complex financial workflows, and enhance operational efficiency.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed line-clamp-3">
+                <p className="text-base text-gray-600 leading-relaxed">
                   From intelligent cash flow forecasting to automated anomaly detection, NetSuite AI empowers your team to make data-driven decisions with confidence. Eliminate manual data processing and focus on strategic initiatives with a platform that continuously learns and optimizes your business processes.
                 </p>
               </div>

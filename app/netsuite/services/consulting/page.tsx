@@ -426,7 +426,7 @@ export default function NetSuiteConsultingPage() {
 
       {/* ── What is NetSuite Consulting ──────────────────────────────── */}
       <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
-        <div className="max-w-8xl mx-auto px-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
           <div className="grid lg:grid-cols-2 gap-10 items-stretch mt-15">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -451,7 +451,7 @@ export default function NetSuiteConsultingPage() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="flex flex-col justify-center space-y-6 bg-slate-50/50 p-8 md:p-12 rounded-2xl border border-slate-100"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
                 Turn NetSuite into a Competitive Advantage.
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">

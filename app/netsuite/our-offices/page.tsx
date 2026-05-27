@@ -35,6 +35,7 @@ interface Location {
   email: string;
   phone?: string;
   mapUrl: string;
+  image: string;
 }
 
 const locations: Location[] = [
@@ -46,6 +47,7 @@ const locations: Location[] = [
     address: `Office No. 1110, 11th floor, Gera's Imperium Rise, Hinjewadi Rajiv Gandhi Infotech Park, Hinjewadi, Pune, Maharashtra, INDIA – 411057.`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://www.google.com/maps/place/AGSuite+Technologies+(Top+NetSuite+Partner)/@18.5964114,73.7182446,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2bbbaf62357d1:0x8b9a4ecd422c8b03!8m2!3d18.5964114!4d73.7182446!16s%2Fg%2F11kjps0bgc?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D",
+    image: "/images/offices images/pune_city.png",
   },
   {
     region: "INDIA",
@@ -55,6 +57,7 @@ const locations: Location[] = [
     address: `3rd Floor, Unit no. 4, Inspire, Main Road, G Block BKC, Bandra Kurla Complex, Mumbai, Maharashtra INDIA – 400051`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://maps.google.com/?q=Inspire+BKC+Bandra+Kurla+Complex+Mumbai",
+    image: "/images/offices images/mumbai_city.png",
   },
   {
     region: "INDIA",
@@ -64,6 +67,7 @@ const locations: Location[] = [
     address: `Whitefield, Survey No. 192, Whitefield Main Road, B Narayanapura, Mahadevapura, Bangalore, KA, INDIA – 560001`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://maps.google.com/?q=Whitefield+Main+Road+Mahadevapura+Bangalore",
+    image: "/images/offices images/bangalore_city.png",
   },
   {
     region: "INDIA",
@@ -73,6 +77,7 @@ const locations: Location[] = [
     address: `6th Floor, N Heights, Plot No 38, Phase 2 Hitec City, Siddiq nagar, Hyderabad, Telangana, INDIA – 500081`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://maps.google.com/?q=N+Heights+Hitec+City+Hyderabad",
+    image: "/images/offices images/hyderabad_city.png",
   },
   {
     region: "INDIA",
@@ -82,6 +87,7 @@ const locations: Location[] = [
     address: `07th Floor, Gate No. 03 & Gate No. 04, Ambience Island, NH 48, Gurugram, Haryana, INDIA – 122002`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://maps.google.com/?q=Ambience+Island+NH48+Gurugram",
+    image: "/images/offices images/gurugram_city.png",
   },
   {
     region: "INDIA",
@@ -91,6 +97,7 @@ const locations: Location[] = [
     address: `F-18 Subcity Center, Opp. Income Tax Office, Udaipur, Rajasthan INDIA – 313001`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://maps.google.com/?q=Subcity+Center+Udaipur+Rajasthan",
+    image: "/images/offices images/udaipur_city.png",
   },
   {
     region: "USA",
@@ -100,6 +107,7 @@ const locations: Location[] = [
     address: `6421-1 Metro Plantation Road, Fort Myers, FL, US – 33966`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://maps.google.com/?q=6421+Metro+Plantation+Road+Fort+Myers+FL",
+    image: "/images/offices images/florida_city.png",
   },
   {
     region: "UK",
@@ -109,6 +117,7 @@ const locations: Location[] = [
     address: `The Old Dairy, Drummers Hill, St Austell, Cornwall, PL26 8XR`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://maps.google.com/?q=Drummers+Hill+St+Austell+Cornwall",
+    image: "/images/offices images/uk_city.png",
   },
 ];
 
@@ -190,7 +199,7 @@ export default function NetSuiteOfficesPage() {
                 transition={{ delay: 0.35 }}
                 className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-xl mb-10"
               >
-                Strategically located across continents, our global offices provide the local expertise and worldwide perspective needed to scale your enterprise with NetSuite.
+                Local NetSuite expertise, global perspective. Scale your enterprise through our global offices.
               </motion.p>
               
               <motion.div
@@ -288,36 +297,7 @@ export default function NetSuiteOfficesPage() {
             </motion.div>
           </div>
 
-          {/* Bottom Stats bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-            className="border-t border-white/15 pt-8 mt-12 sm:mt-16"
-          >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { label: 'Global Offices', value: '8+', icon: Building2, color: 'text-blue-400' },
-                { label: 'Countries', value: '3+', icon: Globe2, color: 'text-cyan-400' },
-                { label: 'Consultants', value: '100+', icon: Users, color: 'text-indigo-400' },
-                { label: 'Success Rate', value: '98%', icon: Target, color: 'text-blue-300' },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.9 + i * 0.1 }}
-                  className="flex flex-col gap-2"
-                >
-                  <div className="flex items-center gap-3">
-                    <item.icon className={`w-5 h-5 ${item.color}`} />
-                    <span className="text-3xl font-bold text-white">{item.value}</span>
-                  </div>
-                  <p className="text-white/50 text-xs font-bold uppercase tracking-widest">{item.label}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+
         </div>
       </section>
 
@@ -436,21 +416,30 @@ export default function NetSuiteOfficesPage() {
                     whileHover={{ y: -8 }}
                     className="group relative bg-white rounded-3xl overflow-hidden flex flex-col border border-gray-100 shadow-sm hover:shadow-2xl hover:border-blue-100 transition-all duration-300"
                   >
-                    <div className="h-[4px] w-full shrink-0" style={{ background: "linear-gradient(90deg, #0a1f5c, #1d4ed8, #60a5fa)" }} />
+                    {/* Office Image */}
+                    <div className="relative h-48 w-full overflow-hidden shrink-0">
+                      <img
+                        src={loc.image}
+                        alt={`${loc.city} Office`}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                      {/* Floating flag and region */}
+                      <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-sm border border-white/20">
+                        <img 
+                          src={`https://flagcdn.com/${loc.region === "INDIA" ? "in" : loc.region === "USA" ? "us" : "gb"}.svg`}
+                          alt={loc.region}
+                          className="w-4.5 h-3 object-cover rounded-sm"
+                        />
+                        <span className="text-gray-800 font-bold text-[10px] tracking-wider uppercase">{loc.region}</span>
+                      </div>
+                    </div>
+
                     <div className="relative z-10 p-8 flex flex-col flex-1 gap-6">
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                          <div className="relative w-10 h-7 rounded-md overflow-hidden shadow-sm border border-gray-100">
-                            <img 
-                              src={`https://flagcdn.com/${loc.region === "INDIA" ? "in" : loc.region === "USA" ? "us" : "gb"}.svg`}
-                              alt={loc.region}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-bold text-gray-900 leading-tight">{loc.city}</h3>
-                            <p className="text-xs text-blue-600 font-bold uppercase tracking-wider mt-1">{loc.state}</p>
-                          </div>
+                        <div>
+                          <h3 className="text-lg font-bold text-gray-900 leading-tight">{loc.city}</h3>
+                          <p className="text-xs text-blue-600 font-bold uppercase tracking-wider mt-1">{loc.state}</p>
                         </div>
                         <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-blue-50 border border-blue-100 shrink-0">
                           <Building2 className="w-5 h-5 text-blue-600" />
@@ -466,15 +455,6 @@ export default function NetSuiteOfficesPage() {
                           </div>
                           <a href={loc.mapUrl} target="_blank" rel="noopener noreferrer" className="text-gray-600 text-sm leading-relaxed hover:text-blue-600 transition-colors">
                             {loc.address}
-                          </a>
-                        </div>
-                        
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 bg-blue-50 border border-blue-100 group-hover:bg-blue-600 group-hover:border-blue-600 transition-colors duration-300">
-                            <Mail className="w-4 h-4 text-blue-600 group-hover:text-white transition-colors duration-300" />
-                          </div>
-                          <a href={`mailto:${loc.email}`} className="text-gray-800 text-sm font-bold hover:text-blue-600 transition-colors">
-                            {loc.email}
                           </a>
                         </div>
 
@@ -509,58 +489,70 @@ export default function NetSuiteOfficesPage() {
       </section>
 
       {/* ── CTA Section ─────────────────────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="rounded-[3rem] overflow-hidden relative p-12 md:p-20 text-center"
-            style={{
-              background: "linear-gradient(135deg, #000814 0%, #001240 20%, #0a2472 45%, #1d4ed8 65%, #0e1b6e 80%, #000d2e 100%)",
-            }}
+            transition={{ duration: 0.6 }}
+            className="rounded-3xl overflow-hidden relative py-10 px-8 sm:px-12 text-left border border-gray-800"
           >
-            <div
-              className="absolute inset-0 pointer-events-none opacity-20"
-              style={{
-                backgroundImage:
-                  "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
-                backgroundSize: "50px 50px",
-              }}
-            />
-            
-            <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm mb-4">
-                <Globe className="w-4 h-4 text-cyan-400" />
-                <span className="text-cyan-300 text-xs font-semibold tracking-wider uppercase">Anywhere You Are</span>
+            {/* Background Image with Dark Opacity */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/images/office/building.webp"
+                alt="Office Building"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 80vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/85 to-blue-950/90" />
+            </div>
+
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+              {/* Left Side: Content & Contacts */}
+              <div className="flex flex-col items-start gap-4 max-w-2xl">
+                
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-medium text-white leading-tight">
+                  Ready to transform your business{" "}
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-blue-300 to-indigo-300 font-bold">
+                    from any location?
+                  </span>
+                </h3>
+
+                {/* Horizontal Stack for Direct Contact Info */}
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-2 text-white/90">
+                  <a href="mailto:contact@agsuitetech.com" className="flex items-center gap-2.5 hover:text-cyan-400 transition-colors group">
+                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
+                      <Mail className="w-3.5 h-3.5 text-cyan-400" />
+                    </div>
+                    <span className="text-xs sm:text-sm font-semibold tracking-wide">contact@agsuitetech.com</span>
+                  </a>
+                  <a href="tel:+919096012100" className="flex items-center gap-2.5 hover:text-cyan-400 transition-colors group">
+                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
+                      <Phone className="w-3.5 h-3.5 text-cyan-400" />
+                    </div>
+                    <span className="text-xs sm:text-sm font-semibold tracking-wide">+91 909 601 2100</span>
+                  </a>
+                </div>
               </div>
-              
-              <h3 className="text-3xl sm:text-5xl font-medium text-white leading-tight">
-                Ready to transform your business{" "}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-blue-300 to-indigo-300 font-bold">
-                  from any location?
-                </span>
-              </h3>
-              
-              <p className="text-blue-100/70 text-lg sm:text-xl leading-relaxed">
-                Our global team of certified NetSuite consultants delivers world-class implementations, 24/7 support, and tailored solutions wherever you operate.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
+
+              {/* Right Side: Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
                 <Link
                   href="/netsuite/contact/request-quote"
-                  className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-[#0a1f5c] font-bold rounded-2xl hover:bg-cyan-50 transition-all duration-300 shadow-2xl hover:scale-[1.05] text-base"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold rounded-xl bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-lg hover:scale-105"
                 >
-                  <Send className="w-5 h-5" />
+                  <Send className="w-4 h-4" />
                   Contact Us Now
                 </Link>
                 <Link
                   href="/netsuite/contact/free-consultation"
-                  className="inline-flex items-center justify-center gap-2 px-10 py-5 border-2 border-white/30 text-white font-bold rounded-2xl hover:bg-white/15 hover:border-white/60 backdrop-blur-sm transition-all duration-300 text-base"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold border border-white/30 text-white rounded-xl hover:bg-white/15 hover:border-white/60 backdrop-blur-sm transition-all duration-300 hover:scale-105"
                 >
                   Free Consultation
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>

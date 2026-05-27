@@ -181,22 +181,22 @@ export default function NetSuiteEcommercePage() {
       {/* What is */}
       <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative flex items-center justify-center rounded-3xl overflow-hidden w-full"
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
             >
-              <div className="relative w-full aspect-[16/11] p-2 lg:p-4">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/10 border-4 border-blue-100 transition-transform duration-500 hover:scale-[1.03]">
+              <div className="relative w-full h-full p-4 lg:p-6">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/10 border-4 border-blue-100">
                   <Image
                     src="/images/Dashboard/suitecommerce 2 dashbaord.jpg"
                     alt="NetSuite SuiteCommerce Unified E-Commerce Management Dashboard"
                     fill
-                    sizes="(max-width: 768px) 100vw, 60vw"
-                    className="object-cover rounded-xl"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
                   />
                 </div>
               </div>
@@ -211,14 +211,14 @@ export default function NetSuiteEcommercePage() {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
-                  NetSuite SuiteCommerce: Unified E-Commerce for Seamless Omnichannel Growth
+                  Unify Your Commerce with SuiteCommerce.
                 </h2>
               </div>
-              <div className="space-y-2 my-auto">
-                <p className="text-base text-gray-600 leading-relaxed line-clamp-4">
+              <div className="space-y-2 my-auto pt-2 md:pt-4">
+                <p className="text-base text-gray-600 leading-relaxed">
                   NetSuite SuiteCommerce is a robust, unified ecommerce platform that seamlessly connects your online sales channel with your core ERP system. As a leading NetSuite SuiteCommerce implementation partner, we help businesses eliminate data silos by integrating inventory, CRM, and financials into a single, high-performance web storefront.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed line-clamp-3">
+                <p className="text-base text-gray-600 leading-relaxed">
                   Whether you are scaling B2B wholesale operations or high-volume B2C retail, SuiteCommerce provides the agility to deliver personalized shopping experiences across all devices. Optimize your order-to-cash process and gain real-time visibility into customer behavior to drive sustainable global growth.
                 </p>
               </div>
