@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SuiteProjects Pro PSA (NetSuite OpenAir) | AGSuite Technologies",
+  title: "NetSuite SuiteProject Pro PSA | AGSuite Technologies",
 
   description:
-    "Optimize project delivery and resource utilization with SuiteProjects Pro (formerly NetSuite OpenAir). The leading Professional Services Automation (PSA) solution for enterprise project control.",
+    "Optimize project delivery and resource utilization with NetSuite SuiteProject Pro. The leading Professional Services Automation (PSA) solution for enterprise project control.",
 
   robots: {
     index: true,
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   openGraph: {
     locale: "en_US",
     type: "article",
-    title: "SuiteProjects Pro PSA (NetSuite OpenAir) | AGSuite Technologies",
+    title: "NetSuite SuiteProject Pro PSA | AGSuite Technologies",
     description:
-      "Optimize project delivery and resource utilization with SuiteProjects Pro (formerly NetSuite OpenAir). The leading Professional Services Automation (PSA) solution for enterprise project control.",
+      "Optimize project delivery and resource utilization with NetSuite SuiteProject Pro. The leading Professional Services Automation (PSA) solution for enterprise project control.",
     url: "https://agsuitetech.com/netsuite-open-air-solution/",
     siteName: "AGSuite",
     images: [

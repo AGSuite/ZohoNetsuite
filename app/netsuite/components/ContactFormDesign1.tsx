@@ -100,7 +100,7 @@ export default function ContactFormDesign1() {
                         <option value="NetSuite OneWorld" className="bg-[#0f1115]">NetSuite OneWorld</option>
                         <option value="NetSuite SuiteCommerce" className="bg-[#0f1115]">NetSuite SuiteCommerce</option>
                         <option value="NetSuite Planning & Budgeting" className="bg-[#0f1115]">NetSuite Planning & Budgeting</option>
-                        <option value="NetSuite OpenAir" className="bg-[#0f1115]">NetSuite OpenAir</option>
+                        <option value="NetSuite SuiteProject Pro" className="bg-[#0f1115]">NetSuite SuiteProject Pro</option>
                         <option value="NetSuite Analytics Warehouse" className="bg-[#0f1115]">NetSuite Analytics Warehouse</option>
                      </select>
                   </div>

@@ -244,7 +244,7 @@ export default function FooterFormLight() {
                       <option value="NetSuite OneWorld">NetSuite OneWorld</option>
                       <option value="NetSuite SuiteCommerce">NetSuite SuiteCommerce</option>
                       <option value="NetSuite Planning & Budgeting">NetSuite Planning & Budgeting</option>
-                      <option value="NetSuite OpenAir">NetSuite OpenAir</option>
+                      <option value="NetSuite SuiteProject Pro">NetSuite SuiteProject Pro</option>
                       <option value="NetSuite Analytics Warehouse">NetSuite Analytics Warehouse</option>
                     </select>
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">

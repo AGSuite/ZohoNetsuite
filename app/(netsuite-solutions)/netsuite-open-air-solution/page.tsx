@@ -49,7 +49,7 @@ function Counter({ value }: { value: number }) {
 }
 
 
-export default function OpenAirPage() {
+export default function SuiteProjectProPage() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
 
@@ -65,7 +65,7 @@ export default function OpenAirPage() {
       title: "Advanced PSA",
       description:
         "Enterprise-grade professional services automation for complex, large-scale organizations with deep integrations.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/netsuiteimages/ns_endtoend_management.png",
       color: "#1e8a9e",
       rgb: "14,108,130",
     },
@@ -73,7 +73,7 @@ export default function OpenAirPage() {
       title: "Portfolio Management",
       description:
         "Manage multiple projects and programs across your organization with full portfolio-level visibility.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/unified_platform.png",
       color: "#3b5299",
       rgb: "40,65,145",
     },
@@ -81,7 +81,7 @@ export default function OpenAirPage() {
       title: "Global Resource Management",
       description:
         "Optimize resources across global teams with AI-powered insights, skills matching, and real-time utilization.",
-      image: "/images/modules/working module.webp",
+      image: "/images/people/global.webp",
       color: "#8b3a6a",
       rgb: "125,42,88",
     },
@@ -89,7 +89,7 @@ export default function OpenAirPage() {
       title: "Advanced Billing",
       description:
         "Support for the most complex billing scenarios including T&M, fixed-price, milestone, and outcome-based.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/order_management.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -97,7 +97,7 @@ export default function OpenAirPage() {
       title: "Revenue Recognition",
       description:
         "ASC 606 and IFRS 15 compliant revenue recognition with percentage-of-completion and milestone-based rules.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/people/laptopmen1.jpg",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -105,7 +105,7 @@ export default function OpenAirPage() {
       title: "Workflow Automation",
       description:
         "Automate complex approval workflows and business processes across your entire services organization.",
-      image: "/images/modules/module8.webp",
+      image: "/images/netsuiteimages/ns_automation_efficiency.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
@@ -113,7 +113,7 @@ export default function OpenAirPage() {
       title: "Project Accounting",
       description:
         "Connect project activities directly to financials for accurate cost tracking and real-time margin analysis.",
-      image: "/images/modules/sheet module.webp",
+      image: "/images/lap/lap8_11zon.webp",
       color: "#1a6080",
       rgb: "20,88,115",
     },
@@ -121,7 +121,7 @@ export default function OpenAirPage() {
       title: "Time & Expense",
       description:
         "Capture time and expenses from any device with smart rules for approval, policies, and project coding.",
-      image: "/images/modules/csm modules.webp",
+      image: "/images/people/laptopgirl.webp",
       color: "#6a2575",
       rgb: "95,30,105",
     },
@@ -129,7 +129,7 @@ export default function OpenAirPage() {
       title: "Capacity Planning",
       description:
         "Forecast future resource needs based on the sales pipeline and current project commitments globally.",
-      image: "/images/modules/managging together module.webp",
+      image: "/images/netsuiteimages/ns_rapid_scaling.png",
       color: "#154e8a",
       rgb: "18,68,130",
     },
@@ -137,7 +137,7 @@ export default function OpenAirPage() {
       title: "Global Operations",
       description:
         "One system for all your entities, supporting multi-currency, multi-language, taxation, and local compliance.",
-      image: "/images/modules/account modules.webp",
+      image: "/images/netsuiteimages/ns_global_business.png",
       color: "#1a6545",
       rgb: "20,95,60",
     },
@@ -145,7 +145,7 @@ export default function OpenAirPage() {
       title: "Opportunity Management",
       description:
         "Link CRM opportunities to project delivery for early insight into upcoming resource needs and capacity.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/crm.png",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
@@ -153,7 +153,7 @@ export default function OpenAirPage() {
       title: "Project Dashboards",
       description:
         "Role-based dashboards for project managers, executives, and resources to monitor what matters most.",
-      image: "/images/modules/mobile module.webp",
+      image: "/images/netsuiteimages/ns_realtime_visibility.png",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },
@@ -163,25 +163,25 @@ export default function OpenAirPage() {
     {
       title: "Global Resource Management",
       description: "Optimize resource utilization across global teams, skills, and time zones with AI-powered insights.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/people/global.webp",
       points: ["AI-powered skill matching", "Cross-timezone visibility", "Real-time utilization tracking", "Global bench management"],
     },
     {
       title: "Complex Billing Automation",
       description: "Handle the most complex billing scenarios including outcome-based, recurring, and hybrid models.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/modules/cost_efficiency.png",
       points: ["T&M, Fixed-Price, Hybrid billing", "Outcome-based models", "Automated invoice generation", "Client self-service portals"],
     },
     {
       title: "Advanced Revenue Recognition",
       description: "Automate revenue recognition compliant with ASC 606 and IFRS 15 for accurate financial forecasting.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/people/laptopmen1.jpg",
       points: ["ASC 606 and IFRS 15 compliant", "Percentage-of-completion", "Milestone-based recognition", "Reduce audit risk"],
     },
     {
       title: "Global Operations",
       description: "Run a unified services organization across multiple countries, currencies, and tax jurisdictions.",
-      image: "/images/people/laptopgirl3.webp",
+      image: "/images/netsuiteimages/ns_global_business.png",
       points: ["Multi-currency & multi-entity", "Local tax compliance", "Consolidated reporting", "100+ country support"],
     },
     {
@@ -193,7 +193,7 @@ export default function OpenAirPage() {
     {
       title: "Enterprise Security",
       description: "Protect sensitive project and financial data with enterprise-grade security and role-based access.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/netsuiteimages/data_accuracy_compliance_risk.png",
       points: ["Role-based access controls", "SOC 2 Type II certified", "Data encryption at rest & in transit", "Comprehensive audit trails"],
     },
   ];
@@ -244,7 +244,7 @@ export default function OpenAirPage() {
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <Link href="/netsuite/solutions" className="text-blue-300 hover:text-white transition-colors">Solutions</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/80">NetSuite OpenAir</span>
+            <span className="text-white/80">NetSuite SuiteProject Pro</span>
           </motion.nav>
 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-16 sm:mb-20">
@@ -261,7 +261,7 @@ export default function OpenAirPage() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  NetSuite SuiteProject Pro (OpenAir)
+                  NetSuite SuiteProject Pro
                 </span>
               </motion.h1>
 
@@ -290,7 +290,7 @@ export default function OpenAirPage() {
                   href="#contact-form"
                   className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
                 >
-                  Get Started with OpenAir
+                  Get Started with NetSuite SuiteProject Pro
                   <motion.span
                     animate={{ x: [0, 6, 0] }}
                     transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
@@ -317,7 +317,7 @@ export default function OpenAirPage() {
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
                   <Image
                     src="/images/lap/lap9_11zon.webp"
-                    alt="NetSuite SuiteProject Pro OpenAir"
+                    alt="NetSuite SuiteProject Pro"
                     fill
                     sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover object-center"
@@ -359,7 +359,7 @@ export default function OpenAirPage() {
                   </div>
                   <div>
                     <p className="text-gray-900 text-[13px] font-bold leading-tight whitespace-nowrap">
-                      NetSuite SuiteProject Pro (OpenAir)
+                      NetSuite SuiteProject Pro
                     </p>
                     <p className="text-gray-400 text-[11px] mt-0.5 whitespace-nowrap">
                       PSA · Portfolio · Global Ops · Billing · Rev. Rec.
@@ -413,8 +413,8 @@ export default function OpenAirPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-hide py-4">
             {[
-              { label: "What is NetSuite SuiteProject Pro (OpenAir)?", href: "#what-is-openair" },
-              { label: "Features", href: "#modules" },
+              { label: "What is NetSuite SuiteProject Pro?", href: "#what-is-suiteproject-pro" },
+              { label: "Modules", href: "#modules" },
               { label: "Benefits", href: "#benefits" },
               { label: "Services", href: "#services" },
               { label: "FAQ", href: "#faq" },
@@ -433,8 +433,8 @@ export default function OpenAirPage() {
         </div>
       </nav>
 
-      {/* ── What is OpenAir Section ─────────────────────────────────────── */}
-      <section id="what-is-openair" className="pt-5 pb-14 bg-white scroll-mt-36">
+      {/* ── What is SuiteProject Pro Section ─────────────────────────────────── */}
+      <section id="what-is-suiteproject-pro" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             {/* LEFT — Dashboard Image */}
@@ -449,7 +449,7 @@ export default function OpenAirPage() {
                 <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100">
                   <Image
                     src="/images/Dashboard/suiteproject dashboard 2.jpg"
-                    alt="NetSuite OpenAir PSA Solution Dashboard"
+                    alt="NetSuite SuiteProject Pro PSA Solution Dashboard"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
@@ -468,15 +468,15 @@ export default function OpenAirPage() {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  Optimize Services with NetSuite OpenAir.
+                  Optimize Services with NetSuite SuiteProject Pro
                 </h2>
               </div>
               <div className="space-y-2 my-auto pt-2 md:pt-4">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite OpenAir (formerly SuiteProjects Pro) is a specialized Professional Services Automation (PSA) platform designed for large-scale, global organizations. As a premier NetSuite OpenAir partner, we help businesses manage thousands of resources and complex multi-entity billing workflows within a single, high-performance system.
+                  NetSuite SuiteProject Pro is a specialized Professional Services Automation (PSA) platform designed for large-scale, global organizations. As a premier NetSuite SuiteProject Pro partner, we help businesses manage thousands of resources and complex multi-entity billing workflows within a single, high-performance system.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
-                  By unifying project delivery with financial operations, OpenAir provides deep visibility into global utilization and project margins. Eliminate manual data reconciliation and gain the real-time insights needed to optimize resource allocation and drive enterprise-wide profitability.
+                  By unifying project delivery with financial operations, NetSuite SuiteProject Pro provides deep visibility into global utilization and project margins. Eliminate manual data reconciliation and gain the real-time insights needed to optimize resource allocation and drive enterprise-wide profitability.
                 </p>
               </div>
               <div className="pt-4 mt-auto">
@@ -513,12 +513,11 @@ export default function OpenAirPage() {
         </div>
       </section>
 
-      {/* ── OpenAir Modules Grid ──────────────────────────────────────────── */}
+      {/* ── NetSuite SuiteProject Pro Modules Grid ─────────────────────────── */}
       <section id="modules" className="py-16 bg-white relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-5xl font-medium text-gray-900 text-center">
-            NetSuite SuiteProject Pro (OpenAir)
-            Modules
+            NetSuite SuiteProject Pro Modules
           </motion.h2>
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="text-gray-600 text-lg max-w-2xl text-center">
             All integrated modules to manage enterprise project delivery and financial excellence in one unified platform
@@ -531,18 +530,18 @@ export default function OpenAirPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
-                  whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white"
-                  style={{ minHeight: 340 }}
+                  whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white"
+                  style={{ minHeight: 380 }}
                 >
                   {/* Top: Image Section with Color Overlay */}
-                  <div className="relative h-44 shrink-0 overflow-hidden">
+                  <div className="relative h-48 shrink-0 overflow-hidden">
                     <Image
                       src={mod.image}
                       alt={mod.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover object-top"
+                      className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
                     />
                     <div
                       className="absolute inset-0"
@@ -567,7 +566,7 @@ export default function OpenAirPage() {
                     {/* Hover Reveal Button */}
                     <div className="absolute bottom-6 left-5 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                       <span className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full shadow-md">
-                        Explore <ArrowRight size={10} />
+                        Get Started <ArrowRight size={10} />
                       </span>
                     </div>
 
@@ -600,8 +599,7 @@ export default function OpenAirPage() {
             className="text-center mb-8"
           >
             <h2 className="text-3xl md:text-5xl font-medium mt-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Key Business Benefits of NetSuite SuiteProject Pro (OpenAir)
-
+              Key Business Benefits of NetSuite SuiteProject Pro
             </h2>
           </motion.div>
 
@@ -696,10 +694,10 @@ export default function OpenAirPage() {
               <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
                 <div className="w-14 h-1 bg-yellow-400 mb-5 rounded-full" />
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-snug">
-                  How Much Does NetSuite OpenAir Cost?
+                  How Much Does NetSuite SuiteProject Pro Cost?
                 </h2>
                 <p className="text-white/75 text-base leading-relaxed mb-8">
-                  NetSuite OpenAir pricing is tailored to your business size and requirements. The annual subscription combines the core professional services automation platform, any additional modules you need, and your user count — plus a one-time implementation fee. As your business grows, activate new modules or add users instantly — no upgrades, no downtime, no infrastructure headaches.
+                  NetSuite SuiteProject Pro pricing is tailored to your business size and requirements. The annual subscription combines the core professional services automation platform, any additional modules you need, and your user count — plus a one-time implementation fee. As your business grows, activate new modules or add users instantly — no upgrades, no downtime, no infrastructure headaches.
                 </p>
                 <div>
                   <Link
@@ -719,7 +717,7 @@ export default function OpenAirPage() {
                 <div className="relative z-10 mt-6 w-[280px] h-[320px] lg:w-[300px] lg:h-[340px] overflow-hidden shadow-2xl" style={{ borderRadius: '50% 50% 46% 54% / 52% 48% 52% 48%' }}>
                   <Image
                     src="/images/people/laptopgirl3.webp"
-                    alt="NetSuite OpenAir Pricing"
+                    alt="NetSuite SuiteProject Pro Pricing"
                     fill
                     sizes="(max-width: 768px) 100vw, 30vw"
                     className="object-cover object-top"
@@ -738,16 +736,16 @@ export default function OpenAirPage() {
       <FAQ
         variant="netsuite"
         id="faq"
-        customSubtitle="Everything you need to know about NetSuite OpenAir & SuiteProject Pro — PSA, project billing, resource management, and implementation timelines."
+        customSubtitle="Everything you need to know about NetSuite SuiteProject Pro — PSA, project billing, resource management, and implementation timelines."
         customFaqs={[
-          { q: "What is NetSuite OpenAir / SuiteProject Pro?", a: "NetSuite OpenAir is a purpose-built Professional Services Automation (PSA) platform for project-based businesses — covering project management, resource planning, time and expense tracking, project billing, and real-time utilisation analytics. SuiteProject Pro brings similar capabilities natively within NetSuite ERP for organisations that want project management embedded directly in their financial system." },
-          { q: "What types of businesses benefit most from OpenAir?", a: "OpenAir is designed for professional and managed services organisations — consulting firms, IT services companies, marketing agencies, engineering firms, staffing businesses, and any organisation that delivers projects, tracks billable hours, and invoices clients based on time, milestones, or fixed fees." },
-          { q: "How does OpenAir handle project billing?", a: "OpenAir supports all standard professional services billing models — time and materials (T&M), fixed fee, milestone-based, retainer, and hybrid. Approved timesheets feed directly into invoicing workflows, with project managers approving billable hours before invoices are generated. Revenue recognition rules are applied automatically based on contract type and delivery completion." },
-          { q: "How does resource management work in OpenAir?", a: "OpenAir provides a real-time resource capacity and demand view across all projects — showing which resources are available, overallocated, or underutilised. Project managers can search resources by skill, certification, location, and availability, then book them to projects directly. Utilisation targets and forecasts are tracked at individual, team, and department levels." },
-          { q: "How does time and expense capture work for project teams?", a: "OpenAir provides a mobile-first timesheet and expense capture interface for project teams. Time is submitted against specific projects and tasks, with configurable approval workflows for manager review. Expense receipts are captured by photo on mobile devices, categorised, and routed for approval — then automatically processed into reimbursement and client billing." },
-          { q: "Can OpenAir integrate with NetSuite financials?", a: "Yes. OpenAir integrates natively with NetSuite financials — approved project revenue, billing, and cost data sync automatically to NetSuite for financial reporting, revenue recognition, and cash collection. Project profitability is visible in real time within both OpenAir and NetSuite dashboards." },
-          { q: "Does OpenAir support revenue recognition for long-term contracts?", a: "Yes. OpenAir includes ASC 606 / IFRS 15 compliant revenue recognition — supporting percentage-of-completion, milestone, and straight-line recognition methods. Revenue schedules are generated automatically based on project delivery progress and contract terms, flowing into NetSuite for financial statement reporting." },
-          { q: "How long does an OpenAir implementation take?", a: "A standard NetSuite OpenAir implementation for a professional services firm — covering project setup, resource management, timesheet workflows, billing rules, and integration with NetSuite financials — typically takes 8 to 14 weeks. Larger implementations with complex billing arrangements, multi-entity structures, or custom integrations may take 14 to 20 weeks." },
+          { q: "What is NetSuite SuiteProject Pro?", a: "NetSuite SuiteProject Pro is a purpose-built Professional Services Automation (PSA) platform for project-based businesses — covering project management, resource planning, time and expense tracking, project billing, and real-time utilisation analytics natively within NetSuite ERP." },
+          { q: "What types of businesses benefit most from NetSuite SuiteProject Pro?", a: "SuiteProject Pro is designed for professional and managed services organisations — consulting firms, IT services companies, marketing agencies, engineering firms, staffing businesses, and any organisation that delivers projects, tracks billable hours, and invoices clients based on time, milestones, or fixed fees." },
+          { q: "How does NetSuite SuiteProject Pro handle project billing?", a: "SuiteProject Pro supports all standard professional services billing models — time and materials (T&M), fixed fee, milestone-based, retainer, and hybrid. Approved timesheets feed directly into invoicing workflows, with project managers approving billable hours before invoices are generated. Revenue recognition rules are applied automatically based on contract type and delivery completion." },
+          { q: "How does resource management work in NetSuite SuiteProject Pro?", a: "SuiteProject Pro provides a real-time resource capacity and demand view across all projects — showing which resources are available, overallocated, or underutilised. Project managers can search resources by skill, certification, location, and availability, then book them to projects directly. Utilisation targets and forecasts are tracked at individual, team, and department levels." },
+          { q: "How does time and expense capture work for project teams?", a: "SuiteProject Pro provides a mobile-first timesheet and expense capture interface for project teams. Time is submitted against specific projects and tasks, with configurable approval workflows for manager review. Expense receipts are captured by photo on mobile devices, categorised, and routed for approval — then automatically processed into reimbursement and client billing." },
+          { q: "Can NetSuite SuiteProject Pro integrate with NetSuite financials?", a: "Yes. NetSuite SuiteProject Pro integrates natively with NetSuite financials — approved project revenue, billing, and cost data sync automatically for financial reporting, revenue recognition, and cash collection. Project profitability is visible in real time." },
+          { q: "Does NetSuite SuiteProject Pro support revenue recognition for long-term contracts?", a: "Yes. NetSuite SuiteProject Pro includes ASC 606 / IFRS 15 compliant revenue recognition — supporting percentage-of-completion, milestone, and straight-line recognition methods. Revenue schedules are generated automatically based on project delivery progress and contract terms, flowing into NetSuite for financial statement reporting." },
+          { q: "How long does a NetSuite SuiteProject Pro implementation take?", a: "A standard NetSuite SuiteProject Pro implementation for a professional services firm — covering project setup, resource management, timesheet workflows, billing rules, and integration with financials — typically takes 8 to 14 weeks. Larger implementations with complex billing arrangements, multi-entity structures, or custom integrations may take 14 to 20 weeks." },
         ]}
       />
 
@@ -777,7 +775,7 @@ export default function OpenAirPage() {
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                  Transform Your Enterprise on NetSuite OpenAir —{" "}
+                  Transform Your Enterprise with NetSuite SuiteProject Pro —{" "}
                   <span className="text-cyan-300">Scale Globally.</span>
                 </h2>
                 <p className="text-white/80 text-lg md:text-xl font-medium">
@@ -789,7 +787,7 @@ export default function OpenAirPage() {
                 href="#contact-form"
                 className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
               >
-                Go Live on NetSuite OpenAir
+                Go Live with NetSuite SuiteProject Pro
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

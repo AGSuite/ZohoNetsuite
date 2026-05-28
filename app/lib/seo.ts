@@ -507,10 +507,10 @@ export const NETSUITE_PAGES: Record<
     publishedTime: "2024-01-28T00:00:00Z",
   },
   "/netsuite-open-air-solution": {
-    title: "NetSuite OpenAir — Professional Services Automation | AGSuite",
+    title: "NetSuite SuiteProject Pro — Professional Services Automation | AGSuite",
     description:
-      "Optimize project delivery and resource utilization with NetSuite OpenAir. Time tracking, project accounting, resource management, and billing — fully integrated.",
-    keywords: ["NetSuite OpenAir", "professional services automation", "PSA software", "project management ERP", "AGSuite OpenAir"],
+      "Optimize project delivery and resource utilization with NetSuite SuiteProject Pro. Time tracking, project accounting, resource management, and billing — fully integrated.",
+    keywords: ["NetSuite SuiteProject Pro", "SuiteProject Pro", "professional services automation", "PSA software", "project management ERP", "AGSuite SuiteProject Pro"],
     category: "PSA Software",
     publishedTime: "2024-02-01T00:00:00Z",
   },

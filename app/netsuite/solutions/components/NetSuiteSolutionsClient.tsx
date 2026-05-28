@@ -107,16 +107,7 @@ export default function NetSuiteSolutionsClient() {
   const introScale = useTransform(introScrollProgress, [0, 0.3], [1, 0.99]);
 
   const solutionsRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: solutionsRef,
-    offset: ["start end", "start start"]
-  });
 
-  const cardRadius = useTransform(scrollYProgress, [0.3, 0.95], ["0px", "48px"]);
-  const cardMargin = useTransform(scrollYProgress, [0.3, 0.95], ["0px", "32px"]);
-  const cardScale = useTransform(scrollYProgress, [0.3, 0.95], [1, 0.99]);
-
-  // All NetSuite Solutions with full detail
   const solutions = [
     {
       category: "Core ERP",
@@ -125,7 +116,7 @@ export default function NetSuiteSolutionsClient() {
       passage1: "NetSuite ERP is the world's #1 cloud-based business management solution, trusted by over 43,000 organisations across 219 countries. It unifies your entire business — financials, inventory, order management, manufacturing, HR, and supply chain — onto a single real-time platform, eliminating data silos and manual reconciliation forever.",
       passage2: "Whether you're a fast-growing startup or a global enterprise, NetSuite ERP scales with you, delivering the visibility and control you need to make faster, smarter decisions at every stage. By centralising your operations in the cloud, you can reduce IT costs, improve collaborative workflows, and focus on innovation rather than infrastructure.",
       link: "/netsuite/solutions/core-erp/erp",
-      image: "/images/netsuiteimages/solutions/NetsuiteERP.webp",
+      image: "/images/Dashboard/NetsuiteDashboard.webp",
       icon: Database,
       tag: "Most Popular",
     },
@@ -136,7 +127,7 @@ export default function NetSuiteSolutionsClient() {
       passage1: "NetSuite's cloud-based accounting software transforms the way finance teams operate — replacing disconnected spreadsheets and legacy systems with a single, intelligent platform for managing every financial process from the general ledger to multi-entity consolidation. It provides real-time access to financial data, enabling teams to maintain transparency and accuracy across the entire organisation.",
       passage2: "Automate accounts payable, accounts receivable, bank reconciliations, multi-currency transactions, and tax compliance with built-in audit trails and real-time reporting. With NetSuite Accounting, your finance team can close the books faster, report with confidence, and focus on strategic analysis instead of manual data entry, ensuring long-term financial health.",
       link: "/netsuite/solutions/core-erp/accounting",
-      image: "/images/netsuiteimages/solutions/netsuiteaccounting.webp",
+      image: "/images/Dashboard/accounting and planing dashboard.jpg",
       icon: DollarSign,
       tag: "Finance",
     },
@@ -147,7 +138,7 @@ export default function NetSuiteSolutionsClient() {
       passage1: "NetSuite OneWorld is purpose-built for organisations operating across multiple countries, currencies, and legal entities — giving you a single, unified platform to manage your global business with local compliance in every market. It simplifies the complexity of international operations by providing a standardised framework for all subsidiaries.",
       passage2: "Consolidate financials across subsidiaries in real time, manage intercompany transactions with automatic eliminations, and produce local statutory reports while maintaining a single global view. From a two-entity group to a 200-country enterprise, NetSuite OneWorld grows with your international footprint without adding operational complexity or data fragmentation.",
       link: "/netsuite/solutions/core-erp/global-business",
-      image: "/images/netsuiteimages/solutions/NetsuiteGlobal.webp",
+      image: "/images/Dashboard/global business managemnet dashboard.jpg",
       icon: Globe,
       tag: "Global",
     },
@@ -158,7 +149,7 @@ export default function NetSuiteSolutionsClient() {
       passage1: "NetSuite CRM is the only customer relationship management platform built natively inside your ERP — giving every sales, marketing, and service team a complete, real-time view of each customer including their financials, order history, support cases, and marketing interactions. This unified approach ensures that customer data is consistent across all touchpoints, leading to higher satisfaction and retention.",
       passage2: "Manage the full customer lifecycle from first lead to repeat purchase in a single system, eliminating the integration gaps and data inconsistencies that plague stand-alone CRM tools. Drive revenue growth with automated sales workflows, targeted campaign management, and AI-powered lead scoring — all without leaving the NetSuite environment you already trust.",
       link: "/netsuite/solutions/customer-management/crm",
-      image: "/images/netsuiteimages/solutions/NetsuiteCRM.webp",
+      image: "/images/Dashboard/CRM Dashbaord 2_11zon.jpg",
       icon: Users,
       tag: "CRM",
     },
@@ -169,18 +160,18 @@ export default function NetSuiteSolutionsClient() {
       passage1: "NetSuite SRP (Services Resource Planning) is an end-to-end cloud solution that connects every stage of the project lifecycle — from opportunity and resource planning through delivery, time capture, and project billing — in a single unified platform. It bridges the gap between sales and delivery, ensuring that resources are utilised effectively and projects stay on track.",
       passage2: "Eliminate revenue leakage by ensuring every billable hour is captured, every milestone is invoiced on time, and every project's profitability is visible in real time. Purpose-built for professional services firms, IT companies, and project-driven businesses, NetSuite SRP gives you the operational control to deliver projects profitably at scale while maintaining high quality standards.",
       link: "/netsuite/solutions/project-management/netsuite-srp",
-      image: "/images/netsuiteimages/solutions/NetsuiteSRP.webp",
+      image: "/images/Dashboard/suiteproject dashboard 2.jpg",
       icon: Rocket,
       tag: "Professional Services",
     },
     {
       category: "Project Management",
-      title: "NetSuite OpenAir (SuiteProject Pro)",
+      title: "NetSuite SuiteProject Pro",
       subtitle: "Enterprise PSA for Professional Services",
-      passage1: "NetSuite OpenAir — now called SuiteProject Pro — is the industry-leading Professional Services Automation (PSA) platform designed for complex, high-volume services organisations. It delivers sophisticated resource management, project accounting, revenue forecasting, and client collaboration capabilities that go beyond standard project tools, empowering services leaders with deep operational insight.",
-      passage2: "Fully integrated with NetSuite ERP and CRM, SuiteProject Pro eliminates the disconnect between services delivery and back-office finance, ensuring your revenue recognition is always current and compliant. By optimising resource allocation and improving project visibility, your organisation can maximise margin and accelerate growth in a competitive services market.",
-      link: "/netsuite/solutions/project-management/openair",
-      image: "/images/lap/lap9_11zon.webp",
+      passage1: "NetSuite SuiteProject Pro is the industry-leading Professional Services Automation (PSA) platform designed for complex, high-volume services organisations. It delivers sophisticated resource management, project accounting, revenue forecasting, and client collaboration capabilities that go beyond standard project tools, empowering services leaders with deep operational insight.",
+      passage2: "Fully integrated with NetSuite ERP and CRM, NetSuite SuiteProject Pro eliminates the disconnect between services delivery and back-office finance, ensuring your revenue recognition is always current and compliant. By optimising resource allocation and improving project visibility, your organisation can maximise margin and accelerate growth in a competitive services market.",
+      link: "/netsuite-open-air-solution",
+      image: "/images/Dashboard/suiteproject dashboard 2.jpg",
       icon: Layers,
       tag: "PSA",
     },
@@ -191,7 +182,7 @@ export default function NetSuiteSolutionsClient() {
       passage1: "NetSuite SuiteAnalytics is a fully embedded business intelligence platform that transforms your ERP data into actionable insights — without exporting to spreadsheets or relying on a separate BI tool. Build role-based dashboards, create ad-hoc reports, and drill from high-level KPIs down to individual transactions in seconds, all within the same system your team uses every day.",
       passage2: "With real-time data across every NetSuite module and automated report delivery, SuiteAnalytics empowers your leadership, finance, and operations teams to make faster, more confident decisions. The platform provides a consistent view of the truth, allowing everyone in the organisation to align on the same metrics and drive performance toward common goals.",
       link: "/netsuite/solutions/analytics/bi",
-      image: "/images/lap/lap8_11zon.webp",
+      image: "/images/Dashboard/business intelligence 2.jpg",
       icon: BarChart3,
       tag: "Analytics",
     },
@@ -202,7 +193,7 @@ export default function NetSuiteSolutionsClient() {
       passage1: "The NetSuite Analytics Warehouse is a purpose-built, cloud-native data warehousing solution that lets you analyse your NetSuite data alongside data from any other source — CRM, e-commerce, marketing, HR, and beyond — using the BI tools your teams already love. It centralises diverse data sets into a single high-performance repository for advanced historical analysis and trend discovery.",
       passage2: "Pre-built Oracle Analytics-powered workbooks and data models cover every NetSuite domain, reducing deployment time dramatically while delivering enterprise-scale analytical depth. For organisations that need to go beyond standard ERP reporting and build a true single source of truth across their entire business, the Analytics Warehouse is the definitive solution for large-scale data strategy.",
       link: "/netsuite/solutions/analytics/warehouse",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/Dashboard/analytic wharehouse 2.jpg",
       icon: Database,
       tag: "Data Warehouse",
     },
@@ -213,7 +204,7 @@ export default function NetSuiteSolutionsClient() {
       passage1: "NetSuite's natively embedded AI and machine learning capabilities bring predictive intelligence directly into your day-to-day ERP workflows — no separate AI tool, no data export, no complex integration required. It leverages the vast amounts of data within your system to provide meaningful forecasts and identify patterns that human analysis might miss.",
       passage2: "From AI-driven cash flow forecasting and anomaly detection in accounts payable to intelligent dunning recommendations and demand sensing for inventory, NetSuite AI helps your team spot issues before they escalate. As the volume of data in your NetSuite grows, the AI models get smarter — continuously improving the accuracy of their predictions and the relevance of their recommendations.",
       link: "/netsuite/solutions/analytics/ai",
-      image: "/images/lap/lap3.webp",
+      image: "/images/Dashboard/Artifical Intelligence 2 dashboard.jpg",
       icon: Star,
       tag: "AI",
     },
@@ -224,7 +215,7 @@ export default function NetSuiteSolutionsClient() {
       passage1: "NetSuite SuiteCommerce is the only e-commerce platform built natively inside your ERP — meaning your online store, inventory, pricing, orders, and financials are all managed in a single system with no integration lag or data inconsistency. It provides a seamless shopping experience for customers while simplifying the complex back-end operations of a modern digital business.",
       passage2: "Serve both B2B and B2C customers on one platform with real-time product availability, personalised pricing, self-service account portals, and seamless omnichannel fulfilment across all locations. As your commerce business grows, SuiteCommerce scales effortlessly — adding new channels and customer segments without the infrastructure overhead of traditional, disconnected platforms.",
       link: "/netsuite/solutions/ecommerce/main",
-      image: "/images/lap/lap6_11zon.webp",
+      image: "/images/Dashboard/suitecommerce 2 dashbaord.jpg",
       icon: ShoppingCart,
       tag: "E-Commerce",
     },
@@ -235,7 +226,7 @@ export default function NetSuiteSolutionsClient() {
       passage1: "NetSuite Planning and Budgeting (PBCS) replaces the inefficiency of spreadsheet-based Financial Planning and Analysis with a purpose-built, cloud-native planning platform that connects directly to your NetSuite actuals in real time. It enables collaborative budgeting and rolling forecasts, ensuring that your financial plans are always grounded in the latest operational reality.",
       passage2: "Build sophisticated scenario models across every business unit with driver-based planning logic and workflow-managed approvals. By eliminating the version control chaos of Excel-based planning, PBCS lets your finance team spend less time building models and more time generating the strategic insights that drive business growth and long-term stability.",
       link: "/netsuite/solutions/planning/main",
-      image: "/images/lap/lap5.webp",
+      image: "/images/Dashboard/planing and budgeting 2 dashboard.jpg",
       icon: TrendingUp,
       tag: "Financial Planning and Analysis",
     },
@@ -246,7 +237,7 @@ export default function NetSuiteSolutionsClient() {
       passage1: "NetSuite SuiteSuccess is Oracle's industry-optimised implementation methodology and preconfigured platform bundle — combining ERP, CRM, commerce, HR, and business intelligence in a single, ready-to-run cloud suite. It leverages years of leading-practice business processes to ensure your organisation gets up and running quickly with a system designed for your specific vertical.",
       passage2: "By leveraging hundreds of pre-built reports and thousands of hours of industry expertise, SuiteSuccess dramatically reduces implementation risk and time-to-value. Whether you're a startup scaling fast or an established business replacing legacy systems, SuiteSuccess gives you the confidence of a proven path to success with a comprehensive, unified business suite.",
       link: "/netsuite/solutions/specialized/suitesuccess",
-      image: "/images/lap/lap4.webp",
+      image: "/images/Dashboard/suitesuccess 2 dashboard.jpg",
       icon: Trophy,
       tag: "All-in-One",
     },
@@ -257,7 +248,7 @@ export default function NetSuiteSolutionsClient() {
       passage1: "AGSuite's India Localization for NetSuite is a certified, natively built compliance suite that embeds complete Indian statutory requirements directly into your NetSuite account — covering GST, TDS, e-invoicing, and all prescribed statutory reports. Every transaction automatically generates the correct tax treatment, ensuring that your compliance is always accurate and up-to-date.",
       passage2: "Every invoice is validated and submitted to the government portal in real time, keeping your business audit-ready and penalty-free at all times. Built for Indian businesses running NetSuite, our localization solution is continuously updated to reflect every GST council notification and legal requirement, allowing you to focus on growth while we handle the complexity of compliance.",
       link: "/netsuite/solutions/specialized/india-localization",
-      image: "/images/lap/lap3.webp",
+      image: "/images/Dashboard/indian localization 2 dashboard.jpg",
       icon: BookOpen,
       tag: "India",
     },
@@ -328,7 +319,7 @@ export default function NetSuiteSolutionsClient() {
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/people/fourteam.webp" alt="Oracle NetSuite Solutions" fill className="object-cover object-center" priority  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                  <Image src="/images/netsuiteimages/netsuitemainpageheroimg.webp" alt="Oracle NetSuite Solutions" fill className="object-cover object-center" priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }} className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}><Database className="w-5 h-5 text-white" /></div>
@@ -392,7 +383,7 @@ export default function NetSuiteSolutionsClient() {
                 className="flex items-center justify-center rounded-2xl"
                 style={{ minHeight: 340 }}
               >
-                <Image src="/images/lap/group1.webp" alt="Oracle NetSuite Platform" width={560} height={380} className="w-full h-auto rounded-xl object-contain border-2 border-indigo-100 shadow-xl" priority />
+                <Image src="/images/netsuiteimages/netsuitemainpage2ndsec.jpeg" alt="Oracle NetSuite Platform" width={560} height={380} className="w-full h-auto rounded-xl object-cover border-2 border-indigo-100 shadow-xl" priority />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: isMobile ? 0 : 30 }}
@@ -406,7 +397,7 @@ export default function NetSuiteSolutionsClient() {
                   fromColor="#111827"
                   toColor="#2563eb"
                 >
-                  The #1 Cloud ERP for Growing Businesses
+                  The #1 Cloud ERP for Growing   Businesses
                 </ScrollFloat>
                 <p className="text-lg text-gray-600 leading-relaxed">Oracle NetSuite is the world&apos;s most deployed cloud Enterprise Resource Planning (ERP) solution. Built from the ground up for the cloud, it provides a single, unified platform to manage every aspect of your business — from financials and CRM to inventory and e-commerce.</p>
                 <p className="text-lg text-gray-600 leading-relaxed">Every solution is purpose-built for cloud — running inside your NetSuite account with real-time data, no silos, and unified reporting across every department.</p>
@@ -463,29 +454,22 @@ export default function NetSuiteSolutionsClient() {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6 font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-blue-400 leading-tight">
               All NetSuite Solutions
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
               Comprehensive solutions to power every aspect of your business operations — all on one unified cloud platform.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         <div className="w-full px-2 sm:px-4 lg:px-6">
-          <motion.div
-            ref={solutionsRef}
+          <div
             style={!isMobile ? {
-              borderRadius: cardRadius,
-              margin: cardMargin,
-              scale: cardScale,
-            } : {}}
+              borderRadius: "48px",
+              margin: "32px",
+            } : { borderRadius: "16px" }}
             className="bg-gradient-to-br from-blue-50 via-red-50 to-purple-50 shadow-[0_35px_80px_-15px_rgba(0,0,0,0.4)] border border-white/20 overflow-hidden relative"
           >
             <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4">
@@ -572,7 +556,7 @@ export default function NetSuiteSolutionsClient() {
                 })}
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -633,7 +617,7 @@ export default function NetSuiteSolutionsClient() {
             viewport={{ once: true }}
             className="border border-gray-200 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
           >
-            <Image src="/images/lap/group1.webp" alt="NetSuite Solutions" fill className="object-cover"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+            <Image src="/images/Dashboard/NetsuiteDashboard.webp" alt="NetSuite Solutions" fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-3xl -mr-32 -mt-32" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />

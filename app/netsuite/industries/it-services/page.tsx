@@ -183,7 +183,7 @@ const data: IndustryPageData = {
       description: "For global, multi-subsidiary services firms.",
       features: [
         "NetSuite OneWorld",
-        "OpenAir / SuiteProject Pro",
+        "NetSuite SuiteProject Pro",
         "Advanced Revenue Management",
         "Custom Dashboards & Reports",
         "Dedicated Implementation Manager",
@@ -194,9 +194,9 @@ const data: IndustryPageData = {
   faqs: [
     {
       question:
-        "What is the difference between NetSuite SRP and NetSuite OpenAir?",
+        "What is the difference between NetSuite SRP and NetSuite SuiteProject Pro?",
       answer:
-        "NetSuite SRP (Services Resource Planning) is the project management module built natively into NetSuite ERP. NetSuite OpenAir (now SuiteProject Pro) is an advanced, standalone PSA solution. SRP suits most services firms while OpenAir is for complex enterprise services operations.",
+        "NetSuite SRP (Services Resource Planning) is the project management module built natively into NetSuite ERP. NetSuite SuiteProject Pro is an advanced, standalone PSA solution. SRP suits most services firms while NetSuite SuiteProject Pro is for complex enterprise services operations.",
     },
     {
       question:

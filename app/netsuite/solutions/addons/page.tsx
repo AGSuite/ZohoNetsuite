@@ -105,16 +105,6 @@ export default function AddonsPage() {
   const introMargin = useTransform(introScrollProgress, [0, 0.3], ["0px", "32px"]);
   const introScale = useTransform(introScrollProgress, [0, 0.3], [1, 0.99]);
 
-  const solutionsRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: solutionsRef,
-    offset: ["start end", "start start"]
-  });
-
-  const cardRadius = useTransform(scrollYProgress, [0.3, 0.95], ["0px", "48px"]);
-  const cardMargin = useTransform(scrollYProgress, [0.3, 0.95], ["0px", "32px"]);
-  const cardScale = useTransform(scrollYProgress, [0.3, 0.95], [1, 0.99]);
-
   // All Add-Ons & Connectors with full detail
   const addons = [
     {
@@ -130,7 +120,7 @@ export default function AddonsPage() {
         "Multi-GSTIN & multi-state support",
       ],
       link: "/netsuite/solutions/addons/india-localization",
-      image: "/images/modules/account modules.webp",
+      image: "/images/Dashboard/indian localization 2 dashboard.jpg",
       icon: IndianRupee,
       tag: "Compliance",
       color: "blue",
@@ -148,7 +138,7 @@ export default function AddonsPage() {
         "Payroll export & manager approval workflow",
       ],
       link: "/netsuite/solutions/addons/smart-commission",
-      image: "/images/modules/csm modules.webp",
+      image: "/images/Dashboard/smart commision dashboard.jpg",
       icon: DollarSign,
       tag: "Revenue",
       color: "blue",
@@ -166,7 +156,7 @@ export default function AddonsPage() {
         "SuiteScript & configuration backup",
       ],
       link: "/netsuite/solutions/addons/data-backup",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/Dashboard/netsuite data backup dashboard.jpg",
       icon: ShieldCheck,
       tag: "Security",
       color: "blue",
@@ -184,7 +174,7 @@ export default function AddonsPage() {
         "Multi-marketplace support",
       ],
       link: "/netsuite/solutions/addons/connectors/amazon",
-      image: "/images/modules/working module.webp",
+      image: "/images/Dashboard/Amazon netsuite connector dashboard.jpg",
       icon: ShoppingBag,
       tag: "Connector",
       color: "blue",
@@ -202,7 +192,7 @@ export default function AddonsPage() {
         "Refund & fulfilment automation",
       ],
       link: "/netsuite/solutions/addons/connectors/shopify",
-      image: "/images/modules/mobile module.webp",
+      image: "/images/Dashboard/shopify connector dashboard.jpg",
       icon: ShoppingCart,
       tag: "Connector",
       color: "blue",
@@ -220,7 +210,7 @@ export default function AddonsPage() {
         "Configurable product sync",
       ],
       link: "/netsuite/solutions/addons/connectors/magento2",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/Dashboard/Magento Connector Dashboard.jpg",
       icon: Layers,
       tag: "Connector",
       color: "blue",
@@ -238,7 +228,7 @@ export default function AddonsPage() {
         "SuiteTalk & REST API expertise",
       ],
       link: "/netsuite/contact",
-      image: "/images/modules/sheet module.webp",
+      image: "/images/Dashboard/netsuite_erp_dashboard_realistic.png",
       icon: Code,
       tag: "Custom",
       color: "blue",
@@ -302,7 +292,7 @@ export default function AddonsPage() {
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/people/fourteam.webp" alt="NetSuite Add-Ons" fill className="object-cover object-center" priority  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                  <Image src="/images/netsuiteimages/Netsuiteaddonheroimg.jpeg" alt="NetSuite Add-Ons" fill className="object-cover object-center" priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }} className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}><Layers className="w-5 h-5 text-white" /></div>
@@ -378,7 +368,7 @@ export default function AddonsPage() {
                 className="flex items-center justify-center rounded-2xl"
                 style={{ minHeight: 340 }}
               >
-                <Image src="/images/Dashboard/ERP Dashboard_11zon.jpg" alt="NetSuite Add-Ons" width={1400} height={900} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20" priority />
+                <Image src="/images/netsuiteimages/netsuiteaddonsecondsec.jpeg" alt="NetSuite Add-Ons" width={1400} height={900} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20" priority />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: isMobile ? 0 : 30 }}
@@ -392,7 +382,7 @@ export default function AddonsPage() {
                   fromColor="#111827"
                   toColor="#2563eb"
                 >
-                  Supercharge NetSuite with Purpose-Built Add-Ons.
+                  Supercharge NetSuite with         Purpose-Built Add-Ons.
                 </ScrollFloat>
                 <p className="text-lg text-gray-600 leading-relaxed">AGSuite's NetSuite Add-Ons and Connectors extend your NetSuite ERP with automation for the capabilities NetSuite doesn't include out of the box — commission management, disaster recovery, and multi-channel commerce integration.</p>
                 <p className="text-lg text-gray-600 leading-relaxed">Every Add-On is built as a native SuiteApp — running inside your NetSuite account with no middleware, no data lag, and no separate login required.</p>
@@ -487,13 +477,11 @@ export default function AddonsPage() {
         </div>
 
         <div className="w-full px-2 sm:px-4 lg:px-6">
-          <motion.div
-            ref={solutionsRef}
+          <div
             style={!isMobile ? {
-              borderRadius: cardRadius,
-              margin: cardMargin,
-              scale: cardScale,
-            } : {}}
+              borderRadius: "48px",
+              margin: "32px",
+            } : { borderRadius: "16px" }}
             className="bg-gradient-to-br from-blue-50 via-red-50 to-purple-50 shadow-[0_35px_80px_-15px_rgba(0,0,0,0.4)] border border-white/20 overflow-hidden relative"
           >
             <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4">
@@ -591,7 +579,7 @@ export default function AddonsPage() {
                 })}
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -623,14 +611,17 @@ export default function AddonsPage() {
             viewport={{ once: true }}
             className="border border-gray-200 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10"
           >
-            <Image src="/images/lap/group2.webp" alt="NetSuite Add-Ons CTA" fill className="object-cover"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/40" />
+            <Image src="/images/netsuiteimages/background/netsuiteCTA.webp" alt="NetSuite Add-Ons CTA" fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-transparent" />
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-3xl -mr-32 -mt-32" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />
 
             <div className="relative z-10 text-left max-w-2xl">
               <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">Extend NetSuite — <span className="text-cyan-200">Start with an <br></br>Add-On Today.</span></h2>
-              <p className="text-white/80 text-lg md:text-xl">Let our certified team help you automate commissions, protect your data, and connect your commerce channels — all inside NetSuite.</p>
+              <p className="text-white/80 text-lg md:text-xl leading-relaxed">
+                Natively automate commissions, secure critical data, and sync your commerce channels inside NetSuite with our certified team.
+              </p>
             </div>
             <div className="relative z-10 shrink-0">
               <Link href="/netsuite/contact" className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-xl transition-all group active:scale-95">

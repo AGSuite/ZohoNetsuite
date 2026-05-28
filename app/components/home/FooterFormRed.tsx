@@ -183,7 +183,7 @@ export default function FooterFormRed() {
                     <option value='NetSuite&#x20;OneWorld'>NetSuite OneWorld</option>
                     <option value='NetSuite&#x20;SuiteCommerce'>NetSuite SuiteCommerce</option>
                     <option value='NetSuite&#x20;Planning&#x20;&amp;&#x20;Budgeting'>NetSuite Planning &amp; Budgeting</option>
-                    <option value='NetSuite&#x20;OpenAir'>NetSuite OpenAir</option>
+                    <option value='NetSuite&#x20;SuiteProject&#x20;Pro'>NetSuite SuiteProject Pro</option>
                     <option value='NetSuite&#x20;Analytics&#x20;Warehouse'>NetSuite Analytics Warehouse</option>
                   </select>
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">

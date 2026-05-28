@@ -131,7 +131,7 @@ export const navItemsNetSuite: NavSection[] = [
                             title: 'Project Management',
                             items: [
                                 { label: 'NetSuite SRP', href: '/service-resource-planning', icon: Briefcase },
-                                { label: 'SuiteProject Pro (OpenAir)', href: '/netsuite-open-air-solution', icon: Clock },
+                                { label: 'NetSuite SuiteProject Pro', href: '/netsuite-open-air-solution', icon: Clock },
                             ]
                         },
                         {
