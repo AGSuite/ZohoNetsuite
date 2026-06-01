@@ -424,9 +424,9 @@ export default function ContactPage() {
 
               {/* H1 */}
               <h1 className="text-4xl sm:text-5xl xl:text-5xl font-medium text-white leading-[1.1] tracking-tight">
-                Architecting Enterprise Excellence with{" "}
+                Scale Your Business with{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300">
-                  NetSuite Precision
+                  NetSuite Experts
                 </span>
               </h1>
 
@@ -492,7 +492,7 @@ export default function ContactPage() {
 
                 <div className="relative z-10 p-8 lg:p-10">
                   <div className="mb-8">
-                    <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2">Connect with Strategic Architects</h2>
+                    <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2">Talk to a NetSuite Expert</h2>
                     <p className="text-gray-500 text-base">Fill in your details — we'll respond within 24 hours.</p>
                   </div>
 

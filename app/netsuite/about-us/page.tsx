@@ -703,7 +703,7 @@ function ClientsSection() {
         }
         .animate-marquee {
           display: inline-flex;
-          animation: marquee 50s linear infinite;
+          animation: marquee 120s linear infinite;
           will-change: transform;
         }
         .animate-marquee:hover {

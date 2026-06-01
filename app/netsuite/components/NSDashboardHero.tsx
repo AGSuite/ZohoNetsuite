@@ -275,7 +275,7 @@ const NSDashboardHero: React.FC = () => {
         }
         .animate-marquee {
         display: inline-flex;
-        animation: marquee 25s linear infinite;
+        animation: marquee 120s linear infinite;
         will-change: transform;
         }
         .animate-marquee:hover {

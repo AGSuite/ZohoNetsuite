@@ -8,7 +8,8 @@ import { useInView } from 'react-intersection-observer';
 import {
     Trophy, Rocket, FolderCheck,
     ArrowRight, CheckCircle2, ChevronRight, Activity, BookOpen,
-    Calendar, MapPin, Clock, Users, ExternalLink, Zap, Star
+    Calendar, MapPin, Clock, Users, ExternalLink, Zap, Star,
+    Briefcase, Building2, Globe2
 } from 'lucide-react';
 import ContactFormDesign4 from '../../components/ContactFormDesign4';
 import NSCaseStudiesSlider from '../../components/NSCaseStudiesSlider';
@@ -337,10 +338,10 @@ export default function NetSuiteInsightsClient({ blogs }: { blogs: any[] }) {
     const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
 
     const stats = [
-        { label: 'Resources Available', value: 200, suffix: '+', icon: BookOpen },
-        { label: 'Success Stories', value: 120, suffix: '+', icon: FolderCheck },
-        { label: 'Industry Awards', value: 20, suffix: '+', icon: Trophy },
+        { label: 'Projects Completed', value: 600, suffix: '+', icon: Briefcase },
+        { label: 'Global Customers', value: 200, suffix: '+', icon: Building2 },
         { label: 'Years Experience', value: 15, suffix: '+', icon: Rocket },
+        { label: 'Countries Serving', value: 10, suffix: '+', icon: Globe2 },
     ];
 
     return (

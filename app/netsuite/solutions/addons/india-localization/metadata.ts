@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "India Tax Solution | Accounting & Taxation services - AGSuite Technologies",
+  title: "NetSuite India Localization — GST, TDS & Indian Compliance | AGSuite",
   description:
-    "AGSuite Technologies offers comprehensive tax solutions, India tax solution, and Accounting & Taxation services. Discover expert tax solutions tailored to your needs.",
+    "Full GST, TDS, and Indian statutory compliance built into NetSuite. AGSuite India Localization keeps your NetSuite ERP fully compliant with Indian tax regulations.",
 
   robots: {
     index: true,
@@ -25,10 +25,9 @@ export const metadata: Metadata = {
     type: "article",
     locale: "en_US",
     url: "https://agsuitetech.com/india-localization-for-netsuite/",
-    title:
-      "India Tax Solution | Accounting & Taxation services - AGSuite Technologies",
+    title: "NetSuite India Localization — GST, TDS & Indian Compliance | AGSuite",
     description:
-      "AGSuite Technologies offers comprehensive tax solutions, India tax solution, and Accounting & Taxation services. Discover expert tax solutions tailored to your needs.",
+      "Full GST, TDS, and Indian statutory compliance built into NetSuite. AGSuite India Localization keeps your NetSuite ERP fully compliant with Indian tax regulations.",
     siteName: "AGSuite",
     images: [
       {

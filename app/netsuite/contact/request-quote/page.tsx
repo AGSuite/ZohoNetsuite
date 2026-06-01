@@ -378,7 +378,16 @@ export default function RequestQuotePremium() {
                             {/* Estimation Process Cards */}
                             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 {[
-
+                                    {
+                                        icon: FileSearch,
+                                        title: "Requirement Audit",
+                                        desc: "We analyze your operational gaps and technical requirements to define a precise project scope."
+                                    },
+                                    {
+                                        icon: ShieldCheck,
+                                        title: "Fixed-Price Guarantee",
+                                        desc: "Transparent, SLA-backed pricing structures with no hidden costs for enterprise-grade NetSuite deployments."
+                                    },
                                     {
                                         icon: TrendingUp,
                                         title: "ROI Projection",

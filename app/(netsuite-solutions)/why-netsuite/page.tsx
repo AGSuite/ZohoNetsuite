@@ -52,8 +52,8 @@ export default function WhyNetsuitePage() {
   const stats = [
     { label: "Customer Satisfaction", value: 93, suffix: "%", icon: Star },
     { label: "Countries Supported", value: 219, suffix: "+", icon: Globe },
-    { label: "Years Cloud ERP", value: 25, suffix: "+", icon: Cloud },
-    { label: "Companies Worldwide", value: 43, suffix: "k+", icon: Users },
+    { label: "Years Cloud ERP", value: 28, suffix: "+", icon: Cloud },
+    { label: "Customers Worldwide", value: 43, suffix: "k+", icon: Users },
   ];
 
   const growBusiness = [
@@ -62,37 +62,37 @@ export default function WhyNetsuitePage() {
       description: "NetSuite ERP provides an integrated suite of cloud applications for accounting, sales and customer service, supply chain and warehouse operations, professional services, HR, advanced analytics, and more. This suite lets you manage your entire business on a single system.",
       icon: Box,
       rgb: "30,58,138",
-      image: "/images/lap/lap1.webp"
+      image: "/images/Netsuite Latest Images/Case study/NetSuite_for_Wholesale_Distribution.webp"
     },
     {
       title: "Embedded AI across the suite",
       description: "NetSuite centrally stores your business information in a single data model, providing an ideal foundation to maximize the use of AI across the suite. With embedded AI capabilities to assist with tasks, suggest actions, generate business insights, and analyze data faster to underpin confident decision-making, NetSuite AI powered solutions helps businesses run more efficiently, be more competitive and grow.",
       icon: Cpu,
       rgb: "37,99,235",
-      image: "/images/lap/lap4.webp"
+      image: "/images/Netsuite Latest Images/Case study/Netsuite For Mobility Solution.webp"
     },
     {
       title: "One Oracle",
       description: "NetSuite is uniquely positioned to take advantage of all the best that Oracle has to offer. From using the latest hardware and database technology in Oracle Cloud Infrastructure (OCI) data centers, to leveraging Oracle AI services and partnerships, to tailoring Oracle's enterprise-grade applications and technologies for NetSuite customers, there's no other solution provider that can deliver the same level of value and ROI.",
       icon: Layers,
       rgb: "202,138,4",
-      image: "/images/lap/lap5.webp"
+      image: "/images/Dashboard/oracle_infrastructure_dashboard.png"
     },
     {
       title: "Continued innovation",
       description: "With automatic updates that bring enhancements and new features to all customers twice a year, NetSuite is not a static solution. You're always on the latest technology and never falling behind. It continually advances to help you keep up with the evolving demands of your organization so you can run your business better and be ready for what's next.",
       icon: TrendingUp,
       rgb: "220,38,38",
-      image: "/images/lap/group1.webp"
+      image: "/images/Dashboard/innovation_analytics_dashboard.png"
     }
   ];
 
   const adaptability = [
-    { title: "True cloud", description: "As the world's first cloud company, NetSuite was born in and built for the cloud. This means all our customers are on the same version of the software and automatically receive biannual updates. Additionally, NetSuite runs on the global network of Oracle Cloud Infrastructure (OCI) cloud regions you can easily scale up with increasing volumes of data and bigger workloads without impacting performance.", image: "/images/hero/netsuite_hero_v2.png", icon: Cloud },
-    { title: "Unite your data", description: "Stop wasting time compiling data and reports. NetSuite brings together financial and operational data for a single, comprehensive, and real-time view of your company's performance. AI technologies can then use this data from the suite to simplify business tasks and uncover insights that drive better decision-making.", image: "/images/Dashboard/NetsuiteDashboard.webp", icon: LineChart },
-    { title: "Fine tune built-in best practices", description: "NetSuite offers hundreds of prebuilt workflows based on best practices gleaned from tens of thousands of implementations. It also makes it easy for business users to configure these templates to suit their unique business needs.", image: "/images/lap/lap2.webp", icon: Settings },
-    { title: "Customizations to suit your business", description: "Extend and optimize core NetSuite functionality leveraging industry-standard tools and technologies to manage change and automate each stage of your DevOps lifecycle.", image: "/images/lap/lap3.webp", icon: Wrench },
-    { title: "Power of partners", description: "Connect, integrate, and extend NetSuite with hundreds of certified SuiteApp solutions provided by our vast network of partners.", image: "/images/people/fourteam.webp", icon: Network },
+    { title: "True cloud", description: "As the world's first cloud company, NetSuite was born in and built for the cloud. This means all our customers are on the same version of the software and automatically receive biannual updates. Additionally, NetSuite runs on the global network of Oracle Cloud Infrastructure (OCI) cloud regions you can easily scale up with increasing volumes of data and bigger workloads without impacting performance.", image: "/images/Dashboard/ns_visibility_dash.png", icon: Cloud },
+    { title: "Unite your data", description: "Stop wasting time compiling data and reports. NetSuite brings together financial and operational data for a single, comprehensive, and real-time view of your company's performance. AI technologies can then use this data from the suite to simplify business tasks and uncover insights that drive better decision-making.", image: "/images/Dashboard/analytic wharehouse 2.jpg", icon: LineChart },
+    { title: "Fine tune built-in best practices", description: "NetSuite offers hundreds of prebuilt workflows based on best practices gleaned from tens of thousands of implementations. It also makes it easy for business users to configure these templates to suit their unique business needs.", image: "/images/lap/lap7_11zon.webp", icon: Settings },
+    { title: "Customizations to suit your business", description: "Extend and optimize core NetSuite functionality leveraging industry-standard tools and technologies to manage change and automate each stage of your DevOps lifecycle.", image: "/images/lap/lap9_11zon.webp", icon: Wrench },
+    { title: "Power of partners", description: "Connect, integrate, and extend NetSuite with hundreds of certified SuiteApp solutions provided by our vast network of partners.", image: "/images/lap/group2.webp", icon: Network },
   ];
 
   const successPriority = [
@@ -100,31 +100,31 @@ export default function WhyNetsuitePage() {
       title: "Direct access to expertise",
       description: "We understand that every interaction and decision can impact your business growth. That's why NetSuite Customer Success offers direct access to our global consulting and implementation experts. Our team is dedicated to helping you utilize NetSuite to its full potential, ensuring you can not only meet but exceed your business objectives.",
       icon: PhoneCall,
-      image: "/images/people/threeteam.webp"
+      image: "/images/people/people5_11zon.webp"
     },
     {
       title: "Accelerate your success",
       description: "Understanding that time is of the essence, we have streamlined our processes to accelerate your success. From scoping to implementation, our proven SuiteSuccess methodology is designed to get you up and running quickly and effectively. With NetSuite, you can expect a predictable deployment and rapid realization of ROI, thanks to our expert guidance and comprehensive support.",
       icon: Zap,
-      image: "/images/people/laptopmen.webp"
+      image: "/images/people/laptopmen2.webp"
     },
     {
       title: "All the support you need",
       description: "We're ready to lend a helping hand, providing expert implementation resources and 24/7 phone support to proactive optimization of your NetSuite solution after your business is running on NetSuite. Our training platform allows all NetSuite users in your company to engage in continuous learning.",
       icon: ShieldCheck,
-      image: "/images/people/laptopgirl.webp"
+      image: "/images/people/laptopgirl3.webp"
     },
     {
       title: "Learn, engage and grow",
       description: "Ongoing learning and engagement is key to leveraging the full potential of NetSuite. We encourage you to participate in our live events, webinars, and in-person learning labs, which provide valuable networking opportunities and insights into optimizing your use of our platform. These interactions not only allow for direct access to NetSuite experts but also help you learn from other customers' experiences.",
       icon: GraduationCap,
-      image: "/images/people/people4.webp"
+      image: "/images/people/people6_11zon.webp"
     },
     {
       title: "Global community",
       description: "Our amazing NetSuite Community provides a space to collaborate, ask questions, learn, and share ideas with your peers.",
       icon: MessageSquare,
-      image: "/images/people/global.webp"
+      image: "/images/people/scaling.webp"
     }
   ];
 
@@ -241,7 +241,7 @@ export default function WhyNetsuitePage() {
               transition={{ duration: 0.7 }}
               className="relative flex items-center justify-center rounded-3xl overflow-hidden shadow-2xl border border-gray-100 min-h-[400px]"
             >
-                <Image
+              <Image
                 src="/images/Dashboard/netsuite_erp_dashboard_realistic.png"
                 alt="What Is NetSuite Dashboard"
                 fill
@@ -258,9 +258,8 @@ export default function WhyNetsuitePage() {
               className="flex flex-col justify-between py-6 h-full"
             >
               <div className="space-y-4">
-                <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">Overview</span>
                 <h2 className="text-3xl md:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-700 leading-tight">
-                  What Is NetSuite ERP?
+                  One Unified Cloud Platform to Run Your Entire Business
                 </h2>
               </div>
 
@@ -301,7 +300,6 @@ export default function WhyNetsuitePage() {
       <section id="growth" className="py-24 bg-gray-50 relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-8">
-            <span className="bg-blue-600/10 text-blue-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">Growth Framework</span>
             <h2 className="text-4xl md:text-5xl font-medium text-gray-900">Helping You Grow Your Business with NetSuite</h2>
           </motion.div>
 
@@ -391,14 +389,26 @@ export default function WhyNetsuitePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#002a8c] via-[#0044cc] to-[#0099a3] shadow-2xl"
+            className="relative overflow-hidden rounded-3xl shadow-2xl bg-gray-950"
           >
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/images/netsuiteimages/background/netsuiteCTA.webp"
+                alt="CTA Background"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1280px) 100vw, 1280px"
+              />
+              <div className="absolute inset-0 bg-black/80 backdrop-blur-[2px]" />
+            </div>
+
             {/* Particles */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
               {CTA_PARTICLES.map((p, i) => (
                 <motion.div
                   key={i}
-                  className="absolute bg-white rounded-full"
+                  className="absolute bg-white rounded-full opacity-35"
                   style={{ width: `${p.w}px`, height: `${p.h}px`, top: `${p.top}%`, left: `${p.left}%` }}
                   animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }}
                   transition={{ duration: p.dur, repeat: Infinity, ease: 'easeInOut', delay: p.delay }}
@@ -406,7 +416,7 @@ export default function WhyNetsuitePage() {
               ))}
             </div>
 
-            <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
+            <div className="relative z-20 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
                   Start Your NetSuite Journey Today —{" "}
@@ -449,10 +459,11 @@ export default function WhyNetsuitePage() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-900/30 to-transparent z-10" />
+                <div className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 flex flex-col justify-end p-8 transition-all duration-500">
+                <div className="absolute inset-0 flex flex-col justify-end p-8 transition-all duration-500 z-20">
                   <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
                     <item.icon className="w-6 h-6 text-white" />
                   </div>

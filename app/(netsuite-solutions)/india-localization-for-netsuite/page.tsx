@@ -14,7 +14,6 @@ import {
 import dynamic from "next/dynamic";
 import { FAQ } from "@/app/components/home/FAQ";
 import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
-import NSServicesSection from "@/app/netsuite/components/NSServicesSection";
 
 const IndiaComplianceCircle = dynamic(() => import("./components/IndiaComplianceCircle"), {
   ssr: false,
@@ -52,67 +51,67 @@ export default function IndiaLocalizationPage() {
     {
       title: "Efficient GST Management",
       description: "Our platform automates GST compliance through customized configuration of location, vendor, customer, and HSN code details. It handles tax calculations and filing for GSTR1, 2, 3B filings, and identifies transaction types. Additionally, the platform also provides separate CGST and SGST accounts to streamline organizational tax management.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/gst_management.png",
       rgb: "30,58,138"
     },
     {
       title: "GST Advanced Features",
       description: "GSTIN Validation and GSTR 2B Reconciliation within NetSuite. Ensure your tax filings are accurate and your vendors are compliant with real-time validation and automated reconciliation tools.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/gst_validation.png",
       rgb: "6,95,70"
     },
     {
       title: "Streamlined TDS Compliance",
       description: "Our platform streamlines TDS management through customized setup of company, subsidiary and vendor details. It automates TDS calculations per government rules and vendor types for accuracy and compliance. The platform manages threshold limits and PAN rules, generates Form 26Q, and enables automatic GL posting to designated accounts.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/tds_compliance.png",
       rgb: "124,45,18"
     },
     {
       title: "TDS Advanced Features",
       description: "TDS on Vendor PrePayment, TDS Challan, TXT File Generation for eTDS Return, 194Q & 206(1H). Handle complex TDS scenarios with automated processes for prepayments and statutory file generation.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/tds_advanced.png",
       rgb: "76,29,149"
     },
     {
       title: "Auto TCS Calculation",
       description: "TCS details setup on company/subsidiary, TCS detail setup on Customer records. Automatic tax calculation of TCS based on government rules, automatic GL posting in specific TCS Accounts. TCS Report: Form 27EQ.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/tcs_calculation.png",
       rgb: "12,74,110"
     },
     {
       title: "E-Invoicing",
       description: "Integrates NetSuite with E-invoice Portal via our GSP Partner. Invoices created in NetSuite are validated and sent to E-invoice Portal in JSON Format via APIs. IRN and QR Code is generated and received back to NetSuite automatically. QR code is printed on existing invoice PDF.",
-      image: "/images/modules/module8.webp",
+      image: "/images/modules/e_invoicing.png",
       rgb: "113,63,18"
     },
     {
       title: "E-Way Bill",
       description: "NetSuite Integration with E-Way Bill Portal. E-Way Bill Registration, EBN Generation, receipt and store on the invoice record in NetSuite. Print E-Way Bill PDF, support B2B, B2C, Export, Error Handling and detailed Reports.",
-      image: "/images/modules/sheet module.webp",
+      image: "/images/modules/eway_bill.png",
       rgb: "19,78,74"
     },
     {
       title: "Vendor Statement",
       description: "Easily generate detailed vendor statements, enabling clear visibility into outstanding balances, transaction history, and payment schedules, enhancing transparency and vendor relations.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/vendor_statement.png",
       rgb: "131,24,67"
     },
     {
       title: "MSME Reporting",
       description: "Access streamlined reporting tailored for MSME compliance, facilitating accurate tracking and timely submissions in accordance with regulatory standards for small and medium-sized enterprises.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/msme_reporting.png",
       rgb: "30,58,138"
     },
     {
       title: "Compliance Calendar and Reminders",
       description: "Stay compliant effortlessly with an integrated calendar that schedules key deadlines, providing timely reminders to avoid missed filings and penalties.",
-      image: "/images/modules/account modules.webp",
+      image: "/images/modules/compliance_calendar.png",
       rgb: "6,78,59"
     },
     {
       title: "Audit Related Reports",
       description: "Generate audit-ready reports with ease, ensuring accuracy and completeness in financial documentation, simplifying the audit process and fostering regulatory compliance.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/audit_reports.png",
       rgb: "120,53,15"
     },
   ];
@@ -121,31 +120,31 @@ export default function IndiaLocalizationPage() {
     {
       title: "Enhanced Compliance",
       description: "Automated GST, TDS, and TCS calculations ensure adherence to India's tax regulations, minimizing compliance risks.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/modules/benefit_compliance.png",
       points: ["100% GST Regulation compliance", "Real-time IRP integration", "Automated TDS/TCS calculation", "Minimize compliance risks"],
     },
     {
       title: "Streamlined Operations",
       description: "E-invoicing, e-way bill management, and vendor statements simplify transaction processing and reduce administrative workload.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/modules/benefit_operations.png",
       points: ["Automated e-invoicing", "E-way bill management", "Simplified vendor statements", "Reduced administrative workload"],
     },
     {
       title: "Accurate Reporting",
       description: "MSME reporting, audit-ready reports, and advanced tax features provide precise, real-time insights to support business decisions.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/modules/benefit_reporting.png",
       points: ["MSME compliance reporting", "Audit-ready financial reports", "Real-time business insights", "Precise data tracking"],
     },
     {
       title: "Automated Reminders",
       description: "Compliance calendar and timely reminders help your team stay on top of regulatory deadlines without manual tracking.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/modules/compliance_calendar.png",
       points: ["Integrated compliance calendar", "Automated deadline reminders", "Avoid missed filings", "No more manual tracking"],
     },
     {
       title: "Seamless Integration",
       description: "The platform integrates smoothly with NetSuite, allowing your business to achieve efficient operations on a single, unified system.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/modules/unified_platform.png",
       points: ["Native NetSuite integration", "Single unified system", "Smooth data flow", "Optimized cloud operations"],
     },
   ];
@@ -249,7 +248,6 @@ export default function IndiaLocalizationPage() {
               ["Modules", "#modules"],
               ["Benefits", "#benefits"],
               ["Challenges", "#challenges"],
-              ["Services", "#services"],
               ["FAQ", "#faq"]
             ].map(([label, href]) => (
               <a key={href} href={href} className="px-4 py-2 text-base font-semibold hover:bg-blue-50 rounded-lg transition-all whitespace-nowrap">
@@ -338,7 +336,6 @@ export default function IndiaLocalizationPage() {
       <section id="modules" className="py-16 bg-white scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-4xl md:text-5xl font-medium text-gray-900 text-center">India Localization for NetSuite Compliance Modules</motion.h2>
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-gray-600 text-lg max-w-2xl text-center">11 compliance modules covering GST, TDS, TCS, e-invoicing, and statutory reporting</motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8 items-start">
             {modules.map((mod, i) => (
               <motion.div
@@ -351,8 +348,8 @@ export default function IndiaLocalizationPage() {
                 style={{ backgroundColor: `rgb(${mod.rgb})` }}
               >
                 <div className="flex flex-col h-full w-full rounded-2xl overflow-hidden transition-all duration-500 ease-in-out">
-                  <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
+                  <div className="relative h-56 shrink-0 overflow-hidden">
+                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-center group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom,transparent 0%,rgba(${mod.rgb},0.4) 70%,rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 flex flex-col relative transition-all duration-500">
@@ -413,14 +410,14 @@ export default function IndiaLocalizationPage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
             <h3 className="text-3xl md:text-5xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-              Key Benefits of India Localization for NetSuite Suite
+              Key Benefits of India Localization for NetSuite
             </h3>
           </motion.div>
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 items-stretch">
             <div className="order-2 lg:order-1 relative min-h-[380px] lg:min-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait" initial={false}>
                 <motion.div key={activeBenefit} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} className="absolute inset-0">
-                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" />
+                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill priority sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" />
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -448,12 +445,6 @@ export default function IndiaLocalizationPage() {
         </div>
       </section>
 
-      <div id="services">
-        <NSServicesSection />
-      </div>
-
-
-
       {/* FAQ */}
       <FAQ
         variant="netsuite"
@@ -477,16 +468,30 @@ export default function IndiaLocalizationPage() {
       {/* CTA BANNER */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#0891b2] shadow-2xl">
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative overflow-hidden rounded-3xl shadow-2xl bg-gray-950">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+              <Image 
+                src="/images/netsuiteimages/background/netsuiteCTA.webp" 
+                alt="CTA Background Image" 
+                fill 
+                className="object-cover"
+                sizes="(max-width: 1280px) 100vw, 1280px"
+              />
+              {/* Dark Opacity Layer */}
+              <div className="absolute inset-0 bg-black/75 backdrop-blur-[2px]" />
+            </div>
+
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
               {PARTICLES.map((p, i) => (<motion.div key={i} className="absolute bg-white rounded-full" style={{ width: `${p.w}px`, height: `${p.h}px`, top: `${p.top}%`, left: `${p.left}%` }} animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }} transition={{ duration: p.dur, repeat: Infinity, ease: 'easeInOut', delay: p.delay }} />))}
             </div>
-            <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
+
+            <div className="relative z-20 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Stay GST Compliant — <span className="text-cyan-200">Automate India Tax with India Localization for NetSuite.</span></h2>
-                <p className="text-white/80 text-lg md:text-xl">End manual GST calculations, e-invoice filing, and TDS tracking. Our India Localization Add-On keeps your NetSuite environment fully compliant with every GSTN and Income Tax requirement.</p>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">Stay GST Compliant — <span className="text-cyan-200">Automate India Tax in NetSuite.</span></h2>
+                <p className="text-white/80 text-base md:text-lg">End manual GST calculations, e-invoice filing, and TDS tracking. Our India Localization Add-On keeps your NetSuite environment fully compliant with every GSTN and Income Tax requirement.</p>
               </div>
-              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all group active:scale-95">
+              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all group active:scale-95">
                 Get India Compliance <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
