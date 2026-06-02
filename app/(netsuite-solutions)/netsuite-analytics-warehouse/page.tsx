@@ -48,18 +48,18 @@ export default function AnalyticsWarehousePage() {
   ];
 
   const modules = [
-    { title: "Unified Data Repository", description: "Centralise all your NetSuite ERP data alongside 100+ external sources into one cloud-native analytics warehouse.", image: "/images/modules/dashboard module.webp", color: "#1e8a9e", rgb: "14,108,130" },
-    { title: "Pre-Built Connectors", description: "Connect Salesforce, Shopify, Google Analytics, HubSpot, and 40+ popular platforms with zero-code connectors.", image: "/images/modules/any module.webp", color: "#3b5299", rgb: "40,65,145" },
-    { title: "SQL Access & Querying", description: "Full SQL query access for data analysts — write custom queries, create views, and perform complex joins across all data.", image: "/images/modules/sheet module.webp", color: "#1a7a55", rgb: "18,108,72" },
-    { title: "Visual Data Modelling", description: "Create semantic data models, define relationships, and build reusable datasets — no coding required.", image: "/images/modules/dashbord module.webp", color: "#8b3a6a", rgb: "125,42,88" },
-    { title: "BI Tool Integration", description: "Connect Tableau, Power BI, Looker, and any JDBC/ODBC-compatible tool directly to your NetSuite data warehouse.", image: "/images/modules/module8.webp", color: "#a05a18", rgb: "145,75,18" },
-    { title: "Automated Data Refresh", description: "Schedule data refreshes at any frequency — real-time, hourly, or daily — to keep your warehouse always current.", image: "/images/modules/working module.webp", color: "#4a3a8a", rgb: "65,45,130" },
-    { title: "Multi-Source Consolidation", description: "Merge ERP, CRM, marketing, and operational data into a single trusted dataset for cross-functional analytics.", image: "/images/modules/managging together module.webp", color: "#1a6080", rgb: "20,88,115" },
-    { title: "Data Governance", description: "Define data ownership, access controls, lineage tracking, and quality rules to ensure trusted, compliant analytics.", image: "/images/modules/any modules.webp", color: "#6a2575", rgb: "95,30,105" },
-    { title: "Advanced Calculations", description: "Write complex business logic, KPI definitions, and aggregations once — reuse across every report and dashboard.", image: "/images/modules/account modules.webp", color: "#154e8a", rgb: "18,68,130" },
-    { title: "Historical Data Archiving", description: "Retain unlimited historical data for trend analysis, audit compliance, and long-term forecasting with no ERP storage impact.", image: "/images/modules/mobile module.webp", color: "#1a6545", rgb: "20,95,60" },
-    { title: "Cloud-Native Architecture", description: "Built on an enterprise-grade cloud data warehouse — scales automatically with your data volume and query concurrency.", image: "/images/modules/chatt mdoule.webp", color: "#8a2a3a", rgb: "130,35,48" },
-    { title: "Real-Time Streaming", description: "Stream transaction-level events from NetSuite into your warehouse in real time for operational analytics with zero lag.", image: "/images/modules/csm modules.webp", color: "#0f4e8a", rgb: "12,68,130" },
+    { title: "Unified Data Repository", description: "Centralise all your NetSuite ERP data alongside 100+ external sources into one cloud-native analytics warehouse.", image: "/images/netsuiteimages/ns_endtoend_management.png", color: "#1e8a9e", rgb: "14,108,130" },
+    { title: "Pre-Built Connectors", description: "Connect Salesforce, Shopify, Google Analytics, HubSpot, and 40+ popular platforms with zero-code connectors.", image: "/images/netsuiteimages/ns_integration_services.png", color: "#3b5299", rgb: "40,65,145" },
+    { title: "SQL Access & Querying", description: "Full SQL query access for data analysts — write custom queries, create views, and perform complex joins across all data.", image: "/images/modules/general_ledger_custom.png", color: "#1a7a55", rgb: "18,108,72" },
+    { title: "Visual Data Modelling", description: "Create semantic data models, define relationships, and build reusable datasets — no coding required.", image: "/images/modules/budgeting_planning_custom.png", color: "#8b3a6a", rgb: "125,42,88" },
+    { title: "BI Tool Integration", description: "Connect Tableau, Power BI, Looker, and any JDBC/ODBC-compatible tool directly to your NetSuite data warehouse.", image: "/images/netsuiteimages/ns_low_code_dev.png", color: "#a05a18", rgb: "145,75,18" },
+    { title: "Automated Data Refresh", description: "Schedule data refreshes at any frequency — real-time, hourly, or daily — to keep your warehouse always current.", image: "/images/netsuiteimages/ns_automation_dash.png", color: "#4a3a8a", rgb: "65,45,130" },
+    { title: "Multi-Source Consolidation", description: "Merge ERP, CRM, marketing, and operational data into a single trusted dataset for cross-functional analytics.", image: "/images/netsuiteimages/ns_visibility_dash.png", color: "#1a6080", rgb: "20,88,115" },
+    { title: "Data Governance", description: "Define data ownership, access controls, lineage tracking, and quality rules to ensure trusted, compliant analytics.", image: "/images/modules/period_close_custom.png", color: "#6a2575", rgb: "95,30,105" },
+    { title: "Advanced Calculations", description: "Write complex business logic, KPI definitions, and aggregations once — reuse across every report and dashboard.", image: "/images/modules/financial_reporting_custom.png", color: "#154e8a", rgb: "18,68,130" },
+    { title: "Historical Data Archiving", description: "Retain unlimited historical data for trend analysis, audit compliance, and long-term forecasting with no ERP storage impact.", image: "/images/modules/bank_reconciliation_custom.png", color: "#1a6545", rgb: "20,95,60" },
+    { title: "Cloud-Native Architecture", description: "Built on an enterprise-grade cloud data warehouse — scales automatically with your data volume and query concurrency.", image: "/images/netsuiteimages/ns_scaling_dash.png", color: "#8a2a3a", rgb: "130,35,48" },
+    { title: "Real-Time Streaming", description: "Stream transaction-level events from NetSuite into your warehouse in real time for operational analytics with zero lag.", image: "/images/modules/intelligent_automation.png", color: "#0f4e8a", rgb: "12,68,130" },
   ];
 
   const benefits = [
@@ -274,7 +274,7 @@ export default function AnalyticsWarehousePage() {
                   transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }} whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
                   className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white" style={{ minHeight: 340 }}>
                   <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top" />
+                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${mod.rgb})` }}>

@@ -47,18 +47,18 @@ export default function SuiteSuccessPage() {
   ];
 
   const modules = [
-    { title: "Build", description: "Establish a solid foundation with core ERP, CRM, and financials tailored to your industry from day one.", image: "/images/modules/dashboard module.webp", color: "#1e6fa8", rgb: "30,111,168" },
-    { title: "Engage", description: "Add ecommerce, customer portals, and marketing automation to grow your reach and revenue.", image: "/images/modules/csm modules.webp", color: "#3b5299", rgb: "59,82,153" },
-    { title: "Consume", description: "Expand functionality with project management, warehouse, and industry-specific capabilities.", image: "/images/modules/working module.webp", color: "#1a7a55", rgb: "26,122,85" },
-    { title: "Optimize", description: "Leverage advanced analytics, AI insights, and business intelligence for smarter decisions.", image: "/images/modules/dashbord module.webp", color: "#7b3a8a", rgb: "123,58,138" },
-    { title: "Dominate", description: "Innovate and disrupt your market with a future-proof, continuously updated cloud platform.", image: "/images/modules/any module.webp", color: "#a05a18", rgb: "160,90,24" },
-    { title: "Quick Implementation", description: "Pre-configured industry setups drastically reduce time-to-value and implementation risk.", image: "/images/modules/chatt mdoule.webp", color: "#4a3a8a", rgb: "74,58,138" },
-    { title: "Role-Based Dashboards", description: "300+ pre-built KPIs and dashboards for every function — from CFO to warehouse manager.", image: "/images/modules/module8.webp", color: "#1a6080", rgb: "26,96,128" },
-    { title: "Industry Best Practices", description: "Built-in workflows and processes based on thousands of successful global deployments.", image: "/images/modules/any modules.webp", color: "#6a2575", rgb: "106,37,117" },
-    { title: "Continuous Updates", description: "Two automatic platform upgrades per year — with all your customizations preserved.", image: "/images/modules/account modules.webp", color: "#154e8a", rgb: "21,78,138" },
-    { title: "Phased Approach", description: "A structured, agile methodology that delivers business value at every single stage.", image: "/images/modules/managging together module.webp", color: "#1a6545", rgb: "26,101,69" },
-    { title: "Training & Adoption", description: "Built-in training pathways ensure rapid user adoption from the first day of go-live.", image: "/images/modules/sheet module.webp", color: "#8a2a3a", rgb: "138,42,58" },
-    { title: "Ongoing Innovation", description: "NetSuite continuously innovates the SuiteSuccess editions based on real customer feedback and market trends.", image: "/images/modules/mobile module.webp", color: "#0f4e8a", rgb: "15,78,138" },
+    { title: "Build", description: "Establish a solid foundation with core ERP, CRM, and financials tailored to your industry from day one.", image: "/images/modules/general_ledger_custom.png", color: "#1e6fa8", rgb: "30,111,168" },
+    { title: "Engage", description: "Add ecommerce, customer portals, and marketing automation to grow your reach and revenue.", image: "/images/modules/marketing_automation.png", color: "#3b5299", rgb: "59,82,153" },
+    { title: "Consume", description: "Expand functionality with project management, warehouse, and industry-specific capabilities.", image: "/images/modules/warehouse_management.png", color: "#1a7a55", rgb: "26,122,85" },
+    { title: "Optimize", description: "Leverage advanced analytics, AI insights, and business intelligence for smarter decisions.", image: "/images/modules/financial_reporting_custom.png", color: "#7b3a8a", rgb: "123,58,138" },
+    { title: "Dominate", description: "Innovate and disrupt your market with a future-proof, continuously updated cloud platform.", image: "/images/netsuiteimages/ns_digital_transformation.png", color: "#a05a18", rgb: "160,90,24" },
+    { title: "Quick Implementation", description: "Pre-configured industry setups drastically reduce time-to-value and implementation risk.", image: "/images/netsuiteimages/ns_automation_dash.png", color: "#4a3a8a", rgb: "74,58,138" },
+    { title: "Role-Based Dashboards", description: "300+ pre-built KPIs and dashboards for every function — from CFO to warehouse manager.", image: "/images/netsuiteimages/ns_visibility_dash.png", color: "#1a6080", rgb: "26,96,128" },
+    { title: "Industry Best Practices", description: "Built-in workflows and processes based on thousands of successful global deployments.", image: "/images/netsuiteimages/ns_realtime_visibility.png", color: "#6a2575", rgb: "106,37,117" },
+    { title: "Continuous Updates", description: "Two automatic platform upgrades per year — with all your customizations preserved.", image: "/images/netsuiteimages/ns_scaling_dash.png", color: "#154e8a", rgb: "21,78,138" },
+    { title: "Phased Approach", description: "A structured, agile methodology that delivers business value at every single stage.", image: "/images/modules/project_management.png", color: "#1a6545", rgb: "26,101,69" },
+    { title: "Training & Adoption", description: "Built-in training pathways ensure rapid user adoption from the first day of go-live.", image: "/images/netsuiteimages/ns_training_services.png", color: "#8a2a3a", rgb: "138,42,58" },
+    { title: "Ongoing Innovation", description: "NetSuite continuously innovates the SuiteSuccess editions based on real customer feedback and market trends.", image: "/images/modules/intelligent_automation.png", color: "#0f4e8a", rgb: "15,78,138" },
   ];
 
   const benefits = [
@@ -266,7 +266,7 @@ export default function SuiteSuccessPage() {
                   transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }} whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
                   className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white" style={{ minHeight: 340 }}>
                   <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top" />
+                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${mod.rgb})` }}>

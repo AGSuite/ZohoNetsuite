@@ -47,18 +47,18 @@ export default function NetSuiteAIPage() {
   ];
 
   const modules = [
-    { title: "Intelligent Insights", description: "Surface hidden patterns and anomalies across your entire ERP dataset automatically — no data scientist required.", image: "/images/modules/dashboard module.webp", color: "#1e8a9e", rgb: "14,108,130" },
-    { title: "Cash Flow Forecasting", description: "Predict 30, 60, and 90-day cash positions using historical trends, open AR, and payment behaviour models.", image: "/images/modules/account modules.webp", color: "#3b5299", rgb: "40,65,145" },
-    { title: "Supply Chain AI", description: "Anticipate demand fluctuations, supplier delays, and reorder points before they impact your operations.", image: "/images/modules/working module.webp", color: "#7b3a8a", rgb: "123,58,138" },
-    { title: "Smart Automation", description: "Automate approvals, journal entries, and dunning sequences with AI-driven workflow triggers.", image: "/images/modules/dashbord module.webp", color: "#1a7a55", rgb: "18,108,72" },
-    { title: "Predictive Analytics", description: "AI-powered scenario modelling for revenue forecasting, headcount planning, and budget variance detection.", image: "/images/modules/any module.webp", color: "#a05a18", rgb: "145,75,18" },
-    { title: "Anomaly Detection", description: "Real-time detection of outliers in financial transactions, inventory records, and operational KPIs.", image: "/images/modules/sheet module.webp", color: "#4a3a8a", rgb: "65,45,130" },
-    { title: "Personalised Recommendations", description: "AI-driven product, upsell, and cross-sell recommendations for e-commerce and customer service teams.", image: "/images/modules/csm modules.webp", color: "#1a6080", rgb: "20,88,115" },
-    { title: "Generative AI Assistant", description: "Ask questions in plain English and receive instant answers, summaries, and report generation from your NetSuite data.", image: "/images/modules/chatt mdoule.webp", color: "#6a2575", rgb: "95,30,105" },
-    { title: "AI-Driven Financials", description: "Smart Financials automates period close, reconciliation, and journal creation based on machine learning patterns.", image: "/images/modules/module8.webp", color: "#154e8a", rgb: "18,68,130" },
-    { title: "Customer Behaviour AI", description: "Predict churn risk, segment customers by lifetime value, and determine next best action for each account.", image: "/images/modules/managging together module.webp", color: "#1a6545", rgb: "20,95,60" },
-    { title: "Demand Sensing", description: "Combine internal sales trends with external signals to build more accurate demand forecasts at SKU level.", image: "/images/modules/any modules.webp", color: "#8a2a3a", rgb: "130,35,48" },
-    { title: "AI Risk Scoring", description: "Score every customer, supplier, and transaction for risk — enabling proactive decisions before problems occur.", image: "/images/modules/mobile module.webp", color: "#0f4e8a", rgb: "12,68,130" },
+    { title: "Intelligent Insights", description: "Surface hidden patterns and anomalies across your entire ERP dataset automatically — no data scientist required.", image: "/images/netsuiteimages/ns_visibility_dash.png", color: "#1e8a9e", rgb: "14,108,130" },
+    { title: "Cash Flow Forecasting", description: "Predict 30, 60, and 90-day cash positions using historical trends, open AR, and payment behaviour models.", image: "/images/modules/budgeting_planning_custom.png", color: "#3b5299", rgb: "40,65,145" },
+    { title: "Supply Chain AI", description: "Anticipate demand fluctuations, supplier delays, and reorder points before they impact your operations.", image: "/images/modules/supply_chain.png", color: "#7b3a8a", rgb: "123,58,138" },
+    { title: "Smart Automation", description: "Automate approvals, journal entries, and dunning sequences with AI-driven workflow triggers.", image: "/images/netsuiteimages/ns_automation_dash.png", color: "#1a7a55", rgb: "18,108,72" },
+    { title: "Predictive Analytics", description: "AI-powered scenario modelling for revenue forecasting, headcount planning, and budget variance detection.", image: "/images/modules/financial_reporting_custom.png", color: "#a05a18", rgb: "145,75,18" },
+    { title: "Anomaly Detection", description: "Real-time detection of outliers in financial transactions, inventory records, and operational KPIs.", image: "/images/modules/general_ledger_custom.png", color: "#4a3a8a", rgb: "65,45,130" },
+    { title: "Personalised Recommendations", description: "AI-driven product, upsell, and cross-sell recommendations for e-commerce and customer service teams.", image: "/images/modules/intelligent_automation.png", color: "#1a6080", rgb: "20,88,115" },
+    { title: "Generative AI Assistant", description: "Ask questions in plain English and receive instant answers, summaries, and report generation from your NetSuite data.", image: "/images/netsuiteimages/ns_low_code_dev.png", color: "#6a2575", rgb: "95,30,105" },
+    { title: "AI-Driven Financials", description: "Smart Financials automates period close, reconciliation, and journal creation based on machine learning patterns.", image: "/images/modules/period_close_custom.png", color: "#154e8a", rgb: "18,68,130" },
+    { title: "Customer Behaviour AI", description: "Predict churn risk, segment customers by lifetime value, and determine next best action for each account.", image: "/images/modules/crm.png", color: "#1a6545", rgb: "20,95,60" },
+    { title: "Demand Sensing", description: "Combine internal sales trends with external signals to build more accurate demand forecasts at SKU level.", image: "/images/modules/inventory_management.png", color: "#8a2a3a", rgb: "130,35,48" },
+    { title: "AI Risk Scoring", description: "Score every customer, supplier, and transaction for risk — enabling proactive decisions before problems occur.", image: "/images/modules/bank_reconciliation_custom.png", color: "#0f4e8a", rgb: "12,68,130" },
   ];
 
   const benefits = [
@@ -267,7 +267,7 @@ export default function NetSuiteAIPage() {
                   transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }} whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
                   className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white" style={{ minHeight: 340 }}>
                   <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top" />
+                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${mod.rgb})` }}>

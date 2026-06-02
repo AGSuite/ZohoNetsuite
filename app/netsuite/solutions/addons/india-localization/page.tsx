@@ -351,7 +351,7 @@ export default function IndiaLocalizationPage() {
               >
                 <div className="flex flex-col h-full w-full rounded-2xl overflow-hidden transition-all duration-500 ease-in-out">
                   <div className="relative h-56 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill className="object-cover object-center group-hover:scale-110 transition-transform duration-700" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                    <Image src={mod.image} alt={mod.title} fill className="object-cover object-top group-hover:scale-110 transition-transform duration-700" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom,transparent 0%,rgba(${mod.rgb},0.4) 70%,rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 flex flex-col relative transition-all duration-500">

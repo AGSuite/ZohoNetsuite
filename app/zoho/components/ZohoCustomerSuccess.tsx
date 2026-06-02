@@ -64,6 +64,14 @@ const customers: CustomerSuccess[] = [
     }
 ];
 
+// Shrink font when testimonial is long — never below text-base so it stays readable
+function getQuoteFontSize(text: string): string {
+    const len = text.length;
+    if (len < 180) return "text-xl leading-relaxed";
+    if (len < 350) return "text-lg leading-relaxed";
+    return "text-base md:text-lg leading-relaxed";
+}
+
 const ZohoCustomerSuccess = () => {
     const [activeIdx, setActiveIdx] = useState(0);
     const [direction, setDirection] = useState(1); // 1 = forward, -1 = backward
@@ -143,7 +151,7 @@ const ZohoCustomerSuccess = () => {
                     </button>
 
                     {/* Main Card */}
-                    <div className="relative flex-1 min-h-[380px]">
+                    <div className="relative flex-1 h-[460px]">
                         <AnimatePresence mode="wait" custom={direction}>
                             <motion.div
                                 key={activeIdx}
@@ -153,10 +161,10 @@ const ZohoCustomerSuccess = () => {
                                 animate="center"
                                 exit="exit"
                                 transition={{ duration: 0.45, ease: "easeOut" }}
-                                className="bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] border border-rose-50/50 flex flex-col md:flex-row min-h-[380px]"
+                                className="bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] border border-rose-50/50 flex flex-col md:flex-row h-[460px]"
                             >
                                 {/* Left Side: Image & Logo */}
-                                <div className="w-full md:w-[40%] relative min-h-[250px] md:min-h-full">
+                                <div className="w-full md:w-[40%] relative min-h-[180px] md:min-h-full">
                                     <Image
                                         src={activeCustomer.bgImage}
                                         alt={activeCustomer.companyName}
@@ -180,19 +188,19 @@ const ZohoCustomerSuccess = () => {
                                 </div>
 
                                 {/* Right Side: Quote & Person */}
-                                <div className="w-full md:w-[60%] p-8 md:p-10 lg:p-12 flex flex-col justify-center">
-                                    <div className="relative">
+                                <div className="w-full md:w-[60%] p-8 md:p-10 lg:p-12 flex flex-col justify-between overflow-hidden">
+                                    <div className="relative flex-1 overflow-hidden">
                                         {/* Quote Mark Icon */}
                                         <svg className="absolute -top-6 -left-4 w-10 h-10 text-rose-100 opacity-40" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V3H21.017C22.1216 3 23.017 3.89543 23.017 5V15C23.017 18.3137 20.3307 21 17.017 21H14.017ZM1.017 21L1.017 18C1.017 16.8954 1.91243 16 3.017 16H6.017C6.56928 16 7.017 15.5523 7.017 15V9C7.017 8.44771 6.56928 8 6.017 8H3.017C1.91243 8 1.017 7.10457 1.017 6V3H8.017C9.12157 3 10.017 3.89543 10.017 5V15C10.017 18.3137 7.33071 21 4.017 21H1.017Z" />
                                         </svg>
 
-                                        <blockquote className="text-lg md:text-xl font-medium text-[#333] leading-relaxed mb-8 relative z-10">
+                                        <blockquote className={`font-medium text-[#333] relative z-10 ${getQuoteFontSize(activeCustomer.testimonial)}`}>
                                             &ldquo;{activeCustomer.testimonial}&rdquo;
                                         </blockquote>
                                     </div>
 
-                                    <div className="flex items-center gap-4">
+                                    <div className="flex items-center gap-4 mt-4 pt-4 border-t border-gray-100 shrink-0">
                                         <div>
                                             <p className="text-lg font-bold text-[#1a1a1a]">{activeCustomer.personName}</p>
                                             <p className="text-sm text-gray-500 font-medium">{activeCustomer.personRole}</p>

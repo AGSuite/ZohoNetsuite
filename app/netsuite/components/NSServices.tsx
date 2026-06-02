@@ -183,10 +183,12 @@ export default function NSServices() {
                     alt={service.title}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 260px"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 500px"
+                    quality={95}
+                    priority={index < 3}
                   />
                   {/* Black gradient overlay - transparent top to dark bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent" />
                 </div>
 
                 {/* Default State - Image with Left-Aligned Content */}
@@ -285,9 +287,11 @@ export default function NSServices() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={95}
+                    priority={index < 2}
                   />
                   {/* Black gradient overlay - transparent top to dark bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent" />
                 </div>
 
                 {/* Default State - Image with Left-Aligned Content */}
@@ -379,10 +383,12 @@ export default function NSServices() {
                 fill
                 className="object-cover"
                 sizes="100vw"
+                quality={95}
+                priority
               />
 
               {/* Gradient overlay for text visibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent" />
 
               {/* Title + Button always visible on mobile */}
               <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-3 text-white">

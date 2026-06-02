@@ -47,18 +47,18 @@ export default function NetSuiteEcommercePage() {
   ];
 
   const modules = [
-    { title: "Order Management", description: "Centralize orders from all sales channels into a single, real-time fulfillment workflow without manual data entry.", image: "/images/modules/dashboard module.webp", color: "#1e6fa8", rgb: "30,111,168" },
-    { title: "Product Catalog", description: "Manage rich product data, images, pricing rules, and variants all from one centralized location.", image: "/images/modules/sheet module.webp", color: "#3b5299", rgb: "59,82,153" },
-    { title: "Site Management", description: "Drag-and-drop tools to manage promotions, landing pages, and navigation — no developer required.", image: "/images/modules/dashbord module.webp", color: "#1a7a55", rgb: "26,122,85" },
-    { title: "CRM Integration", description: "360-degree customer view with purchase history, preferences, and support tickets in one profile.", image: "/images/modules/csm modules.webp", color: "#7b3a8a", rgb: "123,58,138" },
-    { title: "B2B Commerce", description: "Negotiated pricing, quote-to-order workflows, and self-service portals built for wholesale buyers.", image: "/images/modules/account modules.webp", color: "#a05a18", rgb: "160,90,24" },
-    { title: "Marketing Engine", description: "Targeted email campaigns, dynamic promotions, and A/B testing powered by your own ERP data.", image: "/images/modules/any module.webp", color: "#4a3a8a", rgb: "74,58,138" },
-    { title: "Mobile Commerce", description: "Fully responsive storefronts that deliver seamless shopping on any device, anywhere in the world.", image: "/images/modules/mobile module.webp", color: "#1a6080", rgb: "26,96,128" },
-    { title: "Analytics & Reports", description: "Real-time insight into sales performance, customer behavior, and inventory across all channels.", image: "/images/modules/module8.webp", color: "#6a2575", rgb: "106,37,117" },
-    { title: "Payment Processing", description: "Accept all major payment methods with built-in fraud detection and PCI DSS Level 1 compliance.", image: "/images/modules/chatt mdoule.webp", color: "#154e8a", rgb: "21,78,138" },
-    { title: "Inventory Sync", description: "Real-time inventory on your web store — no overselling, no stockouts, always accurate.", image: "/images/modules/working module.webp", color: "#1a6545", rgb: "26,101,69" },
-    { title: "Multi-Site Management", description: "Run multiple brands and regional storefronts from one account with centralized management.", image: "/images/modules/managging together module.webp", color: "#8a2a3a", rgb: "138,42,58" },
-    { title: "Global Commerce", description: "Multi-currency, multi-language, and multi-tax support so you can sell anywhere in the world.", image: "/images/modules/any modules.webp", color: "#0f4e8a", rgb: "15,78,138" },
+    { title: "Order Management", description: "Centralize orders from all sales channels into a single, real-time fulfillment workflow without manual data entry.", image: "/images/modules/order_management.png", color: "#1e6fa8", rgb: "30,111,168" },
+    { title: "Product Catalog", description: "Manage rich product data, images, pricing rules, and variants all from one centralized location.", image: "/images/netsuiteimages/ns_endtoend_management.png", color: "#3b5299", rgb: "59,82,153" },
+    { title: "Site Management", description: "Drag-and-drop tools to manage promotions, landing pages, and navigation — no developer required.", image: "/images/netsuiteimages/ns_low_code_dev.png", color: "#1a7a55", rgb: "26,122,85" },
+    { title: "CRM Integration", description: "360-degree customer view with purchase history, preferences, and support tickets in one profile.", image: "/images/modules/crm.png", color: "#7b3a8a", rgb: "123,58,138" },
+    { title: "B2B Commerce", description: "Negotiated pricing, quote-to-order workflows, and self-service portals built for wholesale buyers.", image: "/images/modules/accounts_receivable_custom.png", color: "#a05a18", rgb: "160,90,24" },
+    { title: "Marketing Engine", description: "Targeted email campaigns, dynamic promotions, and A/B testing powered by your own ERP data.", image: "/images/modules/sc_marketing_engine.png", color: "#4a3a8a", rgb: "74,58,138" },
+    { title: "Mobile Commerce", description: "Fully responsive storefronts that deliver seamless shopping on any device, anywhere in the world.", image: "/images/modules/sc_mobile_commerce.png", color: "#1a6080", rgb: "26,96,128" },
+    { title: "Analytics & Reports", description: "Real-time insight into sales performance, customer behavior, and inventory across all channels.", image: "/images/modules/financial_reporting_custom.png", color: "#6a2575", rgb: "106,37,117" },
+    { title: "Payment Processing", description: "Accept all major payment methods with built-in fraud detection and PCI DSS Level 1 compliance.", image: "/images/modules/accounts_payable_custom.png", color: "#154e8a", rgb: "21,78,138" },
+    { title: "Inventory Sync", description: "Real-time inventory on your web store — no overselling, no stockouts, always accurate.", image: "/images/modules/inventory_management.png", color: "#1a6545", rgb: "26,101,69" },
+    { title: "Multi-Site Management", description: "Run multiple brands and regional storefronts from one account with centralized management.", image: "/images/netsuiteimages/ns_global_business.png", color: "#8a2a3a", rgb: "138,42,58" },
+    { title: "Global Commerce", description: "Multi-currency, multi-language, and multi-tax support so you can sell anywhere in the world.", image: "/images/modules/multi_currency_custom.png", color: "#0f4e8a", rgb: "15,78,138" },
   ];
 
   const benefits = [
@@ -262,12 +262,19 @@ export default function NetSuiteEcommercePage() {
           </motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {modules.map((mod, index) => (
-              <Link key={index} href="#contact-form" className="block">
+              <Link key={index} href="#contact-form" className="block h-full">
                 <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }} whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white" style={{ minHeight: 340 }}>
-                  <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top" />
+                  className="group flex flex-col h-full rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white" style={{ minHeight: 340 }}>
+                  <div className="relative h-64 shrink-0 overflow-hidden">
+                    <Image
+                      src={mod.image}
+                      alt={mod.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
+                      quality={95}
+                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                    />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${mod.rgb})` }}>

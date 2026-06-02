@@ -62,18 +62,18 @@ export default function AccountingSoftwarePage() {
   ];
 
   const modules = [
-    { title: "General Ledger", description: "Real-time P&L, balance sheets, multi-dimensional chart of accounts, and automated journal entries for a single source of financial truth.", image: "/images/modules/sheet module.webp", color: "#1e8a9e", rgb: "14,108,130" },
-    { title: "Accounts Payable", description: "Automate purchase invoices, vendor payments, and approval workflows — eliminating manual processing and reducing payment errors.", image: "/images/modules/account modules.webp", color: "#3b5299", rgb: "40,65,145" },
-    { title: "Accounts Receivable", description: "Accelerate cash collection with automated billing, dunning, and payment matching from a single dashboard.", image: "/images/modules/dashbord module.webp", color: "#1a7a55", rgb: "18,108,72" },
-    { title: "Fixed Asset Management", description: "Track asset lifecycle with automated depreciation schedules, revaluations, and disposal with full audit trails.", image: "/images/modules/working module.webp", color: "#8b3a6a", rgb: "125,42,88" },
-    { title: "Tax Management", description: "Handle multi-jurisdiction tax automatically — VAT, GST, sales tax — with built-in compliance and filing-ready reports.", image: "/images/modules/csm modules.webp", color: "#a05a18", rgb: "145,75,18" },
-    { title: "Financial Reporting", description: "Generate real-time P&L, cash flow, and balance sheet statements. Schedule reports to be delivered automatically to stakeholders.", image: "/images/modules/dashboard module.webp", color: "#4a3a8a", rgb: "65,45,130" },
-    { title: "Bank Reconciliation", description: "Auto-match bank transactions with NetSuite records, flag discrepancies, and close the books faster every period.", image: "/images/modules/any module.webp", color: "#1a6080", rgb: "20,88,115" },
-    { title: "Multi-Currency", description: "Transact in 190+ currencies with live exchange rates, automated revaluations, and consolidated multi-entity reporting.", image: "/images/modules/module8.webp", color: "#6a2575", rgb: "95,30,105" },
-    { title: "Revenue Recognition", description: "Automate ASC 606 / IFRS 15 compliant revenue recognition schedules tied directly to contracts and delivery milestones.", image: "/images/modules/managging together module.webp", color: "#154e8a", rgb: "18,68,130" },
-    { title: "Budgeting & Planning", description: "Build rolling forecasts, compare actuals vs. budget in real time, and drill into variances at any level of the organisation.", image: "/images/modules/any modules.webp", color: "#1a6545", rgb: "20,95,60" },
-    { title: "Expense Management", description: "Capture, approve, and reimburse employee expenses with policy controls, receipt capture, and automatic GL coding.", image: "/images/modules/chatt mdoule.webp", color: "#8a2a3a", rgb: "130,35,48" },
-    { title: "Period Close Checklist", description: "Standardise and automate month-end tasks with role-based checklists, status tracking, and one-click period locking.", image: "/images/modules/mobile module.webp", color: "#0f4e8a", rgb: "12,68,130" },
+    { title: "General Ledger", description: "Real-time P&L, balance sheets, multi-dimensional chart of accounts, and automated journal entries for a single source of financial truth.", image: "/images/modules/acct_general_ledger.png", color: "#1e8a9e", rgb: "14,108,130" },
+    { title: "Accounts Payable", description: "Automate purchase invoices, vendor payments, and approval workflows — eliminating manual processing and reducing payment errors.", image: "/images/modules/acct_accounts_payable.png", color: "#3b5299", rgb: "40,65,145" },
+    { title: "Accounts Receivable", description: "Accelerate cash collection with automated billing, dunning, and payment matching from a single dashboard.", image: "/images/modules/acct_accounts_receivable.png", color: "#1a7a55", rgb: "18,108,72" },
+    { title: "Fixed Asset Management", description: "Track asset lifecycle with automated depreciation schedules, revaluations, and disposal with full audit trails.", image: "/images/lap/netsuitelap.png", color: "#8b3a6a", rgb: "125,42,88" },
+    { title: "Tax Management", description: "Handle multi-jurisdiction tax automatically — VAT, GST, sales tax — with built-in compliance and filing-ready reports.", image: "/images/people/laptopgirl1.webp", color: "#a05a18", rgb: "145,75,18" },
+    { title: "Financial Reporting", description: "Generate real-time P&L, cash flow, and balance sheet statements. Schedule reports to be delivered automatically to stakeholders.", image: "/images/modules/financial_reporting_custom.png", color: "#4a3a8a", rgb: "65,45,130" },
+    { title: "Bank Reconciliation", description: "Auto-match bank transactions with NetSuite records, flag discrepancies, and close the books faster every period.", image: "/images/modules/bank_reconciliation_custom.png", color: "#1a6080", rgb: "20,88,115" },
+    { title: "Multi-Currency", description: "Transact in 190+ currencies with live exchange rates, automated revaluations, and consolidated multi-entity reporting.", image: "/images/modules/multi_currency_custom.png", color: "#6a2575", rgb: "95,30,105" },
+    { title: "Revenue Recognition", description: "Automate ASC 606 / IFRS 15 compliant revenue recognition schedules tied directly to contracts and delivery milestones.", image: "/images/people/laptopmen2.webp", color: "#154e8a", rgb: "18,68,130" },
+    { title: "Budgeting & Planning", description: "Build rolling forecasts, compare actuals vs. budget in real time, and drill into variances at any level of the organisation.", image: "/images/modules/budgeting_planning_custom.png", color: "#1a6545", rgb: "20,95,60" },
+    { title: "Expense Management", description: "Capture, approve, and reimburse employee expenses with policy controls, receipt capture, and automatic GL coding.", image: "/images/modules/expense_management_custom.png", color: "#8a2a3a", rgb: "130,35,48" },
+    { title: "Period Close Checklist", description: "Standardise and automate month-end tasks with role-based checklists, status tracking, and one-click period locking.", image: "/images/people/fourteam.webp", color: "#0f4e8a", rgb: "12,68,130" },
   ];
 
   const benefits = [
@@ -200,7 +200,7 @@ export default function AccountingSoftwarePage() {
                 {/* Main image — smaller, rounded */}
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
                   <Image
-                    src="/images/lap/lap2.webp"
+                    src="/images/hero/netsuite_cloud_accounting_office.png"
                     alt="NetSuite Cloud Accounting Software"
                     fill
                     sizes="(max-width: 768px) 100vw, 40vw"
@@ -406,18 +406,25 @@ export default function AccountingSoftwarePage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {modules.map((mod, index) => (
-              <Link key={index} href="#contact-form" className="block">
+              <Link key={index} href="#contact-form" className="block h-full">
                 <motion.div
                   initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
                   whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white"
+                  className="group flex flex-col h-full rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white"
                   style={{ minHeight: 340 }}
                 >
-                  <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top" />
-                    <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
-                  </div>
+                    <div className="relative h-44 shrink-0 overflow-hidden">
+                      <Image 
+                        src={mod.image} 
+                        alt={mod.title} 
+                        fill 
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px" 
+                        quality={95}
+                        className="object-cover object-top group-hover:scale-110 transition-transform duration-700" 
+                      />
+                      <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
+                    </div>
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${mod.rgb})` }}>
                     <div className="flex-1">
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">{mod.title}</h4>

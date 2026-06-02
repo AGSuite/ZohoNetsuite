@@ -408,7 +408,7 @@ export default function NetSuiteERPPage() {
                       alt={mod.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                     />
                     <div
                       className="absolute inset-0"
@@ -669,7 +669,7 @@ export default function NetSuiteERPPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#002a8c] via-[#0044cc] to-[#0099a3] shadow-2xl"
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#000814] via-[#001233] to-[#002a8c] shadow-2xl"
           >
             {/* Animated star particles */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">

@@ -316,7 +316,7 @@ export default function WhyNetsuitePage() {
                         alt={mod.title}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                        className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                       />
                     </div>
                   )}
@@ -350,7 +350,7 @@ export default function WhyNetsuitePage() {
             <div className="order-2 lg:order-1 relative min-h-[450px] lg:min-h-[550px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
               <AnimatePresence mode="wait">
                 <motion.div key={activeAdaptability} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} className="absolute inset-0">
-                  <Image src={adaptability[activeAdaptability].image} alt={adaptability[activeAdaptability].title} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" />
+                  <Image src={adaptability[activeAdaptability].image} alt={adaptability[activeAdaptability].title} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-top" suppressHydrationWarning />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </motion.div>
               </AnimatePresence>

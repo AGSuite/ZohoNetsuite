@@ -88,7 +88,7 @@ export default function NetSuiteCRMPage() {
       title: "Sales Force Automation",
       description:
         "Manage every lead, opportunity, and forecast in real time — giving sales reps the pipeline visibility they need to close faster and managers the accuracy to plan confidently.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/crm.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -96,7 +96,7 @@ export default function NetSuiteCRMPage() {
       title: "Marketing Automation",
       description:
         "Design, execute, and measure multi-channel campaigns — from email nurture to webinar follow-ups — with ROI tracked directly to revenue in the same system.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/marketing_automation.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -104,7 +104,7 @@ export default function NetSuiteCRMPage() {
       title: "Customer Service Management",
       description:
         "Empower support agents with a 360° customer history — open cases, past orders, contract terms — so every interaction is informed and resolution times plummet.",
-      image: "/images/modules/csm modules.webp",
+      image: "/images/netsuiteimages/ns_endtoend_management.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
@@ -112,7 +112,7 @@ export default function NetSuiteCRMPage() {
       title: "Partner Relationship Management",
       description:
         "Give channel partners their own portal to register deals, access resources, and track commissions — accelerating partner-led revenue without adding headcount.",
-      image: "/images/modules/managging together module.webp",
+      image: "/images/netsuiteimages/ns_managed_services.png",
       color: "#1a6080",
       rgb: "20,88,115",
     },
@@ -120,7 +120,7 @@ export default function NetSuiteCRMPage() {
       title: "CRM Analytics & Dashboards",
       description:
         "Real-time sales dashboards, funnel analytics, and territory performance reports — built on live transaction data, not yesterday's exports.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/netsuiteimages/ns_visibility_dash.png",
       color: "#6a2575",
       rgb: "95,30,105",
     },
@@ -128,7 +128,7 @@ export default function NetSuiteCRMPage() {
       title: "Mobile CRM",
       description:
         "Access full customer records, log calls, update opportunities, and submit quotes from any iOS or Android device — keeping field sales teams productive wherever they are.",
-      image: "/images/modules/mobile module.webp",
+      image: "/images/netsuiteimages/ns_low_code_dev.png",
       color: "#154e8a",
       rgb: "18,68,130",
     },
@@ -136,7 +136,7 @@ export default function NetSuiteCRMPage() {
       title: "Quote & Order Management",
       description:
         "Generate accurate, branded quotes in seconds with product catalogs, pricing rules, and discount approvals — converting to orders without re-keying a single line.",
-      image: "/images/modules/sheet module.webp",
+      image: "/images/modules/order_management.png",
       color: "#1a6545",
       rgb: "20,95,60",
     },
@@ -144,7 +144,7 @@ export default function NetSuiteCRMPage() {
       title: "Territory & Quota Management",
       description:
         "Assign territories, set quotas, and balance workloads across your sales org — then track attainment in real time with automatic alerts when reps fall behind pace.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/budgeting_planning_custom.png",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
@@ -152,7 +152,7 @@ export default function NetSuiteCRMPage() {
       title: "Case & Escalation Management",
       description:
         "Route support cases, set SLA rules, trigger auto escalations, and measure first-reply and resolution times — building a support operation that retains clients.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/netsuiteimages/ns_automation_dash.png",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },
@@ -160,7 +160,7 @@ export default function NetSuiteCRMPage() {
       title: "Email & Campaign Tracking",
       description:
         "Track opens, clicks, and conversions per campaign — then segment responders for follow-up sequences automatically, keeping marketing and sales perfectly aligned.",
-      image: "/images/modules/account modules.webp",
+      image: "/images/modules/marketing_automation.png",
       color: "#523a8a",
       rgb: "75,48,130",
     },
@@ -168,7 +168,7 @@ export default function NetSuiteCRMPage() {
       title: "Customer Segmentation",
       description:
         "Build dynamic customer segments based on purchase history, industry, or deal size — then target each segment with relevant offers and messaging at scale.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/modules/financial_reporting_custom.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -176,7 +176,7 @@ export default function NetSuiteCRMPage() {
       title: "Forecasting & Reporting",
       description:
         "Bottom-up and top-down sales forecasting with commit, best case, and pipeline views — giving leadership the revenue predictability needed for confident planning.",
-      image: "/images/modules/module8.webp",
+      image: "/images/modules/budgeting_planning_custom.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -572,6 +572,7 @@ export default function NetSuiteCRMPage() {
                       alt={mod.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                     />
                     <div
                       className="absolute inset-0"

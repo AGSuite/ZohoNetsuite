@@ -49,70 +49,70 @@ export default function PlanningPage() {
     {
       title: "Budgeting and Forecasting",
       description: "Automate tedious companywide and departmental budgeting processes. Prebuilt workflows that leverage best practices make it easy to closely track the progress of tasks, such as reviews and approvals.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/budgeting_planning_custom.png",
       color: "#0f6e8a",
       rgb: "15,110,138"
     },
     {
       title: "Scenario Planning and Modeling",
       description: "Perform scenario modeling and multidimensional planning with any number of dimensions, such as location, product, customer or expense. Easily model complex calculations.",
-      image: "/images/modules/account modules.webp",
+      image: "/images/netsuiteimages/ns_scaling_dash.png",
       color: "#3b5299",
       rgb: "59,82,153"
     },
     {
       title: "AI-Powered Predictive Planning",
       description: "Leveraging embedded AI, Intelligent Performance Management automates data analysis to improve and accelerate decision making. Prediction algorithms continually monitor and analyze plans.",
-      image: "/images/modules/managging together module.webp",
+      image: "/images/modules/intelligent_automation.png",
       color: "#1a7a55",
       rgb: "26,122,85"
     },
     {
       title: "Revenue Planning",
       description: "Align revenue forecasts and sales plans with corporate objectives. Create driver-based revenue and sales forecasts for all business units in collaboration with teams.",
-      image: "/images/modules/sheet module.webp",
+      image: "/images/modules/revenue_recognition_custom.png",
       color: "#7b3a8a",
       rgb: "123,58,138"
     },
     {
       title: "Operational Expense",
       description: "Enable flexible driver-based planning to connect your operational assumptions to financial outcomes. Support a hierarchical planning process encompassing finance and business lines.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/expense_management_custom.png",
       color: "#a05a18",
       rgb: "160,90,24"
     },
     {
       title: "Workforce Planning",
       description: "Simplify workforce planning, headcount, salary and compensation planning by aligning organizational needs with workforce priorities to ensure objectives are met.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/workforce_management.png",
       color: "#4a3a8a",
       rgb: "74,58,138"
     },
     {
       title: "Trended Financial Statements",
       description: "Fully integrated GAAP-compliant statements mean income, balance sheet and cash flow statements are connected with seamless actual-to-budget trending.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/financial_reporting_custom.png",
       color: "#1a6080",
       rgb: "26,96,128"
     },
     {
       title: "Data Synchronization",
       description: "Prebuilt data synchronization with NetSuite ERP ensures data accuracy. Up-to-date financial and operational data are automatically reflected in your plans.",
-      image: "/images/modules/module8.webp",
+      image: "/images/netsuiteimages/ns_integration_services.png",
       color: "#6a2575",
       rgb: "106,37,117"
     },
     {
       title: "Dashboards",
       description: "Easily create dashboards in minutes that display budget and actuals data. Secure, collaborative, process-driven approach makes defining and authoring reports effortless.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/netsuiteimages/ns_visibility_dash.png",
       color: "#154e8a",
       rgb: "21,78,138"
     },
     {
       title: "Microsoft Office Integration",
       description: "Smart View for Office enables integration with Outlook, Excel, Word and PowerPoint. Users can add what-if analyses in Excel for customers or items on the fly.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/general_ledger_custom.png",
       color: "#1a6545",
       rgb: "26,101,69"
     },
@@ -403,7 +403,7 @@ export default function PlanningPage() {
                   style={{ backgroundColor: `rgb(${mod.rgb})` }}
                 >
                   <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover" />
+                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="p-6 flex flex-col transition-all duration-500">

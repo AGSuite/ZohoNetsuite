@@ -63,18 +63,18 @@ export default function GlobalBusinessPage() {
   ];
 
   const modules = [
-    { title: "Multi-Subsidiary Management", description: "Manage multiple legal entities, business units, and subsidiaries from a single unified platform with real-time consolidated reporting.", image: "/images/modules/managging together module.webp", color: "#1e5e9e", rgb: "14,78,130" },
-    { title: "Multi-Currency Support", description: "Transact in 190+ currencies with live exchange rate updates, automated revaluations, and consolidated cross-entity financial reporting.", image: "/images/modules/dashboard module.webp", color: "#1a7a55", rgb: "18,108,72" },
-    { title: "Global Tax Management", description: "Stay compliant with local tax regulations across 100+ jurisdictions — VAT, GST, withholding tax — with automated calculation and filing-ready reports.", image: "/images/modules/sheet module.webp", color: "#8b3a6a", rgb: "125,42,88" },
-    { title: "Localization & Compliance", description: "Built-in country-specific accounting standards, statutory reporting formats, and regulatory requirements for key global markets.", image: "/images/modules/working module.webp", color: "#a05a18", rgb: "145,75,18" },
-    { title: "Global Consolidation", description: "Automate financial consolidation across all subsidiaries — eliminating intercompany eliminations, currency translations, and manual roll-ups.", image: "/images/modules/dashbord module.webp", color: "#3b5299", rgb: "40,65,145" },
-    { title: "Intercompany Transactions", description: "Automatically create matched intercompany journal entries and elimination postings to ensure accurate group-level financial statements.", image: "/images/modules/account modules.webp", color: "#1a6545", rgb: "20,95,60" },
-    { title: "Multi-GAAP Reporting", description: "Maintain multiple accounting books (IFRS, US GAAP, local GAAP) simultaneously for each entity and consolidate under a single group standard.", image: "/images/modules/module8.webp", color: "#4a3a8a", rgb: "65,45,130" },
-    { title: "Global Financial Reporting", description: "Generate real-time consolidated P&L, balance sheets, and cash flows segmented by subsidiary, region, or business unit with one click.", image: "/images/modules/csm modules.webp", color: "#1a6080", rgb: "20,88,115" },
-    { title: "NetSuite OneWorld", description: "The purpose-built solution for multinational companies — manage 200+ subsidiaries across 190+ currencies and 100+ tax jurisdictions from one system.", image: "/images/modules/any modules.webp", color: "#6a2575", rgb: "95,30,105" },
-    { title: "Foreign Currency Revaluation", description: "Automate period-end foreign currency revaluation of open balances and report unrealised gains/losses in full compliance with IFRS and US GAAP.", image: "/images/modules/any module.webp", color: "#154e8a", rgb: "18,68,130" },
-    { title: "Global Payroll Integration", description: "Connect NetSuite with leading global payroll providers — synchronise headcount, salary costs, and journal entries across 200+ countries.", image: "/images/modules/chatt mdoule.webp", color: "#8a2a3a", rgb: "130,35,48" },
-    { title: "Subsidiary Quick-Launch", description: "Spin up a new legal entity in days — copy chart of accounts, tax rules, and workflows from a parent or sister subsidiary with zero re-implementation.", image: "/images/modules/mobile module.webp", color: "#0f4e8a", rgb: "12,68,130" },
+    { title: "Multi-Subsidiary Management", description: "Manage multiple legal entities, business units, and subsidiaries from a single unified platform with real-time consolidated reporting.", image: "/images/modules/gbm_multi_subsidiary.png", color: "#1e5e9e", rgb: "14,78,130" },
+    { title: "Multi-Currency Support", description: "Transact in 190+ currencies with live exchange rate updates, automated revaluations, and consolidated cross-entity financial reporting.", image: "/images/modules/gbm_multi_currency.png", color: "#1a7a55", rgb: "18,108,72" },
+    { title: "Global Tax Management", description: "Stay compliant with local tax regulations across 100+ jurisdictions — VAT, GST, withholding tax — with automated calculation and filing-ready reports.", image: "/images/modules/gbm_global_tax.png", color: "#8b3a6a", rgb: "125,42,88" },
+    { title: "Localization & Compliance", description: "Built-in country-specific accounting standards, statutory reporting formats, and regulatory requirements for key global markets.", image: "/images/modules/gbm_localization.png", color: "#a05a18", rgb: "145,75,18" },
+    { title: "Global Consolidation", description: "Automate financial consolidation across all subsidiaries — eliminating intercompany eliminations, currency translations, and manual roll-ups.", image: "/images/modules/gbm_consolidation.png", color: "#3b5299", rgb: "40,65,145" },
+    { title: "Intercompany Transactions", description: "Automatically create matched intercompany journal entries and elimination postings to ensure accurate group-level financial statements.", image: "/images/modules/gbm_intercompany.png", color: "#1a6545", rgb: "20,95,60" },
+    { title: "Multi-GAAP Reporting", description: "Maintain multiple accounting books (IFRS, US GAAP, local GAAP) simultaneously for each entity and consolidate under a single group standard.", image: "/images/modules/gbm_multi_gaap.png", color: "#4a3a8a", rgb: "65,45,130" },
+    { title: "Global Financial Reporting", description: "Generate real-time consolidated P&L, balance sheets, and cash flows segmented by subsidiary, region, or business unit with one click.", image: "/images/modules/gbm_global_reporting.png", color: "#1a6080", rgb: "20,88,115" },
+    { title: "NetSuite OneWorld", description: "The purpose-built solution for multinational companies — manage 200+ subsidiaries across 190+ currencies and 100+ tax jurisdictions from one system.", image: "/images/modules/gbm_oneworld.png", color: "#6a2575", rgb: "95,30,105" },
+    { title: "Foreign Currency Revaluation", description: "Automate period-end foreign currency revaluation of open balances and report unrealised gains/losses in full compliance with IFRS and US GAAP.", image: "/images/modules/gbm_fx_revaluation.png", color: "#154e8a", rgb: "18,68,130" },
+    { title: "Global Payroll Integration", description: "Connect NetSuite with leading global payroll providers — synchronise headcount, salary costs, and journal entries across 200+ countries.", image: "/images/modules/gbm_payroll_integration.png", color: "#8a2a3a", rgb: "130,35,48" },
+    { title: "Subsidiary Quick-Launch", description: "Spin up a new legal entity in days — copy chart of accounts, tax rules, and workflows from a parent or sister subsidiary with zero re-implementation.", image: "/images/modules/gbm_subsidiary_launch.png", color: "#0f4e8a", rgb: "12,68,130" },
   ];
 
   const benefits = [
@@ -393,16 +393,23 @@ export default function GlobalBusinessPage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {modules.map((mod, index) => (
-              <Link key={index} href="#contact-form" className="block">
+              <Link key={index} href="#contact-form" className="block h-full">
                 <motion.div
                   initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
                   whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white"
+                  className="group flex flex-col h-full rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white"
                   style={{ minHeight: 340 }}
                 >
-                  <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top" />
+                  <div className="relative h-64 shrink-0 overflow-hidden">
+                    <Image
+                      src={mod.image}
+                      alt={mod.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
+                      quality={95}
+                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                    />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${mod.rgb})` }}>
