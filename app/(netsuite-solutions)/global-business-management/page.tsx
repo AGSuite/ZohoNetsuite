@@ -81,37 +81,37 @@ export default function GlobalBusinessPage() {
     {
       title: "One Platform for All Subsidiaries",
       description: "Consolidate financials, operations, and reporting across every global entity from a single NetSuite environment — eliminating disconnected systems and manual roll-ups.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_gbm_subsidiaries.png",
       points: ["Real-time consolidated reporting", "Automated intercompany eliminations", "Single chart of accounts across all entities", "Drill-down from group to subsidiary to transaction"]
     },
     {
       title: "Multi-Currency & FX Management",
       description: "Operate in 190+ currencies with live exchange rates, automated revaluations, and reporting in any currency — so your global numbers are always accurate and audit-ready.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/benefits/benefit_gbm_currency.png",
       points: ["190+ currencies supported natively", "Automated period-end revaluation", "Realised & unrealised FX gain/loss reporting", "Dynamic exchange rate feeds"]
     },
     {
       title: "Local Compliance at Scale",
       description: "Stay audit-ready in every jurisdiction with built-in VAT/GST engines, country-specific chart-of-accounts templates, statutory report formats, and multi-GAAP support.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/benefits/benefit_gbm_compliance.png",
       points: ["100+ tax jurisdiction support", "Multi-GAAP: IFRS, US GAAP, local GAAP", "Country statutory report templates", "SOX, SOC 1 & SOC 2 certified controls"]
     },
     {
       title: "Rapid Subsidiary Expansion",
       description: "Launch a new legal entity in days — copy configuration from an existing subsidiary, apply the appropriate localisation pack, and go live without a re-implementation.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/benefit_gbm_expansion.png",
       points: ["New subsidiary in days, not months", "Pre-built localization packs for key markets", "Automated role and permission inheritance", "Template-driven chart of accounts setup"]
     },
     {
       title: "Global Financial Visibility",
       description: "Access real-time P&L, cash flow, and balance sheet data consolidated across all regions from any device — with drill-down to the individual transaction level.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_gbm_visibility.png",
       points: ["CFO & group finance dashboards", "Segment reporting by region or business unit", "Live KPIs without manual data extracts", "Scheduled reports delivered to inboxes"]
     },
     {
       title: "Standardised Global Processes",
       description: "Enforce consistent financial controls, approval workflows, and period-close procedures across every subsidiary so every entity operates to the same standard.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/benefits/benefit_gbm_processes.png",
       points: ["Unified AP/AR and procurement workflows", "Role-based access with field-level security", "Standardised period-close checklists", "Global audit trail down to every transaction"]
     },
   ];
@@ -192,7 +192,7 @@ export default function GlobalBusinessPage() {
                 {/* Main image */}
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
                   <Image
-                    src="/images/lap/group2.webp"
+                    src="/images/netsuiteimages/ns_global_business.png"
                     alt="NetSuite Global Business Management"
                     fill
                     sizes="(max-width: 768px) 100vw, 40vw"
@@ -399,9 +399,9 @@ export default function GlobalBusinessPage() {
                   viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
                   whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
                   className="group flex flex-col h-full rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white"
-                  style={{ minHeight: 340 }}
+                  style={{ minHeight: 380 }}
                 >
-                  <div className="relative h-64 shrink-0 overflow-hidden">
+                  <div className="relative h-56 shrink-0 overflow-hidden">
                     <Image
                       src={mod.image}
                       alt={mod.title}
@@ -415,7 +415,7 @@ export default function GlobalBusinessPage() {
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${mod.rgb})` }}>
                     <div className="flex-1">
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">{mod.title}</h4>
-                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">{mod.description}</p>
+                      <p className="text-white/90 text-sm leading-snug font-medium">{mod.description}</p>
                     </div>
                     <div className="absolute bottom-6 left-5 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                       <span className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full shadow-md">
@@ -583,7 +583,7 @@ export default function GlobalBusinessPage() {
           <motion.div
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#002a8c] via-[#0044cc] to-[#0099a3] shadow-2xl"
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#000814] via-[#001233] to-[#002a8c] shadow-2xl"
           >
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {CTA_PARTICLES.map((p, i) => (
@@ -600,17 +600,17 @@ export default function GlobalBusinessPage() {
 
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                   Scale Your Global Business with NetSuite —{" "}
                   <span className="text-cyan-300">From One Unified Platform.</span>
                 </h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">
+                <p className="text-white/80 text-base md:text-lg font-medium">
                   Join 43,000+ businesses that run global operations on NetSuite. Manage every subsidiary, currency, and compliance requirement from a single cloud system — your global transformation starts with one conversation.
                 </p>
               </div>
               <a
                 href="#contact-form"
-                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
+                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
               >
                 Start Your NetSuite Global Business Journey
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

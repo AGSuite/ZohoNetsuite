@@ -69,6 +69,7 @@ function Counter({ value }: { value: number }) {
 export default function ManagedServicesPage() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const stats = [
     { label: "System Uptime", value: 99, suffix: ".9%", icon: Activity },
@@ -87,7 +88,7 @@ export default function ManagedServicesPage() {
       title: "24/7 System Monitoring",
       description:
         "Round-the-clock monitoring of your NetSuite environment — detecting performance degradation, integration failures, and scripting errors before they impact your business.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/netsuiteimages/Servicesimg/managed_support.png",
       color: "#1e3a8a",
       rgb: "14,50,130",
       Icon: Activity,
@@ -96,7 +97,7 @@ export default function ManagedServicesPage() {
       title: "SLA-Backed Support Desk",
       description:
         "A dedicated NetSuite support team handling incidents, questions, and change requests via a structured ticketing system with defined response and resolution SLAs.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/Services/ns_ai_managed_services.png",
       color: "#0e7490",
       rgb: "14,116,144",
       Icon: Headphones,
@@ -105,7 +106,7 @@ export default function ManagedServicesPage() {
       title: "Bi-Annual Upgrade Readiness",
       description:
         "Proactive review, regression testing, and sign-off for every NetSuite upgrade cycle — so your customisations, integrations, and workflows survive each release unscathed.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/netsuiteimages/Servicesimg/process_automation.png",
       color: "#065f46",
       rgb: "6,95,70",
       Icon: RefreshCw,
@@ -114,7 +115,7 @@ export default function ManagedServicesPage() {
       title: "Performance Optimisation",
       description:
         "Continuous monitoring and tuning of saved searches, scripts, dashboards, and database queries to ensure your NetSuite environment stays fast as data volumes grow.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/netsuiteimages/Servicesimg/data_analytics.png",
       color: "#581c87",
       rgb: "88,28,135",
       Icon: Zap,
@@ -123,7 +124,7 @@ export default function ManagedServicesPage() {
       title: "Security & Access Reviews",
       description:
         "Quarterly review of roles, permissions, and audit trails — identifying orphaned accounts, over-privileged access, and non-compliant configurations before they become risks.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/netsuiteimages/Servicesimg/cybersecurity_compliance.png",
       color: "#92400e",
       rgb: "146,64,14",
       Icon: Lock,
@@ -132,7 +133,7 @@ export default function ManagedServicesPage() {
       title: "Configuration Change Management",
       description:
         "Managed handling of all configuration changes — new workflows, field additions, subsidiary setups, and tax code updates — with full change log and regression testing.",
-      image: "/images/people/laptopmen.webp",
+      image: "/images/netsuiteimages/Servicesimg/change_management.png",
       color: "#1e1b4b",
       rgb: "30,27,75",
       Icon: Settings,
@@ -141,7 +142,7 @@ export default function ManagedServicesPage() {
       title: "Data Quality Management",
       description:
         "Ongoing data hygiene services — identifying duplicates, orphaned records, and data inconsistencies — keeping your master data clean and your reports trustworthy.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/netsuiteimages/Servicesimg/erp_integration.png",
       color: "#1a4365",
       rgb: "26,67,101",
       Icon: Database,
@@ -150,7 +151,7 @@ export default function ManagedServicesPage() {
       title: "Integration Health Monitoring",
       description:
         "Real-time monitoring of all NetSuite integrations — with automated error alerting, retry management, and scheduled sync reporting to ensure data always flows.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/netsuiteimages/Servicesimg/system_integration.png",
       color: "#14532d",
       rgb: "20,83,45",
       Icon: Layers,
@@ -159,7 +160,7 @@ export default function ManagedServicesPage() {
       title: "Custom Reporting & Dashboards",
       description:
         "Ongoing development and maintenance of custom NetSuite reports, saved searches, KPI portlets, and SuiteAnalytics workbooks as your business intelligence needs evolve.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/netsuiteimages/Servicesimg/digital_strategy.png",
       color: "#7f1d1d",
       rgb: "127,29,29",
       Icon: BarChart3,
@@ -168,7 +169,7 @@ export default function ManagedServicesPage() {
       title: "End-User Helpdesk",
       description:
         "A dedicated functional helpdesk for your NetSuite users — answering process questions, guiding configuration, and providing on-demand training for new team members.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/netsuiteimages/Servicesimg/mobile_portal.png",
       color: "#312e81",
       rgb: "49,46,129",
       Icon: Users,
@@ -177,7 +178,7 @@ export default function ManagedServicesPage() {
       title: "Compliance & Audit Support",
       description:
         "Prepare audit-ready evidence packs, financial report extracts, and access control logs — supporting your internal audit, SOC, and regulatory compliance requirements.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/netsuiteimages/Servicesimg/cloud_migration.png",
       color: "#0c4a6e",
       rgb: "12,74,110",
       Icon: Shield,
@@ -186,7 +187,7 @@ export default function ManagedServicesPage() {
       title: "Strategic NetSuite Advisory",
       description:
         "Monthly strategic review with your dedicated NetSuite success manager — roadmap planning, new module recommendations, and continuous improvement prioritisation.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/netsuiteimages/Servicesimg/ai_intelligent_automation.png",
       color: "#4a1942",
       rgb: "74,25,66",
       Icon: Cloud,
@@ -198,7 +199,7 @@ export default function ManagedServicesPage() {
       title: "Dedicated NetSuite Success Manager",
       description:
         "Every managed services client gets a named NetSuite success manager — your single point of contact for strategic guidance, escalation, and continuous improvement planning.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_crm_customer_intelligence.png",
       points: [
         "Monthly strategic review calls",
         "Roadmap planning and prioritisation",
@@ -210,7 +211,7 @@ export default function ManagedServicesPage() {
       title: "SLA-Governed Response Times",
       description:
         "Defined and contractually binding response and resolution SLAs for every incident severity level — so you always know when to expect a fix, not just an acknowledgement.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/benefits/benefit_automated_close.png",
       points: [
         "Critical: 1-hour response, 4-hour fix",
         "High: 4-hour response, next-business-day fix",
@@ -222,7 +223,7 @@ export default function ManagedServicesPage() {
       title: "Proactive Upgrade Management",
       description:
         "We review NetSuite release notes, test your customisations in a sandbox, and deliver a clear upgrade impact report before every bi-annual release — keeping you one step ahead.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/benefits/benefit_gbm_processes.png",
       points: [
         "Pre-release sandbox regression testing",
         "Custom script compatibility checks",
@@ -234,7 +235,7 @@ export default function ManagedServicesPage() {
       title: "Continuous Security Hardening",
       description:
         "Quarterly access reviews, role optimisation, and audit log analysis — ensuring your NetSuite environment remains secure, compliant, and hardened against internal threats.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/benefit_compliance_security.png",
       points: [
         "Quarterly role and permission review",
         "Orphaned account decommissioning",
@@ -246,7 +247,7 @@ export default function ManagedServicesPage() {
       title: "Real-Time System Health Visibility",
       description:
         "A shared monitoring dashboard gives you live visibility into NetSuite performance, integration sync status, open ticket queue, and SLA compliance — all in one place.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_financial_visibility.png",
       points: [
         "Live performance metrics dashboard",
         "Integration sync status view",
@@ -258,7 +259,7 @@ export default function ManagedServicesPage() {
       title: "Flexible Managed Service Plans",
       description:
         "Choose from tiered managed service plans scaled to your team size, incident volume, and support requirements — from essential monitoring through to full strategic partnership.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/benefits/benefit_scalable_growth.png",
       points: [
         "Essentials: monitoring + helpdesk",
         "Advanced: + change mgmt + upgrades",
@@ -520,7 +521,7 @@ export default function ManagedServicesPage() {
               style={{ minHeight: 340 }}
             >
               <Image
-                src="/images/netsuiteimages/background/netsuiteaccounting.webp"
+                src="/images/netsuiteimages/ns_managed_services.png"
                 alt="NetSuite Managed Services"
                 width={560}
                 height={380}
@@ -630,8 +631,10 @@ export default function ManagedServicesPage() {
                     ease: "easeOut",
                   }}
                   whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white"
-                  style={{ minHeight: 340 }}
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out cursor-pointer bg-white"
+                  style={{ height: hoveredCard === index ? 450 : 340 }}
                 >
                   <div className="relative h-44 shrink-0 overflow-hidden">
                     <Image
@@ -652,11 +655,11 @@ export default function ManagedServicesPage() {
                     className="flex-1 p-5 pb-6 flex flex-col relative"
                     style={{ backgroundColor: `rgb(${svc.rgb})` }}
                   >
-                    <div className="flex-1">
+                    <div className="flex-1 pb-12">
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">
                         {svc.title}
                       </h4>
-                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">
+                      <p className={`text-white/90 text-sm leading-snug font-medium transition-all duration-500 ${hoveredCard === index ? "" : "line-clamp-3"}`}>
                         {svc.description}
                       </p>
                     </div>

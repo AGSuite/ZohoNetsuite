@@ -203,7 +203,7 @@ export default function IndiaLocalizationPage() {
                 Full Indian tax compliance inside NetSuite — GST automation, e-invoicing with IRP, TDS/TCS management, e-Way Bills, and GSTR filing reports. Built for Indian businesses running on NetSuite.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
+                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:scale-105">
                   Get in Touch
                   <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }} className="flex items-center">
                     <ArrowRight className="w-4 h-4" />
@@ -349,7 +349,7 @@ export default function IndiaLocalizationPage() {
               >
                 <div className="flex flex-col h-full w-full rounded-2xl overflow-hidden transition-all duration-500 ease-in-out">
                   <div className="relative h-56 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
+                    <Image src={mod.image} alt={mod.title} fill className="object-cover object-top group-hover:scale-110 transition-transform duration-700" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom,transparent 0%,rgba(${mod.rgb},0.4) 70%,rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 flex flex-col relative transition-all duration-500">
@@ -488,8 +488,8 @@ export default function IndiaLocalizationPage() {
 
             <div className="relative z-20 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">Stay GST Compliant — <span className="text-cyan-200">Automate India Tax in NetSuite.</span></h2>
-                <p className="text-white/80 text-base md:text-lg">End manual GST calculations, e-invoice filing, and TDS tracking. Our India Localization Add-On keeps your NetSuite environment fully compliant with every GSTN and Income Tax requirement.</p>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">Stay GST Compliant — <span className="text-cyan-200">Automate India Tax in NetSuite.</span></h2>
+                <p className="text-white/80 text-base md:text-lg font-medium">End manual GST calculations, e-invoice filing, and TDS tracking. Our India Localization Add-On keeps your NetSuite environment fully compliant with every GSTN and Income Tax requirement.</p>
               </div>
               <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all group active:scale-95">
                 Get India Compliance <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -503,7 +503,3 @@ export default function IndiaLocalizationPage() {
     </div>
   );
 }
-
-
-
-

@@ -14,7 +14,7 @@ const data: IndustryPageData = {
   heroTitle: "Build the Future of Your Factory Floor with NetSuite",
   heroDescription:
     "Streamline discrete manufacturing, tighten supply chains, and gain real-time visibility with the #1 cloud ERP built for modern manufacturers.",
-  heroImage: "/images/industries/manufacture-compressed-1.webp",
+  heroImage: "/images/hero/industry_manufacturing_hero.png",
   heroCardTitle: "Shop Floor Control",
   heroCardSub: "Production · Inventory · Financials · Supply Chain",
   heroTopCardTitle: "Trusted by 1,000+ Manufacturers",

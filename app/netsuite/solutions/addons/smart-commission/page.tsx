@@ -65,18 +65,18 @@ export default function SmartCommissionPage() {
     { title: "Retroactive Adjustments", description: "Easily handle returns, contract amendments, and adjustments with full audit trail.", image: "/images/modules/sheet module.webp", color: "#134e4a", rgb: "19,78,74" },
     { title: "Analytics & Reporting", description: "Built-in dashboards show plan performance, payout trends, and top-earner rankings.", image: "/images/modules/csm modules.webp", color: "#831843", rgb: "131,24,67" },
     { title: "Split Commissions", description: "Handle overlapping territories, team splits, and channel partner commissions automatically.", image: "/images/modules/managging together module.webp", color: "#1e3a8a", rgb: "30,58,138" },
-    { title: "Clawbacks & Holds", description: "Automatically claw back commissions on cancelled deals or non-payments based on your rules.", image: "/images/modules/account modules.webp", color: "#064e3b", rgb: "6,78,59" },
-    { title: "Multi-Currency", description: "Pay reps in their local currency with automatic exchange rate application at the payout date.", image: "/images/modules/chatt mdoule.webp", color: "#78350f", rgb: "120,53,15" },
-    { title: "Payroll Export", description: "One-click export of finalized commission amounts to your payroll or HR system of choice.", image: "/images/modules/mobile module.webp", color: "#3b0764", rgb: "59,7,100" },
+    { title: "Clawbacks & Holds", description: "Automatically claw back commissions on cancelled deals or non-payments based on your rules.", image: "/images/modules/audit_reports.png", color: "#064e3b", rgb: "6,78,59" },
+    { title: "Multi-Currency", description: "Pay reps in their local currency with automatic exchange rate application at the payout date.", image: "/images/modules/gbm_multi_currency.png", color: "#78350f", rgb: "120,53,15" },
+    { title: "Payroll Export", description: "One-click export of finalized commission amounts to your payroll or HR system of choice.", image: "/images/modules/gbm_payroll_integration.png", color: "#3b0764", rgb: "59,7,100" },
   ];
 
   const benefits = [
-    { title: "Eliminate Spreadsheet Chaos", description: "Replace error-prone commission spreadsheets with an automated engine that calculates every rep's pay exactly right every time — no manual formulas, no version confusion.", image: "/images/lap/lap4.webp", points: ["Auto-calculation on deal close", "No manual spreadsheet updates", "Version-controlled plan changes", "Full audit history on every payout"] },
-    { title: "Motivate with Transparency", description: "When reps can see their earnings in real time, they stay focused on the right activities. Smart Commission gives every rep a live dashboard showing quota attainment and projected pay.", image: "/images/people/fourteam.webp", points: ["Live earnings dashboard for reps", "Quota attainment progress bar", "Projected earnings from pipeline", "Mobile-accessible self-service portal"] },
-    { title: "Handle Complex Plans", description: "From tiered accelerators and SPIFFs to channel splits and residual payments — SmartCommission handles plan structures that would take days to calculate manually.", image: "/images/lap/lap2.webp", points: ["Unlimited plan types and tiers", "Accelerators at quota thresholds", "SPIFF and overlay programs", "Channel and partner commissions"] },
-    { title: "Automated Approvals", description: "Route commission statements through a structured approval workflow — manager review, finance sign-off, and rep acknowledgement — all tracked with full audit trail.", image: "/images/people/laptopmen2.webp", points: ["Multi-level approval routing", "Exception flagging and alerts", "Rep electronic acknowledgement", "Complete audit log for compliance"] },
-    { title: "Native NetSuite Integration", description: "Because SmartCommission runs inside NetSuite, it reads directly from your closed deals, invoices, and payment data — no integration middleware, no data lag.", image: "/images/lap/lap3.webp", points: ["Reads from NetSuite transactions live", "No sync delays or export needed", "Works with all NetSuite item types", "Supports custom NetSuite fields"] },
-    { title: "Finance Control & Accruals", description: "Finance teams gain full control over commission accruals, expense recognition, and payout scheduling — integrated directly with NetSuite's general ledger.", image: "/images/lap/lap5.webp", points: ["Auto commission expense accruals", "Payout scheduling and batching", "GL journal entry automation", "Period-close acceleration"] },
+    { title: "Eliminate Spreadsheet Chaos", description: "Replace error-prone commission spreadsheets with an automated engine that calculates every rep's pay exactly right every time — no manual formulas, no version confusion.", image: "/images/benefits/benefit_automated_close.png", points: ["Auto-calculation on deal close", "No manual spreadsheet updates", "Version-controlled plan changes", "Full audit history on every payout"] },
+    { title: "Motivate with Transparency", description: "When reps can see their earnings in real time, they stay focused on the right activities. Smart Commission gives every rep a live dashboard showing quota attainment and projected pay.", image: "/images/benefits/benefit_scalable_growth.png", points: ["Live earnings dashboard for reps", "Quota attainment progress bar", "Projected earnings from pipeline", "Mobile-accessible self-service portal"] },
+    { title: "Handle Complex Plans", description: "From tiered accelerators and SPIFFs to channel splits and residual payments — SmartCommission handles plan structures that would take days to calculate manually.", image: "/images/benefits/benefit_gbm_processes.png", points: ["Unlimited plan types and tiers", "Accelerators at quota thresholds", "SPIFF and overlay programs", "Channel and partner commissions"] },
+    { title: "Automated Approvals", description: "Route commission statements through a structured approval workflow — manager review, finance sign-off, and rep acknowledgement — all tracked with full audit trail.", image: "/images/benefits/benefit_compliance_security.png", points: ["Multi-level approval routing", "Exception flagging and alerts", "Rep electronic acknowledgement", "Complete audit log for compliance"] },
+    { title: "Native NetSuite Integration", description: "Because SmartCommission runs inside NetSuite, it reads directly from your closed deals, invoices, and payment data — no integration middleware, no data lag.", image: "/images/benefits/benefit_unified_platform.png", points: ["Reads from NetSuite transactions live", "No sync delays or export needed", "Works with all NetSuite item types", "Supports custom NetSuite fields"] },
+    { title: "Finance Control & Accruals", description: "Finance teams gain full control over commission accruals, expense recognition, and payout scheduling — integrated directly with NetSuite's general ledger.", image: "/images/benefits/benefit_financial_visibility.png", points: ["Auto commission expense accruals", "Payout scheduling and batching", "GL journal entry automation", "Period-close acceleration"] },
   ];
 
   return (
@@ -323,23 +323,35 @@ export default function SmartCommissionPage() {
         ]}
       />
 
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#0891b2] shadow-2xl">
+            className="relative overflow-hidden rounded-2xl shadow-2xl"
+            style={{ background: "linear-gradient(135deg, #000814 0%, #000f22 40%, #001535 70%, #000c1a 100%)" }}>
+            {/* Glow accents */}
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full blur-[80px] pointer-events-none" style={{ background: "radial-gradient(circle, rgba(37,99,235,0.2) 0%, transparent 70%)" }} />
+            <div className="absolute bottom-0 left-0 w-[200px] h-[200px] rounded-full blur-[60px] pointer-events-none" style={{ background: "radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)" }} />
+            {/* Grid overlay */}
+            <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+            {/* Particles */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {CTA_PARTICLES.map((p, i) => (
-                <motion.div key={i} className="absolute bg-white rounded-full" style={{ width: `${p.w}px`, height: `${p.h}px`, top: `${p.top}%`, left: `${p.left}%` }}
-                  animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }} transition={{ duration: p.dur, repeat: Infinity, ease: 'easeInOut', delay: p.delay }} />
+                <motion.div key={i} className="absolute bg-blue-400 rounded-full" style={{ width: `${p.w}px`, height: `${p.h}px`, top: `${p.top}%`, left: `${p.left}%` }}
+                  animate={{ y: [0, -20, 0], opacity: [0.1, 0.4, 0.1] }} transition={{ duration: p.dur, repeat: Infinity, ease: 'easeInOut', delay: p.delay }} />
               ))}
             </div>
-            <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
-              <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Pay Your Reps Right — <span className="text-cyan-200">Automatically.</span></h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">Join sales teams using NetSuite Smart Commission to eliminate spreadsheets, end disputes, and motivate with real-time earnings transparency.</p>
+            <div className="relative z-10 px-8 py-10 lg:px-14 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="text-left max-w-xl">
+                <div className="w-10 h-0.5 bg-blue-500 mb-4 rounded-full" />
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-snug">
+                  Pay Your Reps Right — <span className="text-blue-400">Automatically.</span>
+                </h2>
+                <p className="text-white/60 text-sm md:text-base leading-relaxed">
+                  Join sales teams using NetSuite Smart Commission to eliminate spreadsheets, end disputes, and motivate with real-time earnings transparency.
+                </p>
               </div>
-              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
-                Request a Demo <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-2 bg-white text-gray-900 hover:bg-blue-50 font-semibold text-sm px-7 py-3 rounded-lg shadow-lg transition-all duration-200 group active:scale-95 border border-white/20">
+                Request a Demo <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </motion.div>

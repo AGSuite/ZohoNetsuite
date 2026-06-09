@@ -14,7 +14,7 @@ const data: IndustryPageData = {
   heroTitle: "NetSuite for Transportation & Logistics",
   heroDescription:
     "Gain end-to-end visibility across your logistics network. NetSuite connects fleet management, freight billing, warehouse operations, and financials in one cloud platform — helping you deliver on time, every time.",
-  heroImage: "/images/industries/logistics-means-transport-together-with-technological-futuristic-holograms (2)_11zon.jpg",
+  heroImage: "/images/hero/industry_transport_hero.png",
   heroCardTitle: "Logistics & Transport ERP",
   heroCardSub: "Fleet · Freight · Warehouse · Financials",
   heroTopCardTitle: "Trusted Across Logistics Sectors",

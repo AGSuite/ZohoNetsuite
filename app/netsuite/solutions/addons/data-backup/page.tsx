@@ -135,22 +135,24 @@ export default function DataBackupPage() {
               </motion.div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center animate-pulse" style={{ minHeight: 460 }}>
-              <div className="relative w-[88%] ml-auto">
+            <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-start justify-center" style={{ minHeight: 460 }}>
+              <div className="relative w-[88%] ml-auto pb-8">
+                {/* Image */}
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/lap/lap4.webp" alt="NetSuite Zoho Books Compliance Data Backup" fill className="object-cover object-center" priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.6 }}
-                    className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #1e3a8a, #2563eb)' }}>
-                      <ShieldCheck className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-gray-900 text-sm font-bold leading-tight">MCA Section 128 Compliant Backup</p>
-                      <p className="text-gray-500 text-xs mt-0.5">Automated Daily Sync · Indian Servers · Full Audit Trail</p>
-                    </div>
-                  </motion.div>
+                  <Image src="/images/lap/netsuite_person_using_automated_dashboard.png" alt="IT Manager using NetSuite Data Backup Dashboard" fill className="object-cover object-top" priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
+                {/* Card — straddling the bottom edge, centered */}
+                <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.6 }}
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-0 flex items-center gap-3 bg-white rounded-xl px-5 py-3.5 shadow-2xl shadow-blue-900/20 border border-gray-100 w-max">
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #1e3a8a, #2563eb)' }}>
+                    <ShieldCheck className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-gray-900 text-sm font-bold leading-tight whitespace-nowrap">MCA Section 128 Compliant Backup</p>
+                    <p className="text-gray-500 text-xs mt-0.5 whitespace-nowrap">Automated Daily Sync · Indian Servers · Full Audit Trail</p>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>

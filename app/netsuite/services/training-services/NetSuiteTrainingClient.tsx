@@ -69,6 +69,7 @@ function Counter({ value }: { value: number }) {
 export default function NetSuiteTrainingClient() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const stats = [
     {
@@ -97,7 +98,7 @@ export default function NetSuiteTrainingClient() {
       title: "Functional End-User Training",
       description:
         "Comprehensive training for end-users on core NetSuite modules — ERP, CRM, Inventory, Procurement, and more — with hands-on sandbox exercises and role-based learning paths.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/netsuiteimages/Servicesimg/traning.webp",
       color: "#1e3a8a",
       rgb: "14,50,130",
       Icon: Users,
@@ -106,7 +107,7 @@ export default function NetSuiteTrainingClient() {
       title: "Administrator Training",
       description:
         "Deep-dive training for NetSuite administrators — covering configuration, role management, saved searches, workflows, and system maintenance best practices.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/netsuiteimages/Servicesimg/managedservices.webp",
       color: "#0e7490",
       rgb: "14,116,144",
       Icon: Settings,
@@ -115,7 +116,7 @@ export default function NetSuiteTrainingClient() {
       title: "SuiteScript Technical Training",
       description:
         "Hands-on technical training in SuiteScript 2.x — covering script types, API patterns, debugging, and best practices for building upgrade-safe customisations.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/netsuiteimages/Servicesimg/custom_development.png",
       color: "#065f46",
       rgb: "6,95,70",
       Icon: Code,
@@ -124,7 +125,7 @@ export default function NetSuiteTrainingClient() {
       title: "Analytics & Reporting Training",
       description:
         "Master NetSuite's reporting tools — saved searches, report builder, SuiteAnalytics Workbook, and dashboard configuration — to turn data into actionable intelligence.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/netsuiteimages/Servicesimg/data_analytics.png",
       color: "#581c87",
       rgb: "88,28,135",
       Icon: BarChart3,
@@ -133,7 +134,7 @@ export default function NetSuiteTrainingClient() {
       title: "New Release Training",
       description:
         "Stay ahead of NetSuite's bi-annual updates with targeted training on new features, functional changes, and UI enhancements — delivered within weeks of each release.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/netsuiteimages/Servicesimg/low code.webp",
       color: "#92400e",
       rgb: "146,64,14",
       Icon: Zap,
@@ -142,7 +143,7 @@ export default function NetSuiteTrainingClient() {
       title: "On-Site Training",
       description:
         "Instructor-led training delivered at your office location — maximising team engagement, hands-on practice, and immediate application to your live NetSuite environment.",
-      image: "/images/people/laptopmen.webp",
+      image: "/images/Services/ns_service_training.png",
       color: "#1e1b4b",
       rgb: "30,27,75",
       Icon: Laptop,
@@ -151,7 +152,7 @@ export default function NetSuiteTrainingClient() {
       title: "Virtual Classroom Training",
       description:
         "Live, instructor-led remote training sessions that bring your distributed workforce together — with interactive exercises, Q&A, and recorded replays for absentees.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/Services/traning2.webp",
       color: "#1a4365",
       rgb: "26,67,101",
       Icon: Cloud,
@@ -160,7 +161,7 @@ export default function NetSuiteTrainingClient() {
       title: "Custom Curriculum Design",
       description:
         "Tailor-made training programmes designed to match your exact NetSuite configuration, business processes, and role requirements — not generic out-of-the-box content.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/netsuiteimages/Servicesimg/digital_strategy.png",
       color: "#14532d",
       rgb: "20,83,45",
       Icon: BookOpen,
@@ -169,7 +170,7 @@ export default function NetSuiteTrainingClient() {
       title: "Executive Orientation",
       description:
         "High-level NetSuite orientation for C-suite and senior management — covering dashboard navigation, executive reporting, KPI monitoring, and approval workflows.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/netsuiteimages/Servicesimg/Digital transformation.webp",
       color: "#7f1d1d",
       rgb: "127,29,29",
       Icon: Award,
@@ -178,7 +179,7 @@ export default function NetSuiteTrainingClient() {
       title: "Finance & Accounting Training",
       description:
         "Specialised training for finance teams on NetSuite's general ledger, accounts payable, accounts receivable, fixed assets, and period-close procedures.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/netsuiteimages/Servicesimg/finamce.webp",
       color: "#312e81",
       rgb: "49,46,129",
       Icon: Database,
@@ -187,7 +188,7 @@ export default function NetSuiteTrainingClient() {
       title: "SuiteFlow & Workflow Training",
       description:
         "Hands-on training for power users and admins on designing, deploying, and troubleshooting NetSuite SuiteFlow workflow automations and approval chains.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/netsuiteimages/Servicesimg/process_automation.png",
       color: "#0c4a6e",
       rgb: "12,74,110",
       Icon: Layers,
@@ -196,7 +197,7 @@ export default function NetSuiteTrainingClient() {
       title: "Ongoing Training Retainer",
       description:
         "A monthly training retainer giving your team on-demand access to NetSuite instructors — for new hire onboarding, refresher sessions, and change management support.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/netsuiteimages/Servicesimg/managed_support.png",
       color: "#4a1942",
       rgb: "74,25,66",
       Icon: GraduationCap,
@@ -208,7 +209,7 @@ export default function NetSuiteTrainingClient() {
       title: "Role-Based Learning Paths",
       description:
         "Every training programme is structured around the specific roles in your organisation — finance users, warehouse operators, sales teams, and administrators each get a tailored curriculum.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_crm_sales_automation.png",
       points: [
         "Role-specific module selection",
         "Hands-on sandbox exercises",
@@ -220,7 +221,7 @@ export default function NetSuiteTrainingClient() {
       title: "Hands-On, Not Just Theory",
       description:
         "All our training sessions use your actual NetSuite environment or a live sandbox — ensuring every exercise is relevant, practical, and immediately applicable to your daily work.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/benefits/benefit_sc_omnichannel.png",
       points: [
         "Live NetSuite sandbox environment",
         "Your real business scenarios",
@@ -232,7 +233,7 @@ export default function NetSuiteTrainingClient() {
       title: "Flexible Delivery Modes",
       description:
         "Choose on-site instructor-led, virtual live classroom, recorded on-demand, or blended delivery — designed around your team's locations, schedules, and learning preferences.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/benefits/benefit_scalable_growth.png",
       points: [
         "On-site at your office",
         "Live virtual classroom",
@@ -244,7 +245,7 @@ export default function NetSuiteTrainingClient() {
       title: "NetSuite-Certified Instructors",
       description:
         "Every AGSuite trainer holds active NetSuite certifications and brings real-world implementation experience — so your team learns from people who've lived the platform.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/benefit_compliance_security.png",
       points: [
         "NetSuite certified consultants",
         "10+ years of average experience",
@@ -256,7 +257,7 @@ export default function NetSuiteTrainingClient() {
       title: "Post-Training Support",
       description:
         "Training doesn't end at the session. We include post-training Q&A support, quick-reference guides, and optional follow-up sessions to reinforce learning and drive adoption.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_unified_platform.png",
       points: [
         "30-day post-training Q&A access",
         "Custom quick-reference guides",
@@ -268,7 +269,7 @@ export default function NetSuiteTrainingClient() {
       title: "Measurable Adoption Outcomes",
       description:
         "We measure training effectiveness through pre/post assessments, adoption metrics, and user satisfaction surveys — giving you proof that your training investment is paying off.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/benefits/benefit_gbm_visibility.png",
       points: [
         "Pre and post assessment scores",
         "User adoption rate tracking",
@@ -529,7 +530,7 @@ export default function NetSuiteTrainingClient() {
               style={{ minHeight: 340 }}
             >
               <Image
-                src="/images/netsuiteimages/background/netsuiteaccounting.webp"
+                src="/images/netsuiteimages/ns_training_services.png"
                 alt="NetSuite Training Services"
                 width={560}
                 height={380}
@@ -640,8 +641,10 @@ export default function NetSuiteTrainingClient() {
                     ease: "easeOut",
                   }}
                   whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white"
-                  style={{ minHeight: 340 }}
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out cursor-pointer bg-white"
+                  style={{ height: hoveredCard === index ? 450 : 340 }}
                 >
                   <div className="relative h-44 shrink-0 overflow-hidden">
                     <Image
@@ -649,7 +652,7 @@ export default function NetSuiteTrainingClient() {
                       alt={svc.title}
                       fill
                       className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
-                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     <div
                       className="absolute inset-0"
                       style={{
@@ -661,11 +664,11 @@ export default function NetSuiteTrainingClient() {
                     className="flex-1 p-5 pb-6 flex flex-col relative"
                     style={{ backgroundColor: `rgb(${svc.rgb})` }}
                   >
-                    <div className="flex-1">
+                    <div className="flex-1 pb-12">
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">
                         {svc.title}
                       </h4>
-                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">
+                      <p className={`text-white/90 text-sm leading-snug font-medium transition-all duration-500 ${hoveredCard === index ? "" : "line-clamp-3"}`}>
                         {svc.description}
                       </p>
                     </div>

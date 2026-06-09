@@ -176,37 +176,37 @@ export default function NetSuiteBIPage() {
     {
       title: "Real-Time Business Insights",
       description: "Monitor KPIs and financial metrics live — without waiting for batch reports or manual data pulls from disconnected systems.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_financial_visibility.png",
       points: ["Live KPI tile dashboards", "Instant drill-down to transactions", "Role-specific access for every team", "Scheduled report delivery to inbox"],
     },
     {
       title: "Self-Service Analytics",
       description: "Empower every business user to build their own reports and visualizations — no IT ticket required.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/benefits/benefit_gbm_processes.png",
       points: ["Drag-and-drop report builder", "200+ pre-built templates", "Pivot tables and chart builder", "Shareable saved views across teams"],
     },
     {
       title: "Predictive Intelligence",
       description: "Leverage AI and machine learning to forecast trends, surface anomalies, and identify opportunities before competitors do.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/benefits/benefit_gbm_visibility.png",
       points: ["AI-driven revenue forecasting", "Cash flow projection models", "Anomaly detection in real time", "Trend-based demand planning"],
     },
     {
       title: "Unified Data Platform",
       description: "Eliminate data silos by connecting finance, sales, inventory, and HR in a single analytics source of truth.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_unified_platform.png",
       points: ["Single source of truth across modules", "Cross-functional consolidated reports", "Eliminate manual spreadsheet merges", "Real-time sync — no data lag"],
     },
     {
       title: "Mobile & Remote Access",
       description: "Stay connected to business performance from any device — get notified when critical KPIs breach thresholds.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/benefits/benefit_sc_omnichannel.png",
       points: ["Full dashboard access on iOS & Android", "Push alerts for KPI thresholds", "Offline report caching", "Responsive design for all screens"],
     },
     {
       title: "Enterprise-Grade Security",
       description: "Control exactly who sees which reports and data with field-level permissions and comprehensive audit trails.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/benefit_compliance_security.png",
       points: ["Role-based report access controls", "Field-level data security", "Full audit trails for report access", "SOC 2 certified platform infrastructure"],
     },
   ];
@@ -305,7 +305,7 @@ export default function NetSuiteBIPage() {
                 {/* Main image */}
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
                   <Image
-                    src="/images/lap/lap6_11zon.webp"
+                    src="/images/hero/business_intelligence_hero.png"
                     alt="NetSuite Business Intelligence Dashboard"
                     fill
                     sizes="(max-width: 768px) 100vw, 40vw"
@@ -313,27 +313,27 @@ export default function NetSuiteBIPage() {
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-
-                  {/* Bottom overlay card */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.1, duration: 0.6, ease: "easeOut" }}
-                    className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3"
-                  >
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #059669, #10b981)' }}>
-                      <CheckCircle2 className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-gray-900 text-sm font-bold leading-tight">
-                        Insights in seconds, not days
-                      </p>
-                      <p className="text-gray-500 text-xs mt-0.5 leading-snug">
-                        Live dashboards · AI Forecasting · 200+ Reports · Mobile Access
-                      </p>
-                    </div>
-                  </motion.div>
                 </div>
+
+                {/* Bottom white card — same width as image, sits at bottom edge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.1, duration: 0.6, ease: "easeOut" }}
+                  className="absolute -bottom-6 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3 z-10"
+                >
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #059669, #10b981)' }}>
+                    <CheckCircle2 className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-gray-900 text-sm font-bold leading-tight">
+                      Insights in seconds, not days
+                    </p>
+                    <p className="text-gray-500 text-xs mt-0.5 leading-snug">
+                      Live dashboards · AI Forecasting · 200+ Reports · Mobile Access
+                    </p>
+                  </div>
+                </motion.div>
 
                 {/* Top-left floating badge card */}
                 <motion.div
@@ -514,18 +514,18 @@ export default function NetSuiteBIPage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {modules.map((mod, index) => (
-              <Link key={index} href="#contact-form" className="block">
+              <Link key={index} href="#contact-form" className="block h-full">
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
                   whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white"
-                  style={{ minHeight: 340 }}
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white h-full"
+                  style={{ minHeight: 380 }}
                 >
                   {/* Top: Image */}
-                  <div className="relative h-44 shrink-0 overflow-hidden">
+                  <div className="relative h-56 shrink-0 overflow-hidden">
                     <Image
                       src={mod.image}
                       alt={mod.title}
@@ -546,7 +546,7 @@ export default function NetSuiteBIPage() {
                   >
                     <div className="flex-1">
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">{mod.title}</h4>
-                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">{mod.description}</p>
+                      <p className="text-white/90 text-sm leading-snug font-medium">{mod.description}</p>
                     </div>
 
                     {/* Hover reveal */}
@@ -735,7 +735,7 @@ export default function NetSuiteBIPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#002a8c] via-[#0044cc] to-[#0099a3] shadow-2xl"
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#000814] via-[#001233] to-[#002a8c] shadow-2xl"
           >
             {/* Particles */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -752,18 +752,18 @@ export default function NetSuiteBIPage() {
 
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                   Transform Your NetSuite Data into Decisions —{" "}
                   <span className="text-cyan-300">Start Today.</span>
                 </h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">
+                <p className="text-white/80 text-base md:text-lg font-medium">
                   Join thousands of businesses that replaced static spreadsheets with NetSuite&apos;s real-time, AI-powered Business Intelligence platform.
                 </p>
               </div>
 
               <Link
                 href="#contact-form"
-                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
+                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
               >
                 See NetSuite Business Intelligence in Action
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

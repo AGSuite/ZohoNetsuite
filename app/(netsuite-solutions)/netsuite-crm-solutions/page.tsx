@@ -160,7 +160,7 @@ export default function NetSuiteCRMPage() {
       title: "Email & Campaign Tracking",
       description:
         "Track opens, clicks, and conversions per campaign — then segment responders for follow-up sequences automatically, keeping marketing and sales perfectly aligned.",
-      image: "/images/modules/marketing_automation.png",
+      image: "/images/modules/sc_marketing_engine.png",
       color: "#523a8a",
       rgb: "75,48,130",
     },
@@ -176,7 +176,7 @@ export default function NetSuiteCRMPage() {
       title: "Forecasting & Reporting",
       description:
         "Bottom-up and top-down sales forecasting with commit, best case, and pipeline views — giving leadership the revenue predictability needed for confident planning.",
-      image: "/images/modules/budgeting_planning_custom.png",
+      image: "/images/modules/financial_reporting_custom.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -187,7 +187,7 @@ export default function NetSuiteCRMPage() {
       title: "360° Customer Intelligence",
       description:
         "Every customer record in NetSuite CRM connects to their quote history, orders, invoices, support cases, and campaign activity — giving sales, marketing, and service one complete, live view without toggling between systems.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/benefits/benefit_crm_customer_intelligence.png",
       points: [
         "Unified customer timeline across all touchpoints",
         "Live order and invoice status visible in CRM",
@@ -199,7 +199,7 @@ export default function NetSuiteCRMPage() {
       title: "Accelerated Quote-to-Cash",
       description:
         "NetSuite CRM eliminates the friction between a won deal and a paid invoice — reps build quotes from live product catalogs, approvals happen in-system, and orders are created automatically without exporting to a separate billing tool.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_crm_quote_to_cash.png",
       points: [
         "Quotes generated from live product and pricing data",
         "Multi-tier discount approval workflows built-in",
@@ -211,7 +211,7 @@ export default function NetSuiteCRMPage() {
       title: "Intelligent Sales Automation",
       description:
         "Eliminate the administrative burden that kills selling time — NetSuite CRM automates lead assignment, follow-up reminders, pipeline stage updates, and activity logging so reps spend more hours with prospects.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/benefit_crm_sales_automation.png",
       points: [
         "Automated lead routing by territory and score",
         "Follow-up task creation on deal inactivity",
@@ -223,7 +223,7 @@ export default function NetSuiteCRMPage() {
       title: "Marketing ROI Transparency",
       description:
         "Stop guessing which campaigns drive revenue — NetSuite CRM links every lead and opportunity back to the campaign that sourced it, giving marketing teams closed-loop attribution with no spreadsheet gymnastics.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_crm_marketing_roi.png",
       points: [
         "Campaign-to-opportunity attribution built-in",
         "Multi-touch influence tracking across channels",
@@ -235,7 +235,7 @@ export default function NetSuiteCRMPage() {
       title: "Service That Retains Customers",
       description:
         "Equip your support team with the full customer context they need to resolve cases faster — open orders, billing status, prior issues, and contract terms — so every interaction feels premium and builds loyalty.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/benefits/benefit_sc_marketing_personalization.png",
       points: [
         "Case auto-routing by product, region, or priority",
         "SLA tracking with auto-escalation rules",
@@ -247,7 +247,7 @@ export default function NetSuiteCRMPage() {
       title: "Accurate Sales Forecasting",
       description:
         "Replace gut-feel pipeline reviews with data-driven forecasts — NetSuite CRM combines historical win rates, deal velocity, and stage-weighted probabilities to give leadership a reliable revenue outlook every week.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/benefits/benefit_gbm_visibility.png",
       points: [
         "Commit, best case, and pipeline forecast views",
         "Team and territory roll-up in real time",
@@ -551,7 +551,7 @@ export default function NetSuiteCRMPage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {modules.map((mod, index) => (
-              <Link key={index} href="#contact-form" className="block">
+              <Link key={index} href="#contact-form" className="block h-full">
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -562,11 +562,11 @@ export default function NetSuiteCRMPage() {
                     ease: "easeOut",
                   }}
                   whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white"
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white h-full"
                   style={{ minHeight: 380 }}
                 >
                   {/* Image top */}
-                  <div className="relative h-48 shrink-0 overflow-hidden">
+                  <div className="relative h-56 shrink-0 overflow-hidden">
                     <Image
                       src={mod.image}
                       alt={mod.title}
@@ -590,7 +590,7 @@ export default function NetSuiteCRMPage() {
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">
                         {mod.title}
                       </h4>
-                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">
+                      <p className="text-white/90 text-sm leading-snug font-medium">
                         {mod.description}
                       </p>
                     </div>
@@ -910,13 +910,13 @@ export default function NetSuiteCRMPage() {
 
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                   Close More Deals with NetSuite CRM —{" "}
                   <span className="text-cyan-200">
                     With CRM Built for Growth.
                   </span>
                 </h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">
+                <p className="text-white/80 text-base md:text-lg font-medium">
                   Join 43,000+ businesses that manage sales, marketing, and
                   service in one unified platform. Your NetSuite CRM
                   transformation begins with a single conversation.
@@ -924,7 +924,7 @@ export default function NetSuiteCRMPage() {
               </div>
               <Link
                 href="#contact-form"
-                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
+                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
               >
                 Start Your NetSuite CRM Journey
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

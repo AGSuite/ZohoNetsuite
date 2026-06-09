@@ -62,12 +62,12 @@ export default function NetSuiteEcommercePage() {
   ];
 
   const benefits = [
-    { title: "Unified Commerce & ERP", description: "SuiteCommerce connects your storefront directly to your ERP, eliminating manual data entry and ensuring real-time accuracy across inventory, orders, and financials.", image: "/images/lap/lap4.webp", points: ["Real-time inventory on web store", "Orders flow straight into NetSuite", "No middleware or integrations needed", "Single source of truth for all data"] },
-    { title: "B2B & B2C on One Platform", description: "Serve both wholesale buyers and retail customers from a single platform with tailored experiences, pricing rules, and workflows for each customer type.", image: "/images/people/laptopmen2.webp", points: ["Negotiated pricing per customer", "Quote-to-order for B2B buyers", "Guest checkout for B2C shoppers", "Self-service account portals"] },
-    { title: "Global Expansion Ready", description: "Launch new storefronts in new markets without adding complexity — multi-currency, multi-language, and local tax rules are all built in.", image: "/images/lap/lap3.webp", points: ["Multiple currencies and exchange rates", "Localized storefronts and languages", "Automated tax calculation by region", "Country-specific payment methods"] },
-    { title: "Omnichannel Experience", description: "Unify your web store, POS, and back office so customers receive a consistent experience whether they shop online, in-store, or via mobile.", image: "/images/lap/lap2.webp", points: ["In-store POS connected to ERP", "Click-and-collect and ship-from-store", "Unified customer profile and history", "Seamless returns across all channels"] },
-    { title: "Marketing & Personalization", description: "Drive repeat purchases with targeted promotions, personalized recommendations, and intelligent email campaigns powered by your ERP data.", image: "/images/lap/lap5.webp", points: ["Behavior-based email campaigns", "Dynamic product recommendations", "Coupon and promotion engine", "A/B testing for conversion optimization"] },
-    { title: "Enterprise Security & Scale", description: "Hosted on Oracle Cloud Infrastructure — enterprise-grade uptime, security, and scalability without any IT overhead on your side.", image: "/images/people/laptopgirl1.webp", points: ["99.99% uptime SLA", "PCI DSS Level 1 compliant", "DDoS and fraud protection", "Auto-scaling for peak seasons"] },
+    { title: "Unified Commerce & ERP", description: "SuiteCommerce connects your storefront directly to your ERP, eliminating manual data entry and ensuring real-time accuracy across inventory, orders, and financials.", image: "/images/benefits/benefit_sc_unified_commerce.png", points: ["Real-time inventory on web store", "Orders flow straight into NetSuite", "No middleware or integrations needed", "Single source of truth for all data"] },
+    { title: "B2B & B2C on One Platform", description: "Serve both wholesale buyers and retail customers from a single platform with tailored experiences, pricing rules, and workflows for each customer type.", image: "/images/benefits/benefit_sc_b2b_b2c.png", points: ["Negotiated pricing per customer", "Quote-to-order for B2B buyers", "Guest checkout for B2C shoppers", "Self-service account portals"] },
+    { title: "Global Expansion Ready", description: "Launch new storefronts in new markets without adding complexity — multi-currency, multi-language, and local tax rules are all built in.", image: "/images/benefits/benefit_sc_global_ready.png", points: ["Multiple currencies and exchange rates", "Localized storefronts and languages", "Automated tax calculation by region", "Country-specific payment methods"] },
+    { title: "Omnichannel Experience", description: "Unify your web store, POS, and back office so customers receive a consistent experience whether they shop online, in-store, or via mobile.", image: "/images/benefits/benefit_sc_omnichannel.png", points: ["In-store POS connected to ERP", "Click-and-collect and ship-from-store", "Unified customer profile and history", "Seamless returns across all channels"] },
+    { title: "Marketing & Personalization", description: "Drive repeat purchases with targeted promotions, personalized recommendations, and intelligent email campaigns powered by your ERP data.", image: "/images/benefits/benefit_sc_marketing_personalization.png", points: ["Behavior-based email campaigns", "Dynamic product recommendations", "Coupon and promotion engine", "A/B testing for conversion optimization"] },
+    { title: "Enterprise Security & Scale", description: "Hosted on Oracle Cloud Infrastructure — enterprise-grade uptime, security, and scalability without any IT overhead on your side.", image: "/images/benefits/benefit_sc_security_scale.png", points: ["99.99% uptime SLA", "PCI DSS Level 1 compliant", "DDoS and fraud protection", "Auto-scaling for peak seasons"] },
   ];
 
   return (
@@ -117,19 +117,26 @@ export default function NetSuiteEcommercePage() {
               className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/lap/lap2.webp" alt="NetSuite SuiteCommerce" fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" priority />
+                  <Image src="/images/hero/netsuite_dashboard_white_theme.png" alt="NetSuite SuiteCommerce Dashboard" fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" priority />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.6 }}
-                    className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #1e40af, #3b82f6)' }}>
-                      <ShoppingBag className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-gray-900 text-sm font-bold leading-tight">Unified Commerce Platform</p>
-                      <p className="text-gray-500 text-xs mt-0.5">B2B · B2C · Omnichannel · Real-Time Inventory · Global</p>
-                    </div>
-                  </motion.div>
                 </div>
+
+                {/* Bottom card — same width as image, sits at bottom edge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.1, duration: 0.6 }}
+                  className="absolute -bottom-6 left-4 right-4 bg-white rounded-xl px-5 py-3.5 shadow-xl flex items-center gap-3 z-10"
+                >
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #1e40af, #3b82f6)' }}>
+                    <ShoppingBag className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-gray-900 text-sm font-bold leading-tight">Unified Commerce Platform</p>
+                    <p className="text-gray-500 text-xs mt-0.5">B2B · B2C · Omnichannel · Real-Time Inventory · Global</p>
+                  </div>
+                </motion.div>
+
                 <motion.div initial={{ opacity: 0, x: -20, y: -10 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ delay: 0.8, duration: 0.6 }}
                   className="absolute -top-5 -left-10 flex items-center gap-3.5 bg-white rounded-2xl px-4 py-3 shadow-2xl border border-gray-100">
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #1e3a8a, #2563eb)' }}>
@@ -192,7 +199,7 @@ export default function NetSuiteEcommercePage() {
               <div className="relative w-full h-full p-4 lg:p-6">
                 <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/10 border-4 border-blue-100">
                   <Image
-                    src="/images/Dashboard/suitecommerce 2 dashbaord.jpg"
+                    src="/images/Dashboard/suitecommerce_dashboard_new.png"
                     alt="NetSuite SuiteCommerce Unified E-Commerce Management Dashboard"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -265,8 +272,8 @@ export default function NetSuiteEcommercePage() {
               <Link key={index} href="#contact-form" className="block h-full">
                 <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }} whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
-                  className="group flex flex-col h-full rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white" style={{ minHeight: 340 }}>
-                  <div className="relative h-64 shrink-0 overflow-hidden">
+                  className="group flex flex-col h-full rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white" style={{ minHeight: 380 }}>
+                  <div className="relative h-56 shrink-0 overflow-hidden">
                     <Image
                       src={mod.image}
                       alt={mod.title}
@@ -280,7 +287,7 @@ export default function NetSuiteEcommercePage() {
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${mod.rgb})` }}>
                     <div className="flex-1">
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">{mod.title}</h4>
-                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">{mod.description}</p>
+                      <p className="text-white/90 text-sm leading-snug font-medium">{mod.description}</p>
                     </div>
                     <div className="absolute bottom-6 left-5 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                       <span className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full shadow-md">Explore <ArrowRight size={10} /></span>
@@ -393,7 +400,7 @@ export default function NetSuiteEcommercePage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#0099a3] shadow-2xl">
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#000814] via-[#001233] to-[#002a8c] shadow-2xl">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {CTA_PARTICLES.map((p, i) => (
                 <motion.div key={i} className="absolute bg-white rounded-full"
@@ -404,10 +411,10 @@ export default function NetSuiteEcommercePage() {
             </div>
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Launch Your NetSuite Store — <span className="text-cyan-300">Start Today.</span></h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">Join thousands of businesses growing their revenue with SuiteCommerce — unified commerce that works as hard as your business.</p>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">Launch Your NetSuite Store — <span className="text-cyan-300">Start Today.</span></h2>
+                <p className="text-white/80 text-base md:text-lg font-medium">Join thousands of businesses growing their revenue with SuiteCommerce — unified commerce that works as hard as your business.</p>
               </div>
-              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-800 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
+              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-800 hover:bg-blue-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
                 Request a NetSuite SuiteCommerce Demo <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

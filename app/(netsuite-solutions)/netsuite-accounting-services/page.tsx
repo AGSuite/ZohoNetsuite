@@ -65,52 +65,52 @@ export default function AccountingSoftwarePage() {
     { title: "General Ledger", description: "Real-time P&L, balance sheets, multi-dimensional chart of accounts, and automated journal entries for a single source of financial truth.", image: "/images/modules/acct_general_ledger.png", color: "#1e8a9e", rgb: "14,108,130" },
     { title: "Accounts Payable", description: "Automate purchase invoices, vendor payments, and approval workflows — eliminating manual processing and reducing payment errors.", image: "/images/modules/acct_accounts_payable.png", color: "#3b5299", rgb: "40,65,145" },
     { title: "Accounts Receivable", description: "Accelerate cash collection with automated billing, dunning, and payment matching from a single dashboard.", image: "/images/modules/acct_accounts_receivable.png", color: "#1a7a55", rgb: "18,108,72" },
-    { title: "Fixed Asset Management", description: "Track asset lifecycle with automated depreciation schedules, revaluations, and disposal with full audit trails.", image: "/images/lap/netsuitelap.png", color: "#8b3a6a", rgb: "125,42,88" },
-    { title: "Tax Management", description: "Handle multi-jurisdiction tax automatically — VAT, GST, sales tax — with built-in compliance and filing-ready reports.", image: "/images/people/laptopgirl1.webp", color: "#a05a18", rgb: "145,75,18" },
+    { title: "Fixed Asset Management", description: "Track asset lifecycle with automated depreciation schedules, revaluations, and disposal with full audit trails.", image: "/images/modules/fixed_assets_custom.png", color: "#8b3a6a", rgb: "125,42,88" },
+    { title: "Tax Management", description: "Handle multi-jurisdiction tax automatically — VAT, GST, sales tax — with built-in compliance and filing-ready reports.", image: "/images/modules/tax_management_custom.png", color: "#a05a18", rgb: "145,75,18" },
     { title: "Financial Reporting", description: "Generate real-time P&L, cash flow, and balance sheet statements. Schedule reports to be delivered automatically to stakeholders.", image: "/images/modules/financial_reporting_custom.png", color: "#4a3a8a", rgb: "65,45,130" },
     { title: "Bank Reconciliation", description: "Auto-match bank transactions with NetSuite records, flag discrepancies, and close the books faster every period.", image: "/images/modules/bank_reconciliation_custom.png", color: "#1a6080", rgb: "20,88,115" },
     { title: "Multi-Currency", description: "Transact in 190+ currencies with live exchange rates, automated revaluations, and consolidated multi-entity reporting.", image: "/images/modules/multi_currency_custom.png", color: "#6a2575", rgb: "95,30,105" },
-    { title: "Revenue Recognition", description: "Automate ASC 606 / IFRS 15 compliant revenue recognition schedules tied directly to contracts and delivery milestones.", image: "/images/people/laptopmen2.webp", color: "#154e8a", rgb: "18,68,130" },
+    { title: "Revenue Recognition", description: "Automate ASC 606 / IFRS 15 compliant revenue recognition schedules tied directly to contracts and delivery milestones.", image: "/images/modules/revenue_recognition_custom.png", color: "#154e8a", rgb: "18,68,130" },
     { title: "Budgeting & Planning", description: "Build rolling forecasts, compare actuals vs. budget in real time, and drill into variances at any level of the organisation.", image: "/images/modules/budgeting_planning_custom.png", color: "#1a6545", rgb: "20,95,60" },
     { title: "Expense Management", description: "Capture, approve, and reimburse employee expenses with policy controls, receipt capture, and automatic GL coding.", image: "/images/modules/expense_management_custom.png", color: "#8a2a3a", rgb: "130,35,48" },
-    { title: "Period Close Checklist", description: "Standardise and automate month-end tasks with role-based checklists, status tracking, and one-click period locking.", image: "/images/people/fourteam.webp", color: "#0f4e8a", rgb: "12,68,130" },
+    { title: "Period Close Checklist", description: "Standardise and automate month-end tasks with role-based checklists, status tracking, and one-click period locking.", image: "/images/modules/period_close_custom.png", color: "#0f4e8a", rgb: "12,68,130" },
   ];
 
   const benefits = [
     {
       title: "Accelerated Period Close",
       description: "Reduce month-end close from weeks to days with automated reconciliations, journal templates, and parallel close workflows that eliminate bottlenecks.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_automated_close.png",
       points: ["Automated bank and intercompany reconciliation", "Parallel close across multiple entities", "Real-time close status dashboard", "Standardised checklists with sign-off controls"]
     },
     {
       title: "Real-Time Financial Visibility",
       description: "Access live P&L, balance sheet, and cash flow data from any device — no more waiting for batch reports or manual spreadsheet consolidation.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/benefits/benefit_financial_visibility.png",
       points: ["Configurable CFO & finance dashboards", "Live KPIs without manual data pulls", "Drill-down from summary to transaction", "Scheduled reports delivered to inboxes"]
     },
     {
       title: "Global Compliance & Tax",
       description: "Stay audit-ready across every jurisdiction with built-in VAT, GST, and sales-tax engines, and country-specific chart-of-accounts templates.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/benefits/benefit_compliance_security.png",
       points: ["190+ currency support with auto revaluation", "Multi-GAAP reporting (IFRS, US GAAP, local)", "SOX, SOC 1 & SOC 2 certified controls", "Country-specific statutory reporting"]
     },
     {
       title: "Intelligent Automation",
       description: "Take humans out of the loop for repetitive, rules-based accounting tasks — freeing your finance team to focus on analysis and strategy.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/benefit_automated_close.png",
       points: ["Automated AP/AR matching and posting", "Rules-based journal entries and allocations", "Revenue recognition on auto-pilot (ASC 606)", "AI-driven anomaly detection in transactions"]
     },
     {
       title: "Scalable Chart of Accounts",
       description: "Start with your current structure and grow without limits — add subsidiaries, segments, and new dimensions in minutes without any re-implementation.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_scalable_growth.png",
       points: ["Unlimited segments and custom dimensions", "Multi-entity consolidation built-in", "Add new subsidiaries in minutes", "Handles millions of transactions seamlessly"]
     },
     {
       title: "Audit-Ready Security",
       description: "Protect financial data with enterprise-grade controls, detailed audit trails, and role-based access that ensure only the right people see the right numbers.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/benefits/benefit_compliance_security.png",
       points: ["Full transaction-level audit trail", "Role-based access with field-level security", "Multi-factor authentication built-in", "Immutable period locks to prevent back-dating"]
     },
   ];
@@ -412,9 +412,9 @@ export default function AccountingSoftwarePage() {
                   viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
                   whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
                   className="group flex flex-col h-full rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white"
-                  style={{ minHeight: 340 }}
+                  style={{ minHeight: 380 }}
                 >
-                    <div className="relative h-44 shrink-0 overflow-hidden">
+                    <div className="relative h-56 shrink-0 overflow-hidden">
                       <Image 
                         src={mod.image} 
                         alt={mod.title} 
@@ -428,7 +428,7 @@ export default function AccountingSoftwarePage() {
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${mod.rgb})` }}>
                     <div className="flex-1">
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">{mod.title}</h4>
-                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">{mod.description}</p>
+                      <p className="text-white/90 text-sm leading-snug font-medium">{mod.description}</p>
                     </div>
                     <div className="absolute bottom-6 left-5 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                       <span className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full shadow-md">
@@ -596,7 +596,7 @@ export default function AccountingSoftwarePage() {
           <motion.div
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#002a8c] via-[#0044cc] to-[#0099a3] shadow-2xl"
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#000814] via-[#001233] to-[#002a8c] shadow-2xl"
           >
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {CTA_PARTICLES.map((p, i) => (
@@ -613,17 +613,17 @@ export default function AccountingSoftwarePage() {
 
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                   Modernise Your NetSuite Accounting —{" "}
                   <span className="text-cyan-300">Faster Than You Think.</span>
                 </h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">
+                <p className="text-white/80 text-base md:text-lg font-medium">
                   Join 43,000+ businesses that replaced spreadsheets and legacy finance tools with the world&apos;s #1 cloud accounting platform. Your transformation starts with one conversation.
                 </p>
               </div>
               <a
                 href="#contact-form"
-                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
+                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
               >
                 Start Your NetSuite Accounting Journey
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -55,19 +55,19 @@ export default function SuiteSuccessPage() {
     { title: "Quick Implementation", description: "Pre-configured industry setups drastically reduce time-to-value and implementation risk.", image: "/images/netsuiteimages/ns_automation_dash.png", color: "#4a3a8a", rgb: "74,58,138" },
     { title: "Role-Based Dashboards", description: "300+ pre-built KPIs and dashboards for every function — from CFO to warehouse manager.", image: "/images/netsuiteimages/ns_visibility_dash.png", color: "#1a6080", rgb: "26,96,128" },
     { title: "Industry Best Practices", description: "Built-in workflows and processes based on thousands of successful global deployments.", image: "/images/netsuiteimages/ns_realtime_visibility.png", color: "#6a2575", rgb: "106,37,117" },
-    { title: "Continuous Updates", description: "Two automatic platform upgrades per year — with all your customizations preserved.", image: "/images/netsuiteimages/ns_scaling_dash.png", color: "#154e8a", rgb: "21,78,138" },
+    { title: "Continuous Updates", description: "Two automatic platform upgrades per year — with all your customizations preserved.", image: "/images/benefits/benefit_sc_security_scale.png", color: "#154e8a", rgb: "21,78,138" },
     { title: "Phased Approach", description: "A structured, agile methodology that delivers business value at every single stage.", image: "/images/modules/project_management.png", color: "#1a6545", rgb: "26,101,69" },
     { title: "Training & Adoption", description: "Built-in training pathways ensure rapid user adoption from the first day of go-live.", image: "/images/netsuiteimages/ns_training_services.png", color: "#8a2a3a", rgb: "138,42,58" },
     { title: "Ongoing Innovation", description: "NetSuite continuously innovates the SuiteSuccess editions based on real customer feedback and market trends.", image: "/images/modules/intelligent_automation.png", color: "#0f4e8a", rgb: "15,78,138" },
   ];
-
+ 
   const benefits = [
-    { title: "Rapid 100-Day Go-Live", description: "SuiteSuccess enables go-live in as little as 100 days — compared to 12–18 months with traditional ERP — using pre-configured, industry-specific setups that drastically reduce risk.", image: "/images/people/people5_11zon.webp", points: ["100-day go-live methodology", "Industry-preset configurations", "Reduced project risk", "Faster time to value"] },
-    { title: "Industry Best Practices Built In", description: "Built on the experience of thousands of global deployments — the KPIs, workflows, and dashboards that matter most in your industry are already configured and ready from day one.", image: "/images/lap/lap2.webp", points: ["300+ pre-built KPIs", "Industry-specific workflows", "Pre-defined chart of accounts", "Role-based dashboards for every function"] },
-    { title: "Lower Implementation Cost", description: "Starting from an industry-matched baseline slashes implementation consulting hours, reducing total cost of ownership and avoiding expensive scope creep throughout the project.", image: "/images/lap/lap4.webp", points: ["18% average cost reduction", "Fixed-scope engagement model", "Fewer custom configurations needed", "Predictable implementation budget"] },
-    { title: "Scalable Stairway to Growth", description: "Start with what you need now and scale on the same platform — the SuiteSuccess Stairway guides you from Build to Engage to Optimize in clear structured phases.", image: "/images/people/laptopmen2.webp", points: ["Phased adoption model", "No re-implementation ever", "Add modules as you scale", "Continuous platform improvement"] },
-    { title: "Built-In Training & Adoption", description: "SuiteSuccess includes role-based training pathways for every functional user, dramatically accelerating adoption and reducing change management challenges from day one.", image: "/images/people/fourteam.webp", points: ["Role-specific training content", "Learning paths for every function", "In-app guidance and walkthroughs", "Rapid user proficiency from go-live"] },
-    { title: "Continuous Platform Innovation", description: "Two automatic NetSuite upgrades per year — no re-implementation required, all your customizations are preserved, and you continuously benefit from new capabilities.", image: "/images/lap/lap3.webp", points: ["Bi-annual automatic upgrades", "Customizations preserved", "Early access to new features", "Ongoing access to NetSuite innovations"] },
+    { title: "Rapid 100-Day Go-Live", description: "SuiteSuccess enables go-live in as little as 100 days — compared to 12–18 months with traditional ERP — using pre-configured, industry-specific setups that drastically reduce risk.", image: "/images/benefits/benefit_gbm_expansion.png", points: ["100-day go-live methodology", "Industry-preset configurations", "Reduced project risk", "Faster time to value"] },
+    { title: "Industry Best Practices Built In", description: "Built on the experience of thousands of global deployments — the KPIs, workflows, and dashboards that matter most in your industry are already configured and ready from day one.", image: "/images/benefits/benefit_gbm_processes.png", points: ["300+ pre-built KPIs", "Industry-specific workflows", "Pre-defined chart of accounts", "Role-based dashboards for every function"] },
+    { title: "Lower Implementation Cost", description: "Starting from an industry-matched baseline slashes implementation consulting hours, reducing total cost of ownership and avoiding expensive scope creep throughout the project.", image: "/images/benefits/benefit_cost_efficiency.png", points: ["18% average cost reduction", "Fixed-scope engagement model", "Fewer custom configurations needed", "Predictable implementation budget"] },
+    { title: "Scalable Stairway to Growth", description: "Start with what you need now and scale on the same platform — the SuiteSuccess Stairway guides you from Build to Engage to Optimize in clear structured phases.", image: "/images/benefits/benefit_scalable_growth.png", points: ["Phased adoption model", "No re-implementation ever", "Add modules as you scale", "Continuous platform improvement"] },
+    { title: "Built-In Training & Adoption", description: "SuiteSuccess includes role-based training pathways for every functional user, dramatically accelerating adoption and reducing change management challenges from day one.", image: "/images/benefits/benefit_sc_b2b_b2c.png", points: ["Role-specific training content", "Learning paths for every function", "In-app guidance and walkthroughs", "Rapid user proficiency from go-live"] },
+    { title: "Continuous Platform Innovation", description: "Two automatic NetSuite upgrades per year — no re-implementation required, all your customizations are preserved, and you continuously benefit from new capabilities.", image: "/images/benefits/benefit_sc_security_scale.png", points: ["Bi-annual automatic upgrades", "Customizations preserved", "Early access to new features", "Ongoing access to NetSuite innovations"] },
   ];
 
   return (
@@ -117,19 +117,26 @@ export default function SuiteSuccessPage() {
               className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/people/fourteam.webp" alt="NetSuite SuiteSuccess" fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" priority />
+                  <Image src="/images/hero/suitesuccess_hero.png" alt="NetSuite SuiteSuccess Dashboard" fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" priority />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.6 }}
-                    className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #1e3a8a, #2563eb)' }}>
-                      <Rocket className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-gray-900 text-sm font-bold leading-tight">Fastest Path to Cloud ERP</p>
-                      <p className="text-gray-500 text-xs mt-0.5">100-Day Go-Live · Industry KPIs · Zero Re-Implementation · Lower Cost</p>
-                    </div>
-                  </motion.div>
                 </div>
+
+                {/* Bottom card — same width as image, sits at bottom edge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.1, duration: 0.6 }}
+                  className="absolute -bottom-6 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3 z-10"
+                >
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #1e3a8a, #2563eb)' }}>
+                    <Rocket className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-gray-900 text-sm font-bold leading-tight">Fastest Path to Cloud ERP</p>
+                    <p className="text-gray-500 text-xs mt-0.5">100-Day Go-Live · Industry KPIs · Zero Re-Implementation · Lower Cost</p>
+                  </div>
+                </motion.div>
+
                 <motion.div initial={{ opacity: 0, x: -20, y: -10 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ delay: 0.8, duration: 0.6 }}
                   className="absolute -top-5 -left-10 flex items-center gap-3.5 bg-white rounded-2xl px-4 py-3 shadow-2xl border border-gray-100">
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #1e3a8a, #2563eb)' }}>
@@ -192,7 +199,7 @@ export default function SuiteSuccessPage() {
               <div className="relative w-full h-full p-4 lg:p-6">
                 <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/10 border-4 border-blue-100">
                   <Image
-                    src="/images/Dashboard/suitesuccess 2 dashboard.jpg"
+                    src="/images/Dashboard/suitesuccess_dashboard_new.png"
                     alt="NetSuite SuiteSuccess Solution Dashboard"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -261,18 +268,18 @@ export default function SuiteSuccessPage() {
           </motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {modules.map((mod, index) => (
-              <Link key={index} href="#contact-form" className="block">
+              <Link key={index} href="#contact-form" className="block h-full">
                 <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }} whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white" style={{ minHeight: 340 }}>
-                  <div className="relative h-44 shrink-0 overflow-hidden">
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white h-full" style={{ minHeight: 380 }}>
+                  <div className="relative h-56 shrink-0 overflow-hidden">
                     <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${mod.rgb})` }}>
                     <div className="flex-1">
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">{mod.title}</h4>
-                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">{mod.description}</p>
+                      <p className="text-white/90 text-sm leading-snug font-medium">{mod.description}</p>
                     </div>
                     <div className="absolute bottom-6 left-5 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                       <span className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full shadow-md">Explore <ArrowRight size={10} /></span>
@@ -385,7 +392,7 @@ export default function SuiteSuccessPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#0891b2] shadow-2xl">
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#000814] via-[#001233] to-[#002a8c] shadow-2xl">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {CTA_PARTICLES.map((p, i) => (
                 <motion.div key={i} className="absolute bg-white rounded-full"
@@ -396,10 +403,10 @@ export default function SuiteSuccessPage() {
             </div>
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Go Live with NetSuite in 100 Days — <span className="text-cyan-200">Start Today.</span></h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">Join thousands of businesses that chose SuiteSuccess for faster, lower-risk ERP implementations with industry best practices built right in.</p>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">Go Live with NetSuite in 100 Days — <span className="text-cyan-200">Start Today.</span></h2>
+                <p className="text-white/80 text-base md:text-lg font-medium">Join thousands of businesses that chose SuiteSuccess for faster, lower-risk ERP implementations with industry best practices built right in.</p>
               </div>
-              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
+              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
                 Request a NetSuite SuiteSuccess Demo <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

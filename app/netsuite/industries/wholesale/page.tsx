@@ -14,12 +14,12 @@ const data: IndustryPageData = {
   heroTitle: "Expand Your Distribution Enterprise Without Limits",
   heroDescription:
     "Eliminate supply chain bottlenecks and accelerate order fulfillment with the world’s #1 cloud ERP tailored for wholesale distributors.",
-  heroImage: "/images/industries/Wholesale-Distribution-compressed.webp",
+  heroImage: "/images/hero/industry_wholesale_hero.png",
   heroCardTitle: "Unified Fulfillment ERP Platform",
   heroCardSub: "Purchasing · Inventory · Warehouse · Fulfilment",
   heroTopCardTitle: "Trusted by 400+ Distributors",
   heroTopCardSub: "Wholesale · B2B · Multi-location · 3PL",
-  introImage: "/images/lap/lap7_11zon.webp",
+  introImage: "/images/benefits/benefit_sc_unified_commerce.png",
   introTitle: "The ERP That Powers Smarter Distribution",
   introDescription:
     "Wholesale distributors operate in an environment of thin margins, complex customer pricing structures, and high inventory investment. Disconnected purchasing, warehouse, and accounting systems create errors, delays, and blind spots that cost margin points.",
@@ -51,58 +51,58 @@ const data: IndustryPageData = {
       title: "Multi-Location Inventory Management",
       description:
         "Real-time inventory visibility across all warehouses and distribution centres. Bin-level location tracking, lot/serial control, and cycle counting built in.",
-      image: "/images/lap/lap9_11zon.webp",
+      image: "/images/benefits/benefit_gbm_visibility.png",
     },
     {
       title: "Warehouse Management (WMS)",
       description:
         "NetSuite WMS covers receiving, put-away, pick/pack/ship, and returns — with mobile barcode scanning and directed workflows that boost warehouse productivity.",
-      image: "/images/lap/lap10_11zon.webp",
+      image: "/images/benefits/benefit_sc_omnichannel.png",
     },
     {
       title: "Demand Planning & Replenishment",
       description:
         "Data-driven reorder points, safety stock calculations, and min/max replenishment connected to supplier lead times to optimise inventory investment.",
-      image: "/images/lap/lap8_11zon.webp",
+      image: "/images/benefits/benefit_cost_efficiency.png",
     },
     {
       title: "Customer Pricing & Contracts",
       description:
         "Manage complex customer-specific pricing, volume discounts, contract pricing, rebates, and trade promotions — with margin visibility at every level.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/benefits/benefit_crm_quote_to_cash.png",
     },
     {
       title: "Lot & Serial Number Tracking",
       description:
         "Ensure full traceability with automated lot and serial number tracking. Manage expiration dates and handle recalls with precision and speed.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/benefits/benefit_gbm_compliance.png",
     },
   ],
   features: [
     {
       title: "Financial Management",
       description: "Automate transaction flow and gain real-time access to financial and operational performance metrics.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_financial_visibility.png",
     },
     {
       title: "Inventory Management",
       description: "Optimize inventory levels, minimize stockouts, and boost profitability with company-wide inventory visibility.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_gbm_processes.png",
     },
     {
       title: "Customer Relationship Management",
       description: "Track and analyze multi-channel marketing campaigns, automate case management, and provide real-time customer data.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/benefits/benefit_crm_customer_intelligence.png",
     },
     {
       title: "E-commerce Integration",
       description: "Unify e-commerce platforms with backend systems for a seamless online shopping experience.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/benefits/benefit_sc_b2b_b2c.png",
     },
     {
       title: "Order Management",
       description: "Automate the entire order-to-fulfillment cycle for faster delivery and improved customer satisfaction.",
-      image: "/images/lap/lap6_11zon.webp",
+      image: "/images/benefits/benefit_crm_sales_automation.png",
     },
   ],
   challenges: [

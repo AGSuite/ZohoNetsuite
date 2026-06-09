@@ -122,31 +122,31 @@ export default function PlanningPage() {
     {
       title: "Reduced Planning Cycle Times",
       description: "Templates and workflows make it easy to gather inputs and assumptions.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/benefits/benefit_gbm_processes.png",
       points: ["Gather inputs easily", "Automated assumptions", "Streamlined templates", "Faster cycles"]
     },
     {
       title: "Accurate Information",
       description: "Pre-built synchronization with NetSuite ERP ensures real-time, accurate financial and operational data is used.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/benefit_unified_platform.png",
       points: ["Real-time synchronization", "ERP data integration", "Eliminated discrepancies", "Reliable datasets"]
     },
     {
       title: "Align the Organization",
       description: "All stakeholders are connected in a single environment, eliminating emails and spreadsheets.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/benefits/benefit_sc_b2b_b2c.png",
       points: ["Unified environment", "No disconnected spreadsheets", "Seamless collaboration", "Org-wide visibility"]
     },
     {
       title: "Increased Transparency",
       description: "Everyone is entering data consistently and using the same processes, so all changes are tracked.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/benefits/benefit_compliance_security.png",
       points: ["Consistent data entry", "Unified processes", "Tracked changes", "Audit readiness"]
     },
     {
       title: "Improved Forecast Accuracy",
       description: "Regularly compare and analyze actual versus projected results to refine forecasts.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_financial_visibility.png",
       points: ["Refined forecasting", "Variance analysis", "Actual vs Projected", "Data-driven decisions"]
     },
   ];
@@ -383,47 +383,66 @@ export default function PlanningPage() {
         </div>
       </section>
 
-      {/* Features Grid - Already updated in previous turn */}
+      {/* Features Grid */}
       <section id="modules" className="py-24 bg-gray-50 relative overflow-hidden scroll-mt-36">
         <div className="max-w-7xl mx-auto px-10 flex flex-col items-center gap-5">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-medium text-gray-900 text-center">
             NetSuite Planning and Budgeting Features
           </motion.h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8 items-start">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {modules.map((mod, index) => (
-              <div key={index} className="group relative">
+              <Link key={index} href="#contact-form" className="block h-full">
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.05 }}
+                  transition={{ duration: 0.6, delay: index * 0.05, ease: "easeOut" }}
                   whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
-                  className="relative flex flex-col rounded-3xl overflow-hidden shadow-lg transition-all duration-500 z-10 hover:z-20 min-h-[360px]"
-                  style={{ backgroundColor: `rgb(${mod.rgb})` }}
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white h-full"
+                  style={{ minHeight: 380 }}
                 >
-                  <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
-                    <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
+                  {/* Top: Image Section with Color Overlay */}
+                  <div className="relative h-56 shrink-0 overflow-hidden">
+                    <Image
+                      src={mod.image}
+                      alt={mod.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }}
+                    />
                   </div>
-                  <div className="p-6 flex flex-col transition-all duration-500">
-                    <h4 className="text-white font-bold text-xl mb-3 tracking-wide line-clamp-2">{mod.title}</h4>
-                    <div className={`relative overflow-hidden transition-all duration-500 group-hover:max-h-[500px] ${mod.title.length > 22 ? 'max-h-[6rem]' : 'max-h-[7.5rem]'}`}>
-                      <p className={`text-white/90 text-sm leading-relaxed font-medium group-hover:line-clamp-none transition-all duration-500 ${mod.title.length > 22 ? 'line-clamp-4' : 'line-clamp-5'}`}>
+
+                  {/* Bottom: Information Section */}
+                  <div
+                    className="flex-1 p-5 pb-6 flex flex-col relative"
+                    style={{ backgroundColor: `rgb(${mod.rgb})` }}
+                  >
+                    <div className="flex-1">
+                      <h4 className="text-white font-bold text-lg mb-2 tracking-wide">
+                        {mod.title}
+                      </h4>
+                      <p className="text-white/90 text-sm leading-snug font-medium">
                         {mod.description}
                       </p>
                     </div>
-                    <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 overflow-hidden max-h-0 group-hover:max-h-[100px]">
-                      <div className="pt-6">
-                        <Link href="#contact-form" className="inline-flex items-center gap-2 bg-white text-gray-900 text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-md hover:bg-gray-50 transition-colors">
-                          Learn More <ArrowRight size={12} />
-                        </Link>
-                      </div>
+
+                    {/* Hover Reveal Button */}
+                    <div className="absolute bottom-6 left-5 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                      <span className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full shadow-md">
+                        Get Started <ArrowRight size={10} />
+                      </span>
                     </div>
+
+                    {/* Multi-color Bottom Border */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500" />
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                 </motion.div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -560,26 +579,35 @@ export default function PlanningPage() {
         </div>
       </section>
 
-      {/* CTA section - SuiteCommerce Style */}
+      {/* CTA section - Dark Teal Theme */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0f766e] via-[#14b8a6] to-[#0099a3] shadow-2xl">
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#00080d] via-[#00171f] to-[#004350] shadow-2xl">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {CTA_PARTICLES.map((p, i) => (
                 <motion.div key={i} className="absolute bg-white rounded-full"
-                  style={{ width: `${p.w * 5}px`, height: `${p.h * 5}px`, top: `${p.top}%`, left: `${p.left}%` }}
+                  style={{ width: `${p.w}px`, height: `${p.h}px`, top: `${p.top}%`, left: `${p.left}%` }}
                   animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }}
                   transition={{ duration: p.dur, repeat: Infinity, ease: 'easeInOut', delay: p.delay }} />
               ))}
             </div>
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Learn How NetSuite ERP Can <span className="text-teal-200">Streamline Your Business.</span></h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">Join thousands of businesses growing their revenue with NetSuite — unified planning that works as hard as your business.</p>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                  Optimize Your Finance on NetSuite Planning & Budgeting —{" "}
+                  <span className="text-teal-300">Forecast Confidently.</span>
+                </h2>
+                <p className="text-white/80 text-base md:text-lg font-medium">
+                  Join thousands of businesses growing their efficiency with NetSuite — unified planning that works as hard as your business.
+                </p>
               </div>
-              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-teal-800 hover:bg-teal-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
-                Get Free Consultation <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <Link
+                href="#contact-form"
+                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#004350] hover:bg-teal-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
+              >
+                Get Free Consultation
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </motion.div>

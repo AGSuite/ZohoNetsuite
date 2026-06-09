@@ -14,7 +14,7 @@ const data: IndustryPageData = {
   heroTitle: "NetSuite for Media & Publishing Industries",
   heroDescription:
     "Manage subscriptions, advertising revenue, content licensing, and royalties on a single cloud ERP. NetSuite gives media and publishing industries the financial agility to monetise content across every channel.",
-  heroImage: "/images/industries/media.webp",
+  heroImage: "/images/hero/industry_media_hero.png",
   heroCardTitle: "Media & Publishing ERP",
   heroCardSub: "Subscriptions · Advertising · Royalties · Content",
   heroTopCardTitle: "Trusted by Leading Publishers",

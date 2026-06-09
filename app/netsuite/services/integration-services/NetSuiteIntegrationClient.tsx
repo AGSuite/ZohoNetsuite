@@ -69,6 +69,7 @@ function Counter({ value }: { value: number }) {
 export default function NetSuiteIntegrationClient() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const stats = [
     { label: "Integrations Built", value: 120, suffix: "+", icon: GitMerge },
@@ -82,7 +83,7 @@ export default function NetSuiteIntegrationClient() {
       title: "E-Commerce Connectors",
       description:
         "Real-time sync of orders, inventory, customers, and fulfilment between NetSuite and Shopify, Magento, WooCommerce, Amazon, and other platforms.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/netsuiteimages/Servicesimg/mobile_portal.png",
       color: "#1e3a8a",
       rgb: "14,50,130",
       Icon: Globe,
@@ -91,7 +92,7 @@ export default function NetSuiteIntegrationClient() {
       title: "CRM Integration",
       description:
         "Connect NetSuite with Salesforce, HubSpot, or Zoho CRM — ensuring leads, contacts, opportunities, and quotes flow seamlessly between systems.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/netsuiteimages/Servicesimg/digital_strategy.png",
       color: "#0e7490",
       rgb: "14,116,144",
       Icon: Users,
@@ -100,7 +101,7 @@ export default function NetSuiteIntegrationClient() {
       title: "Middleware Orchestration",
       description:
         "Implement and manage middleware platforms — Celigo, Dell Boomi, MuleSoft, or Zapier — for complex, multi-point enterprise data integrations.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/netsuiteimages/Servicesimg/system_integration.png",
       color: "#065f46",
       rgb: "6,95,70",
       Icon: Layers,
@@ -109,7 +110,7 @@ export default function NetSuiteIntegrationClient() {
       title: "Custom REST & SOAP APIs",
       description:
         "Build bespoke REST or SOAP APIs to bridge NetSuite with unique legacy applications, custom portals, and proprietary business systems.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/netsuiteimages/Servicesimg/custom_development.png",
       color: "#581c87",
       rgb: "88,28,135",
       Icon: Code2,
@@ -118,7 +119,7 @@ export default function NetSuiteIntegrationClient() {
       title: "EDI Integration",
       description:
         "Automate B2B trading partner transactions with NetSuite EDI — handling 850/855/856/810 transaction sets with full error-handling and audit trails.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/netsuiteimages/Servicesimg/erp_integration.png",
       color: "#92400e",
       rgb: "146,64,14",
       Icon: Database,
@@ -127,7 +128,7 @@ export default function NetSuiteIntegrationClient() {
       title: "WMS & Logistics",
       description:
         "Connect NetSuite with warehouse management systems, 3PLs, and shipping carriers — automating fulfilment, tracking, and inventory reconciliation.",
-      image: "/images/people/laptopmen.webp",
+      image: "/images/netsuiteimages/Servicesimg/process_automation.png",
       color: "#1e1b4b",
       rgb: "30,27,75",
       Icon: GitMerge,
@@ -136,7 +137,7 @@ export default function NetSuiteIntegrationClient() {
       title: "Payment Gateway Integration",
       description:
         "Integrate NetSuite with Stripe, PayPal, Razorpay, or Adyen — automating payment capture, cash application, reconciliation, and refund processing.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/netsuiteimages/Servicesimg/finamce.webp",
       color: "#1a4365",
       rgb: "26,67,101",
       Icon: Shield,
@@ -145,7 +146,7 @@ export default function NetSuiteIntegrationClient() {
       title: "HRMS & Payroll Integration",
       description:
         "Sync employee records, payroll journals, cost centres, and HR data between NetSuite and Workday, BambooHR, Darwinbox, or ADP.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/netsuiteimages/Servicesimg/change_management.png",
       color: "#14532d",
       rgb: "20,83,45",
       Icon: Users,
@@ -154,7 +155,7 @@ export default function NetSuiteIntegrationClient() {
       title: "Banking & Open Finance APIs",
       description:
         "Connect NetSuite directly to bank feeds and open banking APIs for automated transaction matching, cash position reporting, and reconciliation.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/netsuiteimages/Servicesimg/data_analytics.png",
       color: "#7f1d1d",
       rgb: "127,29,29",
       Icon: BarChart3,
@@ -163,7 +164,7 @@ export default function NetSuiteIntegrationClient() {
       title: "Tax & Compliance Engines",
       description:
         "Integrate NetSuite with Avalara, Vertex, or GST/VAT compliance engines for automated real-time tax calculation and filing-ready reporting.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/netsuiteimages/Servicesimg/cybersecurity_compliance.png",
       color: "#312e81",
       rgb: "49,46,129",
       Icon: Cpu,
@@ -172,7 +173,7 @@ export default function NetSuiteIntegrationClient() {
       title: "Cloud Platform Connectors",
       description:
         "Build connections between NetSuite and SaaS platforms — Slack, Microsoft Teams, Power BI, Google Workspace — for workflow and reporting automation.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/netsuiteimages/Servicesimg/cloud_migration.png",
       color: "#0c4a6e",
       rgb: "12,74,110",
       Icon: Cloud,
@@ -181,7 +182,7 @@ export default function NetSuiteIntegrationClient() {
       title: "Integration Monitoring",
       description:
         "Real-time health monitoring of your integration landscape — automated error alerting, retry management, and SLA reporting to keep data always flowing.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/netsuiteimages/Servicesimg/managed_support.png",
       color: "#4a1942",
       rgb: "74,25,66",
       Icon: Settings,
@@ -193,7 +194,7 @@ export default function NetSuiteIntegrationClient() {
       title: "Real-Time, Bi-Directional Sync",
       description:
         "Our integrations push and pull data in real time — so every team always works with the same live, accurate information across NetSuite and every connected platform.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_sc_omnichannel.png",
       points: [
         "Sub-minute sync intervals",
         "Bi-directional data flows",
@@ -205,7 +206,7 @@ export default function NetSuiteIntegrationClient() {
       title: "Resilient Error Handling",
       description:
         "We build resilient architectures with automatic retry logic, dead-letter queues, and instant alerting — so integration failures are caught and resolved before they cascade.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/benefits/benefit_automated_close.png",
       points: [
         "Automated retry with back-off",
         "Error quarantine and manual review",
@@ -217,7 +218,7 @@ export default function NetSuiteIntegrationClient() {
       title: "Scalable Architecture",
       description:
         "Whether you process 100 or 1 million transactions daily, our integration framework scales horizontally — handling peak loads without performance degradation.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/benefits/benefit_scalable_growth.png",
       points: [
         "Queue-based async processing",
         "Load-balanced connector pools",
@@ -229,7 +230,7 @@ export default function NetSuiteIntegrationClient() {
       title: "Secure by Design",
       description:
         "Every integration is built with security at its core — OAuth 2.0, encrypted transport, IP-restricted access, and full audit logs for every data exchange.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/benefit_compliance_security.png",
       points: [
         "OAuth 2.0 token management",
         "TLS 1.3 encrypted transport",
@@ -241,7 +242,7 @@ export default function NetSuiteIntegrationClient() {
       title: "Single Source of Truth",
       description:
         "Designate NetSuite as the master record with clear data ownership rules, deduplication logic, and conflict resolution — eliminating silos permanently.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_unified_platform.png",
       points: [
         "Master data management rules",
         "Conflict resolution policies",
@@ -253,7 +254,7 @@ export default function NetSuiteIntegrationClient() {
       title: "Full Monitoring Visibility",
       description:
         "A real-time monitoring dashboard shows sync status, error rates, and throughput across every connected system — so you always know the health of your data ecosystem.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/benefits/benefit_gbm_visibility.png",
       points: [
         "Live sync status per connector",
         "Error rate trend charts",
@@ -275,7 +276,7 @@ export default function NetSuiteIntegrationClient() {
             fill
             className="object-cover object-center"
             priority
-           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
         </div>
@@ -382,7 +383,7 @@ export default function NetSuiteIntegrationClient() {
                     fill
                     className="object-cover object-center"
                     priority
-                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                 </div>
 
@@ -513,7 +514,7 @@ export default function NetSuiteIntegrationClient() {
               style={{ minHeight: 340 }}
             >
               <Image
-                src="/images/netsuiteimages/background/netsuiteaccounting.webp"
+                src="/images/netsuiteimages/background/integration-image.png"
                 alt="NetSuite Integration Services"
                 width={560}
                 height={380}
@@ -624,8 +625,10 @@ export default function NetSuiteIntegrationClient() {
                     ease: "easeOut",
                   }}
                   whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white"
-                  style={{ minHeight: 340 }}
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out cursor-pointer bg-white"
+                  style={{ height: hoveredCard === index ? 450 : 340 }}
                 >
                   <div className="relative h-44 shrink-0 overflow-hidden">
                     <Image
@@ -633,7 +636,7 @@ export default function NetSuiteIntegrationClient() {
                       alt={svc.title}
                       fill
                       className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
-                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     <div
                       className="absolute inset-0"
                       style={{
@@ -645,11 +648,11 @@ export default function NetSuiteIntegrationClient() {
                     className="flex-1 p-5 pb-6 flex flex-col relative"
                     style={{ backgroundColor: `rgb(${svc.rgb})` }}
                   >
-                    <div className="flex-1">
+                    <div className="flex-1 pb-12">
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">
                         {svc.title}
                       </h4>
-                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">
+                      <p className={`text-white/90 text-sm leading-snug font-medium transition-all duration-500 ${hoveredCard === index ? "" : "line-clamp-3"}`}>
                         {svc.description}
                       </p>
                     </div>
@@ -752,7 +755,7 @@ export default function NetSuiteIntegrationClient() {
                     alt={benefits[activeBenefit].title}
                     fill
                     className="object-cover object-center"
-                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
                 </motion.div>
               </AnimatePresence>
@@ -764,8 +767,8 @@ export default function NetSuiteIntegrationClient() {
                   key={index}
                   onClick={() => setActiveBenefit(index)}
                   className={`group relative w-full flex flex-col justify-center px-5 py-4 text-left rounded-xl transition-all duration-300 outline-none ${activeBenefit === index
-                      ? "bg-white shadow-xl border-l-4 border-blue-600"
-                      : "bg-white/5 border-l-4 border-transparent hover:bg-white/10"
+                    ? "bg-white shadow-xl border-l-4 border-blue-600"
+                    : "bg-white/5 border-l-4 border-transparent hover:bg-white/10"
                     }`}
                   suppressHydrationWarning
                 >
@@ -889,7 +892,7 @@ export default function NetSuiteIntegrationClient() {
                     alt="Integration Services Pricing"
                     fill
                     className="object-cover object-top"
-                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
               </div>
             </div>

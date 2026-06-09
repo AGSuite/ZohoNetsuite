@@ -69,6 +69,7 @@ function Counter({ value }: { value: number }) {
 export default function NetSuiteLowCodeServices() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const stats = [
     { label: "Custom Apps Built", value: 250, suffix: "+", icon: Code2 },
@@ -87,7 +88,7 @@ export default function NetSuiteLowCodeServices() {
       title: "SuiteScript 2.x Development",
       description:
         "Build powerful server-side and client-side business logic with SuiteScript 2.x — from scheduled scripts and map/reduce processing to RESTlets and user event handlers.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/Services/ns_service_low_code_new.png",
       color: "#1e3a8a",
       rgb: "14,50,130",
       Icon: Code2,
@@ -96,7 +97,7 @@ export default function NetSuiteLowCodeServices() {
       title: "SuiteFlow Visual Workflows",
       description:
         "Design no-code workflow automations for approval routing, lead nurturing, and lifecycle management — using NetSuite's point-and-click SuiteFlow builder.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/netsuiteimages/Servicesimg/process_automation.png",
       color: "#0e7490",
       rgb: "14,116,144",
       Icon: Zap,
@@ -105,7 +106,7 @@ export default function NetSuiteLowCodeServices() {
       title: "Custom SuiteApps",
       description:
         "Package your custom logic as managed or unmanaged SuiteApps — upgrade-safe, version-controlled, and distributable across multiple NetSuite accounts.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/Services/ns_low_code_development.png",
       color: "#065f46",
       rgb: "6,95,70",
       Icon: Layers,
@@ -114,7 +115,7 @@ export default function NetSuiteLowCodeServices() {
       title: "Mobile SuiteApps",
       description:
         "Develop responsive mobile-first applications for field services, warehouse operations, and sales teams — extending NetSuite data to every device.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/netsuiteimages/Servicesimg/mobile_portal.png",
       color: "#581c87",
       rgb: "88,28,135",
       Icon: Smartphone,
@@ -123,7 +124,7 @@ export default function NetSuiteLowCodeServices() {
       title: "SuiteTalk REST / SOAP APIs",
       description:
         "Expose custom NetSuite data and logic via RESTlets or SuiteTalk SOAP APIs — enabling seamless integration with external systems and third-party platforms.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/netsuiteimages/Servicesimg/integration.webp",
       color: "#92400e",
       rgb: "146,64,14",
       Icon: Cpu,
@@ -132,7 +133,7 @@ export default function NetSuiteLowCodeServices() {
       title: "Custom Record Types",
       description:
         "Create bespoke record types, custom fields, and tailored list views that capture the unique entities and data structures your business requires.",
-      image: "/images/people/laptopmen.webp",
+      image: "/images/netsuiteimages/Servicesimg/erp_integration.png",
       color: "#1e1b4b",
       rgb: "30,27,75",
       Icon: Database,
@@ -141,7 +142,7 @@ export default function NetSuiteLowCodeServices() {
       title: "Portlet & Dashboard Development",
       description:
         "Build role-specific KPI portlets, custom reminders, and interactive dashboards that give every user a personalised NetSuite home screen.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/netsuiteimages/Servicesimg/data_analytics.png",
       color: "#1a4365",
       rgb: "26,67,101",
       Icon: BarChart3,
@@ -150,7 +151,7 @@ export default function NetSuiteLowCodeServices() {
       title: "AI-Augmented Automation",
       description:
         "Embed AI-driven anomaly detection, predictive routing, and smart approval logic into your NetSuite workflows for next-generation intelligent automation.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/Services/ns_ai_low_code_development.png",
       color: "#14532d",
       rgb: "20,83,45",
       Icon: BrainCircuit,
@@ -159,7 +160,7 @@ export default function NetSuiteLowCodeServices() {
       title: "Custom PDF & Email Templates",
       description:
         "Design pixel-perfect invoices, POs, and email notifications using FreeMarker — branded to your corporate identity and configured per subsidiary.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/netsuiteimages/Servicesimg/Digital transformation.webp",
       color: "#7f1d1d",
       rgb: "127,29,29",
       Icon: Settings,
@@ -168,7 +169,7 @@ export default function NetSuiteLowCodeServices() {
       title: "Self-Service Portals",
       description:
         "Build customer and vendor self-service portals on top of NetSuite — enabling order tracking, invoice approval, PO submission, and support case logging.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/netsuiteimages/Servicesimg/change_management.png",
       color: "#312e81",
       rgb: "49,46,129",
       Icon: Cloud,
@@ -177,7 +178,7 @@ export default function NetSuiteLowCodeServices() {
       title: "SuiteAnalytics Workbooks",
       description:
         "Create advanced SuiteAnalytics workbooks, pivot analyses, and drill-down reports tailored to your executive, finance, and operations reporting requirements.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/netsuiteimages/Servicesimg/digital_strategy.png",
       color: "#0c4a6e",
       rgb: "12,74,110",
       Icon: BarChart3,
@@ -186,7 +187,7 @@ export default function NetSuiteLowCodeServices() {
       title: "Ongoing Code Maintenance",
       description:
         "Keep your SuiteScripts and SuiteApps healthy across bi-annual upgrades — with proactive regression testing, bug resolution, and continuous enhancement support.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/netsuiteimages/Servicesimg/managed_support.png",
       color: "#4a1942",
       rgb: "74,25,66",
       Icon: Users,
@@ -198,7 +199,7 @@ export default function NetSuiteLowCodeServices() {
       title: "Upgrade-Safe by Design",
       description:
         "Every application we build uses NetSuite's version-independent SuiteCloud frameworks — so your custom code survives every bi-annual upgrade without regression surprises.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_compliance_security.png",
       points: [
         "SuiteScript 2.x best practices",
         "SuiteApp packaging for version control",
@@ -210,7 +211,7 @@ export default function NetSuiteLowCodeServices() {
       title: "Rapid Delivery Cycles",
       description:
         "Our low-code methodology combines pre-built component libraries with agile sprint delivery — getting functional tools in your hands in weeks, not months.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/benefits/benefit_gbm_processes.png",
       points: [
         "Pre-built SuiteScript component library",
         "Agile sprint-based delivery",
@@ -222,7 +223,7 @@ export default function NetSuiteLowCodeServices() {
       title: "Fully Documented Codebase",
       description:
         "Every deliverable comes with JSDoc inline documentation, a functional specification, test scripts, and a deployment runbook — so your team can maintain and extend it confidently.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/benefits/benefit_gbm_compliance.png",
       points: [
         "In-code JSDoc documentation",
         "Functional spec and test scripts",
@@ -234,7 +235,7 @@ export default function NetSuiteLowCodeServices() {
       title: "Integrated User Experience",
       description:
         "Our custom apps live natively inside NetSuite — sharing the same data model, authentication, and UI — delivering a seamless experience without external logins or context switching.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/benefit_crm_sales_automation.png",
       points: [
         "Native NetSuite UI components",
         "Single sign-on via NetSuite auth",
@@ -246,7 +247,7 @@ export default function NetSuiteLowCodeServices() {
       title: "Cost-Efficient vs. Custom ERP",
       description:
         "Low-code SuiteCloud development delivers bespoke functionality at a fraction of the cost of traditional enterprise custom development — with faster time-to-market.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_cost_efficiency.png",
       points: [
         "Up to 60% faster dev cycle",
         "Reusable component library",
@@ -258,7 +259,7 @@ export default function NetSuiteLowCodeServices() {
       title: "Scalable Platform Foundation",
       description:
         "Build on a cloud-native platform that scales with your data, users, and business complexity — with no infrastructure management, no scaling costs, and 99.9% uptime.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/benefits/benefit_scalable_growth.png",
       points: [
         "Auto-scaling NetSuite infrastructure",
         "Multi-subsidiary compatible apps",
@@ -518,7 +519,7 @@ export default function NetSuiteLowCodeServices() {
               style={{ minHeight: 340 }}
             >
               <Image
-                src="/images/netsuiteimages/background/netsuiteaccounting.webp"
+                src="/images/netsuiteimages/ns_low_code_dev.png"
                 alt="NetSuite Low-Code Development"
                 width={560}
                 height={380}
@@ -628,8 +629,10 @@ export default function NetSuiteLowCodeServices() {
                     ease: "easeOut",
                   }}
                   whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white"
-                  style={{ minHeight: 340 }}
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out cursor-pointer bg-white"
+                  style={{ height: hoveredCard === index ? 450 : 340 }}
                 >
                   <div className="relative h-44 shrink-0 overflow-hidden">
                     <Image
@@ -637,7 +640,7 @@ export default function NetSuiteLowCodeServices() {
                       alt={svc.title}
                       fill
                       className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
-                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     <div
                       className="absolute inset-0"
                       style={{
@@ -649,11 +652,11 @@ export default function NetSuiteLowCodeServices() {
                     className="flex-1 p-5 pb-6 flex flex-col relative"
                     style={{ backgroundColor: `rgb(${svc.rgb})` }}
                   >
-                    <div className="flex-1">
+                    <div className="flex-1 pb-12">
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">
                         {svc.title}
                       </h4>
-                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">
+                      <p className={`text-white/90 text-sm leading-snug font-medium transition-all duration-500 ${hoveredCard === index ? "" : "line-clamp-3"}`}>
                         {svc.description}
                       </p>
                     </div>

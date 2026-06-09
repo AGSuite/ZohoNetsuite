@@ -58,17 +58,17 @@ export default function AnalyticsWarehousePage() {
     { title: "Data Governance", description: "Define data ownership, access controls, lineage tracking, and quality rules to ensure trusted, compliant analytics.", image: "/images/modules/period_close_custom.png", color: "#6a2575", rgb: "95,30,105" },
     { title: "Advanced Calculations", description: "Write complex business logic, KPI definitions, and aggregations once — reuse across every report and dashboard.", image: "/images/modules/financial_reporting_custom.png", color: "#154e8a", rgb: "18,68,130" },
     { title: "Historical Data Archiving", description: "Retain unlimited historical data for trend analysis, audit compliance, and long-term forecasting with no ERP storage impact.", image: "/images/modules/bank_reconciliation_custom.png", color: "#1a6545", rgb: "20,95,60" },
-    { title: "Cloud-Native Architecture", description: "Built on an enterprise-grade cloud data warehouse — scales automatically with your data volume and query concurrency.", image: "/images/netsuiteimages/ns_scaling_dash.png", color: "#8a2a3a", rgb: "130,35,48" },
+    { title: "Cloud-Native Architecture", description: "Built on an enterprise-grade cloud data warehouse — scales automatically with your data volume and query concurrency.", image: "/images/benefits/benefit_sc_security_scale.png", color: "#8a2a3a", rgb: "130,35,48" },
     { title: "Real-Time Streaming", description: "Stream transaction-level events from NetSuite into your warehouse in real time for operational analytics with zero lag.", image: "/images/modules/intelligent_automation.png", color: "#0f4e8a", rgb: "12,68,130" },
   ];
 
   const benefits = [
-    { title: "Unified Single Source of Truth", description: "Stop juggling data from multiple systems. Consolidate NetSuite ERP and 100+ external sources into one governed, trusted analytics layer.", image: "/images/lap/lap2.webp", points: ["100+ pre-built external data connectors", "Single dataset across ERP + CRM + Marketing", "No manual data merges or export jobs", "Consistent, governed metrics across all reports"] },
-    { title: "Full SQL Access for Data Teams", description: "Give your data analysts the freedom to write custom queries, build views, and explore data at any granularity — no restrictions.", image: "/images/lap/lap3.webp", points: ["Full ANSI SQL support", "Create custom views and materialized queries", "Complex joins across all data sources", "JDBC/ODBC connectivity for BI tools"] },
-    { title: "10x Faster Query Performance", description: "NetSuite Analytics Warehouse (NSAW) is built on a columnar, cloud-native architecture optimised for analytics — not transactional ERP queries.", image: "/images/lap/lap4.webp", points: ["Columnar storage for analytics workloads", "Massively parallel query execution", "Sub-second dashboard load times", "Zero performance impact on ERP operations"] },
-    { title: "Enterprise Data Governance", description: "Ensure every metric, report, and dashboard is built on trusted, governed data — with full lineage, access control, and quality tracking.", image: "/images/lap/lap1.webp", points: ["Field-level data access controls", "Full data lineage and audit trails", "Data quality rules and alerting", "SOC 2 and GDPR compliant processing"] },
-    { title: "Connect Your Entire BI Ecosystem", description: "Use your existing BI investments — Tableau, Power BI, Looker — connected directly to NetSuite data without ETL pipelines.", image: "/images/people/laptopgirl1.webp", points: ["JDBC/ODBC connections for any BI tool", "Live and import connection modes", "Pre-certified Tableau and Power BI connectors", "REST API access for custom applications"] },
-    { title: "Scalable & Always Available", description: "A fully managed, cloud-native warehouse that scales automatically — no infrastructure to manage and 99% SLA-backed uptime.", image: "/images/lap/lap5.webp", points: ["Auto-scaling compute and storage", "99% uptime SLA guarantee", "Zero maintenance or patching required", "Global data residency options"] },
+    { title: "Unified Single Source of Truth", description: "Stop juggling data from multiple systems. Consolidate NetSuite ERP and 100+ external sources into one governed, trusted analytics layer.", image: "/images/benefits/benefit_unified_platform.png", points: ["100+ pre-built external data connectors", "Single dataset across ERP + CRM + Marketing", "No manual data merges or export jobs", "Consistent, governed metrics across all reports"] },
+    { title: "Full SQL Access for Data Teams", description: "Give your data analysts the freedom to write custom queries, build views, and explore data at any granularity — no restrictions.", image: "/images/benefits/benefit_gbm_processes.png", points: ["Full ANSI SQL support", "Create custom views and materialized queries", "Complex joins across all data sources", "JDBC/ODBC connectivity for BI tools"] },
+    { title: "10x Faster Query Performance", description: "NetSuite Analytics Warehouse (NSAW) is built on a columnar, cloud-native architecture optimised for analytics — not transactional ERP queries.", image: "/images/benefits/benefit_cost_efficiency.png", points: ["Columnar storage for analytics workloads", "Massively parallel query execution", "Sub-second dashboard load times", "Zero performance impact on ERP operations"] },
+    { title: "Enterprise Data Governance", description: "Ensure every metric, report, and dashboard is built on trusted, governed data — with full lineage, access control, and quality tracking.", image: "/images/benefits/benefit_compliance_security.png", points: ["Field-level data access controls", "Full data lineage and audit trails", "Data quality rules and alerting", "SOC 2 and GDPR compliant processing"] },
+    { title: "Connect Your Entire BI Ecosystem", description: "Use your existing BI investments — Tableau, Power BI, Looker — connected directly to NetSuite data without ETL pipelines.", image: "/images/benefits/benefit_financial_visibility.png", points: ["JDBC/ODBC connections for any BI tool", "Live and import connection modes", "Pre-certified Tableau and Power BI connectors", "REST API access for custom applications"] },
+    { title: "Scalable & Always Available", description: "A fully managed, cloud-native warehouse that scales automatically — no infrastructure to manage and 99% SLA-backed uptime.", image: "/images/benefits/benefit_scalable_growth.png", points: ["Auto-scaling compute and storage", "99% uptime SLA guarantee", "Zero maintenance or patching required", "Global data residency options"] },
   ];
 
   return (
@@ -269,18 +269,18 @@ export default function AnalyticsWarehousePage() {
           </motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {modules.map((mod, index) => (
-              <Link key={index} href="#contact-form" className="block">
+              <Link key={index} href="#contact-form" className="block h-full">
                 <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }} whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white" style={{ minHeight: 340 }}>
-                  <div className="relative h-44 shrink-0 overflow-hidden">
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white h-full" style={{ minHeight: 380 }}>
+                  <div className="relative h-56 shrink-0 overflow-hidden">
                     <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${mod.rgb})` }}>
                     <div className="flex-1">
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">{mod.title}</h4>
-                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">{mod.description}</p>
+                      <p className="text-white/90 text-sm leading-snug font-medium">{mod.description}</p>
                     </div>
                     <div className="absolute bottom-6 left-5 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                       <span className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full shadow-md">Explore <ArrowRight size={10} /></span>
@@ -395,7 +395,7 @@ export default function AnalyticsWarehousePage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#062520] via-[#0d4f40] to-[#0099a3] shadow-2xl">
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#000814] via-[#001233] to-[#002a8c] shadow-2xl">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {CTA_PARTICLES.map((p, i) => (
                 <motion.div key={i} className="absolute bg-white rounded-full"
@@ -406,10 +406,10 @@ export default function AnalyticsWarehousePage() {
             </div>
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Unify Your Data Strategy with NetSuite — <span className="text-teal-300">Start Today.</span></h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">Stop managing data silos. Connect all your business data in one governed warehouse and give every team the analytics power they need.</p>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">Unify Your Data Strategy with NetSuite — <span className="text-teal-300">Start Today.</span></h2>
+                <p className="text-white/80 text-base md:text-lg font-medium">Stop managing data silos. Connect all your business data in one governed warehouse and give every team the analytics power they need.</p>
               </div>
-              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-[#062520] hover:bg-teal-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
+              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-[#062520] hover:bg-teal-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
                 See NetSuite Analytics Warehouse Demo <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

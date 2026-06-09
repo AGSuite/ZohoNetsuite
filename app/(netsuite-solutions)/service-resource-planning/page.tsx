@@ -167,37 +167,37 @@ export default function NetSuiteSRPPage() {
     {
       title: "Unified Platform",
       description: "Consolidate your entire services business on a single cloud platform, from opportunity to PSA to ERP.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_unified_platform.png",
       points: ["One source of truth for projects and finance", "Eliminate siloed data between teams", "Real-time sync across all departments", "Single login for your entire organization"]
     },
     {
       title: "Resource Optimization",
       description: "Ensure the right people are working on the right projects based on skills, availability, and cost.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/benefits/benefit_gbm_processes.png",
       points: ["Visualize resource capacity in real-time", "Skill-based resource matching", "Reduced bench time and burnout", "Optimal resource load balancing"]
     },
     {
       title: "Project Visibility",
       description: "Access critical project metrics instantly with live dashboards and customizable reports.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/benefits/benefit_financial_visibility.png",
       points: ["Live project health indicators", "Budget vs. Actuals tracking", "Drill-down to transaction details", "Automated stakeholder reporting"]
     },
     {
       title: "Accurate Revenue Recognition",
       description: "Automate complex revenue recognition rules to ensure compliance and accurate financial forecasting.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/benefit_sc_unified_commerce.png",
       points: ["ASC 606 and IFRS 15 compliant", "Automated revenue schedules", "Integration with project milestones", "Reduce audit risks and manual effort"]
     },
     {
       title: "Streamlined Billing",
       description: "Accelerate billing cycles with flexible, automated invoicing tied directly to project activity.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_crm_quote_to_cash.png",
       points: ["Support for T&M, Fixed-Price, and Hybrid", "Automated milestone billing", "Consolidated client invoices", "Faster collection and improved cash flow"]
     },
     {
       title: "Intelligent Automation",
       description: "Take humans out of the administrative loop for repetitive, rules-based tasks.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/benefits/benefit_automated_close.png",
       points: ["Automated time & expense approvals", "Workflow rules for project escalations", "AI-driven project demand forecasting", "Resource request and fulfillment automation"]
     },
   ];
@@ -473,18 +473,18 @@ export default function NetSuiteSRPPage() {
           </motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {modules.map((mod, index) => (
-              <Link key={index} href="#contact-form" className="block">
+              <Link key={index} href="#contact-form" className="block h-full">
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
                   whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white"
-                  style={{ minHeight: 340 }}
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white h-full"
+                  style={{ minHeight: 380 }}
                 >
                   {/* Top: Image Section with Color Overlay */}
-                  <div className="relative h-44 shrink-0 overflow-hidden">
+                  <div className="relative h-56 shrink-0 overflow-hidden">
                     <Image
                       src={mod.image}
                       alt={mod.title}
@@ -507,7 +507,7 @@ export default function NetSuiteSRPPage() {
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">
                         {mod.title}
                       </h4>
-                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">
+                      <p className="text-white/90 text-sm leading-snug font-medium">
                         {mod.description}
                       </p>
                     </div>
@@ -697,7 +697,7 @@ export default function NetSuiteSRPPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#002a8c] via-[#0044cc] to-[#0099a3] shadow-2xl"
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#000814] via-[#001233] to-[#002a8c] shadow-2xl"
           >
             {/* Particles */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -714,18 +714,18 @@ export default function NetSuiteSRPPage() {
 
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                   Optimize Your Firm on NetSuite SRP —{" "}
                   <span className="text-cyan-300">Scale Globally.</span>
                 </h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">
+                <p className="text-white/80 text-base md:text-lg font-medium">
                   Join thousands of professional services firms that traded spreadsheets for the world&apos;s #1 cloud SRP solution.
                 </p>
               </div>
 
               <Link
                 href="#contact-form"
-                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
+                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
               >
                 Go Live on NetSuite SRP
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

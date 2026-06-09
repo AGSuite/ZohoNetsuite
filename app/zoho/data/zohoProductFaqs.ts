@@ -592,6 +592,28 @@ export const zohoProductFaqs: Record<string, { q: string; a: string }[]> = {
       q: "Can I migrate from Google Workspace?",
       a: "Yes, Zoho provides seamless migration tools to move your emails, files from Google Drive, contacts, and calendars over to Workplace with no data loss.",
     }
+  ],
+  itManagement: [
+    {
+      q: "What applications are included in Zoho IT Management?",
+      a: "It includes a comprehensive suite of IT tools like Service Desk (ITIL service desk), Endpoint Management (endpoints, patch & mobile devices), IT Operations (OpManager for network monitoring), Site24x7 (cloud & application monitoring), and Remote Support (Assist), among others.",
+    },
+    {
+      q: "Does Zoho Endpoint Management support both Windows and macOS devices?",
+      a: "Yes. Zoho Endpoint Management provides robust cross-platform capabilities, allowing you to manage, patch, and secure Windows, macOS, Linux, iOS, Android, and iPadOS devices from a single centralized console.",
+    },
+    {
+      q: "Does Zoho IT Management align with ITIL standards?",
+      a: "Yes, the Service Desk module is built on ITIL frameworks, supporting best practices for Incident Management, Problem Management, Change Enablement, Release Management, Asset Management, and Service Catalog.",
+    },
+    {
+      q: "Can Zoho IT Management monitor multi-cloud and hybrid environments?",
+      a: "Absolutely. The Cloud Management module allows you to monitor and optimize resources across popular cloud providers like AWS, Microsoft Azure, and Google Cloud Platform, tracking usage, costs, and availability in real-time.",
+    },
+    {
+      q: "How does Zoho Remote Support (Assist) ensure security during sessions?",
+      a: "Zoho Assist uses industry-standard SSL 256-bit AES encryption, supports multi-factor authentication (MFA), session recording, custom user permissions, and requires explicit user consent before screen sharing or file transfer operations.",
+    }
   ]
 };
 
@@ -601,7 +623,8 @@ export const getZohoProductFaqs = (title: string): { q: string; a: string }[] | 
   if (normalized.includes("crm plus")) return zohoProductFaqs.crmPlus;
   if (normalized.includes("crm")) return zohoProductFaqs.crm;
   if (normalized.includes("books") || normalized.includes("accounting")) return zohoProductFaqs.books;
-  if (normalized.includes("creator") || normalized.includes("it management")) return zohoProductFaqs.creator;
+  if (normalized.includes("creator")) return zohoProductFaqs.creator;
+  if (normalized.includes("it management")) return zohoProductFaqs.itManagement;
   if (normalized.includes("desk")) return zohoProductFaqs.desk;
   if (normalized.includes("analytics")) return zohoProductFaqs.analytics;
   if (normalized.includes("projects")) return zohoProductFaqs.projects;

@@ -14,12 +14,12 @@ const data: IndustryPageData = {
   heroTitle: "Scale Your IT Services Business Without Limits",
   heroDescription:
     "Optimize billable utilization, accelerate project delivery, and automate complex billing with the #1 cloud ERP built for IT and consulting firms.",
-  heroImage: "/images/people/people4.webp",
+  heroImage: "/images/hero/industry_it_services_hero.png",
   heroCardTitle: "Project Profitability",
   heroCardSub: "Projects · Resources · Billing · Revenue Recognition",
   heroTopCardTitle: "Trusted by 500+ Services Firms",
   heroTopCardSub: "Consulting · Legal · IT · Engineering",
-  introImage: "/images/people/laptopmen2.webp",
+  introImage: "/images/benefits/benefit_unified_platform.png",
   introTitle: "Run Projects, Resources, and Finances in One System",
   introDescription:
     "Professional services firms struggle with disconnected tools — separate project management, time tracking, billing, and accounting systems that create data silos and revenue leakage. NetSuite SRP brings it all together in one unified cloud ERP.",
@@ -46,58 +46,58 @@ const data: IndustryPageData = {
       title: "Project & Milestone Management",
       description:
         "Plan projects with tasks, milestones, dependencies, and resource assignments. Track actuals vs. budget in real time and get early warning on at-risk projects.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/benefits/benefit_gbm_processes.png",
     },
     {
       title: "Resource Management & Utilisation",
       description:
         "Allocate the right people to the right projects based on skills, availability, and utilisation targets. Avoid bench time and project bottlenecks.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/benefits/benefit_scalable_growth.png",
     },
     {
       title: "Flexible Project Billing",
       description:
         "Support T&M, fixed-fee, milestone, and retainer billing models. Generate client invoices directly from approved timesheets and project milestones.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/benefits/benefit_crm_quote_to_cash.png",
     },
     {
       title: "Revenue Recognition (ASC 606)",
       description:
         "Automate complex revenue recognition schedules natively in NetSuite, ensuring ASC 606 and IFRS 15 compliance without manual spreadsheets.",
-      image: "/images/people/global.webp",
+      image: "/images/benefits/benefit_gbm_compliance.png",
     },
     {
       title: "Time & Expense Automation",
       description:
         "Enable consultants to submit time and expenses on-the-go via mobile. Automated approval workflows ensure faster reimbursement and quicker client billing cycles.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/benefits/benefit_crm_sales_automation.png",
     },
   ],
   features: [
     {
       title: "Project and Resource Management",
       description: "Comprehensive solutions for managing projects and optimizing resource utilization.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_gbm_visibility.png",
     },
     {
       title: "Time and Expense Tracking",
       description: "Tools for tracking time and expenses associated with projects, ensuring accurate billing and invoicing.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_automated_close.png",
     },
     {
       title: "Project Accounting",
       description: "Systems for managing project finances, tracking costs, and generating accurate invoices.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/benefits/benefit_cost_efficiency.png",
     },
     {
       title: "Customer Relationship Management (CRM)",
       description: "Cloud-based CRM solutions for managing interactions with customers, partners, and suppliers.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/benefits/benefit_crm_customer_intelligence.png",
     },
     {
       title: "Financial Management",
       description: "Automate bookkeeping and gain real-time visibility into your cash flow with NetSuite.",
-      image: "/images/lap/lap10_11zon.webp",
+      image: "/images/benefits/benefit_financial_visibility.png",
     },
   ],
   challenges: [

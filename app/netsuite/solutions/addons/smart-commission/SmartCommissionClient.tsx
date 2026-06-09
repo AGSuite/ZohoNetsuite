@@ -40,17 +40,17 @@ export default function SmartCommissionClient() {
   ];
 
   const benefits = [
-    { title: "Real-time Visibility", description: "Give sales reps instant visibility into their estimated commissions as soon as an order is created.", image: "/images/lap/lap5.webp" },
-    { title: "Complex Plan Engine", description: "Easily manage multi-tiered rates, accelerators, and quota-based overrides without spreadsheets.", image: "/images/lap/lap2.webp" },
-    { title: "Automated Clawbacks", description: "Automatically handle commission reversals for returned orders or credit memos, ensuring zero overpayments.", image: "/images/people/laptopmen2.webp" },
-    { title: "Performance Motivation", description: "Gamify sales with interactive dashboards that show progress toward the next commission tier.", image: "/images/people/laptopgirl1.webp" }
+    { title: "Real-time Visibility", description: "Give sales reps instant visibility into their estimated commissions as soon as an order is created.", image: "/images/benefits/benefit_financial_visibility.png" },
+    { title: "Complex Plan Engine", description: "Easily manage multi-tiered rates, accelerators, and quota-based overrides without spreadsheets.", image: "/images/benefits/benefit_gbm_processes.png" },
+    { title: "Automated Clawbacks", description: "Automatically handle commission reversals for returned orders or credit memos, ensuring zero overpayments.", image: "/images/benefits/benefit_crm_quote_to_cash.png" },
+    { title: "Performance Motivation", description: "Gamify sales with interactive dashboards that show progress toward the next commission tier.", image: "/images/benefits/benefit_scalable_growth.png" }
   ];
 
   const challenges = [
-    { title: "Spreadsheet Hell", description: "Manually calculating commissions in Excel is error-prone and takes days of work every month.", image: "/images/people/laptopmen1.jpg" },
-    { title: "Shadow Accounting", description: "Sales reps waste time tracking their own commissions because they don't trust the official numbers.", image: "/images/lap/lap1.webp" },
-    { title: "Delayed Payouts", description: "Slow manual processing leads to frustrated reps and decreased motivation.", image: "/images/people/fourteam.webp" },
-    { title: "Dispute Friction", description: "Lack of transparency leads to endless disputes between sales, finance, and management.", image: "/images/people/group5.webp" }
+    { title: "Spreadsheet Hell", description: "Manually calculating commissions in Excel is error-prone and takes days of work every month.", image: "/images/benefits/benefit_cost_efficiency.png" },
+    { title: "Shadow Accounting", description: "Sales reps waste time tracking their own commissions because they don't trust the official numbers.", image: "/images/benefits/benefit_gbm_visibility.png" },
+    { title: "Delayed Payouts", description: "Slow manual processing leads to frustrated reps and decreased motivation.", image: "/images/benefits/benefit_automated_close.png" },
+    { title: "Dispute Friction", description: "Lack of transparency leads to endless disputes between sales, finance, and management.", image: "/images/benefits/benefit_crm_marketing_roi.png" }
   ];
 
   const commissionFeatures = [

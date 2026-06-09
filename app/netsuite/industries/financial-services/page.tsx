@@ -10,7 +10,7 @@ const data: IndustryPageData = {
   heroTitle: "Streamline and Elevate Finance Operations with Oracle NetSuite ERP",
   heroDescription:
     "Empower your financial institution with a unified, cloud-based ERP that delivers real-time compliance, automated workflows, and enterprise-grade security — built for the demands of modern financial services.",
-  heroImage: "/images/industries/financial-services-industry.webp",
+  heroImage: "/images/hero/industry_financial_services_hero.png",
   heroCardTitle: "Financial ERP Command Center",
   heroCardSub: "Compliance · Risk Management · Reporting · Multi-Entity Consolidation",
   heroTopCardTitle: "Trusted by Financial Leaders",

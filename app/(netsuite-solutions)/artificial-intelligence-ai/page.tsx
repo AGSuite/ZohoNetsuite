@@ -47,14 +47,14 @@ export default function NetSuiteAIPage() {
   ];
 
   const modules = [
-    { title: "Intelligent Insights", description: "Surface hidden patterns and anomalies across your entire ERP dataset automatically — no data scientist required.", image: "/images/netsuiteimages/ns_visibility_dash.png", color: "#1e8a9e", rgb: "14,108,130" },
+    { title: "Intelligent Insights", description: "Surface hidden patterns and anomalies across your entire ERP dataset automatically — no data scientist required.", image: "/images/modules/real_time_visibility.png", color: "#1e8a9e", rgb: "14,108,130" },
     { title: "Cash Flow Forecasting", description: "Predict 30, 60, and 90-day cash positions using historical trends, open AR, and payment behaviour models.", image: "/images/modules/budgeting_planning_custom.png", color: "#3b5299", rgb: "40,65,145" },
     { title: "Supply Chain AI", description: "Anticipate demand fluctuations, supplier delays, and reorder points before they impact your operations.", image: "/images/modules/supply_chain.png", color: "#7b3a8a", rgb: "123,58,138" },
-    { title: "Smart Automation", description: "Automate approvals, journal entries, and dunning sequences with AI-driven workflow triggers.", image: "/images/netsuiteimages/ns_automation_dash.png", color: "#1a7a55", rgb: "18,108,72" },
+    { title: "Smart Automation", description: "Automate approvals, journal entries, and dunning sequences with AI-driven workflow triggers.", image: "/images/modules/intelligent_automation.png", color: "#1a7a55", rgb: "18,108,72" },
     { title: "Predictive Analytics", description: "AI-powered scenario modelling for revenue forecasting, headcount planning, and budget variance detection.", image: "/images/modules/financial_reporting_custom.png", color: "#a05a18", rgb: "145,75,18" },
     { title: "Anomaly Detection", description: "Real-time detection of outliers in financial transactions, inventory records, and operational KPIs.", image: "/images/modules/general_ledger_custom.png", color: "#4a3a8a", rgb: "65,45,130" },
-    { title: "Personalised Recommendations", description: "AI-driven product, upsell, and cross-sell recommendations for e-commerce and customer service teams.", image: "/images/modules/intelligent_automation.png", color: "#1a6080", rgb: "20,88,115" },
-    { title: "Generative AI Assistant", description: "Ask questions in plain English and receive instant answers, summaries, and report generation from your NetSuite data.", image: "/images/netsuiteimages/ns_low_code_dev.png", color: "#6a2575", rgb: "95,30,105" },
+    { title: "Personalised Recommendations", description: "AI-driven product, upsell, and cross-sell recommendations for e-commerce and customer service teams.", image: "/images/modules/ecommerce.png", color: "#1a6080", rgb: "20,88,115" },
+    { title: "Generative AI Assistant", description: "Ask questions in plain English and receive instant answers, summaries, and report generation from your NetSuite data.", image: "/images/modules/chatt mdoule.webp", color: "#6a2575", rgb: "95,30,105" },
     { title: "AI-Driven Financials", description: "Smart Financials automates period close, reconciliation, and journal creation based on machine learning patterns.", image: "/images/modules/period_close_custom.png", color: "#154e8a", rgb: "18,68,130" },
     { title: "Customer Behaviour AI", description: "Predict churn risk, segment customers by lifetime value, and determine next best action for each account.", image: "/images/modules/crm.png", color: "#1a6545", rgb: "20,95,60" },
     { title: "Demand Sensing", description: "Combine internal sales trends with external signals to build more accurate demand forecasts at SKU level.", image: "/images/modules/inventory_management.png", color: "#8a2a3a", rgb: "130,35,48" },
@@ -62,12 +62,12 @@ export default function NetSuiteAIPage() {
   ];
 
   const benefits = [
-    { title: "Intelligent Business Insights", description: "AI automatically identifies patterns, surfaces anomalies, and recommends actions across your entire ERP data set.", image: "/images/people/laptopgirl1.webp", points: ["Auto-detected trends and anomalies", "Natural language Q&A on live data", "Proactive alerts before KPIs breach", "AI-curated insights on your dashboard"] },
-    { title: "Accurate Demand & Cash Forecasting", description: "ML models trained on your historical data deliver more accurate revenue, cash flow, and demand forecasts.", image: "/images/lap/lap4.webp", points: ["30/60/90-day cash flow predictions", "SKU-level demand sensing", "Budget vs actuals variance detection", "Seasonal and trend-adjusted forecasting"] },
-    { title: "Smart Supply Chain Optimisation", description: "Proactively manage supply chain risk with AI models that predict delays, stockouts, and supplier issues.", image: "/images/lap/lap3.webp", points: ["Predictive reorder point optimisation", "Supplier risk scoring", "Dynamic safety stock recommendations", "Demand-driven procurement triggers"] },
-    { title: "Intelligent Automation", description: "Remove humans from repetitive, rules-based work — let AI handle approvals, reconciliations, and data entry.", image: "/images/lap/lap2.webp", points: ["AI-triggered workflow approvals", "Automated journal entries", "Smart dunning sequences", "Self-healing data quality corrections"] },
-    { title: "Embedded Across the Entire Suite", description: "NetSuite's intelligence is woven into every module — finance, supply chain, HR, CRM, and more.", image: "/images/lap/lap1.webp", points: ["No separate AI tool or licence needed", "Works with existing NetSuite data", "AI insights in every module natively", "Continuously improves with usage"] },
-    { title: "Enterprise-Grade AI Governance", description: "Your data is yours. NetSuite's AI uses tenant-specific models — never trains public AI models.", image: "/images/people/laptopmen2.webp", points: ["Tenant-isolated ML models", "GDPR and SOC 2 compliant", "Full audit trails on AI-driven actions", "Configurable AI confidence thresholds"] },
+    { title: "Intelligent Business Insights", description: "AI automatically identifies patterns, surfaces anomalies, and recommends actions across your entire ERP data set.", image: "/images/lap/ai_business_insights.png", points: ["Auto-detected trends and anomalies", "Natural language Q&A on live data", "Proactive alerts before KPIs breach", "AI-curated insights on your dashboard"] },
+    { title: "Accurate Demand & Cash Forecasting", description: "ML models trained on your historical data deliver more accurate revenue, cash flow, and demand forecasts.", image: "/images/lap/cash_demand_forecasting.png", points: ["30/60/90-day cash flow predictions", "SKU-level demand sensing", "Budget vs actuals variance detection", "Seasonal and trend-adjusted forecasting"] },
+    { title: "Smart Supply Chain Optimisation", description: "Proactively manage supply chain risk with AI models that predict delays, stockouts, and supplier issues.", image: "/images/lap/supply_chain_optimization.png", points: ["Predictive reorder point optimisation", "Supplier risk scoring", "Dynamic safety stock recommendations", "Demand-driven procurement triggers"] },
+    { title: "Intelligent Automation", description: "Remove humans from repetitive, rules-based work — let AI handle approvals, reconciliations, and data entry.", image: "/images/lap/ai_intelligent_automation.png", points: ["AI-triggered workflow approvals", "Automated journal entries", "Smart dunning sequences", "Self-healing data quality corrections"] },
+    { title: "Embedded Across the Entire Suite", description: "NetSuite's intelligence is woven into every module — finance, supply chain, HR, CRM, and more.", image: "/images/modules/unified_platform.png", points: ["No separate AI tool or licence needed", "Works with existing NetSuite data", "AI insights in every module natively", "Continuously improves with usage"] },
+    { title: "Enterprise-Grade AI Governance", description: "Your data is yours. NetSuite's AI uses tenant-specific models — never trains public AI models.", image: "/images/modules/audit_reports.png", points: ["Tenant-isolated ML models", "GDPR and SOC 2 compliant", "Full audit trails on AI-driven actions", "Configurable AI confidence thresholds"] },
   ];
 
   return (
@@ -117,19 +117,21 @@ export default function NetSuiteAIPage() {
               className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/lap/lap8_11zon.webp" alt="NetSuite AI" fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" priority />
+                  <Image src="/images/hero/ai_hero.png" alt="NetSuite AI Dashboard" fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" priority />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.6 }}
-                    className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #1e3a8a, #2563eb)' }}>
-                      <Sparkles className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-gray-900 text-sm font-bold leading-tight">Now with Generative AI</p>
-                      <p className="text-gray-500 text-xs mt-0.5">Forecasting · Anomaly Detection · Smart Automation · NL Queries</p>
-                    </div>
-                  </motion.div>
                 </div>
+                
+                {/* Bottom card — same width as image, sits at bottom edge */}
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.6 }}
+                  className="absolute -bottom-6 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3 z-10">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #1e3a8a, #2563eb)' }}>
+                    <Sparkles className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-gray-900 text-sm font-bold leading-tight">Now with Generative AI</p>
+                    <p className="text-gray-500 text-xs mt-0.5">Forecasting · Anomaly Detection · Smart Automation · NL Queries</p>
+                  </div>
+                </motion.div>
                 <motion.div initial={{ opacity: 0, x: -20, y: -10 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ delay: 0.8, duration: 0.6 }}
                   className="absolute -top-5 -left-10 flex items-center gap-3.5 bg-white rounded-2xl px-4 py-3 shadow-2xl border border-gray-100">
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #1e3a8a, #2563eb)' }}>
@@ -262,18 +264,18 @@ export default function NetSuiteAIPage() {
           </motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {modules.map((mod, index) => (
-              <Link key={index} href="#contact-form" className="block">
+              <Link key={index} href="#contact-form" className="block h-full">
                 <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }} whileHover={{ scale: 1.03, boxShadow: `0 20px 40px -8px rgba(${mod.rgb}, 0.5)`, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white" style={{ minHeight: 340 }}>
-                  <div className="relative h-44 shrink-0 overflow-hidden">
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg transition-all duration-300 cursor-pointer bg-white h-full" style={{ minHeight: 380 }}>
+                  <div className="relative h-56 shrink-0 overflow-hidden">
                     <Image src={mod.image} alt={mod.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, transparent 0%, rgba(${mod.rgb},0.4) 70%, rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${mod.rgb})` }}>
                     <div className="flex-1">
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">{mod.title}</h4>
-                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">{mod.description}</p>
+                      <p className="text-white/90 text-sm leading-snug font-medium">{mod.description}</p>
                     </div>
                     <div className="absolute bottom-6 left-5 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                       <span className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full shadow-md">Explore <ArrowRight size={10} /></span>
@@ -388,7 +390,7 @@ export default function NetSuiteAIPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#0891b2] shadow-2xl">
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#000814] via-[#001233] to-[#002a8c] shadow-2xl">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {CTA_PARTICLES.map((p, i) => (
                 <motion.div key={i} className="absolute bg-white rounded-full"
@@ -399,10 +401,10 @@ export default function NetSuiteAIPage() {
             </div>
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Make Your NetSuite ERP Intelligent — <span className="text-cyan-200">Start Today.</span></h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">Join thousands of businesses using NetSuite AI to predict outcomes, automate decisions, and gain a competitive edge — without leaving their ERP.</p>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">Make Your NetSuite ERP Intelligent — <span className="text-cyan-200">Start Today.</span></h2>
+                <p className="text-white/80 text-base md:text-lg font-medium">Join thousands of businesses using NetSuite AI to predict outcomes, automate decisions, and gain a competitive edge — without leaving their ERP.</p>
               </div>
-              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
+              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
                 Request a NetSuite AI Demo <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

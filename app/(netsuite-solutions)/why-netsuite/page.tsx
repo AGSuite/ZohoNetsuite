@@ -88,11 +88,11 @@ export default function WhyNetsuitePage() {
   ];
 
   const adaptability = [
-    { title: "True cloud", description: "As the world's first cloud company, NetSuite was born in and built for the cloud. This means all our customers are on the same version of the software and automatically receive biannual updates. Additionally, NetSuite runs on the global network of Oracle Cloud Infrastructure (OCI) cloud regions you can easily scale up with increasing volumes of data and bigger workloads without impacting performance.", image: "/images/Dashboard/ns_visibility_dash.png", icon: Cloud },
-    { title: "Unite your data", description: "Stop wasting time compiling data and reports. NetSuite brings together financial and operational data for a single, comprehensive, and real-time view of your company's performance. AI technologies can then use this data from the suite to simplify business tasks and uncover insights that drive better decision-making.", image: "/images/Dashboard/analytic wharehouse 2.jpg", icon: LineChart },
-    { title: "Fine tune built-in best practices", description: "NetSuite offers hundreds of prebuilt workflows based on best practices gleaned from tens of thousands of implementations. It also makes it easy for business users to configure these templates to suit their unique business needs.", image: "/images/lap/lap7_11zon.webp", icon: Settings },
-    { title: "Customizations to suit your business", description: "Extend and optimize core NetSuite functionality leveraging industry-standard tools and technologies to manage change and automate each stage of your DevOps lifecycle.", image: "/images/lap/lap9_11zon.webp", icon: Wrench },
-    { title: "Power of partners", description: "Connect, integrate, and extend NetSuite with hundreds of certified SuiteApp solutions provided by our vast network of partners.", image: "/images/lap/group2.webp", icon: Network },
+    { title: "True cloud", description: "As the world's first cloud company, NetSuite was born in and built for the cloud. This means all our customers are on the same version of the software and automatically receive biannual updates. Additionally, NetSuite runs on the global network of Oracle Cloud Infrastructure (OCI) cloud regions you can easily scale up with increasing volumes of data and bigger workloads without impacting performance.", image: "/images/benefits/benefit_sc_security_scale.png", icon: Cloud },
+    { title: "Unite your data", description: "Stop wasting time compiling data and reports. NetSuite brings together financial and operational data for a single, comprehensive, and real-time view of your company's performance. AI technologies can then use this data from the suite to simplify business tasks and uncover insights that drive better decision-making.", image: "/images/benefits/benefit_unified_platform.png", icon: LineChart },
+    { title: "Fine tune built-in best practices", description: "NetSuite offers hundreds of prebuilt workflows based on best practices gleaned from tens of thousands of implementations. It also makes it easy for business users to configure these templates to suit their unique business needs.", image: "/images/benefits/benefit_gbm_processes.png", icon: Settings },
+    { title: "Customizations to suit your business", description: "Extend and optimize core NetSuite functionality leveraging industry-standard tools and technologies to manage change and automate each stage of your DevOps lifecycle.", image: "/images/benefits/benefit_automated_close.png", icon: Wrench },
+    { title: "Power of partners", description: "Connect, integrate, and extend NetSuite with hundreds of certified SuiteApp solutions provided by our vast network of partners.", image: "/images/benefits/benefit_sc_b2b_b2c.png", icon: Network },
   ];
 
   const successPriority = [
@@ -307,16 +307,16 @@ export default function WhyNetsuitePage() {
             {growBusiness.map((mod, index) => (
               <motion.div key={index} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                className={`group relative rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden ${cardBgColors[index % cardBgColors.length]}`}>
+                className={`group relative rounded-3xl pt-6 px-8 pb-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden ${cardBgColors[index % cardBgColors.length]}`}>
                 <div className="relative z-10 h-full flex flex-col">
                   {mod.image && (
-                    <div className="relative h-52 w-full mb-6 rounded-2xl overflow-hidden shadow-md">
+                    <div className="relative h-52 w-full -translate-y-2 mb-4 rounded-2xl overflow-hidden shadow-md">
                       <Image
                         src={mod.image}
                         alt={mod.title}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                        className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
                       />
                     </div>
                   )}
@@ -350,7 +350,7 @@ export default function WhyNetsuitePage() {
             <div className="order-2 lg:order-1 relative min-h-[450px] lg:min-h-[550px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
               <AnimatePresence mode="wait">
                 <motion.div key={activeAdaptability} initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} className="absolute inset-0">
-                  <Image src={adaptability[activeAdaptability].image} alt={adaptability[activeAdaptability].title} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-top" suppressHydrationWarning />
+                  <Image src={adaptability[activeAdaptability].image} alt={adaptability[activeAdaptability].title} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover object-center" suppressHydrationWarning />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </motion.div>
               </AnimatePresence>

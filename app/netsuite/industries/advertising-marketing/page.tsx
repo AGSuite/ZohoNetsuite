@@ -14,12 +14,12 @@ const data: IndustryPageData = {
   heroTitle: "NetSuite for Advertising & Marketing Agencies",
   heroDescription:
     "Run a more profitable agency with a cloud ERP purpose-built for project-based billing, resource management, and client financial visibility. NetSuite empowers agencies to scale without losing control.",
-  heroImage: "/images/industries/marketing.jpg",
+  heroImage: "/images/hero/industry_marketing_hero.png",
   heroCardTitle: "Agency ERP & Project Management",
   heroCardSub: "Projects · Retainers · Billing · Resource Planning",
   heroTopCardTitle: "Trusted by Leading Agencies",
   heroTopCardSub: "Digital · Creative · Media · Integrated",
-  introImage: "/images/lap/lap9_11zon.webp",
+  introImage: "/images/benefits/adv_marketing_overview.png",
   introTitle: "Built for Creative & Digital Agencies",
   introDescription:
     "Advertising and digital marketing agencies operate in a fast-paced, project-driven environment where profitability lives and dies on utilisation rates, scope creep management, and timely billing. Most agencies outgrow their spreadsheets and fragmented tools well before they realise it.",
@@ -46,58 +46,58 @@ const data: IndustryPageData = {
       title: "Project & Campaign Management",
       description:
         "Plan and manage campaigns, creative projects, and retainers with tasks, milestones, budgets, and resource assignments — all connected to billing.",
-      image: "/images/lap/lap6_11zon.webp",
+      image: "/images/benefits/benefit_gbm_processes.png",
     },
     {
       title: "Resource & Utilisation Management",
       description:
         "Allocate creative, strategy, and technical resources across projects based on skills and availability. Track utilisation rates and identify bottlenecks before they impact delivery.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/benefits/benefit_scalable_growth.png",
     },
     {
       title: "Flexible Client Billing",
       description:
         "Support retainer, T&M, fixed-fee, and milestone billing models. Generate client invoices directly from approved timesheets and campaign deliverables.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/benefit_crm_quote_to_cash.png",
     },
     {
       title: "Client Profitability Reporting",
       description:
         "Real-time client and project P&L dashboards showing revenue, costs, and margins — enabling leadership to spot unprofitable accounts before they escalate.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/benefits/benefit_financial_visibility.png",
     },
     {
       title: "Time & Expense Mobile Entry",
       description:
         "Empower your creative team to capture billable time and out-of-pocket expenses instantly via mobile. Speed up your reimbursement and client billing cycles.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/benefits/benefit_crm_sales_automation.png",
     },
   ],
   features: [
     {
-      title: "Project Management",
-      description: "Comprehensive solutions for managing projects, including task tracking, resource allocation, and budget management.",
-      image: "/images/lap/lap1.webp",
+      title: "Campaign & Project Management (OpenAir)",
+      description: "Track creative campaigns, retainers, and client projects from brief to invoice using NetSuite OpenAir. Set milestones, assign tasks to creative teams, monitor budget-vs-actuals in real time, and trigger scope-creep alerts before margin is lost.",
+      image: "/images/adv-features/adv_feature_project_management.png",
     },
     {
-      title: "Resource Management",
-      description: "Maximize resource utilization and ensure on-time project delivery.",
-      image: "/images/lap/lap2.webp",
+      title: "Resource & Capacity Planning",
+      description: "Allocate designers, copywriters, and strategists based on skills and real-time availability. NetSuite's resource scheduling engine surfaces utilisation rates, prevents team overloading, and maximises your billable capacity across every engagement.",
+      image: "/images/adv-features/adv_feature_resource_management.png",
     },
     {
-      title: "Project Accounting",
-      description: "Systems for managing project finances, tracking costs, and generating accurate invoices.",
-      image: "/images/lap/lap4.webp",
+      title: "Multi-Model Client Billing (SuiteBilling)",
+      description: "Automate retainer, time-and-materials, fixed-fee, and milestone invoices directly from approved timesheets via NetSuite SuiteBilling. Reduce billing cycles from days to hours with zero manual data entry and eliminate revenue leakage.",
+      image: "/images/adv-features/adv_feature_project_accounting.png",
     },
     {
-      title: "Customer Relationship Management (CRM)",
-      description: "Cloud-based CRM solutions for managing interactions with customers, partners, and suppliers.",
-      image: "/images/lap/lap7_11zon.webp",
+      title: "Client & Pipeline CRM",
+      description: "Manage pitches, retainer renewals, and account growth in NetSuite's native CRM. Track client health scores, deal stages, and revenue forecasts — all connected to live project and financial data so your account team always has context.",
+      image: "/images/adv-features/adv_feature_crm.png",
     },
     {
-      title: "Financial Management",
-      description: "Automate bookkeeping and gain real-time visibility into your cash flow with NetSuite.",
-      image: "/images/lap/lap5.webp",
+      title: "Agency Financial Visibility & Reporting",
+      description: "Real-time P&L by client, project, or service line — without spreadsheets. NetSuite's financial dashboards give agency finance teams instant visibility into gross margin, WIP, accounts receivable ageing, and cash flow forecasts.",
+      image: "/images/adv-features/adv_feature_financial_management.png",
     },
   ],
   challenges: [

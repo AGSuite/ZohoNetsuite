@@ -74,7 +74,7 @@ export default function NetSuiteServicesClient() {
       description:
         "Go live on NetSuite faster, cleaner, and with zero surprises. Our proven implementation methodology covers everything from discovery workshops to hypercare — delivering a fully configured, user-adopted NetSuite system that works from day one.",
       link: "/netsuite/services/implementation",
-      image: "/images/lap/lap10_11zon.webp",
+      image: "/images/netsuiteimages/Servicesimg/cloud_migration.png",
       icon: Rocket,
     },
     {
@@ -106,7 +106,7 @@ export default function NetSuiteServicesClient() {
       description:
         "Extend NetSuite's capabilities with specialized SuiteScripts and custom forms. We build industry-specific features within the native framework to solve your most complex operational challenges and unique business requirements.",
       link: "/netsuite/services/customization",
-      image: "/images/Services/lowcodeservices.webp",
+      image: "/images/Services/ns_service_low_code_new.png",
       icon: Code,
     },
     {

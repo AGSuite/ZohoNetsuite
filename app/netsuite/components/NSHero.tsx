@@ -63,7 +63,7 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                 />
               </div>
 
-              <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-[52%_46%] gap-10 items-center">
+              <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-[52%_46%] gap-10 items-center -translate-y-4 lg:-translate-y-6">
                 <div className="max-w-2xl text-left lg:-ml-12">
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight bg-linear-to-r from-blue-950 via-blue-800 to-blue-900 bg-clip-text text-transparent pb-1">
                     Built for Your Industry. Powered by NetSuite.
@@ -438,46 +438,173 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   cta="Book a Demo"
                   link="/netsuite/contact"
                   customVisual={
-                    <div className="relative w-full h-full flex items-center justify-center p-4">
-                      {/* Cinematic Boost Scale (165%) */}
-                      <div className="relative z-10 w-[165%] max-w-none">
+                    <div className="relative w-full max-w-[520px] mx-auto flex items-center justify-center p-4">
+                      <div className="relative w-full">
                         <Image
-                          src="/images/Netsuite Latest Images/Case study/Netsute for Software technology and deployment services.webp"
-                          alt="Financial Operations"
-                          width={1800}
-                          height={1600}
-                          className="w-full h-auto object-contain filter drop-shadow-[0_25px_45px_rgba(79,70,229,0.2)] -mr-[15%] transition-transform duration-700 hover:scale-[1.01]" 
+                          src="/images/lap/netsuite_person_using_automated_dashboard.png"
+                          alt="NetSuite Automated Financial Transactions Dashboard"
+                          width={1900}
+                          height={1900}
+                          className="w-full h-auto rounded-2xl object-contain filter drop-shadow-[0_20px_35px_rgba(79,70,229,0.25)] transition-transform duration-700 hover:scale-[1.02]"
                           sizes="(max-width: 1024px) 100vw, 60vw"
                         />
-                      </div>
-                      
-                      {/* Top Corner Card (Commerce Style) */}
-                      <motion.div
-                        initial={{ opacity: 0, x: -30, y: -20 }}
-                        animate={{ opacity: 1, x: 0, y: 0 }}
-                        transition={{ duration: 0.7, delay: 0.8 }}
-                        className="absolute -top-6 -left-8 bg-white p-3.5 rounded-xl shadow-2xl z-40 flex items-center gap-4 border border-gray-100 min-w-[280px]"
-                      >
-                        <div className="w-11 h-11 rounded-lg bg-linear-to-br from-indigo-600 to-blue-700 flex items-center justify-center text-white shadow-lg">
-                          <Zap className="w-6 h-6" />
-                        </div>
-                        <span className="text-[15px] font-bold text-gray-800 leading-tight">Automated Accounting Engine</span>
-                      </motion.div>
+                        
+                        {/* Top Corner Card (Commerce Style) */}
+                        <motion.div
+                          initial={{ opacity: 0, x: -30, y: -20 }}
+                          animate={{ opacity: 1, x: 0, y: 0 }}
+                          transition={{ duration: 0.7, delay: 0.8 }}
+                          className="absolute -top-4 -left-6 bg-white p-3 rounded-xl shadow-2xl z-40 flex items-center gap-3 border border-gray-100 min-w-[260px]"
+                        >
+                          <div className="w-10 h-10 rounded-lg bg-linear-to-br from-indigo-600 to-blue-700 flex items-center justify-center text-white shadow-lg shrink-0">
+                            <Zap className="w-5 h-5" />
+                          </div>
+                          <span className="text-[14px] font-bold text-gray-800 leading-tight">Automated Accounting Engine</span>
+                        </motion.div>
 
-                      {/* Bottom-Center Power Card (Commerce Style) */}
-                      <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 1.1 }}
-                        className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[115%] bg-white p-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-40 flex items-center gap-5 border border-gray-50"
-                      >
-                        <div className="flex-shrink-0 w-14 h-14 rounded-full bg-indigo-50 flex items-center justify-center shadow-inner">
-                          <FileCheck className="w-8 h-8 text-indigo-600" />
-                        </div>
-                        <p className="text-[17px] font-medium text-[#1e3a5f] leading-snug">
-                          &quot;Eliminate your accounting bottlenecks and ensure 100% compliance with automated financials.&quot;
-                        </p>
-                      </motion.div>
+                        {/* Bottom-Center Power Card (Commerce Style) */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.8, delay: 1.1 }}
+                          className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[95%] bg-white p-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.15)] z-40 flex items-center gap-4 border border-gray-50"
+                        >
+                          <div className="flex-shrink-0 w-11 h-11 rounded-full bg-indigo-50 flex items-center justify-center shadow-inner shrink-0">
+                            <FileCheck className="w-6 h-6 text-indigo-600" />
+                          </div>
+                          <p className="text-[14px] font-medium text-[#1e3a5f] leading-snug">
+                            &quot;Eliminate your accounting bottlenecks and ensure 100% compliance with automated financials.&quot;
+                          </p>
+                        </motion.div>
+                      </div>
+                    </div>
+                  }
+                  showOverlay={false}
+                  textColor="dark"
+                />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <HeroSlide
+                  isActive={activeIndex === 6}
+                  gridClass="lg:grid-cols-[45%_55%]"
+                  customBg={
+                    <div className="absolute inset-0 overflow-hidden bg-slate-50">
+                      <div className="absolute -top-[10%] -left-[10%] w-[65%] h-[65%] rounded-full bg-gradient-to-br from-violet-200/40 via-indigo-100/30 to-transparent blur-[130px]" />
+                      <div className="absolute -bottom-[10%] -right-[10%] w-[65%] h-[65%] rounded-full bg-gradient-to-tl from-fuchsia-200/40 via-purple-100/30 to-transparent blur-[130px]" />
+                      {!isMobile && (
+                        <div className="absolute inset-0 opacity-[0.03]"
+                          style={{ backgroundImage: 'radial-gradient(#6366f1 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+                      )}
+                    </div>
+                  }
+                  title="Unified Global Control: Multi-Entity Consolidation"
+                  desc="Eliminate manual intercompany adjustments and complex currency translations. NetSuite automates consolidation across global subsidiaries, ensuring a faster and error-free financial close."
+                  cta="Book a Demo"
+                  link="/netsuite/contact"
+                  customVisual={
+                    <div className="relative w-full max-w-[520px] mx-auto flex items-center justify-center p-4">
+                      <div className="relative w-full">
+                        <Image
+                          src="/images/lap/netsuite_cfo_consolidation_dashboard.png"
+                          alt="NetSuite Multi-Entity Consolidation Dashboard"
+                          width={1900}
+                          height={1900}
+                          className="w-full h-auto rounded-2xl object-contain filter drop-shadow-[0_20px_35px_rgba(99,102,241,0.25)] transition-transform duration-700 hover:scale-[1.02]"
+                          sizes="(max-width: 1024px) 100vw, 60vw"
+                        />
+                        
+                        {/* Top Corner Card */}
+                        <motion.div
+                          initial={{ opacity: 0, x: -30, y: -20 }}
+                          animate={{ opacity: 1, x: 0, y: 0 }}
+                          transition={{ duration: 0.7, delay: 0.8 }}
+                          className="absolute -top-4 -left-6 bg-white p-3 rounded-xl shadow-2xl z-40 flex items-center gap-3 border border-gray-100 min-w-[260px]"
+                        >
+                          <div className="w-10 h-10 rounded-lg bg-linear-to-br from-violet-600 to-indigo-700 flex items-center justify-center text-white shadow-lg shrink-0">
+                            <TrendingUp className="w-5 h-5" />
+                          </div>
+                          <span className="text-[14px] font-bold text-gray-800 leading-tight">Global Ledger Engine</span>
+                        </motion.div>
+
+                        {/* Bottom-Center Power Card */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.8, delay: 1.1 }}
+                          className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[95%] bg-white p-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.15)] z-40 flex items-center gap-4 border border-gray-50"
+                        >
+                          <div className="flex-shrink-0 w-11 h-11 rounded-full bg-indigo-50 flex items-center justify-center shadow-inner shrink-0">
+                            <ShieldCheck className="w-6 h-6 text-indigo-600" />
+                          </div>
+                          <p className="text-[14px] font-medium text-[#1e3a5f] leading-snug">
+                            &quot;Consolidate multi-currency and multi-subsidiary financials instantly.&quot;
+                          </p>
+                        </motion.div>
+                      </div>
+                    </div>
+                  }
+                  showOverlay={false}
+                  textColor="dark"
+                />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <HeroSlide
+                  isActive={activeIndex === 7}
+                  gridClass="lg:grid-cols-[45%_55%]"
+                  customBg={
+                    <div className="absolute inset-0 overflow-hidden bg-white">
+                      <div className="absolute top-0 right-0 w-[55%] h-[55%] rounded-full bg-linear-to-br from-emerald-100/40 via-teal-50/20 to-transparent blur-[120px]" />
+                      <div className="absolute bottom-0 left-0 w-[55%] h-[55%] rounded-full bg-linear-to-tr from-blue-100/40 via-cyan-50/20 to-transparent blur-[120px]" />
+                      <div className="absolute inset-0 opacity-[0.04]" 
+                        style={{ backgroundImage: 'linear-gradient(#2563eb 1.5px, transparent 1.5px), linear-gradient(90deg, #2563eb 1.5px, transparent 1.5px)', backgroundSize: '80px 80px' }} />
+                    </div>
+                  }
+                  title="Predictive AI: Smart Cash Flow Forecasting"
+                  desc="Don't just track cash flow—predict it. Leverage NetSuite's built-in machine learning models to analyze trends, run scenarios, and navigate future markets with absolute certainty."
+                  cta="Book a Demo"
+                  link="/netsuite/contact"
+                  customVisual={
+                    <div className="relative w-full max-w-[520px] mx-auto flex items-center justify-center p-4">
+                      <div className="relative w-full">
+                        <Image
+                          src="/images/lap/netsuite_cfo_predictive_cashflow.png"
+                          alt="NetSuite Predictive Cash Flow Dashboard"
+                          width={1900}
+                          height={1900}
+                          className="w-full h-auto rounded-2xl object-contain filter drop-shadow-[0_20px_35px_rgba(16,185,129,0.25)] transition-transform duration-700 hover:scale-[1.02]"
+                          sizes="(max-width: 1024px) 100vw, 60vw"
+                        />
+                        
+                        {/* Top Corner Card */}
+                        <motion.div
+                          initial={{ opacity: 0, x: -30, y: -20 }}
+                          animate={{ opacity: 1, x: 0, y: 0 }}
+                          transition={{ duration: 0.7, delay: 0.8 }}
+                          className="absolute -top-4 -left-6 bg-white p-3 rounded-xl shadow-2xl z-40 flex items-center gap-3 border border-gray-100 min-w-[260px]"
+                        >
+                          <div className="w-10 h-10 rounded-lg bg-linear-to-br from-emerald-600 to-teal-700 flex items-center justify-center text-white shadow-lg shrink-0">
+                            <Zap className="w-5 h-5" />
+                          </div>
+                          <span className="text-[14px] font-bold text-gray-800 leading-tight">AI Financial Intelligence</span>
+                        </motion.div>
+
+                        {/* Bottom-Center Power Card */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.8, delay: 1.1 }}
+                          className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[95%] bg-white p-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.15)] z-40 flex items-center gap-4 border border-gray-50"
+                        >
+                          <div className="flex-shrink-0 w-11 h-11 rounded-full bg-emerald-50 flex items-center justify-center shadow-inner shrink-0">
+                            <FileCheck className="w-6 h-6 text-emerald-600" />
+                          </div>
+                          <p className="text-[14px] font-medium text-[#1e3a5f] leading-snug">
+                            &quot;Generate 12-month predictive cash demand models with a single click.&quot;
+                          </p>
+                        </motion.div>
+                      </div>
                     </div>
                   }
                   showOverlay={false}
@@ -542,7 +669,7 @@ const HeroSlide = ({
         <div className="absolute inset-0 bg-linear-to-r from-black/55 via-black/55 to-transparent" />
       )}
 
-      <div className={`relative z-10 mx-auto max-w-6xl ${containerClass} w-full grid grid-cols-1 ${activeGridClass} gap-10 lg:gap-27 items-center`}>
+      <div className={`relative z-10 mx-auto max-w-6xl ${containerClass} w-full grid grid-cols-1 ${activeGridClass} gap-10 lg:gap-27 items-center -translate-y-4 lg:-translate-y-6`}>
         <div className={`${textWidthClass} text-left ${textColumnClass}`}>
           <AnimatePresence mode="wait">
             {isActive && (

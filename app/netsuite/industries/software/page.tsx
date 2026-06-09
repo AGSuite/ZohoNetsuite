@@ -14,7 +14,7 @@ const data: IndustryPageData = {
   heroTitle: "NetSuite for Software & Technology Industries",
   heroDescription:
     "Scale your SaaS, software, or tech industry with a cloud ERP built for subscription revenue, ASC 606 compliance, and rapid growth. NetSuite is the platform of choice for 8,000+ software industries worldwide.",
-  heroImage: "/images/Services/trainingservices.webp",
+  heroImage: "/images/hero/industry_software_hero.png",
   heroCardTitle: "SaaS & Software ERP Platform",
   heroCardSub: "Subscriptions · ARR · Revenue Recognition · Billing",
   heroTopCardTitle: "8,000+ Software Industries",
@@ -46,58 +46,58 @@ const data: IndustryPageData = {
       title: "Subscription Billing & Management",
       description:
         "Automate complex subscription billing — monthly, annual, usage-based, and hybrid. Manage upgrades, downgrades, cancellations, and renewals with automated billing schedules.",
-      image: "/images/lap/lap6_11zon.webp",
+      image: "/images/benefits/benefit_crm_quote_to_cash.png",
     },
     {
       title: "SaaS Metrics & ARR/MRR Dashboards",
       description:
         "Real-time dashboards for ARR, MRR, churn, NRR, CAC, and LTV — giving your finance and leadership team the metrics that matter for SaaS growth.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/benefits/benefit_financial_visibility.png",
     },
     {
       title: "Revenue Recognition (ASC 606)",
       description:
         "Automate ASC 606 / IFRS 15 compliant revenue recognition schedules for multi-element arrangements, term licences, and subscription contracts — without spreadsheets.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/benefits/benefit_compliance_security.png",
     },
     {
       title: "Global Multi-Currency Operations",
       description:
         "Support global customers with 190+ currency handling, automated FX revaluation, and multi-subsidiary consolidation — ideal for tech industries expanding internationally.",
-      image: "/images/people/global.webp",
+      image: "/images/benefits/benefit_gbm_currency.png",
     },
     {
       title: "Unified CRM & ERP",
       description:
         "Seamlessly connect sales with finance. From lead-to-quote to order-to-cash, everything lives in one system, eliminating manual data re-entry and sync errors.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/benefits/benefit_unified_platform.png",
     },
   ],
   features: [
     {
       title: "Customized Solutions",
       description: "Tailored software and technology services to meet the unique needs and requirements of businesses.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/Services/ns_service_low_code_new.png",
     },
     {
       title: "Integration Features",
       description: "Ensuring smooth integration with existing systems and platforms to ensure compatibility and seamless operation",
-      image: "/images/lap/lap10_11zon.webp",
+      image: "/images/Services/ns_service_integration_new.png",
     },
     {
       title: "Cloud-Based Solutions",
       description: "Offering cloud-based software and technology solutions that provide flexibility, accessibility, and scalability to businesses.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/Services/ns_service_digital_transformation_new.png",
     },
     {
       title: "Global Business Management",
       description: "Seamlessly manage multiple currencies and reporting as your business expands.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/Services/ns_service_managed_new.png",
     },
     {
       title: "Automated Professional Services",
       description: "Maximize resource allocation, elevate on-time delivery, and streamline project accounting.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/Services/ns_service_training_new.png",
     },
   ],
   challenges: [

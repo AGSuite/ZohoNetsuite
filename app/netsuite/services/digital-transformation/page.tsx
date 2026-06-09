@@ -87,7 +87,7 @@ export default function DigitalTransformationPage() {
       title: "ERP Integration",
       description:
         "Replace siloed legacy ERPs with NetSuite's unified cloud-native platform — eliminating data silos, manual reconciliations, and costly custom code.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/netsuiteimages/Servicesimg/erp_integration.png",
       color: "#1e3a8a",
       rgb: "14,50,130",
       Icon: Database,
@@ -96,7 +96,7 @@ export default function DigitalTransformationPage() {
       title: "Cloud Migration",
       description:
         "Safely lift and shift your on-premise systems to the cloud with zero data loss — including data cleansing, parallel run testing, and cutover support.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/netsuiteimages/Servicesimg/cloud_migration.png",
       color: "#0e7490",
       rgb: "14,116,144",
       Icon: Cloud,
@@ -105,7 +105,7 @@ export default function DigitalTransformationPage() {
       title: "Process Automation",
       description:
         "Identify and eliminate repetitive manual workflows across finance, operations, and HR using NetSuite SuiteFlow, workflows, and custom scripts.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/netsuiteimages/Servicesimg/process_automation.png",
       color: "#065f46",
       rgb: "6,95,70",
       Icon: Settings,
@@ -114,7 +114,7 @@ export default function DigitalTransformationPage() {
       title: "System Integration",
       description:
         "Connect NetSuite to your CRM, e-commerce, WMS, HRMS, or third-party platforms via pre-built connectors and custom REST/SOAP APIs.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/netsuiteimages/Servicesimg/system_integration.png",
       color: "#581c87",
       rgb: "88,28,135",
       Icon: GitMerge,
@@ -123,7 +123,7 @@ export default function DigitalTransformationPage() {
       title: "Data & Analytics",
       description:
         "Unlock the value hidden in your data with custom NetSuite dashboards, saved searches, SuiteAnalytics, and embedded Power BI / Tableau integrations.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/netsuiteimages/Servicesimg/data_analytics.png",
       color: "#92400e",
       rgb: "146,64,14",
       Icon: BarChart3,
@@ -132,7 +132,7 @@ export default function DigitalTransformationPage() {
       title: "AI & Intelligent Automation",
       description:
         "Embed AI-driven anomaly detection, demand forecasting, and smart approval routing into your NetSuite workflows for next-generation automation.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/netsuiteimages/Servicesimg/ai_intelligent_automation.png",
       color: "#1e1b4b",
       rgb: "30,27,75",
       Icon: BrainCircuit,
@@ -141,7 +141,7 @@ export default function DigitalTransformationPage() {
       title: "Custom Development",
       description:
         "Build bespoke SuiteApps, custom forms, and proprietary logic using SuiteScript 2.x — perfectly tailored to your unique industry requirements.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/netsuiteimages/Servicesimg/custom_development.png",
       color: "#1a4365",
       rgb: "26,67,101",
       Icon: Code2,
@@ -150,7 +150,7 @@ export default function DigitalTransformationPage() {
       title: "Mobile & Portal Solutions",
       description:
         "Extend NetSuite to field teams, customers, and vendors with responsive mobile interfaces, self-service portals, and PWA deployments.",
-      image: "/images/people/laptopmen.webp",
+      image: "/images/netsuiteimages/Servicesimg/mobile_portal.png",
       color: "#4a1942",
       rgb: "74,25,66",
       Icon: Smartphone,
@@ -159,7 +159,7 @@ export default function DigitalTransformationPage() {
       title: "Digital Strategy & Consulting",
       description:
         "Define a phased digital roadmap aligned with your business goals — from quick-win automations to multi-year transformation programmes.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/netsuiteimages/Servicesimg/digital_strategy.png",
       color: "#14532d",
       rgb: "20,83,45",
       Icon: Globe,
@@ -168,7 +168,7 @@ export default function DigitalTransformationPage() {
       title: "Change Management",
       description:
         "Ensure lasting adoption with end-user training, executive workshops, role-based learning paths, and structured hypercare post go-live.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/netsuiteimages/Servicesimg/change_management.png",
       color: "#7f1d1d",
       rgb: "127,29,29",
       Icon: Users,
@@ -177,7 +177,7 @@ export default function DigitalTransformationPage() {
       title: "Cybersecurity & Compliance",
       description:
         "Harden your NetSuite environment with role-based access controls, SOC 2 / ISO 27001 alignment, audit trails, and penetration testing.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/netsuiteimages/Servicesimg/cybersecurity_compliance.png",
       color: "#312e81",
       rgb: "49,46,129",
       Icon: Lock,
@@ -186,7 +186,7 @@ export default function DigitalTransformationPage() {
       title: "Managed Support Services",
       description:
         "Protect your investment with 24/7 monitoring, proactive upgrades, SLA-backed support, and a dedicated NetSuite success manager.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/netsuiteimages/Servicesimg/managed_support.png",
       color: "#0c4a6e",
       rgb: "12,74,110",
       Icon: Headphones,
@@ -198,7 +198,7 @@ export default function DigitalTransformationPage() {
       title: "Accelerated Time-to-Value",
       description:
         "Our proven rapid-deployment methodology gets your teams live on NetSuite in weeks, not months — with a structured cutover plan and hypercare that minimises disruption.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/lap/netsuite_person_using_automated_dashboard.png",
       points: [
         "Pre-configured industry templates",
         "Parallel run testing before cutover",
@@ -210,7 +210,7 @@ export default function DigitalTransformationPage() {
       title: "Unified Business Operations",
       description:
         "Eliminate data silos by connecting finance, supply chain, HR, and CRM in a single source of truth — giving every team the same real-time picture of the business.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/lap/netsuite_ai_hero.png",
       points: [
         "One platform across all departments",
         "Automated inter-company transactions",
@@ -222,7 +222,7 @@ export default function DigitalTransformationPage() {
       title: "Real-Time Business Intelligence",
       description:
         "Stop running the business on last month's numbers. NetSuite's live dashboards and configurable KPIs put decision-critical data in front of every role, always up to date.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/lap/ai_business_insights.png",
       points: [
         "Role-based executive dashboards",
         "Drill down from KPI to transaction",
@@ -234,7 +234,7 @@ export default function DigitalTransformationPage() {
       title: "Scalable Cloud Architecture",
       description:
         "Add new subsidiaries, regions, currencies, and users in minutes — not months. NetSuite scales with you, with zero infrastructure investment and 99.99% uptime SLA.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/lap/supply_chain_optimization.png",
       points: [
         "190+ currency support built-in",
         "Multi-subsidiary in a single tenant",
@@ -246,7 +246,7 @@ export default function DigitalTransformationPage() {
       title: "AI-Powered Process Automation",
       description:
         "Remove humans from repetitive, rules-based tasks across finance, procurement, and operations — freeing your team to focus on growth, not administration.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/lap/netsuite_cfo_predictive_cashflow.png",
       points: [
         "Automated AP/AR matching & posting",
         "AI-driven demand forecasting",
@@ -258,7 +258,7 @@ export default function DigitalTransformationPage() {
       title: "Enterprise-Grade Security & Compliance",
       description:
         "Protect your business data with SOC 1 & SOC 2 certified controls, field-level security, full audit trails, and multi-factor authentication — out of the box.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/netsuiteimages/Servicesimg/cybersecurity_compliance.png",
       points: [
         "SOC 1, SOC 2 & ISO 27001 aligned",
         "Role-based access with field-level control",
@@ -516,21 +516,20 @@ export default function DigitalTransformationPage() {
       {/* ── What is Digital Transformation ───────────────────────────────── */}
       <section id="what-is-dt" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="flex items-center justify-center rounded-2xl overflow-hidden p-4"
-              style={{ minHeight: 340 }}
+              className="relative w-full h-full min-h-[350px] lg:min-h-full rounded-2xl overflow-hidden shadow-2xl border border-gray-100"
             >
               <Image
-                src="/images/netsuiteimages/background/netsuiteaccounting.webp"
+                src="/images/Services/ns_service_digital_transformation_new.png"
                 alt="NetSuite Digital Transformation"
-                width={560}
-                height={380}
-                className="w-full h-auto rounded-xl object-contain"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
               />
             </motion.div>
 

@@ -81,7 +81,7 @@ export default function SuiteProjectProPage() {
       title: "Global Resource Management",
       description:
         "Optimize resources across global teams with AI-powered insights, skills matching, and real-time utilization.",
-      image: "/images/people/global.webp",
+      image: "/images/modules/workforce_management.png",
       color: "#8b3a6a",
       rgb: "125,42,88",
     },
@@ -97,7 +97,7 @@ export default function SuiteProjectProPage() {
       title: "Revenue Recognition",
       description:
         "ASC 606 and IFRS 15 compliant revenue recognition with percentage-of-completion and milestone-based rules.",
-      image: "/images/people/laptopmen1.jpg",
+      image: "/images/modules/revenue_recognition_custom.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -113,7 +113,7 @@ export default function SuiteProjectProPage() {
       title: "Project Accounting",
       description:
         "Connect project activities directly to financials for accurate cost tracking and real-time margin analysis.",
-      image: "/images/lap/lap8_11zon.webp",
+      image: "/images/modules/project_management.png",
       color: "#1a6080",
       rgb: "20,88,115",
     },
@@ -121,7 +121,7 @@ export default function SuiteProjectProPage() {
       title: "Time & Expense",
       description:
         "Capture time and expenses from any device with smart rules for approval, policies, and project coding.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/modules/expense_management_custom.png",
       color: "#6a2575",
       rgb: "95,30,105",
     },
@@ -163,37 +163,37 @@ export default function SuiteProjectProPage() {
     {
       title: "Global Resource Management",
       description: "Optimize resource utilization across global teams, skills, and time zones with AI-powered insights.",
-      image: "/images/people/global.webp",
+      image: "/images/benefits/benefit_gbm_processes.png",
       points: ["AI-powered skill matching", "Cross-timezone visibility", "Real-time utilization tracking", "Global bench management"],
     },
     {
       title: "Complex Billing Automation",
       description: "Handle the most complex billing scenarios including outcome-based, recurring, and hybrid models.",
-      image: "/images/modules/cost_efficiency.png",
+      image: "/images/benefits/benefit_cost_efficiency.png",
       points: ["T&M, Fixed-Price, Hybrid billing", "Outcome-based models", "Automated invoice generation", "Client self-service portals"],
     },
     {
       title: "Advanced Revenue Recognition",
       description: "Automate revenue recognition compliant with ASC 606 and IFRS 15 for accurate financial forecasting.",
-      image: "/images/people/laptopmen1.jpg",
+      image: "/images/benefits/benefit_automated_close.png",
       points: ["ASC 606 and IFRS 15 compliant", "Percentage-of-completion", "Milestone-based recognition", "Reduce audit risk"],
     },
     {
       title: "Global Operations",
       description: "Run a unified services organization across multiple countries, currencies, and tax jurisdictions.",
-      image: "/images/netsuiteimages/ns_global_business.png",
+      image: "/images/benefits/benefit_sc_global_ready.png",
       points: ["Multi-currency & multi-entity", "Local tax compliance", "Consolidated reporting", "100+ country support"],
     },
     {
       title: "Portfolio Management",
       description: "Gain executive-level visibility across hundreds of concurrent projects and programs.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/benefits/benefit_financial_visibility.png",
       points: ["Program-level dashboards", "Cross-project resource views", "Portfolio health indicators", "Risk & issue tracking"],
     },
     {
       title: "Enterprise Security",
       description: "Protect sensitive project and financial data with enterprise-grade security and role-based access.",
-      image: "/images/netsuiteimages/data_accuracy_compliance_risk.png",
+      image: "/images/benefits/benefit_compliance_security.png",
       points: ["Role-based access controls", "SOC 2 Type II certified", "Data encryption at rest & in transit", "Comprehensive audit trails"],
     },
   ];
@@ -316,8 +316,8 @@ export default function SuiteProjectProPage() {
                 {/* Main image — smaller, rounded */}
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
                   <Image
-                    src="/images/lap/lap9_11zon.webp"
-                    alt="NetSuite SuiteProject Pro"
+                    src="/images/hero/openair_suiteproject_hero.png"
+                    alt="NetSuite SuiteProject Pro Dashboard"
                     fill
                     sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover object-center"
@@ -325,27 +325,27 @@ export default function SuiteProjectProPage() {
                   />
                   {/* Bottom scrim */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-
-                  {/* Bottom white card — inside image at bottom */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.1, duration: 0.6, ease: "easeOut" }}
-                    className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3"
-                  >
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #059669, #10b981)' }}>
-                      <CheckCircle2 className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-gray-900 text-sm font-bold leading-tight">
-                        Manage 1,000s of projects globally
-                      </p>
-                      <p className="text-gray-500 text-xs mt-0.5 leading-snug">
-                        Real-time PSA · Global Resources · ASC 606 Revenue Rec.
-                      </p>
-                    </div>
-                  </motion.div>
                 </div>
+
+                {/* Bottom white card — same width as image, sits at bottom edge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.1, duration: 0.6, ease: "easeOut" }}
+                  className="absolute -bottom-6 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3 z-10"
+                >
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #059669, #10b981)' }}>
+                    <CheckCircle2 className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-gray-900 text-sm font-bold leading-tight">
+                      Manage 1,000s of projects globally
+                    </p>
+                    <p className="text-gray-500 text-xs mt-0.5 leading-snug">
+                      Real-time PSA · Global Resources · ASC 606 Revenue Rec.
+                    </p>
+                  </div>
+                </motion.div>
 
                 {/* Top-left white card — peeking outside image on the left */}
                 <motion.div
@@ -524,18 +524,18 @@ export default function SuiteProjectProPage() {
           </motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {modules.map((mod, index) => (
-              <Link key={index} href="#contact-form" className="block">
+              <Link key={index} href="#contact-form" className="block h-full">
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
                   whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white"
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white h-full"
                   style={{ minHeight: 380 }}
                 >
                   {/* Top: Image Section with Color Overlay */}
-                  <div className="relative h-48 shrink-0 overflow-hidden">
+                  <div className="relative h-56 shrink-0 overflow-hidden">
                     <Image
                       src={mod.image}
                       alt={mod.title}
@@ -558,7 +558,7 @@ export default function SuiteProjectProPage() {
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">
                         {mod.title}
                       </h4>
-                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">
+                      <p className="text-white/90 text-sm leading-snug font-medium">
                         {mod.description}
                       </p>
                     </div>
@@ -757,7 +757,7 @@ export default function SuiteProjectProPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#002a8c] via-[#0044cc] to-[#0099a3] shadow-2xl"
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#000814] via-[#001233] to-[#002a8c] shadow-2xl"
           >
             {/* Particles */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -774,18 +774,18 @@ export default function SuiteProjectProPage() {
 
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                   Transform Your Enterprise with NetSuite SuiteProject Pro —{" "}
                   <span className="text-cyan-300">Scale Globally.</span>
                 </h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">
+                <p className="text-white/80 text-base md:text-lg font-medium">
                   Join thousands of enterprise services organizations that traded complexity for the world&apos;s #1 cloud PSA solution.
                 </p>
               </div>
 
               <Link
                 href="#contact-form"
-                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
+                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
               >
                 Go Live with NetSuite SuiteProject Pro
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

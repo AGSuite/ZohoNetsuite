@@ -10,7 +10,7 @@ const data: IndustryPageData = {
   heroTitle: "Modernize & Streamline Telecom Operations with Oracle NetSuite ERP",
   heroDescription:
     "Empower your telecom business with a unified cloud ERP that delivers real-time visibility, automated billing, and scalable operations — from subscription management to multi-subsidiary financials.",
-  heroImage: "/images/industries/telecom-industry.webp",
+  heroImage: "/images/hero/industry_telecom_hero.png",
   heroCardTitle: "Telecom ERP Command Center",
   heroCardSub: "Billing · Revenue Recognition · OSS/BSS Integration · Compliance",
   heroTopCardTitle: "Trusted by Telecom Leaders",

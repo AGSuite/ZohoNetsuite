@@ -70,37 +70,37 @@ export default function NetSuiteERPPage() {
     {
       title: "Unified Platform",
       description: "Consolidate every department on a single cloud platform, eliminating data silos and manual reconciliation.",
-      image: "/images/modules/unified_platform.png",
+      image: "/images/benefits/benefit_unified_platform.png",
       points: ["One source of truth across Finance, HR, CRM & Supply Chain", "Eliminate duplicate data entry across systems", "Real-time sync between all departments", "Single login for your entire organisation"]
     },
     {
       title: "Real-Time Visibility",
       description: "Access critical business metrics instantly with live dashboards and customisable reports.",
-      image: "/images/modules/real_time_visibility.png",
+      image: "/images/benefits/benefit_financial_visibility.png",
       points: ["Configurable role-based dashboards", "Live KPIs without manual data pulls", "Drill-down from summary to transaction level", "Automated scheduled reports delivered to inboxes"]
     },
     {
       title: "Scalable Architecture",
       description: "Start lean and grow without limits — NetSuite scales with your headcount, geography, and transaction volume.",
-      image: "/images/people/scaling.webp",
+      image: "/images/benefits/benefit_scalable_growth.png",
       points: ["Add subsidiaries and currencies in minutes", "Multi-entity consolidation built-in", "No infrastructure upgrades required", "Handles millions of transactions seamlessly"]
     },
     {
       title: "Cost Efficiency",
       description: "Automate repetitive tasks and eliminate redundant systems to significantly reduce operational costs.",
-      image: "/images/modules/cost_efficiency.png",
+      image: "/images/benefits/benefit_cost_efficiency.png",
       points: ["Reduce IT overhead with a single SaaS platform", "Automate month-end close and reconciliations", "Cut software licence sprawl across tools", "Lower audit costs with built-in controls"]
     },
     {
       title: "Intelligent Automation",
       description: "Take humans out of the loop for repetitive, rules-based tasks — freeing your team for strategic work.",
-      image: "/images/modules/intelligent_automation.png",
+      image: "/images/benefits/benefit_automated_close.png",
       points: ["Automated AP/AR, invoicing & purchase orders", "Workflow rules for approvals and escalations", "Revenue recognition on auto-pilot", "AI-driven demand forecasting"]
     },
     {
       title: "Compliance & Security",
       description: "Stay audit-ready at all times with enterprise-grade security controls and built-in compliance frameworks.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/benefits/benefit_compliance_security.png",
       points: ["SOC 1, SOC 2 & ISO 27001 certified", "Role-based access controls & audit trails", "Multi-factor authentication built-in", "Country-specific tax & regulatory compliance"]
     },
   ];
@@ -391,18 +391,18 @@ export default function NetSuiteERPPage() {
               { title: "Ecommerce", description: "Native B2B/B2C storefront connected directly to inventory, orders, and fulfilment.", image: "/images/modules/ecommerce.png", color: "#0f4e8a", rgb: "12,68,130" },
               { title: "Marketing Automation", description: "Campaign management, lead nurture, and ROI analytics integrated with CRM.", image: "/images/modules/marketing_automation.png", color: "#523a8a", rgb: "75,48,130" },
             ].map((mod, index) => (
-              <Link key={index} href="#contact-form" className="block">
+              <Link key={index} href="#contact-form" className="block h-full">
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
                   whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white"
+                  className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white h-full"
                   style={{ minHeight: 380 }}
                 >
                   {/* Top: Image Section with Color Overlay */}
-                  <div className="relative h-48 shrink-0 overflow-hidden">
+                  <div className="relative h-56 shrink-0 overflow-hidden">
                     <Image
                       src={mod.image}
                       alt={mod.title}
@@ -425,7 +425,7 @@ export default function NetSuiteERPPage() {
                       <h4 className="text-white font-bold text-lg mb-2 tracking-wide">
                         {mod.title}
                       </h4>
-                      <p className="text-white/90 text-sm leading-snug font-medium line-clamp-3">
+                      <p className="text-white/90 text-sm leading-snug font-medium">
                         {mod.description}
                       </p>
                     </div>
@@ -701,11 +701,11 @@ export default function NetSuiteERPPage() {
             <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               {/* Left — Text */}
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                   Go Live with NetSuite ERP —{" "}
                   <span className="text-cyan-300">Faster Than You Think.</span>
                 </h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">
+                <p className="text-white/80 text-base md:text-lg font-medium">
                   Join 43,000+ businesses that replaced spreadsheets and legacy systems with the world&apos;s #1 cloud ERP. Your transformation starts with one conversation.
                 </p>
               </div>
@@ -713,7 +713,7 @@ export default function NetSuiteERPPage() {
               {/* Right — CTA Button (scrolls to form below) */}
               <a
                 href="#contact-form"
-                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
+                className="shrink-0 inline-flex items-center gap-3 bg-white text-[#002a8c] hover:bg-blue-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all duration-200 group active:scale-95"
               >
                 Start Your ERP Journey
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

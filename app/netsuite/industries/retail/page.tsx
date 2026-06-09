@@ -14,7 +14,7 @@ const data: IndustryPageData = {
   heroTitle: "NetSuite for Retail & E-Commerce",
   heroDescription:
     "Power your omnichannel retail operation from a single cloud platform. NetSuite connects your online store, physical locations, inventory, and financials — giving customers a seamless experience everywhere they shop.",
-  heroImage: "/images/industries/ecommerce.webp",
+  heroImage: "/images/hero/industry_retail_hero.png",
   heroCardTitle: "Unified Omnichannel Retail ERP",
   heroCardSub: "POS · E-Commerce · Inventory · Financials",
   heroTopCardTitle: "Trusted by 500+ Retailers",
