@@ -260,15 +260,13 @@ export const NSCircularDesign = () => {
 
                 {/* Central NetSuite Logo - Smaller */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90px] h-[90px] xl:w-[100px] xl:h-[100px] rounded-full bg-white flex items-center justify-center z-40 shadow-lg border-2 border-blue-100">
-                    <div className="relative w-[70%] h-[80%]">
-                        <Image
-                            src="/images/logos/oracle%20netsuite%20logo.png"
-                            alt="Oracle NetSuite"
-                            fill
-                            className="object-contain"
-                            sizes="100px"
-                        />
-                    </div>
+                    <Image
+                        src="/images/logos/oracle%20netsuite%20logo.png"
+                        alt="Oracle NetSuite"
+                        width={70}
+                        height={70}
+                        className="object-contain"
+                    />
                 </div>
 
                 {/* Revolving Stakeholder Icons on the dotted circle */}

@@ -66,6 +66,37 @@ function Counter({ value }: { value: number }) {
   );
 }
 
+const managedServicesFaqs = [
+  {
+    q: "What is included in NetSuite Managed Services?",
+    a: "NetSuite Managed Services covers 24/7 system monitoring, SLA-backed helpdesk support for user incidents, proactive management of bi-annual NetSuite upgrades, role and security audits, custom saved searches and reports, integration health monitoring, and strategic advisory with a dedicated success manager.",
+  },
+  {
+    q: "How do your support response and resolution SLAs work?",
+    a: "We offer tier-based, contractually binding SLAs based on issue severity. For example, under our Enterprise tier, Critical issues (system outages) receive a 1-hour response and a 4-hour fix SLA. High, Medium, and Low severity issues are resolved in accordance with standard business day timelines.",
+  },
+  {
+    q: "How do you handle NetSuite's bi-annual upgrades?",
+    a: "Every bi-annual upgrade is proactively managed. We review the NetSuite release notes against your customizations, run comprehensive regression testing in your sandbox, identify potential scripting or integration failures, resolve compatibility issues, and sign off on a successful upgrade before it hits production.",
+  },
+  {
+    q: "Can we use managed services hours for new custom development?",
+    a: "Yes! Depending on your chosen retainer plan, a set number of development hours is allocated each month. These hours can be used for building new custom records, creating SuiteScripts, defining SuiteFlow automations, or setting up new integrations.",
+  },
+  {
+    q: "Is there a long-term contract lock-in for your plans?",
+    a: "No. We offer flexible plans structured as monthly retainers on rolling contracts, allowing you to scale up or down your tier as your business support requirements change throughout the year.",
+  },
+  {
+    q: "How do you ensure data security and compliance?",
+    a: "Our team conducts quarterly security audits, manages role-based permissions, reviews audit trails, and helps package audit evidence. We adhere to industry compliance guidelines and use secure sandbox deployment pipelines to ensure database integrity.",
+  },
+  {
+    q: "How does a dedicated NetSuite Success Manager help my business?",
+    a: "Your named NetSuite Success Manager serves as a strategic advisor. They conduct monthly review meetings, analyze system usage patterns, help prioritize your development backlog, and guide your team on adopting new NetSuite features to maximize ROI.",
+  },
+];
+
 export default function ManagedServicesPage() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
@@ -908,7 +939,12 @@ export default function ManagedServicesPage() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────────── */}
-      <FAQ variant="netsuite-accounting" id="faq" />
+      <FAQ
+        variant="netsuite"
+        id="faq"
+        customSubtitle="Everything you need to know about NetSuite Managed Services — from support response SLAs and upgrade testing to custom development and strategic advisory."
+        customFaqs={managedServicesFaqs}
+      />
 
       {/* ── CTA Banner ────────────────────────────────────────────────────── */}
       <section className="py-16 bg-white">

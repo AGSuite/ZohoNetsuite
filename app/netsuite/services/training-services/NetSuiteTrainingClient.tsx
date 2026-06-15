@@ -66,6 +66,37 @@ function Counter({ value }: { value: number }) {
   );
 }
 
+const trainingFaqs = [
+  {
+    q: "What types of NetSuite training do you offer?",
+    a: "We offer a wide range of training services: Functional End-User training (core ERP/CRM), deep-dive NetSuite Administrator training, developer training (SuiteScript 2.x, SuiteFlow workflows), Advanced Analytics and Reporting (SuiteAnalytics Workbook, Saved Searches), and bi-annual New Release delta training.",
+  },
+  {
+    q: "Can you customize the training to our specific processes and configuration?",
+    a: "Yes, absolutely. We design custom curriculums tailored to your exact NetSuite setup, unique record configurations, and business process flows, rather than using generic, out-of-the-box demo accounts.",
+  },
+  {
+    q: "What formats are available for training sessions?",
+    a: "We provide flexible delivery modes: Live on-site instructor-led workshops, live virtual classrooms for distributed workforces, and asynchronous recorded sessions. All training files, slides, and videos are recorded for subsequent revision.",
+  },
+  {
+    q: "Do you provide hands-on practice during training?",
+    a: "Yes. All training sessions involve active, hands-on participation. We conduct practical exercises using either your dedicated NetSuite sandbox account or a sandbox setup mimicking your business operations.",
+  },
+  {
+    q: "Who are the trainers conducting the courses?",
+    a: "Our courses are led by NetSuite-certified consultants and administrators who bring 10+ years of real-world implementation experience, ensuring that your team learns directly from senior practitioners.",
+  },
+  {
+    q: "Do you provide post-training support or documentation?",
+    a: "Yes. Every training program includes custom step-by-step quick-reference guides, complete session recordings, and 30 days of post-training email and Q&A support to help resolve implementation doubts.",
+  },
+  {
+    q: "How do we measure the success of the training program?",
+    a: "We use pre- and post-session functional assessments, user confidence surveys, and post-go-live metrics (such as a reduction in user support desk tickets) to evaluate training effectiveness and return on investment.",
+  },
+];
+
 export default function NetSuiteTrainingClient() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
@@ -916,7 +947,12 @@ export default function NetSuiteTrainingClient() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────────── */}
-      <FAQ variant="netsuite-accounting" id="faq" />
+      <FAQ
+        variant="netsuite"
+        id="faq"
+        customSubtitle="Everything you need to know about NetSuite Training Services — from custom curriculums and delivery formats to certified trainers and post-training support."
+        customFaqs={trainingFaqs}
+      />
 
       {/* ── CTA Banner ────────────────────────────────────────────────────── */}
       <section className="py-16 bg-white">

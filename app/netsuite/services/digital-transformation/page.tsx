@@ -71,6 +71,37 @@ function Counter({ value }: { value: number }) {
   );
 }
 
+const digitalTransformationFaqs = [
+  {
+    q: "What is Digital Transformation with NetSuite?",
+    a: "Digital Transformation with NetSuite involves moving from siloed legacy systems or manual spreadsheets to a single, unified cloud-native ERP. This transformation optimizes business processes, connects data across finance, sales, and supply chain, and unlocks real-time visibility and scalability.",
+  },
+  {
+    q: "How do you ensure zero data loss during cloud migration?",
+    a: "We follow a strict data migration protocol: extracting, cleaning, mapping, and validating data from legacy databases. We conduct parallel run tests and final reconciliation cycles during cutover to ensure all records migration is 100% accurate.",
+  },
+  {
+    q: "Can NetSuite automate all of our workflows?",
+    a: "Yes, we automate workflow processes across departments. Using NetSuite's SuiteFlow engine and SuiteScript customizations, we can automate accounts payable/receivable posting, complex purchase order approval routing, inventory management, and lead-to-order processing.",
+  },
+  {
+    q: "How does digital transformation with NetSuite improve business intelligence?",
+    a: "It puts all operational and financial data in one unified ledger. Role-specific dashboards and KPIs give real-time analytics to users, allowing teams to analyze performance, configure custom reminders, and generate scheduled reports without batched exports.",
+  },
+  {
+    q: "How does AGSuite manage organizational change and training?",
+    a: "To ensure high user adoption, we provide comprehensive change management: structured post-launch hypercare, role-based hands-on user training in a sandbox environment, and custom quick-reference guides for all operational teams.",
+  },
+  {
+    q: "Is NetSuite suitable for international subsidiaries and currency management?",
+    a: "Yes, through NetSuite OneWorld. It supports multi-subsidiary structures, multi-GAAP compliance, automated intercompany transaction eliminations, 190+ currencies with real-time conversion rates, and country-specific tax rules.",
+  },
+  {
+    q: "How long does a digital transformation implementation take?",
+    a: "Timelines depend on the modules and custom features required. A phased implementation or mid-market SuiteSuccess deployment typically takes between 3 to 6 months, ensuring thorough testing and safe system cutover.",
+  },
+];
+
 export default function DigitalTransformationPage() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
@@ -915,7 +946,12 @@ export default function DigitalTransformationPage() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────────── */}
-      <FAQ variant="netsuite-accounting" id="faq" />
+      <FAQ
+        variant="netsuite"
+        id="faq"
+        customSubtitle="Everything you need to know about NetSuite Digital Transformation — from cloud migration and workflow automation to change management and project timelines."
+        customFaqs={digitalTransformationFaqs}
+      />
 
       {/* ── CTA Banner ────────────────────────────────────────────────────── */}
       <section className="py-16 bg-white">

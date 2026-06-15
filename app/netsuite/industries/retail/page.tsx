@@ -38,61 +38,86 @@ const data: IndustryPageData = {
   ],
   benefits: [
     {
-      title: "Omnichannel Commerce",
+      title: "Omnichannel Unified Experience",
       description:
-        "Sell seamlessly across web, mobile, in-store, and marketplace — with unified inventory, orders, and customer data across every channel.",
-      image: "/images/people/laptopgirl3.webp",
+        "Bridge the gap between physical retail (POS) and digital e-commerce storefronts, presenting a single customer profile and real-time inventory.",
+      image: "/images/netsuiteimages/ns_endtoend_management.png",
+      points: [
+        "Unified POS & e-commerce database",
+        "Consistent pricing & promotions online/in-store",
+        "360° customer purchase history view",
+      ],
     },
     {
-      title: "SuiteCommerce (Built-in E-Commerce)",
+      title: "Real-Time Inventory Synchronization",
       description:
-        "Launch a responsive B2C or B2B webstore powered directly by your NetSuite data — no middleware, real-time product availability, and unified checkout.",
-      image: "/images/lap/lap3.webp",
+        "Avoid overselling and stockouts with automated replenishment rules and cross-channel inventory visibility across all locations.",
+      image: "/images/netsuiteimages/ns_realtime_visibility.png",
+      points: [
+        "Multi-location inventory tracking",
+        "Automatic safety stock alerts",
+        "Accurate online product availability status",
+      ],
     },
     {
-      title: "Inventory & Order Management",
+      title: "Automated Fulfillment & Order Routes",
       description:
-        "Real-time multi-location inventory with automated replenishment, ship-from-store, click-and-collect, and drop-ship fulfilment options.",
-      image: "/images/lap/lap9_11zon.webp",
+        "Optimize shipping costs and speeds using advanced order routing (ship-from-store, buy-online-pickup-in-store, drop-ship).",
+      image: "/images/netsuiteimages/Servicesimg/process_automation.png",
+      points: [
+        "Intelligent routing rules",
+        "BOPIS & click-and-collect support",
+        "Seamless 3PL & carrier integrations",
+      ],
     },
     {
-      title: "Customer & Loyalty Management",
+      title: "Data-Driven Merchandising & Analytics",
       description:
-        "Full 360° customer view across channels. Manage loyalty programmes, personalised promotions, and customer purchase history in one system.",
-      image: "/images/lap/lap5.webp",
+        "Leverage robust BI tools to uncover SKU profitability, category performance, and customer lifetime value.",
+      image: "/images/netsuiteimages/Servicesimg/data_analytics.png",
+      points: [
+        "Real-time channel profitability dashboards",
+        "Slow-moving SKU identification alerts",
+        "Subscriber & loyalty lifecycle metrics",
+      ],
     },
     {
-      title: "Personalized Promotions & Marketing",
+      title: "Elastic Peak Season Scalability",
       description:
-        "Leverage unified customer data to create targeted promotions and personalized marketing campaigns. Drive repeat purchases and increase customer lifetime value.",
-      image: "/images/people/laptopgirl.webp",
+        "Scale transaction processing elastically to handle high holiday traffic (e.g. Black Friday Cyber Monday) without system lag.",
+      image: "/images/netsuiteimages/ns_rapid_scaling.png",
+      points: [
+        "Cloud-native SaaS infrastructure",
+        "High-volume transaction processing",
+        "Zero local server maintenance costs",
+      ],
     },
   ],
   features: [
     {
-      title: "Omnichannel Commerce",
-      description: "Deliver a seamless shopping experience across all channels, from online stores to physical locations.",
-      image: "/images/lap/lap1.webp",
+      title: "SuiteCommerce & Web Storefronts",
+      description: "Build responsive, SEO-friendly B2C and B2B shopping portals native to NetSuite, eliminating sync middleware.",
+      image: "/images/netsuiteimages/ns_digital_transformation.png",
     },
     {
-      title: "Inventory Management",
-      description: "Optimize inventory levels, minimize stockouts, and boost profitability with company-wide inventory visibility.",
-      image: "/images/lap/lap4.webp",
+      title: "Smart Inventory & Replenishment",
+      description: "Gain global visibility into stock across warehouses, retail locations, and transit paths with automated purchasing triggers.",
+      image: "/images/netsuiteimages/scalability_and_adaptability.png",
     },
     {
-      title: "Customer Relationship Management",
-      description: "Track and analyze multi-channel marketing campaigns, automate case management, and provide real-time customer data.",
-      image: "/images/lap/lap7_11zon.webp",
+      title: "Omnichannel Order Management (OMS)",
+      description: "Automatically orchestrate order workflows from cart to delivery, routing orders dynamically to the optimal warehouse.",
+      image: "/images/netsuiteimages/ns_automation_efficiency.png",
     },
     {
-      title: "Financial Management",
-      description: "Automate transaction flow and gain real-time access to financial and operational performance metrics.",
-      image: "/images/lap/lap10_11zon.webp",
+      title: "Marketplace & CRM Integration",
+      description: "Connect natively with major channels like Shopify, Amazon, and eBay while tracking marketing campaigns and loyalty.",
+      image: "/images/netsuiteimages/ns_integration_services.png",
     },
     {
-      title: "Order Management",
-      description: "Automate the entire order-to-fulfillment cycle for faster delivery and improved customer satisfaction.",
-      image: "/images/lap/lap8_11zon.webp",
+      title: "Automated Retail Accounting & Audit",
+      description: "Streamline daily sales audits, automate payment gateway reconciliation, and close books quickly with automated transaction flows.",
+      image: "/images/netsuiteimages/data_accuracy_compliance_risk.png",
     },
   ],
   challenges: [

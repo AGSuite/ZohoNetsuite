@@ -998,7 +998,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl bg-slate-950 text-white shadow-2xl border border-white/10 px-8 py-12 md:px-16 md:py-16"
+            className="relative overflow-hidden rounded-3xl bg-slate-950 text-white shadow-2xl border border-white/10 px-8 py-10 md:px-12 md:py-12"
           >
             {/* Animated star particles */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -1025,25 +1025,25 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
             <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
-              <div className="text-left max-w-3xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
+              <div className="text-left max-w-2xl">
+                <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-4 leading-tight">
                   Ready to Transform Your {data.industry} Operations?{" "}
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
                     Faster Than You Think.
                   </span>
                 </h2>
-                <p className="text-gray-300 text-base md:text-lg font-medium">
+                <p className="text-gray-300 text-sm md:text-base font-medium">
                   Get a tailored NetSuite demo built specifically for your industry needs.
                 </p>
               </div>
               <div className="shrink-0 w-full lg:w-auto text-center">
                 <Link
                   href="#contact-form"
-                  className="inline-flex items-center gap-3 bg-white text-slate-950 hover:bg-slate-100 font-bold text-base md:text-lg px-8 py-4 md:px-10 md:py-5 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 group w-full lg:w-auto justify-center"
+                  className="inline-flex items-center gap-3 bg-white text-slate-950 hover:bg-slate-100 font-bold text-sm md:text-base px-6 py-3 md:px-8 md:py-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 group w-full lg:w-auto justify-center"
                 >
                   Start Your Journey
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>

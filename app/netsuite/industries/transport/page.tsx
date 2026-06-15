@@ -19,7 +19,7 @@ const data: IndustryPageData = {
   heroCardSub: "Fleet · Freight · Warehouse · Financials",
   heroTopCardTitle: "Trusted Across Logistics Sectors",
   heroTopCardSub: "3PL · Freight · Last-Mile · Courier",
-  introImage: "/images/lap/lap5.webp",
+  introImage: "/images/netsuiteimages/transport_overview.png",
   introTitle: "Real-Time Visibility Across Every Mile",
   introDescription:
     "Transportation and logistics industries deal with razor-thin margins, complex customer billing, driver management, fleet costs, and compliance requirements. Most rely on disconnected TMS, fleet, and accounting systems that create costly blind spots.",

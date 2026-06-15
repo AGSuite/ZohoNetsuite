@@ -66,6 +66,37 @@ function Counter({ value }: { value: number }) {
   );
 }
 
+const lowCodeFaqs = [
+  {
+    q: "What is NetSuite Low-Code Development?",
+    a: "NetSuite low-code development leverages the platform's native SuiteCloud framework — including SuiteScript 2.x, SuiteFlow (visual workflow builder), SuiteBuilder, and SuiteTalk APIs. It allows developers to quickly build custom database records, automate business processes, design interactive dashboards, and configure custom screens natively within NetSuite.",
+  },
+  {
+    q: "Is low-code development in NetSuite upgrade-safe?",
+    a: "Yes, absolutely. By using NetSuite's standard SuiteCloud extension model (SuiteScript, SuiteFlow, and Custom Records) rather than altering the core platform database, all customizations are fully insulated. They survive NetSuite's bi-annual automatic upgrades without regressions, keeping your ERP system upgrade-safe by design.",
+  },
+  {
+    q: "What is the difference between SuiteScript and SuiteFlow?",
+    a: "SuiteFlow is NetSuite's visual workflow engine, ideal for point-and-click automation like approval routings, lead nurturing, and simple record updates. SuiteScript is a JavaScript-based API used when you need complex business logic, bulk data processing (map/reduce), scheduled operations, or integrations that exceed SuiteFlow's visual boundaries.",
+  },
+  {
+    q: "Can we build custom mobile applications on NetSuite using low-code?",
+    a: "Yes. We can extend NetSuite's mobile capabilities by building responsive, mobile-optimized SuiteApps or leveraging SuiteTalk REST/SOAP APIs to connect with external mobile platforms. This enables field service, warehouse management, and sales teams to access and update NetSuite data from any device.",
+  },
+  {
+    q: "How long does a typical low-code customization project take?",
+    a: "Timelines depend on complexity. Simple visual workflows or basic SuiteScripts can be delivered in a matter of days. Larger projects, such as building a custom SuiteApp or a vendor/customer self-service portal, typically take between 4 to 8 weeks, including thorough sandbox testing and documentation.",
+  },
+  {
+    q: "Can NetSuite low-code customizations connect with third-party software?",
+    a: "Yes, NetSuite's SuiteTalk APIs (both SOAP and REST) and RESTlets allow us to expose custom data endpoints and process flows. This ensures seamless integration with external systems like Shopify, Salesforce, HubSpot, custom web portals, and shipping carriers.",
+  },
+  {
+    q: "How does AGSuite ensure the quality and performance of custom scripts?",
+    a: "We follow NetSuite governance limits and SuiteScript 2.x best practices to avoid performance bottlenecks. Every script is thoroughly tested in a sandbox environment using mock data under peak load, fully documented with JSDoc, and delivered with a deployment runbook for seamless production migration.",
+  },
+];
+
 export default function NetSuiteLowCodeServices() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
@@ -904,7 +935,12 @@ export default function NetSuiteLowCodeServices() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────────── */}
-      <FAQ variant="netsuite-accounting" id="faq" />
+      <FAQ
+        variant="netsuite"
+        id="faq"
+        customSubtitle="Everything you need to know about NetSuite Low-Code development — from SuiteScript and SuiteFlow to APIs and implementation timelines."
+        customFaqs={lowCodeFaqs}
+      />
 
       {/* ── CTA Banner ────────────────────────────────────────────────────── */}
       <section className="py-16 bg-white">

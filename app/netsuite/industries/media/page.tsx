@@ -43,61 +43,86 @@ const data: IndustryPageData = {
   ],
   benefits: [
     {
-      title: "Subscription Management & Billing",
+      title: "Unified Revenue & Billing Operations",
       description:
-        "Automate subscription billing — print, digital, bundled, and freemium. Manage renewals, upgrades, cancellations, and churn analytics in one system.",
-      image: "/images/lap/lap5.webp",
+        "Consolidate diverse media revenue streams — subscriptions, advertising, licensing, and merchandising — onto a single ledger for complete financial visibility and zero revenue leakage.",
+      image: "/images/netsuiteimages/ns_integration_services.png",
+      points: [
+        "Integrated subscription & ad billing",
+        "Eliminated cross-department data silos",
+        "Real-time revenue stream tracking",
+      ],
     },
     {
-      title: "Advertising Revenue Management",
+      title: "Automated Royalty & Payout Cycles",
       description:
-        "Track insertion orders, ad placements, yield, and collections. Reconcile advertising revenue across digital, print, and broadcast channels in real time.",
-      image: "/images/lap/lap3.webp",
+        "Configure complex royalty agreements by title, contributor, and territory. Automate statements and payouts directly from sales data, reducing processing time and billing disputes.",
+      image: "/images/netsuiteimages/ns_managed_services.png",
+      points: [
+        "Tier-based royalty automation",
+        "Automated statements & payouts",
+        "Accelerated publisher close times",
+      ],
     },
     {
-      title: "Content Licensing & Royalties",
+      title: "Audit-Ready Revenue Recognition (ASC 606)",
       description:
-        "Automate royalty calculations based on sales, licensing agreements, and distribution deals. Generate royalty statements and payments directly from NetSuite.",
-      image: "/images/people/laptopmen2.webp",
+        "Simplify compliance for complex contracts, bundled digital-print subscriptions, and multi-year licensing deals with NetSuite's Advanced Revenue Management.",
+      image: "/images/netsuiteimages/data_accuracy_compliance_risk.png",
+      points: [
+        "ASC 606 & IFRS 15 compliance",
+        "Automated deferred revenue schedules",
+        "Dynamic multi-element allocation rules",
+      ],
     },
     {
-      title: "Revenue Recognition (ASC 606)",
+      title: "Audience Lifecycle & Churn Analytics",
       description:
-        "Automate deferred revenue recognition for multi-period subscriptions, bundled licences, and event revenue — fully compliant with ASC 606 / IFRS 15.",
-      image: "/images/people/global.webp",
+        "Track audience metrics like MRR, Customer Acquisition Cost (CAC), Customer Lifetime Value (LTV), and churn rates to optimize subscription models and retention plans.",
+      image: "/images/netsuiteimages/Servicesimg/data_analytics.png",
+      points: [
+        "Real-time subscriber LTV tracking",
+        "Automated churn warning signals",
+        "Advanced audience segmentation tools",
+      ],
     },
     {
-      title: "Multi-Channel Revenue Consolidation",
+      title: "Scalable Multi-Entity Consolidation",
       description:
-        "Unify revenue from subscriptions, digital ads, and physical sales in one place. Gain a holistic view of your audience's lifetime value across all platforms.",
-      image: "/images/people/laptopgirl3.webp",
+        "Scale operations across regions and channels. NetSuite OneWorld consolidates multiple subsidiaries, currencies, and tax jurisdictions in real time.",
+      image: "/images/netsuiteimages/ns_rapid_scaling.png",
+      points: [
+        "Real-time global consolidation",
+        "Multi-currency ad & subscription billing",
+        "Local tax compliance auto-updates",
+      ],
     },
   ],
   features: [
     {
-      title: "Financial Management",
-      description: "Automate transaction flow and gain real-time access to financial and operational performance metrics.",
-      image: "/images/lap/lap1.webp",
+      title: "Subscription Billing & SuiteBilling",
+      description: "Automate subscription renewals, dunning, and upgrades across print, digital, and bundled plans. Reduce involuntary churn with intelligent payment retry workflows built into NetSuite SuiteBilling.",
+      image: "/images/netsuiteimages/ns_automation_efficiency.png",
     },
     {
-      title: "Inventory Management",
-      description: "Optimize inventory levels, minimize stockouts, and boost profitability with company-wide inventory visibility.",
-      image: "/images/lap/lap4.webp",
+      title: "Advertising Revenue Tracking",
+      description: "Manage insertion orders, digital impressions, and yield reconciliation across all ad channels. Track ad revenue against targets in real time and automate billing directly from delivery data.",
+      image: "/images/netsuiteimages/ns_realtime_visibility.png",
     },
     {
-      title: "Customer Relationship Management",
-      description: "Track and analyze multi-channel marketing campaigns, automate case management, and provide real-time customer data.",
-      image: "/images/lap/lap6_11zon.webp",
+      title: "Royalty & Rights Automation",
+      description: "Configure royalty rate schedules by title, territory, and channel. Automatically calculate and generate royalty statements and AP payments for authors, artists, and licensors — on time, every time.",
+      image: "/images/netsuiteimages/ns_endtoend_management.png",
     },
     {
-      title: "E-commerce Integration",
-      description: "Unify e-commerce platforms with backend systems for a seamless online shopping experience.",
-      image: "/images/lap/lap7_11zon.webp",
+      title: "Revenue Recognition (ASC 606 / IFRS 15)",
+      description: "Eliminate spreadsheet-driven revenue schedules. NetSuite's Advanced Revenue Management automatically defers and recognises revenue for subscriptions, bundles, and licensing deals in full compliance with ASC 606.",
+      image: "/images/netsuiteimages/ns_global_business.png",
     },
     {
-      title: "Subscription Analytics",
-      description: "Gain real-time visibility into MRR, Churn, and LTV with NetSuite's advanced subscription analytics.",
-      image: "/images/lap/lap8_11zon.webp",
+      title: "Audience CRM & Churn Analytics",
+      description: "Segment audiences by subscription tier, engagement, and lifetime value. Monitor real-time MRR, churn rate, and cohort retention — then trigger automated win-back campaigns before subscribers lapse.",
+      image: "/images/netsuiteimages/ns_digital_transformation.png",
     },
   ],
   challenges: [
@@ -193,34 +218,28 @@ const data: IndustryPageData = {
   ],
   faqs: [
     {
-      question:
-        "Can NetSuite automate subscription renewal billing and dunning?",
-      answer:
-        "Yes. NetSuite SuiteBilling automates subscription renewals, sends renewal notices, and executes automated dunning workflows for failed payments — reducing churn caused by involuntary cancellations.",
+      question: "How does NetSuite automate complex subscription billing and involuntary churn management?",
+      answer: "NetSuite SuiteBilling handles recurring digital subscriptions, print schedules, and bundled hybrid plans. It automates dunning workflows, intelligent payment retries, and renewal notifications to lower involuntary churn.",
     },
     {
-      question:
-        "Does NetSuite handle royalty payments to authors, artists, and content creators?",
-      answer:
-        "Yes. NetSuite's royalty module calculates payments based on configurable rate structures (flat royalty, escalating tiers, per-unit) and integrates with AP to generate royalty payments on schedule.",
+      question: "Can NetSuite reconcile programmatic and insertion-order advertising revenue?",
+      answer: "Yes. NetSuite integrates with ad serving and programmatic platforms (like Google Ad Manager) to pull impressions and delivery data, automatically reconciling it with insertion orders to generate accurate invoices and recognize revenue.",
     },
     {
-      question:
-        "How does NetSuite handle deferred revenue for annual subscriptions?",
-      answer:
-        "NetSuite automatically creates deferred revenue journal entries for prepaid subscriptions and amortises them over the subscription term according to your configured revenue recognition schedule — fully ASC 606 compliant.",
+      question: "Does NetSuite support automated royalty calculations and payouts for content creators?",
+      answer: "Absolutely. NetSuite configures custom royalty rate schedules by contributor, territory, and channels. It automatically processes stream or sales data to calculate payouts, compile statements, and trigger accounts payable runs.",
     },
     {
-      question:
-        "Can NetSuite integrate with our ad server or programmatic advertising platform?",
-      answer:
-        "Yes. NetSuite integrates with major ad serving platforms via REST APIs and certified SuiteApps. AGSuite can build custom connectors to reconcile ad impression data, insertion orders, and billing in NetSuite.",
+      question: "How does NetSuite ensure compliance with ASC 606 and IFRS 15 for media companies?",
+      answer: "NetSuite's Advanced Revenue Management automatically handles deferred revenue for multi-element bundles (e.g., digital access + print delivery + event ticket). It splits contract value by standalone selling price and releases revenue over the service term.",
     },
     {
-      question:
-        "Does NetSuite support event ticketing and event revenue management?",
-      answer:
-        "Yes. NetSuite can manage event revenue, ticket sales, sponsorship billing, and post-event financial reconciliation — either natively or through integration with Eventbrite or Cvent.",
+      question: "Can NetSuite consolidate financials for media companies with multiple brands or subsidiaries?",
+      answer: "Yes. NetSuite OneWorld enables real-time consolidation across multiple media properties, brands, currencies, and tax jurisdictions, streamlining intercompany eliminations and giving an aggregate view of operations.",
+    },
+    {
+      question: "How does NetSuite track audience analytics and customer lifetime value (LTV)?",
+      answer: "NetSuite integrates customer demographics, subscription history, and engagement behavior into a single CRM. Real-time dashboards track metrics like Monthly Recurring Revenue (MRR), Customer Acquisition Cost (CAC), and subscriber LTV.",
     },
   ],
   relatedIndustries: [

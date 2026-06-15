@@ -66,6 +66,37 @@ function Counter({ value }: { value: number }) {
   );
 }
 
+const integrationFaqs = [
+  {
+    q: "What integration methodologies do you support for NetSuite?",
+    a: "We support multiple methodologies depending on your architecture: out-of-the-box SuiteCloud connectors, middleware integration platforms (Celigo, Dell Boomi, MuleSoft, Zapier), custom RESTlets, and SuiteTalk REST/SOAP APIs.",
+  },
+  {
+    q: "Can you integrate NetSuite with custom or legacy systems?",
+    a: "Yes. We build custom APIs and RESTlets within NetSuite to connect with proprietary databases, custom customer portals, or legacy systems that do not have standard connectors.",
+  },
+  {
+    q: "How do you handle e-commerce integrations?",
+    a: "We connect NetSuite to Shopify, Magento, WooCommerce, BigCommerce, and Amazon. Our integrations sync customer data, inventory levels, order placements, billing information, and fulfillment details in real time, eliminating manual data entry.",
+  },
+  {
+    q: "How do your integrations handle synchronization errors?",
+    a: "We design resilient error-handling frameworks with automated retry mechanisms, dead-letter queues, and real-time alert notifications (via email or Slack). All transaction logs are recorded in a central monitoring dashboard.",
+  },
+  {
+    q: "Is it possible to integrate NetSuite with payment gateways?",
+    a: "Yes, we integrate with Stripe, PayPal, Razorpay, Adyen, and other payment providers. This automates invoice payment capture, settlement matching, cash application, and customer refund processing.",
+  },
+  {
+    q: "How do you ensure data security during transfer?",
+    a: "All connections use secure protocols including OAuth 2.0 token-based authentication, TLS 1.3 encrypted transport, and IP address whitelisting to safeguard sensitive financial and customer database records.",
+  },
+  {
+    q: "How long does it take to implement a standard integration?",
+    a: "Implementation timelines vary: pre-built SaaS connectors (such as Shopify or Salesforce via Celigo) can be deployed in 2 to 4 weeks, whereas complex, multi-point enterprise middleware integrations can take 8 to 12 weeks.",
+  },
+];
+
 export default function NetSuiteIntegrationClient() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeBenefit, setActiveBenefit] = useState(0);
@@ -901,7 +932,12 @@ export default function NetSuiteIntegrationClient() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────────── */}
-      <FAQ variant="netsuite-accounting" id="faq" />
+      <FAQ
+        variant="netsuite"
+        id="faq"
+        customSubtitle="Everything you need to know about NetSuite Integration Services — from middleware solutions and e-commerce connectors to error handling and data security."
+        customFaqs={integrationFaqs}
+      />
 
       {/* ── CTA Banner ────────────────────────────────────────────────────── */}
       <section className="py-16 bg-white">

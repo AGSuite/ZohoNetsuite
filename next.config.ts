@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 604800,
     dangerouslyAllowSVG: true,
-    qualities: [75, 80, 90],
+    qualities: [75, 80, 90, 95],
   },
   experimental: {
     optimizePackageImports: [

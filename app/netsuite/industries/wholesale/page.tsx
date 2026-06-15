@@ -51,31 +51,31 @@ const data: IndustryPageData = {
       title: "Multi-Location Inventory Management",
       description:
         "Real-time inventory visibility across all warehouses and distribution centres. Bin-level location tracking, lot/serial control, and cycle counting built in.",
-      image: "/images/benefits/benefit_gbm_visibility.png",
+      image: "/images/benefits/wholesale_multi_location_inventory.png",
     },
     {
       title: "Warehouse Management (WMS)",
       description:
         "NetSuite WMS covers receiving, put-away, pick/pack/ship, and returns — with mobile barcode scanning and directed workflows that boost warehouse productivity.",
-      image: "/images/benefits/benefit_sc_omnichannel.png",
+      image: "/images/benefits/wholesale_warehouse_management_wms.png",
     },
     {
       title: "Demand Planning & Replenishment",
       description:
         "Data-driven reorder points, safety stock calculations, and min/max replenishment connected to supplier lead times to optimise inventory investment.",
-      image: "/images/benefits/benefit_cost_efficiency.png",
+      image: "/images/benefits/wholesale_demand_planning_replenishment.png",
     },
     {
       title: "Customer Pricing & Contracts",
       description:
         "Manage complex customer-specific pricing, volume discounts, contract pricing, rebates, and trade promotions — with margin visibility at every level.",
-      image: "/images/benefits/benefit_crm_quote_to_cash.png",
+      image: "/images/benefits/wholesale_customer_pricing_contracts.png",
     },
     {
       title: "Lot & Serial Number Tracking",
       description:
         "Ensure full traceability with automated lot and serial number tracking. Manage expiration dates and handle recalls with precision and speed.",
-      image: "/images/benefits/benefit_gbm_compliance.png",
+      image: "/images/benefits/wholesale_lot_serial_tracking.png",
     },
   ],
   features: [

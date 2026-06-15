@@ -382,7 +382,7 @@ export default function NSServices() {
                 alt={service.title}
                 fill
                 className="object-cover"
-                sizes="100vw"
+                sizes="(max-width: 768px) calc(100vw - 48px), 100vw"
                 quality={95}
                 priority
               />
