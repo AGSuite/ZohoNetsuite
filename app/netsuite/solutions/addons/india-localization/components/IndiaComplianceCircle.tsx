@@ -4,32 +4,46 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // ─── India Compliance Circular Diagram Constants ──────────────────────────
-const ORBIT_ITEMS = [
-  { label: "GST",       angle: 0   },
-  { label: "TDS",       angle: 45  },
-  { label: "E-Invoice", angle: 90  },
-  { label: "E-Way Bill",angle: 135 },
-  { label: "GSTR",      angle: 180 },
-  { label: "TCS",       angle: 225 },
-  { label: "ITC",       angle: 270 },
-  { label: "HSN/SAC",   angle: 315 },
+// ─── India Compliance Circular Diagram Constants ──────────────────────────
+const ORBIT_ITEMS_LABELS = [
+  "GST",
+  "TDS & TCS",
+  "E-Invoice",
+  "E-Way Bill",
+  "GSTR-2B",
+  "Multi-Book",
 ];
 
-const INNER_SEGMENTS = [
-  { label: "GST\nAutomation",    angle: -90  },
-  { label: "E-Invoice\n(IRP)",   angle: -30  },
-  { label: "TDS / TCS",          angle: 30   },
-  { label: "E-Way Bill",         angle: 90   },
-  { label: "GSTR\nReports",      angle: 150  },
-  { label: "ITC\nManagement",    angle: 210  },
+const ORBIT_ITEMS = ORBIT_ITEMS_LABELS.map((label, idx) => {
+  const angle = idx * (360 / ORBIT_ITEMS_LABELS.length);
+  return { label, angle };
+});
+
+const INNER_SEGMENTS_LABELS = [
+  "Multi-Book\nAccounting",
+  "Multi GSTIN\nManagement",
+  "GST\nCompliance",
+  "GSTR-2B\nReconciliation",
+  "ISD\nManagement",
+  "E-Invoice &\nE-Way Bill",
+  "MSME & Related\nParty",
+  "Vendor\nBalance",
+  "Vendor\nStatement",
+  "TDS & TCS\nCompliance",
+  "Compliance\nCalendar",
 ];
+
+const INNER_SEGMENTS = INNER_SEGMENTS_LABELS.map((label, idx) => {
+  const angle = -90 + idx * (360 / INNER_SEGMENTS_LABELS.length);
+  return { label, angle };
+});
 
 export default function IndiaComplianceCircle() {
   const CX = 260; // SVG centre x
   const CY = 260; // SVG centre y
-  const HUB_R = 90;          // dark centre circle - slightly larger to hold more text
-  const INNER_RING_OUTER_R = 190; // larger ring
-  const INNER_RING_INNER_R = 105; // slightly smaller inner for thicker ring
+  const HUB_R = 104;          // increased dark centre circle size for better readability
+  const INNER_RING_OUTER_R = 200; // shifted outer radius outward
+  const INNER_RING_INNER_R = 114; // shifted inner radius outward to maintain gap and thickness
 
   // Generate a donut-segment arc path
   function arcPath(innerR: number, outerR: number, startDeg: number, endDeg: number) {
@@ -84,10 +98,10 @@ export default function IndiaComplianceCircle() {
           opacity="0.3"
         />
 
-        {/* ── Inner white donut ring with 6 segments ── */}
+        {/* ── Inner white donut ring with segments ── */}
         {INNER_SEGMENTS.map((seg, i) => {
-          const gap = 4; // degrees gap between segments
-          const segSpan = 60;
+          const gap = 3; // degrees gap between segments
+          const segSpan = 360 / INNER_SEGMENTS.length;
           const half = segSpan / 2 - gap / 2;
           const start = seg.angle - half;
           const end = seg.angle + half;
@@ -105,7 +119,8 @@ export default function IndiaComplianceCircle() {
 
         {/* ── Segment divider lines (spokes) ── */}
         {INNER_SEGMENTS.map((seg, i) => {
-          const rad = ((seg.angle - 30) * Math.PI) / 180;
+          const segSpan = 360 / INNER_SEGMENTS.length;
+          const rad = ((seg.angle - (segSpan / 2)) * Math.PI) / 180;
           return (
             <line
               key={i}
@@ -130,17 +145,17 @@ export default function IndiaComplianceCircle() {
           return (
             <text
               key={i}
-              x={x} y={y - (lines.length > 1 ? 7 : 0)}
+              x={x} y={y - (lines.length > 1 ? 6 : 0)}
               textAnchor="middle"
               dominantBaseline="middle"
-              fontSize="10"
-              fontWeight="700"
+              fontSize="9"
+              fontWeight="800"
               fill="#1e3a8a"
-              letterSpacing="0.3"
+              letterSpacing="0.2"
               style={{ textTransform: "uppercase" }}
             >
               {lines.map((ln, li) => (
-                <tspan key={li} x={x} dy={li === 0 ? 0 : 13}>{ln}</tspan>
+                <tspan key={li} x={x} dy={li === 0 ? 0 : 11}>{ln}</tspan>
               ))}
             </text>
           );
@@ -162,11 +177,11 @@ export default function IndiaComplianceCircle() {
           dominantBaseline="middle" 
           fontWeight="900" 
           className="fill-white"
-          style={{ fontSize: '12px', letterSpacing: '0.8px' }}
+          style={{ fontSize: '13.5px', letterSpacing: '0.8px' }}
         >
-          <tspan x={CX} dy="-1.3em" fontSize="13">NETSUITE</tspan>
-          <tspan x={CX} dy="1.4em" fill="#93c5fd">INDIA</tspan>
-          <tspan x={CX} dy="1.4em" fill="#93c5fd">LOCALIZATION</tspan>
+          <tspan x={CX} dy="-1.2em">INDIA</tspan>
+          <tspan x={CX} dy="1.25em" fill="#93c5fd">LOCALIZATION</tspan>
+          <tspan x={CX} dy="1.25em">FOR NETSUITE</tspan>
         </text>
       </svg>
 

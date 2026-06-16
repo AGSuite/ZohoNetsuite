@@ -15,7 +15,7 @@ const data: IndustryPageData = {
   heroCardSub: "Billing · Revenue Recognition · OSS/BSS Integration · Compliance",
   heroTopCardTitle: "Trusted by Telecom Leaders",
   heroTopCardSub: "Subscription-Ready · Cloud-Native · Scalable",
-  introImage: "/images/lap/lap2.webp",
+  introImage: "/images/netsuiteimages/ns_global_business.png",
   introTitle: "Why NetSuite ERP for the Telecom Industry?",
   introDescription:
     "The telecom industry is transforming rapidly — with increasing service demands, complex billing models, multi-channel operations, and rising regulatory requirements. To stay competitive, telecom companies need a scalable, cloud-based ERP that delivers real-time visibility, automation, and unified operations across finance, service delivery, and customer management.",
@@ -32,7 +32,7 @@ const data: IndustryPageData = {
       title: "Service Performance Dashboards",
       description:
         "Real-time visibility into ARPU, churn, usage trends, billing performance, and operational metrics — all consolidated in a single executive dashboard for faster, data-driven decisions.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/netsuiteimages/ns_realtime_visibility.png",
       points: [
         "ARPU & churn rate tracking",
         "Billing performance KPIs",
@@ -43,7 +43,7 @@ const data: IndustryPageData = {
       title: "Subscription & Usage-Based Billing",
       description:
         "Support recurring plans, data/usage billing, bundled services, and tiered pricing with complete accuracy. Automate invoice generation, credit management, and dunning processes.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/netsuiteimages/scalability_and_adaptability.png",
       points: [
         "Tiered & bundled pricing",
         "Usage-based billing automation",
@@ -54,7 +54,7 @@ const data: IndustryPageData = {
       title: "Integrated Order-to-Cash Automation",
       description:
         "Streamline orders, provisioning, billing, renewals, and collections with a unified workflow — reducing cycle time and eliminating manual handoffs across departments.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/netsuiteimages/ns_automation_efficiency.png",
       points: [
         "End-to-end order automation",
         "Provisioning workflow integration",
@@ -65,7 +65,7 @@ const data: IndustryPageData = {
       title: "Telecom-Focused Revenue Recognition",
       description:
         "Automate recognition for subscription, device, and hybrid revenue models with full ASC 606/IFRS 15 compliance. Eliminate spreadsheets and manual adjustments.",
-      image: "/images/lap/lap9_11zon.webp",
+      image: "/images/netsuiteimages/data_accuracy_compliance_risk.png",
       points: [
         "ASC 606 / IFRS 15 compliance",
         "Hybrid revenue model support",
@@ -76,7 +76,7 @@ const data: IndustryPageData = {
       title: "Multi-Subsidiary & Global Expansion",
       description:
         "Manage multiple entities, currencies, tax environments, and telecom regulations from a single ERP system. Simplify inter-company eliminations and global financial consolidation.",
-      image: "/images/lap/lap8_11zon.webp",
+      image: "/images/netsuiteimages/ns_global_business.png",
       points: [
         "Multi-entity consolidation",
         "Multi-currency support",
@@ -86,29 +86,29 @@ const data: IndustryPageData = {
   ],
   features: [
     {
-      title: "Subscription and Usage-Based Billing",
-      description: "Support recurring, consumption, tiered, and flat-rate billing models.",
-      image: "/images/lap/lap1.webp",
+      title: "Subscription & Rating Engine",
+      description: "Manage complex subscription lifecycle events, high-volume usage rating (voice, data, SMS, API calls), and automated tiered pricing rules.",
+      image: "/images/netsuiteimages/ns_rapid_scaling.png",
     },
     {
-      title: "Revenue Recognition",
-      description: "Automate deferred revenue recognition for multi-period subscriptions and bundled licenses.",
-      image: "/images/lap/lap3.webp",
+      title: "Advanced Revenue Recognition (ASC 606)",
+      description: "Automate deferred revenue schedules, multi-element contracts (device sales + recurring services), and ensure compliance natively.",
+      image: "/images/netsuiteimages/ns_training_services.png",
     },
     {
-      title: "Financial Management",
-      description: "Automate transaction flow and gain real-time access to financial and operational performance metrics.",
-      image: "/images/lap/lap6_11zon.webp",
+      title: "OSS/BSS & Provisioning Integration",
+      description: "Connect customer provisioning platforms, network controllers, and third-party billing engines directly with NetSuite financials.",
+      image: "/images/netsuiteimages/ns_integration_services.png",
     },
     {
-      title: "Customer Relationship Management (CRM)",
-      description: "Cloud-based CRM solutions for managing interactions with customers, partners, and suppliers.",
-      image: "/images/people/laptopgirl.webp",
+      title: "Partner & Channel Commissions",
+      description: "Calculate broker, retail distributor, and affiliate partner commissions based on customer acquisition and monthly recurring revenue (MRR).",
+      image: "/images/netsuiteimages/ns_low_code_dev.png",
     },
     {
-      title: "Order Management",
-      description: "Automate the entire order-to-fulfillment cycle for faster delivery and improved customer satisfaction.",
-      image: "/images/lap/lap4.webp",
+      title: "Dunning & Credit Control Management",
+      description: "Automate customer payment notifications, retry logic for failed credit card transactions, and customized dunning strategies to prevent churn.",
+      image: "/images/netsuiteimages/ns_managed_services.png",
     },
   ],
   challenges: [

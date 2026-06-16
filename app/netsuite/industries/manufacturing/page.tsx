@@ -19,7 +19,7 @@ const data: IndustryPageData = {
   heroCardSub: "Production · Inventory · Financials · Supply Chain",
   heroTopCardTitle: "Trusted by 1,000+ Manufacturers",
   heroTopCardSub: "Certified · Cloud-Native · SuiteCloud",
-  introImage: "/images/lap/lap2.webp",
+  introImage: "/images/netsuiteimages/ns_endtoend_management.png",
   introTitle: "Purpose-Built ERP for Modern Manufacturers",
   introDescription:
     "Manufacturing businesses face relentless pressure — rising costs, supply chain volatility, complex compliance, and the need for real-time data. NetSuite's cloud manufacturing ERP provides a single, unified system that connects every process from production planning to financial close.",
@@ -35,59 +35,84 @@ const data: IndustryPageData = {
     {
       title: "Production Planning & Scheduling",
       description:
-        "Plan and schedule production runs, manage work orders, track machine utilisation, and optimise shop floor throughput — all from a single NetSuite dashboard.",
-      image: "/images/lap/lap4.webp",
+        "Plan and schedule production runs, manage work orders, track machine utilization, and optimize shop floor throughput — all from a single NetSuite dashboard.",
+      image: "/images/netsuiteimages/ns_endtoend_management.png",
+      points: [
+        "Create drag-and-drop production schedules natively.",
+        "Gain real-time capacity and routing visibility.",
+        "Minimize production bottlenecks and machine downtime."
+      ]
     },
     {
       title: "Multi-Location Inventory Management",
       description:
         "Real-time inventory visibility across all warehouses. Manage raw materials, WIP, and finished goods with bin-level tracking and automated replenishment.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/netsuiteimages/ns_global_business.png",
+      points: [
+        "Track inventory levels across global multi-depot sites.",
+        "Automate replenishment triggers based on lead times.",
+        "Perform cycle counts and bin-level tracking on mobile."
+      ]
     },
     {
       title: "Quality Management & Compliance",
       description:
         "Define quality standards, automate inspection workflows, track defect rates, and ensure ISO/GMP compliance natively inside NetSuite.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/netsuiteimages/data_accuracy_compliance_risk.png",
+      points: [
+        "Set strict quality check parameters for raw materials.",
+        "Enforce in-process inspections on the production line.",
+        "Record and trace non-conformance for compliance audits."
+      ]
     },
     {
       title: "Supply Chain Visibility",
       description:
         "Connect with suppliers, manage purchase orders, track deliveries, and get real-time landed cost visibility across your entire supply chain.",
-      image: "/images/lap/lap9_11zon.webp",
+      image: "/images/netsuiteimages/ns_realtime_visibility.png",
+      points: [
+        "Achieve complete visibility of incoming raw material runs.",
+        "Trace product landed costs including freight and tariffs.",
+        "Track vendor performance scoring dynamically."
+      ]
     },
     {
       title: "Shop Floor Mobility",
       description:
         "Give your team real-time access to work orders and quality checklists via mobile. Capture production data instantly and reduce paper-based errors on the factory floor.",
-      image: "/images/people/laptopgirl3.webp",
+      image: "/images/netsuiteimages/ns_rapid_scaling.png",
+      points: [
+        "Deliver electronic work instructions to operators.",
+        "Record labor and scrap metrics in real time via mobile.",
+        "Eliminate paper traveler errors with digitized records."
+      ]
     },
   ],
   features: [
     {
-      title: "Financial Management",
-      description: "Automate transaction flow and gain real-time access to financial and operational performance metrics.",
-      image: "/images/lap/lap1.webp",
+      title: "Work Order & Assembly Management",
+      description: "Automate raw material allocation, create work order travelers, release assemblies, and track work-in-progress costs in real-time.",
+      image: "/images/netsuiteimages/ns_automation_efficiency.png",
     },
     {
-      title: "Inventory Management",
-      description: "Optimize inventory levels, minimize stockouts, and boost profitability with company-wide inventory visibility.",
-      image: "/images/lap/lap3.webp",
+      title: "Multi-Level Bill of Materials (BOM)",
+      description: "Establish and trace complex hierarchical parts lists, routing instructions, phantom components, and alternate revision configurations.",
+      image: "/images/netsuiteimages/ns_integration_services.png",
     },
     {
-      title: "Customer Relationship Management",
-      description: "Track and analyze multi-channel marketing campaigns, automate case management, and provide real-time customer data.",
-      image: "/images/people/laptopgirl.webp",
+      title: "Materials Requirement Planning (MRP)",
+      description: "Balance supply and demand inputs, forecast future stock needs, and generate automated purchase and production schedule recommendations.",
+      image: "/images/netsuiteimages/scalability_and_adaptability.png",
     },
     {
-      title: "E-commerce Integration",
-      description: "Unify e-commerce platforms with backend systems for a seamless online shopping experience.",
-      image: "/images/lap/lap5.webp",
+      title: "Shop Floor Control & MES Integration",
+      description: "Capture labor runtimes, machine performance, scrap counts, and line operations status using simple, tablet-friendly operators panels.",
+      image: "/images/netsuiteimages/ns_low_code_dev.png",
     },
     {
-      title: "Supply Chain Management",
-      description: "Optimize procurement and supplier relationships with NetSuite's unified supply chain suite.",
-      image: "/images/lap/lap10_11zon.webp",
+      title: "Quality Inspections & Auditing",
+      description: "Enforce inspect-on-receipt routines, log custom quality records, manage quarantine queues, and audit safety workflows natively.",
+      image: "/images/netsuiteimages/ns_training_services.png",
     },
   ],
   challenges: [

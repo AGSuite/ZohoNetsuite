@@ -19,7 +19,7 @@ const data: IndustryPageData = {
   heroCardSub: "Fleet · Freight · Warehouse · Financials",
   heroTopCardTitle: "Trusted Across Logistics Sectors",
   heroTopCardSub: "3PL · Freight · Last-Mile · Courier",
-  introImage: "/images/netsuiteimages/transport_overview.png",
+  introImage: "/images/netsuiteimages/ns_realtime_visibility.png",
   introTitle: "Real-Time Visibility Across Every Mile",
   introDescription:
     "Transportation and logistics industries deal with razor-thin margins, complex customer billing, driver management, fleet costs, and compliance requirements. Most rely on disconnected TMS, fleet, and accounting systems that create costly blind spots.",
@@ -38,61 +38,86 @@ const data: IndustryPageData = {
   ],
   benefits: [
     {
-      title: "Freight & Shipment Billing",
+      title: "Automated Freight Billing & Invoicing",
       description:
-        "Automate complex freight billing with rate tables, surcharges, fuel adjustments, and accessorial charges — by lane, customer, or contract.",
-      image: "/images/lap/lap7_11zon.webp",
+        "Streamline complex billing processes with fuel adjustments, accessorial surcharges, and lane rates, and auto-apply customer contract rules to resolve billing disputes.",
+      image: "/images/netsuiteimages/ns_automation_efficiency.png",
+      points: [
+        "Automate multi-lane and contract-specific billing rules.",
+        "Include dynamic fuel index surcharges and extra stop charges.",
+        "Trigger immediate billing via mobile proof of delivery (POD)."
+      ]
     },
     {
-      title: "Fleet Cost Management",
+      title: "Accurate Shipment & Lane Profitability",
       description:
-        "Track vehicle expenses, fuel consumption, maintenance schedules, and depreciation per vehicle — with real-time cost-per-mile reporting.",
-      image: "/images/lap/lap9_11zon.webp",
+        "Calculate gross margins per shipment, driver, route, or customer in real-time, giving operations teams the insights needed to maximize logistics efficiency.",
+      image: "/images/netsuiteimages/data_accuracy_compliance_risk.png",
+      points: [
+        "Analyze real-time gross margin by freight lane.",
+        "Allocate fleet overhead and driver salaries directly to trips.",
+        "Identify and prune low-performing or unprofitable routes."
+      ]
     },
     {
-      title: "Customer Contract & Rate Management",
+      title: "Optimized Fleet Cost & Maintenance",
       description:
-        "Manage customer-specific freight rates, contract terms, and volume commitments. Auto-apply applicable rates at order entry to eliminate billing disputes.",
-      image: "/images/people/laptopmen2.webp",
+        "Track vehicle maintenance history, asset depreciation, and fuel card transactions per vehicle to control fleet expenses and reduce breakdowns.",
+      image: "/images/netsuiteimages/ns_endtoend_management.png",
+      points: [
+        "Schedule preventive maintenance based on actual vehicle mileage.",
+        "Audit fuel card usage against odometer readings to reduce leakage.",
+        "Automate fixed asset depreciation for logistics fleets."
+      ]
     },
     {
-      title: "Financial Management & Job Costing",
+      title: "Third-Party Carrier & 3PL Integration",
       description:
-        "Accurate gross margin by shipment, lane, and customer. Automated AP for carrier invoices, multi-entity consolidation, and real-time financial dashboards.",
-      image: "/images/people/global.webp",
+        "Manage subcontracted shipments, spot-quotes, and carrier rates while automating carrier invoice reconciliation (3-way match) within NetSuite.",
+      image: "/images/netsuiteimages/ns_low_code_dev.png",
+      points: [
+        "Unify carrier spot-quote bidding and contract rates.",
+        "Automate carrier AP invoice matching against dispatch records.",
+        "Monitor subcontractor SLA compliance and delivery performance."
+      ]
     },
     {
-      title: "Route Density & Optimization",
+      title: "Unified TMS and ERP Environment",
       description:
-        "Optimize your transport network to increase route density and reduce empty miles. Gain visibility into lane profitability and make data-driven decisions on network expansion.",
-      image: "/images/lap/lap8_11zon.webp",
+        "Eliminate data silos by integrating your Transport Management System (TMS) directly with NetSuite ERP for consolidated financials.",
+      image: "/images/netsuiteimages/ns_integration_services.png",
+      points: [
+        "Sync shipments, routes, and billing from TMS to NetSuite.",
+        "Consolidate financials across multiple entities or logistics hubs.",
+        "Establish single-source visibility from booking to bank deposit."
+      ]
     },
   ],
   features: [
     {
-      title: "Order and Billing Management",
-      description: "Automate processing for initial and recurring transactions, and streamline billing across multiple revenue streams.",
-      image: "/images/lap/lap1.webp",
+      title: "Fleet & Asset Management",
+      description: "Manage tractor and trailer records, driver profiles, safety logs, and preventative maintenance schedules natively connected to financials.",
+      image: "/images/netsuiteimages/ns_realtime_visibility.png",
     },
     {
-      title: "Financial Management",
-      description: "Automate transaction flow and gain real-time access to financial and operational performance metrics.",
-      image: "/images/lap/lap2.webp",
+      title: "Freight Pricing & Rate Engine",
+      description: "Define multi-dimensional rate matrices by lane, customer contract, equipment type, zone-to-zone tables, and accessory fees.",
+      image: "/images/netsuiteimages/scalability_and_adaptability.png",
     },
     {
-      title: "Inventory and Warehouse Management",
-      description: "Optimize inventory levels, minimize stockouts, and boost profitability with company-wide inventory visibility.",
-      image: "/images/lap/lap3.webp",
+      title: "Dispatch & Route Optimization",
+      description: "Integrate dispatch schedules, load planning, and optimized routes with NetSuite to improve tractor utility and decrease empty miles.",
+      image: "/images/netsuiteimages/ns_rapid_scaling.png",
     },
     {
-      title: "Customer Relationship Management (CRM)",
-      description: "Cloud-based CRM solutions for managing interactions with customers, partners, and suppliers.",
-      image: "/images/people/laptopgirl.webp",
+      title: "Subcontractor & Carrier Management",
+      description: "Coordinate with external carriers, manage spot-market bids, generate manifests, and track compliance documentation easily.",
+      image: "/images/netsuiteimages/ns_managed_services.png",
     },
     {
-      title: "Order Management",
-      description: "Automate the entire order-to-fulfillment cycle for faster delivery and improved customer satisfaction.",
-      image: "/images/lap/lap6_11zon.webp",
+      title: "Real-time Shipment & Cargo Tracking",
+      description: "Track shipment milestones (in-transit, out for delivery, arrived) with direct integrations to GPS tracking, TMS, and mobile POD portals.",
+      image: "/images/netsuiteimages/ns_training_services.png",
     },
   ],
   challenges: [

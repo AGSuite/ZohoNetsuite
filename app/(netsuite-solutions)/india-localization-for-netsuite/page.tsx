@@ -49,69 +49,69 @@ export default function IndiaLocalizationPage() {
 
   const modules = [
     {
-      title: "Efficient GST Management",
-      description: "Our platform automates GST compliance through customized configuration of location, vendor, customer, and HSN code details. It handles tax calculations and filing for GSTR1, 2, 3B filings, and identifies transaction types. Additionally, the platform also provides separate CGST and SGST accounts to streamline organizational tax management.",
-      image: "/images/modules/gst_management.png",
+      title: "Multi-Book Accounting Support",
+      description: "Enable concurrent accounting under multiple books (such as Indian GAAP and US GAAP / IFRS) to satisfy local statutory compliance and corporate group standards simultaneously, automating separate tax treatment mapping and GL entry posting.",
+      image: "/images/modules/gbm_multi_gaap.png",
       rgb: "30,58,138"
     },
     {
-      title: "GST Advanced Features",
-      description: "GSTIN Validation and GSTR 2B Reconciliation within NetSuite. Ensure your tax filings are accurate and your vendors are compliant with real-time validation and automated reconciliation tools.",
-      image: "/images/modules/gst_validation.png",
+      title: "Multi Entity / Multi GSTIN Management",
+      description: "Manage multiple GST registration numbers (GSTINs) across different states within a single NetSuite instance. Automatically associate transactions with correct GSTINs, compute state-specific taxes, and generate consolidated reports.",
+      image: "/images/modules/gbm_multi_subsidiary.png",
       rgb: "6,95,70"
     },
     {
-      title: "Streamlined TDS Compliance",
-      description: "Our platform streamlines TDS management through customized setup of company, subsidiary and vendor details. It automates TDS calculations per government rules and vendor types for accuracy and compliance. The platform manages threshold limits and PAN rules, generates Form 26Q, and enables automatic GL posting to designated accounts.",
-      image: "/images/modules/tds_compliance.png",
+      title: "GST Compliance",
+      description: "Automate tax calculation and filing preparation for GSTR-1, GSTR-3B, and GSTR-9. Configures tax codes for CGST, SGST, IGST, and UTGST based on transaction origin/destination, customer type, and HSN/SAC codes.",
+      image: "/images/modules/gst_management.png",
       rgb: "124,45,18"
     },
     {
-      title: "TDS Advanced Features",
-      description: "TDS on Vendor PrePayment, TDS Challan, TXT File Generation for eTDS Return, 194Q & 206(1H). Handle complex TDS scenarios with automated processes for prepayments and statutory file generation.",
-      image: "/images/modules/tds_advanced.png",
+      title: "GSTR-2B Reconciliation within NetSuite",
+      description: "Reconcile purchases and input tax credits (ITC) automatically by matching NetSuite purchase records with monthly GSTR-2B reports downloaded from the GST portal, preventing incorrect ITC claims and identifying vendor mismatches.",
+      image: "/images/modules/gst_validation.png",
       rgb: "76,29,149"
     },
     {
-      title: "Auto TCS Calculation",
-      description: "TCS details setup on company/subsidiary, TCS detail setup on Customer records. Automatic tax calculation of TCS based on government rules, automatic GL posting in specific TCS Accounts. TCS Report: Form 27EQ.",
-      image: "/images/modules/tcs_calculation.png",
+      title: "ISD Management",
+      description: "Streamline Input Service Distributor (ISD) requirements by tracking common input tax credits on services and distributing them to other operating units or branches across states according to statutory formulas.",
+      image: "/images/modules/gbm_global_tax.png",
       rgb: "12,74,110"
     },
     {
-      title: "E-Invoicing",
-      description: "Integrates NetSuite with E-invoice Portal via our GSP Partner. Invoices created in NetSuite are validated and sent to E-invoice Portal in JSON Format via APIs. IRN and QR Code is generated and received back to NetSuite automatically. QR code is printed on existing invoice PDF.",
+      title: "E-Invoicing & E-Way Bill Integration",
+      description: "Automate JSON generation and API exchange with the Government's IRP/NIC portals. Generate, register, and embed IRN and QR codes onto NetSuite invoices, and generate E-Way Bills for shipments with direct print capabilities.",
       image: "/images/modules/e_invoicing.png",
       rgb: "113,63,18"
     },
     {
-      title: "E-Way Bill",
-      description: "NetSuite Integration with E-Way Bill Portal. E-Way Bill Registration, EBN Generation, receipt and store on the invoice record in NetSuite. Print E-Way Bill PDF, support B2B, B2C, Export, Error Handling and detailed Reports.",
-      image: "/images/modules/eway_bill.png",
+      title: "MSME & Related Party Reporting",
+      description: "Track and report transactions with MSME vendors and related parties. Monitor credit terms, track aging, and ensure compliance with statutory payment timelines (such as the 45-day MSME payment rule) within NetSuite.",
+      image: "/images/modules/msme_reporting.png",
       rgb: "19,78,74"
     },
     {
-      title: "Vendor Statement",
-      description: "Easily generate detailed vendor statements, enabling clear visibility into outstanding balances, transaction history, and payment schedules, enhancing transparency and vendor relations.",
-      image: "/images/modules/vendor_statement.png",
+      title: "Vendor Balance & MSME Confirmation",
+      description: "Automate vendor balance confirmation cycles and capture MSME status declarations. Provide vendors with digital self-service confirmations, reconciling account statements directly within the NetSuite environment.",
+      image: "/images/modules/ns_accounts_payable.png",
       rgb: "131,24,67"
     },
     {
-      title: "MSME Reporting",
-      description: "Access streamlined reporting tailored for MSME compliance, facilitating accurate tracking and timely submissions in accordance with regulatory standards for small and medium-sized enterprises.",
-      image: "/images/modules/msme_reporting.png",
+      title: "Vendor Statement",
+      description: "Generate detailed, itemized statements of accounts for suppliers. Tracks invoices, credit memos, payments, adjustments, and outstanding balances to facilitate clear communication and reconciliation.",
+      image: "/images/modules/vendor_statement.png",
       rgb: "30,58,138"
     },
     {
-      title: "Compliance Calendar and Reminders",
-      description: "Stay compliant effortlessly with an integrated calendar that schedules key deadlines, providing timely reminders to avoid missed filings and penalties.",
-      image: "/images/modules/compliance_calendar.png",
+      title: "TDS & TCS Compliance",
+      description: "Compute tax deducted at source (TDS) and tax collected at source (TCS) dynamically during transaction entry. Supports section threshold limits, PAN validation, Challan entry, and exports ready-to-file Form 26Q/27EQ data.",
+      image: "/images/modules/tds_compliance.png",
       rgb: "6,78,59"
     },
     {
-      title: "Audit Related Reports",
-      description: "Generate audit-ready reports with ease, ensuring accuracy and completeness in financial documentation, simplifying the audit process and fostering regulatory compliance.",
-      image: "/images/modules/audit_reports.png",
+      title: "Compliance Calendar with Automated Reminders",
+      description: "Never miss a statutory deadline. The system maps all GST, TDS, TCS, and corporate filing schedules, sending automated email and dashboard reminders to key personnel to avoid penalties and interest.",
+      image: "/images/modules/compliance_calendar.png",
       rgb: "120,53,15"
     },
   ];

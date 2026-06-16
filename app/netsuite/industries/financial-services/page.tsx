@@ -15,7 +15,7 @@ const data: IndustryPageData = {
   heroCardSub: "Compliance · Risk Management · Reporting · Multi-Entity Consolidation",
   heroTopCardTitle: "Trusted by Financial Leaders",
   heroTopCardSub: "Compliant · Secure · Scalable",
-  introImage: "/images/lap/lap10_11zon.webp",
+  introImage: "/images/lap/netsuite_person_using_automated_dashboard.png",
   introTitle: "Why NetSuite ERP for Financial Services Industry?",
   introDescription:
     "In a rapidly evolving financial landscape, organizations face challenges like regulatory compliance, data security, and operational inefficiencies. To stay competitive, financial institutions require a modern, cloud-based ERP solution that delivers real-time visibility, automation, and scalability.",
@@ -32,7 +32,7 @@ const data: IndustryPageData = {
       title: "End-to-End Financial Management",
       description:
         "Automate accounts payable, receivable, and general ledger operations with full audit trails. Eliminate manual reconciliation and close books faster with automated period-end processes.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/lap/netsuite_cfo_consolidation_dashboard.png",
       points: [
         "Automated AP/AR & GL",
         "Fast period-end close",
@@ -54,7 +54,7 @@ const data: IndustryPageData = {
       title: "Real-Time Analytics & Reporting",
       description:
         "Gain accurate, data-driven insights with customizable dashboards and reports. Access financial KPIs, risk metrics, and performance benchmarks in real time — no waiting for end-of-month reports.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/lap/netsuite_cfo_predictive_cashflow.png",
       points: [
         "Custom financial dashboards",
         "Real-time KPI tracking",
@@ -65,7 +65,7 @@ const data: IndustryPageData = {
       title: "Process Automation & Workflows",
       description:
         "Reduce manual workloads with smart workflows and automated approvals. Automate routine financial operations like invoice processing, payment runs, and reconciliation.",
-      image: "/images/lap/lap9_11zon.webp",
+      image: "/images/lap/ai_intelligent_automation.png",
       points: [
         "Multi-level approval workflows",
         "Automated payment runs",
@@ -76,7 +76,7 @@ const data: IndustryPageData = {
       title: "Scalability & Multi-Entity Support",
       description:
         "Easily scale your ERP system as your financial organization grows. Manage multi-entity, multi-currency, and multi-jurisdiction operations from a single consolidated platform.",
-      image: "/images/lap/lap8_11zon.webp",
+      image: "/images/lap/cash_demand_forecasting.png",
       points: [
         "Multi-subsidiary consolidation",
         "Multi-currency & multi-tax",
@@ -86,29 +86,29 @@ const data: IndustryPageData = {
   ],
   features: [
     {
-      title: "Comprehensive Financial Management",
-      description: "Automate accounts payable, receivable, and general ledger operations.",
-      image: "/images/lap/lap1.webp",
+      title: "General Ledger & Automated Close",
+      description: "Streamline complex journal entries, intercompany transactions, and period-end close processes with complete audit control.",
+      image: "/images/lap/lap4.webp",
     },
     {
-      title: "Compliance Automation",
-      description: "Built-in features ensure adherence to international accounting and reporting standards.",
-      image: "/images/lap/lap2.webp",
+      title: "Global Consolidation (OneWorld)",
+      description: "Consolidate multiple subsidiaries, currencies, and tax jurisdictions in real time with automated intercompany eliminations.",
+      image: "/images/lap/netsuite_cfo_consolidation_dashboard.png",
     },
     {
       title: "Advanced Financial Analytics",
-      description: "Gain accurate, data-driven insights with customizable dashboards and reports.",
-      image: "/images/lap/lap3.webp",
+      description: "Access real-time profitability tracking, key financial ratio calculators, risk indicators, and customized business intelligence reporting.",
+      image: "/images/lap/ai_business_insights.png",
     },
     {
-      title: "Workflow Automation",
-      description: "Reduce manual workloads with smart workflows and automated approvals.",
-      image: "/images/lap/lap5.webp",
+      title: "Automated Approval Workflows",
+      description: "Configure multi-level purchase, billing, and expense approval routing to enforce strict internal control policies.",
+      image: "/images/lap/ai_intelligent_automation.png",
     },
     {
-      title: "Multi-Entity Consolidation",
-      description: "Easily scale your ERP system as your financial organization grows.",
-      image: "/images/lap/lap6_11zon.webp",
+      title: "Tax & Regulatory Compliance",
+      description: "Automate compliance for global accounting standards (IFRS, GAAP) and local Indian regulations (GST, TDS, and e-invoicing).",
+      image: "/images/lap/lap9_11zon.webp",
     },
   ],
   challenges: [
