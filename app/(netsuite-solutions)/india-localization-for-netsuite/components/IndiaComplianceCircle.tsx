@@ -19,17 +19,17 @@ const ORBIT_ITEMS = ORBIT_ITEMS_LABELS.map((label, idx) => {
 });
 
 const INNER_SEGMENTS_LABELS = [
-  "Multi-Book\nAccounting",
-  "Multi GSTIN\nManagement",
+  "Multi Entity/Multi\nGSTIN Management",
   "GST\nCompliance",
-  "GSTR-2B\nReconciliation",
+  "GSTR-2B Reconciliation\nwithin NetSuite",
   "ISD\nManagement",
-  "E-Invoice &\nE-Way Bill",
-  "MSME & Related\nParty",
-  "Vendor\nBalance",
+  "E-Invoicing & E-Way\nBill Integration",
+  "MSME & Related\nParty Reporting",
+  "Vendor Balance &\nMSME Confirmation",
   "Vendor\nStatement",
   "TDS & TCS\nCompliance",
-  "Compliance\nCalendar",
+  "Compliance Calendar\n with Automated Reminders",
+  "Multi-Book\nAccounting Support",
 ];
 
 const INNER_SEGMENTS = INNER_SEGMENTS_LABELS.map((label, idx) => {
@@ -38,11 +38,11 @@ const INNER_SEGMENTS = INNER_SEGMENTS_LABELS.map((label, idx) => {
 });
 
 export default function IndiaComplianceCircle() {
-  const CX = 260; // SVG centre x
-  const CY = 260; // SVG centre y
-  const HUB_R = 104;          // increased dark centre circle size for better readability
-  const INNER_RING_OUTER_R = 200; // shifted outer radius outward
-  const INNER_RING_INNER_R = 114; // shifted inner radius outward to maintain gap and thickness
+  const CX = 350; // SVG centre x
+  const CY = 350; // SVG centre y
+  const HUB_R = 128;           // dark centre hub
+  const INNER_RING_OUTER_R = 300; // outer radius of text ring
+  const INNER_RING_INNER_R = 148; // inner radius of text ring — wide band for longer labels
 
   // Generate a donut-segment arc path
   function arcPath(innerR: number, outerR: number, startDeg: number, endDeg: number) {
@@ -57,21 +57,24 @@ export default function IndiaComplianceCircle() {
   }
 
   return (
-    <div className="relative w-[480px] h-[480px] flex items-center justify-center select-none">
+    <div
+      className="relative w-[560px] h-[560px] flex items-center justify-center select-none"
+      style={{ transform: 'translateY(-40px)' }}
+    >
       {/* ── SVG base ── */}
       <svg
-        viewBox="0 0 520 520"
+        viewBox="0 0 700 700"
         className="absolute inset-0 w-full h-full pointer-events-none"
       >
         <defs>
           {/* Hub gradient — dark navy */}
           <radialGradient id="il-hubGrad" cx="50%" cy="40%" r="60%">
-            <stop offset="0%"   stopColor="#1e40af" />
+            <stop offset="0%" stopColor="#1e40af" />
             <stop offset="100%" stopColor="#0a1f5c" />
           </radialGradient>
           {/* Inner ring gradient — solid white / very light gray */}
           <linearGradient id="il-ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%"   stopColor="#ffffff" />
+            <stop offset="0%" stopColor="#ffffff" />
             <stop offset="100%" stopColor="#f8fafc" />
           </linearGradient>
           {/* Glow filter */}
@@ -85,11 +88,24 @@ export default function IndiaComplianceCircle() {
           <filter id="il-shadow" x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow dx="0" dy="3" stdDeviation="5" floodOpacity="0.18" />
           </filter>
+          {/* Per-segment clip paths — keeps labels strictly inside their arc tile */}
+          {INNER_SEGMENTS.map((seg, i) => {
+            const gap = 3;
+            const segSpan = 360 / INNER_SEGMENTS.length;
+            const half = segSpan / 2 - gap / 2;
+            const start = seg.angle - half;
+            const end = seg.angle + half;
+            return (
+              <clipPath key={i} id={`il-clip-${i}`}>
+                <path d={arcPath(INNER_RING_INNER_R + 2, INNER_RING_OUTER_R - 2, start, end)} />
+              </clipPath>
+            );
+          })}
         </defs>
 
         {/* ── Outer dotted orbit ring ── */}
         <circle
-          cx={CX} cy={CY} r="245"
+          cx={CX} cy={CY} r="330"
           fill="none"
           stroke="#93c5fd"
           strokeWidth="1"
@@ -144,17 +160,18 @@ export default function IndiaComplianceCircle() {
           return (
             <text
               key={i}
-              x={x} y={y - (lines.length > 1 ? 6 : 0)}
+              clipPath={`url(#il-clip-${i})`}
+              x={x} y={y - (lines.length > 1 ? 8 : 0)}
               textAnchor="middle"
               dominantBaseline="middle"
-              fontSize="9"
+              fontSize="10"
               fontWeight="800"
               fill="#1e3a8a"
-              letterSpacing="0.2"
+              letterSpacing="0.15"
               style={{ textTransform: "uppercase" }}
             >
               {lines.map((ln, li) => (
-                <tspan key={li} x={x} dy={li === 0 ? 0 : 11}>{ln}</tspan>
+                <tspan key={li} x={x} dy={li === 0 ? 0 : 13}>{ln}</tspan>
               ))}
             </text>
           );
@@ -168,13 +185,13 @@ export default function IndiaComplianceCircle() {
           strokeWidth="2"
           filter="url(#il-glow)"
         />
-        
+
         {/* Centre Text: NetSuite India Localization */}
-        <text 
-          x={CX} y={CY} 
-          textAnchor="middle" 
-          dominantBaseline="middle" 
-          fontWeight="900" 
+        <text
+          x={CX} y={CY}
+          textAnchor="middle"
+          dominantBaseline="middle"
+          fontWeight="900"
           className="fill-white"
           style={{ fontSize: '13.5px', letterSpacing: '0.8px' }}
         >
@@ -192,12 +209,12 @@ export default function IndiaComplianceCircle() {
       >
         {ORBIT_ITEMS.map((item, i) => {
           const rad = (item.angle * Math.PI) / 180;
-          const r = 245; // slightly further out
-          // Position relative to centre of our 480px div
-          const cx = 240;
-          const cy = 240;
-          const x = cx + r * (480 / 520) * Math.cos(rad);
-          const y = cy + r * (480 / 520) * Math.sin(rad);
+          const r = 330; // matches orbit ring radius
+          // Position relative to centre of our 560px div
+          const cx = 280;
+          const cy = 280;
+          const x = cx + r * (560 / 700) * Math.cos(rad);
+          const y = cy + r * (560 / 700) * Math.sin(rad);
           return (
             <motion.div
               key={i}
