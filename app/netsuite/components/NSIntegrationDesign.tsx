@@ -29,7 +29,7 @@ const NSIntegrationDesign = () => {
                         <div className="relative overflow-hidden w-full">
                             <div className="relative aspect-[3/3] overflow-hidden group">
                                 <Image
-                                    src="/images/netsuiteimages/background/integration-image.png"
+                                    src="/images/lap/integration image.png"
                                     alt="NetSuite Integration Design"
                                     fill
                                     className="object-contain transition-transform duration-700 group-hover:scale-105"

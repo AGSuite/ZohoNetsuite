@@ -29,6 +29,12 @@ const NSDashboardHero = dynamic(() => import('./components/NSDashboardHero').the
 const NSIntegrationDesign = dynamic(() => import('./components/NSIntegrationDesign').then(mod => mod.default), {
   loading: () => <div className="h-[500px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
 });
+const NSLeadMagnet = dynamic(() => import('./components/NSLeadMagnet').then(mod => mod.default), {
+  loading: () => <div className="h-[600px] w-full bg-slate-900/60 animate-pulse my-0" />
+});
+const NSChecklistLeadMagnet = dynamic(() => import('./components/NSChecklistLeadMagnet').then(mod => mod.default), {
+  loading: () => <div className="h-[600px] w-full bg-slate-900/60 animate-pulse my-0" />
+});
 
 const NSIndustries = dynamic(() => import('./components/NSIndustries').then(mod => mod.default), {
   loading: () => <div className="h-[1400px] lg:h-[600px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
@@ -79,8 +85,10 @@ export default async function NetSuitePage() {
       <NSCustomerSuccess />
       <NSCaseStudiesSlider />
       <NSIntegrationDesign />
+      <NSLeadMagnet />
 
       <NSKeyCapabilities />
+      <NSChecklistLeadMagnet />
 
       {/* <NSDashboardHero /> */}
 
