@@ -60,7 +60,7 @@ export default function DataBackupPage() {
     {
       title: "MCA Rule 3 Compliance",
       description: "Retain your backups in original, unaltered formats stored on servers physically located inside India. Fulfill all statutory inspection and printing requirements seamlessly.",
-      image: "/images/Dashboard/mca_compliance_illustration.png",
+      image: "/images/Dashboard/data_backup_benefit_mca_compliance.png",
       points: [
         "Backups retained in native formats",
         "Data stored in Indian servers via Zoho Books",
@@ -70,7 +70,7 @@ export default function DataBackupPage() {
     {
       title: "Secure and Automated Daily Backup",
       description: "Ensure complete safety of your financials with fully automated daily schedules hosted on Zoho's enterprise-grade, secure cloud in India.",
-      image: "/images/Dashboard/automated_daily_backup.png",
+      image: "/images/Dashboard/data_backup_benefit_daily_backup.png",
       points: [
         "Daily automated backups of NetSuite financials",
         "Secure storage on India-based cloud servers",
@@ -80,7 +80,7 @@ export default function DataBackupPage() {
     {
       title: "Seamless NetSuite-Zoho Integration",
       description: "Direct unidirectional data synchronization from NetSuite to Zoho Books. Minimize failure points and cost by eliminating third-party middleware.",
-      image: "/images/Dashboard/netsuite_zoho_integration.png",
+      image: "/images/Dashboard/data_backup_benefit_integration.png",
       points: [
         "Unidirectional sync prevents data duplication",
         "Zero dependency on external middleware",
@@ -281,7 +281,7 @@ export default function DataBackupPage() {
             {/* Left side Image */}
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="flex items-center justify-center">
               <div className="relative w-full h-[380px] rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/10 border border-white/10">
-                <Image src="/images/lap/netsuitelap2.png" alt="Technical Integration Architecture Screen" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                <Image src="/images/Dashboard/netsuite_data_backup_architecture_realistic.png" alt="Technical Integration Architecture Diagram" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
               </div>
             </motion.div>
 
@@ -361,7 +361,7 @@ export default function DataBackupPage() {
             {/* Security Image */}
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="flex items-center justify-center">
               <div className="relative w-full h-[380px] rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
-                <Image src="/images/lap/lap8_11zon.webp" alt="Data Security Shield Compliance Concept" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                <Image src="/images/Dashboard/netsuite_data_backup_security_realistic.png" alt="Data Security & Compliance Diagram" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
               </div>
             </motion.div>
           </div>
@@ -465,24 +465,33 @@ export default function DataBackupPage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#0891b2] shadow-2xl">
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              {CTA_PARTICLES.map((p, i) => (
-                <motion.div key={i} className="absolute bg-white rounded-full opacity-30" style={{ width: `${p.w}px`, height: `${p.h}px`, top: `${p.top}%`, left: `${p.left}%` }}
-                  animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }} transition={{ duration: p.dur, repeat: Infinity, ease: 'easeInOut', delay: p.delay }} />
-              ))}
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative overflow-hidden rounded-3xl shadow-2xl bg-gray-950">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/images/netsuiteimages/background/netsuiteCTA.webp"
+                alt="CTA Background Image"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1280px) 100vw, 1280px"
+              />
+              {/* Dark Opacity Layer */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />
             </div>
 
-            <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
+              {CTA_PARTICLES.map((p, i) => (<motion.div key={i} className="absolute bg-white rounded-full" style={{ width: `${p.w}px`, height: `${p.h}px`, top: `${p.top}%`, left: `${p.left}%` }} animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }} transition={{ duration: p.dur, repeat: Infinity, ease: 'easeInOut', delay: p.delay }} />))}
+            </div>
+
+            <div className="relative z-20 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Ready to Stay Compliant?</h2>
-                <p className="text-white/80 text-lg md:text-xl font-medium">Connect with AGSuite today to implement your NetSuite Data Backup solution with minimal effort and full compliance!</p>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">Stay MCA Compliant — <span className="text-cyan-200">Automate NetSuite Data Backup in India.</span></h2>
+                <p className="text-white/80 text-base md:text-lg">End manual backup routines, compliance worries, and local storage gaps. Our NetSuite Data Backup Add-On stores your critical ERP data securely on local Indian servers to guarantee full MCA Rule 3 compliance.</p>
               </div>
-              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-lg px-8 py-4 sm:px-10 sm:py-5 rounded-xl shadow-xl transition-all duration-200 group active:scale-95">
-                Connect with AGSuite <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all group active:scale-95">
+                Secure Your Data <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </motion.div>

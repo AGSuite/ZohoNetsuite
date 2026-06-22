@@ -44,27 +44,27 @@ export default function MagentoConnectorPage() {
   ];
 
   const modules = [
-    { title: "Order Management", description: "Automated order flow from Adobe Commerce to NetSuite including all customer data and line items.", image: "/images/modules/dashboard module.webp", color: "#1e3a8a", rgb: "30,58,138" },
-    { title: "Inventory Sync", description: "Real-time inventory updates for single or multi-source inventory across all warehouse locations.", image: "/images/modules/dashbord module.webp", color: "#065f46", rgb: "6,95,70" },
-    { title: "Customer Sync", description: "Sync customer groups, company accounts, addresses, and credit limits for B2B operations.", image: "/images/modules/working module.webp", color: "#7c2d12", rgb: "124,45,18" },
-    { title: "Shipment Tracking", description: "Push tracking information from NetSuite back to Adobe Commerce the moment orders ship.", image: "/images/modules/any module.webp", color: "#4c1d95", rgb: "76,29,149" },
-    { title: "Price List Sync", description: "Sync complex NetSuite price levels and customer group pricing directly to Adobe Commerce.", image: "/images/modules/any modules.webp", color: "#0c4a6e", rgb: "12,74,110" },
-    { title: "Tier Pricing", description: "Support for volume-based pricing structures defined in NetSuite and synced to catalog rules.", image: "/images/modules/module8.webp", color: "#713f12", rgb: "113,63,18" },
-    { title: "Product Catalog Sync", description: "Manage thousands of SKUs and product variants from NetSuite and publish to Adobe Commerce.", image: "/images/modules/sheet module.webp", color: "#134e4a", rgb: "19,78,74" },
-    { title: "Multi-Source Inventory", description: "Full support for Adobe Commerce MSI and NetSuite Multi-Location Inventory per warehouse.", image: "/images/modules/csm modules.webp", color: "#831843", rgb: "131,24,67" },
-    { title: "B2B Company Accounts", description: "Sync company accounts, credit limits, and purchase order workflows for B2B buyers.", image: "/images/modules/managging together module.webp", color: "#1e3a8a", rgb: "30,58,138" },
-    { title: "Omnichannel Returns", description: "Manage returns and refunds seamlessly across online and offline channels from NetSuite.", image: "/images/modules/account modules.webp", color: "#064e3b", rgb: "6,78,59" },
-    { title: "Configurable Products", description: "Handle simple, configurable, bundled, and grouped products with full variant relationship sync.", image: "/images/modules/chatt mdoule.webp", color: "#78350f", rgb: "120,53,15" },
-    { title: "Tax Compliance", description: "Accurate tax calculation and reporting for domestic and global Adobe Commerce sales.", image: "/images/modules/mobile module.webp", color: "#3b0764", rgb: "59,7,100" },
+    { title: "Order Management", description: "Automated order flow from Adobe Commerce to NetSuite including all customer data and line items.", image: "/images/modules/order_management.png", color: "#1e3a8a", rgb: "30,58,138" },
+    { title: "Inventory Sync", description: "Real-time inventory updates for single or multi-source inventory across all warehouse locations.", image: "/images/modules/inventory_management.png", color: "#065f46", rgb: "6,95,70" },
+    { title: "Customer Sync", description: "Sync customer groups, company accounts, addresses, and credit limits for B2B operations.", image: "/images/modules/crm.png", color: "#7c2d12", rgb: "124,45,18" },
+    { title: "Shipment Tracking", description: "Push tracking information from NetSuite back to Adobe Commerce the moment orders ship.", image: "/images/modules/real_time_visibility.png", color: "#4c1d95", rgb: "76,29,149" },
+    { title: "Price List Sync", description: "Sync complex NetSuite price levels and customer group pricing directly to Adobe Commerce.", image: "/images/modules/financial_management.png", color: "#0c4a6e", rgb: "12,74,110" },
+    { title: "Tier Pricing", description: "Support for volume-based pricing structures defined in NetSuite and synced to catalog rules.", image: "/images/modules/cost_efficiency.png", color: "#713f12", rgb: "113,63,18" },
+    { title: "Product Catalog Sync", description: "Manage thousands of SKUs and product variants from NetSuite and publish to Adobe Commerce.", image: "/images/modules/ecommerce.png", color: "#134e4a", rgb: "19,78,74" },
+    { title: "Multi-Source Inventory", description: "Full support for Adobe Commerce MSI and NetSuite Multi-Location Inventory per warehouse.", image: "/images/modules/supply_chain.png", color: "#831843", rgb: "131,24,67" },
+    { title: "B2B Company Accounts", description: "Sync company accounts, credit limits, and purchase order workflows for B2B buyers.", image: "/images/modules/sc_rep_self_service.png", color: "#1e3a8a", rgb: "30,58,138" },
+    { title: "Omnichannel Returns", description: "Manage returns and refunds seamlessly across online and offline channels from NetSuite.", image: "/images/modules/benefit_operations.png", color: "#064e3b", rgb: "6,78,59" },
+    { title: "Configurable Products", description: "Handle simple, configurable, bundled, and grouped products with full variant relationship sync.", image: "/images/modules/sc_mobile_commerce.png", color: "#78350f", rgb: "120,53,15" },
+    { title: "Tax Compliance", description: "Accurate tax calculation and reporting for domestic and global Adobe Commerce sales.", image: "/images/modules/tax_management_custom.png", color: "#3b0764", rgb: "59,7,100" },
   ];
 
   const benefits = [
-    { title: "B2B & B2C in One Integration", description: "Adobe Commerce is used for both B2B and B2C commerce — and our connector handles both models in a single integration, with different logic for each order type, customer group, and pricing rule.", image: "/images/lap/lap5.webp", points: ["Corporate account and PO sync", "Customer group pricing support", "Shared catalog integration", "B2B credit limit enforcement"] },
-    { title: "Complex Catalog Without Limits", description: "Manage thousands of SKUs, product variants, configurable products, bundles, and grouped items from NetSuite — then publish to Adobe Commerce automatically with no manual catalogue management.", image: "/images/lap/lap2.webp", points: ["All Adobe Commerce product types", "Variant and option sync", "Bundle and grouped product support", "Attribute set mapping"] },
-    { title: "Multi-Source Inventory Precision", description: "Our connector fully supports Adobe Commerce Multi-Source Inventory alongside NetSuite Multi-Location Inventory — giving you accurate per-warehouse stock visibility across both platforms.", image: "/images/people/fourteam.webp", points: ["Per-location inventory accuracy", "Source-stock mapping", "Real-time reservation updates", "Low-stock alerting"] },
-    { title: "Tier & Volume Pricing", description: "Sync NetSuite's complex tier and volume pricing structures directly to Adobe Commerce shared catalogs and customer group price rules — eliminating manual price management entirely.", image: "/images/people/laptopmen2.webp", points: ["Tier price sync by quantity", "Customer group price rules", "Shared catalog support", "Currency-specific pricing"] },
-    { title: "Real-Time Order Processing", description: "High-volume Adobe Commerce stores need fast order processing. Our connector ensures every order reaches NetSuite within minutes — not hours — enabling immediate warehouse action and faster shipping.", image: "/images/lap/lap3.webp", points: ["Sub-5-minute order delivery", "High-volume API optimized", "Retry and error handling", "Custom business logic support"] },
-    { title: "Tax & Global Compliance", description: "Whether you sell nationally or globally, our connector ensures tax codes, rates, and calculation logic are correctly applied to every Adobe Commerce order as it enters NetSuite.", image: "/images/lap/lap4.webp", points: ["Tax code mapping by region", "VAT and GST support", "Tax-exempt customer handling", "Compliance audit trails"] },
+    { title: "B2B & B2C in One Integration", description: "Adobe Commerce is used for both B2B and B2C commerce — and our connector handles both models in a single integration, with different logic for each order type, customer group, and pricing rule.", image: "/images/modules/unified_platform.png", points: ["Corporate account and PO sync", "Customer group pricing support", "Shared catalog integration", "B2B credit limit enforcement"] },
+    { title: "Complex Catalog Without Limits", description: "Manage thousands of SKUs, product variants, configurable products, bundles, and grouped items from NetSuite — then publish to Adobe Commerce automatically with no manual catalogue management.", image: "/images/modules/ecommerce.png", points: ["All Adobe Commerce product types", "Variant and option sync", "Bundle and grouped product support", "Attribute set mapping"] },
+    { title: "Multi-Source Inventory Precision", description: "Our connector fully supports Adobe Commerce Multi-Source Inventory alongside NetSuite Multi-Location Inventory — giving you accurate per-warehouse stock visibility across both platforms.", image: "/images/modules/supply_chain.png", points: ["Per-location inventory accuracy", "Source-stock mapping", "Real-time reservation updates", "Low-stock alerting"] },
+    { title: "Tier & Volume Pricing", description: "Sync NetSuite's complex tier and volume pricing structures directly to Adobe Commerce shared catalogs and customer group price rules — eliminating manual price management entirely.", image: "/images/modules/financial_management.png", points: ["Tier price sync by quantity", "Customer group price rules", "Shared catalog support", "Currency-specific pricing"] },
+    { title: "Real-Time Order Processing", description: "High-volume Adobe Commerce stores need fast order processing. Our connector ensures every order reaches NetSuite within minutes — not hours — enabling immediate warehouse action and faster shipping.", image: "/images/modules/real_time_visibility.png", points: ["Sub-5-minute order delivery", "High-volume API optimized", "Retry and error handling", "Custom business logic support"] },
+    { title: "Tax & Global Compliance", description: "Whether you sell nationally or globally, our connector ensures tax codes, rates, and calculation logic are correctly applied to every Adobe Commerce order as it enters NetSuite.", image: "/images/modules/benefit_compliance.png", points: ["Tax code mapping by region", "VAT and GST support", "Tax-exempt customer handling", "Compliance audit trails"] },
   ];
 
   const CARD_BG = "linear-gradient(135deg, #000814 0%, #000f22 25%, #001535 55%, #000c1a 80%, #000810 100%)";
@@ -100,7 +100,7 @@ export default function MagentoConnectorPage() {
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/lap/lap3.webp" alt="Magento Connector" fill className="object-cover object-center" priority  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                  <Image src="/images/hero/netsuite_office_dashboard.png" alt="Magento Connector" fill className="object-cover object-center" priority  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }} className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}><Layers className="w-5 h-5 text-white" /></div>
@@ -143,18 +143,67 @@ export default function MagentoConnectorPage() {
 
       {/* WHAT IS */}
       <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="flex items-center justify-center rounded-2xl p-4 mt-15" style={{ minHeight: 340 }}>
-              <Image src="/images/Dashboard/Magento Connector Dashboard.jpg" alt="Magento Connector" width={1400} height={900} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" className="w-full h-auto rounded-xl object-contain border-4 border-indigo-200 shadow-2xl shadow-indigo-900/20" />
+        <div className="max-w-8xl mx-auto px-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
+            >
+              <div className="relative w-full h-full p-4 lg:p-6">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100">
+                  <Image
+                    src="/images/Dashboard/Magento Connector Dashboard.jpg"
+                    alt="Magento Connector"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+              </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="space-y-6">
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">Unify Adobe Commerce and NetSuite — B2B & B2C Together.</h3>
-              <p className="text-lg text-gray-600 leading-relaxed">The NetSuite Magento Connector bridges your Adobe Commerce storefront with NetSuite ERP — handling the complexity of B2B accounts, multi-source inventory, tiered pricing, and high-volume order processing automatically.</p>
-              <p className="text-lg text-gray-600 leading-relaxed">Whether you run B2C, B2B, or both, our connector keeps every product, price, order, customer, and inventory record in sync with no manual intervention required.</p>
-              <div className="pt-4">
-                <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest text-white transition-all" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}>
-                  Explore Magento Connector <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 1.2, repeat: Infinity }}><ArrowRight size={17} /></motion.span>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="flex flex-col justify-between py-6 h-full"
+            >
+              <div className="space-y-4">
+                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
+                  Unify Adobe Commerce and NetSuite — B2B & B2C Together.
+                </h2>
+              </div>
+              <div className="space-y-2 my-auto pt-2 md:pt-4">
+                <p className="text-base text-gray-600 leading-relaxed">The NetSuite Magento Connector bridges your Adobe Commerce storefront with NetSuite ERP — handling the complexity of B2B accounts, multi-source inventory, tiered pricing, and high-volume order processing automatically.</p>
+                <p className="text-base text-gray-600 leading-relaxed">Whether you run B2C, B2B, or both, our connector keeps every product, price, order, customer, and inventory record in sync with no manual intervention required.</p>
+              </div>
+              <div className="pt-4 mt-auto">
+                <Link
+                  href="#contact-form"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
+                  style={{ background: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)', color: '#ffffff' }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#1e3a8a';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 10px 25px -5px rgba(30, 58, 138, 0.3)';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.background = 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
+                  }}
+                >
+                  <span>Explore Magento Connector</span>
+                  <motion.span
+                    className="flex items-center"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <ArrowRight size={17} strokeWidth={2.5} />
+                  </motion.span>
                 </Link>
               </div>
             </motion.div>
@@ -172,7 +221,7 @@ export default function MagentoConnectorPage() {
               <Link key={i} href="#contact-form" className="block">
                 <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.06 }} whileHover={{ y: -10, transition: { duration: 0.3 } }} className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer" style={{ minHeight: 340 }}>
                   <div className="relative h-44 shrink-0 overflow-hidden">
-                    <Image src={mod.image} alt={mod.title} fill className="object-cover object-top group-hover:scale-110 transition-transform duration-700"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                    <Image src={mod.image} alt={mod.title} fill className="object-cover object-center group-hover:scale-110 transition-transform duration-700"  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom,transparent 0%,rgba(${mod.rgb},0.4) 70%,rgba(${mod.rgb},1) 100%)` }} />
                   </div>
                   <div className="flex-1 p-5 pb-6 flex flex-col relative" style={{ backgroundColor: `rgb(${mod.rgb})` }}>
@@ -276,16 +325,30 @@ export default function MagentoConnectorPage() {
       {/* CTA */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#0891b2] shadow-2xl">
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative overflow-hidden rounded-3xl shadow-2xl bg-gray-950">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/images/netsuiteimages/background/netsuiteCTA.webp"
+                alt="CTA Background Image"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1280px) 100vw, 1280px"
+              />
+              {/* Dark Opacity Layer */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />
+            </div>
+
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
               {PARTICLES.map((p, i) => (<motion.div key={i} className="absolute bg-white rounded-full" style={{ width: `${p.w}px`, height: `${p.h}px`, top: `${p.top}%`, left: `${p.left}%` }} animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }} transition={{ duration: p.dur, repeat: Infinity, ease: 'easeInOut', delay: p.delay }} />))}
             </div>
-            <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
+
+            <div className="relative z-20 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Unify Magento and NetSuite — <span className="text-cyan-200">Start Today.</span></h2>
-                <p className="text-white/80 text-lg md:text-xl">Join B2B and B2C merchants using our connector to automate their Adobe Commerce operations with real-time NetSuite synchronization.</p>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">Unify Magento and NetSuite — <span className="text-cyan-200">Automate Your Commerce Operations.</span></h2>
+                <p className="text-white/80 text-base md:text-lg">End manual data entry, inventory delays, and order mismatches. Our Magento Connector Add-On keeps your storefront and ERP fully synchronized in real time across B2B and B2C channels.</p>
               </div>
-              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all group active:scale-95">
+              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all group active:scale-95">
                 Connect Magento <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

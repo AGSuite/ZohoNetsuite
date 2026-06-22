@@ -609,25 +609,52 @@ export default function NetSuiteSolutionsClient() {
       </section>
 
       {/* ─────────────── CTA SECTION ─────────────── */}
-      <section className="py-24 overflow-hidden relative bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-12 overflow-hidden relative bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="border border-gray-200 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
+            transition={{ duration: 0.6 }}
+            className="relative overflow-hidden rounded-3xl shadow-2xl"
           >
-            <Image src="/images/Dashboard/NetsuiteDashboard.webp" alt="NetSuite Solutions" fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
-            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-3xl -mr-32 -mt-32" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />
-            <div className="relative z-10 max-w-2xl">
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-8 leading-tight">
-                Scale your business with the world's #1 Cloud ERP. Ready to get started?
-              </h2>
-              <div className="flex justify-start">
-                <Link href="/netsuite/contact" className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition shadow-xl">
+            {/* Background Image */}
+            <Image
+              src="/images/Background/netsuite_solutions_cta_bg.png"
+              alt="NetSuite Solutions CTA Background"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+            />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/65 to-black/20" />
+            {/* Glow accents */}
+            <div className="absolute top-0 right-0 w-72 h-72 bg-blue-500/15 blur-3xl -mr-20 -mt-20 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-56 h-56 bg-cyan-500/10 blur-2xl -ml-16 -mb-16 pointer-events-none" />
+
+            {/* Content */}
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 px-8 py-10 lg:px-14 lg:py-12">
+              {/* Left: text */}
+              <div className="flex-1 min-w-0">
+                <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">
+                  <Rocket className="w-3 h-3" /> World&apos;s #1 Cloud ERP
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-white leading-snug mb-2">
+                  Scale your business with the world&apos;s #1 Cloud ERP.
+                </h2>
+                <p className="text-white/70 text-sm md:text-base">
+                  Ready to get started? Our certified NetSuite experts are here to help.
+                </p>
+              </div>
+
+              {/* Right: button */}
+              <div className="shrink-0">
+                <Link
+                  href="/netsuite/contact"
+                  className="group inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-sm px-7 py-3.5 rounded-xl shadow-xl transition-all active:scale-95"
+                >
                   Talk to an Expert
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>

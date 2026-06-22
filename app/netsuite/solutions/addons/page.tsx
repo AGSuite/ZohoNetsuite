@@ -612,8 +612,7 @@ export default function AddonsPage() {
             className="border border-gray-200 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10"
           >
             <Image src="/images/netsuiteimages/background/netsuiteCTA.webp" alt="NetSuite Add-Ons CTA" fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-            <div className="absolute inset-0 bg-black/60" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-3xl -mr-32 -mt-32" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />
 

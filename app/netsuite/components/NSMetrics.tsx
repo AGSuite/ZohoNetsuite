@@ -61,7 +61,7 @@ const NSMetrics = () => {
     const { ref: marqueeRef, inView: marqueeInView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
     // Split headline into words for animation
-    const headlineText = "83 % of companies meet or exceed their";
+    const headlineText = "83% of companies meet or exceed their";
     const highlightText = "ROI expectations";
     const words = headlineText.split(" ");
 

@@ -1,0 +1,17 @@
+.calendarHeader{font-family:Verdana;font-size:18px;font-weight:bold;background-color:#C3D9FF;border: 1px solid #C0C0C0;}
+.calendarHeader1{font-family:Verdana;font-size:12px;font-weight:bolder;background-color:#E0ECFF;border: 1px solid #C0C0C0;}
+.calendarHeaderLink{font-family:Verdana;font-size:26px;background-color:#C3D9FF;border: 1px solid #C0C0C0;}
+.calendarYearHeader{font-family:Verdana;font-size:30px;font-weight:bolder;}
+.calendarbody{border: 1px solid #C0C0C0;font-family:Verdana;font-size:12px;}
+.calendarholiday{border: 1px solid #C0C0C0;font-family:Verdana;font-size:12px;font-weight:bold;}
+.calendar{border-collapse:collapse;border: 1px solid #0000FF;}
+.calendaryear{border-collapse:collapse;}
+.calendarToday{background-color:#B6FBAA;font-family:Verdana;font-weight:bolder;font-size:12px;}
+.cWknd{border: 1px solid #C0C0C0;font-family:Verdana;font-size:12px;}
+.cBlank{border: 1px solid #C0C0C0;background-color:#EEEEEE;}
+.cHday{font-family:Verdana;font-size:12px;color:#FF0000;}
+.hText{font-family:Verdana;font-size:12px;}
+.yearly-online h2 {  text-align: center;  font-size: 14px;  color: #000;  font-family: Verdana;  margin: 2px;  }
+.yearly-online a {  font-family: Verdana;  font-size: 11px;  color: #000;  text-decoration: none;  }
+.yearly-online a:hover {  color: #000;  }
+.calendarbody2, .calendarbody1{  border: 1px solid #c0c0c0;  font-family: Verdana;  font-size: 11px;  text-align: center;  }

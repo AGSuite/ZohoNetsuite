@@ -92,12 +92,14 @@ export default function SmartCommissionClient() {
       <section className="relative min-h-screen overflow-hidden flex flex-col">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/people/fourteam.webp"
-            alt="NetSuite Smart Commission"
+            src="/images/people/netsuite_white_dashboard_people.png"
+            alt="NetSuite Smart Commission Dashboard"
             fill
             priority
+            quality={95}
             className="object-cover"
-           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+            sizes="100vw"
+          />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent z-10" />
 

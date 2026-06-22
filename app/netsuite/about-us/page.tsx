@@ -783,7 +783,7 @@ function AboutStatsSection() {
 export default function AboutClient() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [videoSrc, setVideoSrc] = useState('/images/videos/aboutus desktop video.mp4');
+  const [videoSrc, setVideoSrc] = useState('/images/videos/Blue%20Modern%20Minimal%20Marketing%20169%20Video%20(2).mp4');
   const heroRef = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -814,7 +814,7 @@ export default function AboutClient() {
       if (window.innerWidth <= 768) {
         setVideoSrc('/images/videos/aboutus mobile video.mp4');
       } else {
-        setVideoSrc('/images/videos/aboutus desktop video.mp4');
+        setVideoSrc('/images/videos/Blue%20Modern%20Minimal%20Marketing%20169%20Video%20(2).mp4');
       }
     };
 

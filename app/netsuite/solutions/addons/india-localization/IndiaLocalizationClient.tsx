@@ -471,7 +471,7 @@ export default function IndiaLocalizationClient() {
                 sizes="(max-width: 1280px) 100vw, 1280px"
               />
               {/* Dark Opacity Layer */}
-              <div className="absolute inset-0 bg-black/75 backdrop-blur-[2px]" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />
             </div>
 
             <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">

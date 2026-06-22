@@ -276,16 +276,30 @@ export default function ShopifyConnectorPage() {
       {/* CTA */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#0891b2] shadow-2xl">
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative overflow-hidden rounded-3xl shadow-2xl bg-gray-950">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/images/netsuiteimages/background/netsuiteCTA.webp"
+                alt="CTA Background Image"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1280px) 100vw, 1280px"
+              />
+              {/* Dark Opacity Layer */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />
+            </div>
+
+            <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
               {PARTICLES.map((p, i) => (<motion.div key={i} className="absolute bg-white rounded-full" style={{ width: `${p.w}px`, height: `${p.h}px`, top: `${p.top}%`, left: `${p.left}%` }} animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }} transition={{ duration: p.dur, repeat: Infinity, ease: 'easeInOut', delay: p.delay }} />))}
             </div>
-            <div className="relative z-10 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
+
+            <div className="relative z-20 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="text-left max-w-2xl">
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Automate Shopify with NetSuite — <span className="text-cyan-200">Start Today.</span></h2>
-                <p className="text-white/80 text-lg md:text-xl">Eliminate manual order entry, prevent overselling, and accelerate shipping — automatically.</p>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">Automate Shopify with NetSuite — <span className="text-cyan-200">Start Today.</span></h2>
+                <p className="text-white/80 text-base md:text-lg">End manual order entry, inventory discrepancies, and shipping delays. Our Shopify Connector Add-On keeps your store and NetSuite completely synchronized automatically.</p>
               </div>
-              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-lg px-10 py-5 rounded-xl shadow-xl transition-all group active:scale-95">
+              <Link href="#contact-form" className="shrink-0 inline-flex items-center gap-3 bg-white text-blue-900 hover:bg-blue-50 font-bold text-base px-8 py-4 rounded-xl shadow-xl transition-all group active:scale-95">
                 Connect Shopify <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
