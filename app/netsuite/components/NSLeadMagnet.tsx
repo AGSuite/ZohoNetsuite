@@ -9,54 +9,54 @@ import {
 
 /* ── Country codes with flagcdn.com iso codes ── */
 const COUNTRY_CODES = [
-  { code: "+91",  iso: "in", name: "India"        },
-  { code: "+1",   iso: "us", name: "USA"           },
-  { code: "+44",  iso: "gb", name: "UK"            },
-  { code: "+971", iso: "ae", name: "UAE"           },
-  { code: "+61",  iso: "au", name: "Australia"     },
-  { code: "+65",  iso: "sg", name: "Singapore"     },
-  { code: "+60",  iso: "my", name: "Malaysia"      },
-  { code: "+966", iso: "sa", name: "Saudi Arabia"  },
-  { code: "+27",  iso: "za", name: "South Africa"  },
+  { code: "+91", iso: "in", name: "India" },
+  { code: "+1", iso: "us", name: "USA" },
+  { code: "+44", iso: "gb", name: "UK" },
+  { code: "+971", iso: "ae", name: "UAE" },
+  { code: "+61", iso: "au", name: "Australia" },
+  { code: "+65", iso: "sg", name: "Singapore" },
+  { code: "+60", iso: "my", name: "Malaysia" },
+  { code: "+966", iso: "sa", name: "Saudi Arabia" },
+  { code: "+27", iso: "za", name: "South Africa" },
 ];
 
 /* ── Region data with flagcdn.com iso codes ── */
 const REGIONS = [
   {
-    rank: "01", iso: "in",  country: "India",          region: "South Asia",
-    growth: "28%",   stat: "YoY ERP adoption",         highlight: "Fastest growing market",
+    rank: "01", iso: "in", country: "India", region: "South Asia",
+    growth: "28%", stat: "YoY ERP adoption", highlight: "Fastest growing market",
     color: "from-orange-500 to-orange-600", border: "border-orange-300", accent: "text-orange-600",
     insight: "GST mandates & Digital India push driving mass NetSuite adoption across mid-market.",
   },
   {
-    rank: "02", iso: "us",  country: "United States",  region: "North America",
-    growth: "$9.2B", stat: "Cloud ERP market size",    highlight: "Largest NetSuite market",
-    color: "from-blue-500 to-blue-600",     border: "border-blue-300",   accent: "text-blue-600",
+    rank: "02", iso: "us", country: "United States", region: "North America",
+    growth: "$9.2B", stat: "Cloud ERP market size", highlight: "Largest NetSuite market",
+    color: "from-blue-500 to-blue-600", border: "border-blue-300", accent: "text-blue-600",
     insight: "SaaS-first culture and SOX compliance make NetSuite the #1 ERP choice.",
   },
   {
-    rank: "03", iso: "ae",  country: "UAE & Middle East", region: "GCC Region",
-    growth: "34%",   stat: "Digital transformation spend", highlight: "Vision 2030 catalyst",
-    color: "from-emerald-500 to-teal-600",  border: "border-emerald-300", accent: "text-emerald-600",
+    rank: "03", iso: "ae", country: "UAE & Middle East", region: "GCC Region",
+    growth: "34%", stat: "Digital transformation spend", highlight: "Vision 2030 catalyst",
+    color: "from-emerald-500 to-teal-600", border: "border-emerald-300", accent: "text-emerald-600",
     insight: "Vision 2030 & Saudi Expo legacy pushing enterprises off legacy ERPs at record pace.",
   },
   {
-    rank: "04", iso: "gb",  country: "United Kingdom", region: "Europe",
-    growth: "19%",   stat: "Post-Brexit ERP upgrades", highlight: "Compliance-driven surge",
+    rank: "04", iso: "gb", country: "United Kingdom", region: "Europe",
+    growth: "19%", stat: "Post-Brexit ERP upgrades", highlight: "Compliance-driven surge",
     color: "from-violet-500 to-purple-600", border: "border-violet-300", accent: "text-violet-600",
     insight: "Post-Brexit restructuring is forcing CFOs to modernise ERP stacks now.",
   },
   {
-    rank: "05", iso: "au",  country: "Australia",      region: "Asia-Pacific",
-    growth: "23%",   stat: "Cloud ERP growth rate",    highlight: "APAC high-growth pick",
-    color: "from-cyan-500 to-sky-600",      border: "border-cyan-300",   accent: "text-cyan-600",
+    rank: "05", iso: "au", country: "Australia", region: "Asia-Pacific",
+    growth: "23%", stat: "Cloud ERP growth rate", highlight: "APAC high-growth pick",
+    color: "from-cyan-500 to-sky-600", border: "border-cyan-300", accent: "text-cyan-600",
     insight: "Tax digitalisation & remote-work mandates are accelerating cloud ERP investments.",
   },
 ];
 
 const FORBIDDEN_DOMAINS = [
-  "gmail.com","yahoo.com","outlook.com","hotmail.com",
-  "live.com","icloud.com","rediffmail.com","ymail.com",
+  "gmail.com", "yahoo.com", "outlook.com", "hotmail.com",
+  "live.com", "icloud.com", "rediffmail.com", "ymail.com",
 ];
 
 /* ── Reusable flag image (same src pattern as our-offices page) ── */
@@ -120,11 +120,10 @@ function CountryCodePicker({
                 <button
                   type="button"
                   onClick={() => { onChange(c.code); setOpen(false); }}
-                  className={`w-full flex items-center gap-3 px-3.5 py-3 text-sm text-left transition-colors ${
-                    c.code === value
-                      ? "bg-blue-50 text-blue-700 font-bold"
-                      : "text-gray-700 hover:bg-gray-50"
-                  }`}
+                  className={`w-full flex items-center gap-3 px-3.5 py-3 text-sm text-left transition-colors ${c.code === value
+                    ? "bg-blue-50 text-blue-700 font-bold"
+                    : "text-gray-700 hover:bg-gray-50"
+                    }`}
                 >
                   <FlagImg iso={c.iso} className="w-6 h-4 shrink-0" />
                   <span className="font-semibold text-sm text-gray-500 w-12 shrink-0">{c.code}</span>
@@ -144,13 +143,13 @@ export default function NSLeadMagnet() {
   const [isClient, setIsClient] = useState(false);
   useEffect(() => { setIsClient(true); }, []);
 
-  const [name,         setName]         = useState("");
-  const [email,        setEmail]        = useState("");
-  const [countryCode,  setCountryCode]  = useState("+91");
-  const [phone,        setPhone]        = useState("");
-  const [errors,       setErrors]       = useState<Record<string, string>>({});
-  const [submitted,    setSubmitted]    = useState(false);
-  const [loading,      setLoading]      = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [countryCode, setCountryCode] = useState("+91");
+  const [phone, setPhone] = useState("");
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [activeRegion, setActiveRegion] = useState(0);
 
   function validate() {
@@ -171,7 +170,7 @@ export default function NSLeadMagnet() {
     }
 
     const digits = phone.replace(/\D/g, "");
-    if (!phone.trim())             errs.phone = "Mobile number cannot be empty.";
+    if (!phone.trim()) errs.phone = "Mobile number cannot be empty.";
     else if (digits.length !== 10) errs.phone = "Must be exactly 10 digits.";
 
     return errs;
@@ -253,13 +252,13 @@ export default function NSLeadMagnet() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.15 }}
-                  className="text-4xl md:text-5xl font-black leading-[1.1] text-white"
+                  className="text-4xl md:text-5xl font-medium leading-[1.1] text-white"
                 >
                   Top 5 Regions Where{" "}
                   <span className="bg-clip-text text-transparent"
                     style={{ backgroundImage: "linear-gradient(90deg,#f59e0b,#fbbf24)" }}>
                     NetSuite Delivers
-                  </span>{" "}
+                  </span>{" "}<br></br>
                   the Fastest ROI
                 </motion.h2>
 
@@ -317,9 +316,8 @@ export default function NSLeadMagnet() {
                                   placeholder="John Doe"
                                   maxLength={80}
                                   suppressHydrationWarning
-                                  className={`w-full bg-gray-50 border-2 rounded-xl px-3.5 py-2.5 text-gray-900 outline-none text-sm transition-all ${
-                                    errors.name ? "border-red-400 font-medium" : "border-blue-100 focus:border-blue-500 font-medium"
-                                  }`}
+                                  className={`w-full bg-gray-50 border-2 rounded-xl px-3.5 py-2.5 text-gray-900 outline-none text-sm transition-all ${errors.name ? "border-red-400 font-medium" : "border-blue-100 focus:border-blue-500 font-medium"
+                                    }`}
                                 />
                                 {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
                               </div>
@@ -335,9 +333,8 @@ export default function NSLeadMagnet() {
                                   maxLength={100}
                                   autoComplete="off"
                                   suppressHydrationWarning
-                                  className={`w-full bg-gray-50 border-2 rounded-xl px-3.5 py-2.5 text-gray-900 outline-none text-sm transition-all ${
-                                    errors.email ? "border-red-400 font-medium" : "border-blue-100 focus:border-blue-500 font-medium"
-                                  }`}
+                                  className={`w-full bg-gray-50 border-2 rounded-xl px-3.5 py-2.5 text-gray-900 outline-none text-sm transition-all ${errors.email ? "border-red-400 font-medium" : "border-blue-100 focus:border-blue-500 font-medium"
+                                    }`}
                                 />
                                 {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                               </div>
@@ -358,9 +355,8 @@ export default function NSLeadMagnet() {
                                   placeholder="98765 43210"
                                   maxLength={10}
                                   suppressHydrationWarning
-                                  className={`flex-1 bg-gray-50 border-2 rounded-xl px-3.5 py-2.5 text-gray-900 outline-none text-sm transition-all ${
-                                    errors.phone ? "border-red-400 font-medium" : "border-blue-100 focus:border-blue-500 font-medium"
-                                  }`}
+                                  className={`flex-1 bg-gray-50 border-2 rounded-xl px-3.5 py-2.5 text-gray-900 outline-none text-sm transition-all ${errors.phone ? "border-red-400 font-medium" : "border-blue-100 focus:border-blue-500 font-medium"
+                                    }`}
                                 />
                               </div>
                               {errors.phone && (
@@ -429,11 +425,10 @@ export default function NSLeadMagnet() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.07 }}
                   onClick={() => setActiveRegion(i)}
-                  className={`w-full text-left rounded-2xl border-2 bg-white transition-all duration-300 overflow-hidden ${
-                    activeRegion === i
-                      ? `${r.border} shadow-xl`
-                      : "border-gray-100 shadow-sm hover:border-gray-200 hover:shadow-md"
-                  }`}
+                  className={`w-full text-left rounded-2xl border-2 bg-white transition-all duration-300 overflow-hidden ${activeRegion === i
+                    ? `${r.border} shadow-xl`
+                    : "border-gray-100 shadow-sm hover:border-gray-200 hover:shadow-md"
+                    }`}
                 >
                   <div className="w-full px-6 py-5">
                     <div className="flex items-center gap-4">
@@ -463,9 +458,8 @@ export default function NSLeadMagnet() {
                         </div>
                       </div>
 
-                      <ChevronRight className={`w-5 h-5 shrink-0 transition-transform duration-300 ${
-                        activeRegion === i ? `rotate-90 ${r.accent}` : "text-gray-300"
-                      }`} />
+                      <ChevronRight className={`w-5 h-5 shrink-0 transition-transform duration-300 ${activeRegion === i ? `rotate-90 ${r.accent}` : "text-gray-300"
+                        }`} />
                     </div>
 
                     <AnimatePresence>

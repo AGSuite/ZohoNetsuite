@@ -8,15 +8,15 @@ import {
 
 /* ── Country codes with flagcdn.com iso codes ── */
 const COUNTRY_CODES = [
-  { code: "+91",  iso: "in", name: "India"        },
-  { code: "+1",   iso: "us", name: "USA"           },
-  { code: "+44",  iso: "gb", name: "UK"            },
-  { code: "+971", iso: "ae", name: "UAE"           },
-  { code: "+61",  iso: "au", name: "Australia"     },
-  { code: "+65",  iso: "sg", name: "Singapore"     },
-  { code: "+60",  iso: "my", name: "Malaysia"      },
-  { code: "+966", iso: "sa", name: "Saudi Arabia"  },
-  { code: "+27",  iso: "za", name: "South Africa"  },
+  { code: "+91", iso: "in", name: "India" },
+  { code: "+1", iso: "us", name: "USA" },
+  { code: "+44", iso: "gb", name: "UK" },
+  { code: "+971", iso: "ae", name: "UAE" },
+  { code: "+61", iso: "au", name: "Australia" },
+  { code: "+65", iso: "sg", name: "Singapore" },
+  { code: "+60", iso: "my", name: "Malaysia" },
+  { code: "+966", iso: "sa", name: "Saudi Arabia" },
+  { code: "+27", iso: "za", name: "South Africa" },
 ];
 
 const FORBIDDEN_DOMAINS = [
@@ -84,11 +84,10 @@ function CountryCodePicker({
                 <button
                   type="button"
                   onClick={() => { onChange(c.code); setOpen(false); }}
-                  className={`w-full flex items-center gap-3 px-3.5 py-3 text-sm text-left transition-colors ${
-                    c.code === value
+                  className={`w-full flex items-center gap-3 px-3.5 py-3 text-sm text-left transition-colors ${c.code === value
                       ? "bg-blue-50 text-blue-700 font-bold"
                       : "text-gray-700 hover:bg-gray-50"
-                  }`}
+                    }`}
                 >
                   <FlagImg iso={c.iso} className="w-6 h-4 shrink-0" />
                   <span className="font-semibold text-sm text-gray-500 w-12 shrink-0">{c.code}</span>
@@ -107,13 +106,13 @@ export default function NSChecklistLeadMagnet() {
   const [isClient, setIsClient] = useState(false);
   useEffect(() => { setIsClient(true); }, []);
 
-  const [name,         setName]         = useState("");
-  const [email,        setEmail]        = useState("");
-  const [countryCode,  setCountryCode]  = useState("+91");
-  const [phone,        setPhone]        = useState("");
-  const [errors,       setErrors]       = useState<Record<string, string>>({});
-  const [submitted,    setSubmitted]    = useState(false);
-  const [loading,      setLoading]      = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [countryCode, setCountryCode] = useState("+91");
+  const [phone, setPhone] = useState("");
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   function validate() {
     const errs: Record<string, string> = {};
@@ -133,7 +132,7 @@ export default function NSChecklistLeadMagnet() {
     }
 
     const digits = phone.replace(/\D/g, "");
-    if (!phone.trim())             errs.phone = "Mobile number cannot be empty.";
+    if (!phone.trim()) errs.phone = "Mobile number cannot be empty.";
     else if (digits.length !== 10) errs.phone = "Must be exactly 10 digits.";
 
     return errs;
@@ -193,19 +192,19 @@ export default function NSChecklistLeadMagnet() {
 
       <div className="relative z-10 mx-auto max-w-[1240px] w-full px-4 md:px-6">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
-          
+
           {/* Left Column: Heading & Inline Form */}
           <div className="lg:col-span-6 flex flex-col justify-center text-left space-y-6">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wider uppercase mb-4">
                 <ClipboardCheck className="w-4 h-4" /> Pre-Implementation Playbook
               </div>
-              
-              <h2 className="text-3xl md:text-5xl font-black text-white leading-tight">
+
+              <h2 className="text-3xl md:text-5xl font-medium text-white leading-tight">
                 The Essential Checklist Before You Implement NetSuite
               </h2>
             </div>
-            
+
             <p className="text-slate-300 text-base md:text-lg leading-relaxed max-w-xl">
               Don&#39;t join the 50% of ERP rollouts that exceed budget. Prepare your team, audit your data, and map subsidiaries with our comprehensive 50-point preparation playbook.
             </p>
@@ -245,13 +244,12 @@ export default function NSChecklistLeadMagnet() {
                                 placeholder="John Doe"
                                 maxLength={80}
                                 suppressHydrationWarning
-                                className={`w-full bg-gray-50 border-2 rounded-xl px-3.5 py-2.5 text-gray-900 placeholder-gray-400 outline-none text-sm transition-all ${
-                                  errors.name ? "border-red-400 font-medium" : "border-gray-200 focus:border-blue-500 font-medium focus:bg-white"
-                                }`}
+                                className={`w-full bg-gray-50 border-2 rounded-xl px-3.5 py-2.5 text-gray-900 placeholder-gray-400 outline-none text-sm transition-all ${errors.name ? "border-red-400 font-medium" : "border-gray-200 focus:border-blue-500 font-medium focus:bg-white"
+                                  }`}
                               />
                               {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
                             </div>
-                            
+
                             <div>
                               <label className="block text-gray-600 text-[10px] font-bold uppercase tracking-wider mb-1.5">
                                 Work Email <span className="text-red-500">*</span>
@@ -264,9 +262,8 @@ export default function NSChecklistLeadMagnet() {
                                 maxLength={100}
                                 autoComplete="off"
                                 suppressHydrationWarning
-                                className={`w-full bg-gray-50 border-2 rounded-xl px-3.5 py-2.5 text-gray-900 placeholder-gray-400 outline-none text-sm transition-all ${
-                                  errors.email ? "border-red-400 font-medium" : "border-gray-200 focus:border-blue-500 font-medium focus:bg-white"
-                                }`}
+                                className={`w-full bg-gray-50 border-2 rounded-xl px-3.5 py-2.5 text-gray-900 placeholder-gray-400 outline-none text-sm transition-all ${errors.email ? "border-red-400 font-medium" : "border-gray-200 focus:border-blue-500 font-medium focus:bg-white"
+                                  }`}
                               />
                               {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
                             </div>
@@ -286,9 +283,8 @@ export default function NSChecklistLeadMagnet() {
                                 placeholder="98765 43210"
                                 maxLength={10}
                                 suppressHydrationWarning
-                                className={`flex-1 bg-gray-50 border-2 rounded-xl px-3.5 py-2.5 text-gray-900 placeholder-gray-400 outline-none text-sm transition-all ${
-                                  errors.phone ? "border-red-400 font-medium" : "border-gray-200 focus:border-blue-500 font-medium focus:bg-white"
-                                }`}
+                                className={`flex-1 bg-gray-50 border-2 rounded-xl px-3.5 py-2.5 text-gray-900 placeholder-gray-400 outline-none text-sm transition-all ${errors.phone ? "border-red-400 font-medium" : "border-gray-200 focus:border-blue-500 font-medium focus:bg-white"
+                                  }`}
                               />
                             </div>
                             {errors.phone && (

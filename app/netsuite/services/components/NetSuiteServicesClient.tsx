@@ -70,67 +70,44 @@ export default function NetSuiteServicesClient() {
 
   const services = [
     {
-      title: "NetSuite Implementation",
-      description:
-        "Go live on NetSuite faster, cleaner, and with zero surprises. Our proven implementation methodology covers everything from discovery workshops to hypercare — delivering a fully configured, user-adopted NetSuite system that works from day one.",
-      link: "/netsuite/services/implementation",
-      image: "/images/netsuiteimages/Servicesimg/cloud_migration.png",
-      icon: Rocket,
-    },
-    {
-      title: "NetSuite Managed Support",
-      description:
-        "Elevate your NetSuite environment with mission-critical support. Our team handles everything from complex troubleshooting to bi-annual upgrade readiness and continuous system fine-tuning, ensuring maximum uptime and efficiency.",
-      link: "/netsuite/services/managed-services",
-      image: "/images/Services/managed.webp",
-      icon: ShieldCheck,
-    },
-    {
       title: "Digital Transformation",
       description:
-        "Move beyond simple ERP setup. We help you rethink your business workflows, automate manual processes, and migrate legacy data into a unified, high-performance cloud ecosystem that drives real business value.",
+        "Modernize your business for the digital age. We help you rethink workflows, automate manual processes, and migrate legacy data into a unified, high-performance cloud ecosystem that drives real business value.",
       link: "/netsuite/services/digital-transformation",
       image: "/images/Services/digitaltrans.webp",
       icon: Zap,
     },
     {
-      title: "NetSuite Integration",
+      title: "Integration Services",
       description:
-        "Eliminate data silos by connecting NetSuite with your CRM, e-commerce, payroll, and third-party logistics systems. We build robust, API-led integrations that ensure real-time data flow across your entire tech stack.",
+        "Seamlessly connect your systems. Eliminate data silos by linking NetSuite with your CRM, e-commerce, payroll, and third-party platforms through robust, API-led integrations that ensure real-time data flow.",
       link: "/netsuite/services/integration",
       image: "/images/Services/integration2.webp",
       icon: Share2,
     },
     {
-      title: "NetSuite Customization",
+      title: "Training Services",
       description:
-        "Extend NetSuite's capabilities with specialized SuiteScripts and custom forms. We build industry-specific features within the native framework to solve your most complex operational challenges and unique business requirements.",
-      link: "/netsuite/services/customization",
-      image: "/images/Services/ns_service_low_code_new.png",
-      icon: Code,
-    },
-    {
-      title: "NetSuite Training",
-      description:
-        "High-adoption starts with high-quality training. We provide role-based training paths for admins, power users, and executives to ensure your team is confident, efficient, and productive from day one.",
+        "Upskill your team with expert-led training. We provide role-based training paths for admins, power users, and executives to ensure your team is confident, efficient, and productive from day one.",
       link: "/netsuite/services/training-services",
       image: "/images/netsuiteimages/Servicesimg/traning.webp",
       icon: Users,
     },
     {
-      title: "Low-Code Development",
-      description: "Build bespoke SuiteApps and automations within NetSuite's native SuiteCloud platform. We deliver functional tools in weeks, not months, with zero compromise on quality or upgrade safety.",
+      title: "Low-Code Application Development",
+      description:
+        "Build apps faster with minimal coding. Create bespoke SuiteApps and automations within NetSuite's native SuiteCloud platform, delivering functional tools in weeks, not months.",
       link: "/netsuite/services/low-code",
       image: "/images/Services/lowcode.webp",
       icon: Code,
     },
     {
-      title: "NetSuite Consulting",
+      title: "Managed Services",
       description:
-        "Align your NetSuite investment with your long-term business goals. Our consultants provide strategic roadmaps, ROI projections, and global rollout planning to ensure sustained success and scalability.",
-      link: "/netsuite/services/consulting",
-      image: "/images/lap/lap5.webp",
-      icon: HeartHandshake,
+        "End-to-end IT management & support. Our team handles everything from complex troubleshooting to bi-annual upgrade readiness and continuous system fine-tuning, ensuring maximum uptime and efficiency.",
+      link: "/netsuite/services/managed-services",
+      image: "/images/Services/managed.webp",
+      icon: ShieldCheck,
     },
   ];
 
@@ -223,7 +200,7 @@ export default function NetSuiteServicesClient() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15]"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  Global NetSuite Specialist Services
+                  NetSuite Services Built for Your Business
                 </span>
               </motion.h1>
               <motion.div
@@ -275,7 +252,7 @@ export default function NetSuiteServicesClient() {
                   style={{ height: 390 }}
                 >
                   <Image
-                    src="/images/people/fourteam.webp"
+                    src="/images/Services/netsuite_hero_people.png"
                     alt="Oracle NetSuite Services"
                     fill
                     className="object-cover object-center"
@@ -380,8 +357,8 @@ export default function NetSuiteServicesClient() {
               style={{ minHeight: 340 }}
             >
               <Image
-                src="/images/netsuiteimages/background/netsuite-expert-guidance.png"
-                alt="NetSuite Services"
+                src="/images/Services/netsuite_intro_left.png"
+                alt="NetSuite Expert Services"
                 width={1400}
                 height={900}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
@@ -396,7 +373,7 @@ export default function NetSuiteServicesClient() {
               className="space-y-6"
             >
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
-                Architecting Your Success
+                Your NetSuite Partner, End to End
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed">
                 As a specialized Oracle NetSuite partner, AGSuite provides the
@@ -445,7 +422,7 @@ export default function NetSuiteServicesClient() {
               Service Portfolio
             </span>
             <h2 className="text-4xl lg:text-5xl font-bold mt-6 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#1e3a8a] via-blue-600 to-black">
-              Comprehensive NetSuite Expertise
+              Our Core Services
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               We empower global enterprises with end-to-end services that cover

@@ -98,7 +98,7 @@ export default function AccountingSoftwarePage() {
     {
       title: "Intelligent Automation",
       description: "Take humans out of the loop for repetitive, rules-based accounting tasks — freeing your finance team to focus on analysis and strategy.",
-      image: "/images/benefits/benefit_automated_close.png",
+      image: "/images/benefits/benefit_intelligent_automation.png",
       points: ["Automated AP/AR matching and posting", "Rules-based journal entries and allocations", "Revenue recognition on auto-pilot (ASC 606)", "AI-driven anomaly detection in transactions"]
     },
     {
@@ -110,7 +110,7 @@ export default function AccountingSoftwarePage() {
     {
       title: "Audit-Ready Security",
       description: "Protect financial data with enterprise-grade controls, detailed audit trails, and role-based access that ensure only the right people see the right numbers.",
-      image: "/images/benefits/benefit_compliance_security.png",
+      image: "/images/benefits/benefit_audit_ready_security.png",
       points: ["Full transaction-level audit trail", "Role-based access with field-level security", "Multi-factor authentication built-in", "Immutable period locks to prevent back-dating"]
     },
   ];
