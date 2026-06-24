@@ -22,7 +22,7 @@ const services: ServiceItem[] = [
     title: "Digital Transformation",
     heading: "",
     description: "Modernize your business for the digital age with our strategic transformation roadmap.",
-    bgImage: "/images/zoho-services/srv_digital_transformation_v3.png",
+    bgImage: "/images/zoho-services/srv_digital_transformation_v4.png",
     href: "/zoho/services/digital-transformation",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -34,7 +34,7 @@ const services: ServiceItem[] = [
     title: "Integration Services",
     heading: "",
     description: "Seamlessly connect Zoho with your entire ecosystem via robust API-led integrations.",
-    bgImage: "/images/zoho-services/srv_integration_v3.png",
+    bgImage: "/images/zoho-services/srv_integration_v4.png",
     href: "/zoho/services/integration-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -46,7 +46,7 @@ const services: ServiceItem[] = [
     title: "Training Services",
     heading: "",
     description: "Upskill your team with expert-led Zoho training to maximise platform adoption.",
-    bgImage: "/images/zoho-services/srv_training_v3.png",
+    bgImage: "/images/zoho-services/srv_training_v4.png",
     href: "/zoho/services/training-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -59,7 +59,7 @@ const services: ServiceItem[] = [
     title: "Low-Code Application Development",
     heading: "",
     description: "Build powerful custom applications with Zoho Creator and extend your business faster.",
-    bgImage: "/images/zoho-services/srv_low_code_v3.webp",
+    bgImage: "/images/zoho-services/srv_low_code_v4.webp",
     href: "/zoho/services/low-code",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -71,7 +71,7 @@ const services: ServiceItem[] = [
     title: "Managed Services",
     heading: "",
     description: "End-to-end IT management and dedicated support to keep your Zoho operations running smoothly.",
-    bgImage: "/images/zoho-services/srv_managed_v3.png",
+    bgImage: "/images/zoho-services/srv_managed_v4.png",
     href: "/zoho/services/managed-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -185,7 +185,7 @@ export default function ZohoServices() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 260px"
                   />
                   {/* Black gradient overlay - transparent top to dark bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/50 to-black/90" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                 </div>
 
                 {/* Default State - Image with Left-Aligned Content */}
@@ -276,7 +276,7 @@ export default function ZohoServices() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   {/* Black gradient overlay - transparent top to dark bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/50 to-black/90" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                 </div>
 
                 {/* Default State - Image with Left-Aligned Content */}
@@ -361,7 +361,7 @@ export default function ZohoServices() {
               />
 
               {/* Gradient overlay for text visibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
               {/* Title + Button always visible on mobile */}
               <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-3 text-white">
