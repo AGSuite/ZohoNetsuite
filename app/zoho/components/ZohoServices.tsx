@@ -190,54 +190,44 @@ export default function ZohoServices() {
 
                 {/* Default State - Image with Left-Aligned Content */}
                 <div
-                  className={`absolute inset-0 transition-opacity duration-500 z-10 px-5 ${activeIdx === index ? "opacity-0" : "opacity-100"
+                  className={`absolute inset-0 transition-opacity duration-500 z-10 px-5 pb-6 flex flex-col justify-end text-left ${activeIdx === index ? "opacity-0" : "opacity-100"
                     }`}
                 >
-                  {/* Icon - Positioned lower in default state */}
-                  <div className="absolute bottom-[170px] left-5 transition-all duration-500">
-                    <div className="text-white w-12 h-12">
-                      {service.icon}
-                    </div>
+                  {/* Icon */}
+                  <div className="text-white w-12 h-12 mb-4">
+                    {service.icon}
                   </div>
 
-                  {/* Content - Positioned at bottom in default state */}
-                  <div className="absolute bottom-6 left-5 right-5 text-left transition-all duration-500">
-                    {/* Title */}
-                    <h3 className="text-2xl font-bold text-white mb-3 leading-tight">
-                      {service.title}
-                    </h3>
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-white mb-3 leading-tight">
+                    {service.title}
+                  </h3>
 
-                    {/* Description - Equal length */}
-                    <p className="text-base text-white/90 leading-relaxed line-clamp-3">
-                      {service.description}
-                    </p>
-                  </div>
+                  {/* Description - Equal length */}
+                  <p className="text-base text-white/90 leading-relaxed line-clamp-3">
+                    {service.description}
+                  </p>
                 </div>
 
                 {/* Hover/Active State - White Background with Left-Aligned Content */}
                 <div
-                  className={`absolute inset-0 bg-white transition-opacity duration-500 z-20 px-5 ${activeIdx === index ? "opacity-100" : "opacity-0"
+                  className={`absolute inset-0 bg-white transition-opacity duration-500 z-20 px-5 pb-24 flex flex-col justify-end text-left ${activeIdx === index ? "opacity-100" : "opacity-0"
                     }`}
                 >
-                  {/* Icon - Fixed position from bottom, No background */}
-                  <div className="absolute bottom-[260px] left-5">
-                    <div className="text-red-600 w-12 h-12">
-                      {service.icon}
-                    </div>
+                  {/* Icon */}
+                  <div className="text-red-600 w-12 h-12 mb-4">
+                    {service.icon}
                   </div>
 
-                  {/* Content - Fixed position from bottom */}
-                  <div className="absolute bottom-[100px] left-5 right-5 text-left">
-                    {/* Title */}
-                    <h3 className="text-2xl font-medium text-red-600 mb-3 leading-tight">
-                      {service.title}
-                    </h3>
+                  {/* Title */}
+                  <h3 className="text-2xl font-medium text-red-600 mb-3 leading-tight">
+                    {service.title}
+                  </h3>
 
-                    {/* Description */}
-                    <p className="text-base text-gray-600 leading-relaxed mb-0 line-clamp-3">
-                      {service.description}
-                    </p>
-                  </div>
+                  {/* Description */}
+                  <p className="text-base text-gray-600 leading-relaxed mb-0 line-clamp-3">
+                    {service.description}
+                  </p>
 
                   {/* CTA Button - Fixed at bottom */}
                   <div className="absolute bottom-6 left-5">
@@ -291,54 +281,44 @@ export default function ZohoServices() {
 
                 {/* Default State - Image with Left-Aligned Content */}
                 <div
-                  className={`absolute inset-0 transition-opacity duration-500 z-10 px-5 ${activeIdx === index ? "opacity-0" : "opacity-100"
+                  className={`absolute inset-0 transition-opacity duration-500 z-10 px-5 pb-6 flex flex-col justify-end text-left ${activeIdx === index ? "opacity-0" : "opacity-100"
                     }`}
                 >
-                  {/* Icon - Positioned lower in default state */}
-                  <div className="absolute bottom-[170px] left-5 transition-all duration-500">
-                    <div className="text-white w-12 h-12">
-                      {service.icon}
-                    </div>
+                  {/* Icon */}
+                  <div className="text-white w-12 h-12 mb-4">
+                    {service.icon}
                   </div>
 
-                  {/* Content - Positioned at bottom in default state */}
-                  <div className="absolute bottom-6 left-5 right-5 text-left transition-all duration-500">
-                    {/* Title */}
-                    <h3 className="text-2xl font-bold text-white mb-3 leading-tight">
-                      {service.title}
-                    </h3>
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-white mb-3 leading-tight">
+                    {service.title}
+                  </h3>
 
-                    {/* Description - Equal length */}
-                    <p className="text-base text-white/90 leading-relaxed line-clamp-3">
-                      {service.description}
-                    </p>
-                  </div>
+                  {/* Description - Equal length */}
+                  <p className="text-base text-white/90 leading-relaxed line-clamp-3">
+                    {service.description}
+                  </p>
                 </div>
 
                 {/* Hover/Active State - White Background with Left-Aligned Content */}
                 <div
-                  className={`absolute inset-0 bg-white transition-opacity duration-500 z-20 px-5 ${activeIdx === index ? "opacity-100" : "opacity-0"
+                  className={`absolute inset-0 bg-white transition-opacity duration-500 z-20 px-5 pb-24 flex flex-col justify-end text-left ${activeIdx === index ? "opacity-100" : "opacity-0"
                     }`}
                 >
-                  {/* Icon - Fixed position from bottom, No background */}
-                  <div className="absolute bottom-[260px] left-5">
-                    <div className="text-red-600 w-12 h-12">
-                      {service.icon}
-                    </div>
+                  {/* Icon */}
+                  <div className="text-red-600 w-12 h-12 mb-4">
+                    {service.icon}
                   </div>
 
-                  {/* Content - Fixed position from bottom */}
-                  <div className="absolute bottom-[100px] left-5 right-5 text-left">
-                    {/* Title */}
-                    <h3 className="text-2xl font-medium text-red-600 mb-3 leading-tight">
-                      {service.title}
-                    </h3>
+                  {/* Title */}
+                  <h3 className="text-2xl font-medium text-red-600 mb-3 leading-tight">
+                    {service.title}
+                  </h3>
 
-                    {/* Description */}
-                    <p className="text-base text-gray-600 leading-relaxed mb-0 line-clamp-3">
-                      {service.description}
-                    </p>
-                  </div>
+                  {/* Description */}
+                  <p className="text-base text-gray-600 leading-relaxed mb-0 line-clamp-3">
+                    {service.description}
+                  </p>
 
                   {/* CTA Button - Fixed at bottom */}
                   <div className="absolute bottom-6 left-5">
