@@ -461,7 +461,7 @@ const partnerLogos = [
   { logo: "/images/zoho%20client%20images/initium.png", name: "Initium" },
   { logo: "/images/zoho%20client%20images/krishgen.png", name: "Krishgen" },
   { logo: "/images/zoho%20client%20images/KTA.png", name: "KTA" },
-  { logo: "/images/zoho%20client%20images/rentopia.png", name: "Rentopia" },
+  { logo: "/images/zoho%20client%20images/rentopia_v2.png", name: "Rentopia" },
   { logo: "/images/zoho%20client%20images/samson.png", name: "Samson" },
   { logo: "/images/zoho%20client%20images/shaurrya.png", name: "Shaurrya" },
   { logo: "/images/zoho%20client%20images/tardid.png", name: "Tardid" },

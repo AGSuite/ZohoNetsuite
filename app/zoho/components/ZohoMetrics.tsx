@@ -18,7 +18,7 @@ const logos = [
     { id: "initium", logo: "/images/zoho%20client%20images/initium.png", name: "Initium", link: "#" },
     { id: "krishgen", logo: "/images/zoho%20client%20images/krishgen.png", name: "Krishgen", link: "#" },
     { id: "kta", logo: "/images/zoho%20client%20images/KTA.png", name: "KTA", link: "#" },
-    { id: "rentopia", logo: "/images/zoho%20client%20images/rentopia.png", name: "Rentopia", link: "#" },
+    { id: "rentopia", logo: "/images/zoho%20client%20images/rentopia_v2.png", name: "Rentopia", link: "#" },
     { id: "samson", logo: "/images/zoho%20client%20images/samson.png", name: "Samson", link: "#" },
     { id: "shaurrya", logo: "/images/zoho%20client%20images/shaurrya.png", name: "Shaurrya", link: "#" },
     { id: "tardid", logo: "/images/zoho%20client%20images/tardid.png", name: "Tardid", link: "#" },
@@ -176,10 +176,10 @@ const ZohoMetrics = () => {
                             >
                                 <div className="relative h-40 w-32 overflow-hidden rounded-2xl shadow-lg lg:h-44 lg:w-36 xl:h-72 xl:w-30 translate-y-6">
                                     <Image
-                                        src="/images/people/laptopgirl3.webp"
+                                        src="/images/people/laptopgirl1.webp"
                                         alt="Professional using Zoho"
                                         fill
-                                        className="object-cover"
+                                        className="object-cover scale-x-[-1]"
                                         sizes="(max-width: 1280px) 150px, 120px"
                                     />
                                 </div>
@@ -254,7 +254,7 @@ const ZohoMetrics = () => {
                             >
                                 <div className="relative h-40 w-32 overflow-hidden rounded-2xl shadow-lg lg:h-44 lg:w-36 xl:h-72 xl:w-30 translate-y-6">
                                     <Image
-                                        src="/images/people/laptopgirl.webp"
+                                        src="/images/people/laptopmen1.jpg"
                                         alt="Professional working with Zoho"
                                         fill
                                         className="object-cover"

@@ -72,18 +72,18 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                 </div>
 
                 <div className="hidden lg:flex justify-center lg:justify-end">
-                   <div className="w-full relative">
-                      <Image
-                        src="/images/Dashboard/zohodash.webp"
-                        alt="Empower Your Business with Premium Zoho Cloud Solutions"
-                        width={1200}
-                        height={1000}
-                        priority
-                        fetchPriority="high"
-                        className="w-[140%] max-lg:h-auto max-w-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.2)] -ml-[25%]"
-                        sizes="(max-width: 1024px) 100vw, 60vw"
-                      />
-                   </div>
+                  <div className="w-full relative">
+                    <Image
+                      src="/images/Dashboard/zohodash.webp"
+                      alt="Empower Your Business with Premium Zoho Cloud Solutions"
+                      width={1200}
+                      height={1000}
+                      priority
+                      fetchPriority="high"
+                      className="w-[140%] max-lg:h-auto max-w-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.2)] -ml-[25%]"
+                      sizes="(max-width: 1024px) 100vw, 60vw"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -286,7 +286,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                           alt="Zoho Finance Automation"
                           width={1200}
                           height={1000}
-                          className="w-[135%] max-lg:h-auto max-w-none object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.2)] drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] -mr-[1%] transition-transform duration-700 hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 60vw"
+                          className="w-[1051%] max-h-[320px] max-lg:h-auto max-w-none object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.2)] drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] transition-transform duration-700 hover:scale-[1.02]" sizes="(max-width: 124px) 100vw, 180vw"
                         />
 
                         <motion.div
@@ -386,11 +386,11 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                   customVisual={
                     <div className="relative w-full h-full flex items-center justify-center p-4">
                       <Image
-                        src="/images/lap/lap10_11zon.webp"
-                        alt="Zoho Dashboard"
+                        src="/images/lap/lap9_11zon.webp"
+                        alt="Zoho Managed Services"
                         width={1200}
                         height={1000}
-                        className="w-[135%] max-lg:h-auto max-w-none object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.2)] drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] -mr-[1%] transition-transform duration-700 hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 60vw"
+                        className="w-[1051%] max-h-[320px] max-lg:h-auto max-w-none object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.2)] drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] transition-transform duration-700 hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 80vw"
                       />
 
                       <motion.div
@@ -502,7 +502,7 @@ const HeroSlide = ({
                   className={`mt-4 text-base sm:text-lg lg:text-xl font-normal leading-relaxed ${textColor === 'dark' ? 'text-gray-700' : 'text-white/90'
                     }`}>{desc}</motion.p>
 
-                 <motion.div
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}

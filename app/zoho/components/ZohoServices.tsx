@@ -22,7 +22,7 @@ const services: ServiceItem[] = [
     title: "Digital Transformation",
     heading: "",
     description: "Modernize your business for the digital age with our strategic transformation roadmap.",
-    bgImage: "/images/Services/Digitalservices.webp",
+    bgImage: "/images/zoho-services/srv_digital_transformation_v3.png",
     href: "/zoho/services/digital-transformation",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -34,7 +34,7 @@ const services: ServiceItem[] = [
     title: "Integration Services",
     heading: "",
     description: "Seamlessly connect Zoho with your entire ecosystem via robust API-led integrations.",
-    bgImage: "/images/lap/group2.webp",
+    bgImage: "/images/zoho-services/srv_integration_v3.png",
     href: "/zoho/services/integration-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -46,7 +46,7 @@ const services: ServiceItem[] = [
     title: "Training Services",
     heading: "",
     description: "Upskill your team with expert-led Zoho training to maximise platform adoption.",
-    bgImage: "/images/Services/trainingservices.webp",
+    bgImage: "/images/zoho-services/srv_training_v3.png",
     href: "/zoho/services/training-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -59,7 +59,7 @@ const services: ServiceItem[] = [
     title: "Low-Code Application Development",
     heading: "",
     description: "Build powerful custom applications with Zoho Creator and extend your business faster.",
-    bgImage: "/images/Services/lowcodeservices.webp",
+    bgImage: "/images/zoho-services/srv_low_code_v3.webp",
     href: "/zoho/services/low-code",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -71,7 +71,7 @@ const services: ServiceItem[] = [
     title: "Managed Services",
     heading: "",
     description: "End-to-end IT management and dedicated support to keep your Zoho operations running smoothly.",
-    bgImage: "/images/Services/managedservices.webp",
+    bgImage: "/images/zoho-services/srv_managed_v3.png",
     href: "/zoho/services/managed-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">

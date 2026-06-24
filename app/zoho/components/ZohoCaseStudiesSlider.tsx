@@ -23,7 +23,7 @@ const caseStudies: CaseStudy[] = [
         id: 2,
         title: "Zoho for Business Consulting & Services Industry Sector",
         description: "A leading managed consulting provider streamlines its client management and service delivery.",
-        image: "/images/lap/lap6_11zon.webp",
+        image: "/images/case-studies/cs_consulting_operations.png",
         company: "Business Consulting",
         industry: "Business Consulting & Services",
         recipientEmail: "shivam@agsuitetech.com"
@@ -32,7 +32,7 @@ const caseStudies: CaseStudy[] = [
         id: 3,
         title: "Zoho for Financial Services",
         description: "Modernizing financial operations with an automated approach to data gathering and analysis.",
-        image: "/images/lap/lap7_11zon.webp",
+        image: "/images/case-studies/cs_financial_services.png",
         company: "Financial Services",
         industry: "Financial Services",
         recipientEmail: "shivam@agsuitetech.com"

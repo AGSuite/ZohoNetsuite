@@ -21,7 +21,7 @@ const capabilities: Capability[] = [
         title: "Unified Cloud Platform",
         subline: "Everything you need in one place",
         description: "Zoho One provides a comprehensive suite of 50+ applications to run your entire business—from sales and marketing to finance and HR.",
-        image: "/images/lap/lap9_11zon.webp",
+        image: "/images/key-capabilities/cap_unified.png",
         link: "/zoho/solutions "
     },
     {
@@ -29,7 +29,7 @@ const capabilities: Capability[] = [
         title: "Seamless Integration",
         subline: "Apps that talk to each other",
         description: "Experience effortless data flow across all departments. Your CRM, desk, and books work together to provide a 360-degree view of your operations.",
-        image: "/images/lap/lap7_11zon.webp",
+        image: "/images/key-capabilities/cap_integration.png",
         link: "/zoho/solutions"
     },
     {
@@ -37,7 +37,7 @@ const capabilities: Capability[] = [
         title: "Advanced AI with Zia",
         subline: "Smarter business decisions",
         description: "Harness Zoho's AI assistant, Zia, to predict sales trends, automate tasks, and gain deeper insights into customer behavior.",
-        image: "/images/lap/lap3.webp",
+        image: "/images/key-capabilities/cap_ai_zia.png",
         link: "/zoho/solutions"
     },
     {
@@ -45,7 +45,7 @@ const capabilities: Capability[] = [
         title: "Global Scalability",
         subline: "Ready for your next big step",
         description: "Whether you're a startup or an enterprise, Zoho scales with you, supporting multiple languages, currencies, and global operations.",
-        image: "/images/people/global.webp",
+        image: "/images/key-capabilities/cap_global.png",
         link: "/zoho/solutions"
     },
     {
@@ -53,7 +53,7 @@ const capabilities: Capability[] = [
         title: "Customizable Workflows",
         subline: "Built for your unique needs",
         description: "Automate repetitive tasks and design custom workflows that match your business processes perfectly with Zoho’s low-code tools.",
-        image: "/images/lap/lap6_11zon.webp",
+        image: "/images/key-capabilities/cap_workflows.png",
         link: "/zoho/solutions"
     }
 ];
