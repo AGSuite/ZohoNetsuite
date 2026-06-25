@@ -101,7 +101,7 @@ export default function NSServices() {
           start: "top center",
           end: "bottom center",
           onEnter: () => {
-            gsap.to(overlayRef.current, { opacity: 1, duration: 0.5 });
+            gsap.to(overlayRef.current, { opacity: 0.9, duration: 0.5 });
             gsap.to(glowRef.current, { opacity: 1, duration: 0.5 });
           },
           onLeave: () => {
@@ -109,7 +109,7 @@ export default function NSServices() {
             gsap.to(glowRef.current, { opacity: 0, duration: 0.5 });
           },
           onEnterBack: () => {
-            gsap.to(overlayRef.current, { opacity: 1, duration: 0.5 });
+            gsap.to(overlayRef.current, { opacity: 0.9, duration: 0.5 });
             gsap.to(glowRef.current, { opacity: 1, duration: 0.5 });
           },
           onLeaveBack: () => {
@@ -188,7 +188,7 @@ export default function NSServices() {
                     priority={index < 3}
                   />
                   {/* Black gradient overlay - transparent top to dark bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
                 </div>
 
                 {/* Default State - Image with Left-Aligned Content */}
@@ -291,7 +291,7 @@ export default function NSServices() {
                     priority={index < 2}
                   />
                   {/* Black gradient overlay - transparent top to dark bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
 
                 {/* Default State - Image with Left-Aligned Content */}
@@ -388,7 +388,7 @@ export default function NSServices() {
               />
 
               {/* Gradient overlay for text visibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
               {/* Title + Button always visible on mobile */}
               <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-3 text-white">

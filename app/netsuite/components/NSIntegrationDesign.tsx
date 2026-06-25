@@ -26,13 +26,13 @@ const NSIntegrationDesign = () => {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="relative"
                     >
-                        <div className="relative overflow-hidden w-full">
-                            <div className="relative aspect-[3/3] overflow-hidden group">
+                        <div className="relative overflow-hidden w-full flex justify-center">
+                            <div className="relative aspect-[3/3] overflow-hidden w-[92%] mx-auto">
                                 <Image
                                     src="/images/lap/integration image.png"
                                     alt="NetSuite Integration Design"
                                     fill
-                                    className="object-contain transition-transform duration-700 group-hover:scale-105"
+                                    className="object-contain"
                                     priority
                                     sizes="(max-width: 1024px) 100vw, 50vw"
                                 />

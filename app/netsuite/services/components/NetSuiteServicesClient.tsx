@@ -200,7 +200,7 @@ export default function NetSuiteServicesClient() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15]"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  NetSuite Services Built for Your Business
+                  Empowering Businesses Through End-to-End NetSuite Services
                 </span>
               </motion.h1>
               <motion.div
@@ -215,10 +215,7 @@ export default function NetSuiteServicesClient() {
                 transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8"
               >
-                Scale your vision with AGSuite's comprehensive Oracle NetSuite
-                services. From mission-critical implementations to complex
-                integrations and 24/7 managed support, we empower brands to run
-                entirely in the cloud.
+                AGSuite delivers comprehensive Oracle NetSuite solutions that help organizations modernize processes, connect systems, and drive sustainable growth. From implementation and integration to optimization and managed services, we provide the expertise needed to thrive in a cloud-first world.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
@@ -257,7 +254,7 @@ export default function NetSuiteServicesClient() {
                     fill
                     className="object-cover object-center"
                     priority
-                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                 </div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -372,20 +369,14 @@ export default function NetSuiteServicesClient() {
               transition={{ delay: 0.2 }}
               className="space-y-6"
             >
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
-                Your NetSuite Partner, End to End
+              <h3 className="text-3xl md:text-4xl lg:text-4xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
+                Driving Intelligent Business Transformation with NetSuite
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed">
-                As a specialized Oracle NetSuite partner, AGSuite provides the
-                technical expertise and strategic vision needed to maximize
-                your ERP investment. From global rollouts to complex
-                automations, we ensure your system scales with your business.
+                Successful organizations need more than ERP implementation—they need a trusted partner that can continuously evolve their technology ecosystem. AGSuite delivers a full spectrum of Oracle NetSuite services, including Digital Transformation, System Integration, Low-Code Application Development, User Training, and Managed Services, designed to help businesses maximize value at every stage of growth.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our approach combines industry best practices with deep
-                technical knowledge in SuiteScript, SuiteFlow, and API-led
-                integrations. We help you eliminate operational silos and
-                drive predictable growth in a unified cloud environment.
+                Leveraging AI-driven automation, advanced analytics, and deep platform expertise, we create connected business environments that eliminate operational silos and improve visibility across the enterprise. The result is a smarter, more agile organization equipped to adapt, innovate, and grow in an increasingly digital world.
               </p>
               <div className="pt-4">
                 <Link
@@ -452,7 +443,7 @@ export default function NetSuiteServicesClient() {
                         alt={ind.title}
                         fill
                         className="object-cover"
-                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     </div>
                   </div>
 
@@ -610,7 +601,7 @@ export default function NetSuiteServicesClient() {
               alt="NetSuite Services"
               fill
               className="object-cover"
-             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-transparent" />
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-3xl -mr-32 -mt-32" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />

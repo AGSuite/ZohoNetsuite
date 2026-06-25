@@ -51,15 +51,26 @@ export default function Home() {
           className="relative h-[45vh] md:h-[70vh]  flex flex-col items-center justify-center text-center rounded-2xl shadow-lg"
           aria-label="Visit NetSuite Page"
         >
-          <Image
-            src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
-            alt="Oracle NetSuite Logo"
-            width={320}
-            height={150}
-            className="mb-6 h-[130px] w-auto object-contain"
-            priority
-            fetchPriority="high"
-          />
+          <div className="flex items-center justify-center gap-5 mb-8 px-4 flex-wrap sm:flex-nowrap">
+            <Image
+              src="/images/logos/agsuite_logo.webp"
+              alt="AGSuite Logo"
+              width={180}
+              height={60}
+              className="h-14 md:h-16 lg:h-18 w-auto object-contain"
+              priority
+            />
+            <div className="w-px h-8 bg-gray-400/50 hidden sm:block" />
+            <Image
+              src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
+              alt="Oracle NetSuite Logo"
+              width={180}
+              height={60}
+              className="h-14 md:h-16 lg:h-18 w-auto object-contain"
+              priority
+              fetchPriority="high"
+            />
+          </div>
           <button className="px-8 py-3 rounded-lg bg-gray-700 text-white text-lg font-semibold hover:bg-gray-900 transition">
             Visit NetSuite →
           </button>
@@ -92,16 +103,7 @@ export default function Home() {
             className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"
           />
 
-          {/* Oracle NetSuite Logo — Top Left Corner */}
-          <div className="absolute top-5 left-6 z-10">
-            <Image
-              src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
-              alt="Oracle NetSuite Partner Logo"
-              width={220}
-              height={80}
-              className="h-16 w-auto object-contain drop-shadow-lg brightness-200"
-            />
-          </div>
+
 
           {/* Content */}
           <article className="absolute bottom-5 left-5 md:bottom-8 md:left-8 text-white drop-shadow-lg">
@@ -175,18 +177,7 @@ export default function Home() {
             className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent"
           />
 
-          {/* Zoho Logo — Top Left Corner */}
-          <div className="absolute top-5 left-6 z-10">
-            <Image
-              src="/images/zoho logos/zoho premium.png"
-              alt="Zoho Premium Partner Logo"
-              width={280}
-              height={100}
-              priority
-              fetchPriority="high"
-              className="h-20 w-auto object-contain drop-shadow-lg"
-            />
-          </div>
+
 
           {/* Content */}
           <article className="absolute bottom-5 left-5 md:bottom-8 md:left-8 text-white drop-shadow-lg">
@@ -202,15 +193,26 @@ export default function Home() {
           className="relative h-[45vh] md:h-[70vh]  flex flex-col items-center justify-center text-center rounded-2xl shadow-lg"
           aria-label="Go to Zoho Page"
         >
-          <Image
-            src="/images/zoho logos/zoho premium.png"
-            alt="Zoho Logo"
-            width={260}
-            height={150}
-            priority
-            fetchPriority="high"
-            className="mb-6 h-[130px] w-auto object-contain"
-          />
+          <div className="flex items-center justify-center gap-5 mb-8 px-4 flex-wrap sm:flex-nowrap">
+            <Image
+              src="/images/logos/agsuite_logo.webp"
+              alt="AGSuite Logo"
+              width={180}
+              height={60}
+              className="h-14 md:h-16 lg:h-18 w-auto object-contain"
+              priority
+            />
+            <div className="w-px h-8 bg-gray-400/50 hidden sm:block" />
+            <Image
+              src="/images/zoho logos/zoho premium.png"
+              alt="Zoho Premium Partner Logo"
+              width={180}
+              height={60}
+              className="h-14 md:h-16 lg:h-18 w-auto object-contain"
+              priority
+              fetchPriority="high"
+            />
+          </div>
           <button className="px-8 py-3 rounded-lg bg-gray-700 text-white text-lg font-semibold hover:bg-gray-900 transition">
             Visit Zoho →
           </button>
