@@ -26,25 +26,9 @@ const data: IndustryPageData = {
   introDescription2:
     "NetSuite consolidates your entire distribution operation — from vendor ordering and goods receipt to pick/pack/ship and customer invoicing — in one real-time system. You get complete inventory visibility, automated replenishment, and accurate landed cost tracking.",
   stats: [
-    {
-      icon: Package,
-      value: 400,
-      suffix: "+",
-      label: "Distributors on NetSuite",
-    },
-    {
-      icon: BarChart3,
-      value: 28,
-      suffix: "%",
-      label: "Reduction in Inventory Costs",
-    },
-    {
-      icon: TrendingUp,
-      value: 99,
-      suffix: "%",
-      label: "Order Fulfilment Accuracy",
-    },
-    { icon: Globe, value: 15, suffix: "+", label: "Years of Distribution ERP" },
+    
+    { icon: TrendingUp, value: 15, suffix: "+", label: "Years Experience" },
+  
   ],
   benefits: [
     {

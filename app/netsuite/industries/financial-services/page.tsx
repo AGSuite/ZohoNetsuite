@@ -22,10 +22,12 @@ const data: IndustryPageData = {
   introDescription2:
     "NetSuite for Financial Services is designed to address these needs by streamlining accounting, improving compliance, and enabling informed decision-making. Its unified platform eliminates data silos, ensuring accurate financial reporting and seamless integration across business functions. At AGSuite Technologies, we help financial organizations implement and optimize NetSuite to gain maximum value, transforming complex operations into efficient, data-driven processes.",
   stats: [
+    
     { icon: DollarSign, value: 35, suffix: "%", label: "Reduction in Compliance Costs" },
     { icon: BarChart3, value: 99, suffix: "%", label: "Reporting Accuracy" },
     { icon: Shield, value: 100, suffix: "+", label: "Financial Firms Served" },
-    { icon: TrendingUp, value: 15, suffix: "+", label: "Years ERP Experience" },
+    { icon: TrendingUp, value: 15, suffix: "+", label: "Years Experience" },
+  
   ],
   benefits: [
     {

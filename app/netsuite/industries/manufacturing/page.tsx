@@ -26,10 +26,12 @@ const data: IndustryPageData = {
   introDescription2:
     "With AGSuite's certified NetSuite implementation, manufacturers get a system tailored to their workflows — not the other way around. Our team has delivered NetSuite for discrete, process, and mixed-mode manufacturers across India and globally.",
   stats: [
+    
     { icon: Factory, value: 120, suffix: "+", label: "Manufacturers Served" },
     { icon: BarChart3, value: 40, suffix: "%", label: "Avg Cost Reduction" },
     { icon: Package, value: 99, suffix: "%", label: "Inventory Accuracy" },
     { icon: TrendingUp, value: 15, suffix: "+", label: "Years Experience" },
+  
   ],
   benefits: [
     {

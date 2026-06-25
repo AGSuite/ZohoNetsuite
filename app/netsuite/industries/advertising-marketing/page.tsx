@@ -26,6 +26,7 @@ const data: IndustryPageData = {
   introDescription2:
     "NetSuite gives agencies a single system for CRM, project management, time and expense tracking, client billing, and financial reporting. With real-time visibility into project margins and utilisation, you can make confident decisions on every engagement.",
   stats: [
+    
     { icon: Users, value: 300, suffix: "+", label: "Agencies on NetSuite" },
     {
       icon: BarChart3,
@@ -39,7 +40,8 @@ const data: IndustryPageData = {
       suffix: "%",
       label: "Faster Client Invoicing",
     },
-    { icon: Globe, value: 15, suffix: "+", label: "Years of Agency ERP" },
+    { icon: TrendingUp, value: 15, suffix: "+", label: "Years Experience" },
+  
   ],
   benefits: [
     {

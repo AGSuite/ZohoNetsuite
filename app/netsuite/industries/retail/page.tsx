@@ -3,7 +3,7 @@
 import IndustryTemplate, {
   IndustryPageData,
 } from "@/app/netsuite/industries/_template/IndustryTemplate";
-import { ShoppingCart, BarChart3, Package, Globe } from "lucide-react";
+import { ShoppingCart, BarChart3, Package, Globe, TrendingUp } from "lucide-react";
 
 
 
@@ -26,6 +26,7 @@ const data: IndustryPageData = {
   introDescription2:
     "With real-time inventory visibility, a built-in POS, native e-commerce storefront, and integrated financials, NetSuite gives retailers the single source of truth they need to grow profitably across every channel.",
   stats: [
+    
     {
       icon: ShoppingCart,
       value: 500,
@@ -34,7 +35,8 @@ const data: IndustryPageData = {
     },
     { icon: BarChart3, value: 30, suffix: "%", label: "Avg Revenue Growth" },
     { icon: Package, value: 99, suffix: "%", label: "Inventory Accuracy" },
-    { icon: Globe, value: 100, suffix: "+", label: "Countries Supported" },
+    { icon: TrendingUp, value: 15, suffix: "+", label: "Years Experience" },
+  
   ],
   benefits: [
     {

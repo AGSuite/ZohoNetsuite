@@ -22,10 +22,12 @@ const data: IndustryPageData = {
   introDescription2:
     "Oracle NetSuite ERP for the Telecom Industry is designed to support subscription-driven, high-volume businesses by streamlining financial operations, simplifying billing, and ensuring compliance across geographies. At AGSuite Technologies, we empower telecom organizations to deploy and optimize NetSuite, transforming complex processes into efficient and scalable digital operations.",
   stats: [
+    
     { icon: Wifi, value: 98, suffix: "%", label: "Billing Accuracy Rate" },
     { icon: BarChart3, value: 40, suffix: "%", label: "Reduction in Revenue Leakage" },
     { icon: Globe2, value: 60, suffix: "+", label: "Telecom Deployments" },
-    { icon: TrendingUp, value: 15, suffix: "+", label: "Years ERP Experience" },
+    { icon: TrendingUp, value: 15, suffix: "+", label: "Years Experience" },
+  
   ],
   benefits: [
     {

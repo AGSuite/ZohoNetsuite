@@ -328,7 +328,7 @@ export default function NetSuiteIndustriesClient() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15]"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  Expert Oracle NetSuite Services for Your Industry
+                  Serving Diverse Industries with Specialized Oracle NetSuite Expertise
                 </span>
               </motion.h1>
               <motion.div
@@ -343,7 +343,7 @@ export default function NetSuiteIndustriesClient() {
                 transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8"
               >
-                At AGSuite, we provide comprehensive NetSuite services tailored to the specific needs of diverse sectors. From rapid implementation to complex integrations, we help industries like Software, Manufacturing, and Retail scale with the world's leading cloud ERP.
+                No two industries operate the same way. That&apos;s why AGSuite delivers Oracle NetSuite ERP services tailored to the unique requirements of each sector. Explore how we help businesses across industries streamline operations, enhance visibility, and scale with confidence on NetSuite&apos;s leading cloud platform.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
@@ -377,7 +377,7 @@ export default function NetSuiteIndustriesClient() {
                   style={{ height: 390 }}
                 >
                   <Image
-                    src="/images/people/fourteam.webp"
+                    src="/images/industries/netsuite-industries-hero-v2.png"
                     alt="Oracle NetSuite Industries"
                     fill
                     className="object-cover object-center"
@@ -482,11 +482,11 @@ export default function NetSuiteIndustriesClient() {
               style={{ minHeight: 340 }}
             >
               <Image
-                src="/images/lap/group1.webp"
-                alt="NetSuite by Industry"
+                src="/images/industries/netsuite-industry-operations-v2.png"
+                alt="Built Around the Way Your Industry Operates"
                 width={560}
                 height={380}
-                className="w-full h-auto rounded-xl object-contain"
+                className="w-full h-auto rounded-xl object-cover shadow-lg"
               />
             </motion.div>
             <motion.div
@@ -497,19 +497,13 @@ export default function NetSuiteIndustriesClient() {
               className="space-y-6"
             >
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
-                Tailored to Your Industry
+                Built Around the Way Your Industry Operates
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Oracle NetSuite is designed with industry-specific best
-                practices built right in. From manufacturing floors to software
-                subscriptions, NetSuite provides the features and workflows you
-                need to run your business efficiently.
+                Every industry has its own processes, challenges, and growth objectives. Oracle NetSuite brings together industry-specific functionality, proven workflows, and real-time insights to help businesses operate more efficiently and make smarter decisions.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Unlike fragmented systems, NetSuite offers a seamless,
-                cloud-native ERP that unifies your entire operations structure.
-                Focus on growing your business with a platform that natively
-                speaks your industry's language.
+                With a unified cloud ERP platform, NetSuite eliminates disconnected systems and manual processes, providing complete visibility across finance, operations, inventory, sales, and customer management. No matter your industry, you gain a scalable foundation designed to support growth, agility, and long-term success.
               </p>
               <div className="pt-4">
                 <Link
@@ -549,7 +543,7 @@ export default function NetSuiteIndustriesClient() {
               Industries We Serve
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              We empower businesses across diverse sectors with NetSuite's
+              We empower businesses across diverse sectors with NetSuite&apos;s
               robust cloud architecture and industry-specialized capabilities.
             </p>
           </motion.div>

@@ -26,7 +26,8 @@ const data: IndustryPageData = {
   introDescription2:
     "NetSuite unifies subscription management, advertising revenue tracking, royalty calculations, and financial reporting on a single platform — giving media executives real-time visibility into every revenue stream, channel, and audience segment.",
   stats: [
-    { icon: Globe, value: 200, suffix: "+", label: "Media Industries Served" },
+    
+    { icon: Globe, value: 200, suffix: "+", label: "Media Agencies Served" },
     {
       icon: BarChart3,
       value: 45,
@@ -39,7 +40,8 @@ const data: IndustryPageData = {
       suffix: "%",
       label: "Revenue Recognition Accuracy",
     },
-    { icon: Users, value: 15, suffix: "+", label: "Years of Media ERP" },
+    { icon: TrendingUp, value: 15, suffix: "+", label: "Years Experience" },
+  
   ],
   benefits: [
     {

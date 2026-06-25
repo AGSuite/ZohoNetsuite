@@ -37,6 +37,7 @@ import {
   Map,
   Zap,
   Target,
+  Wifi,
 } from "lucide-react";
 import FooterContactForm from "@/app/components/shared/FooterContactForm";
 
@@ -125,7 +126,7 @@ export default function NetSuiteServicesClient() {
       href: "/netsuite/industries/software",
     },
     {
-      title: "Retail",
+      title: "Retail & E-Commerce",
       description: "Deliver seamless omnichannel customer experiences.",
       icon: ShoppingCart,
       href: "/netsuite/industries/retail",
@@ -137,7 +138,7 @@ export default function NetSuiteServicesClient() {
       href: "/netsuite/industries/wholesale",
     },
     {
-      title: "IT Services",
+      title: "IT & Professional Services",
       description: "Streamline project delivery and resource utilization.",
       icon: Briefcase,
       href: "/netsuite/industries/it-services",
@@ -147,6 +148,30 @@ export default function NetSuiteServicesClient() {
       description: "Optimize ad sales and subscription revenue streams.",
       icon: MonitorPlay,
       href: "/netsuite/industries/media",
+    },
+    {
+      title: "Advertising & Marketing",
+      description: "Manage campaigns, resources, and margins effectively.",
+      icon: Megaphone,
+      href: "/netsuite/industries/advertising-marketing",
+    },
+    {
+      title: "Transportation & Logistics",
+      description: "Drive operational excellence and route visibility.",
+      icon: Map,
+      href: "/netsuite/industries/transport",
+    },
+    {
+      title: "Telecom Industry",
+      description: "Modernize billing and streamline complex subscription management.",
+      icon: Wifi,
+      href: "/netsuite/industries/telecom",
+    },
+    {
+      title: "Financial Services",
+      description: "Ensure regulatory compliance, audit control, and risk management.",
+      icon: DollarSign,
+      href: "/netsuite/industries/financial-services",
     },
   ];
 
@@ -607,7 +632,7 @@ export default function NetSuiteServicesClient() {
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 blur-3xl -ml-32 -mb-32" />
             <div className="relative z-10 max-w-2xl">
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-                Scale your vision with the world's #1 Cloud ERP.
+                Scale your vision with the world&apos;s #1 Cloud ERP.
                 Ready to get started?
               </h2>
               <div className="flex justify-start">

@@ -26,7 +26,8 @@ const data: IndustryPageData = {
   introDescription2:
     "NetSuite brings your financial management, customer billing, route costing, and operational reporting into one unified cloud platform — giving leadership and operations teams the real-time data they need to run a profitable logistics business.",
   stats: [
-    { icon: Package, value: 250, suffix: "+", label: "Logistics Industries" },
+    
+    { icon: Package, value: 250, suffix: "+", label: "Logistics Companies Served" },
     {
       icon: BarChart3,
       value: 30,
@@ -34,7 +35,8 @@ const data: IndustryPageData = {
       label: "Reduction in Billing Errors",
     },
     { icon: TrendingUp, value: 95, suffix: "%", label: "On-Time Billing" },
-    { icon: Globe, value: 15, suffix: "+", label: "Years of Logistics ERP" },
+    { icon: TrendingUp, value: 15, suffix: "+", label: "Years Experience" },
+  
   ],
   benefits: [
     {

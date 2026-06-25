@@ -26,6 +26,7 @@ const data: IndustryPageData = {
   introDescription2:
     "From the initial statement of work through project delivery, time and expense capture, invoicing, and revenue recognition — every step is connected in real time. Your PMs have live project health. Your finance team has accurate revenue data.",
   stats: [
+    
     { icon: Users, value: 500, suffix: "+", label: "Services Firms Served" },
     {
       icon: BarChart3,
@@ -39,7 +40,8 @@ const data: IndustryPageData = {
       suffix: "%",
       label: "On-Time Project Delivery",
     },
-    { icon: Database, value: 15, suffix: "+", label: "Years Experience" },
+    { icon: TrendingUp, value: 15, suffix: "+", label: "Years Experience" },
+  
   ],
   benefits: [
     {

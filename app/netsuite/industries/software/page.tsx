@@ -26,6 +26,7 @@ const data: IndustryPageData = {
   introDescription2:
     "NetSuite's SuiteSuccess for Software edition is pre-configured for ISVs, SaaS industries, and tech firms — with subscription billing, revenue recognition automation, and SaaS metrics built in from day one.",
   stats: [
+    
     {
       icon: Zap,
       value: 8000,
@@ -39,7 +40,8 @@ const data: IndustryPageData = {
       label: "Faster Financial Close",
     },
     { icon: TrendingUp, value: 99, suffix: "%", label: "Revenue Accuracy" },
-    { icon: Globe, value: 100, suffix: "+", label: "Currencies Supported" },
+    { icon: TrendingUp, value: 15, suffix: "+", label: "Years Experience" },
+  
   ],
   benefits: [
     {
