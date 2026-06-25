@@ -66,7 +66,7 @@ const NSMetrics = () => {
     const words = headlineText.split(" ");
 
     const stats = [
-        { value: "600+", label: "Projects Completed" },
+        { value: "700+", label: "Projects Completed" },
         { value: "15+", label: "Industry Expertise" },
         { value: "10+", label: "Countries Serving" },
         { value: "15+", label: "Years Experience" },

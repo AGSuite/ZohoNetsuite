@@ -75,8 +75,8 @@ export default function NetSuiteSolutionsClient() {
   const currentColor = wordColors[rotatingIdx] ?? wordColors[0];
 
   const stats = [
-    { label: "Projects Completed", value: 600, suffix: "+", icon: Briefcase },
-    { label: "Global Customers", value: 200, suffix: "+", icon: Building2 },
+    { label: "Projects Completed", value: 700, suffix: "+", icon: Briefcase },
+    { label: "Global Customers", value: 250, suffix: "+", icon: Building2 },
     { label: "Industry Expertise", value: 15, suffix: "+", icon: Target },
     { label: "Customer Retention", value: 84, suffix: "%", icon: HeartHandshake },
     { label: "Years Experience", value: 15, suffix: "+", icon: Rocket },

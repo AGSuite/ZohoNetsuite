@@ -65,9 +65,9 @@ export default function NetSuiteIndustriesClient() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
 
   const stats = [
-    { label: "Enterprises Served", value: 180, suffix: "+", icon: Trophy },
+    { label: "Enterprises Served", value: 250, suffix: "+", icon: Trophy },
     { label: "NetSuite Experts", value: 50, suffix: "+", icon: Users },
-    { label: "Global Roll-outs", value: 50, suffix: "+", icon: Globe2 },
+    { label: "Global Roll-outs", value: 40, suffix: "+", icon: Globe2 },
     { label: "Years Experience", value: 15, suffix: "+", icon: Rocket },
   ];
 

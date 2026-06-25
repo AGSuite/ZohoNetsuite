@@ -98,7 +98,7 @@ export default function ZohoSolutionsClient() {
         "Advanced sales analytics",
       ],
       link: "/zoho/solutions/sales/zoho-crm",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/zoho-dashboards/zoho-crm.webp",
       icon: Database,
       tag: "Most Popular",
     },
@@ -114,7 +114,7 @@ export default function ZohoSolutionsClient() {
         "Instant financial reports",
       ],
       link: "/zoho/solutions/finance/zoho-books",
-      image: "/images/lap/lap4.webp",
+      image: "/images/zoho-dashboards/zoho-books.webp",
       icon: DollarSign,
       tag: "Finance",
     },
@@ -130,7 +130,7 @@ export default function ZohoSolutionsClient() {
         "Consolidated financial view",
       ],
       link: "/zoho/solutions/finance/zoho-finance-plus",
-      image: "/images/lap/lap2.webp",
+      image: "/images/zoho-dashboards/zoho-finance-plus.webp",
       icon: BarChart3,
       tag: "Suite",
     },
@@ -146,7 +146,7 @@ export default function ZohoSolutionsClient() {
         "HR process automation",
       ],
       link: "/zoho/solutions/hr/zoho-people",
-      image: "/images/lap/lap3.webp",
+      image: "/images/zoho-dashboards/zoho-people.webp",
       icon: Users,
       tag: "HR",
     },
@@ -162,7 +162,7 @@ export default function ZohoSolutionsClient() {
         "Resource utilization",
       ],
       link: "/zoho/solutions/projects/zoho-projects",
-      image: "/images/lap/lap1.webp",
+      image: "/images/zoho-dashboards/zoho-projects.webp",
       icon: Rocket,
       tag: "Projects",
     },
@@ -178,7 +178,7 @@ export default function ZohoSolutionsClient() {
         "SLA and performance tracking",
       ],
       link: "/zoho/solutions/service/zoho-desk",
-      image: "/images/lap/lap4.webp",
+      image: "/images/zoho-dashboards/zoho-desk.webp",
       icon: Globe,
       tag: "Support",
     },
@@ -194,7 +194,7 @@ export default function ZohoSolutionsClient() {
         "Engagement analytics",
       ],
       link: "/zoho/solutions/marketing/zoho-social",
-      image: "/images/lap/lap5.webp",
+      image: "/images/zoho-dashboards/zoho-social-dashboard.png",
       icon: Share2,
       tag: "Marketing",
     },
@@ -210,7 +210,7 @@ export default function ZohoSolutionsClient() {
         "Predictive forecasting",
       ],
       link: "/zoho/solutions/analytics/zoho-analytics",
-      image: "/images/lap/lap8_11zon.webp",
+      image: "/images/zoho-dashboards/zoho-analytics-dashboard.png",
       icon: PieChart,
       tag: "BI",
     },
@@ -226,7 +226,7 @@ export default function ZohoSolutionsClient() {
         "Unbeatable enterprise value",
       ],
       link: "/zoho/solutions/it-management/zoho-one",
-      image: "/images/lap/lap6_11zon.webp",
+      image: "/images/zoho-dashboards/zoho-one.webp",
       icon: Zap,
       tag: "All-in-One",
     },
@@ -242,7 +242,7 @@ export default function ZohoSolutionsClient() {
         "Centralized team storage",
       ],
       link: "/zoho/solutions/email-collab/zoho-workplace",
-      image: "/images/lap/lap10_11zon.webp",
+      image: "/images/zoho-dashboards/zoho-workplace-dashboard.png",
       icon: Globe2,
       tag: "Workplace",
     },
@@ -402,7 +402,7 @@ export default function ZohoSolutionsClient() {
                 className="flex items-center justify-center rounded-2xl"
                 style={{ minHeight: 340 }}
               >
-                <Image src="/images/lap/group1.webp" alt="Zoho Enterprise Platform" width={560} height={380} className="w-full h-auto rounded-xl object-contain border-2 border-indigo-100 shadow-xl" priority />
+                <Image src="/images/zoho_suite_graphic.png" alt="Zoho Enterprise Platform" width={560} height={380} className="w-full h-auto rounded-xl object-contain border-2 border-indigo-100 shadow-xl" priority />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: isMobile ? 0 : 30 }}
@@ -416,7 +416,7 @@ export default function ZohoSolutionsClient() {
                   fromColor="#111827"
                   toColor="#2563eb"
                 >
-                  The Most Versatile Cloud Suite for Growing Businesses
+                  The Most Versatile Cloud Suite  for Growing Businesses
                 </ScrollFloat>
                 <p className="text-lg text-gray-600 leading-relaxed">Zoho is the world&apos;s most comprehensive business software suite with over 45+ integrated applications. Built from the ground up for the cloud, it provides a single unified platform to manage every aspect of your business — from CRM and finance to HR and automation.</p>
                 <p className="text-lg text-gray-600 leading-relaxed">Every solution is purpose-built for cloud — running inside your Zoho account with real-time data, no silos, and unified reporting across every department.</p>
@@ -504,6 +504,7 @@ export default function ZohoSolutionsClient() {
                   const isEven = index % 2 === 0;
                   const currentGradient = imageBgGradients[index % imageBgGradients.length];
                   const accentColor = currentGradient.split(',')[2].trim().replace(')', '');
+                  const delay = index * 0.15;
 
                   return (
                     <div
@@ -516,7 +517,7 @@ export default function ZohoSolutionsClient() {
                           initial={{ opacity: 0, y: isMobile ? 0 : 40, scale: isMobile ? 1 : 0.95 }}
                           whileInView={{ opacity: 0.8, y: 0, scale: 1 }}
                           viewport={{ once: true, margin: "-100px" }}
-                          transition={{ duration: 0.5, ease: "easeOut" }}
+                          transition={{ type: "spring", stiffness: 120, damping: 20, delay }}
                           className="absolute inset-2 sm:inset-0 rounded-[2.5rem] shadow-lg border border-white/50"
                           style={{
                             background: currentGradient,
@@ -528,14 +529,14 @@ export default function ZohoSolutionsClient() {
                           initial={{ opacity: 0, y: isMobile ? 0 : 40 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true, margin: "-100px" }}
-                          transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-                          className="relative h-64 sm:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-2xl z-10 transform transition-transform group-hover:scale-[1.02]"
+                          transition={{ type: "spring", stiffness: 120, damping: 20, delay }}
+                          className="relative h-64 sm:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-2xl z-10 transform transition-transform group-hover:scale-[1.02] bg-white"
                         >
                           <Image
                             src={solution.image}
                             alt={solution.title}
                             fill
-                            className="object-cover"
+                            className="object-contain object-center p-4"
                             sizes="(max-width: 768px) 100vw, 50vw"
                           />
                         </motion.div>
@@ -546,7 +547,7 @@ export default function ZohoSolutionsClient() {
                         initial={{ opacity: 0, x: isMobile ? 0 : (isEven ? 40 : -40) }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+                        transition={{ type: "spring", stiffness: 120, damping: 20, delay }}
                         className={`relative z-10 order-2 ${isEven ? '' : 'lg:order-1'}`}
                       >
                         <span

@@ -55,12 +55,12 @@ export const NSCircularDesign = () => {
     }, []);
 
     return (
-        <div className="relative w-full h-[450px] xl:h-[550px] flex items-center justify-center overflow-visible select-none py-6">
+        <div className="relative w-full h-[410px] lg:h-[510px] xl:h-[580px] flex items-center justify-center overflow-visible select-none py-6">
             {/* Main Container - Compact to prevent icon clipping */}
-            <div className="relative w-[350px] h-[350px] xl:w-[550px] xl:h-[550px]">
+            <div className="relative w-[350px] h-[350px] lg:w-[460px] lg:h-[460px] xl:w-[520px] xl:h-[520px]">
 
                 {/* SVG for the circular diagram */}
-                <svg viewBox="0 0 600 600" className="absolute inset-0 w-full h-full pointer-events-none">
+                <svg viewBox="-60 -60 720 720" className="absolute inset-0 w-full h-full pointer-events-none">
                     <defs>
                         {/* Professional Dark Blue Gradients */}
                         <linearGradient id="darkBlueGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -254,17 +254,17 @@ export const NSCircularDesign = () => {
                     <circle cx="300" cy="300" r="0" fill="#ffffff" stroke="#e5e7eb" strokeWidth="2" filter="url(#shadow)" />
 
                     {/* Dotted circle for revolving icons - Visible orbit closer in */}
-                    <circle cx="300" cy="300" r="330" fill="none" stroke="#132552ff" strokeWidth="1" strokeDasharray="10,10" opacity="1" />
+                    <circle cx="300" cy="300" r="350" fill="none" stroke="#1e3a8a" strokeWidth="1.5" strokeDasharray="6,6" opacity="1" />
 
                 </svg>
 
                 {/* Central NetSuite Logo - Smaller */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90px] h-[90px] xl:w-[100px] xl:h-[100px] rounded-full bg-white flex items-center justify-center z-40 shadow-lg border-2 border-blue-100">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[56px] h-[56px] lg:w-[68px] lg:h-[68px] xl:w-[76px] xl:h-[76px] rounded-full bg-white flex items-center justify-center z-40 shadow-lg border-2 border-blue-100">
                     <Image
                         src="/images/logos/oracle%20netsuite%20logo.png"
                         alt="Oracle NetSuite"
-                        width={70}
-                        height={70}
+                        width={52}
+                        height={52}
                         className="object-contain"
                     />
                 </div>
@@ -272,6 +272,10 @@ export const NSCircularDesign = () => {
                 {/* Revolving Stakeholder Icons on the dotted circle */}
                 <div className="absolute inset-0 z-50 pointer-events-none">
                     {STAKEHOLDERS.map((stakeholder, idx) => {
+                        const angleRad = (stakeholder.angle * Math.PI) / 180;
+                        const x = (48.6111 * Math.cos(angleRad)).toFixed(4);
+                        const y = (48.6111 * Math.sin(angleRad)).toFixed(4);
+
                         return (
                             <motion.div
                                 key={idx}
@@ -282,12 +286,14 @@ export const NSCircularDesign = () => {
                                     ease: "linear",
                                     delay: 0
                                 }}
-                                className="absolute inset-0 flex items-center justify-center"
+                                className="absolute inset-0 pointer-events-none"
                             >
                                 <div
-                                    className="absolute pointer-events-auto flex flex-col items-center"
+                                    className="absolute pointer-events-auto flex flex-col items-center justify-center"
                                     style={{
-                                        transform: `rotate(${stakeholder.angle}deg) translateY(-${280}px) rotate(-${stakeholder.angle}deg)`
+                                        left: `calc(50% + ${x}%)`,
+                                        top: `calc(50% + ${y}%)`,
+                                        transform: "translate(-50%, -50%)",
                                     }}
                                 >
                                     <motion.div
@@ -300,14 +306,14 @@ export const NSCircularDesign = () => {
                                         }}
                                         className="relative flex flex-col items-center"
                                     >
-                                        {/* Icon container - Smaller for compact design */}
-                                        <div className="w-10 h-10 xl:w-12 xl:h-12 rounded-full bg-white flex items-center justify-center text-blue-600 text-lg shadow-[0_4px_12px_rgba(59,130,246,0.3)] border-2 border-blue-200">
+                                        {/* Icon container */}
+                                        <div className="w-8 h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 rounded-full bg-white flex items-center justify-center text-blue-600 text-xs lg:text-sm shadow-[0_4px_10px_rgba(59,130,246,0.25)] border border-blue-200">
                                             <stakeholder.Icon />
                                         </div>
 
                                         {/* Text label with white background and border */}
-                                        <div className="mt-2 text-center">
-                                            <span className="text-[10px] font-bold text-blue-900 uppercase tracking-wide whitespace-nowrap bg-white px-2 py-1 rounded-lg border border-blue-200 shadow-sm">
+                                        <div className="mt-1.5 text-center">
+                                            <span className="text-[10px] font-bold text-blue-900 uppercase tracking-wide whitespace-nowrap bg-white px-2 py-0.5 rounded-md border border-blue-200 shadow-sm">
                                                 {stakeholder.name}
                                             </span>
                                         </div>

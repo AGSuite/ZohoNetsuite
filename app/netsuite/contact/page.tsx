@@ -464,8 +464,8 @@ export default function ContactPage() {
               {/* Consultation Metrics Cards (Synced from About Us) */}
               <div className="mt-2 grid grid-cols-2 gap-4 sm:gap-6">
                 {[
-                  { label: 'Projects Completed', value: '600+', icon: Briefcase },
-                  { label: 'Global Customers', value: '200+', icon: Building2 },
+                  { label: 'Projects Completed', value: '700+', icon: Briefcase },
+                  { label: 'Global Customers', value: '250+', icon: Building2 },
                   { label: 'Industry Expertise', value: '15+', icon: Target },
                   { label: 'Customer Retention', value: '84%', icon: Heart },
                   { label: 'Years Experience', value: '15+', icon: Rocket },

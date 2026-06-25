@@ -192,7 +192,7 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                         alt="NetSuite for IT and ITES"
                         width={100}
                         height={1600}
-                        className="w-[150%] max-w-none object-contain drop-shadow-[0_40px_80px_rgba(37,99,235,0.45)] -mr-[18%] transition-transform duration-700 hover:scale-[1.02]"
+                        className="w-[120%] lg:w-[130%] xl:w-[135%] max-w-none object-contain drop-shadow-[0_40px_80px_rgba(37,99,235,0.45)] -mr-[10%] transition-transform duration-700 hover:scale-[1.02]"
                         sizes="(max-width: 1024px) 100vw, 60vw"
                       />
                     </div>
@@ -264,52 +264,52 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                         alt="NetSuite Dashboard"
                         width={1900}
                         height={1900}
-                        className="w-[135%] max-w-none object-contain filter drop-shadow-[0_20px_30px_rgba(219,39,119,0.4)] drop-shadow-[0_30px_60px_rgba(147,51,234,0.3)] -mr-[1%] transition-transform duration-700 hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 60vw"
+                        className="w-[100%] lg:w-[105%] xl:w-[110%] max-w-none object-contain filter drop-shadow-[0_20px_30px_rgba(219,39,119,0.4)] drop-shadow-[0_30px_60px_rgba(147,51,234,0.3)] transition-transform duration-700 hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 60vw"
                       />
 
                       <motion.div
                         initial={{ opacity: 0, x: -30, y: -20 }}
                         animate={{ opacity: 1, x: 0, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.8 }}
-                        className="absolute -top-6 -left-8 bg-white p-3.5 rounded-xl shadow-2xl z-40 flex items-center gap-4 border border-gray-100 min-w-[280px]"
+                        className="absolute -top-4 -left-6 bg-white p-2.5 rounded-xl shadow-xl z-40 flex items-center gap-3 border border-gray-100 min-w-[220px] lg:min-w-[240px]"
                       >
                         <div className="flex -space-x-3 shrink-0">
-                          <div className="w-11 h-11 rounded-lg bg-[#005a5a] flex items-center justify-center p-2 shadow-lg ring-2 ring-white z-20">
+                          <div className="w-7.5 h-7.5 lg:w-8 lg:h-8 rounded-lg bg-[#005a5a] flex items-center justify-center p-1.5 shadow-lg ring-2 ring-white z-20">
                             <Image
                               src="/images/logos/oracle%20netsuite%20logo.png"
                               alt="Oracle NetSuite"
-                              width={28}
-                              height={28}
+                              width={24}
+                              height={24}
                               className="object-contain brightness-0 invert"
                               style={{ width: 'auto', height: 'auto' }}
                             />
                           </div>
-                          <div className="w-11 h-11 rounded-lg bg-[#007b7b] flex items-center justify-center text-white shadow-lg ring-2 ring-white z-10">
-                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                          <div className="w-7.5 h-7.5 lg:w-8 lg:h-8 rounded-lg bg-[#007b7b] flex items-center justify-center text-white shadow-lg ring-2 ring-white z-10">
+                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                             </svg>
                           </div>
-                          <div className="w-11 h-11 rounded-lg bg-[#95C93D] flex items-center justify-center text-white shadow-lg ring-2 ring-white">
-                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                          <div className="w-7.5 h-7.5 lg:w-8 lg:h-8 rounded-lg bg-[#95C93D] flex items-center justify-center text-white shadow-lg ring-2 ring-white">
+                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                             </svg>
                           </div>
                         </div>
-                        <span className="text-[15px] font-bold text-gray-800 leading-tight">Operations, Financials, Analytics</span>
+                        <span className="text-[11px] lg:text-[12px] font-bold text-gray-800 leading-tight">Operations, Financials, Analytics</span>
                       </motion.div>
 
                       <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 1.1 }}
-                        className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[115%] bg-white p-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-40 flex items-center gap-5 border border-gray-50"
+                        className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[95%] bg-white p-3 rounded-2xl shadow-[0_15px_35px_rgba(0,0,0,0.15)] z-40 flex items-center gap-3 border border-gray-50"
                       >
-                        <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#f4f9eb] flex items-center justify-center shadow-inner">
-                          <svg className="w-8 h-8 text-[#95C93D]" fill="currentColor" viewBox="0 0 24 24">
+                        <div className="flex-shrink-0 w-9 h-9 rounded-full bg-[#f4f9eb] flex items-center justify-center shadow-inner">
+                          <svg className="w-5 h-5 text-[#95C93D]" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C20.1216 16 21.017 16.8954 21.017 18V21C21.017 22.1046 20.1216 23 19.017 23H16.017C14.9124 23 14.017 22.1046 14.017 21ZM14.017 11L14.017 8C14.017 6.89543 14.9124 6 16.017 6H19.017C20.1216 6 21.017 6.89543 21.017 8V11C21.017 12.1046 20.1216 13 19.017 13H16.017C14.9124 13 14.017 12.1046 14.017 11ZM3.017 21L3.017 18C3.017 16.8954 3.91243 16 5.01699 16H8.01699C9.12156 16 10.017 16.8954 10.017 18V21C10.017 22.1046 9.12156 23 8.01699 23H5.01699C3.91243 23 3.017 22.1046 3.017 21ZM3.017 11L3.017 8C3.017 6.89543 3.91243 6 5.01699 6H8.01699C9.12156 6 10.017 6.89543 10.017 8V11C10.017 12.1046 9.12156 13 8.01699 13H5.01699C3.91243 13 3.017 12.1046 3.017 11Z" />
                           </svg>
                         </div>
-                        <p className="text-[17px] font-medium text-[#1e3a5f] leading-snug">
+                        <p className="text-[13px] lg:text-[14px] font-medium text-[#1e3a5f] leading-snug">
                           &quot;NetSuite, the single source of truth that can make your operations seamless&quot;
                         </p>
                       </motion.div>
@@ -371,13 +371,13 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   customVisual={
                     <div className="relative w-full h-full flex items-center justify-center p-4">
                       {/* Medium Balanced Scale (155%) */}
-                      <div className="relative z-10 w-[155%] max-w-none">
+                      <div className="relative z-10 w-[110%] lg:w-[115%] xl:w-[120%] max-w-none">
                         <Image
                           src="/images/lap/group1.webp"
                           alt="Global Command Dashboards"
                           width={1900}
                           height={1400}
-                          className="w-full h-auto object-contain filter drop-shadow-[0_25px_45px_rgba(37,99,235,0.25)] -mr-[13%] transition-transform duration-700 hover:scale-[1.01]" 
+                          className="w-full h-auto object-contain filter drop-shadow-[0_25px_45px_rgba(37,99,235,0.25)] -mr-[10%] transition-transform duration-700 hover:scale-[1.01]" 
                           sizes="(max-width: 1024px) 100vw, 60vw"
                         />
                         
@@ -391,12 +391,12 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                         initial={{ opacity: 0, x: -30, y: -20 }}
                         animate={{ opacity: 1, x: 0, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.8 }}
-                        className="absolute -top-6 -left-8 bg-white p-3.5 rounded-xl shadow-2xl z-40 flex items-center gap-4 border border-gray-100 min-w-[280px]"
+                        className="absolute -top-4 -left-6 bg-white p-2.5 rounded-xl shadow-xl z-40 flex items-center gap-3 border border-gray-100 min-w-[220px] lg:min-w-[240px]"
                       >
-                        <div className="w-11 h-11 rounded-lg bg-linear-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white shadow-lg">
-                          <TrendingUp className="w-6 h-6" />
+                        <div className="w-7.5 h-7.5 lg:w-8 lg:h-8 rounded-lg bg-linear-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white shadow-lg shrink-0">
+                          <TrendingUp className="w-4 h-4 lg:w-4.5 lg:h-4.5" />
                         </div>
-                        <span className="text-[15px] font-bold text-gray-800 leading-tight">Strategic Intelligence Platform</span>
+                        <span className="text-[11px] lg:text-[12px] font-bold text-gray-800 leading-tight">Strategic Intelligence Platform</span>
                       </motion.div>
 
                       {/* Bottom-Center Power Card (Commerce Style) */}
@@ -404,14 +404,14 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 1.1 }}
-                        className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[115%] bg-white p-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-40 flex items-center gap-5 border border-gray-50"
+                        className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[95%] bg-white p-3 rounded-2xl shadow-[0_15px_35px_rgba(0,0,0,0.15)] z-40 flex items-center gap-3 border border-gray-50"
                       >
-                        <div className="flex-shrink-0 w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center shadow-inner">
-                          <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                        <div className="flex-shrink-0 w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center shadow-inner shrink-0">
+                          <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C20.1216 16 21.017 16.8954 21.017 18V21C21.017 22.1046 20.1216 23 19.017 23H16.017C14.9124 23 14.017 22.1046 14.017 21ZM14.017 11L14.017 8C14.017 6.89543 14.9124 6 16.017 6H19.017C20.1216 6 21.017 6.89543 21.017 8V11C21.017 12.1046 20.1216 13 19.017 13H16.017C14.9124 13 14.017 12.1046 14.017 11ZM3.017 21L3.017 18C3.017 16.8954 3.91243 16 5.01699 16H8.01699C9.12156 16 10.017 16.8954 10.017 18V21C10.017 22.1046 9.12156 23 8.01699 23H5.01699C3.91243 23 3.017 22.1046 3.017 21ZM3.017 11L3.017 8C3.017 6.89543 3.91243 6 5.01699 6H8.01699C9.12156 6 10.017 6.89543 10.017 8V11C10.017 12.1046 9.12156 13 8.01699 13H5.01699C3.91243 13 3.017 12.1046 3.017 11Z" />
                           </svg>
                         </div>
-                        <p className="text-[17px] font-medium text-[#1e3a5f] leading-snug">
+                        <p className="text-[13px] lg:text-[14px] font-medium text-[#1e3a5f] leading-snug">
                           &quot;NetSuite is the central source of strategic truth, empowering modern CFOs to lead with precision.&quot;
                         </p>
                       </motion.div>
@@ -735,7 +735,7 @@ const HeroSlide = ({
                       width={1800}
                       height={1600}
                       priority={priority}
-                      className="w-[140%] max-w-none object-contain drop-shadow-[0_20px_60px_rgba(59,130,246,0.25)] -ml-[25%] transition-transform duration-700 hover:scale-[1.02]"
+                      className="w-[115%] lg:w-[125%] xl:w-[130%] max-w-none object-contain drop-shadow-[0_20px_60px_rgba(59,130,246,0.25)] -ml-[10%] lg:-ml-[15%] xl:-ml-[20%] transition-transform duration-700 hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 60vw"
                     />
                   )}

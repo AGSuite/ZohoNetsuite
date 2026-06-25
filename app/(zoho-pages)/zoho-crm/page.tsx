@@ -134,7 +134,7 @@ export default function ZohoCRMPage() {
       title: "Unmatched Productivity",
       description:
         "Automate the busywork that slows down your sales team. From lead scoring to follow-up emails, Zoho CRM handles the routine tasks so your reps can focus on building relationships.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/people/zoho_crm_hero.png",
       points: [
         "Advanced lead scoring and assignment rules",
         "Automated email sequences and follow-up tasks",
@@ -206,7 +206,7 @@ export default function ZohoCRMPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap2.webp"
+      heroImage="/images/people/zoho_crm_hero.png"
       whatIsImage="/images/zoho-dashboards/zoho-crm.webp"
       heroCard1={{
         title: "250,000+ Businesses",

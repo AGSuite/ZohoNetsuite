@@ -310,8 +310,8 @@ type CounterItem = {
 };
 
 const counters: CounterItem[] = [
-  { label: 'Projects Completed', value: 600, icon: Briefcase, suffix: "+" },
-  { label: 'Global Customers', value: 200, icon: Building2, suffix: "+" },
+  { label: 'Projects Completed', value: 700, icon: Briefcase, suffix: "+" },
+  { label: 'Global Customers', value: 250, icon: Building2, suffix: "+" },
   { label: 'Industry Expertise', value: 15, icon: Target, suffix: "+" },
   { label: 'Customer Retention', value: 84, icon: Heart, suffix: "%" },
   { label: 'Years Experience', value: 15, icon: Rocket, suffix: "+" },

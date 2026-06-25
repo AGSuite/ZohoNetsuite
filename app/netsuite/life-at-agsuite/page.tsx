@@ -246,7 +246,7 @@ export default function LifeAtAGSuite() {
                   <Trophy className="text-indigo-600 w-7 h-7" />
                 </div>
                 <div>
-                  <h4 className="text-3xl font-medium text-gray-900">600+</h4>
+                  <h4 className="text-3xl font-medium text-gray-900">700+</h4>
                   <p className="text-[12px] text-gray-500 font-medium uppercase tracking-wider">Projects Completed</p>
                 </div>
               </div>

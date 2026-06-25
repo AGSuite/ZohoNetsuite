@@ -381,14 +381,14 @@ export default function ZohoSolutionTemplate({
 
       {/* ── Introduction Section (What is ...) ───────────────────────────────── */}
       <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
+        <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-16">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden aspect-w-16 aspect-h-9 w-full min-h-[600px]"
             >
               <div className="relative w-full h-full p-4 lg:p-6">
                 <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-red-900/10 border-4 border-red-50">
@@ -396,7 +396,7 @@ export default function ZohoSolutionTemplate({
                     src={whatIsImage || heroImage}
                     alt={title}
                     fill
-                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                    className="object-contain"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   {/* Decorative Gradient Border Overlay */}
@@ -413,7 +413,8 @@ export default function ZohoSolutionTemplate({
               className="flex flex-col justify-center space-y-6 py-6"
             >
               <div className="space-y-4">
-                <h3 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-red-600 leading-tight">
+                <h3 className="text-2xl md:text-3xl lg:text-[32px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-red-600 leading-tight">
+
                   {subtitle}
                 </h3>
               </div>
