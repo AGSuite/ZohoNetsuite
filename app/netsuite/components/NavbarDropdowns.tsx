@@ -27,11 +27,11 @@ export const DesktopDropdown: React.FC<DesktopDropdownProps> = ({ item, setOpenD
                                 <div className="absolute inset-0 opacity-10">
                                     <Image
                                         src={
-                                            item.title === 'Services' ? "/images/lap/lap4.webp" :
-                                                item.title === 'Industries' ? "/images/people/fourteam.webp" :
-                                                    item.title === 'Insights' ? "/images/lap/lap3.webp" :
-                                                        item.title === 'Contact' ? "/images/people/laptopmen.webp" :
-                                                            "/images/lap/lap1.webp"
+                                            item.title === 'Services' ? "/images/navbar/services.png" :
+                                                item.title === 'Industries' ? "/images/navbar/industries.png" :
+                                                    item.title === 'Insights' ? "/images/navbar/insights.png" :
+                                                        item.title === 'Contact' ? "/images/navbar/contact.png" :
+                                                            "/images/navbar/about.png"
                                         }
                                         alt={item.title} fill className="object-cover"
                                         sizes="400px"
@@ -108,11 +108,11 @@ export const DesktopDropdown: React.FC<DesktopDropdownProps> = ({ item, setOpenD
                         <div className="relative flex-1 w-full rounded-2xl overflow-hidden shadow-lg group/card border border-gray-100 min-h-[180px]">
                             <Image
                                 src={
-                                    item.title === 'Services' ? "/images/lap/lap4.webp" :
-                                        item.title === 'Industries' ? "/images/people/fourteam.webp" :
-                                            item.title === 'Insights' ? "/images/lap/lap3.webp" :
-                                                item.title === 'Contact' ? "/images/people/laptopmen.webp" :
-                                                    "/images/lap/lap1.webp"
+                                    item.title === 'Services' ? "/images/navbar/services.png" :
+                                        item.title === 'Industries' ? "/images/navbar/industries.png" :
+                                            item.title === 'Insights' ? "/images/navbar/insights.png" :
+                                                item.title === 'Contact' ? "/images/navbar/contact.png" :
+                                                    "/images/navbar/about.png"
                                 }
                                 alt="Featured" fill className="object-cover group-hover/card:scale-105 transition-transform duration-700"
                                 sizes="400px"
