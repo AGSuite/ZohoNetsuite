@@ -122,7 +122,7 @@ export default function ZohoCRMPage() {
       title: "360° Customer Intelligence",
       description:
         "Zoho CRM provides a complete picture of every customer interaction across sales, marketing, and support — allowing your teams to deliver highly personalized experiences at every touchpoint.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/zoho-crm-benefits/customer-intelligence.png",
       points: [
         "Unified customer timeline across all channels",
         "Seamless integration with finance and inventory",
@@ -134,7 +134,7 @@ export default function ZohoCRMPage() {
       title: "Unmatched Productivity",
       description:
         "Automate the busywork that slows down your sales team. From lead scoring to follow-up emails, Zoho CRM handles the routine tasks so your reps can focus on building relationships.",
-      image: "/images/people/zoho_crm_hero.png",
+      image: "/images/zoho-crm-benefits/productivity.png",
       points: [
         "Advanced lead scoring and assignment rules",
         "Automated email sequences and follow-up tasks",
@@ -146,7 +146,7 @@ export default function ZohoCRMPage() {
       title: "Omnichannel Engagement",
       description:
         "Meet your customers where they are. Whether it's email, phone, live chat, or social media, Zoho CRM centralizes all communication so you never miss a beat.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/zoho-crm-benefits/omnichannel.png",
       points: [
         "Integrated telephony and SMS capabilities",
         "Live chat triggered by lead behavior",
@@ -158,7 +158,7 @@ export default function ZohoCRMPage() {
       title: "AI-Powered Insights",
       description:
         "Leverage Zia, our AI assistant, to get smarter about your sales. Zia identifies patterns, predicts outcomes, and offers actionable suggestions to help you close more deals.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/zoho-crm-benefits/ai-insights.png",
       points: [
         "Predictive lead and deal conversion scoring",
         "Best-time-to-contact recommendations",
@@ -170,7 +170,7 @@ export default function ZohoCRMPage() {
       title: "Customizable & Scalable",
       description:
         "Your business is unique, and your CRM should be too. Zoho CRM's highly flexible architecture allows you to customize every aspect to fit your specific workflows.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/zoho-crm-benefits/customizable.png",
       points: [
         "Custom modules, fields, and layouts",
         "Bespoke canvass design for unique UIs",
@@ -182,7 +182,7 @@ export default function ZohoCRMPage() {
       title: "Enterprise-Grade Security",
       description:
         "Protect your most valuable asset — your data. Zoho CRM comes with robust security features that give you complete control over who sees what.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/zoho-crm-benefits/security.png",
       points: [
         "Role-based access and field-level security",
         "HIPAA and GDPR compliance built-in",

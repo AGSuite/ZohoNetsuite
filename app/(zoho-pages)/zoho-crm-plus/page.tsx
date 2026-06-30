@@ -121,7 +121,7 @@ export default function ZohoCRMPlusPage() {
     {
       title: "The Ultimate CX Platform",
       description: "Break down the wall between sales, marketing, and support. Zoho CRM Plus provides a unified platform to deliver exceptional customer experiences.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/zoho-crm-plus-benefits/cx-platform.png",
       points: [
         "Unify every stage of the customer journey",
         "Seamless data flow between sales and support",
@@ -132,7 +132,7 @@ export default function ZohoCRMPlusPage() {
     {
       title: "Unbeatable Team Productivity",
       description: "Empower your teams to work together. From marketing handoffs to support escalations, everything happens on one platform.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/zoho-crm-plus-benefits/team-productivity.png",
       points: [
         "Eliminate app switching and context loss",
         "Shared customer context for all teams",
@@ -143,7 +143,7 @@ export default function ZohoCRMPlusPage() {
     {
       title: "Data-Driven CX Decisions",
       description: "Measure what matters. With cross-app analytics, you can see exactly how marketing spend or support quality impacts your sales line.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/zoho-crm-plus-benefits/data-decisions.png",
       points: [
         "Unified dashboards for CX metrics",
         "Closed-loop attribution from click to close",
@@ -154,7 +154,7 @@ export default function ZohoCRMPlusPage() {
     {
       title: "Simplified Administration",
       description: "Stop managing individual apps. CRM Plus gives you one place to manage users, security, and billing for your entire customer suite.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/zoho-crm-plus-benefits/admin.png",
       points: [
         "One admin console for 8 powerful apps",
         "Unified user management and SSO",

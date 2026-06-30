@@ -267,27 +267,28 @@ export default function ZohoSolutionTemplate({
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-
-                  {/* Bottom Float Card */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.1, duration: 0.6, ease: "easeOut" }}
-                    className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3"
-                  >
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #059669, #10b981)' }}>
-                      {heroCard2?.icon ? <heroCard2.icon className="w-5 h-5 text-white" /> : <CheckCircle2 className="w-5 h-5 text-white" />}
-                    </div>
-                    <div>
-                      <p className="text-gray-900 text-sm font-bold leading-tight">
-                        {heroCard2?.title || "Optimized for Growth"}
-                      </p>
-                      <p className="text-gray-500 text-xs mt-0.5 leading-snug">
-                        {heroCard2?.subtitle || "Real-time insights and automated workflows."}
-                      </p>
-                    </div>
-                  </motion.div>
                 </div>
+
+                {/* Bottom Float Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.1, duration: 0.6, ease: "easeOut" }}
+                  className="absolute left-1/2 -translate-x-1/2 w-[90%] bg-white rounded-xl px-5 py-4 shadow-2xl flex items-center gap-4 z-10 border border-gray-100/50"
+                  style={{ bottom: "-60px" }}
+                >
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #059669, #10b981)' }}>
+                    {heroCard2?.icon ? <heroCard2.icon className="w-5.5 h-5.5 text-white" /> : <CheckCircle2 className="w-5.5 h-5.5 text-white" />}
+                  </div>
+                  <div>
+                    <p className="text-gray-900 text-sm sm:text-base font-bold leading-tight">
+                      {heroCard2?.title || "Optimized for Growth"}
+                    </p>
+                    <p className="text-gray-500 text-xs sm:text-sm mt-0.5 leading-snug">
+                      {heroCard2?.subtitle || "Real-time insights and automated workflows."}
+                    </p>
+                  </div>
+                </motion.div>
 
                 {/* Top-left peeking card */}
                 <motion.div
@@ -355,9 +356,9 @@ export default function ZohoSolutionTemplate({
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-wrap items-center justify-center gap-1 py-2 sm:py-4">
             {[
-              { 
-                label: "What is " + (title.split('—')[0].trim().replace(/\bCRM\b/g, "Customer Relationship Management").replace(/\bERP\b/g, "Enterprise Resource Planning").replace(/\bFSM\b/g, "Field Service Management").replace(/\bBI\b/g, "Business Intelligence").replace(/\bIT\b/g, "Information Technology")) + "?", 
-                href: "#what-is" 
+              {
+                label: "What is " + (title.split('—')[0].trim().replace(/\bCRM\b/g, "Customer Relationship Management").replace(/\bERP\b/g, "Enterprise Resource Planning").replace(/\bFSM\b/g, "Field Service Management").replace(/\bBI\b/g, "Business Intelligence").replace(/\bIT\b/g, "Information Technology")) + "?",
+                href: "#what-is"
               },
               { label: "Modules", href: "#modules" },
               { label: "Benefits", href: "#benefits" },
@@ -388,21 +389,15 @@ export default function ZohoSolutionTemplate({
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative flex items-center justify-center rounded-3xl overflow-hidden aspect-w-16 aspect-h-9 w-full min-h-[600px]"
+              className="relative w-[95%] mx-auto h-[380px] rounded-2xl overflow-hidden shadow-xl shadow-gray-200/80"
             >
-              <div className="relative w-full h-full p-4 lg:p-6">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-red-900/10 border-4 border-red-50">
-                  <Image
-                    src={whatIsImage || heroImage}
-                    alt={title}
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  {/* Decorative Gradient Border Overlay */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-red-100/50 via-transparent to-rose-50/50 pointer-events-none" />
-                </div>
-              </div>
+              <Image
+                src={whatIsImage || heroImage}
+                alt={title}
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </motion.div>
 
             <motion.div
@@ -512,7 +507,7 @@ export default function ZohoSolutionTemplate({
                       src={mod.image}
                       alt={mod.title}
                       fill
-                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                      className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                     <div

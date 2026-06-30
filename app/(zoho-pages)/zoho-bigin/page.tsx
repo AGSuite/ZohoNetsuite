@@ -121,7 +121,7 @@ export default function ZohoBiginPage() {
     {
       title: "The Simple CRM for Small Teams",
       description: "Stop juggling spreadsheets. Bigin provides the perfect balance of power and simplicity for startups and small businesses.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/zoho-bigin-benefits/simple-crm.png",
       points: [
         "Visual pipelines for absolute clarity",
         "Clean, intuitive, and distraction-free UI",
@@ -132,7 +132,7 @@ export default function ZohoBiginPage() {
     {
       title: "Customer Info at Your Fingertips",
       description: "Know your customers better. Keep a complete history of every interaction and deal in one secure, accessible place.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/zoho-bigin-benefits/customer-info.png",
       points: [
         "Unified view of contact and deal data",
         "Instant access to communication history",
@@ -143,7 +143,7 @@ export default function ZohoBiginPage() {
     {
       title: "Close Deals on the Go",
       description: "Your business doesn't stop when you leave your desk. Bigin's mobile app keeps you connected to your deals anywhere.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/zoho-bigin-benefits/mobile-deals.png",
       points: [
         "Full-featured iOS and Android apps",
         "Real-time notifications for deal events",
@@ -154,7 +154,7 @@ export default function ZohoBiginPage() {
     {
       title: "Powerful Integrations",
       description: "Bigin works seamlessly with the tools you already use. Connect your email, website, and other Zoho apps effortlessly.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/zoho-bigin-benefits/integrations.png",
       points: [
         "Seamless sync with G Suite and Office 365",
         "Integrates with 100+ third-party apps",
@@ -178,7 +178,7 @@ export default function ZohoBiginPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/people/laptopgirl.webp"
+      heroImage="/images/people/zoho_bigin_hero.png"
       whatIsImage="/images/zoho-dashboards/zoho-bigin.webp"
       heroCard1={{
         title: "Built for Small Teams",
