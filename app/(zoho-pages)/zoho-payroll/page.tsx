@@ -123,7 +123,7 @@ export default function ZohoPayrollPage() {
     {
       title: "Effortless Compliance",
       description: "Zoho Payroll is built to keep you on the right side of the law. Localized for major markets, it handles every statutory detail automatically.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/people/zoho_payroll_benefit_compliance.png",
       points: [
         "Automated tax and PF calculations",
         "Region-specific payroll compliance built-in",
@@ -134,7 +134,7 @@ export default function ZohoPayrollPage() {
     {
       title: "Frictionless Payruns",
       description: "Stop spending days on salary processing. Automate the most complex parts of your payroll and pay your team on time, every time.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/people/zoho_payroll_benefit_payruns.png",
       points: [
         "Process payroll in just a few clicks",
         "Automated leave and attendance sync",
@@ -145,7 +145,7 @@ export default function ZohoPayrollPage() {
     {
       title: "Empowered Workforce",
       description: "Give your employees the transparency they deserve. A dedicated self-service portal handles everything from payslips to tax claims.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/zoho_payroll_benefit_workforce.png",
       points: [
         "Instant digital payslip distribution",
         "Smart tax declaration and tracker",
@@ -156,7 +156,7 @@ export default function ZohoPayrollPage() {
     {
       title: "Deep Finance Integration",
       description: "Your payroll and your books should never be at odds. Zoho Payroll connects directly to your accounting for absolute data integrity.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/people/zoho_payroll_benefit_finance.png",
       points: [
         "Automated payroll journal entries",
         "Unifiead vendor and benefit mapping",
@@ -180,7 +180,7 @@ export default function ZohoPayrollPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap4.webp"
+      heroImage="/images/people/zoho_payroll_hero.png"
       whatIsImage="/images/zoho-dashboards/zoho-payroll.webp"
       heroCard1={{
         title: "100% Statutory Compliance",

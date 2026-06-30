@@ -4,10 +4,10 @@ import React from "react";
 
 
 
-import { 
-  Users, 
-  Heart, 
-  Zap, 
+import {
+  Users,
+  Heart,
+  Zap,
   TrendingUp,
   Clock,
   Briefcase,
@@ -41,7 +41,7 @@ export default function ZohoPeoplePage() {
     {
       title: "Attendance Management",
       description: "Track time and attendance with ease. Use geo-fencing, facial recognition, or mobile check-ins.",
-      image: "/images/modules/mobile module.webp",
+      image: "/images/modules/working module.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -62,14 +62,14 @@ export default function ZohoPeoplePage() {
     {
       title: "Employee Self-Service",
       description: "Empower employees to manage their own profiles, apply for leave, and access payslips from any device.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/modules/any module.webp",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "Leave Management",
       description: "Automate leave applications and approvals with customizable policies and real-time balance tracking.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/any modules.webp",
       color: "#154e8a",
       rgb: "18,68,130",
     },
@@ -97,7 +97,7 @@ export default function ZohoPeoplePage() {
     {
       title: "Query Management",
       description: "Centralize employee requests and issues with an internal helpdesk that ensures timely resolutions.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/chat desk module.webp",
       color: "#523a8a",
       rgb: "75,48,130",
     },
@@ -111,7 +111,7 @@ export default function ZohoPeoplePage() {
     {
       title: "Mobile HR",
       description: "Access all HR functions on-the-go with native mobile apps, keeping your workforce connected and productive.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/mobile module.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -121,7 +121,7 @@ export default function ZohoPeoplePage() {
     {
       title: "Unified Employee Experience",
       description: "Zoho People centralizes all your HR operations, providing one platform for the entire employee lifecycle from hire to retire.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/people/zoho_people_benefit_experience.png",
       points: [
         "Single source of truth for employee data",
         "Seamless integration with payroll and finance",
@@ -132,7 +132,7 @@ export default function ZohoPeoplePage() {
     {
       title: "Data-Driven Talent Growth",
       description: "Make informed decisions about your workforce. Use powerful analytics to identify top performers and areas for improvement.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/people/zoho_people_benefit_growth.png",
       points: [
         "Continuous performance monitoring",
         "Skill gap analysis and training suggestions",
@@ -143,7 +143,7 @@ export default function ZohoPeoplePage() {
     {
       title: "Frictionless HR Operations",
       description: "Automate administrative tasks so your HR team can focus on strategic initiatives and employee engagement.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/zoho_people_benefit_operations.png",
       points: [
         "Automated leave and attendance tracking",
         "Digital document signing and storage",
@@ -154,7 +154,7 @@ export default function ZohoPeoplePage() {
     {
       title: "Global Compliance & Security",
       description: "Stay compliant with local labor laws and protect sensitive employee data with enterprise-grade security features.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/people/zoho_people_benefit_compliance.png",
       points: [
         "GDPR and local data privacy compliance",
         "Role-based access control and audit logs",
@@ -168,7 +168,11 @@ export default function ZohoPeoplePage() {
     <ZohoSolutionTemplate
       title="Zoho People — Complete HR Management Software"
       subtitle="Zoho People: Unified Cloud HRMS for the Modern Global Workforce"
-      description="Zoho People is a comprehensive Human Resource Management System (HRMS) designed to simplify your HR operations, nurture employee development, and foster a high-performance workplace culture. As a specialized Zoho People implementation partner, we help you automate the entire employee lifecycle — from onboarding and attendance tracking to performance appraisals and learning management."
+      description={
+        <>
+          Zoho People is a comprehensive Human Resource Management System (HRMS) designed to simplify your HR operations, nurture employee development, and foster a high-performance workplace culture.
+        </>
+      }
       introDescription2="Zoho People transforms HR from a back-office function into a strategic asset, providing the tools needed to nurture talent, manage performance, and build a high-performance culture across your entire organization."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
@@ -178,7 +182,7 @@ export default function ZohoPeoplePage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/people/laptopgirl.webp"
+      heroImage="/images/people/zoho_people_hero.png"
       whatIsImage="/images/zoho-dashboards/zoho-people.webp"
       heroCard1={{
         title: "Employee Centric",

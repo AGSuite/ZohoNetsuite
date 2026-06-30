@@ -38,84 +38,84 @@ export default function ZohoSocialPage() {
     {
       title: "Content Publishing",
       description: "Schedule your posts for when your audience is most active and manage all your social channels from one clean dashboard.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/marketing_automation.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Social Listening",
       description: "Track mentions of your brand, keywords, and competitors to understand the conversation happening on social media.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/real_time_visibility.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Engage with Followers",
       description: "Never miss a comment or direct message with a unified inbox for all your social media interactions.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/sc_rep_self_service.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Advanced Analytics",
       description: "Measure your performance, identify best-performing content, and generate professional reports for your team.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/gbm_global_reporting.png",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Collaborative Feed",
       description: "Work with your team on post approvals, shared calendars, and internal discussions on social strategies.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/modules/workforce_management.png",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "Customized Reports",
       description: "Create and schedule tailor-made reports for clients or management with deep metrics on engagement and growth.",
-      image: "/images/modules/module8.webp",
+      image: "/images/modules/financial_reporting_custom.png",
       color: "#154e8a",
       rgb: "18,68,130",
     },
     {
       title: "Lead Generation",
       description: "Identify and capture potential leads directly from social media and sync them automatically with your Zoho CRM.",
-      image: "/images/modules/sheet module.webp",
+      image: "/images/modules/crm.png",
       color: "#1a6545",
       rgb: "20,95,60",
     },
     {
       title: "Social CRM",
       description: "Link your social media profiles with your CRM data to understand the full social lifestyle of your customers.",
-      image: "/images/modules/csm modules.webp",
+      image: "/images/modules/project_management.png",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
     {
       title: "Integrations & APIs",
       description: "Connect Zoho Social with your existing tools and build custom workflows with powerful APIs.",
-      image: "/images/modules/managging together module.webp",
+      image: "/images/modules/intelligent_automation.png",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },
     {
       title: "Mobile App for Social",
       description: "Manage your social presence on-the-go with native mobile apps that keep you connected anywhere.",
-      image: "/images/modules/account modules.webp",
+      image: "/images/modules/sc_mobile_commerce.png",
       color: "#523a8a",
       rgb: "75,48,130",
     },
     {
       title: "Smart Scheduling",
       description: "Leverage AI to predict the best times to post based on your audience's unique activity patterns.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/sc_marketing_engine.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Multi-Brand Management",
       description: "Manage multiple brands or client accounts with separate workspaces and permissions levels.",
-      image: "/images/modules/mobile module.webp",
+      image: "/images/modules/unified_platform.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -125,7 +125,7 @@ export default function ZohoSocialPage() {
     {
       title: "Complete Social Command",
       description: "Zoho Social brings all your social media activities into one platform, from planning to engagement and analytics.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/benefits/benefit_unified_platform.png",
       points: [
         "Single dashboard for all social networks",
         "Unified inbox for community management",
@@ -136,7 +136,7 @@ export default function ZohoSocialPage() {
     {
       title: "Data-Driven Strategy",
       description: "Stop guessing. Use powerful social analytics to identify what resonates with your audience and drive better engagement.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_financial_visibility.png",
       points: [
         "In-depth post performance metrics",
         "Audience growth and demographic data",
@@ -147,7 +147,7 @@ export default function ZohoSocialPage() {
     {
       title: "Seamless Team Collaboration",
       description: "Empower your marketing team to work together on social media. Manage approvals and discussions in one place.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/benefit_crm_marketing_roi.png",
       points: [
         "Approval workflows for social content",
         "Shared calendars for better alignment",
@@ -158,7 +158,7 @@ export default function ZohoSocialPage() {
     {
       title: "Convert Social into Sales",
       description: "Build a bridge between social media and your bottom line. Identify potential leads and nurture them directly in your CRM.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_crm_sales_automation.png",
       points: [
         "Lead identification from social interactions",
         "Direct sync with Zoho CRM workflows",
@@ -182,8 +182,8 @@ export default function ZohoSocialPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap2.webp"
-      whatIsImage="/images/zoho-dashboards/zoho-social-dashboard.png"
+      heroImage="/images/zoho-dashboards/zoho-social-dashboard.png"
+      whatIsImage="/images/zoho-dashboards/zoho-marketing-plus-dashboard.png"
       heroCard1={{
         title: "All Networks Unified",
         subtitle: "One calendar for FB, IG, LI, and TW.",

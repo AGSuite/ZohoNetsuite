@@ -102,7 +102,7 @@ export interface SolutionStat {
 export interface SolutionProps {
   title: string;
   subtitle: string;
-  description: string;
+  description: React.ReactNode;
   breadcrumb: { label: string; href: string }[];
   stats: SolutionStat[];
   modules: SolutionModule[];

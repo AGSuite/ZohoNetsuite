@@ -80,7 +80,7 @@ export default function ZohoPeoplePlusPage() {
     {
       title: "Unified Employee Journey",
       description: "Zoho People Plus connects every stage of the employee lifecycle, from the first interview to retirement, in a single integrated suite.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/people/zoho_people_plus_benefit_journey.png",
       points: [
         "End-to-end recruitment and onboarding",
         "Centralized employee data and self-service",
@@ -91,7 +91,7 @@ export default function ZohoPeoplePlusPage() {
     {
       title: "Exceptional Employee Experience",
       description: "Empower your workforce with intuitive tools that make their daily tasks easier, fostering engagement and a positive work culture.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/people/zoho_people_plus_benefit_experience.png",
       points: [
         "Collaborative social intranet for teams",
         "Instant messaging and quick communication",
@@ -102,7 +102,7 @@ export default function ZohoPeoplePlusPage() {
     {
       title: "Data-Backed HR Decisions",
       description: "Leverage advanced analytics across all HR verticals to uncover actionable insights and build a high-performing organization.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/zoho_people_plus_benefit_decisions.png",
       points: [
         "Cross-functional HR reporting capabilities",
         "Predictive analytics for attrition and retention",
@@ -116,7 +116,12 @@ export default function ZohoPeoplePlusPage() {
     <ZohoSolutionTemplate
       title="Zoho People Plus — Unified HR Suite"
       subtitle="Zoho People Plus: The Unified Employee Experience Platform for Global Enterprises"
-      description="Zoho People Plus is a comprehensive, all-in-one suite that unifies your entire employee lifecycle — from recruitment and onboarding to payroll, performance, and internal communication. As a specialized Zoho People Plus partner, we help you eliminate fragmented HR processes by integrating Zoho People, Recruit, Payroll, Expense, Connect, and Cliq into one seamless employee experience."
+      description={
+        <>
+          Zoho People Plus is a comprehensive, all-in-one suite that unifies your entire employee lifecycle — from recruitment and onboarding to payroll, performance, and internal communication.
+
+        </>
+      }
       introDescription2="Zoho People Plus provides an integrated employee experience platform that covers everything from talent acquisition and core HR to employee engagement and payroll, ensuring your workforce remains connected and productive."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
@@ -126,7 +131,7 @@ export default function ZohoPeoplePlusPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/people/laptopgirl.webp"
+      heroImage="/images/people/zoho_people_plus_hero.png"
       whatIsImage="/images/zoho-dashboards/zoho-people.webp"
       heroCard1={{
         title: "Unified Suite",

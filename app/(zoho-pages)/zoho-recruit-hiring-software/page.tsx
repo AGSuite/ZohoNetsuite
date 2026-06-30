@@ -41,56 +41,56 @@ export default function ZohoRecruitPage() {
     {
       title: "Multi-Channel Sourcing",
       description: "Post jobs to 75+ job boards, social media, and your own careers page with just one click.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/any modules.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Resume Parsing",
       description: "Automatically extract candidate data from resumes and populate your database with searchable profiles.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/sheet module.webp",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Interview Scheduling",
       description: "Sync with calendars, send automated invites, and collect feedback in reality-time from the hiring team.",
-      image: "/images/modules/module8.webp",
+      image: "/images/modules/working module.webp",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Candidate Assessments",
       description: "Integrate with top assessment platforms to evaluate candidate skills before the first interview.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/module8.webp",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "CRM for Recruiters",
       description: "Treat candidates like customers with a built-in CRM for managing long-term talent relationships.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/modules/csm modules.webp",
       color: "#154e8a",
       rgb: "18,68,130",
     },
     {
       title: "Collaboration Tools",
       description: "Keep the hiring team aligned with @mentions, shared notes, and collaborative candidate evaluations.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/chat desk module.webp",
       color: "#1a6545",
       rgb: "20,95,60",
     },
     {
       title: "Offer Customization",
       description: "Generate professional offer letters, manage approvals, and track e-signatures within the platform.",
-      image: "/images/modules/sheet module.webp",
+      image: "/images/modules/account modules.webp",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
     {
       title: "Advanced Analytics",
       description: "Track hiring metrics, sourcing ROI, and recruiter performance with customizable dashboards.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/dashboard module.webp",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },
@@ -104,14 +104,14 @@ export default function ZohoRecruitPage() {
     {
       title: "Candidate Portal",
       description: "Provide a branded, professional experience for candidates to track their own application status.",
-      image: "/images/modules/csm modules.webp",
+      image: "/images/modules/any module.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Referral Management",
       description: "Incentivize your current employees to refer top talent with an integrated referral portal.",
-      image: "/images/modules/account modules.webp",
+      image: "/images/modules/dashbord module.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -121,7 +121,7 @@ export default function ZohoRecruitPage() {
     {
       title: "Streamlined Hiring Process",
       description: "Zoho Recruit unifies all your hiring tools into one platform, from job posting to candidate onboarding.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/people/zoho_recruit_benefit_process.png",
       points: [
         "Automated candidate tracking pipeline",
         "Centralized candidate database",
@@ -132,7 +132,7 @@ export default function ZohoRecruitPage() {
     {
       title: "Exceptional Candidate Experience",
       description: "Build a strong employer brand with a professional, frictionless application and communication experience.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/people/zoho_recruit_benefit_experience.png",
       points: [
         "Branded career portal for candidates",
         "Automated application status updates",
@@ -143,7 +143,7 @@ export default function ZohoRecruitPage() {
     {
       title: "Data-Driven Talent Sourcing",
       description: "Stop guessing where your best hires come from. Use powerful analytics to optimize your recruitment spend.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/zoho_recruit_benefit_sourcing.png",
       points: [
         "Sourcing channel ROI analysis",
         "Recruiter productivity dashboards",
@@ -154,7 +154,7 @@ export default function ZohoRecruitPage() {
     {
       title: "Hiring Team Collaboration",
       description: "Eliminate silos in your hiring process. Get entire teams involved in finding and evaluating top talent.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/people/zoho_recruit_benefit_collaboration.png",
       points: [
         "Collaborative candidate scorecards",
         "Integrated team feedback loops",

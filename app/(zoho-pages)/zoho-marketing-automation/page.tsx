@@ -34,84 +34,84 @@ export default function ZohoMarketingAutomationPage() {
     {
       title: "Omnichannel Journeys",
       description: "Create complex, automated customer journeys across email, SMS, and advertising channels in a single visual builder.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/modules/marketing_automation.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Lead Scoring",
       description: "Automatically identify your hottest leads based on their interaction and engagement levels across all touchpoints.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/modules/crm.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Webinar Marketing",
       description: "Manage end-to-end webinar workflows, from registration and reminders to follow-ups and CRM sync.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/modules/project_management.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Behavioral Tracking",
       description: "Track exactly what your prospects are doing on your website and trigger automated responses in real-time.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/modules/real_time_visibility.png",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Campaign Attribution",
       description: "Understand which marketing activities are actually driving revenue with deep-dive attribution reports.",
-      image: "/images/people/laptopmen.webp",
+      image: "/images/modules/financial_reporting_custom.png",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "Content Marketing",
       description: "Manage your blog, content collateral, and promotional distributions from a centralized marketing hub.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/modules/sc_marketing_engine.png",
       color: "#154e8a",
       rgb: "18,68,130",
     },
     {
       title: "Personalization Engine",
       description: "Deliver highly tailored content to each subscriber based on their preferences, behavior, and lifecycle stage.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/modules/sc_rep_self_service.png",
       color: "#1a6545",
       rgb: "20,95,60",
     },
     {
       title: "E-Commerce Automation",
       description: "Recover abandoned carts, send personalized product recommendations, and nurture repeat buyers automatically.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/modules/ecommerce.png",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
     {
       title: "Marketing Planner",
       description: "Plan and coordinate all your marketing efforts with a centralized calendar and shared team task boards.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/modules/workforce_management.png",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },
     {
       title: "Advanced Reporting",
       description: "Gain 360-degree visibility into your marketing performance with detailed dashboards and ROI tracking.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/modules/gbm_global_reporting.png",
       color: "#523a8a",
       rgb: "75,48,130",
     },
     {
       title: "Lead Management",
       description: "Sync leads seamlessly with Zoho CRM and ensure your sales team always has the full marketing context.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/modules/intelligent_automation.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Mobile App",
       description: "Manage your marketing automation efforts on-the-go with native mobile apps for iOS and Android.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/modules/sc_mobile_commerce.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -121,7 +121,7 @@ export default function ZohoMarketingAutomationPage() {
     {
       title: "Unified Marketing Command",
       description: "Consolidate your entire marketing stack into one platform. Stop jumping between tools and get a single view of your customer.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/benefits/benefit_unified_platform.png",
       points: [
         "Consolidated data across channels",
         "Unified team collaboration",
@@ -132,7 +132,7 @@ export default function ZohoMarketingAutomationPage() {
     {
       title: "Intelligent Customer Journeys",
       description: "Guide your leads through the funnel with automated paths that adapt to their real-time behavior and needs.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_intelligent_automation.png",
       points: [
         "Visual drag-and-drop journey builder",
         "Behavior-triggered automations",
@@ -143,7 +143,7 @@ export default function ZohoMarketingAutomationPage() {
     {
       title: "Precision Lead Nurturing",
       description: "Nurture every single lead according to its value and stage. Never let a qualified opportunity slip through the cracks.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/benefit_crm_customer_intelligence.png",
       points: [
         "Advanced multi-criteria lead scoring",
         "Automated sales hand-off flows",
@@ -154,7 +154,7 @@ export default function ZohoMarketingAutomationPage() {
     {
       title: "Closed-Loop ROI Attribution",
       description: "Know exactly which marketing dollar is driving revenue. Connect your marketing spend directly to won deals in CRM.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_crm_marketing_roi.png",
       points: [
         "Multi-touch attribution models",
         "Real-time ROI dashboarding",
@@ -179,7 +179,7 @@ export default function ZohoMarketingAutomationPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap4.webp"
+      heroImage="/images/zoho-dashboards/zoho-marketing-plus-dashboard.png"
       whatIsImage="/images/zoho-dashboards/zoho-marketing-automation-ai.png"
       heroCard1={{
         title: "Omnichannel Power",

@@ -40,7 +40,7 @@ export default function ZohoExpensePage() {
     {
       title: "Receipt Scanning (OCR)",
       description: "Auto-scan and capture data from receipts instantly with advanced AI. No more manual data entry of individual expenses.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/sheet module.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -54,21 +54,21 @@ export default function ZohoExpensePage() {
     {
       title: "Travel Management",
       description: "Request travels, book flights and hotels, and manage entire trip itineraries within the application workflow.",
-      image: "/images/modules/managging together module.webp",
+      image: "/images/modules/any modules.webp",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Approval Workflows",
       description: "Define multi-level, automated approval rules to ensure transparency and prevent expense policy violations.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/managging together module.webp",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Expense Policies",
       description: "Set up granular spend limits, category rules, and audit flags to enforce company spending best practices.",
-      image: "/images/modules/csm modules.webp",
+      image: "/images/modules/module8.webp",
       color: "#6a2575",
       rgb: "95,30,105",
     },
@@ -82,14 +82,14 @@ export default function ZohoExpensePage() {
     {
       title: "Direct Reimbursements",
       description: "Empower your employees by paying back their business expenses directly to their bank accounts on time.",
-      image: "/images/modules/sheet module.webp",
+      image: "/images/modules/csm modules.webp",
       color: "#1a6545",
       rgb: "20,95,60",
     },
     {
       title: "Mileage Tracking",
       description: "Track trip miles accurately with GPS, Map integration, or odometer readings for precise fuel reimbursements.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/modules/working module.webp",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
@@ -103,14 +103,14 @@ export default function ZohoExpensePage() {
     {
       title: "Analytics & Trends",
       description: "Identify spend patterns, monitor budget health, and find areas for cost-cutting with over 25+ detailed reports.",
-      image: "/images/modules/module8.webp",
+      image: "/images/modules/dashboard module.webp",
       color: "#523a8a",
       rgb: "75,48,130",
     },
     {
       title: "Vendor Management",
       description: "Centralize your vendor data and payments for regular office expenses and third-party services in one portal.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/chat desk module.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -127,7 +127,7 @@ export default function ZohoExpensePage() {
     {
       title: "Absolute Control Over Spend",
       description: "Zoho Expense is your first line of defense against overspending. Gain total visibility and control over every cent spent by your team.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/people/zoho_expense_benefit_control.png",
       points: [
         "Real-time visibility into all business spending",
         "Granular, automated policy enforcement",
@@ -138,7 +138,7 @@ export default function ZohoExpensePage() {
     {
       title: "Frictionless Reporting for Teams",
       description: "Make life easy for your employees. Our AI-driven receipt scanning and mobile app turn tedious reporting into a matter of seconds.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_crm_customer_intelligence.png",
       points: [
         "AI-powered receipt data extraction (OCR)",
         "Submit entire reports in just a few taps",
@@ -149,7 +149,7 @@ export default function ZohoExpensePage() {
     {
       title: "Integrated Travel Management",
       description: "Go beyond just reporting spend. Manage the entire business travel lifecycle, from planning and bookings to final settlements.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/benefit_gbm_currency.png",
       points: [
         "Comprehensive travel booking workflow",
         "Policy-compliant travel requests and bookings",
@@ -160,7 +160,7 @@ export default function ZohoExpensePage() {
     {
       title: "Unified Financial Data",
       description: "Your expense data shouldn't be isolated. Zoho Expense connects to your accounting systems for absolute financial integrity.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/people/zoho_expense_benefit_finance.png",
       points: [
         "Native sync with Zoho Books & ERPs",
         "Unified general ledger and chart of accounts",
@@ -174,7 +174,13 @@ export default function ZohoExpensePage() {
     <ZohoSolutionTemplate
       title="Zoho Expense — Online Expense Management Software"
       subtitle="Zoho Expense: AI-Powered Travel and Expense Management for Modern Global Teams"
-      description="Zoho Expense is a powerful, cloud-based expense management Solution designed to automate reporting, streamline travel management, and gain total visibility into corporate spend. As a specialized Zoho Finance partner, we help you eliminate manual data entry with AI-driven OCR receipt scanning and enforce granular spending policies across your entire organization."
+      description={
+        <>
+          Zoho Expense is a powerful, cloud-based expense management solution designed to automate reporting, streamline travel management, and gain total visibility into corporate spend.
+          <br /><br />
+          As a specialized Zoho Finance partner, we help you eliminate manual data entry with AI-driven OCR receipt scanning and enforce granular spending policies across your entire organization.
+        </>
+      }
       introDescription2="Transform how your organization manages expenses. Zoho Expense automates expense reporting, provides real-time policy checks, and speeds up reimbursement cycles, ensuring absolute financial control and transparency."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
@@ -184,7 +190,7 @@ export default function ZohoExpensePage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/people/laptopmen.webp"
+      heroImage="/images/people/zoho_expense_hero.png"
       whatIsImage="/images/zoho-dashboards/zoho-expense.webp"
       heroCard1={{
         title: "98% Compliance Rate",
