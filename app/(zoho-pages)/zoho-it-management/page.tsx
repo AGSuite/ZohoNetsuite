@@ -34,84 +34,84 @@ export default function ZohoITManagementPage() {
     {
       title: "Service Desk (Servicely)",
       description: "A comprehensive ITIL-aligned service desk for managing incidents, problems, and changes with ease.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/modules/it_mod_service.svg",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Endpoint Management",
       description: "Manage, secure, and monitor all your enterprise endpoints from a single centralized dashboard.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/modules/it_mod_endpoint.svg",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "IT Operations (OpManager)",
       description: "Gain 360-degree visibility into your network, servers, and applications for proactive issue resolution.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/modules/it_mod_operations.svg",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Security & Compliance",
       description: "Ensure enterprise-grade security with vulnerability assessments and automated compliance audits.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/modules/it_mod_security.svg",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Identity Management",
       description: "Manage user identities, access controls, and single sign-on (SSO) for your entire organization.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/modules/it_mod_identity.svg",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "Cloud Management",
       description: "Optimize your cloud resources, track usage, and manage multi-cloud environments effortlessly.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/modules/it_mod_cloud.svg",
       color: "#154e8a",
       rgb: "18,68,130",
     },
     {
       title: "IT Asset Management",
       description: "Track the entire lifecycle of your IT assets, from procurement and deployment to disposal.",
-      image: "/images/people/laptopmen.webp",
+      image: "/images/modules/it_mod_asset.svg",
       color: "#1a6545",
       rgb: "20,95,60",
     },
     {
       title: "Patch Management",
       description: "Automate the deployment of patches across your enterprise to protect against vulnerabilities.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/modules/it_mod_patch.svg",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
     {
       title: "Remote Support (Assist)",
       description: "Provide instant remote support to your team and customers with secure, high-performance screen sharing.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/modules/it_mod_remote.svg",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },
     {
       title: "Application Monitoring",
       description: "Monitor the performance and availability of your business-critical applications in real-time.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/modules/it_mod_application.svg",
       color: "#523a8a",
       rgb: "75,48,130",
     },
     {
       title: "Network Security (NetFlow)",
       description: "Analyze network traffic patterns and identify potential security threats before they impact operations.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/modules/it_mod_net_security.svg",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Strategic IT BI",
       description: "Gain actionable insights into your IT performance with powerful analytics and custom reporting.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/modules/it_mod_strategic.svg",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -121,7 +121,7 @@ export default function ZohoITManagementPage() {
     {
       title: "Unified IT Operations",
       description: "Eliminate tool sprawl and data silos. Zoho IT Management provides a single platform to manage your entire IT ecosystem.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/people/zoho_it_mgmt_benefit_unified.svg",
       points: [
         "Single source for IT operations",
         "Consistent security policies",
@@ -132,7 +132,7 @@ export default function ZohoITManagementPage() {
     {
       title: "Proactive Issue Resolution",
       description: "Identify and resolve IT issues before they impact your business operations and employee productivity.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/people/zoho_it_mgmt_benefit_proactive.svg",
       points: [
         "Real-time alerts and monitoring",
         "Automated incident workflows",
@@ -143,7 +143,7 @@ export default function ZohoITManagementPage() {
     {
       title: "Hardened Security Posture",
       description: "Protect your organization from evolving cyber threats with integrated security and compliance management.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/zoho_it_mgmt_benefit_security.svg",
       points: [
         "Automated patch management",
         "Vulnerability assessment tools",
@@ -154,7 +154,7 @@ export default function ZohoITManagementPage() {
     {
       title: "Maximized IT ROI",
       description: "Optimize your IT spend and improve service delivery with powerful analytics and efficient workflows.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/people/zoho_it_mgmt_benefit_roi.svg",
       points: [
         "Detailed IT asset tracking",
         "Optimized cloud resource usage",
@@ -178,8 +178,8 @@ export default function ZohoITManagementPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap2.webp"
-      whatIsImage="/images/zoho-dashboards/zoho-it-mgmt-dashboard.png"
+      heroImage="/images/people/zoho_it_mgmt_hero.svg"
+      whatIsImage="/images/zoho-dashboards/zoho-it-mgmt-dashboard.svg"
       heroCard1={{
         title: "100% Security",
         subtitle: "Integrated compliance and protection.",

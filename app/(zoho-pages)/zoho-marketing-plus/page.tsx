@@ -31,56 +31,56 @@ export default function ZohoMarketingPlusPage() {
     {
       title: "Marketing Automation",
       description: "Automate complex marketing journeys across multiple channels and engage customers at the perfect moment.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/marketing_automation.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Social Media Management",
       description: "Schedule posts, monitor mentions, and analyze social media performance across all your brand profiles.",
-      image: "/images/modules/managging together module.webp",
+      image: "/images/modules/sc_marketing_engine.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Email Marketing",
       description: "Create stunning email campaigns, manage subscriber lists, and track engagement with detailed analytics.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/crm.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Survey & Feedback",
       description: "Understand your audience better with custom surveys and NPS tracking integrated into your marketing stack.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/audit_reports.png",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Event Management",
       description: "Plan, promote, and manage both virtual and in-person events with integrated registration and tracking.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/modules/project_management.png",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "Brand Management",
       description: "Maintain brand consistency across all touchpoints with shared asset libraries and approval workflows.",
-      image: "/images/modules/csm modules.webp",
+      image: "/images/modules/unified_platform.png",
       color: "#154e8a",
       rgb: "18,68,130",
     },
     {
       title: "Marketing Analytics",
       description: "Gain deep insights into your marketing performance with unified dashboards covering all your channels.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/gbm_global_reporting.png",
       color: "#1a6545",
       rgb: "20,95,60",
     },
     {
       title: "Team Collaboration",
       description: "Streamline marketing operations with shared workspaces, project tracking, and real-time collaboration tools.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/workforce_management.png",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
@@ -90,7 +90,7 @@ export default function ZohoMarketingPlusPage() {
     {
       title: "Unified Marketing Ecosystem",
       description: "Break down the silos between your marketing tools. Zoho Marketing Plus provides a single platform to manage everything from email to social media.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/benefits/benefit_unified_platform.png",
       points: [
         "Consolidated view of all marketing activities",
         "Seamless data flow between different modules",
@@ -101,7 +101,7 @@ export default function ZohoMarketingPlusPage() {
     {
       title: "Enhanced Customer Journey",
       description: "Deliver a personalized experience to every customer across every touchpoint. Map and automate the entire lifecycle effortlessly.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_intelligent_automation.png",
       points: [
         "Multi-channel marketing automation",
         "Dynamic content and personalization",
@@ -112,7 +112,7 @@ export default function ZohoMarketingPlusPage() {
     {
       title: "Data-Driven Strategies",
       description: "Stop guessing and start knowing. Leverage unified analytics to understand exactly which campaigns are driving the most value.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/benefit_crm_marketing_roi.png",
       points: [
         "Attribution modeling across all channels",
         "Real-time ROI tracking for every campaign",
@@ -123,7 +123,7 @@ export default function ZohoMarketingPlusPage() {
     {
       title: "Collaborative Marketing",
       description: "Empower your team to work together more efficiently. Manage projects, share assets, and get approvals faster than ever.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_crm_sales_automation.png",
       points: [
         "Shared marketing calendars and assets",
         "Internal collaboration and chat tools",
@@ -147,7 +147,7 @@ export default function ZohoMarketingPlusPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap4.webp"
+      heroImage="/images/zoho-dashboards/zoho-marketing-automation-ai.png"
       whatIsImage="/images/zoho-dashboards/zoho-marketing-plus-dashboard.png"
       heroCard1={{
         title: "Unified Console",

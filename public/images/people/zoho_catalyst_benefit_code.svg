@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#080e1e"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bgGrad)" rx="16"/>
+  <g stroke="#334155" stroke-width="0.5" opacity="0.15">
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none"/>
+    </pattern>
+    <rect width="100%" height="100%" fill="url(#grid)"/>
+  </g>
+
+  <!-- Left Side: IDE / Code Editor Window -->
+  <g transform="translate(30, 50)">
+    <rect width="200" height="240" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+    <rect width="200" height="25" rx="3" fill="#0f172a"/>
+    <circle cx="15" cy="12.5" r="4" fill="#ef4444"/>
+    <circle cx="27" cy="12.5" r="4" fill="#f59e0b"/>
+    <circle cx="39" cy="12.5" r="4" fill="#10b981"/>
+    
+    <text x="60" y="17" fill="#64748b" font-family="monospace" font-size="10">index.js</text>
+    
+    <g transform="translate(15, 45)">
+      <text x="0" y="15" fill="#f43f5e" font-family="monospace" font-size="10">const</text>
+      <text x="40" y="15" fill="#e2e8f0" font-family="monospace" font-size="10">catalyst = require(</text>
+      <text x="145" y="15" fill="#10b981" font-family="monospace" font-size="10">'z-cat'</text>
+      <text x="180" y="15" fill="#e2e8f0" font-family="monospace" font-size="10">);</text>
+      
+      <text x="0" y="35" fill="#f43f5e" font-family="monospace" font-size="10">exports</text>
+      <text x="45" y="35" fill="#e2e8f0" font-family="monospace" font-size="10">.handler = async (</text>
+      <text x="140" y="35" fill="#fb923c" font-family="monospace" font-size="10">event</text>
+      <text x="170" y="35" fill="#e2e8f0" font-family="monospace" font-size="10">) =&gt; {</text>
+      
+      <text x="15" y="55" fill="#38bdf8" font-family="monospace" font-size="10">const</text>
+      <text x="50" y="55" fill="#e2e8f0" font-family="monospace" font-size="10">db = catalyst.database();</text>
+      
+      <text x="15" y="75" fill="#38bdf8" font-family="monospace" font-size="10">await</text>
+      <text x="50" y="75" fill="#e2e8f0" font-family="monospace" font-size="10">db.insert(</text>
+      <text x="110" y="75" fill="#10b981" font-family="monospace" font-size="10">'Users'</text>
+      <text x="150" y="75" fill="#e2e8f0" font-family="monospace" font-size="10">, data);</text>
+      
+      <text x="15" y="95" fill="#e2e8f0" font-family="monospace" font-size="10">return {</text>
+      <text x="30" y="115" fill="#f43f5e" font-family="monospace" font-size="10">status:</text>
+      <text x="80" y="115" fill="#e5e7eb" font-family="monospace" font-size="10">200,</text>
+      
+      <text x="30" y="135" fill="#f43f5e" font-family="monospace" font-size="10">body:</text>
+      <text x="70" y="135" fill="#10b981" font-family="monospace" font-size="10">'User Created'</text>
+      
+      <text x="15" y="155" fill="#e2e8f0" font-family="monospace" font-size="10">};</text>
+      <text x="0" y="175" fill="#e2e8f0" font-family="monospace" font-size="10">};</text>
+    </g>
+  </g>
+
+  <!-- Flow Arrow -->
+  <g stroke="#3b82f6" stroke-width="2" fill="none">
+    <path d="M250,175 L310,175" stroke-dasharray="4 4"/>
+    <polygon points="310,170 320,175 310,180" fill="#3b82f6" stroke="none"/>
+  </g>
+
+  <!-- Right Side: Auto-managed infrastructure graphic -->
+  <g transform="translate(340, 70)">
+    <!-- Shield / Safe execution -->
+    <circle cx="60" cy="50" r="30" fill="#10b981" opacity="0.1" filter="url(#glow)"/>
+    <circle cx="60" cy="50" r="25" fill="none" stroke="#10b981" stroke-width="2"/>
+    <path d="M50,50 L57,57 L72,42" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Code deployment status -->
+    <rect x="0" y="110" width="120" height="90" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="60" y="135" text-anchor="middle" fill="#60a5fa" font-family="sans-serif" font-size="11" font-weight="bold">DEPLOYMENT</text>
+    <text x="60" y="155" text-anchor="middle" fill="#34d399" font-family="sans-serif" font-size="13" font-weight="bold">SUCCESSFUL</text>
+    
+    <circle cx="20" cy="180" r="4" fill="#10b981"/>
+    <line x1="30" y1="180" x2="100" y2="180" stroke="#475569" stroke-width="2"/>
+  </g>
+</svg>

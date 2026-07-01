@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#0b1329" rx="8"/>
+  <rect x="35" y="45" width="130" height="60" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="100" y="80" text-anchor="middle" fill="#34d399" font-family="sans-serif" font-weight="bold" font-size="10">PACKETS ANALYZED</text>
+  <path d="M70,25 Q100,5 130,25" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="2 3"/>
+  <path d="M70,125 Q100,145 130,125" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="2 3"/>
+  <circle cx="100" cy="15" r="3" fill="#10b981"/>
+  <circle cx="100" cy="135" r="3" fill="#10b981"/>
+</svg>

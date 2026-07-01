@@ -34,84 +34,84 @@ export default function ZohoBooksPage() {
     {
       title: "Invoicing",
       description: "Create professional invoices, set up recurring billing, and get paid faster with online payment gateways.",
-      image: "/images/modules/account modules.webp",
+      image: "/images/modules/e_invoicing.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Inventory Management",
       description: "Track stock levels in real-time, manage sales and purchase orders, and optimize your supply chain.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/inventory_management.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Expense Tracking",
       description: "Record and categorize business expenses, upload receipts, and stay on top of your spending effortlessly.",
-      image: "/images/modules/sheet module.webp",
+      image: "/images/modules/expense_management_custom.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Banking",
       description: "Connect your bank accounts, fetch statements automatically, and reconcile transactions in seconds.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/bank_reconciliation_custom.png",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Project Accounting",
       description: "Track time spent on tasks, manage project budgets, and bill clients directly from your projects.",
-      image: "/images/modules/module8.webp",
+      image: "/images/modules/project_management.png",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "GST & Tax Compliance",
       description: "Automatically calculate taxes, generate GST-compliant invoices, and file returns with ease.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/gst_management.png",
       color: "#154e8a",
       rgb: "18,68,130",
     },
     {
       title: "Purchase Orders",
       description: "Create and send purchase orders, track deliveries, and convert them into bills seamlessly.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/modules/procurement.png",
       color: "#1a6545",
       rgb: "20,95,60",
     },
     {
       title: "Financial Reporting",
       description: "Gain insights with over 50+ financial reports, including P&L, balance sheets, and cash flow statements.",
-      image: "/images/modules/csm modules.webp",
+      image: "/images/modules/financial_reporting_custom.png",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
     {
       title: "Client Portal",
       description: "Give your clients a secure space to view invoices, make payments, and discuss estimates.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/sc_rep_self_service.png",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },
     {
       title: "Sales Orders",
       description: "Manage your sales pipeline from quote to fulfillment, ensuring every order is tracked accurately.",
-      image: "/images/modules/managging together module.webp",
+      image: "/images/modules/order_management.png",
       color: "#523a8a",
       rgb: "75,48,130",
     },
     {
       title: "Recurring Transactions",
       description: "Automate your billing and payments for regular clients, saving you hours of manual work every month.",
-      image: "/images/modules/mobile module.webp",
+      image: "/images/modules/intelligent_automation.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Multi-Currency support",
       description: "Record transactions in multiple currencies and handle global business operations with automated exchange rates.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/gbm_multi_currency.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -121,7 +121,7 @@ export default function ZohoBooksPage() {
     {
       title: "End-to-End Accounting",
       description: "Manage every aspect of your finances from one place. Zoho Books connects your sales, purchases, and banking into a single source of truth.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/benefits/benefit_financial_visibility.png",
       points: [
         "Unified view of cash flow and health",
         "Direct integration with CRM and Inventory",
@@ -132,7 +132,7 @@ export default function ZohoBooksPage() {
     {
       title: "Automated Workflows",
       description: "Eliminate manual data entry and repetitive tasks. Set up rules to automate invoicing, reminders, and payment processing.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/zoho_books_benefit_automation.png",
       points: [
         "Schedule professional recurring invoices",
         "Automated payment reminders for clients",
@@ -143,7 +143,7 @@ export default function ZohoBooksPage() {
     {
       title: "Real-time Collaboration",
       description: "Work together with your accountant and team in real-time. Role-based access ensures everyone has the data they need, safely.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/fourteam.webp",
       points: [
         "Secure accountant access for easy audits",
         "Collaborative client portal for transparency",
@@ -154,7 +154,7 @@ export default function ZohoBooksPage() {
     {
       title: "Global Tax Compliance",
       description: "Stay compliant wherever you do business. Zoho Books handles GST, VAT, and other local taxes automatically based on your region.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_compliance_security.png",
       points: [
         "Automatic GST calculation and filing",
         "E-invoicing and E-way bill generation",
@@ -178,7 +178,7 @@ export default function ZohoBooksPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap2.webp"
+      heroImage="/images/people/zoho_books_hero.png"
       whatIsImage="/images/zoho-dashboards/zoho-books.webp"
       heroCard1={{
         title: "GST & Tax Compliant",

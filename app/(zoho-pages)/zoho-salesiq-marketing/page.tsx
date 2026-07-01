@@ -35,42 +35,42 @@ export default function ZohoSalesIqMarketingPage() {
     {
       title: "Marketing Attribution",
       description: "Track which marketing campaigns and channels are driving the most high-value visitors to your site.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/marketing_automation.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Visitor Insights",
       description: "Analyze visitor demographics, geographic location, and search intent to refine your marketing messaging.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/real_time_visibility.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Campaign Tracking",
       description: "Monitor the performance of your PPC, email, and social media campaigns with custom tracking parameters.",
-      image: "/images/modules/module8.webp",
+      image: "/images/modules/gbm_global_reporting.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Proactive Engagement",
       description: "Use behavioral triggers to engage visitors who have shown interest in specific marketing assets or product pages.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/sc_rep_self_service.png",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Lead Qualification Bots",
       description: "Deploy Zobots to qualify leads based on marketing criteria before they reach your sales team.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/modules/intelligent_automation.png",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "A/B Testing Content",
       description: "Test different chat triggers and greetings to see which marketing hooks convert best with your audience.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/audit_reports.png",
       color: "#154e8a",
       rgb: "18,68,130",
     }
@@ -80,7 +80,7 @@ export default function ZohoSalesIqMarketingPage() {
     {
       title: "Data-Driven Marketing",
       description: "Stop flying blind. Zoho SalesIQ for Marketing provides the behavioral data you need to optimize your marketing spend.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/benefits/benefit_financial_visibility.png",
       points: [
         "Track campaign-to-chat conversion",
         "Identify high-performing ad sources",
@@ -91,7 +91,7 @@ export default function ZohoSalesIqMarketingPage() {
     {
       title: "Personalized Experiences",
       description: "Deliver the right message to the right person at the right time based on their previous marketing interactions.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/benefits/benefit_crm_customer_intelligence.png",
       points: [
         "Geo-targeted marketing messages",
         "Behavioral segmentation for chat",
@@ -115,7 +115,7 @@ export default function ZohoSalesIqMarketingPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap2.webp"
+      heroImage="/images/zoho-dashboards/zoho-analytics-dashboard.png"
       whatIsImage="/images/zoho-dashboards/zoho-sales-IQ.webp"
       heroCard1={{
         title: "Marketing Insights",

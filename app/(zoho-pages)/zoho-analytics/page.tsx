@@ -30,84 +30,84 @@ export default function ZohoAnalyticsPage() {
     {
       title: "Data Preparation",
       description: "Clean, transform, and enrich your data with automated self-service data preparation tools.",
-      image: "/images/modules/sheet module.webp",
+      image: "/images/modules/analytics_data_prep.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Visual Analysis",
       description: "Create stunning charts, widgets, and dashboards with an intuitive drag-and-drop interface.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/analytics_visual_analysis.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Augmented Analytics",
       description: "Leverage AI and ML for automated insights, natural language queries, and predictive forecasting.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/analytics_augmented_ai.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Collaborative Analytics",
       description: "Share reports securely and collaborate with your team with shared workspaces and comments.",
-      image: "/images/modules/managging together module.webp",
+      image: "/images/modules/analytics_collab.png",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Embedded Analytics",
       description: "Embed live dashboards and reports into your own applications and websites with ease.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/real_time_visibility.png",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "Unified Data View",
       description: "Import data from over 250+ sources including CRM, finance, and marketing apps into one place.",
-      image: "/images/modules/module8.webp",
+      image: "/images/modules/unified_platform.png",
       color: "#154e8a",
       rgb: "18,68,130",
     },
     {
       title: "Self-Service BI",
       description: "Empower every team member to explore data and find answers without relying on IT.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/modules/financial_reporting_custom.png",
       color: "#1a6545",
       rgb: "20,95,60",
     },
     {
       title: "White Labeling",
       description: "Rebrand Zoho Analytics as your own solution for clients with custom logos, domains, and styling.",
-      image: "/images/modules/csm modules.webp",
+      image: "/images/modules/marketing_automation.png",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
     {
       title: "Mobile BI",
       description: "Access your business insights on-the-go with native mobile apps for iOS and Android.",
-      image: "/images/modules/mobile module.webp",
+      image: "/images/modules/analytics_mobile_bi.png",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },
     {
       title: "Smart Forecasting",
       description: "Predict future business trends accurately based on historical data patterns and seasonality.",
-      image: "/images/modules/account modules.webp",
+      image: "/images/modules/analytics_forecasting.png",
       color: "#523a8a",
       rgb: "75,48,130",
     },
     {
       title: "Alerts & Notifications",
       description: "Set up smart alerts to get notified whenever key metrics cross specific thresholds.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/intelligent_automation.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Security & Governance",
       description: "Control data access with granular permissions and comply with global privacy standards.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/audit_reports.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -117,7 +117,7 @@ export default function ZohoAnalyticsPage() {
     {
       title: "360° Business Visibility",
       description: "Unify data from all departments into a single source of truth for a complete view of your business health.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/people/zoho_analytics_benefit_visibility.png",
       points: [
         "250+ pre-built connectors to popular apps",
         "Cross-functional reports for holistic insights",
@@ -128,7 +128,7 @@ export default function ZohoAnalyticsPage() {
     {
       title: "AI-Powered Business Intelligence",
       description: "Go beyond basic reporting. Use Zia, our AI assistant, to get automated insights and predict future outcomes.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/people/zoho_analytics_benefit_ai.png",
       points: [
         "Ask Zia questions in natural language",
         "Automated anomaly detection and alerts",
@@ -139,17 +139,18 @@ export default function ZohoAnalyticsPage() {
     {
       title: "Faster Decision Making",
       description: "Cut down on manual data extraction and analysis time. Get real-time answers to your business questions.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/zoho_analytics_benefit_decisions.png",
       points: [
         "Real-time dashboards with live data",
         "Automated report generation and delivery",
-        "Collaborative workflows for team decisions", "Self-service BI for every department"
+        "Collaborative workflows for team decisions",
+        "Self-service BI for every department"
       ],
     },
     {
       title: "Secure & Scalable Analytics",
       description: "Protect your data while scaling your analytics as your company grows. Enterprise-grade security is built-in.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/people/zoho_analytics_benefit_security.png",
       points: [
         "Granular role-based access control",
         "GDPR and SOC2 Type II compliance",
@@ -173,7 +174,7 @@ export default function ZohoAnalyticsPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap2.webp"
+      heroImage="/images/people/zoho_analytics_hero.png"
       whatIsImage="/images/zoho-dashboards/zoho-analytics-dashboard.png"
       heroCard1={{
         title: "250+ Data Sources",

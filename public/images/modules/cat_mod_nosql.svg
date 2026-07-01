@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#0b1329" rx="8"/>
+  <ellipse cx="100" cy="40" rx="35" ry="10" fill="none" stroke="#34d399" stroke-width="1.5"/>
+  <path d="M65,40 L65,85 A35,10 0 0 0 135,85 L135,40" fill="none" stroke="#34d399" stroke-width="1.5"/>
+  <path d="M65,62 A35,10 0 0 0 135,62" fill="none" stroke="#34d399" stroke-width="1.5"/>
+  <!-- Schema-less data representation -->
+  <text x="100" y="120" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">{ "id": 101, "role": "admin" }</text>
+</svg>

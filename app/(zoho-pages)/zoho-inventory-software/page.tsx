@@ -34,84 +34,84 @@ export default function ZohoInventoryPage() {
     {
       title: "Stock Management",
       description: "Get real-time updates on stock levels across all your warehouses and selling channels in one place.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/inventory_management.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Order Fulfilment",
       description: "Process orders fast with automated packing and shipping labels from 40+ shipping carriers.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/order_management.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Warehouse Management",
       description: "Manage multiple warehouses, track transfers, and pick items correctly with barcode scanning.",
-      image: "/images/modules/module8.webp",
+      image: "/images/modules/warehouse_management.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Batch & Serial Tracking",
       description: "Trace every item with absolute precision using batch and serial number tracking across the lifecycle.",
-      image: "/images/modules/csm modules.webp",
+      image: "/images/benefits/wholesale_lot_serial_tracking.png",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Multi-Channel Selling",
       description: "Sync inventory and orders across Amazon, eBay, Etsy, and your own online store automatically.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/ecommerce.png",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "Shipping Integrations",
       description: "Compare carrier rates, print labels, and track shipments in real-time from your Zoho dashboard.",
-      image: "/images/modules/managging together module.webp",
+      image: "/images/modules/eway_bill.png",
       color: "#154e8a",
       rgb: "18,68,130",
     },
     {
       title: "Reporting & Insights",
       description: "Identify best-selling items, evaluate inventory turnover, and make informed purchasing decisions.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/real_time_visibility.png",
       color: "#1a6545",
       rgb: "20,95,60",
     },
     {
       title: "Purchasing & Bills",
       description: "Manage vendor lists, create purchase orders, and track your accounts payable with finance integration.",
-      image: "/images/modules/account modules.webp",
+      image: "/images/modules/procurement.png",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
     {
       title: "Mobile Inventory App",
       description: "Manage orders and stock from your phone, with integrated barcode scanning for faster operations.",
-      image: "/images/modules/mobile module.webp",
+      image: "/images/modules/sc_mobile_commerce.png",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },
     {
       title: "Returns Management",
       description: "Handle customer returns efficiently with RMA workflows and automated stock adjustments.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/modules/vendor_statement.png",
       color: "#523a8a",
       rgb: "75,48,130",
     },
     {
       title: "Automation Rules",
       description: "Set up smart workflows to automate repetitive tasks like low-stock alerts and order status updates.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/intelligent_automation.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Invoice & Payment Sync",
       description: "Keep your inventory and accounting in lockstep with deep integration into Zoho Books.",
-      image: "/images/modules/sheet module.webp",
+      image: "/images/modules/e_invoicing.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -121,7 +121,7 @@ export default function ZohoInventoryPage() {
     {
       title: "Unified Inventory Control",
       description: "Zoho Inventory provides a single source of truth for your stock levels across every channel and warehouse.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/benefits/wholesale_multi_location_inventory.png",
       points: [
         "Real-time stock level synchronization",
         "Multi-warehouse visibility and control",
@@ -132,7 +132,7 @@ export default function ZohoInventoryPage() {
     {
       title: "Optimized Order Management",
       description: "Fulfill orders faster and more accurately with a streamlined workflow from order intake to doorstep delivery.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/benefits/benefit_sc_omnichannel.png",
       points: [
         "Automated shipping and tracking labels",
         "Comparison of 40+ carrier rates",
@@ -143,7 +143,7 @@ export default function ZohoInventoryPage() {
     {
       title: "Data-Driven Purchase Planning",
       description: "Make informed buying decisions with powerful reporting that identifies trends and stock turnover.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/benefits/wholesale_demand_planning_replenishment.png",
       points: [
         "Automated low-stock reorder points",
         "Vendor performance and history tracking",
@@ -154,7 +154,7 @@ export default function ZohoInventoryPage() {
     {
       title: "Frictionless Operations",
       description: "Connect your inventory with your sales, commerce, and accounting tools for absolute operational efficiency.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/benefits/benefit_unified_platform.png",
       points: [
         "Native integration with Zoho Books & CRM",
         "Connect with Shopify, Amazon, and eBay",
@@ -178,7 +178,7 @@ export default function ZohoInventoryPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap3.webp"
+      heroImage="/images/people/zoho_inventory_hero.png"
       whatIsImage="/images/zoho-dashboards/zoho-inventory-dashboard.png"
       heroCard1={{
         title: "Multi-Channel Sync",

@@ -38,42 +38,42 @@ export default function ZohoExpenseFinancePage() {
     {
       title: "Finance Control Center",
       description: "Gain a unified view of all business spending and employee reimbursements in one central finance portal.",
-      image: "/images/modules/account modules.webp",
+      image: "/images/modules/financial_reporting_custom.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Corporate Card Reconciliation",
       description: "Direct feeds from major banks to reconcile corporate card transactions automatically with your general ledger.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/bank_reconciliation_custom.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Policy Enforcement",
       description: "Automate spending policies and multi-level approval workflows to prevent budget leaks and fraud.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/compliance_calendar.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "General Ledger Sync",
       description: "Export expense reports directly into Zoho Books, QuickBooks, or NetSuite for seamless accounting.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/general_ledger_custom.png",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "VAT & Tax Handling",
       description: "Automatically track and recover VAT/GST on business expenses with built-in multi-region tax support.",
-      image: "/images/modules/sheet module.webp",
+      image: "/images/modules/tax_management_custom.png",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "Project-Wise Spending",
       description: "Track expenses against specific projects and clients to ensure accurate project costing and billing.",
-      image: "/images/modules/module8.webp",
+      image: "/images/modules/project_management.png",
       color: "#154e8a",
       rgb: "18,68,130",
     }
@@ -83,7 +83,7 @@ export default function ZohoExpenseFinancePage() {
     {
       title: "Total Fiscal Visibility",
       description: "Know exactly where every dollar is going. Zoho Expense provides deep analytics to identify spend trends and cost-cutting opportunities.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/people/zoho_expense_benefit_visibility.png",
       points: [
         "Real-time spend analytics dashboards",
         "Budget vs. Actual tracking",
@@ -94,7 +94,7 @@ export default function ZohoExpenseFinancePage() {
     {
       title: "Automated Reimbursements",
       description: "Keep your employees happy with lightning-fast reimbursements directly to their bank accounts.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/people/zoho_expense_benefit_reimbursement.png",
       points: [
         "Direct bank payment integration",
         "Automated reimbursement workflows",
@@ -118,7 +118,7 @@ export default function ZohoExpenseFinancePage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap4.webp"
+      heroImage="/images/people/zoho_expense_finance_hero.png"
       whatIsImage="/images/zoho-dashboards/zoho-expense.webp"
       heroCard1={{
         title: "Policy Audit",

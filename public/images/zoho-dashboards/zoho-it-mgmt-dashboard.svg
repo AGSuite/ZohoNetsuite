@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="neonBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+
+  <!-- Left Sidebar -->
+  <g>
+    <rect width="70" height="500" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    <circle cx="35" cy="40" r="14" fill="#ef4444"/>
+    <rect x="23" y="29" width="24" height="22" rx="2" fill="none" stroke="#ffffff" stroke-width="2"/>
+    
+    <rect x="25" y="100" width="20" height="20" rx="3" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="25" y="150" width="20" height="20" rx="3" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="25" y="200" width="20" height="20" rx="3" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+  </g>
+
+  <!-- Top bar -->
+  <g transform="translate(70, 0)">
+    <rect width="730" height="60" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    <text x="30" y="36" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold">IT Operations Dashboard</text>
+    <circle cx="680" cy="30" r="8" fill="#10b981"/>
+    <text x="660" y="34" text-anchor="end" fill="#10b981" font-family="sans-serif" font-size="12" font-weight="bold">SYSTEM HEALTH: 100%</text>
+  </g>
+
+  <!-- Content grid -->
+  <g transform="translate(90, 80)">
+    <!-- KPI 1 -->
+    <g>
+      <rect width="210" height="90" rx="8" fill="url(#card)" stroke="#374151" stroke-width="1.5"/>
+      <text x="20" y="28" fill="#9ca3af" font-family="sans-serif" font-size="11" font-weight="bold">ENDPOINT HEALH</text>
+      <text x="20" y="60" fill="#38bdf8" font-family="monospace" font-size="24" font-weight="bold" filter="url(#glow)">1,482 Active</text>
+      <text x="20" y="78" fill="#34d399" font-family="sans-serif" font-size="10" font-weight="bold">● 0 Critical Issues</text>
+    </g>
+
+    <!-- KPI 2 -->
+    <g transform="translate(230, 0)">
+      <rect width="210" height="90" rx="8" fill="url(#card)" stroke="#374151" stroke-width="1.5"/>
+      <text x="20" y="28" fill="#9ca3af" font-family="sans-serif" font-size="11" font-weight="bold">AVG RESPONSE TIME</text>
+      <text x="20" y="60" fill="#a855f7" font-family="monospace" font-size="24" font-weight="bold" filter="url(#glow)">12.5 Mins</text>
+      <text x="20" y="78" fill="#34d399" font-family="sans-serif" font-size="10" font-weight="bold">✔ Within SLA limits</text>
+    </g>
+
+    <!-- KPI 3 -->
+    <g transform="translate(460, 0)">
+      <rect width="230" height="90" rx="8" fill="url(#card)" stroke="#374151" stroke-width="1.5"/>
+      <text x="20" y="28" fill="#9ca3af" font-family="sans-serif" font-size="11" font-weight="bold">PATCH STATUS</text>
+      <text x="20" y="60" fill="#10b981" font-family="monospace" font-size="24" font-weight="bold" filter="url(#glow)">99.8% Applied</text>
+      <text x="20" y="78" fill="#f59e0b" font-family="sans-serif" font-size="10" font-weight="bold">▲ 3 pending reboot</text>
+    </g>
+
+    <!-- Network Health Graph -->
+    <g transform="translate(0, 110)">
+      <rect width="440" height="280" rx="8" fill="url(#card)" stroke="#374151" stroke-width="1.5"/>
+      <text x="20" y="30" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold">Network Bandwidth &amp; Load</text>
+      <path d="M40,230 L100,180 L160,195 L220,110 L280,135 L340,75 L400,60" fill="none" stroke="url(#neonBlue)" stroke-width="3" filter="url(#glow)"/>
+      <circle cx="340" cy="75" r="4" fill="#38bdf8"/>
+      <line x1="40" y1="230" x2="400" y2="230" stroke="#4b5563" stroke-width="1"/>
+      <text x="40" y="250" fill="#9ca3af" font-family="sans-serif" font-size="9">00:00</text>
+      <text x="220" y="250" fill="#9ca3af" font-family="sans-serif" font-size="9">12:00</text>
+      <text x="400" y="250" fill="#9ca3af" font-family="sans-serif" font-size="9">24:00</text>
+    </g>
+
+    <!-- Alert Panel -->
+    <g transform="translate(460, 110)">
+      <rect width="230" height="280" rx="8" fill="url(#card)" stroke="#374151" stroke-width="1.5"/>
+      <text x="20" y="30" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold">Active Alerts</text>
+      
+      <g transform="translate(15, 50)">
+        <rect width="200" height="45" rx="5" fill="#111827" stroke="#dc2626" stroke-width="1"/>
+        <text x="15" y="26" fill="#f87171" font-family="sans-serif" font-size="11" font-weight="bold">High CPU - Server-04</text>
+      </g>
+      
+      <g transform="translate(15, 105)">
+        <rect width="200" height="45" rx="5" fill="#111827" stroke="#f59e0b" stroke-width="1"/>
+        <text x="15" y="26" fill="#fbbf24" font-family="sans-serif" font-size="11" font-weight="bold">Disk Capacity - LogServer</text>
+      </g>
+      
+      <g transform="translate(15, 160)">
+        <rect width="200" height="45" rx="5" fill="#111827" stroke="#3b82f6" stroke-width="1"/>
+        <text x="15" y="26" fill="#60a5fa" font-family="sans-serif" font-size="11" font-weight="bold">Updates Available (Windows)</text>
+      </g>
+    </g>
+  </g>
+</svg>

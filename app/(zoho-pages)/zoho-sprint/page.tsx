@@ -35,84 +35,84 @@ export default function ZohoSprintsPage() {
     {
       title: "Sprint Planning",
       description: "Define your goals, estimate tasks using story points, and plan your sprints with a simple drag-and-drop interface.",
-      image: "/images/modules/managging together module.webp",
+      image: "/images/modules/project_management.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Scrum Boards",
       description: "Visualize your workflow and track task progress in real-time with customizable Scrum boards for your team.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/analytics_visual_analysis.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Backlog Management",
       description: "Prioritize your user stories and manage your product backlog effectively to ensure you're always working on high-value tasks.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/supply_chain.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Agile Reports",
       description: "Monitor your team's progress with Burndown, Burnup, and Velocity charts to identify bottlenecks and optimize performance.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/financial_reporting_custom.png",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Timesheets",
       description: "Track the time spent on every task and story across your sprints for accurate billing and resource planning.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/modules/period_close_custom.png",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "Release Management",
       description: "Plan and track your product releases with a centralized view of all related tasks, stories, and bugs.",
-      image: "/images/modules/csm modules.webp",
+      image: "/images/modules/real_time_visibility.png",
       color: "#154e8a",
       rgb: "18,68,130",
     },
     {
       title: "Team Collaboration",
       description: "Engage your team with built-in feeds, comments, and task assignments that keep everyone in sync.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/analytics_collab.png",
       color: "#1a6545",
       rgb: "20,95,60",
     },
     {
       title: "Custom Workflows",
       description: "Design and automate your unique agile processes with custom statuses, transitions, and field sets.",
-      image: "/images/modules/module8.webp",
+      image: "/images/modules/intelligent_automation.png",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
     {
       title: "Epics & Stories",
       description: "Organize your project into large Epics and granular User Stories to maintain a clear vision of your goals.",
-      image: "/images/modules/sheet module.webp",
+      image: "/images/modules/unified_platform.png",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },
     {
       title: "Dashboard Insights",
       description: "Get a high-level view of your project health with personalized dashboards that highlight key metrics.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/analytics_augmented_ai.png",
       color: "#523a8a",
       rgb: "75,48,130",
     },
     {
       title: "Bugs & Issue Tracking",
       description: "Manage and resolve software bugs effortlessly within your sprints using integrated issue tracking tools.",
-      image: "/images/modules/account modules.webp",
+      image: "/images/modules/audit_reports.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Mobile Agile",
       description: "Manage your sprints and track tasks on-the-go with native mobile apps for iOS and Android.",
-      image: "/images/modules/mobile module.webp",
+      image: "/images/modules/analytics_mobile_bi.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -122,7 +122,7 @@ export default function ZohoSprintsPage() {
     {
       title: "Unmatched Team Agility",
       description: "Empower your team to adapt quickly to changing requirements and deliver high-quality software faster than ever.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/people/zoho_flow_benefit_unified.png",
       points: [
         "True agile planning and execution",
         "Visual progress tracking for all",
@@ -133,7 +133,7 @@ export default function ZohoSprintsPage() {
     {
       title: "Predictable Delivery Cycles",
       description: "Use real-time data to estimate completion dates accurately and ensure you meet your release deadlines consistently.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/people/zoho_analytics_benefit_decisions.png",
       points: [
         "Data-driven velocity tracking",
         "Clear sprint burndown visibility",
@@ -144,7 +144,7 @@ export default function ZohoSprintsPage() {
     {
       title: "Maximized Value for Effort",
       description: "Ensure your team is always working on the most important tasks by prioritizing your backlog with precision.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/zoho_analytics_benefit_visibility.png",
       points: [
         "Efficient story point estimation",
         "Prioritized product backlog",
@@ -155,7 +155,7 @@ export default function ZohoSprintsPage() {
     {
       title: "Seamless Project Ecosystem",
       description: "Integrate Zoho Sprints with your favorite tools to create a truly connected agile development environment.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/people/zoho_flow_benefit_speed.png",
       points: [
         "Native Zoho Projects integration",
         "Connect with GitHub and Bitbucket",
@@ -179,7 +179,7 @@ export default function ZohoSprintsPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap2.webp"
+      heroImage="/images/people/zoho_flow_hero.png"
       whatIsImage="/images/zoho-dashboards/zoho-sprints.webp"
       heroCard1={{
         title: "Agile Power",

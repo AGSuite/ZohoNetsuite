@@ -33,84 +33,84 @@ export default function ZohoProjectsPage() {
     {
       title: "Task Management",
       description: "Break complex projects down into manageable tasks, milestones, and subtasks for better clarity and tracking.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/project_management.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Gantt Charts",
       description: "Visualize your project timeline, manage dependencies, and adjust schedules with a simple drag-and-drop interface.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/analytics_visual_analysis.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Timesheets & Logging",
       description: "Track every billable and non-billable minute spent on tasks to ensure accurate project costing and invoicing.",
-      image: "/images/modules/account modules.webp",
+      image: "/images/modules/period_close_custom.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Resource Management",
       description: "Balance workloads and optimize team capacity with visual resource utilization charts and heatmaps.",
-      image: "/images/modules/module8.webp",
+      image: "/images/modules/workforce_management.png",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Collaborative Feed",
       description: "Keep the conversation flowing with real-time updates, @mentions, and discussions centered around project work.",
-      image: "/images/modules/managging together module.webp",
+      image: "/images/modules/analytics_collab.png",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "Issue & Bug Tracking",
       description: "Identify and resolve issues fast with a dedicated bug tracking system integrated into your project workflow.",
-      image: "/images/modules/csm modules.webp",
+      image: "/images/modules/audit_reports.png",
       color: "#154e8a",
       rgb: "18,68,130",
     },
     {
       title: "Project Dashboards",
       description: "Get a bird's-eye view of your project health with customizable dashboards and status reports.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/financial_reporting_custom.png",
       color: "#1a6545",
       rgb: "20,95,60",
     },
     {
       title: "Automation (Blueprints)",
       description: "Automate repetitive project workflows and ensure adherence to best practices with visual blueprints.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/modules/intelligent_automation.png",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
     {
       title: "Document Management",
       description: "Share and collaborate on files, spreadsheets, and presentations directly within your project workspace.",
-      image: "/images/modules/sheet module.webp",
+      image: "/images/modules/budgeting_planning_custom.png",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },
     {
       title: "Budget & Billing",
       description: "Manage project budgets, track expenses, and generate client invoices with seamless finance integration.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/expense_management_custom.png",
       color: "#523a8a",
       rgb: "75,48,130",
     },
     {
       title: "Mobile App for Teams",
       description: "Stay updated and log time on project tasks from anywhere with our full-featured mobile applications.",
-      image: "/images/modules/mobile module.webp",
+      image: "/images/modules/analytics_mobile_bi.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Client Collaboration",
       description: "Invite clients to specific projects for better transparency, feedback, and project alignment.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/unified_platform.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -120,7 +120,7 @@ export default function ZohoProjectsPage() {
     {
       title: "End-to-End Visibility",
       description: "Never lose track of a project again. Zoho Projects gives you complete visibility into tasks, timelines, and team performance.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/people/zoho_analytics_benefit_visibility.png",
       points: [
         "Consolidated view of all ongoing projects",
         "Clear milestone tracking and status updates",
@@ -131,7 +131,7 @@ export default function ZohoProjectsPage() {
     {
       title: "Optimized Team Capacity",
       description: "Empower your team without burning them out. Our resource management tools help you balance work and maximize productivity.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/people/zoho_people_benefit_operations.png",
       points: [
         "Visual workload management and heatmaps",
         "Skill-based task assignment for efficiency",
@@ -142,7 +142,7 @@ export default function ZohoProjectsPage() {
     {
       title: "Seamless Collaboration",
       description: "Move beyond messy email threads. Keep all project communication in one place, linked directly to the work being done.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/zoho_flow_benefit_unified.png",
       points: [
         "Social-style project feed for updates",
         "Interactive document and file sharing",
@@ -153,7 +153,7 @@ export default function ZohoProjectsPage() {
     {
       title: "Profitability & Control",
       description: "Stay on budget and ensuring project profitability. Integrated time and expense tracking help you manage the bottom line efficiently.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/people/zoho_finance_plus_benefit_unified.png",
       points: [
         "Project budget tracking and forecasting",
         "Billable time logging and finance sync",
@@ -177,7 +177,7 @@ export default function ZohoProjectsPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/people/laptopmen2.webp"
+      heroImage="/images/people/zoho_analytics_benefit_decisions.png"
       whatIsImage="/images/zoho-dashboards/zoho-projects.webp"
       heroCard1={{
         title: "On-Time Delivery",
