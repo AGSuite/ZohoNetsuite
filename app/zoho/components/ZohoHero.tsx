@@ -265,6 +265,77 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
               <SwiperSlide>
                 <HeroSlide
                   isActive={activeIndex === 2}
+                  customBg={
+                    <div className="absolute inset-0 overflow-hidden bg-white">
+                      <div className="absolute -top-[20%] -left-[10%] w-[60%] h-[80%] rounded-full bg-gradient-to-br from-blue-100/40 via-indigo-50/30 to-transparent blur-[140px]" />
+                      <div className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[80%] rounded-full bg-gradient-to-tl from-violet-100/40 via-purple-50/30 to-transparent blur-[140px]" />
+                    </div>
+                  }
+                  title="Experience Zoho One — The Operating System for Business"
+                  desc="Unify your sales, marketing, finance, HR, and operations on a single, secure cloud platform of over 45+ integrated applications."
+                  cta="Explore Zoho One"
+                  link="/zoho-one"
+                  customVisual={
+                    <div className="relative w-full flex justify-center lg:justify-end">
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[130%] -z-10 blur-[130px] opacity-20 select-none pointer-events-none">
+                        <div>
+                          <div className="absolute top-0 left-0 w-[80%] h-[80%] bg-blue-300 rounded-full blur-[60px]" />
+                          <div className="absolute top-0 right-0 w-[80%] h-[80%] bg-indigo-400 rounded-full blur-[60px]" />
+                          <div className="absolute bottom-0 right-0 w-[80%] h-[80%] bg-violet-500 rounded-full blur-[60px]" />
+                          <div className="absolute bottom-0 left-0 w-[80%] h-[80%] bg-purple-400 rounded-full blur-[60px]" />
+                        </div>
+                      </div>
+                      <div className="relative w-full h-full flex items-center justify-center p-4">
+                        <Image
+                          src="/images/people/zoho_one_hero.jpg"
+                          alt="Zoho One Operations"
+                          width={1200}
+                          height={1000}
+                          className="w-[130%] max-h-[380px] max-lg:h-auto max-w-none object-contain rounded-2xl filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.2)] drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] transition-transform duration-700 hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 80vw"
+                        />
+
+                         <motion.div
+                          initial={{ opacity: 0, x: -30, y: -20 }}
+                          animate={{ opacity: 1, x: 0, y: 0 }}
+                          transition={{ duration: 0.7, delay: 0.8 }}
+                          className="absolute -top-6 -left-8 bg-white p-2.5 rounded-xl shadow-2xl z-40 flex items-center gap-3 border border-gray-100 min-w-[240px]"
+                        >
+                          <div className="flex shrink-0">
+                            <div className="w-9 h-9 rounded-lg bg-indigo-600 flex items-center justify-center p-1.5 shadow-lg ring-2 ring-white z-20 text-white">
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4zM14 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2v-4z" />
+                              </svg>
+                            </div>
+                          </div>
+                          <span className="text-[14px] font-bold text-gray-800 leading-tight">45+ Integrated Apps</span>
+                        </motion.div>
+
+                        <motion.div
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.8, delay: 1.1 }}
+                          className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[100%] bg-white p-3.5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-40 flex items-center gap-3.5 border border-gray-50"
+                        >
+                          <div className="flex-shrink-0 w-11 h-11 rounded-full bg-indigo-50 flex items-center justify-center shadow-inner">
+                            <svg className="w-6 h-6 text-indigo-600" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                          </div>
+                          <p className="text-[14px] font-medium text-indigo-950 leading-snug">
+                            &quot;Run your entire business operations on a single, unified operating system&quot;
+                          </p>
+                        </motion.div>
+                      </div>
+                    </div>
+                  }
+                  showOverlay={false}
+                  textColor="dark"
+                />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <HeroSlide
+                  isActive={activeIndex === 3}
                   bg="/images/Background/herobg5.png"
                   title="Master Your Financial Future with Zoho Books and Smart Automation"
                   desc="Automate accounting, invoicing, and tax compliance so your team can focus on strategic growth."
@@ -286,37 +357,37 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                           alt="Zoho Finance Automation"
                           width={1200}
                           height={1000}
-                          className="w-[1051%] max-h-[320px] max-lg:h-auto max-w-none object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.2)] drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] transition-transform duration-700 hover:scale-[1.02]" sizes="(max-width: 124px) 100vw, 180vw"
+                          className="w-[130%] max-h-[380px] max-lg:h-auto max-w-none object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.2)] drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] transition-transform duration-700 hover:scale-[1.02] translate-x-[5%] lg:translate-x-[5%]" sizes="(max-width: 1024px) 100vw, 80vw"
                         />
 
                         <motion.div
                           initial={{ opacity: 0, x: -30, y: -20 }}
                           animate={{ opacity: 1, x: 0, y: 0 }}
                           transition={{ duration: 0.7, delay: 0.8 }}
-                          className="absolute -top-6 -left-8 bg-white p-3.5 rounded-xl shadow-2xl z-40 flex items-center gap-4 border border-gray-100 min-w-[280px]"
+                          className="absolute -top-6 -left-8 bg-white p-2.5 rounded-xl shadow-2xl z-40 flex items-center gap-3 border border-gray-100 min-w-[240px]"
                         >
                           <div className="flex shrink-0">
-                            <div className="w-11 h-11 rounded-lg bg-red-600 flex items-center justify-center p-2 shadow-lg ring-2 ring-white z-20 text-white">
-                              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                            <div className="w-9 h-9 rounded-lg bg-red-600 flex items-center justify-center p-1.5 shadow-lg ring-2 ring-white z-20 text-white">
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                               </svg>
                             </div>
                           </div>
-                          <span className="text-[15px] font-bold text-gray-800 leading-tight">Zoho Books & Finance</span>
+                          <span className="text-[14px] font-bold text-gray-800 leading-tight">Zoho Books & Finance</span>
                         </motion.div>
 
                         <motion.div
                           initial={{ opacity: 0, y: 30 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.8, delay: 1.1 }}
-                          className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[115%] bg-white p-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-40 flex items-center gap-5 border border-gray-50"
+                          className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[100%] bg-white p-3.5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-40 flex items-center gap-3.5 border border-gray-50"
                         >
-                          <div className="flex-shrink-0 w-14 h-14 rounded-full bg-rose-50 flex items-center justify-center shadow-inner">
-                            <svg className="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                          <div className="flex-shrink-0 w-11 h-11 rounded-full bg-rose-50 flex items-center justify-center shadow-inner">
+                            <svg className="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C20.1216 16 21.017 16.8954 21.017 18V21C21.017 22.1046 20.1216 23 19.017 23H16.017C14.9124 23 14.017 22.1046 14.017 21ZM14.017 11L14.017 8C14.017 6.89543 14.9124 6 16.017 6H19.017C20.1216 6 21.017 6.89543 21.017 8V11C21.017 12.1046 20.1216 13 19.017 13H16.017C14.9124 13 14.017 12.1046 14.017 11ZM3.017 21L3.017 18C3.017 16.8954 3.91243 16 5.01699 16H8.01699C9.12156 16 10.017 16.8954 10.017 18V21C10.017 22.1046 9.12156 23 8.01699 23H5.01699C3.91243 23 3.017 22.1046 3.017 21ZM3.017 11L3.017 8C3.017 6.89543 3.91243 6 5.01699 6H8.01699C9.12156 6 10.017 6.89543 10.017 8V11C10.017 12.1046 9.12156 13 8.01699 13H5.01699C3.91243 13 3.017 12.1046 3.017 11Z" />
                             </svg>
                           </div>
-                          <p className="text-[17px] font-medium text-red-950 leading-snug">
+                          <p className="text-[14px] font-medium text-red-950 leading-snug">
                             &quot;Master your financial future with smart automation and real-time insights&quot;
                           </p>
                         </motion.div>
@@ -330,7 +401,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
 
               <SwiperSlide>
                 <HeroSlide
-                  isActive={activeIndex === 3}
+                  isActive={activeIndex === 4}
                   customBg={
                     <div className="absolute inset-0 overflow-hidden bg-slate-50">
                       <div className="absolute -top-[15%] -left-[10%] w-[70%] h-[70%] rounded-full bg-gradient-to-br from-red-50/10 via-pink-50/10 to-transparent blur-[140px]" />
@@ -390,37 +461,37 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                         alt="Zoho Managed Services"
                         width={1200}
                         height={1000}
-                        className="w-[1051%] max-h-[320px] max-lg:h-auto max-w-none object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.2)] drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] transition-transform duration-700 hover:scale-[1.02]" sizes="(max-width: 1024px) 100vw, 80vw"
+                        className="w-[130%] max-h-[380px] max-lg:h-auto max-w-none object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.2)] drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] transition-transform duration-700 hover:scale-[1.02] translate-x-[5%] lg:translate-x-[5%]" sizes="(max-width: 1024px) 100vw, 80vw"
                       />
 
                       <motion.div
                         initial={{ opacity: 0, x: -30, y: -20 }}
                         animate={{ opacity: 1, x: 0, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.8 }}
-                        className="absolute -top-6 -left-8 bg-white p-3.5 rounded-xl shadow-2xl z-40 flex items-center gap-4 border border-gray-100 min-w-[280px]"
+                        className="absolute -top-6 -left-8 bg-white p-2.5 rounded-xl shadow-2xl z-40 flex items-center gap-3 border border-gray-100 min-w-[240px]"
                       >
                         <div className="flex shrink-0">
-                          <div className="w-11 h-11 rounded-lg bg-pink-600 flex items-center justify-center text-white shadow-lg ring-2 ring-white z-10">
+                          <div className="w-9 h-9 rounded-lg bg-pink-600 flex items-center justify-center text-white shadow-lg ring-2 ring-white z-10">
                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                             </svg>
                           </div>
                         </div>
-                        <span className="text-[15px] font-bold text-gray-800 leading-tight">CRM, Books, Analytics</span>
+                        <span className="text-[14px] font-bold text-gray-800 leading-tight">CRM, Books, Analytics</span>
                       </motion.div>
 
                       <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 1.1 }}
-                        className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[115%] bg-white p-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-40 flex items-center gap-5 border border-gray-50"
+                        className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[100%] bg-white p-3.5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-40 flex items-center gap-3.5 border border-gray-50"
                       >
-                        <div className="flex-shrink-0 w-14 h-14 rounded-full bg-rose-50 flex items-center justify-center shadow-inner">
-                          <svg className="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                        <div className="flex-shrink-0 w-11 h-11 rounded-full bg-rose-50 flex items-center justify-center shadow-inner">
+                          <svg className="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C20.1216 16 21.017 16.8954 21.017 18V21C21.017 22.1046 20.1216 23 19.017 23H16.017C14.9124 23 14.017 22.1046 14.017 21ZM14.017 11L14.017 8C14.017 6.89543 14.9124 6 16.017 6H19.017C20.1216 6 21.017 6.89543 21.017 8V11C21.017 12.1046 20.1216 13 19.017 13H16.017C14.9124 13 14.017 12.1046 14.017 11ZM3.017 21L3.017 18C3.017 16.8954 3.91243 16 5.01699 16H8.01699C9.12156 16 10.017 16.8954 10.017 18V21C10.017 22.1046 9.12156 23 8.01699 23H5.01699C3.91243 23 3.017 22.1046 3.017 21ZM3.017 11L3.017 8C3.017 6.89543 3.91243 6 5.01699 6H8.01699C9.12156 6 10.017 6.89543 10.017 8V11C10.017 12.1046 9.12156 13 8.01699 13H5.01699C3.91243 13 3.017 12.1046 3.017 11Z" />
                           </svg>
                         </div>
-                        <p className="text-[17px] font-medium text-red-950 leading-snug">
+                        <p className="text-[14px] font-medium text-red-950 leading-snug">
                           &quot;Zoho One, the operating system for business that can make your operations seamless&quot;
                         </p>
                       </motion.div>

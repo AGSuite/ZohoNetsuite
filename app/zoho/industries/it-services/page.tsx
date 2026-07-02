@@ -18,7 +18,7 @@ const data: IndustryPageData = {
   heroTitle: "Maximize Billable Hours & Delivery with Zoho",
   heroDescription:
     "Streamline project accounting, automate resource allocation, and gain real-time visibility with the unified Zoho cloud suite built for modern IT service providers.",
-  heroImage: "/images/industries/Professional-Services-compressed-1 (1).webp",
+  heroImage: "/images/industries/it-services-main.png",
   heroCardTitle: "Project Profibilty",
   heroCardSub: "Tracking · Billing · Resources · Revenue",
   heroTopCardTitle: "Trusted by 600+ Agencies",

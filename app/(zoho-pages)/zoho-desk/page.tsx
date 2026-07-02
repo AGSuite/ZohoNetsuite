@@ -121,7 +121,7 @@ export default function ZohoDeskPage() {
     {
       title: "Context-Aware Service",
       description: "Give your agents the full picture. Zoho Desk pulls in customer data from your CRM, allowing for personalized and efficient support.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/people/zoho_analytics_benefit_visibility.png",
       points: [
         "Unified customer history across all apps",
         "CRM integration for personalized service",
@@ -132,7 +132,7 @@ export default function ZohoDeskPage() {
     {
       title: "Efficiency at Scale",
       description: "Scale your support team without increasing headcount. Automate the low-value tasks and let your agents focus on critical resolutions.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/people/zoho_flow_benefit_speed.png",
       points: [
         "Automated routing and skill-based assignment",
         "Pre-built templates and canned responses",
@@ -143,7 +143,7 @@ export default function ZohoDeskPage() {
     {
       title: "Happier Customers",
       description: "Provide the fast, accurate, and multi-channel support that your customers expect. Reduce churn by delivering excellence consistently.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/zoho_people_plus_benefit_experience.png",
       points: [
         "Support on email, chat, social, and phone",
         "Transparent ticket status for customers",
@@ -154,7 +154,7 @@ export default function ZohoDeskPage() {
     {
       title: "Data-Driven Support",
       description: "Know exactly how your team is performing. identify bottlenecks, track happiness scores, and optimize your help desk operations.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/people/zoho_analytics_benefit_decisions.png",
       points: [
         "Live dashboard of service metrics",
         "Agent performance and workload reports",
@@ -178,7 +178,7 @@ export default function ZohoDeskPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap1.webp"
+      heroImage="/images/people/zoho_solutions_hero_person.png"
       whatIsImage="/images/zoho-dashboards/zoho-desk.webp"
       heroCard1={{
         title: "Omnichannel Support",

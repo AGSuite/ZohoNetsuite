@@ -218,11 +218,11 @@ const ZohoMetrics = () => {
                                 >
                                     <div className="relative h-72 w-[420px] overflow-hidden rounded-3xl shadow-2xl bg-white lg:h-80 lg:w-[520px] xl:h-[420px] xl:w-[680px] border-2 border-white/20 hover:border-white/40 transition-all duration-300">
                                         <Image
-                                            src="/images/Dashboard/zohodash.webp"
+                                            src="/images/zoho-dashboards/Zoho_dashboard_UI_UX_design_2K_202607021312.jpeg"
                                             alt="Zoho Dashboard"
                                             fill
                                             sizes="(min-width: 1280px) 680px, (min-width: 1024px) 520px, 420px"
-                                            className="object-cover"
+                                            className="object-cover object-left"
                                         />
                                     </div>
                                 </motion.div>
@@ -273,7 +273,7 @@ const ZohoMetrics = () => {
                         >
                             <div className="relative max-w-3xl mx-auto">
                                 <Image
-                                    src="/images/Dashboard/zohodash.webp"
+                                    src="/images/zoho-dashboards/Zoho_dashboard_UI_UX_design_2K_202607021312.jpeg"
                                     alt="Zoho Dashboard"
                                     width={1200}
                                     height={600}

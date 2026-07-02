@@ -29,7 +29,7 @@ export default function ZohoLowCodePage() {
     {
       title: "Zoho Creator Apps",
       description: "Build bespoke business applications that fill the gaps where off-the-shelf software falls short.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/Services/zoho_low_code_hero.png",
       color: "#1e3a8a",
       rgb: "14,50,130",
       Icon: Wrench,
@@ -37,7 +37,7 @@ export default function ZohoLowCodePage() {
     {
       title: "Mobile App Development",
       description: "Automatically deploy your business apps to iOS and Android with Zoho Creator's native mobile frameworks.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/Services/zoho_low_code_mobile.png",
       color: "#0e7490",
       rgb: "14,116,144",
       Icon: MonitorSmartphone,
@@ -45,7 +45,7 @@ export default function ZohoLowCodePage() {
     {
       title: "Deluge Scripting",
       description: "Advanced Deluge scripting for complex business logic, data validation, and automated background tasks.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/modules/intelligent_automation.png",
       color: "#065f46",
       rgb: "6,95,70",
       Icon: Code2,
@@ -53,7 +53,7 @@ export default function ZohoLowCodePage() {
     {
       title: "App Portal Design",
       description: "Design secure, user-friendly portals for your customers, vendors, and external partners to interact with your data.",
-      image: "/images/people/laptopmen.webp",
+      image: "/images/modules/sc_mobile_commerce.png",
       color: "#581c87",
       rgb: "88,28,135",
       Icon: MousePointer2,
@@ -64,7 +64,7 @@ export default function ZohoLowCodePage() {
     {
       title: "Rapid Prototyping",
       description: "Turn ideas into working prototypes in days instead of months using Zoho's low-code interface.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/Services/zoho_srv_low_code_new.jpg",
       points: [
         "Iterative app development",
         "Visual drag-and-drop UI",
@@ -75,7 +75,7 @@ export default function ZohoLowCodePage() {
     {
       title: "Reduced IT Overhead",
       description: "Lower your development costs and maintenance burdens by building on a hosted, managed platform.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/modules/cost_efficiency.png",
       points: [
         "No server maintenance",
         "Automatic security patches",
@@ -86,7 +86,7 @@ export default function ZohoLowCodePage() {
     {
       title: "Native Cloud Ecosystem",
       description: "Your custom apps are natively connected to CRM, Finance, and Marketing data within Zoho One.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/modules/unified_platform.png",
       points: [
         "Access shared databases",
         "Seamless cross-app sync",
@@ -97,7 +97,7 @@ export default function ZohoLowCodePage() {
     {
       title: "Enterprise Grade Security",
       description: "Custom apps built on Zoho Creator inherit its robust security framework, including role-based access and data encryption.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/modules/benefit_compliance.png",
       points: [
         "Role-based access control",
         "Encrypted data at rest",
@@ -108,7 +108,7 @@ export default function ZohoLowCodePage() {
     {
       title: "Future-Proof Scalability",
       description: "Start small with one process and scale your custom app to handle thousands of users and millions of records with no extra server setup.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/benefits/benefit_sc_security_scale.png",
       points: [
         "Elastic cloud hosting",
         "Automated performance tuning",
@@ -150,8 +150,8 @@ export default function ZohoLowCodePage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/netsuiteimages/Servicesimg/low code.webp"
-      introImage="/images/Services/lowcode.webp"
+      heroImage="/images/Services/zoho_low_code_hero.png"
+      introImage="/images/Services/zoho_srv_low_code_new.jpg"
       introTitle="Tailor-Made Software for Your Unique Business."
       introDescription1="Sometimes off-the-shelf software doesn't fit your processes. Our low-code development services bridge that gap with custom Zoho Creator applications."
       introDescription2="We help you digitize manual spreadsheets and fragmented legacy tools into a single, secure cloud app that works exactly how you do."

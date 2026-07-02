@@ -336,7 +336,7 @@ export default function ZohoServiceTemplate({
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative min-h-[400px] rounded-3xl overflow-hidden mt-12 lg:mt-15"
+              className="relative min-h-[400px] rounded-3xl overflow-hidden lg:mt-0"
             >
               <Image
                 src={introImage}
@@ -434,7 +434,7 @@ export default function ZohoServiceTemplate({
                   className="group flex flex-col rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white"
                   style={{ minHeight: 340 }}
                 >
-                  <div className="relative h-44 shrink-0 overflow-hidden">
+                  <div className="relative h-56 shrink-0 overflow-hidden">
                     <Image
                       src={svc.image}
                       alt={svc.title}

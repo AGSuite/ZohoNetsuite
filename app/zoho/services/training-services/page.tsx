@@ -29,7 +29,7 @@ export default function ZohoTrainingServicesPage() {
     {
       title: "Role-Based Training",
       description: "Custom courses for sales, finance, marketing, and support teams — teaching exactly what they need.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/people/zoho_people_benefit_growth.png",
       color: "#1e3a8a",
       rgb: "14,50,130",
       Icon: Presentation,
@@ -37,7 +37,7 @@ export default function ZohoTrainingServicesPage() {
     {
       title: "Admin Certification",
       description: "Upskill your internal IT team to manage roles, layouts, and automation within Zoho.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/people/zoho_people_benefit_operations.png",
       color: "#0e7490",
       rgb: "14,116,144",
       Icon: BookOpen,
@@ -45,7 +45,7 @@ export default function ZohoTrainingServicesPage() {
     {
       title: "Executive Sessions",
       description: "High-level workshops for leadership on how to extract and interpret Zoho Analytics for better strategy.",
-      image: "/images/people/laptopmen.webp",
+      image: "/images/people/zoho_people_plus_benefit_decisions.png",
       color: "#065f46",
       rgb: "6,95,70",
       Icon: Monitor,
@@ -53,7 +53,7 @@ export default function ZohoTrainingServicesPage() {
     {
       title: "Interactive Webinars",
       description: "Live, remote training sessions with hands-on exercises in your actual Zoho environment.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/Services/zoho_training_session.png",
       color: "#581c87",
       rgb: "88,28,135",
       Icon: Video,
@@ -64,7 +64,7 @@ export default function ZohoTrainingServicesPage() {
     {
       title: "High Adoption Rate",
       description: "Proper training reduces user resistance and ensures your team uses Zoho correctly from day one.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/zoho_people_plus_benefit_experience.png",
       points: [
         "Interactive Q&A sessions",
         "Hand-on sandbox practice",
@@ -75,7 +75,7 @@ export default function ZohoTrainingServicesPage() {
     {
       title: "Custom Documentation",
       description: "We provide your team with tailored training manuals and video walkthroughs specific to your setup.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/modules/audit_reports.png",
       points: [
         "User process guides",
         "Custom Loom videos",
@@ -86,7 +86,7 @@ export default function ZohoTrainingServicesPage() {
     {
       title: "Reduced Support Burdens",
       description: "Empower your team with the knowledge they need to resolve minor issues internally without tickets.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/people/zoho_recruit_benefit_process.png",
       points: [
         "Empowered super-users",
         "Internal self-service",
@@ -97,7 +97,7 @@ export default function ZohoTrainingServicesPage() {
     {
       title: "Phased Learning Paths",
       description: "We design training that scales with your team's comfort level, from basic navigation to advanced automation and AI reporting.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/people/zoho_people_plus_benefit_journey.png",
       points: [
         "Structured curriculum design",
         "Skill-level assessments",
@@ -108,7 +108,7 @@ export default function ZohoTrainingServicesPage() {
     {
       title: "Increased Data Integrity",
       description: "Trained users enter cleaner data. Our sessions emphasize the importance of data quality for accurate business intelligence.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/modules/general_ledger_custom.png",
       points: [
         "Standardized entry protocols",
         "Validation rule awareness",
@@ -150,8 +150,8 @@ export default function ZohoTrainingServicesPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/netsuiteimages/Servicesimg/traning.webp"
-      introImage="/images/Services/traning2.webp"
+      heroImage="/images/Services/zoho_training_hero.png"
+      introImage="/images/Services/zoho_training_hero.png"
       introTitle="Unlock the Full Potential of Your Team."
       introDescription1="Software is only as effective as the people who use it. Our Zoho training programmes bridge the gap between technical complexity and daily productivity."
       introDescription2="Whether you're a new user or looking to master advanced analytics, we provide the structured learning paths your team needs to thrive on the Zoho platform."

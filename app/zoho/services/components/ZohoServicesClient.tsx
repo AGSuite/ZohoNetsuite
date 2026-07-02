@@ -209,10 +209,10 @@ export default function ZohoServicesClient() {
                   style={{ height: 390 }}
                 >
                   <Image
-                    src="/images/people/fourteam.webp"
+                    src="/images/people/zoho_solutions_hero_person.png"
                     alt="Zoho Specialist Services"
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-top"
                     priority
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
@@ -314,7 +314,7 @@ export default function ZohoServicesClient() {
               className="relative flex items-center justify-center rounded-3xl overflow-hidden shadow-2xl w-full h-full min-h-[400px]"
             >
               <Image
-                src="/images/people/threeteam.webp"
+                src="/images/Services/zoho_success_architecture.png"
                 alt="AGSuite Zoho Expert Team"
                 fill
                 className="object-cover object-center transform hover:scale-105 transition-transform duration-700"
@@ -328,8 +328,8 @@ export default function ZohoServicesClient() {
               transition={{ delay: 0.2 }}
               className="space-y-6"
             >
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
-                Architecting Your Zoho Success
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
+                Driving Intelligent Business Transformation with Zoho
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed">
                 As a certified Zoho Premium Partner, AGSuite provides the

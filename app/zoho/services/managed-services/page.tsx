@@ -29,7 +29,7 @@ export default function ZohoManagedServicesPage() {
     {
       title: "System Health Checks",
       description: "Regular audits of your Zoho environment to identify bottlenecks and optimize performance.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/zoho-services/srv_managed_v2.png",
       color: "#1e3a8a",
       rgb: "14,50,130",
       Icon: BarChart3,
@@ -37,7 +37,7 @@ export default function ZohoManagedServicesPage() {
     {
       title: "Upgrade Readiness",
       description: "Preparing your Zoho system for the bi-annual product updates with zero disruption.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/zohoimages/zoho_cap_workflows_new.png",
       color: "#0e7490",
       rgb: "14,116,144",
       Icon: Settings,
@@ -45,7 +45,7 @@ export default function ZohoManagedServicesPage() {
     {
       title: "Custom Support",
       description: "Dedicated Zoho experts to handle your most complex troubleshooting and configuration needs.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/zoho-services/srv_managed_v4.png",
       color: "#065f46",
       rgb: "6,95,70",
       Icon: LifeBuoy,
@@ -53,7 +53,7 @@ export default function ZohoManagedServicesPage() {
     {
       title: "System Fine-Tuning",
       description: "Continuous optimization of your Zoho workflows and automation for maximum efficiency.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/zoho-services/srv_managed.png",
       color: "#581c87",
       rgb: "88,28,135",
       Icon: Wrench,
@@ -64,7 +64,7 @@ export default function ZohoManagedServicesPage() {
     {
       title: "Peace of Mind",
       description: "Managed support means your Zoho environment is always monitored and supported by experts.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/Services/zoho_srv_managed_new2.png",
       points: [
         "24/7 system monitoring",
         "Proactive issue detection",
@@ -75,7 +75,7 @@ export default function ZohoManagedServicesPage() {
     {
       title: "Predictable Costs",
       description: "Fixed-monthly support plans that keep your Zoho maintenance budget transparent and consistent.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/modules/cost_efficiency.png",
       points: [
         "Fixed monthly retainer",
         "No hidden expenses",
@@ -86,7 +86,7 @@ export default function ZohoManagedServicesPage() {
     {
       title: "Expert Knowledge",
       description: "Access a team of certified Zoho consultants for strategic advice and technical depth.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/netsuiteimages/ns_managed_services.png",
       points: [
         "Zoho certified experts",
         "Strategic system advice",
@@ -97,7 +97,7 @@ export default function ZohoManagedServicesPage() {
     {
       title: "Reduced IT Burden",
       description: "Let our experts handle the day-to-day management of your Zoho environment, freeing up your internal IT team for other strategic initiatives.",
-      image: "/images/people/laptopgirl1.webp",
+      image: "/images/modules/workforce_management.png",
       points: [
         "Focus on core business",
         "No internal Zoho expertise needed",
@@ -108,7 +108,7 @@ export default function ZohoManagedServicesPage() {
     {
       title: "Continuous Optimization",
       description: "We don't just maintain; we improve. Our team regularly reviews your processes to suggest and implement new Zoho features that drive efficiency.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/modules/analytics_forecasting.png",
       points: [
         "New feature activation",
         "Process efficiency audits",

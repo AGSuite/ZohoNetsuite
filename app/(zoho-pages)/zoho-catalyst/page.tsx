@@ -35,84 +35,84 @@ export default function ZohoCatalystPage() {
     {
       title: "Serverless Functions",
       description: "Write and deploy backend logic in Node.js, Java, Python, or PHP without managing any servers.",
-      image: "/images/modules/cat_mod_serverless.svg",
+      image: "/images/modules/intelligent_automation.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "NoSQL Database",
       description: "A secure, scalable, and schema-less database designed for high-performance applications.",
-      image: "/images/modules/cat_mod_nosql.svg",
+      image: "/images/modules/analytics_data_prep.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Cloud Storage",
       description: "Store and manage large volumes of unstructured data like images, videos, and documents securely.",
-      image: "/images/modules/cat_mod_storage.svg",
+      image: "/images/modules/general_ledger_custom.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Authentication",
       description: "Integrated user management and authentication services with support for multiple providers.",
-      image: "/images/modules/cat_mod_auth.svg",
+      image: "/images/zoho-mail-modules/secure-email.png",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Cloud Scale",
       description: "Automatically scale your application resources based on traffic demands, ensuring perfect performance.",
-      image: "/images/modules/cat_mod_scale.svg",
+      image: "/images/modules/analytics_forecasting.png",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "Smart Objects",
       description: "Simplify complex data operations with intelligent data models and automated relationships.",
-      image: "/images/modules/cat_mod_objects.svg",
+      image: "/images/modules/accounts_receivable_custom.png",
       color: "#154e8a",
       rgb: "18,68,130",
     },
     {
       title: "CLI & SDKs",
       description: "Powerful command-line tools and software development kits for seamless local development.",
-      image: "/images/modules/cat_mod_cli.svg",
+      image: "/images/modules/analytics_mobile_bi.png",
       color: "#1a6545",
       rgb: "20,95,60",
     },
     {
       title: "Event Listeners",
       description: "Trigger functions automatically in response to events from various Zoho and third-party services.",
-      image: "/images/modules/cat_mod_events.svg",
+      image: "/images/modules/gst_validation.png",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
     {
       title: "Zia AI Services",
       description: "Access powerful pre-built AI models for OCR, image recognition, and sentiment analysis via API.",
-      image: "/images/modules/cat_mod_zia.svg",
+      image: "/images/modules/analytics_augmented_ai.png",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },
     {
       title: "Monitoring & Logs",
       description: "In-depth tracking of function executions, logs, and overall application health in real-time.",
-      image: "/images/modules/cat_mod_logs.svg",
+      image: "/images/modules/audit_reports.png",
       color: "#523a8a",
       rgb: "75,48,130",
     },
     {
       title: "Environment Management",
       description: "Manage development, testing, and production environments with complete isolation and security.",
-      image: "/images/modules/cat_mod_envs.svg",
+      image: "/images/modules/project_management.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "API Gateway",
       description: "Create, publish, and manage secure APIs to connect your serverless logic with any client application.",
-      image: "/images/modules/cat_mod_gateway.svg",
+      image: "/images/modules/unified_platform.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -122,7 +122,7 @@ export default function ZohoCatalystPage() {
     {
       title: "Focus on Code, Not Infra",
       description: "Catalyst handles all the heavy lifting of infrastructure management, from provisioning and scaling to security and patching.",
-      image: "/images/people/zoho_catalyst_benefit_code.svg",
+      image: "/images/people/zoho_flow_benefit_unified.png",
       points: [
         "Zero server maintenance",
         "Automated resource scaling",
@@ -133,7 +133,7 @@ export default function ZohoCatalystPage() {
     {
       title: "Extreme Operational Speed",
       description: "Build and deploy mission-critical applications at the speed of your ideas. Reduce your time-to-market significantly.",
-      image: "/images/people/zoho_catalyst_benefit_speed.svg",
+      image: "/images/people/zoho_flow_benefit_speed.png",
       points: [
         "Instant function deployments",
         "Pre-built authentication & DB",
@@ -144,7 +144,7 @@ export default function ZohoCatalystPage() {
     {
       title: "Enterprise-Grade Reliability",
       description: "Your applications run on Zoho's world-class cloud infrastructure, ensuring high availability and robust security.",
-      image: "/images/people/zoho_catalyst_benefit_reliability.svg",
+      image: "/images/people/zoho_analytics_benefit_security.png",
       points: [
         "99.9% infrastructure uptime",
         "End-to-end data encryption",
@@ -155,7 +155,7 @@ export default function ZohoCatalystPage() {
     {
       title: "Zero-Waste Pricing",
       description: "Pay only for what you use. No upfront costs, no minimum commitments — just transparent, execution-based billing.",
-      image: "/images/people/zoho_catalyst_benefit_pricing.svg",
+      image: "/images/people/zoho_finance_plus_benefit_scalable.png",
       points: [
         "Millions of free executions/month",
         "Pay-as-you-go model",
@@ -180,7 +180,7 @@ export default function ZohoCatalystPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/people/zoho_catalyst_hero.svg"
-      whatIsImage="/images/zoho-dashboards/zoho-catalyst-dashboard.svg"
+      whatIsImage="/images/zoho-dashboards/zoho-catalyst-dashboard.png"
       heroCard1={{
         title: "10x Faster Dev",
         subtitle: "Zero server management overhead.",

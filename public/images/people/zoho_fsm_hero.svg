@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#172554" />
+    </linearGradient>
+
+    <!-- Glowing Blue/Cyan Gradient -->
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Glowing Emerald/Success Gradient -->
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+
+    <!-- Mobile UI Background -->
+    <linearGradient id="mobileBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <!-- Map Route Gradient -->
+    <linearGradient id="routeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+
+  <!-- Ambient Glow Background Circles -->
+  <circle cx="700" cy="150" r="220" fill="#0ea5e9" opacity="0.12" filter="url(#glow)" />
+  <circle cx="150" cy="450" r="250" fill="#10b981" opacity="0.08" filter="url(#glow)" />
+
+  <!-- Technical Grid Overlay -->
+  <g stroke="#ffffff" stroke-opacity="0.02" stroke-width="1">
+    <path d="M 0,50 L 800,50 M 0,100 L 800,100 M 0,150 L 800,150 M 0,200 L 800,200 M 0,250 L 800,250 M 0,300 L 800,300 M 0,350 L 800,350 M 0,400 L 800,400 M 0,450 L 800,450 M 0,500 L 800,500 M 0,550 L 800,550" />
+    <path d="M 50,0 L 50,600 M 100,0 L 100,600 M 150,0 L 150,600 M 200,0 L 200,600 M 250,0 L 250,600 M 300,0 L 300,600 M 350,0 L 350,600 M 400,0 L 400,600 M 450,0 L 450,600 M 500,0 L 500,600 M 550,0 L 550,600 M 600,0 L 600,600 M 650,0 L 650,600 M 700,0 L 700,600 M 750,0 L 750,600" />
+  </g>
+
+  <!-- BACKGROUND: Dispatcher Control Map (Grid & Routes) -->
+  <g transform="translate(80, 50)" filter="url(#shadow)">
+    <!-- Base Dispatch Board Panel -->
+    <rect width="640" height="480" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
+    <rect width="640" height="40" rx="14" fill="#020617" />
+    <rect width="640" height="12" y="28" fill="#020617" />
+    <line x1="0" y1="40" x2="640" y2="40" stroke="#1e293b" stroke-width="1" />
+    
+    <!-- Title and Window Controls -->
+    <circle cx="20" cy="20" r="5" fill="#ef4444" />
+    <circle cx="36" cy="20" r="5" fill="#f59e0b" />
+    <circle cx="52" cy="20" r="5" fill="#10b981" />
+    <text x="80" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94a3b8" font-weight="bold" letter-spacing="1">ZOHO FSM - DISPATCH CONSOLE</text>
+
+    <!-- Map Routing Visualization on Console -->
+    <g transform="translate(30, 60)" opacity="0.85">
+      <rect width="360" height="390" rx="8" fill="#020617" stroke="#1e293b" stroke-width="1" />
+      
+      <!-- Grid/Street Map Background (Abstract) -->
+      <path d="M 0,60 L 360,60 M 0,140 L 360,140 M 0,220 L 360,220 M 0,300 L 360,300 M 0,380 L 360,380" stroke="#1e293b" stroke-width="0.8" />
+      <path d="M 60,0 L 60,390 M 150,0 L 150,390 M 240,0 L 240,390 M 320,0 L 320,390" stroke="#1e293b" stroke-width="0.8" />
+      
+      <!-- Route 1: Dispatcher Path (Glowing Cyan/Green Line) -->
+      <path d="M 60,140 L 150,140 L 150,220 L 240,220 L 240,300 L 320,300" fill="none" stroke="url(#routeGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" />
+      
+      <!-- Technician Tracking Map Pins -->
+      <!-- Start Pin -->
+      <circle cx="60" cy="140" r="14" fill="#3b82f6" fill-opacity="0.3" />
+      <circle cx="60" cy="140" r="8" fill="#3b82f6" stroke="#ffffff" stroke-width="2" />
+      
+      <!-- Destination Pin (Active Work Order Location) -->
+      <g transform="translate(320,300)">
+        <path d="M0 -15 C-8 -15 -8 -5 0 0 C8 -5 8 -15 0 -15 Z" fill="#10b981" stroke="#ffffff" stroke-width="1.5" />
+        <circle cx="0" cy="-10" r="3" fill="#ffffff" />
+      </g>
+
+      <!-- Active Service Van Indicator -->
+      <g transform="translate(150, 180)">
+        <rect x="-16" y="-10" width="32" height="20" rx="4" fill="#3b82f6" stroke="#ffffff" stroke-width="1" />
+        <text x="0" y="4" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#ffffff" font-weight="bold" text-anchor="middle">VAN 3</text>
+      </g>
+    </g>
+
+    <!-- Schedule Board Sidebar in Console -->
+    <g transform="translate(410, 60)">
+      <rect width="200" height="390" rx="8" fill="#0b1329" stroke="#1e293b" stroke-width="1" />
+      <text x="16" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffffff" font-weight="bold">Technician Queue</text>
+      
+      <!-- Job Card 1 (In Progress) -->
+      <g transform="translate(12, 40)">
+        <rect width="176" height="66" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1" />
+        <text x="12" y="20" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffffff" font-weight="bold">WO-1049: HVAC Repair</text>
+        <text x="12" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#94a3b8">Technician: Alex Rivers</text>
+        <rect x="12" y="46" width="60" height="12" rx="3" fill="#065f46" />
+        <text x="18" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#34d399" font-weight="bold">IN PROGRESS</text>
+      </g>
+
+      <!-- Job Card 2 (Scheduled) -->
+      <g transform="translate(12, 118)">
+        <rect width="176" height="66" rx="6" fill="#1e293b" stroke="#1e293b" stroke-width="1" />
+        <text x="12" y="20" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffffff" font-weight="bold">WO-1050: System Setup</text>
+        <text x="12" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#94a3b8">Technician: David Miller</text>
+        <rect x="12" y="46" width="60" height="12" rx="3" fill="#1e3a8a" />
+        <text x="21" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#93c5fd" font-weight="bold">SCHEDULED</text>
+      </g>
+
+      <!-- Dispatcher Efficiency Gauge -->
+      <g transform="translate(12, 200)">
+        <rect width="176" height="176" rx="6" fill="#020617" stroke="#1e293b" stroke-width="1" />
+        <text x="16" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffffff" font-weight="bold">On-Time SLA Rate</text>
+        <!-- Arc Gauge -->
+        <path d="M 38 120 A 50 50 0 0 1 138 120" fill="none" stroke="#1e293b" stroke-width="10" stroke-linecap="round" />
+        <path d="M 38 120 A 50 50 0 0 1 125 80" fill="none" stroke="#10b981" stroke-width="10" stroke-linecap="round" filter="url(#glow)" />
+        <text x="88" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#ffffff" font-weight="bold" text-anchor="middle">95%</text>
+        <text x="88" y="142" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#10b981" font-weight="bold" text-anchor="middle">EXCELLENT RUN</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- FOREGROUND: Person (Technician) Using FSM Smartphone App -->
+  <!-- Floating Mobile App Screen Mockup -->
+  <g transform="translate(460, 200)" filter="url(#shadow)">
+    <!-- Phone Body -->
+    <rect width="260" height="360" rx="24" fill="url(#mobileBg)" stroke="#475569" stroke-width="3" />
+    <!-- Speaker notch -->
+    <rect x="100" y="8" width="60" height="6" rx="3" fill="#0f172a" />
+    
+    <!-- App Screen Area -->
+    <g transform="translate(10, 22)">
+      <!-- App Header -->
+      <rect width="240" height="38" rx="0" fill="#0f172a" />
+      <text x="12" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#ffffff" font-weight="bold">My Jobs - FSM Mobile</text>
+      <circle cx="225" cy="20" r="3" fill="#10b981" filter="url(#glow)" />
+
+      <!-- Active Work Order Details -->
+      <g transform="translate(10, 48)">
+        <!-- Job Card -->
+        <rect width="220" height="150" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        <text x="12" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#ffffff" font-weight="bold">WO-1049: HVAC Maintenance</text>
+        <text x="12" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#10b981" font-weight="bold">ASSIGNED TO ME</text>
+        
+        <!-- Location details -->
+        <path d="M12 55 L16 55 L16 75 L12 75 Z" fill="#94a3b8" />
+        <text x="15" y="65" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#94a3b8">Customer: Acme Corporate HQ</text>
+        <text x="15" y="78" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#94a3b8">Address: 512 Congress Ave, Austin</text>
+
+        <!-- Status Steps -->
+        <g transform="translate(12, 94)">
+          <!-- Circle 1 -->
+          <circle cx="10" cy="10" r="8" fill="#10b981" />
+          <path d="M7 10 L9 12 L13 8" stroke="#ffffff" stroke-width="1.5" fill="none" />
+          <line x1="18" y1="10" x2="68" y2="10" stroke="#10b981" stroke-width="2" />
+          
+          <!-- Circle 2 -->
+          <circle cx="78" cy="10" r="8" fill="#3b82f6" />
+          <circle cx="78" cy="10" r="3" fill="#ffffff" />
+          <line x1="86" y1="10" x2="136" y2="10" stroke="#475569" stroke-width="2" stroke-dasharray="3 2" />
+
+          <!-- Circle 3 -->
+          <circle cx="146" cy="10" r="8" fill="#475569" />
+
+          <!-- Status labels -->
+          <text x="10" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#10b981" font-weight="bold" text-anchor="middle">Travel</text>
+          <text x="78" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#3b82f6" font-weight="bold" text-anchor="middle">Execute</text>
+          <text x="146" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">Invoice</text>
+        </g>
+      </g>
+
+      <!-- Signature & Checklist Area -->
+      <g transform="translate(10, 208)">
+        <rect width="220" height="110" rx="8" fill="#0b1329" stroke="#334155" stroke-width="1" />
+        <text x="12" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#94a3b8" font-weight="bold">CUSTOMER SIGN-OFF</text>
+        
+        <!-- Signature Pad Mockup -->
+        <rect x="12" y="32" width="196" height="42" rx="4" fill="#020617" stroke="#1e293b" stroke-width="1" />
+        <!-- Handdrawn Signature Path -->
+        <path d="M 30,62 Q 50,42 70,52 T 110,48 T 160,54 T 190,48" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" />
+        
+        <!-- Confirm Button -->
+        <rect x="12" y="82" width="196" height="20" rx="4" fill="url(#emeraldGrad)" />
+        <text x="110" y="95" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#ffffff" font-weight="bold" text-anchor="middle">CONFIRM &amp; INVOICE</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Person Vector Avatar Interacting with Devices -->
+  <g transform="translate(300, 360)" filter="url(#shadow)">
+    <!-- Back Glow for the Person -->
+    <ellipse cx="60" cy="120" rx="80" ry="100" fill="#3b82f6" opacity="0.1" filter="url(#glow)" />
+    
+    <!-- Technician Body silhouette outline representation -->
+    <!-- Shoulder / Torso -->
+    <path d="M -30,240 Q 60,130 150,240 Z" fill="#1e293b" stroke="#334155" stroke-width="2" />
+    <path d="M -10,240 Q 60,150 130,240 Z" fill="#0f172a" />
+    
+    <!-- Service Jacket Collar / Reflective Vest striping -->
+    <path d="M 20,180 L 10,240 M 100,180 L 110,240" stroke="#10b981" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Head / Neck -->
+    <rect x="50" y="110" width="20" height="30" fill="#e2e8f0" rx="4" />
+    <ellipse cx="60" cy="80" rx="36" ry="38" fill="#e2e8f0" />
+    
+    <!-- Technician Cap / Safety Gear -->
+    <path d="M 22,76 Q 60,34 98,76 Z" fill="#0f172a" />
+    <!-- Visor -->
+    <path d="M 38,76 L 12,74 L 14,80 L 40,78 Z" fill="#3b82f6" />
+    
+    <!-- Headset (Dispatcher/Tech communication gear) -->
+    <path d="M 60,42 A 38 38 0 0 1 96,78" fill="none" stroke="#475569" stroke-width="3.5" />
+    <circle cx="96" cy="78" r="6" fill="#0ea5e9" />
+    <!-- Mic boom -->
+    <path d="M 96,78 Q 90,100 78,102" fill="none" stroke="#475569" stroke-width="2" />
+    <circle cx="78" cy="102" r="2.5" fill="#0ea5e9" />
+    
+    <!-- Hand / Tablet interaction arm -->
+    <path d="M 140,220 Q 180,180 200,140" fill="none" stroke="#e2e8f0" stroke-width="12" stroke-linecap="round" />
+    <!-- Intersect finger tapping the phone screen -->
+    <circle cx="200" cy="140" r="6" fill="#e2e8f0" />
+  </g>
+</svg>

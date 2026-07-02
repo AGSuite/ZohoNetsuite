@@ -35,84 +35,84 @@ export default function ZohoOnePage() {
     {
       title: "Unified CRM",
       description: "A centralized customer platform for sales, marketing, and support to build lasting relationships.",
-      image: "/images/modules/managging together module.webp",
+      image: "/images/modules/crm.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Complete Finance",
       description: "Manage accounting, inventory, and expenses in one place while staying compliant.",
-      image: "/images/modules/account modules.webp",
+      image: "/images/modules/financial_reporting_custom.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Full HR Suite",
       description: "From hiring to retirement, manage your workforce with automated processes and self-service.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/modules/hr_management.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Marketing Suite",
       description: "Engage with customers across all channels with integrated multi-channel marketing tools.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/marketing_automation.png",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Project Management",
       description: "Plan, track, and collaborate on projects with ease using social features and task boards.",
-      image: "/images/modules/module8.webp",
+      image: "/images/modules/project_management.png",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "Business Intelligence",
       description: "Analyze data from all departments to make smarter decisions with automated dashboards.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/analytics_visual_analysis.png",
       color: "#154e8a",
       rgb: "18,68,130",
     },
     {
       title: "Collaboration Tools",
       description: "Enable teams to communicate with chat, email, and meetings built into the platform.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/analytics_collab.png",
       color: "#1a6545",
       rgb: "20,95,60",
     },
     {
       title: "Developer Platform",
       description: "Build custom applications and extensions to fit your specific business processes.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/analytics_mobile_bi.png",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
     {
       title: "Security & Admin",
       description: "Manage users, control access, and ensure compliance from a single administrative console.",
-      image: "/images/modules/working module.webp",
+      image: "/images/zoho-mail-modules/secure-email.png",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },
     {
       title: "AI & Search",
       description: "Leverage Zia AI for smarter insights and find any piece of information with cross-app search.",
-      image: "/images/modules/csm modules.webp",
+      image: "/images/modules/analytics_augmented_ai.png",
       color: "#523a8a",
       rgb: "75,48,130",
     },
     {
       title: "Mobile Business",
       description: "Run your entire business from your phone with native apps for every function.",
-      image: "/images/modules/mobile module.webp",
+      image: "/images/modules/sc_mobile_commerce.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Custom Workflows",
       description: "Automate complex business processes across multiple apps without coding.",
-      image: "/images/modules/sheet module.webp",
+      image: "/images/modules/intelligent_automation.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -122,7 +122,7 @@ export default function ZohoOnePage() {
     {
       title: "One Platform for All",
       description: "Eliminate silos and messy integrations. Zoho One provides over 45+ integrated apps to run your entire operation.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/people/zoho_one_benefit_1.jpg",
       points: [
         "Unprecedent data sharing across departments",
         "Single sign-on for all business applications",
@@ -133,7 +133,7 @@ export default function ZohoOnePage() {
     {
       title: "Unbeatable Value",
       description: "Get the features of 45+ enterprise-grade apps for a fraction of the cost of individual subscriptions.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/people/zoho_one_benefit_2.jpg",
       points: [
         "Simplify billing with one single subscription",
         "Reduce operational costs by over 40%",
@@ -144,7 +144,7 @@ export default function ZohoOnePage() {
     {
       title: "Smarter Business with AI",
       description: "Leverage Zia, the AI that spans your entire business. Get insights and find data instantly with cross-platform search.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/zoho_one_benefit_3.jpg",
       points: [
         "Predictive analytics for sales and finance",
         "Cross-app search to find any record instantly",
@@ -155,7 +155,7 @@ export default function ZohoOnePage() {
     {
       title: "Security by Design",
       description: "Ensure your data is protected with enterprise-grade security and compliance features out of the box.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/people/zoho_analytics_benefit_security.png",
       points: [
         "Centralized user management and access",
         "GDPR, SOC2, and ISO 27001 compliant",
@@ -179,7 +179,7 @@ export default function ZohoOnePage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap2.webp"
+      heroImage="/images/people/zoho_one_hero.jpg"
       whatIsImage="/images/zoho-dashboards/zoho-one.webp"
       heroCard1={{
         title: "45+ Integrated Apps",

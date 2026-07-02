@@ -29,7 +29,7 @@ export default function ZohoIntegrationServicesPage() {
     {
       title: "Zoho-to-ERP Integration",
       description: "Seamlessly connect Zoho to major ERP systems like NetSuite, SAP, and Oracle for a unified financial truth.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/modules/unified_platform.png",
       color: "#1e3a8a",
       rgb: "14,50,130",
       Icon: Database,
@@ -37,7 +37,7 @@ export default function ZohoIntegrationServicesPage() {
     {
       title: "E-Commerce Sync",
       description: "Auto-sync Shopify, WooCommerce, or Amazon sales data with Zoho Inventory and Books in real-time.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/modules/ecommerce.png",
       color: "#0e7490",
       rgb: "14,116,144",
       Icon: ArrowRightLeft,
@@ -45,7 +45,7 @@ export default function ZohoIntegrationServicesPage() {
     {
       title: "Zoho Flow Automation",
       description: "Build visual, multi-app workflows that trigger actions across your entire business cloud automatically.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/modules/intelligent_automation.png",
       color: "#065f46",
       rgb: "6,95,70",
       Icon: Share2,
@@ -53,7 +53,7 @@ export default function ZohoIntegrationServicesPage() {
     {
       title: "Custom API Development",
       description: "Our developers build bespoke REST and SOAP connectors for legacy or niche external systems.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/ai/integration_custom_rest_soap_apis.jpg",
       color: "#581c87",
       rgb: "88,28,135",
       Icon: GitMerge,
@@ -64,7 +64,7 @@ export default function ZohoIntegrationServicesPage() {
     {
       title: "Zero Manual Data Entry",
       description: "Eliminate the risk of human error by automating data transfers between your business critical apps.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/modules/order_management.png",
       points: [
         "Automated record creation",
         "Bi-directional data sync",
@@ -75,7 +75,7 @@ export default function ZohoIntegrationServicesPage() {
     {
       title: "Real-Time Visibility",
       description: "Get a unified view of your business by pulling data from multiple sources into a single Zoho dashboard.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/modules/real_time_visibility.png",
       points: [
         "Consolidated group reporting",
         "Cross-platform data analytics",
@@ -86,7 +86,7 @@ export default function ZohoIntegrationServicesPage() {
     {
       title: "Scalable Architecture",
       description: "We build integrations using lightweight, API-led architecture that grows with your business complexity.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/ai/integration_middleware_orchestration.jpg",
       points: [
         "Future-proof API layers",
         "Minimal system overhead",
@@ -97,7 +97,7 @@ export default function ZohoIntegrationServicesPage() {
     {
       title: "Automated Error Handling",
       description: "Our integrations come with built-in retry mechanisms and alert systems to ensure data consistency even during downtime.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/ai/integration_edi_integration.jpg",
       points: [
         "Proactive failure alerts",
         "Automatic retry logic",
@@ -108,7 +108,7 @@ export default function ZohoIntegrationServicesPage() {
     {
       title: "Enhanced Compliance",
       description: "Maintain a clear audit trail of every data transfer, ensuring your business stays compliant with data governance standards.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/modules/benefit_compliance.png",
       points: [
         "Secure OAuth2 authentication",
         "Encrypted data transmission",
@@ -151,7 +151,7 @@ export default function ZohoIntegrationServicesPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/zohoimages/zohointegration.png"
-      introImage="/images/people/laptopmen.webp"
+      introImage="/images/Services/zoho_integration_services_overview.png"
       bgImage="/images/zohoimages/background/zohobg.webp"
       introTitle="Unify Your Entire Business Stack."
       introDescription1="A disconnected business is an inefficient business. Our integration experts ensure your Zoho platform communicates seamlessly with every other tool in your stack."

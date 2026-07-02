@@ -24,7 +24,7 @@ const data: IndustryPageData = {
   heroCardSub: "Sales · Subscriptions · Support · Metrics",
   heroTopCardTitle: "Trusted by 800+ Tech Firms",
   heroTopCardSub: "Cloud-Native · High-Scale · Global",
-  introImage: "/images/lap/lap2.webp",
+  introImage: "/images/Services/zoho_success_architecture.png",
   introTitle: "Purpose-Built Zoho Tools for SaaS Companies",
   introDescription:
     "Software companies face unique challenges — managing recurring revenue, tracking complex customer success metrics, and ensuring seamless lead-to-cash flows. Zoho's technology ecosystem provides a single, unified system that connects your product usage with your financial performance.",
@@ -41,58 +41,58 @@ const data: IndustryPageData = {
       title: "Subscription Lifecycle Management",
       description:
         "Manage the entire customer lifecycle — from trial to upgrade to renewal — using Zoho Subscriptions and Zoho CRM.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/people/zoho_crm_hero.png",
     },
     {
       title: "Real-time SaaS Dashboards",
       description:
         "Track MRR, ARR, Churn, and LTV in real-time with Zoho Analytics' built-in SaaS metrics engine.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/people/zoho_analytics_hero.png",
     },
     {
       title: "Customer Success & Support",
       description:
         "Deliver world-class support and proactively manage customer health using Zoho Desk and Zoho CRM.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/zoho_people_benefit_operations.png",
     },
     {
       title: "Automated Revenue Recognition",
       description:
         "Ensure compliance with ASC 606 and IFRS 15 using Zoho Books' automated revenue recognition features.",
-      image: "/images/lap/lap9_11zon.webp",
+      image: "/images/people/zoho_books_hero.png",
     },
     {
       title: "Global Multi-Currency Operations",
       description:
         "Support global customers with 160+ currency handling, automated FX revaluation, and multi-subsidiary consolidation within Zoho Finance Plus.",
-      image: "/images/lap/lap8_11zon.webp",
+      image: "/images/people/zoho_finance_plus_hero.png",
     },
   ],
   features: [
     {
       title: "Customized Solutions",
       description: "Tailored software and technology services to meet the unique needs and requirements of businesses.",
-      image: "/images/lap/lap6_11zon.webp",
+      image: "/images/Services/zoho_low_code_hero.png",
     },
     {
       title: "Integration Features",
       description: "Ensuring smooth integration with existing systems and platforms to ensure compatibility and seamless operation",
-      image: "/images/lap/lap3.webp",
+      image: "/images/people/zoho_flow_hero.png",
     },
     {
       title: "Cloud-Based Solutions",
       description: "Offering cloud-based software and technology solutions that provide flexibility, accessibility, and scalability to businesses.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/people/zoho_one_hero.jpg",
     },
     {
       title: "Global Business Management",
       description: "Seamlessly manage multiple currencies and reporting as your business expands.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/people/zoho_analytics_benefit_visibility.png",
     },
     {
       title: "Automated Support Workflows",
       description: "Optimize support ticket routing and resolution with Zoho Desk's intelligent automation.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/people/zoho_analytics_benefit_decisions.png",
     },
   ],
   challenges: [

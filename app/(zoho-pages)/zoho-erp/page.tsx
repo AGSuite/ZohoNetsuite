@@ -34,42 +34,42 @@ export default function ZohoERPPage() {
     {
       title: "Finance & Accounting",
       description: "Manage your accounts, invoices, and expenses with ease while ensuring local tax compliance.",
-      image: "/images/modules/account modules.webp",
+      image: "/images/modules/financial_reporting_custom.png",
       color: "#1e8a9e",
       rgb: "14,108,130",
     },
     {
       title: "Inventory Management",
       description: "Track stock levels, manage warehouses, and automate reordering processes across multiple locations.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/inventory_management.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "People & Payroll",
       description: "Streamline HR processes from onboarding to retirement, including automated payroll processing.",
-      image: "/images/modules/working module.webp",
+      image: "/images/modules/hr_management.png",
       color: "#8b3a6a",
       rgb: "125,42,88",
     },
     {
       title: "CRM & Sales",
       description: "Build lasting customer relationships and accelerate sales cycles with unified customer data.",
-      image: "/images/modules/csm modules.webp",
+      image: "/images/modules/crm.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Project Management",
       description: "Plan, track, and collaborate on projects with integrated time tracking and billing.",
-      image: "/images/modules/any modules.webp",
+      image: "/images/modules/project_management.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Business Intelligence",
       description: "Turn your data into actionable insights with 500+ pre-built reports and dashboards.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/analytics_visual_analysis.png",
       color: "#154e8a",
       rgb: "18,68,130",
     },
@@ -80,7 +80,7 @@ export default function ZohoERPPage() {
       title: "Unified Business Ecosystem",
       description:
         "Break down silos with a single platform that connects every department — from sales and marketing to finance and HR.",
-      image: "/images/people/fourteam.webp",
+      image: "/images/modules/intelligent_automation.png",
       points: [
         "Real-time data flow between all applications",
         "Single source of truth for your entire business",
@@ -92,7 +92,7 @@ export default function ZohoERPPage() {
       title: "Scalable Operations",
       description:
         "Start with what you need and expand as you grow. Zoho's modular approach allows you to scale without complexity.",
-      image: "/images/lap/lap2.webp",
+      image: "/images/modules/sc_mobile_commerce.png",
       points: [
         "Add modules and users as required",
         "Support for multi-currency and multi-entity",
@@ -104,7 +104,7 @@ export default function ZohoERPPage() {
       title: "Cost-Effective Innovation",
       description:
         "Get enterprise-grade capabilities without the enterprise price tag. Achieve a higher ROI with lower TCO.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/modules/gst_management.png",
       points: [
         "Transparent, pay-as-you-go pricing",
         "Minimal IT overhead with cloud-native suite",
@@ -128,7 +128,7 @@ export default function ZohoERPPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/lap/lap1.webp"
+      heroImage="/images/people/zoho_erp_hero.jpg"
       whatIsImage="/images/zoho-dashboards/zoho-erp-ai.png"
       heroCard1={{
         title: "45+ Apps",
