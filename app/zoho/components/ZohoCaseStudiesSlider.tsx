@@ -96,7 +96,7 @@ const ZohoCaseStudiesSlider = () => {
                         {caseStudies.map((study) => (
                             <div key={study.id} className="bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col group transition-transform duration-300 hover:-translate-y-2 border border-white/10">
                                 <div className="relative h-56 md:h-64 w-full overflow-hidden">
-                                    <Image src={study.image} alt={study.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 50vw" />
+                                    <Image src={study.image} alt={study.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent opacity-60" />
                                     <div className="absolute bottom-4 left-4 bg-blue-600 text-white px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider backdrop-blur-md">
                                         {study.industry}
