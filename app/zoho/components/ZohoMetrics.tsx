@@ -278,7 +278,6 @@ const ZohoMetrics = () => {
                                     width={1200}
                                     height={600}
                                     className="w-full h-auto rounded-2xl shadow-2xl shadow-rose-500/30 border-2 border-white/20"
-                                    priority
                                     sizes="100vw"
                                 />
                             </div>

@@ -32,14 +32,15 @@ export const NSHero: React.FC<NSHeroProps> = () => {
 
   React.useEffect(() => {
     setIsMounted(true);
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+    const media = window.matchMedia("(max-width: 1023px)");
+    setIsMobile(media.matches);
+    const listener = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    media.addEventListener('change', listener);
     // After mount, we allow animations for subsequent slides
     const timer = setTimeout(() => setSkipFirstAnimation(false), 1000);
     return () => {
       clearTimeout(timer);
-      window.removeEventListener('resize', checkMobile);
+      media.removeEventListener('change', listener);
     };
   }, []);
 
@@ -645,10 +646,11 @@ const HeroSlide = ({
 }: any) => {
   const [isMobile, setIsMobile] = React.useState(false);
   React.useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    const media = window.matchMedia("(max-width: 1023px)");
+    setIsMobile(media.matches);
+    const listener = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
   }, []);
 
   const defaultGridClass = image || customVisual ? 'lg:grid-cols-[52%_46%]' : 'lg:grid-cols-2';

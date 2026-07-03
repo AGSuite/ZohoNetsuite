@@ -38,15 +38,16 @@ const NavbarNetSuite = () => {
         ticking = true;
       }
     };
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1024);
+    const media = window.matchMedia("(min-width: 1024px)");
+    setIsDesktop(media.matches);
+    const handleResize = (e: MediaQueryListEvent) => {
+      setIsDesktop(e.matches);
     };
-    handleResize();
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleResize);
+    media.addEventListener('change', handleResize);
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
+      media.removeEventListener('change', handleResize);
     };
   }, []);
 

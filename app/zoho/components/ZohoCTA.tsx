@@ -15,7 +15,6 @@ const ZohoCTA = () => {
           alt="Zoho Savings CTA"
           fill
           className="object-cover"
-          priority
           sizes="100vw"
         />
       </div>

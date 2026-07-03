@@ -48,10 +48,11 @@ export const NSCircularDesign = () => {
     const [isMobile, setIsMobile] = React.useState(false);
 
     React.useEffect(() => {
-        const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
+        const media = window.matchMedia("(max-width: 1023px)");
+        setIsMobile(media.matches);
+        const listener = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+        media.addEventListener('change', listener);
+        return () => media.removeEventListener('change', listener);
     }, []);
 
     return (

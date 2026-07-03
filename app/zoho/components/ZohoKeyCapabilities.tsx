@@ -115,7 +115,6 @@ const ZohoKeyCapabilities = () => {
                                     fill
                                     className="object-cover"
                                     sizes="(max-width: 1024px) 100vw, 50vw"
-                                    priority
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/20 to-transparent z-10" />
                                 <div className="absolute inset-0 z-20 flex flex-col justify-end p-8">
@@ -187,7 +186,6 @@ const ZohoKeyCapabilities = () => {
                                     fill
                                     className="object-cover"
                                     sizes="(max-width: 1024px) 100vw, 50vw"
-                                    priority
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent z-10" />
                                 <div className="absolute inset-0 z-20 flex flex-col justify-end p-5">
