@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 // Dynamically import client components to split bundle size
 const AboutUsClient = dynamic(() => import("./AboutUsClient"), {
-  ssr: false,
+  loading: () => <div className="h-[2000px] w-full bg-slate-50/50 animate-pulse rounded-3xl" />
 });
 
 export default function AboutUsPage() {
