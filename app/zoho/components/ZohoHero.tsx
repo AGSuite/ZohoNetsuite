@@ -78,8 +78,6 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                       alt="Empower Your Business with Premium Zoho Cloud Solutions"
                       width={1200}
                       height={1000}
-                      priority
-                      fetchPriority="high"
                       className="w-[140%] max-lg:h-auto max-w-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.2)] -ml-[25%]"
                       sizes="(max-width: 1024px) 100vw, 60vw"
                     />
@@ -615,7 +613,6 @@ const HeroSlide = ({
                       alt={title}
                       width={1200}
                       height={1000}
-                      priority={priority}
                       className="w-[140%] max-lg:h-auto max-w-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.2)] -ml-[25%] transition-transform duration-700 hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 60vw"
                     />

@@ -91,7 +91,6 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                         alt="NetSuite Dashboard"
                         width={1800}
                         height={1600}
-                        priority
                         className="w-[140%] max-w-none object-contain drop-shadow-[0_20px_60px_rgba(59,130,246,0.25)] -ml-[25%]"
                         sizes="(max-width: 1024px) 100vw, 60vw"
                       />
@@ -734,7 +733,6 @@ const HeroSlide = ({
                       alt={title}
                       width={1800}
                       height={1600}
-                      priority={priority}
                       className="w-[115%] lg:w-[125%] xl:w-[130%] max-w-none object-contain drop-shadow-[0_20px_60px_rgba(59,130,246,0.25)] -ml-[10%] lg:-ml-[15%] xl:-ml-[20%] transition-transform duration-700 hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 60vw"
                     />

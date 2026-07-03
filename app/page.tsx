@@ -35,10 +35,9 @@ export default function Home() {
           alt="Background"
           fill
           priority
-          fetchPriority="high"
           className="object-cover object-center scale-110"
           sizes="100vw"
-          quality={90}
+          quality={75}
         />
       </div>
 
@@ -58,7 +57,6 @@ export default function Home() {
               width={180}
               height={60}
               className="h-14 md:h-16 lg:h-18 w-auto object-contain"
-              priority
             />
             <div className="w-px h-8 bg-gray-400/50 hidden sm:block" />
             <Image
@@ -67,8 +65,6 @@ export default function Home() {
               width={180}
               height={60}
               className="h-14 md:h-16 lg:h-18 w-auto object-contain"
-              priority
-              fetchPriority="high"
             />
           </div>
           <button className="px-8 py-3 rounded-lg bg-gray-700 text-white text-lg font-semibold hover:bg-gray-900 transition">
@@ -86,8 +82,6 @@ export default function Home() {
             src="/images/people/people5_11zon.webp"
             alt="Oracle NetSuite Business Professionals"
             fill
-            priority
-            fetchPriority="high"
             className="object-cover object-center group-hover:scale-105 transition-all duration-700"
             sizes="(max-width: 768px) 100vw, 50vw"
             quality={80}
@@ -160,8 +154,6 @@ export default function Home() {
             src="/images/zohoimages/background/zohobg.webp"
             alt="Zoho Background"
             fill
-            priority
-            fetchPriority="high"
             className="object-cover group-hover:scale-105 transition-all duration-700"
             sizes="(max-width: 768px) 100vw, 50vw"
             quality={75}
@@ -200,7 +192,6 @@ export default function Home() {
               width={180}
               height={60}
               className="h-14 md:h-16 lg:h-18 w-auto object-contain"
-              priority
             />
             <div className="w-px h-8 bg-gray-400/50 hidden sm:block" />
             <Image
@@ -209,8 +200,6 @@ export default function Home() {
               width={180}
               height={60}
               className="h-14 md:h-16 lg:h-18 w-auto object-contain"
-              priority
-              fetchPriority="high"
             />
           </div>
           <button className="px-8 py-3 rounded-lg bg-gray-700 text-white text-lg font-semibold hover:bg-gray-900 transition">
