@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Download, CheckCircle2, Shield, Phone, ChevronDown, ClipboardCheck, ArrowRight
 } from "lucide-react";
+import Image from "next/image";
 
 /* ── Country codes with flagcdn.com iso codes ── */
 const COUNTRY_CODES = [
@@ -342,10 +343,12 @@ export default function NSChecklistLeadMagnet() {
               transition={{ duration: 0.8, delay: 0.15 }}
               className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 w-full h-full flex min-h-[350px] lg:min-h-full"
             >
-              <img
+              <Image
                 src="/images/Background/netsuite_checklist.png"
                 alt="NetSuite Implementation Checklist"
+                fill
                 className="w-full h-full object-cover select-none"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
               {/* Subtle glass overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent pointer-events-none" />

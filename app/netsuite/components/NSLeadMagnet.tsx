@@ -6,6 +6,7 @@ import {
   Download, TrendingUp, CheckCircle2,
   Shield, Zap, ChevronRight, Phone, ChevronDown
 } from "lucide-react";
+import Image from "next/image";
 
 /* ── Country codes with flagcdn.com iso codes ── */
 const COUNTRY_CODES = [
@@ -217,10 +218,12 @@ export default function NSLeadMagnet() {
       >
         {/* Map Background Overlay */}
         <div className="absolute inset-0 opacity-[0.07] mix-blend-overlay pointer-events-none overflow-hidden select-none">
-          <img
+          <Image
             src="/images/Background/world-map-light.png"
             alt="World Map Background"
+            fill
             className="w-full h-full object-cover"
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </div>
 

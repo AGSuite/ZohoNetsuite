@@ -522,6 +522,13 @@ const HeroSlide = ({
   isActive = false,
   multiColorShadow = false,
 }: any) => {
+  const [isMobile, setIsMobile] = React.useState(false);
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   return (
     <div className="relative h-full w-full flex items-center">
       <div className="absolute inset-0 top-0 -z-10">
@@ -590,7 +597,7 @@ const HeroSlide = ({
           </AnimatePresence>
         </div>
 
-        {(image || customVisual) && (
+        {!isMobile && (image || customVisual) && (
           <div className="hidden lg:flex justify-center lg:justify-end">
             <AnimatePresence mode="wait">
               {isActive && (

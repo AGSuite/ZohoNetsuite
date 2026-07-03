@@ -31,8 +31,7 @@ const NetsuiteCTA = () => {
             alt="NetSuite Calculator CTA"
             fill
             className="object-cover"
-            priority
-            quality={95}
+            quality={75}
             sizes="100vw"
           />
         </div>

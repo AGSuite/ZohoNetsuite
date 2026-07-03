@@ -345,22 +345,26 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                       )}
 
                       {/* Moving Scanning Beams */}
-                      <motion.div 
-                        animate={{ x: [-200, 1600] }}
-                        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-y-0 w-32 bg-linear-to-r from-transparent via-blue-600/5 to-transparent skew-x-12 pointer-events-none"
-                      />
+                      {!isMobile && (
+                        <motion.div 
+                          animate={{ x: [-200, 1600] }}
+                          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                          className="absolute inset-y-0 w-32 bg-linear-to-r from-transparent via-blue-600/5 to-transparent skew-x-12 pointer-events-none"
+                        />
+                      )}
 
                       {/* Strategic Graph Line Background */}
-                      <svg className="absolute inset-x-0 bottom-0 w-full h-[300px] opacity-[0.1]" viewBox="0 0 1440 300">
-                        <motion.path 
-                          initial={{ pathLength: 0 }}
-                          animate={{ pathLength: 1 }}
-                          transition={{ duration: 12, repeat: Infinity, repeatType: "reverse" }}
-                          d="M0 250C200 230 400 270 600 200C800 130 1000 150 1200 70C1400 0 1600 20 1800 -20" 
-                          stroke="#2563eb" strokeWidth="2" fill="none" 
-                        />
-                      </svg>
+                      {!isMobile && (
+                        <svg className="absolute inset-x-0 bottom-0 w-full h-[300px] opacity-[0.1]" viewBox="0 0 1440 300">
+                          <motion.path 
+                            initial={{ pathLength: 0 }}
+                            animate={{ pathLength: 1 }}
+                            transition={{ duration: 12, repeat: Infinity, repeatType: "reverse" }}
+                            d="M0 250C200 230 400 270 600 200C800 130 1000 150 1200 70C1400 0 1600 20 1800 -20" 
+                            stroke="#2563eb" strokeWidth="2" fill="none" 
+                          />
+                        </svg>
+                      )}
                     </div>
                   }
                   title="The CFO Strategic Command Center"
@@ -639,6 +643,14 @@ const HeroSlide = ({
   containerClass = "px-4 sm:px-6 lg:px-8",
   gridClass = "",
 }: any) => {
+  const [isMobile, setIsMobile] = React.useState(false);
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const defaultGridClass = image || customVisual ? 'lg:grid-cols-[52%_46%]' : 'lg:grid-cols-2';
   const activeGridClass = gridClass || defaultGridClass;
 
@@ -710,7 +722,7 @@ const HeroSlide = ({
           </AnimatePresence>
         </div>
 
-        {(image || customVisual) && (
+        {!isMobile && (image || customVisual) && (
           <div className="hidden lg:flex justify-center lg:justify-end">
             <AnimatePresence mode="wait">
               {isActive && (
