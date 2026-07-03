@@ -1,10 +1,7 @@
-import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { getZohoPosts } from '../../sanity/lib/zohoFetch';
-
 import { ZohoHero } from './components/ZohoHero';
+import ZohoPageClient from './components/ZohoPageClient';
 import { Metadata } from 'next';
-import LazySection from '../components/shared/LazySection';
 
 export const metadata: Metadata = {
   title: "Zoho Solutions | CRM, HR, Finance & Automation | AGSuite",
@@ -15,40 +12,6 @@ export const metadata: Metadata = {
     images: ["/images/Background/heropinkbg.webp"],
   },
 };
-
-const ZohoMetrics = dynamic(() => import('./components/ZohoMetrics').then(mod => mod.default), {
-  loading: () => <div className="h-[950px] lg:h-[600px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
-});
-const ZohoCustomerSuccess = dynamic(() => import('./components/ZohoCustomerSuccess').then(mod => mod.default), {
-  loading: () => <div className="h-[1200px] lg:h-[600px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
-});
-const ZohoCaseStudiesSlider = dynamic(() => import('./components/ZohoCaseStudiesSlider').then(mod => mod.default), {
-  loading: () => <div className="h-[800px] lg:h-[500px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
-});
-const ZohoKeyCapabilities = dynamic(() => import('./components/ZohoKeyCapabilities').then(mod => mod.default), {
-  loading: () => <div className="h-[1000px] lg:h-[700px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
-});
-const ZohoServices = dynamic(() => import('./components/ZohoServices').then(mod => mod.default), {
-  loading: () => <div className="h-[2200px] lg:h-[800px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
-});
-const ZohoIndustries = dynamic(() => import('./components/ZohoIndustries').then(mod => mod.default), {
-  loading: () => <div className="h-[1400px] lg:h-[600px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
-});
-const ZohoCTA = dynamic(() => import('./components/ZohoCTA').then(mod => mod.default), {
-  loading: () => <div className="h-[300px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
-});
-const ZohoWhyChooseUs = dynamic(() => import('./components/ZohoWhyChooseUs').then(mod => mod.default), {
-  loading: () => <div className="h-[1500px] lg:h-[700px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
-});
-const ZohoBlogsSlider = dynamic(() => import('./components/ZohoBlogsSlider').then(mod => mod.default), {
-  loading: () => <div className="h-[1000px] lg:h-[500px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
-});
-const FAQ = dynamic(() => import('../components/home/FAQ').then(mod => mod.FAQ), {
-  loading: () => <div className="h-[1000px] lg:h-[600px] w-full bg-slate-50/50 animate-pulse rounded-[2rem] mx-auto max-w-7xl my-16" />
-});
-const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm').then(mod => mod.default), {
-  loading: () => <div className="h-[1200px] lg:h-[800px] w-full bg-slate-50/50 animate-pulse rounded-[3rem] mx-auto max-w-7xl my-16" />
-});
 
 export default async function ZohoPage() {
   const blogs = await getZohoPosts();
@@ -63,49 +26,7 @@ export default async function ZohoPage() {
         ctaHref="/zoho/solutions"
       />
 
-      <LazySection height="600px">
-        <ZohoMetrics />
-      </LazySection>
-
-      <LazySection height="600px">
-        <ZohoCustomerSuccess />
-      </LazySection>
-
-      <LazySection height="500px">
-        <ZohoCaseStudiesSlider />
-      </LazySection>
-
-      <LazySection height="700px">
-        <ZohoKeyCapabilities />
-      </LazySection>
-
-      <LazySection height="800px">
-        <ZohoServices />
-      </LazySection>
-
-      <LazySection height="600px">
-        <ZohoIndustries />
-      </LazySection>
-
-      <LazySection height="300px">
-        <ZohoCTA />
-      </LazySection>
-
-      <LazySection height="700px">
-        <ZohoWhyChooseUs />
-      </LazySection>
-
-      <LazySection height="500px">
-        <ZohoBlogsSlider blogs={blogs} variant="small" />
-      </LazySection>
-
-      <LazySection height="600px">
-        <FAQ variant="zoho" layout="sidebar" />
-      </LazySection>
-
-      <LazySection height="800px">
-        <FooterContactForm platform="Zoho" />
-      </LazySection>
+      <ZohoPageClient blogs={blogs} />
     </div>
   );
 }
