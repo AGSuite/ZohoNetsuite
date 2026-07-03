@@ -312,7 +312,7 @@ const ZohoMetrics = () => {
                                                 alt={`${logo.name} logo`}
                                                 width={200}
                                                 height={65}
-                                                sizes="200px"
+                                                sizes="(max-width: 640px) 100px, 150px"
                                                 className={`max-h-full w-auto object-contain transition-all duration-300 ${logo.id === 'quickheal' ? 'px-4' : 'px-2'}`}
                                             />
                                         </a>

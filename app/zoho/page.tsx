@@ -4,6 +4,7 @@ import { getZohoPosts } from '../../sanity/lib/zohoFetch';
 
 import { ZohoHero } from './components/ZohoHero';
 import { Metadata } from 'next';
+import LazySection from '../components/shared/LazySection';
 
 export const metadata: Metadata = {
   title: "Zoho Solutions | CRM, HR, Finance & Automation | AGSuite",
@@ -52,7 +53,6 @@ const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterCo
 export default async function ZohoPage() {
   const blogs = await getZohoPosts();
 
-
   return (
     <div className="relative">
       <ZohoHero
@@ -63,31 +63,49 @@ export default async function ZohoPage() {
         ctaHref="/zoho/solutions"
       />
 
-      <ZohoMetrics />
+      <LazySection height="600px">
+        <ZohoMetrics />
+      </LazySection>
 
-      <ZohoCustomerSuccess />
+      <LazySection height="600px">
+        <ZohoCustomerSuccess />
+      </LazySection>
 
-      <ZohoCaseStudiesSlider />
+      <LazySection height="500px">
+        <ZohoCaseStudiesSlider />
+      </LazySection>
 
-      <ZohoKeyCapabilities />
+      <LazySection height="700px">
+        <ZohoKeyCapabilities />
+      </LazySection>
 
-      <ZohoServices />
+      <LazySection height="800px">
+        <ZohoServices />
+      </LazySection>
 
-      <ZohoIndustries />
+      <LazySection height="600px">
+        <ZohoIndustries />
+      </LazySection>
 
-      <ZohoCTA />
+      <LazySection height="300px">
+        <ZohoCTA />
+      </LazySection>
 
-      <ZohoWhyChooseUs />
+      <LazySection height="700px">
+        <ZohoWhyChooseUs />
+      </LazySection>
 
-      <ZohoBlogsSlider blogs={blogs} variant="small" />
+      <LazySection height="500px">
+        <ZohoBlogsSlider blogs={blogs} variant="small" />
+      </LazySection>
 
-      <FAQ variant="zoho" layout="sidebar" />
+      <LazySection height="600px">
+        <FAQ variant="zoho" layout="sidebar" />
+      </LazySection>
 
-      <FooterContactForm platform="Zoho" />
+      <LazySection height="800px">
+        <FooterContactForm platform="Zoho" />
+      </LazySection>
     </div>
   );
 }
-
-
-
-

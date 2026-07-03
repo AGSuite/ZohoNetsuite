@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { getPosts } from '../../sanity/lib/fetch'
 import { NSHero } from './components/NSHero';
 import { Metadata } from 'next';
+import LazySection from '../components/shared/LazySection';
 
 export const metadata: Metadata = {
   title: "Oracle NetSuite ERP Solutions | AGSuite Technologies",
@@ -81,45 +82,61 @@ export default async function NetSuitePage() {
         ctaHref="/netsuite/solutions"
       />
 
-      <NSMetrics />
-      <NSCustomerSuccess />
-      <NSCaseStudiesSlider />
-      <NSIntegrationDesign />
-      <NSLeadMagnet />
+      <LazySection height="600px">
+        <NSMetrics />
+      </LazySection>
 
-      <NSKeyCapabilities />
-      <NSChecklistLeadMagnet />
+      <LazySection height="600px">
+        <NSCustomerSuccess />
+      </LazySection>
 
-      {/* <NSDashboardHero /> */}
+      <LazySection height="500px">
+        <NSCaseStudiesSlider />
+      </LazySection>
 
-      {/* Key Solutions Grid (Existing) */}
+      <LazySection height="500px">
+        <NSIntegrationDesign />
+      </LazySection>
 
+      <LazySection height="600px">
+        <NSLeadMagnet />
+      </LazySection>
 
-      <NSServices />
+      <LazySection height="700px">
+        <NSKeyCapabilities />
+      </LazySection>
 
-      <NSIndustries />
+      <LazySection height="600px">
+        <NSChecklistLeadMagnet />
+      </LazySection>
 
-      <NetsuiteCTA />
+      <LazySection height="800px">
+        <NSServices />
+      </LazySection>
 
-      {/* <NSHowItWorks /> */}
+      <LazySection height="600px">
+        <NSIndustries />
+      </LazySection>
 
-      <NSWhyChooseUs />
+      <LazySection height="300px">
+        <NetsuiteCTA />
+      </LazySection>
 
-      <NSBlogsSlider blogs={blogs} variant="small" />
+      <LazySection height="700px">
+        <NSWhyChooseUs />
+      </LazySection>
 
-      {/* <NSTestimonialSection /> */}
+      <LazySection height="400px">
+        <NSBlogsSlider blogs={blogs} variant="small" />
+      </LazySection>
 
+      <LazySection height="600px">
+        <FAQ variant="netsuite" />
+      </LazySection>
 
-
-
-
-      <FAQ variant="netsuite" />
-
-      <FooterContactForm platform="NetSuite" />
+      <LazySection height="800px">
+        <FooterContactForm platform="NetSuite" />
+      </LazySection>
     </div>
   );
 }
-
-
-
-
