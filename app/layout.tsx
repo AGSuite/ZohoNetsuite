@@ -1,9 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, DM_Sans } from "next/font/google";
 import "./globals.css";
-import ScrollToTopWrapper from "./components/shared/ScrollToTopWrapper";
-import CursorFollower from "./components/shared/CursorFollower";
-import SocialSidebar from "./components/shared/SocialSidebar";
+import ClientOverlays from "./components/shared/ClientOverlays";
 import { SITE_URL, SITE_NAME, orgSchema, websiteSchema } from "./lib/seo";
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
@@ -192,9 +190,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${dmSans.variable} antialiased`}>
         <main>{children}</main>
-        <SocialSidebar />
-        <CursorFollower />
-        <ScrollToTopWrapper />
+        <ClientOverlays />
       </body>
     </html>
   );
