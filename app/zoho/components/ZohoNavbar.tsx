@@ -96,6 +96,7 @@ const ZohoNavbar = () => {
             width={240}
             height={80}
             priority
+            fetchPriority="high"
             className="w-[240px] h-[80px] object-contain"
           />
         </Link>
