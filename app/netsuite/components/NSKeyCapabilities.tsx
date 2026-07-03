@@ -120,8 +120,7 @@ const NSKeyCapabilities = () => {
                                     alt={activeCapability.title}
                                     fill
                                     className="object-cover"
-                                    sizes="50vw"
-                                    priority
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
                                 <div className="absolute inset-0 z-20 flex flex-col justify-end p-8">

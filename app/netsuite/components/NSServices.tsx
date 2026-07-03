@@ -184,8 +184,7 @@ export default function NSServices() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 500px"
-                    quality={95}
-                    priority={index < 3}
+                    quality={75}
                   />
                   {/* Black gradient overlay - transparent top to dark bottom */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
@@ -287,8 +286,7 @@ export default function NSServices() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    quality={95}
-                    priority={index < 2}
+                    quality={75}
                   />
                   {/* Black gradient overlay - transparent top to dark bottom */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -383,8 +381,7 @@ export default function NSServices() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) calc(100vw - 48px), 100vw"
-                quality={95}
-                priority
+                quality={75}
               />
 
               {/* Gradient overlay for text visibility */}
