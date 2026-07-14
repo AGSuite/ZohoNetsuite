@@ -674,9 +674,9 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-02-15T00:00:00Z",
   },
   "/zoho-creator": {
-    title: "Zoho Creator — Low-Code App Development Platform | AGSuite",
+    title: "Zoho App Creator | Zoho Creator Consultant & Integrations | AGSuite Technologies",
     description:
-      "Build custom business apps 10x faster with Zoho Creator. Drag-and-drop builder, mobile-ready apps, and seamless Zoho ecosystem integration.",
+      "Enhance your business with Zoho app creator, Zoho creator consultant, and Zoho Creator integrations from AGSuite Technologies. Build and integrate apps seamlessly.",
     keywords: ["Zoho Creator", "low-code app builder", "custom app development", "Zoho Creator implementation", "AGSuite Zoho Creator"],
     category: "App Development",
     publishedTime: "2024-02-20T00:00:00Z",
@@ -714,17 +714,17 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-03-10T00:00:00Z",
   },
   "/zoho-mail": {
-    title: "Zoho Mail — Business Email Hosting | AGSuite",
+    title: "Zoho Mail Integration | Zoho Business Email – AGSuite Technologies",
     description:
-      "Secure, ad-free business email with Zoho Mail. Custom domain email, team collaboration, and deep integration with the Zoho ecosystem.",
+      "Enhance your email efficiency with AGSuite Technologies' Zoho Mail solutions. We offer Zoho Business Email, Zoho Mail Integration, and Zoho Mail Hosting for seamless...",
     keywords: ["Zoho Mail", "business email hosting", "custom domain email", "Zoho Mail setup", "AGSuite Zoho Mail"],
     category: "Email Hosting",
     publishedTime: "2024-03-15T00:00:00Z",
   },
   "/zoho-workplace": {
-    title: "Zoho Workplace — Team Collaboration & Productivity Suite | AGSuite",
+    title: "Zoho Workplace Solutions | Collaboration Software – AGSuite Technologies",
     description:
-      "Collaborate seamlessly with Zoho Workplace. Email, chat, docs, meetings, and intranet — a complete productivity suite for modern teams.",
+      "Elevate your team's productivity with AGSuite Technologies' Zoho Workplace Solutions. Our Zoho Workplace Software offers seamless Integration and Collaboration tools for businesses.",
     keywords: ["Zoho Workplace", "team collaboration software", "productivity suite", "Zoho Workplace implementation", "AGSuite Zoho Workplace"],
     category: "Productivity Suite",
     publishedTime: "2024-03-20T00:00:00Z",
