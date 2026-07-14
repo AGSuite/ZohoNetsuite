@@ -402,9 +402,9 @@ export default function ZohoContactPage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium text-white leading-[1.1] tracking-tight">
-                Architecting Enterprise Excellence with{" "}
+                Transform Your Business with{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-indigo-300 to-cyan-200">
-                  Zoho Precision
+                  Zoho Experts
                 </span>
               </h1>
 
@@ -464,7 +464,7 @@ export default function ZohoContactPage() {
 
                 <div className="relative z-10 p-8 lg:p-10">
                   <div className="mb-8 border-b border-gray-100 pb-6">
-                    <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Get Expert Guidance</h2>
+                    <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Connect with an Expert</h2>
                     <p className="text-gray-500 text-base">Fill in your details — we'll respond within 24 hours.</p>
                   </div>
 

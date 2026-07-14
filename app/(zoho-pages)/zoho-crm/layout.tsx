@@ -7,7 +7,7 @@ const pageData = ZOHO_PAGES[PAGE_PATH];
 export const metadata: Metadata = buildMetadata({
   ...pageData,
   path: PAGE_PATH,
-  ogImage: "https://www.agsuitetech.com/images/og/og-zoho.jpg",
+  ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
 });
 
 export default function ZohoCRMLayout({

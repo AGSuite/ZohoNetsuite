@@ -121,7 +121,7 @@ export const DesktopDropdown: React.FC<DesktopDropdownProps> = ({ item, setOpenD
                             <div className="absolute inset-0 p-5 flex flex-col justify-end">
                                 <h4 className="text-lg font-bold text-white mb-1 leading-tight">Empower Your Business</h4>
                                 <p className="text-[11px] text-white/80 mb-3 leading-relaxed">Leverage Zoho to drive growth.</p>
-                                <Link href="/zoho/contact/careers" className="inline-flex items-center gap-2 text-xs font-bold text-white group-hover/card:gap-3 transition-all" onClick={() => setOpenDropdown(null)}>
+                                <Link href="/zoho/contact" className="inline-flex items-center gap-2 text-xs font-bold text-white group-hover/card:gap-3 transition-all" onClick={() => setOpenDropdown(null)}>
                                     Get started now <span>→</span>
                                 </Link>
                             </div>

@@ -205,8 +205,25 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
     setOpenItems((prev) => ({ ...prev, [idx]: !prev[idx] }));
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <div id={id} className={`w-full relative text-gray-800 ${variant === "zoho" ? "bg-white" : "bg-[#f0f4ff]"} scroll-mt-36`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <section className="py-16 mx-auto max-w-7xl px-6 lg:px-10">
         <div className={`flex flex-col ${layout === "sidebar" ? "lg:grid lg:grid-cols-12 gap-10" : "items-center gap-12"}`}>
           {/* Sidebar or Top Header */}

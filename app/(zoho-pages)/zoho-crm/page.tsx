@@ -206,7 +206,7 @@ export default function ZohoCRMPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/people/zoho_crm_hero.png"
+      heroImage="/images/people/zoho_crm_hero_updated.png"
       whatIsImage="/images/zoho-dashboards/zoho-crm.webp"
       heroCard1={{
         title: "250,000+ Businesses",

@@ -34,7 +34,14 @@ import {
   ChevronRight,
   MonitorPlay,
   Zap,
-  GraduationCap
+  GraduationCap,
+  Megaphone,
+  Map,
+  Monitor,
+  Newspaper,
+  Store,
+  Factory,
+  Wifi
 } from "lucide-react";
 import ZohoServicesCards from "../../components/ZohoServicesCards";
 import FooterContactForm from "@/app/components/shared/FooterContactForm";
@@ -71,40 +78,64 @@ export default function ZohoServicesClient() {
 
   const industries = [
     {
-      title: "Manufacturing",
-      description: "Optimize production and supply chain operations.",
-      icon: Package,
-      href: "/zoho/industries/manufacturing",
-    },
-    {
-      title: "Software & Tech",
-      description: "Accelerate growth and manage complex billing.",
-      icon: Code,
+      title: "Software & Technology",
+      description: "Solutions for tech businesses.",
+      icon: Monitor,
       href: "/zoho/industries/software",
     },
     {
-      title: "Retail",
-      description: "Deliver seamless omnichannel customer experiences.",
-      icon: ShoppingCart,
-      href: "/zoho/industries/retail",
-    },
-    {
-      title: "Wholesale Distribution",
-      description: "Maximize supply chain efficiency and visibility.",
-      icon: Truck,
-      href: "/zoho/industries/wholesale",
-    },
-    {
-      title: "IT Services",
-      description: "Streamline project delivery and resource utilization.",
+      title: "IT & Professional Services",
+      description: "Automation for service providers.",
       icon: Briefcase,
       href: "/zoho/industries/it-services",
     },
     {
+      title: "Wholesale Distribution",
+      description: "Distribution & logistics tools.",
+      icon: Truck,
+      href: "/zoho/industries/wholesale",
+    },
+    {
+      title: "Advertising & Marketing",
+      description: "Boost your campaigns.",
+      icon: Megaphone,
+      href: "/zoho/industries/advertising-marketing",
+    },
+    {
       title: "Media & Publishing",
-      description: "Optimize ad sales and subscription revenue streams.",
-      icon: MonitorPlay,
+      description: "Tools for media houses.",
+      icon: Newspaper,
       href: "/zoho/industries/media",
+    },
+    {
+      title: "Retail & E-Commerce",
+      description: "Retail automation suite.",
+      icon: Store,
+      href: "/zoho/industries/retail",
+    },
+    {
+      title: "Transportation & Logistics",
+      description: "Smart logistics systems.",
+      icon: Truck,
+      href: "/zoho/industries/transport",
+    },
+    {
+      title: "Manufacturing",
+      description: "Optimize manufacturing cycles.",
+      icon: Factory,
+      href: "/zoho/industries/manufacturing",
+    },
+    {
+      title: "Telecom Industry",
+      description: "Modernize billing & telecom operations.",
+      icon: Wifi,
+      href: "/zoho/industries/telecom",
+    },
+    {
+      title: "Financial Services",
+      description: "Compliance, risk & real-time insights.",
+      icon: DollarSign,
+      href: "/zoho/industries/financial-services",
     },
   ];
 

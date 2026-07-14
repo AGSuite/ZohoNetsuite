@@ -13,15 +13,15 @@ export const COMPANY = {
   url: SITE_URL,
   logo: `${SITE_URL}/images/netsuiteimages/netsuitelogos/netsuitepartner1.png`,
   email: "info@agsuitetech.com",
-  telephone: "+91-XXXXXXXXXX",          // ← replace with real number
+  telephone: "+91-9461046161",
   address: {
-    street: "Your Street Address",       // ← replace
-    city: "Mumbai",
+    street: "1111, 11th Floor, Gera Imperium Rise, Wipro Circle, Hinjawadi Phase 2 Rd, opposite Wipro Phase 2, Hinjawadi Phase II, Rajiv Gandhi Infotech Park",
+    city: "Pune",
     state: "Maharashtra",
-    postalCode: "400001",
+    postalCode: "411057",
     country: "IN",
   },
-  geo: { lat: 19.076, lng: 72.8777 },   // ← Mumbai coords, adjust as needed
+  geo: { lat: 18.5936, lng: 73.7301 },
   sameAs: [
     "https://www.linkedin.com/company/agsuitetech",
     "https://twitter.com/AGSuiteTech",
@@ -562,9 +562,9 @@ export const ZOHO_PAGES: Record<
   { title: string; description: string; keywords: string[]; category: string; publishedTime: string }
 > = {
   "/zoho-crm": {
-    title: "Zoho CRM — Sales Automation & Customer Management | AGSuite",
+    title: "Zoho Integration Services | Zoho CRM Implementation Services | Zoho CRM Consulting Services",
     description:
-      "Boost sales by 45% with Zoho CRM. Lead management, AI-powered insights (Zia), omnichannel communication, and workflow automation. AGSuite Zoho Premium Partner.",
+      "Elevate your business with our tailored Zoho Integration, CRM Implementation, and Consulting Services. Streamline processes and maximize efficiency with AGSuite Technologies.",
     keywords: ["Zoho CRM", "CRM software India", "Zoho CRM implementation", "sales automation", "AGSuite Zoho CRM"],
     category: "CRM Software",
     publishedTime: "2024-01-05T00:00:00Z",
@@ -578,17 +578,17 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-01-08T00:00:00Z",
   },
   "/zoho-one": {
-    title: "Zoho One — The Operating System for Business | AGSuite",
+    title: "Zoho One | All In One Business Management Software | AGSuite Technologies",
     description:
-      "Run your entire business on Zoho One — 45+ integrated apps for sales, marketing, HR, finance, and more. One subscription, zero data silos.",
+      "Zoho one - Empower your business growth with comprehensive software for sales, marketing, accounting, project management, and more, all in one integrated solution.",
     keywords: ["Zoho One", "Zoho all-in-one", "business software suite", "Zoho One implementation", "AGSuite Zoho One"],
     category: "Business Suite",
     publishedTime: "2024-01-10T00:00:00Z",
   },
   "/zoho-crm-plus": {
-    title: "Zoho CRM Plus — Unified Customer Experience Platform | AGSuite",
+    title: "Top Zoho CRM Plus Partner | Implementation Service | AGSuite Technologies",
     description:
-      "Deliver exceptional customer experiences with Zoho CRM Plus. Sales, marketing, support, and analytics — unified in one platform.",
+      "AGSuite Technologies: Expert Zoho CRM Plus Partner offering seamless Zoho CRM Plus implementation and top-notch Zoho CRM Plus Implementation Service for your business needs.",
     keywords: ["Zoho CRM Plus", "customer experience platform", "unified CRM", "AGSuite Zoho CRM Plus"],
     category: "CRM Software",
     publishedTime: "2024-01-12T00:00:00Z",
@@ -610,9 +610,9 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-01-18T00:00:00Z",
   },
   "/zoho-people": {
-    title: "Zoho People — HR Management Software | AGSuite",
+    title: "HR Software Solutions | Cloud HRMS | Zoho People - AGSuite Technologies",
     description:
-      "Manage your entire HR lifecycle with Zoho People. Leave, attendance, performance, onboarding, and payroll — all in one cloud HR platform.",
+      "Discover top HR software solutions with AGSuite Technologies. Implement cloud-based HRMS like Zoho People for seamless management. Contact us today!",
     keywords: ["Zoho People", "HR software India", "HRMS software", "Zoho People implementation", "AGSuite Zoho People"],
     category: "HR Software",
     publishedTime: "2024-01-20T00:00:00Z",
@@ -682,9 +682,9 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-02-20T00:00:00Z",
   },
   "/zoho-erp": {
-    title: "Zoho ERP — Integrated ERP Solution for SMEs | AGSuite",
+    title: "Zoho ERP Software | Zoho ERP Solutions | Zoho ERP System | AGSuiteTech",
     description:
-      "Run a unified ERP on the Zoho platform. Finance, inventory, HR, sales, and operations — connected across the Zoho ecosystem for seamless business management.",
+      "AGSuite provides Zoho ERP integrates finance, inventory, sales, HR, & operations into one scalable, cloud-based system with automation, analytics, & tailored implementation for growth.",
     keywords: ["Zoho ERP", "ERP software India", "SME ERP solution", "Zoho integrated ERP", "AGSuite Zoho ERP"],
     category: "ERP Software",
     publishedTime: "2024-02-25T00:00:00Z",
@@ -706,9 +706,9 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-03-05T00:00:00Z",
   },
   "/zoho-bigin": {
-    title: "Zoho Bigin — Simple CRM for Small Businesses | AGSuite",
+    title: "Zoho Bigin Implementation, Integration & Consulting Solution | AGSuite",
     description:
-      "The simplest CRM for small businesses. Zoho Bigin helps you manage pipelines, contacts, and deals without the complexity of a full CRM.",
+      "Empower your business with AGSuite Technologies' expert Zoho Bigin CRM solutions. We specialize in Zoho Bigin Implementation, Integration, Consulting, Support, and Customization.",
     keywords: ["Zoho Bigin", "small business CRM", "simple CRM software", "pipeline management", "AGSuite Zoho Bigin"],
     category: "CRM Software",
     publishedTime: "2024-03-10T00:00:00Z",

@@ -41,7 +41,7 @@ const data: IndustryPageData = {
       title: "Subscription Lifecycle Management",
       description:
         "Manage the entire customer lifecycle — from trial to upgrade to renewal — using Zoho Subscriptions and Zoho CRM.",
-      image: "/images/people/zoho_crm_hero.png",
+      image: "/images/people/zoho_crm_hero_updated.png",
     },
     {
       title: "Real-time SaaS Dashboards",
