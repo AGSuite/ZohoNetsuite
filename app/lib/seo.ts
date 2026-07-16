@@ -52,6 +52,12 @@ export function buildMetadata({
   category = "Technology",
   publishedTime,
   modifiedTime = LAST_MODIFIED,
+  canonicalUrl,
+  ogType = "website",
+  ogSiteName,
+  twitterCard = "summary_large_image",
+  twitterLabel1,
+  twitterData1,
 }: {
   title: string;
   description: string;
@@ -62,8 +68,14 @@ export function buildMetadata({
   category?: string;
   publishedTime?: string;
   modifiedTime?: string;
+  canonicalUrl?: string;
+  ogType?: string;
+  ogSiteName?: string;
+  twitterCard?: "summary" | "summary_large_image" | "app" | "player";
+  twitterLabel1?: string;
+  twitterData1?: string;
 }) {
-  const url = `${SITE_URL}${path}`;
+  const url = canonicalUrl ?? `${SITE_URL}${path}`;
   const image = ogImage ?? DEFAULT_OG_IMAGE;
 
   return {
@@ -107,6 +119,8 @@ export function buildMetadata({
       title,
       description,
       url,
+      type: ogType as any,
+      siteName: ogSiteName ?? SITE_NAME,
       images: [
         { url: image, width: 1200, height: 630, alt: title, type: "image/jpeg" },
       ],
@@ -117,10 +131,19 @@ export function buildMetadata({
     // ── Twitter / X Card ─────────────────────────────────────────────────────
     twitter: {
       ...twitterBase,
+      card: twitterCard,
       title,
       description,
       images: [{ url: image, alt: title }],
     },
+
+    // ── Custom arbitrary tags ─────────────────────────────────────────────────
+    ...((twitterLabel1 && twitterData1) && {
+      other: {
+        "twitter:label1": twitterLabel1,
+        "twitter:data1": twitterData1,
+      },
+    }),
 
     // ── Author / Publisher ────────────────────────────────────────────────────
     authors: [{ name: SITE_NAME, url: SITE_URL }],
@@ -232,6 +255,7 @@ export function buildWebPageSchema({
   breadcrumbs,
   datePublished = "2024-01-01",
   dateModified = LAST_MODIFIED,
+  url,
 }: {
   title: string;
   description: string;
@@ -239,18 +263,19 @@ export function buildWebPageSchema({
   breadcrumbs: { name: string; url: string }[];
   datePublished?: string;
   dateModified?: string;
+  url?: string;
 }) {
-  const url = `${SITE_URL}${path}`;
+  const pageUrl = url ?? `${SITE_URL}${path}`;
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": url,
-    url,
+    "@id": pageUrl,
+    url: pageUrl,
     name: title,
     description,
     datePublished,
     dateModified,
-    isPartOf: { "@type": "WebSite", "@id": SITE_URL, name: SITE_NAME, url: SITE_URL },
+    isPartOf: { "@type": "WebSite", "@id": "https://agsuitetech.com/#website", name: "AGSuite", url: "https://agsuitetech.com" },
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
@@ -260,7 +285,7 @@ export function buildWebPageSchema({
     inLanguage: "en-US",
     potentialAction: {
       "@type": "ReadAction",
-      target: [url],
+      target: [pageUrl],
     },
   };
 }
@@ -392,17 +417,16 @@ export function buildFAQSchema(
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": `${SITE_URL}/#website`,
-  url: SITE_URL,
-  name: SITE_NAME,
-  description:
-    "Zoho Premium Partner & Oracle NetSuite Partner — ERP, CRM, HR, Finance cloud solutions",
-  publisher: { "@type": "Organization", "@id": `${SITE_URL}/#organization` },
+  "@id": "https://agsuitetech.com/#website",
+  url: "https://agsuitetech.com",
+  name: "AGSuite",
+  description: "Precise Cloud Solutions, Designed for Your Business Success.",
+  publisher: { "@type": "Organization", "@id": "https://agsuitetech.com/#organization" },
   potentialAction: {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
+      urlTemplate: "https://agsuitetech.com/?s={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },
@@ -559,7 +583,21 @@ export const NETSUITE_PAGES: Record<
 // ─── Zoho page metadata map ───────────────────────────────────────────────────
 export const ZOHO_PAGES: Record<
   string,
-  { title: string; description: string; keywords: string[]; category: string; publishedTime: string }
+  {
+    title: string;
+    description: string;
+    keywords: string[];
+    category: string;
+    publishedTime: string;
+    dateModified?: string;
+    canonicalUrl?: string;
+    ogImage?: string;
+    ogType?: string;
+    ogSiteName?: string;
+    twitterLabel1?: string;
+    twitterData1?: string;
+    breadcrumbs?: { name: string; url: string }[];
+  }
 > = {
   "/zoho-crm": {
     title: "Zoho Integration Services | Zoho CRM Implementation Services | Zoho CRM Consulting Services",
@@ -594,12 +632,23 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-01-12T00:00:00Z",
   },
   "/zoho-analytics": {
-    title: "Zoho Analytics — Self-Service BI & Data Analytics | AGSuite",
+    title: "Zoho Analytics Software | Zoho Business Intelligence - AGSuite Technologies",
     description:
-      "Transform raw data into actionable insights with Zoho Analytics. AI-driven reports, drag-and-drop dashboards, and 500+ data connectors.",
+      "Explore Zoho Analytics software and Zoho Business Intelligence solutions at AGSuite Technologies. Enhance data-driven decisions with our expert implementation and support.",
     keywords: ["Zoho Analytics", "business intelligence software", "data analytics India", "Zoho BI", "AGSuite Zoho Analytics"],
     category: "Business Intelligence",
-    publishedTime: "2024-01-15T00:00:00Z",
+    publishedTime: "2024-04-12T00:00:00Z",
+    dateModified: "2024-11-29",
+    canonicalUrl: "https://agsuitetech.com/zoho-analytics/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "17 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "Zoho Analytics", url: "https://agsuitetech.com/zoho-analytics/" }
+    ]
   },
   "/zoho-desk": {
     title: "Zoho Desk & Customer Service Help Desk Software | AGSuite Technologies",
@@ -642,12 +691,22 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-01-28T00:00:00Z",
   },
   "/zoho-marketing-automation": {
-    title: "Zoho Marketing Automation — B2B Marketing Platform | AGSuite",
+    title: "Zoho Marketing Automation Software | AGSuite Technologies",
     description:
-      "Nurture leads and drive conversions with Zoho Marketing Automation. Email campaigns, lead scoring, journey builder, and CRM integration.",
+      "Enhance your marketing with Zoho Marketing Automation Software. AGSuite Technologies provides expert solutions to streamline your campaigns and drive results.",
     keywords: ["Zoho Marketing Automation", "B2B marketing software", "lead nurturing", "marketing automation India", "AGSuite Zoho marketing"],
     category: "Marketing Software",
     publishedTime: "2024-02-01T00:00:00Z",
+    canonicalUrl: "https://agsuitetech.com/zoho-marketing-automation/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "20 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "Zoho Marketing Automation", url: "https://agsuitetech.com/zoho-marketing-automation/" }
+    ]
   },
   "/zoho-recruit-hiring-software": {
     title: "Zoho Hiring Software | Zoho Recruit | Recruitment Solution - AGSuite Technologies",
@@ -666,12 +725,22 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-02-10T00:00:00Z",
   },
   "/zoho-flow": {
-    title: "Zoho Flow — No-Code Business Process Automation | AGSuite",
+    title: "Zoho Flow | Zoho Flow Integration - AGSuite Technologies",
     description:
-      "Automate workflows across 800+ apps with Zoho Flow. No-code integration builder, trigger-based automation, and powerful data transformation.",
+      "Discover Zoho Flow and seamless Zoho Flow integration services at AGSuite Technologies. Optimize your workflows with our expert solutions and support.",
     keywords: ["Zoho Flow", "workflow automation", "no-code automation", "Zoho integration", "AGSuite Zoho Flow"],
     category: "Automation Software",
     publishedTime: "2024-02-15T00:00:00Z",
+    canonicalUrl: "https://agsuitetech.com/zoho-flow/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "16 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "Zoho Flow", url: "https://agsuitetech.com/zoho-flow/" }
+    ]
   },
   "/zoho-creator": {
     title: "Zoho App Creator | Zoho Creator Consultant & Integrations | AGSuite Technologies",
@@ -679,7 +748,17 @@ export const ZOHO_PAGES: Record<
       "Enhance your business with Zoho app creator, Zoho creator consultant, and Zoho Creator integrations from AGSuite Technologies. Build and integrate apps seamlessly.",
     keywords: ["Zoho Creator", "low-code app builder", "custom app development", "Zoho Creator implementation", "AGSuite Zoho Creator"],
     category: "App Development",
-    publishedTime: "2024-02-20T00:00:00Z",
+    publishedTime: "2024-04-17T00:00:00Z",
+    dateModified: "2024-11-29",
+    canonicalUrl: "https://agsuitetech.com/zoho-creator/",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "24 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "Zoho Creator", url: "https://agsuitetech.com/zoho-creator/" }
+    ]
   },
   "/zoho-erp": {
     title: "Zoho ERP Software | Zoho ERP Solutions | Zoho ERP System | AGSuiteTech",
@@ -730,36 +809,76 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-03-20T00:00:00Z",
   },
   "/zoho-social-media-management": {
-    title: "Zoho Social — Social Media Management Software | AGSuite",
+    title: "Zoho Social Media Marketing | Zoho Social Implementation | AGSuite Technologies",
     description:
-      "Schedule posts, monitor brand mentions, and analyze social media performance with Zoho Social. Multi-channel publishing and team collaboration built in.",
+      "Boost your online presence with Zoho Social Media Marketing Software and expert Zoho Social Implementation by AGSuite Technologies. Enhance your social strategy today!",
     keywords: ["Zoho Social", "social media management", "social media scheduling", "Zoho Social implementation", "AGSuite Zoho Social"],
     category: "Social Media Software",
     publishedTime: "2024-03-25T00:00:00Z",
+    canonicalUrl: "https://agsuitetech.com/zoho-social-media-management/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "26 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "Zoho Social", url: "https://agsuitetech.com/zoho-social-media-management/" }
+    ]
   },
   "/zoho-sites": {
-    title: "Zoho Sites — Website Builder for Business | AGSuite",
+    title: "Zoho Site Builder | Zoho Sites Integrations | AGSuite Technologies",
     description:
-      "Build professional websites without code using Zoho Sites. Responsive templates, SEO tools, and native Zoho CRM integration for lead capture.",
+      "Create stunning websites with Zoho Site and Zoho website builder. Enhance functionality with Zoho Sites integrations from AGSuite Technologies. Build your site today!",
     keywords: ["Zoho Sites", "website builder", "no-code website", "Zoho Sites implementation", "AGSuite Zoho Sites"],
     category: "Website Builder",
     publishedTime: "2024-04-01T00:00:00Z",
+    canonicalUrl: "https://agsuitetech.com/zoho-sites/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "21 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "Zoho Sites", url: "https://agsuitetech.com/zoho-sites/" }
+    ]
   },
   "/zoho-commerce": {
-    title: "Zoho Commerce — Online Store & eCommerce Platform | AGSuite",
+    title: "Zoho Commerce | Build Your Online Store | AGSuite Technologies",
     description:
-      "Launch your online store with Zoho Commerce. Product management, secure checkout, inventory sync, and built-in marketing tools for growing businesses.",
+      "Build your online store with Zoho Commerce. AGSuite Technologies helps you leverage Zoho Commerce to create a seamless and efficient e-commerce platform.",
     keywords: ["Zoho Commerce", "ecommerce platform India", "online store builder", "Zoho ecommerce"],
     category: "eCommerce Software",
     publishedTime: "2024-04-05T00:00:00Z",
+    canonicalUrl: "https://agsuitetech.com/zoho-commerce/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "17 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "Zoho Commerce", url: "https://agsuitetech.com/zoho-commerce/" }
+    ]
   },
   "/zoho-marketing-plus": {
-    title: "Zoho Marketing Plus — Unified Marketing Platform | AGSuite",
+    title: "Zoho Marketing Plus Solutions | AGSuite Technologies",
     description:
-      "Plan, execute, and measure all your marketing from one platform with Zoho Marketing Plus. Email, social, events, webinars, and analytics — unified.",
+      "Discover powerful Zoho Marketing Plus solutions with AGSuite Technologies. Enhance your marketing strategies efficiently. Contact us today!",
     keywords: ["Zoho Marketing Plus", "unified marketing platform", "marketing software India", "AGSuite Zoho Marketing Plus"],
     category: "Marketing Suite",
     publishedTime: "2024-04-10T00:00:00Z",
+    canonicalUrl: "https://agsuitetech.com/zoho-marketing-plus/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "18 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "Zoho Marketing Plus", url: "https://agsuitetech.com/zoho-marketing-plus/" }
+    ]
   },
   "/zoho-salesiq-implementation": {
     title: "Zoho SalesIQ Implementation Software | AGSuite Technologies",
@@ -794,20 +913,42 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-04-22T00:00:00Z",
   },
   "/zoho-catalyst": {
-    title: "Zoho Catalyst — Serverless App Development Platform | AGSuite",
+    title: "Zoho Catalyst | Cloud Computing Services - AGSuite Technologies",
     description:
-      "Build and deploy scalable serverless applications with Zoho Catalyst. Cloud functions, data store, AI components, and full CI/CD pipeline.",
+      "Discover Zoho Catalyst cloud computing services at AGSuite Technologies. Streamline operations with our expert implementation and support.",
     keywords: ["Zoho Catalyst", "serverless development", "cloud app platform", "Zoho Catalyst implementation", "AGSuite Zoho Catalyst"],
     category: "Cloud Platform",
-    publishedTime: "2024-04-25T00:00:00Z",
+    publishedTime: "2024-04-17T00:00:00Z",
+    dateModified: "2024-11-29",
+    canonicalUrl: "https://agsuitetech.com/zoho-catalyst/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "26 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "Zoho Catalyst", url: "https://agsuitetech.com/zoho-catalyst/" }
+    ]
   },
   "/zoho-it-management": {
-    title: "Zoho IT Management — IT Operations & Asset Management | AGSuite",
+    title: "Zoho IT Project Management | Cloud Data Solution | AGSuite Technologies",
     description:
-      "Simplify IT operations with Zoho's IT management suite. Asset tracking, service desk, patch management, and remote monitoring in one platform.",
+      "Optimize your business with Zoho IT Project Management Software and cloud-based data management solution from AGSuite Technologies. Achieve seamless project control.",
     keywords: ["Zoho IT management", "IT asset management", "IT operations software", "AGSuite Zoho IT"],
     category: "IT Management",
-    publishedTime: "2024-04-28T00:00:00Z",
+    publishedTime: "2024-04-12T00:00:00Z",
+    dateModified: "2024-11-29",
+    canonicalUrl: "https://agsuitetech.com/zoho-it-management/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "21 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "Zoho IT Management", url: "https://agsuitetech.com/zoho-it-management/" }
+    ]
   },
   "/zoho-creator-it-management": {
     title: "Zoho Creator for IT — Custom IT Apps & Automation | AGSuite",

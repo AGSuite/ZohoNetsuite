@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import ClientOverlays from "./components/shared/ClientOverlays";
 import { SITE_URL, SITE_NAME, orgSchema, websiteSchema } from "./lib/seo";
@@ -173,7 +174,38 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <head>
-        {/* Performance: preconnect & DNS prefetch */}
+        {/* Google Tag Manager (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-FWVDJQ8Q2R"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-FWVDJQ8Q2R');
+          `}
+        </Script>
+
+        {/* Speculation Rules API for conservative prefetching */}
+        <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              prefetch: [
+                {
+                  source: "document",
+                  where: {
+                    href_matches: "/*"
+                  },
+                  eagerness: "conservative"
+                }
+              ]
+            })
+          }}
+        />
+
         {/* Performance: preconnect & DNS prefetch */}
         <link rel="dns-prefetch" href="https://cdn.sanity.io" />
 
