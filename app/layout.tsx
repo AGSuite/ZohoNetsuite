@@ -3,7 +3,7 @@ import { Inter, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import ClientOverlays from "./components/shared/ClientOverlays";
-import { SITE_URL, SITE_NAME, orgSchema, websiteSchema } from "./lib/seo";
+import { SITE_URL, SITE_NAME, orgSchema, websiteSchema, localBusinessSchema } from "./lib/seo";
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
 const inter = Inter({
@@ -218,6 +218,11 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        {/* JSON-LD — LocalBusiness / ProfessionalService (describes business locations, categories, and attributes) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
       <body className={`${inter.variable} ${dmSans.variable} antialiased`}>

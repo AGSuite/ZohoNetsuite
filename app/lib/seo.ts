@@ -247,6 +247,8 @@ export function buildLocalBusinessSchema() {
   };
 }
 
+export const localBusinessSchema = buildLocalBusinessSchema();
+
 /** WebPage schema — add to every solution page */
 export function buildWebPageSchema({
   title,
