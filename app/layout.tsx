@@ -3,6 +3,7 @@ import { Inter, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import ClientOverlays from "./components/shared/ClientOverlays";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL, SITE_NAME, orgSchema, websiteSchema, localBusinessSchema } from "./lib/seo";
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
@@ -228,6 +229,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${dmSans.variable} antialiased`}>
         <main>{children}</main>
         <ClientOverlays />
+        <SpeedInsights />
       </body>
     </html>
   );
