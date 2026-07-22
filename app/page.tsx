@@ -82,6 +82,8 @@ export default function Home() {
             src="/images/people/people5_11zon.webp"
             alt="Oracle NetSuite Business Professionals"
             fill
+            priority
+            loading="eager"
             className="object-cover object-center group-hover:scale-105 transition-all duration-700"
             sizes="(max-width: 768px) 100vw, 50vw"
             quality={80}

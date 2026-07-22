@@ -59,11 +59,14 @@ export default async function NetSuiteSolutionsLayout({
     title: pageData.title,
     description: pageData.description,
     path: path,
-    breadcrumbs: [
+    breadcrumbs: pageData.breadcrumbs || [
       { name: "Home", url: "/" },
       { name: "NetSuite", url: "/netsuite" },
       { name: pageData.title.split("|")[0].trim(), url: path }
-    ]
+    ],
+    datePublished: pageData.publishedTime ? pageData.publishedTime.split("T")[0] : undefined,
+    dateModified: pageData.dateModified,
+    url: pageData.canonicalUrl,
   }) : null;
 
   return (

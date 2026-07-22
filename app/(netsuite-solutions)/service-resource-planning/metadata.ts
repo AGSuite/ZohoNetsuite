@@ -43,6 +43,6 @@ export const metadata: Metadata = {
 
   other: {
     "twitter:label1": "Est. reading time",
-    "twitter:data1": "29 minutes",
+    "twitter:data1": "16 minutes",
   },
 };

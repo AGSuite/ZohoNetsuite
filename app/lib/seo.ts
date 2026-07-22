@@ -438,20 +438,45 @@ export const websiteSchema = {
 // ─── NetSuite page metadata map ───────────────────────────────────────────────
 export const NETSUITE_PAGES: Record<
   string,
-  { title: string; description: string; keywords: string[]; category: string; publishedTime: string }
+  {
+    title: string;
+    description: string;
+    keywords: string[];
+    category: string;
+    publishedTime: string;
+    dateModified?: string;
+    canonicalUrl?: string;
+    ogImage?: string;
+    ogType?: string;
+    ogSiteName?: string;
+    twitterLabel1?: string;
+    twitterData1?: string;
+    breadcrumbs?: { name: string; url: string }[];
+  }
 > = {
   "/netsuite-suitesuccess": {
-    title: "NetSuite SuiteSuccess — 100-Day ERP Go-Live | AGSuite",
+    title: "SuiteSuccess Implementation Partner | AGSuite Technologies",
     description:
-      "Go live with NetSuite in 100 days using SuiteSuccess. Pre-built KPIs, industry best practices, and 300+ dashboards. AGSuite certified NetSuite partner.",
+      "AGSuite Technologies is your trusted NetSuite SuiteSuccess Implementation Partner delivering rapid go-live, tailored setups, and end-to-end support for faster ROI and scalable growth.",
     keywords: ["NetSuite SuiteSuccess", "NetSuite implementation", "ERP go-live", "NetSuite partner India", "SuiteSuccess methodology", "AGSuite NetSuite"],
     category: "ERP Software",
-    publishedTime: "2024-01-10T00:00:00Z",
+    publishedTime: "2024-03-06T00:00:00Z",
+    dateModified: "2025-11-17",
+    canonicalUrl: "https://agsuitetech.com/netsuite-suitesuccess/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "20 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "NetSuite SuiteSuccess", url: "https://agsuitetech.com/netsuite-suitesuccess/" },
+    ],
   },
   "/netsuite-planning-and-budgeting": {
-    title: "NetSuite Planning & Budgeting Software | Forecasting & Financial Planning",
+    title: "NetSuite Planning and Budgeting | NetSuite Financial Services| AGSuite Technologies",
     description:
-      "Improve financial planning with NetSuite Planning and Budgeting. Automate forecasting, scenario planning, and what-if analysis to make smarter business decisions.",
+      "Streamline your planning and budgeting processes and enhance forecast precision with NetSuite Planning and Budgeting. Leverage scenario planning and conduct what-if analyses to make informed decisions.",
     keywords: [
       "NetSuite Planning and Budgeting",
       "Financial Planning Software",
@@ -463,7 +488,18 @@ export const NETSUITE_PAGES: Record<
       "Cloud Financial Planning",
     ],
     category: "Financial Software",
-    publishedTime: "2024-01-12T00:00:00Z",
+    publishedTime: "2024-10-16T00:00:00Z",
+    dateModified: "2025-06-30",
+    canonicalUrl: "https://agsuitetech.com/netsuite-planning-and-budgeting/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "37 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "NetSuite Planning and Budgeting", url: "https://agsuitetech.com/netsuite-planning-and-budgeting/" },
+    ],
   },
   "/netsuite-erp-solution": {
     title: "NetSuite ERP Solution Provider | ERP Software | ERP System | AGSuite Technologies",
@@ -481,36 +517,80 @@ export const NETSUITE_PAGES: Record<
       "ERP Services",
     ],
     category: "ERP Software",
-    publishedTime: "2024-01-15T00:00:00Z",
+    publishedTime: "2024-03-06T00:00:00Z",
+    dateModified: "2025-12-17",
+    canonicalUrl: "https://agsuitetech.com/netsuite-erp-solution/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "25 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "NetSuite ERP Solution", url: "https://agsuitetech.com/netsuite-erp-solution/" },
+    ],
   },
   "/netsuite-crm-solutions": {
-    title: "NetSuite CRM Solutions — Sales Force Automation & Customer Management | AGSuite",
+    title: "NetSuite CRM Solution Provider | Best CRM Software for Business | AGSuite Technologies",
     description:
-      "Unify sales, marketing, and support with NetSuite CRM. Real-time pipeline visibility, partner relationship management, and native ERP integration.",
+      "AGSuite is a leading NetSuite CRM Solution Provider offering powerful CRM software to help businesses stay connected with customers, streamline sales processes, and drive revenue growth. Discover advanced CRM solutions with our cloud CRM system and CRM application tailored to your needs.",
     keywords: ["NetSuite CRM", "sales force automation", "NetSuite customer management", "CRM ERP integration", "AGSuite CRM"],
     category: "CRM Software",
-    publishedTime: "2024-01-18T00:00:00Z",
+    publishedTime: "2024-03-06T00:00:00Z",
+    dateModified: "2025-12-17",
+    canonicalUrl: "https://agsuitetech.com/netsuite-crm-solutions/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "27 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "NetSuite CRM Solutions", url: "https://agsuitetech.com/netsuite-crm-solutions/" },
+    ],
   },
   "/netsuite-accounting-services": {
-    title: "NetSuite Accounting Services — Automated Financial Management | AGSuite",
+    title: "Netsuite Accounting Services | netsuite implementation partners| AGSuite Technologies",
     description:
-      "Automate accounts payable, receivable, and close processes with NetSuite Accounting. Multi-subsidiary, multi-currency, and real-time financial reporting.",
+      "AGSuite is a leading Netsuite accounting service providers. NetSuite Financial management Planning is a cloud-based planning application that includes budgeting, forecasting, financial reporting, and analysis.",
     keywords: ["NetSuite accounting", "cloud accounting software", "NetSuite financials", "automated accounting", "AGSuite accounting"],
     category: "Accounting Services",
-    publishedTime: "2024-01-20T00:00:00Z",
+    publishedTime: "2024-03-13T00:00:00Z",
+    dateModified: "2024-11-29",
+    canonicalUrl: "https://agsuitetech.com/netsuite-accounting-services/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "26 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "NetSuite Accounting Services", url: "https://agsuitetech.com/netsuite-accounting-services/" },
+    ],
   },
   "/netsuite-analytics-warehouse": {
-    title: "NetSuite Analytics Warehouse — Business Intelligence & Reporting | AGSuite",
+    title: "NetSuite Analytics Warehouse (NSAW) | AGSuite Technologies",
     description:
-      "Unlock deeper insights with NetSuite Analytics Warehouse. Pre-built workbooks, AI-driven insights, and enterprise BI from your NetSuite data.",
+      "Unlock the power of the NetSuite Analytics Warehouse (NSAW) for comprehensive data management, seamless integration, and in-depth reporting. Centralize your business data for better insights and decision-making.",
     keywords: ["NetSuite Analytics Warehouse", "NetSuite BI", "business intelligence NetSuite", "data warehouse NetSuite", "AGSuite analytics"],
     category: "Business Intelligence",
-    publishedTime: "2024-01-22T00:00:00Z",
+    publishedTime: "2024-10-17T00:00:00Z",
+    dateModified: "2025-11-07",
+    canonicalUrl: "https://agsuitetech.com/netsuite-analytics-warehouse/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "34 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "NetSuite Analytics Warehouse (NSAW)", url: "https://agsuitetech.com/netsuite-analytics-warehouse/" },
+    ],
   },
   "/netsuite-business-intelligence": {
-    title: "NetSuite Business Intelligence | BI Software | NetSuite Partner",
+    title: "NetSuite Business Intelligence | NetSuite Partner | AGSuite Technologies",
     description:
-      "AGSuite Technologies provides NetSuite Business Intelligence (BI) solutions to help businesses analyze data, improve decisions, and boost performance.",
+      "AGSuite Technologies - NetSuite Business Intelligence Software (BI) is a data analysis process that organizations use to gain insights into business performance and improve operational decision-making and strategic.",
     keywords: [
       "NetSuite Business Intelligence",
       "BI Software",
@@ -522,63 +602,151 @@ export const NETSUITE_PAGES: Record<
       "Cloud BI Solutions",
     ],
     category: "Business Intelligence",
-    publishedTime: "2024-01-25T00:00:00Z",
+    publishedTime: "2024-03-06T00:00:00Z",
+    dateModified: "2024-11-22",
+    canonicalUrl: "https://agsuitetech.com/netsuite-business-intelligence/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "24 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "NetSuite Business Intelligence", url: "https://agsuitetech.com/netsuite-business-intelligence/" },
+    ],
   },
   "/netsuite-suite-commerce-site-builder": {
-    title: "NetSuite SuiteCommerce — Unified B2C & B2B eCommerce | AGSuite",
+    title: "NetSuite Suite Commerce Site Builder | NetSuite SuiteSuccess Implementation Partner | AGSuite Technologies",
     description:
-      "Build powerful eCommerce experiences with NetSuite SuiteCommerce. Native ERP integration, real-time inventory, and seamless customer portal.",
+      "AGSuite Provides NetSuite SuiteCommerce services in India & USA. Ecommerce software is complete package for integrating ecommerce websites. It helps to manages all transactions and customer interactions via the Web, mobile and social.",
     keywords: ["NetSuite SuiteCommerce", "NetSuite ecommerce", "B2B ecommerce ERP", "SuiteCommerce Site Builder", "AGSuite ecommerce"],
     category: "eCommerce Software",
-    publishedTime: "2024-01-28T00:00:00Z",
+    publishedTime: "2024-03-20T00:00:00Z",
+    dateModified: "2024-11-21",
+    canonicalUrl: "https://agsuitetech.com/netsuite-suite-commerce-site-builder/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "26 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "NetSuite E-Commerce", url: "https://agsuitetech.com/netsuite-suite-commerce-site-builder/" },
+    ],
   },
   "/netsuite-open-air-solution": {
-    title: "NetSuite SuiteProject Pro — Professional Services Automation | AGSuite",
+    title: "NetSuite OpenAir Software Integration - AGSuite Technologies",
     description:
-      "Optimize project delivery and resource utilization with NetSuite SuiteProject Pro. Time tracking, project accounting, resource management, and billing — fully integrated.",
-    keywords: ["NetSuite SuiteProject Pro", "SuiteProject Pro", "professional services automation", "PSA software", "project management ERP", "AGSuite SuiteProject Pro"],
+      "AGSuite Technologies specializes in NetSuite OpenAir software integration for efficient open-air project management solutions.",
+    keywords: ["NetSuite SuiteProject Pro", "SuiteProject Pro", "professional services automation", "PSA software", "project management ERP", "AGSuite SuiteProject Pro", "NetSuite OpenAir"],
     category: "PSA Software",
-    publishedTime: "2024-02-01T00:00:00Z",
+    publishedTime: "2024-03-06T00:00:00Z",
+    dateModified: "2024-11-22",
+    canonicalUrl: "https://agsuitetech.com/netsuite-open-air-solution/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "20 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "Open Air", url: "https://agsuitetech.com/netsuite-open-air-solution/" },
+    ],
   },
   "/service-resource-planning": {
-    title: "NetSuite Service Resource Planning — SRP for Services Businesses | AGSuite",
+    title: "Service Resource Planning | AGSuite Technologies",
     description:
-      "Align projects, resources, and financials with NetSuite Service Resource Planning. Real-time profitability and utilization for services organizations.",
+      "AGSuite Technologies -Services Resource Planning (SRP) Solution Tool helps you complete projects more quickly, decrease accounts receivable cycles, and generate invoices accurately and efficiently.",
     keywords: ["NetSuite SRP", "service resource planning", "professional services ERP", "resource management", "AGSuite SRP"],
     category: "ERP Software",
-    publishedTime: "2024-02-05T00:00:00Z",
+    publishedTime: "2024-03-06T00:00:00Z",
+    dateModified: "2024-11-22",
+    canonicalUrl: "https://agsuitetech.com/service-resource-planning/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "16 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "SRP", url: "https://agsuitetech.com/service-resource-planning/" },
+    ],
   },
   "/global-business-management": {
-    title: "NetSuite Global Business Management — Multi-Currency & Multi-Subsidiary | AGSuite",
+    title: "NetSuite Global Business Management Software - AGSuite Technologies",
     description:
-      "Manage global operations from one platform. NetSuite GBM supports multi-currency, multi-subsidiary, and local compliance for international businesses.",
+      "Discover NetSuite global business management software at AGSuite Technologies. Expert solutions for your global business management software needs.",
     keywords: ["NetSuite global business management", "multi-subsidiary ERP", "NetSuite multi-currency", "international ERP", "AGSuite GBM"],
     category: "ERP Software",
-    publishedTime: "2024-02-10T00:00:00Z",
+    publishedTime: "2024-03-06T00:00:00Z",
+    dateModified: "2024-11-22",
+    canonicalUrl: "https://agsuitetech.com/global-business-management/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "22 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "Global Business Management", url: "https://agsuitetech.com/global-business-management/" },
+    ],
   },
   "/india-localization-for-netsuite": {
-    title: "NetSuite India Localization — GST, TDS & Indian Compliance | AGSuite",
+    title: "India Tax Solution | Accounting & Taxation services - AGSuite Technologies",
     description:
-      "Full GST, TDS, and Indian statutory compliance built into NetSuite. AGSuite India Localization keeps your NetSuite ERP fully compliant with Indian tax regulations.",
-    keywords: ["NetSuite India localization", "NetSuite GST", "NetSuite TDS", "Indian ERP compliance", "AGSuite India"],
+      "AGSuite Technologies offers comprehensive tax solutions, India tax solution, and Accounting & Taxation services. Discover expert tax solutions tailored to your needs.",
+    keywords: ["NetSuite India localization", "NetSuite GST", "NetSuite TDS", "Indian ERP compliance", "AGSuite India", "India Tax Solution"],
     category: "ERP Software",
-    publishedTime: "2024-02-15T00:00:00Z",
+    publishedTime: "2024-03-08T00:00:00Z",
+    dateModified: "2025-07-25",
+    canonicalUrl: "https://agsuitetech.com/india-localization-for-netsuite/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "27 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "India Localization for NetSuite", url: "https://agsuitetech.com/india-localization-for-netsuite/" },
+    ],
   },
   "/artificial-intelligence-ai": {
-    title: "NetSuite AI & Machine Learning — Intelligent ERP Automation | AGSuite",
+    title: "Artificial Intelligence in NetSuite | AGSuite Technologies",
     description:
-      "Leverage AI in NetSuite for predictive analytics, intelligent automation, and smarter decision-making. AGSuite helps you activate NetSuite's AI capabilities.",
+      "Discover how Artificial Intelligence in NetSuite streamlines business processes with predictive analytics, automation, and smarter decision-making. Explore AI-driven solutions for enhanced efficiency.",
     keywords: ["NetSuite AI", "artificial intelligence ERP", "NetSuite machine learning", "intelligent automation", "AGSuite AI NetSuite"],
     category: "Artificial Intelligence",
-    publishedTime: "2024-02-20T00:00:00Z",
+    publishedTime: "2024-10-18T00:00:00Z",
+    dateModified: "2025-05-05",
+    canonicalUrl: "https://agsuitetech.com/artificial-intelligence-ai/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "31 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "Artificial Intelligence in NetSuite", url: "https://agsuitetech.com/artificial-intelligence-ai/" },
+    ],
   },
   "/why-netsuite": {
-    title: "Why NetSuite? — The #1 Cloud ERP Platform | AGSuite",
+    title: "Why NetSuite: Unlock Efficiency with the #1 Cloud ERP",
     description:
-      "Discover why 37,000+ organizations worldwide trust NetSuite. Scalable, real-time, and built for the cloud — the only ERP you'll ever need.",
+      "Discover why NetSuite is the #1 cloud ERP solution for businesses. Streamline operations, enhance scalability, and gain real-time insights with NetSuite's comprehensive suite of tools.",
     keywords: ["why NetSuite", "NetSuite vs SAP", "best cloud ERP", "NetSuite benefits", "AGSuite NetSuite"],
     category: "ERP Software",
-    publishedTime: "2024-02-25T00:00:00Z",
+    publishedTime: "2024-10-17T00:00:00Z",
+    dateModified: "2025-05-05",
+    canonicalUrl: "https://agsuitetech.com/why-netsuite/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "28 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "Why NetSuite", url: "https://agsuitetech.com/why-netsuite/" },
+    ],
   },
 };
 

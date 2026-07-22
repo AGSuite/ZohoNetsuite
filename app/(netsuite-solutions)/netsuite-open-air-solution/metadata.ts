@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "NetSuite SuiteProject Pro PSA | AGSuite Technologies",
+  title: "NetSuite OpenAir Software Integration - AGSuite Technologies",
 
   description:
-    "Optimize project delivery and resource utilization with NetSuite SuiteProject Pro. The leading Professional Services Automation (PSA) solution for enterprise project control.",
+    "AGSuite Technologies specializes in NetSuite OpenAir software integration for efficient open-air project management solutions.",
 
   robots: {
     index: true,
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   openGraph: {
     locale: "en_US",
     type: "article",
-    title: "NetSuite SuiteProject Pro PSA | AGSuite Technologies",
+    title: "NetSuite OpenAir Software Integration - AGSuite Technologies",
     description:
-      "Optimize project delivery and resource utilization with NetSuite SuiteProject Pro. The leading Professional Services Automation (PSA) solution for enterprise project control.",
+      "AGSuite Technologies specializes in NetSuite OpenAir software integration for efficient open-air project management solutions.",
     url: "https://agsuitetech.com/netsuite-open-air-solution/",
     siteName: "AGSuite",
     images: [
@@ -43,6 +43,6 @@ export const metadata: Metadata = {
 
   other: {
     "twitter:label1": "Est. reading time",
-    "twitter:data1": "32 minutes",
+    "twitter:data1": "20 minutes",
   },
 };
