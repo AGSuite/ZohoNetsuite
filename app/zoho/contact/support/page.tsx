@@ -36,7 +36,9 @@ const PARTICLES = [
 export default function ZohoSupportPage() {
     const [isClient, setIsClient] = useState(false);
     const [captchaUrl, setCaptchaUrl] = useState("");
+    const [captchaDigest, setCaptchaDigest] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
 
     useEffect(() => {
         setIsClient(true);
@@ -50,14 +52,26 @@ export default function ZohoSupportPage() {
                     try {
                         const response = JSON.parse(xhr.responseText);
                         setCaptchaUrl(response.captchaUrl);
-                        const xJdfEaS = document.getElementsByName('xJdfEaS')[0] as HTMLInputElement;
-                        if (xJdfEaS) xJdfEaS.value = response.captchaDigest;
+                        setCaptchaDigest(response.captchaDigest);
                     } catch (e) {
                         console.error("Captcha error:", e);
                     }
                 }
             };
             xhr.send();
+        };
+
+        // Capture Zoho Desk's callback in the parent scope for error handling
+        window.showAnimateMessageDiv = (message, isError) => {
+            alert(message || "Unable to process your request");
+            setIsSubmitting(false);
+        };
+
+        return () => {
+            // @ts-ignore
+            window.zsRegenerateCaptcha = undefined;
+            // @ts-ignore
+            window.showAnimateMessageDiv = undefined;
         };
     }, []);
 
@@ -95,6 +109,17 @@ export default function ZohoSupportPage() {
         } catch (err) {}
 
         setIsSubmitting(true);
+    };
+
+    const handleIframeLoad = () => {
+        if (isSubmitting) {
+            setIsSubmitting(false);
+            setSubmitted(true);
+            // reset captcha for next time
+            if (window.zsRegenerateCaptcha) {
+                window.zsRegenerateCaptcha();
+            }
+        }
     };
 
     if (!isClient) return null;
@@ -233,127 +258,156 @@ export default function ZohoSupportPage() {
                                 <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600" />
                                 
                                 <div className="relative z-10 p-8 lg:p-10">
-                                    <div className="mb-8 border-b border-gray-100 pb-6">
-                                        <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Open Support Ticket</h2>
-                                        <p className="text-gray-500 text-base">Fill out the form to open a case in our Zoho Desk.</p>
-                                    </div>
-
-                                    <form 
-                                        action="https://desk.zoho.in/support/WebToCase" 
-                                        name="zsWebToCase_100504000001340024" 
-                                        id="zsWebToCase_100504000001340024" 
-                                        method="POST" 
-                                        onSubmit={handleFormSubmit}
-                                        encType="multipart/form-data"
-                                        acceptCharset="UTF-8"
-                                        className="space-y-5"
-                                    >
-                                        <input type="hidden" name="xnQsjsdp" defaultValue="edbsne80a7a137f60f5b09ef1e4c9bc70ad0a" />
-                                        <input type="hidden" name="xmIwtLD" defaultValue="edbsn0d3e8787e0f8593207d41c639514556c45c9d78bb3f63e8d870ddcd0989381fd" />
-                                        <input type="hidden" name="xJdfEaS" defaultValue="" />
-                                        <input type="hidden" name="actionType" defaultValue="Q2FzZXM=" />
-                                        <input type="hidden" id="property(module)" name="property(module)" defaultValue="Cases" />
-                                        <input type="hidden" id="dependent_field_values_Cases" defaultValue='{"JSON_VALUES":{},"JSON_SELECT_VALUES":{},"JSON_MAP_DEP_LABELS":[]}' />
-                                        <input type="hidden" name="returnURL" defaultValue="https://www.agsuitetech.com" />
-
-                                        {/* Subject */}
-                                        <div>
-                                            <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Subject *</label>
-                                            <input type="text" name="Subject" required placeholder="Briefly describe the issue" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
-                                        </div>
-
-                                        {/* Name Row */}
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                            <div>
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">First Name *</label>
-                                                <input type="text" name="First Name" required placeholder="John" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
-                                            </div>
-                                            <div>
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Last Name *</label>
-                                                <input type="text" name="Contact Name" required placeholder="Doe" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
-                                            </div>
-                                        </div>
-
-                                        {/* Email + Priority */}
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                            <div>
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Email *</label>
-                                                <input type="email" name="Email" required placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
-                                            </div>
-                                            <div>
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Priority</label>
-                                                <select name="Priority" defaultValue="" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer shadow-sm">
-                                                    <option value="" disabled>-None-</option>
-                                                    <option value="High">High</option>
-                                                    <option value="Medium">Medium</option>
-                                                    <option value="Low">Low</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        {/* Product Selection */}
-                                        <div>
-                                            <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Zoho Product Name</label>
-                                            <select name="Zoho Product Name" id="CASECF1" defaultValue="" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer shadow-sm">
-                                                <option value="" disabled>-None-</option>
-                                                <option value="Zoho People">Zoho People</option>
-                                                <option value="Zoho CRM">Zoho CRM</option>
-                                                <option value="Zoho Books">Zoho Books</option>
-                                                <option value="Zoho Creator">Zoho Creator</option>
-                                                <option value="Zoho inventory">Zoho inventory</option>
-                                                <option value="Zoho Payroll">Zoho Payroll</option>
-                                                <option value="Zoho Projects">Zoho Projects</option>
-                                                <option value="Zoho Desk">Zoho Desk</option>
-                                                <option value="Zoho Campaigns">Zoho Campaigns</option>
-                                            </select>
-                                        </div>
-
-                                        {/* Description */}
-                                        <div>
-                                            <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Issue Description</label>
-                                            <textarea name="Description" rows={3} placeholder="Please provide technical details..." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400 shadow-sm" />
-                                        </div>
-
-                                        {/* Captcha */}
-                                        <div className="bg-blue-50/30 p-5 rounded-2xl border border-blue-100 space-y-4">
-                                            <div className="flex items-center justify-between">
-                                                <label className="text-gray-700 text-xs font-semibold uppercase tracking-wider">Security Verification *</label>
-                                                <button type="button" onClick={() => window.zsRegenerateCaptcha && window.zsRegenerateCaptcha()} className="text-blue-600 text-[10px] font-bold uppercase hover:underline flex items-center gap-1">
-                                                    <RefreshCcw className="w-3 h-3" /> Refresh
-                                                </button>
-                                            </div>
-                                            
-                                            <div className="flex flex-col sm:flex-row items-center gap-4">
-                                                <div className="w-full sm:w-1/2 h-14 bg-white rounded-lg border border-blue-100 flex items-center justify-center overflow-hidden">
-                                                    {captchaUrl ? (
-                                                        <img src={captchaUrl} alt="Captcha" className="h-full object-contain" />
-                                                    ) : (
-                                                        <p className="text-xs text-blue-300 animate-pulse">Loading Captcha...</p>
-                                                    )}
-                                                </div>
-                                                <div className="w-full sm:w-1/2">
-                                                    <input type="text" name="zsWebFormCaptchaWord" required placeholder="Enter Code" className="w-full bg-white border-2 border-blue-100 focus:border-blue-600 rounded-lg px-4 py-2.5 text-gray-900 text-sm outline-none transition-all text-center tracking-widest font-bold" />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        {/* Submit */}
-                                        <button 
-                                            type="submit" 
-                                            id="zsSubmitButton_100504000001340024"
-                                            disabled={isSubmitting}
-                                            className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed group"
+                                    {submitted ? (
+                                        <motion.div
+                                            initial={{ opacity: 0, scale: 0.95 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            className="flex flex-col items-center justify-center py-16 text-center gap-4"
                                         >
-                                            {isSubmitting ? (
-                                                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                            ) : (
-                                                <>
-                                                    <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                                    Submit Case to Desk
-                                                </>
-                                            )}
-                                        </button>
-                                    </form>
+                                            <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+                                                <CheckCircle className="w-8 h-8 text-green-600" />
+                                            </div>
+                                            <h3 className="text-xl font-medium text-gray-900">Ticket Created!</h3>
+                                            <p className="text-gray-500 max-w-xs leading-relaxed text-sm">Your support request has been queued. A Zoho specialist will reach out shortly.</p>
+                                            <button 
+                                                onClick={() => setSubmitted(false)}
+                                                className="mt-6 px-6 py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition"
+                                            >
+                                                Submit Another Case
+                                            </button>
+                                        </motion.div>
+                                    ) : (
+                                        <>
+                                            <div className="mb-8 border-b border-gray-100 pb-6">
+                                                <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Open Support Ticket</h2>
+                                                <p className="text-gray-500 text-base">Fill out the form to open a case in our Zoho Desk.</p>
+                                            </div>
+
+                                            <form 
+                                                action="https://desk.zoho.in/support/WebToCase" 
+                                                name="zsWebToCase_100504000001340024" 
+                                                id="zsWebToCase_100504000001340024" 
+                                                target="zsWebToCase_iframe"
+                                                method="POST" 
+                                                onSubmit={handleFormSubmit}
+                                                encType="multipart/form-data"
+                                                acceptCharset="UTF-8"
+                                                className="space-y-5"
+                                            >
+                                                <input type="hidden" name="xnQsjsdp" defaultValue="edbsne80a7a137f60f5b09ef1e4c9bc70ad0a" />
+                                                <input type="hidden" name="xmIwtLD" defaultValue="edbsn0d3e8787e0f8593207d41c639514556c45c9d78bb3f63e8d870ddcd0989381fd" />
+                                                <input type="hidden" name="xJdfEaS" value={captchaDigest} readOnly />
+                                                <input type="hidden" name="actionType" defaultValue="Q2FzZXM=" />
+                                                <input type="hidden" id="property(module)" name="property(module)" defaultValue="Cases" />
+                                                <input type="hidden" id="dependent_field_values_Cases" defaultValue='{"JSON_VALUES":{},"JSON_SELECT_VALUES":{},"JSON_MAP_DEP_LABELS":[]}' />
+                                                <input type="hidden" name="returnURL" defaultValue="https://www.agsuitetech.com" />
+
+                                                {/* Subject */}
+                                                <div>
+                                                    <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Subject *</label>
+                                                    <input type="text" name="Subject" required placeholder="Briefly describe the issue" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                                                </div>
+
+                                                {/* Name Row */}
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                                    <div>
+                                                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">First Name *</label>
+                                                        <input type="text" name="First Name" required placeholder="John" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                                                    </div>
+                                                    <div>
+                                                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Last Name *</label>
+                                                        <input type="text" name="Contact Name" required placeholder="Doe" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                                                    </div>
+                                                </div>
+
+                                                {/* Email + Priority */}
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                                    <div>
+                                                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Email *</label>
+                                                        <input type="email" name="Email" required placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                                                    </div>
+                                                    <div>
+                                                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Priority</label>
+                                                        <select name="Priority" defaultValue="" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer shadow-sm">
+                                                            <option value="" disabled>-None-</option>
+                                                            <option value="High">High</option>
+                                                            <option value="Medium">Medium</option>
+                                                            <option value="Low">Low</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                {/* Product Selection */}
+                                                <div>
+                                                    <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Zoho Product Name</label>
+                                                    <select name="Zoho Product Name" id="CASECF1" defaultValue="" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer shadow-sm">
+                                                        <option value="" disabled>-None-</option>
+                                                        <option value="Zoho People">Zoho People</option>
+                                                        <option value="Zoho CRM">Zoho CRM</option>
+                                                        <option value="Zoho Books">Zoho Books</option>
+                                                        <option value="Zoho Creator">Zoho Creator</option>
+                                                        <option value="Zoho inventory">Zoho inventory</option>
+                                                        <option value="Zoho Payroll">Zoho Payroll</option>
+                                                        <option value="Zoho Projects">Zoho Projects</option>
+                                                        <option value="Zoho Desk">Zoho Desk</option>
+                                                        <option value="Zoho Campaigns">Zoho Campaigns</option>
+                                                    </select>
+                                                </div>
+
+                                                {/* Description */}
+                                                <div>
+                                                    <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Issue Description</label>
+                                                    <textarea name="Description" rows={3} placeholder="Please provide technical details..." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400 shadow-sm" />
+                                                </div>
+
+                                                {/* Captcha */}
+                                                <div className="bg-blue-50/30 p-5 rounded-2xl border border-blue-100 space-y-4">
+                                                    <div className="flex items-center justify-between">
+                                                        <label className="text-gray-700 text-xs font-semibold uppercase tracking-wider">Security Verification *</label>
+                                                        <button type="button" onClick={() => window.zsRegenerateCaptcha && window.zsRegenerateCaptcha()} className="text-blue-600 text-[10px] font-bold uppercase hover:underline flex items-center gap-1">
+                                                            <RefreshCcw className="w-3 h-3" /> Refresh
+                                                        </button>
+                                                    </div>
+                                                    
+                                                    <div className="flex flex-col sm:flex-row items-center gap-4">
+                                                        <div className="w-full sm:w-1/2 h-14 bg-white rounded-lg border border-blue-100 flex items-center justify-center overflow-hidden">
+                                                            {captchaUrl ? (
+                                                                <img src={captchaUrl} alt="Captcha" className="h-full object-contain" />
+                                                            ) : (
+                                                                <p className="text-xs text-blue-300 animate-pulse">Loading Captcha...</p>
+                                                            )}
+                                                        </div>
+                                                        <div className="w-full sm:w-1/2">
+                                                            <input type="text" name="zsWebFormCaptchaWord" required placeholder="Enter Code" className="w-full bg-white border-2 border-blue-100 focus:border-blue-600 rounded-lg px-4 py-2.5 text-gray-900 text-sm outline-none transition-all text-center tracking-widest font-bold" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                {/* Submit */}
+                                                <button 
+                                                    type="submit" 
+                                                    id="zsSubmitButton_100504000001340024"
+                                                    disabled={isSubmitting}
+                                                    className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed group"
+                                                >
+                                                    {isSubmitting ? (
+                                                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                                    ) : (
+                                                        <>
+                                                            <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                                            Submit Case to Desk
+                                                        </>
+                                                    )}
+                                                </button>
+                                            </form>
+                                            <iframe 
+                                                name="zsWebToCase_iframe" 
+                                                id="zsWebToCase_iframe" 
+                                                style={{ display: "none" }}
+                                                onLoad={handleIframeLoad}
+                                            />
+                                        </>
+                                    )}
                                 </div>
                             </div>
                         </motion.div>

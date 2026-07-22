@@ -51,5 +51,6 @@ declare global {
     // ── Zoho Desk support page helpers ─────────────────────────────────
     zsValidateMandatoryFields: () => boolean;
     zsRegenerateCaptcha: () => void;
+    showAnimateMessageDiv?: (message: string, isError: boolean) => void;
   }
 }
