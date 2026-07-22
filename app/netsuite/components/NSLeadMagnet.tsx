@@ -222,6 +222,8 @@ export default function NSLeadMagnet() {
             src="/images/Background/world-map-light.png"
             alt="World Map Background"
             fill
+            priority
+            loading="eager"
             className="w-full h-full object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />

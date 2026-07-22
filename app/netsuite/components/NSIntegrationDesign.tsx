@@ -32,6 +32,8 @@ const NSIntegrationDesign = () => {
                                     src="/images/lap/integration image.png"
                                     alt="NetSuite Integration Design"
                                     fill
+                                    priority
+                                    loading="eager"
                                     className="object-contain"
                                     sizes="(max-width: 1024px) 100vw, 50vw"
                                 />

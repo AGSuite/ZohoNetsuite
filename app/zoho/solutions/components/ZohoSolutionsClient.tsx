@@ -15,14 +15,13 @@ import ZohoServices from '../../components/ZohoServices';
 
 const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
 const FAQ = dynamic(() => import('@/app/components/home/FAQ').then(mod => mod.FAQ), { ssr: false });
-const ScrollFloat = dynamic(() => import('./ScrollFloat'), { ssr: false });
 const RotatingText = dynamic(() => import('./RotatingText'), { ssr: false });
 
 function Counter({ value }: { value: number }) {
-  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   const spring = useSpring(0, { mass: 0.8, stiffness: 75, damping: 15 });
   const display = useTransform(spring, (v) => Math.round(v));
-  useEffect(() => { if (inView) { spring.set(value); } else { spring.set(0); } }, [inView, spring, value]);
+  useEffect(() => { if (inView) { spring.set(value); } }, [inView, spring, value]);
   return <span ref={ref}><motion.span>{display}</motion.span></span>;
 }
 
@@ -30,38 +29,12 @@ type ParticleDatum = { width: number; height: number; top: string; left: string;
 
 export default function ZohoSolutionsClient() {
   const [isMobile, setIsMobile] = useState(false);
-  const [introParticles, setIntroParticles] = useState<ParticleDatum[]>([]);
-  const [sectionStars, setSectionStars] = useState<ParticleDatum[]>([]);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1024);
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  useEffect(() => {
-    // Generate particle data client-side only to avoid SSR hydration mismatch
-    setIntroParticles(
-      Array.from({ length: 20 }, () => ({
-        width: Math.random() * 4 + 2,
-        height: Math.random() * 4 + 2,
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        duration: Math.random() * 5 + 5,
-        delay: Math.random() * 5,
-      }))
-    );
-    setSectionStars(
-      Array.from({ length: 50 }, () => ({
-        width: Math.random() * 2 + 1,
-        height: Math.random() * 2 + 1,
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        duration: Math.random() * 3 + 2,
-        delay: Math.random() * 5,
-      }))
-    );
   }, []);
 
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
@@ -262,25 +235,7 @@ export default function ZohoSolutionsClient() {
     'linear-gradient(135deg, #740d94ff, #252a29ff)', // Teal
   ];
 
-  const introRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress: introScrollProgress } = useScroll({
-    target: introRef,
-    offset: ["start start", "end start"]
-  });
-
-  const introRadius = useTransform(introScrollProgress, [0, 0.3], ["0px", "48px"]);
-  const introMargin = useTransform(introScrollProgress, [0, 0.3], ["0px", "32px"]);
-  const introScale = useTransform(introScrollProgress, [0, 0.3], [1, 0.99]);
-
-  const solutionsRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: solutionsRef,
-    offset: ["start end", "start start"]
-  });
-
-  const cardRadius = useTransform(scrollYProgress, [0.3, 0.95], ["0px", "48px"]);
-  const cardMargin = useTransform(scrollYProgress, [0.3, 0.95], ["0px", "32px"]);
-  const cardScale = useTransform(scrollYProgress, [0.3, 0.95], [1, 0.99]);
+  // Scroll animations removed for performance optimization
 
   return (
     <div className="min-h-screen bg-white">
@@ -367,31 +322,14 @@ export default function ZohoSolutionsClient() {
       </section>
 
       {/* ─────────────── INTRO SECTION ─────────────── */}
-      <section ref={introRef} className="pb-20 pt-0 bg-[#000d1a] overflow-hidden relative">
+      <section className="pb-20 pt-0 bg-[#000d1a] overflow-hidden relative">
         {/* Background Designs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2" />
-          {/* Particles - client-side only to avoid SSR mismatch */}
-          {introParticles.map((p, i) => (
-            <motion.div
-              key={i}
-              className="absolute bg-white/10 rounded-full"
-              style={{ width: p.width, height: p.height, top: p.top, left: p.left }}
-              animate={!isMobile ? { y: [0, -30, 0], opacity: [0.1, 0.3, 0.1] } : { opacity: 0.1 }}
-              transition={{ duration: p.duration, repeat: Infinity, ease: "easeInOut", delay: p.delay }}
-            />
-          ))}
         </div>
 
-        <motion.div
-          style={!isMobile ? {
-            borderRadius: introRadius,
-            margin: introMargin,
-            scale: introScale,
-          } : {}}
-          className="relative z-10 bg-gradient-to-br from-blue-50 via-red-50 to-purple-50 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] border border-white/20 transition-all duration-500 overflow-hidden"
-        >
+        <div className="relative z-10 bg-gradient-to-br from-blue-50 via-red-50 to-purple-50 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] border border-white/20 overflow-hidden rounded-[2.5rem] mx-4 sm:mx-8 lg:mx-12">
           <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-24">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -405,19 +343,15 @@ export default function ZohoSolutionsClient() {
                 <Image src="/images/zoho_suite_graphic.png" alt="Zoho Enterprise Platform" width={560} height={380} className="w-full h-auto rounded-xl object-contain border-2 border-indigo-100 shadow-xl" priority />
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, x: isMobile ? 0 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
                 className="space-y-6"
               >
-                <ScrollFloat
-                  containerClassName="text-3xl md:text-4xl lg:text-4xl font-medium leading-[1.25]"
-                  fromColor="#111827"
-                  toColor="#2563eb"
-                >
-                  The Most Versatile Cloud Suite  for Growing Businesses
-                </ScrollFloat>
+                <h3 className="text-3xl md:text-4xl lg:text-4xl font-medium leading-[1.25] text-gray-900">
+                  The Most Versatile Cloud Suite for Growing Businesses
+                </h3>
                 <p className="text-lg text-gray-600 leading-relaxed">Zoho is the world&apos;s most comprehensive business software suite with over 45+ integrated applications. Built from the ground up for the cloud, it provides a single unified platform to manage every aspect of your business — from CRM and finance to HR and automation.</p>
                 <p className="text-lg text-gray-600 leading-relaxed">Every solution is purpose-built for cloud — running inside your Zoho account with real-time data, no silos, and unified reporting across every department.</p>
                 <div className="pt-4">
@@ -428,7 +362,7 @@ export default function ZohoSolutionsClient() {
               </motion.div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* ─────────────── ALL SOLUTIONS — ALTERNATING ROWS ─────────────── */}
@@ -439,72 +373,30 @@ export default function ZohoSolutionsClient() {
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(147,51,234,0.1)_0%,transparent_50%)]" />
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(220,38,38,0.05)_0%,transparent_50%)]" />
 
-          {/* Moving Orbs */}
-          {!isMobile && (
-            <>
-              <motion.div
-                animate={{ x: [0, 100, 0], y: [0, 50, 0] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px]"
-              />
-              <motion.div
-                animate={{ x: [0, -150, 0], y: [0, 100, 0] }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[130px]"
-              />
-              <motion.div
-                animate={{ x: [0, 50, 0], y: [0, -100, 0] }}
-                transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-                className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[110px]"
-              />
-            </>
-          )}
-
-          {/* Twinkling Stars - client-side only to avoid SSR mismatch */}
-          {sectionStars.map((s, i) => (
-            <motion.div
-              key={i}
-              className="absolute bg-white rounded-full"
-              style={{ width: s.width, height: s.height, top: s.top, left: s.left }}
-              animate={!isMobile ? { opacity: [0.2, 0.8, 0.2], scale: [1, 1.5, 1] } : { opacity: 0.4 }}
-              transition={{ duration: s.duration, repeat: Infinity, ease: "easeInOut", delay: s.delay }}
-            />
-          ))}
+          {/* Simple Static Glows for performance */}
+          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] bg-blue-600/5 rounded-full blur-[130px]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-8"
-          >
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6 font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-blue-400 leading-tight">
               All Zoho Solutions
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
               Comprehensive solutions to power every aspect of your business operations — all on one unified cloud platform.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         <div className="w-full px-2 sm:px-4 lg:px-6">
-          <motion.div
-            ref={solutionsRef}
-            style={!isMobile ? {
-              borderRadius: cardRadius,
-              margin: cardMargin,
-              scale: cardScale,
-            } : {}}
-            className="bg-gradient-to-br from-blue-50 via-red-50 to-purple-50 shadow-[0_35px_80px_-15px_rgba(0,0,0,0.4)] border border-white/20 overflow-hidden relative"
-          >
+          <div className="bg-gradient-to-br from-blue-50 via-red-50 to-purple-50 shadow-[0_35px_80px_-15px_rgba(0,0,0,0.4)] border border-white/20 overflow-hidden relative rounded-[2.5rem] mx-4 sm:mx-8 lg:mx-12">
             <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4">
               <div className="flex flex-col">
                 {solutions.map((solution, index) => {
                   const isEven = index % 2 === 0;
                   const currentGradient = imageBgGradients[index % imageBgGradients.length];
                   const accentColor = currentGradient.split(',')[2].trim().replace(')', '');
-                  const delay = index * 0.15;
 
                   return (
                     <div
@@ -514,10 +406,10 @@ export default function ZohoSolutionsClient() {
                       {/* IMAGE SIDE - Always first on mobile */}
                       <div className={`relative px-4 py-4 lg:px-6 lg:py-6 order-1 ${isEven ? '' : 'lg:order-2'}`}>
                         <motion.div
-                          initial={{ opacity: 0, y: isMobile ? 0 : 40, scale: isMobile ? 1 : 0.95 }}
-                          whileInView={{ opacity: 0.8, y: 0, scale: 1 }}
-                          viewport={{ once: true, margin: "-100px" }}
-                          transition={{ type: "spring", stiffness: 120, damping: 20, delay }}
+                          initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
+                          whileInView={{ opacity: 0.8, y: 0 }}
+                          viewport={{ once: true, margin: "-50px" }}
+                          transition={{ ease: "easeOut", duration: 0.8 }}
                           className="absolute inset-2 sm:inset-0 rounded-[2.5rem] shadow-lg border border-white/50"
                           style={{
                             background: currentGradient,
@@ -526,11 +418,11 @@ export default function ZohoSolutionsClient() {
                         />
 
                         <motion.div
-                          initial={{ opacity: 0, y: isMobile ? 0 : 40 }}
+                          initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
                           whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true, margin: "-100px" }}
-                          transition={{ type: "spring", stiffness: 120, damping: 20, delay }}
-                          className="relative h-64 sm:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-2xl z-10 transform transition-transform group-hover:scale-[1.02] bg-white"
+                          viewport={{ once: true, margin: "-50px" }}
+                          transition={{ ease: "easeOut", duration: 0.9, delay: 0.15 }}
+                          className="relative h-64 sm:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-2xl z-10 bg-white"
                         >
                           <Image
                             src={solution.image}
@@ -544,10 +436,10 @@ export default function ZohoSolutionsClient() {
 
                       {/* TEXT SIDE - Always second on mobile */}
                       <motion.div
-                        initial={{ opacity: 0, x: isMobile ? 0 : (isEven ? 40 : -40) }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ type: "spring", stiffness: 120, damping: 20, delay }}
+                        initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ ease: "easeOut", duration: 0.5 }}
                         className={`relative z-10 order-2 ${isEven ? '' : 'lg:order-1'}`}
                       >
                         <span
@@ -588,7 +480,7 @@ export default function ZohoSolutionsClient() {
                 })}
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
