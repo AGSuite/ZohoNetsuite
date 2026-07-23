@@ -19,7 +19,7 @@ const data: IndustryPageData = {
   heroTitle: "Accelerate SaaS Growth with Zoho",
   heroDescription:
     "Unify your sales, subscription billing, and customer support on a single cloud platform. Gain real-time visibility into MRR, Churn, and LTV to scale your tech business.",
-  heroImage: "/images/industries/software-tech-main.png",
+  heroImage: "/images/industries/zoho_software_tech_hero.png",
   heroCardTitle: "SaaS Ops Control",
   heroCardSub: "Sales · Subscriptions · Support · Metrics",
   heroTopCardTitle: "Trusted by 800+ Tech Firms",

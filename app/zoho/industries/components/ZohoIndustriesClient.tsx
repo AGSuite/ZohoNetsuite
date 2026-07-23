@@ -382,7 +382,7 @@ export default function ZohoIndustriesClient() {
                   style={{ height: 390 }}
                 >
                   <Image
-                    src="/images/people/fourteam.webp"
+                    src="/images/industries/zoho_industries_hero.png"
                     alt="Zoho Industry Expertise"
                     fill
                     className="object-cover object-center"

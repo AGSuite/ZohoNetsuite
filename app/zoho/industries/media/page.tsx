@@ -24,7 +24,7 @@ const data: IndustryPageData = {
   heroCardSub: "Subscriptions · Rights · Billing · Analytics",
   heroTopCardTitle: "Trusted by 300+ Media Firms",
   heroTopCardSub: "Content-First · Scalable · Global",
-  introImage: "/images/lap/lap2.webp",
+  introImage: "/images/industries/zoho_media_overview.png",
   introTitle: "Purpose-Built Zoho Tools for Media & Publishing",
   introDescription:
     "Media companies face constant pressure — managing multiple revenue streams, tracking complex content rights, and understanding audience behavior. Zoho's media ecosystem provides a single, unified system that connects your content delivery with your financial performance.",
@@ -41,58 +41,58 @@ const data: IndustryPageData = {
       title: "Omnichannel Content Monetization",
       description:
         "Manage multiple revenue streams — including subscriptions, ads, and licensing — from a single, unified Zoho dashboard.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/people/zoho_analytics_benefit_visibility.png",
     },
     {
       title: "Automated Subscription Billing",
       description:
         "Run your subscription business effortlessly with Zoho Subscriptions — handling proration, renewals, and dunning management automatically.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/people/zoho_media_sub_billing.png",
     },
     {
       title: "Real-time Audience Analytics",
       description:
         "Use Zoho Analytics to build deep audience profiles and deliver personalized, segment-based content and marketing.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/zoho_analytics_hero.png",
     },
     {
       title: "Unified Financial Reporting",
       description:
         "Instantly see profitability by channel, title, or platform with Zoho Books' automated media accounting features.",
-      image: "/images/lap/lap9_11zon.webp",
+      image: "/images/people/zoho_books_hero.png",
     },
     {
       title: "Digital Rights Management",
       description:
         "Manage content rights, licensing terms, and expiry dates centrally within Zoho Creator, preventing legal risks and revenue loss.",
-      image: "/images/lap/lap8_11zon.webp",
+      image: "/images/people/zoho_media_rights_mgmt.png",
     },
   ],
   features: [
     {
-      title: "Financial Management",
-      description: "Automate bookkeeping and gain real-time visibility into your cash flow with Zoho Books.",
-      image: "/images/lap/lap6_11zon.webp",
+      title: "Ad Sales & Campaign Management",
+      description: "Manage direct and programmatic advertising pipelines, track ad inventory, and report campaign performance using Zoho CRM.",
+      image: "/images/people/zoho_crm_hero_updated.png",
     },
     {
-      title: "Inventory Management",
-      description: "Manage stock across multiple locations and automate reordering with Zoho Inventory.",
-      image: "/images/lap/lap1.webp",
+      title: "Subscription & Circulation Management",
+      description: "Automate paywalls, reader registrations, renewals, and recurring billing plans with Zoho Subscriptions.",
+      image: "/images/people/zoho_media_sub_billing.png",
     },
     {
-      title: "Customer Relationship Management",
-      description: "Centralize your sales and customer data to improve relationships and sales performance with Zoho CRM.",
-      image: "/images/people/laptopgirl.webp",
+      title: "Audience Segmentation & Marketing",
+      description: "Segment readers by behavior, demographics, and subscription tier to deliver targeted campaigns with Zoho Campaigns.",
+      image: "/images/people/zoho_analytics_benefit_visibility.png",
     },
     {
-      title: "E-commerce Integration",
-      description: "Connect your online store with Zoho to automate order fulfillment and inventory updates.",
-      image: "/images/lap/lap3.webp",
+      title: "Digital Rights & Royalty Tracking",
+      description: "Centrally manage copyright licensing, contributor agreements, and royalty payout calculations within Zoho Creator.",
+      image: "/images/people/zoho_media_rights_mgmt.png",
     },
     {
-      title: "Subscription Analytics",
-      description: "Gain real-time visibility into MRR, Churn, and LTV with Zoho's advanced subscription analytics.",
-      image: "/images/lap/lap5.webp",
+      title: "Real-time Content & Revenue Insights",
+      description: "Unify traffic analytics, ad revenue, and subscription logs into a single executive dashboard with Zoho Analytics.",
+      image: "/images/people/zoho_analytics_hero.png",
     },
   ],
   challenges: [

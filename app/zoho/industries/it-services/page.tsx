@@ -23,7 +23,7 @@ const data: IndustryPageData = {
   heroCardSub: "Tracking · Billing · Resources · Revenue",
   heroTopCardTitle: "Trusted by 600+ Agencies",
   heroTopCardSub: "Project-First · Cloud-Native · High-Scale",
-  introImage: "/images/lap/lap2.webp",
+  introImage: "/images/industries/zoho_it_services_overview.png",
   introTitle: "Purpose-Built Zoho Tools for IT Services",
   introDescription:
     "IT service businesses face constant pressure — managing project timelines, tracking billable hours, and ensuring accurate revenue recognition. Zoho's ecosystem provides a single, unified system that connects your project delivery with your back-office finance.",
@@ -40,58 +40,58 @@ const data: IndustryPageData = {
       title: "Project Management & Tracking",
       description:
         "Manage project timelines, track milestones, and visualize progress using Zoho Projects — all integrated with your CRM and finance suites.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/people/zoho_project_mgmt.png",
     },
     {
       title: "Automated Resource Allocation",
       description:
         "Ensure the right people are working on the right tasks with smart resource forecasting and workload management within Zoho Projects.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/people/zoho_resource_alloc.png",
     },
     {
       title: "Time & Expense Tracking",
       description:
         "Capture every billable minute and expense on-the-go with Zoho's native mobile apps, ensuring zero revenue leakage.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/zoho_expense_finance_hero.png",
     },
     {
       title: "Project-Wise Profitability",
       description:
         "Instantly see the profitability of every project with Zoho Books — providing detailed insights into material and labour costs.",
-      image: "/images/lap/lap9_11zon.webp",
+      image: "/images/people/zoho_books_hero.png",
     },
     {
       title: "Unified Client Management",
       description:
         "Gain a 360-degree view of your clients — from initial inquiry through project delivery and ongoing support with Zoho CRM.",
-      image: "/images/lap/lap8_11zon.webp",
+      image: "/images/people/zoho_crm_hero_updated.png",
     },
   ],
   features: [
     {
       title: "Project and Resource Management",
       description: "Comprehensive tools in Zoho Projects for task tracking and team collaboration.",
-      image: "/images/lap/lap5.webp",
+      image: "/images/people/zoho_project_mgmt.png",
     },
     {
       title: "Time and Expense Tracking",
       description: "Easily log time and expenses associated with projects for accurate billing.",
-      image: "/images/people/laptopgirl.webp",
+      image: "/images/people/zoho_expense_hero.png",
     },
     {
       title: "Project Accounting",
       description: "Manage project budgets and track profitability in real-time with Zoho Books.",
-      image: "/images/lap/lap3.webp",
+      image: "/images/people/zoho_books_hero.png",
     },
     {
       title: "Customer Relationship Management (CRM)",
       description: "Unify your client data and communication with Zoho CRM.",
-      image: "/images/people/threeteam.webp",
+      image: "/images/people/zoho_crm_hero_updated.png",
     },
     {
       title: "Financial Management",
       description: "Automate bookkeeping and gain real-time visibility into your agency's cash flow with Zoho Books.",
-      image: "/images/lap/lap1.webp",
+      image: "/images/people/zoho_finance_plus_hero.png",
     },
   ],
   challenges: [

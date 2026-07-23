@@ -151,7 +151,7 @@ export default function ZohoTrainingServicesPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/Services/zoho_training_hero.png"
-      introImage="/images/Services/zoho_training_hero.png"
+      introImage="/images/Services/zoho_srv_training_office.png"
       introTitle="Unlock the Full Potential of Your Team."
       introDescription1="Software is only as effective as the people who use it. Our Zoho training programmes bridge the gap between technical complexity and daily productivity."
       introDescription2="Whether you're a new user or looking to master advanced analytics, we provide the structured learning paths your team needs to thrive on the Zoho platform."
