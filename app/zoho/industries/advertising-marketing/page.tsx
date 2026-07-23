@@ -19,7 +19,7 @@ const data: IndustryPageData = {
   heroTitle: "Scale Your Creative Agency with Zoho",
   heroDescription:
     "Unify project delivery, resource management, and client billing on a single cloud platform. Deliver high-impact campaigns while maintaining agency margins.",
-  heroImage: "/images/industries/marketing.jpg",
+  heroImage: "/images/industries/zoho_marketing_hero.png",
   heroCardTitle: "Agency Ops Control",
   heroCardSub: "Projects · Resources · Billing · Analytics",
   heroTopCardTitle: "Trusted by 500+ Agencies",

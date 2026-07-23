@@ -41,58 +41,58 @@ const data: IndustryPageData = {
       title: "Intelligent Procurement",
       description:
         "Automate vendor selection and purchase order creation based on dynamic stocking levels and historical lead times in Zoho Inventory.",
-      image: "/images/lap/lap4.webp",
+      image: "/images/people/zoho_wholesale_procurement.png",
     },
     {
       title: "Multi-Warehouse Management",
       description:
         "Track inventory levels across multiple geographical locations and warehouses in real-time, with automated stock transfer workflows.",
-      image: "/images/lap/lap7_11zon.webp",
+      image: "/images/people/zoho_inventory_hero.png",
     },
     {
       title: "Consolidated Billing & Tallying",
       description:
         "Automate high-volume billing, manage multi-currency accounts, and get real-time bank reconciliation through your Zoho Books environment.",
-      image: "/images/people/laptopmen2.webp",
+      image: "/images/people/zoho_books_hero.png",
     },
     {
       title: "End-to-End Fulfillment",
       description:
         "Streamline pick-pack-ship sequences and integrate with major global shipping carriers to provide live tracking updates to customers.",
-      image: "/images/lap/lap9_11zon.webp",
+      image: "/images/people/zoho_wholesale_fulfillment.png",
     },
     {
       title: "Demand Planning & Forecasting",
       description:
         "Predict future demand and optimize stocking levels using AI-driven analytics and historical sales trends in Zoho Inventory.",
-      image: "/images/lap/lap8_11zon.webp",
+      image: "/images/people/zoho_wholesale_forecasting.png",
     },
   ],
   features: [
     {
-      title: "Financial Management",
-      description: "Automate bookkeeping and gain real-time visibility into your cash flow with Zoho Books.",
-      image: "/images/lap/lap2.webp",
+      title: "Multi-Warehouse Inventory Control",
+      description: "Track and manage stock levels across multiple geographical warehouses in real-time, with automated transfer orders using Zoho Inventory.",
+      image: "/images/people/zoho_inventory_hero.png",
     },
     {
-      title: "Inventory Management",
-      description: "Manage stock across multiple locations and automate reordering with Zoho Inventory.",
-      image: "/images/lap/lap1.webp",
+      title: "Automated Order Fulfillment",
+      description: "Streamline the pick-pack-ship cycle with automated picking lists, barcode scanners, and direct shipping carrier integrations.",
+      image: "/images/people/zoho_wholesale_fulfillment.png",
     },
     {
-      title: "Customer Relationship Management",
-      description: "Centralize your sales and customer data to improve relationships and sales performance with Zoho CRM.",
-      image: "/images/people/laptopgirl.webp",
+      title: "B2B Customer Portal",
+      description: "Empower wholesale clients to place bulk orders, view real-time stock availability, and manage invoices independently via a custom B2B Portal.",
+      image: "/images/people/zoho_wholesale_b2b_portal.png",
     },
     {
-      title: "E-commerce Integration",
-      description: "Connect your online store with Zoho to automate order fulfillment and inventory updates.",
-      image: "/images/lap/lap3.webp",
+      title: "Landed Cost & Purchase Automation",
+      description: "Track freight, duties, and fees to calculate true landed costs, and automate purchase orders at stock reorder points via Zoho Books.",
+      image: "/images/people/zoho_books_hero.png",
     },
     {
-      title: "Order Management",
-      description: "Automate the entire order-to-fulfillment cycle for faster delivery and improved customer satisfaction.",
-      image: "/images/lap/lap5.webp",
+      title: "Multi-Channel Sales Sync",
+      description: "Sync your bulk distribution orders, sales reps, and retail e-commerce channels with a single, central ledger using Zoho CRM.",
+      image: "/images/people/zoho_crm_hero_updated.png",
     },
   ],
   challenges: [
