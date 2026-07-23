@@ -406,10 +406,10 @@ export default function ZohoSolutionsClient() {
                       {/* IMAGE SIDE - Always first on mobile */}
                       <div className={`relative px-4 py-4 lg:px-6 lg:py-6 order-1 ${isEven ? '' : 'lg:order-2'}`}>
                         <motion.div
-                          initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
+                          initial={{ opacity: 0, y: isMobile ? 0 : 60 }}
                           whileInView={{ opacity: 0.8, y: 0 }}
                           viewport={{ once: true, margin: "-50px" }}
-                          transition={{ ease: "easeOut", duration: 0.8 }}
+                          transition={{ ease: "easeOut", duration: 1.2, delay: 0.3 }}
                           className="absolute inset-2 sm:inset-0 rounded-[2.5rem] shadow-lg border border-white/50"
                           style={{
                             background: currentGradient,
@@ -418,10 +418,10 @@ export default function ZohoSolutionsClient() {
                         />
 
                         <motion.div
-                          initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
+                          initial={{ opacity: 0, y: isMobile ? 0 : 60 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true, margin: "-50px" }}
-                          transition={{ ease: "easeOut", duration: 0.9, delay: 0.15 }}
+                          transition={{ ease: "easeOut", duration: 1.4, delay: 0.55 }}
                           className="relative h-64 sm:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-2xl z-10 bg-white"
                         >
                           <Image
@@ -436,10 +436,10 @@ export default function ZohoSolutionsClient() {
 
                       {/* TEXT SIDE - Always second on mobile */}
                       <motion.div
-                        initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: isMobile ? 0 : (isEven ? 50 : -50) }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
-                        transition={{ ease: "easeOut", duration: 0.5 }}
+                        transition={{ ease: "easeOut", duration: 0.8, delay: 0.1 }}
                         className={`relative z-10 order-2 ${isEven ? '' : 'lg:order-1'}`}
                       >
                         <span

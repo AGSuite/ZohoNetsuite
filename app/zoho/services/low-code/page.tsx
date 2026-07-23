@@ -151,7 +151,7 @@ export default function ZohoLowCodePage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/Services/zoho_low_code_hero.png"
-      introImage="/images/Services/zoho_srv_low_code_new.jpg"
+      introImage="/images/Services/zoho_srv_low_code_office.png"
       introTitle="Tailor-Made Software for Your Unique Business."
       introDescription1="Sometimes off-the-shelf software doesn't fit your processes. Our low-code development services bridge that gap with custom Zoho Creator applications."
       introDescription2="We help you digitize manual spreadsheets and fragmented legacy tools into a single, secure cloud app that works exactly how you do."
