@@ -153,10 +153,38 @@ const NavbarNetSuite = () => {
               )}
             </div>
           ))}
+
+          {/* NEXT AI Shiny Gradient Button */}
+          <Link
+            href="/netsuite/next-ai"
+            className="relative inline-flex items-center justify-center px-4 py-2 ml-2 overflow-hidden rounded-full font-extrabold text-sm tracking-wide group transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(30,103,198,0.4)]"
+          >
+            {/* Animated Rotating Gradient Shimmer Border */}
+            <span className="absolute inset-0 bg-linear-to-r from-[#13FFAA] via-[#1E67C6] via-[#CE84CF] to-[#DD335C] animate-gradient-x p-[1.5px] rounded-full">
+              <span className="block w-full h-full bg-slate-950/95 rounded-full transition-colors group-hover:bg-slate-900/80" />
+            </span>
+            <span className="relative flex items-center gap-2 bg-linear-to-r from-[#13FFAA] via-white to-[#CE84CF] bg-clip-text text-transparent">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#13FFAA] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#13FFAA]" />
+              </span>
+              <span>NEXT AI</span>
+              <span className="text-xs bg-linear-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">✨</span>
+            </span>
+          </Link>
         </nav>
 
         {/* Right Buttons */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
+          {/* Mobile NEXT AI Quick Link */}
+          <Link
+            href="/netsuite/next-ai"
+            className="lg:hidden relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-950 text-xs font-bold border border-cyan-400/50 shadow-[0_0_12px_rgba(19,255,170,0.3)] text-transparent bg-clip-text bg-linear-to-r from-[#13FFAA] to-[#CE84CF]"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#13FFAA] animate-pulse" />
+            NEXT AI
+          </Link>
+
           <button
             onClick={toggleNavbar}
             className={`lg:hidden p-2 rounded-lg ${isScrolled ? 'bg-gray-100' : 'bg-gray-100/10'} text-gray-900`}

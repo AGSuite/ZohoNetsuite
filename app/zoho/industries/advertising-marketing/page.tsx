@@ -70,55 +70,55 @@ const data: IndustryPageData = {
   ],
   features: [
     {
-      title: "Project Management",
-      description: "Plan and track creative projects and campaigns with Zoho Projects.",
-      image: "/images/lap/lap6_11zon.webp",
+      title: "Campaign & Project Execution",
+      description: "Coordinate multi-channel campaign rollouts, track creative deliverables, and collaborate across teams using Zoho Projects.",
+      image: "/images/people/zoho_project_mgmt.png",
     },
     {
-      title: "Resource Management",
-      description: "Optimize team utilization and skill-mapping with integrated resource tools.",
-      image: "/images/lap/lap3.webp",
+      title: "Resource Allocation & Utilization",
+      description: "Map designers, copywriters, and media buyers to projects based on real-time availability and skillsets.",
+      image: "/images/people/zoho_resource_alloc.png",
     },
     {
-      title: "Project Accounting",
-      description: "Track project budgets and profitability in real-time with Zoho Books.",
-      image: "/images/lap/lap1.webp",
+      title: "Retainer & Milestone Billing",
+      description: "Automate invoicing, track billable hours, and manage media buying or creative expenses using Zoho Books.",
+      image: "/images/people/zoho_books_hero.png",
     },
     {
-      title: "Customer Relationship Management (CRM)",
-      description: "Centralize client communication and manage your sales pipeline with Zoho CRM.",
-      image: "/images/people/laptopgirl.webp",
+      title: "Pitch & Client Relationship Management",
+      description: "Manage pitches, retainer proposals, and client communications seamlessly from onboarding to project delivery with Zoho CRM.",
+      image: "/images/people/zoho_crm_hero_updated.png",
     },
     {
-      title: "Financial Management",
-      description: "Automate bookkeeping and gain real-time visibility into your agency's cash flow with Zoho Books.",
-      image: "/images/lap/lap5.webp",
+      title: "Campaign ROI & Analytics",
+      description: "Consolidate campaign metrics from Google Ads and social media alongside agency financial data using Zoho Analytics.",
+      image: "/images/people/zoho_analytics_benefit_visibility.png",
     },
   ],
   challenges: [
     {
       title: "Inaccurate Job Costing",
       solution:
-        "Zoho Books and Projects track materials, external vendor costs, and internal labour hours per job — ensuring true profitability reporting.",
-      image: "/images/challenges/profitability.png",
+        "Zoho Books and Projects track external vendor spend, media buy costs, and internal creative hours per campaign to ensure real-time profitability reporting.",
+      image: "/images/challenges/revenue-leakage.png",
     },
     {
       title: "Poor Resource Visibility",
       solution:
-        "Zoho's centralized resource management gives you a global view of team availability and creative skillsets across all your active projects.",
+        "Zoho's centralized resource utilization dashboards offer a global view of creative availability, reducing bench time and designer burnout.",
       image: "/images/challenges/resource-visibility.png",
     },
     {
       title: "Manual Billing Delays",
       solution:
-        "Zoho Books automates your client billing based on project milestones or recorded time entries, ensures faster payments.",
+        "Zoho Books automates client billing by compiling timesheets and expenses into clean milestone invoices, speeding up agency cash flow.",
       image: "/images/challenges/manual-billing.png",
     },
     {
       title: "Disconnected Client Portals",
       solution:
-        "A dedicated Client Portal within Zoho Projects allows your clients to track progress, approve designs, and view invoices directly.",
-      image: "/images/challenges/ecommerce-sync.png",
+        "A secure client portal within Zoho Projects lets clients review copy, approve graphic designs, track milestones, and view invoices in one hub.",
+      image: "/images/challenges/siloed-communication.png",
     },
   ],
   pricingTiers: [

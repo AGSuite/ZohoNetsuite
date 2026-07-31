@@ -6,330 +6,269 @@ import { motion } from "framer-motion";
 import {
     FaUsers,
     FaChartLine,
-    FaShieldAlt,
+    FaDatabase,
+    FaCloud,
+    FaHandshake,
     FaShoppingCart,
     FaTruck,
-    FaHandshake,
-    FaUserTie,
-    FaHeadset,
+    FaCog,
 } from "react-icons/fa";
+import { BiBrain } from "react-icons/bi";
 
-// Stakeholder positions - will revolve on dotted circle
+// ─── SVG geometry constants ───────────────────────────────────────────────────
+// ViewBox: "-60 -60 720 720"  →  total 720×720 units, center at (300, 300)
+const CX = 300, CY = 300;
+
+// Orbit circle sits clearly outside the outer ring (outerR = 295).
+// r = 340 gives a visible gap between the ring and the orbit.
+const ORBIT_SVG_R = 340;
+
+// How to convert SVG radius → CSS % for icon positioning:
+//   CSS offset from center (%) = (ORBIT_SVG_R / 720) * 100
+// because `left: calc(50% + X%)` uses the parent's full width,
+// and 720 SVG units = 100% of the container.
+const ORBIT_CSS_PCT = (ORBIT_SVG_R / 720) * 100; // ≈ 47.22 %
+
+// ─── Data ─────────────────────────────────────────────────────────────────────
+
+// 8 icons evenly at 45° so they never crowd each other
 const STAKEHOLDERS = [
-    { Icon: FaUsers, name: "Customers", angle: 0 },
-    { Icon: FaChartLine, name: "CFO", angle: 45 },
-    { Icon: FaUserTie, name: "Sales Rep", angle: 90 },
-    { Icon: FaHeadset, name: "Support", angle: 135 },
-    { Icon: FaHandshake, name: "Partners", angle: 180 },
-    { Icon: FaUsers, name: "Vendors", angle: 225 },
-    { Icon: FaShoppingCart, name: "Ecommerce", angle: 270 },
-    { Icon: FaTruck, name: "Shipping", angle: 315 },
+    { Icon: FaUsers,        name: "Customers", angle: 0   },
+    { Icon: FaChartLine,    name: "Finance",   angle: 45  },
+    { Icon: FaDatabase,     name: "ERP Data",  angle: 90  },
+    { Icon: FaCloud,        name: "Cloud ERP", angle: 135 },
+    { Icon: BiBrain,        name: "AI Engine", angle: 180 },
+    { Icon: FaHandshake,    name: "Partners",  angle: 225 },
+    { Icon: FaShoppingCart, name: "Commerce",  angle: 270 },
+    { Icon: FaTruck,        name: "Logistics", angle: 315 },
 ];
 
-// Module labels in the dark ring
+// Module labels
 const MODULES = [
-    { name: "FINANCIALS", angle: -90 },
-    { name: "SCM", angle: -30 },
-    { name: "BFN", angle: 30 },
-    { name: "PSA", angle: 90 },
-    { name: "E-COMMERCE", angle: 150 },
-    { name: "CRM", angle: 210 },
+    { name: "FINANCIALS",  angle: -90 },
+    { name: "SCM",         angle: -30 },
+    { name: "BFN",         angle:  30 },
+    { name: "PSA",         angle:  90 },
+    { name: "E-COMMERCE",  angle: 150 },
+    { name: "CRM",         angle: 210 },
 ];
 
-// Outer ring labels with light gradient colors (like reference image)
+// Outer dark-blue segments
 const OUTER_LABELS = [
-    { text: "Multi-Currency", startAngle: 135, endAngle: 225, gradient: "url(#darkBlueGrad1)" },
-    { text: "Multi- Company Tax Compliance", startAngle: 225, endAngle: 315, gradient: "url(#darkBlueGrad2)" },
-    { text: "Multi-Language", startAngle: -45, endAngle: 45, gradient: "url(#darkBlueGrad3)" },
-    { text: "Multi- Subsidiary Management", startAngle: 45, endAngle: 135, gradient: "url(#darkBlueGrad4)" },
+    { text: "Multi-Currency",          startAngle: 135, endAngle: 225, gradient: "url(#g1)" },
+    { text: "Multi-Company Tax",       startAngle: 225, endAngle: 315, gradient: "url(#g2)" },
+    { text: "Multi-Language",          startAngle: -45, endAngle:  45, gradient: "url(#g3)" },
+    { text: "Multi-Subsidiary Mgmt",   startAngle:  45, endAngle: 135, gradient: "url(#g4)" },
 ];
 
+// ─── Component ────────────────────────────────────────────────────────────────
 export const NSCircularDesign = () => {
     const [isMobile, setIsMobile] = React.useState(false);
 
     React.useEffect(() => {
-        const media = window.matchMedia("(max-width: 1023px)");
-        setIsMobile(media.matches);
-        const listener = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-        media.addEventListener('change', listener);
-        return () => media.removeEventListener('change', listener);
+        const m = window.matchMedia("(max-width: 1023px)");
+        setIsMobile(m.matches);
+        const fn = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+        m.addEventListener("change", fn);
+        return () => m.removeEventListener("change", fn);
     }, []);
 
     return (
-        <div className="relative w-full h-[410px] lg:h-[510px] xl:h-[580px] flex items-center justify-center overflow-visible select-none py-6">
-            {/* Main Container - Compact to prevent icon clipping */}
-            <div className="relative w-[350px] h-[350px] lg:w-[460px] lg:h-[460px] xl:w-[520px] xl:h-[520px]">
+        <div className="relative w-full h-[460px] lg:h-[570px] xl:h-[640px] flex items-center justify-center overflow-visible select-none py-6">
+            {/* Container — square, sized to match the visual diagram */}
+            <div className="relative w-[370px] h-[370px] lg:w-[490px] lg:h-[490px] xl:w-[555px] xl:h-[555px]">
 
-                {/* SVG for the circular diagram */}
+                {/* ── SVG static rings ─────────────────────────────────────── */}
                 <svg viewBox="-60 -60 720 720" className="absolute inset-0 w-full h-full pointer-events-none">
                     <defs>
-                        {/* Professional Dark Blue Gradients */}
-                        <linearGradient id="darkBlueGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#0a192f" />
-                            <stop offset="100%" stopColor="#112240" />
+                        <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#0a192f"/><stop offset="100%" stopColor="#112240"/>
                         </linearGradient>
-                        <linearGradient id="darkBlueGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#112240" />
-                            <stop offset="100%" stopColor="#1e3a8a" />
+                        <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#112240"/><stop offset="100%" stopColor="#1e3a8a"/>
                         </linearGradient>
-                        <linearGradient id="darkBlueGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#0c1d36" />
-                            <stop offset="100%" stopColor="#172a45" />
+                        <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#0c1d36"/><stop offset="100%" stopColor="#172a45"/>
                         </linearGradient>
-                        <linearGradient id="darkBlueGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#1e3a8a" />
-                            <stop offset="100%" stopColor="#3b82f6" />
+                        <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#1e3a8a"/><stop offset="100%" stopColor="#3b82f6"/>
                         </linearGradient>
-                        <linearGradient id="innerCircleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stopColor="#ffffff" />
-                            <stop offset="100%" stopColor="#dbeafe" />
+                        <linearGradient id="midGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stopColor="#ffffff"/><stop offset="100%" stopColor="#dbeafe"/>
                         </linearGradient>
-                        <linearGradient id="suiteCloudGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stopColor="#0a192f" />
-                            <stop offset="100%" stopColor="#1e3a8a" />
+                        <linearGradient id="coreGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stopColor="#0a192f"/><stop offset="100%" stopColor="#1e3a8a"/>
                         </linearGradient>
-
-                        {/* Blue gradient shadow filter */}
-                        <filter id="blueShadow" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur in="SourceAlpha" stdDeviation="8" />
-                            <feOffset dx="0" dy="4" result="offsetblur" />
-                            <feFlood floodColor="#eef0f3ff" floodOpacity="0.3" />
-                            <feComposite in2="offsetblur" operator="in" />
-                            <feMerge>
-                                <feMergeNode />
-                                <feMergeNode in="SourceGraphic" />
-                            </feMerge>
-                        </filter>
-
-                        {/* Regular shadow */}
-                        <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-                            <feDropShadow dx="0" dy="4" stdDeviation="6" floodOpacity="0.2" />
+                        <filter id="sh"><feDropShadow dx="0" dy="3" stdDeviation="5" floodOpacity="0.2"/></filter>
+                        <filter id="bsh" x="-60%" y="-60%" width="220%" height="220%">
+                            <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+                            <feOffset dy="4" result="off"/>
+                            <feFlood floodColor="#c5d4e8" floodOpacity="0.3"/>
+                            <feComposite in2="off" operator="in"/>
+                            <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
                         </filter>
                     </defs>
 
-                    {/* Outer Ring Segment Backgrounds */}
-                    {OUTER_LABELS.map((label, idx) => {
-                        const startRad = (label.startAngle * Math.PI) / 180;
-                        const endRad = (label.endAngle * Math.PI) / 180;
-                        const outerR = 295;
-                        const innerR = 235;
-
-                        const x1 = 300 + outerR * Math.cos(startRad);
-                        const y1 = 300 + outerR * Math.sin(startRad);
-                        const x2 = 300 + outerR * Math.cos(endRad);
-                        const y2 = 300 + outerR * Math.sin(endRad);
-                        const x3 = 300 + innerR * Math.cos(endRad);
-                        const y3 = 300 + innerR * Math.sin(endRad);
-                        const x4 = 300 + innerR * Math.cos(startRad);
-                        const y4 = 300 + innerR * Math.sin(startRad);
-
-                        const largeArc = label.endAngle - label.startAngle > 180 ? 1 : 0;
-
+                    {/* Outer ring segments */}
+                    {OUTER_LABELS.map((lbl, i) => {
+                        const sR = (lbl.startAngle * Math.PI) / 180;
+                        const eR = (lbl.endAngle   * Math.PI) / 180;
+                        const oR = 295, iR = 235;
+                        const la = (lbl.endAngle - lbl.startAngle) > 180 ? 1 : 0;
+                        const x1=CX+oR*Math.cos(sR), y1=CY+oR*Math.sin(sR);
+                        const x2=CX+oR*Math.cos(eR), y2=CY+oR*Math.sin(eR);
+                        const x3=CX+iR*Math.cos(eR), y3=CY+iR*Math.sin(eR);
+                        const x4=CX+iR*Math.cos(sR), y4=CY+iR*Math.sin(sR);
                         return (
-                            <path
-                                key={idx}
-                                d={`M ${x1} ${y1} A ${outerR} ${outerR} 0 ${largeArc} 1 ${x2} ${y2} L ${x3} ${y3} A ${innerR} ${innerR} 0 ${largeArc} 0 ${x4} ${y4} Z`}
-                                fill={label.gradient}
-                                stroke="#fff"
-                                strokeWidth="1.5"
-                                filter="url(#shadow)"
+                            <path key={i}
+                                d={`M${x1} ${y1} A${oR} ${oR} 0 ${la} 1 ${x2} ${y2} L${x3} ${y3} A${iR} ${iR} 0 ${la} 0 ${x4} ${y4}Z`}
+                                fill={lbl.gradient} stroke="#fff" strokeWidth="1.5" filter="url(#sh)"
                             />
                         );
                     })}
 
-                    {/* Outer Ring Text Paths */}
-                    {OUTER_LABELS.map((label, idx) => {
-                        const r = 265; // Position for text path
-
-                        // Determine if this segment sits in the bottom half of the circle.
-                        // For bottom-half arcs (mid-angle roughly 45°–225° clockwise) the
-                        // text would render upside-down when following the clockwise arc, so
-                        // we reverse the path direction (draw counter-clockwise, sweep=0).
-                        const midAngle = (label.startAngle + label.endAngle) / 2;
-                        const isBottomHalf = midAngle > 45 && midAngle < 225;
-
-                        let d: string;
-                        if (isBottomHalf) {
-                            // Reversed: start from endAngle → startAngle (counter-clockwise)
-                            const startRad = (label.endAngle * Math.PI) / 180;
-                            const endRad = (label.startAngle * Math.PI) / 180;
-                            const x1 = 300 + r * Math.cos(startRad);
-                            const y1 = 300 + r * Math.sin(startRad);
-                            const x2 = 300 + r * Math.cos(endRad);
-                            const y2 = 300 + r * Math.sin(endRad);
-                            d = `M ${x1} ${y1} A ${r} ${r} 0 0 0 ${x2} ${y2}`;
-                        } else {
-                            const startRad = (label.startAngle * Math.PI) / 180;
-                            const endRad = (label.endAngle * Math.PI) / 180;
-                            const x1 = 300 + r * Math.cos(startRad);
-                            const y1 = 300 + r * Math.sin(startRad);
-                            const x2 = 300 + r * Math.cos(endRad);
-                            const y2 = 300 + r * Math.sin(endRad);
-                            d = `M ${x1} ${y1} A ${r} ${r} 0 0 1 ${x2} ${y2}`;
-                        }
-
+                    {/* Outer ring text paths */}
+                    {OUTER_LABELS.map((lbl, i) => {
+                        const r   = 265;
+                        const mid = (lbl.startAngle + lbl.endAngle) / 2;
+                        const bot = mid > 45 && mid < 225;
+                        const a1  = (bot ? lbl.endAngle   : lbl.startAngle) * Math.PI / 180;
+                        const a2  = (bot ? lbl.startAngle : lbl.endAngle)   * Math.PI / 180;
                         return (
-                            <path
-                                key={idx}
-                                id={`outer-text-path-${idx}`}
-                                d={d}
+                            <path key={i} id={`op${i}`}
+                                d={`M${CX+r*Math.cos(a1)} ${CY+r*Math.sin(a1)} A${r} ${r} 0 0 ${bot?0:1} ${CX+r*Math.cos(a2)} ${CY+r*Math.sin(a2)}`}
                                 fill="none"
                             />
                         );
                     })}
 
-                    {/* Outer ring text labels */}
-                    {OUTER_LABELS.map((label, idx) => {
+                    {/* Outer ring text — fontSize in SVG user-units so it scales with viewBox */}
+                    {OUTER_LABELS.map((lbl, i) => (
+                        <text key={i} fontSize="20" fontWeight="900" fill="white" letterSpacing="3">
+                            <textPath href={`#op${i}`} startOffset="50%" textAnchor="middle">
+                                {lbl.text}
+                            </textPath>
+                        </text>
+                    ))}
+
+                    {/* Middle (light-blue) ring */}
+                    <circle cx={CX} cy={CY} r="215" fill="url(#midGrad)" stroke="#bfdbfe" strokeWidth="2" filter="url(#sh)"/>
+
+                    {/* Module segment dividers */}
+                    {MODULES.map((m, i) => {
+                        const a = (m.angle * Math.PI) / 180 + Math.PI / 6;
                         return (
-                            <text key={idx} className="text-[14px] font-black fill-white uppercase tracking-wider">
-                                <textPath href={`#outer-text-path-${idx}`} startOffset="50%" textAnchor="middle">
-                                    {label.text}
-                                </textPath>
-                            </text>
+                            <line key={i}
+                                x1={CX+110*Math.cos(a)} y1={CY+110*Math.sin(a)}
+                                x2={CX+215*Math.cos(a)} y2={CY+215*Math.sin(a)}
+                                stroke="#60a5fa" strokeWidth="1.5" opacity="0.4"
+                            />
                         );
                     })}
 
-                    {/* Middle light blue/white gradient ring - Closer to outer */}
-                    <circle cx="300" cy="300" r="215" fill="url(#innerCircleGrad)" stroke="#bfdbfe" strokeWidth="2" filter="url(#shadow)" />
-
-                    {/* Module segments with dividing lines */}
-                    {MODULES.map((module, idx) => {
-                        const angleRad = (module.angle * Math.PI) / 180;
-                        const innerR = 110;
-                        const outerR = 215;
-
-                        // Dividing line
-                        const x1 = 300 + innerR * Math.cos(angleRad + Math.PI / 6);
-                        const y1 = 300 + innerR * Math.sin(angleRad + Math.PI / 6);
-                        const x2 = 300 + outerR * Math.cos(angleRad + Math.PI / 6);
-                        const y2 = 300 + outerR * Math.sin(angleRad + Math.PI / 6);
-
+                    {/* Module labels — two-line tspan for long names */}
+                    {MODULES.map((m, i) => {
+                        const a = (m.angle * Math.PI) / 180;
+                        const x = CX + 160 * Math.cos(a);
+                        const y = CY + 160 * Math.sin(a);
+                        // Split "E-COMMERCE" into two lines: "E-" and "COMMERCE"
+                        const parts = m.name === "E-COMMERCE"
+                            ? ["E-", "COMMERCE"]
+                            : [m.name];
                         return (
-                            <g key={idx}>
-                                <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="#60a5fa" strokeWidth="1.5" opacity="0.4" />
-                            </g>
-                        );
-                    })}
-
-                    {/* Module text labels - Straight and Horizontal */}
-                    {MODULES.map((module, idx) => {
-                        const r = 160; // Adjusted radius for horizontal labels
-                        const angleRad = (module.angle * Math.PI) / 180;
-                        const x = 300 + r * Math.cos(angleRad);
-                        const y = 300 + r * Math.sin(angleRad);
-
-                        return (
-                            <text
-                                key={idx}
-                                x={x}
-                                y={y}
-                                className="text-[15px] font-extrabold fill-blue-950 uppercase tracking-tight"
-                                textAnchor="middle"
-                                dominantBaseline="middle"
+                            <text key={i}
+                                x={x} y={y}
+                                fontSize="18" fontWeight="800" fill="#1e3a5f"
+                                textAnchor="middle" dominantBaseline="middle" letterSpacing="1"
                             >
-                                {module.name}
+                                {parts.length === 2 ? (
+                                    <>
+                                        <tspan x={x} dy="-10">{parts[0]}</tspan>
+                                        <tspan x={x} dy="22">{parts[1]}</tspan>
+                                    </>
+                                ) : (
+                                    m.name
+                                )}
                             </text>
                         );
                     })}
 
-                    {/* Inner SuiteCloud circle - Dark Blue */}
-                    <circle cx="300" cy="300" r="100" fill="url(#suiteCloudGrad)" stroke="#1e40af" strokeWidth="2" filter="url(#blueShadow)" />
+                    {/* Inner SuiteCloud circle */}
+                    <circle cx={CX} cy={CY} r="105" fill="url(#coreGrad)" stroke="#1e40af" strokeWidth="2" filter="url(#bsh)"/>
 
-                    {/* SUITECLOUD text on top (curved upward) - White text */}
-                    <path id="suiteCloudTopPath" fill="none" d="M 215, 300 a 85,85 0 0,1 170,0" />
-                    <text className="text-[13px] font-black fill-white uppercase tracking-[0.3em]">
-                        <textPath href="#suiteCloudTopPath" startOffset="50%" textAnchor="middle">
-                            SUITECLOUD
-                        </textPath>
+                    {/* SUITECLOUD curved text on top arc */}
+                    <path id="sp" fill="none" d={`M${CX-85} ${CY} a85,85 0 0,1 170,0`}/>
+                    <text fontSize="14" fontWeight="900" fill="white" letterSpacing="5">
+                        <textPath href="#sp" startOffset="50%" textAnchor="middle">SUITECLOUD</textPath>
                     </text>
 
-                    {/* PLATFORM text on bottom (curved downward) - White text */}
-                    <path id="platformBottomPath" fill="none" d="M 215, 300 a 85,85 0 0,0 170,0" />
-                    <text className="text-[13px] font-black fill-white uppercase tracking-[0.3em]">
-                        <textPath href="#platformBottomPath" startOffset="50%" textAnchor="middle">
-                            PLATFORM
-                        </textPath>
+                    {/* PLATFORM curved text on bottom arc */}
+                    <path id="pp" fill="none" d={`M${CX-85} ${CY} a85,85 0 0,0 170,0`}/>
+                    <text fontSize="14" fontWeight="900" fill="white" letterSpacing="5">
+                        <textPath href="#pp" startOffset="50%" textAnchor="middle">PLATFORM</textPath>
                     </text>
 
-                    {/* Center white circle for logo - Smaller */}
-                    <circle cx="300" cy="300" r="0" fill="#ffffff" stroke="#e5e7eb" strokeWidth="2" filter="url(#shadow)" />
-
-                    {/* Dotted circle for revolving icons - Visible orbit closer in */}
-                    <circle cx="300" cy="300" r="350" fill="none" stroke="#1e3a8a" strokeWidth="1.5" strokeDasharray="6,6" opacity="1" />
-
+                    {/* ── Dashed orbit circle ──────────────────────────────── */}
+                    {/* r = ORBIT_SVG_R = 310 units, just outside the outer ring (295) */}
+                    <circle cx={CX} cy={CY} r={ORBIT_SVG_R}
+                        fill="none" stroke="#1e3a8a" strokeWidth="1.8"
+                        strokeDasharray="7,7" opacity="0.85"
+                    />
                 </svg>
 
-                {/* Central NetSuite Logo - Smaller */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[56px] h-[56px] lg:w-[68px] lg:h-[68px] xl:w-[76px] xl:h-[76px] rounded-full bg-white flex items-center justify-center z-40 shadow-lg border-2 border-blue-100">
-                    <Image
-                        src="/images/logos/oracle%20netsuite%20logo.png"
-                        alt="Oracle NetSuite"
-                        width={52}
-                        height={52}
-                        className="object-contain"
-                    />
+                {/* ── Central NetSuite logo ─────────────────────────────────── */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[58px] h-[58px] lg:w-[72px] lg:h-[72px] xl:w-[82px] xl:h-[82px] rounded-full bg-white flex items-center justify-center z-40 shadow-lg border-2 border-blue-100">
+                    <Image src="/images/logos/oracle%20netsuite%20logo.png" alt="Oracle NetSuite" width={60} height={60} className="object-contain"/>
                 </div>
 
-                {/* Revolving Stakeholder Icons on the dotted circle */}
-                <div className="absolute inset-0 z-50 pointer-events-none">
-                    {STAKEHOLDERS.map((stakeholder, idx) => {
-                        const angleRad = (stakeholder.angle * Math.PI) / 180;
-                        const x = (48.6111 * Math.cos(angleRad)).toFixed(4);
-                        const y = (48.6111 * Math.sin(angleRad)).toFixed(4);
+                {/*
+                  ── Revolving icons ───────────────────────────────────────────
+                  ONE shared motion.div rotates 360° around the container center.
+                  Each icon is positioned at ORBIT_CSS_PCT from center (matches
+                  the SVG dashed circle at r=310 / 720 total = 43.06%).
+                  Each icon counter-rotates -360° to stay upright.
+                */}
+                <motion.div
+                    className="absolute inset-0 z-50 pointer-events-none"
+                    style={{ transformOrigin: "50% 50%" }}
+                    animate={isMobile ? {} : { rotate: 360 }}
+                    transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
+                >
+                    {STAKEHOLDERS.map((s, i) => {
+                        const rad = (s.angle * Math.PI) / 180;
+                        const ox  = (ORBIT_CSS_PCT * Math.cos(rad)).toFixed(3);
+                        const oy  = (ORBIT_CSS_PCT * Math.sin(rad)).toFixed(3);
 
                         return (
-                            <motion.div
-                                key={idx}
-                                animate={isMobile ? { rotate: 0 } : { rotate: 360 }}
-                                transition={{
-                                    duration: 60,
-                                    repeat: Infinity,
-                                    ease: "linear",
-                                    delay: 0
+                            <div
+                                key={i}
+                                className="absolute pointer-events-auto"
+                                style={{
+                                    left:      `calc(50% + ${ox}%)`,
+                                    top:       `calc(50% + ${oy}%)`,
+                                    transform: "translate(-50%, -50%)",
                                 }}
-                                className="absolute inset-0 pointer-events-none"
                             >
-                                <div
-                                    className="absolute pointer-events-auto flex flex-col items-center justify-center"
-                                    style={{
-                                        left: `calc(50% + ${x}%)`,
-                                        top: `calc(50% + ${y}%)`,
-                                        transform: "translate(-50%, -50%)",
-                                    }}
+                                {/* Counter-rotation keeps the icon label upright */}
+                                <motion.div
+                                    className="flex flex-col items-center gap-1"
+                                    style={{ transformOrigin: "50% 50%" }}
+                                    animate={isMobile ? {} : { rotate: -360 }}
+                                    transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
                                 >
-                                    <motion.div
-                                        animate={isMobile ? { rotate: 0 } : { rotate: -360 }}
-                                        transition={{
-                                            duration: 60,
-                                            repeat: Infinity,
-                                            ease: "linear",
-                                            delay: 0
-                                        }}
-                                        className="relative flex flex-col items-center"
-                                    >
-                                        {/* Icon container */}
-                                        <div className="w-8 h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 rounded-full bg-white flex items-center justify-center text-blue-600 text-xs lg:text-sm shadow-[0_4px_10px_rgba(59,130,246,0.25)] border border-blue-200">
-                                            <stakeholder.Icon />
-                                        </div>
-
-                                        {/* Text label with white background and border */}
-                                        <div className="mt-1.5 text-center">
-                                            <span className="text-[10px] font-bold text-blue-900 uppercase tracking-wide whitespace-nowrap bg-white px-2 py-0.5 rounded-md border border-blue-200 shadow-sm">
-                                                {stakeholder.name}
-                                            </span>
-                                        </div>
-                                    </motion.div>
-                                </div>
-                            </motion.div>
+                                    <div className="w-11 h-11 lg:w-13 lg:h-13 xl:w-14 xl:h-14 rounded-full bg-white flex items-center justify-center text-blue-600 shadow-[0_4px_14px_rgba(59,130,246,0.35)] border-2 border-blue-100">
+                                        <s.Icon size={19} />
+                                    </div>
+                                    <span className="text-[9px] lg:text-[10px] font-bold text-blue-900 uppercase tracking-wide whitespace-nowrap bg-white/95 px-1.5 py-0.5 rounded border border-blue-100 shadow-sm leading-none">
+                                        {s.name}
+                                    </span>
+                                </motion.div>
+                            </div>
                         );
                     })}
-                </div>
+                </motion.div>
 
             </div>
         </div>
     );
 };
-
-
-
-
