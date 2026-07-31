@@ -144,8 +144,7 @@ const HeroSlide = ({
                       height={1600}
                       className={imageClass || "w-[115%] lg:w-[125%] xl:w-[130%] max-w-none object-contain drop-shadow-[0_20px_60px_rgba(59,130,246,0.25)] -ml-[10%] lg:-ml-[15%] xl:-ml-[20%] transition-transform duration-700 hover:scale-[1.02]"}
                       sizes="(max-width: 1024px) 100vw, 100vw"
-                      quality={100}
-                      unoptimized={true}
+                      quality={85}
                     />
                   )}
                 </motion.div>
@@ -168,7 +167,7 @@ const NSComplianceCardDeck = ({ isActive }: { isActive: boolean }) => {
       subtitle: "Direct E-Way bill generation, auto TDS reconciliation & real-time GST filing directly inside NetSuite.",
       btnText: "Explore GST Engine →",
       btnGradient: "from-blue-600 to-indigo-600 shadow-blue-500/25",
-      image: "/images/Dashboard/indian%20localization%202%20dashboard.jpg",
+      image: "/images/Dashboard/indian localization 2 dashboard.webp",
       accentBorder: "border-blue-200/90",
       shadowGlow: "shadow-[0_25px_60px_-10px_rgba(37,99,235,0.22)]",
     },
@@ -180,7 +179,7 @@ const NSComplianceCardDeck = ({ isActive }: { isActive: boolean }) => {
       subtitle: "Role-based permissions, automated SOC-1/SOC-2 logs, and tamper-proof approval workflows.",
       btnText: "View Audit Controls →",
       btnGradient: "from-emerald-600 to-teal-600 shadow-emerald-500/25",
-      image: "/images/Dashboard/mca_compliance_illustration.png",
+      image: "/images/Dashboard/mca_compliance_illustration.webp",
       accentBorder: "border-emerald-200/90",
       shadowGlow: "shadow-[0_25px_60px_-10px_rgba(16,185,129,0.22)]",
     },
@@ -192,7 +191,7 @@ const NSComplianceCardDeck = ({ isActive }: { isActive: boolean }) => {
       subtitle: "Real-time intercompany eliminations, multi-currency consolidation, and automated global financial statements.",
       btnText: "Explore Global Close →",
       btnGradient: "from-indigo-600 to-purple-600 shadow-indigo-500/25",
-      image: "/images/lap/netsuite_cfo_consolidation_dashboard.png",
+      image: "/images/lap/netsuite_cfo_consolidation_dashboard.webp",
       accentBorder: "border-indigo-200/90",
       shadowGlow: "shadow-[0_25px_60px_-10px_rgba(99,102,241,0.22)]",
     },
@@ -204,7 +203,7 @@ const NSComplianceCardDeck = ({ isActive }: { isActive: boolean }) => {
       subtitle: "Complex multi-currency revenue schedules, subscription billing, and 1-click month-end close.",
       btnText: "Learn Revenue Engine →",
       btnGradient: "from-cyan-600 to-blue-600 shadow-cyan-500/25",
-      image: "/images/Dashboard/planing%20and%20budgeting%202%20dashboard.jpg",
+      image: "/images/Dashboard/planing and budgeting 2 dashboard.webp",
       accentBorder: "border-cyan-200/90",
       shadowGlow: "shadow-[0_25px_60px_-10px_rgba(6,182,212,0.22)]",
     },
@@ -294,7 +293,6 @@ const NSComplianceCardDeck = ({ isActive }: { isActive: boolean }) => {
                   width={1200}
                   height={800}
                   className="w-full h-full object-cover object-center filter drop-shadow-md transition-transform duration-500 hover:scale-[1.02]"
-                  unoptimized={true}
                 />
               </div>
 
@@ -395,7 +393,7 @@ export default function NSHeroSlider() {
           desc="Empower your business with AI-driven, industry-specific NetSuite solutions designed to automate operations, deliver predictive insights, improve real-time visibility, and accelerate scalable growth across Software & Technology, Financial Services, Tech Companies, Manufacturing, Retail, and more."
           cta="Book a Demo"
           link="/netsuite/contact"
-          image="/images/Dashboard/netsuite%20Ai%20dashboard%20enhanced-Photoroom.png"
+          image="/images/Dashboard/netsuite Ai dashboard enhanced-Photoroom.webp"
           priority={true}
           multiColorShadow={true}
           skipEntranceAnimation={skipFirstAnimation}
@@ -486,8 +484,7 @@ export default function NSHeroSlider() {
                     priority={true}
                     className="w-full h-auto rounded-xl object-contain filter drop-shadow-[0_14px_28px_rgba(37,99,235,0.2)] transition-transform duration-700 hover:scale-[1.01]"
                     sizes="(max-width: 1024px) 100vw, 60vw"
-                    unoptimized={true}
-                    quality={100}
+                    quality={85}
                   />
                 </div>
 
@@ -557,14 +554,13 @@ export default function NSHeroSlider() {
                 {/* Inner Image Frame */}
                 <div className="relative w-full overflow-hidden rounded-xl border border-slate-100 shadow-inner bg-slate-50/50">
                   <Image
-                    src="/images/lap/happy_cfo_netsuite_office.png"
+                    src="/images/lap/happy_cfo_netsuite_office.webp"
                     alt="Happy Executive CFO in Oracle NetSuite Office"
                     width={1500}
                     height={1000}
                     className="w-full h-auto rounded-xl object-contain filter drop-shadow-[0_12px_24px_rgba(37,99,235,0.18)] transition-transform duration-700 hover:scale-[1.01]"
                     sizes="(max-width: 1024px) 100vw, 60vw"
-                    unoptimized={true}
-                    quality={100}
+                    quality={85}
                   />
                 </div>
 
@@ -656,6 +652,8 @@ export default function NSHeroSlider() {
           desc="Make faster, data-driven decisions with AI-powered forecasting, live dashboards, automated MIS reporting, and real-time analytics. NetSuite transforms finance operations into a strategic command center for smarter planning and confident decision-making."
           cta="Book a Demo"
           link="/netsuite/contact"
+          showOverlay={false}
+          textColor="dark"
           customVisual={
             <div className="relative w-full flex justify-center lg:justify-end">
               {/* Animated background ambient glow */}
@@ -686,14 +684,13 @@ export default function NSHeroSlider() {
                 {/* Inner Image Frame - Cropped top & bottom */}
                 <div className="relative w-full h-[260px] sm:h-[310px] lg:h-[350px] overflow-hidden rounded-2xl border border-slate-200/80 shadow-inner bg-slate-950/20">
                   <Image
-                    src="/images/lap/netsuite_cfo_predictive_cashflow.png"
+                    src="/images/lap/netsuite_cfo_predictive_cashflow.webp"
                     alt="CFO Using Oracle NetSuite AI Financial Command Center & Cash Flow Forecast"
                     width={1500}
                     height={1000}
                     className="w-full h-full rounded-2xl object-cover object-center filter drop-shadow-[0_16px_32px_rgba(37,99,235,0.22)] transition-transform duration-700 hover:scale-[1.01]"
                     sizes="(max-width: 1024px) 100vw, 60vw"
-                    unoptimized={true}
-                    quality={100}
+                    quality={85}
                   />
 
                   {/* Pulsing AI Intelligence Radar Nodes on Wall Screen */}
@@ -790,14 +787,13 @@ export default function NSHeroSlider() {
               {/* Clean Laptop Image without background card/border - Large Prominent Size */}
               <div className="relative w-[138%] lg:w-[146%] xl:w-[154%] max-w-none flex justify-center lg:justify-end -mr-[6%] lg:-mr-[12%] xl:-mr-[16%]">
                 <Image
-                  src="/images/lap/netsuitelap2.png"
+                  src="/images/lap/netsuitelap2.webp"
                   alt="NetSuite for IT and ITES"
                   width={1900}
                   height={1900}
                   className="w-full h-auto object-contain filter drop-shadow-[0_25px_50px_rgba(99,102,241,0.25)] transition-transform duration-700 hover:scale-[1.01]"
                   sizes="(max-width: 1024px) 100vw, 60vw"
-                  unoptimized={true}
-                  quality={100}
+                  quality={85}
                 />
               </div>
             </div>

@@ -237,7 +237,6 @@ export default function NetSuiteNextAIPage() {
                   height={1080}
                   className="w-full h-auto object-cover filter drop-shadow-2xl transition-transform duration-700 hover:scale-[1.01]"
                   priority
-                  unoptimized
                 />
               </div>
 
@@ -328,33 +327,67 @@ export default function NetSuiteNextAIPage() {
             ))}
           </div>
 
-          {/* Image showcase for Ask Oracle */}
+          {/* Ask Oracle Laptop Showcase */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl max-w-5xl mx-auto"
+            className="relative max-w-5xl mx-auto"
           >
-            <Image
-              src="/images/lap/netsuite_ai_hero.png"
-              alt="Ask Oracle AI Interface in Action"
-              width={1200}
-              height={700}
-              className="w-full h-auto object-cover"
-              unoptimized
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 flex items-center justify-between">
-              <div>
-                <p className="text-white font-bold text-lg">Ask Oracle in Action</p>
-                <p className="text-slate-400 text-sm">Powered by Oracle AI, delivered by AGSuite</p>
+            {/* Outer glow */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 blur-[60px] rounded-[3rem] pointer-events-none" />
+
+            {/* Card shell — same bg image from netsuite_ai_hero style */}
+            <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.8)]">
+
+              {/* Background: generated dark office environment */}
+              <div className="relative w-full">
+                <Image
+                  src="/images/lap/ask_oracle_laptop_mockup.webp"
+                  alt="Ask Oracle AI — NetSuite Next Dashboard on Laptop in Dark Office"
+                  width={1200}
+                  height={1200}
+                  className="w-full h-auto object-cover"
+                  quality={88}
+                />
+
+                {/* Dashboard composited onto the laptop screen area */}
+                {/* Precise overlay positioned over the MacBook screen in the generated image */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "24%",
+                    left: "21.5%",
+                    width: "57%",
+                    height: "43%",
+                    borderRadius: "4px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <Image
+                    src="/images/lap/Next AI Dashboard.webp"
+                    alt="NetSuite Next AI Dashboard"
+                    fill
+                    className="object-cover object-top"
+                    quality={90}
+                  />
+                </div>
               </div>
-              <Link
-                href="/netsuite/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 backdrop-blur-md transition-all"
-              >
-                Learn More <FiArrowRight />
-              </Link>
+
+              {/* Bottom gradient + text overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                  <p className="text-white font-bold text-lg">Ask Oracle in Action</p>
+                  <p className="text-slate-400 text-sm">Powered by Oracle AI, delivered by AGSuite</p>
+                </div>
+                <Link
+                  href="/netsuite/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 backdrop-blur-md transition-all shrink-0"
+                >
+                  Learn More <FiArrowRight />
+                </Link>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -425,11 +458,10 @@ export default function NetSuiteNextAIPage() {
               className="relative rounded-3xl overflow-hidden aspect-[4/3] border border-white/10 shadow-2xl"
             >
               <Image
-                src="/images/lap/happy_cfo_netsuite_office.png"
+                src="/images/lap/happy_cfo_netsuite_office.webp"
                 alt="Finance leader using NetSuite Next AI at AGSuite"
                 fill
                 className="object-cover"
-                unoptimized
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
@@ -558,11 +590,10 @@ export default function NetSuiteNextAIPage() {
                 {/* Image Right */}
                 <div className="relative min-h-[280px] lg:min-h-0 overflow-hidden border-t lg:border-t-0 lg:border-l border-white/10">
                   <Image
-                    src="/images/lap/netsuite_cfo_predictive_cashflow.png"
+                    src="/images/lap/netsuite_cfo_predictive_cashflow.webp"
                     alt={`NetSuite ${activeModuleData?.label} Module Preview`}
                     fill
                     className="object-cover"
-                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-transparent to-transparent lg:from-transparent lg:via-transparent" />
                 </div>
@@ -593,14 +624,14 @@ export default function NetSuiteNextAIPage() {
                 gradient: "from-blue-500 to-cyan-500",
                 title: "Built for Scale and Security",
                 desc: "Powered by Oracle Cloud Infrastructure (OCI), NetSuite Next delivers enterprise-grade security and resilience — optimized for real-time, AI-driven workload execution.",
-                img: "/images/lap/netsuite_cfo_ai_dashboard.png",
+                img: "/images/lap/netsuite_cfo_ai_dashboard.webp",
               },
               {
                 icon: FiCpu,
                 gradient: "from-purple-500 to-indigo-500",
                 title: "Built to Extend",
                 desc: "Build custom autonomous agents, connect 3rd party systems, and create tailored ERP experiences on the SuiteCloud platform with AGSuite's certified developers.",
-                img: "/images/lap/netsuite_cfo_consolidation_dashboard.png",
+                img: "/images/lap/netsuite_cfo_consolidation_dashboard.webp",
               },
             ].map((item, i) => (
               <motion.div
@@ -617,7 +648,6 @@ export default function NetSuiteNextAIPage() {
                     alt={item.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
                 </div>
