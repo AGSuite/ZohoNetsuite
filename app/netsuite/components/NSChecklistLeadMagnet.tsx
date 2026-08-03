@@ -103,7 +103,7 @@ function CountryCodePicker({
   );
 }
 
-export default function NSChecklistLeadMagnet() {
+export default function NSChecklistLeadMagnet({ hideBackground = false }: { hideBackground?: boolean }) {
   const [isClient, setIsClient] = useState(false);
   useEffect(() => { setIsClient(true); }, []);
 
@@ -174,22 +174,24 @@ export default function NSChecklistLeadMagnet() {
 
   return (
     <section
-      className="relative overflow-hidden py-16 md:py-24 font-['DM_Sans',sans-serif]"
-      style={{
+      className={`relative overflow-hidden ${hideBackground ? 'py-8 md:py-12' : 'py-16 md:py-24'} font-['DM_Sans',sans-serif]`}
+      style={hideBackground ? undefined : {
         background: "radial-gradient(at 0% 82.58333206176758%, #4a055c 0px, transparent 50%), radial-gradient(at 97.58620673212512% 84.0833330154419%, #10011f 0px, transparent 50%), radial-gradient(at 10.73275845626305% 10.12499968210856%, #000000 0px, transparent 50%), radial-gradient(at 48.66379293902167% 89.91666634877524%, #1000ed 0px, transparent 50%), #021526"
       }}
     >
       {/* Square Grid Pattern Overlay */}
-      <div
-        className="absolute inset-0 z-0 opacity-15 pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(255,255,255,0.2) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255,255,255,0.2) 1px, transparent 1px)
-          `,
-          backgroundSize: "60px 60px"
-        }}
-      />
+      {!hideBackground && (
+        <div
+          className="absolute inset-0 z-0 opacity-15 pointer-events-none"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(255,255,255,0.2) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(255,255,255,0.2) 1px, transparent 1px)
+            `,
+            backgroundSize: "60px 60px"
+          }}
+        />
+      )}
 
       <div className="relative z-10 mx-auto max-w-[1240px] w-full px-4 md:px-6">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">

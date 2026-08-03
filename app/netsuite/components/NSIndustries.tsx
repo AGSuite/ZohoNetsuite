@@ -61,52 +61,52 @@ const industries = [
   {
     id: 1,
     title: "Software and Technology",
-    description: "Scale your software business with NetSuite's module-based cloud ERP.",
+    description: "Accelerate innovation, automate financial operations, and scale globally with AI-powered cloud ERP built for fast-growing software and technology businesses.",
   },
   {
     id: 2,
     title: "IT and Professional Services",
-    description: "Streamline project management and resource allocation for service firms.",
+    description: "Streamline project delivery, resource utilization, billing, and profitability with real-time visibility across your entire services operation.",
   },
   {
     id: 3,
     title: "Wholesale Distribution",
-    description: "Optimize inventory and supply chain management for distributors.",
+    description: "Optimize inventory, warehousing, procurement, and supply chain operations with intelligent, real-time distribution management.",
   },
   {
     id: 4,
     title: "Advertising and Digital Marketing Agencies",
-    description: "Manage client projects, billing, and creative resources efficiently.",
+    description: "Manage campaigns, client billing, project profitability, and creative workflows seamlessly from a single unified platform.",
   },
   {
     id: 5,
     title: "Media and Publishing",
-    description: "Unified platforms for subscription management and content monetization.",
+    description: "Drive subscription growth, automate revenue recognition, and manage digital content operations with complete business visibility.",
   },
   {
     id: 6,
     title: "Retail & E-Commerce",
-    description: "Omnichannel retail solutions to unify in-store and online experiences.",
+    description: "Deliver connected omnichannel experiences with real-time inventory, order management, customer insights, and AI-driven commerce operations.",
   },
   {
     id: 7,
     title: "Transportation and Logistics",
-    description: "Real-time visibility into fleet management and logistics operations.",
+    description: "Gain real-time visibility into fleet operations, logistics planning, shipment tracking, and supply chain performance.",
   },
   {
     id: 8,
     title: "Manufacturing",
-    description: "End-to-end manufacturing planning and shop floor control systems.",
+    description: "Improve production planning, inventory control, procurement, and shop floor efficiency with intelligent manufacturing automation.",
   },
   {
     id: 9,
     title: "Financial Services",
-    description: "Automate core accounting and ensure bulletproof compliance.",
+    description: "Automate accounting, strengthen compliance, accelerate financial close, and gain real-time financial intelligence with AI-powered ERP.",
   },
   {
     id: 10,
     title: "Telecom",
-    description: "Manage global networks, subscriptions, and complex billing.",
+    description: "Manage complex billing, subscriptions, financial operations, and multi-location telecom networks with a scalable cloud ERP platform.",
   },
 ];
 

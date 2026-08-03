@@ -233,30 +233,30 @@ const wordItem: Variants = {
 };
 
 const partnerLogos = [
-  { logo: "/images/assets/affle%20tech.webp",                          name: "Affle",         pad: 4               },
-  { logo: "/images/assets/tyfone%20tech.webp",                         name: "Tyfone",        pad: 4               },
-  { logo: "/images/assets/airling%20tech.webp",                        name: "Airling",       pad: 4               },
-  { logo: "/images/netuite%20client%20images/videoverse.png",          name: "VideoVerse",    pad: 1, unopt: true  },
-  { logo: "/images/assets/quickheal%20tech.webp",                      name: "Quick Heal",    pad: 7               },
-  { logo: "/images/assets/control%20service.webp",                     name: "Control Svc",   pad: 4               },
-  { logo: "/images/netuite%20client%20images/uniacco.png",             name: "UniAcco",       pad: 4               },
-  { logo: "/images/assets/dlz%20service.webp",                         name: "DLZ",           pad: 4               },
-  { logo: "/images/netuite%20client%20images/Indovance-new-logo.webp", name: "Indovance",     pad: 5               },
-  { logo: "/images/assets/pace%20services.webp",                       name: "Pace",          pad: 4               },
-  { logo: "/images/netuite%20client%20images/aidashlogo.png",          name: "AiDash",        pad: 4, unopt: true  },
-  { logo: "/images/netuite%20client%20images/controlcase.png",         name: "ControlCase",   pad: 4               },
-  { logo: "/images/netuite%20client%20images/escalent.webp",           name: "Escalent",      pad: 5               },
-  { logo: "/images/netuite%20client%20images/FINN-Logo(1).jpg",        name: "Finn",          pad: 4               },
-  { logo: "/images/netuite%20client%20images/flatworld.png",           name: "Flatworld",     pad: 9               },
-  { logo: "/images/netuite%20client%20images/image%20(13).png",        name: "Coastal",       pad: 4               },
-  { logo: "/images/netuite%20client%20images/kale.png",                name: "Kale",          pad: 8               },
-  { logo: "/images/netuite%20client%20images/keycraft.png",            name: "Keycraft",      pad: 8               },
-  { logo: "/images/netuite%20client%20images/modaxo.png",              name: "Modaxo",        pad: 5               },
-  { logo: "/images/netuite%20client%20images/prioritytire.png",        name: "Priority Tire", pad: 5               },
-  { logo: "/images/netuite%20client%20images/signal.png",              name: "Signal",        pad: 5, unopt: true  },
-  { logo: "/images/netuite%20client%20images/traxon.png",              name: "Traxon",        pad: 4               },
-  { logo: "/images/netuite%20client%20images/tsi-logo.png",            name: "TSI",           pad: 4               },
-  { logo: "/images/netuite%20client%20images/loylogic.png",            name: "LoyLogic",      pad: 2               },
+  { logo: "/images/assets/affle%20tech.webp", name: "Affle", pad: 4 },
+  { logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone", pad: 4 },
+  { logo: "/images/assets/airling%20tech.webp", name: "Airling", pad: 4 },
+  { logo: "/images/netuite%20client%20images/videoverse.png", name: "VideoVerse", pad: 1, unopt: true },
+  { logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal", pad: 7 },
+  { logo: "/images/assets/control%20service.webp", name: "Control Svc", pad: 4 },
+  { logo: "/images/netuite%20client%20images/uniacco.png", name: "UniAcco", pad: 4 },
+  { logo: "/images/assets/dlz%20service.webp", name: "DLZ", pad: 4 },
+  { logo: "/images/netuite%20client%20images/Indovance-new-logo.webp", name: "Indovance", pad: 5 },
+  { logo: "/images/assets/pace%20services.webp", name: "Pace", pad: 4 },
+  { logo: "/images/netuite%20client%20images/aidashlogo.png", name: "AiDash", pad: 4, unopt: true },
+  { logo: "/images/netuite%20client%20images/controlcase.png", name: "ControlCase", pad: 4 },
+  { logo: "/images/netuite%20client%20images/escalent.webp", name: "Escalent", pad: 5 },
+  { logo: "/images/netuite%20client%20images/FINN-Logo(1).jpg", name: "Finn", pad: 4 },
+  { logo: "/images/netuite%20client%20images/flatworld.png", name: "Flatworld", pad: 9 },
+  { logo: "/images/netuite%20client%20images/image%20(13).png", name: "Coastal", pad: 4 },
+  { logo: "/images/netuite%20client%20images/kale.png", name: "Kale", pad: 8 },
+  { logo: "/images/netuite%20client%20images/keycraft.png", name: "Keycraft", pad: 8 },
+  { logo: "/images/netuite%20client%20images/modaxo.png", name: "Modaxo", pad: 5 },
+  { logo: "/images/netuite%20client%20images/prioritytire.png", name: "Priority Tire", pad: 5 },
+  { logo: "/images/netuite%20client%20images/signal.png", name: "Signal", pad: 5, unopt: true },
+  { logo: "/images/netuite%20client%20images/traxon.png", name: "Traxon", pad: 4 },
+  { logo: "/images/netuite%20client%20images/tsi-logo.png", name: "TSI", pad: 4 },
+  { logo: "/images/netuite%20client%20images/loylogic.png", name: "LoyLogic", pad: 2 },
 ];
 
 function WhoWeAreSection() {
@@ -273,14 +273,15 @@ function WhoWeAreSection() {
         >
           {/* Main Heading */}
           <motion.h2 variants={slideInLeft} className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-blue-600 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
-            Empowering You<br />to Secure Your<br />
-            <span className="italic font-serif">Business & Growth</span>
+            Accelerating Digital  <br />Transformation with<br />
+            <span className="italic font-serif">AI-Powered ERP
+
+            </span>
           </motion.h2>
 
           {/* Description */}
           <motion.p variants={slideInLeft} className="text-gray-600 text-sm md:text-base leading-relaxed max-w-xl">
-            AGSuite Technologies is a trusted Oracle NetSuite Solution Provider helping businesses streamline operations with a unified cloud ERP platform. We specialize in NetSuite implementation, customization, and integration to improve efficiency and support scalable growth.
-          </motion.p>
+            AGSuite Technologies is a trusted Oracle NetSuite Solution Provider helping modern businesses eliminate operational chaos, automate critical processes, and gain real-time visibility through AI-powered cloud ERP solutions. From finance and compliance to inventory, procurement, and reporting, we enable organizations to scale faster with smarter decision-making and connected business operations.          </motion.p>
 
           {/* Feature Cards */}
           <motion.div variants={slideInLeft} className="space-y-3 pt-2">
@@ -292,7 +293,7 @@ function WhoWeAreSection() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-gray-900 font-semibold text-base mb-0.5">Certified Oracle NetSuite Partner</h3>
+                <h3 className="text-gray-900 font-semibold text-base mb-0.5">Certified Oracle NetSuite Solution Partner</h3>
                 <p className="text-gray-600 text-xs leading-relaxed">Trusted Solution Provider with 15+ years of expertise in NetSuite implementation and optimization.</p>
               </div>
             </div>
@@ -381,10 +382,9 @@ function StrategicPartnersSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-gray-300 text-base md:text-2xl leading-relaxed max-w-lg mx-auto lg:mx-0"
+                className="text-gray-300 text-base md:text-xl leading-relaxed max-w-lg mx-auto lg:mx-0"
               >
-                As a leading NetSuite Partner, we help you transform your business with scalable, innovative, and future-ready ERP solutions.
-              </motion.p>
+                Backed by 15+ years of ERP expertise, we specialize in NetSuite implementation, customization, automation, and integrations delivering intelligent, scalable, and future-ready ERP solutions tailored for growing enterprises.              </motion.p>
             </div>
 
             {/* Logo right after subline */}
@@ -589,84 +589,90 @@ const leadersData = [
     title: "CEO",
     image: "/images/people/Ankur.jpg",
     linkedin: "https://www.linkedin.com/in/ankurgoyal2/",
-    bio: "Visionary leader driving AGSuite's strategic vision with 25+ years in enterprise technology solutions."
+    imgClass: "object-cover object-top",
   },
   {
     name: "Rajat Goyal",
     title: "Director",
     image: "/images/people/Rajat_v2.png",
     linkedin: "https://www.linkedin.com/in/rajat-goyal-9007a6101/",
-    bio: "Strategic business leader specializing in operational excellence and global expansion initiatives."
+    imgClass: "object-cover object-top",
   },
   {
     name: "Nikhil Jain",
     title: "CTO",
     image: "/images/people/Nikhil.png",
     linkedin: "#",
-    bio: "Technology innovator leading AGSuite's technical strategy and cloud architecture excellence."
+    imgClass: "object-contain p-2.5",
   },
   {
     name: "Shailesh Punse",
     title: "Head of Sales & Marketing",
     image: "/images/people/Shailesh.jpg",
     linkedin: "https://www.linkedin.com/in/shailesh-punse-79771413/",
-    bio: "Driving global revenue growth and strategic partnerships with 25+ years of cross-industry expertise."
+    imgClass: "object-cover object-top",
   },
   {
-    name: "Mayuri",
+    name: "Mayuri Bharadi",
     title: "Project Delivery Manager",
-    image: "/images/people/mayuri.webp",
+    image: "/images/people/mayuri%20mam.png",
     linkedin: "#",
-    bio: "Over 12 years of experience leading complex cloud migrations and delivery frameworks with agile execution."
+    imgClass: "object-contain p-2.5",
   }
 ];
 
 function OurLeaders() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 w-full max-w-7xl mx-auto items-stretch">
       {leadersData.map((leader, index) => (
         <motion.div
           key={index}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="group relative bg-gradient-to-br from-[#e6f0ff] to-[#f0f5ff] rounded-[2rem] p-5 hover:bg-gradient-to-br hover:from-[#001535] hover:to-[#002b6b] transition-all duration-500 overflow-hidden flex flex-col shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-900/40 text-left w-full"
+          className="group relative bg-white border border-gray-100 rounded-3xl p-5 transition-all duration-500 flex flex-col justify-between text-left w-full hover:-translate-y-2.5 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-blue-500/20 hover:border-blue-300"
         >
-          <div className="relative w-48 h-48 mx-auto mb-5 rounded-full border-4 border-slate-700 group-hover:border-blue-300 transition-all duration-500 flex items-center justify-center overflow-hidden">
-            <div className="relative w-full h-full">
+          {/* Top Accent Line Glow */}
+          <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent group-hover:via-blue-600 transition-all duration-500" />
+
+          {/* Profile Image Box - Light Color Shadow on Hover ONLY */}
+          <div className="relative w-full aspect-square max-w-[200px] mb-4 rounded-2xl overflow-hidden border border-gray-200 bg-slate-50 shadow-none group-hover:shadow-xl group-hover:shadow-blue-400/35 group-hover:border-blue-400/50 p-1 mx-auto flex items-center justify-center transition-all duration-500">
+            <div className="relative w-full h-full rounded-xl overflow-hidden bg-white">
               <Image
                 src={leader.image}
                 alt={leader.name}
                 fill
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
-                sizes="160px"
+                className={`${leader.imgClass} transition-transform duration-700 group-hover:scale-105`}
+                sizes="(max-width: 640px) 100vw, 200px"
               />
             </div>
           </div>
 
-          <div className="px-2 flex-grow flex flex-col pt-2">
-            <div className="flex items-center justify-between mb-1">
-              <h3 className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-[#001535] to-[#004e9a] bg-clip-text text-transparent group-hover:from-white group-hover:to-white transition-all duration-500">
+          {/* Leader Info Container */}
+          <div className="w-full flex flex-col justify-between flex-grow pt-1">
+            {/* Name on Left (Dark Blue Color), Social LinkedIn Icon on Right */}
+            <div className="flex items-center justify-between gap-2 mb-1 w-full">
+              <h3 className="text-base md:text-lg font-bold text-[#001e4d] group-hover:text-blue-600 transition-colors duration-300 text-left truncate">
                 {leader.name}
               </h3>
               <a
                 href={leader.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#0077b5] group-hover:text-white hover:scale-110 transition-transform duration-300 flex-shrink-0"
+                className="p-1.5 rounded-lg bg-[#0077B5]/10 group-hover:bg-[#0077B5] text-[#0077B5] group-hover:text-white transition-all duration-300 shrink-0"
                 aria-label={`${leader.name} LinkedIn`}
               >
-                <Linkedin className="w-6 h-6 fill-current" />
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
               </a>
             </div>
 
-            <div className="mb-2 flex-grow">
-              <span className="block text-sm font-semibold bg-gradient-to-r from-[#001535] to-[#004e9a] bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:to-cyan-300 transition-all duration-500 mb-3 border-b border-gray-300 group-hover:border-blue-400/30 pb-3 w-max pr-6">
+            {/* Designation on Left */}
+            <div className="w-full text-left">
+              <span className="block text-xs md:text-sm font-medium text-gray-600 group-hover:text-gray-900 transition-colors duration-300 leading-snug text-left">
                 {leader.title}
               </span>
-              <p className="text-[11px] md:text-[12px] font-medium bg-gradient-to-r from-[#1e293b] to-[#334155] bg-clip-text text-transparent group-hover:from-white/80 group-hover:to-white/80 transition-all duration-500 leading-relaxed">
-                {leader.bio}
-              </p>
             </div>
           </div>
         </motion.div>
@@ -750,7 +756,7 @@ export default function AboutUsClient() {
                 <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 bg-gradient-to-r from-[#000814] via-[#001535] to-black bg-clip-text text-transparent">Our Mission</motion.h2>
                 <motion.div variants={wordContainer} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
                   {(() => {
-                    const text = "AGSuite Technologies thrives on empowering businesses through cutting-edge Cloud ERP technology, specializing in NetSuite. Our passion is to streamline operations, enhance efficiency, and drive sustainable growth for our clients. Our commitment lies in being a catalyst for positive transformation, helping clients achieve their strategic goals in the dynamic digital landscape.";
+                    const text = "AGSuite Technologies thrives on empowering businesses through cutting-edge technology solutions, specializing in Oracle NetSuite ERP. Our passion is to streamline operations, enhance efficiency, and drive sustainable growth for our clients. Our commitment lies in being a catalyst for positive transformation, helping clients achieve their strategic goals in the dynamic digital landscape.";
                     const words = text.split(" ");
                     const groups = [];
                     for (let i = 0; i < words.length; i += 3) {
@@ -778,7 +784,7 @@ export default function AboutUsClient() {
                 <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 bg-gradient-to-r from-[#000814] via-[#001535] to-black bg-clip-text text-transparent">Our Vision</motion.h2>
                 <motion.div variants={wordContainer} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
                   {(() => {
-                    const text = "AGSuite Technologies envisions global leadership in Oracle NetSuite consulting, setting industry benchmarks for innovation, integrity, and client satisfaction. We aspire to be the preferred choice, renowned for transformative ERP solutions, agility, and empathetic growth. Our vision is to forge lasting partnerships, defining the zenith of excellence in the dynamic field of cloud technology.";
+                    const text = "AGSuite Technologies envisions global leadership in NetSuite consulting, setting industry benchmarks for innovation, integrity, and client satisfaction. We aspire to be the preferred choice, renowned for transformative NetSuite solutions, agility, and empathetic growth. Our vision is to forge lasting partnerships, defining the zenith of excellence in the dynamic field of ERP technology.";
                     const words = text.split(" ");
                     const groups = [];
                     for (let i = 0; i < words.length; i += 3) {
@@ -868,7 +874,7 @@ export default function AboutUsClient() {
                 <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 bg-gradient-to-r from-[#000814] via-[#001535] to-black bg-clip-text text-transparent">Our Niche</motion.h2>
                 <motion.div variants={wordContainer} className="text-gray-700 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
                   {(() => {
-                    const text = "AGSuite Technologies excels in Oracle NetSuite Implementation, offering top-notch NetSuite Consulting Services. Our specialization includes Customizations, Managed Services, and Integrations, ensuring tailored solutions for clients. With a focus on client success, we leverage our expertise to lead in the dynamic landscape of cloud-based business solutions.";
+                    const text = "AGSuite Technologies excels in Oracle NetSuite Implementation, offering top-notch Technology Consulting Services. Our specialization includes NetSuite Customizations, Managed Services, and Integrations, ensuring tailored solutions for clients. With a focus on client success, we leverage our expertise to lead in the dynamic landscape of cloud-based business solutions.";
                     const words = text.split(" ");
                     const groups = [];
                     for (let i = 0; i < words.length; i += 3) {
@@ -905,11 +911,10 @@ export default function AboutUsClient() {
           >
             <div className="max-w-2xl">
               <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl lg:text-4xl font-medium mb-4 text-white leading-tight">
-                Empowering Global Enterprises with <span className="text-blue-400">NetSuite Solutions</span>
+                Scale Smarter with <span className="text-blue-400">AI-Driven Oracle NetSuite ERP</span>
               </motion.h2>
               <motion.p variants={fadeInUp} className="text-base md:text-lg mb-8 text-gray-200 leading-relaxed max-w-xl">
-                Join AGSuite Technologies in driving innovation and operational excellence.
-                Our expert NetSuite consultants are ready to help you scale your business with the power of the cloud.
+                Partner with AGSuite Technologies to streamline operations, improve decision-making, and build a connected, future-ready enterprise powered by intelligent ERP automation.
               </motion.p>
               <motion.div variants={fadeInUp} className="flex">
                 <Link
@@ -983,7 +988,7 @@ export default function AboutUsClient() {
 
       {/* Global Leaders Section */}
       <LazySection height="600px">
-        <section id="leaders" className="relative py-24 bg-gradient-to-br from-[#000814] via-[#001535] to-[#000814] overflow-hidden">
+        <section id="leaders" className="relative py-24 bg-black bg-gradient-to-b from-black via-[#050b18] to-black overflow-hidden">
           {/* Moving Stars Effect */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {STATIC_STARS_40.map((star, i) => (
@@ -1012,8 +1017,8 @@ export default function AboutUsClient() {
             ))}
           </div>
 
-          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-600/20 blur-[120px] rounded-full -z-0 pointer-events-none" />
-          <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-indigo-600/20 blur-[120px] rounded-full -z-0 pointer-events-none" />
+          <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-blue-600/15 blur-[150px] rounded-full -z-0 pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-indigo-600/15 blur-[150px] rounded-full -z-0 pointer-events-none" />
 
           <motion.div
             initial={{ opacity: 0, y: 40 }}

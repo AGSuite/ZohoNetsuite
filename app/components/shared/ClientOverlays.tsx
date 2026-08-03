@@ -18,6 +18,11 @@ const SocialSidebar = dynamic(
     { ssr: false }
 );
 
+const SmoothScroll = dynamic(
+    () => import('./SmoothScroll'),
+    { ssr: false }
+);
+
 export default function ClientOverlays() {
     const pathname = usePathname();
     const isStudio = pathname.includes('/studio');
@@ -26,8 +31,8 @@ export default function ClientOverlays() {
 
     return (
         <>
+            <SmoothScroll />
             <SocialSidebar />
-            <CursorFollower />
             <ScrollToTopButton />
         </>
     );

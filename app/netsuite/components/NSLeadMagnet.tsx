@@ -31,7 +31,7 @@ const REGIONS = [
   },
   {
     rank: "02", iso: "us", country: "United States", region: "North America",
-    growth: "$9.2B", stat: "Cloud ERP market size", highlight: "Largest NetSuite market",
+    growth: "25%", stat: "Cloud ERP growth rate", highlight: "Largest NetSuite market",
     color: "from-blue-500 to-blue-600", border: "border-blue-300", accent: "text-blue-600",
     insight: "SaaS-first culture and SOX compliance make NetSuite the #1 ERP choice.",
   },

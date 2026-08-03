@@ -48,7 +48,7 @@ const fadeUp = {
     }),
 };
 
-const NSMetrics = () => {
+const NSMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     // Each block gets its OWN inView ref so it fires when it scrolls into view
@@ -61,37 +61,42 @@ const NSMetrics = () => {
     const { ref: marqueeRef, inView: marqueeInView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
     // Split headline into words for animation
-    const headlineText = "83% of companies meet or exceed their";
-    const highlightText = "ROI expectations";
+    const headlineText = "83% of companies meet or exceed their ROI expectations with";
+    const highlightText = "AI-powered Oracle NetSuite ERP solutions.";
     const words = headlineText.split(" ");
+
+
+
 
     const stats = [
         { value: "700+", label: "Projects Completed" },
+        { value: "250+", label: "Customers" },
         { value: "15+", label: "Industry Expertise" },
         { value: "10+", label: "Countries Serving" },
-        { value: "15+", label: "Years Experience" },
     ];
 
     return (
         <section
-            className="relative py-24 overflow-hidden font-['DM_Sans',sans-serif]"
-            style={{
+            className={`relative ${hideBackground ? 'pt-6 pb-16 md:pb-24' : 'py-24'} overflow-hidden font-['DM_Sans',sans-serif]`}
+            style={hideBackground ? undefined : {
                 background: "radial-gradient(at 0% 82.58333206176758%, #4a055c 0px, transparent 50%), radial-gradient(at 97.58620673212512% 84.0833330154419%, #10011f 0px, transparent 50%), radial-gradient(at 10.73275845626305% 10.12499968210856%, #000000 0px, transparent 50%), radial-gradient(at 48.66379293902167% 89.91666634877524%, #1000ed 0px, transparent 50%), #021526"
             }}
         >
             {/* Square Grid Pattern */}
-            <div
-                className="absolute inset-0 z-0 opacity-20 pointer-events-none"
-                style={{
-                    backgroundImage: `
-                        linear-gradient(to right, rgba(255,255,255,0.3) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(255,255,255,0.3) 1px, transparent 1px)
-                    `,
-                    backgroundSize: "60px 60px",
-                    maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,1) 60%)",
-                    WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,1) 60%)"
-                }}
-            />
+            {!hideBackground && (
+                <div
+                    className="absolute inset-0 z-0 opacity-20 pointer-events-none"
+                    style={{
+                        backgroundImage: `
+                            linear-gradient(to right, rgba(255,255,255,0.3) 1px, transparent 1px),
+                            linear-gradient(to bottom, rgba(255,255,255,0.3) 1px, transparent 1px)
+                        `,
+                        backgroundSize: "60px 60px",
+                        maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,1) 60%)",
+                        WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,1) 60%)"
+                    }}
+                />
+            )}
 
             <div className="relative z-10 max-w-5xl mx-auto px-6">
                 <div className="text-center">
@@ -116,7 +121,7 @@ const NSMetrics = () => {
                     {/* Headline with Word-by-Word Animation */}
                     <motion.h2
                         ref={headlineRef}
-                        className="text-4xl md:text-6xl lg:text-5xl font-semibold text-white mb-6 tracking-tight leading-tight"
+                        className="text-4xl md:text-6xl lg:text-5xl font-semibold text-white mb-6 tracking-tight leading-normal"
                     >
                         {words.map((word, index) => (
                             <motion.span
@@ -133,9 +138,20 @@ const NSMetrics = () => {
                             initial={{ opacity: 0, y: 18 }}
                             animate={headlineInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.35, ease: "easeOut", delay: words.length * 0.07 }}
-                            className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400"
+                            className="relative inline-flex items-center justify-center mx-1 my-1 group/pill align-middle cursor-pointer"
                         >
-                            {highlightText}
+                            {/* Soft Light Red / Purple / Blue Gradient Glow Shadow - ONLY ON HOVER */}
+                            <span className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-rose-300 via-purple-300 to-sky-300 blur-md opacity-0 group-hover/pill:opacity-100 transition duration-300" />
+
+                            {/* Border & Body: Glass by default, White on Hover */}
+                            <span className="relative inline-flex items-center justify-center p-[1.5px] rounded-2xl overflow-hidden transition-all duration-300">
+                                <span className="absolute inset-0 bg-gradient-to-r from-rose-300/40 via-purple-300/40 to-sky-300/40 group-hover/pill:from-rose-400 group-hover/pill:via-purple-400 group-hover/pill:to-sky-400 rounded-2xl transition-all duration-300" />
+                                <span className="relative px-3.5 py-1 bg-white/10 group-hover/pill:bg-white backdrop-blur-md rounded-[14px] block transition-colors duration-300">
+                                    <span className="text-white group-hover/pill:text-black font-medium transition-colors duration-300">
+                                        {highlightText}
+                                    </span>
+                                </span>
+                            </span>
                         </motion.span>
                     </motion.h2>
 
@@ -147,7 +163,7 @@ const NSMetrics = () => {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto mb-10 font-medium leading-relaxed"
                     >
-                        AGSuite Technologies empowers businesses to meet and exceed ROI expectations with Oracle NetSuite.
+                        AGSuite Technologies helps businesses unlock smarter automation, real-time intelligence, and accelerated growth with AI-driven Oracle NetSuite ERP implementations.
                     </motion.p>
 
                     {/* CTA Buttons */}
@@ -158,20 +174,49 @@ const NSMetrics = () => {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-wrap items-center justify-center gap-4"
                     >
-                        <Link
-                            href="#contact-form"
-                            className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-base transition-all shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40 hover:scale-105 active:scale-100"
-                            suppressHydrationWarning={true}
-                        >
-                            Get Free Consultation
-                        </Link>
-                        <Link
-                            href="/netsuite/contact"
-                            className="px-10 py-4 bg-white/5 border border-white/10 hover:border-white/20 text-white rounded-xl font-bold text-base transition-all backdrop-blur-sm hover:bg-white/10"
-                            suppressHydrationWarning={true}
-                        >
-                            Get Demo
-                        </Link>
+                        {/* Get Free Consultation Button */}
+                        <div className="relative inline-flex items-center group">
+                            {/* Colorful Light Gradient Shadow Glow - ONLY ON MOUSE OVER */}
+                            <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-cyan-300 via-blue-300 via-purple-300 to-pink-300 blur-md opacity-0 group-hover:opacity-100 transition duration-300 animate-gradient-x" />
+
+                            <Link
+                                href="#contact-form"
+                                className="relative inline-flex items-center justify-center p-[1.5px] rounded-xl overflow-hidden font-bold text-base transition-all duration-300 hover:scale-105 active:scale-100"
+                                suppressHydrationWarning={true}
+                            >
+                                {/* Light Gradient Border */}
+                                <span className="absolute inset-0 bg-gradient-to-r from-cyan-300 via-blue-400 via-purple-400 to-pink-400 rounded-xl" />
+
+                                {/* White Button Body */}
+                                <span className="relative px-10 py-3.5 bg-white rounded-[10px] block transition-colors duration-300">
+                                    <span className="text-black group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:via-indigo-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent font-extrabold transition-all duration-300">
+                                        Get Free Consultation
+                                    </span>
+                                </span>
+                            </Link>
+                        </div>
+
+                        {/* Get Demo Button */}
+                        <div className="relative inline-flex items-center group">
+                            {/* Colorful Gradient Shadow Glow - ONLY ON MOUSE OVER */}
+                            <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 blur-md opacity-0 group-hover:opacity-100 transition duration-300" />
+
+                            <Link
+                                href="/netsuite/contact"
+                                className="relative inline-flex items-center justify-center p-[1.5px] rounded-xl overflow-hidden font-bold text-base transition-all duration-300 hover:scale-105 active:scale-100"
+                                suppressHydrationWarning={true}
+                            >
+                                {/* Gradient Border on Hover */}
+                                <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 group-hover:from-blue-400 group-hover:via-indigo-400 group-hover:to-purple-400 rounded-xl transition-all duration-300" />
+
+                                {/* Glass to White Button Body */}
+                                <span className="relative px-10 py-3.5 bg-white/10 group-hover:bg-white backdrop-blur-md rounded-[10px] block transition-colors duration-300">
+                                    <span className="text-white group-hover:text-black font-extrabold transition-colors duration-300">
+                                        Get Demo
+                                    </span>
+                                </span>
+                            </Link>
+                        </div>
                     </motion.div>
 
                     {/* Statistics Above Dashboard — each stat animates one by one on scroll */}

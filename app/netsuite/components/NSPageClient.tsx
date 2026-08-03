@@ -81,8 +81,31 @@ interface NSPageClientProps {
 export default function NSPageClient({ blogs }: NSPageClientProps) {
   return (
     <>
-      <LazySection height="600px">
-        <NSMetrics />
+      <LazySection height="1200px">
+        <section
+          className="relative overflow-hidden font-['DM_Sans',sans-serif] pt-12 md:pt-16 pb-16 md:pb-24"
+          style={{
+            background: "radial-gradient(at 0% 82.58333206176758%, #4a055c 0px, transparent 50%), radial-gradient(at 97.58620673212512% 84.0833330154419%, #10011f 0px, transparent 50%), radial-gradient(at 10.73275845626305% 10.12499968210856%, #000000 0px, transparent 50%), radial-gradient(at 48.66379293902167% 89.91666634877524%, #1000ed 0px, transparent 50%), #021526"
+          }}
+        >
+          {/* Continuous Square Grid Pattern Overlay */}
+          <div
+            className="absolute inset-0 z-0 opacity-15 pointer-events-none"
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(255,255,255,0.2) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.2) 1px, transparent 1px)
+              `,
+              backgroundSize: "60px 60px"
+            }}
+          />
+
+          <div className="relative z-10 space-y-12 md:space-y-16">
+            <NSChecklistLeadMagnet hideBackground />
+            <div className="w-full max-w-5xl mx-auto h-px bg-gradient-to-r from-transparent via-blue-400/20 via-purple-400/20 to-transparent" />
+            <NSMetrics hideBackground />
+          </div>
+        </section>
       </LazySection>
 
       <LazySection height="600px">
@@ -103,10 +126,6 @@ export default function NSPageClient({ blogs }: NSPageClientProps) {
 
       <LazySection height="700px">
         <NSKeyCapabilities />
-      </LazySection>
-
-      <LazySection height="600px">
-        <NSChecklistLeadMagnet />
       </LazySection>
 
       <LazySection height="800px">
