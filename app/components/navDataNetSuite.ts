@@ -174,7 +174,7 @@ export const navItemsNetSuite: NavSection[] = [
             // --------------- NETSUITE ADD-ONS ---------------
             {
                 label: 'NETSUITE ADD-ONS AND CONNECTORS',
-                href: '/netsuite/solutions/addons',
+                href: '/netsuite-connector',
                 megaMenu: {
                     title: 'NetSuite Add-On Solutions',
                     description: 'Extend NetSuite with connectors & automation tools',

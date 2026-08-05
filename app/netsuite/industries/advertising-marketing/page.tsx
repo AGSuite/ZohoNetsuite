@@ -20,11 +20,11 @@ const data: IndustryPageData = {
   heroTopCardTitle: "Trusted by Leading Agencies",
   heroTopCardSub: "Digital · Creative · Media · Integrated",
   introImage: "/images/benefits/adv_marketing_overview.png",
-  introTitle: "Built for Creative & Digital Agencies",
+  introTitle: "Gain Real-Time Control Over Agency Operations and Profitability",
   introDescription:
-    "Advertising and digital marketing agencies operate in a fast-paced, project-driven environment where profitability lives and dies on utilisation rates, scope creep management, and timely billing. Most agencies outgrow their spreadsheets and fragmented tools well before they realise it.",
+    "In today's fast-moving agency environment, visibility is everything. Without a connected system, managing project performance, team utilization, client profitability, and financial reporting can quickly become complex and time-consuming.",
   introDescription2:
-    "NetSuite gives agencies a single system for CRM, project management, time and expense tracking, client billing, and financial reporting. With real-time visibility into project margins and utilisation, you can make confident decisions on every engagement.",
+    "NetSuite provides a unified business platform that connects every stage of the client lifecycle—from opportunity management and project execution to invoicing and revenue tracking. Combined with intelligent automation and AI-powered insights, agencies can streamline operations, improve forecasting accuracy, and scale with confidence while maintaining strong profit margins.",
   stats: [
     
     { icon: Users, value: 300, suffix: "+", label: "Agencies on NetSuite" },

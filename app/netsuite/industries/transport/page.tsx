@@ -20,11 +20,11 @@ const data: IndustryPageData = {
   heroTopCardTitle: "Trusted Across Logistics Sectors",
   heroTopCardSub: "3PL · Freight · Last-Mile · Courier",
   introImage: "/images/netsuiteimages/ns_realtime_visibility.png",
-  introTitle: "Real-Time Visibility Across Every Mile",
+  introTitle: "Connect Operations, Costs, and Performance in Real Time",
   introDescription:
-    "Transportation and logistics industries deal with razor-thin margins, complex customer billing, driver management, fleet costs, and compliance requirements. Most rely on disconnected TMS, fleet, and accounting systems that create costly blind spots.",
+    "Transportation and logistics companies need accurate, real-time information to keep operations running efficiently and profitably. Disconnected systems often limit visibility into costs, customer billing, resource utilization, and overall business performance.",
   introDescription2:
-    "NetSuite brings your financial management, customer billing, route costing, and operational reporting into one unified cloud platform — giving leadership and operations teams the real-time data they need to run a profitable logistics business.",
+    "NetSuite provides a unified platform that brings together operational and financial data, giving teams a single source of truth for managing day-to-day activities. With intelligent automation, predictive analytics, and AI-driven reporting, organizations can streamline processes, improve operational control, and make faster, data-backed decisions.",
   stats: [
     
     { icon: Package, value: 250, suffix: "+", label: "Logistics Companies Served" },

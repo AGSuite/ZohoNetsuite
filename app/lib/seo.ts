@@ -1449,5 +1449,12 @@ export const INDUSTRY_PAGES: Record<
     "keywords": ["NetSuite Shopify Connector", "Shopify Plus NetSuite Integration", "Shopify ERP Sync", "AGSuite Shopify Connector"],
     "category": "Addon Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/netsuite-connector": {
+    "title": "NetSuite Add-Ons & Connectors — Purpose-Built Automation | AGSuite",
+    "description": "Extend NetSuite ERP with purpose-built SuiteApps and connectors for sales commission management, MCA data backup, India localization, Amazon, Shopify, and Magento.",
+    "keywords": ["NetSuite Connectors", "NetSuite Add-Ons", "NetSuite SuiteApp", "NetSuite Integration Partner", "AGSuite NetSuite"],
+    "category": "Addon Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
   }
 };

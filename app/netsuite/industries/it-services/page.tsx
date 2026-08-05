@@ -11,20 +11,20 @@ import { Users, BarChart3, TrendingUp, Database } from "lucide-react";
 
 const data: IndustryPageData = {
   industry: "IT & Professional Services",
-  heroTitle: "Scale Your IT Services Business Without Limits",
+  heroTitle: "AI-Powered NetSuite for IT & Professional Services Firms",
   heroDescription:
-    "Optimize billable utilization, accelerate project delivery, and automate complex billing with the #1 cloud ERP built for IT and consulting firms.",
+    "Scale your IT and consulting business with intelligent automation, real-time visibility, and data-driven decision-making. NetSuite optimizes resource utilization, accelerates project delivery, and streamlines complex billing with AI-powered insights.",
   heroImage: "/images/hero/industry_it_services_hero.png",
   heroCardTitle: "Project Profitability",
   heroCardSub: "Projects · Resources · Billing · Revenue Recognition",
   heroTopCardTitle: "Trusted by 500+ Services Firms",
   heroTopCardSub: "Consulting · Legal · IT · Engineering",
   introImage: "/images/benefits/benefit_unified_platform.png",
-  introTitle: "Run Projects, Resources, and Finances in One System",
+  introTitle: "Transform Service Operations with Intelligent Project-to-Cash Management",
   introDescription:
-    "Professional services firms struggle with disconnected tools — separate project management, time tracking, billing, and accounting systems that create data silos and revenue leakage. NetSuite SRP brings it all together in one unified cloud ERP.",
+    "Successful professional services firms depend on accurate project execution, efficient resource allocation, and complete financial visibility. Yet many organizations still rely on disconnected applications for project management, time tracking, billing, and accounting—leading to inefficiencies, delayed reporting, and reduced profitability.",
   introDescription2:
-    "From the initial statement of work through project delivery, time and expense capture, invoicing, and revenue recognition — every step is connected in real time. Your PMs have live project health. Your finance team has accurate revenue data.",
+    "NetSuite Services Resource Planning (SRP) brings your entire project lifecycle onto a single intelligent platform. From resource planning and project delivery to time capture, invoicing, and revenue management, every process is connected in real time. With AI-powered insights, automated workflows, and live performance dashboards, teams can optimize utilization, improve project outcomes, forecast revenue more accurately, and make faster business decisions with confidence.",
   stats: [
     
     { icon: Users, value: 500, suffix: "+", label: "Services Firms Served" },

@@ -20,11 +20,11 @@ const data: IndustryPageData = {
   heroTopCardTitle: "8,000+ Software Industries",
   heroTopCardSub: "SaaS · ISV · Tech Startups · Scaleups",
   introImage: "/images/lap/lap8_11zon.webp",
-  introTitle: "The ERP Built for High-Growth Tech Industries",
+  introTitle: "Accelerate Growth with AI-Enhanced ERP for Software & Tech",
   introDescription:
-    "Software and technology industries have unique financial complexity — subscription billing models, deferred revenue, complex revenue recognition under ASC 606 / IFRS 15, multi-currency operations, and the need for real-time ARR and MRR dashboards.",
+    "Today's software and technology companies need more than operational efficiency—they need intelligence that helps them move faster. From subscription billing and deferred revenue management to compliance and global financial reporting, NetSuite provides a modern ERP foundation designed for high-growth organizations.",
   introDescription2:
-    "NetSuite's SuiteSuccess for Software edition is pre-configured for ISVs, SaaS industries, and tech firms — with subscription billing, revenue recognition automation, and SaaS metrics built in from day one.",
+    "Built specifically for SaaS and technology businesses, NetSuite SuiteSuccess delivers automated workflows, real-time SaaS KPIs, and AI-powered insights that help teams optimize performance, predict trends, and scale with confidence.",
   stats: [
     
     {

@@ -20,11 +20,11 @@ const data: IndustryPageData = {
   heroTopCardTitle: "Trusted by 400+ Distributors",
   heroTopCardSub: "Wholesale · B2B · Multi-location · 3PL",
   introImage: "/images/benefits/benefit_sc_unified_commerce.png",
-  introTitle: "The ERP That Powers Smarter Distribution",
+  introTitle: "Intelligent ERP for Modern Wholesale Distribution",
   introDescription:
-    "Wholesale distributors operate in an environment of thin margins, complex customer pricing structures, and high inventory investment. Disconnected purchasing, warehouse, and accounting systems create errors, delays, and blind spots that cost margin points.",
+    "In today's competitive distribution landscape, success depends on having complete visibility across inventory, purchasing, warehousing, and customer fulfillment. Disconnected systems and manual processes can lead to inventory inaccuracies, pricing inconsistencies, operational delays, and reduced profitability.",
   introDescription2:
-    "NetSuite consolidates your entire distribution operation — from vendor ordering and goods receipt to pick/pack/ship and customer invoicing — in one real-time system. You get complete inventory visibility, automated replenishment, and accurate landed cost tracking.",
+    "Oracle NetSuite unifies your entire distribution ecosystem within a single cloud platform, connecting procurement, inventory management, warehouse operations, order fulfillment, and financials in real time. With AI-powered insights, automated replenishment, demand forecasting, and end-to-end inventory visibility, distributors can optimize stock levels, improve order accuracy, reduce costs, and make faster, data-driven decisions.",
   stats: [
     { icon: Globe, value: 400, suffix: "+", label: "Distributors Served" },
     { icon: BarChart3, value: 40, suffix: "%", label: "Fulfillment Speedup" },

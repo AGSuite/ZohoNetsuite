@@ -405,8 +405,8 @@ export default function NetSuiteServicesClient() {
               </p>
               <div className="pt-4">
                 <Link
-                  href="/netsuite/solutions/why-netsuite/main"
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest text-white transition-all"
+                  href="/why-netsuite"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest text-white transition-all shadow-lg hover:shadow-xl hover:scale-105"
                   style={{
                     background: "linear-gradient(135deg,#1e3a8a,#2563eb)",
                   }}
