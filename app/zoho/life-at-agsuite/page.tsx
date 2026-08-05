@@ -3,6 +3,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import OurLeaders from "@/app/components/OurLeaders";
 import Link from "next/link";
 import {
   ChevronRight,
@@ -661,58 +662,7 @@ export default function ZohoLifeAtAGSuite() {
             Driving innovation and excellence with a passion for transformative technology.
           </motion.p>
 
-          <div className="flex flex-wrap justify-center gap-6 w-full max-w-7xl mx-auto">
-            {leadersData.map((leader, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative bg-gradient-to-br from-[#e6f0ff] to-[#f0f5ff] rounded-[2rem] p-4 hover:bg-gradient-to-br hover:from-[#001535] hover:to-[#002b6b] transition-all duration-500 overflow-hidden flex flex-col shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-900/40 text-left max-w-[310px] mx-auto w-full"
-              >
-                {/* Inner Image Container - Circular Background */}
-                <div className="relative w-40 h-40 mx-auto mb-6 rounded-full p-2 border-2 border-slate-800/80 group-hover:border-blue-300 transition-all duration-500 flex items-center justify-center">
-                  <div className="relative w-full h-full rounded-full overflow-hidden">
-                    <Image
-                      src={leader.image}
-                      alt={leader.name}
-                      fill
-                      className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
-                      sizes="160px"
-                    />
-                  </div>
-                </div>
-
-                <div className="px-2 flex-grow flex flex-col pt-2">
-                  {/* Name and LinkedIn Inline */}
-                  <div className="flex items-center justify-between mb-1">
-                    <h3 className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-[#001535] to-[#004e9a] bg-clip-text text-transparent group-hover:from-white group-hover:to-white transition-all duration-500">
-                      {leader.name}
-                    </h3>
-                    <a
-                      href={leader.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#0077b5] group-hover:text-white hover:scale-110 transition-transform duration-300 flex-shrink-0"
-                      aria-label={`${leader.name} LinkedIn`}
-                    >
-                      <Linkedin className="w-6 h-6 fill-current" />
-                    </a>
-                  </div>
-
-                  {/* Title & Bio combined */}
-                  <div className="mb-2 flex-grow">
-                    <span className="block text-sm font-semibold bg-gradient-to-r from-[#001535] to-[#004e9a] bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:to-cyan-300 transition-all duration-500 mb-3 border-b border-gray-300 group-hover:border-blue-400/30 pb-3 w-max pr-6">
-                      {leader.title}
-                    </span>
-                    <p className="text-[13px] md:text-[14px] font-medium bg-gradient-to-r from-[#1e293b] to-[#334155] bg-clip-text text-transparent group-hover:from-white/80 group-hover:to-white/80 transition-all duration-500 leading-relaxed">
-                      {leader.bio}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <OurLeaders />
         </motion.div>
       </section>
 

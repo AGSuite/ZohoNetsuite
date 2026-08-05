@@ -87,6 +87,244 @@ const StarsCanvas = () => {
   return <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none w-full h-full" />;
 };
 
+/* ── Ask Oracle Interactive Features Section ──────────────────────────────── */
+const askOracleFeatureItems = [
+  {
+    id: 0,
+    icon: FiMessageSquare,
+    title: "Ask in Your Own Words",
+    subtitle: "Natural Language ERP Search",
+    desc: "Search, navigate, and analyze business data using plain natural language — no SQL or saved searches required. Simply type what you need and Oracle AI understands your intent, surfacing the right data instantly.",
+    color: "from-cyan-400 to-blue-500",
+    glow: "shadow-cyan-500/30",
+    accent: "#13FFAA",
+    image: "/images/ai/ask_natural_language.png",
+    imageAlt: "Natural language AI search interface for NetSuite ERP",
+    tags: ["No-Code Queries", "Intent Recognition", "Instant Results"],
+  },
+  {
+    id: 1,
+    icon: FiShield,
+    title: "Trust Every Answer",
+    subtitle: "Source-Cited AI Responses",
+    desc: "Source citations on every AI response — validate, audit, and act with confidence backed by your verified General Ledger. Every insight is traceable to its source, giving finance teams the transparency they need.",
+    color: "from-purple-400 to-indigo-500",
+    glow: "shadow-purple-500/30",
+    accent: "#CE84CF",
+    image: "/images/ai/trust_every_answer.png",
+    imageAlt: "AI trust and source citation verification dashboard",
+    tags: ["Audit Trail", "Source Citations", "GL Verified"],
+  },
+  {
+    id: 2,
+    icon: FiZap,
+    title: "An Easier Way to Work",
+    subtitle: "Streamlined AI-Powered Workflows",
+    desc: "Clean, intuitive interface with smarter search, streamlined workflows, and automated financial summaries for faster decisions. Work the way you think — Oracle AI adapts to your process, not the other way around.",
+    color: "from-emerald-400 to-teal-500",
+    glow: "shadow-emerald-500/30",
+    accent: "#4ADE80",
+    image: "/images/ai/easier_way_to_work.png",
+    imageAlt: "AI-powered streamlined ERP workflow dashboard",
+    tags: ["Auto-Summaries", "Smart Search", "Workflow AI"],
+  },
+];
+
+function AskOracleFeatures() {
+  const [active, setActive] = useState(0);
+  const activeItem = askOracleFeatureItems[active];
+
+  return (
+    <div className="mb-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+
+        {/* ── LEFT: Headline Tabs ── */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-col gap-4"
+        >
+          {askOracleFeatureItems.map((item) => {
+            const isActive = active === item.id;
+            return (
+              <button
+                key={item.id}
+                onClick={() => setActive(item.id)}
+                className={`group relative w-full text-left rounded-2xl border transition-all duration-300 overflow-hidden ${isActive
+                  ? "border-white/20 bg-white/[0.08] shadow-2xl"
+                  : "border-white/5 bg-white/[0.02] hover:border-white/15 hover:bg-white/[0.05]"
+                  }`}
+              >
+                {/* Active left accent bar */}
+                <div
+                  className={`absolute left-0 top-3 bottom-3 w-1 rounded-r-full bg-gradient-to-b ${item.color} transition-all duration-300 ${isActive ? "opacity-100" : "opacity-0"
+                    }`}
+                />
+
+                <div className="flex items-start gap-4 px-6 py-5">
+                  {/* Icon */}
+                  <div
+                    className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br ${item.color} shadow-lg ${item.glow} transition-transform duration-300 ${isActive ? "scale-110" : "scale-100"}`}
+                  >
+                    <item.icon className="w-6 h-6 text-white" />
+                  </div>
+
+                  <div className="flex-1 min-w-0">
+                    {/* Subtitle */}
+                    <p
+                      className="text-xs font-bold uppercase tracking-widest mb-1 transition-colors duration-300"
+                      style={{ color: isActive ? item.accent : "#94a3b8" }}
+                    >
+                      {item.subtitle}
+                    </p>
+
+                    {/* Title */}
+                    <h3
+                      className={`text-lg sm:text-xl font-extrabold transition-colors duration-300 ${isActive ? "text-white" : "text-slate-300 group-hover:text-white"
+                        }`}
+                    >
+                      {item.title}
+                    </h3>
+
+                    {/* Description — visible when active */}
+                    <AnimatePresence mode="wait">
+                      {isActive && (
+                        <motion.div
+                          key={item.id + "-desc"}
+                          initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                          animate={{ opacity: 1, height: "auto", marginTop: 12 }}
+                          exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                          transition={{ duration: 0.35, ease: "easeInOut" }}
+                        >
+                          <p className="text-slate-200 text-sm sm:text-base leading-relaxed mb-4 font-normal">
+                            {item.desc}
+                          </p>
+                          {/* Tags */}
+                          <div className="flex flex-wrap gap-2">
+                            {item.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="text-xs font-semibold px-3 py-1 rounded-full border"
+                                style={{
+                                  color: item.accent,
+                                  borderColor: item.accent + "50",
+                                  background: item.accent + "18",
+                                }}
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+
+                  {/* Arrow indicator */}
+                  <div
+                    className={`flex-shrink-0 mt-2 transition-all duration-300 ${isActive ? "text-white rotate-90" : "text-slate-600 group-hover:text-slate-400"
+                      }`}
+                  >
+                    <FiArrowRight className="w-5 h-5" />
+                  </div>
+                </div>
+              </button>
+            );
+          })}
+        </motion.div>
+
+        {/* ── RIGHT: Image Panel ── */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="relative"
+        >
+          {/* Glow aura */}
+          <div
+            className={`absolute -inset-4 rounded-[2rem] blur-[60px] opacity-25 bg-gradient-to-br ${activeItem.color} transition-all duration-700 pointer-events-none`}
+          />
+
+          {/* Image card shell */}
+          <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-[0_20px_80px_rgba(0,0,0,0.6)] bg-slate-950 flex flex-col">
+            {/* Top color accent bar */}
+            <div className={`h-1 flex-shrink-0 bg-gradient-to-r ${activeItem.color} w-full transition-all duration-500`} />
+
+            {/* AI dot indicators */}
+            <div className="absolute top-4 right-4 z-10 flex gap-2">
+              {[0, 1, 2].map((d) => (
+                <motion.div
+                  key={d}
+                  animate={{ opacity: [0.4, 1, 0.4] }}
+                  transition={{ repeat: Infinity, duration: 1.5, delay: d * 0.4 }}
+                  className="w-2 h-2 rounded-full"
+                  style={{ background: activeItem.accent }}
+                />
+              ))}
+            </div>
+
+            {/* Image viewport — 100% visible, crisp white theme dashboard */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, scale: 1.03 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.97 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="w-full bg-slate-900 overflow-hidden"
+              >
+                <Image
+                  src={activeItem.image}
+                  alt={activeItem.imageAlt}
+                  width={900}
+                  height={600}
+                  className="w-full h-auto object-contain rounded-t-xl"
+                  quality={95}
+                />
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Dedicated Footer Caption Bar below image (No Overlap) */}
+            <div className="bg-slate-900/95 border-t border-white/10 p-4 flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <div className={`w-9 h-9 rounded-xl bg-gradient-to-br ${activeItem.color} flex items-center justify-center shadow-md flex-shrink-0`}>
+                  <activeItem.icon className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="text-white font-extrabold text-sm leading-tight">{activeItem.title}</p>
+                  <p className="text-slate-400 text-xs mt-0.5">{activeItem.subtitle}</p>
+                </div>
+              </div>
+              <span className="text-xs font-bold px-3 py-1 rounded-full text-slate-300 bg-white/10 border border-white/15">
+                Live AI Engine
+              </span>
+            </div>
+          </div>
+
+          {/* Floating AI decoration — top-left */}
+          <motion.div
+            animate={{ y: [-6, 6, -6] }}
+            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+            className="absolute -top-5 -left-5 w-16 h-16 rounded-2xl border border-white/15 bg-slate-900/90 backdrop-blur-md flex items-center justify-center shadow-2xl hidden sm:flex z-20"
+          >
+            <FiCpu className="w-7 h-7 text-cyan-400" />
+          </motion.div>
+          {/* Floating AI decoration — bottom-right */}
+          <motion.div
+            animate={{ y: [6, -6, 6] }}
+            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
+            className="absolute -bottom-4 -right-4 w-14 h-14 rounded-2xl border border-white/15 bg-slate-900/90 backdrop-blur-md flex items-center justify-center shadow-2xl hidden sm:flex z-20"
+          >
+            <FiActivity className="w-5 h-5 text-purple-400" />
+          </motion.div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
+
 export default function NetSuiteNextAIPage() {
   const color = useMotionValue(COLORS_TOP[0]);
   const [activeModule, setActiveModule] = useState("accounting");
@@ -105,18 +343,106 @@ export default function NetSuiteNextAIPage() {
   const boxShadow = useMotionTemplate`0px 4px 24px ${color}`;
 
   const industries = [
-    { id: "media", name: "Advertising, Media & Publishing", description: "Streamline bid-to-bill workflows and improve billing accuracy with AI-driven contract intelligence.", gradient: "from-blue-500 to-cyan-400" },
-    { id: "construction", name: "Construction & Energy", description: "Unify project management, financials, and operations in one AI-powered unified cloud ERP system.", gradient: "from-amber-500 to-orange-400" },
-    { id: "consulting", name: "Consulting & IT Services", description: "Maximize resource utilization, project margins, and billing accuracy with AI resource allocation.", gradient: "from-purple-500 to-indigo-400" },
-    { id: "consumer", name: "Consumer Goods", description: "Stay ahead of demand with AI that predicts supply chain shifts, adjusts reorders, and optimizes inventory in real time.", gradient: "from-emerald-500 to-teal-400" },
-    { id: "financial", name: "Financial Services", description: "Forecast performance, manage multi-currency risks, and accelerate month-end close with AI-powered planning.", gradient: "from-blue-600 to-indigo-500" },
-    { id: "food", name: "Food & Beverage", description: "Anticipate ingredient demand, reduce perishability waste, and optimize distributor supply with AI planning.", gradient: "from-lime-500 to-emerald-400" },
-    { id: "healthcare", name: "Healthcare & MedTech", description: "Gain operational visibility while simplifying compliance reviews, HIPAA audits, and patient billing with AI summaries.", gradient: "from-cyan-500 to-blue-400" },
-    { id: "hospitality", name: "Hospitality & Leisure", description: "Run reservations, property management, and guest services with unified, AI-driven daily revenue operations.", gradient: "from-rose-500 to-pink-400" },
-    { id: "industrial", name: "Industrial & Equipment", description: "Manage production, warehousing, asset maintenance, and field service to minimize unplanned downtime.", gradient: "from-slate-500 to-zinc-400" },
-    { id: "life", name: "Life Sciences & Biotech", description: "Gain visibility across clinical trials and commercial operations with AI-assisted, audit-ready compliance reporting.", gradient: "from-indigo-500 to-violet-400" },
-    { id: "nonprofit", name: "Nonprofit & Social Impact", description: "Unify donor data, grant tracking, and fund accounting to optimize resources and maximize mission impact.", gradient: "from-teal-500 to-emerald-400" },
-    { id: "software", name: "Software & Technology", description: "Manage SaaS products, subscription metrics, ARR/MRR, and ASC 606 revenue recognition with AI analytics.", gradient: "from-violet-500 to-purple-400" },
+    {
+      id: "software",
+      name: "Software & Technology",
+      description: "Automate complex subscription billing, ASC 606 revenue recognition, and multi-entity financial consolidations.",
+      gradient: "from-purple-500 to-indigo-500",
+      image: "/images/industries/software-tech-main.png",
+      link: "/netsuite/industries/software",
+      icon: FiCpu,
+      tag: "Technology",
+    },
+    {
+      id: "it-services",
+      name: "IT & Professional Services",
+      description: "Maximize resource utilization, project accounting, time & expense tracking, and automated client billing.",
+      gradient: "from-blue-500 to-cyan-500",
+      image: "/images/industries/it-services-main.png",
+      link: "/netsuite/industries/it-services",
+      icon: FiUsers,
+      tag: "Services",
+    },
+    {
+      id: "wholesale",
+      name: "Wholesale Distribution",
+      description: "Automate procurement, WMS warehouse operations, demand planning, and multi-channel order fulfillment.",
+      gradient: "from-amber-500 to-orange-500",
+      image: "/images/industries/Wholesale-Distribution-compressed.webp",
+      link: "/netsuite/industries/wholesale",
+      icon: FiGrid,
+      tag: "Distribution",
+    },
+    {
+      id: "advertising",
+      name: "Advertising & Marketing",
+      description: "Integrate campaign project management and agency financials for real-time campaign margin profitability.",
+      gradient: "from-rose-500 to-pink-500",
+      image: "/images/industries/marketing.jpg",
+      link: "/netsuite/industries/advertising-marketing",
+      icon: FiGlobe,
+      tag: "Agencies",
+    },
+    {
+      id: "media",
+      name: "Media & Publishing",
+      description: "Manage advertising sales, subscriber circulation, ASC 606 revenue recognition, and digital media operations.",
+      gradient: "from-violet-500 to-purple-500",
+      image: "/images/industries/media.webp",
+      link: "/netsuite/industries/media",
+      icon: FiLayers,
+      tag: "Media",
+    },
+    {
+      id: "retail",
+      name: "Retail & E-Commerce",
+      description: "Connect e-commerce, POS, real-time inventory, and intelligent order routing into a unified omnichannel experience.",
+      gradient: "from-emerald-500 to-teal-500",
+      image: "/images/industries/ecommerce.webp",
+      link: "/netsuite/industries/retail",
+      icon: FiTrendingUp,
+      tag: "Omnichannel",
+    },
+    {
+      id: "transport",
+      name: "Transportation & Logistics",
+      description: "Manage fleet operations, route optimization, automated dispatch, and real-time freight financial management.",
+      gradient: "from-cyan-500 to-blue-500",
+      image: "/images/industries/logistics-means-transport-together-with-technological-futuristic-holograms (2)_11zon.jpg",
+      link: "/netsuite/industries/transport",
+      icon: FiGlobe,
+      tag: "Logistics",
+    },
+    {
+      id: "manufacturing",
+      name: "Manufacturing",
+      description: "Connect shop floor operations, WIP routing, quality assurance control, and supply chain on a single platform.",
+      gradient: "from-slate-600 to-zinc-500",
+      image: "/images/industries/manufacture-compressed-1.webp",
+      link: "/netsuite/industries/manufacturing",
+      icon: FiGrid,
+      tag: "Manufacturing",
+    },
+    {
+      id: "telecom",
+      name: "Telecom Industry",
+      description: "Manage high-volume usage billing, OSS/BSS integrations, ASC 606 revenue recognition, and global expansion.",
+      gradient: "from-blue-600 to-indigo-600",
+      image: "/images/industries/telecom-industry.webp",
+      link: "/netsuite/industries/telecom",
+      icon: FiZap,
+      tag: "Telecom",
+    },
+    {
+      id: "financial",
+      name: "Financial Services",
+      description: "Streamline multi-entity consolidation, GAAP/IFRS compliance, risk management controls, and automated reporting.",
+      gradient: "from-teal-500 to-emerald-500",
+      image: "/images/industries/financial-services-industry.webp",
+      link: "/netsuite/industries/financial-services",
+      icon: FiBarChart2,
+      tag: "Finance",
+    },
   ];
 
   const erpModules = [
@@ -292,7 +618,7 @@ export default function NetSuiteNextAIPage() {
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#13FFAA] bg-[#13FFAA]/10 px-4 py-1.5 rounded-full border border-[#13FFAA]/30">
               AI IS THE NEW UI
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black text-white mt-5 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-5xl font-medium text-white mt-5 tracking-tight leading-tight">
               Ask Oracle is at the Center of NetSuite Next
             </h2>
             <p className="text-slate-400 mt-4 text-base sm:text-lg leading-relaxed">
@@ -300,93 +626,109 @@ export default function NetSuiteNextAIPage() {
             </p>
           </div>
 
-          {/* Three pillars — glassmorphic cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {[
-              { icon: FiMessageSquare, color: "from-cyan-500 to-blue-500", title: "Ask in Your Own Words", desc: "Search, navigate, and analyze business data using plain natural language — no SQL or saved searches required.", glow: "rgba(6,182,212,0.15)" },
-              { icon: FiShield, color: "from-purple-500 to-indigo-500", title: "Trust Every Answer", desc: "Source citations on every AI response — validate, audit, and act with confidence backed by your verified General Ledger.", glow: "rgba(168,85,247,0.15)" },
-              { icon: FiZap, color: "from-emerald-500 to-teal-500", title: "An Easier Way to Work", desc: "Clean, intuitive interface with smarter search, streamlined workflows, and automated financial summaries for faster decisions.", glow: "rgba(16,185,129,0.15)" },
-            ].map((card, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12 }}
-                whileHover={{ y: -6 }}
-                className="relative p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md hover:border-white/20 transition-all duration-300 overflow-hidden group"
-                style={{ boxShadow: `0 0 60px ${card.glow}` }}
-              >
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-white/5 to-transparent rounded-3xl" />
-                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-6 shadow-lg`}>
-                  <card.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-extrabold text-white mb-3">{card.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{card.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+          {/* Interactive Benefits — Left tabs + Right image */}
+          <AskOracleFeatures />
 
-          {/* Ask Oracle Laptop Showcase */}
+          {/* Ask Oracle Laptop Showcase with Animated Background Tech Graphics */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="relative max-w-5xl mx-auto"
           >
-            {/* Outer glow */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 blur-[60px] rounded-[3rem] pointer-events-none" />
+            {/* Background AI Tech Graphics behind Laptop */}
+            <div className="absolute -inset-12 -z-10 pointer-events-none overflow-hidden rounded-[4rem]">
+              {/* Multi-layer animated glowing aura */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 via-blue-600/35 to-purple-600/30 blur-[110px] animate-pulse" />
 
-            {/* Card shell — same bg image from netsuite_ai_hero style */}
-            <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.8)]">
+              {/* Tech Circuit / Grid Lines SVG pattern */}
+              <svg className="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="laptop-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" />
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#laptop-grid)" />
+              </svg>
 
-              {/* Background: generated dark office environment */}
-              <div className="relative w-full">
-                <Image
-                  src="/images/lap/ask_oracle_laptop_mockup.webp"
-                  alt="Ask Oracle AI — NetSuite Next Dashboard on Laptop in Dark Office"
-                  width={1200}
-                  height={1200}
-                  className="w-full h-auto object-cover"
-                  quality={88}
-                />
-
-                {/* Dashboard composited onto the laptop screen area */}
-                {/* Precise overlay positioned over the MacBook screen in the generated image */}
-                <div
-                  className="absolute"
-                  style={{
-                    top: "24%",
-                    left: "21.5%",
-                    width: "57%",
-                    height: "43%",
-                    borderRadius: "4px",
-                    overflow: "hidden",
+              {/* Floating Animated Sparks / Twinkling Stars */}
+              {[
+                { top: "10%", left: "8%", size: "w-3 h-3", color: "#13FFAA", delay: 0 },
+                { top: "18%", right: "6%", size: "w-3.5 h-3.5", color: "#CE84CF", delay: 1 },
+                { bottom: "14%", left: "6%", size: "w-3 h-3", color: "#1E67C6", delay: 2 },
+                { bottom: "20%", right: "10%", size: "w-2.5 h-2.5", color: "#13FFAA", delay: 0.5 },
+                { top: "45%", left: "2%", size: "w-2.5 h-2.5", color: "#CE84CF", delay: 1.5 },
+                { top: "50%", right: "2%", size: "w-3 h-3", color: "#1E67C6", delay: 2.2 },
+              ].map((star, sIdx) => (
+                <motion.div
+                  key={sIdx}
+                  animate={{
+                    scale: [1, 1.8, 1],
+                    opacity: [0.3, 1, 0.3],
+                    rotate: [0, 180, 360],
                   }}
-                >
+                  transition={{ repeat: Infinity, duration: 3.5, delay: star.delay, ease: "easeInOut" }}
+                  className={`absolute ${star.size} rounded-full blur-[1px]`}
+                  style={{
+                    top: star.top,
+                    left: star.left,
+                    right: star.right,
+                    bottom: star.bottom,
+                    backgroundColor: star.color,
+                    boxShadow: `0 0 16px ${star.color}`,
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Floating Outer Graphic Badges (Outside the Card) */}
+            <div className="absolute -top-5 -left-4 sm:-top-6 sm:-left-6 bg-slate-900/95 text-white px-4 py-2 rounded-2xl border border-cyan-400/40 shadow-2xl flex items-center gap-2.5 backdrop-blur-xl z-20">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#13FFAA] animate-ping" />
+              <span className="text-xs font-black tracking-wide text-cyan-300">Ask Oracle AI Core Active</span>
+            </div>
+
+            <div className="absolute -top-5 -right-4 sm:-top-6 sm:-right-6 bg-slate-900/95 text-white px-4 py-2 rounded-2xl border border-purple-400/40 shadow-2xl flex items-center gap-2 backdrop-blur-xl z-20 hidden sm:flex">
+              <FiShield className="text-[#CE84CF] w-4 h-4" />
+              <span className="text-xs font-black text-purple-200">100% General Ledger Verified</span>
+            </div>
+
+            <div className="absolute -bottom-5 -left-4 sm:-bottom-6 sm:-left-6 bg-slate-900/95 text-white px-4 py-2 rounded-2xl border border-emerald-400/40 shadow-2xl flex items-center gap-2 backdrop-blur-xl z-20 hidden sm:flex">
+              <FiZap className="text-emerald-400 w-4 h-4" />
+              <span className="text-xs font-black text-emerald-200">Autonomous ERP Intelligence</span>
+            </div>
+
+            {/* Outer Glowing Neon Border Ring + Card shell */}
+            <div className="p-[2px] rounded-[2rem] bg-gradient-to-r from-cyan-400/60 via-blue-500/70 to-purple-500/60 shadow-[0_0_60px_rgba(19,255,170,0.25)]">
+              <div className="relative rounded-[1.9rem] overflow-hidden border border-white/20 shadow-[0_30px_100px_rgba(0,0,0,0.9)] bg-slate-950 backdrop-blur-xl">
+
+                {/* High-res crystal clear large laptop showcasing NetSuite Next AI dashboard */}
+                <div className="relative w-full overflow-hidden">
                   <Image
-                    src="/images/lap/Next AI Dashboard.webp"
-                    alt="NetSuite Next AI Dashboard"
-                    fill
-                    className="object-cover object-top"
-                    quality={90}
+                    src="/images/lap/ask_oracle_laptop_perfect_composite.png"
+                    alt="Ask Oracle AI in Action — NetSuite Next AI Dashboard on Laptop with AI Graphics"
+                    width={1400}
+                    height={1400}
+                    className="w-full h-auto object-cover rounded-[1.9rem] transition-transform duration-700 hover:scale-[1.008]"
+                    quality={100}
+                    priority
+                    unoptimized
                   />
                 </div>
-              </div>
 
-              {/* Bottom gradient + text overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent pointer-events-none" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div>
-                  <p className="text-white font-bold text-lg">Ask Oracle in Action</p>
-                  <p className="text-slate-400 text-sm">Powered by Oracle AI, delivered by AGSuite</p>
+                {/* Bottom gradient + text overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 z-10">
+                  <div>
+                    <p className="text-white font-black text-lg sm:text-xl tracking-tight">Ask Oracle in Action</p>
+                    <p className="text-slate-300 text-xs sm:text-sm font-medium mt-0.5">Powered by Oracle AI, delivered by AGSuite</p>
+                  </div>
+                  <Link
+                    href="/netsuite/contact"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/15 hover:bg-white/25 text-white font-bold text-sm border border-white/30 backdrop-blur-md transition-all shrink-0 shadow-lg"
+                  >
+                    Learn More <FiArrowRight />
+                  </Link>
                 </div>
-                <Link
-                  href="/netsuite/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 backdrop-blur-md transition-all shrink-0"
-                >
-                  Learn More <FiArrowRight />
-                </Link>
               </div>
             </div>
           </motion.div>
@@ -404,7 +746,7 @@ export default function NetSuiteNextAIPage() {
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#CE84CF] bg-[#CE84CF]/10 px-4 py-1.5 rounded-full border border-[#CE84CF]/30">
               TAILORED INDUSTRY SOLUTIONS
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black text-white mt-5 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-5xl font-medium text-white mt-5 tracking-tight leading-tight">
               AI-Powered ERP for Every Industry
             </h2>
             <p className="text-slate-400 mt-4 text-base sm:text-lg">
@@ -412,33 +754,61 @@ export default function NetSuiteNextAIPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {industries.map((ind, i) => (
-              <motion.div
-                key={ind.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                whileHover={{ y: -5 }}
-                className="group relative p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between overflow-hidden"
-              >
-                <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${ind.gradient} opacity-60 group-hover:opacity-100 transition-opacity`} />
-                <div>
-                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${ind.gradient} flex items-center justify-center mb-4 shadow-md`}>
-                    <FiGrid className="w-4 h-4 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {industries.map((ind, i) => {
+              return (
+                <motion.div
+                  key={ind.id}
+                  initial="initial"
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.04 }}
+                  whileHover="hover"
+                  variants={{
+                    initial: { opacity: 0, y: 20 },
+                    hover: { y: -6, transition: { duration: 0.3 } },
+                  }}
+                  className="group relative rounded-2xl bg-white border border-gray-200/90 hover:border-blue-400/80 shadow-lg shadow-slate-900/5 hover:shadow-2xl hover:shadow-blue-500/15 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer"
+                >
+                  {/* Larger Top Image Banner (h-56 = 224px) for prominent crystal clear visuals */}
+                  <div className="relative w-full h-56 overflow-hidden bg-slate-100">
+                    <Image
+                      src={ind.image}
+                      alt={ind.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/15 to-transparent" />
+
+                    {/* Category Tag on Image */}
+                    <span className="absolute top-3 left-3 text-[11px] font-extrabold uppercase tracking-wider text-white bg-slate-900/85 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 shadow-md">
+                      {ind.tag}
+                    </span>
                   </div>
-                  <h3 className="text-base font-bold text-white mb-2 group-hover:text-white/90 transition-colors">
-                    {ind.name}
-                  </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{ind.description}</p>
-                </div>
-                <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-white transition-colors">
-                  <span>Explore Industry Suite</span>
-                  <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-                </div>
-              </motion.div>
-            ))}
+
+                  {/* Compact Card Content Body (Takes less space) */}
+                  <div className="p-5 pt-4 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-lg font-extrabold text-[#001e4d] mb-1.5 group-hover:text-blue-600 transition-colors">
+                        {ind.name}
+                      </h3>
+                      <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium line-clamp-2">
+                        {ind.description}
+                      </p>
+                    </div>
+
+                    {/* Explore Link */}
+                    <Link
+                      href={ind.link}
+                      className="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-slate-500 group-hover:text-blue-600 transition-colors"
+                    >
+                      <span>Explore Industry Suite</span>
+                      <FiArrowRight className="group-hover:translate-x-1.5 transition-transform duration-300" />
+                    </Link>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -515,7 +885,7 @@ export default function NetSuiteNextAIPage() {
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#13FFAA] bg-[#13FFAA]/10 px-4 py-1.5 rounded-full border border-[#13FFAA]/30">
               UNIFIED ARCHITECTURE
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black text-white mt-5 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-5xl font-medium text-white mt-5 tracking-tight leading-tight">
               AI Built Into Your ERP, Not Bolted On
             </h2>
             <p className="text-slate-400 mt-4 text-base sm:text-lg">
@@ -530,11 +900,10 @@ export default function NetSuiteNextAIPage() {
                 key={mod.id}
                 onClick={() => setActiveModule(mod.id)}
                 type="button"
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer border ${
-                  activeModule === mod.id
-                    ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg border-blue-500/50"
-                    : "bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 border-white/10"
-                }`}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer border ${activeModule === mod.id
+                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg border-blue-500/50"
+                  : "bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 border-white/10"
+                  }`}
               >
                 <mod.icon className="w-4 h-4" />
                 {mod.label}
@@ -588,12 +957,13 @@ export default function NetSuiteNextAIPage() {
                 </div>
 
                 {/* Image Right */}
-                <div className="relative min-h-[280px] lg:min-h-0 overflow-hidden border-t lg:border-t-0 lg:border-l border-white/10">
+                <div className="relative min-h-[300px] lg:min-h-0 overflow-hidden border-t lg:border-t-0 lg:border-l border-white/10">
                   <Image
-                    src="/images/lap/netsuite_cfo_predictive_cashflow.webp"
+                    src="/images/lap/netsuite_module_showcase_hd.png"
                     alt={`NetSuite ${activeModuleData?.label} Module Preview`}
                     fill
                     className="object-cover"
+                    quality={98}
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-transparent to-transparent lg:from-transparent lg:via-transparent" />
                 </div>
@@ -624,14 +994,14 @@ export default function NetSuiteNextAIPage() {
                 gradient: "from-blue-500 to-cyan-500",
                 title: "Built for Scale and Security",
                 desc: "Powered by Oracle Cloud Infrastructure (OCI), NetSuite Next delivers enterprise-grade security and resilience — optimized for real-time, AI-driven workload execution.",
-                img: "/images/lap/netsuite_cfo_ai_dashboard.webp",
+                img: "/images/lap/netsuite_scale_security_hd.png",
               },
               {
                 icon: FiCpu,
                 gradient: "from-purple-500 to-indigo-500",
                 title: "Built to Extend",
                 desc: "Build custom autonomous agents, connect 3rd party systems, and create tailored ERP experiences on the SuiteCloud platform with AGSuite's certified developers.",
-                img: "/images/lap/netsuite_cfo_consolidation_dashboard.webp",
+                img: "/images/lap/netsuite_built_to_extend_hd.png",
               },
             ].map((item, i) => (
               <motion.div
@@ -642,12 +1012,13 @@ export default function NetSuiteNextAIPage() {
                 transition={{ delay: i * 0.15 }}
                 className="group rounded-3xl bg-white/5 border border-white/10 hover:border-white/20 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-56 overflow-hidden">
                   <Image
                     src={item.img}
                     alt={item.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    quality={98}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
                 </div>
@@ -701,11 +1072,12 @@ export default function NetSuiteNextAIPage() {
             className="border border-gray-700 rounded-[3rem] p-12 lg:p-24 relative overflow-hidden"
           >
             <Image
-              src="/images/lap/group1.webp"
+              src="/images/lap/netsuite_final_cta_bg_hd.png"
               alt="NetSuite Next — AGSuite Implementation"
               fill
               className="object-cover"
               sizes="100vw"
+              quality={98}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-transparent" />
             <div className="absolute top-0 right-0 w-72 h-72 bg-blue-500/15 blur-3xl -mr-36 -mt-36" />
