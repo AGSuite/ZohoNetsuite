@@ -127,6 +127,13 @@ export const navItemsZoho: NavSection[] = [
                     description: "All the tools you need for sales, HR, operations & automation.",
                     categories: [
                         {
+                            title: "Suites",
+                            items: [
+                                { label: "Zoho One", href: "/zoho-one", icon: Box },
+                                { label: "Zoho ERP", href: "/zoho-erp", icon: Layers },
+                            ]
+                        },
+                        {
                             title: "Sales",
                             items: [
                                 { label: "Zoho CRM", href: "/zoho-crm", icon: Database },
@@ -202,13 +209,6 @@ export const navItemsZoho: NavSection[] = [
                                 { label: "Zoho IT Management", href: "/zoho-it-management", icon: Server },
                             ]
                         },
-                        {
-                            title: "Suites",
-                            items: [
-                                { label: "Zoho One", href: "/zoho-one", icon: Box },
-                                { label: "Zoho ERP", href: "/zoho-erp", icon: Layers },
-                            ]
-                        }
                     ]
                 }
             }
