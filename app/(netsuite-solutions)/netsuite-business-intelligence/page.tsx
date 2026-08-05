@@ -255,7 +255,7 @@ export default function NetSuiteBIPage() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  NetSuite Business Intelligence & Analytics
+                  Turn Business Data into Strategic Growth with NetSuite Business Intelligence
                 </span>
               </motion.h1>
 
@@ -272,7 +272,7 @@ export default function NetSuiteBIPage() {
                 transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                Turn your ERP data into a competitive advantage — real-time dashboards, AI-powered forecasting, and self-service analytics built directly into your NetSuite platform.
+                Unlock the power of your data with NetSuite Business Intelligence — delivering real-time dashboards, AI insights, and predictive analytics from a single source of truth.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
@@ -452,15 +452,15 @@ export default function NetSuiteBIPage() {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  Gain Real-Time Insights with NetSuite Business Intelligence.
+                  See Beyond the Numbers with NetSuite Business Intelligence
                 </h2>
               </div>
               <div className="space-y-2 my-auto pt-2 md:pt-4">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite Business Intelligence (BI) provides built-in analytics and reporting within your ERP, eliminating the need for third-party data visualization tools. As a specialized NetSuite BI partner, we help you leverage real-time dashboards and AI-powered insights to turn raw operational data into clear, actionable business intelligence.
+                  NetSuite Business Intelligence empowers organizations to move beyond static reports and spreadsheets by delivering real-time operational intelligence directly within the ERP platform. By combining AI-driven analytics, interactive dashboards, and role-based insights, it helps leaders identify trends, monitor performance, and make proactive business decisions with confidence.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
-                  By centralizing data across finance, sales, and supply chain, NetSuite ensures a single version of truth. Empower your team with self-service analytics and automated reporting, allowing for faster decision-making and continuous performance optimization across your entire organization.
+                  With a unified view of financial, operational, sales, and customer data, teams can uncover hidden opportunities, improve forecasting accuracy, and respond faster to changing business conditions. NetSuite BI transforms everyday data into actionable insights that drive efficiency, agility, and sustainable growth.
                 </p>
               </div>
               <div className="pt-4 mt-auto">

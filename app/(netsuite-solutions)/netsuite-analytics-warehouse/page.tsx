@@ -95,14 +95,14 @@ export default function AnalyticsWarehousePage() {
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15] tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-teal-100 to-teal-400">
-                  NetSuite Analytics Warehouse (NSAW)
+                  Go Beyond ERP Reporting with NetSuite Analytics Warehouse (NSAW)
                 </span>
               </motion.h1>
               <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }}
                 className="h-[3px] bg-gradient-to-r from-teal-500 to-cyan-300 mb-5 rounded-full" />
               <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8">
-                Centralise data from NetSuite and 100+ external sources in a cloud-native analytics warehouse — then query, model, and visualise with enterprise BI tools at 10x the performance.
+                NetSuite Analytics Warehouse (NSAW) unifies NetSuite and external data into a single cloud analytics platform for a complete enterprise view. Powered by Oracle Analytics and AI insights, NSAW enables predictive forecasting and interactive dashboards to drive data-driven growth.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">

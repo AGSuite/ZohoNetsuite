@@ -139,7 +139,7 @@ export default function GlobalBusinessPage() {
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/80">NetSuite Global Business Management</span>
           </motion.nav>
- 
+
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-16 sm:mb-20">
 
             {/* LEFT */}
@@ -150,7 +150,7 @@ export default function GlobalBusinessPage() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  NetSuite Global Business Management
+                  Transform Global Complexity into Operational Clarity with NetSuite Global Business Management
                 </span>
               </motion.h1>
 
@@ -163,7 +163,7 @@ export default function GlobalBusinessPage() {
                 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                Manage multiple subsidiaries, currencies, and tax regulations from a single cloud platform — with real-time visibility across 200+ countries and 190+ currencies.
+                Manage global subsidiaries, currencies, tax regulations, and financial operations from one intelligent cloud platform with real-time visibility across 200+ countries. Powered by AI insights, NetSuite helps multinational businesses streamline operations and simplify compliance.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
@@ -337,15 +337,15 @@ export default function GlobalBusinessPage() {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  Scale Globally with NetSuite OneWorld.
+                  NetSuite OneWorld: Smarter Global Business Management for Multi-Entity Enterprises
                 </h2>
               </div>
               <div className="space-y-2 my-auto pt-2 md:pt-4">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite OneWorld is the industry standard for NetSuite Global Business Management, enabling multinational organizations to manage diverse legal entities and subsidiaries from a single platform. As a specialized NetSuite Global Business partner, we help you unify operations across 200+ countries with automated intercompany eliminations and consolidated financial reporting.
+                  Oracle NetSuite OneWorld enables multinational organizations to manage subsidiaries, financials, currencies, and tax compliance on a single unified cloud platform. Built for growing enterprises, OneWorld eliminates fragmented systems and delivers real-time visibility across global entities.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
-                  With support for 190+ currencies and 100+ tax jurisdictions, OneWorld ensures local compliance while providing real-time global visibility. Eliminate fragmented systems and manual roll-ups, allowing your executive team to make data-driven decisions based on a single, unified version of the truth.
+                  Supporting 200+ countries, 190+ currencies, and 100+ tax jurisdictions, NetSuite OneWorld streamlines intercompany transactions, automates consolidation, and simplifies global compliance. Powered by intelligent automation and analytics, businesses can scale international operations with confidence.
                 </p>
               </div>
               <div className="pt-4 mt-auto">

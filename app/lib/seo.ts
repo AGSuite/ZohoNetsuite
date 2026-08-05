@@ -1414,5 +1414,40 @@ export const INDUSTRY_PAGES: Record<
     "keywords": ["Zoho Industries", "CRM Solutions", "Industry Automation", "Zoho Partner"],
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/smart-commission-app": {
+    "title": "NetSuite Smart Commission App — Automated Sales Commission | AGSuite",
+    "description": "Automate every sales commission calculation natively inside NetSuite. Multi-tier plans, quota tracking, manager approvals, and real-time rep dashboards.",
+    "keywords": ["NetSuite Smart Commission", "NetSuite Sales Commission App", "Commission Automation NetSuite", "AGSuite Smart Commission"],
+    "category": "Addon Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/netsuite-data-backup-solution": {
+    "title": "NetSuite India Data Backup Solution — MCA Rule 3 Compliance | AGSuite",
+    "description": "Stay fully compliant with MCA Rule 3 by securely backing up your global NetSuite data to Indian servers daily. Encrypted, automated daily sync via Zoho Books.",
+    "keywords": ["NetSuite Data Backup", "MCA Rule 3 Compliance NetSuite", "NetSuite India Backup", "AGSuite NetSuite Backup"],
+    "category": "Addon Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/magento-2-netsuite-connector": {
+    "title": "NetSuite Magento Connector — Adobe Commerce Integration | AGSuite",
+    "description": "Connect Adobe Commerce (Magento) with NetSuite ERP for unified B2B and B2C operations — orders, multi-source inventory, catalog, tier pricing, and customers synced automatically.",
+    "keywords": ["NetSuite Magento Connector", "Adobe Commerce NetSuite Integration", "Magento ERP Sync", "AGSuite Magento Connector"],
+    "category": "Addon Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/amazon-netsuite-connector": {
+    "title": "NetSuite Amazon Connector — FBA & FBM Automated Sync | AGSuite",
+    "description": "Automate your entire Amazon business inside NetSuite — sync FBA and FBM orders, real-time inventory, settlement reports, and customers without manual export.",
+    "keywords": ["NetSuite Amazon Connector", "Amazon FBA NetSuite Integration", "Amazon Settlement Reconciliation", "AGSuite Amazon Connector"],
+    "category": "Addon Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
+  },
+  "/shopify-netsuite-connector": {
+    "title": "NetSuite Shopify Connector — Bi-Directional eCommerce Sync | AGSuite",
+    "description": "Connect your Shopify store to NetSuite ERP — sync orders, real-time inventory, fulfillments, customers, and returns automatically with zero manual data entry.",
+    "keywords": ["NetSuite Shopify Connector", "Shopify Plus NetSuite Integration", "Shopify ERP Sync", "AGSuite Shopify Connector"],
+    "category": "Addon Solutions",
+    "publishedTime": "2024-01-01T00:00:00Z"
   }
 };

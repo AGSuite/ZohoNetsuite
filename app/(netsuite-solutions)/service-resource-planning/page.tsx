@@ -165,40 +165,40 @@ export default function NetSuiteSRPPage() {
 
   const benefits = [
     {
-      title: "Unified Platform",
-      description: "Consolidate your entire services business on a single cloud platform, from opportunity to PSA to ERP.",
-      image: "/images/benefits/benefit_unified_platform.png",
-      points: ["One source of truth for projects and finance", "Eliminate siloed data between teams", "Real-time sync across all departments", "Single login for your entire organization"]
-    },
-    {
-      title: "Resource Optimization",
-      description: "Ensure the right people are working on the right projects based on skills, availability, and cost.",
+      title: "Global Resource Management",
+      description: "Optimize resource utilization across global teams, skills, and time zones with AI-powered insights.",
       image: "/images/benefits/benefit_gbm_processes.png",
-      points: ["Visualize resource capacity in real-time", "Skill-based resource matching", "Reduced bench time and burnout", "Optimal resource load balancing"]
+      points: ["AI-powered skill matching", "Cross-timezone visibility", "Real-time utilization tracking", "Global bench management"]
     },
     {
-      title: "Project Visibility",
-      description: "Access critical project metrics instantly with live dashboards and customizable reports.",
-      image: "/images/benefits/benefit_financial_visibility.png",
-      points: ["Live project health indicators", "Budget vs. Actuals tracking", "Drill-down to transaction details", "Automated stakeholder reporting"]
-    },
-    {
-      title: "Accurate Revenue Recognition",
-      description: "Automate complex revenue recognition rules to ensure compliance and accurate financial forecasting.",
-      image: "/images/benefits/benefit_sc_unified_commerce.png",
-      points: ["ASC 606 and IFRS 15 compliant", "Automated revenue schedules", "Integration with project milestones", "Reduce audit risks and manual effort"]
-    },
-    {
-      title: "Streamlined Billing",
-      description: "Accelerate billing cycles with flexible, automated invoicing tied directly to project activity.",
+      title: "Complex Billing Automation",
+      description: "Handle the most complex billing scenarios including outcome-based, recurring, and hybrid models.",
       image: "/images/benefits/benefit_crm_quote_to_cash.png",
-      points: ["Support for T&M, Fixed-Price, and Hybrid", "Automated milestone billing", "Consolidated client invoices", "Faster collection and improved cash flow"]
+      points: ["T&M, Fixed-Price, Hybrid billing", "Outcome-based models", "Automated invoice generation", "Client self-service portals"]
     },
     {
-      title: "Intelligent Automation",
-      description: "Take humans out of the administrative loop for repetitive, rules-based tasks.",
-      image: "/images/benefits/benefit_automated_close.png",
-      points: ["Automated time & expense approvals", "Workflow rules for project escalations", "AI-driven project demand forecasting", "Resource request and fulfillment automation"]
+      title: "Advanced Revenue Recognition",
+      description: "Automate revenue recognition compliant with ASC 606 and IFRS 15 for accurate financial forecasting.",
+      image: "/images/benefits/benefit_sc_unified_commerce.png",
+      points: ["ASC 606 and IFRS 15 compliant", "Percentage-of-completion", "Milestone-based recognition", "Reduce audit risk"]
+    },
+    {
+      title: "Global Operations",
+      description: "Run a unified services organization across multiple countries, currencies, and tax jurisdictions.",
+      image: "/images/benefits/benefit_gbm_subsidiaries.png",
+      points: ["Multi-currency & multi-entity", "Local tax compliance", "Consolidated reporting", "100+ country support"]
+    },
+    {
+      title: "Portfolio Management",
+      description: "Gain executive-level visibility across hundreds of concurrent projects and programs.",
+      image: "/images/benefits/benefit_financial_visibility.png",
+      points: ["Program-level dashboards", "Cross-project resource views", "Portfolio health indicators", "Risk & issue tracking"]
+    },
+    {
+      title: "Enterprise Security",
+      description: "Protect sensitive project and financial data with enterprise-grade security and role-based access.",
+      image: "/images/benefits/benefit_compliance_security.png",
+      points: ["Role-based access controls", "SOC 2 Type II certified", "Data encryption at rest & in transit", "Comprehensive audit trails"]
     },
   ];
 
@@ -275,7 +275,7 @@ export default function NetSuiteSRPPage() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  NetSuite SRP — Services Resource Planning
+                  Turn Projects into Profitable Growth with NetSuite SRP — Services Resource Planning
                 </span>
               </motion.h1>
 
@@ -292,7 +292,7 @@ export default function NetSuiteSRPPage() {
                 transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                Scale your service business with the world&apos;s first cloud-native NetSuite Solution that unites projects, resources, and financials on a single platform.
+                Transform service delivery with an intelligent cloud platform that unifies projects, resources, financials, and billing in one ecosystem. Powered by real-time AI insights, NetSuite SRP helps service organizations optimize utilization and improve project profitability.
               </motion.p>
 
               <motion.div
@@ -420,15 +420,15 @@ export default function NetSuiteSRPPage() {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  Optimize Projects with NetSuite Service Resource Planning.
+                  Connect Projects, People & Performance with AI-Driven NetSuite SRP
                 </h2>
               </div>
               <div className="space-y-2 my-auto pt-2 md:pt-4">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite SRP (Service Resource Planning) is a unified cloud solution designed to manage the entire services lifecycle—from initial opportunity and resource scheduling to project delivery and financial recognition. As a specialized NetSuite SRP partner, we help Professional Services organizations eliminate siloed data and bridge the gap between project teams and back-office finance.
+                  Oracle NetSuite SRP unifies project management, resource planning, time tracking, billing, and accounting on one intelligent cloud platform. Built for professional services and project-driven firms, it helps teams streamline delivery and eliminate operational silos.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
-                  By centralizing Professional Services Automation (PSA) with core ERP financials, NetSuite SRP provides real-time visibility into project health, resource utilization, and billable margins. Optimize your talent pool and ensure project success with a scalable platform that grows alongside your firm&apos;s global ambitions.
+                  Powered by real-time visibility and AI-driven insights, NetSuite SRP enables businesses to optimize resource allocation, improve project execution, and forecast revenue accurately. From project planning to revenue recognition, gain the agility and control needed to deliver successful projects and scale your services business with confidence.
                 </p>
               </div>
               <div className="pt-4 mt-auto">

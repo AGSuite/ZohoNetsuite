@@ -47,24 +47,46 @@ const ScrollFloat = ({
   const containerRef = useRef<HTMLHeadingElement>(null);
 
   const splitText = useMemo(() => {
+    if (!children) return null;
     const total = children.length;
-    return children.split('').map((char, index) => (
-      <span
-        className="char inline-block"
-        key={index}
-        style={{
-          color: lerpColor(fromColor, toColor, total > 1 ? index / (total - 1) : 0),
-        }}
-      >
-        {char === ' ' ? '\u00A0' : char}
-      </span>
-    ));
+    let globalCharIndex = 0;
+    const words = children.split(' ');
+
+    return words.map((word, wordIndex) => {
+      const charSpans = word.split('').map((char) => {
+        const charIdx = globalCharIndex++;
+        const color = lerpColor(fromColor, toColor, total > 1 ? charIdx / (total - 1) : 0);
+        return (
+          <span
+            className="char inline-block"
+            key={charIdx}
+            style={{ color }}
+          >
+            {char}
+          </span>
+        );
+      });
+
+      if (wordIndex < words.length - 1) {
+        globalCharIndex++;
+      }
+
+      return (
+        <span key={wordIndex} className="inline-block whitespace-nowrap">
+          {charSpans}
+          {wordIndex < words.length - 1 && (
+            <span className="inline-block">&nbsp;</span>
+          )}
+        </span>
+      );
+    });
   }, [children, fromColor, toColor]);
 
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
     const chars = el.querySelectorAll('.char');
+    if (!chars.length) return;
 
     const ctx = gsap.context(() => {
       // Never animate opacity — color is always visible, only transform & blur change
@@ -94,7 +116,7 @@ const ScrollFloat = ({
     }, el);
 
     return () => ctx.revert();
-  }, [animationDuration, end, start, scrub]);
+  }, [animationDuration, end, start, scrub, splitText]);
 
   return (
     <h3
@@ -102,7 +124,7 @@ const ScrollFloat = ({
       className={`relative overflow-hidden ${containerClassName}`}
       style={{ perspective: '800px', perspectiveOrigin: '50% 50%' }}
     >
-      <span style={{ display: 'flex', flexWrap: 'wrap', lineHeight: 'inherit' }}>
+      <span className="inline-block w-full">
         {splitText}
       </span>
     </h3>

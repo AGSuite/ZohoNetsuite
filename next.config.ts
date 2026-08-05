@@ -43,6 +43,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: '/netsuite/solutions', destination: '/netsuite-products', permanent: true },
       { source: '/netsuite/solutions/core-erp/erp', destination: '/netsuite-erp-solution', permanent: true },
       { source: '/netsuite/solutions/analytics/bi', destination: '/netsuite-business-intelligence', permanent: true },
       { source: '/netsuite/solutions/planning/main', destination: '/netsuite-planning-and-budgeting', permanent: true },
@@ -57,6 +58,12 @@ const nextConfig: NextConfig = {
       { source: '/netsuite/solutions/why-netsuite/main', destination: '/why-netsuite', permanent: true },
       { source: '/netsuite/solutions/project-management/srp', destination: '/service-resource-planning', permanent: true },
       { source: '/netsuite/solutions/specialized/india-localization', destination: '/india-localization-for-netsuite', permanent: true },
+      { source: '/netsuite/solutions/addons/india-localization', destination: '/india-localization-for-netsuite', permanent: true },
+      { source: '/netsuite/solutions/addons/smart-commission', destination: '/smart-commission-app', permanent: true },
+      { source: '/netsuite/solutions/addons/data-backup', destination: '/netsuite-data-backup-solution', permanent: true },
+      { source: '/netsuite/solutions/addons/connectors/magento2', destination: '/magento-2-netsuite-connector', permanent: true },
+      { source: '/netsuite/solutions/addons/connectors/amazon', destination: '/amazon-netsuite-connector', permanent: true },
+      { source: '/netsuite/solutions/addons/connectors/shopify', destination: '/shopify-netsuite-connector', permanent: true },
       // Zoho Redirects
       { source: '/zoho/solutions/finance/zoho-books', destination: '/zoho-books-accounting-software', permanent: true },
       { source: '/zoho/solutions/finance/zoho-inventory', destination: '/zoho-inventory-software', permanent: true },

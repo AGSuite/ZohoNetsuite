@@ -261,7 +261,7 @@ export default function SuiteProjectProPage() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  NetSuite SuiteProject Pro
+                  Scale Global Service Operations with NetSuite SuiteProject Pro
                 </span>
               </motion.h1>
 
@@ -278,7 +278,7 @@ export default function SuiteProjectProPage() {
                 transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                Enterprise professional services automation built for global organizations — managing thousands of projects, resources, and complex billing scenarios with ease.
+                NetSuite SuiteProject Pro (formerly OpenAir) is an advanced PSA platform that unifies project management, resource planning, accounting, and billing in one cloud system. Built for global teams, it provides real-time AI insights to optimize resource utilization and streamline service delivery.
               </motion.p>
 
               <motion.div
@@ -468,15 +468,15 @@ export default function SuiteProjectProPage() {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  Optimize Services with NetSuite SuiteProject Pro
+                  Transform Resource Planning into a Strategic Advantage with NetSuite SuiteProject Pro
                 </h2>
               </div>
               <div className="space-y-2 my-auto pt-2 md:pt-4">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite SuiteProject Pro is a specialized Professional Services Automation (PSA) platform designed for large-scale, global organizations. As a premier NetSuite SuiteProject Pro partner, we help businesses manage thousands of resources and complex multi-entity billing workflows within a single, high-performance system.
+                  NetSuite SuiteProject Pro provides complete control over resources, project delivery, and service performance. It enables businesses to manage allocation, execution, timesheets, billing, and accounting through a single connected platform.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
-                  By unifying project delivery with financial operations, NetSuite SuiteProject Pro provides deep visibility into global utilization and project margins. Eliminate manual data reconciliation and gain the real-time insights needed to optimize resource allocation and drive enterprise-wide profitability.
+                  With AI-powered forecasting and intelligent capacity planning, SuiteProject Pro aligns resources with demand, reduces bottlenecks, and boosts productivity. Real-time visibility into project progress and financials empowers service leaders to scale with confidence.
                 </p>
               </div>
               <div className="pt-4 mt-auto">

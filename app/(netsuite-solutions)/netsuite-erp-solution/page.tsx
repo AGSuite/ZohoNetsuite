@@ -153,7 +153,7 @@ export default function NetSuiteERPPage() {
               Home
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <Link href="/netsuite/solutions" className="text-blue-300 hover:text-white transition-colors">Solutions</Link>
+            <Link href="/netsuite-products" className="text-blue-300 hover:text-white transition-colors">Solutions</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/80">NetSuite ERP</span>
           </motion.nav>
@@ -174,7 +174,7 @@ export default function NetSuiteERPPage() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  NetSuite Enterprise Resource Planning (ERP)
+                  Eliminate Data Silos with AI-Powered NetSuite ERP
                 </span>
               </motion.h1>
 
@@ -191,7 +191,7 @@ export default function NetSuiteERPPage() {
                 transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                Join over 43,000 businesses that trust NetSuite to streamline operations, gain real-time visibility, and free up resources to adapt and innovate.
+                Join 43,000+ businesses using Oracle NetSuite ERP to unify finance, inventory, supply chain, and CRM on a single cloud platform. Empower your enterprise with AI-driven insights, automated workflows, and real-time operational visibility.
               </motion.p>
 
               <motion.div
@@ -325,10 +325,10 @@ export default function NetSuiteERPPage() {
               </div>
               <div className="space-y-2 my-auto pt-2 md:pt-4">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite ERP is an all-in-one cloud business management suite that unifies financials, inventory, orders, and CRM. As a premium NetSuite Solution Provider, we help businesses eliminate manual processes and gain real-time visibility into their entire operations through a single, scalable platform.
+                  Disconnected systems, manual processes, and limited visibility slow business growth. Oracle NetSuite ERP brings finance, operations, inventory, CRM, and business intelligence together into one intelligent cloud platform — helping organizations simplify operations, automate workflows, and make faster, data-driven decisions.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
-                  From advanced financial reporting to global business management, NetSuite provides the agility required to scale. It empowers organizations to improve efficiency, ensure regulatory compliance, and drive strategic growth with data-driven decision-making.
+                  Powered by real-time analytics and AI-driven insights, NetSuite ERP enables businesses to gain complete operational visibility, improve efficiency, and scale with confidence. From fast-growing startups to global enterprises, NetSuite delivers the agility, automation, and financial control modern businesses need to drive sustainable growth and stay ahead in a rapidly evolving market.
                 </p>
               </div>
               <div className="pt-4 mt-auto">

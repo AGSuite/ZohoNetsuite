@@ -159,6 +159,10 @@ export default function WhyNetsuitePage() {
               </motion.h1>
               <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }}
                 className="h-[3px] bg-gradient-to-r from-yellow-500 to-blue-300 mb-5 rounded-full" />
+              <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
+                className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8">
+                NetSuite is a cloud-based enterprise resource planning (ERP) suite that gives organizations everything they need to run their businesses efficiently and accelerate growth.
+              </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="mt-8">
                 <Link href="#contact-form" className="group inline-flex items-center gap-3 px-8 py-4 sm:px-10 sm:py-4.5 text-base font-bold rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
                   Get in Touch
@@ -259,7 +263,7 @@ export default function WhyNetsuitePage() {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-700 leading-tight">
-                  One Unified Cloud Platform to Run Your Entire Business
+                  What Is NetSuite ERP?
                 </h2>
               </div>
 

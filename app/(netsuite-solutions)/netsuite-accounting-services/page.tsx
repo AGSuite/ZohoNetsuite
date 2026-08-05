@@ -158,7 +158,7 @@ export default function AccountingSoftwarePage() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  NetSuite Cloud Accounting Software
+                  Close Faster. Work Smarter. Scale with NetSuite Cloud Accounting
                 </span>
               </motion.h1>
 
@@ -171,7 +171,7 @@ export default function AccountingSoftwarePage() {
                 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                Close the books faster, eliminate manual errors, and gain real-time financial visibility — all from the world&apos;s #1 cloud accounting platform trusted by 43,000+ businesses.
+                Automate financial operations, accelerate month-end close, and gain real-time visibility with Oracle NetSuite Cloud Accounting — trusted by 43,000+ businesses worldwide. Powered by AI-driven workflows, NetSuite helps finance teams eliminate manual tasks and make faster, data-backed decisions.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
@@ -347,15 +347,15 @@ export default function AccountingSoftwarePage() {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  NetSuite Accounting: Unified Cloud Financial Management for Scalable Growth
+                  Transform Financial Operations with AI-Powered NetSuite Cloud Accounting
                 </h2>
               </div>
               <div className="space-y-2 my-auto pt-2 md:pt-4">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite Cloud Accounting is a robust financial management solution that unifies your general ledger, AR, AP, and tax into a single cloud-based platform. As a trusted NetSuite implementation partner, we help organizations eliminate disconnected spreadsheets and achieve a single version of financial truth across their entire enterprise.
+                  Oracle NetSuite Cloud Accounting unifies your general ledger, AP, AR, tax, and financial reporting on a single intelligent cloud platform. Built for growing enterprises, NetSuite eliminates disconnected systems, automates workflows, and delivers real-time visibility across your financial operations.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
-                  With real-time visibility and automated financial workflows, your team can accelerate the month-end close, ensure global compliance, and deliver audit-ready reporting. Optimize your financial operations with a scalable system designed to support complex business models and international expansion.
+                  With AI insights, automated reconciliations, and live reporting, finance teams accelerate month-end close and make faster, data-driven decisions. NetSuite Accounting empowers organizations to streamline operations, strengthen financial control, and scale efficiently.
                 </p>
               </div>
               <div className="pt-4 mt-auto">

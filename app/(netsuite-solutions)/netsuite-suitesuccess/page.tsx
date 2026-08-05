@@ -94,14 +94,14 @@ export default function SuiteSuccessPage() {
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15] tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  NetSuite SuiteSuccess
+                  Go Live Faster. Scale Smarter. Succeed Sooner with NetSuite SuiteSuccess
                 </span>
               </motion.h1>
               <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }}
                 className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full" />
               <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8">
-                Zero to cloud in 100 days. A proven, industry-engineered methodology that delivers NetSuite with best practices built right in — faster, cheaper, and with far less risk.
+                NetSuite SuiteSuccess combines industry-leading practices and pre-configured solutions to help businesses go live faster and achieve measurable results sooner. Built on real-world processes, it reduces implementation risk and accelerates user adoption for long-term success.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
@@ -217,15 +217,15 @@ export default function SuiteSuccessPage() {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
-                  Deploy Cloud ERP Faster with SuiteSuccess.
+                  Start Strong. Scale Faster. Succeed with SuiteSuccess
                 </h2>
               </div>
               <div className="space-y-2 my-auto pt-2 md:pt-4">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite SuiteSuccess is a purpose-built industry cloud solution designed for rapid deployment. As a leading NetSuite SuiteSuccess partner, we provide pre-configured workflows, role-based dashboards, and industry KPIs that allow you to go live in as little as 100 days.
+                  NetSuite SuiteSuccess is a proven implementation framework that combines industry-specific best practices, pre-configured workflows, role-based dashboards, and intelligent KPIs to accelerate your cloud ERP journey. Designed to reduce complexity and speed up deployment, it helps organizations achieve faster time-to-value while minimizing implementation risks.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
-                  By leveraging thousands of successful global deployments, SuiteSuccess eliminates implementation risk and ensures your business follows industry best practices from day one. Scale your operations on a unified platform that evolves with your growth strategy.
+                  Built on insights from thousands of successful NetSuite deployments worldwide, SuiteSuccess provides a clear roadmap for digital transformation, enabling businesses to adopt proven processes from day one. With a scalable foundation and continuous optimization approach, organizations can confidently grow, adapt, and unlock long-term business value.
                 </p>
               </div>
               <div className="pt-4 mt-auto">

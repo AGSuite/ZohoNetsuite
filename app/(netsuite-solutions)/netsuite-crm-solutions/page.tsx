@@ -316,7 +316,7 @@ export default function NetSuiteCRMPage() {
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  NetSuite CRM — Customer Relationship Management
+                  Transform Customer Relationships with NetSuite CRM
                 </span>
               </motion.h1>
 
@@ -333,9 +333,7 @@ export default function NetSuiteCRMPage() {
                 transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                The only CRM natively unified with your ERP — giving sales,
-                marketing, and service a single 360° view of every customer,
-                from first touchpoint to paid invoice.
+                The only CRM natively unified with your ERP, Oracle NetSuite CRM gives sales, marketing, and support teams a complete 360° view of every customer interaction. Powered by real-time insights and automation, NetSuite CRM streamlines customer engagement and accelerates sales cycles from a single platform.
               </motion.p>
 
               <motion.div
@@ -474,15 +472,18 @@ export default function NetSuiteCRMPage() {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                  Drive Customer Success with NetSuite CRM.
+                  NetSuite CRM: Intelligent Customer Management on a Unified ERP Platform
                 </h2>
               </div>
               <div className="space-y-2 my-auto pt-2 md:pt-4">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite CRM is the only customer relationship management platform built natively on a unified ERP architecture. As a specialized NetSuite CRM solution provider, we help you eliminate data silos by connecting sales, marketing, and service teams through a single source of truth—from lead generation to final invoicing.
+                  Oracle NetSuite CRM connects sales, marketing, support, and financial data on a single cloud platform — eliminating data silos to provide a complete 360° view of every customer interaction.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
-                  By centralizing customer interactions and real-time orders in one dashboard, NetSuite CRM empowers your team to improve forecasting accuracy and deliver personalized experiences. Drive sustainable, data-driven growth with a platform designed to scale with your business needs.
+                  Built natively within NetSuite, it enables organizations to streamline lead management, improve forecasting, automate engagement, and deliver personalized experiences through real-time workflows.
+                </p>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  With unified customer intelligence and connected operations, NetSuite CRM empowers teams to strengthen customer relationships, improve collaboration, and accelerate sustainable revenue growth.
                 </p>
               </div>
               <div className="pt-4 mt-auto">

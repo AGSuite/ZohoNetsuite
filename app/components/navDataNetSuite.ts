@@ -108,7 +108,7 @@ export const navItemsNetSuite: NavSection[] = [
         children: [
             {
                 label: 'NETSUITE',
-                href: '/netsuite/solutions',
+                href: '/netsuite-products',
                 megaMenu: {
                     title: 'NetSuite Business Management Solutions',
                     description: 'Comprehensive ERP and business management platform',
@@ -184,19 +184,19 @@ export const navItemsNetSuite: NavSection[] = [
                             items: [
                                 {
                                     label: 'Indian Localization for NetSuite',
-                                    href: '/netsuite/solutions/addons/india-localization',
+                                    href: '/india-localization-for-netsuite',
                                     description: 'E-invoicing, GST & statutory compliance for India',
                                     icon: MapPin
                                 },
                                 {
                                     label: 'Smart Commission App',
-                                    href: '/netsuite/solutions/addons/smart-commission',
+                                    href: '/smart-commission-app',
                                     description: 'Automate complex partner & sales commission tracking',
                                     icon: Coins
                                 },
                                 {
                                     label: 'NetSuite Data Backup',
-                                    href: '/netsuite/solutions/addons/data-backup',
+                                    href: '/netsuite-data-backup-solution',
                                     description: 'Secure automated backup for your critical ERP data',
                                     icon: Database
                                 },
@@ -207,19 +207,19 @@ export const navItemsNetSuite: NavSection[] = [
                             items: [
                                 {
                                     label: 'Magento 2 NetSuite Connector',
-                                    href: '/netsuite/solutions/addons/connectors/magento2',
+                                    href: '/magento-2-netsuite-connector',
                                     description: 'Real-time sync between Magento storefront & NetSuite',
                                     icon: GitMerge
                                 },
                                 {
                                     label: 'Amazon NetSuite Connector',
-                                    href: '/netsuite/solutions/addons/connectors/amazon',
+                                    href: '/amazon-netsuite-connector',
                                     description: 'Automate Amazon FBA/FBM orders & inventory',
                                     icon: Share2
                                 },
                                 {
                                     label: 'Shopify NetSuite Connector',
-                                    href: '/netsuite/solutions/addons/connectors/shopify',
+                                    href: '/shopify-netsuite-connector',
                                     description: 'Seamless integration for Shopify & Shopify Plus',
                                     icon: Repeat
                                 },

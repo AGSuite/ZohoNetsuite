@@ -94,14 +94,14 @@ export default function NetSuiteEcommercePage() {
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15] tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  NetSuite SuiteCommerce Site Builder
+                  Turn Online Experiences into Revenue Growth with NetSuite SuiteCommerce
                 </span>
               </motion.h1>
               <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }}
                 className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full" />
               <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8">
-                Unified ecommerce connected directly to your ERP — deliver seamless B2B and B2C shopping experiences with real-time inventory, orders, and financials in one cloud platform.
+                NetSuite SuiteCommerce unifies your ecommerce storefront, ERP, inventory, order management, and financials on a single cloud platform. Deliver seamless B2B and B2C shopping experiences with real-time inventory visibility, intelligent fulfillment, and omnichannel growth.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
                 <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
@@ -218,15 +218,15 @@ export default function NetSuiteEcommercePage() {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-blue-500 leading-tight">
-                  Unify Your Commerce with SuiteCommerce.
+                  From Browsing to Buying — Deliver Seamless Commerce Experiences
                 </h2>
               </div>
               <div className="space-y-2 my-auto pt-2 md:pt-4">
                 <p className="text-base text-gray-600 leading-relaxed">
-                  NetSuite SuiteCommerce is a robust, unified ecommerce platform that seamlessly connects your online sales channel with your core ERP system. As a leading NetSuite SuiteCommerce implementation partner, we help businesses eliminate data silos by integrating inventory, CRM, and financials into a single, high-performance web storefront.
+                  NetSuite SuiteCommerce is a unified ecommerce platform that seamlessly connects your online store with inventory, order management, customer data, and financials on a single cloud platform. By eliminating disconnected systems and manual processes, businesses gain real-time visibility across their entire commerce operation while delivering consistent and personalized customer experiences.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed">
-                  Whether you are scaling B2B wholesale operations or high-volume B2C retail, SuiteCommerce provides the agility to deliver personalized shopping experiences across all devices. Optimize your order-to-cash process and gain real-time visibility into customer behavior to drive sustainable global growth.
+                  Powered by intelligent automation, real-time insights, and omnichannel capabilities, SuiteCommerce helps B2B and B2C businesses streamline order fulfillment, improve customer engagement, accelerate online sales, and scale digital commerce with confidence.
                 </p>
               </div>
               <div className="pt-4 mt-auto">
