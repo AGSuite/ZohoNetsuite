@@ -244,17 +244,17 @@ export default function ZohoHeroSlider() {
                 {/* Inner Ring of Products - Orbiting */}
                 <motion.div
                   animate={{ rotate: 360 }}
-                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                  transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
                   className="absolute inset-0 flex items-center justify-center"
                   style={{ willChange: 'transform' }}
                 >
                   {[
-                    { src: "/images/zoho logos/zoho Crm logo.png", angle: 0 },
-                    { src: "/images/zoho logos/zoho cliq logo.png", angle: 60 },
-                    { src: "/images/zoho logos/zoho desk logo.png", angle: 120 },
-                    { src: "/images/zoho logos/zoho finance logo.png", angle: 180 },
-                    { src: "/images/zoho logos/zoho maarkiting logo.png", angle: 240 },
-                    { src: "/images/zoho logos/zoho mail logo.png", angle: 300 }
+                    { src: "/images/zoho logos/zoho Crm logo.png", angle: 0, name: "Zoho CRM" },
+                    { src: "/images/zoho logos/zoho finance logo.png", angle: 60, name: "Zoho Books" },
+                    { src: "/images/zoho logos/zoho desk logo.png", angle: 120, name: "Zoho Desk" },
+                    { src: "/images/zoho logos/zoho_creator.png", angle: 180, name: "Zoho Creator" },
+                    { src: "/images/zoho logos/zoho_analytics.png", angle: 240, name: "Zoho Analytics" },
+                    { src: "/images/zoho logos/zoho mail logo.png", angle: 300, name: "Zoho Mail" }
                   ].map((logo, i) => (
                     <motion.div
                       key={`inner-${i}`}
@@ -266,14 +266,19 @@ export default function ZohoHeroSlider() {
                         y: Math.sin((logo.angle * Math.PI) / 180) * 145,
                       }}
                       transition={{ duration: 0.6, delay: 0.3 + i * 0.1, ease: "backOut" }}
-                      className="absolute z-10"
+                      className="absolute z-10 pointer-events-auto"
                     >
                       <motion.div
                         animate={{ rotate: -360 }}
-                        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                        className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-xl flex items-center justify-center p-4 border border-white/80"
+                        transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+                        className="flex flex-col items-center justify-center group"
                       >
-                        <Image src={logo.src} alt="logo" width={48} height={48} className="object-contain max-lg:w-auto max-lg:h-auto max-lg:max-w-full max-lg:max-h-full" style={{ width: 'auto', height: 'auto' }} sizes="48px" />
+                        <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-2xl shadow-[0_10px_25px_rgba(0,0,0,0.12)] flex items-center justify-center p-3 border border-gray-100 hover:scale-110 transition-transform">
+                          <Image src={logo.src} alt={logo.name} width={40} height={40} className="object-contain w-8 h-8 md:w-9 md:h-9" sizes="40px" />
+                        </div>
+                        <span className="mt-1 px-2 py-0.5 bg-white/95 backdrop-blur-md rounded-full text-[10px] md:text-[11px] font-extrabold text-gray-800 shadow-md border border-gray-100 whitespace-nowrap">
+                          {logo.name}
+                        </span>
                       </motion.div>
                     </motion.div>
                   ))}
@@ -282,17 +287,19 @@ export default function ZohoHeroSlider() {
                 {/* Outer Ring of Services - Orbiting (Counter-direction) */}
                 <motion.div
                   animate={{ rotate: -360 }}
-                  transition={{ duration: 65, repeat: Infinity, ease: "linear" }}
+                  transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
                   className="absolute inset-0 flex items-center justify-center"
                   style={{ willChange: 'transform' }}
                 >
                   {[
-                    { src: "/images/zoho logos/zoho people logo.png", angle: 30 },
-                    { src: "/images/zoho logos/zoho project logo.png", angle: 90 },
-                    { src: "/images/zoho logos/zoho sheets logo.png", angle: 150 },
-                    { src: "/images/zoho logos/zoho drive logo.png", angle: 210 },
-                    { src: "/images/zoho logos/zoho Crm logo.png", angle: 270 },
-                    { src: "/images/zoho logos/zoho finance logo.png", angle: 330 }
+                    { src: "/images/zoho logos/zoho people logo.png", angle: 0, name: "Zoho People" },
+                    { src: "/images/zoho logos/zoho project logo.png", angle: 45, name: "Zoho Projects" },
+                    { src: "/images/zoho logos/zoho cliq logo.png", angle: 90, name: "Zoho Cliq" },
+                    { src: "/images/zoho logos/zoho_inventory.png", angle: 135, name: "Zoho Inventory" },
+                    { src: "/images/zoho logos/zoho maarkiting logo.png", angle: 180, name: "Zoho Marketing" },
+                    { src: "/images/zoho logos/zoho_payroll.png", angle: 225, name: "Zoho Payroll" },
+                    { src: "/images/zoho logos/zoho drive logo.png", angle: 270, name: "Zoho WorkDrive" },
+                    { src: "/images/zoho logos/zoho_sign.png", angle: 315, name: "Zoho Sign" }
                   ].map((logo, i) => (
                     <motion.div
                       key={`outer-${i}`}
@@ -300,18 +307,23 @@ export default function ZohoHeroSlider() {
                       animate={{
                         opacity: 1,
                         scale: 1,
-                        x: Math.cos((logo.angle * Math.PI) / 180) * 235,
-                        y: Math.sin((logo.angle * Math.PI) / 180) * 235,
+                        x: Math.cos((logo.angle * Math.PI) / 180) * 240,
+                        y: Math.sin((logo.angle * Math.PI) / 180) * 240,
                       }}
-                      transition={{ duration: 0.6, delay: 1.0 + i * 0.1, ease: "backOut" }}
-                      className="absolute z-0"
+                      transition={{ duration: 0.6, delay: 0.8 + i * 0.1, ease: "backOut" }}
+                      className="absolute z-0 pointer-events-auto"
                     >
                       <motion.div
                         animate={{ rotate: 360 }}
-                        transition={{ duration: 65, repeat: Infinity, ease: "linear" }}
-                        className="w-12 h-12 md:w-16 md:h-16 bg-white/70 backdrop-blur-md rounded-xl shadow-lg flex items-center justify-center p-3 border border-white/50"
+                        transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
+                        className="flex flex-col items-center justify-center group"
                       >
-                        <Image src={logo.src} alt="logo" width={38} height={38} className="object-contain max-lg:w-auto max-lg:h-auto max-lg:max-w-full max-lg:max-h-full" style={{ width: 'auto', height: 'auto' }} sizes="38px" />
+                        <div className="w-12 h-12 md:w-14 md:h-14 bg-white/95 backdrop-blur-md rounded-xl shadow-[0_8px_20px_rgba(0,0,0,0.1)] flex items-center justify-center p-2.5 border border-white/80 hover:scale-110 transition-transform">
+                          <Image src={logo.src} alt={logo.name} width={34} height={34} className="object-contain w-7 h-7 md:w-8 md:h-8" sizes="34px" />
+                        </div>
+                        <span className="mt-1 px-1.5 py-0.5 bg-white/95 backdrop-blur-md rounded-full text-[9px] md:text-[10px] font-bold text-gray-800 shadow-sm border border-gray-100 whitespace-nowrap">
+                          {logo.name}
+                        </span>
                       </motion.div>
                     </motion.div>
                   ))}
