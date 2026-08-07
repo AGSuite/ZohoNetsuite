@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "NetSuite ERP Solution Provider | ERP Software | ERP System | AGSuite Technologies",
+  title: "NetSuite ERP Solution Provider | ERP Software | ERP System",
 
   description:
     "AGSuite Technologies is a trusted NetSuite ERP Solution Provider offering robust ERP Software, ERP Solutions, and ERP System services. We specialize in NetSuite ERP and NetSuite Financial Services to streamline your business operations.",

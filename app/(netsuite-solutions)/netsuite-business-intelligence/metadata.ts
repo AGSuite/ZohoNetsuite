@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "NetSuite Business Intelligence | NetSuite Partner | AGSuite Technologies",
+  title: "NetSuite Business Intelligence | NetSuite Partner",
 
   description:
     "AGSuite Technologies - NetSuite Business Intelligence Software (BI) is a data analysis process that organizations use to gain insights into business performance and improve operational decision-making and strategic.",

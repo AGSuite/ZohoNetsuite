@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "NetSuite Global Business Management Software - AGSuite Technologies",
+  title: "NetSuite Global Business Management Software",
 
   description:
     "Discover NetSuite global business management software at AGSuite Technologies. Expert solutions for your global business management software needs.",

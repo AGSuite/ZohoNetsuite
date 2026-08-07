@@ -455,7 +455,7 @@ export const NETSUITE_PAGES: Record<
   }
 > = {
   "/netsuite-suitesuccess": {
-    title: "SuiteSuccess Implementation Partner | AGSuite Technologies",
+    title: "SuiteSuccess Implementation Partner",
     description:
       "AGSuite Technologies is your trusted NetSuite SuiteSuccess Implementation Partner delivering rapid go-live, tailored setups, and end-to-end support for faster ROI and scalable growth.",
     keywords: ["NetSuite SuiteSuccess", "NetSuite implementation", "ERP go-live", "NetSuite partner India", "SuiteSuccess methodology", "AGSuite NetSuite"],
@@ -474,7 +474,7 @@ export const NETSUITE_PAGES: Record<
     ],
   },
   "/netsuite-planning-and-budgeting": {
-    title: "NetSuite Planning and Budgeting | NetSuite Financial Services| AGSuite Technologies",
+    title: "NetSuite Planning and Budgeting | NetSuite Financial Services",
     description:
       "Streamline your planning and budgeting processes and enhance forecast precision with NetSuite Planning and Budgeting. Leverage scenario planning and conduct what-if analyses to make informed decisions.",
     keywords: [
@@ -502,7 +502,7 @@ export const NETSUITE_PAGES: Record<
     ],
   },
   "/netsuite-erp-solution": {
-    title: "NetSuite ERP Solution Provider | ERP Software | ERP System | AGSuite Technologies",
+    title: "NetSuite ERP Solution Provider | ERP Software | ERP System",
     description:
       "AGSuite Technologies is a trusted NetSuite ERP Solution Provider offering robust ERP Software, ERP Solutions, and ERP System services. We specialize in NetSuite ERP and NetSuite Financial Services to streamline your business operations.",
     keywords: [
@@ -531,7 +531,7 @@ export const NETSUITE_PAGES: Record<
     ],
   },
   "/netsuite-crm-solutions": {
-    title: "NetSuite CRM Solution Provider | Best CRM Software for Business | AGSuite Technologies",
+    title: "NetSuite CRM Solution Provider | Best CRM Software for Business",
     description:
       "AGSuite is a leading NetSuite CRM Solution Provider offering powerful CRM software to help businesses stay connected with customers, streamline sales processes, and drive revenue growth. Discover advanced CRM solutions with our cloud CRM system and CRM application tailored to your needs.",
     keywords: ["NetSuite CRM", "sales force automation", "NetSuite customer management", "CRM ERP integration", "AGSuite CRM"],
@@ -550,7 +550,7 @@ export const NETSUITE_PAGES: Record<
     ],
   },
   "/netsuite-accounting-services": {
-    title: "Netsuite Accounting Services | netsuite implementation partners| AGSuite Technologies",
+    title: "Netsuite Accounting Services | netsuite implementation partners",
     description:
       "AGSuite is a leading Netsuite accounting service providers. NetSuite Financial management Planning is a cloud-based planning application that includes budgeting, forecasting, financial reporting, and analysis.",
     keywords: ["NetSuite accounting", "cloud accounting software", "NetSuite financials", "automated accounting", "AGSuite accounting"],
@@ -569,7 +569,7 @@ export const NETSUITE_PAGES: Record<
     ],
   },
   "/netsuite-analytics-warehouse": {
-    title: "NetSuite Analytics Warehouse (NSAW) | AGSuite Technologies",
+    title: "NetSuite Analytics Warehouse (NSAW)",
     description:
       "Unlock the power of the NetSuite Analytics Warehouse (NSAW) for comprehensive data management, seamless integration, and in-depth reporting. Centralize your business data for better insights and decision-making.",
     keywords: ["NetSuite Analytics Warehouse", "NetSuite BI", "business intelligence NetSuite", "data warehouse NetSuite", "AGSuite analytics"],
@@ -588,7 +588,7 @@ export const NETSUITE_PAGES: Record<
     ],
   },
   "/netsuite-business-intelligence": {
-    title: "NetSuite Business Intelligence | NetSuite Partner | AGSuite Technologies",
+    title: "NetSuite Business Intelligence | NetSuite Partner",
     description:
       "AGSuite Technologies - NetSuite Business Intelligence Software (BI) is a data analysis process that organizations use to gain insights into business performance and improve operational decision-making and strategic.",
     keywords: [
@@ -616,7 +616,7 @@ export const NETSUITE_PAGES: Record<
     ],
   },
   "/netsuite-suite-commerce-site-builder": {
-    title: "NetSuite Suite Commerce Site Builder | NetSuite SuiteSuccess Implementation Partner | AGSuite Technologies",
+    title: "NetSuite Suite Commerce Site Builder | NetSuite SuiteSuccess Implementation Partner",
     description:
       "AGSuite Provides NetSuite SuiteCommerce services in India & USA. Ecommerce software is complete package for integrating ecommerce websites. It helps to manages all transactions and customer interactions via the Web, mobile and social.",
     keywords: ["NetSuite SuiteCommerce", "NetSuite ecommerce", "B2B ecommerce ERP", "SuiteCommerce Site Builder", "AGSuite ecommerce"],
@@ -635,7 +635,7 @@ export const NETSUITE_PAGES: Record<
     ],
   },
   "/netsuite-open-air-solution": {
-    title: "NetSuite OpenAir Software Integration - AGSuite Technologies",
+    title: "NetSuite OpenAir Software Integration",
     description:
       "AGSuite Technologies specializes in NetSuite OpenAir software integration for efficient open-air project management solutions.",
     keywords: ["NetSuite SuiteProject Pro", "SuiteProject Pro", "professional services automation", "PSA software", "project management ERP", "AGSuite SuiteProject Pro", "NetSuite OpenAir"],
@@ -654,7 +654,7 @@ export const NETSUITE_PAGES: Record<
     ],
   },
   "/service-resource-planning": {
-    title: "Service Resource Planning | AGSuite Technologies",
+    title: "Service Resource Planning",
     description:
       "AGSuite Technologies -Services Resource Planning (SRP) Solution Tool helps you complete projects more quickly, decrease accounts receivable cycles, and generate invoices accurately and efficiently.",
     keywords: ["NetSuite SRP", "service resource planning", "professional services ERP", "resource management", "AGSuite SRP"],
@@ -673,7 +673,7 @@ export const NETSUITE_PAGES: Record<
     ],
   },
   "/global-business-management": {
-    title: "NetSuite Global Business Management Software - AGSuite Technologies",
+    title: "NetSuite Global Business Management Software",
     description:
       "Discover NetSuite global business management software at AGSuite Technologies. Expert solutions for your global business management software needs.",
     keywords: ["NetSuite global business management", "multi-subsidiary ERP", "NetSuite multi-currency", "international ERP", "AGSuite GBM"],
@@ -692,7 +692,7 @@ export const NETSUITE_PAGES: Record<
     ],
   },
   "/india-localization-for-netsuite": {
-    title: "India Tax Solution | Accounting & Taxation services - AGSuite Technologies",
+    title: "India Tax Solution | Accounting & Taxation services",
     description:
       "AGSuite Technologies offers comprehensive tax solutions, India tax solution, and Accounting & Taxation services. Discover expert tax solutions tailored to your needs.",
     keywords: ["NetSuite India localization", "NetSuite GST", "NetSuite TDS", "Indian ERP compliance", "AGSuite India", "India Tax Solution"],
@@ -711,7 +711,7 @@ export const NETSUITE_PAGES: Record<
     ],
   },
   "/artificial-intelligence-ai": {
-    title: "Artificial Intelligence in NetSuite | AGSuite Technologies",
+    title: "Artificial Intelligence in NetSuite",
     description:
       "Discover how Artificial Intelligence in NetSuite streamlines business processes with predictive analytics, automation, and smarter decision-making. Explore AI-driven solutions for enhanced efficiency.",
     keywords: ["NetSuite AI", "artificial intelligence ERP", "NetSuite machine learning", "intelligent automation", "AGSuite AI NetSuite"],

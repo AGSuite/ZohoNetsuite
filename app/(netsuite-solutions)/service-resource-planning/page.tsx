@@ -389,23 +389,25 @@ export default function NetSuiteSRPPage() {
       </nav>
 
       <section id="what-is-srp" className="pt-5 pb-14 bg-white scroll-mt-36">
-        <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+        <div className="max-w-8xl mx-auto px-4 sm:px-8 lg:px-16">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
+              className="relative flex items-center justify-center rounded-3xl overflow-hidden w-full"
             >
-              <div className="relative w-full h-full p-4 lg:p-6">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100">
+              <div className="relative w-full p-2 sm:p-4 lg:p-6">
+                <div className="relative w-full aspect-[16/9] min-h-[260px] sm:min-h-[340px] rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100 bg-white">
                   <Image
-                    src="/images/Dashboard/suiteproject dashboard 2.jpg"
-                    alt="NetSuite Service Resource Planning SRP Dashboard"
+                    src="/images/Dashboard/netsuite_srp_widescreen_pc_dashboard.png"
+                    alt="NetSuite Service Resource Planning Widescreen PC Dashboard"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                    quality={98}
+                    priority
                   />
                 </div>
               </div>

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "NetSuite Planning and Budgeting | NetSuite Financial Services| AGSuite Technologies",
+  title: "NetSuite Planning and Budgeting | NetSuite Financial Services",
 
   description:
     "Streamline your planning and budgeting processes and enhance forecast precision with NetSuite Planning and Budgeting. Leverage scenario planning and conduct what-if analyses to make informed decisions.",

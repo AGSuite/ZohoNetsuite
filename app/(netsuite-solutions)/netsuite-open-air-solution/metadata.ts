@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "NetSuite OpenAir Software Integration - AGSuite Technologies",
+  title: "NetSuite OpenAir Software Integration",
 
   description:
     "AGSuite Technologies specializes in NetSuite OpenAir software integration for efficient open-air project management solutions.",

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "NetSuite Suite Commerce Site Builder | NetSuite SuiteSuccess Implementation Partner | AGSuite Technologies",
+  title: "NetSuite Suite Commerce Site Builder | NetSuite SuiteSuccess Implementation Partner",
 
   description:
     "AGSuite Provides NetSuite SuiteCommerce services in India & USA. Ecommerce software is complete package for integrating ecommerce websites. It helps to manages all transactions and customer interactions via the Web, mobile and social.",

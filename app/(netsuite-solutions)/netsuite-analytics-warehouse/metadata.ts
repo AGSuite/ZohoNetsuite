@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "NetSuite Analytics Warehouse (NSAW) | AGSuite Technologies",
+  title: "NetSuite Analytics Warehouse (NSAW)",
 
   description:
     "Unlock the power of the NetSuite Analytics Warehouse (NSAW) for comprehensive data management, seamless integration, and in-depth reporting. Centralize your business data for better insights and decision-making.",

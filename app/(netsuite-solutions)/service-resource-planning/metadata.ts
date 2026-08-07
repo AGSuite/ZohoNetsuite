@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Service Resource Planning | AGSuite Technologies",
+  title: "Service Resource Planning",
 
   description:
     "AGSuite Technologies -Services Resource Planning (SRP) Solution Tool helps you complete projects more quickly, decrease accounts receivable cycles, and generate invoices accurately and efficiently.",

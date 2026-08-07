@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Artificial Intelligence in NetSuite | AGSuite Technologies",
+  title: "Artificial Intelligence in NetSuite",
 
   description:
     "Discover how Artificial Intelligence in NetSuite streamlines business processes with predictive analytics, automation, and smarter decision-making. Explore AI-driven solutions for enhanced efficiency.",

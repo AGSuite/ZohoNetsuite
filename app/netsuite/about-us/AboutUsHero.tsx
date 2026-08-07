@@ -7,7 +7,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 export default function AboutUsHero() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [videoSrc, setVideoSrc] = useState("/images/videos/Blue%20Modern%20Minimal%20Marketing%20169%20Video%20(2).mp4");
+  const [videoSrc, setVideoSrc] = useState("/images/videos/vidosaboutus/Netsuite%20AboutUs%20Hero.mp4");
   const heroRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -31,9 +31,9 @@ export default function AboutUsHero() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
-        setVideoSrc("/images/videos/aboutus mobile video.mp4");
+        setVideoSrc("/images/videos/vidosaboutus/netsuite%20mobile%20aboutus%20video.mp4");
       } else {
-        setVideoSrc("/images/videos/Blue%20Modern%20Minimal%20Marketing%20169%20Video%20(2).mp4");
+        setVideoSrc("/images/videos/vidosaboutus/Netsuite%20AboutUs%20Hero.mp4");
       }
     };
 

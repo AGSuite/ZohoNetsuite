@@ -248,20 +248,20 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
       )}
       <iframe name={`zoho_iframe_${platform}`} style={{ display: 'none' }}></iframe>
 
-      <section id="contact-form" className="relative py-24 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
+      <section id="contact-form" className="relative py-14 sm:py-24 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
         <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-blue-500/30 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3" />
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-500/25 rounded-full blur-[140px] translate-x-1/3 -translate-y-1/3" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="rounded-[40px] bg-[#0d0d0d]/70 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-white/5 rounded-[40px]" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="rounded-3xl sm:rounded-[40px] bg-[#0d0d0d]/70 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-white/5 rounded-3xl sm:rounded-[40px]" />
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
 
               {/* Left Side - Standardized platform-specific content */}
               <motion.div
                 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.2 } } }}
                 initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
-                className="flex flex-col h-full justify-between p-8 lg:p-14 relative overflow-hidden"
+                className="flex flex-col h-full justify-between p-5 sm:p-8 lg:p-14 relative overflow-hidden"
               >
                 <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/Background/grid-white.svg')] opacity-[0.05] pointer-events-none z-10" />
                 <div className="absolute inset-0 z-0 opacity-40">
@@ -270,16 +270,16 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                 <div className="relative z-20">
                   <motion.h2
                     variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
-                    className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.15]"
+                    className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 tracking-tight leading-[1.15]"
                   >
                     Ready to Transform{" "}
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400">Your Business?</span>
                   </motion.h2>
                   <motion.div
                     variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
-                    className="space-y-4 mb-10 text-gray-300"
+                    className="space-y-4 mb-6 sm:mb-10 text-gray-300"
                   >
-                    <p className="text-lg">
+                    <p className="text-base sm:text-lg">
                       {isNetSuite
                         ? "Take the first step towards streamlined operations and accelerated growth with Oracle NetSuite."
                         : "Empower your team and drive exceptional growth with Zoho's integrated suite of business applications."}
@@ -287,17 +287,17 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                   </motion.div>
                   <motion.div
                     variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
-                    className="mb-10"
+                    className="mb-6 sm:mb-10"
                   >
                     <Image
                       src={isNetSuite ? "/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" : "/images/zoho logos/zoho premium.png"}
                       alt={isNetSuite ? "NetSuite Partner" : "Zoho Partner"}
                       width={220} height={70}
-                      className="h-16 w-auto object-contain"
+                      className="h-12 sm:h-16 w-auto object-contain"
                       sizes="(max-width: 768px) 100vw, 220px"
                     />
                   </motion.div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
                     {[
                       { label: "Projects Completed", value: isNetSuite ? "700+" : "600+", icon: Briefcase },
                       { label: "Global Customers", value: isNetSuite ? "250+" : "200+", icon: Globe2 },
@@ -310,17 +310,17 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                           hidden: { opacity: 0, y: 20 },
                           visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1 } }
                         }}
-                        className="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-blue-600/10 to-indigo-600/10 backdrop-blur-md shadow-2xl hover:bg-white hover:border-white hover:-translate-y-1 transition-all duration-500 group"
+                        className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-white/10 bg-gradient-to-br from-blue-600/10 to-indigo-600/10 backdrop-blur-md shadow-2xl hover:bg-white hover:border-white hover:-translate-y-1 transition-all duration-500 group"
                       >
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
-                            <stat.icon size={20} />
+                        <div className="flex items-center gap-3 mb-2.5 sm:mb-4">
+                          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
+                            <stat.icon size={18} />
                           </div>
                           <div className="h-[1px] flex-1 bg-gradient-to-r from-blue-500/30 to-transparent group-hover:from-blue-500 transition-all duration-500" />
                         </div>
                         <div>
-                          <p className="text-3xl font-bold text-white tracking-tight mb-0.5 group-hover:text-blue-950 transition-colors duration-500">{stat.value}</p>
-                          <h3 className="font-bold text-lg leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-cyan-200 group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-500">{stat.label}</h3>
+                          <p className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-0.5 group-hover:text-blue-950 transition-colors duration-500">{stat.value}</p>
+                          <h3 className="font-bold text-sm sm:text-lg leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-cyan-200 group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-500">{stat.label}</h3>
                         </div>
                       </motion.div>
                     ))}
@@ -332,7 +332,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
               <motion.div
                 initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative bg-white rounded-r-[40px] p-8 lg:p-12 h-full flex flex-col justify-center"
+                className="relative bg-white rounded-b-3xl lg:rounded-b-none lg:rounded-r-[40px] p-5 sm:p-8 lg:p-12 h-full flex flex-col justify-center"
               >
                 {submitted ? (
                   <motion.div
@@ -359,9 +359,9 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                   </motion.div>
                 ) : (
                   <>
-                    <div className="mb-8">
-                      <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-3 tracking-tight">Get Expert Guidance</h3>
-                      <p className="text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500">Fill in your details and our team will reach out within 24 hours.</p>
+                    <div className="mb-6 sm:mb-8">
+                      <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 tracking-tight">Get Expert Guidance</h3>
+                      <p className="text-sm sm:text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500">Fill in your details and our team will reach out within 24 hours.</p>
                     </div>
 
                     <div id="crmWebToEntityForm" className="crmWebToEntityForm">

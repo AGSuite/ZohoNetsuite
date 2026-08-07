@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "NetSuite CRM Solution Provider | Best CRM Software for Business | AGSuite Technologies",
+  title: "NetSuite CRM Solution Provider | Best CRM Software for Business",
 
   description:
     "AGSuite is a leading NetSuite CRM Solution Provider offering powerful CRM software to help businesses stay connected with customers, streamline sales processes, and drive revenue growth. Discover advanced CRM solutions with our cloud CRM system and CRM application tailored to your needs.",

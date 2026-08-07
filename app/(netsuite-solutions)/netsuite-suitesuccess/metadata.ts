@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SuiteSuccess Implementation Partner | AGSuite Technologies",
+  title: "SuiteSuccess Implementation Partner",
 
   description:
     "AGSuite Technologies is your trusted NetSuite SuiteSuccess Implementation Partner delivering rapid go-live, tailored setups, and end-to-end support for faster ROI and scalable growth.",

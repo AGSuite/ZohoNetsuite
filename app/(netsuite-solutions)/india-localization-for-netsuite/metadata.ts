@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "India Tax Solution | Accounting & Taxation services - AGSuite Technologies",
+  title: "India Tax Solution | Accounting & Taxation services",
   description:
     "AGSuite Technologies offers comprehensive tax solutions, India tax solution, and Accounting & Taxation services. Discover expert tax solutions tailored to your needs.",
 
