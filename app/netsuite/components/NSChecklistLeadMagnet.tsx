@@ -204,7 +204,7 @@ export default function NSChecklistLeadMagnet({ hideBackground = false }: { hide
               </div>
 
               <h2 className="text-3xl md:text-5xl font-medium text-white leading-tight">
-                The Essential Checklist Before You Implement NetSuite
+                ERP Implementation Checklist for CFOs &amp; Finance Teams.
               </h2>
             </div>
 

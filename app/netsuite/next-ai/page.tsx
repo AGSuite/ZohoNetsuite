@@ -699,23 +699,7 @@ export default function NetSuiteNextAIPage() {
               ))}
             </div>
 
-            {/* Responsive Outer Badges */}
-            <div className="flex flex-wrap gap-2 mb-3 sm:mb-0 sm:absolute sm:-top-6 sm:-left-6 z-20">
-              <div className="bg-slate-900/95 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl border border-cyan-400/40 shadow-2xl flex items-center gap-2 backdrop-blur-xl">
-                <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#13FFAA] animate-ping" />
-                <span className="text-[11px] sm:text-xs font-black tracking-wide text-cyan-300">Ask Oracle AI Core Active</span>
-              </div>
-            </div>
 
-            <div className="absolute -top-6 -right-6 bg-slate-900/95 text-white px-4 py-2 rounded-2xl border border-purple-400/40 shadow-2xl items-center gap-2 backdrop-blur-xl z-20 hidden sm:flex">
-              <FiShield className="text-[#CE84CF] w-4 h-4" />
-              <span className="text-xs font-black text-purple-200">100% General Ledger Verified</span>
-            </div>
-
-            <div className="absolute -bottom-6 -left-6 bg-slate-900/95 text-white px-4 py-2 rounded-2xl border border-emerald-400/40 shadow-2xl items-center gap-2 backdrop-blur-xl z-20 hidden sm:flex">
-              <FiZap className="text-emerald-400 w-4 h-4" />
-              <span className="text-xs font-black text-emerald-200">Autonomous ERP Intelligence</span>
-            </div>
 
             {/* Outer Glowing Neon Border Ring + Card shell */}
             <div className="p-[2px] rounded-2xl sm:rounded-[2rem] bg-gradient-to-r from-cyan-400/60 via-blue-500/70 to-purple-500/60 shadow-[0_0_60px_rgba(19,255,170,0.25)]">
