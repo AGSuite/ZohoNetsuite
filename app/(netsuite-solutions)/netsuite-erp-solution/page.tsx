@@ -289,49 +289,46 @@ export default function NetSuiteERPPage() {
 
 
       {/* What is NetSuite ERP Section with Light Gradient */}
-      <section id="what-is-erp" className="pt-5 pb-14 bg-white scroll-mt-36">
-        <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+      <section id="what-is-erp" className="pt-8 pb-16 bg-white scroll-mt-36">
+        <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
+              className="lg:col-span-6 relative w-full aspect-[16/10.5] rounded-2xl overflow-hidden"
             >
-              <div className="relative w-full h-full p-4 lg:p-6">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100">
-                  <Image
-                    src="/images/Dashboard/ERP Dashboard_11zon.jpg"
-                    alt="NetSuite ERP Solution Dashboard"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-              </div>
+              <Image
+                src="/images/Dashboard/ERP Dashboard_11zon.jpg"
+                alt="NetSuite ERP Solution Dashboard"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover object-top rounded-2xl transition-transform duration-700 hover:scale-105"
+                priority
+              />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex flex-col justify-between py-6 h-full"
+              className="lg:col-span-6 flex flex-col justify-between py-2 space-y-6"
             >
               <div className="space-y-4">
-                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-800 to-indigo-600 leading-tight">
                   Turn Complexity into Clarity with NetSuite ERP
                 </h2>
               </div>
-              <div className="space-y-2 my-auto pt-2 md:pt-4">
-                <p className="text-base text-gray-600 leading-relaxed">
-                  Disconnected systems, manual processes, and limited visibility slow business growth. Oracle NetSuite ERP brings finance, operations, inventory, CRM, and business intelligence together into one intelligent cloud platform — helping organizations simplify operations, automate workflows, and make faster, data-driven decisions.
+              <div className="space-y-4 my-auto">
+                <p className="text-base md:text-[17px] text-gray-600 leading-relaxed">
+                  Disconnected systems, manual processes, and limited visibility can slow business growth and reduce operational efficiency. As a leading NetSuite ERP Solution Provider, we deliver Oracle NetSuite, a powerful cloud-based ERP software that unifies finance, operations, inventory, CRM, and business intelligence into a single intelligent ERP system. This integrated platform helps organizations simplify operations, automate workflows, and make faster, data-driven decisions.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed">
-                  Powered by real-time analytics and AI-driven insights, NetSuite ERP enables businesses to gain complete operational visibility, improve efficiency, and scale with confidence. From fast-growing startups to global enterprises, NetSuite delivers the agility, automation, and financial control modern businesses need to drive sustainable growth and stay ahead in a rapidly evolving market.
+                <p className="text-base md:text-[17px] text-gray-600 leading-relaxed">
+                  Powered by real-time analytics and AI-driven insights, Oracle NetSuite ERP provides complete operational visibility, enabling businesses to improve efficiency, optimize performance, and scale with confidence. Whether you&apos;re a fast-growing startup or a global enterprise, this advanced ERP software offers the agility, automation, and financial control required to drive sustainable growth, enhance productivity, and stay competitive in today&apos;s rapidly evolving business landscape.
                 </p>
               </div>
-              <div className="pt-4 mt-auto">
+              <div className="pt-2">
                 <Link
                   href="#contact-form"
                   className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"

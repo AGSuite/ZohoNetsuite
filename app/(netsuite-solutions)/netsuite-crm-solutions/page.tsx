@@ -438,55 +438,52 @@ export default function NetSuiteCRMPage() {
       </nav>
 
       {/* -- What is NetSuite CRM ----------------------------------------------- */}
-      <section id="what-is-crm" className="pt-5 pb-14 bg-white scroll-mt-36">
-        <div className="max-w-8xl mx-auto px-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+      <section id="what-is-crm" className="pt-8 pb-16 bg-white scroll-mt-36">
+        <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* LEFT — Dashboard Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative flex items-center justify-center rounded-3xl overflow-hidden"
+              className="lg:col-span-6 relative w-full aspect-[16/10.5] rounded-2xl overflow-hidden"
             >
-              <div className="relative w-full h-full p-4 lg:p-6">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/10 border-4 border-indigo-100">
-                  <Image
-                    src="/images/Dashboard/CRM Dashbaord 2_11zon.jpg"
-                    alt="NetSuite CRM Solution Dashboard"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-              </div>
+              <Image
+                src="/images/Dashboard/CRM Dashbaord 2_11zon.jpg"
+                alt="NetSuite CRM Solution Dashboard"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover object-top rounded-2xl transition-transform duration-700 hover:scale-105"
+                priority
+              />
             </motion.div>
 
-            {/* RIGHT */}
+            {/* RIGHT — Content */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex flex-col justify-between py-6 h-full"
+              className="lg:col-span-6 flex flex-col justify-between py-2 space-y-6"
             >
               <div className="space-y-4">
-                <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-[42px] font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-800 to-indigo-600 leading-tight">
                   NetSuite CRM: Intelligent Customer Management on a Unified ERP Platform
                 </h2>
               </div>
-              <div className="space-y-2 my-auto pt-2 md:pt-4">
-                <p className="text-base text-gray-600 leading-relaxed">
-                  Oracle NetSuite CRM connects sales, marketing, support, and financial data on a single cloud platform — eliminating data silos to provide a complete 360° view of every customer interaction.
+              <div className="space-y-4 my-auto">
+                <p className="text-base md:text-[17px] text-gray-600 leading-relaxed">
+                  Oracle NetSuite CRM connects sales, marketing, support, and financial data on a single cloud platform—eliminating data silos to provide a complete 360° view of every customer interaction.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed">
-                  Built natively within NetSuite, it enables organizations to streamline lead management, improve forecasting, automate engagement, and deliver personalized experiences through real-time workflows.
+                <p className="text-base md:text-[17px] text-gray-600 leading-relaxed">
+                  Built natively within NetSuite, this Cloud CRM and CRM Application enables organizations to streamline lead management, improve forecasting, automate engagement, and deliver personalized experiences through real-time workflows. As a comprehensive CRM Software and CRM System, NetSuite helps businesses unify customer information and optimize operations from a single platform.
                 </p>
-                <p className="text-base text-gray-600 leading-relaxed">
-                  With unified customer intelligence and connected operations, NetSuite CRM empowers teams to strengthen customer relationships, improve collaboration, and accelerate sustainable revenue growth.
+                <p className="text-base md:text-[17px] text-gray-600 leading-relaxed">
+                  With unified customer intelligence and connected operations, Oracle NetSuite CRM empowers teams to strengthen customer relationships, improve collaboration, and accelerate sustainable revenue growth. As a trusted NetSuite CRM Solution Provider, organizations can leverage advanced CRM Solutions to drive efficiency, enhance customer experiences, and support long-term business growth.
                 </p>
               </div>
-              <div className="pt-4 mt-auto">
+              <div className="pt-2">
                 <Link
                   href="#contact-form"
                   className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"

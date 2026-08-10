@@ -450,10 +450,10 @@ export default function NetSuiteSolutionsClient() {
                   Modern enterprises need more than traditional ERP systems. They need connected, intelligent platforms capable of automating workflows, predicting business trends, and enabling real-time decision-making.
                 </p>
                 <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-                  As a trusted Oracle NetSuite Solution Provider, AGSuite Technologies delivers tailored NetSuite solutions that combine cloud ERP capabilities with AI-powered business intelligence, automation, and seamless integrations.
+                  As a trusted Oracle NetSuite Solution Provider and NetSuite Implementation Partner, AGSuite Technologies delivers tailored NetSuite solutions that combine cloud ERP capabilities with AI-powered business intelligence, automation, and seamless integrations.
                 </p>
                 <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-                  From finance and procurement to manufacturing, CRM, inventory, and eCommerce — we help organizations create a future-ready digital ecosystem.
+                  From finance and procurement to manufacturing, CRM, inventory, and eCommerce, we help organizations create a future-ready digital ecosystem with scalable NetSuite solutions designed to streamline operations, improve efficiency, and drive sustainable growth.
                 </p>
                 <div className="pt-4">
                   <Link href="/netsuite/solutions/why-netsuite/main" className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest text-white transition-all shadow-lg hover:shadow-xl hover:scale-105" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}>
