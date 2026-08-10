@@ -584,14 +584,7 @@ export default function NetSuiteNextAIPage() {
                 />
               </div>
 
-              {/* Floating badges */}
-              <div className="absolute top-2 left-2 sm:-top-4 sm:left-6 bg-slate-900/95 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-[#13FFAA]/50 shadow-xl flex items-center gap-2 text-[10px] sm:text-xs font-bold">
-                <span className="w-2 h-2 rounded-full bg-[#13FFAA] animate-ping" />
-                <span>AI Core Engine Active</span>
-              </div>
-              <div className="absolute bottom-2 right-2 sm:-bottom-4 sm:right-6 bg-slate-900/95 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-[#CE84CF]/50 shadow-xl text-[10px] sm:text-xs font-bold text-[#CE84CF]">
-                AGSuite Certified Implementation
-              </div>
+
             </div>
           </motion.div>
         </div>
