@@ -78,14 +78,10 @@ const NetSuitePricingCalculator = () => {
     const commonModules = [
         'Accounting / Financials',
         'CRM',
-        'Inventory Management',
-        'Project Management',
-        'Supply Chain Management',
-        'Warehouse Management',
-        'Planning & Budgeting',
-        'Order Management',
         'Procurement',
-        'Analytics & Reporting'
+        'Analytics & Reporting',
+        'Advanced Financials',
+        'Fixed Asset Management'
     ];
 
     const industryModules: Record<string, string[]> = {
@@ -93,20 +89,13 @@ const NetSuitePricingCalculator = () => {
             'Subscription Billing',
             'Revenue Recognition',
             'Planning & Budgeting',
-            'SuiteAnalytics',
-            'CRM'
+            'SuiteAnalytics'
         ],
         'IT and Professional Services': [
-            'Project Management',
-            'Resource Planning',
-            'Time & Expense Management',
-            'CRM',
             'SuiteProjects'
         ],
         'Financial Services': [
-            'Advanced Financials',
             'Revenue Management',
-            'Fixed Asset Management',
             'Planning & Budgeting',
             'Multi-Book Accounting'
         ],
@@ -114,20 +103,17 @@ const NetSuitePricingCalculator = () => {
             'Warehouse Management System (WMS)',
             'Demand Planning',
             'Order Management',
-            'Supply Chain Management',
-            'Procurement'
+            'Supply Chain Management'
         ],
         'Advertising and Digital Marketing Agencies': [
             'Project Management',
             'Resource Planning',
             'Job Costing',
-            'CRM',
             'Marketing Automation'
         ],
         'Media and Publishing': [
             'Revenue Recognition',
             'Subscription Billing',
-            'CRM',
             'SuiteAnalytics',
             'Advertising Management'
         ],
@@ -155,16 +141,9 @@ const NetSuitePricingCalculator = () => {
         'Telecom Industry': [
             'Subscription Billing',
             'Revenue Management',
-            'CRM',
-            'Customer Support Management',
-            'Analytics & Reporting'
+            'Customer Support Management'
         ],
-        'Other': [
-            'Accounting / Financials',
-            'CRM',
-            'Inventory Management',
-            'Project Management'
-        ]
+        'Other': []
     };
 
     const revenueRanges = ['Under $1M', '$1M to $10M', '$10M to $50M', '$50M to $100M', '$100M to $500M', '$500M+'];
@@ -455,9 +434,9 @@ const NetSuitePricingCalculator = () => {
                                     </div>
                                 )}
                                 <div>
-                                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-3 md:mb-4">General Modules</p>
-                                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-3">
-                                        {commonModules.filter(m => !aggregatedRecommendations.includes(m)).map(m => (
+                                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-3 md:mb-4">General Modules</p>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3">
+                                        {commonModules.map(m => (
                                             <button
                                                 key={m} type="button"
                                                 onClick={() => updateFormData('modules', formData.modules.includes(m) ? formData.modules.filter(x => x !== m) : [...formData.modules, m])}
