@@ -71,6 +71,7 @@ const NSMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) => 
     const stats = [
         { value: "700+", label: "Projects Completed" },
         { value: "250+", label: "Customers" },
+        { value: "84%", label: "Customer Retention" },
         { value: "15+", label: "Industry Expertise" },
         { value: "10+", label: "Countries Serving" },
     ];
@@ -98,7 +99,7 @@ const NSMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) => 
                 />
             )}
 
-            <div className="relative z-10 max-w-5xl mx-auto px-6">
+            <div className="relative z-10 max-w-6xl mx-auto px-6">
                 <div className="text-center">
 
                     {/* Badge */}
@@ -221,21 +222,21 @@ const NSMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) => 
 
                     {/* Statistics Above Dashboard — each stat animates one by one on scroll */}
                     <div ref={statsRef} className="mt-16 mb-8">
-                        <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12 max-w-6xl mx-auto px-6">
+                        <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-4 sm:gap-6 md:gap-6 lg:gap-8 xl:gap-10 max-w-7xl mx-auto px-2">
                             {stats.map((stat, index) => (
                                 <motion.div
                                     key={`${stat.label}-${index}`}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={statsInView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.18 }}
-                                    className="flex items-center gap-3"
+                                    className="flex items-center gap-2.5 sm:gap-3 shrink-0"
                                 >
-                                    <svg className="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-green-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                                     </svg>
                                     <div>
-                                        <div className="text-4xl font-bold text-white">{stat.value}</div>
-                                        <div className="text-sm text-slate-300">{stat.label}</div>
+                                        <div className="text-3xl lg:text-4xl font-bold text-white">{stat.value}</div>
+                                        <div className="text-xs sm:text-sm text-slate-300 whitespace-nowrap">{stat.label}</div>
                                     </div>
                                 </motion.div>
                             ))}

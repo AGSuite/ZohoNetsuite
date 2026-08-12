@@ -17,6 +17,11 @@ const NSCircularDesign = dynamic(() => import("./NSCircularDesign").then(mod => 
   loading: () => <div className="w-[350px] h-[350px] xl:w-[550px] xl:h-[550px] rounded-full bg-blue-50/50 animate-pulse mx-auto" />
 });
 
+const NSHeroNextAIVisual = dynamic(() => import("./NSHeroNextAIVisual").then(mod => mod.NSHeroNextAIVisual), {
+  ssr: false,
+  loading: () => <div className="w-full h-[450px] rounded-2xl bg-blue-50/50 animate-pulse mx-auto" />
+});
+
 const HeroSlide = ({
   bg,
   customBg,
@@ -390,17 +395,16 @@ export default function NSHeroSlider() {
           isActive={activeIndex === 0}
           bg="/images/Background/herobluebg.webp"
           title="AI-Powered, Future-Ready ERP Solutions Tailored for Your Industry"
-          desc="Empower your business with AI-driven, industry-specific NetSuite solutions designed to automate operations, deliver predictive insights, improve real-time visibility, and accelerate scalable growth across Software & Technology, Financial Services, Tech Companies, Manufacturing, Retail, and more."
+          desc="Empower your business with AI-driven NetSuite solutions to automate operations, deliver predictive insights, and accelerate growth across your industry."
           cta="Book a Demo"
           link="/netsuite/contact"
-          image="/images/Dashboard/netsuite Ai dashboard enhanced-Photoroom.webp"
+          customVisual={<NSHeroNextAIVisual />}
           priority={true}
           multiColorShadow={true}
           skipEntranceAnimation={skipFirstAnimation}
           showOverlay={false}
           textColor="dark"
-          gridClass="lg:grid-cols-[48%_52%]"
-          imageClass="w-[110%] lg:w-[115%] xl:w-[110%] max-w-none object-contain drop-shadow-[0_25px_50px_rgba(59,130,246,0.35)] drop-shadow-[0_10px_30px_rgba(59,130,246,0.15)] -ml-[5%] lg:-ml-[8%] xl:-ml-[12%] transition-transform duration-700 hover:scale-[1.02]"
+          gridClass="lg:grid-cols-[42%_58%]"
         />
       </SwiperSlide>
 

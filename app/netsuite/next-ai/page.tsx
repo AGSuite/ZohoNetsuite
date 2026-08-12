@@ -30,6 +30,7 @@ import {
   animate,
   AnimatePresence,
 } from "framer-motion";
+import NSHeroNextAIVisual from "../components/NSHeroNextAIVisual";
 import FooterContactForm from "@/app/components/shared/FooterContactForm";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
@@ -564,28 +565,9 @@ export default function NetSuiteNextAIPage() {
             initial={{ opacity: 0, y: 50, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
-            className="relative mt-12 sm:mt-16 w-full max-w-5xl"
+            className="relative mt-8 sm:mt-10 w-full max-w-4xl sm:max-w-5xl lg:max-w-6xl mx-auto"
           >
-            {/* Ambient glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] -z-10 blur-[100px] opacity-50 pointer-events-none">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#13FFAA]/30 via-[#1E67C6]/40 to-[#CE84CF]/30 rounded-full animate-pulse" />
-            </div>
-
-            {/* Glass frame */}
-            <div className="relative p-2 sm:p-3 rounded-3xl bg-gradient-to-br from-white/15 via-slate-800/30 to-slate-900/70 backdrop-blur-2xl border border-white/20 shadow-[0_30px_90px_rgba(0,0,0,0.8)]">
-              <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950">
-                <Image
-                  src="/images/lap/Next AI Dashboard.webp"
-                  alt="Oracle NetSuite Next AI Command Dashboard — AGSuite Implementation"
-                  width={1920}
-                  height={1080}
-                  className="w-full h-auto object-cover filter drop-shadow-2xl transition-transform duration-700 hover:scale-[1.01]"
-                  priority
-                />
-              </div>
-
-
-            </div>
+            <NSHeroNextAIVisual containerClassName="w-full max-w-full ml-0" showCards={false} />
           </motion.div>
         </div>
       </motion.section>

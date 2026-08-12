@@ -27,9 +27,10 @@ const logos = [
     { id: "ziptrip", logo: "/images/zoho%20client%20images/ziptrip.png", name: "Ziptrip", link: "#" },
 ];
 
-const ZohoMetrics = () => {
+const ZohoMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) => {
     const [isHovered, setIsHovered] = useState(false);
 
+    // Each block gets its OWN inView ref so it fires when it scrolls into view
     const { ref: badgeRef, inView: badgeInView } = useInView({ triggerOnce: true, threshold: 0.2 });
     const { ref: headlineRef, inView: headlineInView } = useInView({ triggerOnce: true, threshold: 0.2 });
     const { ref: subtextRef, inView: subtextInView } = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -38,39 +39,43 @@ const ZohoMetrics = () => {
     const { ref: dashboardRef, inView: dashboardInView } = useInView({ triggerOnce: true, threshold: 0.1 });
     const { ref: marqueeRef, inView: marqueeInView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
+    // Split headline into words for animation
     const headlineText = "87% of businesses improve their";
-    const highlightText = "operational efficiency";
+    const highlightText = "operational efficiency with Zoho ERP & CRM.";
     const words = headlineText.split(" ");
 
     const stats = [
-        { value: "600+", label: "Projects Completed" },
+        { value: "700+", label: "Projects Completed" },
+        { value: "250+", label: "Happy Customers" },
+        { value: "84%", label: "Customer Retention" },
         { value: "15+", label: "Industry Expertise" },
         { value: "10+", label: "Countries Serving" },
-        { value: "15+", label: "Years Experience" },
     ];
 
     return (
         <section
-            className="relative py-24 overflow-hidden font-['DM_Sans',sans-serif]"
-            style={{
+            className={`relative ${hideBackground ? 'pt-6 pb-16 md:pb-24' : 'py-24'} overflow-hidden font-['DM_Sans',sans-serif]`}
+            style={hideBackground ? undefined : {
                 background: "radial-gradient(at 0% 82.58333206176758%, #880e4f 0px, transparent 50%), radial-gradient(at 97.58620673212512% 84.0833330154419%, #311b92 0px, transparent 50%), radial-gradient(at 10.73275845626305% 10.12499968210856%, #1a1a1a 0px, transparent 50%), radial-gradient(at 48.66379293902167% 89.91666634877524%, #b71c1c 0px, transparent 50%), #0d000d"
             }}
         >
             {/* Square Grid Pattern */}
-            <div
-                className="absolute inset-0 z-0 opacity-20 pointer-events-none"
-                style={{
-                    backgroundImage: `
-                        linear-gradient(to right, rgba(255,255,255,0.3) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(255,255,255,0.3) 1px, transparent 1px)
-                    `,
-                    backgroundSize: "60px 60px",
-                    maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,1) 60%)",
-                    WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,1) 60%)"
-                }}
-            />
+            {!hideBackground && (
+                <div
+                    className="absolute inset-0 z-0 opacity-20 pointer-events-none"
+                    style={{
+                        backgroundImage: `
+                            linear-gradient(to right, rgba(255,255,255,0.3) 1px, transparent 1px),
+                            linear-gradient(to bottom, rgba(255,255,255,0.3) 1px, transparent 1px)
+                        `,
+                        backgroundSize: "60px 60px",
+                        maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,1) 60%)",
+                        WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,1) 60%)"
+                    }}
+                />
+            )}
 
-            <div className="relative z-10 max-w-5xl mx-auto px-6">
+            <div className="relative z-10 max-w-6xl mx-auto px-6">
                 <div className="text-center">
 
                     {/* Badge */}
@@ -82,27 +87,49 @@ const ZohoMetrics = () => {
                     >
                         <div className="flex items-center gap-1">
                             {[1, 2, 3, 4, 5].map((i) => (
-                                <Star key={i} className="w-3 h-3 text-rose-500 fill-rose-500" />
+                                <Star key={i} className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
                             ))}
                         </div>
                         <span className="text-[10px] font-bold text-white uppercase tracking-[0.2em]">
-                            4.9/5 · Zoho Premium Partner 2025
+                            4.9/5 · Top Rated Zoho Premium Partner 2025
                         </span>
                     </motion.div>
 
-                    {/* Headline with Simpler Animation */}
+                    {/* Headline with Word-by-Word Animation */}
                     <motion.h2
                         ref={headlineRef}
-                        initial={{ opacity: 0, y: 18 }}
-                        animate={headlineInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.65, ease: "easeOut" }}
-                        className="text-4xl md:text-6xl lg:text-5xl font-semibold text-white mb-6 tracking-tight leading-tight"
-                        style={{ willChange: 'transform, opacity' }}
+                        className="text-4xl md:text-6xl lg:text-5xl font-semibold text-white mb-6 tracking-tight leading-normal"
                     >
-                        {headlineText}{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-red-400">
-                            {highlightText}
-                        </span>
+                        {words.map((word, index) => (
+                            <motion.span
+                                key={index}
+                                initial={{ opacity: 0, y: 18 }}
+                                animate={headlineInView ? { opacity: 1, y: 0 } : {}}
+                                transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.1 }}
+                                className="inline-block mr-[0.3em]"
+                            >
+                                {word}
+                            </motion.span>
+                        ))}
+                        <motion.span
+                            initial={{ opacity: 0, y: 18 }}
+                            animate={headlineInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.35, ease: "easeOut", delay: words.length * 0.07 }}
+                            className="relative inline-flex items-center justify-center mx-1 my-1 group/pill align-middle cursor-pointer"
+                        >
+                            {/* Soft Light Rose / Red / Purple Gradient Glow Shadow - ONLY ON HOVER */}
+                            <span className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-rose-400 via-pink-400 to-red-400 blur-md opacity-0 group-hover/pill:opacity-100 transition duration-300" />
+
+                            {/* Border & Body: Glass by default, White on Hover */}
+                            <span className="relative inline-flex items-center justify-center p-[1.5px] rounded-2xl overflow-hidden transition-all duration-300">
+                                <span className="absolute inset-0 bg-gradient-to-r from-rose-400/40 via-pink-400/40 to-red-400/40 group-hover/pill:from-rose-500 group-hover/pill:via-pink-500 group-hover/pill:to-red-500 rounded-2xl transition-all duration-300" />
+                                <span className="relative px-3.5 py-1 bg-white/10 group-hover/pill:bg-white backdrop-blur-md rounded-[14px] block transition-colors duration-300">
+                                    <span className="text-white group-hover/pill:text-black font-medium transition-colors duration-300">
+                                        {highlightText}
+                                    </span>
+                                </span>
+                            </span>
+                        </motion.span>
                     </motion.h2>
 
                     {/* Subtext */}
@@ -113,7 +140,7 @@ const ZohoMetrics = () => {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="text-rose-100 text-lg md:text-xl max-w-3xl mx-auto mb-10 font-medium leading-relaxed"
                     >
-                        AGSuite Technologies helps organizations transform their operations and maximize growth with the Zoho software suite.
+                        AGSuite Technologies helps organizations transform their operations, automate processes, and maximize growth with expert Zoho software suite implementations.
                     </motion.p>
 
                     {/* CTA Buttons */}
@@ -124,48 +151,78 @@ const ZohoMetrics = () => {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-wrap items-center justify-center gap-4"
                     >
-                        <Link
-                            href="/zoho/contact/free-consultation"
-                            className="px-10 py-4 bg-rose-600 hover:bg-rose-700 text-white rounded-xl font-bold text-base transition-all shadow-lg shadow-rose-600/30 hover:shadow-xl hover:shadow-rose-600/40 hover:scale-105 active:scale-100"
-                        >
-                            Get Free Consultation
-                        </Link>
-                        <Link
-                            href="/zoho/contact"
-                            className="px-10 py-4 bg-white/5 border border-white/10 hover:border-white/20 text-white rounded-xl font-bold text-base transition-all backdrop-blur-sm hover:bg-white/10"
-                        >
-                            Get Demo
-                        </Link>
+                        {/* Get Free Consultation Button */}
+                        <div className="relative inline-flex items-center group">
+                            {/* Colorful Light Gradient Shadow Glow - ONLY ON MOUSE OVER */}
+                            <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-rose-400 via-pink-400 via-red-400 to-rose-500 blur-md opacity-0 group-hover:opacity-100 transition duration-300 animate-gradient-x" />
+
+                            <Link
+                                href="/zoho/contact/free-consultation"
+                                className="relative inline-flex items-center justify-center p-[1.5px] rounded-xl overflow-hidden font-bold text-base transition-all duration-300 hover:scale-105 active:scale-100"
+                            >
+                                {/* Light Gradient Border */}
+                                <span className="absolute inset-0 bg-gradient-to-r from-rose-400 via-pink-400 via-red-400 to-rose-500 rounded-xl" />
+
+                                {/* White Button Body */}
+                                <span className="relative px-10 py-3.5 bg-white rounded-[10px] block transition-colors duration-300">
+                                    <span className="text-black group-hover:bg-gradient-to-r group-hover:from-rose-600 group-hover:via-pink-600 group-hover:to-red-600 group-hover:bg-clip-text group-hover:text-transparent font-extrabold transition-all duration-300">
+                                        Get Free Consultation
+                                    </span>
+                                </span>
+                            </Link>
+                        </div>
+
+                        {/* Get Demo Button */}
+                        <div className="relative inline-flex items-center group">
+                            {/* Colorful Gradient Shadow Glow - ONLY ON MOUSE OVER */}
+                            <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 blur-md opacity-0 group-hover:opacity-100 transition duration-300" />
+
+                            <Link
+                                href="/zoho/contact"
+                                className="relative inline-flex items-center justify-center p-[1.5px] rounded-xl overflow-hidden font-bold text-base transition-all duration-300 hover:scale-105 active:scale-100"
+                            >
+                                {/* Gradient Border on Hover */}
+                                <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 group-hover:from-rose-400 group-hover:via-pink-400 group-hover:to-purple-400 rounded-xl transition-all duration-300" />
+
+                                {/* Glass to White Button Body */}
+                                <span className="relative px-10 py-3.5 bg-white/10 group-hover:bg-white backdrop-blur-md rounded-[10px] block transition-colors duration-300">
+                                    <span className="text-white group-hover:text-black font-extrabold transition-colors duration-300">
+                                        Get Demo
+                                    </span>
+                                </span>
+                            </Link>
+                        </div>
                     </motion.div>
 
-                    {/* Statistics Above Dashboard */}
+                    {/* Statistics Above Dashboard — each stat animates one by one on scroll */}
                     <div ref={statsRef} className="mt-16 mb-8">
-                        <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12 max-w-6xl mx-auto px-6">
+                        <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-4 sm:gap-6 md:gap-6 lg:gap-8 xl:gap-10 max-w-7xl mx-auto px-2">
                             {stats.map((stat, index) => (
                                 <motion.div
                                     key={`${stat.label}-${index}`}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={statsInView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.18 }}
-                                    className="flex items-center gap-3"
+                                    className="flex items-center gap-2.5 sm:gap-3 shrink-0"
                                 >
-                                    <svg className="w-6 h-6 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-rose-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                                     </svg>
                                     <div>
-                                        <div className="text-4xl font-bold text-white">{stat.value}</div>
-                                        <div className="text-sm text-rose-200">{stat.label}</div>
+                                        <div className="text-3xl lg:text-4xl font-bold text-white">{stat.value}</div>
+                                        <div className="text-xs sm:text-sm text-rose-200 whitespace-nowrap">{stat.label}</div>
                                     </div>
                                 </motion.div>
                             ))}
                         </div>
                     </div>
 
-                    {/* Zoho Dashboard Image with Side Images */}
+                    {/* Zoho Dashboard Image with Side Images Collage */}
                     <div ref={dashboardRef} className="relative">
                         {/* Glow Effect */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gradient-to-r from-rose-500/20 via-pink-500/15 to-purple-500/10 blur-[100px] rounded-full -z-10" />
 
+                        {/* Desktop / Tablet collage layout */}
                         <div className="hidden items-center justify-center md:flex">
                             {/* Left images */}
                             <motion.div
@@ -216,13 +273,14 @@ const ZohoMetrics = () => {
                                     transition={{ duration: 0.3, ease: "easeOut" }}
                                     className="relative"
                                 >
-                                    <div className="relative h-72 w-[420px] overflow-hidden rounded-3xl shadow-2xl bg-white lg:h-80 lg:w-[520px] xl:h-[420px] xl:w-[680px] border-2 border-white/20 hover:border-white/40 transition-all duration-300">
+                                    <div className="relative h-80 w-[450px] lg:h-96 lg:w-[580px] xl:h-[480px] xl:w-[740px] overflow-hidden rounded-3xl shadow-2xl bg-white border-2 border-white/40 hover:border-white/70 transition-all duration-300">
                                         <Image
-                                            src="/images/zoho-dashboards/Zoho_dashboard_UI_UX_design_2K_202607021312.jpeg"
-                                            alt="Zoho Dashboard"
+                                            src="/images/zoho-dashboards/zoho-one-new-welcome-dashboard.png"
+                                            alt="Zoho Enterprise Dashboard"
                                             fill
-                                            sizes="(min-width: 1280px) 680px, (min-width: 1024px) 520px, 420px"
-                                            className="object-cover object-left"
+                                            unoptimized
+                                            sizes="(min-width: 1280px) 740px, (min-width: 1024px) 580px, 450px"
+                                            className="object-cover object-top"
                                         />
                                     </div>
                                 </motion.div>
@@ -273,10 +331,11 @@ const ZohoMetrics = () => {
                         >
                             <div className="relative max-w-3xl mx-auto">
                                 <Image
-                                    src="/images/zoho-dashboards/Zoho_dashboard_UI_UX_design_2K_202607021312.jpeg"
-                                    alt="Zoho Dashboard"
+                                    src="/images/zoho-dashboards/zoho-one-new-welcome-dashboard.png"
+                                    alt="Zoho Enterprise Dashboard"
                                     width={1200}
                                     height={600}
+                                    unoptimized
                                     className="w-full h-auto rounded-2xl shadow-2xl shadow-rose-500/30 border-2 border-white/20"
                                     sizes="100vw"
                                 />

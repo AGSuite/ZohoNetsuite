@@ -51,7 +51,7 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   </h1>
 
                   <p className="mt-4 text-base sm:text-lg lg:text-xl font-normal leading-relaxed text-gray-700">
-                    Empower your business with AI-driven, industry-specific NetSuite solutions designed to automate operations, deliver predictive insights, improve real-time visibility, and accelerate scalable growth across Software & Technology, Financial Services, Tech Companies, Manufacturing, Retail, and more.
+                    Empower your business with AI-driven NetSuite solutions to automate operations, deliver predictive insights, and accelerate growth across your industry.
                   </p>
 
                   <div className="mt-5 relative inline-flex group">
@@ -68,7 +68,7 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                 <div className="hidden lg:flex justify-center lg:justify-end">
                   <div className="w-full relative">
                     <Image
-                      src="/images/Dashboard/netsuite%20Ai%20dashboard.png?v=fresh"
+                      src="/images/lap/Next AI Dashboard.webp"
                       alt="NetSuite Dashboard"
                       width={1800}
                       height={1600}
