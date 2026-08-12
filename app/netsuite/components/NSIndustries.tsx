@@ -32,16 +32,16 @@ const industryIconMap: Record<string, React.ElementType> = {
 
 /* ------------------ ROUTES ------------------ */
 const industryRoutes: Record<string, string> = {
-  "Software and Technology": "/netsuite/industries/software",
-  "IT and Professional Services": "/netsuite/industries/it-services",
-  "Wholesale Distribution": "/netsuite/industries/wholesale",
-  "Advertising and Digital Marketing Agencies": "/netsuite/industries/advertising-marketing",
-  "Media and Publishing": "/netsuite/industries/media",
-  "Retail & E-Commerce": "/netsuite/industries/retail",
-  "Transportation and Logistics": "/netsuite/industries/transport",
+  "Software and Technology": "/netsuite/industries/software-and-technology",
+  "IT and Professional Services": "/netsuite/industries/it-and-professional-services",
+  "Wholesale Distribution": "/netsuite/industries/wholesale-distribution",
+  "Advertising and Digital Marketing Agencies": "/netsuite/industries/advertising-and-digital-marketing-agencies",
+  "Media and Publishing": "/netsuite/industries/media-and-publishing",
+  "Retail & E-Commerce": "/netsuite/industries/retail-and-e-commerce",
+  "Transportation and Logistics": "/netsuite/industries/transportation-and-logistics",
   "Manufacturing": "/netsuite/industries/manufacturing",
   "Financial Services": "/netsuite/industries/financial-services",
-  "Telecom": "/netsuite/industries/telecom",
+  "Telecom": "/netsuite/industries/telecom-industry",
 };
 
 /* ------------------ LIGHT GRADIENTS ------------------ */

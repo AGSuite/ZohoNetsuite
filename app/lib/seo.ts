@@ -1275,7 +1275,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/advertising-marketing": {
+  "/netsuite/industries/advertising-and-digital-marketing-agencies": {
     "title": "NetSuite for Advertising & Marketing Agencies | AGSuite",
     "description": "Run a more profitable agency with a cloud ERP purpose-built for project-based billing, resource management, and client financial visibility. NetSuite empowers a",
     "keywords": [
@@ -1287,7 +1287,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/it-services": {
+  "/netsuite/industries/it-and-professional-services": {
     "title": "Scale Your IT Services Business Without Limits | AGSuite",
     "description": "Optimize billable utilization, accelerate project delivery, and automate complex billing with the #1 cloud ERP built for IT and consulting firms.",
     "keywords": [
@@ -1311,7 +1311,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/media": {
+  "/netsuite/industries/media-and-publishing": {
     "title": "NetSuite for Media & Publishing Companies | AGSuite",
     "description": "Manage subscriptions, advertising revenue, content licensing, and royalties on a single cloud ERP. NetSuite gives media and publishing companies the financial a",
     "keywords": [
@@ -1323,7 +1323,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/retail": {
+  "/netsuite/industries/retail-and-e-commerce": {
     "title": "NetSuite for Retail & E-Commerce | AGSuite",
     "description": "Power your omnichannel retail operation from a single cloud platform. NetSuite connects your online store, physical locations, inventory, and financials — givin",
     "keywords": [
@@ -1335,7 +1335,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/software": {
+  "/netsuite/industries/software-and-technology": {
     "title": "NetSuite for Software & Technology Companies | AGSuite",
     "description": "Scale your SaaS, software, or tech company with a cloud ERP built for subscription revenue, ASC 606 compliance, and rapid growth. NetSuite is the platform of ch",
     "keywords": [
@@ -1347,7 +1347,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/transport": {
+  "/netsuite/industries/transportation-and-logistics": {
     "title": "NetSuite for Transportation & Logistics | AGSuite",
     "description": "Gain end-to-end visibility across your logistics network. NetSuite connects fleet management, freight billing, warehouse operations, and financials in one cloud",
     "keywords": [
@@ -1359,7 +1359,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/wholesale": {
+  "/netsuite/industries/wholesale-distribution": {
     "title": "Expand Your Distribution Enterprise Without Limits | AGSuite",
     "description": "Eliminate supply chain bottlenecks and accelerate order fulfillment with the world’s #1 cloud ERP tailored for wholesale distributors.",
     "keywords": [
@@ -1371,7 +1371,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/telecom": {
+  "/netsuite/industries/telecom-industry": {
     "title": "NetSuite ERP for Telecom Industry — Modernize & Streamline Operations | AGSuite",
     "description": "Empower your telecom business with Oracle NetSuite ERP. Automate subscription billing, revenue recognition, and OSS/BSS integrations. AGSuite certified NetSuite partner.",
     "keywords": [

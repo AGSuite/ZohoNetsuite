@@ -211,8 +211,8 @@ export default function ZohoHeroSlider() {
                       alt="Zoho CRM Agreements & Sales Analytics Dashboard"
                       width={1600}
                       height={1100}
-                      quality={100}
-                      unoptimized
+                      quality={85}
+                      priority
                       className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 75vw"
                     />
@@ -296,9 +296,9 @@ export default function ZohoHeroSlider() {
               )}
             </div>
           }
-          title="Boost Productivity with Zoho Projects Setup & Automation"
+          title="The Complete Guide to Zoho Apps for Modern Businesses"
           titleGradient="bg-gradient-to-r from-slate-950 via-slate-900 to-cyan-600 bg-clip-text text-transparent"
-          desc="Streamline workflows, automate repetitive tasks, and keep your projects on track with a smarter Zoho Projects setup built for productivity and growth."
+          desc="Zoho Apps offer a complete set of tools to manage and streamline business operations. They help improve productivity, automate tasks, and support smarter business growth."
           cta="Explore Zoho Projects"
           link="/zoho/solutions"
           customVisual={
@@ -518,8 +518,7 @@ export default function ZohoHeroSlider() {
                       alt="Zoho Creator Custom Apps Dashboard"
                       width={1600}
                       height={1100}
-                      quality={100}
-                      unoptimized
+                      quality={85}
                       className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 75vw"
                     />
@@ -609,8 +608,7 @@ export default function ZohoHeroSlider() {
                       alt="Zoho One Business Operating System"
                       width={1600}
                       height={1100}
-                      quality={100}
-                      unoptimized
+                      quality={85}
                       className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 75vw"
                     />
@@ -747,8 +745,7 @@ export default function ZohoHeroSlider() {
                       alt="Zoho Books Finance Dashboard"
                       width={1600}
                       height={1100}
-                      quality={100}
-                      unoptimized
+                      quality={85}
                       className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 75vw"
                     />
@@ -877,8 +874,7 @@ export default function ZohoHeroSlider() {
                       alt="Zoho ERP Business Overview Dashboard"
                       width={1600}
                       height={1100}
-                      quality={100}
-                      unoptimized
+                      quality={85}
                       className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 75vw"
                     />
@@ -1007,8 +1003,7 @@ export default function ZohoHeroSlider() {
                       alt="Zoho People HR Management Dashboard"
                       width={1600}
                       height={1100}
-                      quality={100}
-                      unoptimized
+                      quality={85}
                       className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 75vw"
                     />

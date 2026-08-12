@@ -274,11 +274,11 @@ const ZohoMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) =
                                     className="relative"
                                 >
                                     <div className="relative h-80 w-[450px] lg:h-96 lg:w-[580px] xl:h-[480px] xl:w-[740px] overflow-hidden rounded-3xl shadow-2xl bg-white border-2 border-white/40 hover:border-white/70 transition-all duration-300">
-                                        <Image
+                                         <Image
                                             src="/images/zoho-dashboards/zoho-one-new-welcome-dashboard.png"
                                             alt="Zoho Enterprise Dashboard"
                                             fill
-                                            unoptimized
+                                            quality={85}
                                             sizes="(min-width: 1280px) 740px, (min-width: 1024px) 580px, 450px"
                                             className="object-cover object-top"
                                         />
@@ -335,7 +335,7 @@ const ZohoMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) =
                                     alt="Zoho Enterprise Dashboard"
                                     width={1200}
                                     height={600}
-                                    unoptimized
+                                    quality={85}
                                     className="w-full h-auto rounded-2xl shadow-2xl shadow-rose-500/30 border-2 border-white/20"
                                     sizes="100vw"
                                 />

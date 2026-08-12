@@ -1,6 +1,6 @@
-import { buildMetadata, INDUSTRY_PAGES } from "@/app/lib/seo";
+﻿import { buildMetadata, INDUSTRY_PAGES } from "@/app/lib/seo";
 
-const PAGE_PATH = "/netsuite/industries/retail";
+const PAGE_PATH = "/netsuite/industries/telecom-industry";
 const pageMetadata = INDUSTRY_PAGES[PAGE_PATH];
 
 export const metadata = pageMetadata ? buildMetadata({
@@ -9,7 +9,7 @@ export const metadata = pageMetadata ? buildMetadata({
   ogImage: "https://www.agsuitetech.com/images/og/og-netsuite.jpg",
 }) : {};
 
-export default function IndustryLayout({
+export default function TelecomLayout({
   children,
 }: {
   children: React.ReactNode;

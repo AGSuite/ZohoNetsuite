@@ -1,6 +1,6 @@
 import { buildMetadata, INDUSTRY_PAGES } from "@/app/lib/seo";
 
-const PAGE_PATH = "/netsuite/industries/software";
+const PAGE_PATH = "/netsuite/industries/advertising-and-digital-marketing-agencies";
 const pageMetadata = INDUSTRY_PAGES[PAGE_PATH];
 
 export const metadata = pageMetadata ? buildMetadata({

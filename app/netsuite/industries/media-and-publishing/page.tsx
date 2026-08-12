@@ -245,16 +245,16 @@ const data: IndustryPageData = {
     },
   ],
   relatedIndustries: [
-    { label: "Software & Technology", href: "/netsuite/industries/software" },
+    { label: "Software & Technology", href: "/netsuite/industries/software-and-technology" },
     {
       label: "Advertising & Marketing",
-      href: "/netsuite/industries/advertising-marketing",
+      href: "/netsuite/industries/advertising-and-digital-marketing-agencies",
     },
     {
       label: "Professional Services",
-      href: "/netsuite/industries/it-services",
+      href: "/netsuite/industries/it-and-professional-services",
     },
-    { label: "Retail & E-Commerce", href: "/netsuite/industries/retail" },
+    { label: "Retail & E-Commerce", href: "/netsuite/industries/retail-and-e-commerce" },
   ],
 };
 

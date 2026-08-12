@@ -241,10 +241,10 @@ const data: IndustryPageData = {
     },
   ],
   relatedIndustries: [
-    { label: "Software & Technology", href: "/netsuite/industries/software" },
+    { label: "Software & Technology", href: "/netsuite/industries/software-and-technology" },
     { label: "Financial Services", href: "/netsuite/industries/financial-services" },
-    { label: "IT & Professional Services", href: "/netsuite/industries/it-services" },
-    { label: "Media & Publishing", href: "/netsuite/industries/media" },
+    { label: "IT & Professional Services", href: "/netsuite/industries/it-and-professional-services" },
+    { label: "Media & Publishing", href: "/netsuite/industries/media-and-publishing" },
   ],
 };
 

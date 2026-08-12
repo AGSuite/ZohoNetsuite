@@ -160,7 +160,7 @@ const nsServices = [
     description:
       "Connect your apps and workflows seamlessly with API-led integrations.",
     icon: Share2,
-    href: "/netsuite/services/integration",
+    href: "/netsuite/services/integration-services",
   },
   {
     title: "NetSuite Customization",

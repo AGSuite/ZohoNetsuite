@@ -28,6 +28,9 @@ export default function SmoothScroll() {
         infinite: false,
       });
 
+      // Expose instance so ScrollRestorer can call lenis.scrollTo(0) on route change
+      (window as any).__lenis = lenisInstance;
+
       function raf(time: number) {
         if (lenisInstance) {
           lenisInstance.raf(time);
@@ -52,7 +55,10 @@ export default function SmoothScroll() {
 
     return () => {
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
-      if (lenisInstance) lenisInstance.destroy();
+      if (lenisInstance) {
+        lenisInstance.destroy();
+        (window as any).__lenis = null;
+      }
     };
   }, []);
 

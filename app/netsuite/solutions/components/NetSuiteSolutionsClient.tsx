@@ -297,7 +297,7 @@ export default function NetSuiteSolutionsClient() {
         "Native India localization solution for Oracle NetSuite",
         "Automated GST, TDS, and e-invoicing compliance"
       ],
-      link: "/netsuite/solutions/specialized/india-localization",
+      link: "/india-localization-for-netsuite",
       image: "/images/Dashboard/indian localization 2 dashboard.jpg",
       icon: BookOpen,
       tag: "India Compliance",
@@ -456,7 +456,7 @@ export default function NetSuiteSolutionsClient() {
                   From finance and procurement to manufacturing, CRM, inventory, and eCommerce, we help organizations create a future-ready digital ecosystem with scalable NetSuite solutions designed to streamline operations, improve efficiency, and drive sustainable growth.
                 </p>
                 <div className="pt-4">
-                  <Link href="/netsuite/solutions/why-netsuite/main" className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest text-white transition-all shadow-lg hover:shadow-xl hover:scale-105" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}>
+                  <Link href="/why-netsuite" className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest text-white transition-all shadow-lg hover:shadow-xl hover:scale-105" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}>
                     Deep Dive into NetSuite <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 1.2, repeat: Infinity }}><ArrowRight size={17} /></motion.span>
                   </Link>
                 </div>

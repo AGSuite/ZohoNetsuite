@@ -242,12 +242,12 @@ const data: IndustryPageData = {
     },
   ],
   relatedIndustries: [
-    { label: "Wholesale Distribution", href: "/netsuite/industries/wholesale" },
+    { label: "Wholesale Distribution", href: "/netsuite/industries/wholesale-distribution" },
     { label: "Manufacturing", href: "/netsuite/industries/manufacturing" },
-    { label: "Software & Technology", href: "/netsuite/industries/software" },
+    { label: "Software & Technology", href: "/netsuite/industries/software-and-technology" },
     {
       label: "Professional Services",
-      href: "/netsuite/industries/it-services",
+      href: "/netsuite/industries/it-and-professional-services",
     },
   ],
 };
