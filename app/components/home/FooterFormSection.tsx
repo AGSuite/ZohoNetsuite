@@ -167,7 +167,7 @@ export default function FooterFormSection() {
           if (container.children.length > 0) return;
 
           (window as any).grecaptcha.render(`recap${suffix}`, {
-            'sitekey': '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y',
+            'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
             'theme': 'light',
             'callback': (window as any).rccallback409531000042578178
           });
@@ -394,7 +394,7 @@ export default function FooterFormSection() {
 
                 {/* Google reCAPTCHA */}
                 <div className="captcha-area transform scale-[0.9] origin-left">
-                  <div data-sitekey="6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y" data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178"></div>
+                  <div data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_" data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178"></div>
                   <div id="recapErr409531000042578178" style={{ fontSize: '10px', color: 'red', marginTop: '4px', visibility: 'hidden' }}>Please verify that you are not a robot.</div>
                 </div>
 

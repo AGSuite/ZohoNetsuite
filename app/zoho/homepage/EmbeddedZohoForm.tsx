@@ -25,7 +25,7 @@ export default function EmbeddedZohoForm() {
                     if (container.children.length > 0) return;
 
                     (window as any).grecaptcha.render('recap409531000042578178', {
-                        'sitekey': '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y',
+                        'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
                         'theme': 'light',
                         'callback': (window as any).rccallback409531000042578178
                     });
@@ -281,7 +281,7 @@ export default function EmbeddedZohoForm() {
                     </div>
 
                     <div className="agsuite_column-large">
-                        <div data-sitekey="6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y" data-theme="light" captcha-verified="false" id="recap409531000042578178"></div>
+                        <div data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_" data-theme="light" captcha-verified="false" id="recap409531000042578178"></div>
                         <div id="recapErr409531000042578178">Please verify you are not a robot.</div>
                         <input type="submit" id="formsubmit" className="zcwf_button" value="Send Request" aria-label="Submit Form" />
                     </div>

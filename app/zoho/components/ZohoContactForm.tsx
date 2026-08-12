@@ -72,7 +72,7 @@ export default function ZohoContactForm() {
                 try {
                     if (container.children.length > 0) return;
                     (window as any).grecaptcha.render('recap409531000042578178', {
-                        'sitekey': '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y',
+                        'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
                         'theme': 'light',
                         'callback': (window as any).rccallback409531000042578178
                     });
@@ -521,7 +521,7 @@ export default function ZohoContactForm() {
 
                                 <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-between gap-8 pt-2">
                                     <div className="captcha-area transform scale-90 origin-left">
-                                        <div data-sitekey="6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y" data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178"></div>
+                                        <div data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_" data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178"></div>
                                         <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#dc2626', marginTop: '6px', fontWeight: '600', visibility: 'hidden' }}>Security verification required.</div>
                                     </div>
 

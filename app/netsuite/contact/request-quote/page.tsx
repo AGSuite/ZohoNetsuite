@@ -40,7 +40,7 @@ export default function RequestQuotePremium() {
             if ((window as any).grecaptcha && container) {
                 try {
                     (window as any).grecaptcha.render('recap409531000042578178', {
-                        'sitekey': '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y',
+                        'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
                         'theme': 'light',
                         'callback': (window as any).rccallback409531000042578178
                     });
@@ -597,7 +597,7 @@ export default function RequestQuotePremium() {
                                             <div className='zcwf_row text-center bg-gray-50 rounded-xl p-4'>
                                                 <div
                                                     className="g-recaptcha flex justify-center scale-90"
-                                                    data-sitekey='6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y'
+                                                    data-sitekey='6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_'
                                                     data-theme='light'
                                                     data-callback='rccallback409531000042578178'
                                                     captcha-verified='false'

@@ -7,7 +7,7 @@ import Image from "next/image";
 import Script from "next/script";
 import { Briefcase, Globe2, HeartHandshake, Rocket } from "lucide-react";
 
-const SITE_KEY = "6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y";
+const SITE_KEY = "6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_";
 
 interface FooterContactFormProps {
   platform: 'NetSuite' | 'Zoho';

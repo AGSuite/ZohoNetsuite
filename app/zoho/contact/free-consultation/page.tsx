@@ -122,7 +122,7 @@ export default function ZohoContactFreeConsultation() {
                 try {
                     if (container.children.length > 0) return;
                     (window as any).grecaptcha.render('recap409531000042578178', {
-                        'sitekey': '6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y',
+                        'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
                         'theme': 'light',
                         'callback': (window as any).rccallback409531000042578178
                     });
@@ -386,7 +386,7 @@ export default function ZohoContactFreeConsultation() {
 
                                         {/* Captcha Section */}
                                         <div className="flex flex-col gap-2">
-                                            <div data-sitekey='6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y' data-theme='light' data-callback='rccallback409531000042578178' captcha-verified='false' id='recap409531000042578178'></div>
+                                            <div data-sitekey='6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_' data-theme='light' data-callback='rccallback409531000042578178' captcha-verified='false' id='recap409531000042578178'></div>
                                             <div id='recapErr409531000042578178' style={{ visibility: 'hidden', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
                                         </div>
 

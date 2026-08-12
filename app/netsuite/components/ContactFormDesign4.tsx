@@ -8,7 +8,7 @@ import Script from "next/script";
 import { Briefcase, Globe2, HeartHandshake, Rocket } from "lucide-react";
 
 // Updated Site Key from User's latest source code
-const SITE_KEY = "6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y";
+const SITE_KEY = "6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_";
 
 export default function ContactFormDesign4() {
   const router = useRouter();

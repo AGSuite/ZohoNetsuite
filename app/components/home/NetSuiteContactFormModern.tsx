@@ -175,7 +175,7 @@ export default function NetSuiteContactFormModern() {
       if ((window as any).grecaptcha && document.getElementById('recap409531000026445204')) {
         try {
           (window as any).grecaptcha.render('recap409531000026445204', {
-            'sitekey': '6Lct5nwkAAAAADdrNkjf_H3jp-0XE9dUqAjgJXQ3',
+            'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
             'theme': 'dark',
             'callback': (window as any).rccallback409531000026445204
           });
@@ -492,7 +492,7 @@ select option {
   </div>
   
   <div class="agsuite_column-large">
-    <div class="g-recaptcha" data-sitekey="6LcWAs0sAAAAAEnzRj3y4c4zhunjhWHq4r7-Ci3y" data-theme="dark" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178"></div>
+    <div class="g-recaptcha" data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_" data-theme="dark" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178"></div>
     <div id="recapErr409531000042578178">Please verify you are not a robot.</div>
     <input type="submit" id="formsubmit" class="zcwf_button" value="Submit" aria-label="Submit Form">
   </div>
