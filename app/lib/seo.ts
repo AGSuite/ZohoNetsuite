@@ -454,6 +454,25 @@ export const NETSUITE_PAGES: Record<
     breadcrumbs?: { name: string; url: string }[];
   }
 > = {
+  "/netsuite-products": {
+    title: "Top NetSuite Implantation Partner in Pune | Mumbai | Bangalore - AGSuite",
+    description:
+      "AGSuite Technologies: Best NetSuite Implementation Partner and NetSuite Solution Provider in India. Trusted NetSuite Partner in Pune, Mumbai, Bangalore for expert services and support.",
+    keywords: ["NetSuite Implementation Partner", "NetSuite Partner Pune", "NetSuite Partner Mumbai", "NetSuite Partner Bangalore", "NetSuite Solution Provider India"],
+    category: "ERP Software",
+    publishedTime: "2024-03-06T00:00:00Z",
+    dateModified: "2026-03-27",
+    canonicalUrl: "https://agsuitetech.com/netsuite-products/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "26 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "NetSuite Products", url: "https://agsuitetech.com/netsuite-products/" },
+    ],
+  },
   "/netsuite-suitesuccess": {
     title: "SuiteSuccess Implementation Partner",
     description:
@@ -778,7 +797,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-01-05T00:00:00Z",
   },
   "/zoho-books-accounting-software": {
-    title: "Zoho Books Accounting Software | Cloud Based Accounting Software | AGSuite Technologies",
+    title: "Zoho Books Accounting Software | Cloud Based Accounting Software",
     description:
       "Empower your business with Zoho Books Accounting Software, a cloud-based solution for streamlined financial management. Elevate your accounting processes with AGSuite Technologies.",
     keywords: ["Zoho Books", "cloud accounting India", "GST accounting software", "Zoho Books implementation", "AGSuite Zoho Books"],
@@ -786,7 +805,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-01-08T00:00:00Z",
   },
   "/zoho-one": {
-    title: "Zoho One | All In One Business Management Software | AGSuite Technologies",
+    title: "Zoho One | All In One Business Management Software",
     description:
       "Zoho one - Empower your business growth with comprehensive software for sales, marketing, accounting, project management, and more, all in one integrated solution.",
     keywords: ["Zoho One", "Zoho all-in-one", "business software suite", "Zoho One implementation", "AGSuite Zoho One"],
@@ -794,7 +813,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-01-10T00:00:00Z",
   },
   "/zoho-crm-plus": {
-    title: "Top Zoho CRM Plus Partner | Implementation Service | AGSuite Technologies",
+    title: "Top Zoho CRM Plus Partner | Implementation Service",
     description:
       "AGSuite Technologies: Expert Zoho CRM Plus Partner offering seamless Zoho CRM Plus implementation and top-notch Zoho CRM Plus Implementation Service for your business needs.",
     keywords: ["Zoho CRM Plus", "customer experience platform", "unified CRM", "AGSuite Zoho CRM Plus"],
@@ -802,7 +821,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-01-12T00:00:00Z",
   },
   "/zoho-analytics": {
-    title: "Zoho Analytics Software | Zoho Business Intelligence - AGSuite Technologies",
+    title: "Zoho Analytics Software | Zoho Business Intelligence",
     description:
       "Explore Zoho Analytics software and Zoho Business Intelligence solutions at AGSuite Technologies. Enhance data-driven decisions with our expert implementation and support.",
     keywords: ["Zoho Analytics", "business intelligence software", "data analytics India", "Zoho BI", "AGSuite Zoho Analytics"],
@@ -821,7 +840,7 @@ export const ZOHO_PAGES: Record<
     ]
   },
   "/zoho-desk": {
-    title: "Zoho Desk & Customer Service Help Desk Software | AGSuite Technologies",
+    title: "Zoho Desk & Customer Service Help Desk Software",
     description:
       "Discover efficient Zoho Desk and customer service help desk software solutions at AGSuite Technologies. Enhance customer support capabilities. Contact us today for tailored solutions!",
     keywords: ["Zoho Desk", "help desk software", "customer support software", "Zoho Desk implementation", "AGSuite Zoho Desk"],
@@ -829,7 +848,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-01-18T00:00:00Z",
   },
   "/zoho-people": {
-    title: "HR Software Solutions | Cloud HRMS | Zoho People - AGSuite Technologies",
+    title: "HR Software Solutions | Cloud HRMS | Zoho People",
     description:
       "Discover top HR software solutions with AGSuite Technologies. Implement cloud-based HRMS like Zoho People for seamless management. Contact us today!",
     keywords: ["Zoho People", "HR software India", "HRMS software", "Zoho People implementation", "AGSuite Zoho People"],
@@ -837,7 +856,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-01-20T00:00:00Z",
   },
   "/zoho-payroll": {
-    title: "Zoho Payroll Implementation | Online Payroll Software – AGSuite Technologies",
+    title: "Zoho Payroll Implementation | Online Payroll Software",
     description:
       "Optimize your payroll with AGSuite Technologies' Zoho Payroll Integration, Online Payroll Software, and HRMS Payroll Integration services. Streamline your payroll processes today!",
     keywords: ["Zoho Payroll", "payroll software India", "Indian payroll compliance", "Zoho Payroll implementation", "AGSuite Zoho Payroll"],
@@ -845,7 +864,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-01-22T00:00:00Z",
   },
   "/zoho-inventory-software": {
-    title: "Zoho Inventory Management Software | AGSuite Technologies",
+    title: "Zoho Inventory Management Software",
     description:
       "AGSuite Technologies – Provides Zoho inventory management software. Zoho Inventory is small business inventory management software allowing you to increase sales and complete orders more powerfully.",
     keywords: ["Zoho Inventory", "inventory management software", "order management", "Zoho Inventory implementation", "AGSuite Zoho Inventory"],
@@ -853,7 +872,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-01-25T00:00:00Z",
   },
   "/zoho-projects": {
-    title: "Zoho Project Management Software | Online Project Tracking Tool | AGSuite Technologies",
+    title: "Zoho Project Management Software | Online Project Tracking Tool",
     description:
       "Zoho Projects is a project management software that helps you track and manage work. The in-built issue tracker module helps you resolve issues while keeping track of deadlines.",
     keywords: ["Zoho Projects", "project management software", "Zoho Projects implementation", "team collaboration tools", "AGSuite Zoho Projects"],
@@ -861,7 +880,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-01-28T00:00:00Z",
   },
   "/zoho-marketing-automation": {
-    title: "Zoho Marketing Automation Software | AGSuite Technologies",
+    title: "Zoho Marketing Automation Software",
     description:
       "Enhance your marketing with Zoho Marketing Automation Software. AGSuite Technologies provides expert solutions to streamline your campaigns and drive results.",
     keywords: ["Zoho Marketing Automation", "B2B marketing software", "lead nurturing", "marketing automation India", "AGSuite Zoho marketing"],
@@ -879,7 +898,7 @@ export const ZOHO_PAGES: Record<
     ]
   },
   "/zoho-recruit-hiring-software": {
-    title: "Zoho Hiring Software | Zoho Recruit | Recruitment Solution - AGSuite Technologies",
+    title: "Zoho Hiring Software | Zoho Recruit | Recruitment Solution",
     description:
       "AGSuite Technologies provides zoho Recruiting Software in USA & India. Zoho Recruit is a web-based recruiting solution for small to mid-sized businesses. The software's comprehensive applicant tracking system",
     keywords: ["Zoho Recruit", "applicant tracking system", "ATS software India", "recruitment software", "AGSuite Zoho Recruit"],
@@ -887,7 +906,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-02-05T00:00:00Z",
   },
   "/zoho-expense": {
-    title: "Zoho Expense Management | Travel Expense Tracker – AGSuite Technologies",
+    title: "Zoho Expense Management | Travel Expense Tracker",
     description:
       "Streamline your expenses with AGSuite Technologies' Zoho Expense Management. Our Zoho Expense Tracker and Travel and Expense Management Software ensure efficient and accurate tracking.",
     keywords: ["Zoho Expense", "expense management software", "expense reporting India", "Zoho Expense implementation", "AGSuite Zoho Expense"],
@@ -895,7 +914,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-02-10T00:00:00Z",
   },
   "/zoho-flow": {
-    title: "Zoho Flow | Zoho Flow Integration - AGSuite Technologies",
+    title: "Zoho Flow | Zoho Flow Integration",
     description:
       "Discover Zoho Flow and seamless Zoho Flow integration services at AGSuite Technologies. Optimize your workflows with our expert solutions and support.",
     keywords: ["Zoho Flow", "workflow automation", "no-code automation", "Zoho integration", "AGSuite Zoho Flow"],
@@ -913,7 +932,7 @@ export const ZOHO_PAGES: Record<
     ]
   },
   "/zoho-creator": {
-    title: "Zoho App Creator | Zoho Creator Consultant & Integrations | AGSuite Technologies",
+    title: "Zoho App Creator | Zoho Creator Consultant & Integrations",
     description:
       "Enhance your business with Zoho app creator, Zoho creator consultant, and Zoho Creator integrations from AGSuite Technologies. Build and integrate apps seamlessly.",
     keywords: ["Zoho Creator", "low-code app builder", "custom app development", "Zoho Creator implementation", "AGSuite Zoho Creator"],
@@ -931,7 +950,7 @@ export const ZOHO_PAGES: Record<
     ]
   },
   "/zoho-erp": {
-    title: "Zoho ERP Software | Zoho ERP Solutions | Zoho ERP System | AGSuiteTech",
+    title: "Zoho ERP Software | Zoho ERP Solutions | Zoho ERP System",
     description:
       "AGSuite provides Zoho ERP integrates finance, inventory, sales, HR, & operations into one scalable, cloud-based system with automation, analytics, & tailored implementation for growth.",
     keywords: ["Zoho ERP", "ERP software India", "SME ERP solution", "Zoho integrated ERP", "AGSuite Zoho ERP"],
@@ -939,7 +958,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-02-25T00:00:00Z",
   },
   "/zoho-finance-plus": {
-    title: "Zoho Finance Plus | Integrated Finance Suite – AGSuite Technologies",
+    title: "Zoho Finance Plus | Integrated Finance Suite",
     description:
       "Transform your business with AGSuite Technologies' Zoho Finance Plus. Our Integrated Finance Suite for Businesses streamlines accounting, invoicing, and expense management for seamless operations.",
     keywords: ["Zoho Finance Plus", "financial management software", "Zoho accounting suite", "AGSuite Zoho Finance"],
@@ -947,7 +966,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-03-01T00:00:00Z",
   },
   "/zoho-people-plus": {
-    title: "Zoho People Plus Implementation | Cloud HRMS Software - AGSuite Technologies",
+    title: "Zoho People Plus Implementation | Cloud HRMS Software",
     description:
       "Implement seamless Zoho People Plus integration and enhance HR management with our advanced cloud-based HRMS solutions. Learn more today!",
     keywords: ["Zoho People Plus", "HR management suite", "employee management software", "AGSuite Zoho HR"],
@@ -955,7 +974,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-03-05T00:00:00Z",
   },
   "/zoho-bigin": {
-    title: "Zoho Bigin Implementation, Integration & Consulting Solution | AGSuite",
+    title: "Zoho Bigin Implementation, Integration & Consulting Solution",
     description:
       "Empower your business with AGSuite Technologies' expert Zoho Bigin CRM solutions. We specialize in Zoho Bigin Implementation, Integration, Consulting, Support, and Customization.",
     keywords: ["Zoho Bigin", "small business CRM", "simple CRM software", "pipeline management", "AGSuite Zoho Bigin"],
@@ -963,7 +982,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-03-10T00:00:00Z",
   },
   "/zoho-mail": {
-    title: "Zoho Mail Integration | Zoho Business Email – AGSuite Technologies",
+    title: "Zoho Mail Integration | Zoho Business Email",
     description:
       "Enhance your email efficiency with AGSuite Technologies' Zoho Mail solutions. We offer Zoho Business Email, Zoho Mail Integration, and Zoho Mail Hosting for seamless...",
     keywords: ["Zoho Mail", "business email hosting", "custom domain email", "Zoho Mail setup", "AGSuite Zoho Mail"],
@@ -971,7 +990,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-03-15T00:00:00Z",
   },
   "/zoho-workplace": {
-    title: "Zoho Workplace Solutions | Collaboration Software – AGSuite Technologies",
+    title: "Zoho Workplace Solutions | Collaboration Software",
     description:
       "Elevate your team's productivity with AGSuite Technologies' Zoho Workplace Solutions. Our Zoho Workplace Software offers seamless Integration and Collaboration tools for businesses.",
     keywords: ["Zoho Workplace", "team collaboration software", "productivity suite", "Zoho Workplace implementation", "AGSuite Zoho Workplace"],
@@ -979,7 +998,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-03-20T00:00:00Z",
   },
   "/zoho-social-media-management": {
-    title: "Zoho Social Media Marketing | Zoho Social Implementation | AGSuite Technologies",
+    title: "Zoho Social Media Marketing | Zoho Social Implementation",
     description:
       "Boost your online presence with Zoho Social Media Marketing Software and expert Zoho Social Implementation by AGSuite Technologies. Enhance your social strategy today!",
     keywords: ["Zoho Social", "social media management", "social media scheduling", "Zoho Social implementation", "AGSuite Zoho Social"],
@@ -997,7 +1016,7 @@ export const ZOHO_PAGES: Record<
     ]
   },
   "/zoho-sites": {
-    title: "Zoho Site Builder | Zoho Sites Integrations | AGSuite Technologies",
+    title: "Zoho Site Builder | Zoho Sites Integrations",
     description:
       "Create stunning websites with Zoho Site and Zoho website builder. Enhance functionality with Zoho Sites integrations from AGSuite Technologies. Build your site today!",
     keywords: ["Zoho Sites", "website builder", "no-code website", "Zoho Sites implementation", "AGSuite Zoho Sites"],
@@ -1015,7 +1034,7 @@ export const ZOHO_PAGES: Record<
     ]
   },
   "/zoho-commerce": {
-    title: "Zoho Commerce | Build Your Online Store | AGSuite Technologies",
+    title: "Zoho Commerce | Build Your Online Store",
     description:
       "Build your online store with Zoho Commerce. AGSuite Technologies helps you leverage Zoho Commerce to create a seamless and efficient e-commerce platform.",
     keywords: ["Zoho Commerce", "ecommerce platform India", "online store builder", "Zoho ecommerce"],
@@ -1033,7 +1052,7 @@ export const ZOHO_PAGES: Record<
     ]
   },
   "/zoho-marketing-plus": {
-    title: "Zoho Marketing Plus Solutions | AGSuite Technologies",
+    title: "Zoho Marketing Plus Solutions",
     description:
       "Discover powerful Zoho Marketing Plus solutions with AGSuite Technologies. Enhance your marketing strategies efficiently. Contact us today!",
     keywords: ["Zoho Marketing Plus", "unified marketing platform", "marketing software India", "AGSuite Zoho Marketing Plus"],
@@ -1051,23 +1070,15 @@ export const ZOHO_PAGES: Record<
     ]
   },
   "/zoho-salesiq-implementation": {
-    title: "Zoho SalesIQ Implementation Software | AGSuite Technologies",
+    title: "Zoho SalesIQ Implementation Software",
     description:
       "AGSuite Technologies – Zoho SalesIQ Implementation Software. It’s to track their website visitors. Not only tracking, but it also facilitates businesses to offer live chat support.",
     keywords: ["Zoho SalesIQ", "live chat software", "website visitor tracking", "Zoho SalesIQ implementation", "AGSuite SalesIQ"],
     category: "Engagement Software",
     publishedTime: "2024-04-15T00:00:00Z",
   },
-  "/zoho-salesiq-marketing": {
-    title: "Zoho SalesIQ for Marketing — Visitor Intelligence & Engagement | AGSuite",
-    description:
-      "Use Zoho SalesIQ to turn website visitors into leads. Behavioral tracking, intelligent chatbots, and marketing automation triggers.",
-    keywords: ["Zoho SalesIQ marketing", "visitor intelligence", "marketing chatbot", "AGSuite SalesIQ marketing"],
-    category: "Marketing Software",
-    publishedTime: "2024-04-18T00:00:00Z",
-  },
   "/zoho-fsm": {
-    title: "Zoho FSM | Field Service Management Software - AGSuite Technologies",
+    title: "Zoho FSM | Field Service Management Software",
     description:
       "Discover Zoho FSM, a powerful field service management software solution. Partner with AGSuite Technologies for seamless implementation and support.",
     keywords: ["Zoho FSM", "field service management", "work order management", "Zoho FSM implementation", "AGSuite Zoho FSM"],
@@ -1075,7 +1086,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-04-20T00:00:00Z",
   },
   "/zoho-sprint": {
-    title: "Zoho Sprints | Agile Project Management Software | AGSuite Technologies",
+    title: "Zoho Sprints | Agile Project Management Software",
     description:
       "Manage agile projects with Zoho Sprints. Discover the best online agile project management software with AGSuite Technologies for seamless project execution.",
     keywords: ["Zoho Sprints", "agile project management", "scrum software", "Zoho Sprints implementation", "AGSuite Zoho Sprints"],
@@ -1083,7 +1094,7 @@ export const ZOHO_PAGES: Record<
     publishedTime: "2024-04-22T00:00:00Z",
   },
   "/zoho-catalyst": {
-    title: "Zoho Catalyst | Cloud Computing Services - AGSuite Technologies",
+    title: "Zoho Catalyst | Cloud Computing Services",
     description:
       "Discover Zoho Catalyst cloud computing services at AGSuite Technologies. Streamline operations with our expert implementation and support.",
     keywords: ["Zoho Catalyst", "serverless development", "cloud app platform", "Zoho Catalyst implementation", "AGSuite Zoho Catalyst"],
@@ -1102,7 +1113,7 @@ export const ZOHO_PAGES: Record<
     ]
   },
   "/zoho-it-management": {
-    title: "Zoho IT Project Management | Cloud Data Solution | AGSuite Technologies",
+    title: "Zoho IT Project Management | Cloud Data Solution",
     description:
       "Optimize your business with Zoho IT Project Management Software and cloud-based data management solution from AGSuite Technologies. Achieve seamless project control.",
     keywords: ["Zoho IT management", "IT asset management", "IT operations software", "AGSuite Zoho IT"],
@@ -1121,28 +1132,12 @@ export const ZOHO_PAGES: Record<
     ]
   },
   "/zoho-creator-it-management": {
-    title: "Zoho Creator for IT — Custom IT Apps & Automation | AGSuite",
+    title: "Zoho Creator for IT — Custom IT Apps & Automation",
     description:
       "Build custom IT management apps with Zoho Creator. Automate IT processes, create service portals, and integrate with your existing IT stack.",
     keywords: ["Zoho Creator IT", "IT app builder", "custom IT automation", "AGSuite Zoho Creator IT"],
     category: "App Development",
     publishedTime: "2024-05-01T00:00:00Z",
-  },
-  "/zoho-expense-finance": {
-    title: "Zoho Expense for Finance — Enterprise Expense Management | AGSuite",
-    description:
-      "Control company spending with Zoho Expense for Finance. Budget enforcement, policy compliance, GST input credits, and ERP integration.",
-    keywords: ["Zoho Expense finance", "enterprise expense management", "finance expense software", "AGSuite Zoho Expense"],
-    category: "Expense Management",
-    publishedTime: "2024-05-05T00:00:00Z",
-  },
-  "/zoho-payroll-finance": {
-    title: "Zoho Payroll for Finance — Compliant Payroll Processing | AGSuite",
-    description:
-      "Ensure payroll accuracy and compliance with Zoho Payroll. Automated TDS, PF, ESI computation and direct salary disbursement for Indian businesses.",
-    keywords: ["Zoho Payroll finance", "payroll compliance India", "automated payroll", "AGSuite Zoho Payroll"],
-    category: "Payroll Software",
-    publishedTime: "2024-05-10T00:00:00Z",
   },
 };
 

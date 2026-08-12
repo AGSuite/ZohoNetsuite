@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import {
@@ -69,7 +69,7 @@ export default function ZohoImplementationPage() {
       description: "Implementing Zoho One provides a single operating system for your entire business, eliminating data silos.",
       image: "/images/lap/lap1.webp",
       points: [
-        "45+ integrated applications",
+        "50+ integrated applications",
         "Single sign-on convenience",
         "Real-time cross-app data",
         "Centralized administration",

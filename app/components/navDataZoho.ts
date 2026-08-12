@@ -156,9 +156,9 @@ export const navItemsZoho: NavSection[] = [
                             items: [
                                 { label: "Zoho Books", href: "/zoho-books-accounting-software", icon: BookOpen },
                                 { label: "Zoho Inventory", href: "/zoho-inventory-software", icon: Package },
-                                { label: "Zoho Payroll", href: "/zoho-payroll-finance", icon: CreditCard },
+                                { label: "Zoho Payroll", href: "/zoho-payroll", icon: CreditCard },
                                 { label: "Zoho Finance Plus", href: "/zoho-finance-plus", icon: Coins },
-                                { label: "Zoho Expense", href: "/zoho-expense-finance", icon: DollarSign },
+                                { label: "Zoho Expense", href: "/zoho-expense", icon: DollarSign },
                             ]
                         },
                         {
@@ -191,7 +191,7 @@ export const navItemsZoho: NavSection[] = [
                                 { label: "Zoho Commerce", href: "/zoho-commerce", icon: ShoppingCart },
                                 { label: "Zoho Marketing Automation", href: "/zoho-marketing-automation", icon: BarChart },
                                 { label: "Zoho Marketing Plus", href: "/zoho-marketing-plus", icon: Megaphone },
-                                { label: "Zoho SalesIQ", href: "/zoho-salesiq-marketing", icon: Eye },
+                                { label: "Zoho SalesIQ", href: "/zoho-salesiq-implementation", icon: Eye },
                             ]
                         },
                         {

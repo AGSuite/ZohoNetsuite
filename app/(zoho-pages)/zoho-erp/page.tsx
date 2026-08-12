@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 
@@ -119,7 +119,7 @@ export default function ZohoERPPage() {
       title="Zoho ERP — Unified Cloud Business Management"
       subtitle="One Suite. Infinite Possibilities."
       description="A complete cloud-based ERP solution that integrates all your core business processes into one unified platform for better visibility and control."
-      introDescription2="Zoho ERP (commonly addressed through Zoho One) provides over 45+ integrated applications to manage your sales, marketing, finance, projects, and more — all from a single console."
+      introDescription2="Zoho ERP (commonly addressed through Zoho One) provides over 50+ integrated applications to manage your sales, marketing, finance, projects, and more — all from a single console."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
@@ -131,7 +131,7 @@ export default function ZohoERPPage() {
       heroImage="/images/people/zoho_erp_hero.jpg"
       whatIsImage="/images/zoho-dashboards/zoho-erp-ai.png"
       heroCard1={{
-        title: "45+ Apps",
+        title: "50+ Apps",
         subtitle: "Everything you need in one place.",
         icon: Layers
       }}

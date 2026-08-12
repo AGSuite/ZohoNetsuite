@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
@@ -147,7 +147,7 @@ const crmFaqs = [
 const zohoFaqs = [
   {
     q: "What is Zoho One?",
-    a: "Zoho One is an all-in-one suite of 45+ integrated business applications designed to manage every aspect of your business from one platform.",
+    a: "Zoho One is an all-in-one suite of 50+ integrated business applications designed to manage every aspect of your business from one platform.",
   },
   {
     q: "Can Zoho be customized for my business needs?",

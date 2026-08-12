@@ -299,8 +299,8 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                   </motion.div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
                     {[
-                      { label: "Projects Completed", value: isNetSuite ? "700+" : "600+", icon: Briefcase },
-                      { label: "Global Customers", value: isNetSuite ? "250+" : "200+", icon: Globe2 },
+                      { label: "Projects Completed", value: "700+", icon: Briefcase },
+                      { label: "Global Customers", value: "250+", icon: Globe2 },
                       { label: "Customer Retention", value: "84%", icon: HeartHandshake },
                       { label: "Years Experience", value: "15+", icon: Rocket }
                     ].map((stat, i) => (

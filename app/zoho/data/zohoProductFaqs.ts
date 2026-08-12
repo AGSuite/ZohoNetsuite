@@ -1,4 +1,4 @@
-export const zohoProductFaqs: Record<string, { q: string; a: string }[]> = {
+﻿export const zohoProductFaqs: Record<string, { q: string; a: string }[]> = {
   crm: [
     {
       q: "What makes Zoho CRM different from other CRMs?",
@@ -222,7 +222,7 @@ export const zohoProductFaqs: Record<string, { q: string; a: string }[]> = {
   one: [
     {
       q: "What exactly is Zoho One?",
-      a: "Zoho One is a revolutionary all-in-one suite of over 45+ integrated applications designed to manage your entire business—from sales and marketing to finance and HR—under a single operating system.",
+      a: "Zoho One is a revolutionary all-in-one suite of over 50+ integrated applications designed to manage your entire business—from sales and marketing to finance and HR—under a single operating system.",
     },
     {
       q: "How is Zoho One priced?",

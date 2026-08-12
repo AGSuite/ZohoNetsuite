@@ -92,6 +92,11 @@ const nextConfig: NextConfig = {
       { source: '/low-code-application-development', destination: '/netsuite/services/low-code', permanent: true },
       { source: '/managed-services', destination: '/netsuite/services/managed-services', permanent: true },
       // Zoho Redirects
+      { source: '/zoho-salesiq-marketing', destination: '/zoho-salesiq-implementation', permanent: true },
+      { source: '/zoho-payroll-finance', destination: '/zoho-payroll', permanent: true },
+      { source: '/zoho-expense-finance', destination: '/zoho-expense', permanent: true },
+      { source: '/zoho/solutions/finance/zoho-payroll', destination: '/zoho-payroll', permanent: true },
+      { source: '/zoho/solutions/finance/zoho-expense', destination: '/zoho-expense', permanent: true },
       { source: '/zoho/solutions/finance/zoho-books', destination: '/zoho-books-accounting-software', permanent: true },
       { source: '/zoho/solutions/finance/zoho-inventory', destination: '/zoho-inventory-software', permanent: true },
       { source: '/zoho/solutions/hr/zoho-payroll', destination: '/zoho-payroll', permanent: true },

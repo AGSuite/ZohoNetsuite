@@ -118,8 +118,8 @@ export default function ZohoInsightsClient({ blogs }: { blogs: any[] }) {
     const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
 
     const stats = [
-        { label: 'Projects Completed', value: 600, suffix: '+', icon: Briefcase },
-        { label: 'Global Customers', value: 200, suffix: '+', icon: Globe2 },
+        { label: 'Projects Completed', value: 700, suffix: '+', icon: Briefcase },
+        { label: 'Global Customers', value: 250, suffix: '+', icon: Globe2 },
         { label: 'Customer Retention', value: 84, suffix: '%', icon: HeartHandshake },
         { label: 'Years Experience', value: 15, suffix: '+', icon: Rocket },
     ];

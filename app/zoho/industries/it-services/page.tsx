@@ -21,7 +21,7 @@ const data: IndustryPageData = {
   heroImage: "/images/industries/it-services-main.png",
   heroCardTitle: "Project Profibilty",
   heroCardSub: "Tracking · Billing · Resources · Revenue",
-  heroTopCardTitle: "Trusted by 600+ Agencies",
+  heroTopCardTitle: "Trusted by 700+ Agencies",
   heroTopCardSub: "Project-First · Cloud-Native · High-Scale",
   introImage: "/images/industries/zoho_it_services_overview.png",
   introTitle: "Purpose-Built Zoho Tools for IT Services",
@@ -30,7 +30,7 @@ const data: IndustryPageData = {
   introDescription2:
     "With AGSuite's service implementation, IT firms get a system tailored to their specific workflows. We help IT service providers build scalable, high-margin business structures across global projects.",
   stats: [
-    { icon: Briefcase, value: 600, suffix: "+", label: "IT Firms Served" },
+    { icon: Briefcase, value: 700, suffix: "+", label: "IT Firms Served" },
     { icon: BarChart3, value: 25, suffix: "%", label: "Avg Profit Growth" },
     { icon: Users, value: 92, suffix: "%", label: "Resource Utilization" },
     { icon: TrendingUp, value: 15, suffix: "+", label: "Years Experience" },

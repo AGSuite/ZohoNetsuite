@@ -349,7 +349,7 @@ export default function ZohoContactForm() {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
                                     {[
                                         { icon: Award, label: "Success Stories", val: "500+", color: "blue", lightColor: "blue" },
-                                        { icon: Rocket, label: "Solution Modules", val: "40+", color: "indigo", lightColor: "indigo" },
+                                        { icon: Rocket, label: "Solution Modules", val: "50+", color: "indigo", lightColor: "indigo" },
                                         { icon: Target, label: "Experience", val: "15+ Yrs", color: "blue", lightColor: "blue" },
                                         { icon: Users, label: "Consultants", val: "50+", color: "indigo", lightColor: "indigo" }
                                     ].map((card, i) => (

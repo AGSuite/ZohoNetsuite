@@ -50,8 +50,8 @@ export default function ZohoSolutionsClient() {
   const currentColor = wordColors[rotatingIdx] ?? wordColors[0];
 
   const stats = [
-    { label: 'Projects Completed', value: 600, suffix: '+', icon: Briefcase },
-    { label: 'Global Customers', value: 200, suffix: '+', icon: Building2 },
+    { label: 'Projects Completed', value: 700, suffix: '+', icon: Briefcase },
+    { label: 'Global Customers', value: 250, suffix: '+', icon: Building2 },
     { label: 'Industry Expertise', value: 15, suffix: '+', icon: Target },
     { label: 'Customer Retention', value: 84, suffix: '%', icon: HeartHandshake },
     { label: 'Years Experience', value: 15, suffix: '+', icon: Rocket },
@@ -191,7 +191,7 @@ export default function ZohoSolutionsClient() {
       category: "Suites",
       title: "Zoho One",
       subtitle: "The Operating System for Business",
-      description: "Run your entire organization on one integrated platform. 45+ enterprise-grade apps for sales, marketing, finance, and operations.",
+      description: "Run your entire organization on one integrated platform. 50+ enterprise-grade apps for sales, marketing, finance, and operations.",
       highlights: [
         "Unified admin console",
         "Single sign-on for all apps",
@@ -297,7 +297,7 @@ export default function ZohoSolutionsClient() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }} className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,#003580,#0044cc)' }}><Database className="w-5 h-5 text-white" /></div>
-                    <div><p className="text-gray-900 text-sm font-bold">Zoho One Platform</p><p className="text-gray-500 text-xs mt-0.5">Zoho ERP · Zoho CRM · Zoho Finance · Zoho HR · Zoho Analytics</p></div>
+                    <div><p className="text-gray-900 text-sm font-bold">Zoho ERP · Zoho CRM · Zoho Finance · Zoho HR · Zoho Analytics</p></div>
                   </motion.div>
                 </div>
                 <motion.div initial={{ opacity: 0, x: -20, y: -10 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ delay: 0.8 }} className="absolute -top-5 -left-10 flex items-center gap-3.5 bg-white rounded-2xl px-4 py-3 shadow-2xl border border-gray-100">
@@ -340,7 +340,7 @@ export default function ZohoSolutionsClient() {
                 className="flex items-center justify-center rounded-2xl"
                 style={{ minHeight: 340 }}
               >
-                <Image src="/images/zoho_suite_graphic.png" alt="Zoho Enterprise Platform" width={560} height={380} className="w-full h-auto rounded-xl object-contain border-2 border-indigo-100 shadow-xl" priority />
+                <Image src="/images/zoho_suite_graphic_v3.jpg" alt="Zoho Enterprise Platform" width={560} height={380} className="w-full h-auto rounded-xl object-contain border-2 border-indigo-100 shadow-xl" priority />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: isMobile ? 0 : 20 }}
@@ -352,7 +352,7 @@ export default function ZohoSolutionsClient() {
                 <h3 className="text-3xl md:text-4xl lg:text-4xl font-medium leading-[1.25] text-gray-900">
                   The Most Versatile Cloud Suite for Growing Businesses
                 </h3>
-                <p className="text-lg text-gray-600 leading-relaxed">Zoho is the world&apos;s most comprehensive business software suite with over 45+ integrated applications. Built from the ground up for the cloud, it provides a single unified platform to manage every aspect of your business — from CRM and finance to HR and automation.</p>
+                <p className="text-lg text-gray-600 leading-relaxed">Zoho is the world&apos;s most comprehensive business software suite with over 50+ integrated applications. Built from the ground up for the cloud, it provides a single unified platform to manage every aspect of your business — from CRM and finance to HR and automation.</p>
                 <p className="text-lg text-gray-600 leading-relaxed">Every solution is purpose-built for cloud — running inside your Zoho account with real-time data, no silos, and unified reporting across every department.</p>
                 <div className="pt-4">
                   <Link href="#solutions" className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-widest text-white transition-all shadow-lg hover:shadow-xl hover:scale-105" style={{ background: 'linear-gradient(135deg,#003580,#0044cc)' }}>

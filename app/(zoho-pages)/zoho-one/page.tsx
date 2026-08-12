@@ -25,7 +25,7 @@ import ZohoSolutionTemplate from "@/app/zoho/components/solutions/ZohoSolutionTe
 
 export default function ZohoOnePage() {
   const stats = [
-    { label: "Apps Included", value: 45, suffix: "+", icon: Zap },
+    { label: "Apps Included", value: 50, suffix: "+", icon: Zap },
     { label: "Cost Savings", value: 40, suffix: "%", icon: TrendingUp },
     { label: "Admin Speed", value: 60, suffix: "%", icon: ShieldCheck },
     { label: "Active Users", value: 50, suffix: "k+", icon: Users },
@@ -121,8 +121,8 @@ export default function ZohoOnePage() {
   const benefits = [
     {
       title: "One Platform for All",
-      description: "Eliminate silos and messy integrations. Zoho One provides over 45+ integrated apps to run your entire operation.",
-      image: "/images/people/zoho_one_benefit_1.jpg",
+      description: "Eliminate silos and messy integrations. Zoho One provides over 50+ integrated apps to run your entire operation.",
+      image: "/images/people/zoho_one_benefit_1_v2.png",
       points: [
         "Unprecedent data sharing across departments",
         "Single sign-on for all business applications",
@@ -132,7 +132,7 @@ export default function ZohoOnePage() {
     },
     {
       title: "Unbeatable Value",
-      description: "Get the features of 45+ enterprise-grade apps for a fraction of the cost of individual subscriptions.",
+      description: "Get the features of 50+ enterprise-grade apps for a fraction of the cost of individual subscriptions.",
       image: "/images/people/zoho_one_benefit_2.jpg",
       points: [
         "Simplify billing with one single subscription",
@@ -169,8 +169,8 @@ export default function ZohoOnePage() {
     <ZohoSolutionTemplate
       title="Zoho One — The Operating System for Business"
       subtitle="Zoho One: The Unified Operating System for Modern Global Enterprises"
-      description="Zoho One is a comprehensive, cloud-native suite of over 45+ integrated applications designed to run your entire organization on a single platform. As a specialized Zoho One implementation partner, we help you eliminate fragmented systems and departmental silos with a unified data model that spans sales, finance, HR, and operations."
-      introDescription2="With a unified data model and single sign-on across more than 45 applications, Zoho One eliminates departmental silos and provides a single source of truth for your entire organization, driving unparalleled efficiency and cost savings."
+      description="Zoho One is a comprehensive, cloud-native suite of over 50+ integrated applications designed to run your entire organization on a single platform. As a specialized Zoho One implementation partner, we help you eliminate fragmented systems and departmental silos with a unified data model that spans sales, finance, HR, and operations."
+      introDescription2="With a unified data model and single sign-on across more than 50 applications, Zoho One eliminates departmental silos and provides a single source of truth for your entire organization, driving unparalleled efficiency and cost savings."
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Solutions", href: "/zoho/solutions" },
@@ -182,7 +182,7 @@ export default function ZohoOnePage() {
       heroImage="/images/people/zoho_one_hero.jpg"
       whatIsImage="/images/zoho-dashboards/zoho-one.webp"
       heroCard1={{
-        title: "45+ Integrated Apps",
+        title: "50+ Integrated Apps",
         subtitle: "One platform for all business needs.",
         icon: Zap
       }}
@@ -197,7 +197,7 @@ export default function ZohoOnePage() {
           "All Employee: $35 /employee/month",
           "Flexible User: $100 /user/month",
           "Scale Edition: Contact for pricing",
-          "Includes 45+ Full Featured Apps",
+          "Includes 50+ Full Featured Apps",
         ],
         ctaText: "Get a Quote",
       }}

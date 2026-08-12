@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | AGSuite Technologies",
   },
   description:
-    "Explore Zoho's complete business software suite — CRM, Books, People, Desk, Analytics, Inventory, and 40+ more apps. Zoho Premium Partner — AGSuite Technologies.",
+    "Explore Zoho's complete business software suite — CRM, Books, People, Desk, Analytics, Inventory, and 50+ more apps. Zoho Premium Partner — AGSuite Technologies.",
   keywords: [
     "Zoho CRM India",
     "Zoho Books",
