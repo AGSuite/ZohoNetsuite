@@ -232,7 +232,7 @@ export default function NetSuiteContactFormModern() {
 
       <Script
         id="wf_anal_footer"
-        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=200f842d0dc0f4e7801db792aae6ced7d901985d65eb7fcd23dda6e56700172097a30a3ef869eb06347d3a4bca25bb6fgid9f5592bc44469936204ad4851be9c0dffc44888d04f59693f16e7853eee295cfgid37385f0c9c29469e462007ae410d9ad684100d05f4e169a235f2b84413a975d4gidbf0e0fb6f34ec2f94a391d45ce6b68f60ace7ff29df396e3a70399e1edee5dc5&tw=23f34b37e865b5335ff2a8f585b01a00b88cb9c9a388aa28b4e9e710c025aad4"
+        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=dc6cfe6eaa303bd5d195bb5352719bba230c529eae5f6f0823d0a841f9dd57657e6049706260d6effe692960c6c5bab7gid6711126e0f954ae10107c9d2bd1b386506273b37e6e0265531ba837d5c4ed25dgid10b59705091816e9551c4ebc62e953e4111c79398428255d38ea16f03d7b9f05gid0c55c5d686e2e3f755b127157834bc2774e542abc82e5c1ce5eba2a071c6fc31&tw=70c0fd3034b5b59f1ac7be0a50f49b22d50d34cb8687eb35e3649323a8c88143&version=v2"
         strategy="lazyOnload"
       />
 
@@ -325,11 +325,11 @@ export default function NetSuiteContactFormModern() {
                     __html: `
 <div id="crmWebToEntityForm" class="zcwf_lblLeft crmWebToEntityForm">
 <form id="webform409531000042578178" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000042578178" method="POST" onSubmit="javascript:document.charset='UTF-8'; return checkMandatory409531000042578178()" accept-charset="UTF-8">
- <input type="text" class="dsp" name="xnQsjsdp" value="37dfc49e97f520b044bada4f449a5c5ccdbce92fc11adcbde859370420398c25">
+ <input type="text" class="dsp" name="xnQsjsdp" value="a7ab09fe90f1a05ce89de47da6f5fe4ec35e5a6a7a3407c3169e127670c7dd56">
  <input type="hidden" name="zc_gad" id="zc_gad" value="">
- <input type="text" class="dsp" name="xmIwtLD" value="12f9e122b2a20e7b120e935f7196c6eb1b4957b3d47254bd86bff874f16310546e1ef014dcf24ff7fdc390003e9608d7">
+ <input type="text" class="dsp" name="xmIwtLD" value="835ba19158c9d4cb19f73b22a127785e9b44da4e740d918a07dc322871eff6d54ae26ddbf0315f1ade82dd193bb27d4b">
  <input type="text" class="dsp" name="actionType" value="TGVhZHM=">
- <input type="text" class="dsp" name="returnURL" value="https://zoho-netsuite.vercel.app/thank-you">
+ <input type="text" class="dsp" name="returnURL" value="https://www.agsuite.tech/thank-you">
 <input type="text" class="dsp" id="ldeskuid" name="ldeskuid">
 <input type="text" class="dsp" id="LDTuvid" name="LDTuvid">
 

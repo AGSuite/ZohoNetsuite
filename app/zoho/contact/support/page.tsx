@@ -300,7 +300,7 @@ export default function ZohoSupportPage() {
                                                 <input type="hidden" name="actionType" defaultValue="Q2FzZXM=" />
                                                 <input type="hidden" id="property(module)" name="property(module)" defaultValue="Cases" />
                                                 <input type="hidden" id="dependent_field_values_Cases" defaultValue='{"JSON_VALUES":{},"JSON_SELECT_VALUES":{},"JSON_MAP_DEP_LABELS":[]}' />
-                                                <input type="hidden" name="returnURL" defaultValue="https://www.agsuitetech.com" />
+                                                <input type="hidden" name="returnURL" defaultValue="https://www.agsuite.tech/thank-you" />
 
                                                 {/* Subject */}
                                                 <div>
