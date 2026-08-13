@@ -154,16 +154,15 @@ const NavbarNetSuite = () => {
             </div>
           ))}
 
-          {/* NetSuite Next AI Shiny Gradient Button */}
+          {/* NetSuite Next AI Shiny Gradient Button (Commented out for now) */}
+          {/*
           <div className="relative inline-flex items-center group ml-2">
-            {/* Background Shadow with Light Gradient Color */}
             <div className="absolute -inset-0.5 rounded-full bg-linear-to-r from-cyan-300 via-blue-300 via-purple-300 to-pink-300 blur-md opacity-35 group-hover:opacity-65 transition duration-300 animate-gradient-x" />
 
             <Link
               href="/netsuite/next-ai"
               className="relative inline-flex items-center justify-center px-4 py-2 overflow-hidden rounded-full font-extrabold text-sm tracking-wide transition-all duration-300 hover:scale-[1.03]"
             >
-              {/* Gradient Border & White Button Interior */}
               <span className="absolute inset-0 bg-linear-to-r from-blue-600 via-indigo-500 via-purple-500 to-pink-500 p-[1.5px] rounded-full">
                 <span className="block w-full h-full bg-white rounded-full transition-colors group-hover:bg-slate-50" />
               </span>
@@ -177,11 +176,13 @@ const NavbarNetSuite = () => {
               </span>
             </Link>
           </div>
+          */}
         </nav>
 
         {/* Right Buttons */}
         <div className="flex items-center gap-3 sm:gap-4">
-          {/* Mobile NetSuite Next AI Quick Link */}
+          {/* Mobile NetSuite Next AI Quick Link (Commented out for now) */}
+          {/*
           <div className="lg:hidden relative inline-flex items-center group">
             <div className="absolute -inset-0.5 rounded-full bg-linear-to-r from-cyan-300 via-blue-300 to-purple-300 blur-xs opacity-35 group-hover:opacity-65 transition duration-300" />
             <Link
@@ -199,6 +200,7 @@ const NavbarNetSuite = () => {
               </span>
             </Link>
           </div>
+          */}
 
           <button
             onClick={toggleNavbar}

@@ -465,21 +465,19 @@ export default function NetSuiteNextAIPage() {
   ];
 
   const erpModules = [
-    { id: "accounting", label: "Accounting", icon: FiBarChart2, desc: "Go beyond numbers — ask questions in natural language and instantly understand drivers. AI automates GL, AR, and AP." },
-    { id: "close", label: "Close Management", icon: FiCheckCircle, desc: "Speed up financial month-end close with automated journal entries, continuous reconciliation, and anomaly alerts." },
-    { id: "multientity", label: "Multi-Entity", icon: FiGlobe, desc: "Consolidate global subsidiaries, automated intercompany eliminations, and multi-currency reporting." },
-    { id: "analytics", label: "Analytics & MIS", icon: FiTrendingUp, desc: "Turn raw transactional data into executive dashboards, predictive trends, and real-time board reports." },
-    { id: "customer", label: "Customer Management", icon: FiUsers, desc: "360-degree customer lifecycle intelligence connecting CRM, sales orders, billing, and support history." },
-    { id: "inventory", label: "Inventory", icon: FiGrid, desc: "Predict demand spikes, prevent stockouts, and optimize warehouse multi-location fulfillment with AI." },
+    { id: "accounting", label: "Accounting", icon: FiBarChart2, desc: "Go beyond numbers — ask questions in natural language and instantly understand financial drivers. AI automates GL, AR, and AP.", image: "/images/next-ai/mod_accounting.png" },
+    { id: "close", label: "Close Management", icon: FiCheckCircle, desc: "Speed up financial month-end close with intelligent close manager, automated journal entries, continuous reconciliation, and exception tracking.", image: "/images/next-ai/mod_close_management.png" },
+    { id: "multientity", label: "Multientity Management", icon: FiGlobe, desc: "Consolidate global subsidiaries, summarize financials across entities, and handle multi-currency balance sheets effortlessly.", image: "/images/next-ai/mod_multientity.png" },
+    { id: "analytics", label: "Analytics", icon: FiTrendingUp, desc: "Turn raw transactional data into multi-series bar charts, top item sales analysis, and real-time executive dashboards.", image: "/images/next-ai/mod_analytics.png" },
+    { id: "customer", label: "Customer Management", icon: FiUsers, desc: "360-degree customer meeting briefs, credit risk exposure tracking, overdue invoice management, and automated collections.", image: "/images/next-ai/mod_customer.png" },
   ];
 
   const moduleBullets: Record<string, string[]> = {
-    accounting: ["Ask questions in natural language and understand drivers instantly", "Automated journal entries, AP/AR workflows, and compliance checks", "Flexible GL controls built for global multi-currency operations"],
-    close: ["Automated journal entry preparation and approval workflows", "Continuous reconciliation alerts for anomaly detection", "Real-time close status dashboard for CFOs and controllers"],
-    multientity: ["Automated intercompany eliminations at period end", "Consolidated multi-currency financial reporting", "Shared chart of accounts across all subsidiaries"],
-    analytics: ["Executive dashboards with predictive trend analysis", "Drill-down from summary to transaction level in one click", "AI-generated board-ready reports with narrative insights"],
-    customer: ["360° view linking CRM, orders, billing, and support history", "AI-predicted customer health scores and renewal risks", "Automated collections workflows and dunning management"],
-    inventory: ["AI-driven demand forecasting to prevent stockouts", "Multi-location bin management and fulfillment optimization", "Automated reorder point calculation and PO generation"],
+    accounting: ["Ask questions in natural language to pull income statements by accounting period", "Automated income comparison across rolling calendar years", "Flexible GL controls built for global multi-currency operations"],
+    close: ["Intelligent Close Manager with lock accounts and task completion tracking", "Real-time task completion percentage for A/R, A/P, and Accounting", "Variance and exception alerts for open invoice approvals"],
+    multientity: ["Summarize balance sheet financials across all subsidiaries", "Top findings insights on high cash position and accounts receivable", "Unified chart of accounts and multi-entity consolidation"],
+    analytics: ["Two-series bar charts of top best-selling items by quantity and revenue", "Drill-down from executive summary to subsidiary transaction level", "AI-generated narrative insights and custom period comparisons"],
+    customer: ["Instant meeting briefs prepared with account terms and credit limits", "Real-time accounts receivable exposure and overdue invoice tracking", "Automated collections workflows and customer relationship check-ins"],
   };
 
   const activeModuleData = erpModules.find((m) => m.id === activeModule);
@@ -876,15 +874,16 @@ export default function NetSuiteNextAIPage() {
                 </div>
 
                 {/* Image Right */}
-                <div className="relative min-h-[220px] sm:min-h-[300px] lg:min-h-0 overflow-hidden border-t lg:border-t-0 lg:border-l border-white/10">
-                  <Image
-                    src="/images/lap/netsuite_module_showcase_hd.png"
-                    alt={`NetSuite ${activeModuleData?.label} Module Preview`}
-                    fill
-                    className="object-cover"
-                    quality={98}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-transparent to-transparent lg:from-transparent lg:via-transparent" />
+                <div className="relative min-h-[300px] sm:min-h-[380px] lg:min-h-[440px] overflow-hidden border-t lg:border-t-0 lg:border-l border-white/10 bg-slate-950/90 flex items-center justify-center p-3 sm:p-5">
+                  <div className="relative w-full h-full min-h-[280px] sm:min-h-[360px] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                    <Image
+                      src={activeModuleData?.image || "/images/next-ai/mod_accounting.png"}
+                      alt={`NetSuite ${activeModuleData?.label} Module Preview`}
+                      fill
+                      className="object-contain object-center bg-slate-950 p-1"
+                      quality={100}
+                    />
+                  </div>
                 </div>
               </div>
             </motion.div>
