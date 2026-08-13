@@ -21,7 +21,7 @@ const capabilities: Capability[] = [
         title: "Unified Cloud Platform",
         subline: "Everything you need in one place",
         description: "Zoho One provides a comprehensive suite of 50+ applications to run your entire business—from sales and marketing to finance and HR.",
-        image: "/images/key-capabilities/cap_unified.png",
+        image: "/images/key-capabilities/cap_unified_person.png",
         link: "/zoho/solutions "
     },
     {

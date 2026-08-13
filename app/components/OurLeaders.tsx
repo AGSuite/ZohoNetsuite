@@ -7,7 +7,7 @@ import Image from "next/image";
 export const leadersData = [
   {
     name: "Ankur Goyal",
-    title: "CEO",
+    title: "Founder & CEO",
     image: "/images/people/Ankur.jpg",
     linkedin: "https://www.linkedin.com/in/ankurgoyal2/",
     imgClass: "object-cover object-top",
@@ -34,10 +34,10 @@ export const leadersData = [
     imgClass: "object-cover object-top",
   },
   {
-    name: "Mayuri Bharadi",
+    name: "Mayuri More",
     title: "Project Delivery Manager",
     image: "/images/people/mayuri%20mam.png",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/mayuri-more-58770733/",
     imgClass: "object-contain p-2.5",
   },
 ];

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
@@ -792,67 +792,7 @@ export default function NetSuiteNextAIPage() {
         </div>
       </section>
 
-      {/* ── 5. TESTIMONIAL / PROOF SECTION ───────────────────────────── */}
-      <section className="relative py-14 sm:py-20 px-4 sm:px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/30 via-slate-950 to-purple-950/20 pointer-events-none" />
 
-        <div className="relative max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
-
-            {/* Image Left */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative rounded-3xl overflow-hidden aspect-[16/9] sm:aspect-[4/3] border border-white/10 shadow-2xl"
-            >
-              <Image
-                src="/images/lap/happy_cfo_netsuite_office.webp"
-                alt="Finance leader using NetSuite Next AI at AGSuite"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-              <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
-                <div className="flex gap-1 mb-1 sm:mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-xs sm:text-sm">★</span>
-                  ))}
-                </div>
-                <p className="text-white font-bold text-xs sm:text-sm">NetSuite Next Customer</p>
-                <p className="text-slate-300 text-[10px] sm:text-xs">AGSuite Implementation Partner</p>
-              </div>
-            </motion.div>
-
-            {/* Quote Right */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="p-6 sm:p-10 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md"
-            >
-              <div className="text-4xl sm:text-5xl text-blue-400 font-serif leading-none mb-3 sm:mb-4">"</div>
-              <p className="text-base sm:text-xl font-semibold text-white italic leading-relaxed">
-                We&apos;re ready for the future, and with NetSuite Next delivered by AGSuite, we&apos;ll keep brewing up joy without the back-office bitterness.
-              </p>
-              <div className="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-white/10">
-                <h4 className="text-sm sm:text-base font-bold text-white">Adam Levison</h4>
-                <p className="text-xs text-blue-400 font-bold mt-0.5">happy® Finance Leader & NetSuite Innovator</p>
-              </div>
-
-              {/* Stats */}
-              <div className="mt-6 sm:mt-8 grid grid-cols-3 gap-2 sm:gap-4">
-                {[{ v: "44K+", l: "Customers" }, { v: "220", l: "Countries" }, { v: "26+", l: "Years" }].map((s, i) => (
-                  <div key={i} className="text-center p-2.5 sm:p-3 rounded-xl bg-white/5 border border-white/10">
-                    <div className="text-base sm:text-xl font-black text-white">{s.v}</div>
-                    <div className="text-[10px] sm:text-xs text-slate-400 mt-0.5">{s.l}</div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* ── 6. ERP MODULE SHOWCASE ────────────────────────────────────── */}
       <section className="relative py-16 sm:py-28 px-4 sm:px-6 overflow-hidden">

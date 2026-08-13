@@ -35,7 +35,7 @@ const caseStudies: CaseStudy[] = [
         id: 3,
         title: "Zoho for Financial Services",
         description: "Modernizing financial operations with an automated approach to data gathering and analysis.",
-        image: "/images/case-studies/cs_financial_services.png",
+        image: "/images/case-studies/cs_financial_services_office.png",
         company: "Financial Services",
         industry: "Financial Services",
         recipientEmail: "shivam@agsuitetech.com"

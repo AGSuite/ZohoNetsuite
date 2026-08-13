@@ -53,7 +53,7 @@ const allCaseStudies: CaseStudy[] = [
         id: 4,
         title: "Zoho for Financial Services",
         description: "Adopting a modern approach to gather, analyze, and manage mission-critical financial data.",
-        image: "/images/case-studies/cs_financial_services.png",
+        image: "/images/case-studies/cs_financial_services_office.png",
         company: "Financial Services",
         industry: "Financial Services",
         tags: ["Zoho", "Financial Services"],

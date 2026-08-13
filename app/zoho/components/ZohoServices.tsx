@@ -22,7 +22,7 @@ const services: ServiceItem[] = [
     title: "Digital Transformation",
     heading: "",
     description: "Modernize your business for the digital age with our strategic transformation roadmap.",
-    bgImage: "/images/zoho-services/srv_digital_transformation_v4.png",
+    bgImage: "/images/zoho-services/srv_digital_transformation_v5.png",
     href: "/zoho/services/digital-transformation",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -34,7 +34,7 @@ const services: ServiceItem[] = [
     title: "Integration Services",
     heading: "",
     description: "Seamlessly connect Zoho with your entire ecosystem via robust API-led integrations.",
-    bgImage: "/images/zoho-services/srv_integration_v4.png",
+    bgImage: "/images/zoho-services/srv_integration_v5.png",
     href: "/zoho/services/integration-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -46,7 +46,7 @@ const services: ServiceItem[] = [
     title: "Training Services",
     heading: "",
     description: "Upskill your team with expert-led Zoho training to maximise platform adoption.",
-    bgImage: "/images/zoho-services/srv_training_v4.png",
+    bgImage: "/images/zoho-services/srv_training_v5.png",
     href: "/zoho/services/training-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -59,7 +59,7 @@ const services: ServiceItem[] = [
     title: "Low-Code Application Development",
     heading: "",
     description: "Build powerful custom applications with Zoho Creator and extend your business faster.",
-    bgImage: "/images/zoho-services/srv_low_code_v4.webp",
+    bgImage: "/images/zoho-services/srv_low_code.png",
     href: "/zoho/services/low-code",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -71,7 +71,7 @@ const services: ServiceItem[] = [
     title: "Managed Services",
     heading: "",
     description: "End-to-end IT management and dedicated support to keep your Zoho operations running smoothly.",
-    bgImage: "/images/zoho-services/srv_managed_v4.png",
+    bgImage: "/images/zoho-services/srv_managed.png",
     href: "/zoho/services/managed-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -90,62 +90,55 @@ export default function ZohoServices() {
   useEffect(() => {
     if (!sectionRef.current) return;
 
-    const mm = gsap.matchMedia();
-
-    mm.add("(min-width: 1024px)", () => {
-      const ctx = gsap.context(() => {
-        // Background fade
-        ScrollTrigger.create({
+    const ctx = gsap.context(() => {
+      // Smooth background transition from white to black on scroll
+      gsap.to(overlayRef.current, {
+        opacity: 1,
+        ease: "none",
+        scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top center",
-          end: "bottom center",
-          onEnter: () => {
-            gsap.to(overlayRef.current, { opacity: 1, duration: 0.5 });
-            gsap.to(glowRef.current, { opacity: 1, duration: 0.5 });
-          },
-          onLeave: () => {
-            gsap.to(overlayRef.current, { opacity: 0, duration: 0.5 });
-            gsap.to(glowRef.current, { opacity: 0, duration: 0.5 });
-          },
-          onEnterBack: () => {
-            gsap.to(overlayRef.current, { opacity: 1, duration: 0.5 });
-            gsap.to(glowRef.current, { opacity: 1, duration: 0.5 });
-          },
-          onLeaveBack: () => {
-            gsap.to(overlayRef.current, { opacity: 0, duration: 0.5 });
-            gsap.to(glowRef.current, { opacity: 0, duration: 0.5 });
-          },
-        });
+          start: "top 70%",
+          end: "top 25%",
+          scrub: 0.5,
+        },
+      });
 
-        // Title color switch
-        ScrollTrigger.create({
+      gsap.to(glowRef.current, {
+        opacity: 1,
+        ease: "none",
+        scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top center",
-          end: "bottom center",
-          onEnter: () => gsap.to(".zoho-services-title", { color: "#fff", duration: 0.5 }),
-          onLeave: () => gsap.to(".zoho-services-title", { color: "#1f2937", duration: 0.5 }),
-          onEnterBack: () => gsap.to(".zoho-services-title", { color: "#fff", duration: 0.5 }),
-          onLeaveBack: () => gsap.to(".zoho-services-title", { color: "#1f2937", duration: 0.5 }),
-        });
-      }, sectionRef);
+          start: "top 70%",
+          end: "top 25%",
+          scrub: 0.5,
+        },
+      });
 
-      return () => ctx.revert();
-    });
+      // Smooth title text color switch from dark to white
+      gsap.to(".zoho-services-title", {
+        color: "#ffffff",
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+          end: "top 25%",
+          scrub: 0.5,
+        },
+      });
+    }, sectionRef);
 
-    return () => {
-      mm.revert();
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
     <section ref={sectionRef} className="relative py-20">
-      {/* Background */}
+      {/* Background - Starts White */}
       <div className="absolute inset-0 bg-white z-0" />
 
-      {/* Overlay */}
+      {/* Overlay - Transitions to Black on scroll */}
       <div
         ref={overlayRef}
-        className="absolute inset-0 bg-black opacity-0 z-1 transition-opacity"
+        className="absolute inset-0 bg-black opacity-0 z-1 pointer-events-none"
       />
 
       {/* Glow */}
@@ -153,7 +146,7 @@ export default function ZohoServices() {
         ref={glowRef}
         className="absolute inset-0 opacity-0 z-2
         bg-[radial-gradient(circle_at_50%_20%,rgba(220,38,38,0.2),transparent_70%)]
-        pointer-events-none transition-opacity"
+        pointer-events-none"
       />
 
       {/* DESKTOP VIEW - Single Row */}
@@ -203,13 +196,13 @@ export default function ZohoServices() {
                     {service.title}
                   </h3>
 
-                  {/* Description - Equal length */}
+                  {/* Description */}
                   <p className="text-base text-white/90 leading-relaxed line-clamp-3">
                     {service.description}
                   </p>
                 </div>
 
-                {/* Hover/Active State - White Background with Left-Aligned Content */}
+                {/* Hover/Active State - White Background with Full Lines Completed */}
                 <div
                   className={`absolute inset-0 bg-white transition-opacity duration-500 z-20 px-5 pb-24 flex flex-col justify-end text-left ${activeIdx === index ? "opacity-100" : "opacity-0"
                     }`}
@@ -224,8 +217,8 @@ export default function ZohoServices() {
                     {service.title}
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-base text-gray-600 leading-relaxed mb-0 line-clamp-3">
+                  {/* Description - Complete lines shown on hover */}
+                  <p className="text-base text-gray-700 leading-relaxed mb-0">
                     {service.description}
                   </p>
 
@@ -250,7 +243,7 @@ export default function ZohoServices() {
       {/* TABLET VIEW - 2 columns */}
       <div className="hidden md:block lg:hidden relative z-10">
         <div className="text-center mb-6">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900">
+          <h2 className="zoho-services-title text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900 transition-colors duration-500">
             Our Zoho Services
           </h2>
         </div>
@@ -294,13 +287,13 @@ export default function ZohoServices() {
                     {service.title}
                   </h3>
 
-                  {/* Description - Equal length */}
+                  {/* Description */}
                   <p className="text-base text-white/90 leading-relaxed line-clamp-3">
                     {service.description}
                   </p>
                 </div>
 
-                {/* Hover/Active State - White Background with Left-Aligned Content */}
+                {/* Hover/Active State - White Background with Full Lines Completed */}
                 <div
                   className={`absolute inset-0 bg-white transition-opacity duration-500 z-20 px-5 pb-24 flex flex-col justify-end text-left ${activeIdx === index ? "opacity-100" : "opacity-0"
                     }`}
@@ -315,8 +308,8 @@ export default function ZohoServices() {
                     {service.title}
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-base text-gray-600 leading-relaxed mb-0 line-clamp-3">
+                  {/* Description - Complete lines shown on hover */}
+                  <p className="text-base text-gray-700 leading-relaxed mb-0">
                     {service.description}
                   </p>
 
@@ -341,7 +334,7 @@ export default function ZohoServices() {
       {/* MOBILE VIEW */}
       <div className="md:hidden px-6 relative z-10">
         <div className="text-center mb-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900">
+          <h2 className="zoho-services-title text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900 transition-colors duration-500">
             Our Zoho Services
           </h2>
         </div>
@@ -350,7 +343,7 @@ export default function ZohoServices() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="relative w-full h-[280px] bg-gray-200 rounded-2xl overflow-hidden"
+              className="relative w-full h-[280px] bg-gray-200 rounded-2xl overflow-hidden shadow-xl"
             >
               <Image
                 src={service.bgImage}

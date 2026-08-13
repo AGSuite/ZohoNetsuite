@@ -53,7 +53,7 @@ export default function LifeAtAGSuite() {
   const leadersData = [
     {
       name: "Ankur Goyal",
-      title: "CEO",
+      title: "Founder & CEO",
       image: "/images/people/Ankur.jpg",
       linkedin: "https://www.linkedin.com/in/ankurgoyal2/",
       bio: "Visionary leader driving AGSuite's strategic vision with 25+ years in enterprise technology solutions."
@@ -80,10 +80,10 @@ export default function LifeAtAGSuite() {
       bio: "Driving global revenue growth and strategic partnerships with 25+ years of cross-industry expertise."
     },
     {
-      name: "Mayuri",
+      name: "Mayuri More",
       title: "Project Delivery Manager",
       image: "/images/people/mayuri.webp",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/mayuri-more-58770733/",
       bio: "Over 12 years of experience leading complex cloud migrations and delivery frameworks with agile execution."
     }
   ];
