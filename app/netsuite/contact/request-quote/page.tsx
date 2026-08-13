@@ -631,9 +631,12 @@ export default function RequestQuotePremium() {
             <section className="py-20 bg-white border-y border-gray-100">
                 <div className="max-w-7xl mx-auto px-6">
                     {/* Section Header */}
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <h2 className="text-3xl sm:text-4xl font-medium text-gray-900">
-                            Explore More Ways to Connect
+                    <div className="text-center max-w-4xl mx-auto mb-12">
+                        <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 tracking-tight">
+                            Explore More Ways to{" "}
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+                                Connect
+                            </span>
                         </h2>
                     </div>
 
