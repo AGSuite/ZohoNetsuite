@@ -69,7 +69,7 @@ export default function LifeAtAGSuite() {
       name: "Nikhil Jain",
       title: "CTO",
       image: "/images/people/Nikhil.png",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/nikhil-jain-193a3b80/",
       bio: "Technology innovator leading AGSuite's technical strategy and cloud architecture excellence."
     },
     {

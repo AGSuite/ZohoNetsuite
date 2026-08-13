@@ -23,8 +23,8 @@ export const leadersData = [
     name: "Nikhil Jain",
     title: "CTO",
     image: "/images/people/Nikhil.png",
-    linkedin: "#",
-    imgClass: "object-contain p-2.5",
+    linkedin: "https://www.linkedin.com/in/nikhil-jain-193a3b80/",
+    imgClass: "object-cover object-top",
   },
   {
     name: "Shailesh Punse",

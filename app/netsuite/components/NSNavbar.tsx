@@ -154,53 +154,10 @@ const NavbarNetSuite = () => {
             </div>
           ))}
 
-          {/* NetSuite Next AI Shiny Gradient Button (Commented out for now) */}
-          {/*
-          <div className="relative inline-flex items-center group ml-2">
-            <div className="absolute -inset-0.5 rounded-full bg-linear-to-r from-cyan-300 via-blue-300 via-purple-300 to-pink-300 blur-md opacity-35 group-hover:opacity-65 transition duration-300 animate-gradient-x" />
-
-            <Link
-              href="/netsuite/next-ai"
-              className="relative inline-flex items-center justify-center px-4 py-2 overflow-hidden rounded-full font-extrabold text-sm tracking-wide transition-all duration-300 hover:scale-[1.03]"
-            >
-              <span className="absolute inset-0 bg-linear-to-r from-blue-600 via-indigo-500 via-purple-500 to-pink-500 p-[1.5px] rounded-full">
-                <span className="block w-full h-full bg-white rounded-full transition-colors group-hover:bg-slate-50" />
-              </span>
-              <span className="relative flex items-center gap-2 bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-bold">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-600" />
-                </span>
-                <span>NetSuite Next AI</span>
-                <span className="text-xs">✨</span>
-              </span>
-            </Link>
-          </div>
-          */}
         </nav>
 
         {/* Right Buttons */}
         <div className="flex items-center gap-3 sm:gap-4">
-          {/* Mobile NetSuite Next AI Quick Link (Commented out for now) */}
-          {/*
-          <div className="lg:hidden relative inline-flex items-center group">
-            <div className="absolute -inset-0.5 rounded-full bg-linear-to-r from-cyan-300 via-blue-300 to-purple-300 blur-xs opacity-35 group-hover:opacity-65 transition duration-300" />
-            <Link
-              href="/netsuite/next-ai"
-              className="relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-xs font-bold p-[1.5px]"
-            >
-              <span className="absolute inset-0 bg-linear-to-r from-blue-600 via-indigo-500 to-purple-600 p-[1px] rounded-full">
-                <span className="block w-full h-full bg-white rounded-full" />
-              </span>
-              <span className="relative flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-                <span className="bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  NetSuite Next AI
-                </span>
-              </span>
-            </Link>
-          </div>
-          */}
 
           <button
             onClick={toggleNavbar}
