@@ -72,12 +72,14 @@ const NetSuitePricingCalculator = () => {
         'Transportation and Logistics',
         'Manufacturing',
         'Telecom Industry',
+        'Food & Beverages',
         'Other'
     ];
     const countries = ['India', 'USA', 'UK', 'Canada', 'Australia', 'UAE', 'Singapore', 'Japan', 'France', 'Germany', 'Dubai', 'Malaysia'];
     const commonModules = [
         'Accounting / Financials',
         'CRM',
+        'Planning & Budgeting',
         'Procurement',
         'Analytics & Reporting',
         'Advanced Financials',
@@ -86,17 +88,15 @@ const NetSuitePricingCalculator = () => {
 
     const industryModules: Record<string, string[]> = {
         'Software and Technology': [
-            'Subscription Billing',
-            'Revenue Recognition',
-            'Planning & Budgeting',
-            'SuiteAnalytics'
+            'SuiteBilling',
+            'Advanced Revenue Management (ARM)',
+            'SuiteProjects'
         ],
         'IT and Professional Services': [
             'SuiteProjects'
         ],
         'Financial Services': [
-            'Revenue Management',
-            'Planning & Budgeting',
+            'Advanced Revenue Management (ARM)',
             'Multi-Book Accounting'
         ],
         'Wholesale Distribution': [
@@ -112,21 +112,18 @@ const NetSuitePricingCalculator = () => {
             'Marketing Automation'
         ],
         'Media and Publishing': [
-            'Revenue Recognition',
-            'Subscription Billing',
-            'SuiteAnalytics',
-            'Advertising Management'
+            'Advanced Revenue Management (ARM)',
+            'SuiteBilling'
         ],
         'Retail & E-Commerce': [
             'SuiteCommerce',
             'Point of Sale (POS)',
             'Inventory Management',
-            'Order Management',
-            'Customer Management'
+            'Order Management'
         ],
         'Transportation and Logistics': [
             'Supply Chain Management',
-            'Inventory Visibility',
+            'Inventory Management',
             'Warehouse Management System (WMS)',
             'Transportation Management',
             'Demand Planning'
@@ -136,12 +133,17 @@ const NetSuitePricingCalculator = () => {
             'Work Orders & Assemblies',
             'Quality Management',
             'Supply Chain Management',
-            'Production Control'
+            'Demand Planning (MRP)'
         ],
         'Telecom Industry': [
-            'Subscription Billing',
-            'Revenue Management',
-            'Customer Support Management'
+            'SuiteBilling',
+            'Advanced Revenue Management (ARM)'
+        ],
+        'Food & Beverages': [
+            'Work Orders & Assemblies',
+            'Quality Management',
+            'Manufacturing WIP',
+            'Inventory Management'
         ],
         'Other': []
     };

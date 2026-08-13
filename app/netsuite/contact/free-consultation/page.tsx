@@ -441,38 +441,38 @@ export default function FreeConsultation() {
                 </div>
             </section>
 
-            {/* ── Quick Access Sub-Pages (THE 4 CARDS) ───────────────────────────── */}
+            {/* ── Quick Access Sub-Pages ────────────────────────────────────────── */}
             <section className="py-20 bg-white border-y border-gray-100">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {/* Section Header */}
+                    <div className="text-center max-w-3xl mx-auto mb-12">
+                        <h2 className="text-3xl sm:text-4xl font-medium text-gray-900">
+                            Explore More Ways to Connect
+                        </h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
+                            {
+                                title: "Free Consultation",
+                                desc: "Talk to an expert.",
+                                link: "/netsuite/contact/free-consultation",
+                                icon: Target,
+                                image: "/images/contact/consultation.webp"
+                            },
+                            {
+                                title: "Request Quote",
+                                desc: "Get a project estimate.",
+                                link: "/netsuite/contact/request-quote",
+                                icon: Clock,
+                                image: "/images/contact/quote.webp"
+                            },
                             {
                                 title: "Careers",
                                 desc: "Join our growing team.",
                                 link: "/netsuite/contact/careers",
                                 icon: Briefcase,
                                 image: "/images/contact/carrer.webp"
-                            },
-                            {
-                                title: "Support",
-                                desc: "24/7 client support.",
-                                link: "/netsuite/contact/support",
-                                icon: HelpCircle,
-                                image: "/images/contact/support.webp"
-                            },
-                            {
-                                title: "Request Quote",
-                                desc: "Get project pricing.",
-                                link: "/netsuite/contact/request-quote",
-                                icon: Clock,
-                                image: "/images/contact/quote.webp"
-                            },
-                            {
-                                title: "Free Consultation",
-                                desc: "Talk to our team.",
-                                link: "/netsuite/contact/free-consultation",
-                                icon: Target,
-                                image: "/images/contact/consultation.webp"
                             }
                         ].map((item, i) => (
                             <Link

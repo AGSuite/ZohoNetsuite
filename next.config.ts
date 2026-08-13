@@ -126,6 +126,12 @@ const nextConfig: NextConfig = {
       { source: '/zoho/solutions/service/zoho-fsm', destination: '/zoho-fsm', permanent: true },
       { source: '/zoho/solutions/analytics/zoho-analytics', destination: '/zoho-analytics', permanent: true },
       { source: '/zoho/solutions/analytics/zoho-flow', destination: '/zoho-flow', permanent: true },
+      // Root-level legacy & landing redirects to NetSuite pages
+      { source: '/blogs', destination: '/netsuite/blogs', permanent: true },
+      { source: '/case-study', destination: '/netsuite/case-studies', permanent: true },
+      { source: '/case-studies', destination: '/netsuite/case-studies', permanent: true },
+      { source: '/events', destination: '/netsuite/insights#events', permanent: true },
+      { source: '/oracle-netsuite-emerging-solution-provider-west-award', destination: '/netsuite/insights#awards', permanent: true },
     ];
   },
 };

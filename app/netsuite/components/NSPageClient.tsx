@@ -120,9 +120,11 @@ export default function NSPageClient({ blogs }: NSPageClientProps) {
         <NSIntegrationDesign />
       </LazySection>
 
+      {/* 
       <LazySection height="600px">
         <NSLeadMagnet />
       </LazySection>
+      */}
 
       <LazySection height="700px">
         <NSKeyCapabilities />

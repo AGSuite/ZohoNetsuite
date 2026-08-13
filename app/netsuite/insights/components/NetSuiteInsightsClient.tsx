@@ -43,7 +43,7 @@ const InsightNav = () => (
 
 function AwardsAndRecognitionSection() {
     return (
-        <section className="relative pt-20 pb-16 bg-white overflow-hidden">
+        <section id="awards" className="relative pt-20 pb-16 bg-white overflow-hidden scroll-mt-28">
             <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 md:px-12 lg:px-16">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
                     <motion.div
@@ -89,7 +89,7 @@ function AwardsAndRecognitionSection() {
 
 function EventsSection() {
     return (
-        <section className="py-24 bg-gray-50 relative overflow-hidden">
+        <section id="events" className="py-24 bg-gray-50 relative overflow-hidden scroll-mt-28">
             <div className="max-w-7xl mx-auto px-6 flex flex-col gap-24">
                 {/* Section Header */}
                 <motion.div
