@@ -8,8 +8,8 @@ export default function EmbeddedZohoForm() {
     const router = useRouter();
 
     useEffect(() => {
-        (window as any).addAriaSelected409531000047791049 = function () {
-            const optionElem = (event as any).target;
+        (window as any).addAriaSelected409531000047791049 = function (event: any) {
+            const optionElem = event.target;
             const previousSelectedOption = optionElem.querySelector('[aria-selected=true]');
             if (previousSelectedOption) {
                 previousSelectedOption.removeAttribute('aria-selected');
@@ -139,7 +139,7 @@ export default function EmbeddedZohoForm() {
 
                     <div className="agsuite_column">
                         <label className="agsuite_label" htmlFor="Email">POC's Email *</label>
-                        <input type="text" id="Email" ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" />
+                        <input type="text" id="Email" data-ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" />
                     </div>
 
                     <div className="agsuite_column">

@@ -22,7 +22,7 @@ export default function ContactFormDesign4() {
     (window as any).validateEmail409531000047791096 = function () {
       const form = document.forms.namedItem('WebToLeads409531000047791096') as HTMLFormElement;
       if (!form) return true;
-      const emailFld = form.querySelectorAll('[ftype="email"]');
+      const emailFld = form.querySelectorAll('[data-ftype="email"]');
       for (let i = 0; i < emailFld.length; i++) {
         const v = (emailFld[i] as HTMLInputElement).value;
         if (v.replace(/^\s+|\s+$/g, '').length !== 0) {
@@ -161,7 +161,7 @@ export default function ContactFormDesign4() {
                   </div>
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">POC's Email *</label>
-                    <input type="text" id="Email" ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
+                    <input type="text" id="Email" data-ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
                   </div>
                 </div>
 

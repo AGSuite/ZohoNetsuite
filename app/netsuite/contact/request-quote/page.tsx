@@ -308,7 +308,7 @@ export default function RequestQuotePremium() {
                                                     <input
                                                         type='text'
                                                         id='Email'
-                                                        ftype="email"
+                                                        data-ftype="email"
                                                         placeholder="john@company.com"
                                                         required
                                                         name='Email'

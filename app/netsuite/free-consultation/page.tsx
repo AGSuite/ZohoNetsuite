@@ -41,7 +41,7 @@ export default function FreeConsultationTopLevel() {
         (window as any).validateEmail409531000047791096 = function () {
             const form = document.forms.namedItem('WebToLeads409531000047791096') as HTMLFormElement;
             if (!form) return true;
-            const emailFld = form.querySelectorAll('[ftype="email"]');
+            const emailFld = form.querySelectorAll('[data-ftype="email"]');
             for (let i = 0; i < emailFld.length; i++) {
                 const emailVal = (emailFld[i] as HTMLInputElement).value;
                 if ((emailVal.replace(/^\s+|\s+$/g, '')).length !== 0) {
@@ -311,7 +311,7 @@ export default function FreeConsultationTopLevel() {
                                                 <input
                                                     type="text"
                                                     id="Email"
-                                                    ftype="email"
+                                                    data-ftype="email"
                                                     name="Email"
                                                     required
                                                     maxLength={100}

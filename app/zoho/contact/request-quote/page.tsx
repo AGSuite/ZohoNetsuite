@@ -47,7 +47,7 @@ export default function ZohoRequestQuotePage() {
         (window as any).validateEmail409531000047791049 = function () {
             const form = document.forms.namedItem('WebToLeads409531000047791049') as HTMLFormElement;
             if (!form) return true;
-            const emailFld = form.querySelectorAll('[ftype="email"]');
+            const emailFld = form.querySelectorAll('[data-ftype="email"]');
             for (let i = 0; i < emailFld.length; i++) {
                 const emailVal = (emailFld[i] as HTMLInputElement).value;
                 if ((emailVal.replace(/^\s+|\s+$/g, '')).length !== 0) {
@@ -387,7 +387,7 @@ export default function ZohoRequestQuotePage() {
                                                 </div>
                                                 <div>
                                                     <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">POC's Email *</label>
-                                                    <input type="text" id="Email" ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
+                                                    <input type="text" id="Email" data-ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                                 </div>
                                             </div>
 

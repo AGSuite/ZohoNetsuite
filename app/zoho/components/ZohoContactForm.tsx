@@ -45,7 +45,7 @@ export default function ZohoContactForm() {
         (window as any).validateEmail409531000047791049 = function () {
             const form = document.forms.namedItem('WebToLeads409531000047791049') as HTMLFormElement;
             if (!form) return true;
-            const emailFld = form.querySelectorAll('[ftype="email"]');
+            const emailFld = form.querySelectorAll('[data-ftype="email"]');
             for (let i = 0; i < emailFld.length; i++) {
                 const emailVal = (emailFld[i] as HTMLInputElement).value;
                 if ((emailVal.replace(/^\s+|\s+$/g, '')).length !== 0) {
@@ -308,7 +308,7 @@ export default function ZohoContactForm() {
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="flex flex-col">
                                         <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">POC's Email *</motion.label>
-                                        <input type="text" id="Email" ftype="email" name="Email" required maxLength={100} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="john@enterprise.com" />
+                                        <input type="text" id="Email" data-ftype="email" name="Email" required maxLength={100} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="john@enterprise.com" />
                                     </motion.div>
                                 </div>
 
