@@ -137,6 +137,7 @@ export const navItemsNetSuite: NavSection[] = [
                         {
                             title: 'Analytics & Intelligence',
                             items: [
+                                { label: 'NetSuite Next AI', href: '/netsuite/next-ai', icon: Cpu },
                                 { label: 'NetSuite Business Intelligence', href: '/netsuite-business-intelligence', icon: PieChart },
                                 { label: 'NetSuite Analytics Warehouse', href: '/netsuite-analytics-warehouse', icon: Activity },
                                 { label: 'Artificial Intelligence in NetSuite', href: '/artificial-intelligence-ai', icon: Cpu },

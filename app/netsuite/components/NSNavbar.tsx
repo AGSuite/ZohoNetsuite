@@ -82,7 +82,7 @@ const NavbarNetSuite = () => {
         <div className="max-w-[1450px] mx-auto px-6 w-full flex items-center justify-between">
           <div className="w-32 h-10 bg-gray-100 animate-pulse rounded" />
           <div className="hidden lg:flex gap-4">
-             {[1,2,3,4,5].map(i => <div key={i} className="w-20 h-4 bg-gray-100 animate-pulse rounded" />)}
+            {[1, 2, 3, 4, 5].map(i => <div key={i} className="w-20 h-4 bg-gray-100 animate-pulse rounded" />)}
           </div>
           <div className="w-24 h-10 bg-gray-100 animate-pulse rounded" />
         </div>
@@ -159,6 +159,20 @@ const NavbarNetSuite = () => {
         {/* Right Buttons */}
         <div className="flex items-center gap-3 sm:gap-4">
 
+          {/* NetSuite Next AI Button */}
+          <div className="hidden sm:block relative group">
+            <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-[#13FFAA] via-[#1E67C6] to-[#CE84CF] blur-sm opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse" />
+            <Link
+              href="/netsuite/next-ai"
+              className="relative px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-white text-slate-900 font-extrabold text-xs sm:text-sm flex items-center gap-2 border border-slate-200 shadow-lg hover:scale-105 transition-all"
+            >
+              <span className="w-2 h-2 rounded-full bg-blue-600 animate-ping" />
+              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-extrabold">
+                NetSuite Next AI
+              </span>
+            </Link>
+          </div>
+
           <button
             onClick={toggleNavbar}
             className={`lg:hidden p-2 rounded-lg ${isScrolled ? 'bg-gray-100' : 'bg-gray-100/10'} text-gray-900`}
@@ -185,6 +199,18 @@ const NavbarNetSuite = () => {
       {openNavbar && (
         <div className="lg:hidden fixed inset-0 top-20 bg-white z-40 overflow-y-auto p-5">
           <div className="space-y-4">
+            <div className="pb-2">
+              <Link
+                href="/netsuite/next-ai"
+                className="flex items-center justify-center gap-2 w-full py-3 bg-white text-slate-900 font-extrabold text-sm rounded-xl border border-slate-200 shadow-md"
+                onClick={() => setOpenNavbar(false)}
+              >
+                <span className="w-2 h-2 rounded-full bg-blue-600 animate-ping" />
+                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-extrabold">
+                  NetSuite Next AI
+                </span>
+              </Link>
+            </div>
             {navItems.map((item, index) => (
               <div key={index} className="border-b border-gray-100 pb-4">
                 <button
@@ -204,8 +230,9 @@ const NavbarNetSuite = () => {
                 )}
               </div>
             ))}
-            <div className="pt-4">
-              <Link href="/netsuite/contact" className="block w-full py-3 bg-blue-600 text-white text-center font-bold rounded-xl" onClick={() => setOpenNavbar(false)}>Request a Demo</Link>
+            <div className="pt-4 space-y-2">
+              <Link href="/netsuite/next-ai" className="block w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center font-bold rounded-xl shadow-md" onClick={() => setOpenNavbar(false)}>✨ NetSuite Next AI</Link>
+              <Link href="/netsuite/contact" className="block w-full py-3 bg-gray-900 text-white text-center font-bold rounded-xl" onClick={() => setOpenNavbar(false)}>Request a Demo</Link>
             </div>
           </div>
         </div>

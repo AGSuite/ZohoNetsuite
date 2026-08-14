@@ -424,7 +424,7 @@ select option {
   </div>
   
   <div class="agsuite_column">
-    <label class="field-label">PHONE *</label>
+    <label class="field-label">MOBILE *</label>
     <input type="text" id="Mobile" name="Mobile" maxlength="30" placeholder="Your phone number" onkeypress="return validateNumber(event)">
   </div>
   
@@ -453,10 +453,16 @@ select option {
     <label class="field-label">SERVICE *</label>
     <select class="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5" onChange="addAriaSelected409531000042578178()">
       <option value="" disabled selected>Select Service</option>
-      <option value="Licenses">Licenses</option>
-      <option value="AMC">AMC</option>
-      <option value="NetSuite Product /Services">NetSuite Product /Services</option>
-      <option value="Zoho Products/Services">Zoho Products/Services</option>
+      <option value="NetSuite Licenses">NetSuite Licenses</option>
+      <option value="NetSuite Implementation">NetSuite Implementation</option>
+      <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
+      <option value="New Subsidiary Implementation">New Subsidiary Implementation</option>
+      <option value="NetSuite Support">NetSuite Support</option>
+      <option value="NetSuite Optimization">NetSuite Optimization</option>
+      <option value="NetSuite Customization">NetSuite Customization</option>
+      <option value="NetSuite Integrations">NetSuite Integrations</option>
+      <option value="NetSuite India Localization">NetSuite India Localization</option>
+      <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
     </select>
   </div>
   

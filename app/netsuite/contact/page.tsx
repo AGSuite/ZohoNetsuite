@@ -562,7 +562,7 @@ export default function ContactPage() {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                           <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
-                            POC's Mobile <span className="text-blue-600">*</span>
+                            Mobile <span className="text-blue-600">*</span>
                           </label>
                           <input
                             type="tel"
@@ -608,10 +608,16 @@ export default function ContactPage() {
                             className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer"
                           >
                             <option value="-None-">-None-</option>
-                            <option value="Licenses">Licenses</option>
-                            <option value="AMC">AMC</option>
-                            <option value="NetSuite Product /Services">NetSuite Product /Services</option>
-                            <option value="Zoho Products/Services">Zoho Products/Services</option>
+                            <option value="NetSuite Licenses">NetSuite Licenses</option>
+                            <option value="NetSuite Implementation">NetSuite Implementation</option>
+                            <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
+                            <option value="New Subsidiary Implementation">New Subsidiary Implementation</option>
+                            <option value="NetSuite Support">NetSuite Support</option>
+                            <option value="NetSuite Optimization">NetSuite Optimization</option>
+                            <option value="NetSuite Customization">NetSuite Customization</option>
+                            <option value="NetSuite Integrations">NetSuite Integrations</option>
+                            <option value="NetSuite India Localization">NetSuite India Localization</option>
+                            <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
                           </select>
                         </div>
                         <div>

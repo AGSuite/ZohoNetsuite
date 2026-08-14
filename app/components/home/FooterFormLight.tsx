@@ -200,7 +200,7 @@ export default function FooterFormLight() {
                 </div>
                 <div>
                   <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
-                    Mobile Number <span className="text-blue-500">*</span>
+                    Mobile <span className="text-blue-500">*</span>
                   </label>
                   <input
                     type="tel"
@@ -230,7 +230,7 @@ export default function FooterFormLight() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-gray-700 text-xs font-medium uppercase tracking-wider mb-2">
-                    NetSuite Solution <span className="text-blue-500">*</span>
+                    Service Interest <span className="text-blue-500">*</span>
                   </label>
                   <div className="relative">
                     <select
@@ -238,14 +238,17 @@ export default function FooterFormLight() {
                       className="w-full bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 border-2 border-blue-200 hover:border-blue-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-4 text-gray-900 transition-all outline-none appearance-none cursor-pointer shadow-[inset_0_1px_2px_rgba(255,255,255,0.8),inset_0_-1px_1px_rgba(0,0,0,0.03)]"
                       suppressHydrationWarning
                     >
-                      <option value="">Select NetSuite Solution</option>
-                      <option value="NetSuite ERP">NetSuite ERP</option>
-                      <option value="NetSuite CRM">NetSuite CRM</option>
-                      <option value="NetSuite OneWorld">NetSuite OneWorld</option>
-                      <option value="NetSuite SuiteCommerce">NetSuite SuiteCommerce</option>
-                      <option value="NetSuite Planning & Budgeting">NetSuite Planning & Budgeting</option>
-                      <option value="NetSuite SuiteProject Pro">NetSuite SuiteProject Pro</option>
-                      <option value="NetSuite Analytics Warehouse">NetSuite Analytics Warehouse</option>
+                      <option value="">Select Service</option>
+                      <option value="NetSuite Licenses">NetSuite Licenses</option>
+                      <option value="NetSuite Implementation">NetSuite Implementation</option>
+                      <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
+                      <option value="New Subsidiary Implementation">New Subsidiary Implementation</option>
+                      <option value="NetSuite Support">NetSuite Support</option>
+                      <option value="NetSuite Optimization">NetSuite Optimization</option>
+                      <option value="NetSuite Customization">NetSuite Customization</option>
+                      <option value="NetSuite Integrations">NetSuite Integrations</option>
+                      <option value="NetSuite India Localization">NetSuite India Localization</option>
+                      <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
                     </select>
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

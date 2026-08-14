@@ -495,7 +495,7 @@ export default function RequestQuotePremium() {
                                                     />
                                                 </div>
                                                 <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">POC's Mobile *</label>
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Mobile *</label>
                                                     <input
                                                         type='text'
                                                         id='Mobile'
@@ -530,10 +530,16 @@ export default function RequestQuotePremium() {
                                                         defaultValue=""
                                                     >
                                                         <option value="-None-">-None-</option>
-                                                        <option value="Licenses">Licenses</option>
-                                                        <option value="AMC">AMC</option>
-                                                        <option value="NetSuite Product /Services">NetSuite Product /Services</option>
-                                                        <option value="Zoho Products/Services">Zoho Products/Services</option>
+                                                        <option value="NetSuite Licenses">NetSuite Licenses</option>
+                                                        <option value="NetSuite Implementation">NetSuite Implementation</option>
+                                                        <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
+                                                        <option value="New Subsidiary Implementation">New Subsidiary Implementation</option>
+                                                        <option value="NetSuite Support">NetSuite Support</option>
+                                                        <option value="NetSuite Optimization">NetSuite Optimization</option>
+                                                        <option value="NetSuite Customization">NetSuite Customization</option>
+                                                        <option value="NetSuite Integrations">NetSuite Integrations</option>
+                                                        <option value="NetSuite India Localization">NetSuite India Localization</option>
+                                                        <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
                                                     </select>
                                                 </div>
 

@@ -242,7 +242,7 @@ export default function EmbeddedZohoForm() {
                     </div>
 
                     <div className="agsuite_column">
-                        <input type="text" id="Mobile" name="Mobile" maxLength={30} placeholder="Mobile Number*" />
+                        <input type="text" id="Mobile" name="Mobile" maxLength={30} placeholder="Mobile*" />
                     </div>
 
                     <div className="agsuite_column-large">
@@ -252,10 +252,13 @@ export default function EmbeddedZohoForm() {
                     <div className="agsuite_column">
                         <select className="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5" defaultValue="">
                             <option value="" disabled>Select Service*</option>
-                            <option value="Licenses">Licenses</option>
-                            <option value="AMC">AMC</option>
-                            <option value="NetSuite Product /Services">NetSuite Product /Services</option>
-                            <option value="Zoho Products/Services">Zoho Products/Services</option>
+                            <option value="Zoho Licenses">Zoho Licenses</option>
+                            <option value="Zoho Implementation">Zoho Implementation</option>
+                            <option value="Zoho Licenses + Implementation">Zoho Licenses + Implementation</option>
+                            <option value="Zoho Support">Zoho Support</option>
+                            <option value="Zoho Optimization">Zoho Optimization</option>
+                            <option value="Zoho Customization">Zoho Customization</option>
+                            <option value="Zoho Integrations">Zoho Integrations</option>
                         </select>
                     </div>
 
