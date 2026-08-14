@@ -84,7 +84,7 @@ export default function ContactFormDesign4() {
 
     (window as any).checkMandatory409531000042578178 = function () {
       const fields = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
-      const labels = ['Company Name', 'Name', 'Mobile', 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
+      const labels = ['Company Name', 'Name', "POC's Mobile", 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
       const form = (document.forms as any)['WebToLeads409531000042578178'];
       if (!form) return false;
       for (let i = 0; i < fields.length; i++) {
@@ -328,7 +328,7 @@ export default function ContactFormDesign4() {
                             <input type="text" id="Designation" name="Designation" maxLength={100} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Manager" />
                           </div>
                           <div>
-                            <label htmlFor="Mobile" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Mobile <span className="text-red-500">*</span></label>
+                            <label htmlFor="Mobile" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">POC's Mobile <span className="text-red-500">*</span></label>
                             <input type="text" id="Mobile" name="Mobile" maxLength={30} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="+91 00000 00000" />
                           </div>
                         </div>
@@ -342,16 +342,10 @@ export default function ContactFormDesign4() {
                             <label htmlFor="LEADCF5" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Service <span className="text-red-500">*</span></label>
                             <select id="LEADCF5" name="LEADCF5" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm">
                               <option value="-None-">-None-</option>
-                              <option value="NetSuite Licenses">NetSuite Licenses</option>
-                              <option value="NetSuite Implementation">NetSuite Implementation</option>
-                              <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
-                              <option value="New Subsidiary Implementation">New Subsidiary Implementation</option>
-                              <option value="NetSuite Support">NetSuite Support</option>
-                              <option value="NetSuite Optimization">NetSuite Optimization</option>
-                              <option value="NetSuite Customization">NetSuite Customization</option>
-                              <option value="NetSuite Integrations">NetSuite Integrations</option>
-                              <option value="NetSuite India Localization">NetSuite India Localization</option>
-                              <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
+                              <option value="Licenses">Licenses</option>
+                              <option value="AMC">AMC</option>
+                              <option value="NetSuite Product /Services">NetSuite Product /Services</option>
+                              <option value="Zoho Products/Services">Zoho Products/Services</option>
                             </select>
                           </div>
                         </div>

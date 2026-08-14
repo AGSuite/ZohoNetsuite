@@ -311,7 +311,7 @@ export default function FooterFormSection() {
 
                   {/* Mobile */}
                   <div>
-                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Mobile *</label>
+                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">POC's Mobile *</label>
                     <input type="tel" name="Mobile" required className="w-full bg-blue-50/30 border-2 border-transparent focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-gray-900 transition-all outline-none text-sm" placeholder="+91 00000 00000" />
                   </div>
                 </div>
@@ -329,23 +329,10 @@ export default function FooterFormSection() {
                     <div className="relative">
                       <select name="LEADCF5" defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000042578178?.(); }} className="w-full bg-blue-50/30 border-2 border-transparent focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-gray-900 transition-all outline-none appearance-none cursor-pointer text-sm">
                         <option value="" disabled>Select Service</option>
-                        <option value="NetSuite Licenses">NetSuite Licenses</option>
-                        <option value="NetSuite Implementation">NetSuite Implementation</option>
-                        <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
-                        <option value="New Subsidiary Implementation">New Subsidiary Implementation</option>
-                        <option value="NetSuite Support">NetSuite Support</option>
-                        <option value="NetSuite Optimization">NetSuite Optimization</option>
-                        <option value="NetSuite Customization">NetSuite Customization</option>
-                        <option value="NetSuite Integrations">NetSuite Integrations</option>
-                        <option value="NetSuite India Localization">NetSuite India Localization</option>
-                        <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
-                        <option value="Zoho Licenses">Zoho Licenses</option>
-                        <option value="Zoho Implementation">Zoho Implementation</option>
-                        <option value="Zoho Licenses + Implementation">Zoho Licenses + Implementation</option>
-                        <option value="Zoho Support">Zoho Support</option>
-                        <option value="Zoho Optimization">Zoho Optimization</option>
-                        <option value="Zoho Customization">Zoho Customization</option>
-                        <option value="Zoho Integrations">Zoho Integrations</option>
+                        <option value="Licenses">Licenses</option>
+                        <option value="AMC">AMC</option>
+                        <option value="NetSuite Product /Services">NetSuite Product /Services</option>
+                        <option value="Zoho Products/Services">Zoho Products/Services</option>
                       </select>
                       <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>

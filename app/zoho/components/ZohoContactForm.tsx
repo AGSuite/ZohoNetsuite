@@ -419,7 +419,7 @@ export default function ZohoContactForm() {
                                         <input type="text" name="Designation" required className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="Manager" />
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Mobile *</motion.label>
+                                        <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Direct Contact (10 Digits) *</motion.label>
                                         <div className="flex gap-2">
                                             <select
                                                 value={selectedCode}
@@ -450,14 +450,17 @@ export default function ZohoContactForm() {
                                         <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Solution Area</motion.label>
                                         <div className="relative group">
                                             <select name="LEADCF5" defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000042578178?.(); }} className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md pr-10">
-                                                <option value="" disabled>Select Service *</option>
-                                                <option value="Zoho Licenses">Zoho Licenses</option>
-                                                <option value="Zoho Implementation">Zoho Implementation</option>
-                                                <option value="Zoho Licenses + Implementation">Zoho Licenses + Implementation</option>
-                                                <option value="Zoho Support">Zoho Support</option>
-                                                <option value="Zoho Optimization">Zoho Optimization</option>
-                                                <option value="Zoho Customization">Zoho Customization</option>
-                                                <option value="Zoho Integrations">Zoho Integrations</option>
+                                                <option value="" disabled>Select Zoho Solution *</option>
+                                                <option value='Zoho&#x20;CRM&#x20;&amp;&#x20;Sales'>Zoho CRM &amp; Sales</option>
+                                                <option value='Zoho&#x20;Finance&#x20;&amp;&#x20;Accounting'>Zoho Finance &amp; Accounting</option>
+                                                <option value='Zoho&#x20;HR&#x20;&amp;&#x20;People'>Zoho HR &amp; People</option>
+                                                <option value='Zoho&#x20;Marketing&#x20;&amp;&#x20;Automation'>Zoho Marketing &amp; Automation</option>
+                                                <option value='Zoho&#x20;IT&#x20;&amp;&#x20;Support'>Zoho IT &amp; Support</option>
+                                                <option value='Zoho&#x20;BI&#x20;&amp;&#x20;Analytics'>Zoho BI &amp; Analytics</option>
+                                                <option value='Zoho&#x20;Developer&#x20;Platforms'>Zoho Developer Platforms</option>
+                                                <option value='Zoho&#x20;One&#x20;&#x28;Complete&#x20;Suite&#x29;'>Zoho One (Complete Suite)</option>
+                                                <option value='NetSuite Product /Services'>NetSuite Product /Services</option>
+                                                <option value='Zoho Products/Services'>Zoho Products/Services</option>
                                             </select>
                                             <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-blue-600 transition-transform group-hover:scale-110">
                                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" /></svg>

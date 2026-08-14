@@ -76,7 +76,7 @@ export default function ContactFormDesign1() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="group">
-                    <label className="block text-gray-500 text-sm mb-2 group-focus-within:text-white transition-colors">Mobile</label>
+                    <label className="block text-gray-500 text-sm mb-2 group-focus-within:text-white transition-colors">Mobile Number</label>
                     <input type="tel" name="Mobile" className="w-full bg-transparent border-b border-white/10 text-white pb-2 focus:border-white/50 focus:outline-none transition-all placeholder-transparent" placeholder="Mobile" />
                   </div>
                   <div className="group">
@@ -95,16 +95,13 @@ export default function ContactFormDesign1() {
                      <label className="block text-gray-500 text-sm mb-2 group-focus-within:text-white transition-colors">Service Interest</label>
                      <select name="LEADCF5" className="w-full bg-transparent border-b border-white/10 text-white pb-2 focus:border-white/50 focus:outline-none transition-all appearance-none cursor-pointer">
                         <option value="" className="bg-[#0f1115]">Select Service</option>
-                        <option value="NetSuite Licenses" className="bg-[#0f1115]">NetSuite Licenses</option>
-                        <option value="NetSuite Implementation" className="bg-[#0f1115]">NetSuite Implementation</option>
-                        <option value="NetSuite Licenses + Implementation" className="bg-[#0f1115]">NetSuite Licenses + Implementation</option>
-                        <option value="New Subsidiary Implementation" className="bg-[#0f1115]">New Subsidiary Implementation</option>
-                        <option value="NetSuite Support" className="bg-[#0f1115]">NetSuite Support</option>
-                        <option value="NetSuite Optimization" className="bg-[#0f1115]">NetSuite Optimization</option>
-                        <option value="NetSuite Customization" className="bg-[#0f1115]">NetSuite Customization</option>
-                        <option value="NetSuite Integrations" className="bg-[#0f1115]">NetSuite Integrations</option>
-                        <option value="NetSuite India Localization" className="bg-[#0f1115]">NetSuite India Localization</option>
-                        <option value="NetSuite Data Backup for India" className="bg-[#0f1115]">NetSuite Data Backup for India</option>
+                        <option value="NetSuite ERP" className="bg-[#0f1115]">NetSuite ERP</option>
+                        <option value="NetSuite CRM" className="bg-[#0f1115]">NetSuite CRM</option>
+                        <option value="NetSuite OneWorld" className="bg-[#0f1115]">NetSuite OneWorld</option>
+                        <option value="NetSuite SuiteCommerce" className="bg-[#0f1115]">NetSuite SuiteCommerce</option>
+                        <option value="NetSuite Planning & Budgeting" className="bg-[#0f1115]">NetSuite Planning & Budgeting</option>
+                        <option value="NetSuite SuiteProject Pro" className="bg-[#0f1115]">NetSuite SuiteProject Pro</option>
+                        <option value="NetSuite Analytics Warehouse" className="bg-[#0f1115]">NetSuite Analytics Warehouse</option>
                      </select>
                   </div>
                   <div className="group">

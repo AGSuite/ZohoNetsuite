@@ -362,7 +362,7 @@ export default function ZohoRequestQuotePage() {
 
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                                 <div>
-                                                    <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Mobile *</label>
+                                                    <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">POC's Mobile *</label>
                                                     <input type="tel" name="Mobile" required placeholder="+91 00000 00000" maxLength={15} onChange={(e) => e.target.value = e.target.value.replace(/[^\d+ ]/g, '').slice(0, 15)} className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                                 </div>
                                                 <div>
@@ -380,13 +380,10 @@ export default function ZohoRequestQuotePage() {
                                                     <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Service *</label>
                                                     <select name="LEADCF5" id="LEADCF5" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer">
                                                         <option value="-None-">-None-</option>
-                                                        <option value="Zoho Licenses">Zoho Licenses</option>
-                                                        <option value="Zoho Implementation">Zoho Implementation</option>
-                                                        <option value="Zoho Licenses + Implementation">Zoho Licenses + Implementation</option>
-                                                        <option value="Zoho Support">Zoho Support</option>
-                                                        <option value="Zoho Optimization">Zoho Optimization</option>
-                                                        <option value="Zoho Customization">Zoho Customization</option>
-                                                        <option value="Zoho Integrations">Zoho Integrations</option>
+                                                        <option value="Licenses">Licenses</option>
+                                                        <option value="AMC">AMC</option>
+                                                        <option value="NetSuite Product /Services">NetSuite Product /Services</option>
+                                                        <option value="Zoho Products/Services">Zoho Products/Services</option>
                                                     </select>
                                                 </div>
                                             </div>

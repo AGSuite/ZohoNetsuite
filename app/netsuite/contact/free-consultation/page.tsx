@@ -352,20 +352,14 @@ export default function FreeConsultation() {
                                                 <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Service *</label>
                                                 <select name="LEADCF5" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer" defaultValue="">
                                                     <option value="" disabled>Select Service *</option>
-                                                    <option value="NetSuite Licenses">NetSuite Licenses</option>
-                                                    <option value="NetSuite Implementation">NetSuite Implementation</option>
-                                                    <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
-                                                    <option value="New Subsidiary Implementation">New Subsidiary Implementation</option>
-                                                    <option value="NetSuite Support">NetSuite Support</option>
-                                                    <option value="NetSuite Optimization">NetSuite Optimization</option>
-                                                    <option value="NetSuite Customization">NetSuite Customization</option>
-                                                    <option value="NetSuite Integrations">NetSuite Integrations</option>
-                                                    <option value="NetSuite India Localization">NetSuite India Localization</option>
-                                                    <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
+                                                    <option value="Licenses">Licenses</option>
+                                                    <option value="AMC">AMC</option>
+                                                    <option value="NetSuite Product /Services">NetSuite Product /Services</option>
+                                                    <option value="Zoho Products/Services">Zoho Products/Services</option>
                                                 </select>
                                             </div>
                                             <div className="space-y-1.5">
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Mobile *</label>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">POC's Mobile (10 Digits) *</label>
                                                 <div className="flex gap-2">
                                                     <select 
                                                         value={selectedCode}
