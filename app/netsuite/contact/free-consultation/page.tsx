@@ -118,29 +118,7 @@ export default function FreeConsultation() {
                 return false;
             }
 
-            window.trackVisitor409531000042578178?.();
-            if (window.validateEmail409531000042578178 && !window.validateEmail409531000042578178()) {
-                return false;
-            }
 
-            return true;
-        };
-
-        window.trackVisitor409531000042578178 = function () {
-          try {
-            if (window.$zoho?.salesiq?.visitor) {
-              const form = document.forms.namedItem('WebToLeads409531000042578178');
-              if (form) {
-                const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
-                if (LDTuvidObj) { LDTuvidObj.value = window.$zoho.salesiq.visitor.uniqueid() || ''; }
-                const nameField = form.elements.namedItem('Last Name') as HTMLInputElement;
-                if (nameField?.value) { window.$zoho.salesiq.visitor.name(nameField.value); }
-                const emailObj = form.elements.namedItem('LEADCF8') as HTMLInputElement;
-                if (emailObj?.value) { window.$zoho.salesiq.visitor.email(emailObj.value); }
-              }
-            }
-          } catch (e) { console.log('Zoho tracking error:', e); }
-        };
 
         // Handle reCAPTCHA rendering for SPA navigation
         const renderRecaptcha = () => {

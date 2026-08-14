@@ -7,8 +7,6 @@ import Image from "next/image";
 import Script from "next/script";
 import { Briefcase, Globe2, HeartHandshake, Rocket } from "lucide-react";
 
-const SITE_KEY = "6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_";
-
 interface FooterContactFormProps {
   platform: 'NetSuite' | 'Zoho';
 }
@@ -20,68 +18,75 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
 
   const isNetSuite = platform === 'NetSuite';
 
-  // Standardized CRM Config (Unified for both platforms)
-  const crmConfig = {
-    xnQsjsdp: "a7ab09fe90f1a05ce89de47da6f5fe4ec35e5a6a7a3407c3169e127670c7dd56",
-    xmIwtLD: "835ba19158c9d4cb19f73b22a127785e9b44da4e740d918a07dc322871eff6d54ae26ddbf0315f1ade82dd193bb27d4b",
-    returnURL: "https://www.agsuite.tech/thank-you",
-    rid: "dc6cfe6eaa303bd5d195bb5352719bba230c529eae5f6f0823d0a841f9dd57657e6049706260d6effe692960c6c5bab7gid6711126e0f954ae10107c9d2bd1b386506273b37e6e0265531ba837d5c4ed25dgid10b59705091816e9551c4ebc62e953e4111c79398428255d38ea16f03d7b9f05gid0c55c5d686e2e3f755b127157834bc2774e542abc82e5c1ce5eba2a071c6fc31",
-    tw: "70c0fd3034b5b59f1ac7be0a50f49b22d50d34cb8687eb35e3649323a8c88143"
-  };
+  const config = isNetSuite
+    ? {
+        formId: "webform409531000047791096",
+        formName: "WebToLeads409531000047791096",
+        xnQsjsdp: "2ae4ca1841d27018fa82a0a48a96f1c01673f80384140a440922ae0aab21aae3",
+        xmIwtLD: "56ac8377184c3ea501a9db3ccd450a182e7e602f9cbf901b0c9852cc9de9f7c713a4ce3d1e636d34dc4666caf4082423",
+        serviceFieldName: "LEADCF166",
+        serviceLabel: "Netsuite Services *",
+        serviceDefault: "-Select NetSuite Service-",
+        serviceOptions: [
+          "NetSuite Licenses",
+          "NetSuite Implementation",
+          "NetSuite Licenses + Implementation",
+          "New Subsidiary Implementation",
+          "NetSuite Support",
+          "NetSuite Optimization",
+          "NetSuite Customization",
+          "NetSuite Integrations",
+          "NetSuite India Localization",
+          "NetSuite Data Backup for India",
+        ],
+        analyticsUrl: "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=f84d1d6876a443cf36bdeab891c5582d7c3e142d9fce42d31ffc393506d6d6d54dbf7f9cf10e11397fb06e31977be163gid65b81325138b2fc10191c2ef7b4572a0b18f76ffadabafd1f029455ae866a59cgidf169f3e66dfe1cbf71d7bc2d3d67d57ab12b228f83d723a6a15eb3cfddecc257gid6d99bc21bab3635e5f6b816b959e07211ea39cb1eae372096d63da78a4b9dccc&tw=1db53bf46a6a8b587793bb8f51f25b9b772d35495cdb16dcd3a6abe2ad6ecd11&version=v2",
+        validateFuncName: "checkMandatory409531000047791096",
+        validateEmailFuncName: "validateEmail409531000047791096",
+      }
+    : {
+        formId: "webform409531000047791049",
+        formName: "WebToLeads409531000047791049",
+        xnQsjsdp: "ce6ebe1d9e713fef68d407d2105f962cb111097dcf75c7448aa9ab6b81795a86",
+        xmIwtLD: "f709a413582c4286a2de04d475889148eb84a2d09b828569c9eba502ddcc5faa4e3fd730e1dcd4cb039e9925fd212664",
+        serviceFieldName: "LEADCF165",
+        serviceLabel: "Zoho Services *",
+        serviceDefault: "-Select Zoho Service-",
+        serviceOptions: [
+          "Zoho Licenses",
+          "Zoho Implementation",
+          "Zoho Licenses + Implementation",
+          "Zoho Support",
+          "Zoho Optimization",
+          "Zoho Customization",
+          "Zoho Integrations",
+        ],
+        analyticsUrl: "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=0eb6a535c81a04e07aa886637740a304d7d59028aa8cf0d09048e8d1fbedf647e44d9f74b254709a0882eb1c31136d9cgid6d4592f2dce66ea8bcc60167960b9d0d27138cba33ac6ce7248c5c53d3a06fdcgid365cc1061c930ed0655f44af7ff3ea4d0b60a3b2784693cb6b2d5828f4dd9f35gid1cae83d6cd96c22775ca40c3b71805971400a95aea889397fdfa8c8f955523fd&tw=d336253c98c6a8f95f079a1420d0d2411cea660a574b2a28d90b4690781c9053&version=v2",
+        validateFuncName: "checkMandatory409531000047791049",
+        validateEmailFuncName: "validateEmail409531000047791049",
+      };
 
   useEffect(() => {
     setIsClient(true);
 
-    const suffix = '409531000042578178';
-    const formName = 'WebToLeads409531000042578178';
-
-    (window as any)[`addAriaSelected${suffix}`] = function () {
-      const optionElem = (event as any).target;
+    (window as any).addAriaSelectedFooter = function (event: any) {
+      const optionElem = event.target;
       const prev = optionElem.querySelector('[aria-selected=true]');
       if (prev) prev.removeAttribute('aria-selected');
       optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
     };
 
-    (window as any).rccallback409531000042578178 = function () {
-      if (document.getElementById('recap409531000042578178')) {
-        document.getElementById('recap409531000042578178')?.setAttribute('captcha-verified', 'true');
-      }
-      const errorElement = document.getElementById('recapErr409531000042578178');
-      if (errorElement && errorElement.style.visibility === 'visible') {
-        errorElement.style.visibility = 'hidden';
-      }
-    };
-
-    (window as any).reCaptchaAlert409531000042578178 = function () {
-      const recap = document.getElementById('recap409531000042578178');
-      if (recap && recap.getAttribute('captcha-verified') === 'false') {
-        const errorElement = document.getElementById('recapErr409531000042578178');
-        if (errorElement) {
-          errorElement.style.visibility = 'visible';
-        }
-        return false;
-      }
-      return true;
-    };
-
-    (window as any)[`validateEmail${suffix}`] = function () {
-      const form = (document.forms as any)[formName];
+    (window as any)[config.validateEmailFuncName] = function () {
+      const form = document.forms.namedItem(config.formName) as HTMLFormElement;
       if (!form) return true;
-      const emailFld = form.querySelectorAll('[data-ftype=email]');
+      const emailFld = form.querySelectorAll('[data-ftype="email"]');
       for (let i = 0; i < emailFld.length; i++) {
-        const v = emailFld[i].value;
-        if (v.replace(/^\s+|\s+$/g, '').length !== 0) {
-          const at = v.indexOf('@'), dot = v.lastIndexOf('.');
-          if (at < 1 || dot < at + 2 || dot + 2 >= v.length) {
+        const emailVal = (emailFld[i] as HTMLInputElement).value;
+        if ((emailVal.replace(/^\s+|\s+$/g, '')).length !== 0) {
+          const atpos = emailVal.indexOf('@');
+          const dotpos = emailVal.lastIndexOf('.');
+          if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
             alert('Please enter a valid email address.');
-            emailFld[i].focus();
-            return false;
-          }
-          const domain = v.split('@')[1].toLowerCase();
-          const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
-          if (forbidden.includes(domain)) {
-            alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
-            emailFld[i].focus();
+            (emailFld[i] as HTMLInputElement).focus();
             return false;
           }
         }
@@ -89,133 +94,33 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
       return true;
     };
 
-    (window as any)[`validateMobile${suffix}`] = function () {
-      const form = (document.forms as any)[formName];
-      if (!form) return true;
-      const mobileFld = form.querySelector('input[name="Mobile"]');
-      if (mobileFld) {
-        const v = mobileFld.value.replace(/\D/g, '');
-        if (v.length !== 10) {
-          alert('Mobile number must be exactly 10 digits.');
-          mobileFld.focus();
-          return false;
-        }
-      }
-      return true;
-    };
-
-    (window as any)[`checkMandatory${suffix}`] = function () {
-      const fields = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
-      const labels = [
-        'Company Name',
-        'Name',
-        "POC's Mobile",
-        'Service',
-        'Company Email',
-        'Annual Revenue',
-        'How We Can Help You'
-      ];
-
-      const form = (document.forms as any)[formName];
+    (window as any)[config.validateFuncName] = function () {
+      const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF127', config.serviceFieldName];
+      const fldLangVal = ['Company Name', 'Name', 'Role', "POC's Email", "POC's Mobile", 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', config.serviceLabel.replace(' *', '')];
+      const form = document.forms.namedItem(config.formName) as HTMLFormElement;
       if (!form) return false;
-      for (let i = 0; i < fields.length; i++) {
-        const f = form[fields[i]];
-        if (f) {
-          if ((f.value.replace(/^\s+|\s+$/g, '')).length === 0) {
-            alert(labels[i] + ' cannot be empty.'); f.focus(); return false;
-          } else if (f.nodeName === 'SELECT' && f.options[f.selectedIndex].value === '-None-') {
-            alert(labels[i] + ' cannot be none.'); f.focus(); return false;
+
+      for (let i = 0; i < mndFileds.length; i++) {
+        const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+        if (fieldObj) {
+          if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length === 0) {
+            alert(fldLangVal[i] + ' cannot be empty.');
+            fieldObj.focus();
+            return false;
+          } else if (fieldObj.nodeName === 'SELECT') {
+            const selectField = fieldObj as HTMLSelectElement;
+            if (selectField.options[selectField.selectedIndex].value === '' || selectField.options[selectField.selectedIndex].value === '-None-') {
+              alert(fldLangVal[i] + ' cannot be none.');
+              fieldObj.focus();
+              return false;
+            }
           }
         }
       }
-      if (!(window as any)[`validateEmail${suffix}`]()) return false;
-      if (!(window as any)[`validateMobile${suffix}`]()) return false;
-      if ((window as any).reCaptchaAlert409531000042578178 && !(window as any).reCaptchaAlert409531000042578178()) return false;
+      if ((window as any)[config.validateEmailFuncName] && !(window as any)[config.validateEmailFuncName]()) return false;
       return true;
     };
-
-    const setupSubmit = () => {
-      const $ = (window as any).$;
-      if (!$) return false;
-      $(`#shared_webform_${platform}`).off('submit').on('submit', function (e: any) {
-        if (!(window as any).checkMandatory409531000042578178()) return;
-        const btn = document.querySelector(`.crmWebToEntityForm .formsubmit-${platform}`);
-        if (btn) btn.setAttribute('disabled', 'true');
-
-        const formData = new FormData(e.target);
-
-        const emailData = {
-          name: formData.get('Last Name'),
-          email: formData.get('LEADCF8'),
-          role: formData.get('Designation'),
-          mobile: formData.get('Mobile'),
-          company: formData.get('Company'),
-          service: formData.get('LEADCF5'),
-          revenue: formData.get('LEADCF19'),
-          hearAboutUs: formData.get('LEADCF127'),
-          requirements: formData.get('LEADCF123'),
-          platform: platform
-        };
-
-        fetch('/api/contact/netsuite', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(emailData)
-        }).catch(err => console.error('Email error:', err));
-
-        const form = e.target;
-        form.action = isNetSuite ? 'https://crm.zoho.in/crm/WebToLeadForm' : 'https://crm.zoho.in/crm/WebToLeadForm';
-        form.method = 'POST';
-        form.target = `zoho_iframe_${platform}`;
-
-        setTimeout(() => {
-          window.dispatchEvent(new CustomEvent('zohoFormSuccess'));
-          if (btn) btn.removeAttribute('disabled');
-        }, 2000);
-
-        return true;
-      });
-      return true;
-    };
-
-    const renderRecaptcha = () => {
-      if ((window as any).grecaptcha && document.getElementById('recap409531000042578178')) {
-        try {
-          (window as any).grecaptcha.render('recap409531000042578178', {
-            'sitekey': SITE_KEY,
-            'theme': 'light',
-            'callback': (window as any).rccallback409531000042578178
-          });
-        } catch (e) {
-          // Already rendered
-        }
-      }
-    };
-
-    const jqInterval = setInterval(() => { if (setupSubmit()) clearInterval(jqInterval); }, 300);
-    setTimeout(() => clearInterval(jqInterval), 10000);
-
-    if ((window as any).grecaptcha?.ready) {
-      (window as any).grecaptcha.ready(renderRecaptcha);
-    } else {
-      const rcInt = setInterval(() => {
-        if ((window as any).grecaptcha) {
-          (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
-          clearInterval(rcInt);
-        }
-      }, 300);
-      setTimeout(() => clearInterval(rcInt), 5000);
-    }
-
-    const onSuccess = () => {
-      setSubmitted(true);
-      setTimeout(() => {
-        router.push('/thank-you');
-      }, 1000);
-    };
-    window.addEventListener('zohoFormSuccess', onSuccess);
-    return () => window.removeEventListener('zohoFormSuccess', onSuccess);
-  }, [platform, isNetSuite, router]);
+  }, [platform, isNetSuite, config]);
 
   const [loadScripts, setLoadScripts] = useState(false);
   useEffect(() => {
@@ -236,17 +141,12 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
   return (
     <>
       {loadScripts && (
-        <>
-          <Script src="https://www.google.com/recaptcha/api.js" strategy="lazyOnload" />
-          <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="lazyOnload" />
-          <Script
-            id={`wf_anal_${platform}`}
-            src={`https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=${crmConfig.rid}&tw=${crmConfig.tw}`}
-            strategy="lazyOnload"
-          />
-        </>
+        <Script
+          id={`wf_anal_${platform}`}
+          src={config.analyticsUrl}
+          strategy="lazyOnload"
+        />
       )}
-      <iframe name={`zoho_iframe_${platform}`} style={{ display: 'none' }}></iframe>
 
       <section id="contact-form" className="relative py-14 sm:py-24 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
         <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-blue-500/30 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3" />
@@ -257,7 +157,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
             <div className="absolute inset-0 bg-white/5 rounded-3xl sm:rounded-[40px]" />
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
 
-              {/* Left Side - Standardized platform-specific content */}
+              {/* Left Side - Platform Content */}
               <motion.div
                 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.2 } } }}
                 initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
@@ -328,7 +228,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                 </div>
               </motion.div>
 
-              {/* Right Side - Standardized form (NetSuite style for both) */}
+              {/* Right Side - Platform-Specific Form */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}
@@ -365,56 +265,76 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                     </div>
 
                     <div id="crmWebToEntityForm" className="crmWebToEntityForm">
-                      <form id={`shared_webform_${platform}`} name="WebToLeads409531000042578178" action="https://crm.zoho.in/crm/WebToLeadForm" method="POST" target={`zoho_iframe_${platform}`} acceptCharset="UTF-8" className="space-y-4">
-                        <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue={crmConfig.xnQsjsdp} readOnly />
-                        <input type="text" style={{ display: 'none' }} name="Lead Source" value="Web to Leads" readOnly />
-                        <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                        <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue={crmConfig.xmIwtLD} readOnly />
-                        <input type="text" style={{ display: 'none' }} name="actionType" defaultValue="TGVhZHM=" readOnly />
-                        <input type="text" style={{ display: 'none' }} name="returnURL" defaultValue={crmConfig.returnURL} readOnly />
-                        <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" defaultValue="" readOnly />
-                        {!isNetSuite && (
-                          <>
-                            <input type="text" style={{ display: 'none' }} id="ldeskuid" name="ldeskuid" readOnly />
-                            <input type="text" style={{ display: 'none' }} id="LDTuvid" name="LDTuvid" readOnly />
-                          </>
-                        )}
+                      <form
+                        id={config.formId}
+                        name={config.formName}
+                        action="https://crm.zoho.in/crm/WebToLeadForm"
+                        method="POST"
+                        onSubmit={(e) => {
+                          if ((window as any)[config.validateFuncName] && !(window as any)[config.validateFuncName]()) {
+                            e.preventDefault();
+                          }
+                        }}
+                        acceptCharset="UTF-8"
+                        className="space-y-4"
+                      >
+                        <input type="text" className="hidden" name="xnQsjsdp" value={config.xnQsjsdp} readOnly />
+                        <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+                        <input type="text" className="hidden" name="xmIwtLD" value={config.xmIwtLD} readOnly />
+                        <input type="text" className="hidden" name="actionType" value="TGVhZHM=" readOnly />
+                        <input type="text" className="hidden" name="returnURL" value="https://www.agsuite.tech/thank-you" readOnly />
+                        <input type="text" className="hidden" name="aG9uZXlwb3Q" value="" readOnly />
+
+                        {/* Hidden default fields required by Zoho */}
+                        <select name="Lead Status" className="hidden" defaultValue="Database">
+                          <option value="Database">Database</option>
+                        </select>
+                        <select name="Lead Source" className="hidden" defaultValue="Website (Form)">
+                          <option value="Website (Form)">Website (Form)</option>
+                        </select>
+                        <input type="hidden" name="No of Employees" value="0" />
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
                             <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Name <span className="text-red-500">*</span></label>
-                            <input type="text" name="Last Name" maxLength={80} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="John Doe" suppressHydrationWarning />
+                            <input type="text" id="Last_Name" name="Last Name" maxLength={80} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="John Doe" suppressHydrationWarning />
                           </div>
                           <div>
-                            <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Email <span className="text-red-500">*</span></label>
-                            <input type="text" data-ftype="email" name="LEADCF8" maxLength={100} autoComplete="off" required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="john@company.com" suppressHydrationWarning />
+                            <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">POC's Email <span className="text-red-500">*</span></label>
+                            <input type="text" id="Email" data-ftype="email" name="Email" maxLength={100} autoComplete="off" required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="john@company.com" suppressHydrationWarning />
                           </div>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
                             <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Role <span className="text-red-500">*</span></label>
-                            <input type="text" name="Designation" maxLength={100} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Manager" suppressHydrationWarning />
+                            <input type="text" id="Designation" name="Designation" maxLength={100} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Manager" suppressHydrationWarning />
                           </div>
                           <div>
                             <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">POC's Mobile <span className="text-red-500">*</span></label>
-                            <input type="text" name="Mobile" maxLength={30} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="+91 00000 00000" suppressHydrationWarning />
+                            <input type="text" id="Mobile" name="Mobile" maxLength={30} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="+91 9876543210" suppressHydrationWarning />
                           </div>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
                             <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Name <span className="text-red-500">*</span></label>
-                            <input type="text" name="Company" maxLength={200} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Company Inc." suppressHydrationWarning />
+                            <input type="text" id="Company" name="Company" maxLength={200} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Company Inc." suppressHydrationWarning />
                           </div>
                           <div>
-                            <label htmlFor={`service_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Service <span className="text-red-500">*</span></label>
-                            <select id={`service_${platform}`} name="LEADCF5" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
-                              <option value="-None-">-None-</option>
-                              <option value="Licenses">Licenses</option>
-                              <option value="AMC">AMC</option>
-                              <option value="NetSuite Product /Services">NetSuite Product /Services</option>
-                              <option value="Zoho Products/Services">Zoho Products/Services</option>
+                            <label htmlFor={`service_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">{config.serviceLabel}</label>
+                            <select
+                              id={config.serviceFieldName}
+                              name={config.serviceFieldName}
+                              onChange={(e) => (window as any).addAriaSelectedFooter?.(e)}
+                              required
+                              className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm"
+                              suppressHydrationWarning
+                            >
+                              <option value="" disabled selected>{config.serviceDefault}</option>
+                              {config.serviceOptions.map((opt) => (
+                                <option key={opt} value={opt}>{opt}</option>
+                              ))}
                             </select>
                           </div>
                         </div>
@@ -422,7 +342,14 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
                             <label htmlFor={`revenue_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Annual Revenue <span className="text-red-500">*</span></label>
-                            <select id={`revenue_${platform}`} name="LEADCF19" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
+                            <select
+                              id="LEADCF19"
+                              name="LEADCF19"
+                              onChange={(e) => (window as any).addAriaSelectedFooter?.(e)}
+                              required
+                              className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm"
+                              suppressHydrationWarning
+                            >
                               <option value="-None-">-None-</option>
                               <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
                               <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
@@ -437,12 +364,19 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                             </select>
                           </div>
                           <div>
-                            <label htmlFor={`hear_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How did you hear about us.</label>
-                            <select id={`hear_${platform}`} name="LEADCF127" onChange={() => (window as any).addAriaSelected409531000042578178?.()} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm" suppressHydrationWarning>
+                            <label htmlFor={`hear_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How did you hear about us. <span className="text-red-500">*</span></label>
+                            <select
+                              id="LEADCF127"
+                              name="LEADCF127"
+                              onChange={(e) => (window as any).addAriaSelectedFooter?.(e)}
+                              required
+                              className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm"
+                              suppressHydrationWarning
+                            >
                               <option value="-None-">-None-</option>
                               <option value="Email">Email</option>
                               <option value="Event">Event</option>
-                              <option value="Friend /Associate">Friend /Associate</option>
+                              <option value="Friend/Associate">Friend/Associate</option>
                               <option value="Search">Search</option>
                               <option value="Social Media">Social Media</option>
                               <option value="Referral">Referral</option>
@@ -452,19 +386,22 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
 
                         <div>
                           <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How We Can Help You <span className="text-red-500">*</span></label>
-                          <textarea name="LEADCF123" rows={2} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all shadow-sm" placeholder="Share your requirements..." suppressHydrationWarning />
-                        </div>
-
-                        {/* reCAPTCHA v2 Checkbox Widget */}
-                        <div className="pt-2">
-                          <div className="g-recaptcha" data-sitekey={SITE_KEY} data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
-                          <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
+                          <textarea
+                            id="LEADCF123"
+                            name="LEADCF123"
+                            rows={2}
+                            required
+                            className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all shadow-sm"
+                            placeholder="Share your requirements..."
+                            suppressHydrationWarning
+                          />
                         </div>
 
                         <div className="flex pt-2">
                           <input
                             type="submit"
-                            className={`formsubmit-${platform} flex-1 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm cursor-pointer`}
+                            id="formsubmit"
+                            className="formsubmit zcwf_button flex-1 py-3.5 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm uppercase tracking-widest cursor-pointer"
                             value="Submit Request"
                             suppressHydrationWarning
                           />
@@ -478,15 +415,6 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
           </div>
         </div>
       </section>
-      <Script
-        id="wf_anal"
-        src={`https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=${crmConfig.rid}&tw=${crmConfig.tw}&version=v2`}
-        strategy="lazyOnload"
-      />
     </>
   );
 }
-
-
-
-
