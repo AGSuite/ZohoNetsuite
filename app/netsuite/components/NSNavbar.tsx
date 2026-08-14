@@ -159,7 +159,7 @@ const NavbarNetSuite = () => {
         {/* Right Buttons */}
         <div className="flex items-center gap-3 sm:gap-4">
 
-          {/* NetSuite Next AI Button */}
+          {/* NetSuite Next AI Button (Commented Out)
           <div className="hidden sm:block relative group">
             <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-[#13FFAA] via-[#1E67C6] to-[#CE84CF] blur-sm opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse" />
             <Link
@@ -172,6 +172,7 @@ const NavbarNetSuite = () => {
               </span>
             </Link>
           </div>
+          */}
 
           <button
             onClick={toggleNavbar}
@@ -199,6 +200,7 @@ const NavbarNetSuite = () => {
       {openNavbar && (
         <div className="lg:hidden fixed inset-0 top-20 bg-white z-40 overflow-y-auto p-5">
           <div className="space-y-4">
+            {/* NetSuite Next AI Mobile Button (Commented Out)
             <div className="pb-2">
               <Link
                 href="/netsuite/next-ai"
@@ -211,6 +213,7 @@ const NavbarNetSuite = () => {
                 </span>
               </Link>
             </div>
+            */}
             {navItems.map((item, index) => (
               <div key={index} className="border-b border-gray-100 pb-4">
                 <button
