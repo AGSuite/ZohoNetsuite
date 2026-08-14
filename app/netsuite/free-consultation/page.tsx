@@ -31,13 +31,20 @@ export default function FreeConsultationTopLevel() {
     useEffect(() => {
         setIsClient(true);
 
-        window.validateEmail409531000042578178_ns = function () {
-            const form = document.forms.namedItem('WebToLeads409531000042578178_ns');
+        (window as any).addAriaSelected409531000047791096 = function (event: any) {
+            const optionElem = (event as any).target;
+            const prev = optionElem.querySelector('[aria-selected=true]');
+            if (prev) prev.removeAttribute('aria-selected');
+            optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
+        };
+
+        (window as any).validateEmail409531000047791096 = function () {
+            const form = document.forms.namedItem('WebToLeads409531000047791096') as HTMLFormElement;
             if (!form) return true;
-            const emailFld = form.querySelectorAll('input[type="email"], [ftype="email"], [name="LEADCF8"]');
+            const emailFld = form.querySelectorAll('[ftype="email"]');
             for (let i = 0; i < emailFld.length; i++) {
                 const emailVal = (emailFld[i] as HTMLInputElement).value;
-                if (emailVal.replace(/^\s+|\s+$/g, '').length !== 0) {
+                if ((emailVal.replace(/^\s+|\s+$/g, '')).length !== 0) {
                     const atpos = emailVal.indexOf('@');
                     const dotpos = emailVal.lastIndexOf('.');
                     if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
@@ -45,71 +52,36 @@ export default function FreeConsultationTopLevel() {
                         (emailFld[i] as HTMLInputElement).focus();
                         return false;
                     }
-                    const domain = emailVal.split('@')[1].toLowerCase();
-                    const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
-                    if (forbidden.includes(domain)) {
-                        alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
-                        (emailFld[i] as HTMLInputElement).focus();
-                        return false;
-                    }
                 }
             }
             return true;
         };
 
-        window.checkMandatory409531000042578178_ns = function (e: any) {
-            const form = e.target as HTMLFormElement;
-            const mndFileds = ['Company', 'Last Name', 'Designation', 'LEADCF8', 'Mobile', 'LEADCF19', 'LEADCF123'];
-            const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Annual Revenue', 'Requirements'];
+        (window as any).checkMandatory409531000047791096 = function () {
+            const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF127', 'LEADCF166'];
+            const fldLangVal = ['Company Name', 'Name', 'Role', "POC's Email", "POC's Mobile", 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Netsuite Services'];
+            const form = document.forms.namedItem('WebToLeads409531000047791096') as HTMLFormElement;
+            if (!form) return false;
 
             for (let i = 0; i < mndFileds.length; i++) {
                 const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
-                if (fieldObj && fieldObj.value.replace(/^\s+|\s+$/g, '').length === 0) {
-                    alert(fldLangVal[i] + ' cannot be empty.');
-                    fieldObj.focus();
-                    return false;
+                if (fieldObj) {
+                    if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length === 0) {
+                        alert(fldLangVal[i] + ' cannot be empty.');
+                        fieldObj.focus();
+                        return false;
+                    } else if (fieldObj.nodeName === 'SELECT') {
+                        const selectField = fieldObj as HTMLSelectElement;
+                        if (selectField.options[selectField.selectedIndex].value === '' || selectField.options[selectField.selectedIndex].value === '-None-') {
+                            alert(fldLangVal[i] + ' cannot be none.');
+                            fieldObj.focus();
+                            return false;
+                        }
+                    }
                 }
             }
-
-            const mobileFld = form.elements.namedItem('Mobile') as HTMLInputElement;
-            if (mobileFld) {
-                const v = mobileFld.value.replace(/\D/g, '');
-                if (v.length !== 10) {
-                    alert('Mobile number must be exactly 10 digits.');
-                    mobileFld.focus();
-                    return false;
-                }
-            }
-
-            const recap = document.getElementById('recap409531000042578178_ns');
-            if (recap && recap.getAttribute('captcha-verified') === 'false') {
-                const recapErr = document.getElementById('recapErr409531000042578178_ns');
-                if (recapErr) recapErr.style.visibility = 'visible';
-                return false;
-            }
-
-            window.trackVisitor409531000042578178_ns?.();
-            if (window.validateEmail409531000042578178_ns && !window.validateEmail409531000042578178_ns()) {
-                return false;
-            }
-
+            if ((window as any).validateEmail409531000047791096 && !(window as any).validateEmail409531000047791096()) return false;
             return true;
-        };
-
-        window.trackVisitor409531000042578178_ns = function () {
-          try {
-            if (window.$zoho?.salesiq?.visitor) {
-              const form = document.forms.namedItem('WebToLeads409531000042578178_ns');
-              if (form) {
-                const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
-                if (LDTuvidObj) { LDTuvidObj.value = window.$zoho.salesiq.visitor.uniqueid() || ''; }
-                const nameField = form.elements.namedItem('Last Name') as HTMLInputElement;
-                if (nameField?.value) { window.$zoho.salesiq.visitor.name(nameField.value); }
-                const emailObj = form.elements.namedItem('LEADCF8') as HTMLInputElement;
-                if (emailObj?.value) { window.$zoho.salesiq.visitor.email(emailObj.value); }
-              }
-            }
-          } catch (e) { console.log('Zoho tracking error:', e); }
         };
 
         // Handle reCAPTCHA rendering for SPA navigation
@@ -151,13 +123,6 @@ export default function FreeConsultationTopLevel() {
             setTimeout(() => clearInterval(interval), 5000);
         }
     }, []);
-
-    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        if (window.checkMandatory409531000042578178_ns && !window.checkMandatory409531000042578178_ns(e.nativeEvent)) {
-            e.preventDefault();
-            return;
-        }
-    };
 
     if (!isClient) return null;
 
@@ -295,48 +260,61 @@ export default function FreeConsultationTopLevel() {
 
                                 <div className="relative z-10 p-8 lg:p-10">
                                     <div className="mb-8 border-b border-gray-100 pb-6">
-                                        <h2 className="text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-indigo-900 to-cyan-900 sm:text-3xl font-medium mb-2">Schedule a free consultation session</h2>
-                                        <p className="text-gray-500 text-base">Select your area of interest below — we'll connect soon.</p>
-                                    </div>
-
-                                    <form 
-                                        id="webform409531000042578178_ns"
+                                      <form 
+                                        id="webform409531000047791096"
                                         action="https://crm.zoho.in/crm/WebToLeadForm" 
-                                        name="WebToLeads409531000042578178_ns" 
+                                        name="WebToLeads409531000047791096" 
                                         method="POST" 
-                                        onSubmit={handleFormSubmit}
+                                        onSubmit={(e) => {
+                                            if ((window as any).checkMandatory409531000047791096 && !(window as any).checkMandatory409531000047791096()) {
+                                                e.preventDefault();
+                                            }
+                                        }}
                                         acceptCharset="UTF-8"
-                                        className="space-y-5"
+                                        className="space-y-4"
                                     >
-                                        <input type="text" className="hidden" name="xnQsjsdp" value="a7ab09fe90f1a05ce89de47da6f5fe4ec35e5a6a7a3407c3169e127670c7dd56" readOnly />
+                                        <input type="text" className="hidden" name="xnQsjsdp" value="2ae4ca1841d27018fa82a0a48a96f1c01673f80384140a440922ae0aab21aae3" readOnly />
                                         <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-                                        <input type="text" className="hidden" name="xmIwtLD" value="835ba19158c9d4cb19f73b22a127785e9b44da4e740d918a07dc322871eff6d54ae26ddbf0315f1ade82dd193bb27d4b" readOnly />
+                                        <input type="text" className="hidden" name="xmIwtLD" value="56ac8377184c3ea501a9db3ccd450a182e7e602f9cbf901b0c9852cc9de9f7c713a4ce3d1e636d34dc4666caf4082423" readOnly />
                                         <input type="text" className="hidden" name="actionType" value="TGVhZHM=" readOnly />
                                         <input type="text" className="hidden" name="returnURL" value="https://www.agsuite.tech/thank-you" readOnly />
-                                        <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
-                                        <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
+                                        <input type="text" className="hidden" name="aG9uZXlwb3Q" value="" readOnly />
+
+                                        {/* Hidden default fields required by Zoho */}
+                                        <select name="Lead Status" className="hidden" defaultValue="Database">
+                                            <option value="Database">Database</option>
+                                        </select>
+                                        <select name="Lead Source" className="hidden" defaultValue="Website (Form)">
+                                            <option value="Website (Form)">Website (Form)</option>
+                                        </select>
+                                        <input type="hidden" name="No of Employees" value="0" />
 
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                             <div className="space-y-1.5">
                                                 <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
-                                                    Full Name <span className="text-blue-600">*</span>
+                                                    Name <span className="text-blue-600">*</span>
                                                 </label>
                                                 <input
                                                     type="text"
+                                                    id="Last_Name"
                                                     name="Last Name"
                                                     required
+                                                    maxLength={80}
                                                     placeholder="John Doe"
                                                     className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
                                                 />
                                             </div>
                                             <div className="space-y-1.5">
                                                 <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
-                                                    Business Email <span className="text-blue-600">*</span>
+                                                    POC's Email <span className="text-blue-600">*</span>
                                                 </label>
                                                 <input
-                                                    type="email"
-                                                    name="LEADCF8"
+                                                    type="text"
+                                                    id="Email"
+                                                    ftype="email"
+                                                    name="Email"
                                                     required
+                                                    maxLength={100}
                                                     placeholder="john@company.com"
                                                     className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
                                                 />
@@ -350,21 +328,25 @@ export default function FreeConsultationTopLevel() {
                                                 </label>
                                                 <input
                                                     type="text"
+                                                    id="Designation"
                                                     name="Designation"
                                                     required
+                                                    maxLength={100}
                                                     placeholder="CFO / Manager"
                                                     className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
                                                 />
                                             </div>
                                             <div className="space-y-1.5">
                                                 <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
-                                                    Mobile <span className="text-blue-600">*</span>
+                                                    POC's Mobile <span className="text-blue-600">*</span>
                                                 </label>
                                                 <input
                                                     type="text"
+                                                    id="Mobile"
                                                     name="Mobile"
                                                     required
-                                                    placeholder="Phone Number"
+                                                    maxLength={30}
+                                                    placeholder="+91 9876543210"
                                                     className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
                                                 />
                                             </div>
@@ -376,8 +358,10 @@ export default function FreeConsultationTopLevel() {
                                             </label>
                                             <input
                                                 type="text"
+                                                id="Company"
                                                 name="Company"
                                                 required
+                                                maxLength={200}
                                                 placeholder="Company Inc."
                                                 className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
                                             />
@@ -386,14 +370,40 @@ export default function FreeConsultationTopLevel() {
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                             <div className="space-y-1.5">
                                                 <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
+                                                    Netsuite Services <span className="text-blue-600">*</span>
+                                                </label>
+                                                <select
+                                                    id="LEADCF166"
+                                                    name="LEADCF166"
+                                                    required
+                                                    onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)}
+                                                    className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer"
+                                                >
+                                                    <option value="" disabled selected>-Select NetSuite Service-</option>
+                                                    <option value="NetSuite Licenses">NetSuite Licenses</option>
+                                                    <option value="NetSuite Implementation">NetSuite Implementation</option>
+                                                    <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
+                                                    <option value="New Subsidiary Implementation">New Subsidiary Implementation</option>
+                                                    <option value="NetSuite Support">NetSuite Support</option>
+                                                    <option value="NetSuite Optimization">NetSuite Optimization</option>
+                                                    <option value="NetSuite Customization">NetSuite Customization</option>
+                                                    <option value="NetSuite Integrations">NetSuite Integrations</option>
+                                                    <option value="NetSuite India Localization">NetSuite India Localization</option>
+                                                    <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
+                                                </select>
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
                                                     Annual Revenue <span className="text-blue-600">*</span>
                                                 </label>
                                                 <select
+                                                    id="LEADCF19"
                                                     name="LEADCF19"
                                                     required
+                                                    onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)}
                                                     className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer"
                                                 >
-                                                    <option value="">Select Revenue</option>
+                                                    <option value="-None-">-None-</option>
                                                     <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
                                                     <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
                                                     <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
@@ -406,26 +416,27 @@ export default function FreeConsultationTopLevel() {
                                                     <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
                                                 </select>
                                             </div>
-                                            <div className="space-y-1.5">
-                                                <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">How did you hear about us?</label>
-                                                <select name="LEADCF127" className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer">
-                                                    <option value="">Select Option</option>
-                                                    <option value='-None-'>-None-</option>
-                                                    <option value='Email'>Email</option>
-                                                    <option value='Event'>Event</option>
-                                                    <option value='Friend /Associate'>Friend /Associate</option>
-                                                    <option value='Search'>Search</option>
-                                                    <option value='Social Media'>Social Media</option>
-                                                    <option value='Referral'>Referral</option>
-                                                </select>
-                                            </div>
+                                        </div>
+
+                                        <div className="space-y-1.5">
+                                            <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">How did you hear about us. *</label>
+                                            <select id="LEADCF127" name="LEADCF127" required onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)} className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer">
+                                                <option value="-None-">-None-</option>
+                                                <option value="Email">Email</option>
+                                                <option value="Event">Event</option>
+                                                <option value="Friend/Associate">Friend/Associate</option>
+                                                <option value="Search">Search</option>
+                                                <option value="Social Media">Social Media</option>
+                                                <option value="Referral">Referral</option>
+                                            </select>
                                         </div>
 
                                         <div className="space-y-1.5">
                                             <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
-                                                Requirements <span className="text-blue-600">*</span>
+                                                How We Can Help You <span className="text-blue-600">*</span>
                                             </label>
                                             <textarea
+                                                id="LEADCF123"
                                                 name="LEADCF123"
                                                 required
                                                 rows={3}
@@ -434,20 +445,9 @@ export default function FreeConsultationTopLevel() {
                                             />
                                         </div>
 
-                                        {/* Captcha Section */}
-                                        <div className="flex flex-col gap-2">
-                                            <div data-sitekey='6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_' data-theme='light' data-callback='rccallback409531000042578178_ns' captcha-verified='false' id='recap409531000042578178_ns'></div>
-                                            <div id='recapErr409531000042578178_ns' style={{ display: 'none', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
-                                        </div>
-
-                                        <button
-                                            type="submit"
-                                            className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semimedium rounded-xl transition-all duration-300 shadow-lg hover:shadow-blue-500/30 hover:scale-[1.02] text-sm"
-                                        >
-                                            <Send size={18} />
-                                            Book My Free Consultation
-                                        </button>
+                                        <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm uppercase tracking-widest cursor-pointer" value="Secure My Strategy Session" />
                                     </form>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

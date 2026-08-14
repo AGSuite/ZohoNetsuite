@@ -201,155 +201,59 @@ export default function ZohoContactPage() {
   useEffect(() => {
     setIsClient(true);
 
-    // Global functions for Zoho CRM Form
-    (window as any).validateEmail409531000042578178 = function () {
-      const form = document.forms.namedItem('WebToLeads409531000042578178');
-      if (!form) return true;
-      const emailFld = form.querySelectorAll('[name="LEADCF8"]');
-      for (let i = 0; i < emailFld.length; i++) {
-        const emailVal = (emailFld[i] as HTMLInputElement).value;
-        if (emailVal.replace(/^\s+|\s+$/g, '').length !== 0) {
-          const atpos = emailVal.indexOf('@');
-          const dotpos = emailVal.lastIndexOf('.');
-          if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
-            alert('Please enter a valid email address.');
-            (emailFld[i] as HTMLInputElement).focus();
-            return false;
-          }
-          const domain = emailVal.split('@')[1].toLowerCase();
-          const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
-          if (forbidden.includes(domain)) {
-            alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
-            (emailFld[i] as HTMLInputElement).focus();
-            return false;
-          }
-        }
-      }
-      return true;
+    (window as any).addAriaSelected409531000047791049 = function (event: any) {
+        const optionElem = (event as any).target;
+        const prev = optionElem.querySelector('[aria-selected=true]');
+        if (prev) prev.removeAttribute('aria-selected');
+        optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
     };
 
-    (window as any).checkMandatory409531000042578178 = function (e: any) {
-      const form = e.target as HTMLFormElement;
-      const mndFileds = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
-      const fldLangVal = ['Company Name', 'Name', 'POC\'s Mobile', 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
-
-      for (let i = 0; i < mndFileds.length; i++) {
-        const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement;
-        if (fieldObj && fieldObj.value.replace(/^\s+|\s+$/g, '').length === 0) {
-          alert(fldLangVal[i] + ' cannot be empty.');
-          fieldObj.focus();
-          return false;
+    (window as any).validateEmail409531000047791049 = function () {
+        const form = document.forms.namedItem('WebToLeads409531000047791049') as HTMLFormElement;
+        if (!form) return true;
+        const emailFld = form.querySelectorAll('[ftype="email"]');
+        for (let i = 0; i < emailFld.length; i++) {
+            const emailVal = (emailFld[i] as HTMLInputElement).value;
+            if ((emailVal.replace(/^\s+|\s+$/g, '')).length !== 0) {
+                const atpos = emailVal.indexOf('@');
+                const dotpos = emailVal.lastIndexOf('.');
+                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+                    alert('Please enter a valid email address.');
+                    (emailFld[i] as HTMLInputElement).focus();
+                    return false;
+                }
+            }
         }
-      }
-
-      const mobileFld = form.elements.namedItem('Mobile') as HTMLInputElement;
-      if (mobileFld) {
-        const v = mobileFld.value.replace(/\D/g, '');
-        if (v.length !== 10) {
-          alert('Mobile number must be exactly 10 digits.');
-          mobileFld.focus();
-          return false;
-        }
-      }
-
-      const recap = document.getElementById('recap409531000042578178');
-      if (recap && recap.getAttribute('captcha-verified') === 'false') {
-        const recapErr = document.getElementById('recapErr409531000042578178');
-        if (recapErr) recapErr.style.visibility = 'visible';
-        return false;
-      }
-
-      if ((window as any).validateEmail409531000042578178 && !(window as any).validateEmail409531000042578178()) {
-        return false;
-      }
-
-      return true;
+        return true;
     };
 
-    // Handle reCAPTCHA rendering for SPA navigation
-    const renderRecaptcha = () => {
-      const container = document.getElementById('recap409531000042578178');
-      if ((window as any).grecaptcha && container) {
-        try {
-          if (container.children.length > 0) return;
-          (window as any).grecaptcha.render('recap409531000042578178', {
-            'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
-            'theme': 'light',
-            'callback': (window as any).rccallback409531000042578178
-          });
-        } catch (e) { }
-      }
-    };
+    (window as any).checkMandatory409531000047791049 = function () {
+        const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF127', 'LEADCF165'];
+        const fldLangVal = ['Company Name', 'Name', 'Role', "POC's Email", "POC's Mobile", 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Services'];
+        const form = document.forms.namedItem('WebToLeads409531000047791049') as HTMLFormElement;
+        if (!form) return false;
 
-    (window as any).rccallback409531000042578178 = function () {
-      const recap = document.getElementById('recap409531000042578178');
-      if (recap) recap.setAttribute('captcha-verified', 'true');
-      const recapErr = document.getElementById('recapErr409531000042578178');
-      if (recapErr) recapErr.style.visibility = 'hidden';
-    };
-
-    if ((window as any).grecaptcha) {
-      (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
-    } else {
-      const interval = setInterval(() => {
-        if ((window as any).grecaptcha) {
-          (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
-          clearInterval(interval);
+        for (let i = 0; i < mndFileds.length; i++) {
+            const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+            if (fieldObj) {
+                if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length === 0) {
+                    alert(fldLangVal[i] + ' cannot be empty.');
+                    fieldObj.focus();
+                    return false;
+                } else if (fieldObj.nodeName === 'SELECT') {
+                    const selectField = fieldObj as HTMLSelectElement;
+                    if (selectField.options[selectField.selectedIndex].value === '' || selectField.options[selectField.selectedIndex].value === '-None-') {
+                        alert(fldLangVal[i] + ' cannot be none.');
+                        fieldObj.focus();
+                        return false;
+                    }
+                }
+            }
         }
-      }, 300);
-      setTimeout(() => clearInterval(interval), 5000);
-    }
+        if ((window as any).validateEmail409531000047791049 && !(window as any).validateEmail409531000047791049()) return false;
+        return true;
+    };
   }, []);
-
-  const sendEmail = async (form: HTMLFormElement) => {
-    const formData = new FormData(form);
-    try {
-      const response = await fetch('https://agsuitetech.com/pricing/form_process_contact.php', {
-        method: 'POST',
-        body: formData
-      });
-      const data = await response.json();
-      if (data.status === 'success') {
-        console.log('Email sent successfully.');
-      } else {
-        console.error('Failed to send email:', data.error);
-      }
-    } catch (error) {
-      console.error('Error while sending email:', error);
-    }
-  };
-
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    if ((window as any).checkMandatory409531000042578178 && !(window as any).checkMandatory409531000042578178(e.nativeEvent)) {
-      e.preventDefault();
-      return;
-    }
-
-    // Visitor Tracking update
-    try {
-      if ((window as any).$zoho && (window as any).$zoho.salesiq) {
-        const form = e.currentTarget;
-        const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
-        if (LDTuvidObj) {
-          LDTuvidObj.value = (window as any).$zoho.salesiq.visitor.uniqueid();
-        }
-        const nameObj = form.elements.namedItem('Last Name') as HTMLInputElement;
-        const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
-        if (nameObj) {
-          (window as any).$zoho.salesiq.visitor.name(nameObj.value);
-        }
-        if (emailObj) {
-          (window as any).$zoho.salesiq.visitor.email(emailObj.value);
-        }
-      }
-    } catch (err) { }
-
-    await sendEmail(e.currentTarget);
-    const submitButton = document.querySelector('.formsubmit-contact') as HTMLButtonElement;
-    if (submitButton) {
-      submitButton.setAttribute('disabled', 'true');
-    }
-  };
 
   if (!isClient) return null;
 
@@ -470,70 +374,84 @@ export default function ZohoContactPage() {
 
                   <form
                     action="https://crm.zoho.in/crm/WebToLeadForm"
-                    id="WebToLeads409531000042578178"
-                    name="WebToLeads409531000042578178"
+                    id="webform409531000047791049"
+                    name="WebToLeads409531000047791049"
                     method="POST"
-                    onSubmit={handleFormSubmit}
+                    onSubmit={(e) => {
+                      if ((window as any).checkMandatory409531000047791049 && !(window as any).checkMandatory409531000047791049()) {
+                        e.preventDefault();
+                      }
+                    }}
                     acceptCharset="UTF-8"
                     className="space-y-5"
                   >
-                    <input type="text" className="hidden" name="xnQsjsdp" defaultValue="a7ab09fe90f1a05ce89de47da6f5fe4ec35e5a6a7a3407c3169e127670c7dd56" readOnly />
-                    <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                    <input type="text" className="hidden" name="xmIwtLD" defaultValue="835ba19158c9d4cb19f73b22a127785e9b44da4e740d918a07dc322871eff6d54ae26ddbf0315f1ade82dd193bb27d4b" readOnly />
-                    <input type="text" className="hidden" name="Lead Source" value="Web to Leads" readOnly />
-                    <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
-                    <input type="text" className="hidden" name="returnURL" defaultValue="https://www.agsuite.tech/thank-you" readOnly />
-                    <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
-                    <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
+                    <input type="text" className="hidden" name="xnQsjsdp" value="ce6ebe1d9e713fef68d407d2105f962cb111097dcf75c7448aa9ab6b81795a86" readOnly />
+                    <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+                    <input type="text" className="hidden" name="xmIwtLD" value="f709a413582c4286a2de04d475889148eb84a2d09b828569c9eba502ddcc5faa4e3fd730e1dcd4cb039e9925fd212664" readOnly />
+                    <input type="text" className="hidden" name="actionType" value="TGVhZHM=" readOnly />
+                    <input type="text" className="hidden" name="returnURL" value="https://www.agsuite.tech/thank-you" readOnly />
+                    <input type="text" className="hidden" name="aG9uZXlwb3Q" value="" readOnly />
+
+                    {/* Hidden default fields required by Zoho */}
+                    <select name="Lead Status" className="hidden" defaultValue="Database">
+                      <option value="Database">Database</option>
+                    </select>
+                    <select name="Lead Source" className="hidden" defaultValue="Website (Form)">
+                      <option value="Website (Form)">Website (Form)</option>
+                    </select>
+                    <input type="hidden" name="No of Employees" value="0" />
 
                     {/* Name Row */}
                     <div className="grid grid-cols-1 sm:grid-cols-1 gap-5">
                       <div>
                         <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Name *</label>
-                        <input type="text" id="Last_Name" name="Last Name" required placeholder="John Doe" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                        <input type="text" id="Last_Name" name="Last Name" required maxLength={80} placeholder="John Doe" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
                       </div>
                     </div>
 
                     {/* Business Email Row */}
                     <div>
-                      <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Business Email *</label>
-                      <input type="email" name="LEADCF8" required placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                      <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">POC's Email *</label>
+                      <input type="text" id="Email" ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
                     </div>
 
                     {/* Mobile + Job Title Row */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Mobile Number *</label>
-                        <input type="tel" name="Mobile" required placeholder="+91 00000 00000" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">POC's Mobile *</label>
+                        <input type="text" id="Mobile" name="Mobile" required maxLength={30} placeholder="+91 9876543210" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
                       </div>
                       <div>
-                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Job Title *</label>
-                        <input type="text" name="Designation" required placeholder="CTO" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Role *</label>
+                        <input type="text" id="Designation" name="Designation" required maxLength={100} placeholder="CTO / Manager" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
                       </div>
                     </div>
 
                     {/* Company Name Row */}
                     <div>
                       <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Company Name *</label>
-                      <input type="text" name="Company" required placeholder="Company Inc." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                      <input type="text" id="Company" name="Company" required maxLength={200} placeholder="Company Inc." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
                     </div>
 
                     {/* Service Row */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Service *</label>
-                        <select name="LEADCF5" id="LEADCF5" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
-                          <option value="-None-">-None-</option>
-                          <option value="Licenses">Licenses</option>
-                          <option value="AMC">AMC</option>
-                          <option value="NetSuite Product /Services">NetSuite Product /Services</option>
-                          <option value="Zoho Products/Services">Zoho Products/Services</option>
+                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Services *</label>
+                        <select id="LEADCF165" name="LEADCF165" required onChange={(e) => (window as any).addAriaSelected409531000047791049?.(e)} className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
+                          <option value="" disabled selected>-Select Service-</option>
+                          <option value="Zoho Licenses">Zoho Licenses</option>
+                          <option value="Zoho Implementation">Zoho Implementation</option>
+                          <option value="Zoho Licenses + Implementation">Zoho Licenses + Implementation</option>
+                          <option value="Zoho Support">Zoho Support</option>
+                          <option value="Zoho Optimization">Zoho Optimization</option>
+                          <option value="Zoho Customization">Zoho Customization</option>
+                          <option value="Zoho Integrations">Zoho Integrations</option>
                         </select>
                       </div>
                       <div>
                         <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Annual Revenue *</label>
-                        <select name="LEADCF19" id="Annual_Revenue" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
-                          <option value="">Select Revenue</option>
+                        <select id="LEADCF19" name="LEADCF19" required onChange={(e) => (window as any).addAriaSelected409531000047791049?.(e)} className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
+                          <option value="-None-">-None-</option>
                           <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
                           <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
                           <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
@@ -548,16 +466,14 @@ export default function ZohoContactPage() {
                       </div>
                     </div>
 
-
-
                     {/* How did you hear about us Row */}
                     <div>
-                      <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">How did you hear about us?</label>
-                      <select name="LEADCF127" id="Lead_Source_Contact" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
+                      <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">How did you hear about us. *</label>
+                      <select id="LEADCF127" name="LEADCF127" required onChange={(e) => (window as any).addAriaSelected409531000047791049?.(e)} className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
                         <option value="-None-">-None-</option>
                         <option value="Email">Email</option>
                         <option value="Event">Event</option>
-                        <option value="Friend /Associate">Friend /Associate</option>
+                        <option value="Friend/Associate">Friend/Associate</option>
                         <option value="Search">Search</option>
                         <option value="Social Media">Social Media</option>
                         <option value="Referral">Referral</option>
@@ -567,35 +483,10 @@ export default function ZohoContactPage() {
                     {/* Requirements Textarea */}
                     <div>
                       <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">How We Can Help You *</label>
-                      <textarea id="Description" name="LEADCF123" required rows={3} placeholder="How We Can Help You*" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400 shadow-sm" />
+                      <textarea id="LEADCF123" name="LEADCF123" required rows={3} placeholder="How We Can Help You*" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400 shadow-sm" />
                     </div>
 
-                    {/* Captcha Section */}
-                    <div className="flex flex-col gap-2">
-                      <div data-sitekey='6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_' data-theme='light' data-callback='rccallback409531000042578178' captcha-verified='false' id='recap409531000042578178'></div>
-                      <div id='recapErr409531000042578178' style={{ visibility: 'hidden', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
-                    </div>
-
-                    {/* Privacy + Submit Row */}
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-1">
-                      <label className="flex items-start gap-3 cursor-pointer group">
-                        <div className="relative mt-0.5">
-                          <input type="checkbox" className="sr-only peer" required />
-                          <div className="w-5 h-5 bg-gray-100 border-2 border-gray-100 rounded peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-all" />
-                          <svg className="absolute top-0.5 left-0.5 w-4 h-4 text-white opacity-0 peer-checked:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <span className="text-gray-500 text-sm leading-snug">
-                          I agree to the Privacy Policy and Terms of Service.
-                        </span>
-                      </label>
-
-                      <button type="submit" className="shrink-0 inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-full transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm formsubmit-contact">
-                        <Send className="w-4 h-4" />
-                        Send Message
-                      </button>
-                    </div>
+                    <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full shrink-0 inline-flex items-center justify-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-full transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm cursor-pointer" value="Send Message" />
                   </form>
 
                 </div>

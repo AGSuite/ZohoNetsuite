@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
 import { Send, Users, Rocket, Target, Award } from "lucide-react";
@@ -34,7 +33,7 @@ export default function ZohoContactForm() {
     useEffect(() => {
         setIsClient(true);
 
-        (window as any).addAriaSelected409531000042578178 = function () {
+        (window as any).addAriaSelected409531000047791049 = function () {
             const optionElem = (event as any).target;
             const previousSelectedOption = optionElem.querySelector('[aria-selected=true]');
             if (previousSelectedOption) {
@@ -43,59 +42,10 @@ export default function ZohoContactForm() {
             optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
         };
 
-        (window as any).rccallback409531000042578178 = function () {
-            if (document.getElementById('recap409531000042578178')) {
-                document.getElementById('recap409531000042578178')?.setAttribute('captcha-verified', 'true');
-            }
-            const errorElement = document.getElementById('recapErr409531000042578178');
-            if (errorElement) {
-                errorElement.style.visibility = 'hidden';
-            }
-        };
-
-        (window as any).reCaptchaAlert409531000042578178 = function () {
-            const recap = document.getElementById('recap409531000042578178');
-            if (recap && recap.getAttribute('captcha-verified') === 'false') {
-                const errorElement = document.getElementById('recapErr409531000042578178');
-                if (errorElement) {
-                    errorElement.style.visibility = 'visible';
-                }
-                return false;
-            }
-            return true;
-        };
-
-        // Handle reCAPTCHA rendering for SPA navigation
-        const renderRecaptcha = () => {
-            const container = document.getElementById('recap409531000042578178');
-            if ((window as any).grecaptcha && container) {
-                try {
-                    if (container.children.length > 0) return;
-                    (window as any).grecaptcha.render('recap409531000042578178', {
-                        'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
-                        'theme': 'light',
-                        'callback': (window as any).rccallback409531000042578178
-                    });
-                } catch (e) { }
-            }
-        };
-
-        if ((window as any).grecaptcha) {
-            (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
-        } else {
-            const interval = setInterval(() => {
-                if ((window as any).grecaptcha) {
-                    (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
-                    clearInterval(interval);
-                }
-            }, 300);
-            setTimeout(() => clearInterval(interval), 5000);
-        }
-
-        (window as any).validateEmail409531000042578178 = function () {
-            const form = document.forms.namedItem('WebToLeads409531000042578178') as HTMLFormElement;
+        (window as any).validateEmail409531000047791049 = function () {
+            const form = document.forms.namedItem('WebToLeads409531000047791049') as HTMLFormElement;
             if (!form) return true;
-            const emailFld = form.querySelectorAll('[name="LEADCF8"]');
+            const emailFld = form.querySelectorAll('[ftype="email"]');
             for (let i = 0; i < emailFld.length; i++) {
                 const emailVal = (emailFld[i] as HTMLInputElement).value;
                 if ((emailVal.replace(/^\s+|\s+$/g, '')).length !== 0) {
@@ -106,22 +56,15 @@ export default function ZohoContactForm() {
                         (emailFld[i] as HTMLInputElement).focus();
                         return false;
                     }
-                    const domain = emailVal.split('@')[1].toLowerCase();
-                    const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
-                    if (forbidden.includes(domain)) {
-                        alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
-                        (emailFld[i] as HTMLInputElement).focus();
-                        return false;
-                    }
                 }
             }
             return true;
         };
 
-        (window as any).checkMandatory409531000042578178 = function () {
-            const mndFileds = ['Company', 'Last Name', 'LEADCF8', 'Mobile', 'LEADCF5', 'LEADCF19', 'LEADCF123'];
-            const fldLangVal = ['Company Name', 'Name', 'Business Email', 'Mobile', 'Zoho Solution', 'Annual Revenue', 'Requirements'];
-            const form = document.forms.namedItem('WebToLeads409531000042578178') as HTMLFormElement;
+        (window as any).checkMandatory409531000047791049 = function () {
+            const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF127', 'LEADCF165'];
+            const fldLangVal = ['Company Name', 'Name', 'Role', "POC's Email", "POC's Mobile", 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Services'];
+            const form = document.forms.namedItem('WebToLeads409531000047791049') as HTMLFormElement;
             if (!form) return false;
 
             for (let i = 0; i < mndFileds.length; i++) {
@@ -134,80 +77,32 @@ export default function ZohoContactForm() {
                     } else if (fieldObj.nodeName === 'SELECT') {
                         const selectField = fieldObj as HTMLSelectElement;
                         if (selectField.options[selectField.selectedIndex].value === '' || selectField.options[selectField.selectedIndex].value === '-None-') {
-                            alert(fldLangVal[i] + ' cannot be empty.');
+                            alert(fldLangVal[i] + ' cannot be none.');
                             fieldObj.focus();
                             return false;
                         }
-                    } else if (fieldObj.name === 'Mobile' && fieldObj.value.replace(/\D/g, '').length !== 10) {
-                        alert('Please enter a valid 10-digit mobile number.');
-                        fieldObj.focus();
-                        return false;
                     }
                 }
             }
-            if ((window as any).validateEmail409531000042578178 && !(window as any).validateEmail409531000042578178()) return false;
-            if ((window as any).reCaptchaAlert409531000042578178 && !(window as any).reCaptchaAlert409531000042578178()) return false;
+            if ((window as any).validateEmail409531000047791049 && !(window as any).validateEmail409531000047791049()) return false;
 
-            (window as any).trackVisitor409531000042578178?.();
-            (window as any).sendEmail?.();
-            const submitButton = document.querySelector('.formsubmit-zoho') as HTMLButtonElement;
+            const submitButton = document.querySelector('.crmWebToEntityForm .formsubmit') as HTMLInputElement;
             if (submitButton) {
                 submitButton.setAttribute('disabled', 'true');
             }
             return true;
         };
 
-        (window as any).sendEmail = function () {
-            const form = document.forms.namedItem('WebToLeads409531000042578178') as HTMLFormElement;
-            if (!form) return;
-            const formData = new FormData(form);
-
-            fetch('https://agsuitetech.com/pricing/form_process_contact.php', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Internal processing successful');
-                })
-                .catch(error => {
-                    console.error('Error in internal processing:', error);
-                });
-        };
-
-        (window as any).trackVisitor409531000042578178 = function () {
-            try {
-                if ((window as any).$zoho && (window as any).$zoho.salesiq) {
-                    const form = document.forms.namedItem('WebToLeads409531000042578178') as HTMLFormElement;
-                    if (form) {
-                        const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
-                        if (LDTuvidObj) {
-                            LDTuvidObj.value = (window as any).$zoho.salesiq.visitor.uniqueid();
-                        }
-                        const nameObj = form.elements.namedItem('Last Name') as HTMLInputElement;
-                        const emailObj = form.elements.namedItem('LEADCF8') as HTMLInputElement;
-                        if (nameObj) {
-                            (window as any).$zoho.salesiq.visitor.name(nameObj.value);
-                        }
-                        if (emailObj) {
-                            (window as any).$zoho.salesiq.visitor.email(emailObj.value);
-                        }
-                    }
-                }
-            } catch (err) { }
-        };
+        if (typeof (window as any)._wfa_fstprtcken === 'undefined') {
+            (window as any)._wfa_fstprtcken = {};
+        }
+        (window as any)._wfa_fstprtcken[409531000047791049] = true;
     }, []);
 
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        if ((window as any).checkMandatory409531000042578178 && !(window as any).checkMandatory409531000042578178()) {
+        if ((window as any).checkMandatory409531000047791049 && !(window as any).checkMandatory409531000047791049()) {
             e.preventDefault();
             return;
-        }
-        // Combine code and mobile
-        const form = e.currentTarget;
-        const mobileField = form.elements.namedItem('Mobile') as HTMLInputElement;
-        if (mobileField) {
-            mobileField.value = `${selectedCode} ${mobileField.value}`;
         }
     };
 
@@ -250,12 +145,8 @@ export default function ZohoContactForm() {
 
     return (
         <>
-            <Script
-                src="https://www.google.com/recaptcha/api.js"
-                strategy="afterInteractive"
-            />
             {/* Zoho CRM Web-to-Lead Analytics */}
-            <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=dc6cfe6eaa303bd5d195bb5352719bba230c529eae5f6f0823d0a841f9dd57657e6049706260d6effe692960c6c5bab7gid6711126e0f954ae10107c9d2bd1b386506273b37e6e0265531ba837d5c4ed25dgid10b59705091816e9551c4ebc62e953e4111c79398428255d38ea16f03d7b9f05gid0c55c5d686e2e3f755b127157834bc2774e542abc82e5c1ce5eba2a071c6fc31&tw=70c0fd3034b5b59f1ac7be0a50f49b22d50d34cb8687eb35e3649323a8c88143&version=v2" />
+            <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=0eb6a535c81a04e07aa886637740a304d7d59028aa8cf0d09048e8d1fbedf647e44d9f74b254709a0882eb1c31136d9cgid6d4592f2dce66ea8bcc60167960b9d0d27138cba33ac6ce7248c5c53d3a06fdcgid365cc1061c930ed0655f44af7ff3ea4d0b60a3b2784693cb6b2d5828f4dd9f35gid1cae83d6cd96c22775ca40c3b71805971400a95aea889397fdfa8c8f955523fd&tw=d336253c98c6a8f95f079a1420d0d2411cea660a574b2a28d90b4690781c9053&version=v2" strategy="afterInteractive" />
             <section id="contact-form" className="relative py-28 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
                 {/* Background Decorative Gradients */}
                 <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-blue-500/30 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
@@ -382,9 +273,9 @@ export default function ZohoContactForm() {
                             </div>
 
                             <motion.form
+                                id="webform409531000047791049"
                                 action="https://crm.zoho.in/crm/WebToLeadForm"
-                                id="WebToLeads409531000042578178"
-                                name="WebToLeads409531000042578178"
+                                name="WebToLeads409531000047791049"
                                 method="POST"
                                 onSubmit={handleFormSubmit}
                                 acceptCharset="UTF-8"
@@ -394,87 +285,92 @@ export default function ZohoContactForm() {
                                 variants={containerVariants}
                                 className="space-y-6"
                             >
-                                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="a7ab09fe90f1a05ce89de47da6f5fe4ec35e5a6a7a3407c3169e127670c7dd56" readOnly />
-                                <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                                <input type="text" className="hidden" name="xmIwtLD" defaultValue="835ba19158c9d4cb19f73b22a127785e9b44da4e740d918a07dc322871eff6d54ae26ddbf0315f1ade82dd193bb27d4b" readOnly />
-                                <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
-                                <input type="text" className="hidden" name="returnURL" defaultValue="https://www.agsuite.tech/thank-you" readOnly />
-                                <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
-                                <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
+                                <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="ce6ebe1d9e713fef68d407d2105f962cb111097dcf75c7448aa9ab6b81795a86" readOnly />
+                                <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+                                <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="f709a413582c4286a2de04d475889148eb84a2d09b828569c9eba502ddcc5faa4e3fd730e1dcd4cb039e9925fd212664" readOnly />
+                                <input type="text" style={{ display: 'none' }} name="actionType" value="TGVhZHM=" readOnly />
+                                <input type="text" style={{ display: 'none' }} name="returnURL" value="https://www.agsuite.tech/thank-you" readOnly />
+                                <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" value="" readOnly />
+
+                                {/* Hidden default fields required by Zoho */}
+                                <select name="Lead Status" className="hidden" defaultValue="Database">
+                                    <option value="Database">Database</option>
+                                </select>
+                                <select name="Lead Source" className="hidden" defaultValue="Website (Form)">
+                                    <option value="Website (Form)">Website (Form)</option>
+                                </select>
+                                <input type="hidden" name="No of Employees" value="0" />
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Full Identity *</motion.label>
-                                        <input type="text" name="Last Name" required className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="Johnathan Doe" />
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">Name *</motion.label>
+                                        <input type="text" id="Last_Name" name="Last Name" required maxLength={80} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="Johnathan Doe" />
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Work Email *</motion.label>
-                                        <input type="email" name="LEADCF8" required className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="john@enterprise.com" />
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">POC's Email *</motion.label>
+                                        <input type="text" id="Email" ftype="email" name="Email" required maxLength={100} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="john@enterprise.com" />
                                     </motion.div>
                                 </div>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Job Role *</motion.label>
-                                        <input type="text" name="Designation" required className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="Manager" />
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">Role *</motion.label>
+                                        <input type="text" id="Designation" name="Designation" required maxLength={100} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="Manager" />
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Direct Contact (10 Digits) *</motion.label>
-                                        <div className="flex gap-2">
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">POC's Mobile *</motion.label>
+                                        <input
+                                            type="text"
+                                            id="Mobile"
+                                            name="Mobile"
+                                            required
+                                            maxLength={30}
+                                            className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm"
+                                            placeholder="+91 9876543210"
+                                        />
+                                    </motion.div>
+                                </div>
+
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+                                    <motion.div variants={itemVariants} className="flex flex-col">
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">Company Name *</motion.label>
+                                        <input type="text" id="Company" name="Company" required maxLength={200} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="Company Inc." />
+                                    </motion.div>
+                                    <motion.div variants={itemVariants} className="flex flex-col">
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">Services *</motion.label>
+                                        <div className="relative group">
                                             <select
-                                                value={selectedCode}
-                                                onChange={(e) => setSelectedCode(e.target.value)}
-                                                className="w-24 bg-blue-50/30 border-2 border-blue-100/50 focus:border-blue-700 rounded-2xl px-2 py-3.5 text-xs font-semibold outline-none transition-all shadow-sm"
-                                            >
-                                                {COUNTRY_CODES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
-                                            </select>
-                                            <input
-                                                type="tel"
-                                                name="Mobile"
+                                                id="LEADCF165"
+                                                name="LEADCF165"
                                                 required
-                                                maxLength={10}
-                                                onChange={(e) => e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10)}
-                                                className="flex-1 bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm"
-                                                placeholder="9876543210"
-                                            />
-                                        </div>
-                                    </motion.div>
-                                </div>
-
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
-                                    <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Enterprise *</motion.label>
-                                        <input type="text" name="Company" required className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="Company Inc." />
-                                    </motion.div>
-                                    <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Solution Area</motion.label>
-                                        <div className="relative group">
-                                            <select name="LEADCF5" defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000042578178?.(); }} className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md pr-10">
-                                                <option value="" disabled>Select Zoho Solution *</option>
-                                                <option value='Zoho&#x20;CRM&#x20;&amp;&#x20;Sales'>Zoho CRM &amp; Sales</option>
-                                                <option value='Zoho&#x20;Finance&#x20;&amp;&#x20;Accounting'>Zoho Finance &amp; Accounting</option>
-                                                <option value='Zoho&#x20;HR&#x20;&amp;&#x20;People'>Zoho HR &amp; People</option>
-                                                <option value='Zoho&#x20;Marketing&#x20;&amp;&#x20;Automation'>Zoho Marketing &amp; Automation</option>
-                                                <option value='Zoho&#x20;IT&#x20;&amp;&#x20;Support'>Zoho IT &amp; Support</option>
-                                                <option value='Zoho&#x20;BI&#x20;&amp;&#x20;Analytics'>Zoho BI &amp; Analytics</option>
-                                                <option value='Zoho&#x20;Developer&#x20;Platforms'>Zoho Developer Platforms</option>
-                                                <option value='Zoho&#x20;One&#x20;&#x28;Complete&#x20;Suite&#x29;'>Zoho One (Complete Suite)</option>
-                                                <option value='NetSuite Product /Services'>NetSuite Product /Services</option>
-                                                <option value='Zoho Products/Services'>Zoho Products/Services</option>
+                                                onChange={(e) => { (window as any).addAriaSelected409531000047791049?.(); }}
+                                                className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md"
+                                            >
+                                                <option value="" disabled selected>-Select Service-</option>
+                                                <option value="Zoho Licenses">Zoho Licenses</option>
+                                                <option value="Zoho Implementation">Zoho Implementation</option>
+                                                <option value="Zoho Licenses + Implementation">Zoho Licenses + Implementation</option>
+                                                <option value="Zoho Support">Zoho Support</option>
+                                                <option value="Zoho Optimization">Zoho Optimization</option>
+                                                <option value="Zoho Customization">Zoho Customization</option>
+                                                <option value="Zoho Integrations">Zoho Integrations</option>
                                             </select>
-                                            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-blue-600 transition-transform group-hover:scale-110">
-                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" /></svg>
-                                            </div>
                                         </div>
                                     </motion.div>
                                 </div>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Revenue *</motion.label>
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">Annual Revenue *</motion.label>
                                         <div className="relative group">
-                                            <select name="LEADCF19" required defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000042578178?.(); }} className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md pr-10">
-                                                <option value="" disabled>Select Yearly Revenue</option>
+                                            <select
+                                                id="LEADCF19"
+                                                name="LEADCF19"
+                                                required
+                                                onChange={(e) => { (window as any).addAriaSelected409531000047791049?.(); }}
+                                                className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md"
+                                            >
+                                                <option value="-None-">-None-</option>
                                                 <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
                                                 <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
                                                 <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
@@ -486,48 +382,38 @@ export default function ZohoContactForm() {
                                                 <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
                                                 <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
                                             </select>
-                                            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-blue-600">
-                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" /></svg>
-                                            </div>
                                         </div>
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Referral Path</motion.label>
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">How did you hear about us. *</motion.label>
                                         <div className="relative group">
-                                            <select name="LEADCF127" defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000042578178?.(); }} className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md pr-10">
-                                                <option value="" disabled>How did you find us?</option>
+                                            <select
+                                                id="LEADCF127"
+                                                name="LEADCF127"
+                                                required
+                                                onChange={(e) => { (window as any).addAriaSelected409531000047791049?.(); }}
+                                                className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md"
+                                            >
                                                 <option value="-None-">-None-</option>
                                                 <option value="Email">Email</option>
                                                 <option value="Event">Event</option>
-                                                <option value="Friend /Associate">Friend /Associate</option>
+                                                <option value="Friend/Associate">Friend/Associate</option>
                                                 <option value="Search">Search</option>
                                                 <option value="Social Media">Social Media</option>
                                                 <option value="Referral">Referral</option>
                                             </select>
-                                            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-blue-600">
-                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" /></svg>
-                                            </div>
                                         </div>
                                     </motion.div>
                                 </div>
 
-
-
-
                                 <motion.div variants={itemVariants} className="flex flex-col">
-                                    <motion.label variants={labelVariants} className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-black text-sm font-bold uppercase tracking-wider mb-2 ml-1">Requirements *</motion.label>
-                                    <textarea name="LEADCF123" required rows={3} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 resize-none shadow-sm focus:shadow-md text-sm" placeholder="Tell us about your project goals..." />
+                                    <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">How We Can Help You *</motion.label>
+                                    <textarea id="LEADCF123" name="LEADCF123" required rows={3} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 resize-none shadow-sm focus:shadow-md text-sm" placeholder="Tell us about your project goals..." />
                                 </motion.div>
 
-                                <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-between gap-8 pt-2">
-                                    <div className="captcha-area transform scale-90 origin-left">
-                                        <div data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_" data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178"></div>
-                                        <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#dc2626', marginTop: '6px', fontWeight: '600', visibility: 'hidden' }}>Security verification required.</div>
-                                    </div>
-
-                                    <button type="submit" className="w-full sm:w-auto px-12 py-4 bg-gradient-to-r from-blue-700 to-gray-900 hover:from-blue-800 hover:to-black text-white font-bold rounded-2xl transition-all shadow-[0_15px_30px_-5px_rgba(30,58,138,0.3)] hover:shadow-[0_20px_40px_-5px_rgba(30,58,138,0.4)] hover:scale-[1.03] active:scale-95 formsubmit-zoho text-sm uppercase tracking-widest">
-                                        Send Now
-                                    </button>
+                                <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+                                    <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full sm:w-auto px-12 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-2xl transition-all shadow-lg hover:scale-[1.02] active:scale-95 text-sm uppercase tracking-widest cursor-pointer" value="Submit" />
+                                    <input type="reset" className="zcwf_button px-6 py-4 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-2xl text-sm cursor-pointer" value="Reset" />
                                 </motion.div>
                             </motion.form>
                         </div>
@@ -537,7 +423,3 @@ export default function ZohoContactForm() {
         </>
     );
 }
-
-
-
-

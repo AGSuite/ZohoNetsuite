@@ -120,183 +120,7 @@ export default function RequestQuotePremium() {
                 recapErr.style.visibility = 'hidden';
             }
         };
-
-        window.reCaptchaAlert409531000042578178 = function () {
-            const recap = document.getElementById('recap409531000042578178');
-            if (recap && recap.getAttribute('captcha-verified') === 'false') {
-                const recapErr = document.getElementById('recapErr409531000042578178');
-                if (recapErr) {
-                    recapErr.style.visibility = 'visible';
-                }
-                return false;
-            }
-            return true;
-        };
-
-        window.validateEmail409531000042578178 = function () {
-            const form = document.forms.namedItem('WebToLeads409531000042578178');
-            if (!form) return true;
-            const emailFld = form.querySelectorAll('[name="LEADCF8"]');
-            for (let i = 0; i < emailFld.length; i++) {
-                const emailVal = (emailFld[i] as HTMLInputElement).value;
-                if (emailVal.replace(/^\s+|\s+$/g, '').length !== 0) {
-                    const atpos = emailVal.indexOf('@');
-                    const dotpos = emailVal.lastIndexOf('.');
-                    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
-                        alert('Please enter a valid email address.');
-                        (emailFld[i] as HTMLInputElement).focus();
-                        return false;
-                    }
-                    const domain = emailVal.split('@')[1].toLowerCase();
-                    const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
-                    if (forbidden.includes(domain)) {
-                        alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
-                        (emailFld[i] as HTMLInputElement).focus();
-                        return false;
-                    }
-                }
-            }
-            return true;
-        };
-
-        window.validateNumber = function (e: KeyboardEvent) {
-            const pattern = /^[0-9]$/;
-            if (!pattern.test(e.key)) {
-                e.preventDefault();
-                return false;
-            }
-            return true;
-        };
-
-        window.sendEmail = function () {
-            const form = document.forms.namedItem('WebToLeads409531000042578178');
-            if (!form) return;
-
-            const formData = new FormData(form);
-
-            fetch('https://agsuitetech.com/pricing/form_process_quote.php', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        console.log('Email sent successfully.');
-                    } else {
-                        console.error('Failed to send email:', data.error);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error while sending email:', error);
-                });
-        };
-
-        window.trackVisitor409531000042578178 = function () {
-            try {
-                if (window.$zoho?.salesiq?.visitor) {
-                    const form = document.forms.namedItem('WebToLeads409531000042578178');
-                    if (!form) return;
-
-                    const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
-                    if (LDTuvidObj) {
-                        LDTuvidObj.value = window.$zoho.salesiq.visitor.uniqueid() || '';
-                    }
-
-                    const nameField = form.elements.namedItem('Last Name') as HTMLInputElement;
-                    const name = nameField?.value || '';
-                    if (name) {
-                        window.$zoho.salesiq.visitor.name(name);
-                    }
-
-                    const emailObj = form.elements.namedItem('LEADCF8') as HTMLInputElement;
-                    if (emailObj && emailObj.value) {
-                        window.$zoho.salesiq.visitor.email(emailObj.value);
-                    }
-                }
-            } catch (e) {
-                console.error('Tracking error:', e);
-            }
-        };
-
-        window.checkMandatory409531000042578178 = function (e: any) {
-            const form = e.target as HTMLFormElement;
-            const mndFileds = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
-            const fldLangVal = ['Company Name', 'Name', 'POC\'s Mobile', 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
-
-            for (let i = 0; i < mndFileds.length; i++) {
-                const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
-                if (fieldObj) {
-                    if (fieldObj.value.replace(/^\s+|\s+$/g, '').length === 0) {
-                        alert(fldLangVal[i] + ' cannot be empty.');
-                        fieldObj.focus();
-                        return false;
-                    }
-                }
-            }
-
-            const mobileFld = form.elements.namedItem('Mobile') as HTMLInputElement;
-            if (mobileFld) {
-                const v = mobileFld.value.replace(/\D/g, '');
-                if (v.length !== 10) {
-                    alert('Mobile number must be exactly 10 digits.');
-                    mobileFld.focus();
-                    return false;
-                }
-            }
-
-            if (window.validateEmail409531000042578178 && !window.validateEmail409531000042578178()) {
-                return false;
-            }
-
-            if (window.reCaptchaAlert409531000042578178 && !window.reCaptchaAlert409531000042578178()) {
-                return false;
-            }
-
-            return true;
-        };
     }, []);
-
-    // Event handlers
-    const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        if (window.checkMandatory409531000042578178 && !window.checkMandatory409531000042578178(e.nativeEvent)) {
-            e.preventDefault();
-            return;
-        }
-
-        // Visitor Tracking
-        try {
-            if (window.$zoho?.salesiq?.visitor) {
-                const form = e.currentTarget;
-                const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
-                if (LDTuvidObj) {
-                    LDTuvidObj.value = window.$zoho.salesiq.visitor.uniqueid() || '';
-                }
-                const nameObj = form.elements.namedItem('Last Name') as HTMLInputElement;
-                const emailObj = form.elements.namedItem('LEADCF8') as HTMLInputElement;
-                if (nameObj) window.$zoho.salesiq.visitor.name(nameObj.value);
-                if (emailObj) window.$zoho.salesiq.visitor.email(emailObj.value);
-            }
-        } catch (err) { }
-
-        // Send internal email
-        const formData = new FormData(e.currentTarget);
-        try {
-            await fetch('https://agsuitetech.com/pricing/form_process_quote.php', {
-                method: 'POST',
-                body: formData
-            });
-        } catch (err) {
-            console.error('Email send error:', err);
-        }
-    };
-
-    const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        window.addAriaSelected409531000042578178?.(e.nativeEvent);
-    };
-
-    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        window.validateNumber?.(e.nativeEvent);
-    };
 
     if (!isClient) return null;
 
@@ -438,24 +262,33 @@ export default function RequestQuotePremium() {
 
                                     <div id='crmWebToEntityForm' className='zcwf_lblLeft crmWebToEntityForm'>
                                         <form
-                                            id='webform409531000042578178'
+                                            id='webform409531000047791096'
                                             action='https://crm.zoho.in/crm/WebToLeadForm'
-                                            name='WebToLeads409531000042578178'
+                                            name='WebToLeads409531000047791096'
                                             method='POST'
-                                            onSubmit={handleFormSubmit}
+                                            onSubmit={(e) => {
+                                                if ((window as any).checkMandatory409531000047791096 && !(window as any).checkMandatory409531000047791096()) {
+                                                    e.preventDefault();
+                                                }
+                                            }}
                                             acceptCharset='UTF-8'
                                             className="space-y-4"
                                         >
-                                            {/* Hidden fields */}
-                                            <input type='text' className="hidden" name='xnQsjsdp' value='a7ab09fe90f1a05ce89de47da6f5fe4ec35e5a6a7a3407c3169e127670c7dd56' readOnly />
+                                            <input type='text' className="hidden" name='xnQsjsdp' value='2ae4ca1841d27018fa82a0a48a96f1c01673f80384140a440922ae0aab21aae3' readOnly />
                                             <input type='hidden' name='zc_gad' id='zc_gad' value='' />
-                                            <input type='text' className="hidden" name='xmIwtLD' value='835ba19158c9d4cb19f73b22a127785e9b44da4e740d918a07dc322871eff6d54ae26ddbf0315f1ade82dd193bb27d4b' readOnly />
-                                            <input type='text' className="hidden" name='Lead Source' value='Web to Leads' readOnly />
+                                            <input type='text' className="hidden" name='xmIwtLD' value='56ac8377184c3ea501a9db3ccd450a182e7e602f9cbf901b0c9852cc9de9f7c713a4ce3d1e636d34dc4666caf4082423' readOnly />
                                             <input type='text' className="hidden" name='actionType' value='TGVhZHM=' readOnly />
                                             <input type='text' className="hidden" name='returnURL' value='https://www.agsuite.tech/thank-you' readOnly />
-                                            <input type='text' className="hidden" id='ldeskuid' name='ldeskuid' readOnly />
-                                            <input type='text' className="hidden" id='LDTuvid' name='LDTuvid' readOnly />
+                                            <input type='text' className="hidden" name='aG9uZXlwb3Q' value='' readOnly />
 
+                                            {/* Hidden default fields required by Zoho */}
+                                            <select name="Lead Status" className="hidden" defaultValue="Database">
+                                                <option value="Database">Database</option>
+                                            </select>
+                                            <select name="Lead Source" className="hidden" defaultValue="Website (Form)">
+                                                <option value="Website (Form)">Website (Form)</option>
+                                            </select>
+                                            <input type="hidden" name="No of Employees" value="0" />
 
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                 <div className="space-y-1">
@@ -471,39 +304,15 @@ export default function RequestQuotePremium() {
                                                     />
                                                 </div>
                                                 <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Company Name *</label>
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">POC's Email *</label>
                                                     <input
                                                         type='text'
-                                                        id='Company'
-                                                        placeholder='Company Inc.'
-                                                        required
-                                                        name='Company'
-                                                        maxLength={200}
-                                                        className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
-                                                    />
-                                                </div>
-                                                <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Company Email *</label>
-                                                    <input
-                                                        type='email'
+                                                        id='Email'
+                                                        ftype="email"
                                                         placeholder="john@company.com"
-                                                        id='LEADCF8'
                                                         required
-                                                        name='LEADCF8'
+                                                        name='Email'
                                                         maxLength={100}
-                                                        className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
-                                                    />
-                                                </div>
-                                                <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">POC's Mobile *</label>
-                                                    <input
-                                                        type='text'
-                                                        id='Mobile'
-                                                        placeholder='+91 00000 00000'
-                                                        required
-                                                        name='Mobile'
-                                                        maxLength={15}
-                                                        onChange={(e) => e.target.value = e.target.value.replace(/[^\d+ ]/g, '').slice(0, 15)}
                                                         className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
                                                     />
                                                 </div>
@@ -520,20 +329,49 @@ export default function RequestQuotePremium() {
                                                     />
                                                 </div>
                                                 <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Service *</label>
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">POC's Mobile *</label>
+                                                    <input
+                                                        type='text'
+                                                        id='Mobile'
+                                                        placeholder='+91 9876543210'
+                                                        required
+                                                        name='Mobile'
+                                                        maxLength={30}
+                                                        className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
+                                                    />
+                                                </div>
+                                                <div className="space-y-1">
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Company Name *</label>
+                                                    <input
+                                                        type='text'
+                                                        id='Company'
+                                                        placeholder='Company Inc.'
+                                                        required
+                                                        name='Company'
+                                                        maxLength={200}
+                                                        className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
+                                                    />
+                                                </div>
+                                                <div className="space-y-1">
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Netsuite Services *</label>
                                                     <select
                                                         className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
-                                                        id='LEADCF5'
-                                                        onChange={handleSelectChange}
+                                                        id='LEADCF166'
+                                                        name='LEADCF166'
                                                         required
-                                                        name='LEADCF5'
-                                                        defaultValue=""
+                                                        onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)}
                                                     >
-                                                        <option value="-None-">-None-</option>
-                                                        <option value="Licenses">Licenses</option>
-                                                        <option value="AMC">AMC</option>
-                                                        <option value="NetSuite Product /Services">NetSuite Product /Services</option>
-                                                        <option value="Zoho Products/Services">Zoho Products/Services</option>
+                                                        <option value="" disabled selected>-Select NetSuite Service-</option>
+                                                        <option value="NetSuite Licenses">NetSuite Licenses</option>
+                                                        <option value="NetSuite Implementation">NetSuite Implementation</option>
+                                                        <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
+                                                        <option value="New Subsidiary Implementation">New Subsidiary Implementation</option>
+                                                        <option value="NetSuite Support">NetSuite Support</option>
+                                                        <option value="NetSuite Optimization">NetSuite Optimization</option>
+                                                        <option value="NetSuite Customization">NetSuite Customization</option>
+                                                        <option value="NetSuite Integrations">NetSuite Integrations</option>
+                                                        <option value="NetSuite India Localization">NetSuite India Localization</option>
+                                                        <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
                                                     </select>
                                                 </div>
 
@@ -542,12 +380,11 @@ export default function RequestQuotePremium() {
                                                     <select
                                                         className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
                                                         id='LEADCF19'
-                                                        onChange={handleSelectChange}
-                                                        required
                                                         name='LEADCF19'
-                                                        defaultValue=""
+                                                        required
+                                                        onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)}
                                                     >
-                                                        <option value="" disabled>Select Revenue</option>
+                                                        <option value="-None-">-None-</option>
                                                         <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
                                                         <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
                                                         <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
@@ -560,21 +397,19 @@ export default function RequestQuotePremium() {
                                                         <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
                                                     </select>
                                                 </div>
-
                                                 <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">How did you hear about us?</label>
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">How did you hear about us. *</label>
                                                     <select
                                                         className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
                                                         id='LEADCF127'
-                                                        onChange={handleSelectChange}
                                                         name='LEADCF127'
-                                                        defaultValue=""
+                                                        required
+                                                        onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)}
                                                     >
-                                                        <option value="" disabled>Select Option</option>
                                                         <option value="-None-">-None-</option>
                                                         <option value="Email">Email</option>
                                                         <option value="Event">Event</option>
-                                                        <option value="Friend /Associate">Friend /Associate</option>
+                                                        <option value="Friend/Associate">Friend/Associate</option>
                                                         <option value="Search">Search</option>
                                                         <option value="Social Media">Social Media</option>
                                                         <option value="Referral">Referral</option>
@@ -586,36 +421,15 @@ export default function RequestQuotePremium() {
                                                 <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">How We Can Help You *</label>
                                                 <textarea
                                                     id='LEADCF123'
-                                                    required
                                                     name='LEADCF123'
-                                                    placeholder='Share your requirements...'
+                                                    required
                                                     rows={3}
-                                                    className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 resize-none"
-                                                ></textarea>
+                                                    placeholder="Share your NetSuite requirement..."
+                                                    className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400"
+                                                />
                                             </div>
 
-                                            <div className='zcwf_row text-center bg-gray-50 rounded-xl p-4'>
-                                                <div
-                                                    className="g-recaptcha flex justify-center scale-90"
-                                                    data-sitekey='6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_'
-                                                    data-theme='light'
-                                                    data-callback='rccallback409531000042578178'
-                                                    captcha-verified='false'
-                                                    id='recap409531000042578178'
-                                                ></div>
-                                                <div id='recapErr409531000042578178' style={{ visibility: 'hidden', color: 'red', fontSize: '12px', marginTop: '4px' }}>
-                                                    Captcha validation failed. If you are not a robot then please try again.
-                                                </div>
-                                            </div>
-
-                                            <button
-                                                type='submit'
-                                                id='formsubmit'
-                                                className='formsubmit w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium rounded-xl transition-all duration-300 shadow-lg hover:shadow-blue-500/30 hover:scale-[1.02] text-sm'
-                                            >
-                                                <Send size={18} />
-                                                Get Your Quote Now
-                                            </button>
+                                            <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm uppercase tracking-widest cursor-pointer" value="Request Project Quote" />
                                         </form>
                                     </div>
                                 </div>

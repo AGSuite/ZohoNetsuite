@@ -1,65 +1,35 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Script from "next/script";
-import { Briefcase, Globe2, HeartHandshake, Rocket } from "lucide-react";
-
-// Updated Site Key from User's latest source code
-const SITE_KEY = "6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_";
+import { Send, Briefcase, Globe2, HeartHandshake, Rocket } from "lucide-react";
 
 export default function ContactFormDesign4() {
-  const router = useRouter();
   const [isClient, setIsClient] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
 
-    (window as any).addAriaSelected409531000042578178 = function () {
+    (window as any).addAriaSelected409531000047791096 = function () {
       const optionElem = (event as any).target;
       const prev = optionElem.querySelector('[aria-selected=true]');
       if (prev) prev.removeAttribute('aria-selected');
       optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
     };
 
-    (window as any).rccallback409531000042578178 = function () {
-      const recap = document.getElementById('recap409531000042578178');
-      if (recap) recap.setAttribute('captcha-verified', 'true');
-      const err = document.getElementById('recapErr409531000042578178') as HTMLElement;
-      if (err && err.style.visibility === 'visible') err.style.visibility = 'hidden';
-    };
-
-    (window as any).reCaptchaAlert409531000042578178 = function () {
-      const recap = document.getElementById('recap409531000042578178');
-      if (recap && recap.getAttribute('captcha-verified') === 'false') {
-        const err = document.getElementById('recapErr409531000042578178') as HTMLElement;
-        if (err) err.style.visibility = 'visible';
-        return false;
-      }
-      return true;
-    };
-
-    (window as any).validateEmail409531000042578178 = function () {
-      const form = (document.forms as any).WebToLeads409531000042578178;
+    (window as any).validateEmail409531000047791096 = function () {
+      const form = document.forms.namedItem('WebToLeads409531000047791096') as HTMLFormElement;
       if (!form) return true;
-      const emailFld = form.querySelectorAll('[data-ftype=email]');
+      const emailFld = form.querySelectorAll('[ftype="email"]');
       for (let i = 0; i < emailFld.length; i++) {
-        const v = emailFld[i].value;
+        const v = (emailFld[i] as HTMLInputElement).value;
         if (v.replace(/^\s+|\s+$/g, '').length !== 0) {
           const at = v.indexOf('@'), dot = v.lastIndexOf('.');
           if (at < 1 || dot < at + 2 || dot + 2 >= v.length) {
             alert('Please enter a valid email address.');
-            emailFld[i].focus();
-            return false;
-          }
-          const domain = v.split('@')[1].toLowerCase();
-          const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
-          if (forbidden.includes(domain)) {
-            alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
-            emailFld[i].focus();
+            (emailFld[i] as HTMLInputElement).focus();
             return false;
           }
         }
@@ -67,357 +37,213 @@ export default function ContactFormDesign4() {
       return true;
     };
 
-    (window as any).validateMobile409531000042578178 = function () {
-      const form = (document.forms as any).WebToLeads409531000042578178;
-      if (!form) return true;
-      const mobileFld = form.querySelector('input[name="Mobile"]');
-      if (mobileFld) {
-        const v = mobileFld.value.replace(/\D/g, '');
-        if (v.length !== 10) {
-          alert('Mobile number must be exactly 10 digits.');
-          mobileFld.focus();
-          return false;
-        }
-      }
-      return true;
-    };
-
-    (window as any).checkMandatory409531000042578178 = function () {
-      const fields = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
-      const labels = ['Company Name', 'Name', "POC's Mobile", 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
-      const form = (document.forms as any)['WebToLeads409531000042578178'];
+    (window as any).checkMandatory409531000047791096 = function () {
+      const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF127', 'LEADCF166'];
+      const fldLangVal = ['Company Name', 'Name', 'Role', "POC's Email", "POC's Mobile", 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Netsuite Services'];
+      const form = document.forms.namedItem('WebToLeads409531000047791096') as HTMLFormElement;
       if (!form) return false;
-      for (let i = 0; i < fields.length; i++) {
-        const f = form[fields[i]];
-        if (f) {
-          if ((f.value.replace(/^\s+|\s+$/g, '')).length === 0) {
-            alert(labels[i] + ' cannot be empty.'); f.focus(); return false;
-          } else if (f.nodeName === 'SELECT' && f.options[f.selectedIndex].value === '-None-') {
-            alert(labels[i] + ' cannot be none.'); f.focus(); return false;
+
+      for (let i = 0; i < mndFileds.length; i++) {
+        const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+        if (fieldObj) {
+          if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length === 0) {
+            alert(fldLangVal[i] + ' cannot be empty.');
+            fieldObj.focus();
+            return false;
+          } else if (fieldObj.nodeName === 'SELECT') {
+            const selectField = fieldObj as HTMLSelectElement;
+            if (selectField.options[selectField.selectedIndex].value === '' || selectField.options[selectField.selectedIndex].value === '-None-') {
+              alert(fldLangVal[i] + ' cannot be none.');
+              fieldObj.focus();
+              return false;
+            }
           }
         }
       }
-      if (!(window as any).validateEmail409531000042578178()) return false;
-      if (!(window as any).validateMobile409531000042578178()) return false;
-      if (!(window as any).reCaptchaAlert409531000042578178()) return false;
-      return true;
-    };
+      if ((window as any).validateEmail409531000047791096 && !(window as any).validateEmail409531000047791096()) return false;
 
-    const setupSubmit = () => {
-      const $ = (window as any).$;
-      if (!$) return false;
-      $('#webform409531000042578178').off('submit').on('submit', function (e: any) {
-        // e.preventDefault(); // Removed to allow standard submission to hidden iframe
-        if (!(window as any).checkMandatory409531000042578178()) return;
-        const btn = document.querySelector('.crmWebToEntityForm .formsubmit');
-        if (btn) btn.setAttribute('disabled', 'true');
-
-        const formData = new FormData(e.target);
-
-        // 1. Send Email Notification First
-        const emailData = {
-          name: formData.get('Last Name'),
-          email: formData.get('LEADCF8'),
-          role: formData.get('Designation'),
-          mobile: formData.get('Mobile'),
-          company: formData.get('Company'),
-          service: formData.get('LEADCF5'),
-          revenue: formData.get('LEADCF19'),
-          hearAboutUs: formData.get('LEADCF127'),
-          requirements: formData.get('LEADCF123'),
-          platform: 'NetSuite'
-        };
-
-        fetch('/api/contact/netsuite', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(emailData)
-        }).catch(err => console.error('Email error:', err));
-
-        // 2. Submit via hidden iframe to avoid CORS issues
-        const form = e.target;
-        form.action = 'https://crm.zoho.in/crm/WebToLeadForm';
-        form.method = 'POST';
-        form.target = 'zoho_iframe_netsuite_design4';
-
-        // Trigger success UI after a short delay
-        setTimeout(() => {
-          setSubmitted(true);
-          if (btn) btn.removeAttribute('disabled');
-          setTimeout(() => router.push('/thank-you'), 2000);
-        }, 2000);
-
-        return true;
-      });
-      return true;
-    };
-
-    const renderRecaptcha = () => {
-      const el = document.getElementById('recap409531000042578178');
-      if ((window as any).grecaptcha && el && el.children.length === 0) {
-        try {
-          (window as any).grecaptcha.render('recap409531000042578178', {
-            sitekey: SITE_KEY,
-            theme: 'light',
-            callback: (window as any).rccallback409531000042578178
-          });
-        } catch (e) { /* already rendered */ }
+      const submitButton = document.querySelector('.crmWebToEntityForm .formsubmit') as HTMLInputElement;
+      if (submitButton) {
+        submitButton.setAttribute('disabled', 'true');
       }
+      return true;
     };
 
-    const jqInterval = setInterval(() => { if (setupSubmit()) clearInterval(jqInterval); }, 300);
-    setTimeout(() => clearInterval(jqInterval), 10000);
-
-    if ((window as any).grecaptcha?.ready) {
-      (window as any).grecaptcha.ready(renderRecaptcha);
-    } else {
-      const rcInt = setInterval(() => {
-        if ((window as any).grecaptcha) {
-          (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
-          clearInterval(rcInt);
-        }
-      }, 300);
-      setTimeout(() => clearInterval(rcInt), 5000);
+    if (typeof (window as any)._wfa_fstprtcken === 'undefined') {
+      (window as any)._wfa_fstprtcken = {};
     }
+    (window as any)._wfa_fstprtcken[409531000047791096] = true;
   }, []);
+
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    if ((window as any).checkMandatory409531000047791096 && !(window as any).checkMandatory409531000047791096()) {
+      e.preventDefault();
+      return;
+    }
+  };
 
   if (!isClient) return null;
 
   return (
     <>
-      <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
-      <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="afterInteractive" />
-      <Script
-        id="wf_anal_netsuite_4"
-        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=ffa911f519bdac1fd37141e7458859338a4c0807209e53fcd9161a4ef8002b597777f2d47c34393e74912d83270ec629gid2020ff77b8590645f6909775bceb1dfe9b354b521b7d31a381183051979950afgidc32afce85ab5735ae0662898fbed0b63bef845d0ee34535ca4044be79f94eb16gidc20f47455171d038199ce12255d9fb14618138cdb451a0053d17b76b5cbc594d&tw=a5bf274d720cc51e70d06319b934b2ae14a201bb6424c6ca86bd81d126e9d37e"
-        strategy="afterInteractive"
-      />
-      <iframe name="zoho_iframe_netsuite_design4" style={{ display: 'none' }}></iframe>
-
-      <section id="contact-form" className="relative py-24 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
-        <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-blue-500/30 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3" />
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-500/25 rounded-full blur-[140px] translate-x-1/3 -translate-y-1/3" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="rounded-[40px] bg-[#0d0d0d]/70 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-white/5 rounded-[40px]" />
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
-
-              {/* Left Side */}
-              <motion.div
-                variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.2 } } }}
-                initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
-                className="flex flex-col h-full justify-between p-8 lg:p-14 relative overflow-hidden"
-              >
-                <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/Background/grid-white.svg')] opacity-[0.05] pointer-events-none z-10" />
-                <div className="absolute inset-0 z-0 opacity-40">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a]/90 via-transparent to-blue-900/60" />
+      {/* NetSuite Web-to-Lead Analytics */}
+      <Script id="wf_anal_netsuite" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=f84d1d6876a443cf36bdeab891c5582d7c3e142d9fce42d31ffc393506d6d6d54dbf7f9cf10e11397fb06e31977be163gid65b81325138b2fc10191c2ef7b4572a0b18f76ffadabafd1f029455ae866a59cgidf169f3e66dfe1cbf71d7bc2d3d67d57ab12b228f83d723a6a15eb3cfddecc257gid6d99bc21bab3635e5f6b816b959e07211ea39cb1eae372096d63da78a4b9dccc&tw=1db53bf46a6a8b587793bb8f51f25b9b772d35495cdb16dcd3a6abe2ad6ecd11&version=v2" strategy="afterInteractive" />
+      <section id="contact-form" className="relative py-24 bg-slate-950 overflow-hidden scroll-mt-28">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.15),rgba(255,255,255,0))]" />
+        
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="rounded-[40px] bg-slate-900/90 border border-slate-800 shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+            {/* Left Narrative */}
+            <div className="lg:w-1/2 p-10 lg:p-14 flex flex-col justify-between bg-gradient-to-br from-blue-950/40 via-slate-900 to-slate-950 relative overflow-hidden">
+              <div className="relative z-10">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
+                  NetSuite Practice
+                </span>
+                <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+                  Accelerate Enterprise Growth with <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">Oracle NetSuite</span>
+                </h2>
+                <p className="text-slate-300 text-base leading-relaxed mb-8">
+                  Get in touch with our certified NetSuite consultants for licensing, multi-subsidiary implementations, optimizations, and custom integrations.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { icon: Globe2, title: "Global Deployments", desc: "Multi-country ERP rollouts" },
+                    { icon: Rocket, title: "Fast Implementation", desc: "SuiteSuccess methodology" },
+                    { icon: HeartHandshake, title: "Dedicated Support", desc: "Post-go-live optimization" },
+                    { icon: Briefcase, title: "Domain Experts", desc: "Certified NetSuite consultants" }
+                  ].map((item, idx) => (
+                    <div key={idx} className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <item.icon className="w-6 h-6 text-blue-400 mb-2" />
+                      <h4 className="text-sm font-bold text-white mb-1">{item.title}</h4>
+                      <p className="text-xs text-slate-400">{item.desc}</p>
+                    </div>
+                  ))}
                 </div>
-                <div className="relative z-20">
-                  <motion.h2
-                    variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
-                    className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.15]"
-                  >
-                    Ready to Transform{" "}
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400">Your Business?</span>
-                  </motion.h2>
-                  <motion.div
-                    variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
-                    className="space-y-4 mb-10 text-gray-300"
-                  >
-                    <p className="text-lg">Take the first step towards streamlined operations and accelerated growth with Oracle NetSuite.</p>
-                  </motion.div>
-                  <motion.div
-                    variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
-                    className="mb-10"
-                  >
-                    <Image src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" alt="NetSuite Partner" width={220} height={70} className="h-16 w-auto object-contain" sizes="(max-width: 768px) 100vw, 220px" />
-                  </motion.div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                    {[
-                      { label: "Projects Completed", value: "700+", icon: Briefcase },
-                      { label: "Global Customers", value: "250+", icon: Globe2 },
-                      { label: "Customer Retention", value: "84%", icon: HeartHandshake },
-                      { label: "Years Experience", value: "15+", icon: Rocket }
-                    ].map((stat, i) => (
-                      <motion.div
-                        key={i}
-                        variants={{
-                          hidden: { opacity: 0, y: 20 },
-                          visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1 } }
-                        }}
-                        className="p-6 rounded-3xl border border-white/10 bg-gradient-to-br from-blue-600/10 to-indigo-600/10 backdrop-blur-md shadow-2xl hover:bg-white hover:border-white hover:-translate-y-1 transition-all duration-500 group"
-                      >
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
-                            <stat.icon size={20} />
-                          </div>
-                          <div className="h-[1px] flex-1 bg-gradient-to-r from-blue-500/30 to-transparent group-hover:from-blue-500 transition-all duration-500" />
-                        </div>
-                        <div>
-                          <p className="text-3xl font-bold text-white tracking-tight mb-0.5 group-hover:text-blue-950 transition-colors duration-500">{stat.value}</p>
-                          <h3 className="font-bold text-lg leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-cyan-200 group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-500">{stat.label}</h3>
-                        </div>
-                      </motion.div>
-                    ))}
+              </div>
+            </div>
+
+            {/* Right Form */}
+            <div className="lg:w-1/2 p-10 lg:p-14 bg-white">
+              <div className="mb-8">
+                <h3 className="text-3xl font-extrabold text-slate-900 mb-2">Request NetSuite Consultation</h3>
+                <p className="text-slate-600 text-sm">Fill out the details below to connect with our NetSuite team.</p>
+              </div>
+
+              <form
+                id="webform409531000047791096"
+                action="https://crm.zoho.in/crm/WebToLeadForm"
+                name="WebToLeads409531000047791096"
+                method="POST"
+                onSubmit={handleFormSubmit}
+                acceptCharset="UTF-8"
+                className="space-y-5"
+              >
+                <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="2ae4ca1841d27018fa82a0a48a96f1c01673f80384140a440922ae0aab21aae3" readOnly />
+                <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+                <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="56ac8377184c3ea501a9db3ccd450a182e7e602f9cbf901b0c9852cc9de9f7c713a4ce3d1e636d34dc4666caf4082423" readOnly />
+                <input type="text" style={{ display: 'none' }} name="actionType" value="TGVhZHM=" readOnly />
+                <input type="text" style={{ display: 'none' }} name="returnURL" value="https://www.agsuite.tech/thank-you" readOnly />
+                <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" value="" readOnly />
+
+                {/* Hidden default fields required by Zoho */}
+                <select name="Lead Status" className="hidden" defaultValue="Database">
+                  <option value="Database">Database</option>
+                </select>
+                <select name="Lead Source" className="hidden" defaultValue="Website (Form)">
+                  <option value="Website (Form)">Website (Form)</option>
+                </select>
+                <input type="hidden" name="No of Employees" value="0" />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Name *</label>
+                    <input type="text" id="Last_Name" name="Last Name" required maxLength={80} placeholder="John Doe" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">POC's Email *</label>
+                    <input type="text" id="Email" ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
                   </div>
                 </div>
-              </motion.div>
 
-              {/* Right Side - Zoho Form */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative bg-white rounded-r-[40px] p-8 lg:p-12 h-full flex flex-col justify-center"
-              >
-                {submitted ? (
-                  /* ── Thank You Card ── */
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className="flex flex-col items-center justify-center text-center py-8 gap-6"
-                  >
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-xl">
-                      <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-3xl font-bold text-gray-900 mb-2">Thank You!</h3>
-                      <p className="text-gray-500 text-sm max-w-xs mx-auto">Your enquiry has been submitted successfully. Our team will reach out to you within 24 hours.</p>
-                    </div>
-                    <button
-                      onClick={() => setSubmitted(false)}
-                      className="mt-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm"
-                    >
-                      Submit Another Enquiry
-                    </button>
-                  </motion.div>
-                ) : (
-                  /* ── Form ── */
-                  <>
-                    <div className="mb-8">
-                      <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-3 tracking-tight">Get Expert Guidance</h3>
-                      <p className="text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500">Fill in your details and our team will reach out within 24 hours.</p>
-                    </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Role *</label>
+                    <input type="text" id="Designation" name="Designation" required maxLength={100} placeholder="CTO / Manager" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">POC's Mobile *</label>
+                    <input type="text" id="Mobile" name="Mobile" required maxLength={30} placeholder="+91 9876543210" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
+                  </div>
+                </div>
 
-                    <div id="crmWebToEntityForm" className="crmWebToEntityForm">
-                      <form id="webform409531000042578178" name="WebToLeads409531000042578178" acceptCharset="UTF-8" className="space-y-4">
-                        <input type="text" style={{ display: 'none' }} name="xnQsjsdp" defaultValue="a7ab09fe90f1a05ce89de47da6f5fe4ec35e5a6a7a3407c3169e127670c7dd56" readOnly />
-                        <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                        <input type="text" style={{ display: 'none' }} name="xmIwtLD" defaultValue="835ba19158c9d4cb19f73b22a127785e9b44da4e740d918a07dc322871eff6d54ae26ddbf0315f1ade82dd193bb27d4b" readOnly />
-                        <input type="text" style={{ display: 'none' }} name="actionType" defaultValue="TGVhZHM=" readOnly />
-                        <input type="text" style={{ display: 'none' }} name="returnURL" defaultValue="https://www.agsuite.tech/thank-you" readOnly />
-                        <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" defaultValue="" readOnly />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Company Name *</label>
+                    <input type="text" id="Company" name="Company" required maxLength={200} placeholder="Company Inc." className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Netsuite Services *</label>
+                    <select id="LEADCF166" name="LEADCF166" required onChange={(e) => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none cursor-pointer">
+                      <option value="" disabled selected>-Select NetSuite Service-</option>
+                      <option value="NetSuite Licenses">NetSuite Licenses</option>
+                      <option value="NetSuite Implementation">NetSuite Implementation</option>
+                      <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
+                      <option value="New Subsidiary Implementation">New Subsidiary Implementation</option>
+                      <option value="NetSuite Support">NetSuite Support</option>
+                      <option value="NetSuite Optimization">NetSuite Optimization</option>
+                      <option value="NetSuite Customization">NetSuite Customization</option>
+                      <option value="NetSuite Integrations">NetSuite Integrations</option>
+                      <option value="NetSuite India Localization">NetSuite India Localization</option>
+                      <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
+                    </select>
+                  </div>
+                </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                          <div>
-                            <label htmlFor="Last_Name" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Name <span className="text-red-500">*</span></label>
-                            <input type="text" id="Last_Name" name="Last Name" maxLength={80} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="John Doe" />
-                          </div>
-                          <div>
-                            <label htmlFor="LEADCF8" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Email <span className="text-red-500">*</span></label>
-                            <input type="text" data-ftype="email" id="LEADCF8" name="LEADCF8" maxLength={100} autoComplete="off" required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="john@company.com" />
-                          </div>
-                        </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Annual Revenue *</label>
+                    <select id="LEADCF19" name="LEADCF19" required onChange={(e) => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none cursor-pointer">
+                      <option value="-None-">-None-</option>
+                      <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
+                      <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
+                      <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
+                      <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
+                      <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
+                      <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
+                      <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
+                      <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
+                      <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
+                      <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">How did you hear about us. *</label>
+                    <select id="LEADCF127" name="LEADCF127" required onChange={(e) => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none cursor-pointer">
+                      <option value="-None-">-None-</option>
+                      <option value="Email">Email</option>
+                      <option value="Event">Event</option>
+                      <option value="Friend/Associate">Friend/Associate</option>
+                      <option value="Search">Search</option>
+                      <option value="Social Media">Social Media</option>
+                      <option value="Referral">Referral</option>
+                    </select>
+                  </div>
+                </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                          <div>
-                            <label htmlFor="Designation" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Role <span className="text-red-500">*</span></label>
-                            <input type="text" id="Designation" name="Designation" maxLength={100} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Manager" />
-                          </div>
-                          <div>
-                            <label htmlFor="Mobile" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">POC's Mobile <span className="text-red-500">*</span></label>
-                            <input type="text" id="Mobile" name="Mobile" maxLength={30} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="+91 00000 00000" />
-                          </div>
-                        </div>
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">How We Can Help You *</label>
+                  <textarea id="LEADCF123" name="LEADCF123" required rows={3} placeholder="Tell us about your NetSuite requirement..." className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none resize-none transition-all" />
+                </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                          <div>
-                            <label htmlFor="Company" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Name <span className="text-red-500">*</span></label>
-                            <input type="text" id="Company" name="Company" maxLength={200} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Company Inc." />
-                          </div>
-                          <div>
-                            <label htmlFor="LEADCF5" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Service <span className="text-red-500">*</span></label>
-                            <select id="LEADCF5" name="LEADCF5" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm">
-                              <option value="-None-">-None-</option>
-                              <option value="Licenses">Licenses</option>
-                              <option value="AMC">AMC</option>
-                              <option value="NetSuite Product /Services">NetSuite Product /Services</option>
-                              <option value="Zoho Products/Services">Zoho Products/Services</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                          <div>
-                            <label htmlFor="LEADCF19" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Annual Revenue <span className="text-red-500">*</span></label>
-                            <select id="LEADCF19" name="LEADCF19" onChange={() => (window as any).addAriaSelected409531000042578178?.()} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm">
-                              <option value="-None-">-None-</option>
-                              <option value="Less&#x20;than&#x20;8&#x20;Cr&#x20;&#x28;&#x24;&#x20;1M&#x29;">Less than 8 Cr ($ 1M)</option>
-                              <option value="8&#x20;-&#x20;20&#x20;Cr&#x20;&#x28;&#x24;&#x20;1M&#x20;-&#x20;2.5M&#x29;">8 - 20 Cr ($ 1M - 2.5M)</option>
-                              <option value="20&#x20;-&#x20;40&#x20;Cr&#x20;&#x28;&#x24;&#x20;2.5M&#x20;-&#x20;5M&#x29;">20 - 40 Cr ($ 2.5M - 5M)</option>
-                              <option value="40&#x20;-&#x20;80&#x20;Cr&#x20;&#x28;&#x24;&#x20;5M&#x20;-&#x20;10M&#x29;">40 - 80 Cr ($ 5M - 10M)</option>
-                              <option value="80&#x20;-&#x20;120&#x20;Cr&#x20;&#x28;&#x24;&#x20;10M&#x20;-&#x20;15M&#x29;">80 - 120 Cr ($ 10M - 15M)</option>
-                              <option value="120&#x20;-&#x20;200&#x20;Cr&#x20;&#x28;&#x24;&#x20;15M&#x20;-&#x20;25M&#x29;">120 - 200 Cr ($ 15M - 25M)</option>
-                              <option value="200&#x20;-&#x20;400&#x20;Cr&#x20;&#x28;&#x24;&#x20;25M&#x20;-&#x20;50M&#x29;">200 - 400 Cr ($ 25M - 50M)</option>
-                              <option value="400&#x20;-&#x20;800&#x20;Cr&#x20;&#x28;&#x24;&#x20;50M&#x20;-&#x20;100M&#x29;">400 - 800 Cr ($ 50M - 100M)</option>
-                              <option value="800&#x20;-&#x20;2000&#x20;Cr&#x20;&#x28;&#x24;&#x20;100M&#x20;-&#x20;250M&#x29;">800 - 2000 Cr ($ 100M - 250M)</option>
-                              <option value="More&#x20;than&#x20;2000&#x20;Cr&#x20;&#x28;&#x24;&#x20;250M&#x2b;&#x29;">More than 2000 Cr ($ 250M+)</option>
-                            </select>
-                          </div>
-                          <div>
-                            <label htmlFor="LEADCF127" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How did you hear about us.</label>
-                            <select id="LEADCF127" name="LEADCF127" onChange={() => (window as any).addAriaSelected409531000042578178?.()} className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm">
-                              <option value="-None-">-None-</option>
-                              <option value="Email">Email</option>
-                              <option value="Event">Event</option>
-                              <option value="Friend /Associate">Friend /Associate</option>
-                              <option value="Search">Search</option>
-                              <option value="Social Media">Social Media</option>
-                              <option value="Referral">Referral</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <div>
-                          <label htmlFor="LEADCF123" className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How We Can Help You <span className="text-red-500">*</span></label>
-                          <textarea id="LEADCF123" name="LEADCF123" rows={2} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all shadow-sm" placeholder="Share your requirements..." />
-                        </div>
-
-                        {/* reCAPTCHA v2 Checkbox Widget */}
-                        <div className="pt-2">
-                          <div className="g-recaptcha" data-sitekey={SITE_KEY} data-theme="light" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178" />
-                          <div id="recapErr409531000042578178" style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', visibility: 'hidden' }}>Captcha validation failed. If you are not a robot then please try again.</div>
-                        </div>
-
-                        <div className="flex pt-2">
-                          <input
-                            type="submit"
-                            id="formsubmit"
-                            className="formsubmit flex-1 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm cursor-pointer"
-                            value="Submit Request"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                  </>
-                )}
-              </motion.div>
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+                  <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full sm:w-auto px-10 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] active:scale-95 text-sm uppercase tracking-widest cursor-pointer" value="Submit" />
+                  <input type="reset" className="zcwf_button px-6 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-sm cursor-pointer" value="Reset" />
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </section>
-      <Script
-        id="wf_anal"
-        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=dc6cfe6eaa303bd5d195bb5352719bba230c529eae5f6f0823d0a841f9dd57657e6049706260d6effe692960c6c5bab7gid6711126e0f954ae10107c9d2bd1b386506273b37e6e0265531ba837d5c4ed25dgid10b59705091816e9551c4ebc62e953e4111c79398428255d38ea16f03d7b9f05gid0c55c5d686e2e3f755b127157834bc2774e542abc82e5c1ce5eba2a071c6fc31&tw=70c0fd3034b5b59f1ac7be0a50f49b22d50d34cb8687eb35e3649323a8c88143&version=v2"
-        strategy="lazyOnload"
-      />
     </>
   );
 }
-
-
-
-

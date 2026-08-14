@@ -54,13 +54,20 @@ export default function FreeConsultation() {
     useEffect(() => {
         setIsClient(true);
 
-        window.validateEmail409531000042578178 = function () {
-            const form = document.forms.namedItem('WebToLeads409531000042578178');
+        (window as any).addAriaSelected409531000047791096 = function (event: any) {
+            const optionElem = (event as any).target;
+            const prev = optionElem.querySelector('[aria-selected=true]');
+            if (prev) prev.removeAttribute('aria-selected');
+            optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
+        };
+
+        (window as any).validateEmail409531000047791096 = function () {
+            const form = document.forms.namedItem('WebToLeads409531000047791096') as HTMLFormElement;
             if (!form) return true;
-            const emailFld = form.querySelectorAll('[name="LEADCF8"]');
+            const emailFld = form.querySelectorAll('[ftype="email"]');
             for (let i = 0; i < emailFld.length; i++) {
                 const emailVal = (emailFld[i] as HTMLInputElement).value;
-                if (emailVal.replace(/^\s+|\s+$/g, '').length !== 0) {
+                if ((emailVal.replace(/^\s+|\s+$/g, '')).length !== 0) {
                     const atpos = emailVal.indexOf('@');
                     const dotpos = emailVal.lastIndexOf('.');
                     if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
@@ -313,84 +320,85 @@ export default function FreeConsultation() {
                                 <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600" />
                                 
                                 <div className="relative z-10 p-8 lg:p-10">
-                                    <div className="mb-8 border-b border-gray-100 pb-6">
-                                        <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Book Discovery Session</h2>
-                                        <p className="text-gray-500 text-base">Select your preferred focus area — we'll secure your session within 24 hours.</p>
-                                    </div>
-
                                     <form 
-                                        id="webform409531000042578178"
+                                        id="webform409531000047791096"
                                         action="https://crm.zoho.in/crm/WebToLeadForm" 
-                                        name="WebToLeads409531000042578178" 
+                                        name="WebToLeads409531000047791096" 
                                         method="POST" 
-                                        onSubmit={handleFormSubmit}
+                                        onSubmit={(e) => {
+                                            if ((window as any).checkMandatory409531000047791096 && !(window as any).checkMandatory409531000047791096()) {
+                                                e.preventDefault();
+                                            }
+                                        }}
                                         acceptCharset="UTF-8"
                                         className="space-y-4"
                                     >
-                                        <input type="text" className="hidden" name="xnQsjsdp" value="a7ab09fe90f1a05ce89de47da6f5fe4ec35e5a6a7a3407c3169e127670c7dd56" readOnly />
+                                        <input type="text" className="hidden" name="xnQsjsdp" value="2ae4ca1841d27018fa82a0a48a96f1c01673f80384140a440922ae0aab21aae3" readOnly />
                                         <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-                                        <input type="text" className="hidden" name="xmIwtLD" value="835ba19158c9d4cb19f73b22a127785e9b44da4e740d918a07dc322871eff6d54ae26ddbf0315f1ade82dd193bb27d4b" readOnly />
+                                        <input type="text" className="hidden" name="xmIwtLD" value="56ac8377184c3ea501a9db3ccd450a182e7e602f9cbf901b0c9852cc9de9f7c713a4ce3d1e636d34dc4666caf4082423" readOnly />
                                         <input type="text" className="hidden" name="actionType" value="TGVhZHM=" readOnly />
                                         <input type="text" className="hidden" name="returnURL" value="https://www.agsuite.tech/thank-you" readOnly />
-                                        {/* Do not remove this code. */}
-                                        <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
-                                        <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
+                                        <input type="text" className="hidden" name="aG9uZXlwb3Q" value="" readOnly />
+
+                                        {/* Hidden default fields required by Zoho */}
+                                        <select name="Lead Status" className="hidden" defaultValue="Database">
+                                            <option value="Database">Database</option>
+                                        </select>
+                                        <select name="Lead Source" className="hidden" defaultValue="Website (Form)">
+                                            <option value="Website (Form)">Website (Form)</option>
+                                        </select>
+                                        <input type="hidden" name="No of Employees" value="0" />
 
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div className="space-y-1.5">
                                                 <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Name *</label>
-                                                <input type="text" name="Last Name" required placeholder="John Doe" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
+                                                <input type="text" id="Last_Name" name="Last Name" required maxLength={80} placeholder="John Doe" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                             </div>
                                             <div className="space-y-1.5">
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Business Email *</label>
-                                                <input type="email" name="LEADCF8" required placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">POC's Email *</label>
+                                                <input type="text" id="Email" ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                             </div>
                                         </div>
 
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div className="space-y-1.5">
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Service *</label>
-                                                <select name="LEADCF5" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer" defaultValue="">
-                                                    <option value="" disabled>Select Service *</option>
-                                                    <option value="Licenses">Licenses</option>
-                                                    <option value="AMC">AMC</option>
-                                                    <option value="NetSuite Product /Services">NetSuite Product /Services</option>
-                                                    <option value="Zoho Products/Services">Zoho Products/Services</option>
-                                                </select>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Role *</label>
+                                                <input type="text" id="Designation" name="Designation" required maxLength={100} placeholder="CFO / Manager" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                             </div>
                                             <div className="space-y-1.5">
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">POC's Mobile (10 Digits) *</label>
-                                                <div className="flex gap-2">
-                                                    <select 
-                                                        value={selectedCode}
-                                                        onChange={(e) => setSelectedCode(e.target.value)}
-                                                        className="w-24 bg-blue-50/50 border-2 border-blue-100 focus:border-blue-600 rounded-xl px-2 py-3.5 text-xs font-semibold outline-none"
-                                                    >
-                                                        {COUNTRY_CODES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
-                                                    </select>
-                                                    <input 
-                                                        type="tel" 
-                                                        name="Mobile" 
-                                                        required 
-                                                        maxLength={10}
-                                                        onChange={(e) => e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10)}
-                                                        placeholder="9876543210" 
-                                                        className="flex-1 bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" 
-                                                    />
-                                                </div>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">POC's Mobile *</label>
+                                                <input type="text" id="Mobile" name="Mobile" required maxLength={30} placeholder="+91 9876543210" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                             </div>
                                         </div>
 
-                                        <div className="space-y-1.5">
-                                            <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Company Name *</label>
-                                            <input type="text" name="Company" required placeholder="Company Inc." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            <div className="space-y-1.5">
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Company Name *</label>
+                                                <input type="text" id="Company" name="Company" required maxLength={200} placeholder="Company Inc." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Netsuite Services *</label>
+                                                <select id="LEADCF166" name="LEADCF166" required onChange={() => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer">
+                                                    <option value="" disabled selected>-Select NetSuite Service-</option>
+                                                    <option value="NetSuite Licenses">NetSuite Licenses</option>
+                                                    <option value="NetSuite Implementation">NetSuite Implementation</option>
+                                                    <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
+                                                    <option value="New Subsidiary Implementation">New Subsidiary Implementation</option>
+                                                    <option value="NetSuite Support">NetSuite Support</option>
+                                                    <option value="NetSuite Optimization">NetSuite Optimization</option>
+                                                    <option value="NetSuite Customization">NetSuite Customization</option>
+                                                    <option value="NetSuite Integrations">NetSuite Integrations</option>
+                                                    <option value="NetSuite India Localization">NetSuite India Localization</option>
+                                                    <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
+                                                </select>
+                                            </div>
                                         </div>
 
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div className="space-y-1.5">
                                                 <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Annual Revenue *</label>
-                                                <select name="LEADCF19" required className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer" defaultValue="">
-                                                    <option value="" disabled>Select Revenue *</option>
+                                                <select id="LEADCF19" name="LEADCF19" required onChange={() => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer">
+                                                    <option value="-None-">-None-</option>
                                                     <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
                                                     <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
                                                     <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
@@ -404,13 +412,12 @@ export default function FreeConsultation() {
                                                 </select>
                                             </div>
                                             <div className="space-y-1.5">
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">How did you hear about us?</label>
-                                                <select name="LEADCF127" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer" defaultValue="">
-                                                    <option value="" disabled>Select Option</option>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">How did you hear about us. *</label>
+                                                <select id="LEADCF127" name="LEADCF127" required onChange={() => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer">
                                                     <option value="-None-">-None-</option>
                                                     <option value="Email">Email</option>
                                                     <option value="Event">Event</option>
-                                                    <option value="Friend /Associate">Friend /Associate</option>
+                                                    <option value="Friend/Associate">Friend/Associate</option>
                                                     <option value="Search">Search</option>
                                                     <option value="Social Media">Social Media</option>
                                                     <option value="Referral">Referral</option>
@@ -420,19 +427,10 @@ export default function FreeConsultation() {
 
                                         <div className="space-y-1.5">
                                             <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">How We Can Help You *</label>
-                                            <textarea name="LEADCF123" required rows={3} placeholder="How We Can Help You*" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400" />
+                                            <textarea id="LEADCF123" name="LEADCF123" required rows={3} placeholder="How We Can Help You*" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400" />
                                         </div>
 
-                                        {/* Captcha Section */}
-                                        <div className="flex flex-col gap-2">
-                                            <div data-sitekey='6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_' data-theme='light' data-callback='rccallback409531000042578178' captcha-verified='false' id='recap409531000042578178'></div>
-                                            <div id='recapErr409531000042578178' style={{ visibility: 'hidden', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
-                                        </div>
-
-                                        <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm">
-                                            <Send className="w-4 h-4" />
-                                            Secure My Strategy Session
-                                        </button>
+                                        <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm uppercase tracking-widest cursor-pointer" value="Secure My Strategy Session" />
                                     </form>
                                 </div>
                             </div>

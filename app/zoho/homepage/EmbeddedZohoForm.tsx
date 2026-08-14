@@ -6,124 +6,39 @@ import Script from "next/script";
 
 export default function EmbeddedZohoForm() {
     const router = useRouter();
+
     useEffect(() => {
-        (window as any).rccallback409531000042578178 = function () {
-            if (document.getElementById('recap409531000042578178')) {
-                document.getElementById('recap409531000042578178')?.setAttribute('captcha-verified', 'true');
+        (window as any).addAriaSelected409531000047791049 = function () {
+            const optionElem = (event as any).target;
+            const previousSelectedOption = optionElem.querySelector('[aria-selected=true]');
+            if (previousSelectedOption) {
+                previousSelectedOption.removeAttribute('aria-selected');
             }
-            const errorElement = document.getElementById('recapErr409531000042578178');
-            if (errorElement && errorElement.style.visibility === 'visible') {
-                errorElement.style.visibility = 'hidden';
-            }
+            optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
         };
 
-        const renderRecaptcha = () => {
-            const container = document.getElementById('recap409531000042578178');
-            if ((window as any).grecaptcha && container) {
-                try {
-                    // Check if already rendered
-                    if (container.children.length > 0) return;
-
-                    (window as any).grecaptcha.render('recap409531000042578178', {
-                        'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
-                        'theme': 'light',
-                        'callback': (window as any).rccallback409531000042578178
-                    });
-                } catch (e) {
-                    console.error("reCAPTCHA render error:", e);
-                }
-            }
-        };
-
-        if ((window as any).grecaptcha) {
-            if ((window as any).grecaptcha.ready) {
-                (window as any).grecaptcha.ready(renderRecaptcha);
-            } else {
-                renderRecaptcha();
-            }
-        } else {
-            const interval = setInterval(() => {
-                if ((window as any).grecaptcha) {
-                    if ((window as any).grecaptcha.ready) {
-                        (window as any).grecaptcha.ready(renderRecaptcha);
-                    } else {
-                        renderRecaptcha();
-                    }
-                    clearInterval(interval);
-                }
-            }, 300);
-            setTimeout(() => clearInterval(interval), 5000);
+        if (typeof (window as any)._wfa_fstprtcken === 'undefined') {
+            (window as any)._wfa_fstprtcken = {};
         }
+        (window as any)._wfa_fstprtcken[409531000047791049] = true;
     }, []);
 
     const handleFormSubmit = async (e: any) => {
         const form = e.target;
 
-        // 1. Mandatory Checks
-        const mnd = ['Last Name', 'LEADCF8', 'Mobile', 'Company', 'LEADCF5', 'LEADCF19', 'LEADCF123'];
-        const labels = ['Name', 'Business Email', 'POC\'s Mobile', 'Company Name', 'Service', 'Annual Revenue', 'How We Can Help You'];
+        // Mandatory Checks
+        const mnd = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF127', 'LEADCF165'];
+        const labels = ['Company Name', 'Name', 'Role', "POC's Email", "POC's Mobile", 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Services'];
 
         for (let i = 0; i < mnd.length; i++) {
             const fld = form[mnd[i]];
-            if (!fld || !fld.value.trim()) {
+            if (!fld || !fld.value.trim() || fld.value === '-None-') {
                 alert(labels[i] + ' cannot be empty.');
                 fld?.focus();
                 e.preventDefault();
                 return false;
             }
         }
-
-        // 2. Email Validation (Business only)
-        const email = form['LEADCF8'].value;
-        const domain = email.split('@')[1]?.toLowerCase();
-        const forbidden = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
-        if (forbidden.includes(domain)) {
-            alert('Please enter a business email address. Personal emails (@' + domain + ') are not accepted.');
-            form['LEADCF8'].focus();
-            e.preventDefault();
-            return false;
-        }
-
-        // 3. Mobile Validation (10 digits)
-        const mobile = form['Mobile'].value.replace(/\D/g, '');
-        if (mobile.length !== 10) {
-            alert('Mobile number must be exactly 10 digits.');
-            form['Mobile'].focus();
-            e.preventDefault();
-            return false;
-        }
-
-        // 4. Captcha
-        const recap = document.getElementById('recap409531000042578178');
-        if (recap && recap.getAttribute('captcha-verified') === 'false') {
-            const errorElement = document.getElementById('recapErr409531000042578178');
-            if (errorElement) errorElement.style.visibility = 'visible';
-            e.preventDefault();
-            return false;
-        }
-
-        // 5. Email Notification
-        const formData = new FormData(form);
-        const emailData = {
-            name: formData.get('Last Name'),
-            email: formData.get('LEADCF8'),
-            role: formData.get('Designation'),
-            mobile: formData.get('Mobile'),
-            company: formData.get('Company'),
-            service: formData.get('LEADCF5'),
-            revenue: formData.get('LEADCF19'),
-            requirements: formData.get('LEADCF123'),
-            platform: 'Zoho'
-        };
-
-        fetch('/api/contact/netsuite', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(emailData)
-        }).catch(err => console.error('Email error:', err));
-
-        // 6. Submit via iframe
-        form.target = 'zoho_iframe_embedded';
 
         const btn = document.getElementById('formsubmit') as HTMLInputElement;
         if (btn) btn.disabled = true;
@@ -135,19 +50,27 @@ export default function EmbeddedZohoForm() {
 
         return true;
     };
+
     return (
         <div id="crmWebToEntityForm" className="zcwf_lblLeft crmWebToEntityForm">
-            <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
+            <Script id="wf_anal_embed" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=0eb6a535c81a04e07aa886637740a304d7d59028aa8cf0d09048e8d1fbedf647e44d9f74b254709a0882eb1c31136d9cgid6d4592f2dce66ea8bcc60167960b9d0d27138cba33ac6ce7248c5c53d3a06fdcgid365cc1061c930ed0655f44af7ff3ea4d0b60a3b2784693cb6b2d5828f4dd9f35gid1cae83d6cd96c22775ca40c3b71805971400a95aea889397fdfa8c8f955523fd&tw=d336253c98c6a8f95f079a1420d0d2411cea660a574b2a28d90b4690781c9053&version=v2" strategy="afterInteractive" />
             <iframe name="zoho_iframe_embedded" style={{ display: 'none' }}></iframe>
-            <form id="webform409531000042578178" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000042578178" method="POST" onSubmit={handleFormSubmit} acceptCharset="UTF-8">
-                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="a7ab09fe90f1a05ce89de47da6f5fe4ec35e5a6a7a3407c3169e127670c7dd56" readOnly />
+            <form id="webform409531000047791049" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000047791049" method="POST" onSubmit={handleFormSubmit} acceptCharset="UTF-8">
+                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="ce6ebe1d9e713fef68d407d2105f962cb111097dcf75c7448aa9ab6b81795a86" readOnly />
                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                <input type="text" className="hidden" name="xmIwtLD" defaultValue="835ba19158c9d4cb19f73b22a127785e9b44da4e740d918a07dc322871eff6d54ae26ddbf0315f1ade82dd193bb27d4b" readOnly />
+                <input type="text" className="hidden" name="xmIwtLD" defaultValue="f709a413582c4286a2de04d475889148eb84a2d09b828569c9eba502ddcc5faa4e3fd730e1dcd4cb039e9925fd212664" readOnly />
                 <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
                 <input type="text" className="hidden" name="returnURL" defaultValue="https://www.agsuite.tech/thank-you" readOnly />
-                <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
-                <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
+                <input type="text" className="hidden" name="aG9uZXlwb3Q" defaultValue="" readOnly />
 
+                {/* Hidden default fields required by Zoho */}
+                <select name="Lead Status" className="hidden" defaultValue="Database">
+                    <option value="Database">Database</option>
+                </select>
+                <select name="Lead Source" className="hidden" defaultValue="Website (Form)">
+                    <option value="Website (Form)">Website (Form)</option>
+                </select>
+                <input type="hidden" name="No of Employees" defaultValue="0" />
 
                 <style dangerouslySetInnerHTML={{
                     __html: `
@@ -158,110 +81,100 @@ export default function EmbeddedZohoForm() {
                     
                     .agsuite_container input[type="text"], 
                     .agsuite_container textarea, 
-                    .zcwf_col_fld_slt {
-                      width: 100%;
-                      padding: 14px 18px;
-                      font-size: 14px;
-                      background: #f9fafb !important;
-                      border: 1px solid #e5e7eb !important;
-                      border-radius: 12px !important;
-                      color: #111827 !important;
-                      transition: all 0.3s ease;
+                    .agsuite_container select {
+                        width: 100%!important;
+                        background: #F9FAFB!important;
+                        border: 1.5px solid #E5E7EB!important;
+                        border-radius: 12px!important;
+                        padding: 14px 16px!important;
+                        font-size: 14px!important;
+                        font-family: inherit!important;
+                        color: #111827!important;
+                        outline: none!important;
+                        box-sizing: border-box!important;
+                        transition: all 0.2s ease!important;
                     }
-                    
-                    .agsuite_container input:focus, 
+
+                    .agsuite_container input[type="text"]:focus, 
                     .agsuite_container textarea:focus, 
-                    .zcwf_col_fld_slt:focus {
-                      outline: none !important;
-                      border-color: #3b82f6 !important;
-                      background: #fff !important;
-                      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
+                    .agsuite_container select:focus {
+                        border-color: #2563EB!important;
+                        background: #FFFFFF!important;
+                        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1)!important;
                     }
-                    
-                    .agsuite_container input::placeholder, 
-                    .agsuite_container textarea::placeholder {
-                      color: #9ca3af !important;
-                    }
-                    
-                    .zcwf_col_fld_slt {
-                      appearance: none;
-                      cursor: pointer;
-                    }
-                    
-                    select option {
-                      background: #fff;
-                      color: #111827;
-                    }
-                    
-                    .agsuite_container textarea { min-height: 100px; resize: none; }
-                    
-                    .zcwf_button {
-                      width: 100%;
-                      padding: 16px !important;
-                      font-size: 15px !important;
-                      font-weight: 700 !important;
-                      color: #fff !important;
-                      background: #3b82f6 !important;
-                      border: none !important;
-                      border-radius: 12px !important;
-                      cursor: pointer !important;
-                      transition: all 0.3s ease !important;
-                      box-shadow: 0 8px 24px -8px #3b82f6 !important;
-                      text-transform: uppercase;
-                      letter-spacing: 0.05em;
-                      margin-top: 10px;
-                    }
-                    
-                    .zcwf_button:hover {
-                      background: #2563eb !important;
-                      transform: translateY(-2px);
-                      box-shadow: 0 12px 30px -10px #3b82f6 !important;
-                    }
-                    
-                    .g-recaptcha { margin-top: 15px; display: flex; justify-content: flex-start; }
-                    #recapErr409531000042578178 { font-size: 12px; color: #ef4444; margin-top: 10px; visibility: hidden; }
-                    
-                    @media (max-width: 640px) {
-                      .agsuite_column { width: 100%; padding: 0; }
-                    }
-                `}} />
 
+                    .agsuite_label {
+                        display: block!important;
+                        font-size: 12px!important;
+                        font-weight: 700!important;
+                        color: #374151!important;
+                        margin-bottom: 6px!important;
+                        text-transform: uppercase!important;
+                        letter-spacing: 0.05em!important;
+                    }
+
+                    .agsuite_button {
+                        background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%)!important;
+                        color: #FFFFFF!important;
+                        border: none!important;
+                        padding: 16px 36px!important;
+                        border-radius: 12px!important;
+                        font-size: 14px!important;
+                        font-weight: 700!important;
+                        cursor: pointer!important;
+                        width: 100%!important;
+                        transition: all 0.3s ease!important;
+                        text-transform: uppercase!important;
+                        letter-spacing: 0.05em!important;
+                    }
+                    `
+                }} />
+
+                <div className="zcwf_title">Get In Touch</div>
                 <div className="agsuite_container">
-                    <div className="zcwf_title">Get a Consultation</div>
-
                     <div className="agsuite_column">
-                        <input type="text" id="Last_Name" name="Last Name" placeholder="Full Name*" maxLength={80} />
+                        <label className="agsuite_label" htmlFor="Last_Name">Name *</label>
+                        <input type="text" id="Last_Name" name="Last Name" required maxLength={80} placeholder="John Doe" />
                     </div>
 
                     <div className="agsuite_column">
-                        <input type="text" id="LEADCF8" name="LEADCF8" placeholder="Business Email*" maxLength={100} />
+                        <label className="agsuite_label" htmlFor="Email">POC's Email *</label>
+                        <input type="text" id="Email" ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" />
                     </div>
 
                     <div className="agsuite_column">
-                        <input type="text" id="Designation" name="Designation" placeholder="Job Title*" maxLength={100} />
+                        <label className="agsuite_label" htmlFor="Mobile">POC's Mobile *</label>
+                        <input type="text" id="Mobile" name="Mobile" required maxLength={30} placeholder="+91 9876543210" />
                     </div>
 
                     <div className="agsuite_column">
-                        <input type="text" id="Mobile" name="Mobile" maxLength={30} placeholder="Mobile Number*" />
-                    </div>
-
-                    <div className="agsuite_column-large">
-                        <input type="text" id="Company" name="Company" maxLength={200} placeholder="Company Name*" />
+                        <label className="agsuite_label" htmlFor="Designation">Role *</label>
+                        <input type="text" id="Designation" name="Designation" required maxLength={100} placeholder="Manager" />
                     </div>
 
                     <div className="agsuite_column">
-                        <select className="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5" defaultValue="">
-                            <option value="" disabled>Select Service*</option>
-                            <option value="Licenses">Licenses</option>
-                            <option value="AMC">AMC</option>
-                            <option value="NetSuite Product /Services">NetSuite Product /Services</option>
-                            <option value="Zoho Products/Services">Zoho Products/Services</option>
+                        <label className="agsuite_label" htmlFor="Company">Company Name *</label>
+                        <input type="text" id="Company" name="Company" required maxLength={200} placeholder="Company Inc." />
+                    </div>
+
+                    <div className="agsuite_column">
+                        <label className="agsuite_label" htmlFor="LEADCF165">Services *</label>
+                        <select id="LEADCF165" name="LEADCF165" required onChange={() => (window as any).addAriaSelected409531000047791049?.()}>
+                            <option value="" disabled selected>-Select Service-</option>
+                            <option value="Zoho Licenses">Zoho Licenses</option>
+                            <option value="Zoho Implementation">Zoho Implementation</option>
+                            <option value="Zoho Licenses + Implementation">Zoho Licenses + Implementation</option>
+                            <option value="Zoho Support">Zoho Support</option>
+                            <option value="Zoho Optimization">Zoho Optimization</option>
+                            <option value="Zoho Customization">Zoho Customization</option>
+                            <option value="Zoho Integrations">Zoho Integrations</option>
                         </select>
                     </div>
 
                     <div className="agsuite_column">
-                        <select className="zcwf_col_fld_slt" id="LEADCF19" name="LEADCF19" defaultValue="">
-                            <option value="" disabled>Annual Revenue*</option>
+                        <label className="agsuite_label" htmlFor="LEADCF19">Annual Revenue *</label>
+                        <select id="LEADCF19" name="LEADCF19" required onChange={() => (window as any).addAriaSelected409531000047791049?.()}>
+                            <option value="-None-">-None-</option>
                             <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
                             <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
                             <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
@@ -275,27 +188,29 @@ export default function EmbeddedZohoForm() {
                         </select>
                     </div>
 
-
-                    <div className="agsuite_column-large">
-                        <textarea id="LEADCF123" name="LEADCF123" placeholder="Tell us about your requirements*"></textarea>
+                    <div className="agsuite_column">
+                        <label className="agsuite_label" htmlFor="LEADCF127">How did you hear about us. *</label>
+                        <select id="LEADCF127" name="LEADCF127" required onChange={() => (window as any).addAriaSelected409531000047791049?.()}>
+                            <option value="-None-">-None-</option>
+                            <option value="Email">Email</option>
+                            <option value="Event">Event</option>
+                            <option value="Friend/Associate">Friend/Associate</option>
+                            <option value="Search">Search</option>
+                            <option value="Social Media">Social Media</option>
+                            <option value="Referral">Referral</option>
+                        </select>
                     </div>
 
                     <div className="agsuite_column-large">
-                        <div data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_" data-theme="light" captcha-verified="false" id="recap409531000042578178"></div>
-                        <div id="recapErr409531000042578178">Please verify you are not a robot.</div>
-                        <input type="submit" id="formsubmit" className="zcwf_button" value="Send Request" aria-label="Submit Form" />
+                        <label className="agsuite_label" htmlFor="LEADCF123">How We Can Help You *</label>
+                        <textarea id="LEADCF123" name="LEADCF123" required rows={3} placeholder="Tell us about your requirements..."></textarea>
+                    </div>
+
+                    <div className="agsuite_column-large">
+                        <input type="submit" id="formsubmit" className="agsuite_button" value="Submit Request" />
                     </div>
                 </div>
             </form>
-            <Script
-                id="wf_anal"
-                src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=dc6cfe6eaa303bd5d195bb5352719bba230c529eae5f6f0823d0a841f9dd57657e6049706260d6effe692960c6c5bab7gid6711126e0f954ae10107c9d2bd1b386506273b37e6e0265531ba837d5c4ed25dgid10b59705091816e9551c4ebc62e953e4111c79398428255d38ea16f03d7b9f05gid0c55c5d686e2e3f755b127157834bc2774e542abc82e5c1ce5eba2a071c6fc31&tw=70c0fd3034b5b59f1ac7be0a50f49b22d50d34cb8687eb35e3649323a8c88143&version=v2"
-                strategy="lazyOnload"
-            />
         </div>
     );
 }
-
-
-
-
