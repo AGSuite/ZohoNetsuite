@@ -299,7 +299,7 @@ function EventsSection() {
 // ─── PRICING CALCULATOR WRAPPER ─────────────────────────────────────────────
 function PricingCalculatorSection() {
     return (
-        <section className="relative py-20 bg-white overflow-hidden">
+        <section id="pricing-calculator" className="relative py-20 bg-white overflow-hidden scroll-mt-28 sm:scroll-mt-36">
             <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(99,102,241,0.06) 0%, transparent 60%), radial-gradient(circle at 80% 70%, rgba(59,130,246,0.06) 0%, transparent 60%)' }} />
             <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
                 <motion.div
@@ -336,6 +336,18 @@ function Counter({ value }: { value: number }) {
 
 export default function NetSuiteInsightsClient({ blogs }: { blogs: any[] }) {
     const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
+
+    useEffect(() => {
+        if (typeof window !== 'undefined' && window.location.hash) {
+            const hash = window.location.hash;
+            const element = document.querySelector(hash);
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }, 150);
+            }
+        }
+    }, []);
 
     const stats = [
         { label: 'Projects Completed', value: 700, suffix: '+', icon: Briefcase },
@@ -423,9 +435,7 @@ export default function NetSuiteInsightsClient({ blogs }: { blogs: any[] }) {
             </div>
 
             {/* PRICING CALCULATOR */}
-            <div id="pricing-calculator" className="scroll-mt-24">
-                <PricingCalculatorSection />
-            </div>
+            <PricingCalculatorSection />
 
             {/* AWARDS */}
             <div id="awards" className="scroll-mt-24">
