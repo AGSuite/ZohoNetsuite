@@ -39,7 +39,7 @@ export default function ContactFormDesign4() {
 
     (window as any).checkMandatory409531000047791096 = function () {
       const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF127', 'LEADCF166'];
-      const fldLangVal = ['Company Name', 'Name', 'Role', "POC's Email", "POC's Mobile", 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Netsuite Services'];
+      const fldLangVal = ['Company Name', 'Name', 'Role', 'Email', 'Mobile', 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Netsuite Services'];
       const form = document.forms.namedItem('WebToLeads409531000047791096') as HTMLFormElement;
       if (!form) return false;
 
@@ -61,6 +61,7 @@ export default function ContactFormDesign4() {
         }
       }
       if ((window as any).validateEmail409531000047791096 && !(window as any).validateEmail409531000047791096()) return false;
+      if ((window as any).reCaptchaAlert409531000042578178_design4_ns && !(window as any).reCaptchaAlert409531000042578178_design4_ns()) return false;
 
       const submitButton = document.querySelector('.crmWebToEntityForm .formsubmit') as HTMLInputElement;
       if (submitButton) {
@@ -68,6 +69,51 @@ export default function ContactFormDesign4() {
       }
       return true;
     };
+
+    (window as any).rccallback409531000042578178_design4_ns = function () {
+      const recap = document.getElementById('recap409531000042578178_design4_ns');
+      if (recap) recap.setAttribute('captcha-verified', 'true');
+      const recapErr = document.getElementById('recapErr409531000042578178_design4_ns');
+      if (recapErr && recapErr.style.visibility === 'visible') {
+        recapErr.style.visibility = 'hidden';
+      }
+    };
+
+    (window as any).reCaptchaAlert409531000042578178_design4_ns = function () {
+      const recap = document.getElementById('recap409531000042578178_design4_ns');
+      if (recap && recap.getAttribute('captcha-verified') === 'false') {
+        const recapErr = document.getElementById('recapErr409531000042578178_design4_ns');
+        if (recapErr) recapErr.style.visibility = 'visible';
+        return false;
+      }
+      return true;
+    };
+
+    const renderRecaptcha = () => {
+      const container = document.getElementById('recap409531000042578178_design4_ns');
+      if ((window as any).grecaptcha && container) {
+        try {
+          if (container.children.length > 0) return;
+          (window as any).grecaptcha.render('recap409531000042578178_design4_ns', {
+            'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
+            'theme': 'light',
+            'callback': (window as any).rccallback409531000042578178_design4_ns
+          });
+        } catch (e) { }
+      }
+    };
+
+    if ((window as any).grecaptcha) {
+      (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
+    } else {
+      const interval = setInterval(() => {
+        if ((window as any).grecaptcha) {
+          (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
+          clearInterval(interval);
+        }
+      }, 300);
+      setTimeout(() => clearInterval(interval), 5000);
+    }
 
     if (typeof (window as any)._wfa_fstprtcken === 'undefined') {
       (window as any)._wfa_fstprtcken = {};
@@ -86,6 +132,7 @@ export default function ContactFormDesign4() {
 
   return (
     <>
+      <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
       {/* NetSuite Web-to-Lead Analytics */}
       <Script id="wf_anal_netsuite" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=f84d1d6876a443cf36bdeab891c5582d7c3e142d9fce42d31ffc393506d6d6d54dbf7f9cf10e11397fb06e31977be163gid65b81325138b2fc10191c2ef7b4572a0b18f76ffadabafd1f029455ae866a59cgidf169f3e66dfe1cbf71d7bc2d3d67d57ab12b228f83d723a6a15eb3cfddecc257gid6d99bc21bab3635e5f6b816b959e07211ea39cb1eae372096d63da78a4b9dccc&tw=1db53bf46a6a8b587793bb8f51f25b9b772d35495cdb16dcd3a6abe2ad6ecd11&version=v2" strategy="afterInteractive" />
       <section id="contact-form" className="relative py-24 bg-slate-950 overflow-hidden scroll-mt-28">
@@ -160,7 +207,7 @@ export default function ContactFormDesign4() {
                     <input type="text" id="Last_Name" name="Last Name" required maxLength={80} placeholder="John Doe" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">POC's Email *</label>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Email *</label>
                     <input type="text" id="Email" data-ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
                   </div>
                 </div>
@@ -171,7 +218,7 @@ export default function ContactFormDesign4() {
                     <input type="text" id="Designation" name="Designation" required maxLength={100} placeholder="CTO / Manager" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">POC's Mobile *</label>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Mobile *</label>
                     <input type="text" id="Mobile" name="Mobile" required maxLength={30} placeholder="+91 9876543210" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
                   </div>
                 </div>
@@ -183,8 +230,8 @@ export default function ContactFormDesign4() {
                   </div>
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Netsuite Services *</label>
-                    <select id="LEADCF166" name="LEADCF166" required onChange={(e) => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none cursor-pointer">
-                      <option value="" disabled selected>-Select NetSuite Service-</option>
+                    <select id="LEADCF166" name="LEADCF166" defaultValue="" required onChange={(e) => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none cursor-pointer">
+                      <option value="" disabled>-Select NetSuite Service-</option>
                       <option value="NetSuite Licenses">NetSuite Licenses</option>
                       <option value="NetSuite Implementation">NetSuite Implementation</option>
                       <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
@@ -233,6 +280,24 @@ export default function ContactFormDesign4() {
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">How We Can Help You *</label>
                   <textarea id="LEADCF123" name="LEADCF123" required rows={3} placeholder="Tell us about your NetSuite requirement..." className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none resize-none transition-all" />
+                </div>
+
+                {/* Captcha Section */}
+                <div className="flex flex-col gap-2 my-2">
+                  <div
+                    className="g-recaptcha"
+                    data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_"
+                    data-theme="light"
+                    data-callback="rccallback409531000042578178_design4_ns"
+                    captcha-verified="false"
+                    id="recap409531000042578178_design4_ns"
+                  ></div>
+                  <div
+                    id="recapErr409531000042578178_design4_ns"
+                    style={{ visibility: 'hidden', color: '#ef4444', fontSize: '12px' }}
+                  >
+                    Captcha validation failed. If you are not a robot then please try again.
+                  </div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">

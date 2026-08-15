@@ -63,7 +63,7 @@ export default function ZohoContactForm() {
 
         (window as any).checkMandatory409531000047791049 = function () {
             const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF127', 'LEADCF165'];
-            const fldLangVal = ['Company Name', 'Name', 'Role', "POC's Email", "POC's Mobile", 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Services'];
+            const fldLangVal = ['Company Name', 'Name', 'Role', 'Email', 'Mobile', 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Services'];
             const form = document.forms.namedItem('WebToLeads409531000047791049') as HTMLFormElement;
             if (!form) return false;
 
@@ -85,6 +85,7 @@ export default function ZohoContactForm() {
                 }
             }
             if ((window as any).validateEmail409531000047791049 && !(window as any).validateEmail409531000047791049()) return false;
+            if ((window as any).reCaptchaAlert409531000042578178_zohocomp && !(window as any).reCaptchaAlert409531000042578178_zohocomp()) return false;
 
             const submitButton = document.querySelector('.crmWebToEntityForm .formsubmit') as HTMLInputElement;
             if (submitButton) {
@@ -92,6 +93,51 @@ export default function ZohoContactForm() {
             }
             return true;
         };
+
+        (window as any).rccallback409531000042578178_zohocomp = function () {
+            const recap = document.getElementById('recap409531000042578178_zohocomp');
+            if (recap) recap.setAttribute('captcha-verified', 'true');
+            const recapErr = document.getElementById('recapErr409531000042578178_zohocomp');
+            if (recapErr && recapErr.style.visibility === 'visible') {
+                recapErr.style.visibility = 'hidden';
+            }
+        };
+
+        (window as any).reCaptchaAlert409531000042578178_zohocomp = function () {
+            const recap = document.getElementById('recap409531000042578178_zohocomp');
+            if (recap && recap.getAttribute('captcha-verified') === 'false') {
+                const recapErr = document.getElementById('recapErr409531000042578178_zohocomp');
+                if (recapErr) recapErr.style.visibility = 'visible';
+                return false;
+            }
+            return true;
+        };
+
+        const renderRecaptcha = () => {
+            const container = document.getElementById('recap409531000042578178_zohocomp');
+            if ((window as any).grecaptcha && container) {
+                try {
+                    if (container.children.length > 0) return;
+                    (window as any).grecaptcha.render('recap409531000042578178_zohocomp', {
+                        'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
+                        'theme': 'light',
+                        'callback': (window as any).rccallback409531000042578178_zohocomp
+                    });
+                } catch (e) { }
+            }
+        };
+
+        if ((window as any).grecaptcha) {
+            (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
+        } else {
+            const interval = setInterval(() => {
+                if ((window as any).grecaptcha) {
+                    (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
+                    clearInterval(interval);
+                }
+            }, 300);
+            setTimeout(() => clearInterval(interval), 5000);
+        }
 
         if (typeof (window as any)._wfa_fstprtcken === 'undefined') {
             (window as any)._wfa_fstprtcken = {};
@@ -307,7 +353,7 @@ export default function ZohoContactForm() {
                                         <input type="text" id="Last_Name" name="Last Name" required maxLength={80} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="Johnathan Doe" />
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">POC's Email *</motion.label>
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">Email *</motion.label>
                                         <input type="text" id="Email" data-ftype="email" name="Email" required maxLength={100} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="john@enterprise.com" />
                                     </motion.div>
                                 </div>
@@ -318,7 +364,7 @@ export default function ZohoContactForm() {
                                         <input type="text" id="Designation" name="Designation" required maxLength={100} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="Manager" />
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">POC's Mobile *</motion.label>
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">Mobile *</motion.label>
                                         <input
                                             type="text"
                                             id="Mobile"
@@ -342,11 +388,12 @@ export default function ZohoContactForm() {
                                             <select
                                                 id="LEADCF165"
                                                 name="LEADCF165"
+                                                defaultValue=""
                                                 required
                                                 onChange={(e) => { (window as any).addAriaSelected409531000047791049?.(); }}
                                                 className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md"
                                             >
-                                                <option value="" disabled selected>-Select Service-</option>
+                                                <option value="" disabled>-Select Service-</option>
                                                 <option value="Zoho Licenses">Zoho Licenses</option>
                                                 <option value="Zoho Implementation">Zoho Implementation</option>
                                                 <option value="Zoho Licenses + Implementation">Zoho Licenses + Implementation</option>
@@ -409,6 +456,23 @@ export default function ZohoContactForm() {
                                 <motion.div variants={itemVariants} className="flex flex-col">
                                     <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">How We Can Help You *</motion.label>
                                     <textarea id="LEADCF123" name="LEADCF123" required rows={3} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 resize-none shadow-sm focus:shadow-md text-sm" placeholder="Tell us about your project goals..." />
+                                </motion.div>
+
+                                <motion.div variants={itemVariants} className="flex flex-col gap-2 my-2">
+                                  <div
+                                    className="g-recaptcha"
+                                    data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_"
+                                    data-theme="light"
+                                    data-callback="rccallback409531000042578178_zohocomp"
+                                    captcha-verified="false"
+                                    id="recap409531000042578178_zohocomp"
+                                  ></div>
+                                  <div
+                                    id="recapErr409531000042578178_zohocomp"
+                                    style={{ visibility: 'hidden', color: '#ef4444', fontSize: '12px' }}
+                                  >
+                                    Captcha validation failed. If you are not a robot then please try again.
+                                  </div>
                                 </motion.div>
 
                                 <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">

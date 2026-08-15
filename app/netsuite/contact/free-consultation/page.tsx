@@ -90,7 +90,7 @@ export default function FreeConsultation() {
         window.checkMandatory409531000042578178 = function (e: any) {
             const form = e.target as HTMLFormElement;
             const mndFileds = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
-            const fldLangVal = ['Company Name', 'Name', 'POC\'s Mobile', 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
+            const fldLangVal = ['Company Name', 'Name', 'Mobile', 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
 
             for (let i = 0; i < mndFileds.length; i++) {
                 const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
@@ -117,6 +117,9 @@ export default function FreeConsultation() {
                 if (recapErr) recapErr.style.visibility = 'visible';
                 return false;
             }
+
+            return true;
+        };
 
 
 
@@ -333,7 +336,7 @@ export default function FreeConsultation() {
                                                 <input type="text" id="Last_Name" name="Last Name" required maxLength={80} placeholder="John Doe" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                             </div>
                                             <div className="space-y-1.5">
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">POC's Email *</label>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Email *</label>
                                                 <input type="text" id="Email" data-ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                             </div>
                                         </div>
@@ -344,7 +347,7 @@ export default function FreeConsultation() {
                                                 <input type="text" id="Designation" name="Designation" required maxLength={100} placeholder="CFO / Manager" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                             </div>
                                             <div className="space-y-1.5">
-                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">POC's Mobile *</label>
+                                                <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Mobile *</label>
                                                 <input type="text" id="Mobile" name="Mobile" required maxLength={30} placeholder="+91 9876543210" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                             </div>
                                         </div>
@@ -356,8 +359,8 @@ export default function FreeConsultation() {
                                             </div>
                                             <div className="space-y-1.5">
                                                 <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Netsuite Services *</label>
-                                                <select id="LEADCF166" name="LEADCF166" required onChange={() => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer">
-                                                    <option value="" disabled selected>-Select NetSuite Service-</option>
+                                                <select id="LEADCF166" name="LEADCF166" defaultValue="" required onChange={() => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer">
+                                                    <option value="" disabled>-Select NetSuite Service-</option>
                                                     <option value="NetSuite Licenses">NetSuite Licenses</option>
                                                     <option value="NetSuite Implementation">NetSuite Implementation</option>
                                                     <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>

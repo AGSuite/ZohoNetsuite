@@ -28,7 +28,7 @@ export default function EmbeddedZohoForm() {
 
         // Mandatory Checks
         const mnd = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF127', 'LEADCF165'];
-        const labels = ['Company Name', 'Name', 'Role', "POC's Email", "POC's Mobile", 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Services'];
+        const labels = ['Company Name', 'Name', 'Role', 'Email', 'Mobile', 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Services'];
 
         for (let i = 0; i < mnd.length; i++) {
             const fld = form[mnd[i]];
@@ -138,12 +138,12 @@ export default function EmbeddedZohoForm() {
                     </div>
 
                     <div className="agsuite_column">
-                        <label className="agsuite_label" htmlFor="Email">POC's Email *</label>
+                        <label className="agsuite_label" htmlFor="Email">Email *</label>
                         <input type="text" id="Email" data-ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" />
                     </div>
 
                     <div className="agsuite_column">
-                        <label className="agsuite_label" htmlFor="Mobile">POC's Mobile *</label>
+                        <label className="agsuite_label" htmlFor="Mobile">Mobile *</label>
                         <input type="text" id="Mobile" name="Mobile" required maxLength={30} placeholder="+91 9876543210" />
                     </div>
 
@@ -159,8 +159,8 @@ export default function EmbeddedZohoForm() {
 
                     <div className="agsuite_column">
                         <label className="agsuite_label" htmlFor="LEADCF165">Services *</label>
-                        <select id="LEADCF165" name="LEADCF165" required onChange={() => (window as any).addAriaSelected409531000047791049?.()}>
-                            <option value="" disabled selected>-Select Service-</option>
+                        <select id="LEADCF165" name="LEADCF165" defaultValue="" required onChange={() => (window as any).addAriaSelected409531000047791049?.()}>
+                            <option value="" disabled>-Select Service-</option>
                             <option value="Zoho Licenses">Zoho Licenses</option>
                             <option value="Zoho Implementation">Zoho Implementation</option>
                             <option value="Zoho Licenses + Implementation">Zoho Licenses + Implementation</option>

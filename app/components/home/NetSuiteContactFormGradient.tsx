@@ -83,7 +83,7 @@ export default function NetSuiteContactFormGradient() {
 
     (window as any).checkMandatory409531000042578178 = function () {
       const mndFileds = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
-      const fldLangVal = ['Company Name', 'Name', 'POC\'s Mobile', 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
+      const fldLangVal = ['Company Name', 'Name', 'Mobile', 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
       const form = document.forms.namedItem('WebToLeads409531000042578178') as HTMLFormElement;
       if (!form) return false;
 
@@ -436,7 +436,7 @@ select option {
   <div class="agsuite_column">
     <label class="field-label">ANNUAL REVENUE *</label>
     <select class="zcwf_col_fld_slt" id="LEADCF19" name="LEADCF19" onChange="addAriaSelected409531000042578178()">
-      <option value="" disabled selected>Select revenue range</option>
+      <option value="" disabled>Select revenue range</option>
       <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
       <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
       <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
@@ -452,7 +452,7 @@ select option {
   <div class="agsuite_column">
     <label class="field-label">SERVICE *</label>
     <select class="zcwf_col_fld_slt" id="LEADCF5" name="LEADCF5" onChange="addAriaSelected409531000042578178()">
-      <option value="" disabled selected>Select Service</option>
+      <option value="" disabled>Select Service</option>
       <option value="Licenses">Licenses</option>
       <option value="AMC">AMC</option>
       <option value="NetSuite Product /Services">NetSuite Product /Services</option>
@@ -463,7 +463,7 @@ select option {
   <div class="agsuite_column">
     <label class="field-label">REFERRAL SOURCE</label>
     <select class="zcwf_col_fld_slt" id="LEADCF127" name="LEADCF127" onChange="addAriaSelected409531000042578178()">
-      <option value="" disabled selected>Select Option</option>
+      <option value="" disabled>Select Option</option>
       <option value="-None-">-None-</option>
       <option value="Email">Email</option>
       <option value="Event">Event</option>

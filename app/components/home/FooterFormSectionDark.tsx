@@ -71,7 +71,7 @@ export default function FooterFormSectionDark() {
 
     (window as any).checkMandatory409531000042578178 = function () {
       const mndFileds = ['Company', 'Last Name', 'Designation', 'LEADCF8', 'Mobile', 'LEADCF19', 'LEADCF123'];
-      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'POC\'s Mobile', 'Annual Revenue', 'How We Can Help You'];
+      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Annual Revenue', 'How We Can Help You'];
       const form = document.forms.namedItem(formName) as HTMLFormElement;
       if (!form) return false;
 
@@ -310,7 +310,7 @@ export default function FooterFormSectionDark() {
 
                   {/* Mobile */}
                   <div>
-                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5">POC's Mobile *</label>
+                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5">Mobile *</label>
                     <input type="tel" name="Mobile" required className="w-full bg-white/5 border-2 border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-xl px-4 py-3 text-white transition-all outline-none text-sm" placeholder="+91 00000 00000" />
                   </div>
                 </div>

@@ -236,7 +236,7 @@ export default function ContactPage() {
 
     (window as any).checkMandatory409531000047791096 = function () {
       const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF127', 'LEADCF166'];
-      const fldLangVal = ['Company Name', 'Name', 'Role', "POC's Email", "POC's Mobile", 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Netsuite Services'];
+      const fldLangVal = ['Company Name', 'Name', 'Role', 'Email', 'Mobile', 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Netsuite Services'];
       const form = document.forms.namedItem('WebToLeads409531000047791096') as HTMLFormElement;
       if (!form) return false;
 
@@ -544,7 +544,7 @@ export default function ContactPage() {
                       {/* POC Email */}
                       <div>
                         <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
-                          POC's Email <span className="text-blue-600">*</span>
+                          Email <span className="text-blue-600">*</span>
                         </label>
                         <input
                           type="text"
@@ -562,7 +562,7 @@ export default function ContactPage() {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                           <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
-                            POC's Mobile <span className="text-blue-600">*</span>
+                            Mobile <span className="text-blue-600">*</span>
                           </label>
                           <input
                             type="text"
@@ -615,11 +615,12 @@ export default function ContactPage() {
                           <select
                             id="LEADCF166"
                             name="LEADCF166"
+                            defaultValue=""
                             required
                             onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)}
                             className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer"
                           >
-                            <option value="" disabled selected>-Select NetSuite Service-</option>
+                            <option value="" disabled>-Select NetSuite Service-</option>
                             <option value="NetSuite Licenses">NetSuite Licenses</option>
                             <option value="NetSuite Implementation">NetSuite Implementation</option>
                             <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>

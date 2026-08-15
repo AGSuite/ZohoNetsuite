@@ -304,7 +304,7 @@ export default function RequestQuotePremium() {
                                                     />
                                                 </div>
                                                 <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">POC's Email *</label>
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Email *</label>
                                                     <input
                                                         type='text'
                                                         id='Email'
@@ -329,7 +329,7 @@ export default function RequestQuotePremium() {
                                                     />
                                                 </div>
                                                 <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">POC's Mobile *</label>
+                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Mobile *</label>
                                                     <input
                                                         type='text'
                                                         id='Mobile'
@@ -358,10 +358,11 @@ export default function RequestQuotePremium() {
                                                         className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
                                                         id='LEADCF166'
                                                         name='LEADCF166'
+                                                        defaultValue=""
                                                         required
                                                         onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)}
                                                     >
-                                                        <option value="" disabled selected>-Select NetSuite Service-</option>
+                                                        <option value="" disabled>-Select NetSuite Service-</option>
                                                         <option value="NetSuite Licenses">NetSuite Licenses</option>
                                                         <option value="NetSuite Implementation">NetSuite Implementation</option>
                                                         <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>

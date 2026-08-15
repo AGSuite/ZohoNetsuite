@@ -65,7 +65,7 @@ export default function ZohoRequestQuotePage() {
 
         (window as any).checkMandatory409531000047791049 = function () {
             const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF127', 'LEADCF165'];
-            const fldLangVal = ['Company Name', 'Name', 'Role', "POC's Email", "POC's Mobile", 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Services'];
+            const fldLangVal = ['Company Name', 'Name', 'Role', 'Email', 'Mobile', 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Services'];
             const form = document.forms.namedItem('WebToLeads409531000047791049') as HTMLFormElement;
             if (!form) return false;
 
@@ -93,7 +93,7 @@ export default function ZohoRequestQuotePage() {
         window.checkMandatoryZQuote = function (e: any) {
             const form = e.target as HTMLFormElement;
             const mndFileds = ['Company', 'Last Name', 'Mobile', 'LEADCF5', 'LEADCF8', 'LEADCF19', 'LEADCF123'];
-            const fldLangVal = ['Company Name', 'Name', 'POC\'s Mobile', 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
+            const fldLangVal = ['Company Name', 'Name', 'Mobile', 'Service', 'Company Email', 'Annual Revenue', 'How We Can Help You'];
 
             for (let i = 0; i < mndFileds.length; i++) {
                 const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
@@ -386,14 +386,14 @@ export default function ZohoRequestQuotePage() {
                                                     <input type="text" id="Last_Name" name="Last Name" required maxLength={80} placeholder="John Doe" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                                 </div>
                                                 <div>
-                                                    <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">POC's Email *</label>
+                                                    <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Email *</label>
                                                     <input type="text" id="Email" data-ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                                 </div>
                                             </div>
 
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                                 <div>
-                                                    <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">POC's Mobile *</label>
+                                                    <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Mobile *</label>
                                                     <input type="text" id="Mobile" name="Mobile" required maxLength={30} placeholder="+91 9876543210" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400" />
                                                 </div>
                                                 <div>
@@ -409,8 +409,8 @@ export default function ZohoRequestQuotePage() {
                                                 </div>
                                                 <div>
                                                     <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Services *</label>
-                                                    <select id="LEADCF165" name="LEADCF165" required onChange={() => (window as any).addAriaSelected409531000047791049?.()} className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer">
-                                                        <option value="" disabled selected>-Select Service-</option>
+                                                    <select id="LEADCF165" name="LEADCF165" defaultValue="" required onChange={() => (window as any).addAriaSelected409531000047791049?.()} className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer">
+                                                        <option value="" disabled>-Select Service-</option>
                                                         <option value="Zoho Licenses">Zoho Licenses</option>
                                                         <option value="Zoho Implementation">Zoho Implementation</option>
                                                         <option value="Zoho Licenses + Implementation">Zoho Licenses + Implementation</option>

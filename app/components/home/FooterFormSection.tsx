@@ -71,7 +71,7 @@ export default function FooterFormSection() {
 
     (window as any).checkMandatory409531000042578178 = function () {
       const mndFileds = ['Company', 'Last Name', 'Designation', 'LEADCF8', 'Mobile', 'LEADCF19', 'LEADCF123'];
-      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'POC\'s Mobile', 'Annual Revenue', 'How We Can Help You'];
+      const fldLangVal = ['Company Name', 'Name', 'Role', 'Business Email', 'Mobile', 'Annual Revenue', 'How We Can Help You'];
       const form = document.forms.namedItem(formName) as HTMLFormElement;
       if (!form) return false;
 
@@ -311,7 +311,7 @@ export default function FooterFormSection() {
 
                   {/* Mobile */}
                   <div>
-                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">POC's Mobile *</label>
+                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Mobile *</label>
                     <input type="tel" name="Mobile" required className="w-full bg-blue-50/30 border-2 border-transparent focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-gray-900 transition-all outline-none text-sm" placeholder="+91 00000 00000" />
                   </div>
                 </div>
