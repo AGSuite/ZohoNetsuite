@@ -2,7 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Managed IT & Cloud Services | AGSuite Technologies',
+  title: 'Managed IT & Cloud Services',
   description:
     'AGSuite Technologies offers Managed IT & Cloud Services including 24/7 monitoring, proactive maintenance, cloud infrastructure, and IT support.',
   alternates: {

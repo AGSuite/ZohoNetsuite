@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import NetSuiteServicesClient from "./components/NetSuiteServicesClient";
 
 export const metadata: Metadata = {
-  title: "Oracle NetSuite Specialist Services | AGSuite Technologies",
+  title: "Oracle NetSuite Specialist Services",
   description:
     "Explore our comprehensive Oracle NetSuite services — Implementation, Integration, Customization, Managed Support, and Training for global enterprises.",
 };

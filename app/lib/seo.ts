@@ -767,6 +767,25 @@ export const NETSUITE_PAGES: Record<
       { name: "Why NetSuite", url: "https://agsuitetech.com/why-netsuite/" },
     ],
   },
+  "/netsuite-connector": {
+    title: "Other Solutions & Services",
+    description:
+      "Explore other solutions and services by AGSuite Technologies. We offer a wide range of customized options to meet your unique business needs. Discover more today!",
+    keywords: ["NetSuite Connectors", "NetSuite Add-ons", "NetSuite Integration", "Custom Solutions", "AGSuite Technologies"],
+    category: "ERP Software",
+    publishedTime: "2024-03-06T00:00:00Z",
+    dateModified: "2024-12-02T10:35:36+00:00",
+    canonicalUrl: "https://agsuitetech.com/netsuite-connector/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "26 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "Other Solutions & Services", url: "https://agsuitetech.com/netsuite-connector/" },
+    ],
+  },
 };
 
 // ─── Zoho page metadata map ───────────────────────────────────────────────────
