@@ -927,6 +927,33 @@ export const ZOHO_PAGES: Record<
     breadcrumbs?: { name: string; url: string }[];
   }
 > = {
+  "/fixed-asset-management": {
+    title: "Fixed Asset Management Software",
+    description:
+      "Streamline your asset lifecycle from procurement to disposal with AGSuite Technologies' Fixed Asset Management tool built on Zoho Creator. Automated depreciation, QR tracking, and statutory compliance.",
+    keywords: [
+      "Fixed Asset Management Software",
+      "Fixed Asset Management Tracker",
+      "Zoho Creator Fixed Asset Management",
+      "Companies Act Depreciation",
+      "Income Tax Depreciation",
+      "AGSuite Technologies",
+    ],
+    category: "Asset Management Software",
+    publishedTime: "2024-03-06T00:00:00Z",
+    dateModified: "2025-06-24T13:23:50+00:00",
+    canonicalUrl: "https://agsuitetech.com/fixed-asset-management/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "15 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/zoho" },
+      { name: "Zoho Add-Ons", url: "https://agsuitetech.com/zoho/solutions" },
+      { name: "Fixed Asset Management", url: "https://agsuitetech.com/fixed-asset-management/" },
+    ],
+  },
   "/zoho-crm": {
     title: "Zoho Integration Services | Zoho CRM Implementation Services | Zoho CRM Consulting Services",
     description:

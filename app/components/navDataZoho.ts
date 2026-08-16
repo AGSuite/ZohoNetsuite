@@ -211,6 +211,27 @@ export const navItemsZoho: NavSection[] = [
                         },
                     ]
                 }
+            },
+            {
+                label: "ZOHO ADD-ONS",
+                href: "/fixed-asset-management",
+                megaMenu: {
+                    title: "Zoho Add-On Solutions",
+                    description: "Custom low-code applications & extensions built on Zoho Creator",
+                    categories: [
+                        {
+                            title: "Add-ons",
+                            items: [
+                                {
+                                    label: "Fixed Asset Management",
+                                    href: "/fixed-asset-management",
+                                    description: "Track physical asset lifecycle, WDV/SLM depreciation & QR audits",
+                                    icon: Box
+                                }
+                            ]
+                        }
+                    ]
+                }
             }
         ]
     },

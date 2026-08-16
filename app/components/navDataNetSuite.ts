@@ -38,7 +38,8 @@ import {
     Puzzle as PuzzleIcon,
     GitMerge,
     Share2,
-    Coins
+    Coins,
+    Box,
 } from 'lucide-react';
 
 // Types
@@ -223,6 +224,29 @@ export const navItemsNetSuite: NavSection[] = [
                                     href: '/shopify-netsuite-connector',
                                     description: 'Seamless integration for Shopify & Shopify Plus',
                                     icon: Repeat
+                                },
+                            ],
+                        },
+                    ],
+                },
+            },
+
+            // --------------- ZOHO ADD-ONS ---------------
+            {
+                label: 'ZOHO ADD-ONS',
+                href: '/fixed-asset-management',
+                megaMenu: {
+                    title: 'Zoho Add-On Solutions',
+                    description: 'Custom extensions and low-code applications built on Zoho Creator',
+                    categories: [
+                        {
+                            title: 'Add-ons',
+                            items: [
+                                {
+                                    label: 'Fixed Asset Management',
+                                    href: '/fixed-asset-management',
+                                    description: 'End-to-end physical asset lifecycle, WDV/SLM depreciation & QR audits',
+                                    icon: Box
                                 },
                             ],
                         },

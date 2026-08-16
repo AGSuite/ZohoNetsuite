@@ -180,7 +180,7 @@ export const DesktopMegaMenu: React.FC<any> = ({ item, openMegaMenu, setOpenMega
                                             className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-lg text-white text-[9px] font-bold uppercase tracking-widest hover:bg-red-600 transition-colors"
                                             onClick={() => setOpenDropdown(null)}
                                         >
-                                            Explore Zoho
+                                            Explore {child.label === 'ZOHO' ? 'Zoho' : 'Add-ons'}
                                         </Link>
                                         <div className={`w-7 h-7 rounded-full flex items-center justify-center transition-all duration-500 ${openMegaMenu === child.label ? 'bg-red-600' : 'bg-white/10 group-hover/tab:bg-red-600'}`}>
                                             <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" /></svg>
