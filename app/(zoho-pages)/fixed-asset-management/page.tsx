@@ -1078,7 +1078,7 @@ export default function FixedAssetManagementPage() {
                         /* Case C: Single Image Features */
                         <div
                           className={`relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 group bg-slate-950 ${
-                            activeFeat.images[0]?.isMobile ? "max-w-xs mx-auto" : ""
+                            (activeFeat.images[0] as any)?.isMobile ? "max-w-xs mx-auto" : ""
                           }`}
                         >
                           <Image
@@ -1087,7 +1087,7 @@ export default function FixedAssetManagementPage() {
                             width={800}
                             height={500}
                             className={`w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 cursor-pointer ${
-                              activeFeat.images[0]?.isMobile ? "max-h-[460px] object-contain p-2" : ""
+                              (activeFeat.images[0] as any)?.isMobile ? "max-h-[460px] object-contain p-2" : ""
                             }`}
                             onClick={() => setSelectedImage(activeFeat.images[0].src)}
                           />
