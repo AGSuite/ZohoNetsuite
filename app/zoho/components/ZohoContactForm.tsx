@@ -67,8 +67,8 @@ export default function ZohoContactForm() {
         };
 
         (window as any).checkMandatory409531000047791049 = function () {
-            const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF127', 'LEADCF165'];
-            const fldLangVal = ['Company Name', 'Name', 'Role', 'Email', 'Mobile', 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Services'];
+            const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF165'];
+            const fldLangVal = ['Company Name', 'Name', 'Role', "POC's Email", "POC's Mobile", 'Annual Revenue', 'How We Can Help You', 'Services'];
             const form = document.forms.namedItem('WebToLeads409531000047791049') as HTMLFormElement;
             if (!form) return false;
 
@@ -337,9 +337,9 @@ export default function ZohoContactForm() {
                                 variants={containerVariants}
                                 className="space-y-6"
                             >
-                                <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="44276f8beed192b8f7e1be65072c435bb8635d713a36ed1383283b028345f158" readOnly />
+                                <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="afe7fc5b0536228280a461c09acb8cd162fafbcf476effeaa3a356db2e458dc1" readOnly />
                                 <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-                                <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="828a6444caf550aa2c7fb30baee0af20ebe53bb4ec14fa9cb848cbaba047cf09851f23ca8992cf00b57712dc4036845e" readOnly />
+                                <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="5a82ca35749552f4f750cae5dec3c5b7d801c95f58f820da5a9e196736a46f71217d8315d7638831db35e87703ae69fb" readOnly />
                                 <input type="text" style={{ display: 'none' }} name="actionType" value="TGVhZHM=" readOnly />
                                 <input type="text" style={{ display: 'none' }} name="returnURL" value={returnUrl} readOnly />
                                 <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" value="" readOnly />

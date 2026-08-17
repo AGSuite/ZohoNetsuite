@@ -70,8 +70,8 @@ export default function EmbeddedZohoForm() {
         const form = e.target;
 
         // Mandatory Checks
-        const mnd = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF127', 'LEADCF165'];
-        const labels = ['Company Name', 'Name', 'Role', 'Email', 'Mobile', 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Services'];
+        const mnd = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF165'];
+        const labels = ['Company Name', 'Name', 'Role', "POC's Email", "POC's Mobile", 'Annual Revenue', 'How We Can Help You', 'Services'];
 
         for (let i = 0; i < mnd.length; i++) {
             const fld = form[mnd[i]];
@@ -96,12 +96,12 @@ export default function EmbeddedZohoForm() {
 
     return (
         <div id="crmWebToEntityForm" className="zcwf_lblLeft crmWebToEntityForm">
-            <Script id="wf_anal_embed" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=9ba9275d1ba2433ba28d0334bf486bd4abd2959e16f782d43429c03186c9c487ee6f78924b1f1106a6dcdd75ba579e09gid78093e56f2fc99f0c3f7443fa899e4c18fd4da32e2cd843412f5927181c00bf0gidea78ce0862d60f0bac5830045d1916c9e69beb39a32cd7c56efb4ce7272d5041gidbbdbb445da8de25a4acca8138c2d3d7ad156c3359920d67288f1804861f07da4&tw=0d7d7da9c337c2ca94057ef8d792e49bf952b4466492d31358d902f3ddf85962&version=v2" strategy="afterInteractive" />
+            <Script id="wf_anal_embed" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=e7fa82545e6cbc426156b206aa8236f2c686a1dd1fa2201a42f8f8bc1f3ed582856adb0b2a204a9d5af92c2452e3a8a8gidc5c4b2eec1a1272f8a476c638c29bb49a4d78e91e7b5216007f5c7aeef1afd9fgid5f6d199f406123ad764d17f846376ab5e7fab29b0bebbbde07b6a8367d0aba4cgid8d7aa6245a7de773373511b56e3ffa902647cb1e3730e636a86b82d0019d0cce&tw=b2ff6a1aabcf001476b36b61fabd0fbad09ea545696c57b419b7adca06e6ef53&version=v2" strategy="afterInteractive" />
             <iframe name="zoho_iframe_embedded" style={{ display: 'none' }}></iframe>
             <form id="webform409531000047791049" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000047791049" method="POST" onSubmit={handleFormSubmit} acceptCharset="UTF-8">
-                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="44276f8beed192b8f7e1be65072c435bb8635d713a36ed1383283b028345f158" readOnly />
+                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="afe7fc5b0536228280a461c09acb8cd162fafbcf476effeaa3a356db2e458dc1" readOnly />
                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                <input type="text" className="hidden" name="xmIwtLD" defaultValue="828a6444caf550aa2c7fb30baee0af20ebe53bb4ec14fa9cb848cbaba047cf09851f23ca8992cf00b57712dc4036845e" readOnly />
+                <input type="text" className="hidden" name="xmIwtLD" defaultValue="5a82ca35749552f4f750cae5dec3c5b7d801c95f58f820da5a9e196736a46f71217d8315d7638831db35e87703ae69fb" readOnly />
                 <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
                 <input type="text" className="hidden" name="returnURL" value={returnUrl} readOnly />
                 <input type="text" className="hidden" name="aG9uZXlwb3Q" defaultValue="" readOnly />
