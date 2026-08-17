@@ -571,14 +571,14 @@ export default function ZohoOfficesPage() {
               {/* Right Side: Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
                 <Link
-                  href="/zoho/contact/request-quote"
+                  href="/zoho/request-quote"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold rounded-xl bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-lg hover:scale-105"
                 >
                   <Send className="w-4 h-4" />
                   Contact Us Now
                 </Link>
                 <Link
-                  href="/zoho/contact/free-consultation"
+                  href="/zoho/free-consultation"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold border border-white/30 text-white rounded-xl hover:bg-white/15 hover:border-white/60 backdrop-blur-sm transition-all duration-300 hover:scale-105"
                 >
                   Free Consultation

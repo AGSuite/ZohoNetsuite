@@ -73,8 +73,13 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
         reCapAlertFuncName: "reCaptchaAlert409531000047791049_footer_zoho",
       };
 
+  const [returnUrl, setReturnUrl] = useState('https://www.agsuite.tech/thank-you');
+
   useEffect(() => {
     setIsClient(true);
+    if (typeof window !== 'undefined') {
+      setReturnUrl(window.location.origin + '/thank-you');
+    }
 
     (window as any).addAriaSelectedFooter = function (event: any) {
       const optionElem = event.target;
@@ -156,10 +161,9 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
 
     const renderRecaptcha = () => {
       const container = document.getElementById(config.recapId);
-      if ((window as any).grecaptcha && container) {
+      if (container && container.children.length === 0 && (window as any).grecaptcha && (window as any).grecaptcha.render) {
         try {
-          if (container.children.length > 0) return;
-          (window as any).grecaptcha.render(config.recapId, {
+          (window as any).grecaptcha.render(container, {
             'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
             'theme': 'light',
             'callback': (window as any)[config.recapCallbackName]
@@ -168,17 +172,19 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
       }
     };
 
-    if ((window as any).grecaptcha) {
-      (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
-    } else {
-      const interval = setInterval(() => {
-        if ((window as any).grecaptcha) {
-          (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
-          clearInterval(interval);
-        }
-      }, 300);
-      setTimeout(() => clearInterval(interval), 5000);
-    }
+    let attempts = 0;
+    const interval = setInterval(() => {
+      attempts++;
+      const container = document.getElementById(config.recapId);
+      if (container && container.children.length > 0) {
+        clearInterval(interval);
+        return;
+      }
+      if ((window as any).grecaptcha && (window as any).grecaptcha.render) {
+        renderRecaptcha();
+      }
+      if (attempts > 60) clearInterval(interval);
+    }, 100);
   }, [platform, isNetSuite, config]);
 
   const [loadScripts, setLoadScripts] = useState(false);
@@ -336,7 +342,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                           <input type="hidden" name="zc_gad" id="zc_gad" value="" />
                           <input type="text" className="hidden" name="xmIwtLD" value={config.xmIwtLD} readOnly />
                           <input type="text" className="hidden" name="actionType" value="TGVhZHM=" readOnly />
-                          <input type="text" className="hidden" name="returnURL" value="https://www.agsuite.tech/thank-you" readOnly />
+                          <input type="text" className="hidden" name="returnURL" value={returnUrl} readOnly />
                           <input type="text" className="hidden" name="aG9uZXlwb3Q" value="" readOnly />
 
                           {/* Hidden default fields required by Zoho */}

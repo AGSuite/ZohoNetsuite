@@ -280,10 +280,10 @@ export const navItemsZoho: NavSection[] = [
     {
         title: "Contact",
         children: [
-            { label: 'Careers', href: '/zoho/contact/careers', description: 'Join our growing team.', icon: Briefcase },
-            // { label: 'Support', href: '/zoho/contact/support', description: 'Get expert help.', icon: Headset },
-            { label: 'Request Quote', href: '/zoho/contact/request-quote', description: 'Get project pricing.', icon: FileText },
-            { label: 'Free Consultation', href: '/zoho/contact/free-consultation', description: 'Talk to our team.', icon: HelpCircle }
+            { label: 'Careers', href: '/zoho/careers', description: 'Join our growing team.', icon: Briefcase },
+            // { label: 'Support', href: '/zoho/support', description: 'Get expert help.', icon: Headset },
+            { label: 'Request Quote', href: '/zoho/request-quote', description: 'Get project pricing.', icon: FileText },
+            { label: 'Free Consultation', href: '/zoho/free-consultation', description: 'Talk to our team.', icon: HelpCircle }
         ]
     }
 ];

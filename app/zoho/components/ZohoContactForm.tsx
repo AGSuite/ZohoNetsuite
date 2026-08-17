@@ -30,8 +30,13 @@ export default function ZohoContactForm() {
         { code: '+852', label: 'HK (+852)' },
     ];
 
+    const [returnUrl, setReturnUrl] = useState('https://www.agsuite.tech/thank-you');
+
     useEffect(() => {
         setIsClient(true);
+        if (typeof window !== 'undefined') {
+            setReturnUrl(window.location.origin + '/thank-you');
+        }
 
         (window as any).addAriaSelected409531000047791049 = function () {
             const optionElem = (event as any).target;
@@ -94,19 +99,19 @@ export default function ZohoContactForm() {
             return true;
         };
 
-        (window as any).rccallback409531000042578178_zohocomp = function () {
-            const recap = document.getElementById('recap409531000042578178_zohocomp');
+        (window as any).rccallback409531000047791049 = function () {
+            const recap = document.getElementById('recap409531000047791049');
             if (recap) recap.setAttribute('captcha-verified', 'true');
-            const recapErr = document.getElementById('recapErr409531000042578178_zohocomp');
+            const recapErr = document.getElementById('recapErr409531000047791049');
             if (recapErr && recapErr.style.visibility === 'visible') {
                 recapErr.style.visibility = 'hidden';
             }
         };
 
-        (window as any).reCaptchaAlert409531000042578178_zohocomp = function () {
-            const recap = document.getElementById('recap409531000042578178_zohocomp');
+        (window as any).reCaptchaAlert409531000047791049 = function () {
+            const recap = document.getElementById('recap409531000047791049');
             if (recap && recap.getAttribute('captcha-verified') === 'false') {
-                const recapErr = document.getElementById('recapErr409531000042578178_zohocomp');
+                const recapErr = document.getElementById('recapErr409531000047791049');
                 if (recapErr) recapErr.style.visibility = 'visible';
                 return false;
             }
@@ -114,30 +119,31 @@ export default function ZohoContactForm() {
         };
 
         const renderRecaptcha = () => {
-            const container = document.getElementById('recap409531000042578178_zohocomp');
-            if ((window as any).grecaptcha && container) {
+            const container = document.getElementById('recap409531000047791049');
+            if (container && container.children.length === 0 && (window as any).grecaptcha && (window as any).grecaptcha.render) {
                 try {
-                    if (container.children.length > 0) return;
-                    (window as any).grecaptcha.render('recap409531000042578178_zohocomp', {
-                        'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
-                        'theme': 'light',
-                        'callback': (window as any).rccallback409531000042578178_zohocomp
+                    (window as any).grecaptcha.render(container, {
+                        sitekey: '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
+                        theme: 'light',
+                        callback: (window as any).rccallback409531000047791049
                     });
                 } catch (e) { }
             }
         };
 
-        if ((window as any).grecaptcha) {
-            (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
-        } else {
-            const interval = setInterval(() => {
-                if ((window as any).grecaptcha) {
-                    (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
-                    clearInterval(interval);
-                }
-            }, 300);
-            setTimeout(() => clearInterval(interval), 5000);
-        }
+        let attempts = 0;
+        const interval = setInterval(() => {
+            attempts++;
+            const container = document.getElementById('recap409531000047791049');
+            if (container && container.children.length > 0) {
+                clearInterval(interval);
+                return;
+            }
+            if ((window as any).grecaptcha && (window as any).grecaptcha.render) {
+                renderRecaptcha();
+            }
+            if (attempts > 60) clearInterval(interval);
+        }, 100);
 
         if (typeof (window as any)._wfa_fstprtcken === 'undefined') {
             (window as any)._wfa_fstprtcken = {};
@@ -335,7 +341,7 @@ export default function ZohoContactForm() {
                                 <input type="hidden" name="zc_gad" id="zc_gad" value="" />
                                 <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="828a6444caf550aa2c7fb30baee0af20ebe53bb4ec14fa9cb848cbaba047cf09851f23ca8992cf00b57712dc4036845e" readOnly />
                                 <input type="text" style={{ display: 'none' }} name="actionType" value="TGVhZHM=" readOnly />
-                                <input type="text" style={{ display: 'none' }} name="returnURL" value="https://www.agsuite.tech/thank-you" readOnly />
+                                <input type="text" style={{ display: 'none' }} name="returnURL" value={returnUrl} readOnly />
                                 <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" value="" readOnly />
 
                                 {/* Hidden default fields required by Zoho */}
@@ -459,16 +465,17 @@ export default function ZohoContactForm() {
                                 </motion.div>
 
                                 <motion.div variants={itemVariants} className="flex flex-col gap-2 my-2">
+                                  <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
                                   <div
                                     className="g-recaptcha"
                                     data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_"
                                     data-theme="light"
-                                    data-callback="rccallback409531000042578178_zohocomp"
+                                    data-callback="rccallback409531000047791049"
                                     captcha-verified="false"
-                                    id="recap409531000042578178_zohocomp"
+                                    id="recap409531000047791049"
                                   ></div>
                                   <div
-                                    id="recapErr409531000042578178_zohocomp"
+                                    id="recapErr409531000047791049"
                                     style={{ visibility: 'hidden', color: '#ef4444', fontSize: '12px' }}
                                   >
                                     Captcha validation failed. If you are not a robot then please try again.

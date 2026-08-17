@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Script from "next/script";
 
 export default function EmbeddedZohoForm() {
     const router = useRouter();
+    const [returnUrl, setReturnUrl] = useState('https://www.agsuite.tech/thank-you');
 
     useEffect(() => {
         (window as any).addAriaSelected409531000047791049 = function (event: any) {
@@ -17,10 +18,52 @@ export default function EmbeddedZohoForm() {
             optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
         };
 
+        if (typeof window !== 'undefined') {
+            setReturnUrl(window.location.origin + '/thank-you');
+        }
+
+        (window as any).rccallback409531000047791049 = function () {
+            const recap = document.getElementById('recap409531000047791049');
+            if (recap) recap.setAttribute('captcha-verified', 'true');
+            const recapErr = document.getElementById('recapErr409531000047791049');
+            if (recapErr && recapErr.style.visibility === 'visible') {
+                recapErr.style.visibility = 'hidden';
+            }
+        };
+
+        const renderRecaptcha = () => {
+            const container = document.getElementById('recap409531000047791049');
+            if (container && container.children.length === 0 && (window as any).grecaptcha && (window as any).grecaptcha.render) {
+                try {
+                    (window as any).grecaptcha.render(container, {
+                        sitekey: '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
+                        theme: 'light',
+                        callback: (window as any).rccallback409531000047791049
+                    });
+                } catch (e) { }
+            }
+        };
+
+        let attempts = 0;
+        const interval = setInterval(() => {
+            attempts++;
+            const container = document.getElementById('recap409531000047791049');
+            if (container && container.children.length > 0) {
+                clearInterval(interval);
+                return;
+            }
+            if ((window as any).grecaptcha && (window as any).grecaptcha.render) {
+                renderRecaptcha();
+            }
+            if (attempts > 60) clearInterval(interval);
+        }, 100);
+
         if (typeof (window as any)._wfa_fstprtcken === 'undefined') {
             (window as any)._wfa_fstprtcken = {};
         }
         (window as any)._wfa_fstprtcken[409531000047791049] = true;
+
+        return () => clearInterval(interval);
     }, []);
 
     const handleFormSubmit = async (e: any) => {
@@ -60,7 +103,7 @@ export default function EmbeddedZohoForm() {
                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
                 <input type="text" className="hidden" name="xmIwtLD" defaultValue="828a6444caf550aa2c7fb30baee0af20ebe53bb4ec14fa9cb848cbaba047cf09851f23ca8992cf00b57712dc4036845e" readOnly />
                 <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
-                <input type="text" className="hidden" name="returnURL" defaultValue="https://www.agsuite.tech/thank-you" readOnly />
+                <input type="text" className="hidden" name="returnURL" value={returnUrl} readOnly />
                 <input type="text" className="hidden" name="aG9uZXlwb3Q" defaultValue="" readOnly />
 
                 {/* Hidden default fields required by Zoho */}
@@ -204,6 +247,24 @@ export default function EmbeddedZohoForm() {
                     <div className="agsuite_column-large">
                         <label className="agsuite_label" htmlFor="LEADCF123">How We Can Help You *</label>
                         <textarea id="LEADCF123" name="LEADCF123" required rows={3} placeholder="Tell us about your requirements..."></textarea>
+                    </div>
+
+                    <div className="agsuite_column-large">
+                        <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
+                        <div
+                            className="g-recaptcha"
+                            data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_"
+                            data-theme="light"
+                            data-callback="rccallback409531000047791049"
+                            captcha-verified="false"
+                            id="recap409531000047791049"
+                        ></div>
+                        <div
+                            id="recapErr409531000047791049"
+                            style={{ visibility: 'hidden', color: '#ef4444', fontSize: '12px' }}
+                        >
+                            Captcha validation failed. If you are not a robot then please try again.
+                        </div>
                     </div>
 
                     <div className="agsuite_column-large">

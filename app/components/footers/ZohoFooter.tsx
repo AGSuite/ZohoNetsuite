@@ -122,7 +122,7 @@ export default function ZohoFooter() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/zoho/contact/careers" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/zoho/careers" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Careers
                                 </Link>
                             </li>

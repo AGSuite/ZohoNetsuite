@@ -198,8 +198,13 @@ export default function ZohoContactPage() {
   const [locationFilter, setLocationFilter] = useState<Region>("All");
   const [isClient, setIsClient] = useState(false);
 
+  const [returnUrl, setReturnUrl] = useState('https://www.agsuite.tech/thank-you');
+
   useEffect(() => {
     setIsClient(true);
+    if (typeof window !== 'undefined') {
+      setReturnUrl(window.location.origin + '/thank-you');
+    }
 
     (window as any).addAriaSelected409531000047791049 = function (event: any) {
         const optionElem = (event as any).target;
@@ -223,6 +228,25 @@ export default function ZohoContactPage() {
                     return false;
                 }
             }
+        }
+        return true;
+    };
+
+    (window as any).rccallback409531000047791049 = function () {
+        const recap = document.getElementById('recap409531000047791049');
+        if (recap) recap.setAttribute('captcha-verified', 'true');
+        const recapErr = document.getElementById('recapErr409531000047791049');
+        if (recapErr && recapErr.style.visibility === 'visible') {
+            recapErr.style.visibility = 'hidden';
+        }
+    };
+
+    (window as any).reCaptchaAlert409531000047791049 = function () {
+        const recap = document.getElementById('recap409531000047791049');
+        if (recap && recap.getAttribute('captcha-verified') === 'false') {
+            const recapErr = document.getElementById('recapErr409531000047791049');
+            if (recapErr) recapErr.style.visibility = 'visible';
+            return false;
         }
         return true;
     };
@@ -251,8 +275,39 @@ export default function ZohoContactPage() {
             }
         }
         if ((window as any).validateEmail409531000047791049 && !(window as any).validateEmail409531000047791049()) return false;
+        if ((window as any).reCaptchaAlert409531000047791049 && !(window as any).reCaptchaAlert409531000047791049()) return false;
         return true;
     };
+
+    // Bulletproof instant reCAPTCHA renderer
+    const renderRecaptcha = () => {
+        const container = document.getElementById('recap409531000047791049');
+        if (container && container.children.length === 0 && (window as any).grecaptcha && (window as any).grecaptcha.render) {
+            try {
+                (window as any).grecaptcha.render(container, {
+                    sitekey: '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
+                    theme: 'light',
+                    callback: (window as any).rccallback409531000047791049
+                });
+            } catch (e) {}
+        }
+    };
+
+    let attempts = 0;
+    const interval = setInterval(() => {
+        attempts++;
+        const container = document.getElementById('recap409531000047791049');
+        if (container && container.children.length > 0) {
+            clearInterval(interval);
+            return;
+        }
+        if ((window as any).grecaptcha && (window as any).grecaptcha.render) {
+            renderRecaptcha();
+        }
+        if (attempts > 60) clearInterval(interval);
+    }, 100);
+
+    return () => clearInterval(interval);
   }, []);
 
   if (!isClient) return null;
@@ -389,7 +444,7 @@ export default function ZohoContactPage() {
                     <input type="hidden" name="zc_gad" id="zc_gad" value="" />
                     <input type="text" className="hidden" name="xmIwtLD" value="828a6444caf550aa2c7fb30baee0af20ebe53bb4ec14fa9cb848cbaba047cf09851f23ca8992cf00b57712dc4036845e" readOnly />
                     <input type="text" className="hidden" name="actionType" value="TGVhZHM=" readOnly />
-                    <input type="text" className="hidden" name="returnURL" value="https://www.agsuite.tech/thank-you" readOnly />
+                    <input type="text" className="hidden" name="returnURL" value={returnUrl} readOnly />
                     <input type="text" className="hidden" name="aG9uZXlwb3Q" value="" readOnly />
 
                     {/* Hidden default fields required by Zoho */}
@@ -480,10 +535,29 @@ export default function ZohoContactPage() {
                       </select>
                     </div>
 
-                    {/* Requirements Textarea */}
+                    {/* How We Can Help You Row */}
                     <div>
                       <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">How We Can Help You *</label>
-                      <textarea id="LEADCF123" name="LEADCF123" required rows={3} placeholder="How We Can Help You*" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400 shadow-sm" />
+                      <textarea id="LEADCF123" name="LEADCF123" required rows={3} placeholder="Tell us about your requirements..." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400 shadow-sm" />
+                    </div>
+
+                    {/* Captcha Section */}
+                    <div className="flex flex-col gap-2 my-2">
+                      <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
+                      <div
+                        className="g-recaptcha"
+                        data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_"
+                        data-theme="light"
+                        data-callback="rccallback409531000047791049"
+                        captcha-verified="false"
+                        id="recap409531000047791049"
+                      ></div>
+                      <div
+                        id="recapErr409531000047791049"
+                        style={{ visibility: 'hidden', color: '#ef4444', fontSize: '12px' }}
+                      >
+                        Captcha validation failed. If you are not a robot then please try again.
+                      </div>
                     </div>
 
                     <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full shrink-0 inline-flex items-center justify-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-full transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm cursor-pointer" value="Send Message" />
@@ -514,21 +588,21 @@ export default function ZohoContactPage() {
               {
                 title: "Free Consultation",
                 desc: "Talk to our team.",
-                link: "/zoho/contact/free-consultation",
+                link: "/zoho/free-consultation",
                 icon: Target,
                 image: "/images/contact/consultation.webp"
               },
               {
                 title: "Request Quote",
                 desc: "Get project pricing.",
-                link: "/zoho/contact/request-quote",
+                link: "/zoho/request-quote",
                 icon: Clock,
                 image: "/images/contact/quote.webp"
               },
               {
                 title: "Careers",
                 desc: "Join our growing team.",
-                link: "/zoho/contact/careers",
+                link: "/zoho/careers",
                 icon: Briefcase,
                 image: "/images/contact/carrer.webp"
               }
