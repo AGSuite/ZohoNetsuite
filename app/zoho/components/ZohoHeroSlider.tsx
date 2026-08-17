@@ -172,7 +172,7 @@ export default function ZohoHeroSlider() {
           titleGradient="bg-gradient-to-r from-gray-950 via-rose-900 to-rose-600 bg-clip-text text-transparent"
           desc="Build stronger customer relationships, streamline your sales process, and turn every opportunity into measurable growth with Zoho CRM."
           cta="Explore Zoho CRM"
-          link="/zoho/solutions"
+          link="/zoho-crm"
           contentShiftLeft="extra"
           customVisual={
             <div className="relative w-full flex justify-center lg:justify-end">
@@ -296,11 +296,11 @@ export default function ZohoHeroSlider() {
               )}
             </div>
           }
-          title="The Complete Guide to Zoho Apps for Modern Businesses"
+          title="50+ Integrated Zoho Apps for Modern Businesses"
           titleGradient="bg-gradient-to-r from-slate-950 via-slate-900 to-cyan-600 bg-clip-text text-transparent"
           desc="Zoho Apps offer a complete set of tools to manage and streamline business operations. They help improve productivity, automate tasks, and support smarter business growth."
-          cta="Explore Zoho Projects"
-          link="/zoho/solutions"
+          cta="Explore Zoho One"
+          link="/zoho-one"
           customVisual={
             <div className="relative w-full h-full flex items-center justify-center p-4 min-h-[400px] lg:min-h-[500px]">
               <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center scale-[0.65] sm:scale-90 lg:scale-100">
@@ -479,7 +479,7 @@ export default function ZohoHeroSlider() {
           titleGradient="bg-gradient-to-r from-slate-950 via-slate-900 to-indigo-600 bg-clip-text text-transparent"
           desc="Streamline your unique business processes, automate repetitive tasks, and build powerful custom applications with Zoho Creator — designed to boost efficiency and drive growth."
           cta="Explore Zoho Creator"
-          link="/zoho/solutions"
+          link="/zoho-creator"
           contentShiftLeft="extra"
           customVisual={
             <div className="relative w-full flex justify-center lg:justify-end">
@@ -569,7 +569,7 @@ export default function ZohoHeroSlider() {
           titleGradient="bg-gradient-to-r from-slate-950 via-slate-900 to-blue-600 bg-clip-text text-transparent"
           desc="Unify your sales, marketing, finance, HR, and operations on a single, secure cloud platform of over 50+ integrated applications."
           cta="Explore Zoho One"
-          link="/zoho/solutions"
+          link="/zoho-one"
           contentShiftLeft="extra"
           customVisual={
             <div className="relative w-full flex justify-center lg:justify-end">
@@ -705,8 +705,8 @@ export default function ZohoHeroSlider() {
           title="Master Your Financial Future with Zoho Books and Smart Automation"
           titleGradient="bg-gradient-to-r from-slate-950 via-slate-900 to-pink-600 bg-clip-text text-transparent"
           desc="Automate accounting, invoicing, and tax compliance so your team can focus on strategic growth."
-          cta="Upgrade Financial Ops"
-          link="/zoho/solutions/finance/zoho-books"
+          cta="Explore Zoho Books"
+          link="/zoho-books-accounting-software"
           contentShiftLeft="extra"
           customVisual={
             <div className="relative w-full flex justify-center lg:justify-end">
@@ -835,7 +835,7 @@ export default function ZohoHeroSlider() {
           titleGradient="bg-gradient-to-r from-slate-950 via-slate-900 to-amber-600 bg-clip-text text-transparent"
           desc="Simplify operations, boost efficiency, and scale your business confidently with smart, integrated Zoho ERP solutions."
           cta="Explore Zoho ERP"
-          link="/zoho/solutions"
+          link="/zoho-erp"
           contentShiftLeft="extra"
           customVisual={
             <div className="relative w-full flex justify-center lg:justify-end">
@@ -960,11 +960,11 @@ export default function ZohoHeroSlider() {
               )}
             </div>
           }
-          title="Power Your Workforce with Intelligent HR Solutions"
+          title="Power Your Workforce with Intelligent HRMS Solutions"
           titleGradient="bg-gradient-to-r from-slate-950 via-slate-900 to-teal-600 bg-clip-text text-transparent"
           desc="Empower your team, simplify HR processes, and boost workplace efficiency with smart, scalable HR solutions."
           cta="Explore Zoho People"
-          link="/zoho/solutions"
+          link="/zoho-people"
           contentShiftLeft="extra"
           customVisual={
             <div className="relative w-full flex justify-center lg:justify-end">

@@ -305,12 +305,12 @@ export default function NetSuiteSolutionsClient() {
   ];
 
   const services = [
-    { title: "NetSuite Implementation", description: "Go live with confidence using our structured, risk-free NetSuite implementation methodology.", icon: Rocket, href: "/netsuite/services/implementation" },
-    { title: "NetSuite Integration", description: "Seamlessly connect NetSuite with your CRM, e-commerce, and third-party systems via robust APIs.", icon: Layers, href: "/netsuite/services/integration-services" },
-    { title: "NetSuite Customization", description: "Tailor NetSuite to your exact workflows with custom SuiteApps, scripts, and UI extensions.", icon: Wrench, href: "/netsuite/services/customization" },
-    { title: "NetSuite Managed Support", description: "Keep your NetSuite environment optimised with dedicated ongoing administration and support.", icon: Settings, href: "/netsuite/services/managed-services" },
-    { title: "NetSuite Training", description: "Empower your team with role-based, hands-on NetSuite training for faster adoption.", icon: GraduationCap, href: "/netsuite/services/training-services" },
-    { title: "NetSuite Consulting", description: "Strategic guidance from certified experts to maximise your NetSuite ROI and business outcomes.", icon: HeartHandshake, href: "/netsuite/services/consulting" },
+    { title: "NetSuite Implementation", description: "Go live with confidence using our structured, risk-free NetSuite implementation methodology.", icon: Rocket, href: "/netsuite-erp-and-crm-implementation" },
+    { title: "NetSuite Integration", description: "Seamlessly connect NetSuite with your CRM, e-commerce, and third-party systems via robust APIs.", icon: Layers, href: "/netsuite-integration" },
+    { title: "NetSuite Customization", description: "Tailor NetSuite to your exact workflows with custom SuiteApps, scripts, and UI extensions.", icon: Wrench, href: "/netsuite-customization" },
+    { title: "NetSuite Managed Support", description: "Keep your NetSuite environment optimised with dedicated ongoing administration and support.", icon: Settings, href: "/netsuite-managed-support" },
+    { title: "NetSuite Training", description: "Empower your team with role-based, hands-on NetSuite training for faster adoption.", icon: GraduationCap, href: "/netsuite/training-services" },
+    { title: "NetSuite Consulting", description: "Strategic guidance from certified experts to maximise your NetSuite ROI and business outcomes.", icon: HeartHandshake, href: "/netsuite-consulting" },
   ];
 
   return (

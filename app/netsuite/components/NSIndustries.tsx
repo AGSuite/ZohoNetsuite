@@ -32,16 +32,16 @@ const industryIconMap: Record<string, React.ElementType> = {
 
 /* ------------------ ROUTES ------------------ */
 const industryRoutes: Record<string, string> = {
-  "Software and Technology": "/netsuite/industries/software-and-technology",
-  "IT and Professional Services": "/netsuite/industries/it-and-professional-services",
-  "Wholesale Distribution": "/netsuite/industries/wholesale-distribution",
-  "Advertising and Digital Marketing Agencies": "/netsuite/industries/advertising-and-digital-marketing-agencies",
-  "Media and Publishing": "/netsuite/industries/media-and-publishing",
-  "Retail & E-Commerce": "/netsuite/industries/retail-and-e-commerce",
-  "Transportation and Logistics": "/netsuite/industries/transportation-and-logistics",
-  "Manufacturing": "/netsuite/industries/manufacturing",
-  "Financial Services": "/netsuite/industries/financial-services",
-  "Telecom": "/netsuite/industries/telecom-industry",
+  "Software and Technology": "/netsuite/software-and-technology",
+  "IT and Professional Services": "/netsuite/it-and-professional-services",
+  "Wholesale Distribution": "/netsuite/wholesale-distribution",
+  "Advertising and Digital Marketing Agencies": "/netsuite/advertising-and-digital-marketing-agencies",
+  "Media and Publishing": "/netsuite/media-and-publishing",
+  "Retail & E-Commerce": "/netsuite/retail-and-e-commerce",
+  "Transportation and Logistics": "/netsuite/transportation-and-logistics",
+  "Manufacturing": "/netsuite/manufacturing",
+  "Financial Services": "/netsuite/financial-services",
+  "Telecom": "/netsuite/telecom-industry",
 };
 
 /* ------------------ LIGHT GRADIENTS ------------------ */

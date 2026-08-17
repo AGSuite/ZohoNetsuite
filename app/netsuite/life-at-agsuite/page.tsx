@@ -188,7 +188,7 @@ export default function LifeAtAGSuite() {
               transition={{ delay: 0.5 }}
             >
               <Link
-                href="#team"
+                href="#celebrations"
                 className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 Discover Our Culture
@@ -302,7 +302,7 @@ export default function LifeAtAGSuite() {
               className="flex flex-wrap gap-4 justify-center mt-4"
             >
               <Link
-                href="#team"
+                href="#leaders"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium px-6 py-3 text-sm md:text-base rounded-full hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all duration-300 hover:scale-105"
               >
                 Meet the Team <ArrowRight size={16} />
@@ -672,7 +672,7 @@ export default function LifeAtAGSuite() {
       {/* ─────────────────────────────────────────────────────────
           OFFICE EVENTS & CELEBRATIONS
       ────────────────────────────────────────────────────────── */}
-      <section className="py-24 bg-gray-50 overflow-hidden">
+      <section id="celebrations" className="py-24 bg-gray-50 overflow-hidden scroll-mt-28">
         <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
           <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[10px] font-medium uppercase tracking-widest mb-4 border border-blue-100/50 mx-auto">
             Life Beyond Work

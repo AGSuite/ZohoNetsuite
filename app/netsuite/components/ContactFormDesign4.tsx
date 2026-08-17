@@ -44,19 +44,25 @@ function Design4StatCard({ item, index }: { item: any; index: number }) {
       }}
       transition={{ delay: 0.3 + index * 0.1 }}
       style={{ perspective: 1000 }}
-      className="relative group p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-blue-400/50 hover:bg-white/10 transition-all duration-500 overflow-hidden flex flex-col justify-between"
+      className="relative group p-5 sm:p-6 rounded-[2rem] bg-gradient-to-br from-white via-white/95 to-blue-50 border border-blue-100/50 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 overflow-hidden flex flex-col justify-between"
     >
-      <div className="absolute -right-3 -bottom-3 opacity-[0.15] group-hover:opacity-[0.35] transition-all duration-500 pointer-events-none">
-        <item.icon className="w-20 h-20 text-blue-400" strokeWidth={1} />
+      {/* Decorative faint icon bg */}
+      <div className="absolute -right-4 -bottom-4 opacity-[0.25] group-hover:opacity-[0.45] transition-all duration-500 pointer-events-none">
+        <item.icon className="w-24 h-24 text-blue-900" strokeWidth={1} />
       </div>
-      <div className="relative z-10">
-        <item.icon className="w-5 h-5 text-blue-400 mb-2" />
-        <div>
-          <div className="text-2xl font-extrabold text-white mb-1">
+
+      <div className="relative z-10 flex flex-col items-start text-left">
+        <div className="mb-4 w-11 h-11 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
+          <item.icon className="w-5.5 h-5.5 font-bold" strokeWidth={1.5} />
+        </div>
+        <div className="space-y-1">
+          <div className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#000d2e] via-blue-900 to-black tracking-tight">
             {displayCount}
             {suffix}
           </div>
-          <p className="text-xs font-semibold text-slate-300 uppercase tracking-wider">{item.label}</p>
+          <p className="text-gray-500 font-semibold text-[10px] sm:text-[11px] group-hover:text-blue-700 transition-colors uppercase tracking-widest leading-tight">
+            {item.label}
+          </p>
         </div>
       </div>
     </motion.div>
@@ -214,20 +220,23 @@ export default function ContactFormDesign4() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.15),rgba(255,255,255,0))]" />
         
         <div className="relative max-w-7xl mx-auto px-6">
-          <div className="rounded-[40px] bg-slate-900/90 border border-slate-800 shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+          <div className="rounded-[40px] bg-slate-900/90 border border-slate-800 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
             {/* Left Narrative */}
-            <div className="lg:w-1/2 p-10 lg:p-14 flex flex-col justify-between bg-gradient-to-br from-blue-950/40 via-slate-900 to-slate-950 relative overflow-hidden">
-              <div className="relative z-10">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
-                  NetSuite Practice
-                </span>
-                <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
-                  Accelerate Enterprise Growth with <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">Oracle NetSuite</span>
-                </h2>
-                <p className="text-slate-300 text-base leading-relaxed mb-8">
-                  Get in touch with our certified NetSuite consultants for licensing, multi-subsidiary implementations, optimizations, and custom integrations.
-                </p>
-                <div className="grid grid-cols-2 gap-4">
+            <div className="p-8 sm:p-12 lg:p-16 flex flex-col justify-between bg-gradient-to-br from-blue-950/40 via-slate-900 to-slate-950 relative overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-800">
+              <div className="relative z-10 flex flex-col justify-between h-full">
+                <div>
+                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
+                    NetSuite Practice
+                  </span>
+                  <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+                    Accelerate Enterprise Growth with <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">Oracle NetSuite</span>
+                  </h2>
+                  <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-10 max-w-xl">
+                    Get in touch with our certified NetSuite consultants for licensing, multi-subsidiary implementations, optimizations, and custom integrations.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mt-auto pt-4">
                   {[
                     { value: "700+", label: "Projects Completed", icon: Briefcase },
                     { value: "250+", label: "Global Customers", icon: Building2 },
@@ -241,10 +250,10 @@ export default function ContactFormDesign4() {
             </div>
 
             {/* Right Form */}
-            <div className="lg:w-1/2 p-10 lg:p-14 bg-white">
-              <div className="mb-8">
-                <h3 className="text-3xl font-extrabold text-slate-900 mb-2">Request NetSuite Consultation</h3>
-                <p className="text-slate-600 text-sm">Fill out the details below to connect with our NetSuite team.</p>
+            <div className="p-8 sm:p-12 lg:p-16 bg-white flex flex-col justify-center">
+              <div className="mb-6 sm:mb-8">
+                <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 tracking-tight">Let’s Get Started !!</h3>
+                <p className="text-sm sm:text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500">Fill in your details and our team will reach out within 24 hours.</p>
               </div>
 
               <form

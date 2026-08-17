@@ -75,27 +75,27 @@ export default function NetSuiteFooter() {
                         <h4 className="text-lg font-bold mb-4 text-blue-400">NetSuite Services</h4>
                         <ul className="space-y-3">
                             <li>
-                                <Link href="/netsuite/services/implementation" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite-erp-and-crm-implementation" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Implementation
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/netsuite/services/customization" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite-customization" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Customization
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/netsuite/services/integration-services" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite-integration" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Integration
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/netsuite/services/managed-services" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite-managed-support" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Managed Support
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/netsuite/services/training-services" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/training-services" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Training & Consulting
                                 </Link>
                             </li>
@@ -139,32 +139,32 @@ export default function NetSuiteFooter() {
                         <h4 className="text-lg font-bold mb-4 text-blue-400">Industries</h4>
                         <ul className="space-y-3">
                             <li>
-                                <Link href="/netsuite/industries/software-and-technology" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/software-and-technology" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Software & Technology
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/netsuite/industries/it-and-professional-services" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/it-and-professional-services" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     IT & Professional Services
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/netsuite/industries/wholesale-distribution" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/wholesale-distribution" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Wholesale Distribution
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/netsuite/industries/retail-and-e-commerce" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/retail-and-e-commerce" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Retail & E-Commerce
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/netsuite/industries/manufacturing" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/manufacturing" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Manufacturing
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/netsuite/industries/advertising-and-digital-marketing-agencies" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/advertising-and-digital-marketing-agencies" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Advertising & Marketing
                                 </Link>
                             </li>

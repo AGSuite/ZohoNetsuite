@@ -363,7 +363,7 @@ export default function ZohoContactPage() {
               <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium text-white leading-[1.1] tracking-tight">
                 Transform Your Business with{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-indigo-300 to-cyan-200">
-                  Zoho Experts
+                  Zoho
                 </span>
               </h1>
 
@@ -423,7 +423,7 @@ export default function ZohoContactPage() {
 
                 <div className="relative z-10 p-8 lg:p-10">
                   <div className="mb-8 border-b border-gray-100 pb-6">
-                    <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Connect with an Expert</h2>
+                    <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Accelerate your growth with zoho</h2>
                     <p className="text-gray-500 text-base">Fill in your details — we'll respond within 24 hours.</p>
                   </div>
 
@@ -881,12 +881,6 @@ export default function ZohoContactPage() {
                       <Mail className="w-3.5 h-3.5 text-cyan-400" />
                     </div>
                     <span className="text-xs sm:text-sm font-semibold tracking-wide">contact@agsuitetech.com</span>
-                  </a>
-                  <a href="tel:+919096012100" className="flex items-center gap-2.5 hover:text-cyan-400 transition-colors group">
-                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
-                      <Phone className="w-3.5 h-3.5 text-cyan-400" />
-                    </div>
-                    <span className="text-xs sm:text-sm font-semibold tracking-wide">+91 909 601 2100</span>
                   </a>
                 </div>
               </div>

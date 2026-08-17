@@ -7,7 +7,7 @@ import Image from "next/image";
 // Light White/Blue Gradient Theme with Full Image on Left
 export default function FooterFormLight() {
   return (
-    <section className="relative py-0 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
+    <section id="contact-form" className="relative py-0 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 scroll-mt-36">
       {/* Enhanced multi-color gradient orbs */}
       <div className="absolute top-0 right-0 w-[900px] h-[900px] bg-blue-300/40 rounded-full blur-[140px] translate-x-1/3 -translate-y-1/3"></div>
       <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-indigo-300/35 rounded-full blur-[130px] -translate-x-1/3 translate-y-1/3"></div>
@@ -151,7 +151,7 @@ export default function FooterFormLight() {
 
             {/* Form Heading */}
             <div className="relative z-10 mb-8">
-              <h3 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-3">Get Expert Guidance</h3>
+              <h3 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-3">Let’s Get Started !!</h3>
               <p className="text-gray-600 text-lg lg:text-xl">Fill in your details and we'll reach out within 24 hours</p>
             </div>
 

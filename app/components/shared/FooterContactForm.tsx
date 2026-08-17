@@ -376,7 +376,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                   ) : (
                     <>
                       <div className="mb-6 sm:mb-8">
-                        <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 tracking-tight">Get Expert Guidance</h3>
+                        <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 tracking-tight">Let’s Get Started !!</h3>
                         <p className="text-sm sm:text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500">Fill in your details and our team will reach out within 24 hours.</p>
                       </div>
 

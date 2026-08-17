@@ -154,9 +154,7 @@ export default function NSPageClient({ blogs }: NSPageClientProps) {
         <FAQ variant="netsuite" />
       </LazySection>
 
-      <LazySection height="800px">
-        <FooterContactForm platform="NetSuite" />
-      </LazySection>
+      <FooterContactForm platform="NetSuite" />
     </>
   );
 }

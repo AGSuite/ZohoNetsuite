@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Script from "next/script";
-import { Send, Users, Rocket, Target, Award } from "lucide-react";
+import { Send, Briefcase, Building2, Target, Heart } from "lucide-react";
 
 export default function ZohoContactForm() {
     const [isClient, setIsClient] = useState(false);
@@ -223,7 +223,7 @@ export default function ZohoContactForm() {
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-500/25 rounded-full blur-[140px] translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6">
-                    <div className="rounded-[40px] bg-[#0d0d0d]/80 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden min-h-[720px] flex flex-col lg:flex-row">
+                    <div className="rounded-[40px] bg-[#0d0d0d]/80 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
                         {/* Left Side: Brand Narrative */}
                         <motion.div
                             variants={{
@@ -239,7 +239,7 @@ export default function ZohoContactForm() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.2 }}
-                            className="lg:w-1/2 p-10 lg:p-14 flex flex-col justify-between bg-gradient-to-br from-blue-950 via-[#0d0d0d] to-[#0a0a0a] relative overflow-hidden"
+                            className="p-8 sm:p-12 lg:p-16 flex flex-col justify-between bg-gradient-to-br from-blue-950 via-[#0d0d0d] to-[#0a0a0a] relative overflow-hidden border-b lg:border-b-0 lg:border-r border-white/10"
                         >
                             <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/Background/grid-white.svg')] opacity-[0.05] pointer-events-none z-10"></div>
 
@@ -309,25 +309,41 @@ export default function ZohoContactForm() {
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
                                     {[
-                                        { icon: Award, label: "Success Stories", val: "500+", color: "blue", lightColor: "blue" },
-                                        { icon: Rocket, label: "Solution Modules", val: "50+", color: "indigo", lightColor: "indigo" },
-                                        { icon: Target, label: "Experience", val: "15+ Yrs", color: "blue", lightColor: "blue" },
-                                        { icon: Users, label: "Consultants", val: "50+", color: "indigo", lightColor: "indigo" }
-                                    ].map((card, i) => (
+                                        { value: "700+", label: "Projects Completed", icon: Briefcase },
+                                        { value: "250+", label: "Global Customers", icon: Building2 },
+                                        { value: "15+", label: "Industry Expertise", icon: Target },
+                                        { value: "84%", label: "Customer Retention", icon: Heart },
+                                    ].map((item, i) => (
                                         <motion.div
                                             key={i}
                                             variants={{
                                                 hidden: { opacity: 0, scale: 0.95, y: 20 },
                                                 visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5, delay: 0.1 * i } }
                                             }}
-                                            className="group relative p-5 rounded-[2rem] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-blue-50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                                            whileHover={{
+                                                scale: 1.05,
+                                                rotateY: 10,
+                                                rotateX: -5,
+                                                transition: { duration: 0.4, ease: "easeOut" },
+                                            }}
+                                            style={{ perspective: 1000 }}
+                                            className="relative group p-5 sm:p-6 rounded-[2rem] bg-gradient-to-br from-white via-white/95 to-blue-50 border border-blue-100/50 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 overflow-hidden flex flex-col justify-between"
                                         >
-                                            <div className="flex flex-col items-center text-center">
-                                                <div className={`p-2.5 bg-${card.lightColor}-50 rounded-2xl text-${card.color}-600 mb-3 border border-${card.lightColor}-100 group-hover:bg-${card.color}-600 group-hover:text-white transition-colors duration-300`}>
-                                                    <card.icon size={21} strokeWidth={1.5} />
+                                            <div className="absolute -right-4 -bottom-4 opacity-[0.25] group-hover:opacity-[0.45] transition-all duration-500 pointer-events-none">
+                                                <item.icon className="w-24 h-24 text-blue-900" strokeWidth={1} />
+                                            </div>
+                                            <div className="relative z-10 flex flex-col items-start text-left">
+                                                <div className="mb-4 w-11 h-11 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
+                                                    <item.icon className="w-5.5 h-5.5 font-bold" strokeWidth={1.5} />
                                                 </div>
-                                                <p className="text-gray-500 font-bold text-[10px] uppercase tracking-widest mb-1">{card.label}</p>
-                                                <p className="text-2xl font-bold text-gray-900 tracking-tight">{card.val}</p>
+                                                <div className="space-y-1">
+                                                    <div className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#000d2e] via-blue-900 to-black tracking-tight">
+                                                        {item.value}
+                                                    </div>
+                                                    <p className="text-gray-500 font-semibold text-[10px] sm:text-[11px] group-hover:text-blue-700 transition-colors uppercase tracking-widest leading-tight">
+                                                        {item.label}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </motion.div>
                                     ))}
@@ -336,10 +352,10 @@ export default function ZohoContactForm() {
                         </motion.div>
 
                         {/* Right Side: Form */}
-                        <div className="lg:w-1/2 p-10 lg:p-16 bg-white relative border-l border-blue-50">
-                            <div className="relative z-10 mb-10">
-                                <h3 className="text-3xl lg:text-4xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-br from-blue-900 to-[#0a0a0a]">Get Expert Guidance</h3>
-                                <p className="text-gray-600">Fill in your details and we'll reach out within 24 hours</p>
+                        <div className="p-8 sm:p-12 lg:p-16 bg-white relative flex flex-col justify-center">
+                            <div className="relative z-10 mb-6 sm:mb-8">
+                                <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 tracking-tight">Let’s Get Started !!</h3>
+                                <p className="text-sm sm:text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500">Fill in your details and we'll reach out within 24 hours.</p>
                             </div>
 
                             <motion.form

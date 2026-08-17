@@ -237,11 +237,11 @@ export const navItemsNetSuite: NavSection[] = [
     {
         title: 'Services',
         children: [
-            { label: 'Digital Transformation', href: '/netsuite/services/digital-transformation', description: 'Modernize your business for the digital age.', icon: Rocket },
-            { label: 'Integration Services', href: '/netsuite/services/integration-services', description: 'Seamlessly connect your systems.', icon: Layers },
-            { label: 'Training Services', href: '/netsuite/services/training-services', description: 'Upskill your team with expert-led training.', icon: GraduationCap },
-            { label: 'Low-Code Application Development', href: '/netsuite/services/low-code', description: 'Build apps faster with minimal coding.', icon: Wrench },
-            { label: 'Managed Services', href: '/netsuite/services/managed-services', description: 'End-to-end IT management & support.', icon: Settings },
+            { label: 'Digital Transformation', href: '/netsuite/digital-transformation', description: 'Modernize your business for the digital age.', icon: Rocket },
+            { label: 'Integration Services', href: '/netsuite-integration', description: 'Seamlessly connect your systems.', icon: Layers },
+            { label: 'Training Services', href: '/netsuite/training-services', description: 'Upskill your team with expert-led training.', icon: GraduationCap },
+            { label: 'Low-Code Application Development', href: '/netsuite/low-code-application-development', description: 'Build apps faster with minimal coding.', icon: Wrench },
+            { label: 'Managed Services', href: '/netsuite-managed-support', description: 'End-to-end IT management & support.', icon: Settings },
         ],
     },
 
@@ -249,16 +249,16 @@ export const navItemsNetSuite: NavSection[] = [
     {
         title: 'Industries',
         children: [
-            { label: 'Software & Technology', href: '/netsuite/industries/software-and-technology', description: 'Tools for modern software companies.', icon: Monitor },
-            { label: 'IT & Professional Services', href: '/netsuite/industries/it-and-professional-services', description: 'Scaling solutions for IT firms.', icon: Briefcase },
-            { label: 'Wholesale Distribution', href: '/netsuite/industries/wholesale-distribution', description: 'Optimize supply chain & inventory.', icon: Truck },
-            { label: 'Advertising & Marketing', href: '/netsuite/industries/advertising-and-digital-marketing-agencies', description: 'Boost your digital campaigns.', icon: Megaphone },
-            { label: 'Media & Publishing', href: '/netsuite/industries/media-and-publishing', description: 'Solutions for media operations.', icon: Newspaper },
-            { label: 'Retail & E-Commerce', href: '/netsuite/industries/retail-and-e-commerce', description: 'End-to-end retail automation.', icon: Store },
-            { label: 'Transportation & Logistics', href: '/netsuite/industries/transportation-and-logistics', description: 'Smart logistics solutions.', icon: Truck },
-            { label: 'Manufacturing', href: '/netsuite/industries/manufacturing', description: 'Streamline production cycles.', icon: Factory },
-            { label: 'Telecom Industry', href: '/netsuite/industries/telecom-industry', description: 'Modernize billing & telecom operations.', icon: Wifi },
-            { label: 'Financial Services', href: '/netsuite/industries/financial-services', description: 'Compliance, risk & real-time insights.', icon: DollarSign },
+            { label: 'Software & Technology', href: '/netsuite/software-and-technology', description: 'Tools for modern software companies.', icon: Monitor },
+            { label: 'IT & Professional Services', href: '/netsuite/it-and-professional-services', description: 'Scaling solutions for IT firms.', icon: Briefcase },
+            { label: 'Wholesale Distribution', href: '/netsuite/wholesale-distribution', description: 'Optimize supply chain & inventory.', icon: Truck },
+            { label: 'Advertising & Marketing', href: '/netsuite/advertising-and-digital-marketing-agencies', description: 'Boost your digital campaigns.', icon: Megaphone },
+            { label: 'Media & Publishing', href: '/netsuite/media-and-publishing', description: 'Solutions for media operations.', icon: Newspaper },
+            { label: 'Retail & E-Commerce', href: '/netsuite/retail-and-e-commerce', description: 'End-to-end retail automation.', icon: Store },
+            { label: 'Transportation & Logistics', href: '/netsuite/transportation-and-logistics', description: 'Smart logistics solutions.', icon: Truck },
+            { label: 'Manufacturing', href: '/netsuite/manufacturing', description: 'Streamline production cycles.', icon: Factory },
+            { label: 'Telecom Industry', href: '/netsuite/telecom-industry', description: 'Modernize billing & telecom operations.', icon: Wifi },
+            { label: 'Financial Services', href: '/netsuite/financial-services', description: 'Compliance, risk & real-time insights.', icon: DollarSign },
         ],
     },
 

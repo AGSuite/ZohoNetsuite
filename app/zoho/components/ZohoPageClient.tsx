@@ -96,9 +96,7 @@ export default function ZohoPageClient({ blogs }: ZohoPageClientProps) {
         <FAQ variant="zoho" layout="sidebar" />
       </LazySection>
 
-      <LazySection height="800px">
-        <FooterContactForm platform="Zoho" />
-      </LazySection>
+      <FooterContactForm platform="Zoho" />
     </>
   );
 }

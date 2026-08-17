@@ -31,17 +31,17 @@ const industryIconMap: Record<string, React.ElementType> = {
 
 /* ------------------ ROUTES ------------------ */
 const industryRoutes: Record<string, string> = {
-  "Software and Technology": "/zoho/industries/software",
-  "IT and Professional Services": "/zoho/industries/it-services",
-  "Wholesale Distribution": "/zoho/industries/wholesale",
+  "Software and Technology": "/zoho/software-and-technology",
+  "IT and Professional Services": "/zoho/it-and-professional-services",
+  "Wholesale Distribution": "/zoho/wholesale-distribution",
   "Advertising and Digital Marketing Agencies":
-    "/zoho/industries/advertising-marketing",
-  "Media and Publishing": "/zoho/industries/media",
-  "Retail & E-Commerce": "/zoho/industries/retail",
-  "Transportation and Logistics": "/zoho/industries/transport",
-  "Manufacturing": "/zoho/industries/manufacturing",
-  "Financial Services": "/zoho/industries/financial-services",
-  "Telecom": "/zoho/industries/telecom",
+    "/zoho/advertising-and-digital-marketing-agencies",
+  "Media and Publishing": "/zoho/media-and-publishing",
+  "Retail & E-Commerce": "/zoho/retail-and-e-commerce",
+  "Transportation and Logistics": "/zoho/transportation-and-logistics",
+  "Manufacturing": "/zoho/manufacturing",
+  "Financial Services": "/zoho/financial-services",
+  "Telecom": "/zoho/telecom-industry",
 };
 
 /* ------------------ LIGHT GRADIENTS ------------------ */

@@ -1,6 +1,8 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
+import Script from "next/script";
+
 import { FaChevronDown } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -220,7 +222,8 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
 
   return (
     <div id={id} className={`w-full relative text-gray-800 ${variant === "zoho" ? "bg-white" : "bg-[#f0f4ff]"} scroll-mt-36`}>
-      <script
+      <Script
+        id={`faq-schema-${variant}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />

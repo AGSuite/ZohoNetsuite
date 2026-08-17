@@ -240,11 +240,11 @@ export const navItemsZoho: NavSection[] = [
     {
         title: "Services",
         children: [
-            { label: 'Digital Transformation', href: '/zoho/services/digital-transformation', description: 'Modernize your business for the digital age.', icon: Rocket },
-            { label: 'Integration Services', href: '/zoho/services/integration-services', description: 'Seamlessly connect your systems.', icon: Layers },
-            { label: 'Training Services', href: '/zoho/services/training-services', description: 'Upskill your team with expert-led training.', icon: GraduationCap },
-            { label: 'Low-Code Application Development', href: '/zoho/services/low-code', description: 'Build apps faster with minimal coding.', icon: Wrench },
-            { label: 'Managed Services', href: '/zoho/services/managed-services', description: 'End-to-end IT management & support.', icon: Settings },
+            { label: 'Digital Transformation', href: '/zoho/digital-transformation', description: 'Modernize your business for the digital age.', icon: Rocket },
+            { label: 'Integration Services', href: '/zoho/integration-services', description: 'Seamlessly connect your systems.', icon: Layers },
+            { label: 'Training Services', href: '/zoho/training-services', description: 'Upskill your team with expert-led training.', icon: GraduationCap },
+            { label: 'Low-Code Application Development', href: '/zoho/low-code-application-development', description: 'Build apps faster with minimal coding.', icon: Wrench },
+            { label: 'Managed Services', href: '/zoho/managed-services', description: 'End-to-end IT management & support.', icon: Settings },
         ]
     },
 
@@ -252,16 +252,16 @@ export const navItemsZoho: NavSection[] = [
     {
         title: "Industries",
         children: [
-            { label: 'Software & Technology', href: '/zoho/industries/software', description: 'Solutions for tech businesses.', icon: Monitor },
-            { label: 'IT & Professional Services', href: '/zoho/industries/it-services', description: 'Automation for service providers.', icon: Briefcase },
-            { label: 'Wholesale Distribution', href: '/zoho/industries/wholesale', description: 'Distribution & logistics tools.', icon: Truck },
-            { label: 'Advertising & Marketing', href: '/zoho/industries/advertising-marketing', description: 'Boost your campaigns.', icon: Megaphone },
-            { label: 'Media & Publishing', href: '/zoho/industries/media', description: 'Tools for media houses.', icon: Newspaper },
-            { label: 'Retail & E-Commerce', href: '/zoho/industries/retail', description: 'Retail automation suite.', icon: Store },
-            { label: 'Transportation & Logistics', href: '/zoho/industries/transport', description: 'Smart logistics systems.', icon: Truck },
-            { label: 'Manufacturing', href: '/zoho/industries/manufacturing', description: 'Optimize manufacturing cycles.', icon: Factory },
-            { label: 'Telecom Industry', href: '/zoho/industries/telecom', description: 'Modernize billing & telecom operations.', icon: Wifi },
-            { label: 'Financial Services', href: '/zoho/industries/financial-services', description: 'Compliance, risk & real-time insights.', icon: DollarSign },
+            { label: 'Software & Technology', href: '/zoho/software-and-technology', description: 'Solutions for tech businesses.', icon: Monitor },
+            { label: 'IT & Professional Services', href: '/zoho/it-and-professional-services', description: 'Automation for service providers.', icon: Briefcase },
+            { label: 'Wholesale Distribution', href: '/zoho/wholesale-distribution', description: 'Distribution & logistics tools.', icon: Truck },
+            { label: 'Advertising & Marketing', href: '/zoho/advertising-and-digital-marketing-agencies', description: 'Boost your campaigns.', icon: Megaphone },
+            { label: 'Media & Publishing', href: '/zoho/media-and-publishing', description: 'Tools for media houses.', icon: Newspaper },
+            { label: 'Retail & E-Commerce', href: '/zoho/retail-and-e-commerce', description: 'Retail automation suite.', icon: Store },
+            { label: 'Transportation & Logistics', href: '/zoho/transportation-and-logistics', description: 'Smart logistics systems.', icon: Truck },
+            { label: 'Manufacturing', href: '/zoho/manufacturing', description: 'Optimize manufacturing cycles.', icon: Factory },
+            { label: 'Telecom Industry', href: '/zoho/telecom-industry', description: 'Modernize billing & telecom operations.', icon: Wifi },
+            { label: 'Financial Services', href: '/zoho/financial-services', description: 'Compliance, risk & real-time insights.', icon: DollarSign },
         ]
     },
 

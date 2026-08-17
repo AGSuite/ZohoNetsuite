@@ -31,6 +31,17 @@ export default function FreeConsultationTopLevel() {
     useEffect(() => {
         setIsClient(true);
 
+        (window as any).rccallback409531000047791096 = function () {
+            const recap = document.getElementById('recap409531000047791096');
+            if (recap) {
+                recap.setAttribute('captcha-verified', 'true');
+            }
+            const recapErr = document.getElementById('recapErr409531000047791096');
+            if (recapErr && recapErr.style.visibility === 'visible') {
+                recapErr.style.visibility = 'hidden';
+            }
+        };
+
         (window as any).addAriaSelected409531000047791096 = function (event: any) {
             const optionElem = (event as any).target;
             const prev = optionElem.querySelector('[aria-selected=true]');
@@ -81,6 +92,13 @@ export default function FreeConsultationTopLevel() {
                 }
             }
             if ((window as any).validateEmail409531000047791096 && !(window as any).validateEmail409531000047791096()) return false;
+
+            const recap = document.getElementById('recap409531000047791096');
+            if (recap && recap.getAttribute('captcha-verified') !== 'true') {
+                const recapErr = document.getElementById('recapErr409531000047791096');
+                if (recapErr) recapErr.style.visibility = 'visible';
+                return false;
+            }
             return true;
         };
 
@@ -189,9 +207,9 @@ export default function FreeConsultationTopLevel() {
                             </div>
 
                             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-50 via-indigo-50 to-cyan-50 leading-[1.1] tracking-tight">
-                                Ignite Your Enterprise <br />
+                                Accelerate Enterprise Growth <br />
                                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-indigo-300 to-cyan-200">
-                                    Evolution with Expert
+                                    with Free NetSuite ERP Consultation
                                 </span>
                             </h1>
 
@@ -260,22 +278,18 @@ export default function FreeConsultationTopLevel() {
 
                                 <div className="relative z-10 p-8 lg:p-10">
                                     <div className="mb-8 border-b border-gray-100 pb-6">
-                                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3">
-                                            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-                                            Schedule Free Consultation
-                                        </div>
-                                        <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mb-2">
-                                            Request Your Free NetSuite Strategy Session
+                                        <h3 className="text-2xl sm:text-3xl font-medium text-gray-900 tracking-tight mb-2">
+                                            Book Your Free NetSuite ERP Consultation
                                         </h3>
                                         <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                                            Speak with our certified NetSuite consultants to optimize your business operations and accelerate growth.
+                                            Fill out the form below to connect with our certified experts.
                                         </p>
                                     </div>
-                                    <form 
+                                    <form
                                         id="webform409531000047791096"
-                                        action="https://crm.zoho.in/crm/WebToLeadForm" 
-                                        name="WebToLeads409531000047791096" 
-                                        method="POST" 
+                                        action="https://crm.zoho.in/crm/WebToLeadForm"
+                                        name="WebToLeads409531000047791096"
+                                        method="POST"
                                         onSubmit={(e) => {
                                             if ((window as any).checkMandatory409531000047791096 && !(window as any).checkMandatory409531000047791096()) {
                                                 e.preventDefault();
@@ -298,7 +312,7 @@ export default function FreeConsultationTopLevel() {
                                                     message: formData.get('LEADCF123'),
                                                     subjectTitle: 'NetSuite Free Consultation Form Enquiry'
                                                 })
-                                            }).catch(() => {});
+                                            }).catch(() => { });
                                         }}
                                         acceptCharset="UTF-8"
                                         className="space-y-4"
@@ -477,9 +491,9 @@ export default function FreeConsultationTopLevel() {
                                         </div>
 
                                         <div className="space-y-2 py-2">
-                                             <div className="g-recaptcha" data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_" data-theme="light" data-callback="rccallback409531000047791096" captcha-verified="false" id="recap409531000047791096"></div>
-                                             <div id="recapErr409531000047791096" style={{ visibility: 'hidden', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
-                                         </div>
+                                            <div className="g-recaptcha" data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_" data-theme="light" data-callback="rccallback409531000047791096" captcha-verified="false" id="recap409531000047791096"></div>
+                                            <div id="recapErr409531000047791096" style={{ visibility: 'hidden', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
+                                        </div>
 
                                         <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm uppercase tracking-widest cursor-pointer" value="Submit" />
                                     </form>
@@ -567,7 +581,7 @@ export default function FreeConsultationTopLevel() {
                     </div>
                 </div>
             </section>
-            
+
             <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
             <Script id="zoho-salesiq-ns-consult" strategy="afterInteractive">
                 {`

@@ -185,7 +185,7 @@ export default function ZohoLifeAtAGSuite() {
               transition={{ delay: 0.5 }}
             >
               <Link
-                href="#team"
+                href="#celebrations"
                 className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 Discover Our Culture
@@ -669,7 +669,7 @@ export default function ZohoLifeAtAGSuite() {
       {/* ─────────────────────────────────────────────────────────
           OFFICE EVENTS & CELEBRATIONS
       ────────────────────────────────────────────────────────── */}
-      <section className="py-24 bg-gray-50 overflow-hidden">
+      <section id="celebrations" className="py-24 bg-gray-50 overflow-hidden scroll-mt-28">
         <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
           <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[10px] font-medium uppercase tracking-widest mb-4 border border-blue-100/50 mx-auto">
             Life Beyond Work

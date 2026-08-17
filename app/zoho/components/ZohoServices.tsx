@@ -23,7 +23,7 @@ const services: ServiceItem[] = [
     heading: "",
     description: "Modernize your business for the digital age with our strategic transformation roadmap.",
     bgImage: "/images/zoho-services/srv_digital_transformation_v5.png",
-    href: "/zoho/services/digital-transformation",
+    href: "/zoho/digital-transformation",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -35,7 +35,7 @@ const services: ServiceItem[] = [
     heading: "",
     description: "Seamlessly connect Zoho with your entire ecosystem via robust API-led integrations.",
     bgImage: "/images/zoho-services/srv_integration_v5.png",
-    href: "/zoho/services/integration-services",
+    href: "/zoho/integration-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -47,7 +47,7 @@ const services: ServiceItem[] = [
     heading: "",
     description: "Upskill your team with expert-led Zoho training to maximise platform adoption.",
     bgImage: "/images/zoho-services/srv_training_v5.png",
-    href: "/zoho/services/training-services",
+    href: "/zoho/training-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
@@ -60,7 +60,7 @@ const services: ServiceItem[] = [
     heading: "",
     description: "Build powerful custom applications with Zoho Creator and extend your business faster.",
     bgImage: "/images/zoho-services/srv_low_code.png",
-    href: "/zoho/services/low-code",
+    href: "/zoho/low-code-application-development",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
@@ -72,7 +72,7 @@ const services: ServiceItem[] = [
     heading: "",
     description: "End-to-end IT management and dedicated support to keep your Zoho operations running smoothly.",
     bgImage: "/images/zoho-services/srv_managed.png",
-    href: "/zoho/services/managed-services",
+    href: "/zoho/managed-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />

@@ -9,9 +9,13 @@
  *   <JsonLd schema={buildServiceSchema({ name: "NetSuite ERP", ... })} />
  *   <JsonLd schema={buildWebPageSchema({ title: "...", ... })} />
  */
-export default function JsonLd({ schema }: { schema: Record<string, unknown> }) {
+import Script from "next/script";
+
+export default function JsonLd({ schema, id }: { schema: Record<string, unknown>; id?: string }) {
+  const scriptId = id || `jsonld-${Math.random().toString(36).substring(2, 9)}`;
   return (
-    <script
+    <Script
+      id={scriptId}
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />

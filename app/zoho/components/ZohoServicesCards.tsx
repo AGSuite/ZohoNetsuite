@@ -10,37 +10,37 @@ const services = [
     title: "Zoho Implementation",
     description: "Organizations can benefit from professional assistance in implementing Zoho solutions tailored to their specific business requirements.",
     icon: Rocket,
-    href: "/zoho/services/implementation",
+    href: "/zoho/implementation",
   },
   {
     title: "Zoho Integration",
     description: "Expert support is available for seamlessly integrating Zoho applications with existing systems and third-party tools, enhancing operational efficiency.",
     icon: Layers,
-    href: "/zoho/services/integration-services",
+    href: "/zoho/integration-services",
   },
   {
     title: "Zoho Customization",
     description: "Businesses can leverage custom development options to tailor Zoho applications to their unique workflows and operational needs.",
     icon: Wrench,
-    href: "/zoho/services/customization",
+    href: "/zoho/customization",
   },
   {
     title: "Zoho Managed Support",
     description: "Ongoing support and maintenance services ensure the smooth functioning and optimal performance of Zoho solutions, providing peace of mind to organizations.",
     icon: Settings,
-    href: "/zoho/services/managed-services",
+    href: "/zoho/managed-services",
   },
   {
     title: "Zoho Training",
     description: "Comprehensive training programs are available to empower teams with the necessary knowledge and skills to effectively utilize Zoho applications, maximizing their potential for business growth.",
     icon: GraduationCap,
-    href: "/zoho/services/training-services",
+    href: "/zoho/training-services",
   },
   {
     title: "Zoho Consulting",
     description: "Strategic guidance from certified experts to maximise your Zoho ROI and business outcomes aligned with your industry requirements.",
     icon: HeartHandshake,
-    href: "/zoho/services/consulting",
+    href: "/zoho/consulting",
   },
 ];
 

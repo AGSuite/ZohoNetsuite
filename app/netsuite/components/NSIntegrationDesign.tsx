@@ -82,7 +82,7 @@ const NSIntegrationDesign = () => {
                             transition={{ delay: 0.8 }}
                         >
                             <Link
-                                href="/netsuite/solutions"
+                                href="/netsuite-integration"
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-600 transition-all group shadow-xl hover:shadow-blue-500/25"
                             >
                                 Explore Details <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

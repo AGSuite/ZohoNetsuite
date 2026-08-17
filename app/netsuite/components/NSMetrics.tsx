@@ -109,13 +109,9 @@ const NSMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) => 
                         animate={badgeInView ? { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut", delay: 0 } } : {}}
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-xl"
                     >
-                        <div className="flex items-center gap-1">
-                            {[1, 2, 3, 4, 5].map((i) => (
-                                <Star key={i} className="w-3 h-3 text-yellow-500 fill-yellow-500" />
-                            ))}
-                        </div>
-                        <span className="text-[10px] font-bold text-white uppercase tracking-[0.2em]">
-                            4.9/5 · Top Rated NetSuite Partner 2025
+                        <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                        <span className="text-[11px] font-bold text-white uppercase tracking-[0.2em]">
+                            Trusted NetSuite Solution Provider
                         </span>
                     </motion.div>
 
@@ -181,7 +177,7 @@ const NSMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) => 
                             <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-cyan-300 via-blue-300 via-purple-300 to-pink-300 blur-md opacity-0 group-hover:opacity-100 transition duration-300 animate-gradient-x" />
 
                             <Link
-                                href="#contact-form"
+                                href="/netsuite/free-consultation"
                                 className="relative inline-flex items-center justify-center p-[1.5px] rounded-xl overflow-hidden font-bold text-base transition-all duration-300 hover:scale-105 active:scale-100"
                                 suppressHydrationWarning={true}
                             >

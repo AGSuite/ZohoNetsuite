@@ -97,7 +97,7 @@ export default function ZohoFreeConsultationPage() {
                 }
             }
             if ((window as any).validateEmail409531000047791049 && !(window as any).validateEmail409531000047791049()) return false;
-            
+
             const recap = document.getElementById('recap409531000047791049');
             if (recap && recap.getAttribute('captcha-verified') === 'false') {
                 const recapErr = document.getElementById('recapErr409531000047791049');
@@ -118,7 +118,7 @@ export default function ZohoFreeConsultationPage() {
                         theme: 'light',
                         callback: (window as any).rccallback409531000047791049
                     });
-                } catch (e) {}
+                } catch (e) { }
             }
         };
 
@@ -204,9 +204,9 @@ export default function ZohoFreeConsultationPage() {
                             </div>
 
                             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-50 via-indigo-50 to-cyan-50 leading-[1.1] tracking-tight">
-                                Ignite Your <br />
+                                Scale Your Business  <br />
                                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-indigo-300 to-cyan-200">
-                                    Enterprise Evolution
+                                    with Zoho Solutions
                                 </span>
                             </h1>
 
@@ -266,18 +266,18 @@ export default function ZohoFreeConsultationPage() {
                         >
                             <div className="relative bg-white rounded-[2.5rem] shadow-[0_32px_80px_rgba(0,0,0,0.5)] overflow-hidden">
                                 <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600" />
-                                
+
                                 <div className="relative z-10 p-8 lg:p-10">
                                     <div className="mb-8 border-b border-gray-100 pb-6">
-                                        <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Book Discovery Session</h2>
-                                        <p className="text-gray-500 text-base">Select your preferred focus area — we'll secure your session within 24 hours.</p>
+                                        <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Book Free Consultation</h2>
+                                        <p className="text-gray-500 text-base">Schedule a 1-on-1 strategy call with our certified Zoho experts — we'll secure your session within 24 hours.</p>
                                     </div>
 
-                                    <form 
+                                    <form
                                         id="webform409531000047791049"
-                                        action="https://crm.zoho.in/crm/WebToLeadForm" 
-                                        name="WebToLeads409531000047791049" 
-                                        method="POST" 
+                                        action="https://crm.zoho.in/crm/WebToLeadForm"
+                                        name="WebToLeads409531000047791049"
+                                        method="POST"
                                         onSubmit={(e) => {
                                             if ((window as any).checkMandatory409531000047791049 && !(window as any).checkMandatory409531000047791049()) {
                                                 e.preventDefault();
@@ -300,7 +300,7 @@ export default function ZohoFreeConsultationPage() {
                                                     message: formData.get('LEADCF123'),
                                                     subjectTitle: 'Zoho Free Consultation Form Enquiry'
                                                 })
-                                            }).catch(() => {});
+                                            }).catch(() => { });
                                         }}
                                         acceptCharset="UTF-8"
                                         className="space-y-4"
@@ -399,21 +399,21 @@ export default function ZohoFreeConsultationPage() {
 
                                         {/* Captcha Section */}
                                         <div className="flex flex-col gap-2 my-2">
-                                          <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
-                                          <div
-                                            className="g-recaptcha"
-                                            data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_"
-                                            data-theme="light"
-                                            data-callback="rccallback409531000047791049"
-                                            captcha-verified="false"
-                                            id="recap409531000047791049"
-                                          ></div>
-                                          <div
-                                            id="recapErr409531000047791049"
-                                            style={{ visibility: 'hidden', color: '#ef4444', fontSize: '12px' }}
-                                          >
-                                            Captcha validation failed. If you are not a robot then please try again.
-                                          </div>
+                                            <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
+                                            <div
+                                                className="g-recaptcha"
+                                                data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_"
+                                                data-theme="light"
+                                                data-callback="rccallback409531000047791049"
+                                                captcha-verified="false"
+                                                id="recap409531000047791049"
+                                            ></div>
+                                            <div
+                                                id="recapErr409531000047791049"
+                                                style={{ visibility: 'hidden', color: '#ef4444', fontSize: '12px' }}
+                                            >
+                                                Captcha validation failed. If you are not a robot then please try again.
+                                            </div>
                                         </div>
 
                                         <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm uppercase tracking-widest cursor-pointer" value="Submit" />

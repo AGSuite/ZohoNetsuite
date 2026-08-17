@@ -28,6 +28,11 @@ const ScrollRestorer = dynamic(
     { ssr: false }
 );
 
+const AnchorScrollHandler = dynamic(
+    () => import('./AnchorScrollHandler'),
+    { ssr: false }
+);
+
 export default function ClientOverlays() {
     const pathname = usePathname();
     const isStudio = pathname?.includes('/studio');
@@ -38,6 +43,7 @@ export default function ClientOverlays() {
         <>
             <ScrollRestorer />
             <SmoothScroll />
+            <AnchorScrollHandler />
             <SocialSidebar />
             <ScrollToTopButton />
         </>

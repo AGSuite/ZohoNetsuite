@@ -189,39 +189,24 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Speculation Rules API for conservative prefetching */}
-        <script
-          type="speculationrules"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              prefetch: [
-                {
-                  source: "document",
-                  where: {
-                    href_matches: "/*"
-                  },
-                  eagerness: "conservative"
-                }
-              ]
-            })
-          }}
-        />
-
         {/* Performance: preconnect & DNS prefetch */}
         <link rel="dns-prefetch" href="https://cdn.sanity.io" />
 
         {/* JSON-LD — Organisation (rich knowledge panel & brand signals) */}
-        <script
+        <Script
+          id="org-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
         {/* JSON-LD — WebSite (enables Sitelinks search box in Google SERPs) */}
-        <script
+        <Script
+          id="website-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         {/* JSON-LD — LocalBusiness / ProfessionalService (describes business locations, categories, and attributes) */}
-        <script
+        <Script
+          id="local-business-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />

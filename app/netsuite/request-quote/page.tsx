@@ -35,10 +35,82 @@ export default function RequestQuotePremium() {
     useEffect(() => {
         setIsClient(true);
 
+        (window as any).rccallback409531000047791096 = function () {
+            const recap = document.getElementById('recap409531000047791096');
+            if (recap) {
+                recap.setAttribute('captcha-verified', 'true');
+            }
+            const recapErr = document.getElementById('recapErr409531000047791096');
+            if (recapErr && recapErr.style.visibility === 'visible') {
+                recapErr.style.visibility = 'hidden';
+            }
+        };
+
+        (window as any).addAriaSelected409531000047791096 = function (event: any) {
+            const optionElem = (event as any).target;
+            const prev = optionElem.querySelector('[aria-selected=true]');
+            if (prev) prev.removeAttribute('aria-selected');
+            optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
+        };
+
+        (window as any).validateEmail409531000047791096 = function () {
+            const form = document.forms.namedItem('WebToLeads409531000047791096') as HTMLFormElement;
+            if (!form) return true;
+            const emailFld = form.querySelectorAll('[data-ftype="email"]');
+            for (let i = 0; i < emailFld.length; i++) {
+                const emailVal = (emailFld[i] as HTMLInputElement).value;
+                if ((emailVal.replace(/^\s+|\s+$/g, '')).length !== 0) {
+                    const atpos = emailVal.indexOf('@');
+                    const dotpos = emailVal.lastIndexOf('.');
+                    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+                        alert('Please enter a valid email address.');
+                        (emailFld[i] as HTMLInputElement).focus();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        };
+
+        (window as any).checkMandatory409531000047791096 = function () {
+            const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF127', 'LEADCF166'];
+            const fldLangVal = ['Company Name', 'Name', 'Role', 'Email', 'Mobile', 'Annual Revenue', 'How We Can Help You', 'How did you hear about us.', 'Netsuite Services'];
+            const form = document.forms.namedItem('WebToLeads409531000047791096') as HTMLFormElement;
+            if (!form) return false;
+
+            for (let i = 0; i < mndFileds.length; i++) {
+                const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+                if (fieldObj) {
+                    if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length === 0) {
+                        alert(fldLangVal[i] + ' cannot be empty.');
+                        fieldObj.focus();
+                        return false;
+                    } else if (fieldObj.nodeName === 'SELECT') {
+                        const selectField = fieldObj as HTMLSelectElement;
+                        if (selectField.options[selectField.selectedIndex].value === '' || selectField.options[selectField.selectedIndex].value === '-None-') {
+                            alert(fldLangVal[i] + ' cannot be none.');
+                            fieldObj.focus();
+                            return false;
+                        }
+                    }
+                }
+            }
+            if ((window as any).validateEmail409531000047791096 && !(window as any).validateEmail409531000047791096()) return false;
+
+            const recap = document.getElementById('recap409531000047791096');
+            if (recap && recap.getAttribute('captcha-verified') !== 'true') {
+                const recapErr = document.getElementById('recapErr409531000047791096');
+                if (recapErr) recapErr.style.visibility = 'visible';
+                return false;
+            }
+            return true;
+        };
+
         const renderRecaptcha = () => {
             const container = document.getElementById('recap409531000047791096');
             if ((window as any).grecaptcha && container) {
                 try {
+                    if (container.children.length > 0) return;
                     (window as any).grecaptcha.render('recap409531000047791096', {
                         'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
                         'theme': 'light',
@@ -97,29 +169,6 @@ export default function RequestQuotePremium() {
                 ready: function () { }
             };
         }
-
-        // Define all required global functions
-        window.addAriaSelected409531000042578178 = function (e: any) {
-            const optionElem = e.target as HTMLSelectElement;
-            const previousSelectedOption = optionElem.querySelector('[aria-selected="true"]');
-            if (previousSelectedOption) {
-                previousSelectedOption.removeAttribute('aria-selected');
-            }
-            if (optionElem.options && optionElem.options[optionElem.selectedIndex]) {
-                optionElem.options[optionElem.selectedIndex].setAttribute('aria-selected', 'true');
-            }
-        };
-
-        window.rccallback409531000042578178 = function () {
-            const recap = document.getElementById('recap409531000042578178');
-            if (recap) {
-                recap.setAttribute('captcha-verified', 'true');
-            }
-            const recapErr = document.getElementById('recapErr409531000042578178');
-            if (recapErr && recapErr.style.visibility === 'visible') {
-                recapErr.style.visibility = 'hidden';
-            }
-        };
     }, []);
 
     if (!isClient) return null;
@@ -187,9 +236,9 @@ export default function RequestQuotePremium() {
                             </div>
 
                             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-50 via-indigo-50 to-cyan-50 leading-[1.1] tracking-tight">
-                                Transform Potential <br />
+                                Get a Quick, Customized Quote <br />
                                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-indigo-300 to-cyan-200">
-                                    into Precision Planning.
+                                    Built Around Your Business Needs
                                 </span>
                             </h1>
 
@@ -250,14 +299,18 @@ export default function RequestQuotePremium() {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="relative"
                         >
-                            <div className="bg-white rounded-[2.5rem] shadow-[0_32px_80px_rgba(0,0,0,0.5)] overflow-hidden">
+                            <div className="relative bg-white rounded-3xl shadow-[0_32px_80px_rgba(0,0,0,0.5)] overflow-hidden">
                                 {/* Top accent bar */}
                                 <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600" />
 
-                                <div className="p-8 lg:p-10">
+                                {/* Light blobs inside form */}
+                                <div className="absolute top-0 right-0 w-[280px] h-[280px] bg-blue-50/80 rounded-full blur-[80px] translate-x-1/4 -translate-y-1/4 pointer-events-none" />
+                                <div className="absolute bottom-0 left-0 w-[220px] h-[220px] bg-indigo-50/60 rounded-full blur-[70px] -translate-x-1/4 translate-y-1/4 pointer-events-none" />
+
+                                <div className="relative z-10 p-8 lg:p-10">
                                     <div className="mb-8">
                                         <h2 className="text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-indigo-900 to-cyan-900 sm:text-3xl font-medium mb-2">Request Your Quote</h2>
-                                        <p className="text-gray-500 text-base">Fill out the form below and we ll get back to you within 24 hours</p>
+                                        <p className="text-gray-500 text-base">Fill out the form below and we will get back to you within 24 hours.</p>
                                     </div>
 
                                     <div id='crmWebToEntityForm' className='zcwf_lblLeft crmWebToEntityForm'>
@@ -291,7 +344,7 @@ export default function RequestQuotePremium() {
                                                 }).catch(() => {});
                                             }}
                                             acceptCharset='UTF-8'
-                                            className="space-y-4"
+                                            className="space-y-5"
                                         >
                                             <input type='text' className="hidden" name='xnQsjsdp' value='d53cf6d2d91bd2c21647f1856ba77f750df004edeb1b81d56dde47d4e8ff036e' readOnly />
                                             <input type='hidden' name='zc_gad' id='zc_gad' value='' />
@@ -309,9 +362,12 @@ export default function RequestQuotePremium() {
                                             </select>
                                             <input type="hidden" name="No of Employees" value="0" />
 
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Name *</label>
+                                            {/* Name + Email */}
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                                <div className="space-y-1.5">
+                                                    <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
+                                                        Name <span className="text-blue-600">*</span>
+                                                    </label>
                                                     <input
                                                         type='text'
                                                         id='Last_Name'
@@ -319,11 +375,13 @@ export default function RequestQuotePremium() {
                                                         required
                                                         name='Last Name'
                                                         maxLength={80}
-                                                        className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
+                                                        className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
                                                     />
                                                 </div>
-                                                <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Email *</label>
+                                                <div className="space-y-1.5">
+                                                    <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
+                                                        Email <span className="text-blue-600">*</span>
+                                                    </label>
                                                     <input
                                                         type='text'
                                                         id='Email'
@@ -332,23 +390,31 @@ export default function RequestQuotePremium() {
                                                         required
                                                         name='Email'
                                                         maxLength={100}
-                                                        className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
+                                                        className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
                                                     />
                                                 </div>
-                                                <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Role *</label>
+                                            </div>
+
+                                            {/* Role + Mobile */}
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                                <div className="space-y-1.5">
+                                                    <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
+                                                        Role <span className="text-blue-600">*</span>
+                                                    </label>
                                                     <input
                                                         type='text'
                                                         id='Designation'
                                                         required
                                                         name='Designation'
-                                                        placeholder='Manager'
+                                                        placeholder='CFO / Manager'
                                                         maxLength={100}
-                                                        className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
+                                                        className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
                                                     />
                                                 </div>
-                                                <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Mobile *</label>
+                                                <div className="space-y-1.5">
+                                                    <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
+                                                        Mobile <span className="text-blue-600">*</span>
+                                                    </label>
                                                     <input
                                                         type='text'
                                                         id='Mobile'
@@ -356,25 +422,35 @@ export default function RequestQuotePremium() {
                                                         required
                                                         name='Mobile'
                                                         maxLength={30}
-                                                        className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
+                                                        className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
                                                     />
                                                 </div>
-                                                <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Company Name *</label>
-                                                    <input
-                                                        type='text'
-                                                        id='Company'
-                                                        placeholder='Company Inc.'
-                                                        required
-                                                        name='Company'
-                                                        maxLength={200}
-                                                        className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all placeholder-gray-400"
-                                                    />
-                                                </div>
-                                                <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Netsuite Services *</label>
+                                            </div>
+
+                                            {/* Company Name */}
+                                            <div>
+                                                <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
+                                                    Company Name <span className="text-blue-600">*</span>
+                                                </label>
+                                                <input
+                                                    type='text'
+                                                    id='Company'
+                                                    placeholder='Company Inc.'
+                                                    required
+                                                    name='Company'
+                                                    maxLength={200}
+                                                    className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
+                                                />
+                                            </div>
+
+                                            {/* Netsuite Services + Annual Revenue */}
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                                <div>
+                                                    <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
+                                                        Netsuite Services <span className="text-blue-600">*</span>
+                                                    </label>
                                                     <select
-                                                        className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
+                                                        className='w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer'
                                                         id='LEADCF166'
                                                         name='LEADCF166'
                                                         defaultValue=""
@@ -394,11 +470,12 @@ export default function RequestQuotePremium() {
                                                         <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
                                                     </select>
                                                 </div>
-
-                                                <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">Annual Revenue *</label>
+                                                <div>
+                                                    <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
+                                                        Annual Revenue <span className="text-blue-600">*</span>
+                                                    </label>
                                                     <select
-                                                        className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
+                                                        className='w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer'
                                                         id='LEADCF19'
                                                         name='LEADCF19'
                                                         required
@@ -414,38 +491,45 @@ export default function RequestQuotePremium() {
                                                         <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
                                                         <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
                                                         <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
-                                                        <option value="More than 2000 Cr ($ 250M+) font-bold">More than 2000 Cr ($ 250M+)</option>
-                                                    </select>
-                                                </div>
-                                                <div className="space-y-1">
-                                                    <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">How did you hear about us. *</label>
-                                                    <select
-                                                        className='w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm outline-none transition-all appearance-none cursor-pointer'
-                                                        id='LEADCF127'
-                                                        name='LEADCF127'
-                                                        required
-                                                        onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)}
-                                                    >
-                                                        <option value="-None-">-None-</option>
-                                                        <option value="Email">Email</option>
-                                                        <option value="Event">Event</option>
-                                                        <option value="Friend/Associate">Friend/Associate</option>
-                                                        <option value="Search">Search</option>
-                                                        <option value="Social Media">Social Media</option>
-                                                        <option value="Referral">Referral</option>
+                                                        <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
                                                     </select>
                                                 </div>
                                             </div>
 
-                                            <div className="space-y-1">
-                                                <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider ml-1">How We Can Help You *</label>
+                                            {/* How did you hear about us */}
+                                            <div>
+                                                <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
+                                                    How did you hear about us. <span className="text-blue-600">*</span>
+                                                </label>
+                                                <select
+                                                    className='w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer'
+                                                    id='LEADCF127'
+                                                    name='LEADCF127'
+                                                    required
+                                                    onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)}
+                                                >
+                                                    <option value="-None-">-None-</option>
+                                                    <option value="Email">Email</option>
+                                                    <option value="Event">Event</option>
+                                                    <option value="Friend/Associate">Friend/Associate</option>
+                                                    <option value="Search">Search</option>
+                                                    <option value="Social Media">Social Media</option>
+                                                    <option value="Referral">Referral</option>
+                                                </select>
+                                            </div>
+
+                                            {/* How We Can Help You */}
+                                            <div>
+                                                <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
+                                                    How We Can Help You <span className="text-blue-600">*</span>
+                                                </label>
                                                 <textarea
                                                     id='LEADCF123'
                                                     name='LEADCF123'
                                                     required
-                                                    rows={3}
+                                                    rows={4}
                                                     placeholder="Share your NetSuite requirement..."
-                                                    className="w-full bg-blue-50/50 border border-blue-100 focus:border-blue-500 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400"
+                                                    className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all resize-none placeholder-gray-400"
                                                 />
                                             </div>
 

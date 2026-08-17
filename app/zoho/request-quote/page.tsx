@@ -206,9 +206,9 @@ export default function ZohoRequestQuotePage() {
                             </div>
 
                             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-50 via-indigo-50 to-cyan-50 leading-[1.1] tracking-tight">
-                                Accelerate Growth with <br />
+                                Get a Quick, Customized Quote <br />
                                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-indigo-300 to-cyan-200">
-                                    Custom Zoho Pricing
+                                    Built Around Your Business Needs
                                 </span>
                             </h1>
 
@@ -271,8 +271,8 @@ export default function ZohoRequestQuotePage() {
                                 
                                 <div className="relative z-10 p-8 lg:p-10">
                                     <div className="mb-8 border-b border-gray-100 pb-6">
-                                        <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Request Project Estimate</h2>
-                                        <p className="text-gray-500 text-base">Fill in your requirements below — our solution architects will analyze your scope and respond shortly.</p>
+                                        <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Request Your Quote</h2>
+                                        <p className="text-gray-500 text-base">Fill out the form below and we will get back to you within 24 hours.</p>
                                     </div>
 
                                     <form 

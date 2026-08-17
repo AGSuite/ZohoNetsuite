@@ -283,7 +283,7 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
                         </p>
                     </div>
                     <div className="shrink-0 flex md:block items-center justify-start">
-                        <Link href="#contact" className="inline-flex items-center justify-center gap-3 bg-white text-[#001f5c] font-black uppercase tracking-widest text-[13px] px-10 py-5 rounded-2xl hover:bg-blue-50 transition-all shadow-2xl hover:shadow-white/10 hover:-translate-y-0.5 active:scale-95">
+                        <Link href="#contact-form" className="inline-flex items-center justify-center gap-3 bg-white text-[#001f5c] font-black uppercase tracking-widest text-[13px] px-10 py-5 rounded-2xl hover:bg-blue-50 transition-all shadow-2xl hover:shadow-white/10 hover:-translate-y-0.5 active:scale-95">
                             Get a Free Consultation <ChevronRight className="w-4 h-4" />
                         </Link>
                     </div>

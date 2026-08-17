@@ -258,6 +258,13 @@ export default function ContactPage() {
         }
       }
       if ((window as any).validateEmail409531000047791096 && !(window as any).validateEmail409531000047791096()) return false;
+
+      const recap = document.getElementById('recap409531000047791096');
+      if (recap && recap.getAttribute('captcha-verified') !== 'true') {
+        const recapErr = document.getElementById('recapErr409531000047791096');
+        if (recapErr) recapErr.style.visibility = 'visible';
+        return false;
+      }
       return true;
     };
 
@@ -413,10 +420,10 @@ export default function ContactPage() {
               </div>
 
               {/* H1 */}
-              <h1 className="text-4xl sm:text-5xl xl:text-5xl font-medium text-white leading-[1.1] tracking-tight">
+              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium text-white leading-[1.1] tracking-tight">
                 Scale Your Business with{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300">
-                  NetSuite Experts
+                  Oracle NetSuite ERP
                 </span>
               </h1>
 
@@ -1058,12 +1065,6 @@ export default function ContactPage() {
                       <Mail className="w-3.5 h-3.5 text-cyan-400" />
                     </div>
                     <span className="text-xs sm:text-sm font-semibold tracking-wide">contact@agsuitetech.com</span>
-                  </a>
-                  <a href="tel:+919096012100" className="flex items-center gap-2.5 hover:text-cyan-400 transition-colors group">
-                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
-                      <Phone className="w-3.5 h-3.5 text-cyan-400" />
-                    </div>
-                    <span className="text-xs sm:text-sm font-semibold tracking-wide">+91 909 601 2100</span>
                   </a>
                 </div>
               </div>

@@ -1312,7 +1312,7 @@ export const INDUSTRY_PAGES: Record<
   string,
   { title: string; description: string; keywords: string[]; category: string; publishedTime: string }
 > = {
-  "/zoho/industries/advertising-marketing": {
+  "/zoho/advertising-and-digital-marketing-agencies": {
     "title": "Manage Campaigns & Margins Effectively with Zoho | AGSuite",
     "description": "Integrate your project management and financials to gain real-time visibility into campaign profitability. Zoho helps agencies optimize resource allocation and ",
     "keywords": [
@@ -1324,7 +1324,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/zoho/industries/it-services": {
+  "/zoho/it-and-professional-services": {
     "title": "Maximize Billable Hours & Delivery with Zoho | AGSuite",
     "description": "Streamline project accounting, automate resource allocation, and gain real-time visibility with the unified Zoho cloud suite built for modern IT service provide",
     "keywords": [
@@ -1336,7 +1336,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/zoho/industries/manufacturing": {
+  "/zoho/manufacturing": {
     "title": "Build the Future of Your Factory Floor with Zoho | AGSuite",
     "description": "Streamline production cycles, tighten supply chains, and gain real-time visibility with the unified Zoho cloud suite built for modern manufacturers.",
     "keywords": [
@@ -1348,7 +1348,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/zoho/industries/media": {
+  "/zoho/media-and-publishing": {
     "title": "Optimize Ad Sales & Subscriptions with Zoho | AGSuite",
     "description": "Manage the entire content lifecycle—from ad sales to subscriber management—on a single cloud platform. Drive digital transformation for your media house.",
     "keywords": [
@@ -1360,7 +1360,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/zoho/industries/retail": {
+  "/zoho/retail-and-e-commerce": {
     "title": "Deliver Perfect Omnichannel Experiences with Zoho | AGSuite",
     "description": "Connect your online store, physical POS, and warehouse back-office on a single cloud platform. Deliver unified, personalized customer journeys across every chan",
     "keywords": [
@@ -1372,7 +1372,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/zoho/industries/software": {
+  "/zoho/software-and-technology": {
     "title": "Accelerate Your SaaS Growth with Zoho | AGSuite",
     "description": "Automate complex subscription billing, revenue recognition, and global financial consolidations with the unified Zoho cloud suite tailored for high-growth tech ",
     "keywords": [
@@ -1384,7 +1384,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/zoho/industries/transport": {
+  "/zoho/transportation-and-logistics": {
     "title": "Drive Operational Excellence with Zoho | AGSuite",
     "description": "Gain complete visibility across your global shipments, fleet management, and logistics financials with the unified Zoho cloud suite tailored for the transportat",
     "keywords": [
@@ -1396,7 +1396,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/zoho/industries/wholesale": {
+  "/zoho/wholesale-distribution": {
     "title": "Maximize Supply Chain Efficiency with Zoho | AGSuite",
     "description": "Run your entire distribution business on a unified cloud suite. Automate procurement, optimize warehouse operations, and improve order fulfillment to scale glob",
     "keywords": [
@@ -1408,7 +1408,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/zoho/industries/telecom": {
+  "/zoho/telecom-industry": {
     "title": "Zoho for Telecom Industry — Billing, CRM & Analytics | AGSuite",
     "description": "Modernize your telecom operations with Zoho's unified cloud suite. Automate subscription billing, CRM integration, and real-time analytics. AGSuite Zoho Premium Partner.",
     "keywords": [
@@ -1422,7 +1422,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/zoho/industries/financial-services": {
+  "/zoho/financial-services": {
     "title": "Zoho for Financial Services — Compliance, Risk & Reporting | AGSuite",
     "description": "Streamline financial operations with Zoho's integrated suite. Compliance automation, real-time analytics, multi-entity management, and enterprise-grade security.",
     "keywords": [
@@ -1436,7 +1436,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/advertising-and-digital-marketing-agencies": {
+  "/netsuite/advertising-and-digital-marketing-agencies": {
     "title": "NetSuite for Advertising & Marketing Agencies | AGSuite",
     "description": "Run a more profitable agency with a cloud ERP purpose-built for project-based billing, resource management, and client financial visibility. NetSuite empowers a",
     "keywords": [
@@ -1448,7 +1448,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/it-and-professional-services": {
+  "/netsuite/it-and-professional-services": {
     "title": "Scale Your IT Services Business Without Limits | AGSuite",
     "description": "Optimize billable utilization, accelerate project delivery, and automate complex billing with the #1 cloud ERP built for IT and consulting firms.",
     "keywords": [
@@ -1460,7 +1460,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/manufacturing": {
+  "/netsuite/manufacturing": {
     "title": "Build the Future of Your Factory Floor with NetSuite | AGSuite",
     "description": "Streamline discrete manufacturing, tighten supply chains, and gain real-time visibility with the #1 cloud ERP built for modern manufacturers.",
     "keywords": [
@@ -1472,7 +1472,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/media-and-publishing": {
+  "/netsuite/media-and-publishing": {
     "title": "NetSuite for Media & Publishing Companies | AGSuite",
     "description": "Manage subscriptions, advertising revenue, content licensing, and royalties on a single cloud ERP. NetSuite gives media and publishing companies the financial a",
     "keywords": [
@@ -1484,7 +1484,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/retail-and-e-commerce": {
+  "/netsuite/retail-and-e-commerce": {
     "title": "NetSuite for Retail & E-Commerce | AGSuite",
     "description": "Power your omnichannel retail operation from a single cloud platform. NetSuite connects your online store, physical locations, inventory, and financials — givin",
     "keywords": [
@@ -1496,7 +1496,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/software-and-technology": {
+  "/netsuite/software-and-technology": {
     "title": "NetSuite for Software & Technology Companies | AGSuite",
     "description": "Scale your SaaS, software, or tech company with a cloud ERP built for subscription revenue, ASC 606 compliance, and rapid growth. NetSuite is the platform of ch",
     "keywords": [
@@ -1508,7 +1508,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/transportation-and-logistics": {
+  "/netsuite/transportation-and-logistics": {
     "title": "NetSuite for Transportation & Logistics | AGSuite",
     "description": "Gain end-to-end visibility across your logistics network. NetSuite connects fleet management, freight billing, warehouse operations, and financials in one cloud",
     "keywords": [
@@ -1520,7 +1520,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/wholesale-distribution": {
+  "/netsuite/wholesale-distribution": {
     "title": "Expand Your Distribution Enterprise Without Limits | AGSuite",
     "description": "Eliminate supply chain bottlenecks and accelerate order fulfillment with the world’s #1 cloud ERP tailored for wholesale distributors.",
     "keywords": [
@@ -1532,7 +1532,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/telecom-industry": {
+  "/netsuite/telecom-industry": {
     "title": "NetSuite ERP for Telecom Industry — Modernize & Streamline Operations | AGSuite",
     "description": "Empower your telecom business with Oracle NetSuite ERP. Automate subscription billing, revenue recognition, and OSS/BSS integrations. AGSuite certified NetSuite partner.",
     "keywords": [
@@ -1547,7 +1547,7 @@ export const INDUSTRY_PAGES: Record<
     "category": "Industry Solutions",
     "publishedTime": "2024-01-01T00:00:00Z"
   },
-  "/netsuite/industries/financial-services": {
+  "/netsuite/financial-services": {
     "title": "NetSuite ERP for Financial Services — Compliance, Risk & Reporting | AGSuite",
     "description": "Streamline financial operations with Oracle NetSuite ERP for financial services. Built-in compliance, real-time analytics, multi-entity consolidation, and enterprise security.",
     "keywords": [

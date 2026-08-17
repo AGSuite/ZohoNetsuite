@@ -529,12 +529,6 @@ export default function NetSuiteOfficesPage() {
                     </div>
                     <span className="text-xs sm:text-sm font-semibold tracking-wide">contact@agsuitetech.com</span>
                   </a>
-                  <a href="tel:+919096012100" className="flex items-center gap-2.5 hover:text-cyan-400 transition-colors group">
-                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
-                      <Phone className="w-3.5 h-3.5 text-cyan-400" />
-                    </div>
-                    <span className="text-xs sm:text-sm font-semibold tracking-wide">+91 909 601 2100</span>
-                  </a>
                 </div>
               </div>
 
