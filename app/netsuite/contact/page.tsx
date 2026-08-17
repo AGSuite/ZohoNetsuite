@@ -263,23 +263,23 @@ export default function ContactPage() {
 
     // Handle reCAPTCHA rendering for SPA navigation
     const renderRecaptcha = () => {
-      const container = document.getElementById('recap409531000042578178_ns');
+      const container = document.getElementById('recap409531000047791096');
       if ((window as any).grecaptcha && container) {
         try {
           if (container.children.length > 0) return;
-          (window as any).grecaptcha.render('recap409531000042578178_ns', {
+          (window as any).grecaptcha.render('recap409531000047791096', {
             'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
             'theme': 'light',
-            'callback': (window as any).rccallback409531000042578178_ns
+            'callback': (window as any).rccallback409531000047791096
           });
         } catch (e) { }
       }
     };
 
-    (window as any).rccallback409531000042578178_ns = function () {
-      const recap = document.getElementById('recap409531000042578178_ns');
+    (window as any).rccallback409531000047791096 = function () {
+      const recap = document.getElementById('recap409531000047791096');
       if (recap) recap.setAttribute('captcha-verified', 'true');
-      const recapErr = document.getElementById('recapErr409531000042578178_ns');
+      const recapErr = document.getElementById('recapErr409531000047791096');
       if (recapErr) recapErr.style.visibility = 'hidden';
     };
 
@@ -298,20 +298,22 @@ export default function ContactPage() {
 
   const sendEmail = async (form: HTMLFormElement) => {
     const formData = new FormData(form);
-    try {
-      const response = await fetch('https://agsuitetech.com/pricing/form_process_contact.php', {
-        method: 'POST',
-        body: formData
-      });
-      const data = await response.json();
-      if (data.status === 'success') {
-        console.log('Email sent successfully.');
-      } else {
-        console.error('Failed to send email:', data.error);
-      }
-    } catch (error) {
-      console.error('Error while sending email:', error);
-    }
+    fetch('/api/contact/zoho-notification', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: formData.get('Last Name'),
+        email: formData.get('Email'),
+        mobile: formData.get('Mobile'),
+        role: formData.get('Designation'),
+        company: formData.get('Company'),
+        services: formData.getAll('LEADCF166'),
+        revenue: formData.get('LEADCF19'),
+        hearAbout: formData.get('LEADCF127'),
+        message: formData.get('LEADCF123'),
+        subjectTitle: 'NetSuite Contact us Form Enquiry'
+      })
+    }).catch(() => {});
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -506,9 +508,9 @@ export default function ContactPage() {
                       acceptCharset="UTF-8"
                       className="space-y-5"
                     >
-                      <input type="text" className="hidden" name="xnQsjsdp" value="2ae4ca1841d27018fa82a0a48a96f1c01673f80384140a440922ae0aab21aae3" readOnly />
+                      <input type="text" className="hidden" name="xnQsjsdp" value="d53cf6d2d91bd2c21647f1856ba77f750df004edeb1b81d56dde47d4e8ff036e" readOnly />
                       <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-                      <input type="text" className="hidden" name="xmIwtLD" value="56ac8377184c3ea501a9db3ccd450a182e7e602f9cbf901b0c9852cc9de9f7c713a4ce3d1e636d34dc4666caf4082423" readOnly />
+                      <input type="text" className="hidden" name="xmIwtLD" value="0dbca13c9e4fae22e074d8e1a51df222b069fd131b4ed865fd39ad02a316b18241f1902d40a5e065b29b169b79077aff" readOnly />
                       <input type="text" className="hidden" name="actionType" value="TGVhZHM=" readOnly />
                       <input type="text" className="hidden" name="returnURL" value="https://www.agsuite.tech/thank-you" readOnly />
                       <input type="text" className="hidden" name="aG9uZXlwb3Q" value="" readOnly />
@@ -689,38 +691,19 @@ export default function ContactPage() {
 
                       {/* Captcha Section */}
                       <div className="flex flex-col gap-2">
-                        <div data-sitekey='6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_' data-theme='light' data-callback='rccallback409531000042578178_ns' captcha-verified='false' id='recap409531000042578178_ns'></div>
-                        <div id='recapErr409531000042578178_ns' style={{ visibility: 'hidden', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
+                        <div data-sitekey='6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_' data-theme='light' data-callback='rccallback409531000047791096' captcha-verified='false' id='recap409531000047791096' className="g-recaptcha"></div>
+                        <div id='recapErr409531000047791096' style={{ visibility: 'hidden', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
                       </div>
 
-                      {/* Privacy + Submit */}
-                      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-1">
-                        <label className="flex items-start gap-3 cursor-pointer group">
-                          <div className="relative mt-0.5">
-                            <input
-                              type="checkbox"
-                              className="sr-only peer"
-                              required
-                            />
-                            <div className="w-5 h-5 bg-gray-100 border-2 border-gray-300 rounded peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-all" />
-                            <svg className="absolute top-0.5 left-0.5 w-4 h-4 text-white opacity-0 peer-checked:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <span className="text-gray-500 text-sm leading-snug">
-                            I agree to the{" "}
-                            <Link href="#" className="text-blue-600 underline hover:text-blue-700">Privacy Policy</Link>
-                            {" "}and{" "}
-                            <Link href="#" className="text-blue-600 underline hover:text-blue-700">Terms of Service</Link>
-                          </span>
-                        </label>
-
+                      {/* Submit Button */}
+                      <div className="pt-2">
                         <button
                           type="submit"
-                          className="shrink-0 inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/30 hover:scale-[1.03] text-sm formsubmit-contact"
+                          id="formsubmit"
+                          className="w-full sm:w-auto shrink-0 inline-flex items-center justify-center gap-2 px-10 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-blue-500/30 hover:scale-[1.02] text-sm uppercase tracking-widest cursor-pointer formsubmit-contact"
                         >
                           <Send className="w-4 h-4" />
-                          Send Message
+                          Submit
                         </button>
                       </div>
                     </form>

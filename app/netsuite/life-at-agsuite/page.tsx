@@ -54,14 +54,14 @@ export default function LifeAtAGSuite() {
     {
       name: "Ankur Goyal",
       title: "Founder & CEO",
-      image: "/images/people/Ankur.jpg",
+      image: "/images/people/Ankur.png",
       linkedin: "https://www.linkedin.com/in/ankurgoyal2/",
       bio: "Visionary leader driving AGSuite's strategic vision with 25+ years in enterprise technology solutions."
     },
     {
       name: "Rajat Goyal",
       title: "Director",
-      image: "/images/people/Rajat_v2.png",
+      image: "/images/people/Rajat.png",
       linkedin: "https://www.linkedin.com/in/rajat-goyal-9007a6101/",
       bio: "Strategic business leader specializing in operational excellence and global expansion initiatives."
     },
@@ -75,14 +75,14 @@ export default function LifeAtAGSuite() {
     {
       name: "Shailesh Punse",
       title: "Head of Sales & Marketing",
-      image: "/images/people/Shailesh.jpg",
+      image: "/images/people/Shailesh.png",
       linkedin: "https://www.linkedin.com/in/shailesh-punse-79771413/",
       bio: "Driving global revenue growth and strategic partnerships with 25+ years of cross-industry expertise."
     },
     {
       name: "Mayuri More",
       title: "Project Delivery Manager",
-      image: "/images/people/mayuri.webp",
+      image: "/images/people/Mayuri.png",
       linkedin: "https://www.linkedin.com/in/mayuri-more-58770733/",
       bio: "Over 12 years of experience leading complex cloud migrations and delivery frameworks with agile execution."
     }

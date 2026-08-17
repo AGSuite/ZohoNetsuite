@@ -26,9 +26,8 @@ export async function POST(request: Request) {
         // Email to the Sales/Admin team
         const mailOptions = {
             from: defaultSender,
-            to: 'shivam@agsuitetech.com, nikhil.khode@agsuitetech.com',
-            cc: 'contact@agsuitetech.com',
-            subject: `New Lead Magnet Download: ${leadTitle} (${platform})`,
+            to: 'inbound@agsuitetech.com, hello@agsuitetech.com, contact@agsuitetech.com',
+            subject: platform === 'NetSuite' ? 'ERP implementation Guide Enquiry Form' : `New Lead Magnet Download: ${leadTitle} (${platform})`,
             html: `
                 <div style="font-family: Arial, sans-serif; padding: 20px; color: #333; max-width: 600px; border: 1px solid #eee;">
                     <div style="text-align: center; margin-bottom: 20px;">

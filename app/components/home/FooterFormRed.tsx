@@ -232,27 +232,15 @@ export default function FooterFormRed() {
               ></textarea>
             </div>
 
-            {/* Checkbox and Button */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
-              <label className="flex items-start gap-3 cursor-pointer group">
-                <div className="relative mt-0.5">
-                  <input type="checkbox" className="sr-only peer" />
-                  <div className="w-5 h-5 bg-white border border-slate-300 rounded peer-checked:bg-red-600 peer-checked:border-red-600 transition-all"></div>
-                  <svg className="absolute top-0.5 left-0.5 w-4 h-4 text-white opacity-0 peer-checked:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <span className="text-slate-600 text-sm leading-tight group-hover:text-slate-700 transition-colors">
-                  I agree to the Privacy Policy and Terms of Service
-                </span>
-              </label>
-
+            {/* Submit Button */}
+            <div className="pt-2">
               <button
                 type="submit"
-                className="shrink-0 px-8 py-3.5 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]"
+                id="formsubmit"
+                className="w-full sm:w-auto shrink-0 px-10 py-3.5 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] uppercase tracking-widest text-sm cursor-pointer"
                 suppressHydrationWarning
               >
-                Send Message
+                Submit
               </button>
             </div>
           </form>

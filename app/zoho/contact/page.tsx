@@ -435,7 +435,26 @@ export default function ZohoContactPage() {
                     onSubmit={(e) => {
                       if ((window as any).checkMandatory409531000047791049 && !(window as any).checkMandatory409531000047791049()) {
                         e.preventDefault();
+                        return;
                       }
+                      const targetForm = e.currentTarget;
+                      const formData = new FormData(targetForm);
+                      fetch('/api/contact/zoho-notification', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                          name: formData.get('Last Name'),
+                          email: formData.get('Email'),
+                          mobile: formData.get('Mobile'),
+                          role: formData.get('Designation'),
+                          company: formData.get('Company'),
+                          services: formData.getAll('LEADCF165'),
+                          revenue: formData.get('LEADCF19'),
+                          hearAbout: formData.get('LEADCF127'),
+                          message: formData.get('LEADCF123'),
+                          subjectTitle: 'Zoho Contact us Form Enquiry'
+                        })
+                      }).catch(() => {});
                     }}
                     acceptCharset="UTF-8"
                     className="space-y-5"
@@ -560,7 +579,7 @@ export default function ZohoContactPage() {
                       </div>
                     </div>
 
-                    <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full shrink-0 inline-flex items-center justify-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-full transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm cursor-pointer" value="Send Message" />
+                    <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full shrink-0 inline-flex items-center justify-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-full transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm cursor-pointer" value="Submit" />
                   </form>
 
                 </div>

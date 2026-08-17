@@ -22,8 +22,8 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
     ? {
         formId: "webform409531000047791096",
         formName: "WebToLeads409531000047791096",
-        xnQsjsdp: "2ae4ca1841d27018fa82a0a48a96f1c01673f80384140a440922ae0aab21aae3",
-        xmIwtLD: "56ac8377184c3ea501a9db3ccd450a182e7e602f9cbf901b0c9852cc9de9f7c713a4ce3d1e636d34dc4666caf4082423",
+        xnQsjsdp: "d53cf6d2d91bd2c21647f1856ba77f750df004edeb1b81d56dde47d4e8ff036e",
+        xmIwtLD: "0dbca13c9e4fae22e074d8e1a51df222b069fd131b4ed865fd39ad02a316b18241f1902d40a5e065b29b169b79077aff",
         serviceFieldName: "LEADCF166",
         serviceLabel: "Netsuite Services *",
         serviceDefault: "-Select NetSuite Service-",
@@ -39,13 +39,13 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
           "NetSuite India Localization",
           "NetSuite Data Backup for India",
         ],
-        analyticsUrl: "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=f84d1d6876a443cf36bdeab891c5582d7c3e142d9fce42d31ffc393506d6d6d54dbf7f9cf10e11397fb06e31977be163gid65b81325138b2fc10191c2ef7b4572a0b18f76ffadabafd1f029455ae866a59cgidf169f3e66dfe1cbf71d7bc2d3d67d57ab12b228f83d723a6a15eb3cfddecc257gid6d99bc21bab3635e5f6b816b959e07211ea39cb1eae372096d63da78a4b9dccc&tw=1db53bf46a6a8b587793bb8f51f25b9b772d35495cdb16dcd3a6abe2ad6ecd11&version=v2",
+        analyticsUrl: "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=4166fb27fa5cc1cf01b8928a236946a1c2bdc6db7e59b193ea91f9c33521aff9a5b0a3f55d9bcbdb236dbab2e40baae2gid9ed1878e9054f25c0b6d3def4c6e478c7c24c8927c7c8e4d9fe1fa0c11f87875gid5f7aa6ebd053d5fd78ba0faa9cc73893b516b5e0e48b61583832fdc7ade510b7gidc7a000443c81ecd27f65e71f073e3e3e9a9cdf3699f81a305ac6bbae40fe1be7&tw=2cd0917d1cca3bbaebdf154ac89ffb93db64aad22b9b101985cc3ca35acbffc6&version=v2",
         validateFuncName: "checkMandatory409531000047791096",
         validateEmailFuncName: "validateEmail409531000047791096",
-        recapId: "recap409531000042578178_footer_ns",
-        recapErrId: "recapErr409531000042578178_footer_ns",
-        recapCallbackName: "rccallback409531000042578178_footer_ns",
-        reCapAlertFuncName: "reCaptchaAlert409531000042578178_footer_ns",
+        recapId: "recap409531000047791096_footer_ns",
+        recapErrId: "recapErr409531000047791096_footer_ns",
+        recapCallbackName: "rccallback409531000047791096_footer_ns",
+        reCapAlertFuncName: "reCaptchaAlert409531000047791096_footer_ns",
       }
     : {
         formId: "webform409531000047791049",
@@ -270,7 +270,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                       : 'Partner with AGSuite for complete Zoho ecosystem strategy, implementation, custom deluge development, license optimization, and 24/7 technical support.'}
                   </motion.p>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mt-auto pt-4">
                     {[
                       { icon: Globe2, title: isNetSuite ? "Global Deployments" : "Full Ecosystem", desc: isNetSuite ? "Multi-country ERP rollouts" : "50+ Zoho apps supported" },
                       { icon: Rocket, title: "Fast Implementation", desc: isNetSuite ? "SuiteSuccess methodology" : "Rapid setup & migration" },
@@ -283,11 +283,15 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 + idx * 0.1 }}
-                        className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all"
+                        className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-gray-100 shadow-xl shadow-black/10 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between min-h-[125px] sm:min-h-[140px] group"
                       >
-                        <item.icon className="w-6 h-6 text-blue-400 mb-2" />
-                        <h4 className="text-sm font-bold text-white mb-1">{item.title}</h4>
-                        <p className="text-xs text-gray-400">{item.desc}</p>
+                        <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-3 shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                          <item.icon className="w-5 h-5 text-blue-600 group-hover:text-white transition-colors duration-300" />
+                        </div>
+                        <div>
+                          <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-1 leading-tight group-hover:text-blue-600 transition-colors duration-300">{item.title}</h4>
+                          <p className="text-xs sm:text-sm font-medium text-gray-600 leading-snug">{item.desc}</p>
+                        </div>
                       </motion.div>
                     ))}
                   </div>
@@ -337,7 +341,26 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                           onSubmit={(e) => {
                             if ((window as any)[config.validateFuncName] && !(window as any)[config.validateFuncName]()) {
                               e.preventDefault();
+                              return;
                             }
+                            const targetForm = e.currentTarget;
+                            const formData = new FormData(targetForm);
+                            fetch('/api/contact/zoho-notification', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({
+                                name: formData.get('Last Name'),
+                                email: formData.get('Email'),
+                                mobile: formData.get('Mobile'),
+                                role: formData.get('Designation'),
+                                company: formData.get('Company'),
+                                services: formData.getAll(config.serviceFieldName),
+                                revenue: formData.get('LEADCF19'),
+                                hearAbout: formData.get('LEADCF127'),
+                                message: formData.get('LEADCF123'),
+                                subjectTitle: isNetSuite ? 'NetSuite Contact us Form Enquiry' : 'Zoho Contact us Form Enquiry'
+                              })
+                            }).catch(() => {});
                           }}
                           acceptCharset="UTF-8"
                           className="space-y-4"
@@ -485,7 +508,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                               type="submit"
                               id="formsubmit"
                               className="formsubmit zcwf_button flex-1 py-3.5 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm uppercase tracking-widest cursor-pointer"
-                              value="Submit Request"
+                              value="Submit"
                               suppressHydrationWarning
                             />
                           </div>

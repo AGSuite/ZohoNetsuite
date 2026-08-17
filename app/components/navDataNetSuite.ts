@@ -278,9 +278,9 @@ export const navItemsNetSuite: NavSection[] = [
     {
         title: 'Contact',
         children: [
-            { label: 'Careers', href: '/netsuite/contact/careers', description: 'Join our growing team.', icon: Briefcase },
-            // { label: 'Support', href: '/netsuite/contact/support', description: '24/7 client support.', icon: Headset },
-            { label: 'Request Quote', href: '/netsuite/contact/request-quote', description: 'Get a project estimate.', icon: FileText },
+            { label: 'Careers', href: '/netsuite/careers', description: 'Join our growing team.', icon: Briefcase },
+            // { label: 'Support', href: '/netsuite/support', description: '24/7 client support.', icon: Headset },
+            { label: 'Request Quote', href: '/netsuite/request-quote', description: 'Get a project estimate.', icon: FileText },
             { label: 'Free Consultation', href: '/netsuite/free-consultation', description: 'Talk to an expert.', icon: HelpCircle }
         ],
     },

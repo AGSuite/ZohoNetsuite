@@ -22,8 +22,7 @@ export async function POST(request: Request) {
         // Notification email to Sales Team
         const mailOptions = {
             from: defaultSender,
-            to: 'shivam@agsuitetech.com, nikhil.khode@agsuitetech.com',
-            cc: 'contact@agsuitetech.com',
+            to: 'inbound@agsuitetech.com, hello@agsuitetech.com, contact@agsuitetech.com',
             subject: `New Lead Generated - ${name} (${platform})`,
             html: `
                 <div style="font-family: Arial, sans-serif; padding: 20px; color: #333; max-width: 600px; border: 1px solid #eee;">

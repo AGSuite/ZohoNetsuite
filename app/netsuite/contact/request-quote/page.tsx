@@ -36,13 +36,13 @@ export default function RequestQuotePremium() {
         setIsClient(true);
 
         const renderRecaptcha = () => {
-            const container = document.getElementById('recap409531000042578178');
+            const container = document.getElementById('recap409531000047791096');
             if ((window as any).grecaptcha && container) {
                 try {
-                    (window as any).grecaptcha.render('recap409531000042578178', {
+                    (window as any).grecaptcha.render('recap409531000047791096', {
                         'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
                         'theme': 'light',
-                        'callback': (window as any).rccallback409531000042578178
+                        'callback': (window as any).rccallback409531000047791096
                     });
                 } catch (e) {
                     // Already rendered or container missing
@@ -269,14 +269,33 @@ export default function RequestQuotePremium() {
                                             onSubmit={(e) => {
                                                 if ((window as any).checkMandatory409531000047791096 && !(window as any).checkMandatory409531000047791096()) {
                                                     e.preventDefault();
+                                                    return;
                                                 }
+                                                const targetForm = e.currentTarget;
+                                                const formData = new FormData(targetForm);
+                                                fetch('/api/contact/zoho-notification', {
+                                                    method: 'POST',
+                                                    headers: { 'Content-Type': 'application/json' },
+                                                    body: JSON.stringify({
+                                                        name: formData.get('Last Name'),
+                                                        email: formData.get('Email'),
+                                                        mobile: formData.get('Mobile'),
+                                                        role: formData.get('Designation'),
+                                                        company: formData.get('Company'),
+                                                        services: formData.getAll('LEADCF166'),
+                                                        revenue: formData.get('LEADCF19'),
+                                                        hearAbout: formData.get('LEADCF127'),
+                                                        message: formData.get('LEADCF123'),
+                                                        subjectTitle: 'NetSuite Request Quote Form Enquiry'
+                                                    })
+                                                }).catch(() => {});
                                             }}
                                             acceptCharset='UTF-8'
                                             className="space-y-4"
                                         >
-                                            <input type='text' className="hidden" name='xnQsjsdp' value='2ae4ca1841d27018fa82a0a48a96f1c01673f80384140a440922ae0aab21aae3' readOnly />
+                                            <input type='text' className="hidden" name='xnQsjsdp' value='d53cf6d2d91bd2c21647f1856ba77f750df004edeb1b81d56dde47d4e8ff036e' readOnly />
                                             <input type='hidden' name='zc_gad' id='zc_gad' value='' />
-                                            <input type='text' className="hidden" name='xmIwtLD' value='56ac8377184c3ea501a9db3ccd450a182e7e602f9cbf901b0c9852cc9de9f7c713a4ce3d1e636d34dc4666caf4082423' readOnly />
+                                            <input type='text' className="hidden" name='xmIwtLD' value='0dbca13c9e4fae22e074d8e1a51df222b069fd131b4ed865fd39ad02a316b18241f1902d40a5e065b29b169b79077aff' readOnly />
                                             <input type='text' className="hidden" name='actionType' value='TGVhZHM=' readOnly />
                                             <input type='text' className="hidden" name='returnURL' value='https://www.agsuite.tech/thank-you' readOnly />
                                             <input type='text' className="hidden" name='aG9uZXlwb3Q' value='' readOnly />
@@ -430,7 +449,12 @@ export default function RequestQuotePremium() {
                                                 />
                                             </div>
 
-                                            <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm uppercase tracking-widest cursor-pointer" value="Request Project Quote" />
+                                            <div className="space-y-2 py-2">
+                                                <div className="g-recaptcha" data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_" data-theme="light" data-callback="rccallback409531000047791096" captcha-verified="false" id="recap409531000047791096"></div>
+                                                <div id="recapErr409531000047791096" style={{ visibility: 'hidden', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
+                                            </div>
+
+                                            <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm uppercase tracking-widest cursor-pointer" value="Submit" />
                                         </form>
                                     </div>
                                 </div>

@@ -8,14 +8,14 @@ export const leadersData = [
   {
     name: "Ankur Goyal",
     title: "Founder & CEO",
-    image: "/images/people/Ankur.jpg",
+    image: "/images/people/Ankur.png",
     linkedin: "https://www.linkedin.com/in/ankurgoyal2/",
     imgClass: "object-cover object-top",
   },
   {
     name: "Rajat Goyal",
     title: "Director",
-    image: "/images/people/Rajat_v2.png",
+    image: "/images/people/Rajat.png",
     linkedin: "https://www.linkedin.com/in/rajat-goyal-9007a6101/",
     imgClass: "object-cover object-top",
   },
@@ -29,16 +29,16 @@ export const leadersData = [
   {
     name: "Shailesh Punse",
     title: "Head of Sales & Marketing",
-    image: "/images/people/Shailesh.jpg",
+    image: "/images/people/Shailesh.png",
     linkedin: "https://www.linkedin.com/in/shailesh-punse-79771413/",
     imgClass: "object-cover object-top",
   },
   {
     name: "Mayuri More",
     title: "Project Delivery Manager",
-    image: "/images/people/mayuri%20mam.png",
+    image: "/images/people/Mayuri.png",
     linkedin: "https://www.linkedin.com/in/mayuri-more-58770733/",
-    imgClass: "object-contain p-2.5",
+    imgClass: "object-cover object-top",
   },
 ];
 

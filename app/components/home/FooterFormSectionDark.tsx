@@ -266,22 +266,41 @@ export default function FooterFormSectionDark() {
               </div>
 
               <form
-                id="webform409531000042578178"
+                id="webform409531000047791096"
                 action="https://crm.zoho.in/crm/WebToLeadForm"
-                name="WebToLeads409531000042578178"
+                name="WebToLeads409531000047791096"
                 method="POST"
                 onSubmit={(e) => {
-                  if ((window as any).checkMandatory409531000042578178 && !(window as any).checkMandatory409531000042578178()) {
+                  if ((window as any).checkMandatory409531000047791096 && !(window as any).checkMandatory409531000047791096()) {
                     e.preventDefault();
+                    return;
                   }
+                  const targetForm = e.currentTarget;
+                  const formData = new FormData(targetForm);
+                  fetch('/api/contact/zoho-notification', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                      name: formData.get('Last Name'),
+                      email: formData.get('Email'),
+                      mobile: formData.get('Mobile'),
+                      role: formData.get('Designation'),
+                      company: formData.get('Company'),
+                      services: formData.getAll('LEADCF166'),
+                      revenue: formData.get('LEADCF19'),
+                      hearAbout: formData.get('LEADCF127'),
+                      message: formData.get('LEADCF123'),
+                      subjectTitle: 'NetSuite Contact us Form Enquiry'
+                    })
+                  }).catch(() => {});
                 }}
                 acceptCharset="UTF-8"
                 className="space-y-6"
               >
                 {/* Zoho CRM Hidden Fields */}
-                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="a7ab09fe90f1a05ce89de47da6f5fe4ec35e5a6a7a3407c3169e127670c7dd56" readOnly />
+                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="d53cf6d2d91bd2c21647f1856ba77f750df004edeb1b81d56dde47d4e8ff036e" readOnly />
                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                <input type="text" className="hidden" name="xmIwtLD" defaultValue="835ba19158c9d4cb19f73b22a127785e9b44da4e740d918a07dc322871eff6d54ae26ddbf0315f1ade82dd193bb27d4b" readOnly />
+                <input type="text" className="hidden" name="xmIwtLD" defaultValue="0dbca13c9e4fae22e074d8e1a51df222b069fd131b4ed865fd39ad02a316b18241f1902d40a5e065b29b169b79077aff" readOnly />
                 <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
                 <input type="text" className="hidden" name="returnURL" defaultValue="https://www.agsuite.tech/thank-you" readOnly />
                 <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
@@ -393,16 +412,17 @@ export default function FooterFormSectionDark() {
 
                 {/* Google reCAPTCHA */}
                 <div className="captcha-area transform scale-[0.9] origin-left">
-                  <div data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_" data-theme="dark" data-callback="rccallback409531000042578178" captcha-verified="false" id="recap409531000042578178"></div>
-                  <div id="recapErr409531000042578178" style={{ fontSize: '10px', color: '#ff4d4d', marginTop: '4px', visibility: 'hidden' }}>Please verify that you are not a robot.</div>
+                  <div data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_" data-theme="dark" data-callback="rccallback409531000047791096" captcha-verified="false" id="recap409531000047791096" className="g-recaptcha"></div>
+                  <div id="recapErr409531000047791096" style={{ fontSize: '10px', color: '#ff4d4d', marginTop: '4px', visibility: 'hidden' }}>Please verify that you are not a robot.</div>
                 </div>
 
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="formsubmit-dark w-full py-4 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-bold rounded-xl shadow-xl shadow-blue-500/20 transition-all duration-300 hover:scale-[1.01] transform active:scale-[0.99] text-sm"
+                  id="formsubmit"
+                  className="formsubmit-dark w-full py-4 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-bold rounded-xl shadow-xl shadow-blue-500/20 transition-all duration-300 hover:scale-[1.01] transform active:scale-[0.99] text-sm uppercase tracking-widest cursor-pointer"
                 >
-                  Send Message Now
+                  Submit
                 </button>
               </form>
             </div>

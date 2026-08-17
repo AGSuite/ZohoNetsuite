@@ -281,14 +281,33 @@ export default function ZohoFreeConsultationPage() {
                                         onSubmit={(e) => {
                                             if ((window as any).checkMandatory409531000047791049 && !(window as any).checkMandatory409531000047791049()) {
                                                 e.preventDefault();
+                                                return;
                                             }
+                                            const targetForm = e.currentTarget;
+                                            const formData = new FormData(targetForm);
+                                            fetch('/api/contact/zoho-notification', {
+                                                method: 'POST',
+                                                headers: { 'Content-Type': 'application/json' },
+                                                body: JSON.stringify({
+                                                    name: formData.get('Last Name'),
+                                                    email: formData.get('Email'),
+                                                    mobile: formData.get('Mobile'),
+                                                    role: formData.get('Designation'),
+                                                    company: formData.get('Company'),
+                                                    services: formData.getAll('LEADCF165'),
+                                                    revenue: formData.get('LEADCF19'),
+                                                    hearAbout: formData.get('LEADCF127'),
+                                                    message: formData.get('LEADCF123'),
+                                                    subjectTitle: 'Zoho Free Consultation Form Enquiry'
+                                                })
+                                            }).catch(() => {});
                                         }}
                                         acceptCharset="UTF-8"
                                         className="space-y-4"
                                     >
-                                        <input type="text" className="hidden" name="xnQsjsdp" value="44276f8beed192b8f7e1be65072c435bb8635d713a36ed1383283b028345f158" readOnly />
+                                        <input type="text" className="hidden" name="xnQsjsdp" value="afe7fc5b0536228280a461c09acb8cd162fafbcf476effeaa3a356db2e458dc1" readOnly />
                                         <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-                                        <input type="text" className="hidden" name="xmIwtLD" value="828a6444caf550aa2c7fb30baee0af20ebe53bb4ec14fa9cb848cbaba047cf09851f23ca8992cf00b57712dc4036845e" readOnly />
+                                        <input type="text" className="hidden" name="xmIwtLD" value="5a82ca35749552f4f750cae5dec3c5b7d801c95f58f820da5a9e196736a46f71217d8315d7638831db35e87703ae69fb" readOnly />
                                         <input type="text" className="hidden" name="actionType" value="TGVhZHM=" readOnly />
                                         <input type="text" className="hidden" name="returnURL" value={returnUrl} readOnly />
                                         <input type="text" className="hidden" name="aG9uZXlwb3Q" value="" readOnly />
@@ -397,7 +416,7 @@ export default function ZohoFreeConsultationPage() {
                                           </div>
                                         </div>
 
-                                        <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm uppercase tracking-widest cursor-pointer" value="Secure My Strategy Session" />
+                                        <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-xl transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm uppercase tracking-widest cursor-pointer" value="Submit" />
                                     </form>
                                 </div>
                             </div>

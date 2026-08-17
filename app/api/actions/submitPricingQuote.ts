@@ -21,8 +21,7 @@ export async function submitPricingQuote(data: any) {
 
         const mailOptions = {
             from: defaultSender,
-            to: 'shivam@agsuitetech.com, nikhil.khode@agsuitetech.com',
-            cc: 'contact@agsuitetech.com',
+            to: 'inbound@agsuitetech.com, hello@agsuitetech.com, contact@agsuitetech.com',
             subject: `New NetSuite Pricing/ROI Quote Request from ${companyname}`,
             html: `
                 <div style="font-family: Arial, sans-serif; padding: 20px; color: #333; max-width: 700px; border: 1px solid #eee;">

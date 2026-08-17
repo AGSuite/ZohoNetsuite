@@ -90,14 +90,14 @@ export default function ContactFormDesign4() {
     };
 
     const renderRecaptcha = () => {
-      const container = document.getElementById('recap409531000042578178_design4_ns');
+      const container = document.getElementById('recap409531000047791096');
       if ((window as any).grecaptcha && container) {
         try {
           if (container.children.length > 0) return;
-          (window as any).grecaptcha.render('recap409531000042578178_design4_ns', {
+          (window as any).grecaptcha.render('recap409531000047791096', {
             'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
             'theme': 'light',
-            'callback': (window as any).rccallback409531000042578178_design4_ns
+            'callback': (window as any).rccallback409531000047791096
           });
         } catch (e) { }
       }
@@ -126,6 +126,24 @@ export default function ContactFormDesign4() {
       e.preventDefault();
       return;
     }
+    const targetForm = e.currentTarget;
+    const formData = new FormData(targetForm);
+    fetch('/api/contact/zoho-notification', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: formData.get('Last Name'),
+        email: formData.get('Email'),
+        mobile: formData.get('Mobile'),
+        role: formData.get('Designation'),
+        company: formData.get('Company'),
+        services: formData.getAll('LEADCF166'),
+        revenue: formData.get('LEADCF19'),
+        hearAbout: formData.get('LEADCF127'),
+        message: formData.get('LEADCF123'),
+        subjectTitle: 'NetSuite Contact us Form Enquiry'
+      })
+    }).catch(() => {});
   };
 
   if (!isClient) return null;
@@ -185,9 +203,9 @@ export default function ContactFormDesign4() {
                 acceptCharset="UTF-8"
                 className="space-y-5"
               >
-                <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="2ae4ca1841d27018fa82a0a48a96f1c01673f80384140a440922ae0aab21aae3" readOnly />
+                <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="d53cf6d2d91bd2c21647f1856ba77f750df004edeb1b81d56dde47d4e8ff036e" readOnly />
                 <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-                <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="56ac8377184c3ea501a9db3ccd450a182e7e602f9cbf901b0c9852cc9de9f7c713a4ce3d1e636d34dc4666caf4082423" readOnly />
+                <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="0dbca13c9e4fae22e074d8e1a51df222b069fd131b4ed865fd39ad02a316b18241f1902d40a5e065b29b169b79077aff" readOnly />
                 <input type="text" style={{ display: 'none' }} name="actionType" value="TGVhZHM=" readOnly />
                 <input type="text" style={{ display: 'none' }} name="returnURL" value="https://www.agsuite.tech/thank-you" readOnly />
                 <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" value="" readOnly />
@@ -288,12 +306,12 @@ export default function ContactFormDesign4() {
                     className="g-recaptcha"
                     data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_"
                     data-theme="light"
-                    data-callback="rccallback409531000042578178_design4_ns"
+                    data-callback="rccallback409531000047791096"
                     captcha-verified="false"
-                    id="recap409531000042578178_design4_ns"
+                    id="recap409531000047791096"
                   ></div>
                   <div
-                    id="recapErr409531000042578178_design4_ns"
+                    id="recapErr409531000047791096"
                     style={{ visibility: 'hidden', color: '#ef4444', fontSize: '12px' }}
                   >
                     Captcha validation failed. If you are not a robot then please try again.

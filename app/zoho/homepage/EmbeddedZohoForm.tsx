@@ -83,6 +83,24 @@ export default function EmbeddedZohoForm() {
             }
         }
 
+        const formData = new FormData(form);
+        fetch('/api/contact/zoho-notification', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name: formData.get('Last Name'),
+                email: formData.get('Email'),
+                mobile: formData.get('Mobile'),
+                role: formData.get('Designation'),
+                company: formData.get('Company'),
+                services: formData.getAll('LEADCF165'),
+                revenue: formData.get('LEADCF19'),
+                hearAbout: formData.get('LEADCF127'),
+                message: formData.get('LEADCF123'),
+                subjectTitle: 'Zoho Contact us Form Enquiry'
+            })
+        }).catch(() => {});
+
         const btn = document.getElementById('formsubmit') as HTMLInputElement;
         if (btn) btn.disabled = true;
 

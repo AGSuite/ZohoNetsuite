@@ -122,7 +122,7 @@ export default function NetSuiteFooter() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/netsuite/contact/careers" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/netsuite/careers" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Careers
                                 </Link>
                             </li>

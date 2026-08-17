@@ -17,11 +17,12 @@ export async function POST(request: Request) {
 
         const transporter = getTransporter();
 
+        const subjectTitle = platform === 'Zoho' ? 'Zoho Case Study Form Enquiry' : `NetSuite Case Study Form Enquiry: ${caseStudyTitle}`;
+
         const mailOptions = {
             from: defaultSender,
-            to: `${recipientEmail}, nikhil.khode@agsuitetech.com`, // Send to respective ID and Nikhil
-            cc: 'contact@agsuitetech.com', // CC the main sales email
-            subject: `New Case Study Request: ${caseStudyTitle} (${platform})`,
+            to: 'inbound@agsuitetech.com, hello@agsuitetech.com, contact@agsuitetech.com',
+            subject: subjectTitle,
             html: `
                 <div style="font-family: Arial, sans-serif; padding: 20px; color: #333; max-width: 600px; border: 1px solid #eee;">
                     <h2 style="color: #001f5c;">New Case Study Access Request</h2>
