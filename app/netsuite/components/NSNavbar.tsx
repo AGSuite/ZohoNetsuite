@@ -95,7 +95,21 @@ const NavbarNetSuite = () => {
     <header className={`fixed top-0 left-0 right-0 z-[100] h-20 transition-all duration-300 ${isScrolled || alwaysScrolled ? 'bg-white shadow-md' : 'bg-white shadow-sm'}`}>
       <div className="max-w-[1450px] mx-auto px-6 h-full flex items-center justify-between">
         {/* Logo */}
-        <Link href="/netsuite" aria-label="Home">
+        <Link
+          href="/netsuite#hero"
+          aria-label="Home"
+          onClick={(e) => {
+            if (window.location.pathname === '/netsuite') {
+              const hero = document.getElementById('hero');
+              if (hero) {
+                e.preventDefault();
+                hero.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }
+          }}
+        >
           <Image
             src="/images/logos/agsuite-logo.webp"
             alt="AGSuite Logo"

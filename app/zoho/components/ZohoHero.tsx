@@ -25,7 +25,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden bg-white font-dm-sans">
+    <div id="hero" className="relative w-full overflow-hidden bg-white font-dm-sans">
       <section className="relative w-full h-[calc(100vh-80px)] flex items-center mt-20">
         <div className="relative w-full h-full">
           {!isMounted ? (

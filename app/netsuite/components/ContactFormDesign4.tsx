@@ -1,10 +1,67 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import Image from "next/image";
 import Script from "next/script";
-import { Send, Briefcase, Globe2, HeartHandshake, Rocket } from "lucide-react";
+import { Send, Briefcase, Building2, Target, Heart } from "lucide-react";
+
+function Design4StatCard({ item, index }: { item: any; index: number }) {
+  const numericValue = parseInt(item.value.replace(/\D/g, "")) || 0;
+  const suffix = item.value.replace(/\d/g, "");
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const [displayCount, setDisplayCount] = useState(0);
+
+  useEffect(() => {
+    const unsubscribe = rounded.on("change", (v) => setDisplayCount(v));
+    return () => unsubscribe();
+  }, [rounded]);
+
+  const triggerRoll = () => {
+    animate(count, numericValue, {
+      duration: 1.5,
+      ease: "easeOut",
+      from: 0,
+    });
+  };
+
+  useEffect(() => {
+    triggerRoll();
+  }, [numericValue]);
+
+  return (
+    <motion.div
+      onMouseEnter={triggerRoll}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      whileHover={{
+        scale: 1.05,
+        rotateY: 10,
+        rotateX: -5,
+        transition: { duration: 0.4, ease: "easeOut" },
+      }}
+      transition={{ delay: 0.3 + index * 0.1 }}
+      style={{ perspective: 1000 }}
+      className="relative group p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-blue-400/50 hover:bg-white/10 transition-all duration-500 overflow-hidden flex flex-col justify-between"
+    >
+      <div className="absolute -right-3 -bottom-3 opacity-[0.15] group-hover:opacity-[0.35] transition-all duration-500 pointer-events-none">
+        <item.icon className="w-20 h-20 text-blue-400" strokeWidth={1} />
+      </div>
+      <div className="relative z-10">
+        <item.icon className="w-5 h-5 text-blue-400 mb-2" />
+        <div>
+          <div className="text-2xl font-extrabold text-white mb-1">
+            {displayCount}
+            {suffix}
+          </div>
+          <p className="text-xs font-semibold text-slate-300 uppercase tracking-wider">{item.label}</p>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function ContactFormDesign4() {
   const [isClient, setIsClient] = useState(false);
@@ -172,16 +229,12 @@ export default function ContactFormDesign4() {
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { icon: Globe2, title: "Global Deployments", desc: "Multi-country ERP rollouts" },
-                    { icon: Rocket, title: "Fast Implementation", desc: "SuiteSuccess methodology" },
-                    { icon: HeartHandshake, title: "Dedicated Support", desc: "Post-go-live optimization" },
-                    { icon: Briefcase, title: "Domain Experts", desc: "Certified NetSuite consultants" }
+                    { value: "700+", label: "Projects Completed", icon: Briefcase },
+                    { value: "250+", label: "Global Customers", icon: Building2 },
+                    { value: "15+", label: "Industry Expertise", icon: Target },
+                    { value: "84%", label: "Customer Retention", icon: Heart },
                   ].map((item, idx) => (
-                    <div key={idx} className="p-4 rounded-2xl bg-white/5 border border-white/10">
-                      <item.icon className="w-6 h-6 text-blue-400 mb-2" />
-                      <h4 className="text-sm font-bold text-white mb-1">{item.title}</h4>
-                      <p className="text-xs text-slate-400">{item.desc}</p>
-                    </div>
+                    <Design4StatCard key={idx} item={item} index={idx} />
                   ))}
                 </div>
               </div>

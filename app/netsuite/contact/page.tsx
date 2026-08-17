@@ -734,21 +734,21 @@ export default function ContactPage() {
               {
                 title: "Free Consultation",
                 desc: "Talk to an expert.",
-                link: "/netsuite/contact/free-consultation",
+                link: "/netsuite/free-consultation",
                 icon: Target,
                 image: "/images/contact/consultation.webp"
               },
               {
                 title: "Request Quote",
                 desc: "Get a project estimate.",
-                link: "/netsuite/contact/request-quote",
+                link: "/netsuite/request-quote",
                 icon: Clock,
                 image: "/images/contact/quote.webp"
               },
               {
                 title: "Careers",
                 desc: "Join our growing team.",
-                link: "/netsuite/contact/careers",
+                link: "/netsuite/careers",
                 icon: Briefcase,
                 image: "/images/contact/carrer.webp"
               }
@@ -1079,7 +1079,7 @@ export default function ContactPage() {
                   Contact Us Now
                 </a>
                 <Link
-                  href="/netsuite/contact/free-consultation"
+                  href="/netsuite/free-consultation"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold border border-white/30 text-white rounded-xl hover:bg-white/15 hover:border-white/60 backdrop-blur-sm transition-all duration-200 hover:scale-105"
                 >
                   Free Consultation

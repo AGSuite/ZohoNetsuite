@@ -508,21 +508,21 @@ export default function FreeConsultationTopLevel() {
                             {
                                 title: "Free Consultation",
                                 desc: "Talk to an expert.",
-                                link: "/netsuite/contact/free-consultation",
+                                link: "/netsuite/free-consultation",
                                 icon: Target,
                                 image: "/images/contact/consultation.webp"
                             },
                             {
                                 title: "Request Quote",
                                 desc: "Get a project estimate.",
-                                link: "/netsuite/contact/request-quote",
+                                link: "/netsuite/request-quote",
                                 icon: Clock,
                                 image: "/images/contact/quote.webp"
                             },
                             {
                                 title: "Careers",
                                 desc: "Join our growing team.",
-                                link: "/netsuite/contact/careers",
+                                link: "/netsuite/careers",
                                 icon: Briefcase,
                                 image: "/images/contact/carrer.webp"
                             }

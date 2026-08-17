@@ -325,9 +325,9 @@ export default function NSChecklistLeadMagnet({ hideBackground = false }: { hide
                       <CheckCircle2 className="w-7 h-7" />
                     </div>
                     <div>
-                      <p className="text-gray-900 text-lg font-bold">Checklist sent! 📈</p>
-                      <p className="text-gray-500 text-xs mt-2 max-w-[240px] mx-auto leading-relaxed">
-                        We sent the PDF to your email. Check your inbox to download your playbook.
+                      <p className="text-gray-900 text-lg font-bold">Thank you for your enquiry</p>
+                      <p className="text-gray-600 text-sm mt-2 max-w-[320px] mx-auto leading-relaxed font-medium">
+                        Our team will connect with you within next 24hr and will share the checklist accordingly.
                       </p>
                     </div>
                   </motion.div>

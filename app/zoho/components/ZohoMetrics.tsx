@@ -172,13 +172,13 @@ const ZohoMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) =
                             </Link>
                         </div>
 
-                        {/* Get Demo Button */}
+                        {/* Zoho Projects Button */}
                         <div className="relative inline-flex items-center group">
                             {/* Colorful Gradient Shadow Glow - ONLY ON MOUSE OVER */}
                             <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 blur-md opacity-0 group-hover:opacity-100 transition duration-300" />
 
                             <Link
-                                href="/zoho/contact"
+                                href="/zoho-projects"
                                 className="relative inline-flex items-center justify-center p-[1.5px] rounded-xl overflow-hidden font-bold text-base transition-all duration-300 hover:scale-105 active:scale-100"
                             >
                                 {/* Gradient Border on Hover */}
@@ -187,7 +187,7 @@ const ZohoMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) =
                                 {/* Glass to White Button Body */}
                                 <span className="relative px-10 py-3.5 bg-white/10 group-hover:bg-white backdrop-blur-md rounded-[10px] block transition-colors duration-300">
                                     <span className="text-white group-hover:text-black font-extrabold transition-colors duration-300">
-                                        Get Demo
+                                        Zoho Projects
                                     </span>
                                 </span>
                             </Link>

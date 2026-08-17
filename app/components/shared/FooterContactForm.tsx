@@ -2,10 +2,73 @@
 
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import Image from "next/image";
 import Script from "next/script";
-import { Briefcase, Globe2, HeartHandshake, Rocket } from "lucide-react";
+import { Briefcase, Building2, Heart, Target } from "lucide-react";
+
+function FooterStatCard({ item, index }: { item: any; index: number }) {
+  const numericValue = parseInt(item.value.replace(/\D/g, "")) || 0;
+  const suffix = item.value.replace(/\d/g, "");
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const [displayCount, setDisplayCount] = useState(0);
+
+  useEffect(() => {
+    const unsubscribe = rounded.on("change", (v) => setDisplayCount(v));
+    return () => unsubscribe();
+  }, [rounded]);
+
+  const triggerRoll = () => {
+    animate(count, numericValue, {
+      duration: 1.5,
+      ease: "easeOut",
+      from: 0,
+    });
+  };
+
+  useEffect(() => {
+    triggerRoll();
+  }, [numericValue]);
+
+  return (
+    <motion.div
+      onMouseEnter={triggerRoll}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      whileHover={{
+        scale: 1.05,
+        rotateY: 10,
+        rotateX: -5,
+        transition: { duration: 0.4, ease: "easeOut" },
+      }}
+      transition={{ delay: 0.3 + index * 0.1 }}
+      style={{ perspective: 1000 }}
+      className="relative group p-5 sm:p-6 rounded-[2rem] bg-gradient-to-br from-white via-white/95 to-blue-50 border border-blue-100/50 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 overflow-hidden flex flex-col justify-between"
+    >
+      {/* Decorative faint icon bg */}
+      <div className="absolute -right-4 -bottom-4 opacity-[0.25] group-hover:opacity-[0.45] transition-all duration-500 pointer-events-none">
+        <item.icon className="w-24 h-24 text-blue-900" strokeWidth={1} />
+      </div>
+
+      <div className="relative z-10 flex flex-col items-start text-left">
+        <div className="mb-4 w-11 h-11 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
+          <item.icon className="w-5.5 h-5.5 font-bold" strokeWidth={1.5} />
+        </div>
+        <div className="space-y-1">
+          <div className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#000d2e] via-blue-900 to-black tracking-tight">
+            {displayCount}
+            {suffix}
+          </div>
+          <p className="text-gray-500 font-semibold text-[10px] sm:text-[11px] group-hover:text-blue-700 transition-colors uppercase tracking-widest leading-tight">
+            {item.label}
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 interface FooterContactFormProps {
   platform: 'NetSuite' | 'Zoho';
@@ -272,27 +335,12 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mt-auto pt-4">
                     {[
-                      { icon: Globe2, title: isNetSuite ? "Global Deployments" : "Full Ecosystem", desc: isNetSuite ? "Multi-country ERP rollouts" : "50+ Zoho apps supported" },
-                      { icon: Rocket, title: "Fast Implementation", desc: isNetSuite ? "SuiteSuccess methodology" : "Rapid setup & migration" },
-                      { icon: HeartHandshake, title: "Dedicated Support", desc: "Post-go-live optimization" },
-                      { icon: Briefcase, title: "Certified Experts", desc: isNetSuite ? "NetSuite ERP consultants" : "Zoho certified developers" }
+                      { value: "700+", label: "Projects Completed", icon: Briefcase },
+                      { value: "250+", label: "Global Customers", icon: Building2 },
+                      { value: "15+", label: "Industry Expertise", icon: Target },
+                      { value: "84%", label: "Customer Retention", icon: Heart },
                     ].map((item, idx) => (
-                      <motion.div
-                        key={idx}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 + idx * 0.1 }}
-                        className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-gray-100 shadow-xl shadow-black/10 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between min-h-[125px] sm:min-h-[140px] group"
-                      >
-                        <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-3 shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                          <item.icon className="w-5 h-5 text-blue-600 group-hover:text-white transition-colors duration-300" />
-                        </div>
-                        <div>
-                          <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-1 leading-tight group-hover:text-blue-600 transition-colors duration-300">{item.title}</h4>
-                          <p className="text-xs sm:text-sm font-medium text-gray-600 leading-snug">{item.desc}</p>
-                        </div>
-                      </motion.div>
+                      <FooterStatCard key={idx} item={item} index={idx} />
                     ))}
                   </div>
                 </div>
