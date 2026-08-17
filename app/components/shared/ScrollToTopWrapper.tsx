@@ -12,7 +12,7 @@ const ScrollToTopButton = dynamic(
 
 export default function ScrollToTopWrapper() {
     const pathname = usePathname();
-    const isStudio = pathname.includes('/studio');
+    const isStudio = pathname?.includes('/studio');
 
     if (isStudio) return null;
 

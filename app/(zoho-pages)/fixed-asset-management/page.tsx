@@ -24,6 +24,16 @@ import {
   Check,
   X,
   HelpCircle,
+  Maximize2,
+  Smartphone,
+  Wrench,
+  Search,
+  Share2,
+  Code,
+  Globe,
+  Bell,
+  UserCheck,
+  Sliders,
 } from "lucide-react";
 import { FAQ } from "@/app/components/home/FAQ";
 import FooterContactForm from "@/app/components/shared/FooterContactForm";
@@ -51,6 +61,423 @@ function Counter({ value }: { value: number }) {
 export default function FixedAssetManagementPage() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeTab, setActiveTab] = useState(0);
+  const [activeFeatureIndex, setActiveFeatureIndex] = useState(0);
+  const [activeBenefit, setActiveBenefit] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [depreciationSubTab, setDepreciationSubTab] = useState<'dashboard' | 'company' | 'tax'>('dashboard');
+
+  const benefitsList = [
+    {
+      title: "Complete Asset Lifecycle Management",
+      description: "Track assets from purchase to disposal in one unified system.",
+      points: [
+        "End-to-end custody tracking from PO to scrap",
+        "Unified system replacing fragmented spreadsheets",
+        "Automated status transitions across departments"
+      ],
+      icon: Layers,
+      color: "from-blue-600 to-indigo-600",
+      image: "/images/assets/asset_tracker_dashboard.png"
+    },
+    {
+      title: "Real-Time Visibility",
+      description: "Web and mobile access ensures instant tracking across locations.",
+      points: [
+        "Live status sync across offices, plants & warehouses",
+        "Instant custodian allocation updates",
+        "24/7 web & mobile portal availability"
+      ],
+      icon: Globe,
+      color: "from-teal-600 to-emerald-600",
+      image: "/images/assets/auditor_dashboard_mobile.png"
+    },
+    {
+      title: "QR-code-Based Accuracy",
+      description: "Mobile QR-code scanning reduces manual errors and improves verification speed.",
+      points: [
+        "Instant camera scanning via smartphones & handheld devices",
+        "60% reduction in audit duration & physical verification effort",
+        "Eliminates duplicate asset entries and ghost inventory"
+      ],
+      icon: QrCode,
+      color: "from-purple-600 to-violet-600",
+      image: "/images/assets/asset_qr_barcode_master.png"
+    },
+    {
+      title: "Automated Depreciation Calculation",
+      description: "Accurate depreciation tracking as per Income Tax Act and Companies Act.",
+      points: [
+        "Automated SLM and WDV calculation engines",
+        "Strict compliance with Indian statutory Income Tax Block rules",
+        "Zero manual spreadsheet calculation risk"
+      ],
+      icon: FileSpreadsheet,
+      color: "from-amber-600 to-orange-600",
+      image: "/images/assets/depreciation_dashboard.png"
+    },
+    {
+      title: "Audit Readiness",
+      description: "Automated audits and audit scheduling simplify compliance and internal controls.",
+      points: [
+        "Audit trail logs for all value & custodian modifications",
+        "Instant PDF/Excel export for internal & external statutory auditors",
+        "Scheduled physical audit cycles with progress tracking"
+      ],
+      icon: ShieldCheck,
+      color: "from-rose-600 to-red-600",
+      image: "/images/assets/audit_trail_overview.png"
+    },
+    {
+      title: "Service Due Control",
+      description: "Prevent breakdowns with proactive maintenance tracking and reminders.",
+      points: [
+        "Preventive vs Breakdown maintenance classification",
+        "Maintenance cost tracking per machine & vendor",
+        "Service due scheduling to extend equipment lifespan"
+      ],
+      icon: Wrench,
+      color: "from-yellow-600 to-amber-600",
+      image: "/images/assets/preventive_maintenance.png"
+    },
+    {
+      title: "Alerts & Notifications",
+      description: "Automated reminders reduce missed servicing, renewals, or compliance deadlines.",
+      points: [
+        "Automated email & system notifications for AMC & Warranty expiry",
+        "Service due alerts sent directly to engineers",
+        "Customizable notification triggers for audit dates"
+      ],
+      icon: Bell,
+      color: "from-indigo-600 to-blue-600",
+      image: "/images/assets/audit_trail_history.png"
+    },
+    {
+      title: "Improved Accountability",
+      description: "Clear tracking of asset allocation and responsibility.",
+      points: [
+        "Individual employee asset acknowledgment & check-in/out",
+        "Branch & department custodian assignment records",
+        "Clear historical logs of asset transfer & usage"
+      ],
+      icon: UserCheck,
+      color: "from-cyan-600 to-blue-600",
+      image: "/images/assets/fixed_asset_register.png"
+    },
+    {
+      title: "Customizable & Scalable",
+      description: "Flexible structure allows adaptation to business needs.",
+      points: [
+        "Built on low-code Zoho Creator for rapid workflow adaptation",
+        "Custom form fields, approval matrices & brand themeing",
+        "Scales seamlessly from single location to multi-entity enterprises"
+      ],
+      icon: Sliders,
+      color: "from-pink-600 to-rose-600",
+      image: "/images/zoho-dashboards/zoho-creator-updated-dashboard.png"
+    },
+    {
+      title: "Centralized Reporting & Decision Support",
+      description: "Depreciation and asset reports enable better financial planning and budgeting.",
+      points: [
+        "Executive dashboard widgets for Net Book Value & Asset Type Mix",
+        "Data-driven replacement & capital expenditure budgeting",
+        "Configurable multi-dimensional reports for CFO decision making"
+      ],
+      icon: BarChart3,
+      color: "from-emerald-600 to-teal-600",
+      image: "/images/zoho-dashboards/zoho-analytics-dashboard.png"
+    }
+  ];
+
+  const interactiveFeatures = [
+    {
+      id: "lifecycle",
+      title: "Asset Lifecycle Management",
+      badge: "Lifecycle & Machine Dashboard",
+      description: "Tracks an asset from purchase and allocation to maintenance and final disposal with complete real-time status visibility.",
+      points: [
+        "Complete lifecycle tracking from procurement to scrapping",
+        "Department-wise employee asset allocation & active status",
+        "Machine Dashboard with availability, allocation & maintenance counts"
+      ],
+      icon: Layers,
+      color: "from-blue-600 to-indigo-600",
+      hasSubTabs: false,
+      twoImages: false,
+      images: [
+        {
+          src: "/images/assets/asset_tracker_dashboard.png",
+          alt: "Asset Lifecycle Management & Machine Dashboard",
+          caption: "AGS Asset Tracker 360 — Dashboard & Machine Allocation Overview"
+        }
+      ]
+    },
+    {
+      id: "mobile",
+      title: "Field Updates & Mobile Access",
+      badge: "iOS & Android Auditor App",
+      description: "Allows users to update asset information using mobile devices from any location. Field engineers and audit custodians can scan QR codes, verify asset status, and log physical audits in real time.",
+      points: [
+        "Native mobile interface for field engineers & audit custodians",
+        "Real-time physical audit counts (Audited vs Not Audited)",
+        "Instant condition reporting for working vs damaged assets"
+      ],
+      icon: Smartphone,
+      color: "from-emerald-600 to-teal-600",
+      hasSubTabs: false,
+      twoImages: false,
+      images: [
+        {
+          src: "/images/assets/auditor_dashboard_mobile.png",
+          alt: "Mobile Auditor Dashboard Interface",
+          caption: "Mobile Auditor Dashboard — On-the-Go Physical Verification Screen",
+          isMobile: true
+        }
+      ]
+    },
+    {
+      id: "categorization",
+      title: "Asset Categorization",
+      badge: "Structured Hierarchy",
+      description: "Organizes assets into categories (such as IT equipment, furniture, or vehicles) for easier management, audit verification, and statutory reporting.",
+      points: [
+        "Categorize IT Equipment, Machinery, Servers, Vehicles & Office Assets",
+        "Custom block-of-assets grouping for financial & tax hierarchy",
+        "Multi-attribute search filters across offices, plants & custodians"
+      ],
+      icon: Building,
+      color: "from-purple-600 to-violet-600",
+      hasSubTabs: false,
+      twoImages: false,
+      images: [
+        {
+          src: "/images/assets/asset_category_distribution.png",
+          alt: "Asset Category Distribution Chart",
+          caption: "Asset Category Distribution — Class & Block Allocation"
+        }
+      ]
+    },
+    {
+      id: "depreciation",
+      title: "Depreciation Management",
+      badge: "Statutory Dual Engine",
+      description: "Automatically calculates asset depreciation over time for accounting and financial reporting, offering dual engines for Companies Act (SLM & WDV) and Income Tax Act rules.",
+      points: [
+        "Automated Straight Line Method (SLM) & Written Down Value (WDV) engines",
+        "Dual schedule generation for Companies Act & Income Tax Act",
+        "Live Depreciation Dashboard with Net Book Value & Asset Type Mix analytics"
+      ],
+      icon: FileSpreadsheet,
+      color: "from-amber-600 to-orange-600",
+      hasSubTabs: true,
+      twoImages: false,
+      images: []
+    },
+    {
+      id: "register",
+      title: "Centralized Asset Register",
+      badge: "Single Source of Truth",
+      description: "Stores all asset information (name, cost, location, purchase date, asset ID, purchase value, current value, opening value, depreciation value, and closing asset value) in one central database for easy access and management.",
+      points: [
+        "Single searchable digital database for all physical asset records",
+        "Live tracking of Purchase Value, Current Asset Value & Closing Asset Value",
+        "One-click Excel / CSV export capability for financial audits"
+      ],
+      icon: Zap,
+      color: "from-cyan-600 to-blue-600",
+      hasSubTabs: false,
+      twoImages: false,
+      images: [
+        {
+          src: "/images/assets/fixed_asset_register.png",
+          alt: "Fixed Asset Register Table",
+          caption: "Centralized Fixed Asset Register — Detailed Asset Value Schedule"
+        }
+      ]
+    },
+    {
+      id: "audit",
+      title: "Audit Trails & Compliance",
+      badge: "Complete History & Event Log (2 Images)",
+      description: "Keeps a complete, tamper-proof record of all asset activities, custodian assignments, invoice modifications, and value changes for auditing and compliance purposes.",
+      points: [
+        "Complete historical chain of custody tracking per asset ID",
+        "Detailed activity timeline recording user changes, invoice numbers & depreciation %",
+        "Direct linkage between physical QR code tags, custodians, and audit history"
+      ],
+      icon: ShieldCheck,
+      color: "from-rose-600 to-red-600",
+      hasSubTabs: false,
+      twoImages: true,
+      images: [
+        {
+          src: "/images/assets/audit_trail_overview.png",
+          alt: "Asset Overview & QR Tag Details",
+          caption: "Image 1: Asset Details & QR Tag Overview"
+        },
+        {
+          src: "/images/assets/audit_trail_history.png",
+          alt: "Asset Activity History Timeline",
+          caption: "Image 2: Asset Timeline & User Activity History"
+        }
+      ]
+    },
+    {
+      id: "barcode",
+      title: "Asset Identification (Barcode / QR Code)",
+      badge: "Instant Mobile Verification",
+      description: "Assigns unique barcodes or QR codes to assets so they can be quickly scanned, verified, and tracked using mobile devices or physical scanners.",
+      points: [
+        "Automated generation of unique Barcodes and QR Codes per asset line item",
+        "Scannable via native smartphone camera or handheld Bluetooth scanners",
+        "Prevents ghost assets and accelerates physical audit speed by 60%"
+      ],
+      icon: QrCode,
+      color: "from-indigo-600 to-blue-600",
+      hasSubTabs: false,
+      twoImages: false,
+      images: [
+        {
+          src: "/images/assets/asset_qr_barcode_master.png",
+          alt: "Asset Master with Barcodes & QR Codes",
+          caption: "Asset Master — Line-Item Barcode & QR Code Tagging View"
+        }
+      ]
+    },
+    {
+      id: "maintenance",
+      title: "Preventive Maintenance Scheduling",
+      badge: "Preventive & Scheduled Service",
+      description: "Schedules regular maintenance and sends reminders to keep assets in good condition, preventing unexpected breakdowns.",
+      points: [
+        "Automated maintenance scheduling & vendor dispatch tracking",
+        "Preventive vs Breakdown maintenance classification & cost logging",
+        "Planned maintenance date alerts to extend overall asset lifecycle"
+      ],
+      icon: Wrench,
+      color: "from-amber-500 to-yellow-600",
+      hasSubTabs: false,
+      twoImages: false,
+      images: [
+        {
+          src: "/images/assets/preventive_maintenance.png",
+          alt: "Asset Maintenance Dashboard",
+          caption: "Asset Maintenance Dashboard — Status & Planned Service Schedule"
+        }
+      ]
+    },
+    {
+      id: "search",
+      title: "Advanced Global Search",
+      badge: "Cross-Module Instant Lookup",
+      description: "Enables users to instantly find assets, transactions, or records across all modules from a single search interface.",
+      points: [
+        "Instant global query across asset names, IDs, barcodes & vendors",
+        "Search across all modules (Asset Master, Maintenance, Allocation) from one bar",
+        "Highlights exact matching records with one-click record navigation"
+      ],
+      icon: Search,
+      color: "from-blue-500 to-cyan-600",
+      hasSubTabs: false,
+      twoImages: false,
+      images: [
+        {
+          src: "/images/assets/advanced_global_search.png",
+          alt: "Advanced Global Search Interface",
+          caption: "Advanced Global Search — Instant Cross-Module Record Lookup"
+        }
+      ]
+    },
+    {
+      id: "integrations",
+      title: "Integrations",
+      badge: "Native Zoho & Ecosystem Connectivity",
+      description: "Integration provides seamless connectivity with Zoho applications such as Zoho People and Zoho Books, while also offering scalable support for third-party integrations to adapt to evolving business requirements.",
+      points: [
+        "Direct sync with Zoho Books for automated financial entries & depreciation",
+        "Seamless employee data sync with Zoho People for asset allocation",
+        "REST API and webhook support for third-party ERP & ITAM tools"
+      ],
+      icon: Share2,
+      color: "from-purple-500 to-indigo-600",
+      hasSubTabs: false,
+      twoImages: false,
+      images: [
+        {
+          src: "/images/assets/zoho_integrations.png",
+          alt: "Zoho Books & Zoho People Integrations",
+          caption: "System Integrations — Automated Accounting & HR Synchronization"
+        }
+      ]
+    },
+    {
+      id: "reports",
+      title: "Custom Reports",
+      badge: "Real-Time Analytics & Exports",
+      description: "Enables dynamic report creation with configurable filters and field-level customization, powered by real-time data insights. Supports export in multiple formats and seamless integration with dashboards for deeper analytics.",
+      points: [
+        "Configurable field-level filtering & custom group-by reporting",
+        "One-click multi-format exports (Excel, PDF, CSV) for audit readiness",
+        "Live dashboard integration for executive asset insights"
+      ],
+      icon: BarChart3,
+      color: "from-emerald-500 to-teal-600",
+      hasSubTabs: false,
+      twoImages: false,
+      images: [
+        {
+          src: "/images/assets/asset_category_distribution.png",
+          alt: "Custom Asset Analytics & Reports",
+          caption: "Custom Reports & Category Distribution Analytics View"
+        }
+      ]
+    },
+    {
+      id: "nocode",
+      title: "No-Code / Low-Code",
+      badge: "Zoho Creator Platform Agility",
+      description: "Delivers a visual, drag-and-drop development environment with reusable workflows and minimal scripting requirements. Facilitates rapid application development, easy modifications, and smooth deployment without heavy coding effort.",
+      points: [
+        "Built on Zoho Creator visual low-code app engine",
+        "Rapid customization of forms, workflows & approval matrices",
+        "Scalable cloud infrastructure with zero heavy maintenance overhead"
+      ],
+      icon: Code,
+      color: "from-rose-500 to-pink-600",
+      hasSubTabs: false,
+      twoImages: false,
+      images: [
+        {
+          src: "/images/assets/asset_tracker_dashboard.png",
+          alt: "No-Code Workflow Builder Platform",
+          caption: "Zoho Creator Low-Code Platform Architecture"
+        }
+      ]
+    },
+    {
+      id: "mobileapp",
+      title: "Mobile-Based Application",
+      badge: "Device-Agnostic Mobile App",
+      description: "Provides a responsive, device-agnostic interface optimized for mobile use. Ensures real-time data synchronization, secure access, and reliable offline/online functionality for uninterrupted business operations.",
+      points: [
+        "Optimized for iOS, Android, and mobile web browsers",
+        "Secure role-based access & real-time cloud data synchronization",
+        "Mobile camera barcode/QR scanning for instant physical verification"
+      ],
+      icon: Smartphone,
+      color: "from-teal-500 to-cyan-600",
+      hasSubTabs: false,
+      twoImages: false,
+      images: [
+        {
+          src: "/images/assets/auditor_dashboard_mobile.png",
+          alt: "Mobile Asset Management Interface",
+          caption: "Mobile-Based Application — Real-Time Field Synchronization",
+          isMobile: true
+        }
+      ]
+    }
+  ];
 
   const stats = [
     { label: "Asset Visibility", value: 100, suffix: "%", icon: CheckCircle2 },
@@ -336,8 +763,8 @@ export default function FixedAssetManagementPage() {
             >
               <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/60 border border-white/10 group">
                 <Image
-                  src="/images/lap/lap2.webp"
-                  alt="Fixed Asset Management Software"
+                  src="/images/assets/fixed_asset_hero.jpg"
+                  alt="Person using Fixed Asset Management software on laptop"
                   width={700}
                   height={500}
                   className="w-full h-auto object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-700"
@@ -452,93 +879,387 @@ export default function FixedAssetManagementPage() {
         </div>
       </section>
 
-      {/* ── 4. FEATURES SECTION ────────────────────────────────────────────── */}
-      <section id="features" className="py-20 bg-white scroll-mt-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-4">
-              Comprehensive Features for Total Control
+      {/* ── 4. UNIFIED INTERACTIVE FEATURES SHOWCASE SECTION (#features) ───────── */}
+      <section id="features" className="py-24 bg-gradient-to-b from-slate-900 via-blue-950 to-slate-900 text-white scroll-mt-24 relative overflow-hidden">
+        {/* Background glow effects */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-300 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4">
+              <Layers className="w-4 h-4 text-blue-400" />
+              Interactive Feature & Module Showcase
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
+              Explore Fixed Asset Features & Live Screenshots
             </h2>
-            <p className="text-base sm:text-lg text-gray-600">
-              Built natively on Zoho Creator to provide enterprise-grade capabilities without complex overhead.
+            <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-normal">
+              Click any feature below to inspect live system screens, audit timelines, mobile dashboards, and statutory depreciation schedules.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feat, idx) => (
+          {/* Interactive Feature Category Selector Tabs */}
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
+            {interactiveFeatures.map((feat, idx) => (
+              <button
+                key={feat.id}
+                onClick={() => setActiveFeatureIndex(idx)}
+                className={`px-4 py-2.5 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 flex items-center gap-2 ${
+                  activeFeatureIndex === idx
+                    ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30 scale-105"
+                    : "bg-white/5 hover:bg-white/10 text-gray-300 border border-white/10"
+                }`}
+              >
+                <feat.icon className="w-4 h-4" />
+                <span>{feat.title}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Active Feature Showcase Panel (WHITE THEME INSIDE CARD) */}
+          {(() => {
+            const activeFeat = interactiveFeatures[activeFeatureIndex];
+            return (
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeFeat.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4 }}
+                  className="bg-white border border-gray-200 p-8 sm:p-12 rounded-3xl shadow-2xl space-y-8 text-gray-900"
+                >
+                  <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    {/* Left Details Column */}
+                    <div className="space-y-6">
+                      <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-wider">
+                        <activeFeat.icon className="w-3.5 h-3.5 text-blue-600" />
+                        {activeFeat.badge}
+                      </div>
+
+                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                        {activeFeat.title}
+                      </h3>
+
+                      <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal">
+                        {activeFeat.description}
+                      </p>
+
+                      <ul className="space-y-3">
+                        {activeFeat.points.map((pt, i) => (
+                          <li key={i} className="flex items-center gap-3 text-sm text-gray-700 font-medium">
+                            <div className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                              <Check className="w-3.5 h-3.5" />
+                            </div>
+                            <span>{pt}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="pt-4">
+                        <Link
+                          href="#contact-form"
+                          className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-all duration-300 shadow-xl shadow-blue-600/20 hover:scale-105"
+                        >
+                          Learn More
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Right Images Column */}
+                    <div className="space-y-6">
+                      {/* Sub-tabs for Depreciation Management */}
+                      {activeFeat.hasSubTabs && (
+                        <div className="flex flex-wrap gap-2 mb-4 bg-gray-100 p-1.5 rounded-xl border border-gray-200">
+                          <button
+                            onClick={() => setDepreciationSubTab('dashboard')}
+                            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                              depreciationSubTab === 'dashboard' ? "bg-blue-600 text-white shadow-sm" : "text-gray-600 hover:text-gray-900"
+                            }`}
+                          >
+                            Depreciation Dashboard
+                          </button>
+                          <button
+                            onClick={() => setDepreciationSubTab('company')}
+                            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                              depreciationSubTab === 'company' ? "bg-blue-600 text-white shadow-sm" : "text-gray-600 hover:text-gray-900"
+                            }`}
+                          >
+                            Company Act Schedule
+                          </button>
+                          <button
+                            onClick={() => setDepreciationSubTab('tax')}
+                            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                              depreciationSubTab === 'tax' ? "bg-blue-600 text-white shadow-sm" : "text-gray-600 hover:text-gray-900"
+                            }`}
+                          >
+                            Income Tax Act Schedule
+                          </button>
+                        </div>
+                      )}
+
+                      {/* Case A: Depreciation Management subtab image */}
+                      {activeFeat.hasSubTabs ? (
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 group bg-slate-950">
+                          <Image
+                            src={
+                              depreciationSubTab === 'dashboard'
+                                ? "/images/assets/depreciation_dashboard.png"
+                                : depreciationSubTab === 'company'
+                                ? "/images/assets/depreciation_company_act.png"
+                                : "/images/assets/depreciation_income_tax.png"
+                            }
+                            alt="Depreciation Management Interface"
+                            width={800}
+                            height={500}
+                            className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 cursor-pointer"
+                            onClick={() =>
+                              setSelectedImage(
+                                depreciationSubTab === 'dashboard'
+                                  ? "/images/assets/depreciation_dashboard.png"
+                                  : depreciationSubTab === 'company'
+                                  ? "/images/assets/depreciation_company_act.png"
+                                  : "/images/assets/depreciation_income_tax.png"
+                              )
+                            }
+                          />
+                          <button
+                            onClick={() =>
+                              setSelectedImage(
+                                depreciationSubTab === 'dashboard'
+                                  ? "/images/assets/depreciation_dashboard.png"
+                                  : depreciationSubTab === 'company'
+                                  ? "/images/assets/depreciation_company_act.png"
+                                  : "/images/assets/depreciation_income_tax.png"
+                              )
+                            }
+                            className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-black/80 text-white text-xs font-medium flex items-center gap-1.5 backdrop-blur-md hover:bg-black transition-colors"
+                          >
+                            <Maximize2 className="w-3.5 h-3.5" />
+                            Expand View
+                          </button>
+                        </div>
+                      ) : activeFeat.twoImages ? (
+                        /* Case B: Audit Trails & Compliance (TWO IMAGES) */
+                        <div className="space-y-4">
+                          <div className="text-xs font-bold text-gray-700 uppercase tracking-wider flex items-center gap-2">
+                            <ShieldCheck className="w-4 h-4 text-rose-600" />
+                            Audit Trail Interface Screens (2 System Views)
+                          </div>
+                          <div className="grid sm:grid-cols-2 gap-4">
+                            {activeFeat.images.map((img, i) => (
+                              <div
+                                key={i}
+                                className="relative rounded-xl overflow-hidden shadow-xl border border-gray-200 group bg-slate-950"
+                              >
+                                <Image
+                                  src={img.src}
+                                  alt={img.alt}
+                                  width={400}
+                                  height={300}
+                                  className="w-full h-44 object-cover transform group-hover:scale-105 transition-transform duration-700 cursor-pointer"
+                                  onClick={() => setSelectedImage(img.src)}
+                                />
+                                <div className="p-2 bg-slate-900 border-t border-gray-800 text-[11px] font-medium text-gray-300 truncate">
+                                  {img.caption}
+                                </div>
+                                <button
+                                  onClick={() => setSelectedImage(img.src)}
+                                  className="absolute top-2 right-2 p-1.5 rounded-md bg-black/70 text-white hover:bg-black transition-colors"
+                                >
+                                  <Maximize2 className="w-3 h-3" />
+                                </button>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        /* Case C: Single Image Features */
+                        <div
+                          className={`relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 group bg-slate-950 ${
+                            activeFeat.images[0]?.isMobile ? "max-w-xs mx-auto" : ""
+                          }`}
+                        >
+                          <Image
+                            src={activeFeat.images[0].src}
+                            alt={activeFeat.images[0].alt}
+                            width={800}
+                            height={500}
+                            className={`w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 cursor-pointer ${
+                              activeFeat.images[0]?.isMobile ? "max-h-[460px] object-contain p-2" : ""
+                            }`}
+                            onClick={() => setSelectedImage(activeFeat.images[0].src)}
+                          />
+                          <div className="p-3 bg-slate-900 border-t border-gray-800 text-xs font-medium text-gray-300">
+                            {activeFeat.images[0].caption}
+                          </div>
+                          <button
+                            onClick={() => setSelectedImage(activeFeat.images[0].src)}
+                            className="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-black/80 text-white text-xs font-medium flex items-center gap-1.5 backdrop-blur-md hover:bg-black transition-colors"
+                          >
+                            <Maximize2 className="w-3.5 h-3.5" />
+                            Expand View
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            );
+          })()}
+        </div>
+      </section>
+
+      {/* ── 5. BENEFITS SECTION ────────────────────────────────────────────── */}
+      <section id="benefits" className="py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50 scroll-mt-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 border border-blue-200 text-blue-800 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4">
+              <CheckCircle2 className="w-4 h-4 text-blue-600" />
+              Key Strategic & Operational Advantages
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+              Why Enterprise Leaders Choose Our Fixed Asset Management Tool
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal">
+              Transform physical asset tracking from an administrative chore into a high-precision, audit-ready financial advantage.
+            </p>
+          </div>
+
+          {/* Interactive Split Showcase: Live Preview Left (Wider) / Accordion List Right */}
+          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-8 xl:gap-12 items-stretch mb-20">
+            {/* Left Image Preview Container (WIDER SIDE) */}
+            <div className="relative min-h-[420px] lg:min-h-[560px] rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-slate-950 flex items-center justify-center p-2">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeBenefit}
+                  initial={{ opacity: 0, scale: 1.03 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="absolute inset-0 flex items-center justify-center bg-slate-950 p-3"
+                >
+                  <Image
+                    src={benefitsList[activeBenefit].image}
+                    alt={benefitsList[activeBenefit].title}
+                    fill
+                    className={`cursor-pointer ${
+                      benefitsList[activeBenefit].image.includes('mobile')
+                        ? "object-contain p-4 max-h-[520px]"
+                        : "object-cover object-top"
+                    }`}
+                    onClick={() => setSelectedImage(benefitsList[activeBenefit].image)}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-6 left-6 right-6 text-white pointer-events-none">
+                    <span className="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold uppercase tracking-wider mb-2 shadow-md">
+                      Live Interface View
+                    </span>
+                    <h4 className="text-xl sm:text-2xl font-bold text-white mb-1 drop-shadow-md">
+                      {benefitsList[activeBenefit].title}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-gray-300 line-clamp-2 drop-shadow">
+                      {benefitsList[activeBenefit].description}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setSelectedImage(benefitsList[activeBenefit].image)}
+                    className="absolute top-4 right-4 px-3.5 py-1.5 rounded-lg bg-black/80 hover:bg-black text-white text-xs font-semibold flex items-center gap-1.5 backdrop-blur-md transition-colors shadow-lg"
+                  >
+                    <Maximize2 className="w-4 h-4" />
+                    Expand View
+                  </button>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Right Accordion List */}
+            <div className="rounded-3xl border border-gray-200 bg-white p-4 sm:p-6 flex flex-col gap-2 justify-center shadow-xl">
+              {benefitsList.map((item, index) => {
+                const IconComponent = item.icon;
+                const isActive = activeBenefit === index;
+                return (
+                  <button
+                    key={index}
+                    onClick={() => setActiveBenefit(index)}
+                    className={`group w-full flex flex-col justify-center px-5 py-3.5 text-left rounded-xl transition-all duration-300 outline-none ${
+                      isActive
+                        ? "bg-blue-50 shadow-md border-l-4 border-blue-600"
+                        : "bg-transparent border-l-4 border-transparent hover:bg-gray-50"
+                    }`}
+                  >
+                    <div className="flex items-center gap-4 w-full">
+                      <div className={`p-2 rounded-lg shrink-0 transition-colors ${isActive ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600 group-hover:bg-gray-200"}`}>
+                        <IconComponent className="w-4 h-4" />
+                      </div>
+                      <span className={`text-sm sm:text-base flex-1 font-bold ${isActive ? "text-blue-950" : "text-gray-800"}`}>
+                        {item.title}
+                      </span>
+                      <ChevronRight className={`w-4 h-4 shrink-0 transition-all ${isActive ? "text-blue-600 rotate-90" : "text-gray-400 opacity-0 group-hover:opacity-60"}`} />
+                    </div>
+
+                    {isActive && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden mt-3 pl-10"
+                      >
+                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-3">
+                          {item.description}
+                        </p>
+                        <ul className="space-y-1.5">
+                          {item.points.map((pt, pi) => (
+                            <li key={pi} className="flex items-center gap-2 text-xs sm:text-sm text-gray-700 font-medium">
+                              <Check className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                              <span>{pt}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Quick-Scan Grid of 10 Benefits Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefitsList.map((b, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-xl hover:bg-white transition-all duration-300 group"
+                transition={{ duration: 0.4, delay: (idx % 3) * 0.08 }}
+                onClick={() => {
+                  setActiveBenefit(idx);
+                  const el = document.getElementById("benefits");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="p-6 rounded-2xl bg-white border border-gray-200 hover:shadow-xl hover:border-blue-300 transition-all duration-300 group cursor-pointer"
               >
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-r ${feat.color} flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md`}>
-                  <feat.icon className="w-7 h-7" />
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${b.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md`}>
+                  <b.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{feat.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{feat.description}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                  {b.title}
+                </h3>
+                <p className="text-gray-600 text-xs leading-relaxed font-normal mb-4">
+                  {b.description}
+                </p>
+                <ul className="space-y-1.5 border-t border-gray-100 pt-3">
+                  {b.points.slice(0, 2).map((pt, j) => (
+                    <li key={j} className="flex items-center gap-2 text-xs text-gray-700">
+                      <Check className="w-3 h-3 text-blue-600 shrink-0" />
+                      <span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 5. BENEFITS SECTION ────────────────────────────────────────────── */}
-      <section id="benefits" className="py-20 bg-gray-50 scroll-mt-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-4">
-              Key Strategic & Operational Benefits
-            </h2>
-            <p className="text-base sm:text-lg text-gray-600">
-              Transform asset accounting from an administrative chore into a high-performance advantage.
-            </p>
-          </div>
-
-          <div className="space-y-16">
-            {benefits.map((b, i) => (
-              <div
-                key={i}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
-                  i % 2 === 1 ? "lg:grid-flow-dense" : ""
-                }`}
-              >
-                <div className={i % 2 === 1 ? "lg:col-start-2" : ""}>
-                  <div className="inline-block px-3.5 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold uppercase tracking-wider mb-4">
-                    Benefit 0{i + 1}
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">
-                    {b.title}
-                  </h3>
-                  <p className="text-gray-600 text-base mb-6 leading-relaxed">
-                    {b.description}
-                  </p>
-                  <ul className="space-y-3">
-                    {b.points.map((pt, j) => (
-                      <li key={j} className="flex items-center gap-3 text-gray-700 text-sm font-medium">
-                        <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
-                          <Check className="w-3.5 h-3.5 stroke-[3]" />
-                        </div>
-                        {pt}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className={i % 2 === 1 ? "lg:col-start-1" : ""}>
-                  <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white p-3">
-                    <Image
-                      src={b.image}
-                      alt={b.title}
-                      width={650}
-                      height={450}
-                      className="w-full h-auto rounded-xl object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
             ))}
           </div>
         </div>
@@ -644,6 +1365,44 @@ export default function FixedAssetManagementPage() {
       <div id="contact-form" className="scroll-mt-28">
         <FooterContactForm platform="Zoho" />
       </div>
+
+      {/* ── 10. SCREENSHOT LIGHTBOX MODAL ───────────────────────────────────── */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-6xl w-full bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-white/20"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/70 hover:bg-black text-white flex items-center justify-center transition-colors shadow-lg"
+                aria-label="Close Preview"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <div className="p-2 sm:p-4 bg-slate-950 flex justify-center">
+                <Image
+                  src={selectedImage}
+                  alt="Enlarged System Screenshot"
+                  width={1400}
+                  height={900}
+                  className="w-auto max-h-[85vh] object-contain rounded-lg"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -52,7 +52,9 @@ export default async function NetSuiteSolutionsLayout({
   const headersList = await headers();
   const domain = headersList.get("host") || "";
   const fullUrl = headersList.get("referer") || "";
-  const path = fullUrl.split(domain)[1]?.split("?")[0] || "/netsuite";
+  const path = (domain && fullUrl.includes(domain))
+    ? (fullUrl.split(domain)[1]?.split("?")[0] || "/netsuite")
+    : "/netsuite";
   
   const pageData = NETSUITE_PAGES[path];
   const schema = pageData ? buildWebPageSchema({

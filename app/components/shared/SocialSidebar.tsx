@@ -49,7 +49,7 @@ const socialLinks = [
 
 export default function SocialSidebar() {
     const pathname = usePathname();
-    const isStudio = pathname.includes('/studio');
+    const isStudio = pathname?.includes('/studio');
     const [isMobile, setIsMobile] = React.useState(true);
     React.useEffect(() => {
         setIsMobile(window.innerWidth < 1024);

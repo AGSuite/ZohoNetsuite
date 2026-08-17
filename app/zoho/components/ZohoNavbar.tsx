@@ -14,7 +14,7 @@ const SECTION_LABELS = ['ZOHO'];
 
 const ZohoNavbar = () => {
   const pathname = usePathname();
-  const isStudio = pathname.includes('/studio');
+  const isStudio = pathname?.includes('/studio');
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const [openMegaMenu, setOpenMegaMenu] = useState<string | null>('ZOHO');

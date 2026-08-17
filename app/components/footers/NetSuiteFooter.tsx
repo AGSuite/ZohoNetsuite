@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function NetSuiteFooter() {
     const pathname = usePathname();
-    const isStudio = pathname.includes('/studio');
+    const isStudio = pathname?.includes('/studio');
 
     if (isStudio) return null;
 

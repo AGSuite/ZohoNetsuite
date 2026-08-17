@@ -30,7 +30,7 @@ const ScrollRestorer = dynamic(
 
 export default function ClientOverlays() {
     const pathname = usePathname();
-    const isStudio = pathname.includes('/studio');
+    const isStudio = pathname?.includes('/studio');
 
     if (isStudio) return null;
 

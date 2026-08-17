@@ -51,7 +51,9 @@ export default async function ZohoPagesLayout({
   const headersList = await headers();
   const domain = headersList.get("host") || "";
   const fullUrl = headersList.get("referer") || "";
-  const path = fullUrl.split(domain)[1]?.split("?")[0] || "/zoho";
+  const path = (domain && fullUrl.includes(domain))
+    ? (fullUrl.split(domain)[1]?.split("?")[0] || "/zoho")
+    : "/zoho";
   
   const pageData = ZOHO_PAGES[path];
   const schema = pageData ? buildWebPageSchema({
