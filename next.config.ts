@@ -43,6 +43,17 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'agsuitetech.com',
+          },
+        ],
+        destination: 'https://www.agsuitetech.com/:path*',
+        permanent: true,
+      },
       { source: '/netsuite/solutions', destination: '/netsuite-products', permanent: true },
       { source: '/zoho/solutions', destination: '/zoho-products', permanent: true },
       { source: '/netsuite/solutions/core-erp/erp', destination: '/netsuite-erp-solution', permanent: true },

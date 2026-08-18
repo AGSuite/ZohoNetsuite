@@ -85,8 +85,8 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
     ? {
         formId: "webform409531000047791096",
         formName: "WebToLeads409531000047791096",
-        xnQsjsdp: "d53cf6d2d91bd2c21647f1856ba77f750df004edeb1b81d56dde47d4e8ff036e",
-        xmIwtLD: "0dbca13c9e4fae22e074d8e1a51df222b069fd131b4ed865fd39ad02a316b18241f1902d40a5e065b29b169b79077aff",
+        xnQsjsdp: "d93e9734418e9c3b30c5c23b8af4dd429de93b1470fabb4bf7e171e04e9320c4",
+        xmIwtLD: "a1ff21d61463233d02dc2b03196b44982299ea07db1e7a146ec82490a3b4ed3f60122b57caf1c6ec49d3dab4bb853c05",
         serviceFieldName: "LEADCF166",
         serviceLabel: "Netsuite Services *",
         serviceDefault: "-Select NetSuite Service-",
@@ -102,19 +102,20 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
           "NetSuite India Localization",
           "NetSuite Data Backup for India",
         ],
-        analyticsUrl: "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=4166fb27fa5cc1cf01b8928a236946a1c2bdc6db7e59b193ea91f9c33521aff9a5b0a3f55d9bcbdb236dbab2e40baae2gid9ed1878e9054f25c0b6d3def4c6e478c7c24c8927c7c8e4d9fe1fa0c11f87875gid5f7aa6ebd053d5fd78ba0faa9cc73893b516b5e0e48b61583832fdc7ade510b7gidc7a000443c81ecd27f65e71f073e3e3e9a9cdf3699f81a305ac6bbae40fe1be7&tw=2cd0917d1cca3bbaebdf154ac89ffb93db64aad22b9b101985cc3ca35acbffc6&version=v2",
+        analyticsUrl: "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=f3bd7ced542f46fb29f93c7b4373f644d31cd086a4c8ba496469ac37904e8969fb10bf3d8a40f15f5fe6730cdc57d4f2gid167833e7721e721304ef8b4e7b752e284f56e917ca0fccb8bc6f7aae6837f471gid5137712e2bcc0fc63616e5455f8634a0d25ac539577adfb58231ee7d8763df70gidf15b03d4b7c830e31d17a78a2ed5d924b5573ae74083bf9cf0ccd463f3da1b79&tw=305381ce4c4600239ccac51f06f0b5020c12d5e18d247356125554ea55b10144&version=v2",
         validateFuncName: "checkMandatory409531000047791096",
         validateEmailFuncName: "validateEmail409531000047791096",
         recapId: "recap409531000047791096_footer_ns",
         recapErrId: "recapErr409531000047791096_footer_ns",
         recapCallbackName: "rccallback409531000047791096_footer_ns",
         reCapAlertFuncName: "reCaptchaAlert409531000047791096_footer_ns",
+        recapSiteKey: "6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7",
       }
     : {
         formId: "webform409531000047791049",
         formName: "WebToLeads409531000047791049",
-        xnQsjsdp: "afe7fc5b0536228280a461c09acb8cd162fafbcf476effeaa3a356db2e458dc1",
-        xmIwtLD: "5a82ca35749552f4f750cae5dec3c5b7d801c95f58f820da5a9e196736a46f71217d8315d7638831db35e87703ae69fb",
+        xnQsjsdp: "67860b2429a550e35c7c44282b3ccd5de42dee7cf8fadbbd5b2f0246e4e596a8",
+        xmIwtLD: "921e163c506154d37a6252eba6666b0ab6a5878005e7d9cb1bf24e8009451307593cbebb06b6266e387cfba4816aa5de",
         serviceFieldName: "LEADCF165",
         serviceLabel: "Zoho Services *",
         serviceDefault: "-Select Zoho Service-",
@@ -127,13 +128,14 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
           "Zoho Customization",
           "Zoho Integrations",
         ],
-        analyticsUrl: "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=e7fa82545e6cbc426156b206aa8236f2c686a1dd1fa2201a42f8f8bc1f3ed582856adb0b2a204a9d5af92c2452e3a8a8gidc5c4b2eec1a1272f8a476c638c29bb49a4d78e91e7b5216007f5c7aeef1afd9fgid5f6d199f406123ad764d17f846376ab5e7fab29b0bebbbde07b6a8367d0aba4cgid8d7aa6245a7de773373511b56e3ffa902647cb1e3730e636a86b82d0019d0cce&tw=b2ff6a1aabcf001476b36b61fabd0fbad09ea545696c57b419b7adca06e6ef53&version=v2",
+        analyticsUrl: "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=b908fa1000ffab4de1ced9e0bc7e605d4b9da9c7e59003cda4fe2d5db395d3a6e920d6be9ea3169a822e7ffa8db98da3gid36af8b4f2f5e65871c16869ec7ceb488d9acd260a6a187e0e40496bb05cbd880gidc009046b21cd87dacbd66406502a39eeeee1bb100ecec3b05d1cddc544de6a91gid71744047765ea757c7b289ee81e7d53226bf584a9c9d5103f52b7caed0551abc&tw=2d15c3d8b27233dfba15d0cf7605b68dbbb864dd84073072c165ea1f4eabbc40&version=v2",
         validateFuncName: "checkMandatory409531000047791049",
         validateEmailFuncName: "validateEmail409531000047791049",
         recapId: "recap409531000047791049_footer_zoho",
         recapErrId: "recapErr409531000047791049_footer_zoho",
         recapCallbackName: "rccallback409531000047791049_footer_zoho",
         reCapAlertFuncName: "reCaptchaAlert409531000047791049_footer_zoho",
+        recapSiteKey: "6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7",
       };
 
   const [returnUrl, setReturnUrl] = useState('https://www.agsuite.tech/thank-you');
@@ -231,7 +233,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
       if (container && container.children.length === 0 && (window as any).grecaptcha && (window as any).grecaptcha.render) {
         try {
           (window as any).grecaptcha.render(container, {
-            'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
+            'sitekey': config.recapSiteKey,
             'theme': 'light',
             'callback': (window as any)[config.recapCallbackName]
           });
@@ -529,7 +531,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                           <div className="flex flex-col gap-2 my-2">
                             <div
                               className="g-recaptcha"
-                              data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_"
+                              data-sitekey={config.recapSiteKey}
                               data-theme="light"
                               data-callback={config.recapCallbackName}
                               captcha-verified="false"

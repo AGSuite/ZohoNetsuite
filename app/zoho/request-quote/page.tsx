@@ -116,7 +116,7 @@ export default function ZohoRequestQuotePage() {
             if (container && container.children.length === 0 && (window as any).grecaptcha && (window as any).grecaptcha.render) {
                 try {
                     (window as any).grecaptcha.render(container, {
-                        sitekey: '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
+                        sitekey: '6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7',
                         theme: 'light',
                         callback: (window as any).rccallback409531000047791049
                     });
@@ -307,9 +307,9 @@ export default function ZohoRequestQuotePage() {
                                         acceptCharset="UTF-8"
                                         className="space-y-4"
                                     >
-                                        <input type="text" className="hidden" name="xnQsjsdp" value="afe7fc5b0536228280a461c09acb8cd162fafbcf476effeaa3a356db2e458dc1" readOnly />
+                                        <input type="text" className="hidden" name="xnQsjsdp" value="67860b2429a550e35c7c44282b3ccd5de42dee7cf8fadbbd5b2f0246e4e596a8" readOnly />
                                         <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-                                        <input type="text" className="hidden" name="xmIwtLD" value="5a82ca35749552f4f750cae5dec3c5b7d801c95f58f820da5a9e196736a46f71217d8315d7638831db35e87703ae69fb" readOnly />
+                                        <input type="text" className="hidden" name="xmIwtLD" value="921e163c506154d37a6252eba6666b0ab6a5878005e7d9cb1bf24e8009451307593cbebb06b6266e387cfba4816aa5de" readOnly />
                                         <input type="text" className="hidden" name="actionType" value="TGVhZHM=" readOnly />
                                         <input type="text" className="hidden" name="returnURL" value={returnUrl} readOnly />
                                         <input type="text" className="hidden" name="aG9uZXlwb3Q" value="" readOnly />
@@ -404,7 +404,7 @@ export default function ZohoRequestQuotePage() {
                                           <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
                                           <div
                                             className="g-recaptcha"
-                                            data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_"
+                                            data-sitekey="6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7"
                                             data-theme="light"
                                             data-callback="rccallback409531000047791049"
                                             captcha-verified="false"

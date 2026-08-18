@@ -111,7 +111,7 @@ export default function FreeConsultationTopLevel() {
                     if (container.children.length > 0) return;
 
                     (window as any).grecaptcha.render('recap409531000047791096', {
-                        'sitekey': '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
+                        'sitekey': '6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7',
                         'theme': 'light',
                         'callback': (window as any).rccallback409531000047791096
                     });
@@ -317,9 +317,9 @@ export default function FreeConsultationTopLevel() {
                                         acceptCharset="UTF-8"
                                         className="space-y-4"
                                     >
-                                        <input type="text" className="hidden" name="xnQsjsdp" value="d53cf6d2d91bd2c21647f1856ba77f750df004edeb1b81d56dde47d4e8ff036e" readOnly />
+                                        <input type="text" className="hidden" name="xnQsjsdp" value="d93e9734418e9c3b30c5c23b8af4dd429de93b1470fabb4bf7e171e04e9320c4" readOnly />
                                         <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-                                        <input type="text" className="hidden" name="xmIwtLD" value="0dbca13c9e4fae22e074d8e1a51df222b069fd131b4ed865fd39ad02a316b18241f1902d40a5e065b29b169b79077aff" readOnly />
+                                        <input type="text" className="hidden" name="xmIwtLD" value="a1ff21d61463233d02dc2b03196b44982299ea07db1e7a146ec82490a3b4ed3f60122b57caf1c6ec49d3dab4bb853c05" readOnly />
                                         <input type="text" className="hidden" name="actionType" value="TGVhZHM=" readOnly />
                                         <input type="text" className="hidden" name="returnURL" value="https://www.agsuite.tech/thank-you" readOnly />
                                         <input type="text" className="hidden" name="aG9uZXlwb3Q" value="" readOnly />
@@ -491,7 +491,7 @@ export default function FreeConsultationTopLevel() {
                                         </div>
 
                                         <div className="space-y-2 py-2">
-                                            <div className="g-recaptcha" data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_" data-theme="light" data-callback="rccallback409531000047791096" captcha-verified="false" id="recap409531000047791096"></div>
+                                            <div className="g-recaptcha" data-sitekey="6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7" data-theme="light" data-callback="rccallback409531000047791096" captcha-verified="false" id="recap409531000047791096"></div>
                                             <div id="recapErr409531000047791096" style={{ visibility: 'hidden', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
                                         </div>
 

@@ -36,7 +36,7 @@ export default function EmbeddedZohoForm() {
             if (container && container.children.length === 0 && (window as any).grecaptcha && (window as any).grecaptcha.render) {
                 try {
                     (window as any).grecaptcha.render(container, {
-                        sitekey: '6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_',
+                        sitekey: '6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7',
                         theme: 'light',
                         callback: (window as any).rccallback409531000047791049
                     });
@@ -114,12 +114,12 @@ export default function EmbeddedZohoForm() {
 
     return (
         <div id="crmWebToEntityForm" className="zcwf_lblLeft crmWebToEntityForm">
-            <Script id="wf_anal_embed" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=e7fa82545e6cbc426156b206aa8236f2c686a1dd1fa2201a42f8f8bc1f3ed582856adb0b2a204a9d5af92c2452e3a8a8gidc5c4b2eec1a1272f8a476c638c29bb49a4d78e91e7b5216007f5c7aeef1afd9fgid5f6d199f406123ad764d17f846376ab5e7fab29b0bebbbde07b6a8367d0aba4cgid8d7aa6245a7de773373511b56e3ffa902647cb1e3730e636a86b82d0019d0cce&tw=b2ff6a1aabcf001476b36b61fabd0fbad09ea545696c57b419b7adca06e6ef53&version=v2" strategy="afterInteractive" />
+            <Script id="wf_anal_embed" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=b908fa1000ffab4de1ced9e0bc7e605d4b9da9c7e59003cda4fe2d5db395d3a6e920d6be9ea3169a822e7ffa8db98da3gid36af8b4f2f5e65871c16869ec7ceb488d9acd260a6a187e0e40496bb05cbd880gidc009046b21cd87dacbd66406502a39eeeee1bb100ecec3b05d1cddc544de6a91gid71744047765ea757c7b289ee81e7d53226bf584a9c9d5103f52b7caed0551abc&tw=2d15c3d8b27233dfba15d0cf7605b68dbbb864dd84073072c165ea1f4eabbc40&version=v2" strategy="afterInteractive" />
             <iframe name="zoho_iframe_embedded" style={{ display: 'none' }}></iframe>
             <form id="webform409531000047791049" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000047791049" method="POST" onSubmit={handleFormSubmit} acceptCharset="UTF-8">
-                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="afe7fc5b0536228280a461c09acb8cd162fafbcf476effeaa3a356db2e458dc1" readOnly />
+                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="67860b2429a550e35c7c44282b3ccd5de42dee7cf8fadbbd5b2f0246e4e596a8" readOnly />
                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                <input type="text" className="hidden" name="xmIwtLD" defaultValue="5a82ca35749552f4f750cae5dec3c5b7d801c95f58f820da5a9e196736a46f71217d8315d7638831db35e87703ae69fb" readOnly />
+                <input type="text" className="hidden" name="xmIwtLD" defaultValue="921e163c506154d37a6252eba6666b0ab6a5878005e7d9cb1bf24e8009451307593cbebb06b6266e387cfba4816aa5de" readOnly />
                 <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
                 <input type="text" className="hidden" name="returnURL" value={returnUrl} readOnly />
                 <input type="text" className="hidden" name="aG9uZXlwb3Q" defaultValue="" readOnly />
@@ -271,7 +271,7 @@ export default function EmbeddedZohoForm() {
                         <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
                         <div
                             className="g-recaptcha"
-                            data-sitekey="6LfSYoItAAAAAGehWFygolLQdx9Sk2qkRDcG6_C_"
+                            data-sitekey="6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7"
                             data-theme="light"
                             data-callback="rccallback409531000047791049"
                             captcha-verified="false"
