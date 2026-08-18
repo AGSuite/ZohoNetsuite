@@ -217,13 +217,13 @@ export default function ZohoContactForm() {
         <>
             {/* Zoho CRM Web-to-Lead Analytics */}
             <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=0eb6a535c81a04e07aa886637740a304d7d59028aa8cf0d09048e8d1fbedf647e44d9f74b254709a0882eb1c31136d9cgid6d4592f2dce66ea8bcc60167960b9d0d27138cba33ac6ce7248c5c53d3a06fdcgid365cc1061c930ed0655f44af7ff3ea4d0b60a3b2784693cb6b2d5828f4dd9f35gid1cae83d6cd96c22775ca40c3b71805971400a95aea889397fdfa8c8f955523fd&tw=d336253c98c6a8f95f079a1420d0d2411cea660a574b2a28d90b4690781c9053&version=v2" strategy="afterInteractive" />
-            <section id="contact-form" className="relative py-28 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
+            <section id="contact-form" className="relative py-10 sm:py-12 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
                 {/* Background Decorative Gradients */}
                 <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-blue-500/30 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-500/25 rounded-full blur-[140px] translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6">
-                    <div className="rounded-[40px] bg-[#0d0d0d]/80 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
+                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+                    <div className="rounded-3xl bg-[#0d0d0d]/80 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
                         {/* Left Side: Brand Narrative */}
                         <motion.div
                             variants={{
@@ -239,7 +239,7 @@ export default function ZohoContactForm() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.2 }}
-                            className="p-8 sm:p-12 lg:p-16 flex flex-col justify-between bg-gradient-to-br from-blue-950 via-[#0d0d0d] to-[#0a0a0a] relative overflow-hidden border-b lg:border-b-0 lg:border-r border-white/10"
+                            className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-gradient-to-br from-blue-950 via-[#0d0d0d] to-[#0a0a0a] relative overflow-hidden border-b lg:border-b-0 lg:border-r border-white/10"
                         >
                             <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/Background/grid-white.svg')] opacity-[0.05] pointer-events-none z-10"></div>
 
@@ -256,23 +256,12 @@ export default function ZohoContactForm() {
                             </div>
 
                             <div className="relative z-20 text-left">
-                                <motion.div
-                                    variants={{
-                                        hidden: { opacity: 0, y: 20 },
-                                        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-                                    }}
-                                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 bg-white/5 shadow-sm mb-8"
-                                >
-                                    <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-                                    <span className="text-blue-100 text-[10px] font-bold tracking-widest uppercase">Global Excellence</span>
-                                </motion.div>
-
                                 <motion.h2
                                     variants={{
                                         hidden: { opacity: 0, y: 20 },
                                         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
                                     }}
-                                    className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight leading-[1.05] text-white"
+                                    className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight leading-tight text-white"
                                 >
                                     Architecting <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
@@ -285,7 +274,7 @@ export default function ZohoContactForm() {
                                         hidden: { opacity: 0, y: 20 },
                                         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
                                     }}
-                                    className="text-gray-300 text-base leading-relaxed mb-10 max-w-sm"
+                                    className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6 max-w-md"
                                 >
                                     Join 500+ enterprises that have optimized their operations with our certified Zoho implementation expertise and custom industrial automation.
                                 </motion.p>
@@ -352,10 +341,9 @@ export default function ZohoContactForm() {
                         </motion.div>
 
                         {/* Right Side: Form */}
-                        <div className="p-8 sm:p-12 lg:p-16 bg-white relative flex flex-col justify-center">
-                            <div className="relative z-10 mb-6 sm:mb-8">
-                                <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 tracking-tight">Let’s Get Started !!</h3>
-                                <p className="text-sm sm:text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500">Fill in your details and we'll reach out within 24 hours.</p>
+                        <div className="p-5 sm:p-6 lg:p-7 bg-white relative flex flex-col justify-center">
+                            <div className="relative z-10 mb-4">
+                                <h3 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">Let’s Get Started !!</h3>
                             </div>
 
                             <motion.form
@@ -516,9 +504,8 @@ export default function ZohoContactForm() {
                                   </div>
                                 </motion.div>
 
-                                <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-                                    <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full sm:w-auto px-12 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-2xl transition-all shadow-lg hover:scale-[1.02] active:scale-95 text-sm uppercase tracking-widest cursor-pointer" value="Submit" />
-                                    <input type="reset" className="zcwf_button px-6 py-4 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-2xl text-sm cursor-pointer" value="Reset" />
+                                <motion.div variants={itemVariants} className="pt-2">
+                                    <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full px-12 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-2xl transition-all shadow-lg hover:scale-[1.02] active:scale-95 text-sm uppercase tracking-widest cursor-pointer text-center" value="Submit" />
                                 </motion.div>
                             </motion.form>
                         </div>

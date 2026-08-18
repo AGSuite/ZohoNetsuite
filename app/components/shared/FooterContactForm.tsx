@@ -286,54 +286,47 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
         </>
       )}
 
-      <section id="contact-form" className="relative py-14 sm:py-24 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
+      <section id="contact-form" className="relative py-10 sm:py-12 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
         <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-blue-500/30 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3" />
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-500/25 rounded-full blur-[140px] translate-x-1/3 -translate-y-1/3" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="rounded-3xl sm:rounded-[40px] bg-[#0d0d0d]/70 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-white/5 rounded-3xl sm:rounded-[40px]" />
+          <div className="rounded-3xl bg-[#0d0d0d]/70 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-white/5 rounded-3xl" />
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
 
               {/* Left Side - Platform Content */}
-              <div className="p-8 sm:p-12 lg:p-16 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10 bg-gradient-to-br from-blue-950/40 via-purple-950/20 to-transparent">
-                <div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6"
-                  >
-                    {isNetSuite ? 'Oracle NetSuite Practice' : 'Zoho Authorized Partner'}
-                  </motion.div>
+              <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10 bg-gradient-to-br from-blue-950/40 via-purple-950/20 to-transparent">
+                <div className="relative z-10 flex flex-col justify-between h-full space-y-6">
+                  <div>
+                    <motion.h2
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 }}
+                      className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight"
+                    >
+                      {isNetSuite ? (
+                        <>Transform Your Business with <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">Oracle NetSuite</span></>
+                      ) : (
+                        <>Accelerate Growth with <span className="bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500 bg-clip-text text-transparent">Zoho Solutions</span></>
+                      )}
+                    </motion.h2>
 
-                  <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 }}
-                    className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight"
-                  >
-                    {isNetSuite ? (
-                      <>Transform Your Business with <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">Oracle NetSuite</span></>
-                    ) : (
-                      <>Accelerate Growth with <span className="bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500 bg-clip-text text-transparent">Zoho Solutions</span></>
-                    )}
-                  </motion.h2>
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 }}
+                      className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-xl"
+                    >
+                      {isNetSuite
+                        ? 'Connect with our certified NetSuite consultants for licensing, multi-subsidiary implementations, optimizations, and custom integrations tailored for enterprise scale.'
+                        : 'Partner with AGSuite for complete Zoho ecosystem strategy, implementation, custom deluge development, license optimization, and 24/7 technical support.'}
+                    </motion.p>
+                  </div>
 
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
-                    className="text-gray-300 text-base sm:text-lg leading-relaxed mb-10 max-w-xl"
-                  >
-                    {isNetSuite
-                      ? 'Connect with our certified NetSuite consultants for licensing, multi-subsidiary implementations, optimizations, and custom integrations tailored for enterprise scale.'
-                      : 'Partner with AGSuite for complete Zoho ecosystem strategy, implementation, custom deluge development, license optimization, and 24/7 technical support.'}
-                  </motion.p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mt-auto pt-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mt-auto pt-2">
                     {[
                       { value: "700+", label: "Projects Completed", icon: Briefcase },
                       { value: "250+", label: "Global Customers", icon: Building2 },
@@ -347,7 +340,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
               </div>
 
               {/* Right Side - Form */}
-              <div className="p-8 sm:p-12 lg:p-16 bg-white flex flex-col justify-center">
+              <div className="p-5 sm:p-6 lg:p-7 bg-white flex flex-col justify-center">
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -375,9 +368,8 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                     </motion.div>
                   ) : (
                     <>
-                      <div className="mb-6 sm:mb-8">
-                        <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 tracking-tight">Let’s Get Started !!</h3>
-                        <p className="text-sm sm:text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500">Fill in your details and our team will reach out within 24 hours.</p>
+                      <div className="mb-4">
+                        <h3 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">Let’s Get Started !!</h3>
                       </div>
 
                       <div id="crmWebToEntityForm" className="crmWebToEntityForm">

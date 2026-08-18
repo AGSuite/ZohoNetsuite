@@ -14,31 +14,31 @@ export default function ContactFormZoho() {
     };
 
     return (
-        <section id="contact-form" className="relative py-24 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
+        <section id="contact-form" className="relative py-10 sm:py-12 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
             <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-red-500/20 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3"></div>
             <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[110px] translate-x-1/3 translate-y-1/3"></div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6">
-                <div className="rounded-[40px] bg-[#0d0d0d]/80 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+                <div className="rounded-3xl bg-[#0d0d0d]/80 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                         {/* Left Side */}
-                        <div className="p-8 lg:p-16 flex flex-col justify-center">
-                            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+                        <div className="p-6 lg:p-10 flex flex-col justify-center">
+                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight leading-tight">
                                 Ready for <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-orange-400">Zoho Mastery?</span>
                             </h2>
-                            <p className="text-gray-300 text-lg mb-8">
+                            <p className="text-gray-300 text-sm sm:text-base mb-6 leading-relaxed">
                                 Leverage the power of the Zoho One suite to unify your business operations. Our experts help you implement, customize, and scale.
                             </p>
                             <div className="flex items-center gap-4 text-gray-400">
-                                <div className="p-3 bg-red-500/10 rounded-xl border border-red-500/20">
-                                    <CheckCircle className="text-red-500" />
+                                <div className="p-2.5 bg-red-500/10 rounded-xl border border-red-500/20">
+                                    <CheckCircle className="text-red-500 w-5 h-5" />
                                 </div>
-                                <span>Premier Zoho Consulting Partner</span>
+                                <span className="text-xs sm:text-sm font-medium">Premier Zoho Consulting Partner</span>
                             </div>
                         </div>
 
                         {/* Right Side - Form */}
-                        <div className="bg-white p-8 lg:p-12 relative">
+                        <div className="bg-white p-6 lg:p-8 relative">
                             {submitted ? (
                                 <div className="h-full flex flex-col items-center justify-center text-center py-20">
                                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">

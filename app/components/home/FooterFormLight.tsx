@@ -14,7 +14,7 @@ export default function FooterFormLight() {
       <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-cyan-200/30 rounded-full blur-[100px]"></div>
 
       <div className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[850px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
 
           {/* Left Side - Full Image with Dark Overlay */}
           <motion.div
@@ -22,7 +22,7 @@ export default function FooterFormLight() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-full min-h-[400px] lg:min-h-full"
+            className="relative h-full min-h-[350px] lg:min-h-full"
           >
             {/* Full Background Image */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -42,7 +42,7 @@ export default function FooterFormLight() {
             <div className="absolute inset-0 bg-gradient-to-t from-blue-900/30 via-transparent to-transparent"></div>
 
             {/* Content on top of overlay */}
-            <div className="relative z-10 flex flex-col justify-center h-full p-8 lg:p-16">
+            <div className="relative z-10 flex flex-col justify-center h-full p-6 lg:p-10">
 
 
               {/* Main Heading */}
@@ -51,7 +51,7 @@ export default function FooterFormLight() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.25 }}
-                className="text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight"
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight tracking-tight"
               >
                 Let's Start{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300">
@@ -65,7 +65,7 @@ export default function FooterFormLight() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.35 }}
-                className="text-white/80 text-xl lg:text-2xl font-medium leading-relaxed mb-10 max-w-lg"
+                className="text-white/80 text-sm sm:text-base font-medium leading-relaxed mb-6 max-w-lg"
               >
                 Transform your business with our award-winning expertise. We turn complex challenges into automated success stories.
               </motion.p>
@@ -141,7 +141,7 @@ export default function FooterFormLight() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative bg-white p-8 lg:p-12 xl:p-16 h-full overflow-hidden flex flex-col justify-center"
+            className="relative bg-white p-5 sm:p-6 lg:p-7 h-full overflow-hidden flex flex-col justify-center"
           >
             {/* Light gradient color blobs in corners */}
             <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-blue-100/50 rounded-full blur-[80px] translate-x-1/3 -translate-y-1/3"></div>
@@ -150,9 +150,8 @@ export default function FooterFormLight() {
             <div className="absolute bottom-1/4 right-1/4 w-[180px] h-[180px] bg-purple-100/25 rounded-full blur-[50px]"></div>
 
             {/* Form Heading */}
-            <div className="relative z-10 mb-8">
-              <h3 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-3">Let’s Get Started !!</h3>
-              <p className="text-gray-600 text-lg lg:text-xl">Fill in your details and we'll reach out within 24 hours</p>
+            <div className="relative z-10 mb-4">
+              <h3 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">Let’s Get Started !!</h3>
             </div>
 
             <form className="relative z-10 space-y-5">

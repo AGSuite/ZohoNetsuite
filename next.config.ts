@@ -44,6 +44,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: '/netsuite/solutions', destination: '/netsuite-products', permanent: true },
+      { source: '/zoho/solutions', destination: '/zoho-products', permanent: true },
       { source: '/netsuite/solutions/core-erp/erp', destination: '/netsuite-erp-solution', permanent: true },
       { source: '/netsuite/solutions/analytics/bi', destination: '/netsuite-business-intelligence', permanent: true },
       { source: '/netsuite/solutions/planning/main', destination: '/netsuite-planning-and-budgeting', permanent: true },
@@ -162,6 +163,8 @@ const nextConfig: NextConfig = {
       { source: '/zoho-customization', destination: '/zoho/customization' },
       { source: '/zoho-support', destination: '/zoho/managed-services' },
       { source: '/zoho-training-services', destination: '/zoho/training-services' },
+      { source: '/zoho-products', destination: '/zoho/solutions' },
+      { source: '/zoho-products/', destination: '/zoho/solutions' },
     ];
   },
 };

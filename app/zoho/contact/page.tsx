@@ -333,7 +333,7 @@ export default function ZohoContactPage() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4 pointer-events-none" />
         <div className="absolute bottom-0 left-1/2 w-[800px] h-[400px] bg-cyan-700/10 rounded-full blur-[150px] -translate-x-1/2 translate-y-1/3 pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-24 pb-12">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-16 pb-10">
 
           {/* Breadcrumb */}
           <motion.nav
@@ -355,12 +355,7 @@ export default function ZohoContactPage() {
               transition={{ duration: 0.8 }}
               className="flex flex-col gap-6 lg:sticky lg:top-32"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white backdrop-blur-sm w-fit">
-                <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-                <span className="text-blue-900 text-xs font-medium tracking-widest uppercase">Get in Touch</span>
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium text-white leading-[1.1] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
                 Transform Your Business with{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-indigo-300 to-cyan-200">
                   Zoho
@@ -375,7 +370,7 @@ export default function ZohoContactPage() {
               />
 
               <div className="space-y-4">
-                <p className="text-gray-300 text-lg leading-relaxed max-w-lg">
+                <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-lg">
                   Bridge the gap between vision and execution. Partner with certified Zoho experts to build a resilient, unified, and data-driven enterprise.
                 </p>
               </div>
@@ -418,13 +413,12 @@ export default function ZohoContactPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="relative bg-white rounded-[2.5rem] shadow-[0_32px_80px_rgba(0,0,0,0.5)] overflow-hidden">
+              <div className="relative bg-white rounded-3xl shadow-[0_32px_80px_rgba(0,0,0,0.5)] overflow-hidden">
                 <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600" />
 
-                <div className="relative z-10 p-8 lg:p-10">
-                  <div className="mb-8 border-b border-gray-100 pb-6">
-                    <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2 tracking-tight">Accelerate your growth with zoho</h2>
-                    <p className="text-gray-500 text-base">Fill in your details — we'll respond within 24 hours.</p>
+                <div className="relative z-10 p-5 sm:p-6 lg:p-7">
+                  <div className="mb-4">
+                    <h2 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">Accelerate your growth with zoho</h2>
                   </div>
 
                   <form

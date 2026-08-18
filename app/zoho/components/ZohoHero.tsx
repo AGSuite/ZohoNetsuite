@@ -57,7 +57,7 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
                   <div className="mt-5 relative inline-flex group">
                     <div className="absolute inset-0 rounded-xl bg-linear-to-r from-[#E91E63] via-[#FF4081] to-[#F06292] opacity-70 blur-lg" />
                     <Link
-                      href="/zoho/solutions"
+                      href="/zoho-products"
                       className="bg-gray-950 text-white relative px-10 py-4 rounded-xl font-medium shadow-2xl inline-block"
                     >
                       Experience Zoho One

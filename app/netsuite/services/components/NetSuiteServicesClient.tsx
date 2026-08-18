@@ -330,7 +330,8 @@ export default function NetSuiteServicesClient() {
               </div>
             </motion.div>
           </div>
-          <motion.div
+          {/* COMMENTED FOR NOW - Hero Stats Metrics */}
+          {/* <motion.div
             ref={statsRef}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -363,7 +364,7 @@ export default function NetSuiteServicesClient() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 

@@ -25,13 +25,13 @@ export const metadata: Metadata = {
 
   // ── Title ──────────────────────────────────────────────────────────────────
   title: {
-    default: "Zoho & NetSuite Solutions | AGSuite Technologies",
+    default: "Oracle NetSuite ERP and Zoho Implementation Partner",
     template: "%s | AGSuite Technologies",
   },
 
   // ── Core tags ──────────────────────────────────────────────────────────────
   description:
-    "AGSuite Technologies — Zoho Premium Partner & Oracle NetSuite Partner. ERP, CRM, HR, Finance, and cloud solutions for growing businesses in India and globally.",
+    "Partner with AGSuite for Oracle NetSuite ERP and Zoho implementation, customization, integration, and support solutions tailored to your business needs.",
   keywords: [
     "Zoho partner India",
     "NetSuite partner India",

@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Zoho & Oracle NetSuite Solutions | AGSuite",
+  title: "Oracle NetSuite ERP and Zoho Implementation Partner",
   description:
-    "Choose between Zoho and Oracle NetSuite. Explore CRM, ERP, automation, and cloud solutions tailored for every business.",
+    "Partner with AGSuite for Oracle NetSuite ERP and Zoho implementation, customization, integration, and support solutions tailored to your business needs.",
   openGraph: {
-    title: "Zoho & Oracle NetSuite Solutions | AGSuite",
+    title: "Oracle NetSuite ERP and Zoho Implementation Partner",
     description:
-      "Explore Zoho CRM and Oracle NetSuite ERP solutions for fast-scaling companies.",
+      "Partner with AGSuite for Oracle NetSuite ERP and Zoho implementation, customization, integration, and support solutions tailored to your business needs.",
     url: "https://agsuitetech.com", // ← CHANGE THIS TO YOUR REAL DOMAIN
     siteName: "AGSuite",
     images: [
@@ -16,7 +16,7 @@ export const metadata = {
         url: "/images/Background/bghomepage.jpg", // ← RECOMMENDED: replace with dedicated OG image (1200×630)
         width: 1200,
         height: 630,
-        alt: "Zoho & NetSuite Platform Overview",
+        alt: "Oracle NetSuite ERP and Zoho Implementation Partner",
       },
     ],
     locale: "en_US",

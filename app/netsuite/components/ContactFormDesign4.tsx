@@ -216,27 +216,24 @@ export default function ContactFormDesign4() {
       <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
       {/* NetSuite Web-to-Lead Analytics */}
       <Script id="wf_anal_netsuite" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=f84d1d6876a443cf36bdeab891c5582d7c3e142d9fce42d31ffc393506d6d6d54dbf7f9cf10e11397fb06e31977be163gid65b81325138b2fc10191c2ef7b4572a0b18f76ffadabafd1f029455ae866a59cgidf169f3e66dfe1cbf71d7bc2d3d67d57ab12b228f83d723a6a15eb3cfddecc257gid6d99bc21bab3635e5f6b816b959e07211ea39cb1eae372096d63da78a4b9dccc&tw=1db53bf46a6a8b587793bb8f51f25b9b772d35495cdb16dcd3a6abe2ad6ecd11&version=v2" strategy="afterInteractive" />
-      <section id="contact-form" className="relative py-24 bg-slate-950 overflow-hidden scroll-mt-28">
+      <section id="contact-form" className="relative py-10 sm:py-12 bg-slate-950 overflow-hidden scroll-mt-28">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.15),rgba(255,255,255,0))]" />
         
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="rounded-[40px] bg-slate-900/90 border border-slate-800 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="rounded-3xl bg-slate-900/90 border border-slate-800 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
             {/* Left Narrative */}
-            <div className="p-8 sm:p-12 lg:p-16 flex flex-col justify-between bg-gradient-to-br from-blue-950/40 via-slate-900 to-slate-950 relative overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-800">
-              <div className="relative z-10 flex flex-col justify-between h-full">
+            <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-gradient-to-br from-blue-950/40 via-slate-900 to-slate-950 relative overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-800">
+              <div className="relative z-10 flex flex-col justify-between h-full space-y-6">
                 <div>
-                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
-                    NetSuite Practice
-                  </span>
-                  <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight">
                     Accelerate Enterprise Growth with <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">Oracle NetSuite</span>
                   </h2>
-                  <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-10 max-w-xl">
+                  <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl">
                     Get in touch with our certified NetSuite consultants for licensing, multi-subsidiary implementations, optimizations, and custom integrations.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mt-auto pt-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mt-auto pt-2">
                   {[
                     { value: "700+", label: "Projects Completed", icon: Briefcase },
                     { value: "250+", label: "Global Customers", icon: Building2 },
@@ -250,10 +247,9 @@ export default function ContactFormDesign4() {
             </div>
 
             {/* Right Form */}
-            <div className="p-8 sm:p-12 lg:p-16 bg-white flex flex-col justify-center">
-              <div className="mb-6 sm:mb-8">
-                <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 tracking-tight">Let’s Get Started !!</h3>
-                <p className="text-sm sm:text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500">Fill in your details and our team will reach out within 24 hours.</p>
+            <div className="p-5 sm:p-6 lg:p-7 bg-white flex flex-col justify-center">
+              <div className="mb-4">
+                <h3 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">Let’s Get Started !!</h3>
               </div>
 
               <form
@@ -380,9 +376,8 @@ export default function ContactFormDesign4() {
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-                  <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full sm:w-auto px-10 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] active:scale-95 text-sm uppercase tracking-widest cursor-pointer" value="Submit" />
-                  <input type="reset" className="zcwf_button px-6 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-sm cursor-pointer" value="Reset" />
+                <div className="pt-2">
+                  <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full px-10 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] active:scale-95 text-sm uppercase tracking-widest cursor-pointer text-center" value="Submit" />
                 </div>
               </form>
             </div>

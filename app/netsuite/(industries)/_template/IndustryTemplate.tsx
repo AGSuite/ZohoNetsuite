@@ -385,8 +385,8 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
               </div>
             </motion.div>
           </div>
-          {/* Stats bar */}
-          <motion.div
+          {/* COMMENTED FOR NOW - Hero Stats Metrics */}
+          {/* <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
@@ -418,7 +418,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 

@@ -128,8 +128,8 @@ export default function ZohoCategoryTemplate({
         </div>
       </section>
 
-      {/* ─────────────── STATS SECTION ─────────────── */}
-      {stats && (
+      {/* COMMENTED FOR NOW - Hero Stats Metrics */}
+      {/* {stats && (
         <section className="py-12 bg-blue-600">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -149,7 +149,7 @@ export default function ZohoCategoryTemplate({
             </div>
           </div>
         </section>
-      )}
+      )} */}
 
       {/* ─────────────── SOLUTIONS GRID ─────────────── */}
       <section id="solutions" className="py-24 bg-gray-50">

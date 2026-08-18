@@ -121,7 +121,7 @@ export const navItemsZoho: NavSection[] = [
         children: [
             {
                 label: "ZOHO",
-                href: "/zoho/solutions",
+                href: "/zoho-products",
                 megaMenu: {
                     title: "Zoho Complete Suite of Applications",
                     description: "All the tools you need for sales, HR, operations & automation.",

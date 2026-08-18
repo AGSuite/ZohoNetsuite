@@ -201,13 +201,13 @@ export default function FooterFormSection() {
   if (!mounted) return null;
 
   return (
-    <section id="contact-us" className="relative py-24 overflow-hidden bg-white">
+    <section id="contact-us" className="relative py-10 sm:py-12 overflow-hidden bg-white">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none opacity-60"></div>
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-50 rounded-full blur-[130px] translate-y-1/2 -translate-x-1/4 pointer-events-none opacity-60"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
           {/* Left Column: Heading and Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -215,19 +215,14 @@ export default function FooterFormSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-100 bg-blue-50/50 mb-6">
-              <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-              <span className="text-blue-900 text-xs font-semibold tracking-widest uppercase">Contact Us</span>
-            </div>
-
-            <h2 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8 tracking-tight leading-[1.05]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight leading-tight">
               Let's Architect <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800">
                 Your Digital Future
               </span>
             </h2>
 
-            <div className="space-y-6 text-gray-600 text-lg leading-relaxed max-w-lg mb-10">
+            <div className="space-y-4 text-gray-600 text-sm sm:text-base leading-relaxed max-w-lg mb-6">
               <p>Ready to streamline your business? Our experts are standing by to help you unlock the full power of Zoho and Oracle NetSuite.</p>
             </div>
 
@@ -246,12 +241,11 @@ export default function FooterFormSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="absolute inset-0 bg-blue-600 rounded-[3rem] blur-3xl opacity-[0.03] -rotate-3"></div>
-            <div className="relative bg-white border border-gray-100 rounded-[3rem] p-8 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden">
+            <div className="absolute inset-0 bg-blue-600 rounded-3xl blur-3xl opacity-[0.03] -rotate-3"></div>
+            <div className="relative bg-white border border-gray-100 rounded-3xl p-5 sm:p-6 lg:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden">
               {/* Form Heading */}
-              <div className="mb-10 text-center lg:text-left">
-                <h3 className="text-3xl font-bold text-gray-900 mb-2">Get in Touch</h3>
-                <p className="text-gray-500">Fill in your details and we'll reach out within 24 hours</p>
+              <div className="mb-4 text-center lg:text-left">
+                <h3 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">Get in Touch</h3>
               </div>
 
               <form

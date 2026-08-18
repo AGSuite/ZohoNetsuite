@@ -446,12 +446,12 @@ export default function NetSuiteNextAIPage() {
   ];
 
   const erpModules = [
-    { id: "accounting", label: "Accounting", icon: FiBarChart2, desc: "Go beyond numbers — ask questions in natural language and instantly understand financial drivers. AI automates GL, AR, and AP.", image: "/images/next-ai/mod_accounting_v2.jpg" },
-    { id: "close", label: "Close Management", icon: FiCheckCircle, desc: "Speed up financial month-end close with intelligent close manager, automated journal entries, continuous reconciliation, and exception tracking.", image: "/images/next-ai/mod_close_mgmt_v2.jpg" },
-    { id: "multientity", label: "Multientity Management", icon: FiGlobe, desc: "Consolidate global subsidiaries, summarize financials across entities, and handle multi-currency balance sheets effortlessly.", image: "/images/next-ai/mod_multientity_v2.jpg" },
-    { id: "analytics", label: "Analytics", icon: FiTrendingUp, desc: "Turn raw transactional data into multi-series bar charts, top item sales analysis, and real-time executive dashboards.", image: "/images/next-ai/mod_analytics_v2.jpg" },
-    { id: "customer", label: "Customer Management", icon: FiUsers, desc: "360-degree customer meeting briefs, credit risk exposure tracking, overdue invoice management, and automated collections.", image: "/images/next-ai/mod_customer_v2.jpg" },
-    { id: "inventory", label: "Inventory Management", icon: FiLayers, desc: "Automate inventory management across stock, consignment, and service items. Generate AI-powered summaries of inventory reports that highlight key trends, insights, and drivers.", image: "/images/next-ai/mod_inventory_v2.jpg" },
+    { id: "accounting", label: "Accounting", icon: FiBarChart2, desc: "Go beyond numbers — ask questions in natural language and instantly understand financial drivers. AI automates GL, AR, and AP.", image: "/images/next-ai/mod_accounting_v3.jpg" },
+    { id: "close", label: "Close Management", icon: FiCheckCircle, desc: "Speed up financial month-end close with intelligent close manager, automated journal entries, continuous reconciliation, and exception tracking.", image: "/images/next-ai/mod_close_mgmt_v3.jpg" },
+    { id: "multientity", label: "Multientity Management", icon: FiGlobe, desc: "Consolidate global subsidiaries, summarize financials across entities, and handle multi-currency balance sheets effortlessly.", image: "/images/next-ai/mod_multientity_v3.jpg" },
+    { id: "analytics", label: "Analytics", icon: FiTrendingUp, desc: "Turn raw transactional data into multi-series bar charts, top item sales analysis, and real-time executive dashboards.", image: "/images/next-ai/mod_analytics_v3.jpg" },
+    { id: "customer", label: "Customer Management", icon: FiUsers, desc: "360-degree customer meeting briefs, credit risk exposure tracking, overdue invoice management, and automated collections.", image: "/images/next-ai/mod_customer_v3.jpg" },
+    { id: "inventory", label: "Inventory Management", icon: FiLayers, desc: "Automate inventory management across stock, consignment, and service items. Generate AI-powered summaries of inventory reports that highlight key trends, insights, and drivers.", image: "/images/next-ai/mod_inventory_v3.jpg" },
   ];
 
   const moduleBullets: Record<string, string[]> = {
@@ -477,21 +477,6 @@ export default function NetSuiteNextAIPage() {
 
         <div className="relative z-10 flex flex-col items-center max-w-6xl mx-auto text-center">
 
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-slate-900/80 px-4 py-2 text-xs font-bold tracking-wide backdrop-blur-md shadow-[0_0_25px_rgba(19,255,170,0.3)]"
-          >
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#13FFAA] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#13FFAA]" />
-            </span>
-            <span className="bg-gradient-to-r from-[#13FFAA] via-[#1E67C6] to-[#CE84CF] bg-clip-text text-transparent font-extrabold">
-              Introducing NetSuite Next — Powered & Delivered by AGSuite
-            </span>
-          </motion.div>
 
           {/* Headline — single line */}
           <motion.h1
@@ -526,7 +511,7 @@ export default function NetSuiteNextAIPage() {
               whileTap={{ scale: 0.97 }}
               className="w-full sm:w-auto group relative flex items-center justify-center gap-2.5 rounded-full bg-gray-950/80 px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-extrabold text-white backdrop-blur-md cursor-pointer hover:bg-slate-900 shadow-xl"
             >
-              <Link href="/netsuite/contact" className="flex items-center gap-2">
+              <Link href="#contact-form" className="flex items-center gap-2">
                 <span>Take NetSuite Next For A Spin</span>
                 <FiArrowRight className="transition-transform group-hover:translate-x-1.5" />
               </Link>
@@ -646,7 +631,7 @@ export default function NetSuiteNextAIPage() {
                 <p className="text-slate-400 text-xs sm:text-sm font-medium mt-1">Powered by Oracle AI, delivered by AGSuite</p>
               </div>
               <Link
-                href="/netsuite/contact"
+                href="#contact-form"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all shrink-0 shadow-lg shadow-blue-600/25"
               >
                 Learn More <FiArrowRight />
@@ -808,7 +793,7 @@ export default function NetSuiteNextAIPage() {
                   </div>
                   <div className="mt-6 sm:mt-8">
                     <Link
-                      href="/netsuite/contact"
+                      href="#contact-form"
                       className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm shadow-lg transition-all"
                     >
                       Explore {activeModuleData?.label} Suite
@@ -821,7 +806,7 @@ export default function NetSuiteNextAIPage() {
                 <div className="relative min-h-[340px] sm:min-h-[420px] lg:min-h-[460px] overflow-hidden border-t lg:border-t-0 lg:border-l border-white/10 bg-slate-950 flex items-center justify-center p-3 sm:p-5">
                   <div className="relative w-full h-full min-h-[300px] sm:min-h-[380px] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900">
                     <Image
-                      src={activeModuleData?.image || "/images/next-ai/mod_accounting_v2.jpg"}
+                      src={activeModuleData?.image || "/images/next-ai/mod_accounting_v3.jpg"}
                       alt={`NetSuite ${activeModuleData?.label} Module Preview`}
                       fill
                       className="object-contain object-center p-2"
@@ -915,7 +900,7 @@ export default function NetSuiteNextAIPage() {
                 NetSuite Next is coming to customers soon! Switching will be as simple as pressing a button — zero data migration or rework required. Partner with AGSuite to prepare your team.
               </p>
               <Link
-                href="/netsuite/contact"
+                href="#contact-form"
                 className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 rounded-full bg-gradient-to-r from-[#13FFAA] via-[#1E67C6] to-[#CE84CF] text-slate-950 font-black text-xs sm:text-base shadow-xl hover:scale-105 transition-all duration-300"
               >
                 Prepare For NetSuite Next With AGSuite →
@@ -961,7 +946,7 @@ export default function NetSuiteNextAIPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
-                  href="/netsuite/contact"
+                  href="#contact-form"
                   className="px-6 py-3.5 sm:px-8 sm:py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl sm:rounded-2xl transition-all shadow-xl hover:shadow-blue-500/30 flex items-center justify-center gap-2 text-sm"
                 >
                   Talk to an Expert <FiArrowRight />

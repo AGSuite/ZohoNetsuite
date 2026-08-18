@@ -341,8 +341,8 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
               </div>
             </motion.div>
           </div>
-          {/* Stats bar */}
-          <motion.div
+          {/* COMMENTED FOR NOW - Hero Stats Metrics */}
+          {/* <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
@@ -363,18 +363,16 @@ export default function ZohoIndustryTemplate({ data }: { data: IndustryPageData 
                     </div>
                   </div>
                   <div className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-1 flex items-center justify-center gap-1">
-                    <Counter value={s.value} />
-                    <span className="text-blue-400 text-2xl sm:text-3xl md:text-4xl">
-                      {s.suffix}
-                    </span>
+                    <span>{s.value}</span>
+                    <span className="text-blue-400 font-medium">{s.suffix}</span>
                   </div>
-                  <div className="text-gray-400 font-medium text-xs sm:text-sm px-2">
+                  <div className="text-xs sm:text-sm text-[#ccd9e8] font-normal leading-snug">
                     {s.label}
                   </div>
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 

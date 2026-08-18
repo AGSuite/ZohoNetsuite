@@ -389,14 +389,14 @@ export default function ContactPage() {
           />
         ))}
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-28 pb-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-16 pb-12">
 
           {/* Breadcrumb */}
           <motion.nav
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.5 }}
-            className="flex items-center gap-2 text-sm font-medium mb-16"
+            className="flex items-center gap-2 text-sm font-medium mb-8"
             aria-label="Breadcrumb"
           >
             <Link href="/netsuite" className="text-blue-300 hover:text-white transition-colors">Home</Link>
@@ -413,14 +413,8 @@ export default function ContactPage() {
               transition={{ duration: 0.8 }}
               className="flex flex-col gap-6 lg:sticky lg:top-32"
             >
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white backdrop-blur-sm w-fit">
-                <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-                <span className="text-blue-900 text-xs font-medium tracking-widest uppercase">Get in Touch</span>
-              </div>
-
               {/* H1 */}
-              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-medium text-white leading-[1.1] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
                 Scale Your Business with{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300">
                   Oracle NetSuite ERP
@@ -437,7 +431,7 @@ export default function ContactPage() {
 
               {/* Sublines */}
               <div className="space-y-4">
-                <p className="text-gray-300 text-lg leading-relaxed max-w-lg">
+                <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-lg">
                   Bridge the gap between vision and execution. Partner with India’s leading certified consultants to build a resilient, data-driven enterprise.
                 </p>
               </div>
@@ -485,12 +479,9 @@ export default function ContactPage() {
 
                 {/* Light blobs inside form */}
                 <div className="absolute top-0 right-0 w-[280px] h-[280px] bg-blue-50/80 rounded-full blur-[80px] translate-x-1/4 -translate-y-1/4 pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-[220px] h-[220px] bg-indigo-50/60 rounded-full blur-[70px] -translate-x-1/4 translate-y-1/4 pointer-events-none" />
-
-                <div className="relative z-10 p-8 lg:p-10">
-                  <div className="mb-8">
-                    <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-2">Talk to a NetSuite Expert</h2>
-                    <p className="text-gray-500 text-base">Fill in your details — we'll respond within 24 hours.</p>
+                <div className="relative z-10 p-5 sm:p-6 lg:p-7">
+                  <div className="mb-4">
+                    <h2 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">Talk to a NetSuite Expert</h2>
                   </div>
 
                   {submitted ? (
