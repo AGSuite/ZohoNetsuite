@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "agsuitetech.com"
+        }
+      ],
+      "destination": "https://www.agsuitetech.com/:path*",
+      "permanent": true
+    }
+  ]
+}
