@@ -34,7 +34,7 @@ const services = [
     title: "Zoho Training",
     description: "Comprehensive training programs are available to empower teams with the necessary knowledge and skills to effectively utilize Zoho applications, maximizing their potential for business growth.",
     icon: GraduationCap,
-    href: "/training-services",
+    href: "/zoho-training-services",
   },
   {
     title: "Zoho Consulting",
@@ -125,6 +125,7 @@ export default function ZohoServicesCards() {
                 <div className="mt-6 border-t border-gray-300 pt-3">
                   <Link
                     href={service.href}
+                    suppressHydrationWarning
                     className="group/link inline-flex items-center gap-2 text-black hover:text-red-600 text-sm font-medium transition-all"
                   >
                     Learn More 

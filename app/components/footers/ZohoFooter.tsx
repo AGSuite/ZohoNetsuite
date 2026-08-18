@@ -95,7 +95,7 @@ export default function ZohoFooter() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/training-services" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/zoho-training-services" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Zoho Training
                                 </Link>
                             </li>

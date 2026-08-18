@@ -276,7 +276,7 @@ export default function ZohoIndustriesClient() {
       title: "Zoho Training",
       description: "Comprehensive training programs are available to empower teams with the necessary knowledge and skills to effectively utilize Zoho applications, maximizing their potential for business growth.",
       icon: GraduationCap,
-      href: "/training-services",
+      href: "/zoho-training-services",
     },
   ];
 
@@ -714,6 +714,7 @@ export default function ZohoIndustriesClient() {
                     <div className="mt-6 border-t border-gray-300 pt-3">
                       <Link
                         href={service.href}
+                        suppressHydrationWarning
                         className="text-black hover:text-blue-600 text-sm font-medium transition-all"
                       >
                         Learn More →

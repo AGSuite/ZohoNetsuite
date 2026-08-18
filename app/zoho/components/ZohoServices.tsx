@@ -47,7 +47,7 @@ const services: ServiceItem[] = [
     heading: "",
     description: "Upskill your team with expert-led Zoho training to maximise platform adoption.",
     bgImage: "/images/zoho-services/srv_training_v5.png",
-    href: "/training-services",
+    href: "/zoho-training-services",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
@@ -224,7 +224,7 @@ export default function ZohoServices() {
 
                   {/* CTA Button - Fixed at bottom */}
                   <div className="absolute bottom-6 left-5">
-                    <Link href={service.href}>
+                    <Link href={service.href} suppressHydrationWarning>
                       <button
                         suppressHydrationWarning={true}
                         className="px-6 py-3 bg-red-600 text-white rounded-full font-semibold hover:bg-red-700 hover:shadow-lg transition-all duration-300 text-sm w-fit"
