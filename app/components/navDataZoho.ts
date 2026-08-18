@@ -241,10 +241,10 @@ export const navItemsZoho: NavSection[] = [
         title: "Services",
         children: [
             { label: 'Digital Transformation', href: '/zoho/digital-transformation', description: 'Modernize your business for the digital age.', icon: Rocket },
-            { label: 'Integration Services', href: '/zoho/integration-services', description: 'Seamlessly connect your systems.', icon: Layers },
-            { label: 'Training Services', href: '/zoho/training-services', description: 'Upskill your team with expert-led training.', icon: GraduationCap },
+            { label: 'Integration Services', href: '/zoho-integration', description: 'Seamlessly connect your systems.', icon: Layers },
+            { label: 'Training Services', href: '/training-services', description: 'Upskill your team with expert-led training.', icon: GraduationCap },
             { label: 'Low-Code Application Development', href: '/zoho/low-code-application-development', description: 'Build apps faster with minimal coding.', icon: Wrench },
-            { label: 'Managed Services', href: '/zoho/managed-services', description: 'End-to-end IT management & support.', icon: Settings },
+            { label: 'Managed Services', href: '/zoho-support', description: 'End-to-end IT management & support.', icon: Settings },
         ]
     },
 

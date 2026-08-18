@@ -145,7 +145,7 @@ export default function ZohoIntegrationServicesPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Services", href: "/zoho/services" },
-        { label: "Integration Services", href: "/zoho/integration-services" },
+        { label: "Integration Services", href: "/zoho-integration" },
       ]}
       stats={stats}
       modules={modules}

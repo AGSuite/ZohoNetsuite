@@ -75,27 +75,27 @@ export default function ZohoFooter() {
                         <h4 className="text-lg font-bold mb-4 text-orange-400">Zoho Services</h4>
                         <ul className="space-y-3">
                             <li>
-                                <Link href="/zoho/implementation" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/zoho-implementation-and-integration" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Zoho Implementation
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/zoho/integration-services" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/zoho-integration" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Zoho Integration
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/zoho/digital-transformation" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/zoho-customization" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Zoho Customization
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/zoho/managed-services" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/zoho-support" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Zoho Managed Support
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/zoho/training-services" className="text-gray-400 hover:text-white transition-colors text-sm">
+                                <Link href="/training-services" className="text-gray-400 hover:text-white transition-colors text-sm">
                                     Zoho Training
                                 </Link>
                             </li>

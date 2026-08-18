@@ -132,7 +132,7 @@ export default function ZohoCustomizationPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Services", href: "/zoho/services" },
-        { label: "Customization", href: "/zoho/customization" },
+        { label: "Customization", href: "/zoho-customization" },
       ]}
       stats={stats}
       modules={modules}

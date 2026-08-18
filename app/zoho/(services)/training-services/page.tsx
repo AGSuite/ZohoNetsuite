@@ -145,7 +145,7 @@ export default function ZohoTrainingServicesPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Services", href: "/zoho/services" },
-        { label: "Training Services", href: "/zoho/training-services" },
+        { label: "Training Services", href: "/training-services" },
       ]}
       stats={stats}
       modules={modules}

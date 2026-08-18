@@ -145,7 +145,7 @@ export default function ZohoManagedServicesPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Services", href: "/zoho/services" },
-        { label: "Managed Services", href: "/zoho/managed-services" },
+        { label: "Managed Services", href: "/zoho-support" },
       ]}
       stats={stats}
       modules={modules}
