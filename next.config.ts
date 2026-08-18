@@ -55,6 +55,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       { source: '/netsuite/solutions', destination: '/netsuite-products', permanent: true },
+      { source: '/careers', destination: '/netsuite/careers', permanent: true },
       { source: '/zoho/solutions', destination: '/zoho-products', permanent: true },
       { source: '/netsuite/solutions/core-erp/erp', destination: '/netsuite-erp-solution', permanent: true },
       { source: '/netsuite/solutions/analytics/bi', destination: '/netsuite-business-intelligence', permanent: true },
