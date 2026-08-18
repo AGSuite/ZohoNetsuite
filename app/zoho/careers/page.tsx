@@ -374,26 +374,15 @@ export default function ZohoCareersPage() {
             {/* RIGHT: Form Sticky */}
             <div id="apply-form" className="w-full lg:w-[500px] xl:w-[550px] shrink-0 scroll-mt-36">
               <div className="sticky top-32">
-                <div className={`bg-white rounded-[3rem] border overflow-hidden transition-all duration-500 ${highlightForm ? 'border-green-500 shadow-[0_0_40px_rgba(34,197,94,0.4)] scale-[1.02]' : 'border-gray-100 shadow-[0_32px_80px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_32px_80px_-15px_rgba(29,78,216,0.15)]'}`}>
-                  <div className="bg-gradient-to-br from-[#000814] to-[#001a4d] p-10 text-white relative overflow-hidden">
-                    <div className="relative z-10">
-                      <h3 className="text-3xl font-bold mb-3 tracking-tight">Express Interest</h3>
-                      <p className="text-blue-200 text-base leading-relaxed font-medium">
-                        Apply for current openings at <span className="font-bold text-white underline decoration-blue-500/50">AGSuite Technologies</span>.
-                      </p>
-                    </div>
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/20 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-                  </div>
-                  <div className="bg-white p-0">
-                    <iframe
-                      title="AGSuite Zoho Application Form"
-                      frameBorder={0}
-                      className="w-full h-[1350px] rounded-[3rem]"
-                      src="https://agsuitetech.zohorecruit.in/forms/58f06577622ce45d508407aae11148ceb8899baae51685ee90b1efbe959f4f75"
-                      allow="fullscreen"
-                      scrolling="no"
-                    />
-                  </div>
+                <div className={`bg-white rounded-3xl overflow-hidden transition-all duration-500 ${highlightForm ? 'border-2 border-green-500 shadow-[0_0_40px_rgba(34,197,94,0.4)] scale-[1.02]' : 'border border-gray-100 shadow-[0_32px_80px_-15px_rgba(0,0,0,0.1)]'}`}>
+                  <iframe
+                    title="AGSuite Zoho Application Form"
+                    frameBorder={0}
+                    style={{ height: '650px', width: '100%', border: 'none' }}
+                    className="w-full rounded-3xl"
+                    src="https://agsuitetech.zohorecruit.in/forms/58f06577622ce45d508407aae11148ce2d6eda0351c5da56a496bbe181a211a6"
+                    allow="fullscreen"
+                  />
                 </div>
               </div>
             </div>

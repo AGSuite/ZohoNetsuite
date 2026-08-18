@@ -258,7 +258,8 @@ export default function AccountingSoftwarePage() {
           </div>
 
           {/* Stats row */}
-          <motion.div
+          {/* COMMENTED FOR NOW - Hero Stats Metrics */}
+          {/* <motion.div
             ref={statsRef}
             initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.8 }}
             className="border-t border-white/15 pt-8 sm:pt-10"
@@ -284,7 +285,7 @@ export default function AccountingSoftwarePage() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 

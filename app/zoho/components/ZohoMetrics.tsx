@@ -41,7 +41,7 @@ const ZohoMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) =
 
     // Split headline into words for animation
     const headlineText = "87% of businesses improve their";
-    const highlightText = "operational efficiency with Zoho ERP & CRM.";
+    const highlightText = "Operational efficiency with Zoho ERP & CRM";
     const words = headlineText.split(" ");
 
     const stats = [
@@ -78,22 +78,7 @@ const ZohoMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) =
             <div className="relative z-10 max-w-6xl mx-auto px-6">
                 <div className="text-center">
 
-                    {/* Badge */}
-                    <motion.div
-                        ref={badgeRef}
-                        initial={{ opacity: 0, y: 24 }}
-                        animate={badgeInView ? { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut", delay: 0 } } : {}}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-xl"
-                    >
-                        <div className="flex items-center gap-1">
-                            {[1, 2, 3, 4, 5].map((i) => (
-                                <Star key={i} className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
-                            ))}
-                        </div>
-                        <span className="text-[10px] font-bold text-white uppercase tracking-[0.2em]">
-                            4.9/5 · Top Rated Zoho Premium Partner 2025
-                        </span>
-                    </motion.div>
+
 
                     {/* Headline with Word-by-Word Animation */}
                     <motion.h2
@@ -172,13 +157,13 @@ const ZohoMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) =
                             </Link>
                         </div>
 
-                        {/* Zoho Projects Button */}
+                        {/* Request Quote Button */}
                         <div className="relative inline-flex items-center group">
                             {/* Colorful Gradient Shadow Glow - ONLY ON MOUSE OVER */}
                             <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 blur-md opacity-0 group-hover:opacity-100 transition duration-300" />
 
                             <Link
-                                href="/zoho-projects"
+                                href="/zoho/request-quote"
                                 className="relative inline-flex items-center justify-center p-[1.5px] rounded-xl overflow-hidden font-bold text-base transition-all duration-300 hover:scale-105 active:scale-100"
                             >
                                 {/* Gradient Border on Hover */}
@@ -187,7 +172,7 @@ const ZohoMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) =
                                 {/* Glass to White Button Body */}
                                 <span className="relative px-10 py-3.5 bg-white/10 group-hover:bg-white backdrop-blur-md rounded-[10px] block transition-colors duration-300">
                                     <span className="text-white group-hover:text-black font-extrabold transition-colors duration-300">
-                                        Zoho Projects
+                                        Request Quote
                                     </span>
                                 </span>
                             </Link>
@@ -274,7 +259,7 @@ const ZohoMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) =
                                     className="relative"
                                 >
                                     <div className="relative h-80 w-[450px] lg:h-96 lg:w-[580px] xl:h-[480px] xl:w-[740px] overflow-hidden rounded-3xl shadow-2xl bg-white border-2 border-white/40 hover:border-white/70 transition-all duration-300">
-                                         <Image
+                                        <Image
                                             src="/images/zoho-dashboards/zoho-one-new-welcome-dashboard.png"
                                             alt="Zoho Enterprise Dashboard"
                                             fill

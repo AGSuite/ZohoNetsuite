@@ -732,7 +732,7 @@ export default function NetSuiteNextAIPage() {
               UNIFIED ARCHITECTURE
             </span>
             <h2 className="text-2xl sm:text-5xl font-medium text-white mt-4 sm:mt-5 tracking-tight leading-tight">
-              AI Built Into Your ERP. Not Added On
+              Native Intelligence Embedded Across Your Core ERP Engine
             </h2>
             <p className="text-slate-400 mt-3 sm:mt-4 text-sm sm:text-lg">
               Connect your data and let AI automate work, uncover insights, and improve visibility across your business.

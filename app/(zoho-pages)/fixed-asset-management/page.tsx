@@ -775,8 +775,8 @@ export default function FixedAssetManagementPage() {
             </motion.div>
           </div>
 
-          {/* Stats Bar */}
-          <motion.div
+          {/* COMMENTED FOR NOW - Stats Bar */}
+          {/* <motion.div
             ref={statsRef}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -799,7 +799,7 @@ export default function FixedAssetManagementPage() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 

@@ -392,8 +392,7 @@ export default function ZohoLifeAtAGSuite() {
                 <Zap size={14} /> Empowering Connectivity
               </div>
               <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6 leading-tight">
-                Zoho Events, <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Global Presence.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Host CFO Event</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
                 Showcasing our proprietary Zoho solutions and expanding our footprint. We actively participate in Zoho events to collaborate with the ecosystem, share insights, and connect with forward-thinking businesses.

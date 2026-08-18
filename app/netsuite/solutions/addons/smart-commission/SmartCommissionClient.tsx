@@ -162,8 +162,8 @@ export default function SmartCommissionClient() {
             </motion.div>
           </div>
 
-          {/* Integrated Metrics Section */}
-          <motion.div
+          {/* COMMENTED FOR NOW - Integrated Metrics Section */}
+          {/* <motion.div
             ref={statsRef}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -196,7 +196,7 @@ export default function SmartCommissionClient() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
 
           <motion.div
             initial={{ opacity: 0 }}
