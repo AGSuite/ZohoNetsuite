@@ -230,7 +230,7 @@ export default function LandingPlatformMetrics() {
                   className="relative w-full h-[280px] sm:h-[420px] lg:h-[560px] overflow-hidden"
                 >
                   <Image
-                    src="/images/Dashboard/NETSUITE ERP DASHBOARD.png "
+                    src="/images/Dashboard/NETSUITE%20ERP%20DASHBOARD.png"
                     alt="Oracle NetSuite ERP Executive Home Dashboard — AGSuite Technologies"
                     fill
                     sizes="(min-width: 1024px) 900px, 100vw"

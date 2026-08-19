@@ -31,64 +31,51 @@ if (typeof window !== "undefined") {
 /* ------------------ SERVICES DATA (With Exact Images) ------------------ */
 const services = [
   {
-    title: "Digital Transformation",
+    title: "NetSuite Implementation",
     description:
-      "Modernize your business with our strategic digital transformation roadmap, ensuring seamless ERP adoption and business scaling.",
+      "The implementation process involves defining clear objectives and delivering a functional scope. A thorough fit gap analysis is conducted to customize the project work plan based on existing business processes.",
     icon: (
       <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
-    bgImage: "/images/Services/ns_service_digital_transformation_new.png",
-    href: "/netsuite/digital-transformation",
+    bgImage: "/images/services/ns%20service%20digital%20transformation%20new.webp",
+    href: "/netsuite-erp-and-crm-implementation",
   },
   {
-    title: "Integration Services",
+    title: "NetSuite Integration",
     description:
-      "Seamlessly connect NetSuite with your entire tech ecosystem via robust pre-built connectors and custom REST/SOAP APIs.",
+      "Integration services seamlessly connect NetSuite with existing systems, facilitating smooth data flow and process synchronization. Operations are optimized, and access to consolidated data across platforms is provided.",
     icon: (
       <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
       </svg>
     ),
-    bgImage: "/images/Services/ns_service_integration_new.png",
+    bgImage: "/images/services/ns%20service%20integration%20new.webp",
     href: "/netsuite-integration",
   },
   {
-    title: "Training Services",
+    title: "NetSuite Customization",
     description:
-      "Upskill your team with expert-led NetSuite functional and administrative training to maximize platform ROI and user adoption.",
-    icon: (
-      <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-      </svg>
-    ),
-    bgImage: "/images/Services/ns_service_training_new.png",
-    href: "/netsuite/training-services",
-  },
-  {
-    title: "Low-Code Development",
-    description:
-      "Build bespoke SuiteScripts, custom workflows, and tailored UI forms within NetSuite's native framework with minimal overhead.",
+      "Tailoring NetSuite to suit specific business needs maximizes its potential to meet unique requirements. Customization options range from configuring workflows to adapting reporting and dashboards.",
     icon: (
       <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
       </svg>
     ),
-    bgImage: "/images/Services/ns_service_low_code_new.png",
-    href: "/netsuite/low-code-application-development",
+    bgImage: "/images/services/ns%20service%20low%20code%20new.webp",
+    href: "/netsuite-customization",
   },
   {
-    title: "Managed Services",
+    title: "NetSuite Managed Support",
     description:
-      "Comprehensive 24/7 SLA-driven support, system health checks, optimization, and administration for continuous ERP success.",
+      "Comprehensive managed support services ensure smooth operation and continuous optimization of the NetSuite system. Proactive monitoring, troubleshooting, and maintenance address issues promptly.",
     icon: (
       <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
     ),
-    bgImage: "/images/Services/ns_service_managed_new.png",
+    bgImage: "/images/services/ns%20service%20managed%20new.webp",
     href: "/netsuite-managed-support",
   },
 ];
@@ -272,7 +259,7 @@ export default function LandingServicesIndustries() {
 
   return (
     <div id="businessGrow" className="font-['DM_Sans',sans-serif]">
-      
+
       {/* ── SECTION 1: OUR NETSUITE SERVICES (GSAP Background Fade & Hover Cards) ── */}
       <section ref={sectionRef} className="relative pt-16 pb-24 overflow-hidden">
         {/* Background Base */}
@@ -309,16 +296,14 @@ export default function LandingServicesIndustries() {
               {services.map((service, index) => (
                 <div
                   key={service.title}
-                  className={`relative w-[300px] h-[480px] rounded-2xl overflow-hidden shadow-xl cursor-pointer shrink-0 transition-all duration-500 ${
-                    activeIdx === index ? "scale-[1.03] shadow-2xl z-30" : "scale-100 opacity-95"
-                  }`}
+                  className={`relative w-[300px] h-[480px] rounded-2xl overflow-hidden shadow-xl cursor-pointer shrink-0 transition-all duration-500 ${activeIdx === index ? "scale-[1.03] shadow-2xl z-30" : "scale-100 opacity-95"
+                    }`}
                   onMouseEnter={() => setActiveIdx(index)}
                 >
                   {/* Background Image - Visible by default, hidden when active */}
                   <div
-                    className={`absolute inset-0 transition-opacity duration-500 z-0 ${
-                      activeIdx === index ? "opacity-0" : "opacity-100"
-                    }`}
+                    className={`absolute inset-0 transition-opacity duration-500 z-0 ${activeIdx === index ? "opacity-0" : "opacity-100"
+                      }`}
                   >
                     <Image
                       src={service.bgImage}
@@ -334,9 +319,8 @@ export default function LandingServicesIndustries() {
 
                   {/* Default Inactive State - Image with Bottom-Aligned Content */}
                   <div
-                    className={`absolute inset-0 transition-opacity duration-500 z-10 p-6 flex flex-col justify-end ${
-                      activeIdx === index ? "opacity-0 pointer-events-none" : "opacity-100"
-                    }`}
+                    className={`absolute inset-0 transition-opacity duration-500 z-10 p-6 flex flex-col justify-end ${activeIdx === index ? "opacity-0 pointer-events-none" : "opacity-100"
+                      }`}
                   >
                     <div className="space-y-3">
                       <div className="text-white w-9 h-9">
@@ -353,9 +337,8 @@ export default function LandingServicesIndustries() {
 
                   {/* Hover/Active State - White Background with Left-Aligned Content */}
                   <div
-                    className={`absolute inset-0 bg-white transition-opacity duration-500 z-20 p-7 flex flex-col justify-between ${
-                      activeIdx === index ? "opacity-100" : "opacity-0 pointer-events-none"
-                    }`}
+                    className={`absolute inset-0 bg-white transition-opacity duration-500 z-20 p-7 flex flex-col justify-between ${activeIdx === index ? "opacity-100" : "opacity-0 pointer-events-none"
+                      }`}
                   >
                     <div className="space-y-4 pt-2">
                       <div className="text-black w-10 h-10">
@@ -404,15 +387,13 @@ export default function LandingServicesIndustries() {
               {services.map((service, index) => (
                 <div
                   key={service.title}
-                  className={`relative w-full h-[440px] rounded-2xl overflow-hidden shadow-xl cursor-pointer transition-all duration-500 ${
-                    activeIdx === index ? "scale-[1.02] shadow-2xl z-30" : "scale-100"
-                  }`}
+                  className={`relative w-full h-[440px] rounded-2xl overflow-hidden shadow-xl cursor-pointer transition-all duration-500 ${activeIdx === index ? "scale-[1.02] shadow-2xl z-30" : "scale-100"
+                    }`}
                   onMouseEnter={() => setActiveIdx(index)}
                 >
                   <div
-                    className={`absolute inset-0 transition-opacity duration-500 z-0 ${
-                      activeIdx === index ? "opacity-0" : "opacity-100"
-                    }`}
+                    className={`absolute inset-0 transition-opacity duration-500 z-0 ${activeIdx === index ? "opacity-0" : "opacity-100"
+                      }`}
                   >
                     <Image
                       src={service.bgImage}
@@ -426,9 +407,8 @@ export default function LandingServicesIndustries() {
                   </div>
 
                   <div
-                    className={`absolute inset-0 transition-opacity duration-500 z-10 p-6 flex flex-col justify-end ${
-                      activeIdx === index ? "opacity-0 pointer-events-none" : "opacity-100"
-                    }`}
+                    className={`absolute inset-0 transition-opacity duration-500 z-10 p-6 flex flex-col justify-end ${activeIdx === index ? "opacity-0 pointer-events-none" : "opacity-100"
+                      }`}
                   >
                     <div className="space-y-3">
                       <div className="text-white w-9 h-9">{service.icon}</div>
@@ -438,9 +418,8 @@ export default function LandingServicesIndustries() {
                   </div>
 
                   <div
-                    className={`absolute inset-0 bg-white transition-opacity duration-500 z-20 p-7 flex flex-col justify-between ${
-                      activeIdx === index ? "opacity-100" : "opacity-0 pointer-events-none"
-                    }`}
+                    className={`absolute inset-0 bg-white transition-opacity duration-500 z-20 p-7 flex flex-col justify-between ${activeIdx === index ? "opacity-100" : "opacity-0 pointer-events-none"
+                      }`}
                   >
                     <div className="space-y-4 pt-2">
                       <div className="text-black w-10 h-10">{service.icon}</div>
@@ -581,7 +560,7 @@ export default function LandingServicesIndustries() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex flex-col items-center gap-5 relative z-10">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-6">
             <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-widest mb-4">
               Industry Verticals
