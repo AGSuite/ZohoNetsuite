@@ -1,28 +1,17 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 
 export default function LandingFooter() {
   return (
-    <footer className="bg-slate-900 border-t border-slate-800 text-slate-400 py-10 font-['DM_Sans',sans-serif]">
+    <footer className="bg-slate-900 border-t border-slate-800 text-slate-400 py-8 font-['DM_Sans',sans-serif]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           
-          {/* Logo & Copyright */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-            <div className="relative h-8 w-36">
-              <Image
-                src="/images/logos/agsuite_logo.webp"
-                alt="AGSuite Technologies"
-                fill
-                className="object-contain object-left brightness-0 invert"
-              />
-            </div>
-            <span className="text-xs text-slate-400">
-              © {new Date().getFullYear()} AGSuite Technologies Pvt. Ltd. All rights reserved.
-            </span>
-          </div>
+          {/* Copyright */}
+          <span className="text-xs text-slate-400">
+            © {new Date().getFullYear()} AGSuite Technologies Pvt. Ltd. All rights reserved.
+          </span>
 
           {/* Legal Links */}
           <div className="flex items-center space-x-6 text-xs font-medium">

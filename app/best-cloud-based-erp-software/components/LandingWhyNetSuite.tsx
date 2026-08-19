@@ -2,61 +2,92 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  Zap, 
-  BarChart3, 
-  Globe2, 
-  ShieldCheck, 
-  Cpu, 
-  RefreshCw, 
-  ArrowRight 
-} from "lucide-react";
-
-const features = [
-  {
-    icon: Zap,
-    title: "Unified Single Business Suite",
-    desc: "Consolidate ERP, CRM, inventory, commerce, and financial management in one unified cloud system.",
-    color: "from-blue-600 to-cyan-500"
-  },
-  {
-    icon: BarChart3,
-    title: "Real-Time BI & Dashboards",
-    desc: "Role-based dashboards deliver instant visibility into key performance indicators across all departments.",
-    color: "from-indigo-600 to-purple-600"
-  },
-  {
-    icon: Globe2,
-    title: "Multi-Subsidiary & Global Expansion",
-    desc: "OneWorld handles multi-currency transactions, automated tax compliance, and multi-entity consolidation.",
-    color: "from-cyan-600 to-blue-600"
-  },
-  {
-    icon: ShieldCheck,
-    title: "Enterprise Security & Compliance",
-    desc: "Bank-grade security, automatic upgrades, SOC 1/SOC 2 compliance, and 99.9% guaranteed uptime.",
-    color: "from-emerald-600 to-teal-600"
-  },
-  {
-    icon: Cpu,
-    title: "Customizable SuiteFlex Engine",
-    desc: "Custom SuiteScripts, automated workflows, and robust REST APIs tailor NetSuite directly to your operational workflow.",
-    color: "from-amber-500 to-orange-600"
-  },
-  {
-    icon: RefreshCw,
-    title: "Automated Order-to-Cash Cycle",
-    desc: "Eliminate manual data re-entry with end-to-end automated quotes, billing, fulfillment, and revenue recognition.",
-    color: "from-pink-600 to-rose-600"
-  }
-];
+import Image from "next/image";
+import Link from "next/link";
+import { CheckCircle2, ArrowRight, Sparkles, TrendingUp, ShieldAlert, Award } from "lucide-react";
 
 export default function LandingWhyNetSuite() {
+  const scrollToHero = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const heroElem = document.getElementById("hero");
+    if (heroElem) {
+      heroElem.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const columns = [
+    {
+      title: "NetSuite ERP Benefits",
+      subtitle: "Experience streamlined operations and complete business visibility.",
+      icon: TrendingUp,
+      accent: "from-blue-600 to-cyan-500",
+      badge: "Benefits",
+      badgeColor: "bg-blue-50 text-blue-700 border-blue-200",
+      cardStyle: "bg-white border-slate-200 hover:border-blue-400 shadow-2xl shadow-black/40",
+      topHighlight: "from-blue-500 via-cyan-400 to-indigo-500",
+      checkColor: "text-blue-600",
+      items: [
+        "Automate Financial Processes",
+        "Gain Inventory Visibility",
+        "Supply Chain Optimization",
+        "Flawless Order Management",
+        "Increase Warehouse Efficiency",
+      ],
+    },
+    {
+      title: "Challenges NetSuite ERP Solves",
+      subtitle: "Eliminate bottlenecks and solve critical business challenges.",
+      icon: ShieldAlert,
+      accent: "from-purple-600 to-indigo-600",
+      badge: "Solutions",
+      badgeColor: "bg-purple-50 text-purple-700 border-purple-200",
+      cardStyle: "bg-white border-slate-200 hover:border-purple-400 shadow-2xl shadow-black/40",
+      topHighlight: "from-purple-500 via-indigo-400 to-pink-500",
+      checkColor: "text-purple-600",
+      items: [
+        "Manual Processes",
+        "Data Accessibility",
+        "Data Integrity",
+        "Meeting Expectations",
+        "Balancing Supply and Demand",
+        "Inventory Insights",
+      ],
+    },
+    {
+      title: "ROI Experienced by Organizations",
+      subtitle: "Achieve measurable results with NetSuite ERP.",
+      icon: Award,
+      accent: "from-emerald-600 to-teal-500",
+      badge: "Proven ROI",
+      badgeColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
+      cardStyle: "bg-white border-slate-200 hover:border-emerald-400 shadow-2xl shadow-black/40",
+      topHighlight: "from-emerald-500 via-teal-400 to-cyan-500",
+      checkColor: "text-emerald-600",
+      items: [
+        "Reduced IT costs by 50% or more",
+        "Accelerated financial close by 20%-50%",
+        "Cut order-to-cash cycle by more than 50%",
+        "Reduced audit preparation time by 50%",
+        "Reduced invoicing costs by 25%-75%",
+        "Reduced days sales outstanding (DSO) by 10%-20%",
+      ],
+    },
+  ];
+
   return (
-    <section id="whyNetSuite" className="py-20 md:py-28 bg-slate-50 text-slate-900 relative font-['DM_Sans',sans-serif]">
+    <section id="whyNetSuite" className="pt-20 md:pt-28 pb-0 bg-slate-950 text-white relative font-['DM_Sans',sans-serif] overflow-hidden">
+      {/* Background Ambient Radial Glows */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-40 left-1/4 w-[600px] h-[600px] rounded-full bg-blue-600/10 blur-[130px]" />
+        <div className="absolute top-1/3 right-10 w-[500px] h-[500px] rounded-full bg-purple-600/10 blur-[120px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:28px_28px] opacity-25" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -64,67 +95,117 @@ export default function LandingWhyNetSuite() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-widest mb-4">
-              Strategic Competitive Advantage
+            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-xs">
+              Why Choose NetSuite
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 mb-6">
-              Why Industry Leaders Choose Oracle NetSuite ERP
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-white mb-5 leading-tight text-center">
+              Transform Your Business Operations
             </h2>
-            <p className="text-base sm:text-lg text-slate-600">
-              Designed to eliminate operational silos, automate manual processes, and accelerate business growth on a single cloud foundation.
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto text-center">
+              Discover how Oracle NetSuite delivers strategic competitive advantages, solves complex challenges, and unlocks rapid return on investment.
             </p>
           </motion.div>
         </div>
 
-        {/* Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {features.map((item, index) => (
+        {/* 3 Columns Comparison Cards with Rich Gradients & Shadows */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          {columns.map((col, idx) => {
+            const IconComp = col.icon;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.15 }}
+                whileHover={{ y: -8 }}
+                className={`relative rounded-3xl p-7 sm:p-8 flex flex-col justify-between border overflow-hidden transition-all duration-300 group ${col.cardStyle}`}
+              >
+                {/* Top Accent Gradient Bar */}
+                <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${col.topHighlight}`} />
+
+                <div className="relative z-10">
+                  {/* Card Top Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${col.accent} flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform`}>
+                      <IconComp className="w-7 h-7" />
+                    </div>
+                    <span className={`px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${col.badgeColor}`}>
+                      {col.badge}
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    {col.title}
+                  </h3>
+                  <p className="text-sm text-slate-600 mb-6 leading-relaxed font-medium">
+                    {col.subtitle}
+                  </p>
+
+                  {/* Bullet Points */}
+                  <ul className="space-y-3.5 pt-4 border-t border-slate-200/80">
+                    {col.items.map((item, itemIdx) => (
+                      <li key={itemIdx} className="flex items-start gap-3">
+                        <CheckCircle2 className={`w-5 h-5 ${col.checkColor} shrink-0 mt-0.5`} />
+                        <span className="text-sm font-semibold text-slate-800 leading-snug">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* ── FULL-WIDTH CTA SECTION (Matching NetSuite Home CTA) ── */}
+      <div className="relative w-full py-16 lg:py-20 overflow-hidden">
+        {/* Background Image: NetSuite Home CTA */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/netsuiteimages/background/netsuiteCTA.webp"
+            alt="NetSuite Business Growth CTA"
+            fill
+            className="object-cover object-center"
+            quality={80}
+            sizes="100vw"
+          />
+          {/* Dark gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="max-w-3xl">
             <motion.div
-              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white border border-slate-200/80 hover:border-blue-400 p-8 rounded-3xl shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group flex flex-col justify-between"
+              transition={{ duration: 0.6 }}
             >
-              <div>
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.color} p-3.5 mb-6 shadow-md flex items-center justify-center transition-transform group-hover:scale-110`}>
-                  <item.icon className="w-full h-full text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {item.desc}
-                </p>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-extrabold uppercase tracking-widest mb-4 backdrop-blur-sm">
+                <Sparkles className="w-4 h-4 text-blue-300" />
+                BUSINESS GROWS HERE!
               </div>
 
-              <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-blue-600 group-hover:text-blue-700">
-                <span>Learn Capability</span>
-                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-white leading-snug mb-6 drop-shadow-md">
+                NetSuite is the first and last business system you’ll ever need to run your business
+              </h2>
+
+              <div>
+                <Link
+                  href="#hero"
+                  onClick={scrollToHero}
+                  className="inline-flex items-center gap-3 px-8 py-3.5 rounded-xl bg-white hover:bg-gray-100 text-slate-900 font-bold text-base shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
+                >
+                  <span>Get Free Consultation</span>
+                  <ArrowRight className="w-5 h-5 text-slate-900" />
+                </Link>
               </div>
             </motion.div>
-          ))}
-        </div>
-
-        {/* Bottom Banner */}
-        <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 border border-blue-800 rounded-3xl p-8 sm:p-10 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-2 text-center md:text-left">
-            <h4 className="text-xl sm:text-2xl font-bold text-white">
-              Ready to Upgrade Your Business ERP Infrastructure?
-            </h4>
-            <p className="text-sm text-slate-300">
-              Get a customized NetSuite demonstration tailored to your industry workflows.
-            </p>
           </div>
-          <a
-            href="#hero"
-            className="px-6 py-3.5 rounded-xl font-bold text-slate-900 text-sm bg-white hover:bg-slate-100 transition-all shadow-md shrink-0 cursor-pointer"
-          >
-            Request Free ERP Demo
-          </a>
         </div>
-
       </div>
     </section>
   );

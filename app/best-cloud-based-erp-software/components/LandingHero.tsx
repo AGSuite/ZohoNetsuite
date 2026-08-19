@@ -56,36 +56,49 @@ export default function LandingHero() {
     }
   };
 
+  // ─────────────────────────────────────────────────────────────────
+  // 🎨  HERO BACKGROUND COLORS
+  const hero = {
+    // Section base gradient: diagonal light blue to purple flow
+    sectionGradient: "from-blue-50/70 via-white to-purple-50/60",
+
+    // Grid lines — clean subtle geometric pattern
+    gridColor: "rgba(99,102,241,0.05)",
+    gridSize: "60px 60px",
+  };
+
   return (
     <section
       id="hero"
-      className="relative pt-32 pb-20 md:pt-36 md:pb-28 overflow-hidden font-['DM_Sans',sans-serif] bg-gradient-to-br from-white via-blue-50/60 to-indigo-100/40"
+      className={`relative pt-28 pb-16 md:pt-32 md:pb-24 overflow-hidden font-['DM_Sans',sans-serif] bg-gradient-to-br ${hero.sectionGradient}`}
     >
-      {/* Delicate Grid Pattern Lines */}
+      {/* Barely Visible Grid Pattern Lines */}
       <div
-        className="absolute inset-0 z-0 opacity-15 pointer-events-none"
+        className="absolute inset-0 z-0 pointer-events-none"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(37,99,235,0.2) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(37,99,235,0.2) 1px, transparent 1px)
+            linear-gradient(to right, ${hero.gridColor} 1px, transparent 1px),
+            linear-gradient(to bottom, ${hero.gridColor} 1px, transparent 1px)
           `,
-          backgroundSize: "60px 60px"
+          backgroundSize: hero.gridSize,
         }}
       />
 
-      {/* Light Ambient Glowing Orbs */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-blue-300/40 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-300/30 rounded-full blur-[130px] pointer-events-none" />
+      {/* Diagonal Corner Light Blue & Purple Gradient Accents */}
+      <div className="absolute -top-28 -left-28 w-[600px] h-[600px] bg-gradient-to-br from-blue-300/35 via-cyan-200/25 to-indigo-200/20 rounded-full blur-[110px] pointer-events-none" />
+      <div className="absolute -top-24 -right-24 w-[600px] h-[600px] bg-gradient-to-bl from-purple-300/30 via-indigo-200/25 to-sky-200/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute -bottom-32 -left-20 w-[550px] h-[550px] bg-gradient-to-tr from-sky-200/30 via-blue-200/25 to-purple-200/20 rounded-full blur-[110px] pointer-events-none" />
+      <div className="absolute -bottom-24 -right-20 w-[550px] h-[550px] bg-gradient-to-tl from-purple-300/30 via-violet-200/25 to-blue-200/20 rounded-full blur-[110px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-          
-          {/* Left Column: Headline & Description (50% width on desktop) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+
+          {/* Left Column: Headline & Description */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:col-span-6 flex flex-col justify-center space-y-6"
+            className="lg:col-span-6 flex flex-col justify-start space-y-6 pt-4"
           >
             {/* Badge */}
             <div>
@@ -130,14 +143,18 @@ export default function LandingHero() {
             </div>
           </motion.div>
 
-          {/* Right Column: Custom White Theme Contact Form (50% width on desktop, expanded layout) */}
+          {/* Right Column: Contact Form — shifted up with -mt-4 */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="lg:col-span-6 w-full"
+            className="lg:col-span-6 w-full relative self-start lg:-mt-4"
           >
-            <div className="relative bg-white p-7 sm:p-9 lg:p-10 rounded-3xl border border-slate-200/90 shadow-2xl overflow-hidden w-full">
+            {/* Form Container with Light Blue Gradient Background, Top Bar and Strong Shadow */}
+            <div className="relative bg-gradient-to-b from-white via-sky-50/40 to-blue-50/80 p-7 sm:p-9 lg:p-10 rounded-3xl border border-blue-200/90 shadow-[0_20px_60px_-10px_rgba(59,130,246,0.2),0_8px_25px_-5px_rgba(99,102,241,0.12)] hover:shadow-[0_25px_70px_-10px_rgba(59,130,246,0.28)] transition-all duration-500 overflow-hidden w-full">
+              {/* Top Accent Gradient Bar (matching Benefits card design) */}
+              <div className="absolute top-0 left-0 right-0 h-1.5 sm:h-2 bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-600 z-20" />
+
               <div className="relative z-10">
                 <div className="mb-6">
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">
@@ -157,7 +174,7 @@ export default function LandingHero() {
                   {/* Name & Company */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                     <div>
-                      <label className="block text-xs sm:text-sm font-bold text-slate-800 uppercase tracking-wider mb-1.5">
+                      <label className="block text-xs sm:text-sm font-bold text-blue-950 uppercase tracking-wider mb-1.5">
                         Full Name *
                       </label>
                       <input
@@ -166,11 +183,11 @@ export default function LandingHero() {
                         required
                         maxLength={80}
                         placeholder="John Doe"
-                        className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm sm:text-base outline-none transition-all placeholder-slate-400"
+                        className="w-full bg-white/90 border border-slate-200 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm sm:text-base outline-none transition-all placeholder-slate-400 shadow-2xs"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs sm:text-sm font-bold text-slate-800 uppercase tracking-wider mb-1.5">
+                      <label className="block text-xs sm:text-sm font-bold text-blue-950 uppercase tracking-wider mb-1.5">
                         Company Name *
                       </label>
                       <input
@@ -179,7 +196,7 @@ export default function LandingHero() {
                         required
                         maxLength={200}
                         placeholder="Acme Corp"
-                        className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm sm:text-base outline-none transition-all placeholder-slate-400"
+                        className="w-full bg-white/90 border border-slate-200 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm sm:text-base outline-none transition-all placeholder-slate-400 shadow-2xs"
                       />
                     </div>
                   </div>
@@ -187,7 +204,7 @@ export default function LandingHero() {
                   {/* Email & Phone */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                     <div>
-                      <label className="block text-xs sm:text-sm font-bold text-slate-800 uppercase tracking-wider mb-1.5">
+                      <label className="block text-xs sm:text-sm font-bold text-blue-950 uppercase tracking-wider mb-1.5">
                         Work Email *
                       </label>
                       <input
@@ -196,11 +213,11 @@ export default function LandingHero() {
                         required
                         maxLength={100}
                         placeholder="john@company.com"
-                        className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm sm:text-base outline-none transition-all placeholder-slate-400"
+                        className="w-full bg-white/90 border border-slate-200 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm sm:text-base outline-none transition-all placeholder-slate-400 shadow-2xs"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs sm:text-sm font-bold text-slate-800 uppercase tracking-wider mb-1.5">
+                      <label className="block text-xs sm:text-sm font-bold text-blue-950 uppercase tracking-wider mb-1.5">
                         Mobile Phone *
                       </label>
                       <input
@@ -209,7 +226,7 @@ export default function LandingHero() {
                         required
                         maxLength={30}
                         placeholder="+91 9876543210"
-                        className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm sm:text-base outline-none transition-all placeholder-slate-400"
+                        className="w-full bg-white/90 border border-slate-200 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm sm:text-base outline-none transition-all placeholder-slate-400 shadow-2xs"
                       />
                     </div>
                   </div>
@@ -217,7 +234,7 @@ export default function LandingHero() {
                   {/* Job Title & Services MultiSelect */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                     <div>
-                      <label className="block text-xs sm:text-sm font-bold text-slate-800 uppercase tracking-wider mb-1.5">
+                      <label className="block text-xs sm:text-sm font-bold text-blue-950 uppercase tracking-wider mb-1.5">
                         Job Title
                       </label>
                       <input
@@ -225,11 +242,11 @@ export default function LandingHero() {
                         name="Designation"
                         maxLength={100}
                         placeholder="CTO / IT Director"
-                        className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm sm:text-base outline-none transition-all placeholder-slate-400"
+                        className="w-full bg-white/90 border border-slate-200 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm sm:text-base outline-none transition-all placeholder-slate-400 shadow-2xs"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs sm:text-sm font-bold text-slate-800 uppercase tracking-wider mb-1.5">
+                      <label className="block text-xs sm:text-sm font-bold text-blue-950 uppercase tracking-wider mb-1.5">
                         Services *
                       </label>
                       <MultiSelectDropdown
@@ -237,7 +254,7 @@ export default function LandingHero() {
                         name="LEADCF166"
                         placeholder="Select Services"
                         darkMenu={false}
-                        bgClassName="bg-slate-50 border border-slate-200 focus:border-blue-600 focus:bg-white"
+                        bgClassName="bg-white/90 border border-slate-200 focus:border-blue-600 focus:bg-white shadow-2xs"
                         textColorClassName="text-slate-900"
                         options={[
                           "NetSuite Licenses",
@@ -256,7 +273,7 @@ export default function LandingHero() {
 
                   {/* Annual Revenue */}
                   <div>
-                    <label className="block text-xs sm:text-sm font-bold text-slate-800 uppercase tracking-wider mb-1.5">
+                    <label className="block text-xs sm:text-sm font-bold text-blue-950 uppercase tracking-wider mb-1.5">
                       Annual Revenue *
                     </label>
                     <select
@@ -264,7 +281,7 @@ export default function LandingHero() {
                       name="LEADCF19"
                       required
                       onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)}
-                      className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm sm:text-base outline-none cursor-pointer transition-all appearance-none"
+                      className="w-full bg-white/90 border border-slate-200 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm sm:text-base outline-none cursor-pointer transition-all appearance-none shadow-2xs"
                     >
                       <option value="-None-">-Select Revenue Range-</option>
                       <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
@@ -281,14 +298,14 @@ export default function LandingHero() {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-xs sm:text-sm font-bold text-slate-800 uppercase tracking-wider mb-1.5">
+                    <label className="block text-xs sm:text-sm font-bold text-blue-950 uppercase tracking-wider mb-1.5">
                       Requirements / Message
                     </label>
                     <textarea
                       name="LEADCF123"
                       rows={2}
                       placeholder="Tell us about your project requirements..."
-                      className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm sm:text-base outline-none transition-all placeholder-slate-400 resize-none"
+                      className="w-full bg-white/90 border border-slate-200 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm sm:text-base outline-none transition-all placeholder-slate-400 resize-none shadow-2xs"
                     ></textarea>
                   </div>
 

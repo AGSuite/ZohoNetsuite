@@ -5,36 +5,42 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
-const metricsData = [
-  { value: "700+", label: "PROJECTS COMPLETED" },
-  { value: "15+", label: "YEARS OF EXPERIENCE" },
-  { value: "250+", label: "CUSTOMERS WORLDWIDE" },
-  { value: "50+", label: "NETSUITE EXPERTS" },
-  { value: "10+ Countries", label: "SERVING CUSTOMERS" },
-  { value: "40+", label: "GLOBAL ROLL-OUTS" },
-  { value: "15+", label: "INDUSTRY EXPERTISE" },
-  { value: "84%", label: "CUSTOMER RETENTION" },
+// ─────────────────────────────────────────────────────────────────
+// Data
+// ─────────────────────────────────────────────────────────────────
+const stats = [
+  { value: "700+", label: "Projects Completed" },
+  { value: "250+", label: "Customers Worldwide" },
+  { value: "84%",  label: "Customer Retention" },
+  { value: "50+",  label: "NetSuite Experts" },
+  { value: "10+",  label: "Countries Serving" },
+  { value: "15+",  label: "Years of Experience" },
+  { value: "40+",  label: "Global Roll-Outs" },
+  { value: "15+",  label: "Industry Expertise" },
 ];
 
 const clientLogos = [
-  { name: "FINN", logo: "/images/netuite client images/FINN-Logo(1).jpg", pad: 4 },
-  { name: "Indovance", logo: "/images/netuite client images/Indovance-new-logo.webp", pad: 5 },
-  { name: "AiDash", logo: "/images/netuite client images/aidashlogo.png", pad: 4, unopt: true },
-  { name: "ControlCase", logo: "/images/netuite client images/controlcase.png", pad: 4 },
-  { name: "Escalent", logo: "/images/netuite client images/escalent.webp", pad: 5 },
-  { name: "Flatworld", logo: "/images/netuite client images/flatworld.png", pad: 9 },
-  { name: "Kale Logistics", logo: "/images/netuite client images/kale.png", pad: 8 },
-  { name: "Keycraft", logo: "/images/netuite client images/keycraft.png", pad: 8 },
-  { name: "Loylogic", logo: "/images/netuite client images/loylogic.png", pad: 2 },
-  { name: "Modaxo", logo: "/images/netuite client images/modaxo.png", pad: 5 },
-  { name: "Priority Tire", logo: "/images/netuite client images/prioritytire.png", pad: 5 },
-  { name: "Signal", logo: "/images/netuite client images/signal.png", pad: 5, unopt: true },
-  { name: "Traxon", logo: "/images/netuite client images/traxon.png", pad: 4 },
-  { name: "TSI", logo: "/images/netuite client images/tsi-logo.png", pad: 4 },
-  { name: "UniAcco", logo: "/images/netuite client images/uniacco.png", pad: 4 },
-  { name: "VideoVerse", logo: "/images/netuite client images/videoverse.png", pad: 1, unopt: true },
+  { name: "FINN",         logo: "/images/netuite client images/FINN-Logo(1).jpg",          pad: 4 },
+  { name: "Indovance",    logo: "/images/netuite client images/Indovance-new-logo.webp",    pad: 5 },
+  { name: "AiDash",       logo: "/images/netuite client images/aidashlogo.png",             pad: 4, unopt: true },
+  { name: "ControlCase",  logo: "/images/netuite client images/controlcase.png",            pad: 4 },
+  { name: "Escalent",     logo: "/images/netuite client images/escalent.webp",              pad: 5 },
+  { name: "Flatworld",    logo: "/images/netuite client images/flatworld.png",              pad: 9 },
+  { name: "Kale",         logo: "/images/netuite client images/kale.png",                   pad: 8 },
+  { name: "Keycraft",     logo: "/images/netuite client images/keycraft.png",               pad: 8 },
+  { name: "Loylogic",     logo: "/images/netuite client images/loylogic.png",               pad: 2 },
+  { name: "Modaxo",       logo: "/images/netuite client images/modaxo.png",                 pad: 5 },
+  { name: "Priority Tire",logo: "/images/netuite client images/prioritytire.png",           pad: 5 },
+  { name: "Signal",       logo: "/images/netuite client images/signal.png",                 pad: 5, unopt: true },
+  { name: "Traxon",       logo: "/images/netuite client images/traxon.png",                 pad: 4 },
+  { name: "TSI",          logo: "/images/netuite client images/tsi-logo.png",               pad: 4 },
+  { name: "UniAcco",      logo: "/images/netuite client images/uniacco.png",                pad: 4 },
+  { name: "VideoVerse",   logo: "/images/netuite client images/videoverse.png",             pad: 1, unopt: true },
 ];
 
+// ─────────────────────────────────────────────────────────────────
+// Animated counter (counts up from 0 on scroll into view)
+// ─────────────────────────────────────────────────────────────────
 function AnimatedCounter({ value, inView }: { value: string; inView: boolean }) {
   const match = value.match(/^(\d+)(.*)$/);
   if (!match) return <span>{value}</span>;
@@ -47,35 +53,36 @@ function AnimatedCounter({ value, inView }: { value: string; inView: boolean }) 
   const [displayValue, setDisplayValue] = useState(0);
 
   useEffect(() => {
-    const unsubscribe = rounded.on("change", (v) => setDisplayValue(v));
-    return () => unsubscribe();
+    const unsub = rounded.on("change", (v) => setDisplayValue(v));
+    return () => unsub();
   }, [rounded]);
 
   useEffect(() => {
     if (inView) {
-      animate(count, targetNumber, {
-        duration: 2.0,
-        ease: "easeOut",
-      });
+      animate(count, targetNumber, { duration: 2.0, ease: "easeOut" });
     }
   }, [inView, targetNumber, count]);
 
-  return (
-    <span>
-      {displayValue}
-      {suffix}
-    </span>
-  );
+  return <span>{displayValue}{suffix}</span>;
 }
 
+// ─────────────────────────────────────────────────────────────────
+// Component
+// ─────────────────────────────────────────────────────────────────
 export default function LandingPlatformMetrics() {
   const [isHovered, setIsHovered] = useState(false);
 
-  const { ref: badgeRef, inView: badgeInView } = useInView({ triggerOnce: true, threshold: 0.2 });
-  const { ref: headlineRef, inView: headlineInView } = useInView({ triggerOnce: true, threshold: 0.2 });
-  const { ref: statsRef, inView: statsInView } = useInView({ triggerOnce: true, threshold: 0.15 });
+  const { ref: badgeRef,     inView: badgeInView }     = useInView({ triggerOnce: true, threshold: 0.2 });
+  const { ref: headlineRef,  inView: headlineInView }  = useInView({ triggerOnce: true, threshold: 0.2 });
+  const { ref: subtextRef,   inView: subtextInView }   = useInView({ triggerOnce: true, threshold: 0.2 });
+  const { ref: statsRef,     inView: statsInView }     = useInView({ triggerOnce: true, threshold: 0.15 });
   const { ref: dashboardRef, inView: dashboardInView } = useInView({ triggerOnce: true, threshold: 0.1 });
-  const { ref: marqueeRef, inView: marqueeInView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref: marqueeRef,   inView: marqueeInView }   = useInView({ triggerOnce: true, threshold: 0.1 });
+
+  // Word-by-word headline animation (same as NSMetrics)
+  const headlineText  = "AGSuite Tech — Certified Oracle NetSuite Solution Provider with";
+  const highlightText = "15+ years of enterprise ERP excellence.";
+  const words = headlineText.split(" ");
 
   return (
     <section
@@ -86,7 +93,7 @@ export default function LandingPlatformMetrics() {
           "radial-gradient(at 0% 82.5%, #4a055c 0px, transparent 50%), radial-gradient(at 97.5% 84%, #10011f 0px, transparent 50%), radial-gradient(at 10% 10%, #000000 0px, transparent 50%), radial-gradient(at 48% 89%, #1000ed 0px, transparent 50%), #021526"
       }}
     >
-      {/* Square Grid Pattern Overlay */}
+      {/* Square Grid Pattern */}
       <div
         className="absolute inset-0 z-0 opacity-20 pointer-events-none"
         style={{
@@ -100,153 +107,184 @@ export default function LandingPlatformMetrics() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Top Badge & Headline */}
-        <div className="text-center max-w-4xl mx-auto mb-12">
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
+        <div className="text-center">
+
+          {/* Badge */}
           <motion.div
             ref={badgeRef}
             initial={{ opacity: 0, y: 24 }}
-            animate={badgeInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.65, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 mb-6 backdrop-blur-xl"
+            animate={badgeInView ? { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" } } : {}}
+            className="inline-block px-4 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-xs"
           >
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="text-[11px] font-bold text-white uppercase tracking-[0.2em]">
-              NetSuite Platform Excellence
-            </span>
+            Trusted NetSuite Solution Provider
           </motion.div>
 
+          {/* Headline */}
           <motion.h2
             ref={headlineRef}
-            initial={{ opacity: 0, y: 20 }}
-            animate={headlineInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.75, ease: "easeOut" }}
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6"
+            className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white mb-5 tracking-tight leading-tight"
           >
-            AGSuite Tech - Certified{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
-              Oracle NetSuite Solution Provider
-            </span>
+            {words.map((word, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0, y: 18 }}
+                animate={headlineInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.08 }}
+                className="inline-block mr-[0.3em]"
+              >
+                {word}
+              </motion.span>
+            ))}
+            {/* Highlight pill */}
+            <motion.span
+              initial={{ opacity: 0, y: 18 }}
+              animate={headlineInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.35, ease: "easeOut", delay: words.length * 0.08 }}
+              className="relative inline-flex items-center justify-center mx-1 my-1 group/pill align-middle cursor-pointer"
+            >
+              <span className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-rose-300 via-purple-300 to-sky-300 blur-md opacity-0 group-hover/pill:opacity-100 transition duration-300" />
+              <span className="relative inline-flex items-center justify-center p-[1.5px] rounded-2xl overflow-hidden transition-all duration-300">
+                <span className="absolute inset-0 bg-gradient-to-r from-rose-300/40 via-purple-300/40 to-sky-300/40 group-hover/pill:from-rose-400 group-hover/pill:via-purple-400 group-hover/pill:to-sky-400 rounded-2xl transition-all duration-300" />
+                <span className="relative px-3.5 py-1 bg-white/10 group-hover/pill:bg-white backdrop-blur-md rounded-[14px] block transition-colors duration-300">
+                  <span className="text-white group-hover/pill:text-black font-medium transition-colors duration-300">
+                    {highlightText}
+                  </span>
+                </span>
+              </span>
+            </motion.span>
           </motion.h2>
 
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-medium leading-relaxed">
+          {/* Subtext */}
+          <motion.p
+            ref={subtextRef}
+            initial={{ opacity: 0, y: 18 }}
+            animate={subtextInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed"
+          >
             Empowering global enterprises with end-to-end Oracle NetSuite cloud transformations, custom integrations, and managed support.
-          </p>
-        </div>
+          </motion.p>
 
-        {/* Small Horizontal Stats Row with Animated Number Counters */}
-        <div ref={statsRef} className="mt-8 mb-16">
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-5 max-w-7xl mx-auto px-2">
-            {metricsData.map((stat, index) => (
-              <motion.div
-                key={`${stat.label}-${index}`}
-                initial={{ opacity: 0, y: 15 }}
-                animate={statsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.06 }}
-                className="flex items-center gap-2.5 shrink-0 bg-white/5 border border-white/10 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl backdrop-blur-md hover:border-cyan-400/40 transition-all hover:-translate-y-0.5"
-              >
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                </svg>
-                <div className="text-left">
-                  <div className="text-lg sm:text-2xl font-bold text-white leading-tight">
-                    <AnimatedCounter value={stat.value} inView={statsInView} />
+          {/* Stats — NO border, just arrow + number + label, larger size */}
+          <div ref={statsRef} className="mt-12 mb-8">
+            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:gap-10 max-w-6xl mx-auto px-2">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={`${stat.label}-${index}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={statsInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.1 }}
+                  className="flex items-center gap-2.5 sm:gap-3 shrink-0"
+                >
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-green-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                  </svg>
+                  <div className="text-left">
+                    <div className="text-3xl lg:text-4xl font-bold text-white leading-tight">
+                      <AnimatedCounter value={stat.value} inView={statsInView} />
+                    </div>
+                    <div className="text-xs sm:text-sm text-slate-300 whitespace-nowrap font-medium mt-0.5">{stat.label}</div>
                   </div>
-                  <div className="text-[10px] sm:text-xs text-slate-300 font-semibold uppercase tracking-wider whitespace-nowrap mt-0.5">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Dashboard — centered, full-width, with border + window chrome */}
+          <div ref={dashboardRef} className="relative mt-6">
+            {/* Ambient glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gradient-to-r from-blue-500/20 via-purple-500/15 to-cyan-500/10 blur-[100px] rounded-full -z-10" />
+
+            <motion.div
+              initial={{ y: 40, opacity: 0, scale: 0.97 }}
+              animate={dashboardInView ? { y: 0, opacity: 1, scale: 1 } : { y: 40, opacity: 0, scale: 0.97 }}
+              transition={{ duration: 0.75, ease: "easeOut" }}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="relative max-w-5xl mx-auto"
+            >
+              {/* Browser-style chrome frame */}
+              <div className="rounded-3xl border-2 border-white/20 bg-gradient-to-b from-white/10 via-white/5 to-transparent shadow-[0_30px_80px_-20px_rgba(99,102,241,0.4)] overflow-hidden backdrop-blur-xl">
+                {/* Window bar */}
+                <div className="flex items-center gap-2 px-5 py-3.5 bg-slate-900/90 border-b border-white/10">
+                  <div className="w-3 h-3 rounded-full bg-rose-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-amber-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
+                  <span className="text-xs text-slate-400 ml-4 font-mono tracking-wide">Oracle NetSuite ERP — AGSuite Technologies Solution Provider Partner</span>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
 
-        {/* Central NetSuite Dashboard Showcase */}
-        <motion.div
-          ref={dashboardRef}
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={dashboardInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.8 }}
-          className="mb-24 relative"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {/* Ambient Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gradient-to-r from-blue-500/20 via-purple-500/15 to-cyan-500/10 blur-[100px] rounded-full -z-10" />
-
-          <div className="relative rounded-3xl p-3 bg-gradient-to-b from-white/15 via-white/5 to-transparent border border-white/20 shadow-2xl overflow-hidden backdrop-blur-2xl">
-            {/* Top Window Bar */}
-            <div className="flex items-center gap-2 px-4 py-3 bg-slate-900/80 rounded-t-2xl border-b border-white/10">
-              <div className="w-3 h-3 rounded-full bg-rose-500/80" />
-              <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-              <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-              <span className="text-xs text-slate-400 ml-4 font-mono">Oracle NetSuite ERP Real-Time Control Center</span>
-            </div>
-
-            {/* Dashboard Image */}
-            <div className="relative w-full h-[320px] sm:h-[480px] lg:h-[580px] rounded-b-2xl overflow-hidden">
-              <Image
-                src="/images/Dashboard/netsuite_erp_dashboard_realistic.png"
-                alt="Oracle NetSuite ERP Central Dashboard"
-                fill
-                className={`object-cover object-top transition-transform duration-700 ${isHovered ? "scale-105" : "scale-100"}`}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-40 pointer-events-none" />
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Client Logos Marquee Section (Matching Homepage Marquee) */}
-        <motion.div
-          ref={marqueeRef}
-          initial={{ opacity: 0, y: 30 }}
-          animate={marqueeInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="w-full border-t border-white/10 pt-10"
-        >
-          <div className="text-center mb-8">
-            <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
-              Trusted by 250+ Industry Leaders Worldwide
-            </span>
+                {/* Dashboard image */}
+                <motion.div
+                  animate={{ scale: isHovered ? 1.03 : 1 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="relative w-full h-[280px] sm:h-[420px] lg:h-[560px] overflow-hidden"
+                >
+                  <Image
+                    src="/images/Dashboard/NETSUITE ERP DASHBOARD.png"
+                    alt="Oracle NetSuite ERP Executive Home Dashboard — AGSuite Technologies"
+                    fill
+                    sizes="(min-width: 1024px) 900px, 100vw"
+                    className="object-cover object-top"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent pointer-events-none" />
+                </motion.div>
+              </div>
+            </motion.div>
           </div>
 
-          <div className="relative w-full overflow-hidden py-2">
-            <div className="animate-marquee whitespace-nowrap flex items-center">
-              {clientLogos.concat(clientLogos).map((client, index) => {
-                const p = client.pad ?? 4;
-                return (
-                  <div key={index} className="inline-flex px-3 sm:px-4">
-                    <div
-                      className="flex h-16 w-40 sm:h-20 sm:w-48 items-center justify-center bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
-                      style={{ padding: `${p * 2}px ${p * 3}px` }}
-                    >
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={client.logo}
-                          alt={`${client.name} logo`}
-                          fill
-                          sizes="(max-width: 640px) 160px, 192px"
-                          className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                          unoptimized={client.unopt === true}
-                        />
+          {/* Client Logos Marquee */}
+          <motion.div
+            ref={marqueeRef}
+            initial={{ opacity: 0, y: 30 }}
+            animate={marqueeInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.45, ease: "easeOut" }}
+            className="w-full border-t border-white/10 pt-8 mt-10"
+          >
+            <p className="mb-8 text-center text-2xl font-medium uppercase text-gray-200 tracking-wide">
+              Trusted by industry leading brands
+            </p>
+
+            <div className="relative w-full overflow-hidden py-2">
+              <div className="animate-marquee whitespace-nowrap flex items-center">
+                {clientLogos.concat(clientLogos).map((client, index) => {
+                  const p = client.pad ?? 4;
+                  return (
+                    <div key={index} className="inline-flex px-4">
+                      <div
+                        className="flex h-16 w-44 sm:h-20 sm:w-52 items-center justify-center bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+                        style={{ padding: `${p * 2}px ${p * 3}px` }}
+                      >
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={client.logo}
+                            alt={`${client.name} logo`}
+                            fill
+                            sizes="(max-width: 640px) 176px, 208px"
+                            className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                            unoptimized={client.unopt === true}
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
+        </div>
       </div>
 
       <style jsx global>{`
         @keyframes marquee {
-          0% { transform: translateX(0); }
+          0%   { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
         .animate-marquee {
           display: inline-flex;
-          animation: marquee 50s linear infinite;
+          animation: marquee 60s linear infinite;
           will-change: transform;
         }
         .animate-marquee:hover {

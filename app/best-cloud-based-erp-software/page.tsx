@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import LandingNavbar from "./components/LandingNavbar";
 import LandingHero from "./components/LandingHero";
 import LandingPlatformMetrics from "./components/LandingPlatformMetrics";
+import LandingUnifiedSolution from "./components/LandingUnifiedSolution";
 import LandingWhyNetSuite from "./components/LandingWhyNetSuite";
 import LandingServicesIndustries from "./components/LandingServicesIndustries";
 import LandingBenefitsPricingFAQ from "./components/LandingBenefitsPricingFAQ";
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     "netsuite implementation partner",
     "cloud erp solution",
     "netsuite integration partner",
-    "agsuite technologies"
+    "agsuite technologies",
   ],
   alternates: {
     canonical: "https://www.agsuitetech.com/best-cloud-based-erp-software/",
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/Dashboard/netsuite_erp_dashboard_realistic.png",
+        url: "/images/Dashboard/netsuite_executive_erp_dashboard.jpg",
         width: 1200,
         height: 630,
         alt: "Oracle NetSuite Cloud ERP Software",
@@ -48,19 +49,22 @@ export default function BestCloudBasedERPSoftwarePage() {
 
       {/* Main Landing Sections */}
       <main>
-        {/* Hero Section with Custom Contact Form & Dark Gradient Theme */}
+        {/* Hero Section with Contact Form */}
         <LandingHero />
 
         {/* Section 2 (#platform): Platform Overview, 8 Metrics, Central Dashboard, Client Logos */}
         <LandingPlatformMetrics />
 
-        {/* Section 3 (#whyNetSuite): Why Choose NetSuite Features */}
+        {/* Section 3: NetSuite ERP – Unified Cloud Solution (12 Core Modules Grid) */}
+        <LandingUnifiedSolution />
+
+        {/* Section 4 (#whyNetSuite): Why Choose NetSuite (Benefits, Challenges, ROI) & Business Grows Here CTA */}
         <LandingWhyNetSuite />
 
-        {/* Section 4 (#businessGrow): NetSuite Services & Industry Solutions */}
+        {/* Section 5 (#businessGrow): Our NetSuite Services & 10 Industry Cards */}
         <LandingServicesIndustries />
 
-        {/* Section 5 & 6 (#benefits & #ERPCost): Core Benefits, Pricing Breakdown, FAQ Accordion */}
+        {/* Section 6 & 7 (#benefits, #ERPCost, #faq): Cloud ERP Benefits, Next AI CTA, Pricing Breakdown & FAQs */}
         <LandingBenefitsPricingFAQ />
       </main>
 
