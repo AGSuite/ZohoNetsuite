@@ -39,7 +39,7 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
-    bgImage: "/images/services/ns_service_digital_transformation_new.webp",
+    bgImage: "/images/Services/ns_service_digital_transformation_new.webp",
     href: "/netsuite-erp-and-crm-implementation",
   },
   {
@@ -51,7 +51,7 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
       </svg>
     ),
-    bgImage: "/images/services/ns_service_integration_new.webp",
+    bgImage: "/images/Services/ns_service_integration_new.webp",
     href: "/netsuite-integration",
   },
   {
@@ -63,7 +63,7 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
       </svg>
     ),
-    bgImage: "/images/services/ns_service_low_code_new.webp",
+    bgImage: "/images/Services/ns_service_low_code_new.webp",
     href: "/netsuite-customization",
   },
   {
@@ -75,7 +75,7 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
     ),
-    bgImage: "/images/services/ns_service_managed_new.webp",
+    bgImage: "/images/Services/ns_service_managed_new.webp",
     href: "/netsuite-managed-support",
   },
 ];
