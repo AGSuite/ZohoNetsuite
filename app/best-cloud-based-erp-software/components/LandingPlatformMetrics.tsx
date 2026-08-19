@@ -20,22 +20,28 @@ const stats = [
 ];
 
 const clientLogos = [
-  { name: "FINN", logo: "/images/netsuite-clients/finn-logo1.webp", pad: 4 },
-  { name: "Indovance", logo: "/images/netsuite-clients/indovance-new-logo.webp", pad: 5 },
-  { name: "AiDash", logo: "/images/netsuite-clients/aidashlogo.webp", pad: 4 },
-  { name: "ControlCase", logo: "/images/netsuite-clients/controlcase.webp", pad: 4 },
-  { name: "Escalent", logo: "/images/netsuite-clients/escalent.webp", pad: 5 },
-  { name: "Flatworld", logo: "/images/netsuite-clients/flatworld.webp", pad: 9 },
-  { name: "Kale", logo: "/images/netsuite-clients/kale.webp", pad: 8 },
-  { name: "Keycraft", logo: "/images/netsuite-clients/keycraft.webp", pad: 8 },
-  { name: "Loylogic", logo: "/images/netsuite-clients/loylogic.webp", pad: 2 },
-  { name: "Modaxo", logo: "/images/netsuite-clients/modaxo.webp", pad: 5 },
-  { name: "Priority Tire", logo: "/images/netsuite-clients/prioritytire.webp", pad: 5 },
-  { name: "Signal", logo: "/images/netsuite-clients/signal.webp", pad: 5 },
-  { name: "Traxon", logo: "/images/netsuite-clients/traxon.webp", pad: 4 },
-  { name: "TSI", logo: "/images/netsuite-clients/tsi-logo.webp", pad: 4 },
-  { name: "UniAcco", logo: "/images/netsuite-clients/uniacco.webp", pad: 4 },
-  { name: "VideoVerse", logo: "/images/netsuite-clients/videoverse.webp", pad: 1 },
+  { id: "affle", logo: "/images/assets/affle%20tech.webp", name: "Affle", link: "https://www.affle.com", pad: 4 },
+  { id: "tyfone", logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone", link: "https://www.tyfone.com", pad: 4 },
+  { id: "airling", logo: "/images/assets/airling%20tech.webp", name: "Airling", link: "#", pad: 4 },
+  { id: "videoverse", logo: "/images/netsuite-clients/videoverse.webp", name: "VideoVerse", link: "https://www.videoverse.com", pad: 1 },
+  { id: "quickheal", logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal", link: "https://www.quickheal.com", pad: 7 },
+  { id: "uniacco", logo: "/images/netsuite-clients/uniacco.webp", name: "UniAcco", link: "https://www.uniacco.com", pad: 4 },
+  { id: "dlz", logo: "/images/assets/dlz%20service.webp", name: "DLZ", link: "#", pad: 4 },
+  { id: "indovance", logo: "/images/netsuite-clients/indovance-new-logo.webp", name: "Indovance", link: "https://www.indovance.com", pad: 5 },
+  { id: "pace", logo: "/images/assets/pace%20services.webp", name: "Pace", link: "#", pad: 4 },
+  { id: "aidash", logo: "/images/netsuite-clients/aidashlogo.webp", name: "AiDash", link: "#", pad: 4 },
+  { id: "controlcase", logo: "/images/netsuite-clients/controlcase.webp", name: "ControlCase", link: "#", pad: 4 },
+  { id: "escalent", logo: "/images/netsuite-clients/escalent.webp", name: "Escalent", link: "#", pad: 5 },
+  { id: "finn", logo: "/images/netsuite-clients/finn-logo1.webp", name: "Finn", link: "#", pad: 4 },
+  { id: "flatworld", logo: "/images/netsuite-clients/flatworld.webp", name: "Flatworld", link: "#", pad: 9 },
+  { id: "kale", logo: "/images/netsuite-clients/kale.webp", name: "Kale", link: "#", pad: 8 },
+  { id: "keycraft", logo: "/images/netsuite-clients/keycraft.webp", name: "Keycraft", link: "#", pad: 8 },
+  { id: "modaxo", logo: "/images/netsuite-clients/modaxo.webp", name: "Modaxo", link: "#", pad: 5 },
+  { id: "prioritytire", logo: "/images/netsuite-clients/prioritytire.webp", name: "Priority Tire", link: "#", pad: 5 },
+  { id: "signal", logo: "/images/netsuite-clients/signal.webp", name: "Signal", link: "#", pad: 5 },
+  { id: "traxon", logo: "/images/netsuite-clients/traxon.webp", name: "Traxon", link: "#", pad: 4 },
+  { id: "tsi", logo: "/images/netsuite-clients/tsi-logo.webp", name: "TSI", link: "#", pad: 4 },
+  { id: "loylogic", logo: "/images/netsuite-clients/loylogic.webp", name: "LoyLogic", link: "#", pad: 2 },
 ];
 
 // ─────────────────────────────────────────────────────────────────
@@ -251,18 +257,25 @@ export default function LandingPlatformMetrics() {
                 {clientLogos.concat(clientLogos).map((client, index) => {
                   const p = client.pad ?? 4;
                   return (
-                    <div key={index} className="inline-flex px-3 sm:px-4">
-                      <div
-                        className="flex h-16 w-44 sm:h-20 sm:w-52 items-center justify-center bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group px-4 py-2"
+                    <div key={index} className="inline-flex px-4">
+                      <a
+                        href={client.link || "#"}
+                        target={client.link && client.link !== "#" ? "_blank" : undefined}
+                        rel={client.link && client.link !== "#" ? "noopener noreferrer" : undefined}
+                        className="flex h-16 w-44 sm:h-20 sm:w-52 items-center justify-center bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+                        style={{ padding: `${p * 2}px ${p * 3}px` }}
+                        aria-label={client.name}
                       >
-                        <Image
-                          src={client.logo}
-                          alt={`${client.name} — Oracle NetSuite Client Partner Logo`}
-                          width={160}
-                          height={60}
-                          className="max-h-11 sm:max-h-14 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                        />
-                      </div>
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={client.logo}
+                            alt={`${client.name} logo`}
+                            fill
+                            sizes="(max-width: 640px) 176px, 208px"
+                            className="object-contain transition-all duration-300 filter grayscale group-hover:grayscale-0"
+                          />
+                        </div>
+                      </a>
                     </div>
                   );
                 })}
