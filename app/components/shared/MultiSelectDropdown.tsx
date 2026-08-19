@@ -104,13 +104,34 @@ export default function MultiSelectDropdown({
 
       {/* Floating Dropdown Menu */}
       {isOpen && (
-        <div
-          className={`absolute z-50 left-0 right-0 mt-1 max-h-60 overflow-y-auto rounded-xl border shadow-xl py-1 text-sm ${
-            darkMenu
-              ? "bg-[#1e232d] border-white/10 text-white"
-              : "bg-white border-gray-200 text-gray-800"
-          }`}
-        >
+        <>
+          <style>{`
+            .custom-dropdown-scrollbar::-webkit-scrollbar {
+              width: 7px;
+            }
+            .custom-dropdown-scrollbar::-webkit-scrollbar-track {
+              background: ${darkMenu ? 'rgba(255, 255, 255, 0.08)' : '#f1f5f9'};
+              border-radius: 8px;
+            }
+            .custom-dropdown-scrollbar::-webkit-scrollbar-thumb {
+              background: ${darkMenu ? '#475569' : '#94a3b8'};
+              border-radius: 8px;
+            }
+            .custom-dropdown-scrollbar::-webkit-scrollbar-thumb:hover {
+              background: ${darkMenu ? '#64748b' : '#64748b'};
+            }
+          `}</style>
+          <div
+            style={{
+              scrollbarWidth: 'thin',
+              scrollbarColor: darkMenu ? '#475569 transparent' : '#94a3b8 #f1f5f9',
+            }}
+            className={`custom-dropdown-scrollbar absolute z-50 left-0 right-0 mt-1 max-h-60 overflow-y-auto rounded-xl border shadow-xl py-1 text-sm ${
+              darkMenu
+                ? "bg-[#1e232d] border-white/10 text-white"
+                : "bg-white border-gray-200 text-gray-800"
+            }`}
+          >
           {options.map((opt) => {
             const isChecked = selected.includes(opt);
             return (
@@ -139,6 +160,7 @@ export default function MultiSelectDropdown({
             );
           })}
         </div>
+        </>
       )}
     </div>
   );

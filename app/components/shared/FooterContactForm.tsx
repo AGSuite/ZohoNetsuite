@@ -123,7 +123,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
         serviceOptions: [
           "Zoho Licenses",
           "Zoho Implementation",
-          "Zoho Licenses + Implementation",
+          // "Zoho Licenses + Implementation",
           "Zoho Support",
           "Zoho Optimization",
           "Zoho Customization",

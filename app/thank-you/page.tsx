@@ -173,16 +173,15 @@ export default function ThankYouPage() {
           Your Submission Has Been Received.<br />We will get in touch with you soon.
         </motion.p>
 
-        {/* Two Cards Row */}
+        {/* Single Card — Follow Us On */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45 }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+          className="max-w-md mx-auto"
         >
-          {/* Card 1 — Connect With Us */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col items-center gap-4">
-            <h2 className="text-gray-800 font-bold text-lg">Connect With Us</h2>
+            <h2 className="text-gray-800 font-bold text-lg">Follow Us On</h2>
             <div className="flex items-center gap-3">
               {socialLinks.map((s) => (
                 <a
@@ -198,20 +197,6 @@ export default function ThankYouPage() {
                 </a>
               ))}
             </div>
-          </div>
-
-          {/* Card 2 — Visit Our Website */}
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col items-center justify-center gap-4">
-            <h2 className="text-gray-800 font-bold text-lg">Visit Our Website</h2>
-            <Link
-              href="/"
-              className="px-8 py-3 rounded-full text-white text-sm font-semibold transition-all duration-300
-                bg-gradient-to-r from-indigo-500 to-violet-500
-                hover:from-indigo-400 hover:to-violet-400
-                shadow-md hover:shadow-indigo-200 hover:shadow-lg hover:scale-105 active:scale-95"
-            >
-              Back to Home
-            </Link>
           </div>
         </motion.div>
 

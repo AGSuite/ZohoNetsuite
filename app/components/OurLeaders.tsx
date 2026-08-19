@@ -56,7 +56,7 @@ export default function OurLeaders() {
           {/* Top Accent Line Glow */}
           <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent group-hover:via-blue-600 transition-all duration-500" />
 
-          {/* Profile Image Box - Light Color Shadow on Hover ONLY */}
+          {/* Profile Image Box */}
           <div className="relative w-full aspect-square max-w-[200px] mb-4 rounded-2xl overflow-hidden border border-gray-200 bg-slate-50 shadow-none group-hover:shadow-xl group-hover:shadow-blue-400/35 group-hover:border-blue-400/50 p-1 mx-auto flex items-center justify-center transition-all duration-500">
             <div className="relative w-full h-full rounded-xl overflow-hidden bg-white">
               <Image
@@ -65,13 +65,14 @@ export default function OurLeaders() {
                 fill
                 className={`${leader.imgClass} transition-transform duration-700 group-hover:scale-105`}
                 sizes="(max-width: 640px) 100vw, 200px"
+                unoptimized={true}
               />
             </div>
           </div>
 
           {/* Leader Info Container */}
           <div className="w-full flex flex-col justify-between flex-grow pt-1">
-            {/* Name on Left (Dark Blue Color), Social LinkedIn Icon on Right */}
+            {/* Name & LinkedIn */}
             <div className="flex items-center justify-between gap-2 mb-1 w-full">
               <h3 className="text-base md:text-lg font-bold text-[#001e4d] group-hover:text-blue-600 transition-colors duration-300 text-left truncate">
                 {leader.name}
@@ -89,7 +90,7 @@ export default function OurLeaders() {
               </a>
             </div>
 
-            {/* Designation on Left */}
+            {/* Designation */}
             <div className="w-full text-left">
               <span className="block text-xs md:text-sm font-medium text-gray-600 group-hover:text-gray-900 transition-colors duration-300 leading-snug text-left">
                 {leader.title}

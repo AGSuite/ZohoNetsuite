@@ -230,7 +230,7 @@ export default function EmbeddedZohoForm() {
                             options={[
                                 "Zoho Licenses",
                                 "Zoho Implementation",
-                                "Zoho Licenses + Implementation",
+                                // "Zoho Licenses + Implementation",
                                 "Zoho Support",
                                 "Zoho Optimization",
                                 "Zoho Customization",
