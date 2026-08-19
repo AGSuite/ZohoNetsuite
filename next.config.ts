@@ -8,13 +8,18 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdn.sanity.io',
-        pathname: '/images/**',
+        hostname: 'www.agsuitetech.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'agsuitetech.com',
+        pathname: '/**',
       },
       {
         protocol: 'https',
         hostname: 'cdn.sanity.io',
-        pathname: '/files/**',
+        pathname: '/**',
       },
     ],
     formats: ['image/avif', 'image/webp'],

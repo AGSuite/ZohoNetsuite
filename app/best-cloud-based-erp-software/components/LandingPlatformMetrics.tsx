@@ -11,31 +11,31 @@ import Image from "next/image";
 const stats = [
   { value: "700+", label: "Projects Completed" },
   { value: "250+", label: "Customers Worldwide" },
-  { value: "84%",  label: "Customer Retention" },
-  { value: "50+",  label: "NetSuite Experts" },
-  { value: "10+",  label: "Countries Serving" },
-  { value: "15+",  label: "Years of Experience" },
-  { value: "40+",  label: "Global Roll-Outs" },
-  { value: "15+",  label: "Industry Expertise" },
+  { value: "84%", label: "Customer Retention" },
+  { value: "50+", label: "NetSuite Experts" },
+  { value: "10+", label: "Countries Serving" },
+  { value: "15+", label: "Years of Experience" },
+  { value: "40+", label: "Global Roll-Outs" },
+  { value: "15+", label: "Industry Expertise" },
 ];
 
 const clientLogos = [
-  { name: "FINN",         logo: "/images/netsuite-clients/FINN-Logo1.jpg",            pad: 4 },
-  { name: "Indovance",    logo: "/images/netsuite-clients/Indovance-new-logo.webp",   pad: 5 },
-  { name: "AiDash",       logo: "/images/netsuite-clients/aidashlogo.png",            pad: 4 },
-  { name: "ControlCase",  logo: "/images/netsuite-clients/controlcase.png",           pad: 4 },
-  { name: "Escalent",     logo: "/images/netsuite-clients/escalent.webp",             pad: 5 },
-  { name: "Flatworld",    logo: "/images/netsuite-clients/flatworld.png",             pad: 9 },
-  { name: "Kale",         logo: "/images/netsuite-clients/kale.png",                  pad: 8 },
-  { name: "Keycraft",     logo: "/images/netsuite-clients/keycraft.png",              pad: 8 },
-  { name: "Loylogic",     logo: "/images/netsuite-clients/loylogic.png",              pad: 2 },
-  { name: "Modaxo",       logo: "/images/netsuite-clients/modaxo.png",                pad: 5 },
-  { name: "Priority Tire",logo: "/images/netsuite-clients/prioritytire.png",          pad: 5 },
-  { name: "Signal",       logo: "/images/netsuite-clients/signal.png",                pad: 5 },
-  { name: "Traxon",       logo: "/images/netsuite-clients/traxon.png",                pad: 4 },
-  { name: "TSI",          logo: "/images/netsuite-clients/tsi-logo.png",              pad: 4 },
-  { name: "UniAcco",      logo: "/images/netsuite-clients/uniacco.png",               pad: 4 },
-  { name: "VideoVerse",   logo: "/images/netsuite-clients/videoverse.png",            pad: 1 },
+  { name: "FINN", logo: "/images/netsuite-clients/FINN-Logo1.jpg", pad: 4 },
+  { name: "Indovance", logo: "/images/netsuite-clients/Indovance-new-logo.webp", pad: 5 },
+  { name: "AiDash", logo: "/images/netsuite-clients/aidashlogo.png", pad: 4 },
+  { name: "ControlCase", logo: "/images/netsuite-clients/controlcase.png", pad: 4 },
+  { name: "Escalent", logo: "/images/netsuite-clients/escalent.webp", pad: 5 },
+  { name: "Flatworld", logo: "/images/netsuite-clients/flatworld.png", pad: 9 },
+  { name: "Kale", logo: "/images/netsuite-clients/kale.png", pad: 8 },
+  { name: "Keycraft", logo: "/images/netsuite-clients/keycraft.png", pad: 8 },
+  { name: "Loylogic", logo: "/images/netsuite-clients/loylogic.png", pad: 2 },
+  { name: "Modaxo", logo: "/images/netsuite-clients/modaxo.png", pad: 5 },
+  { name: "Priority Tire", logo: "/images/netsuite-clients/prioritytire.png", pad: 5 },
+  { name: "Signal", logo: "/images/netsuite-clients/signal.png", pad: 5 },
+  { name: "Traxon", logo: "/images/netsuite-clients/traxon.png", pad: 4 },
+  { name: "TSI", logo: "/images/netsuite-clients/tsi-logo.png", pad: 4 },
+  { name: "UniAcco", logo: "/images/netsuite-clients/uniacco.png", pad: 4 },
+  { name: "VideoVerse", logo: "/images/netsuite-clients/videoverse.png", pad: 1 },
 ];
 
 // ─────────────────────────────────────────────────────────────────
@@ -72,16 +72,16 @@ function AnimatedCounter({ value, inView }: { value: string; inView: boolean }) 
 export default function LandingPlatformMetrics() {
   const [isHovered, setIsHovered] = useState(false);
 
-  const { ref: badgeRef,     inView: badgeInView }     = useInView({ triggerOnce: true, threshold: 0.2 });
-  const { ref: headlineRef,  inView: headlineInView }  = useInView({ triggerOnce: true, threshold: 0.2 });
-  const { ref: subtextRef,   inView: subtextInView }   = useInView({ triggerOnce: true, threshold: 0.2 });
-  const { ref: statsRef,     inView: statsInView }     = useInView({ triggerOnce: true, threshold: 0.15 });
+  const { ref: badgeRef, inView: badgeInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+  const { ref: headlineRef, inView: headlineInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+  const { ref: subtextRef, inView: subtextInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+  const { ref: statsRef, inView: statsInView } = useInView({ triggerOnce: true, threshold: 0.15 });
   const { ref: dashboardRef, inView: dashboardInView } = useInView({ triggerOnce: true, threshold: 0.1 });
-  const { ref: marqueeRef,   inView: marqueeInView }   = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref: marqueeRef, inView: marqueeInView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   // Word-by-word headline animation (same as NSMetrics)
-  const headlineText  = "AGSuite Tech — Certified Oracle NetSuite Solution Provider with";
-  const highlightText = "15+ years of enterprise ERP excellence.";
+  const headlineText = "AGSuite Tech — Certified Oracle NetSuite Solution Provider with";
+  const highlightText = "15+ years of enterprise ERP excellence";
   const words = headlineText.split(" ");
 
   return (
@@ -221,7 +221,7 @@ export default function LandingPlatformMetrics() {
                   className="relative w-full h-[280px] sm:h-[420px] lg:h-[560px] overflow-hidden"
                 >
                   <Image
-                    src="/images/Dashboard/netsuite_erp_dashboard_hd.png"
+                    src="/images/dashboard/netsuite_erp_dashboard_hd.png"
                     alt="Oracle NetSuite ERP Executive Home Dashboard — AGSuite Technologies"
                     fill
                     sizes="(min-width: 1024px) 900px, 100vw"
@@ -251,20 +251,17 @@ export default function LandingPlatformMetrics() {
                 {clientLogos.concat(clientLogos).map((client, index) => {
                   const p = client.pad ?? 4;
                   return (
-                    <div key={index} className="inline-flex px-4">
+                    <div key={index} className="inline-flex px-3 sm:px-4">
                       <div
-                        className="flex h-16 w-44 sm:h-20 sm:w-52 items-center justify-center bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
-                        style={{ padding: `${p * 2}px ${p * 3}px` }}
+                        className="flex h-16 w-44 sm:h-20 sm:w-52 items-center justify-center bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group px-4 py-2"
                       >
-                        <div className="relative w-full h-full">
-                          <Image
-                            src={client.logo}
-                            alt={`${client.name} — Oracle NetSuite Client Partner Logo`}
-                            fill
-                            sizes="(max-width: 640px) 176px, 208px"
-                            className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                          />
-                        </div>
+                        <Image
+                          src={client.logo}
+                          alt={`${client.name} — Oracle NetSuite Client Partner Logo`}
+                          width={160}
+                          height={60}
+                          className="max-h-11 sm:max-h-14 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                        />
                       </div>
                     </div>
                   );
