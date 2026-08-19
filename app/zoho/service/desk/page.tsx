@@ -27,28 +27,28 @@ export default function ZohoDeskServicePage() {
     {
       title: "Contextual Ticketing",
       description: "See the full context of a customer's journey directly within their support ticket.",
-      image: "/images/modules/chat desk module.webp",
+      image: "/images/modules/real_time_visibility.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Guided Conversations",
       description: "Equip your agents with response suggestions and AI-powered help during live chats.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/analytics_collab.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Advanced Knowledge Base",
       description: "Create an extensive help center that answers customer questions before they reach out.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/unified_platform.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Customizable Reports",
       description: "Build reports that track exactly what matters to your service organization.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/analytics_visual_analysis.png",
       color: "#1a6080",
       rgb: "20,88,115",
     }

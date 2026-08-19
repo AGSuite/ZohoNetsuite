@@ -27,28 +27,28 @@ export default function ZohoSurveyPage() {
     {
       title: "Survey Creator",
       description: "Build custom surveys with a variety of question types and logical branching.",
-      image: "/images/modules/csm modules.webp",
+      image: "/images/modules/unified_platform.png",
       color: "#154e8a",
       rgb: "18,68,130",
     },
     {
       title: "Multi-Channel Distribution",
       description: "Share surveys via email, social media, QR codes, or embed them on your website.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/analytics_collab.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Real-Time Analysis",
       description: "Visualize survey responses in real-time with automatically generated charts and graphs.",
-      image: "/images/modules/dashboard module.webp",
+      image: "/images/modules/analytics_visual_analysis.png",
       color: "#1a6545",
       rgb: "20,95,60",
     },
     {
       title: "Advanced Logic",
       description: "Use skip logic and piping to create a personalized experience for every respondent.",
-      image: "/images/modules/managging together module.webp",
+      image: "/images/modules/intelligent_automation.png",
       color: "#a05a18",
       rgb: "145,75,18",
     }

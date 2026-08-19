@@ -27,28 +27,28 @@ export default function ZohoServicePage() {
     {
       title: "Omnichannel Support",
       description: "Manage customer requests across email, phone, chat, and social media from a single interface.",
-      image: "/images/modules/chat desk module.webp",
+      image: "/images/modules/crm.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Intelligent Automation",
       description: "Automate repetitive tasks like ticket assignment, escalations, and status updates.",
-      image: "/images/modules/managging together module.webp",
+      image: "/images/modules/intelligent_automation.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Self-Service Portal",
       description: "Empower customers with a comprehensive knowledge base and community forums.",
-      image: "/images/modules/chatt mdoule.webp",
+      image: "/images/modules/unified_platform.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
     {
       title: "Service Analytics",
       description: "Track team performance and customer satisfaction with deep-dive analytics and real-time reports.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/analytics_visual_analysis.png",
       color: "#1a6080",
       rgb: "20,88,115",
     }

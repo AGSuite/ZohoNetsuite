@@ -114,7 +114,7 @@ const locations: {
       address: "Office No. 1110, 11th floor, Gera's Imperium Rise, Hinjewadi Rajiv Gandhi Infotech Park, Hinjewadi, Pune, Maharashtra, INDIA – 411057",
       email: "contact@agsuitetech.com",
       mapUrl: "https://www.google.com/maps/place/AGSuite+Technologies+(Top+NetSuite+Partner)/@18.5964114,73.7182446,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2bbbaf62357d1:0x8b9a4ecd422c8b03!8m2!3d18.5964114!4d73.7182446!16s%2Fg%2F11kjps0bgc?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D",
-      image: "/images/offices images/pune_city.png",
+      image: "/images/offices/pune_city.png",
     },
     {
       region: "INDIA",
@@ -124,7 +124,7 @@ const locations: {
       address: "3rd Floor, Unit no. 4, Inspire, Main Road, G Block BKC, Bandra Kurla Complex, Mumbai, Maharashtra INDIA – 400051",
       email: "contact@agsuitetech.com",
       mapUrl: "https://maps.google.com/?q=Inspire+BKC+Bandra+Kurla+Complex+Mumbai",
-      image: "/images/offices images/mumbai_city.png",
+      image: "/images/offices/mumbai_city.png",
     },
     {
       region: "INDIA",
@@ -134,7 +134,7 @@ const locations: {
       address: "Whitefield, Survey No. 192, Whitefield Main Road, B Narayanapura, Mahadevapura, Bangalore, KA, INDIA – 560001",
       email: "contact@agsuitetech.com",
       mapUrl: "https://maps.google.com/?q=Whitefield+Main+Road+Mahadevapura+Bangalore",
-      image: "/images/offices images/bangalore_city.png",
+      image: "/images/offices/bangalore_city.png",
     },
     {
       region: "INDIA",
@@ -144,7 +144,7 @@ const locations: {
       address: "6th Floor, N Heights, Plot No 38, Phase 2 Hitec City, Siddiq Nagar, Hyderabad, Telangana, INDIA – 500081",
       email: "contact@agsuitetech.com",
       mapUrl: "https://maps.google.com/?q=N+Heights+Hitec+City+Hyderabad",
-      image: "/images/offices images/hyderabad_city.png",
+      image: "/images/offices/hyderabad_city.png",
     },
     {
       region: "INDIA",
@@ -154,7 +154,7 @@ const locations: {
       address: "07th Floor, Gate No. 03 & Gate No. 04, Ambience Island, NH 48, Gurugram, Haryana, INDIA – 122002",
       email: "contact@agsuitetech.com",
       mapUrl: "https://maps.google.com/?q=Ambience+Island+NH48+Gurugram",
-      image: "/images/offices images/gurugram_city.png",
+      image: "/images/offices/gurugram_city.png",
     },
     {
       region: "INDIA",
@@ -164,7 +164,7 @@ const locations: {
       address: "F-18 Subcity Center, Opp. Income Tax Office, Udaipur, Rajasthan INDIA – 313001",
       email: "contact@agsuitetech.com",
       mapUrl: "https://maps.google.com/?q=Subcity+Center+Udaipur+Rajasthan",
-      image: "/images/offices images/udaipur_city.png",
+      image: "/images/offices/udaipur_city.png",
     },
     // ── USA ────────────────────────────────────────────────────────────────────
     {
@@ -175,7 +175,7 @@ const locations: {
       address: "6421-1 Metro Plantation Road, Fort Myers, FL, US – 33966",
       email: "contact@agsuitetech.com",
       mapUrl: "https://maps.google.com/?q=6421+Metro+Plantation+Road+Fort+Myers+FL",
-      image: "/images/offices images/florida_city.png",
+      image: "/images/offices/florida_city.png",
     },
     // ── UK ─────────────────────────────────────────────────────────────────────
     {
@@ -186,7 +186,7 @@ const locations: {
       address: "The Old Dairy, Drummers Hill, St Austell, Cornwall, PL26 8XR",
       email: "contact@agsuitetech.com",
       mapUrl: "https://maps.google.com/?q=Drummers+Hill+St+Austell+Cornwall",
-      image: "/images/offices images/uk_city.png",
+      image: "/images/offices/uk_city.png",
     },
   ];
 

@@ -264,6 +264,7 @@ export default function ZohoSolutionTemplate({
                     fill
                     className="object-cover object-center"
                     priority
+                    unoptimized={heroImage?.endsWith('.svg')}
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
@@ -396,6 +397,7 @@ export default function ZohoSolutionTemplate({
                 alt={title}
                 fill
                 className="object-cover object-center"
+                unoptimized={(whatIsImage || heroImage)?.endsWith('.svg')}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </motion.div>
@@ -508,6 +510,7 @@ export default function ZohoSolutionTemplate({
                       alt={mod.title}
                       fill
                       className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                      unoptimized={mod.image?.endsWith('.svg')}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                     <div
@@ -585,7 +588,14 @@ export default function ZohoSolutionTemplate({
                   transition={{ duration: 0.5 }}
                   className="absolute inset-0 h-full w-full"
                 >
-                  <Image src={benefits[activeBenefit].image} alt={benefits[activeBenefit].title} fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 40vw" />
+                  <Image
+                    src={benefits[activeBenefit].image}
+                    alt={benefits[activeBenefit].title}
+                    fill
+                    className="object-cover object-center"
+                    unoptimized={benefits[activeBenefit]?.image?.endsWith('.svg')}
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
                 </motion.div>
               </AnimatePresence>

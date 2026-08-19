@@ -27,28 +27,28 @@ export default function ZohoCampaignsPage() {
     {
       title: "Email Marketing",
       description: "Design beautiful, responsive emails with an easy-to-use drag-and-drop editor.",
-      image: "/images/modules/any module.webp",
+      image: "/images/modules/marketing_automation.png",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Marketing Automation",
       description: "Create automated workflows that nurture leads through personalized journeys.",
-      image: "/images/modules/managging together module.webp",
+      image: "/images/modules/intelligent_automation.png",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Audience Segmentation",
       description: "Segment your audience based on behavior and demographics for highly targeted campaigns.",
-      image: "/images/modules/users module.webp",
+      image: "/images/modules/crm.png",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Detailed Analytics",
       description: "Track campaign performance with metrics like open rates, click-through rates, and unsubscribes.",
-      image: "/images/modules/dashbord module.webp",
+      image: "/images/modules/analytics_visual_analysis.png",
       color: "#4a3a8a",
       rgb: "65,45,130",
     }
@@ -94,7 +94,7 @@ export default function ZohoCampaignsPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/lap/lap1.webp"
-      whatIsImage="/images/zoho-dashboards/zoho-marketing-plus.webp"
+      whatIsImage="/images/zoho-dashboards/zoho-marketing-plus-dashboard.png"
       heroCard1={{
         title: "Send with Precision",
         subtitle: "Reach the right inbox, every time.",
