@@ -81,7 +81,7 @@ export default function LandingNavbar() {
             className="hidden sm:block"
           >
             <Image
-              src="/images/netsuiteimages/netsuitelogos/netsuiteblack.png"
+              src="/images/netsuiteimages/netsuitelogos/netsuiteblack.webp"
               alt="Oracle NetSuite Solution Partner Logo"
               width={180}
               height={60}
