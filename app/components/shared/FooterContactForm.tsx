@@ -6,6 +6,7 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import Image from "next/image";
 import Script from "next/script";
 import { Briefcase, Building2, Heart, Target } from "lucide-react";
+import MultiSelectDropdown from "./MultiSelectDropdown";
 
 function FooterStatCard({ item, index }: { item: any; index: number }) {
   const numericValue = parseInt(item.value.replace(/\D/g, "")) || 0;
@@ -93,7 +94,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
         serviceOptions: [
           "NetSuite Licenses",
           "NetSuite Implementation",
-          "NetSuite Licenses + Implementation",
+          // "NetSuite Licenses + Implementation",
           "New Subsidiary Implementation",
           "NetSuite Support",
           "NetSuite Optimization",
@@ -452,20 +453,14 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                             </div>
                             <div>
                               <label htmlFor={`service_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">{config.serviceLabel}</label>
-                              <select
+                              <MultiSelectDropdown
                                 id={config.serviceFieldName}
                                 name={config.serviceFieldName}
-                                defaultValue=""
-                                onChange={(e) => (window as any).addAriaSelectedFooter?.(e)}
-                                required
-                                className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm"
-                                suppressHydrationWarning
-                              >
-                                <option value="" disabled>{config.serviceDefault}</option>
-                                {config.serviceOptions.map((opt) => (
-                                  <option key={opt} value={opt}>{opt}</option>
-                                ))}
-                              </select>
+                                placeholder={config.serviceDefault}
+                                bgClassName="bg-gray-50 border-2 border-blue-100 focus:border-blue-500 hover:border-blue-300 shadow-sm"
+                                textColorClassName="text-gray-900"
+                                options={config.serviceOptions}
+                              />
                             </div>
                           </div>
 

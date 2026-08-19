@@ -25,6 +25,7 @@ import {
   Heart,
   Rocket,
 } from "lucide-react";
+import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
 
 function StatCard({ item, index }: { item: any; index: number }) {
   const numericValue = parseInt(item.value.replace(/\D/g, "")) || 0;
@@ -505,16 +506,22 @@ export default function ZohoContactPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
                         <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Services *</label>
-                        <select id="LEADCF165" name="LEADCF165" defaultValue="" required onChange={(e) => (window as any).addAriaSelected409531000047791049?.(e)} className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
-                          <option value="" disabled>-Select Service-</option>
-                          <option value="Zoho Licenses">Zoho Licenses</option>
-                          <option value="Zoho Implementation">Zoho Implementation</option>
-                          <option value="Zoho Licenses + Implementation">Zoho Licenses + Implementation</option>
-                          <option value="Zoho Support">Zoho Support</option>
-                          <option value="Zoho Optimization">Zoho Optimization</option>
-                          <option value="Zoho Customization">Zoho Customization</option>
-                          <option value="Zoho Integrations">Zoho Integrations</option>
-                        </select>
+                        <MultiSelectDropdown
+                          id="LEADCF165"
+                          name="LEADCF165"
+                          placeholder="-Select Service-"
+                          bgClassName="bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 shadow-sm"
+                          textColorClassName="text-gray-900"
+                          options={[
+                            "Zoho Licenses",
+                            "Zoho Implementation",
+                            "Zoho Licenses + Implementation",
+                            "Zoho Support",
+                            "Zoho Optimization",
+                            "Zoho Customization",
+                            "Zoho Integrations",
+                          ]}
+                        />
                       </div>
                       <div>
                         <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Annual Revenue *</label>
@@ -903,9 +910,16 @@ export default function ZohoContactPage() {
 
       {/* ── Scripts ───────────────────────────────────────────────────────────── */}
       <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
+      {/* Zoho SalesIQ Chatbot - Commented out */}
+      {/*
       <Script id="zoho-salesiq" strategy="afterInteractive">
         {`
           var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.in/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
+        `}
+      </Script>
+      */}
+      <Script id="recap-callback" strategy="afterInteractive">
+        {`
           function rccallback409531000042578178() {
             if(document.getElementById('recap409531000042578178')!=undefined){
               document.getElementById('recap409531000042578178').setAttribute('captcha-verified',true);

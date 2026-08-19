@@ -3,6 +3,7 @@ import Script from "next/script";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import MultiSelectDropdown from "../shared/MultiSelectDropdown";
 
 export default function FooterFormSection() {
   const [mounted, setMounted] = useState(false);
@@ -328,18 +329,19 @@ export default function FooterFormSection() {
                   {/* Service Interest */}
                   <div>
                     <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-widest mb-1.5">Service *</label>
-                    <div className="relative">
-                      <select name="LEADCF5" defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000042578178?.(); }} className="w-full bg-blue-50/30 border-2 border-transparent focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-gray-900 transition-all outline-none appearance-none cursor-pointer text-sm">
-                        <option value="" disabled>Select Service</option>
-                        <option value="Licenses">Licenses</option>
-                        <option value="AMC">AMC</option>
-                        <option value="NetSuite Product /Services">NetSuite Product /Services</option>
-                        <option value="Zoho Products/Services">Zoho Products/Services</option>
-                      </select>
-                      <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
-                      </div>
-                    </div>
+                    <MultiSelectDropdown
+                      id="LEADCF5"
+                      name="LEADCF5"
+                      placeholder="Select Service"
+                      bgClassName="bg-blue-50/30 border-2 border-transparent focus:border-blue-600 focus:bg-white"
+                      textColorClassName="text-gray-900"
+                      options={[
+                        "Licenses",
+                        "AMC",
+                        "NetSuite Product /Services",
+                        "Zoho Products/Services",
+                      ]}
+                    />
                   </div>
                 </div>
 

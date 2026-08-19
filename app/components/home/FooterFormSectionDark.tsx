@@ -327,18 +327,37 @@ export default function FooterFormSectionDark() {
                   {/* Service Interest */}
                   <div>
                     <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5">Service *</label>
-                    <div className="relative">
-                      <select name="LEADCF5" defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000042578178?.(); }} className="w-full bg-white/5 border-2 border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-xl px-4 py-3 text-white transition-all outline-none appearance-none cursor-pointer text-sm">
-                        <option value="" disabled>Select Service</option>
-                        <option value="Licenses">Licenses</option>
-                        <option value="AMC">AMC</option>
-                        <option value="NetSuite Product /Services">NetSuite Product /Services</option>
-                        <option value="Zoho Products/Services">Zoho Products/Services</option>
-                      </select>
-                      <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
-                      </div>
-                    </div>
+                    <select
+                      multiple
+                      name="LEADCF5"
+                      required
+                      className="w-full bg-white/5 border-2 border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-xl p-2 text-white transition-all outline-none text-sm h-28"
+                    >
+                      {[
+                        "Licenses",
+                        "AMC",
+                        "NetSuite Product /Services",
+                        "Zoho Products/Services",
+                      ].map((opt) => (
+                        <option
+                          key={opt}
+                          value={opt}
+                          onMouseDown={(e) => {
+                            e.preventDefault();
+                            const option = e.currentTarget;
+                            option.selected = !option.selected;
+                            const select = option.parentElement as HTMLSelectElement;
+                            if (select) {
+                              select.dispatchEvent(new Event('change', { bubbles: true }));
+                            }
+                          }}
+                          className="py-1 px-2 hover:bg-blue-600 checked:bg-blue-600 checked:text-white cursor-pointer rounded bg-[#252525]"
+                        >
+                          {opt}
+                        </option>
+                      ))}
+                    </select>
+                    <p className="text-[11px] text-gray-400 mt-1 font-medium">Click options to select/unselect multiple services</p>
                   </div>
                 </div>
 

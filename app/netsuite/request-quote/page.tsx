@@ -18,6 +18,7 @@ import {
     HelpCircle,
     Target
 } from "lucide-react";
+import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
 
 /* ─── Particles ───────────────────────────────────────────────────────────── */
 const PARTICLES = [
@@ -136,6 +137,7 @@ export default function RequestQuotePremium() {
             }
         };
 
+        /*
         const loadSalesIQ = () => {
             if (!document.getElementById('zsiqscript')) {
                 const script = document.createElement('script');
@@ -146,6 +148,7 @@ export default function RequestQuotePremium() {
                 document.head.appendChild(script);
             }
         };
+        */
 
         const loadAnalytics = () => {
             if (!document.getElementById('wf_anal')) {
@@ -156,7 +159,7 @@ export default function RequestQuotePremium() {
             }
         };
 
-        loadSalesIQ();
+        // loadSalesIQ();
         loadAnalytics();
         checkAndRenderRecaptcha();
 
@@ -449,26 +452,25 @@ export default function RequestQuotePremium() {
                                                     <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
                                                         Netsuite Services <span className="text-blue-600">*</span>
                                                     </label>
-                                                    <select
-                                                        className='w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer'
-                                                        id='LEADCF166'
-                                                        name='LEADCF166'
-                                                        defaultValue=""
-                                                        required
-                                                        onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)}
-                                                    >
-                                                        <option value="" disabled>-Select NetSuite Service-</option>
-                                                        <option value="NetSuite Licenses">NetSuite Licenses</option>
-                                                        <option value="NetSuite Implementation">NetSuite Implementation</option>
-                                                        <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
-                                                        <option value="New Subsidiary Implementation">New Subsidiary Implementation</option>
-                                                        <option value="NetSuite Support">NetSuite Support</option>
-                                                        <option value="NetSuite Optimization">NetSuite Optimization</option>
-                                                        <option value="NetSuite Customization">NetSuite Customization</option>
-                                                        <option value="NetSuite Integrations">NetSuite Integrations</option>
-                                                        <option value="NetSuite India Localization">NetSuite India Localization</option>
-                                                        <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
-                                                    </select>
+                                                    <MultiSelectDropdown
+                                                        id="LEADCF166"
+                                                        name="LEADCF166"
+                                                        placeholder="-Select NetSuite Service-"
+                                                        bgClassName="bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500"
+                                                        textColorClassName="text-gray-900"
+                                                        options={[
+                                                            "NetSuite Licenses",
+                                                            "NetSuite Implementation",
+                                                            // "NetSuite Licenses + Implementation",
+                                                            "New Subsidiary Implementation",
+                                                            "NetSuite Support",
+                                                            "NetSuite Optimization",
+                                                            "NetSuite Customization",
+                                                            "NetSuite Integrations",
+                                                            "NetSuite India Localization",
+                                                            "NetSuite Data Backup for India",
+                                                        ]}
+                                                    />
                                                 </div>
                                                 <div>
                                                     <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">

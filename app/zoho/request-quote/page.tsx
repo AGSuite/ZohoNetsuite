@@ -19,6 +19,7 @@ import {
     Users,
     Globe
 } from "lucide-react";
+import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
 
 /* ─── Particles ───────────────────────────────────────────────────────────── */
 const PARTICLES = [
@@ -348,16 +349,22 @@ export default function ZohoRequestQuotePage() {
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div className="space-y-1.5">
                                                 <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Services *</label>
-                                                <select id="LEADCF165" name="LEADCF165" defaultValue="" required onChange={() => (window as any).addAriaSelected409531000047791049?.()} className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all appearance-none cursor-pointer">
-                                                    <option value="" disabled>-Select Service-</option>
-                                                    <option value="Zoho Licenses">Zoho Licenses</option>
-                                                    <option value="Zoho Implementation">Zoho Implementation</option>
-                                                    <option value="Zoho Licenses + Implementation">Zoho Licenses + Implementation</option>
-                                                    <option value="Zoho Support">Zoho Support</option>
-                                                    <option value="Zoho Optimization">Zoho Optimization</option>
-                                                    <option value="Zoho Customization">Zoho Customization</option>
-                                                    <option value="Zoho Integrations">Zoho Integrations</option>
-                                                </select>
+                                                <MultiSelectDropdown
+                                                    id="LEADCF165"
+                                                    name="LEADCF165"
+                                                    placeholder="-Select Service-"
+                                                    bgClassName="bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600"
+                                                    textColorClassName="text-gray-900"
+                                                    options={[
+                                                        "Zoho Licenses",
+                                                        "Zoho Implementation",
+                                                        "Zoho Licenses + Implementation",
+                                                        "Zoho Support",
+                                                        "Zoho Optimization",
+                                                        "Zoho Customization",
+                                                        "Zoho Integrations",
+                                                    ]}
+                                                />
                                             </div>
                                             <div className="space-y-1.5">
                                                 <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider">Annual Revenue *</label>

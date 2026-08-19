@@ -16,6 +16,7 @@ import {
     Target,
     Send
 } from "lucide-react";
+import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
 
 /* ─── Particles ───────────────────────────────────────────────────────────── */
 const PARTICLES = [
@@ -412,31 +413,30 @@ export default function FreeConsultationTopLevel() {
                                         </div>
 
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                            <div className="space-y-1.5">
-                                                <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
-                                                    Netsuite Services <span className="text-blue-600">*</span>
-                                                </label>
-                                                <select
-                                                    id="LEADCF166"
-                                                    name="LEADCF166"
-                                                    defaultValue=""
-                                                    required
-                                                    onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)}
-                                                    className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer"
-                                                >
-                                                    <option value="" disabled>-Select NetSuite Service-</option>
-                                                    <option value="NetSuite Licenses">NetSuite Licenses</option>
-                                                    <option value="NetSuite Implementation">NetSuite Implementation</option>
-                                                    <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
-                                                    <option value="New Subsidiary Implementation">New Subsidiary Implementation</option>
-                                                    <option value="NetSuite Support">NetSuite Support</option>
-                                                    <option value="NetSuite Optimization">NetSuite Optimization</option>
-                                                    <option value="NetSuite Customization">NetSuite Customization</option>
-                                                    <option value="NetSuite Integrations">NetSuite Integrations</option>
-                                                    <option value="NetSuite India Localization">NetSuite India Localization</option>
-                                                    <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
-                                                </select>
-                                            </div>
+                                             <div className="space-y-1.5">
+                                                 <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
+                                                     Netsuite Services <span className="text-blue-600">*</span>
+                                                 </label>
+                                                 <MultiSelectDropdown
+                                                     id="LEADCF166"
+                                                     name="LEADCF166"
+                                                     placeholder="-Select NetSuite Service-"
+                                                     bgClassName="bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500"
+                                                     textColorClassName="text-gray-900"
+                                                     options={[
+                                                         "NetSuite Licenses",
+                                                         "NetSuite Implementation",
+                                                         // "NetSuite Licenses + Implementation",
+                                                         "New Subsidiary Implementation",
+                                                         "NetSuite Support",
+                                                         "NetSuite Optimization",
+                                                         "NetSuite Customization",
+                                                         "NetSuite Integrations",
+                                                         "NetSuite India Localization",
+                                                         "NetSuite Data Backup for India",
+                                                     ]}
+                                                 />
+                                             </div>
                                             <div className="space-y-1.5">
                                                 <label className="block text-gray-700 text-xs font-semimedium uppercase tracking-wider">
                                                     Annual Revenue <span className="text-blue-600">*</span>
@@ -583,9 +583,16 @@ export default function FreeConsultationTopLevel() {
             </section>
 
             <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
+            {/* Zoho SalesIQ Chatbot - Commented out */}
+            {/*
             <Script id="zoho-salesiq-ns-consult" strategy="afterInteractive">
                 {`
                     var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.in/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
+                `}
+            </Script>
+            */}
+            <Script id="recap-callback-ns-consult" strategy="afterInteractive">
+                {`
                     function rccallback409531000042578178_ns() {
                         if(document.getElementById('recap409531000042578178_ns')!=undefined){
                             document.getElementById('recap409531000042578178_ns').setAttribute('captcha-verified',true);

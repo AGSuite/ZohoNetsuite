@@ -5,6 +5,7 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import Image from "next/image";
 import Script from "next/script";
 import { Send, Briefcase, Building2, Target, Heart } from "lucide-react";
+import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
 
 function Design4StatCard({ item, index }: { item: any; index: number }) {
   const numericValue = parseInt(item.value.replace(/\D/g, "")) || 0;
@@ -306,19 +307,25 @@ export default function ContactFormDesign4() {
                   </div>
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Netsuite Services *</label>
-                    <select id="LEADCF166" name="LEADCF166" defaultValue="" required onChange={(e) => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none cursor-pointer">
-                      <option value="" disabled>-Select NetSuite Service-</option>
-                      <option value="NetSuite Licenses">NetSuite Licenses</option>
-                      <option value="NetSuite Implementation">NetSuite Implementation</option>
-                      <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
-                      <option value="New Subsidiary Implementation">New Subsidiary Implementation</option>
-                      <option value="NetSuite Support">NetSuite Support</option>
-                      <option value="NetSuite Optimization">NetSuite Optimization</option>
-                      <option value="NetSuite Customization">NetSuite Customization</option>
-                      <option value="NetSuite Integrations">NetSuite Integrations</option>
-                      <option value="NetSuite India Localization">NetSuite India Localization</option>
-                      <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
-                    </select>
+                    <MultiSelectDropdown
+                      id="LEADCF166"
+                      name="LEADCF166"
+                      placeholder="-Select NetSuite Service-"
+                      bgClassName="bg-slate-50 border border-slate-200 focus:border-blue-600 hover:border-blue-400"
+                      textColorClassName="text-slate-900"
+                      options={[
+                        "NetSuite Licenses",
+                        "NetSuite Implementation",
+                        // "NetSuite Licenses + Implementation",
+                        "New Subsidiary Implementation",
+                        "NetSuite Support",
+                        "NetSuite Optimization",
+                        "NetSuite Customization",
+                        "NetSuite Integrations",
+                        "NetSuite India Localization",
+                        "NetSuite Data Backup for India",
+                      ]}
+                    />
                   </div>
                 </div>
 

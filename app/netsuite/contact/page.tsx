@@ -24,7 +24,9 @@ import {
   Target,
   Users,
   Heart,
+  Shield,
 } from "lucide-react";
+import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
 
 
 function StatCard({ item, index }: { item: any; index: number }) {
@@ -612,26 +614,25 @@ export default function ContactPage() {
                           <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
                             Netsuite Services <span className="text-blue-600">*</span>
                           </label>
-                          <select
+                          <MultiSelectDropdown
                             id="LEADCF166"
                             name="LEADCF166"
-                            defaultValue=""
-                            required
-                            onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)}
-                            className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer"
-                          >
-                            <option value="" disabled>-Select NetSuite Service-</option>
-                            <option value="NetSuite Licenses">NetSuite Licenses</option>
-                            <option value="NetSuite Implementation">NetSuite Implementation</option>
-                            <option value="NetSuite Licenses + Implementation">NetSuite Licenses + Implementation</option>
-                            <option value="New Subsidiary Implementation">New Subsidiary Implementation</option>
-                            <option value="NetSuite Support">NetSuite Support</option>
-                            <option value="NetSuite Optimization">NetSuite Optimization</option>
-                            <option value="NetSuite Customization">NetSuite Customization</option>
-                            <option value="NetSuite Integrations">NetSuite Integrations</option>
-                            <option value="NetSuite India Localization">NetSuite India Localization</option>
-                            <option value="NetSuite Data Backup for India">NetSuite Data Backup for India</option>
-                          </select>
+                            placeholder="-Select NetSuite Service-"
+                            bgClassName="bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500"
+                            textColorClassName="text-gray-900"
+                            options={[
+                              "NetSuite Licenses",
+                              "NetSuite Implementation",
+                              // "NetSuite Licenses + Implementation",
+                              "New Subsidiary Implementation",
+                              "NetSuite Support",
+                              "NetSuite Optimization",
+                              "NetSuite Customization",
+                              "NetSuite Integrations",
+                              "NetSuite India Localization",
+                              "NetSuite Data Backup for India",
+                            ]}
+                          />
                         </div>
                         <div>
                           <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
@@ -1087,9 +1088,16 @@ export default function ContactPage() {
       {/* ── Scripts ─────────────────────────────────────────────────────────── */}
       <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
       <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=dc6cfe6eaa303bd5d195bb5352719bba230c529eae5f6f0823d0a841f9dd57657e6049706260d6effe692960c6c5bab7gid6711126e0f954ae10107c9d2bd1b386506273b37e6e0265531ba837d5c4ed25dgid10b59705091816e9551c4ebc62e953e4111c79398428255d38ea16f03d7b9f05gid0c55c5d686e2e3f755b127157834bc2774e542abc82e5c1ce5eba2a071c6fc31&tw=70c0fd3034b5b59f1ac7be0a50f49b22d50d34cb8687eb35e3649323a8c88143&version=v2" strategy="afterInteractive" />
+      {/* Zoho SalesIQ Chatbot - Commented out */}
+      {/*
       <Script id="zoho-salesiq-ns" strategy="afterInteractive">
         {`
           var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.in/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
+        `}
+      </Script>
+      */}
+      <Script id="recap-callback-ns" strategy="afterInteractive">
+        {`
           function rccallback409531000042578178_ns() {
             if(document.getElementById('recap409531000042578178_ns')!=undefined){
               document.getElementById('recap409531000042578178_ns').setAttribute('captcha-verified',true);

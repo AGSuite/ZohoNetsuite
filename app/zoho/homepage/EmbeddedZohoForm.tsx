@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Script from "next/script";
+import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
 
 export default function EmbeddedZohoForm() {
     const router = useRouter();
@@ -220,16 +221,22 @@ export default function EmbeddedZohoForm() {
 
                     <div className="agsuite_column">
                         <label className="agsuite_label" htmlFor="LEADCF165">Services *</label>
-                        <select id="LEADCF165" name="LEADCF165" defaultValue="" required onChange={() => (window as any).addAriaSelected409531000047791049?.()}>
-                            <option value="" disabled>-Select Service-</option>
-                            <option value="Zoho Licenses">Zoho Licenses</option>
-                            <option value="Zoho Implementation">Zoho Implementation</option>
-                            <option value="Zoho Licenses + Implementation">Zoho Licenses + Implementation</option>
-                            <option value="Zoho Support">Zoho Support</option>
-                            <option value="Zoho Optimization">Zoho Optimization</option>
-                            <option value="Zoho Customization">Zoho Customization</option>
-                            <option value="Zoho Integrations">Zoho Integrations</option>
-                        </select>
+                        <MultiSelectDropdown
+                            id="LEADCF165"
+                            name="LEADCF165"
+                            placeholder="-Select Service-"
+                            bgClassName="bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 shadow-sm"
+                            textColorClassName="text-gray-900"
+                            options={[
+                                "Zoho Licenses",
+                                "Zoho Implementation",
+                                "Zoho Licenses + Implementation",
+                                "Zoho Support",
+                                "Zoho Optimization",
+                                "Zoho Customization",
+                                "Zoho Integrations",
+                            ]}
+                        />
                     </div>
 
                     <div className="agsuite_column">
