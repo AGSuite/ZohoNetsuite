@@ -311,7 +311,7 @@ export default function ZohoHeroSlider() {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   className="relative z-20 w-28 h-28 md:w-36 md:h-36 bg-white rounded-[2rem] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.18)] flex items-center justify-center p-6 border border-white/60"
                 >
-                  <Image src="/images/zoho logos/zoho-logo.png" alt="Zoho Original" width={100} height={100} className="object-contain max-lg:w-auto max-lg:h-auto max-lg:max-w-full max-lg:max-h-full" style={{ width: 'auto', height: 'auto' }} sizes="100px" />
+                  <Image src="/images/zoho-logos/zoho-logo.png" alt="Zoho Original" width={100} height={100} className="object-contain max-lg:w-auto max-lg:h-auto max-lg:max-w-full max-lg:max-h-full" style={{ width: 'auto', height: 'auto' }} sizes="100px" />
                 </motion.div>
 
                 {/* Connection Lines Decor - Moving Orbits */}
@@ -338,12 +338,12 @@ export default function ZohoHeroSlider() {
                   style={{ willChange: 'transform' }}
                 >
                   {[
-                    { src: "/images/zoho logos/zoho Crm logo.png", angle: 0, name: "Zoho CRM" },
-                    { src: "/images/zoho logos/zoho finance logo.png", angle: 60, name: "Zoho Books" },
-                    { src: "/images/zoho logos/zoho desk logo.png", angle: 120, name: "Zoho Desk" },
-                    { src: "/images/zoho logos/zoho_creator.png", angle: 180, name: "Zoho Creator" },
-                    { src: "/images/zoho logos/zoho_analytics.png", angle: 240, name: "Zoho Analytics" },
-                    { src: "/images/zoho logos/zoho mail logo.png", angle: 300, name: "Zoho Mail" }
+                    { src: "/images/zoho-logos/zoho Crm logo.png", angle: 0, name: "Zoho CRM" },
+                    { src: "/images/zoho-logos/zoho finance logo.png", angle: 60, name: "Zoho Books" },
+                    { src: "/images/zoho-logos/zoho desk logo.png", angle: 120, name: "Zoho Desk" },
+                    { src: "/images/zoho-logos/zoho_creator.png", angle: 180, name: "Zoho Creator" },
+                    { src: "/images/zoho-logos/zoho_analytics.png", angle: 240, name: "Zoho Analytics" },
+                    { src: "/images/zoho-logos/zoho mail logo.png", angle: 300, name: "Zoho Mail" }
                   ].map((logo, i) => (
                     <motion.div
                       key={`inner-${i}`}
@@ -381,14 +381,14 @@ export default function ZohoHeroSlider() {
                   style={{ willChange: 'transform' }}
                 >
                   {[
-                    { src: "/images/zoho logos/zoho people logo.png", angle: 0, name: "Zoho People" },
-                    { src: "/images/zoho logos/zoho project logo.png", angle: 45, name: "Zoho Projects" },
-                    { src: "/images/zoho logos/zoho cliq logo.png", angle: 90, name: "Zoho Cliq" },
-                    { src: "/images/zoho logos/zoho_inventory.png", angle: 135, name: "Zoho Inventory" },
-                    { src: "/images/zoho logos/zoho maarkiting logo.png", angle: 180, name: "Zoho Marketing" },
-                    { src: "/images/zoho logos/zoho_payroll.png", angle: 225, name: "Zoho Payroll" },
-                    { src: "/images/zoho logos/zoho drive logo.png", angle: 270, name: "Zoho WorkDrive" },
-                    { src: "/images/zoho logos/zoho_sign.png", angle: 315, name: "Zoho Sign" }
+                    { src: "/images/zoho-logos/zoho people logo.png", angle: 0, name: "Zoho People" },
+                    { src: "/images/zoho-logos/zoho project logo.png", angle: 45, name: "Zoho Projects" },
+                    { src: "/images/zoho-logos/zoho cliq logo.png", angle: 90, name: "Zoho Cliq" },
+                    { src: "/images/zoho-logos/zoho_inventory.png", angle: 135, name: "Zoho Inventory" },
+                    { src: "/images/zoho-logos/zoho maarkiting logo.png", angle: 180, name: "Zoho Marketing" },
+                    { src: "/images/zoho-logos/zoho_payroll.png", angle: 225, name: "Zoho Payroll" },
+                    { src: "/images/zoho-logos/zoho drive logo.png", angle: 270, name: "Zoho WorkDrive" },
+                    { src: "/images/zoho-logos/zoho_sign.png", angle: 315, name: "Zoho Sign" }
                   ].map((logo, i) => (
                     <motion.div
                       key={`outer-${i}`}

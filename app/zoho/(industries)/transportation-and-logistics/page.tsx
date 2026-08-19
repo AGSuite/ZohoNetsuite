@@ -19,7 +19,7 @@ const data: IndustryPageData = {
   heroTitle: "Optimize Your Fleet Operations with Zoho",
   heroDescription:
     "Streamline load management, automate freight billing, and gain real-time visibility into fleet costs and shipment profitability with the unified Zoho cloud suite.",
-  heroImage: "/images/industries/logistics-means-transport-together-with-technological-futuristic-holograms (2)_11zon.jpg",
+  heroImage: "/images/industries/logistics_transport_hologram.jpg",
   heroCardTitle: "Logistics Ops Control",
   heroCardSub: "Fleet · Loads · Billing · Analytics",
   heroTopCardTitle: "Trusted by 200+ Logistics Firms",

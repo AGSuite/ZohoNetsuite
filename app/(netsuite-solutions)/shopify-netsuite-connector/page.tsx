@@ -32,18 +32,18 @@ export default function ShopifyConnectorPage() {
   ];
 
   const modules = [
-    { title: "Order Sync", description: "Auto-import Shopify orders into NetSuite as Sales Orders or Cash Sales in real time.", image: "/images/modules/dashboard module.webp", color: "#1e3a8a", rgb: "30,58,138" },
-    { title: "Product Sync", description: "Manage items in NetSuite and publish them to Shopify with prices and images.", image: "/images/modules/dashbord module.webp", color: "#065f46", rgb: "6,95,70" },
-    { title: "Inventory Sync", description: "Real-time inventory updates prevent overselling across all Shopify storefronts.", image: "/images/modules/working module.webp", color: "#7c2d12", rgb: "124,45,18" },
-    { title: "Fulfillment Sync", description: "Push tracking numbers back to Shopify from NetSuite the moment orders ship.", image: "/images/modules/any module.webp", color: "#4c1d95", rgb: "76,29,149" },
-    { title: "Customer Sync", description: "Keep customer records consistent across both Shopify and NetSuite.", image: "/images/modules/any modules.webp", color: "#0c4a6e", rgb: "12,74,110" },
-    { title: "Refund Management", description: "Process refunds in NetSuite and update Shopify order status automatically.", image: "/images/modules/module8.webp", color: "#713f12", rgb: "113,63,18" },
-    { title: "Multi-Store Support", description: "Connect multiple Shopify stores to a single NetSuite account with separate P&L.", image: "/images/modules/sheet module.webp", color: "#134e4a", rgb: "19,78,74" },
-    { title: "Multi-Currency", description: "Automatic currency conversion for international Shopify stores.", image: "/images/modules/csm modules.webp", color: "#831843", rgb: "131,24,67" },
-    { title: "Payment Sync", description: "Shopify payment receipts posted as NetSuite payment entries automatically.", image: "/images/modules/managging together module.webp", color: "#1e3a8a", rgb: "30,58,138" },
-    { title: "Bundle & Kit Support", description: "Explode Shopify bundles into component NetSuite items for accurate COGS.", image: "/images/modules/account modules.webp", color: "#064e3b", rgb: "6,78,59" },
-    { title: "Tax Calculation", description: "NetSuite tax classes applied automatically to imported Shopify orders.", image: "/images/modules/chatt mdoule.webp", color: "#78350f", rgb: "120,53,15" },
-    { title: "Historical Import", description: "One-time import of past Shopify orders and customers into NetSuite at go-live.", image: "/images/modules/mobile module.webp", color: "#3b0764", rgb: "59,7,100" },
+    { title: "Order Sync", description: "Auto-import Shopify orders into NetSuite as Sales Orders or Cash Sales in real time.", image: "/images/modules/analytics_visual_analysis.png", color: "#1e3a8a", rgb: "30,58,138" },
+    { title: "Product Sync", description: "Manage items in NetSuite and publish them to Shopify with prices and images.", image: "/images/modules/audit_reports.png", color: "#065f46", rgb: "6,95,70" },
+    { title: "Inventory Sync", description: "Real-time inventory updates prevent overselling across all Shopify storefronts.", image: "/images/modules/workforce_management.png", color: "#7c2d12", rgb: "124,45,18" },
+    { title: "Fulfillment Sync", description: "Push tracking numbers back to Shopify from NetSuite the moment orders ship.", image: "/images/modules/real_time_visibility.png", color: "#4c1d95", rgb: "76,29,149" },
+    { title: "Customer Sync", description: "Keep customer records consistent across both Shopify and NetSuite.", image: "/images/modules/unified_platform.png", color: "#0c4a6e", rgb: "12,74,110" },
+    { title: "Refund Management", description: "Process refunds in NetSuite and update Shopify order status automatically.", image: "/images/modules/intelligent_automation.png", color: "#713f12", rgb: "113,63,18" },
+    { title: "Multi-Store Support", description: "Connect multiple Shopify stores to a single NetSuite account with separate P&L.", image: "/images/modules/compliance_calendar.png", color: "#134e4a", rgb: "19,78,74" },
+    { title: "Multi-Currency", description: "Automatic currency conversion for international Shopify stores.", image: "/images/modules/crm.png", color: "#831843", rgb: "131,24,67" },
+    { title: "Payment Sync", description: "Shopify payment receipts posted as NetSuite payment entries automatically.", image: "/images/modules/project_management.png", color: "#1e3a8a", rgb: "30,58,138" },
+    { title: "Bundle & Kit Support", description: "Explode Shopify bundles into component NetSuite items for accurate COGS.", image: "/images/modules/general_ledger_custom.png", color: "#064e3b", rgb: "6,78,59" },
+    { title: "Tax Calculation", description: "NetSuite tax classes applied automatically to imported Shopify orders.", image: "/images/modules/analytics_collab.png", color: "#78350f", rgb: "120,53,15" },
+    { title: "Historical Import", description: "One-time import of past Shopify orders and customers into NetSuite at go-live.", image: "/images/modules/analytics_mobile_bi.png", color: "#3b0764", rgb: "59,7,100" },
   ];
 
   const benefits = [

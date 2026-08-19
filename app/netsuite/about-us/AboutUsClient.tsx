@@ -571,7 +571,7 @@ function AwardsAndRecognitionSection() {
               className="hover:-translate-y-2 transition-transform duration-300"
             >
               <Image
-                src="/images/awards/Partner of the Year.png"
+                src="/images/awards/Partner_of_the_Year.png"
                 alt="NetSuite Partner of the Year Award"
                 width={400}
                 height={400}

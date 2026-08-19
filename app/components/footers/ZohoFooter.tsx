@@ -35,7 +35,7 @@ export default function ZohoFooter() {
                         {/* Zoho Partner Badge */}
                         <div className="mb-6">
                             <Image
-                                src="/images/zoho logos/zoho premium.png"
+                                src="/images/zoho-logos/zoho-logo.png"
                                 alt="Zoho Partner"
                                 width={180}
                                 height={60}

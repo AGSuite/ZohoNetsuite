@@ -384,7 +384,7 @@ export default function ZohoContactPage() {
                 className="mt-4 mb-2"
               >
                 <Image
-                  src="/images/zoho logos/zoho premium.png"
+                  src="/images/zoho-logos/zoho-logo.png"
                   alt="Zoho Partner"
                   width={220}
                   height={70}

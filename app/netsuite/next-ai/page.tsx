@@ -408,7 +408,7 @@ export default function NetSuiteNextAIPage() {
       name: "Transportation & Logistics",
       description: "Manage fleet operations, route optimization, automated dispatch, and real-time freight financial management.",
       gradient: "from-cyan-500 to-blue-500",
-      image: "/images/industries/logistics-means-transport-together-with-technological-futuristic-holograms (2)_11zon.jpg",
+      image: "/images/industries/logistics_transport_hologram.jpg",
       link: "/netsuite/transportation-and-logistics",
       icon: FiGlobe,
       tag: "Logistics",

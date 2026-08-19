@@ -72,15 +72,15 @@ function EventsSection() {
                             transition={{ repeat: Infinity, ease: "linear", duration: 60 }}
                         >
                             {[
-                                "/images/Events/5th aniversary/5thaniversary-1.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-2.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-3.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-4.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-5.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-6.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-1.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-2.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-3.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-1.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-2.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-3.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-4.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-5.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-6.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-1.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-2.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-3.jpg",
                             ].map((src, i) => (
                                 <div key={i} className="relative h-full w-96 rounded-3xl overflow-hidden shrink-0 group">
                                     <Image src={src} alt="Anniversary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="384px" />

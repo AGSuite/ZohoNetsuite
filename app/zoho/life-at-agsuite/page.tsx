@@ -89,11 +89,11 @@ export default function ZohoLifeAtAGSuite() {
 
   const achievements = [
     {
-      title: "Best Workplace Award",
+      title: "Fastest Growing Partner",
       year: "2024",
       description:
-        "Recognized for outstanding company culture, employee satisfaction, and inclusive environment.",
-      image: "/images/life/achievement1.webp",
+        "Recognized as one of the fastest-growing Cloud ERP and SaaS solution providers in India.",
+      image: "/images/awards/partnerofyear.png",
       icon: Trophy,
     },
     {
@@ -101,7 +101,7 @@ export default function ZohoLifeAtAGSuite() {
       year: "2023",
       description:
         "Awarded for excellence in delivering Zoho enterprise cloud implementations globally.",
-      image: "/images/life/achievement2.webp",
+      image: "/images/awards/Partner_of_the_Year.png",
       icon: Star,
     },
     {
@@ -109,17 +109,17 @@ export default function ZohoLifeAtAGSuite() {
       year: "2023",
       description:
         "Honored for our proprietary Zoho integrations, pushing the boundaries of cloud business technology.",
-      image: "/images/life/achievement3.webp",
+      image: "/images/awards/Netsuitepartneraward.png",
       icon: Zap,
     },
   ];
 
   const officePhotos = [
-    "/images/office/main office.webp",
+    "/images/office/main_office.webp",
     "/images/office/cafeteria.webp",
     "/images/office/conference.webp",
     "/images/office/building.webp",
-    "/images/office/main conference.webp",
+    "/images/office/main_conference.webp",
     "/images/office/door.webp",
   ];
 
@@ -261,7 +261,7 @@ export default function ZohoLifeAtAGSuite() {
         {/* Team Background Card */}
         <div className="absolute inset-4 md:inset-6 lg:inset-8 z-0 rounded-[2rem] overflow-hidden border border-gray-300/50 dark:border-white/20 bg-[#000] shadow-2xl">
           <Image
-            src="/images/team/team photo 2.webp"
+            src="/images/team/team_photo_2.webp"
             alt="Life at AGSuite Team"
             fill
             className="object-cover object-center"
@@ -331,18 +331,18 @@ export default function ZohoLifeAtAGSuite() {
                 transition={{ repeat: Infinity, ease: "linear", duration: 60 }}
               >
                 {[
-                  "/images/Events/5th aniversary/5thaniversary-1.jpg",
-                  "/images/Events/5th aniversary/5thaniversary-2.jpg",
-                  "/images/Events/5th aniversary/5thaniversary-3.jpg",
-                  "/images/Events/5th aniversary/5thaniversary-4.jpg",
-                  "/images/Events/5th aniversary/5thaniversary-5.jpg",
-                  "/images/Events/5th aniversary/5thaniversary-6.jpg",
-                  "/images/Events/5th aniversary/5thaniversary-1.jpg",
-                  "/images/Events/5th aniversary/5thaniversary-2.jpg",
-                  "/images/Events/5th aniversary/5thaniversary-3.jpg",
-                  "/images/Events/5th aniversary/5thaniversary-4.jpg",
-                  "/images/Events/5th aniversary/5thaniversary-5.jpg",
-                  "/images/Events/5th aniversary/5thaniversary-6.jpg",
+                  "/images/Events/5th-anniversary/5thaniversary-1.jpg",
+                  "/images/Events/5th-anniversary/5thaniversary-2.jpg",
+                  "/images/Events/5th-anniversary/5thaniversary-3.jpg",
+                  "/images/Events/5th-anniversary/5thaniversary-4.jpg",
+                  "/images/Events/5th-anniversary/5thaniversary-5.jpg",
+                  "/images/Events/5th-anniversary/5thaniversary-6.jpg",
+                  "/images/Events/5th-anniversary/5thaniversary-1.jpg",
+                  "/images/Events/5th-anniversary/5thaniversary-2.jpg",
+                  "/images/Events/5th-anniversary/5thaniversary-3.jpg",
+                  "/images/Events/5th-anniversary/5thaniversary-4.jpg",
+                  "/images/Events/5th-anniversary/5thaniversary-5.jpg",
+                  "/images/Events/5th-anniversary/5thaniversary-6.jpg",
                 ].map((src, i) => (
                   <div key={i} className="relative h-full w-96 rounded-3xl overflow-hidden shrink-0 group">
                     <Image
@@ -448,22 +448,22 @@ export default function ZohoLifeAtAGSuite() {
                 transition={{ repeat: Infinity, ease: "linear", duration: 60 }}
               >
                 {[
-                  "/images/Events/indian taxation/india-taxation-summit-2023-1-600x400.jpg",
-                  "/images/Events/indian taxation/india-taxation-summit-2023-2-600x400.jpg",
-                  "/images/Events/indian taxation/india-taxation-summit-2023-3-600x400.jpg",
-                  "/images/Events/indian taxation/india-taxation-summit-2023-4-600x400.jpg",
-                  "/images/Events/indian taxation/india-taxation-summit-2023-5-600x400.jpg",
-                  "/images/Events/indian taxation/india-taxation-summit-2023-6-600x400.jpg",
-                  "/images/Events/indian taxation/india-taxation-summit-2023-7-600x400.jpg",
-                  "/images/Events/indian taxation/india-taxation-summit-2023-8-600x400.jpg",
-                  "/images/Events/indian taxation/india-taxation-summit-2023-1-600x400.jpg",
-                  "/images/Events/indian taxation/india-taxation-summit-2023-2-600x400.jpg",
-                  "/images/Events/indian taxation/india-taxation-summit-2023-3-600x400.jpg",
-                  "/images/Events/indian taxation/india-taxation-summit-2023-4-600x400.jpg",
-                  "/images/Events/indian taxation/india-taxation-summit-2023-5-600x400.jpg",
-                  "/images/Events/indian taxation/india-taxation-summit-2023-6-600x400.jpg",
-                  "/images/Events/indian taxation/india-taxation-summit-2023-7-600x400.jpg",
-                  "/images/Events/indian taxation/india-taxation-summit-2023-8-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-1-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-2-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-3-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-4-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-5-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-6-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-7-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-8-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-1-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-2-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-3-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-4-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-5-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-6-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-7-600x400.jpg",
+                  "/images/Events/indian-taxation/india-taxation-summit-2023-8-600x400.jpg",
                 ].map((src, i) => (
                   <div key={i} className="relative h-full w-96 rounded-3xl overflow-hidden shrink-0 group">
                     <Image
@@ -697,7 +697,7 @@ export default function ZohoLifeAtAGSuite() {
               "/images/celebrations/5.png",
               "/images/celebrations/6.png",
               "/images/celebrations/7.png",
-              "/images/celebrations/Colourful Diwali Photo collage (1).png",
+              "/images/celebrations/diwali_collage_1.png",
               "/images/celebrations/1.png",
               "/images/celebrations/2.png",
               "/images/celebrations/3.png",
@@ -705,7 +705,7 @@ export default function ZohoLifeAtAGSuite() {
               "/images/celebrations/5.png",
               "/images/celebrations/6.png",
               "/images/celebrations/7.png",
-              "/images/celebrations/Colourful Diwali Photo collage (1).png",
+              "/images/celebrations/diwali_collage_1.png",
             ].map((src, i) => (
               <div key={i} className="relative h-72 md:h-80 w-[450px] rounded-3xl overflow-hidden shrink-0 shadow-xl">
                 <Image

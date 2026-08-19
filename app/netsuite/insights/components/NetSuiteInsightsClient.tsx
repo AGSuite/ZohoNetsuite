@@ -73,7 +73,7 @@ function AwardsAndRecognitionSection() {
                             className="hover:-translate-y-2 transition-transform duration-300"
                         >
                             <Image
-                                src="/images/awards/Partner of the Year.png"
+                                src="/images/awards/Partner_of_the_Year.png"
                                 alt="NetSuite Partner of the Year Award"
                                 width={280}
                                 height={280}
@@ -120,18 +120,18 @@ function EventsSection() {
                             transition={{ repeat: Infinity, ease: "linear", duration: 60 }}
                         >
                             {[
-                                "/images/Events/5th aniversary/5thaniversary-1.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-2.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-3.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-4.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-5.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-6.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-1.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-2.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-3.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-4.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-5.jpg",
-                                "/images/Events/5th aniversary/5thaniversary-6.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-1.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-2.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-3.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-4.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-5.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-6.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-1.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-2.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-3.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-4.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-5.jpg",
+                                "/images/Events/5th-anniversary/5thaniversary-6.jpg",
                             ].map((src, i) => (
                                 <div key={i} className="relative h-full w-96 rounded-3xl overflow-hidden shrink-0 group">
                                     <Image
@@ -238,22 +238,22 @@ function EventsSection() {
                             transition={{ repeat: Infinity, ease: "linear", duration: 60 }}
                         >
                             {[
-                                "/images/Events/indian taxation/india-taxation-summit-2023-1-600x400.jpg",
-                                "/images/Events/indian taxation/india-taxation-summit-2023-2-600x400.jpg",
-                                "/images/Events/indian taxation/india-taxation-summit-2023-3-600x400.jpg",
-                                "/images/Events/indian taxation/india-taxation-summit-2023-4-600x400.jpg",
-                                "/images/Events/indian taxation/india-taxation-summit-2023-5-600x400.jpg",
-                                "/images/Events/indian taxation/india-taxation-summit-2023-6-600x400.jpg",
-                                "/images/Events/indian taxation/india-taxation-summit-2023-7-600x400.jpg",
-                                "/images/Events/indian taxation/india-taxation-summit-2023-8-600x400.jpg",
-                                "/images/Events/indian taxation/india-taxation-summit-2023-1-600x400.jpg",
-                                "/images/Events/indian taxation/india-taxation-summit-2023-2-600x400.jpg",
-                                "/images/Events/indian taxation/india-taxation-summit-2023-3-600x400.jpg",
-                                "/images/Events/indian taxation/india-taxation-summit-2023-4-600x400.jpg",
-                                "/images/Events/indian taxation/india-taxation-summit-2023-5-600x400.jpg",
-                                "/images/Events/indian taxation/india-taxation-summit-2023-6-600x400.jpg",
-                                "/images/Events/indian taxation/india-taxation-summit-2023-7-600x400.jpg",
-                                "/images/Events/indian taxation/india-taxation-summit-2023-8-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-1-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-2-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-3-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-4-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-5-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-6-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-7-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-8-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-1-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-2-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-3-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-4-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-5-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-6-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-7-600x400.jpg",
+                                "/images/Events/indian-taxation/india-taxation-summit-2023-8-600x400.jpg",
                             ].map((src, i) => (
                                 <div key={i} className="relative h-full w-96 rounded-3xl overflow-hidden shrink-0 group">
                                     <Image

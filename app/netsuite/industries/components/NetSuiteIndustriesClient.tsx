@@ -188,7 +188,7 @@ export default function NetSuiteIndustriesClient() {
       ],
       link: "/netsuite/transportation-and-logistics",
       image:
-        "/images/industries/logistics-means-transport-together-with-technological-futuristic-holograms (2)_11zon.jpg",
+        "/images/industries/logistics_transport_hologram.jpg",
       icon: Map,
       tag: "Logistics",
     },
