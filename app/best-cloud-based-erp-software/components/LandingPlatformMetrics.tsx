@@ -22,7 +22,7 @@ const stats = [
 const clientLogos = [
   { name: "FINN",         logo: "/images/netsuite-clients/FINN-Logo1.jpg",            pad: 4 },
   { name: "Indovance",    logo: "/images/netsuite-clients/Indovance-new-logo.webp",   pad: 5 },
-  { name: "AiDash",       logo: "/images/netsuite-clients/aidashlogo.png",            pad: 4, unopt: true },
+  { name: "AiDash",       logo: "/images/netsuite-clients/aidashlogo.png",            pad: 4 },
   { name: "ControlCase",  logo: "/images/netsuite-clients/controlcase.png",           pad: 4 },
   { name: "Escalent",     logo: "/images/netsuite-clients/escalent.webp",             pad: 5 },
   { name: "Flatworld",    logo: "/images/netsuite-clients/flatworld.png",             pad: 9 },
@@ -31,11 +31,11 @@ const clientLogos = [
   { name: "Loylogic",     logo: "/images/netsuite-clients/loylogic.png",              pad: 2 },
   { name: "Modaxo",       logo: "/images/netsuite-clients/modaxo.png",                pad: 5 },
   { name: "Priority Tire",logo: "/images/netsuite-clients/prioritytire.png",          pad: 5 },
-  { name: "Signal",       logo: "/images/netsuite-clients/signal.png",                pad: 5, unopt: true },
+  { name: "Signal",       logo: "/images/netsuite-clients/signal.png",                pad: 5 },
   { name: "Traxon",       logo: "/images/netsuite-clients/traxon.png",                pad: 4 },
   { name: "TSI",          logo: "/images/netsuite-clients/tsi-logo.png",              pad: 4 },
   { name: "UniAcco",      logo: "/images/netsuite-clients/uniacco.png",               pad: 4 },
-  { name: "VideoVerse",   logo: "/images/netsuite-clients/videoverse.png",            pad: 1, unopt: true },
+  { name: "VideoVerse",   logo: "/images/netsuite-clients/videoverse.png",            pad: 1 },
 ];
 
 // ─────────────────────────────────────────────────────────────────
@@ -259,11 +259,10 @@ export default function LandingPlatformMetrics() {
                         <div className="relative w-full h-full">
                           <Image
                             src={client.logo}
-                            alt={`${client.name} logo`}
+                            alt={`${client.name} — Oracle NetSuite Client Partner Logo`}
                             fill
                             sizes="(max-width: 640px) 176px, 208px"
                             className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                            unoptimized={client.unopt === true}
                           />
                         </div>
                       </div>

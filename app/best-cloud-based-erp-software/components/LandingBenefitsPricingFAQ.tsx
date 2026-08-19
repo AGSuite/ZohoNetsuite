@@ -261,7 +261,7 @@ export default function LandingBenefitsPricingFAQ() {
                 >
                   <Image
                     src={benefits[activeBenefit].image}
-                    alt={benefits[activeBenefit].title}
+                    alt={`Oracle NetSuite ERP Benefit: ${benefits[activeBenefit].title}`}
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -309,7 +309,7 @@ export default function LandingServicesIndustries() {
                   >
                     <Image
                       src={service.bgImage}
-                      alt={service.title}
+                      alt={`Oracle NetSuite ${service.title} Services — AGSuite Technologies`}
                       fill
                       className="object-cover"
                       sizes="350px"
@@ -469,7 +469,7 @@ export default function LandingServicesIndustries() {
               >
                 <Image
                   src={service.bgImage}
-                  alt={service.title}
+                  alt={`Oracle NetSuite ${service.title} Services — AGSuite Technologies`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) calc(100vw - 48px), 100vw"

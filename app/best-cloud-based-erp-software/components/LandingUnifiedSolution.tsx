@@ -64,8 +64,8 @@ const modules = [
     rgb: "18,68,130",
   },
   {
-    title: "Field Service",
-    description: "Dispatch scheduling, mobile technician enablement, inventory sync, and customer service delivery.",
+    title: "Workforce Management",
+    description: "Resource scheduling, timesheets, payroll integration, field service enablement, and technician tracking.",
     image: "/images/modules/workforce_management.png",
     color: "#1a6545",
     rgb: "20,95,60",
@@ -158,7 +158,7 @@ export default function LandingUnifiedSolution() {
                 <div className="relative h-52 shrink-0 overflow-hidden bg-slate-900">
                   <Image
                     src={mod.image}
-                    alt={mod.title}
+                    alt={`Oracle NetSuite ${mod.title} Cloud ERP Suite Module`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
