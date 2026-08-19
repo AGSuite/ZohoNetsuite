@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/Dashboard/netsuite_executive_erp_dashboard.jpg",
+        url: "/images/dashboard/netsuite_executive_erp_dashboard.webp",
         width: 1200,
         height: 630,
         alt: "Oracle NetSuite Cloud ERP Software",

@@ -82,7 +82,7 @@ export default function LandingNavbar() {
             className="hidden sm:block"
           >
             <Image
-              src="/images/netsuiteimages/netsuitelogos/netsuiteblack.png"
+              src="/images/netsuiteimages/netsuitelogos/netsuiteblack.webp"
               alt="Oracle NetSuite Solution Partner Logo"
               width={180}
               height={60}
@@ -108,7 +108,7 @@ export default function LandingNavbar() {
           <div className="flex justify-between items-center pb-3 border-b border-slate-100">
             <span className="text-xs font-extrabold text-blue-600 uppercase tracking-widest">Menu</span>
             <Image
-              src="/images/netsuiteimages/netsuitelogos/netsuiteblack.png"
+              src="/images/netsuiteimages/netsuitelogos/netsuiteblack.webp"
               alt="Black Oracle NetSuite Partner Logo"
               width={130}
               height={40}

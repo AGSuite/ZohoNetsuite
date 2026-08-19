@@ -20,22 +20,22 @@ const stats = [
 ];
 
 const clientLogos = [
-  { name: "FINN", logo: "/images/netsuite-clients/FINN-Logo1.jpg", pad: 4 },
-  { name: "Indovance", logo: "/images/netsuite-clients/Indovance-new-logo.webp", pad: 5 },
-  { name: "AiDash", logo: "/images/netsuite-clients/aidashlogo.png", pad: 4 },
-  { name: "ControlCase", logo: "/images/netsuite-clients/controlcase.png", pad: 4 },
+  { name: "FINN", logo: "/images/netsuite-clients/finn-logo1.webp", pad: 4 },
+  { name: "Indovance", logo: "/images/netsuite-clients/indovance-new-logo.webp", pad: 5 },
+  { name: "AiDash", logo: "/images/netsuite-clients/aidashlogo.webp", pad: 4 },
+  { name: "ControlCase", logo: "/images/netsuite-clients/controlcase.webp", pad: 4 },
   { name: "Escalent", logo: "/images/netsuite-clients/escalent.webp", pad: 5 },
-  { name: "Flatworld", logo: "/images/netsuite-clients/flatworld.png", pad: 9 },
-  { name: "Kale", logo: "/images/netsuite-clients/kale.png", pad: 8 },
-  { name: "Keycraft", logo: "/images/netsuite-clients/keycraft.png", pad: 8 },
-  { name: "Loylogic", logo: "/images/netsuite-clients/loylogic.png", pad: 2 },
-  { name: "Modaxo", logo: "/images/netsuite-clients/modaxo.png", pad: 5 },
-  { name: "Priority Tire", logo: "/images/netsuite-clients/prioritytire.png", pad: 5 },
-  { name: "Signal", logo: "/images/netsuite-clients/signal.png", pad: 5 },
-  { name: "Traxon", logo: "/images/netsuite-clients/traxon.png", pad: 4 },
-  { name: "TSI", logo: "/images/netsuite-clients/tsi-logo.png", pad: 4 },
-  { name: "UniAcco", logo: "/images/netsuite-clients/uniacco.png", pad: 4 },
-  { name: "VideoVerse", logo: "/images/netsuite-clients/videoverse.png", pad: 1 },
+  { name: "Flatworld", logo: "/images/netsuite-clients/flatworld.webp", pad: 9 },
+  { name: "Kale", logo: "/images/netsuite-clients/kale.webp", pad: 8 },
+  { name: "Keycraft", logo: "/images/netsuite-clients/keycraft.webp", pad: 8 },
+  { name: "Loylogic", logo: "/images/netsuite-clients/loylogic.webp", pad: 2 },
+  { name: "Modaxo", logo: "/images/netsuite-clients/modaxo.webp", pad: 5 },
+  { name: "Priority Tire", logo: "/images/netsuite-clients/prioritytire.webp", pad: 5 },
+  { name: "Signal", logo: "/images/netsuite-clients/signal.webp", pad: 5 },
+  { name: "Traxon", logo: "/images/netsuite-clients/traxon.webp", pad: 4 },
+  { name: "TSI", logo: "/images/netsuite-clients/tsi-logo.webp", pad: 4 },
+  { name: "UniAcco", logo: "/images/netsuite-clients/uniacco.webp", pad: 4 },
+  { name: "VideoVerse", logo: "/images/netsuite-clients/videoverse.webp", pad: 1 },
 ];
 
 // ─────────────────────────────────────────────────────────────────
@@ -221,7 +221,7 @@ export default function LandingPlatformMetrics() {
                   className="relative w-full h-[280px] sm:h-[420px] lg:h-[560px] overflow-hidden"
                 >
                   <Image
-                    src="/images/dashboard/netsuite_erp_dashboard_hd.png"
+                    src="/images/dashboard/netsuite_erp_dashboard_hd.webp"
                     alt="Oracle NetSuite ERP Executive Home Dashboard — AGSuite Technologies"
                     fill
                     sizes="(min-width: 1024px) 900px, 100vw"

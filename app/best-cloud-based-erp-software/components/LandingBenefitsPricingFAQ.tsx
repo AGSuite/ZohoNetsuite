@@ -359,7 +359,7 @@ export default function LandingBenefitsPricingFAQ() {
           >
             {/* Background Image with Black Overlay */}
             <Image
-              src="/images/lap/netsuite_final_cta_bg_hd.png"
+              src="/images/lap/netsuite_final_cta_bg_hd.webp"
               alt="Streamline Your Operations with Oracle NetSuite"
               fill
               className="object-cover object-center opacity-95"
