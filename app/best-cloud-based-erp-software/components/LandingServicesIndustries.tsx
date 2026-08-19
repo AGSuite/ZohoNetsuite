@@ -192,7 +192,7 @@ const cardVariants: Variants = {
 };
 
 export default function LandingServicesIndustries() {
-  const [activeIdx, setActiveIdx] = useState<number>(0);
+  const [activeIdx, setActiveIdx] = useState<number>(-1);
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const overlayRef = useRef<HTMLDivElement | null>(null);
   const glowRef = useRef<HTMLDivElement | null>(null);
@@ -292,7 +292,7 @@ export default function LandingServicesIndustries() {
           </div>
 
           <div className="max-w-[1400px] mx-auto px-8">
-            <div className="flex justify-center gap-5">
+            <div className="flex justify-center gap-5" onMouseLeave={() => setActiveIdx(-1)}>
               {services.map((service, index) => (
                 <div
                   key={service.title}
@@ -383,7 +383,7 @@ export default function LandingServicesIndustries() {
           </div>
 
           <div className="max-w-4xl mx-auto px-6">
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-6" onMouseLeave={() => setActiveIdx(-1)}>
               {services.map((service, index) => (
                 <div
                   key={service.title}
