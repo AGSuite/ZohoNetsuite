@@ -187,7 +187,7 @@ export default function Home() {
             />
             <div className="w-px h-8 bg-gray-400/50 hidden sm:block" />
             <Image
-              src="/images/zoho-logos/zoho-logo.png"
+              src="/images/zoho-logos/zoho%20premium.png"
               alt="Zoho Premium Partner Logo"
               width={180}
               height={60}
