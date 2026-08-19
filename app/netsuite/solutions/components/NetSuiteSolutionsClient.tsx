@@ -117,7 +117,7 @@ export default function NetSuiteSolutionsClient() {
         "Unified cloud platform for end-to-end business operations",
         "AI-driven analytics and real-time reporting"
       ],
-      link: "/netsuite/solutions/core-erp/erp",
+      link: "/netsuite-erp-solution",
       image: "/images/Dashboard/NetsuiteDashboard.webp",
       icon: Database,
       tag: "Most Popular",
@@ -132,7 +132,7 @@ export default function NetSuiteSolutionsClient() {
         "Unified cloud-based financial management",
         "Automated accounts payable & receivable workflows"
       ],
-      link: "/netsuite/solutions/core-erp/accounting",
+      link: "/netsuite-accounting-services",
       image: "/images/Dashboard/accounting and planing dashboard.jpg",
       icon: DollarSign,
       tag: "Finance",
@@ -147,7 +147,7 @@ export default function NetSuiteSolutionsClient() {
         "Centralized management of global subsidiaries and operations",
         "Real-time multi-entity financial consolidation"
       ],
-      link: "/netsuite/solutions/core-erp/global-business",
+      link: "/global-business-management",
       image: "/images/Dashboard/global business managemnet dashboard.jpg",
       icon: Globe,
       tag: "Global",
@@ -162,7 +162,7 @@ export default function NetSuiteSolutionsClient() {
         "Unified customer data across sales, marketing, and support",
         "AI-powered lead scoring and sales insights"
       ],
-      link: "/netsuite/solutions/customer-management/crm",
+      link: "/netsuite-crm-solutions",
       image: "/images/Dashboard/CRM Dashbaord 2_11zon.jpg",
       icon: Users,
       tag: "CRM",
@@ -177,7 +177,7 @@ export default function NetSuiteSolutionsClient() {
         "End-to-end project and resource management",
         "Real-time project profitability and performance tracking"
       ],
-      link: "/netsuite/solutions/project-management/netsuite-srp",
+      link: "/service-resource-planning",
       image: "/images/Dashboard/suiteproject dashboard 2.jpg",
       icon: Rocket,
       tag: "Professional Services",
@@ -207,7 +207,7 @@ export default function NetSuiteSolutionsClient() {
         "Real-time dashboards and KPI monitoring",
         "AI-powered business insights and analytics"
       ],
-      link: "/netsuite/solutions/analytics/bi",
+      link: "/netsuite-business-intelligence",
       image: "/images/Dashboard/business intelligence 2.jpg",
       icon: BarChart3,
       tag: "Analytics",
@@ -222,7 +222,7 @@ export default function NetSuiteSolutionsClient() {
         "Centralized data warehouse for enterprise-wide analytics",
         "AI-powered analytics and predictive insights"
       ],
-      link: "/netsuite/solutions/analytics/warehouse",
+      link: "/netsuite-analytics-warehouse",
       image: "/images/Dashboard/analytic wharehouse 2.jpg",
       icon: Database,
       tag: "Data Warehouse",
@@ -237,7 +237,7 @@ export default function NetSuiteSolutionsClient() {
         "AI-powered forecasting and business insights",
         "Intelligent workflow automation across departments"
       ],
-      link: "/netsuite/solutions/analytics/ai",
+      link: "/artificial-intelligence-ai",
       image: "/images/Dashboard/Artifical Intelligence 2 dashboard.jpg",
       icon: Star,
       tag: "AI",
@@ -252,7 +252,7 @@ export default function NetSuiteSolutionsClient() {
         "Unified eCommerce and ERP platform",
         "Real-time inventory, pricing, and order visibility"
       ],
-      link: "/netsuite/solutions/ecommerce/main",
+      link: "/netsuite-suite-commerce-site-builder",
       image: "/images/Dashboard/suitecommerce_dashboard_new.png",
       icon: ShoppingCart,
       tag: "E-Commerce",
@@ -267,7 +267,7 @@ export default function NetSuiteSolutionsClient() {
         "Unified cloud-based planning and budgeting platform",
         "Collaborative budgeting and rolling forecasts"
       ],
-      link: "/netsuite/solutions/planning/main",
+      link: "/netsuite-planning-and-budgeting",
       image: "/images/Dashboard/planing and budgeting 2 dashboard.jpg",
       icon: TrendingUp,
       tag: "FP&A",
@@ -282,7 +282,7 @@ export default function NetSuiteSolutionsClient() {
         "Faster and structured NetSuite implementation approach",
         "Industry-specific best practices and preconfigured KPIs"
       ],
-      link: "/netsuite/solutions/specialized/suitesuccess",
+      link: "/netsuite-suitesuccess",
       image: "/images/Dashboard/suitesuccess_dashboard_new.png",
       icon: Trophy,
       tag: "SuiteSuccess",
