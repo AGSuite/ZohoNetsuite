@@ -37,9 +37,8 @@ export default function LandingNavbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md" : "bg-white shadow-sm"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-white shadow-sm"
+        }`}
     >
       <div className="max-w-[1450px] mx-auto px-6 h-full flex items-center justify-between">
 
@@ -82,7 +81,7 @@ export default function LandingNavbar() {
             className="hidden sm:block"
           >
             <Image
-              src="/images/netsuiteimages/netsuitelogos/netsuiteblack.webp"
+              src="/images/netsuiteimages/netsuitelogos/netsuiteblack.png"
               alt="Oracle NetSuite Solution Partner Logo"
               width={180}
               height={60}

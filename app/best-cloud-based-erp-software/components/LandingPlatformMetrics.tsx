@@ -19,29 +19,32 @@ const stats = [
   { value: "15+", label: "Industry Expertise" },
 ];
 
-const clientLogos = [
-  { id: "affle", logo: "/images/assets/affle%20tech.webp", name: "Affle", link: "https://www.affle.com", pad: 4 },
-  { id: "tyfone", logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone", link: "https://www.tyfone.com", pad: 4 },
+const logos = [
+  // aspect ratios measured from actual files — pad tunes how much the logo shrinks inside the card
+  // Card inner area (h-16 w-44 = 64×176px): inner_h = 64-(pad*4), inner_w = 176-(pad*6)
+  { id: "affle", logo: "/images/assets/affle%20tech.webp", name: "Affle", link: "https://www.affle.com", pad: 4 },  // aspect 2.4
+  { id: "tyfone", logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone", link: "https://www.tyfone.com", pad: 4 },  // aspect 2.3
   { id: "airling", logo: "/images/assets/airling%20tech.webp", name: "Airling", link: "#", pad: 4 },
-  { id: "videoverse", logo: "/images/netsuite-clients/videoverse.webp", name: "VideoVerse", link: "https://www.videoverse.com", pad: 1 },
+  { id: "videoverse", logo: "/images/netuite%20client%20images/videoverse.png", name: "VideoVerse", link: "https://www.videoverse.com", pad: 1, unopt: true },  // 318×159 low-res
   { id: "quickheal", logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal", link: "https://www.quickheal.com", pad: 7 },
-  { id: "uniacco", logo: "/images/netsuite-clients/uniacco.webp", name: "UniAcco", link: "https://www.uniacco.com", pad: 4 },
+  { id: "uniacco", logo: "/images/netuite%20client%20images/uniacco.png", name: "UniAcco", link: "https://www.uniacco.com", pad: 4 },  // aspect 4.27
   { id: "dlz", logo: "/images/assets/dlz%20service.webp", name: "DLZ", link: "#", pad: 4 },
-  { id: "indovance", logo: "/images/netsuite-clients/indovance-new-logo.webp", name: "Indovance", link: "https://www.indovance.com", pad: 5 },
+  { id: "indovance", logo: "/images/netuite%20client%20images/Indovance-new-logo.webp", name: "Indovance", link: "https://www.indovance.com", pad: 5 },  // very wide thin text
   { id: "pace", logo: "/images/assets/pace%20services.webp", name: "Pace", link: "#", pad: 4 },
-  { id: "aidash", logo: "/images/netsuite-clients/aidashlogo.webp", name: "AiDash", link: "#", pad: 4 },
-  { id: "controlcase", logo: "/images/netsuite-clients/controlcase.webp", name: "ControlCase", link: "#", pad: 4 },
-  { id: "escalent", logo: "/images/netsuite-clients/escalent.webp", name: "Escalent", link: "#", pad: 5 },
-  { id: "finn", logo: "/images/netsuite-clients/finn-logo1.webp", name: "Finn", link: "#", pad: 4 },
-  { id: "flatworld", logo: "/images/netsuite-clients/flatworld.webp", name: "Flatworld", link: "#", pad: 9 },
-  { id: "kale", logo: "/images/netsuite-clients/kale.webp", name: "Kale", link: "#", pad: 8 },
-  { id: "keycraft", logo: "/images/netsuite-clients/keycraft.webp", name: "Keycraft", link: "#", pad: 8 },
-  { id: "modaxo", logo: "/images/netsuite-clients/modaxo.webp", name: "Modaxo", link: "#", pad: 5 },
-  { id: "prioritytire", logo: "/images/netsuite-clients/prioritytire.webp", name: "Priority Tire", link: "#", pad: 5 },
-  { id: "signal", logo: "/images/netsuite-clients/signal.webp", name: "Signal", link: "#", pad: 5 },
-  { id: "traxon", logo: "/images/netsuite-clients/traxon.webp", name: "Traxon", link: "#", pad: 4 },
-  { id: "tsi", logo: "/images/netsuite-clients/tsi-logo.webp", name: "TSI", link: "#", pad: 4 },
-  { id: "loylogic", logo: "/images/netsuite-clients/loylogic.webp", name: "LoyLogic", link: "#", pad: 2 },
+  { id: "aidash", logo: "/images/netuite%20client%20images/aidashlogo.png", name: "AiDash", link: "#", pad: 4, unopt: true },  // 200×100 low-res
+  { id: "controlcase", logo: "/images/netuite%20client%20images/controlcase.png", name: "ControlCase", link: "#", pad: 4 },  // aspect 4.72
+  { id: "escalent", logo: "/images/netuite%20client%20images/escalent.webp", name: "Escalent", link: "#", pad: 5 },  // aspect 3.5
+  { id: "finn", logo: "/images/netuite%20client%20images/FINN-Logo(1).jpg", name: "Finn", link: "#", pad: 4 },  // aspect 2 — has whitespace
+  { id: "flatworld", logo: "/images/netuite%20client%20images/flatworld.png", name: "Flatworld", link: "#", pad: 9 },  // aspect 3.51 — large orb icon
+  { id: "coastal", logo: "/images/netuite%20client%20images/image%20(13).png", name: "Coastal", link: "#", pad: 4 },  // aspect 3.55
+  { id: "kale", logo: "/images/netuite%20client%20images/kale.png", name: "Kale", link: "#", pad: 8 },  // aspect 3.11 — has tagline
+  { id: "keycraft", logo: "/images/netuite%20client%20images/keycraft.png", name: "Keycraft", link: "#", pad: 8 },  // aspect 2.82 — tall & wide
+  { id: "modaxo", logo: "/images/netuite%20client%20images/modaxo.png", name: "Modaxo", link: "#", pad: 5 },  // aspect 3.47
+  { id: "prioritytire", logo: "/images/netuite%20client%20images/prioritytire.png", name: "Priority Tire", link: "#", pad: 5 },  // aspect 5.43
+  { id: "signal", logo: "/images/netuite%20client%20images/signal.png", name: "Signal", link: "#", pad: 5, unopt: true },  // 244×58 low-res
+  { id: "traxon", logo: "/images/netuite%20client%20images/traxon.png", name: "Traxon", link: "#", pad: 4 },  // aspect 3.96
+  { id: "tsi", logo: "/images/netuite%20client%20images/tsi-logo.png", name: "TSI", link: "#", pad: 4 },  // aspect 6.48 — very wide
+  { id: "loylogic", logo: "/images/netuite%20client%20images/loylogic.png", name: "LoyLogic", link: "#", pad: 2 },  // aspect 0.96 SQUARE — minimal pad
 ];
 
 // ─────────────────────────────────────────────────────────────────
@@ -227,7 +230,7 @@ export default function LandingPlatformMetrics() {
                   className="relative w-full h-[280px] sm:h-[420px] lg:h-[560px] overflow-hidden"
                 >
                   <Image
-                    src="/images/dashboard/netsuite_erp_dashboard_hd.webp"
+                    src="/images/Dashboard/NETSUITE ERP DASHBOARD.png "
                     alt="Oracle NetSuite ERP Executive Home Dashboard — AGSuite Technologies"
                     fill
                     sizes="(min-width: 1024px) 900px, 100vw"
@@ -254,25 +257,26 @@ export default function LandingPlatformMetrics() {
 
             <div className="relative w-full overflow-hidden py-2">
               <div className="animate-marquee whitespace-nowrap flex items-center">
-                {clientLogos.concat(clientLogos).map((client, index) => {
-                  const p = client.pad ?? 4;
+                {logos.concat(logos).map((logo, index) => {
+                  const p = logo.pad ?? 4;
                   return (
                     <div key={index} className="inline-flex px-4">
                       <a
-                        href={client.link || "#"}
-                        target={client.link && client.link !== "#" ? "_blank" : undefined}
-                        rel={client.link && client.link !== "#" ? "noopener noreferrer" : undefined}
-                        className="flex h-16 w-44 sm:h-20 sm:w-52 items-center justify-center bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group"
+                        href={logo.link || "#"}
+                        target={logo.link !== "#" ? "_blank" : undefined}
+                        rel={logo.link !== "#" ? "noopener noreferrer" : undefined}
+                        className="flex h-16 w-44 sm:h-20 sm:w-52 items-center justify-center bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
                         style={{ padding: `${p * 2}px ${p * 3}px` }}
-                        aria-label={client.name}
+                        aria-label={logo.name}
                       >
                         <div className="relative w-full h-full">
                           <Image
-                            src={client.logo}
-                            alt={`${client.name} logo`}
+                            src={logo.logo}
+                            alt={`${logo.name} logo`}
                             fill
                             sizes="(max-width: 640px) 176px, 208px"
-                            className="object-contain transition-all duration-300 filter grayscale group-hover:grayscale-0"
+                            className="object-contain transition-all duration-300"
+                            unoptimized={logo.unopt === true}
                           />
                         </div>
                       </a>
