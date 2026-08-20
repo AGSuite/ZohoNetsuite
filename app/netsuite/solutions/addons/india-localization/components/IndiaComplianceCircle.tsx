@@ -44,14 +44,15 @@ export default function IndiaComplianceCircle() {
   const INNER_RING_OUTER_R = 300; // outer radius of text ring
   const INNER_RING_INNER_R = 148; // inner radius of text ring — wide band for longer labels
 
-  // Generate a donut-segment arc path
+  // Generate a donut-segment arc path with rounded coordinates
   function arcPath(innerR: number, outerR: number, startDeg: number, endDeg: number) {
     const toRad = (d: number) => (d * Math.PI) / 180;
+    const r = (n: number) => Number(n.toFixed(3));
     const s = toRad(startDeg), e = toRad(endDeg);
-    const x1 = CX + outerR * Math.cos(s), y1 = CY + outerR * Math.sin(s);
-    const x2 = CX + outerR * Math.cos(e), y2 = CY + outerR * Math.sin(e);
-    const x3 = CX + innerR * Math.cos(e), y3 = CY + innerR * Math.sin(e);
-    const x4 = CX + innerR * Math.cos(s), y4 = CY + innerR * Math.sin(s);
+    const x1 = r(CX + outerR * Math.cos(s)), y1 = r(CY + outerR * Math.sin(s));
+    const x2 = r(CX + outerR * Math.cos(e)), y2 = r(CY + outerR * Math.sin(e));
+    const x3 = r(CX + innerR * Math.cos(e)), y3 = r(CY + innerR * Math.sin(e));
+    const x4 = r(CX + innerR * Math.cos(s)), y4 = r(CY + innerR * Math.sin(s));
     const large = endDeg - startDeg > 180 ? 1 : 0;
     return `M${x1},${y1} A${outerR},${outerR} 0 ${large},1 ${x2},${y2} L${x3},${y3} A${innerR},${innerR} 0 ${large},0 ${x4},${y4} Z`;
   }
@@ -136,13 +137,14 @@ export default function IndiaComplianceCircle() {
         {INNER_SEGMENTS.map((seg, i) => {
           const segSpan = 360 / INNER_SEGMENTS.length;
           const rad = ((seg.angle - (segSpan / 2)) * Math.PI) / 180;
+          const r = (n: number) => Number(n.toFixed(3));
           return (
             <line
               key={i}
-              x1={CX + INNER_RING_INNER_R * Math.cos(rad)}
-              y1={CY + INNER_RING_INNER_R * Math.sin(rad)}
-              x2={CX + (INNER_RING_OUTER_R + 2) * Math.cos(rad)}
-              y2={CY + (INNER_RING_OUTER_R + 2) * Math.sin(rad)}
+              x1={r(CX + (HUB_R + 10) * Math.cos(rad))}
+              y1={r(CY + (HUB_R + 10) * Math.sin(rad))}
+              x2={r(CX + (INNER_RING_OUTER_R - 2) * Math.cos(rad))}
+              y2={r(CY + (INNER_RING_OUTER_R - 2) * Math.sin(rad))}
               stroke="#cbd5e1"
               strokeWidth="1"
               opacity="0.4"

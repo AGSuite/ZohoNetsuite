@@ -18,13 +18,13 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://agsuitetech.com/india-localization-for-netsuite/",
+    canonical: "https://www.agsuitetech.com/agsuite-india-localization-for-netsuite/",
   },
 
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://agsuitetech.com/india-localization-for-netsuite/",
+    url: "https://www.agsuitetech.com/agsuite-india-localization-for-netsuite/",
     title: "NetSuite India Localization — GST, TDS & Indian Compliance | AGSuite",
     description:
       "Full GST, TDS, and Indian statutory compliance built into NetSuite. AGSuite India Localization keeps your NetSuite ERP fully compliant with Indian tax regulations.",

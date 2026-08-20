@@ -21,17 +21,18 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-html.lenis, html.lenis body {
-  height: auto;
-}
-
+html.lenis,
+html.lenis body,
+html.lenis-smooth,
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
+  height: auto;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical:
-      "https://agsuitetech.com/india-localization-for-netsuite/",
+      "https://www.agsuitetech.com/agsuite-india-localization-for-netsuite/",
   },
 
   openGraph: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "AGSuite Technologies offers comprehensive tax solutions, India tax solution, and Accounting & Taxation services. Discover expert tax solutions tailored to your needs.",
     url:
-      "https://agsuitetech.com/india-localization-for-netsuite/",
+      "https://www.agsuitetech.com/agsuite-india-localization-for-netsuite/",
     siteName: "AGSuite",
     images: [
       {

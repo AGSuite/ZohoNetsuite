@@ -12,9 +12,10 @@ export default function AnchorScrollHandler() {
       if (element) {
         const lenis = (window as any).__lenis;
         if (lenis && typeof lenis.scrollTo === "function") {
-          lenis.scrollTo(element, { offset: -80, duration: 1.2 });
+          lenis.scrollTo(element, { offset: -80, duration: 0.9, lock: false });
         } else {
-          element.scrollIntoView({ behavior: "smooth" });
+          const targetY = element.getBoundingClientRect().top + window.pageYOffset - 80;
+          window.scrollTo({ top: targetY, behavior: "smooth" });
         }
       }
     };

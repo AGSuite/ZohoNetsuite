@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShieldCheck } from "lucide-react";
 
-export default function LandingNavbar() {
+export default function LocalizationNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -18,11 +18,11 @@ export default function LandingNavbar() {
   }, []);
 
   const navLinks = [
-    { label: "NetSuite Platform", href: "#platform" },
-    { label: "Why Choose NetSuite", href: "#whyNetSuite" },
-    { label: "Business with NetSuite", href: "#businessGrow" },
-    { label: "NetSuite Benefits", href: "#benefits" },
-    { label: "Pricing", href: "#ERPCost" },
+    { label: "Home", href: "#home" },
+    { label: "Modules", href: "#modules" },
+    { label: "Challenges", href: "#challenges" },
+    { label: "Benefits", href: "#benefits" },
+    { label: "FAQ", href: "#faq" },
   ];
 
   const scrollToSection = (href: string) => (e: React.MouseEvent) => {
@@ -44,19 +44,19 @@ export default function LandingNavbar() {
   };
 
   const scrollToHero = (e: React.MouseEvent) => {
-    scrollToSection("#hero")(e);
+    scrollToSection("#home")(e);
   };
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-white shadow-sm"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 ${
+        scrolled ? "bg-white shadow-md" : "bg-white shadow-sm"
+      }`}
     >
       <div className="max-w-[1450px] mx-auto px-6 h-full flex items-center justify-between">
-
         {/* Left: AGSuite Logo */}
         <Link
-          href="#hero"
+          href="#home"
           onClick={scrollToHero}
           aria-label="AGSuite Technologies Home"
           className="shrink-0"
@@ -78,17 +78,17 @@ export default function LandingNavbar() {
               key={link.label}
               href={link.href}
               onClick={scrollToSection(link.href)}
-              className="px-3 py-2 text-sm xl:text-base font-semibold text-slate-800 hover:text-blue-600 transition-colors duration-200 whitespace-nowrap rounded-lg hover:bg-slate-50 cursor-pointer"
+              className="px-4 py-2 text-sm xl:text-base font-semibold text-slate-800 hover:text-blue-600 transition-colors duration-200 whitespace-nowrap rounded-lg hover:bg-slate-50 cursor-pointer"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        {/* Right: Black NetSuite Solution Partner Logo + Mobile Button */}
+        {/* Right: NetSuite Solution Partner Logo + Mobile Button */}
         <div className="flex items-center gap-3 shrink-0">
           <Link
-            href="#hero"
+            href="#home"
             onClick={scrollToHero}
             aria-label="Oracle NetSuite Solution Partner"
             className="hidden sm:block"

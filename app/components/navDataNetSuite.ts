@@ -154,7 +154,7 @@ export const navItemsNetSuite: NavSection[] = [
                             title: 'Specialized Solutions',
                             items: [
                                 { label: 'SuiteSuccess', href: '/netsuite-suitesuccess', icon: Trophy },
-                                { label: 'India Localization for NetSuite', href: '/india-localization-for-netsuite', icon: MapPin },
+                                { label: 'India Localization for NetSuite', href: '/agsuite-india-localization-for-netsuite', icon: MapPin },
                             ]
                         },
                         {
@@ -186,7 +186,7 @@ export const navItemsNetSuite: NavSection[] = [
                             items: [
                                 {
                                     label: 'Indian Localization for NetSuite',
-                                    href: '/india-localization-for-netsuite',
+                                    href: '/agsuite-india-localization-for-netsuite',
                                     description: 'E-invoicing, GST & statutory compliance for India',
                                     icon: MapPin
                                 },
