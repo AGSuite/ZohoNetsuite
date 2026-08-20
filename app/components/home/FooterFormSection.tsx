@@ -230,7 +230,7 @@ export default function FooterFormSection() {
             {/* Trust Badges */}
             <div className="flex flex-wrap items-center gap-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
               <Image src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" alt="NetSuite Partner" width={160} height={50} className="h-10 w-auto object-contain" />
-              <Image src="/images/Homeicons/Zohoffice/zoho.png" alt="Zoho Partner" width={140} height={40} className="h-8 w-auto object-contain" />
+              <Image src="/images/zoho-logos/zoho premium.png" alt="Zoho Partner" width={140} height={40} className="h-8 w-auto object-contain" />
             </div>
           </motion.div>
 

@@ -392,7 +392,7 @@ function StrategicPartnersSection() {
             >
               <div className="bg-white/100 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl">
                 <Image
-                  src="/images/zoho-logos/zoho-logo.png"
+                  src="/images/zoho-logos/zoho premium.png"
                   alt="Zoho Premium Partner"
                   width={320}
                   height={120}

@@ -268,100 +268,210 @@ export default function ZohoCareersPage() {
       </section>
 
       {/* ── Open Positions & Application Form ───────────────────────────── */}
-      <section id="open-positions" className="py-24 sm:py-32 bg-gray-50/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+      <section id="open-positions" className="pt-16 pb-32 relative overflow-hidden bg-white scroll-mt-20">
 
-            {/* LEFT: Roles List */}
+        {/* Dashed Grid Background */}
+        <div
+          className="absolute inset-0 z-0 pointer-events-none opacity-40"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, #c0d1f9ff 1px, transparent 1px),
+              linear-gradient(to bottom, #94b3fbff 1px, transparent 1px)
+            `,
+            backgroundSize: "20px 20px",
+            backgroundPosition: "0 0, 0 0",
+            maskImage: `
+              repeating-linear-gradient(
+                to right,
+                black 0px,
+                black 3px,
+                transparent 3px,
+                transparent 8px
+              ),
+              repeating-linear-gradient(
+                to bottom,
+                black 0px,
+                black 3px,
+                transparent 3px,
+                transparent 8px
+              )
+            `,
+            WebkitMaskImage: `
+              repeating-linear-gradient(
+                to right,
+                black 0px,
+                black 3px,
+                transparent 3px,
+                transparent 8px
+              ),
+              repeating-linear-gradient(
+                to bottom,
+                black 0px,
+                black 3px,
+                transparent 3px,
+                transparent 8px
+              )
+            `,
+            maskComposite: "intersect",
+            WebkitMaskComposite: "source-in",
+          }}
+        />
+
+        {/* Tricolor Ambient Gradient Blobs */}
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-green-100/30 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[400px] bg-blue-100/40 rounded-full blur-[130px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-red-100/20 rounded-full blur-[120px] translate-y-1/2 pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+
+          {/* Section Header — matches NetSuite careers style */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-14"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-5">
+              <Briefcase className="w-4 h-4 text-blue-600" />
+              <span className="text-blue-700 text-xs font-medium tracking-widest uppercase">Explore Roles</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 mb-4 tracking-tight">
+              Open{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+                Positions
+              </span>
+            </h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
+              Find the role that matches your expertise and passion for the Zoho cloud ecosystem.
+            </p>
+          </motion.div>
+
+          <div className="flex flex-col lg:flex-row gap-20">
+
+            {/* LEFT: Position List */}
             <div className="flex-1">
-              <div className="mb-10">
-                <span className="text-blue-600 text-xs font-bold uppercase tracking-widest bg-blue-50 px-4 py-2 rounded-full border border-blue-100">
-                  Career Opportunities
-                </span>
-                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mt-4 tracking-tight">
-                  Open Positions at AGSuite
-                </h2>
-                <p className="text-gray-500 text-base mt-2">
-                  Find the role that matches your expertise and passion for the Zoho cloud ecosystem.
-                </p>
-              </div>
 
               {/* Filters */}
-              <div className="flex flex-wrap gap-4 mb-8 bg-white p-4 rounded-2xl border border-gray-100 shadow-sm">
-                <div className="flex items-center gap-2 flex-1 min-w-[200px]">
-                  <Filter className="w-4 h-4 text-gray-400 ml-2" />
-                  <select
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                    className="w-full bg-transparent text-sm font-semibold text-gray-700 outline-none cursor-pointer"
-                  >
-                    {locations.map((loc) => (
-                      <option key={loc.value} value={loc.value}>{loc.label}</option>
-                    ))}
-                  </select>
-                </div>
-                <div className="w-[1px] h-8 bg-gray-100 hidden sm:block" />
-                <div className="flex items-center gap-2 flex-1 min-w-[200px]">
-                  <Briefcase className="w-4 h-4 text-gray-400 ml-2" />
+              <div className="grid sm:grid-cols-2 gap-6 mb-12">
+                <div className="relative group">
+                  <Filter className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 group-focus-within:text-blue-500 transition-colors" />
                   <select
                     value={type}
                     onChange={(e) => setType(e.target.value)}
-                    className="w-full bg-transparent text-sm font-semibold text-gray-700 outline-none cursor-pointer"
+                    className="w-full pl-12 pr-10 py-4 bg-white border border-gray-100 rounded-3xl appearance-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none transition-all font-medium text-gray-700 cursor-pointer shadow-sm shadow-blue-900/5"
                   >
                     {jobTypes.map((jt) => (
                       <option key={jt.value} value={jt.value}>{jt.label}</option>
                     ))}
                   </select>
+                  <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                    <ArrowRight className="w-4 h-4 rotate-90" />
+                  </div>
+                </div>
+                <div className="relative group">
+                  <MapPin className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 group-focus-within:text-blue-500 transition-colors" />
+                  <select
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                    className="w-full pl-12 pr-10 py-4 bg-white border border-gray-100 rounded-3xl appearance-none focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none transition-all font-medium text-gray-700 cursor-pointer shadow-sm shadow-blue-900/5"
+                  >
+                    {locations.map((loc) => (
+                      <option key={loc.value} value={loc.value}>{loc.label}</option>
+                    ))}
+                  </select>
+                  <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                    <ArrowRight className="w-4 h-4 rotate-90" />
+                  </div>
                 </div>
               </div>
 
               {/* Job Cards */}
-              <div className="space-y-4">
-                <AnimatePresence>
+              <div className="space-y-6">
+                <AnimatePresence mode="popLayout">
                   {filteredJobs.length > 0 ? (
                     filteredJobs.map((job, idx) => (
                       <motion.div
-                        key={idx}
+                        key={job.title}
                         layout
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, scale: 0.98 }}
+                        animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
-                        className="group bg-white p-6 sm:p-8 rounded-3xl border border-gray-100 hover:border-blue-200 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-950/5 flex flex-col sm:flex-row sm:items-center justify-between gap-6"
+                        transition={{ duration: 0.3, delay: idx * 0.05 }}
+                        className="group relative z-10 hover:z-50 bg-gradient-to-br from-white via-blue-50/60 to-indigo-50/40 p-6 sm:p-8 rounded-[2rem] border border-white/90 shadow-[0_8px_32px_rgba(0,13,46,0.10)] hover:shadow-[0_16px_48px_rgba(0,13,46,0.18)] hover:border-blue-200 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-8"
                       >
-                        <div className="space-y-2 flex-1">
-                          <div className="flex items-center gap-3">
-                            <span className="text-xs font-semibold px-3 py-1 bg-blue-50 text-blue-600 rounded-full border border-blue-100 uppercase tracking-wider">
-                              {job.experience}
-                            </span>
-                            <span className="text-xs font-medium text-gray-400 flex items-center gap-1">
-                              <MapPin className="w-3.5 h-3.5 text-blue-500" />
-                              {job.locationName}
-                            </span>
+                        <div className="flex items-center gap-6 relative z-10">
+                          <div
+                            className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 text-blue-300 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg"
+                            style={{ background: "linear-gradient(135deg, #0a1f5c, #1d4ed8)" }}
+                          >
+                            <Briefcase size={24} />
                           </div>
-                          <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                            {job.title}
-                          </h3>
-                          <p className="text-gray-500 text-sm leading-relaxed max-w-xl">
-                            {job.description}
-                          </p>
+                          <div>
+                            <h3 className="text-lg font-bold text-[#0a1f5c] group-hover:text-blue-700 transition-colors tracking-tight uppercase leading-tight">
+                              {job.title}
+                            </h3>
+                            <div className="flex items-center gap-5 mt-2 text-sm font-semibold">
+                              <span className="flex items-center gap-1.5 text-[#0a1f5c]">
+                                <MapPin size={14} className="text-blue-500" /> {job.locationName}
+                              </span>
+                              <span className="w-1.5 h-1.5 rounded-full bg-blue-300" />
+                              <span className="capitalize text-[#0a1f5c] font-bold">{job.type.replace('-', ' ')}</span>
+                            </div>
+                          </div>
                         </div>
-                        <a
-                          href="#apply-form"
+
+                        {/* Hover Tooltip Card */}
+                        <div className="absolute z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl left-0 top-full mt-2 w-full translate-y-4 group-hover:translate-y-0">
+                          <div className="bg-white rounded-3xl border border-blue-100 p-6 relative overflow-hidden shadow-2xl ring-1 ring-black/5">
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+                            <div className="absolute -top-2 left-10 w-4 h-4 bg-white border-t border-l border-blue-100 rotate-45" />
+                            <h4 className="text-[#0a1f5c] font-bold text-xl mb-3 pr-4 tracking-tight">{job.title}</h4>
+                            <div className="flex flex-wrap items-center gap-2 mb-4">
+                              <span className="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-bold rounded-xl border border-blue-100">Exp: {job.experience}</span>
+                              <span className="px-3 py-1.5 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-xl border border-indigo-100 capitalize">{job.type.replace('-', ' ')}</span>
+                              <span className="px-3 py-1.5 bg-orange-50 text-orange-700 text-xs font-bold rounded-xl border border-orange-100">{job.locationName}</span>
+                            </div>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-6 font-medium">
+                              {job.description}
+                            </p>
+                            <button
+                              onClick={() => {
+                                document.getElementById('apply-form')?.scrollIntoView({ behavior: 'smooth' });
+                                setHighlightForm(true);
+                                setTimeout(() => setHighlightForm(false), 2000);
+                              }}
+                              className="w-full py-3.5 rounded-2xl text-white font-bold text-sm shadow-xl shadow-blue-500/30 flex items-center justify-center gap-2 hover:bg-blue-600 transition-all hover:scale-[1.02]"
+                              style={{ background: "linear-gradient(135deg, #0a1f5c, #1d4ed8)" }}
+                            >
+                              Apply For This Role <ArrowRight size={16} />
+                            </button>
+                          </div>
+                        </div>
+
+                        <button
                           onClick={() => {
+                            document.getElementById('apply-form')?.scrollIntoView({ behavior: 'smooth' });
                             setHighlightForm(true);
                             setTimeout(() => setHighlightForm(false), 2000);
                           }}
-                          className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gray-900 hover:bg-blue-600 text-white text-sm font-semibold rounded-2xl transition-all duration-300 shrink-0 group-hover:shadow-lg group-hover:shadow-blue-600/30"
+                          className="sm:w-auto w-full px-8 py-4 rounded-2xl text-white font-bold text-sm hover:shadow-xl hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-2 group-hover:translate-x-1 relative z-10"
+                          style={{ background: "linear-gradient(135deg, #0a1f5c, #1d4ed8)" }}
+                          onMouseEnter={(e) => {
+                            (e.currentTarget as HTMLButtonElement).style.background = "linear-gradient(135deg, #1d4ed8, #3b82f6)";
+                          }}
+                          onMouseLeave={(e) => {
+                            (e.currentTarget as HTMLButtonElement).style.background = "linear-gradient(135deg, #0a1f5c, #1d4ed8)";
+                          }}
                         >
-                          Apply Now
-                          <ChevronRight className="w-4 h-4" />
-                        </a>
+                          Apply Now <ArrowRight size={18} />
+                        </button>
                       </motion.div>
                     ))
                   ) : (
-                    <div className="text-center py-16 bg-white rounded-3xl border border-gray-100 p-8">
-                      <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-gray-400">
-                        <Search className="w-8 h-8" />
+                    <div className="py-24 text-center bg-gray-50 rounded-[3rem] border-2 border-dashed border-gray-200">
+                      <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto mb-6 border border-gray-100 text-gray-300 shadow-sm">
+                        <Search size={32} />
                       </div>
                       <p className="text-gray-500 font-bold text-xl">No positions found matching your criteria.</p>
                       <p className="text-gray-400 text-sm mt-2">Try adjusting your filters or search terms.</p>
@@ -372,7 +482,7 @@ export default function ZohoCareersPage() {
             </div>
 
             {/* RIGHT: Form Sticky */}
-            <div id="apply-form" className="w-full lg:w-[500px] xl:w-[550px] shrink-0 scroll-mt-36">
+            <div id="apply-form" className="w-full lg:w-[550px] xl:w-[600px] shrink-0 scroll-mt-36">
               <div className="sticky top-32">
                 <div className={`bg-white rounded-3xl overflow-hidden transition-all duration-500 ${highlightForm ? 'border-2 border-green-500 shadow-[0_0_40px_rgba(34,197,94,0.4)] scale-[1.02]' : 'border border-gray-100 shadow-[0_32px_80px_-15px_rgba(0,0,0,0.1)]'}`}>
                   <iframe
@@ -390,6 +500,7 @@ export default function ZohoCareersPage() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }

@@ -311,7 +311,7 @@ export default function ZohoHeroSlider() {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   className="relative z-20 w-28 h-28 md:w-36 md:h-36 bg-white rounded-[2rem] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.18)] flex items-center justify-center p-6 border border-white/60"
                 >
-                  <Image src="/images/zoho-logos/zoho-logo.png" alt="Zoho Original" width={100} height={100} className="object-contain max-lg:w-auto max-lg:h-auto max-lg:max-w-full max-lg:max-h-full" style={{ width: 'auto', height: 'auto' }} sizes="100px" />
+                  <Image src="/images/zoho-logos/zoho premium.png" alt="Zoho Premium Partner" width={120} height={60} className="object-contain max-lg:w-auto max-lg:h-auto max-lg:max-w-full max-lg:max-h-full" style={{ width: 'auto', height: 'auto' }} sizes="120px" />
                 </motion.div>
 
                 {/* Connection Lines Decor - Moving Orbits */}
