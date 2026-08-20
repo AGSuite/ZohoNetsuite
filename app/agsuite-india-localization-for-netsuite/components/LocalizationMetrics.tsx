@@ -20,30 +20,27 @@ const stats = [
   { value: "15+", label: "Industry Expertise" },
 ];
 
-const logos = [
-  { id: "affle", logo: "/images/assets/affle%20tech.webp", name: "Affle", link: "https://www.affle.com", pad: 4 },
-  { id: "tyfone", logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone", link: "https://www.tyfone.com", pad: 4 },
-  { id: "airling", logo: "/images/assets/airling%20tech.webp", name: "Airling", link: "#", pad: 4 },
-  { id: "videoverse", logo: "/images/netuite%20client%20images/videoverse.png", name: "VideoVerse", link: "https://www.videoverse.com", pad: 1, unopt: true },
-  { id: "quickheal", logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal", link: "https://www.quickheal.com", pad: 7 },
-  { id: "uniacco", logo: "/images/netuite%20client%20images/uniacco.png", name: "UniAcco", link: "https://www.uniacco.com", pad: 4 },
-  { id: "dlz", logo: "/images/assets/dlz%20service.webp", name: "DLZ", link: "#", pad: 4 },
-  { id: "indovance", logo: "/images/netuite%20client%20images/Indovance-new-logo.webp", name: "Indovance", link: "https://www.indovance.com", pad: 5 },
-  { id: "pace", logo: "/images/assets/pace%20services.webp", name: "Pace", link: "#", pad: 4 },
-  { id: "aidash", logo: "/images/netuite%20client%20images/aidashlogo.png", name: "AiDash", link: "#", pad: 4, unopt: true },
-  { id: "controlcase", logo: "/images/netuite%20client%20images/controlcase.png", name: "ControlCase", link: "#", pad: 4 },
-  { id: "escalent", logo: "/images/netuite%20client%20images/escalent.webp", name: "Escalent", link: "#", pad: 5 },
-  { id: "finn", logo: "/images/netuite%20client%20images/FINN-Logo(1).jpg", name: "Finn", link: "#", pad: 4 },
-  { id: "flatworld", logo: "/images/netuite%20client%20images/flatworld.png", name: "Flatworld", link: "#", pad: 9 },
-  { id: "coastal", logo: "/images/netuite%20client%20images/image%20(13).png", name: "Coastal", link: "#", pad: 4 },
-  { id: "kale", logo: "/images/netuite%20client%20images/kale.png", name: "Kale", link: "#", pad: 8 },
-  { id: "keycraft", logo: "/images/netuite%20client%20images/keycraft.png", name: "Keycraft", link: "#", pad: 8 },
-  { id: "modaxo", logo: "/images/netuite%20client%20images/modaxo.png", name: "Modaxo", link: "#", pad: 5 },
-  { id: "prioritytire", logo: "/images/netuite%20client%20images/prioritytire.png", name: "Priority Tire", link: "#", pad: 5 },
-  { id: "signal", logo: "/images/netuite%20client%20images/signal.png", name: "Signal", link: "#", pad: 5, unopt: true },
-  { id: "traxon", logo: "/images/netuite%20client%20images/traxon.png", name: "Traxon", link: "#", pad: 4 },
-  { id: "tsi", logo: "/images/netuite%20client%20images/tsi-logo.png", name: "TSI", link: "#", pad: 4 },
-  { id: "loylogic", logo: "/images/netuite%20client%20images/loylogic.png", name: "LoyLogic", link: "#", pad: 2 },
+interface LogoItem {
+  id: string;
+  logo: string;
+  name: string;
+  link: string;
+  pad?: number;
+  unopt?: boolean;
+}
+
+const logos: LogoItem[] = [
+  { id: "affle", logo: "/images/assets/affle%20tech.webp", name: "Affle", link: "https://www.affle.com", pad: 3 },
+  { id: "videoverse", logo: "/images/netsuite-clients/videoverse.webp", name: "VideoVerse", link: "https://www.videoverse.com", pad: 2 },
+  { id: "aidash", logo: "/images/netsuite-clients/aidashlogo.webp", name: "AiDash", link: "https://www.aidash.com", pad: 3 },
+  { id: "finn", logo: "/images/netsuite-clients/finn-logo1.webp", name: "Finn Partners", link: "https://www.finnpartners.com", pad: 3 },
+  { id: "traxon", logo: "/images/netsuite-clients/traxon.webp", name: "Traxon", link: "#", pad: 3 },
+  { id: "uniacco", logo: "/images/netsuite-clients/uniacco.webp", name: "UniAcco", link: "https://www.uniacco.com", pad: 3 },
+  { id: "veeam", logo: "/images/netsuite-clients/veeam.png", name: "Veeam", link: "https://www.veeam.com", pad: 2 },
+  { id: "cfarer", logo: "/images/netsuite-clients/cfarer.png", name: "Cfarer (A DNV Company)", link: "https://www.cfarer.com", pad: 2 },
+  { id: "konrad", logo: "/images/netsuite-clients/konrad.png", name: "Konrad", link: "https://www.konrad.com", pad: 2 },
+  { id: "havas", logo: "/images/netsuite-clients/havas.png", name: "Havas", link: "https://www.havas.com", pad: 2 },
+  { id: "colorifix", logo: "/images/netsuite-clients/colorifix.png", name: "Colorifix", link: "https://www.colorifix.com", pad: 2 },
 ];
 
 // ─────────────────────────────────────────────────────────────────
