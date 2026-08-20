@@ -3,8 +3,17 @@ import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 
 export const metadata: Metadata = {
-  title: "Zoho Business Solutions | AGSuite Technologies",
-  description: "Comprehensive Zoho solutions for sales, HR, finance, and operations. Transform your business with the world's most versatile cloud suite.",
+  title: "Zoho Implementation Partner | Top Zoho Partner | Best Zoho Partner | Pune | India",
+  description: "Elevate your business with AGSuite Technologies, the top Zoho Implementation Partner in Pune, India. Unlock the full potential of Zoho solutions with our expert services",
+  alternates: {
+    canonical: "https://www.agsuitetech.com/zoho-products",
+  },
+  openGraph: {
+    title: "Zoho Implementation Partner | Top Zoho Partner | Best Zoho Partner | Pune | India",
+    description: "Elevate your business with AGSuite Technologies, the top Zoho Implementation Partner in Pune, India. Unlock the full potential of Zoho solutions with our expert services",
+    url: "https://www.agsuitetech.com/zoho-products",
+    type: "website",
+  },
 };
 
 const ZohoSolutionsClient = dynamic(() => import('./components/ZohoSolutionsClient'), {
