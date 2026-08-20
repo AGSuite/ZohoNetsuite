@@ -273,7 +273,7 @@ export default function LocalizationMetrics() {
                   className="relative w-full h-[320px] sm:h-[480px] lg:h-[620px] overflow-hidden bg-slate-50"
                 >
                   <Image
-                    src="/images/dashboard/indian localization 2 dashboard.webp"
+                    src="/images/Dashboard/indian localization 2 dashboard.webp"
                     alt="Oracle NetSuite India Localization SuiteApp Dashboard — AGSuite Technologies"
                     fill
                     sizes="(min-width: 1024px) 1000px, 100vw"

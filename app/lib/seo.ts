@@ -710,6 +710,25 @@ export const NETSUITE_PAGES: Record<
       { name: "Global Business Management", url: "https://agsuitetech.com/global-business-management/" },
     ],
   },
+  "/india-localization-for-netsuite": {
+    title: "India Tax Solution | Accounting & Taxation services",
+    description:
+      "AGSuite Technologies offers comprehensive tax solutions, India tax solution, and Accounting & Taxation services. Discover expert tax solutions tailored to your needs.",
+    keywords: ["NetSuite India localization", "NetSuite GST", "NetSuite TDS", "Indian ERP compliance", "AGSuite India", "India Tax Solution"],
+    category: "ERP Software",
+    publishedTime: "2024-03-08T00:00:00Z",
+    dateModified: "2025-07-25",
+    canonicalUrl: "https://agsuitetech.com/india-localization-for-netsuite/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    twitterLabel1: "Est. reading time",
+    twitterData1: "27 minutes",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "India Localization for NetSuite", url: "https://agsuitetech.com/india-localization-for-netsuite/" },
+    ],
+  },
   "/agsuite-india-localization-for-netsuite": {
     title: "AGSuite India Localization for Oracle NetSuite | 100% Tax & Statutory Compliance",
     description:
@@ -719,14 +738,14 @@ export const NETSUITE_PAGES: Record<
     publishedTime: "2024-03-08T00:00:00Z",
     dateModified: "2026-08-20",
     canonicalUrl: "https://www.agsuitetech.com/agsuite-india-localization-for-netsuite/",
-    ogImage: "https://www.agsuitetech.com/images/dashboard/netsuite_executive_erp_dashboard.webp",
+    ogImage: "https://www.agsuitetech.com/images/Dashboard/netsuite_executive_erp_dashboard.webp",
     ogType: "article",
     ogSiteName: "AGSuite Technologies",
     twitterLabel1: "Est. reading time",
     twitterData1: "27 minutes",
     breadcrumbs: [
       { name: "Home", url: "https://agsuitetech.com/" },
-      { name: "India Localization for NetSuite", url: "https://www.agsuitetech.com/agsuite-india-localization-for-netsuite/" },
+      { name: "AGSuite India Localization for NetSuite", url: "https://www.agsuitetech.com/agsuite-india-localization-for-netsuite/" },
     ],
   },
   "/artificial-intelligence-ai": {

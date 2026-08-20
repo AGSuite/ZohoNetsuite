@@ -297,7 +297,7 @@ export default function NetSuiteSolutionsClient() {
         "Native India localization solution for Oracle NetSuite",
         "Automated GST, TDS, and e-invoicing compliance"
       ],
-      link: "/agsuite-india-localization-for-netsuite",
+      link: "/india-localization-for-netsuite",
       image: "/images/Dashboard/indian localization 2 dashboard.jpg",
       icon: BookOpen,
       tag: "India Compliance",

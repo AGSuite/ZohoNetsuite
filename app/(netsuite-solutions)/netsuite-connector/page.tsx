@@ -116,7 +116,7 @@ export default function NetSuiteConnectorPage() {
         "TDS/TCS with certificate generation",
         "Multi-GSTIN & multi-state support",
       ],
-      link: "/agsuite-india-localization-for-netsuite",
+      link: "/india-localization-for-netsuite",
       image: "/images/Dashboard/indian localization 2 dashboard.jpg",
       icon: IndianRupee,
       tag: "Compliance",
