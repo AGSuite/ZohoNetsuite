@@ -89,7 +89,7 @@ export async function POST(req: Request) {
               <tr>
                 <td align="center" style="padding: 14px 0;">
                   <a href="https://agsuitetech.com" target="_blank">
-                    <img src="https://agsuitetech.com/zoho-mail-signature/thankyou.png" alt="Thank You" style="border: none; display: block; max-width: 100%;" />
+                    <img src="https://agsuitetech.com/email/img/thankyou.png" alt="Thank You" style="border: none; display: block; max-width: 100%;" />
                   </a>
                 </td>
               </tr>
@@ -111,7 +111,7 @@ export async function POST(req: Request) {
               <tr>
                 <td align="center" style="padding: 14px 0;">
                   <a href="https://agsuitetech.com" target="_blank">
-                    <img src="https://agsuitetech.com/zoho-mail-signature/partners-logos.png" alt="Authorized Partner" style="border: none; display: block; max-width: 100%;" />
+                    <img src="https://agsuitetech.com/email/img/partners-logos.png" alt="Authorized Partner" style="border: none; display: block; max-width: 100%;" />
                   </a>
                 </td>
               </tr>
