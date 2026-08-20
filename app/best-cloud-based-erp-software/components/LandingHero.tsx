@@ -85,7 +85,7 @@ export default function LandingHero() {
       const data = await res.json();
 
       if (data.status === 1) {
-        router.push("/free-consultation/thankyou");
+        router.push("/best-cloud-based-erp-software/free-consultation/thankyou");
       } else {
         setErrorMessage(data.msg || "Submission failed. Please try again.");
         recaptchaRef.current?.reset();
