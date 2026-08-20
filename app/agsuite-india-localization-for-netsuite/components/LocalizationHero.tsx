@@ -3,7 +3,7 @@
 import React, { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { CheckCircle2, ShieldCheck, Sparkles, Send, AlertCircle, Award, FileCheck, RefreshCw, Zap } from "lucide-react";
+import { CheckCircle2, Sparkles, Send, AlertCircle, ShieldCheck } from "lucide-react";
 import { GoogleRecaptcha, GoogleRecaptchaRef } from "@/app/components/shared/GoogleRecaptcha";
 
 const INVALID_DOMAINS = /@(gmail|yahoo|outlook|live|hotmail|aol)\.[a-z]{2,}$/i;
@@ -21,7 +21,7 @@ export default function LocalizationHero() {
     phone: "",
     designation: "",
     revenue: "",
-    leadsource: "India Localization Landing Page",
+    leadsource: "",
     comments: "",
     BirthDate: "", // Honeypot field
   });
@@ -79,7 +79,12 @@ export default function LocalizationHero() {
       const res = await fetch("/api/consultation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, recaptchaToken: token }),
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken: token,
+          subject: "AGSuite India Localization for NetSuite Landing Page Enquiry",
+          formTitle: "AGSuite India Localization for NetSuite Landing Page Enquiry",
+        }),
       });
 
       const data = await res.json();
@@ -124,7 +129,7 @@ export default function LocalizationHero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
 
-          {/* LEFT: Hero Copy & Feature List (50% Equal Width, Aligned to Form Top) */}
+          {/* LEFT: Hero Copy & Feature List */}
           <div className="w-full flex flex-col justify-start space-y-5">
             {/* Top Pill Badge */}
             <div>
@@ -152,7 +157,7 @@ export default function LocalizationHero() {
               </span>
             </motion.h1>
 
-            {/* Subtitle */}
+            {/* Subtitle / Paragraph 1 */}
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -162,38 +167,32 @@ export default function LocalizationHero() {
               Full Indian tax compliance inside NetSuite — GST automation, e-invoicing with IRP, TDS/TCS management, e-Way Bills, and GSTR filing reports. Built for Indian businesses running on NetSuite.
             </motion.p>
 
-            {/* Highlight Callout Box */}
+            {/* Circular Design Content Paragraph 2 */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="p-4 sm:p-5 rounded-2xl bg-white/20 border border-white/10 backdrop-blur-md text-xs sm:text-lg text-slate-200 leading-relaxed font-medium shadow-sm"
+              className="rounded-2xl p-5 bg-slate-900/80 border border-slate-800 shadow-md backdrop-blur-xs"
             >
-              Eliminate manual tax calculations, compliance risks, and penalties with AGSuite&apos;s 100% Native SuiteCloud localization SuiteApp. Designed for seamless multi-state operations and global subsidiary consolidation.
+              <p className="text-sm sm:text-base text-slate-300 font-normal leading-relaxed">
+                India Localization for NetSuite simplifies the complexities of Indian tax regulations, providing a cloud-native solution for GST, TDS, and statutory compliance. As a specialized NetSuite India localization partner, we help businesses automate e-invoicing via IRP, multi-state GSTIN management, e-way bills, and MCA audit-ready financial statements within a single unified platform.
+              </p>
             </motion.div>
 
-            {/* Trust Highlights Checklist */}
+            {/* Quick Check Bullet Points */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1"
+              className="grid grid-cols-2 gap-y-2 pt-1"
             >
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                <span className="text-xs sm:text-sm font-semibold text-slate-200">100% Statutory Compliant</span>
+                <span className="text-xs sm:text-sm font-semibold text-slate-200">Multi-GSTIN Management</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                <span className="text-xs sm:text-sm font-semibold text-slate-200">Real-Time IRP & e-Way Bill</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                <span className="text-xs sm:text-sm font-semibold text-slate-200">Automated TDS/TCS & 26Q</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                <span className="text-xs sm:text-sm font-semibold text-slate-200">MCA Audit Trail (Rule 3(1))</span>
+                <span className="text-xs sm:text-sm font-semibold text-slate-200">Section 194Q & 206C</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
@@ -219,7 +218,7 @@ export default function LocalizationHero() {
             </motion.div>
           </div>
 
-          {/* RIGHT: Lead Capture Consultation Form (50% Equal Width with Wider Form) */}
+          {/* RIGHT: Form Matching Best ERP Landing Page Structure */}
           <div className="w-full" id="consultation-form">
             <motion.div
               initial={{ opacity: 0, scale: 0.96, y: 20 }}
@@ -228,163 +227,203 @@ export default function LocalizationHero() {
               className="p-[2px] rounded-[28px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9),0_0_35px_rgba(99,102,241,0.25)]"
             >
               <div className="bg-white rounded-[26px] p-6 sm:p-8 relative overflow-hidden">
+
                 {/* Form Header */}
                 <div className="mb-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-bold uppercase tracking-wider mb-2">
-                    <ShieldCheck className="w-3.5 h-3.5 text-blue-600" /> Fast 1-Day Activation Demo
-                  </div>
+
                   <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                     Request Localization Demo
                   </h2>
-                  <p className="text-slate-600 text-xs sm:text-sm mt-1">
+                  <p className="text-slate-600 text-xs sm:text-sm mt-1 font-medium">
                     Speak with our certified NetSuite tax architects for a tailored India compliance walkthrough.
                   </p>
                 </div>
 
-                {/* Form Body */}
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  {/* Honeypot */}
-                  <input
-                    type="text"
-                    name="BirthDate"
-                    value={formData.BirthDate}
-                    onChange={handleChange}
-                    style={{ display: "none" }}
-                    tabIndex={-1}
-                    autoComplete="off"
-                  />
-
-                  {/* Error Banner */}
-                  {errorMessage && (
-                    <div className="p-3 bg-red-50 border border-red-200 rounded-xl text-red-700 text-xs flex items-center gap-2">
-                      <AlertCircle className="w-4 h-4 shrink-0" />
-                      <span>{errorMessage}</span>
-                    </div>
-                  )}
-
-                  {/* Name */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">
-                      Full Name <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      placeholder="Enter your full name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                    />
+                {/* Error Banner */}
+                {errorMessage && (
+                  <div className="p-3 mb-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-xs flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    <span>{errorMessage}</span>
                   </div>
+                )}
 
-                  {/* Company Name */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">
-                      Company Name <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="companyname"
-                      required
-                      placeholder="Your company name"
-                      value={formData.companyname}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                    />
-                  </div>
-
-                  {/* Business Email */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">
-                      Work Email <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      placeholder="name@company.com"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className={`w-full px-4 py-2.5 rounded-xl border text-slate-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all ${emailError ? "border-red-400 bg-red-50/30" : "border-slate-200"
-                        }`}
-                    />
-                    {emailError && (
-                      <p className="text-[11px] text-red-600 mt-1 font-medium">{emailError}</p>
-                    )}
-                  </div>
-
-                  {/* Phone & Country Code */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">
-                      Phone Number <span className="text-red-500">*</span>
-                    </label>
-                    <div className="flex gap-2">
-                      <select
-                        name="countryCode"
-                        value={formData.countryCode}
-                        onChange={handleChange}
-                        className="px-2.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 text-sm font-semibold outline-none w-24 shrink-0 cursor-pointer"
-                      >
-                        <option value="+91">🇮🇳 +91</option>
-                        <option value="+1">🇺🇸 +1</option>
-                        <option value="+44">🇬🇧 +44</option>
-                        <option value="+971">🇦🇪 +971</option>
-                        <option value="+65">🇸🇬 +65</option>
-                        <option value="+61">🇦🇺 +61</option>
-                      </select>
+                {/* Form Body Matching Best ERP Fields & Styles */}
+                <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
+                  {/* Name & Company */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-blue-950 uppercase tracking-wider mb-1">
+                        Name *
+                      </label>
                       <input
-                        type="tel"
-                        name="phone"
+                        type="text"
+                        name="name"
                         required
-                        placeholder="9876543210"
-                        value={formData.phone}
+                        placeholder="John Doe"
+                        value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                        className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm outline-none transition-all placeholder-slate-400 shadow-2xs"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-blue-950 uppercase tracking-wider mb-1">
+                        Company Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="companyname"
+                        required
+                        placeholder="Acme Corp"
+                        value={formData.companyname}
+                        onChange={handleChange}
+                        className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm outline-none transition-all placeholder-slate-400 shadow-2xs"
                       />
                     </div>
                   </div>
 
-                  {/* Annual Revenue / NetSuite Status */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {/* Business Email & Role */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
-                        Annual Revenue
+                      <label className="block text-xs font-bold text-blue-950 uppercase tracking-wider mb-1">
+                        Business Email *
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        placeholder="john@company.com"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className={`w-full bg-white border ${emailError ? "border-red-500 focus:border-red-600" : "border-slate-200 focus:border-blue-600"
+                          } focus:ring-1 focus:ring-blue-600 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm outline-none transition-all placeholder-slate-400 shadow-2xs`}
+                      />
+                      {emailError && (
+                        <span className="text-[11px] text-red-600 font-medium block mt-1">
+                          {emailError}
+                        </span>
+                      )}
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-blue-950 uppercase tracking-wider mb-1">
+                        Role / Designation *
+                      </label>
+                      <input
+                        type="text"
+                        name="designation"
+                        required
+                        placeholder="CTO / CFO / Finance Head"
+                        value={formData.designation}
+                        onChange={handleChange}
+                        className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm outline-none transition-all placeholder-slate-400 shadow-2xs"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Mobile & Annual Revenue */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-blue-950 uppercase tracking-wider mb-1">
+                        Mobile *
+                      </label>
+                      <div className="flex">
+                        <select
+                          name="countryCode"
+                          value={formData.countryCode}
+                          onChange={handleChange}
+                          className="bg-slate-100 border border-r-0 border-slate-200 rounded-l-xl px-2.5 py-2.5 text-xs font-bold text-slate-700 outline-none cursor-pointer"
+                        >
+                          <option value="+91">IN +91</option>
+                          <option value="+1">US +1</option>
+                          <option value="+44">UK +44</option>
+                          <option value="+61">AU +61</option>
+                          <option value="+971">AE +971</option>
+                          <option value="+65">SG +65</option>
+                          <option value="+49">DE +49</option>
+                        </select>
+                        <input
+                          type="text"
+                          name="phone"
+                          required
+                          minLength={10}
+                          maxLength={12}
+                          placeholder="9876543210"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-r-xl px-3.5 py-2.5 text-slate-900 text-sm outline-none transition-all placeholder-slate-400 shadow-2xs"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-blue-950 uppercase tracking-wider mb-1">
+                        Annual Revenue *
                       </label>
                       <select
                         name="revenue"
+                        required
                         value={formData.revenue}
                         onChange={handleChange}
-                        className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-900 text-xs font-medium outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
+                        className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm outline-none cursor-pointer transition-all shadow-2xs"
                       >
-                        <option value="">Select Range</option>
-                        <option value="Under ₹10 Cr">Under ₹10 Cr</option>
-                        <option value="₹10 Cr - ₹50 Cr">₹10 Cr - ₹50 Cr</option>
-                        <option value="₹50 Cr - ₹250 Cr">₹50 Cr - ₹250 Cr</option>
-                        <option value="₹250 Cr+">₹250 Cr+</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
-                        NetSuite Status
-                      </label>
-                      <select
-                        name="designation"
-                        value={formData.designation}
-                        onChange={handleChange}
-                        className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-900 text-xs font-medium outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
-                      >
-                        <option value="">Select Status</option>
-                        <option value="Existing NetSuite User">Existing NetSuite User</option>
-                        <option value="Currently Implementing">Currently Implementing</option>
-                        <option value="Evaluating NetSuite ERP">Evaluating NetSuite ERP</option>
-                        <option value="Need SuiteApp Only">Need SuiteApp Only</option>
+                        <option value="" disabled>Select Annual Revenue</option>
+                        <option value="$5M to $10M">$5M to $10M</option>
+                        <option value="$10M to $20M">$10M to $20M</option>
+                        <option value="$20M to $30M">$20M to $30M</option>
+                        <option value="$30M to $50M">$30M to $50M</option>
+                        <option value="$50M to $100M">$50M to $100M</option>
+                        <option value="$100M+">$100M+</option>
                       </select>
                     </div>
                   </div>
 
-                  {/* Google reCAPTCHA */}
-                  <div className="flex justify-center my-2 scale-90 sm:scale-100 origin-center">
+                  {/* How did you hear about us */}
+                  <div>
+                    <label className="block text-xs font-bold text-blue-950 uppercase tracking-wider mb-1">
+                      How did you hear about us?
+                    </label>
+                    <select
+                      name="leadsource"
+                      value={formData.leadsource}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm outline-none cursor-pointer transition-all shadow-2xs"
+                    >
+                      <option value="">-- Select Source --</option>
+                      <option value="Email">Email</option>
+                      <option value="Event">Event</option>
+                      <option value="Friend/Associate">Friend/Associate</option>
+                      <option value="Search">Search</option>
+                      <option value="Social Media">Social Media</option>
+                      <option value="Referral">Referral</option>
+                    </select>
+                  </div>
+
+                  {/* Comments / Requirements */}
+                  <div>
+                    <label className="block text-xs font-bold text-blue-950 uppercase tracking-wider mb-1">
+                      How We Can Help! *
+                    </label>
+                    <textarea
+                      name="comments"
+                      required
+                      rows={2}
+                      placeholder="Tell us about your NetSuite India compliance requirements..."
+                      value={formData.comments}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm outline-none transition-all placeholder-slate-400 resize-none shadow-2xs"
+                    />
+                    {/* Honeypot field (hidden from real users, traps bots) */}
+                    <input
+                      type="text"
+                      name="BirthDate"
+                      value={formData.BirthDate}
+                      onChange={handleChange}
+                      style={{ display: "none" }}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
+
+                  {/* Google reCAPTCHA v2 */}
+                  <div className="pt-1">
                     <GoogleRecaptcha
                       ref={recaptchaRef}
                       sitekey="6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7"
@@ -395,24 +434,11 @@ export default function LocalizationHero() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-700 hover:to-indigo-800 text-white font-extrabold text-sm shadow-xl shadow-blue-600/25 hover:shadow-2xl hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
+                    className="w-full py-3.5 px-6 rounded-xl font-extrabold text-white uppercase tracking-wider text-sm bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 transition-all duration-300 shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 cursor-pointer active:scale-98 disabled:opacity-50"
                   >
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        <span>Scheduling Demo...</span>
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4" />
-                        <span>Book Free Localization Demo</span>
-                      </>
-                    )}
+                    <span>{isSubmitting ? "Submitting..." : "Book Free Consultation"}</span>
+                    <Send className="w-4 h-4" />
                   </button>
-
-                  <p className="text-[11px] text-center text-slate-500 leading-tight">
-                    🔒 100% Confidential. No spam. Instant consultation callback.
-                  </p>
                 </form>
               </div>
             </motion.div>

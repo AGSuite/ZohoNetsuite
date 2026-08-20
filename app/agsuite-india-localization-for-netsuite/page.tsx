@@ -55,11 +55,11 @@ export default function IndiaLocalizationLandingPage() {
         {/* Section 1: Home (#home) - Hero with Consultation Form */}
         <LocalizationHero />
 
-        {/* Section 2: Platform & Metrics - Stats, India Localization Dashboard & Client Marquee */}
-        <LocalizationMetrics />
-
-        {/* Section 3: Simplify Compliance - NetSuite India Localization Circular Design & Overview */}
+        {/* Section 2: Simplify Compliance - NetSuite India Localization Circular Design & Overview */}
         <LocalizationSimplify />
+
+        {/* Section 3: Platform & Metrics - Stats, India Localization Dashboard & Client Marquee */}
+        <LocalizationMetrics />
 
         {/* Section 4: Modules (#modules) - India Localization for NetSuite Compliance Modules */}
         <LocalizationModules />

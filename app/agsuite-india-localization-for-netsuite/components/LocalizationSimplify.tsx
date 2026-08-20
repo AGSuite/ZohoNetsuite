@@ -110,14 +110,9 @@ export default function LocalizationSimplify() {
                 onClick={scrollToHero}
                 className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 shadow-md shadow-blue-600/30 hover:shadow-lg transition-all duration-200 group cursor-pointer"
               >
-                <span>Request Custom SuiteApp Demo</span>
+                <span>Get Free Consultation</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
-              
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-400">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>100% Native SuiteCloud Architecture</span>
-              </div>
             </div>
 
           </motion.div>

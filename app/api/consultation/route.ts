@@ -56,11 +56,13 @@ export async function POST(req: Request) {
     });
 
     const dateStr = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+    const emailSubject = data.subject || data.formTitle || 'NetSuite ERP Software Landing Page Enquiry';
+    const emailHeading = data.formTitle || data.subject || 'NetSuite ERP Software Landing Page Enquiry';
 
     // 4. Internal Notification Email
     const internalMailContent = `
       <div style="font-family: Arial, sans-serif; font-size: 14px; padding: 20px; color: #333;">
-        <h3 style="color: #001f5c; border-bottom: 2px solid #001f5c; padding-bottom: 8px;">NetSuite ERP Software Landing Page Enquiry</h3>
+        <h3 style="color: #001f5c; border-bottom: 2px solid #001f5c; padding-bottom: 8px;">${emailHeading}</h3>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Company Name:</strong> ${companyname}</p>
         <p><strong>Business Email:</strong> ${email}</p>
@@ -76,7 +78,7 @@ export async function POST(req: Request) {
     await transporter.sendMail({
       from: '"AGSuite Technologies" <hello@agsuitetech.com>',
       to: 'sales@agsuitetech.com,nikhil.khode@agsuitetech.com,inbound@agsuitetech.com,dwoqqigo@parser.zohocrm.in',
-      subject: 'NetSuite ERP Software Landing Page Enquiry',
+      subject: emailSubject,
       html: internalMailContent,
     });
 
