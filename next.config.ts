@@ -375,8 +375,9 @@ const nextConfig: NextConfig = {
       { source: '/jobs/netsuite-functional-consultant', destination: '/careers/netsuite-functional-consultant/', permanent: true },
       { source: '/jobs/netsuite-developer', destination: '/careers/netsuite-developer/', permanent: true },
       { source: '/jobs/netsuite-technical-lead-2', destination: '/careers/netsuite-technical-lead/', permanent: true },
-      { source: '/jobs/netsuite-technical-lead', destination: '/careers/netsuite-functional-lead/', permanent: true },
       { source: '/home-page/', destination: '/', permanent: true },
+      { source: '/best-cloud-based-erp-software/index.php', destination: '/best-cloud-based-erp-software', permanent: true },
+      { source: '/best-cloud-based-erp-software/index.php/', destination: '/best-cloud-based-erp-software', permanent: true },
     ];
   },
   async rewrites() {
