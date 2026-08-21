@@ -62,7 +62,7 @@ const NSMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) => 
 
     // Split headline into words for animation
     const headlineText = "83% of companies meet or exceed their ROI expectations with";
-    const highlightText = "AI-powered Oracle NetSuite ERP solutions.";
+    const highlightText = "AI-powered Oracle NetSuite ERP Solutions";
     const words = headlineText.split(" ");
 
 
