@@ -37,7 +37,7 @@ export default function LocalizationSimplify() {
     <section
       id="simplify"
       ref={ref}
-      className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white font-['DM_Sans',sans-serif]"
+      className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white font-['DM_Sans',sans-serif] scroll-mt-20"
     >
       {/* Background Decorative Ambient Elements */}
       <div className="absolute -top-32 -right-32 w-[550px] h-[550px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none" />

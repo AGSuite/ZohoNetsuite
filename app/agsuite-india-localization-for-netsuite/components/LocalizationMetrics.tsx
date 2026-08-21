@@ -20,29 +20,6 @@ const stats = [
   { value: "15+", label: "Industry Expertise" },
 ];
 
-interface LogoItem {
-  id: string;
-  logo: string;
-  name: string;
-  link: string;
-  pad?: number;
-  unopt?: boolean;
-}
-
-const logos: LogoItem[] = [
-  { id: "affle", logo: "/images/assets/affle%20tech.webp", name: "Affle", link: "https://www.affle.com", pad: 3 },
-  { id: "videoverse", logo: "/images/netsuite-clients/videoverse.webp", name: "VideoVerse", link: "https://www.videoverse.com", pad: 2 },
-  { id: "aidash", logo: "/images/netsuite-clients/aidashlogo.webp", name: "AiDash", link: "https://www.aidash.com", pad: 3 },
-  { id: "finn", logo: "/images/netsuite-clients/finn-logo1.webp", name: "Finn Partners", link: "https://www.finnpartners.com", pad: 3 },
-  { id: "traxon", logo: "/images/netsuite-clients/traxon.webp", name: "Traxon", link: "#", pad: 3 },
-  { id: "uniacco", logo: "/images/netsuite-clients/uniacco.webp", name: "UniAcco", link: "https://www.uniacco.com", pad: 3 },
-  { id: "veeam", logo: "/images/netsuite-clients/veeam.png", name: "Veeam", link: "https://www.veeam.com", pad: 2 },
-  { id: "cfarer", logo: "/images/netsuite-clients/cfarer.png", name: "Cfarer (A DNV Company)", link: "https://www.cfarer.com", pad: 2 },
-  { id: "konrad", logo: "/images/netsuite-clients/konrad.png", name: "Konrad", link: "https://www.konrad.com", pad: 2 },
-  { id: "havas", logo: "/images/netsuite-clients/havas.png", name: "Havas", link: "https://www.havas.com", pad: 2 },
-  { id: "colorifix", logo: "/images/netsuite-clients/colorifix.png", name: "Colorifix", link: "https://www.colorifix.com", pad: 2 },
-];
-
 // ─────────────────────────────────────────────────────────────────
 // Animated counter
 // ─────────────────────────────────────────────────────────────────
@@ -83,8 +60,6 @@ export default function LocalizationMetrics() {
   const { ref: subtextRef, inView: subtextInView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const { ref: statsRef, inView: statsInView } = useInView({ triggerOnce: true, threshold: 0.15 });
   const { ref: dashboardRef, inView: dashboardInView } = useInView({ triggerOnce: true, threshold: 0.1 });
-  const { ref: marqueeRef, inView: marqueeInView } = useInView({ triggerOnce: true, threshold: 0.1 });
-
 
   const headlineText = "Trusted Oracle NetSuite Solution Provider with";
   const highlightText = "15+ years of enterprise ERP excellence";
@@ -282,67 +257,8 @@ export default function LocalizationMetrics() {
             </motion.div>
           </div>
 
-          {/* Client Logos Marquee */}
-          <motion.div
-            ref={marqueeRef}
-            initial={{ opacity: 0, y: 30 }}
-            animate={marqueeInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.45, ease: "easeOut" }}
-            className="w-full border-t border-slate-200/80 pt-12 mt-16"
-          >
-            <p className="mb-8 text-center text-sm sm:text-base font-bold uppercase text-slate-500 tracking-wider">
-              Trusted by 250+ Industry-Leading Brands Across India & Globally
-            </p>
-
-            <div className="relative w-full overflow-hidden py-2">
-              <div className="animate-marquee whitespace-nowrap flex items-center">
-                {logos.concat(logos).map((logo, index) => {
-                  const p = logo.pad ?? 4;
-                  return (
-                    <div key={index} className="inline-flex px-4">
-                      <a
-                        href={logo.link || "#"}
-                        target={logo.link !== "#" ? "_blank" : undefined}
-                        rel={logo.link !== "#" ? "noopener noreferrer" : undefined}
-                        className="flex h-16 w-44 sm:h-20 sm:w-52 items-center justify-center bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md hover:border-blue-300 transition-all duration-300"
-                        style={{ padding: `${p * 2}px ${p * 3}px` }}
-                        aria-label={logo.name}
-                      >
-                        <div className="relative w-full h-full">
-                          <Image
-                            src={logo.logo}
-                            alt={`${logo.name} logo`}
-                            fill
-                            sizes="(max-width: 640px) 176px, 208px"
-                            className="object-contain transition-all duration-300"
-                            unoptimized={logo.unopt === true}
-                          />
-                        </div>
-                      </a>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </motion.div>
-
         </div>
       </div>
-
-      <style jsx global>{`
-        @keyframes marquee {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          display: inline-flex;
-          animation: marquee 60s linear infinite;
-          will-change: transform;
-        }
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 }

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import LocalizationNavbar from "./components/LocalizationNavbar";
 import LocalizationHero from "./components/LocalizationHero";
-import LocalizationMetrics from "./components/LocalizationMetrics";
+import LocalizationClients from "./components/LocalizationClients";
 import LocalizationSimplify from "./components/LocalizationSimplify";
+import LocalizationMetrics from "./components/LocalizationMetrics";
 import LocalizationModules from "./components/LocalizationModules";
 import LocalizationChallenges from "./components/LocalizationChallenges";
 import LocalizationBenefits from "./components/LocalizationBenefits";
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
 
 export default function IndiaLocalizationLandingPage() {
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-600 selection:text-white font-['DM_Sans',sans-serif]">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-600 selection:text-white font-['DM_Sans',sans-serif] scroll-smooth">
       {/* Landing Page Navbar with requested nav items */}
       <LocalizationNavbar />
 
@@ -55,10 +56,13 @@ export default function IndiaLocalizationLandingPage() {
         {/* Section 1: Home (#home) - Hero with Consultation Form */}
         <LocalizationHero />
 
-        {/* Section 2: Simplify Compliance - NetSuite India Localization Circular Design & Overview */}
+        {/* Section 2: Clients - Trusted Enterprise Brands White Theme with Gradient Background */}
+        <LocalizationClients />
+
+        {/* Section 3: Simplify Compliance - NetSuite India Localization Circular Design & Overview */}
         <LocalizationSimplify />
 
-        {/* Section 3: Platform & Metrics - Stats, India Localization Dashboard & Client Marquee */}
+        {/* Section 4: Platform & Metrics - Stats & India Localization Dashboard */}
         <LocalizationMetrics />
 
         {/* Section 4: Modules (#modules) - India Localization for NetSuite Compliance Modules */}

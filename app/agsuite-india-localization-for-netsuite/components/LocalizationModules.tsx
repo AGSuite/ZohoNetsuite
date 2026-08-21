@@ -129,7 +129,7 @@ export default function LocalizationModules() {
     <section
       id="modules"
       ref={ref}
-      className="py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden font-['DM_Sans',sans-serif]"
+      className="py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden font-['DM_Sans',sans-serif] scroll-mt-20"
     >
       {/* Decorative Corner Glows */}
       <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-blue-100/40 rounded-full blur-[140px] pointer-events-none" />
