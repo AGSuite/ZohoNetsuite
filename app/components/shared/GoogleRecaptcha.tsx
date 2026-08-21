@@ -64,7 +64,14 @@ export const GoogleRecaptcha = forwardRef<GoogleRecaptchaRef, GoogleRecaptchaPro
             script.async = true;
             script.defer = true;
             script.onload = () => {
-              (window as any).grecaptcha?.ready?.(renderWidget) || renderWidget();
+              try {
+                (window as any).grecaptcha?.ready?.(renderWidget) || renderWidget();
+              } catch (e) {
+                console.warn('reCAPTCHA init error:', e);
+              }
+            };
+            script.onerror = () => {
+              console.warn('reCAPTCHA script failed to load (offline or blocked).');
             };
             document.head.appendChild(script);
           } else {
@@ -74,6 +81,7 @@ export const GoogleRecaptcha = forwardRef<GoogleRecaptchaRef, GoogleRecaptchaPro
                 renderWidget();
               }
             }, 100);
+            setTimeout(() => clearInterval(checkInterval), 10000);
           }
         }
       }
