@@ -381,6 +381,7 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
+      { source: '/email/Logo-Light-static-to-gif', destination: '/email/Logo-Light-static-to-gif.gif' },
       { source: '/zoho-implementation-and-integration', destination: '/zoho/implementation' },
       { source: '/zoho-integration', destination: '/zoho/integration-services' },
       { source: '/zoho-customization', destination: '/zoho/customization' },
