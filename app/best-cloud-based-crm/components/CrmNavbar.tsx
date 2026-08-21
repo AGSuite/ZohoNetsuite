@@ -19,11 +19,12 @@ export default function CrmNavbar() {
 
   const navLinks = [
     { label: "Home", href: "#home" },
-    { label: "Why CRM", href: "#simplify" },
+    { label: "What is CRM?", href: "#what-is" },
     { label: "Platform", href: "#platform" },
     { label: "Modules", href: "#modules" },
-    { label: "Challenges", href: "#challenges" },
     { label: "Benefits", href: "#benefits" },
+    { label: "Services", href: "#services" },
+    { label: "Pricing", href: "#pricing" },
     { label: "FAQ", href: "#faq" },
   ];
 

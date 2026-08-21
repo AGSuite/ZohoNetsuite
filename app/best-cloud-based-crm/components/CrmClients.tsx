@@ -14,19 +14,26 @@ interface LogoItem {
   unopt?: boolean;
 }
 
-// Exactly the 11 client logos matching landing page standard
+// Full list of Zoho client logos matching Zoho enterprise client portfolio
 const logos: LogoItem[] = [
-  { id: "affle", logo: "/images/assets/affle%20tech.webp", name: "Affle", link: "https://www.affle.com", pad: 3 },
-  { id: "videoverse", logo: "/images/netsuite-clients/videoverse.webp", name: "VideoVerse", link: "https://www.videoverse.com", pad: 2 },
-  { id: "aidash", logo: "/images/netsuite-clients/aidashlogo.webp", name: "AiDash", link: "https://www.aidash.com", pad: 3 },
-  { id: "finn", logo: "/images/netsuite-clients/finn-logo1.webp", name: "Finn Partners", link: "https://www.finnpartners.com", pad: 3 },
-  { id: "traxon", logo: "/images/netsuite-clients/traxon.webp", name: "Traxon", link: "#", pad: 3 },
-  { id: "uniacco", logo: "/images/netsuite-clients/uniacco.webp", name: "UniAcco", link: "https://www.uniacco.com", pad: 3 },
-  { id: "veeam", logo: "/images/netsuite-clients/veeam.png", name: "Veeam", link: "https://www.veeam.com", pad: 2 },
-  { id: "cfarer", logo: "/images/netsuite-clients/cfarer.png", name: "Cfarer (A DNV Company)", link: "https://www.cfarer.com", pad: 2 },
-  { id: "konrad", logo: "/images/netsuite-clients/konrad.png", name: "Konrad", link: "https://www.konrad.com", pad: 2 },
-  { id: "havas", logo: "/images/netsuite-clients/havas.png", name: "Havas", link: "https://www.havas.com", pad: 2 },
-  { id: "colorifix", logo: "/images/netsuite-clients/colorifix.png", name: "Colorifix", link: "https://www.colorifix.com", pad: 2 },
+  { id: "allwave", logo: "/images/zoho%20client%20images/all%20wave%20av.png", name: "All Wave AV", link: "#", pad: 3 },
+  { id: "aurionpro", logo: "/images/zoho%20client%20images/aurionpro.png", name: "Aurionpro", link: "#", pad: 3 },
+  { id: "avaso", logo: "/images/zoho%20client%20images/avaso.png", name: "Avaso", link: "#", pad: 2 },
+  { id: "bettinelli", logo: "/images/zoho%20client%20images/Bettinelli.png", name: "Bettinelli", link: "#", pad: 3 },
+  { id: "dahchi", logo: "/images/zoho%20client%20images/dahchi.png", name: "Dahchi", link: "#", pad: 2 },
+  { id: "flatworld", logo: "/images/zoho%20client%20images/flatworld.png", name: "Flatworld", link: "#", pad: 3 },
+  { id: "incuspaze", logo: "/images/zoho%20client%20images/incuspaze.png", name: "Incuspaze", link: "#", pad: 3 },
+  { id: "indialand", logo: "/images/zoho%20client%20images/indialand.png", name: "IndiaLand", link: "#", pad: 3 },
+  { id: "initium", logo: "/images/zoho%20client%20images/initium.png", name: "Initium", link: "#", pad: 2 },
+  { id: "krishgen", logo: "/images/zoho%20client%20images/krishgen.png", name: "Krishgen", link: "#", pad: 3 },
+  { id: "kta", logo: "/images/zoho%20client%20images/KTA.png", name: "KTA", link: "#", pad: 2 },
+  { id: "rentopia", logo: "/images/zoho%20client%20images/rentopia_v2.png", name: "Rentopia", link: "#", pad: 3 },
+  { id: "samson", logo: "/images/zoho%20client%20images/samson.png", name: "Samson", link: "#", pad: 3 },
+  { id: "shaurrya", logo: "/images/zoho%20client%20images/shaurrya.png", name: "Shaurrya", link: "#", pad: 3 },
+  { id: "tardid", logo: "/images/zoho%20client%20images/tardid.png", name: "Tardid", link: "#", pad: 3 },
+  { id: "vsn", logo: "/images/zoho%20client%20images/vsn.png", name: "VSN", link: "#", pad: 2 },
+  { id: "waco", logo: "/images/zoho%20client%20images/Waco.png", name: "Waco", link: "#", pad: 3 },
+  { id: "ziptrip", logo: "/images/zoho%20client%20images/ziptrip.png", name: "Ziptrip", link: "#", pad: 3 },
 ];
 
 export default function CrmClients() {

@@ -3,7 +3,7 @@
 import React, { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { CheckCircle2, Sparkles, Send, AlertCircle, ShieldCheck, Zap, Globe, Users2 } from "lucide-react";
+import { CheckCircle2, Sparkles, Send, AlertCircle, ShieldCheck, Zap, Users2 } from "lucide-react";
 import { GoogleRecaptcha, GoogleRecaptchaRef } from "@/app/components/shared/GoogleRecaptcha";
 
 const INVALID_DOMAINS = /@(gmail|yahoo|outlook|live|hotmail|aol)\.[a-z]{2,}$/i;
@@ -110,13 +110,13 @@ export default function CrmHero() {
       className="relative pt-28 pb-16 md:pt-32 md:pb-24 overflow-hidden font-['DM_Sans',sans-serif] bg-gradient-to-br from-amber-50/50 via-orange-50/30 via-rose-50/30 to-teal-50/30 text-slate-900 scroll-mt-20"
     >
       {/* Background Soft Glows (Mixed Zoho ERP Amber/Orange & HRMS Teal/Emerald Theme) */}
-      
+
       {/* Top-Left: Warm Sunset Amber / Orange Glow */}
       <div className="absolute -top-[25%] -left-[15%] w-[70%] h-[90%] rounded-full bg-gradient-to-br from-orange-200/40 via-amber-100/30 to-transparent blur-[150px] pointer-events-none" />
-      
+
       {/* Bottom-Right: Fresh Teal / Emerald Glow */}
       <div className="absolute -bottom-[25%] -right-[15%] w-[70%] h-[90%] rounded-full bg-gradient-to-tl from-teal-200/35 via-emerald-100/25 to-transparent blur-[150px] pointer-events-none" />
-      
+
       {/* Top-Right: Coral Rose Glow */}
       <div className="absolute -top-[20%] -right-[10%] w-[55%] h-[65%] rounded-full bg-gradient-to-bl from-rose-200/30 via-orange-100/20 to-transparent blur-[140px] pointer-events-none" />
 
@@ -131,7 +131,7 @@ export default function CrmHero() {
         {/* Amber/Orange ERP Wave Curves */}
         <path d="M-100 200C300 100 600 300 1000 150C1300 100 1500 250 1700 200" stroke="url(#crm-mix-grad-1)" strokeWidth="2" strokeDasharray="4 8" />
         <path d="M-100 550C300 450 700 650 1100 500C1400 450 1600 600 1800 550" stroke="url(#crm-mix-grad-2)" strokeWidth="2.5" />
-        
+
         {/* Teal/Emerald HRMS Wave Curves */}
         <path d="M-100 350C300 250 600 450 1000 300C1300 250 1500 400 1700 350" stroke="url(#crm-mix-grad-3)" strokeWidth="1.5" strokeDasharray="6 10" opacity="0.6" />
 
@@ -194,12 +194,9 @@ export default function CrmHero() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.1 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.15]"
+              className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] bg-clip-text text-transparent bg-gradient-to-r from-amber-800 via-amber-700 to-black"
             >
-              Empower Your Sales Team with{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-950 via-slate-900 to-amber-600">
-                Zoho CRM
-              </span>
+              Empower Your Sales Team with Zoho CRM
             </motion.h1>
 
             {/* Content Paragraph 1 */}
@@ -219,7 +216,7 @@ export default function CrmHero() {
               transition={{ duration: 0.55, delay: 0.25 }}
               className="p-5 rounded-2xl bg-white/80 border border-orange-200/80 shadow-sm backdrop-blur-xs text-sm sm:text-base text-slate-700 leading-relaxed font-normal"
             >
-              By centralizing customer data and integrating with various business applications, Zoho CRM enables companies to build stronger relationships and drive growth. Zoho CRM facilitates a global network of approximately <strong>250,000 businesses</strong> across more than <strong>180 countries</strong> to acquire more leads, engage with customers, and boost revenue.
+              By centralizing customer data and integrating with various business applications, Zoho CRM enables companies to build stronger relationships and drive growth. Backed by <strong>84% customer retention</strong> and <strong>700+ completed projects</strong>, AGSuite empowers organizations to acquire more leads, engage with customers, and boost revenue.
             </motion.div>
 
             {/* Content Paragraph 3 (AGSuite Specialization Statement) */}
@@ -241,11 +238,11 @@ export default function CrmHero() {
             >
               <div className="flex items-center gap-2">
                 <Users2 className="w-4 h-4 text-orange-600" />
-                <span>250,000+ Businesses</span>
+                <span>84% Customer Retention</span>
               </div>
               <div className="flex items-center gap-2">
-                <Globe className="w-4 h-4 text-rose-600" />
-                <span>180+ Countries</span>
+                <CheckCircle2 className="w-4 h-4 text-rose-600" />
+                <span>700+ Projects Completed</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-600" />
@@ -329,9 +326,8 @@ export default function CrmHero() {
                         placeholder="john@company.com"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`w-full bg-white border ${
-                          emailError ? "border-red-500 focus:border-red-600" : "border-slate-200 focus:border-orange-500"
-                        } focus:ring-1 focus:ring-orange-500 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm outline-none transition-all placeholder-slate-400 shadow-2xs`}
+                        className={`w-full bg-white border ${emailError ? "border-red-500 focus:border-red-600" : "border-slate-200 focus:border-orange-500"
+                          } focus:ring-1 focus:ring-orange-500 rounded-xl px-3.5 py-2.5 text-slate-900 text-sm outline-none transition-all placeholder-slate-400 shadow-2xs`}
                       />
                       {emailError && (
                         <span className="text-[11px] text-red-600 font-medium block mt-1">
