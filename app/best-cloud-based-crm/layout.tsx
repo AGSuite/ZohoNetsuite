@@ -72,9 +72,6 @@ export default function BestCloudBasedCrmLayout({
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=AW-10876325873"
         strategy="lazyOnload"
-        onError={(e) => {
-          console.warn("Google Ads script failed to load:", e);
-        }}
       />
       <Script id="google-ads-init" strategy="lazyOnload">
         {`
@@ -89,9 +86,6 @@ export default function BestCloudBasedCrmLayout({
       <Script
         id="zsiqchat"
         strategy="lazyOnload"
-        onError={(e) => {
-          console.warn("Zoho SalesIQ script failed to load:", e);
-        }}
       >
         {`
           var $zoho=$zoho || {};
@@ -115,9 +109,6 @@ export default function BestCloudBasedCrmLayout({
       <Script
         src="https://crm.zoho.in/crm/javascript/zcga.js"
         strategy="lazyOnload"
-        onError={(e) => {
-          console.warn("Zoho Analytics script failed to load:", e);
-        }}
       />
     </>
   );
