@@ -68,6 +68,19 @@ export default function NetSuiteFooter() {
                                 </a>
                             </div>
                         </div>
+
+                        {/* ISO Certification Badge */}
+                        <div className="mt-6">
+                            <div className="inline-block bg-white rounded-lg p-1.5 shadow-md">
+                                <Image
+                                    src="/images/iso-27001-certified.png"
+                                    alt="ISO 27001:2022 (ISMS) Certified - MSCB-154 TNV"
+                                    width={180}
+                                    height={90}
+                                    className="h-14 w-auto object-contain"
+                                />
+                            </div>
+                        </div>
                     </div>
 
                     {/* NetSuite Services */}
