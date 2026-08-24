@@ -106,11 +106,6 @@ export function buildMetadata({
     // ── Canonical & alternates ────────────────────────────────────────────────
     alternates: {
       canonical: url,
-      languages: {
-        "en-US": url,
-        "en-IN": url,
-        "x-default": url,
-      },
     },
 
     // ── Open Graph ────────────────────────────────────────────────────────────

@@ -20,9 +20,6 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: "https://agsuitetech.com/magento-2-netsuite-connector/",
-    languages: {
-      "en-US": "https://agsuitetech.com/magento-2-netsuite-connector/",
-    },
   },
 
   openGraph: {

@@ -66,14 +66,9 @@ export const metadata: Metadata = {
     },
   },
 
-  // ── Canonical & hreflang alternates ────────────────────────────────────────
+  // ── Canonical alternate ───────────────────────────────────────────────────
   alternates: {
     canonical: SITE_URL,
-    languages: {
-      "en-US": SITE_URL,
-      "en-IN": SITE_URL,
-      "x-default": SITE_URL,
-    },
   },
 
   // ── Open Graph ─────────────────────────────────────────────────────────────

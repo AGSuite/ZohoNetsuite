@@ -20,9 +20,6 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: "https://agsuitetech.com/fixed-asset-management/",
-    languages: {
-      "en-US": "https://agsuitetech.com/fixed-asset-management/",
-    },
   },
 
   openGraph: {

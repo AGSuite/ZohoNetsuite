@@ -20,9 +20,6 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: "https://agsuitetech.com/smart-commission-app/",
-    languages: {
-      "en-US": "https://agsuitetech.com/smart-commission-app/",
-    },
   },
 
   openGraph: {

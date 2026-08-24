@@ -20,9 +20,6 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: "https://agsuitetech.com/netsuite-data-backup-solution/",
-    languages: {
-      "en-US": "https://agsuitetech.com/netsuite-data-backup-solution/",
-    },
   },
 
   openGraph: {
