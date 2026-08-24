@@ -1456,8 +1456,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/netsuite/advertising-and-digital-marketing-agencies": {
-    "title": "NetSuite for Advertising & Marketing Agencies | AGSuite",
-    "description": "Run a more profitable agency with a cloud ERP purpose-built for project-based billing, resource management, and client financial visibility. NetSuite empowers a",
+    "title": "Brand Promotion & Digital Advertising | AGSuite Technologies",
+    "description": "Boost your brand with AGSuite Technologies. Expert in publication design, media planning, digital advertising, and online advertising platforms.",
     "keywords": [
       "Advertising & Marketing",
       "ERP Solutions",
@@ -1468,8 +1468,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/netsuite/it-and-professional-services": {
-    "title": "Scale Your IT Services Business Without Limits | AGSuite",
-    "description": "Optimize billable utilization, accelerate project delivery, and automate complex billing with the #1 cloud ERP built for IT and consulting firms.",
+    "title": "IT Consulting & Managed IT Services | AGSuite Technologies",
+    "description": "Get expert IT consulting, managed IT services, IT support solutions, cloud services, and software development services with AGSuite Technologies.",
     "keywords": [
       "IT & Professional Services",
       "ERP Solutions",
@@ -1480,8 +1480,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/netsuite/manufacturing": {
-    "title": "Build the Future of Your Factory Floor with NetSuite | AGSuite",
-    "description": "Streamline discrete manufacturing, tighten supply chains, and gain real-time visibility with the #1 cloud ERP built for modern manufacturers.",
+    "title": "Manufacturing Technology Solutions | Cost Reduction - AGSuite Technologies",
+    "description": "Discover top manufacturing technology solutions with AGSuite Technologies. Enhance production planning, operations management, and reduce costs effectively.",
     "keywords": [
       "Manufacturing",
       "ERP Solutions",
@@ -1492,8 +1492,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/netsuite/media-and-publishing": {
-    "title": "NetSuite for Media & Publishing Companies | AGSuite",
-    "description": "Manage subscriptions, advertising revenue, content licensing, and royalties on a single cloud ERP. NetSuite gives media and publishing companies the financial a",
+    "title": "Media and Publishing Solutions | AGSuite Technologies",
+    "description": "Manage subscriptions, advertising revenue, content licensing, and royalties with one powerful cloud ERP. AGSuite Technologies helps media and publishing companies streamline finances, improve visibility, and drive growth.",
     "keywords": [
       "Media & Publishing",
       "ERP Solutions",
@@ -1504,8 +1504,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/netsuite/retail-and-e-commerce": {
-    "title": "NetSuite for Retail & E-Commerce | AGSuite",
-    "description": "Power your omnichannel retail operation from a single cloud platform. NetSuite connects your online store, physical locations, inventory, and financials — givin",
+    "title": "E-Commerce Solutions | Website Development & Marketing | AGSuite Technologies",
+    "description": "AGSuite Technologies offers expert e-commerce solutions, website development, marketing, and growth strategies to elevate your online store",
     "keywords": [
       "Retail & E-Commerce",
       "ERP Solutions",
@@ -1516,8 +1516,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/netsuite/software-and-technology": {
-    "title": "NetSuite for Software & Technology Companies | AGSuite",
-    "description": "Scale your SaaS, software, or tech company with a cloud ERP built for subscription revenue, ASC 606 compliance, and rapid growth. NetSuite is the platform of ch",
+    "title": "Technology Solutions | IT Consulting & Custom Software - AGSuite Technologies",
+    "description": "Explore AGSuite Technologies for top technology solutions, IT consulting services, custom software solutions, and expert software project management.",
     "keywords": [
       "Software & Technology",
       "ERP Solutions",
@@ -1528,8 +1528,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/netsuite/transportation-and-logistics": {
-    "title": "NetSuite for Transportation & Logistics | AGSuite",
-    "description": "Gain end-to-end visibility across your logistics network. NetSuite connects fleet management, freight billing, warehouse operations, and financials in one cloud",
+    "title": "Logistics & Transportation Solutions | AGSuite Technologies",
+    "description": "AGSuite Technologies provides comprehensive logistics services, transportation solutions, warehousing solutions, and shipping logistics to streamline your supply chain.",
     "keywords": [
       "Transportation & Logistics",
       "ERP Solutions",
@@ -1540,8 +1540,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/netsuite/wholesale-distribution": {
-    "title": "Expand Your Distribution Enterprise Without Limits | AGSuite",
-    "description": "Eliminate supply chain bottlenecks and accelerate order fulfillment with the world’s #1 cloud ERP tailored for wholesale distributors.",
+    "title": "Industrial Wholesale Suppliers | B2B Distribution - AGSuite Technologies",
+    "description": "Find top industrial wholesale suppliers and efficient B2B distribution channels with AGSuite Technologies. Explore bulk distribution services now!",
     "keywords": [
       "Wholesale Distribution",
       "ERP Solutions",
@@ -1552,8 +1552,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/netsuite/telecom-industry": {
-    "title": "NetSuite ERP for Telecom Industry — Modernize & Streamline Operations | AGSuite",
-    "description": "Empower your telecom business with Oracle NetSuite ERP. Automate subscription billing, revenue recognition, and OSS/BSS integrations. AGSuite certified NetSuite partner.",
+    "title": "Oracle NetSuite ERP for Telecom Industry | Streamline Operations",
+    "description": "Transform your telecom business with Oracle NetSuite ERP. Automate billing, manage operations, and gain real-time insights for growth and efficiency.",
     "keywords": [
       "NetSuite Telecom",
       "Telecom ERP",
@@ -1567,8 +1567,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/netsuite/financial-services": {
-    "title": "NetSuite ERP for Financial Services — Compliance, Risk & Reporting | AGSuite",
-    "description": "Streamline financial operations with Oracle NetSuite ERP for financial services. Built-in compliance, real-time analytics, multi-entity consolidation, and enterprise security.",
+    "title": "NetSuite for Financial Services | Cloud ERP for Banks, Insurance & Investment Firms",
+    "description": "Discover how NetSuite helps financial services companies streamline accounting, ensure compliance, and gain real-time visibility. Manage finance, CRM, and reporting in one unified cloud platform.",
     "keywords": [
       "NetSuite Financial Services",
       "Financial Services ERP",
