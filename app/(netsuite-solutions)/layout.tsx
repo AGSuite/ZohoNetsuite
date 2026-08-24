@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import { headers } from "next/headers";
 import NavbarNetSuite from "@/app/netsuite/components/NSNavbar";
+import NetSuiteFooter from "@/app/components/footers/NetSuiteFooter";
 import { SITE_URL, SITE_NAME, buildWebPageSchema, NETSUITE_PAGES } from "@/app/lib/seo";
 import JsonLd from "@/app/components/seo/JsonLd";
-
-const NetSuiteFooter = dynamic(() => import("@/app/components/footers/NetSuiteFooter"));
 
 export const metadata: Metadata = {
   title: {

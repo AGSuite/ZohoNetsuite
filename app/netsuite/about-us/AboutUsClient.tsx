@@ -390,22 +390,33 @@ function StrategicPartnersSection() {
                 Backed by 15+ years of ERP expertise, we specialize in NetSuite implementation, customization, automation, and integrations delivering intelligent, scalable, and future-ready ERP solutions tailored for growing enterprises.              </motion.p>
             </div>
 
-            {/* Logo right after subline */}
+            {/* Partner & ISO Certification Logos Side by Side */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex justify-center lg:justify-start"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-2"
             >
-              <div className="bg-transparent p-4 rounded-2xl border border-white/10 shadow-2xl">
+              {/* Oracle NetSuite Partner Logo Card */}
+              <div className="bg-white/5 backdrop-blur-md px-5 py-3.5 rounded-2xl border border-white/10 shadow-xl flex items-center justify-center h-20 sm:h-24">
                 <Image
                   src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
                   alt="Oracle NetSuite Partner Logo"
-                  width={400}
-                  height={150}
-                  className="w-full h-auto object-contain"
-                  sizes="(max-width: 768px) 100vw, 400px"
+                  width={180}
+                  height={70}
+                  className="max-h-12 sm:max-h-14 w-auto object-contain brightness-0 invert opacity-90"
+                />
+              </div>
+
+              {/* ISO 27001 Certification Badge Card */}
+              <div className="bg-white px-4 py-2 rounded-2xl border border-white/10 shadow-xl flex items-center justify-center h-20 sm:h-24">
+                <Image
+                  src="/images/iso-27001-certified.png"
+                  alt="ISO 27001:2022 (ISMS) Certified"
+                  width={180}
+                  height={90}
+                  className="max-h-14 sm:max-h-16 w-auto object-contain"
                 />
               </div>
             </motion.div>

@@ -1,0 +1,1385 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Center"/>
+   <Font ss:FontName="Segoe UI" ss:Size="10" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="Header">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2" ss:Color="#1E293B"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#1E293B"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#1E293B"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#1E293B"/>
+   </Borders>
+   <Font ss:FontName="Segoe UI" ss:Size="11" ss:Color="#FFFFFF" ss:Bold="1"/>
+   <Interior ss:Color="#0F172A" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="DataSection">
+   <Alignment ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#CBD5E1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#CBD5E1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#CBD5E1"/>
+   </Borders>
+   <Font ss:FontName="Segoe UI" ss:Size="10" ss:Color="#0F172A" ss:Bold="1"/>
+   <Interior ss:Color="#F1F5F9" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="DataBold">
+   <Alignment ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+   </Borders>
+   <Font ss:FontName="Segoe UI" ss:Size="10" ss:Color="#0F172A" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="DataLink">
+   <Alignment ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+   </Borders>
+   <Font ss:FontName="Segoe UI" ss:Size="10" ss:Color="#0284C7" ss:Underline="Single"/>
+  </Style>
+  <Style ss:ID="DataOldLink">
+   <Alignment ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+   </Borders>
+   <Font ss:FontName="Segoe UI" ss:Size="9.5" ss:Color="#64748B"/>
+  </Style>
+  <Style ss:ID="DataStatus">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+   </Borders>
+   <Font ss:FontName="Segoe UI" ss:Size="9.5" ss:Color="#15803D" ss:Bold="1"/>
+   <Interior ss:Color="#F0FDF4" ss:Pattern="Solid"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Website Pages &amp; Links">
+  <Table ss:ExpandedColumnCount="5" x:FullColumns="1" x:FullRows="1" ss:DefaultRowHeight="26">
+   <Column ss:Width="200"/>
+   <Column ss:Width="280"/>
+   <Column ss:Width="360"/>
+   <Column ss:Width="360"/>
+   <Column ss:Width="160"/>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Section / Category</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Page Name / Title</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Current Live Link (Clickable / Browser URL)</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Old Link (Legacy / Redirect URL)</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Status</Data></Cell>
+   </Row>
+   
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Home &amp; Portal Gateway</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Oracle NetSuite ERP and Zoho Implementation Partner</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/"><Data ss:Type="String">https://www.agsuitetech.com/</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/webinar-quickbooks-to-netsuite/ | https://agsuitetech.com/oracle-cloudworld-tour/ | https://agsuitetech.com/feedback/ | https://agsuitetech.com/cloud-erp-solution-provider/ | https://agsuitetech.com/software-and-technology/get-my-free-product-tour.php | https://agsuitetech.com/home-page/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">24/7 System Monitoring</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-managed-support"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-managed-support</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/managed-services | https://agsuitetech.com/netsuite/managed-services | https://agsuitetech.com/netsuit-managed-support/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Addons</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/solutions/addons"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/solutions/addons</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/addons/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">AGSuite India Localization for Oracle NetSuite | 100% Tax &amp; Statutory Compliance</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/agsuite-india-localization-for-netsuite"><Data ss:Type="String">https://www.agsuitetech.com/agsuite-india-localization-for-netsuite</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/India-Tax-Solution.php | https://agsuitetech.com/e-invoice-software.php | https://agsuitetech.com/India-E-Invoicing-Solution.php | https://agsuitetech.com/india-tax-solution/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">AGSuite Technologies: Integration Services | Integration Solutions</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-integration"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-integration</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/integration-services | https://agsuitetech.com/netsuite/integration-services | https://agsuitetech.com/celigo-development.php | https://agsuitetech.com/Avalara.php | https://agsuitetech.com/netsuite-integration.php | https://agsuitetech.com/NetSuite-Integration.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Amazon</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/solutions/addons/connectors/amazon"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/solutions/addons/connectors/amazon</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/addons/connectors/amazon/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Amazon NetSuite Connector &amp; Integration Services</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/amazon-netsuite-connector"><Data ss:Type="String">https://www.agsuitetech.com/amazon-netsuite-connector</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/addons/connectors/amazon | https://agsuitetech.com/Amazon-NetSuite-Connector.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Artificial Intelligence in NetSuite</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/artificial-intelligence-ai"><Data ss:Type="String">https://www.agsuitetech.com/artificial-intelligence-ai</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/analytics/ai</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Business Process Review</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-consulting"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-consulting</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/consulting | https://agsuitetech.com/NetSuite-Consulting.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Data Backup</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/solutions/addons/data-backup"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/solutions/addons/data-backup</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/addons/data-backup/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">India Tax Solution | Accounting &amp; Taxation services</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/india-localization-for-netsuite"><Data ss:Type="String">https://www.agsuitetech.com/india-localization-for-netsuite</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/specialized/india-localization | https://agsuitetech.com/netsuite/solutions/addons/india-localization</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Magento 2 NetSuite Connector &amp; Integration Services</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/magento-2-netsuite-connector"><Data ss:Type="String">https://www.agsuitetech.com/magento-2-netsuite-connector</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/addons/connectors/magento2 | https://agsuitetech.com/magento-to-netsuite-connector.php | https://agsuitetech.com/Magento-2-NetSuite-Connector.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Magento2</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/solutions/addons/connectors/magento2"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/solutions/addons/connectors/magento2</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/addons/connectors/magento2/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Netsuite Accounting Services | netsuite implementation partners</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-accounting-services"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-accounting-services</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/core-erp/accounting | https://agsuitetech.com/netsuite-accounting-services.php | https://agsuitetech.com/bookkeeping-and-accounting-services.php | https://agsuitetech.com/optimizing-your-business-operations-with-netsuite-accounting-software.php | https://agsuitetech.com/boost-your-business-efficiency-with-netsuite-accounting-software.php | https://agsuitetech.com/simplifying-cash-flow-management-netsuites-solutions-for-business-owners.php | https://agsuitetech.com/the-advantages-of-integrating-accounting-software-and-inventory-tracking-into-your-business.php | https://agsuitetech.com/Accounting-Software.php | https://agsuitetech.com/accounting-software/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite Analytics Warehouse (NSAW)</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-analytics-warehouse"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-analytics-warehouse</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/analytics/warehouse</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite Business Intelligence | NetSuite Partner</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-business-intelligence"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-business-intelligence</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/analytics/bi | https://agsuitetech.com/netsuite-business-intelligence.php | https://agsuitetech.com/Business-intelligence.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite CRM Solution Provider | Best CRM Software for Business</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-crm-solutions"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-crm-solutions</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/customer-management/crm | https://agsuitetech.com/netsuite-crm-solutions.php | https://agsuitetech.com/pipedrive-products.php | https://agsuitetech.com/NetSuite-Optimization.php | https://agsuitetech.com/pipedrive-services.php | https://agsuitetech.com/CRM-software.php | https://agsuitetech.com/pipedrive-software.php | https://agsuitetech.com/PipeDrive/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite Data Backup Solution</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-data-backup-solution"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-data-backup-solution</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/addons/data-backup</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite ERP Solution Provider | ERP Software | ERP System</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-erp-solution"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-erp-solution</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/core-erp/erp | https://agsuitetech.com/netsuite-erp-solution.php | https://agsuitetech.com/oracle-netsuite-financial-management-fostering-cfo-cio-collaboration-for-strategic-success.php | https://agsuitetech.com/ERP-System.php | https://agsuitetech.com/why-should-fast-growing-companies-adopt-netsuite-financials-to-accelerate-growth | https://agsuitetech.com/netsuite-erp.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite Global Business Management Software</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/global-business-management"><Data ss:Type="String">https://www.agsuitetech.com/global-business-management</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/core-erp/global-business | https://agsuitetech.com/Global-Business-Management.php | https://agsuitetech.com/navigate-the-complexities-of-global-markets-with-netsuite-global-business-management.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite India Localization — GST, TDS &amp; Indian Compliance | AGSuite</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/solutions/addons/india-localization"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/solutions/addons/india-localization</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/addons/india-localization/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite OpenAir Software Integration</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-open-air-solution"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-open-air-solution</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/project-management/openair | https://agsuitetech.com/netsuite-open-air-solution.php | https://agsuitetech.com/netsuite-openair-management-service.php | https://agsuitetech.com/Open-Air.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite Planning and Budgeting | NetSuite Financial Services</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-planning-and-budgeting"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-planning-and-budgeting</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/planning/main</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite Pricing Calculator | AGSuite Technologies</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-calculator"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-calculator</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite-calculator/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite Shopify Connector</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/shopify-netsuite-connector"><Data ss:Type="String">https://www.agsuitetech.com/shopify-netsuite-connector</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/addons/connectors/shopify | https://agsuitetech.com/Shopify-Netsuite-Connector.php | https://agsuitetech.com/shopify-development.php | https://agsuitetech.com/discover-the-perfect-e-commerce-solution-unleash-the-benefits-of-zoho-shopify-integration-for-your-business.php | https://agsuitetech.com/reason-to-choose-Shopify.php | https://agsuitetech.com/blog/discover-the-perfect-e-commerce-solution-unleash-the-benefits-of-zoho-shopify-integration-for-your-business-2/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite Suite Commerce Site Builder | NetSuite SuiteSuccess Implementation Partner</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-suite-commerce-site-builder"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-suite-commerce-site-builder</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/ecommerce/main | https://agsuitetech.com/netsuite-suite-commerce-site-builder.php | https://agsuitetech.com/netsuite-suite-commerce-service-provider.php | https://agsuitetech.com/experience-the-power-of-netsuite-e-commerce-simplify-and-supercharge-your-online-business.php | https://agsuitetech.com/E-commerce.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Other Solutions &amp; Services</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-connector"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-connector</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/addons | https://agsuitetech.com/AGSuite-Products.php | https://agsuitetech.com/netsuite-connector.php | https://agsuitetech.com/Non-Profit.php | https://agsuitetech.com/Other-Products.php | https://agsuitetech.com/other-solutions/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Requirements &amp; Discovery</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-erp-and-crm-implementation"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-erp-and-crm-implementation</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/implementation | https://agsuitetech.com/NetSuite-ERP-&amp;-CRM-Implementation.php | https://agsuitetech.com/netsuite-implementation/ | https://agsuitetech.com/netsuite-erp-implementation-top-tips-to-ensure-success.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Service Resource Planning</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/service-resource-planning"><Data ss:Type="String">https://www.agsuitetech.com/service-resource-planning</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/project-management/srp | https://agsuitetech.com/service-resource-planning.php | https://agsuitetech.com/SRP.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Shopify</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/solutions/addons/connectors/shopify"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/solutions/addons/connectors/shopify</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/addons/connectors/shopify/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Smart Commission</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/solutions/addons/smart-commission"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/solutions/addons/smart-commission</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/addons/smart-commission/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Smart Commission App</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/smart-commission-app"><Data ss:Type="String">https://www.agsuitetech.com/smart-commission-app</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/addons/smart-commission | https://agsuitetech.com/Smart-Commission-App.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Solutions</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/solutions"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/solutions</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">SuiteScript Development</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-customization"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-customization</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/customization | https://agsuitetech.com/NetSuite-Customization.php | https://agsuitetech.com/advanced-strategies-for-customizing-netsuite-to-fit-your-business-needs.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">SuiteSuccess Implementation Partner</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-suitesuccess"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-suitesuccess</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/specialized/suitesuccess | https://agsuitetech.com/netsuite-suitesuccess.php | https://agsuitetech.com/SuiteSuccess-Business-Management-Solution.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Top NetSuite Implantation Partner in Pune | Mumbai | Bangalore - AGSuite</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite-products"><Data ss:Type="String">https://www.agsuitetech.com/netsuite-products</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions | https://agsuitetech.com/NetSuite-Products.php | https://agsuitetech.com/HCM-Human-Capital-Management.php | https://agsuitetech.com/NetSuite-Administration.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Products &amp; Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Why NetSuite: Unlock Efficiency with the #1 Cloud ERP</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/why-netsuite"><Data ss:Type="String">https://www.agsuitetech.com/why-netsuite</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/solutions/why-netsuite/main | https://agsuitetech.com/why-netsuite-is-the-ultimate-solution-for-elevating-customer-service.php | https://agsuitetech.com/why-choose-netsuite-erp-over-other-cloud-erp-platforms.php | https://agsuitetech.com/why-oracle-netsuite-for-business-management.php | https://agsuitetech.com/top-reasons-why-netsuite-is-vital-for-your-business-success.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Advanced CRM</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-crm-plus"><Data ss:Type="String">https://www.agsuitetech.com/zoho-crm-plus</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/sales/zoho-crm-plus</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Applicant Tracking</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-people-plus"><Data ss:Type="String">https://www.agsuitetech.com/zoho-people-plus</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/hr/zoho-people-plus | https://agsuitetech.com/introducing-zoho-people-plus-now-with-zoho-payrolls-uae-edition.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Applicant Tracking (ATS)</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-recruit-hiring-software"><Data ss:Type="String">https://www.agsuitetech.com/zoho-recruit-hiring-software</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/hr/zoho-recruit | https://agsuitetech.com/Zoho-Recruit-Hiring-Software.php | https://agsuitetech.com/zoho-recruit/ | https://agsuitetech.com/streamline-your-recruitment-process-on-the-go-with-zoho-recruit.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Asset Management Tools</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-creator-it-management"><Data ss:Type="String">https://www.agsuitetech.com/zoho-creator-it-management</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho-creator-it-management/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Automated Pay Runs</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-payroll"><Data ss:Type="String">https://www.agsuitetech.com/zoho-payroll</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho-payroll-finance | https://agsuitetech.com/zoho/solutions/finance/zoho-payroll | https://agsuitetech.com/zoho/solutions/hr/zoho-payroll | https://agsuitetech.com/zoho-payroll-unleashed-transforming-payroll-management-for-modern-businesses.php | https://agsuitetech.com/boosting-efficiency-integrating-zoho-payroll-with-other-business-tools.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Business Email (Mail)</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-workplace"><Data ss:Type="String">https://www.agsuitetech.com/zoho-workplace</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/email-collab/zoho-workplace</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Content Publishing</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-social-media-management"><Data ss:Type="String">https://www.agsuitetech.com/zoho-social-media-management</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/marketing/zoho-social | https://agsuitetech.com/zoho-social-media-management.php | https://agsuitetech.com/Zoho-Social.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Data Preparation</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-analytics"><Data ss:Type="String">https://www.agsuitetech.com/zoho-analytics</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/analytics/zoho-analytics</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Employee Onboarding</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-people"><Data ss:Type="String">https://www.agsuitetech.com/zoho-people</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/hr/zoho-people | https://agsuitetech.com/Zoho-People.php | https://agsuitetech.com/zoho-people-integration-connecting-hr-processes-for-seamless-operations.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Finance &amp; Accounting</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-erp"><Data ss:Type="String">https://www.agsuitetech.com/zoho-erp</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho-erp/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Fixed Asset Management Software</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/fixed-asset-management"><Data ss:Type="String">https://www.agsuitetech.com/fixed-asset-management</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/fixed-asset-management/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Invoicing</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-books-accounting-software"><Data ss:Type="String">https://www.agsuitetech.com/zoho-books-accounting-software</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/finance/zoho-books | https://agsuitetech.com/Zoho-Book.php | https://agsuitetech.com/mastering-e-invoicing-in-zoho-books-a-users-guide-to-efficient-billing.php | https://agsuitetech.com/best-practices-for-successful-tally-to-zoho-books-data-migration.php | https://agsuitetech.com/is-tally-erp-to-zoho-books-migration-worth-it.php | https://agsuitetech.com/benefits-of-transitioning-from-tally-to-zoho-books-for-your-business.php | https://agsuitetech.com/mastering-financial-control-with-zoho-books.php | https://agsuitetech.com/zoho-books/ | https://agsuitetech.com/quickbooks-to-zoho-books-migration.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Lead Management</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-crm"><Data ss:Type="String">https://www.agsuitetech.com/zoho-crm</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/sales/zoho-crm | https://agsuitetech.com/Zoho-CRM.php | https://agsuitetech.com/hubspot-vs-zoho-crm-a-comparison.php | https://agsuitetech.com/increase-productivity-with-whatsapp-zoho-crm-integration.php | https://agsuitetech.com/unlocking-seamless-integration-timelinesai-brings-whatsapp-to-zoho-crm.php | https://agsuitetech.com/the-8-key-features-of-zoho-crm-mobile-app-that-will-change-the-way-you-do-business.php | https://agsuitetech.com/a-comprehensive-guide-how-to-seamlessly-integrate-indiamart-with-zoho-crm.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Low-Code App Builder</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-creator"><Data ss:Type="String">https://www.agsuitetech.com/zoho-creator</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/dev-platforms/zoho-creator</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Marketing Automation</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-marketing-plus"><Data ss:Type="String">https://www.agsuitetech.com/zoho-marketing-plus</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/marketing/zoho-marketing-plus</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Omnichannel Journeys</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-marketing-automation"><Data ss:Type="String">https://www.agsuitetech.com/zoho-marketing-automation</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/marketing/zoho-marketing-automation</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Pipeline Management</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-bigin"><Data ss:Type="String">https://www.agsuitetech.com/zoho-bigin</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/sales/zoho-bigin | https://agsuitetech.com/zoho-bigin-or-zoho-crm-choosing-the-best-option-for-your-business.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Real-time Visitor Tracking</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-salesiq-implementation"><Data ss:Type="String">https://www.agsuitetech.com/zoho-salesiq-implementation</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho-salesiq-marketing | https://agsuitetech.com/zoho/solutions/service/zoho-sales-iq | https://agsuitetech.com/Zoho-SalesIQ.php | https://agsuitetech.com/zoho-sales-iq/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Receipt Scanning (OCR)</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-expense"><Data ss:Type="String">https://www.agsuitetech.com/zoho-expense</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho-expense-finance | https://agsuitetech.com/zoho/solutions/finance/zoho-expense | https://agsuitetech.com/zoho/solutions/hr/zoho-expense | https://agsuitetech.com/Zoho-Expense.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Secure Business Email</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-mail"><Data ss:Type="String">https://www.agsuitetech.com/zoho-mail</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/email-collab/zoho-mail</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Serverless Functions</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-catalyst"><Data ss:Type="String">https://www.agsuitetech.com/zoho-catalyst</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/dev-platforms/zoho-catalyst</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Service Desk (Servicely)</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-it-management"><Data ss:Type="String">https://www.agsuitetech.com/zoho-it-management</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/it-management/zoho-it-management</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Sprint Planning</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-sprint"><Data ss:Type="String">https://www.agsuitetech.com/zoho-sprint</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/projects/zoho-sprints</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Stock Management</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-inventory-software"><Data ss:Type="String">https://www.agsuitetech.com/zoho-inventory-software</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/finance/zoho-inventory | https://agsuitetech.com/Zoho-Inventory-Software.php | https://agsuitetech.com/Zoho-Inventory.php | https://agsuitetech.com/zoho-inventory/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Storefront Builder</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-commerce"><Data ss:Type="String">https://www.agsuitetech.com/zoho-commerce</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/marketing/zoho-commerce</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Task Management</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-projects"><Data ss:Type="String">https://www.agsuitetech.com/zoho-projects</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/projects/zoho-projects | https://agsuitetech.com/Zoho-Projects.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Ticket Management</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-desk"><Data ss:Type="String">https://www.agsuitetech.com/zoho-desk</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/service/zoho-desk | https://agsuitetech.com/Zoho-Desk.php | https://agsuitetech.com/personalizing-customer-interactions-zoho-desk-customization.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Unified CRM</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-one"><Data ss:Type="String">https://www.agsuitetech.com/zoho-one</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/it-management/zoho-one | https://agsuitetech.com/Zoho-One.php | https://agsuitetech.com/what-exactly-is-zoho-one-and-how-can-it-benefit-our-business.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Visual Page Builder</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-sites"><Data ss:Type="String">https://www.agsuitetech.com/zoho-sites</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/marketing/zoho-sites | https://agsuitetech.com/Zoho-Sites.php | https://agsuitetech.com/simple-steps-to-build-a-visually-stunning-website-with-zoho-sites.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Work Order Management</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-fsm"><Data ss:Type="String">https://www.agsuitetech.com/zoho-fsm</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/service/zoho-fsm</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Workflow Builder</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-flow"><Data ss:Type="String">https://www.agsuitetech.com/zoho-flow</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/how-to-integrate-zoho-pagesense-with-zoho-flow-a-step-by-step-guide.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Zoho Books</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho-finance-plus"><Data ss:Type="String">https://www.agsuitetech.com/zoho-finance-plus</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions/finance/zoho-finance-plus | https://agsuitetech.com/effortless-approvals-made-simple-integrating-zoho-sign-with-zoho-finance-apps.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Products &amp; Applications</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Zoho Implementation Partner | Top Zoho Partner | Best Zoho Partner | Pune | India</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/solutions"><Data ss:Type="String">https://www.agsuitetech.com/zoho/solutions</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho-products | https://agsuitetech.com/zoho-products/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">AI-Powered NetSuite for IT &amp; Professional Services Firms</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/it-and-professional-services"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/it-and-professional-services</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/it-services | https://agsuitetech.com/it-and-professional-services | https://agsuitetech.com/professional-IT-services.php | https://agsuitetech.com/professional-it-services/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Build the Future of Your Factory Floor with NetSuite</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/manufacturing"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/manufacturing</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/manufacturing | https://agsuitetech.com/Manufacturing.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Expand Your Distribution Enterprise Without Limits</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/wholesale-distribution"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/wholesale-distribution</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/wholesale | https://agsuitetech.com/wholesale-distribution | https://agsuitetech.com/Wholesale-Distribution.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Industries</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/industries"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/industries</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/industries/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Modernize &amp; Streamline Telecom Operations with Oracle NetSuite ERP</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/telecom-industry"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/telecom-industry</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/telecom | https://agsuitetech.com/telecom-industry</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite for Advertising &amp; Marketing Agencies</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/advertising-and-digital-marketing-agencies"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/advertising-and-digital-marketing-agencies</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/advertising-marketing | https://agsuitetech.com/advertising-and-digital-marketing-agencies | https://agsuitetech.com/advertising-media-and-publication.php | https://agsuitetech.com/advertising-media-publication/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite for Media &amp; Publishing Industries</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/media-and-publishing"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/media-and-publishing</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/media | https://agsuitetech.com/media-and-publishing</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite for Retail &amp; E-Commerce</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/retail-and-e-commerce"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/retail-and-e-commerce</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/retail | https://agsuitetech.com/retail-and-e-commerce | https://agsuitetech.com/e-commerceindustry.php | https://agsuitetech.com/e-commerceindustry/ | https://agsuitetech.com/Retail.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite for Software &amp; Technology Industries</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/software-and-technology"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/software-and-technology</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/software | https://agsuitetech.com/software-and-technology | https://agsuitetech.com/software-and-technology.php | https://agsuitetech.com/Software-&amp;-Professional-Services.php | https://agsuitetech.com/software-technology/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite for Transportation &amp; Logistics</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/transportation-and-logistics"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/transportation-and-logistics</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/transport | https://agsuitetech.com/transportation-and-logistics | https://agsuitetech.com/improve-customer-satisfaction-and-retention-with-oracle-netsuite-for-transportation-and-logistics.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Streamline and Elevate Finance Operations with Oracle NetSuite ERP</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/financial-services"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/financial-services</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/financial-services | https://agsuitetech.com/mergers-and-acquisitions-made-easier-why-private-equity-firms-should-use-netsuite.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Accelerate SaaS Growth with Zoho</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/software-and-technology"><Data ss:Type="String">https://www.agsuitetech.com/zoho/software-and-technology</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/software</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Build the Future of Your Factory Floor with Zoho</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/manufacturing"><Data ss:Type="String">https://www.agsuitetech.com/zoho/manufacturing</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/manufacturing/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Deliver Perfect Omnichannel Experiences with Zoho</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/retail-and-e-commerce"><Data ss:Type="String">https://www.agsuitetech.com/zoho/retail-and-e-commerce</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/retail</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Future-Proof Your Media Business with Zoho</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/media-and-publishing"><Data ss:Type="String">https://www.agsuitetech.com/zoho/media-and-publishing</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/media</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Industries</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/industries"><Data ss:Type="String">https://www.agsuitetech.com/zoho/industries</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/industries/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Maximize Billable Hours &amp; Delivery with Zoho</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/it-and-professional-services"><Data ss:Type="String">https://www.agsuitetech.com/zoho/it-and-professional-services</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/it-services</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Maximize Supply Chain Efficiency with Zoho</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/wholesale-distribution"><Data ss:Type="String">https://www.agsuitetech.com/zoho/wholesale-distribution</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/wholesale</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Modernize Financial Operations with Zoho Finance Plus</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/financial-services"><Data ss:Type="String">https://www.agsuitetech.com/zoho/financial-services</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/financial-services/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Optimize Your Fleet Operations with Zoho</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/transportation-and-logistics"><Data ss:Type="String">https://www.agsuitetech.com/zoho/transportation-and-logistics</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/transport</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Scale Your Creative Agency with Zoho</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/advertising-and-digital-marketing-agencies"><Data ss:Type="String">https://www.agsuitetech.com/zoho/advertising-and-digital-marketing-agencies</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/advertising-marketing</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Industry Solutions</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Scale Your Telecom Operations with Zoho</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/telecom-industry"><Data ss:Type="String">https://www.agsuitetech.com/zoho/telecom-industry</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/telecom</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">AGSuite Technologies: Training Services | Technical Training</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/training-services"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/training-services</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/training-services | https://agsuitetech.com/Netsuite-Training.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Email Support</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/support"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/support</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/support.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">ERP Integration</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/digital-transformation"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/digital-transformation</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/digital-transformation</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Oracle NetSuite Specialist Services</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/services"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/services</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite-services | https://agsuitetech.com/netsuite-services/ | https://agsuitetech.com/NetSuite-Services.php | https://agsuitetech.com/netsuite-services.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">SuiteScript 2.x Development</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/low-code-application-development"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/low-code-application-development</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/low-code-application-development | https://agsuitetech.com/netsuite/low-code</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Tier 1 &amp; 2 Support</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/contact-us/support"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/contact-us/support</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/contact-us/support/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Business Process Mapping</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/implementation"><Data ss:Type="String">https://www.agsuitetech.com/zoho/implementation</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/Zoho-Implementation-&amp;-Integration.php | https://agsuitetech.com/zoho-implementation/ | https://agsuitetech.com/zoho-implementation-and-integration</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Contextual Ticketing</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/service/desk"><Data ss:Type="String">https://www.agsuitetech.com/zoho/service/desk</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/service/desk/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Deluge Scripting</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/customization"><Data ss:Type="String">https://www.agsuitetech.com/zoho/customization</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/Zoho-Customization.php | https://agsuitetech.com/zoho-customisation/ | https://agsuitetech.com/zoho-customization</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Direct Ticketing</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/support"><Data ss:Type="String">https://www.agsuitetech.com/zoho/support</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/Zoho-Support.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">ERP Modernization</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/digital-transformation"><Data ss:Type="String">https://www.agsuitetech.com/zoho/digital-transformation</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/digital-transformation/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Omnichannel Support</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/service/service"><Data ss:Type="String">https://www.agsuitetech.com/zoho/service/service</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/service/service/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Role-Based Training</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/training-services"><Data ss:Type="String">https://www.agsuitetech.com/zoho/training-services</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho-training-services</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">System Health Checks</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/managed-services"><Data ss:Type="String">https://www.agsuitetech.com/zoho/managed-services</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho-support</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Zoho Creator Apps</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/low-code-application-development"><Data ss:Type="String">https://www.agsuitetech.com/zoho/low-code-application-development</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/low-code</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Zoho Specialist Services | Implementation &amp; Support | AGSuite</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/services"><Data ss:Type="String">https://www.agsuitetech.com/zoho/services</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/services/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Zoho Strategy Audit</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/consulting"><Data ss:Type="String">https://www.agsuitetech.com/zoho/consulting</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/consulting/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Services &amp; Consulting</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Zoho-to-ERP Integration</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/integration-services"><Data ss:Type="String">https://www.agsuitetech.com/zoho/integration-services</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho-integration</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Performance Landing Pages</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Best Cloud-Based CRM Software | Enterprise Sales Automation | AGSuite Technologies</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/best-cloud-based-crm"><Data ss:Type="String">https://www.agsuitetech.com/best-cloud-based-crm</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/best-cloud-based-crm/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Performance Landing Pages</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Best Cloud-Based ERP Software | Oracle NetSuite Implementation Partner - AGSuite</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/best-cloud-based-erp-software"><Data ss:Type="String">https://www.agsuitetech.com/best-cloud-based-erp-software</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/best-cloud-based-erp-software/index.php | https://agsuitetech.com/best-cloud-based-erp-software/index.php/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Performance Landing Pages</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Thankyou</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/best-cloud-based-erp-software/free-consultation/thankyou"><Data ss:Type="String">https://www.agsuitetech.com/best-cloud-based-erp-software/free-consultation/thankyou</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/best-cloud-based-erp-software/free-consultation/thankyou/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">About AGSuite Technologies | NetSuite Partner</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/about-us"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/about-us</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/about-us | https://agsuitetech.com/about-us.php | https://agsuitetech.com/about.php | https://agsuitetech.com/Social-Impact.php | https://agsuitetech.com/Referral-Partner-Program.php | https://agsuitetech.com/Alliance-Partner-Program.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Ask Anything. Get Clarity</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/next-ai"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/next-ai</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/next-ai/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Awards Achievements</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/insights/awards-achievements"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/insights/awards-achievements</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/oracle-NetSuite-emerging-solution-provider-west-award.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Blogs</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/insights/blogs"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/insights/blogs</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/insights/blogs/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Case Studies</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/insights/case-studies"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/insights/case-studies</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/insights/case-studies/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Discovery &amp; Gap Analysis</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/free-consultation"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/free-consultation</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/Free-Consultation-Now.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Events</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/insights/events"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/insights/events</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/events.php | https://agsuitetech.com/News.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Founder &amp; CEO</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/life-at-agsuite"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/life-at-agsuite</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/life-at-agsuite/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite Blogs &amp; Insights | AGSuite Technologies</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/blogs"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/blogs</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/Blog-News.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite Case Studies | AGSuite Technologies</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/case-studies"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/case-studies</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/customer-testimonials.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite Contact us Form Enquiry</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/contact"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/contact</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/contact | https://agsuitetech.com/contact-us | https://agsuitetech.com/contact-us.php | https://agsuitetech.com/contact.php | https://agsuitetech.com/contact.php | https://agsuitetech.com/contact-us</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite Insights &amp; Resources | AGSuite Technologies</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/insights"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/insights</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/New-Feeds.php | https://agsuitetech.com/whitepapers.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">NetSuite Solutions Consultant - Presales</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/careers"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/careers</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/careers | https://agsuitetech.com/careers.php | https://agsuitetech.com/jobs/e-commerce-manager/ | https://agsuitetech.com/jobs/seo-specialist/ | https://agsuitetech.com/jobs/data-analyst/ | https://agsuitetech.com/jobs/netsuite-sales-executive | https://agsuitetech.com/jobs/netsuite-sca-developer | https://agsuitetech.com/jobs/netsuite-techno-functional-consultant | https://agsuitetech.com/jobs/business-development-manager | https://agsuitetech.com/jobs/netsuite-technical-consultant | https://agsuitetech.com/jobs/netsuite-functional-consultant | https://agsuitetech.com/jobs/netsuite-developer | https://agsuitetech.com/jobs/netsuite-technical-lead-2</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Our Offices</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/our-offices"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/our-offices</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/our-offices/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Post Not Found | AGSuite</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/blogs/sample-post"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/blogs/sample-post</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/blogs/sample-post/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Requirement Audit</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/request-quote"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/request-quote</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/quote-now.php | https://agsuitetech.com/request-a-quote</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">NetSuite Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Studio</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite/studio/studio"><Data ss:Type="String">https://www.agsuitetech.com/netsuite/studio/studio</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/netsuite/studio/studio/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">About AGSuite Technologies | Zoho Premium Partner</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/about-us"><Data ss:Type="String">https://www.agsuitetech.com/zoho/about-us</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/about-us/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Awards Achievements</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/insights/awards-achievements"><Data ss:Type="String">https://www.agsuitetech.com/zoho/insights/awards-achievements</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/insights/awards-achievements/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Blogs</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/insights/blogs"><Data ss:Type="String">https://www.agsuitetech.com/zoho/insights/blogs</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/insights/blogs/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Careers</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/contact/careers"><Data ss:Type="String">https://www.agsuitetech.com/zoho/contact/careers</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/contact/careers/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Case Studies</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/insights/case-studies"><Data ss:Type="String">https://www.agsuitetech.com/zoho/insights/case-studies</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/insights/case-studies/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Email Marketing</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/marketing/campaigns"><Data ss:Type="String">https://www.agsuitetech.com/zoho/marketing/campaigns</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/marketing/campaigns/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Events</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/insights/events"><Data ss:Type="String">https://www.agsuitetech.com/zoho/insights/events</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/insights/events/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Founder &amp; CEO</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/life-at-agsuite"><Data ss:Type="String">https://www.agsuitetech.com/zoho/life-at-agsuite</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/life-at-agsuite/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Free Consultation</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/contact/free-consultation"><Data ss:Type="String">https://www.agsuitetech.com/zoho/contact/free-consultation</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/contact/free-consultation/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Operational Audit</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/free-consultation"><Data ss:Type="String">https://www.agsuitetech.com/zoho/free-consultation</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/free-consultation/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Our Offices</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/our-offices"><Data ss:Type="String">https://www.agsuitetech.com/zoho/our-offices</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/our-offices/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Post Not Found | AGSuite</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/blogs/sample-post"><Data ss:Type="String">https://www.agsuitetech.com/zoho/blogs/sample-post</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/blogs/sample-post/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Request Quote</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/contact/request-quote"><Data ss:Type="String">https://www.agsuitetech.com/zoho/contact/request-quote</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/contact/request-quote/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Scope Analysis</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/request-quote"><Data ss:Type="String">https://www.agsuitetech.com/zoho/request-quote</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/request-quote/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Studio</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/studio/studio"><Data ss:Type="String">https://www.agsuitetech.com/zoho/studio/studio</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/studio/studio/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Support</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/contact/support"><Data ss:Type="String">https://www.agsuitetech.com/zoho/contact/support</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/contact/support/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Survey Creator</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/marketing/survey"><Data ss:Type="String">https://www.agsuitetech.com/zoho/marketing/survey</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/marketing/survey/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Zoho Blogs &amp; Insights | AGSuite Technologies</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/blogs"><Data ss:Type="String">https://www.agsuitetech.com/zoho/blogs</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/blogs/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Zoho Case Studies | AGSuite Technologies</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/case-studies"><Data ss:Type="String">https://www.agsuitetech.com/zoho/case-studies</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/case-studies/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Zoho Contact us Form Enquiry</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/contact"><Data ss:Type="String">https://www.agsuitetech.com/zoho/contact</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/contact/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Zoho Functional Consultant</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/careers"><Data ss:Type="String">https://www.agsuitetech.com/zoho/careers</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/jobs/zoho-sales-executive | https://agsuitetech.com/jobs/zoho-functional-consultant | https://agsuitetech.com/jobs/zoho-developer</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Zoho Company &amp; Insights</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Zoho Insights &amp; Resources | AGSuite Technologies</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho/insights"><Data ss:Type="String">https://www.agsuitetech.com/zoho/insights</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/insights/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Legal &amp; System Pages</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Cookie Policy</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/cookie-policy"><Data ss:Type="String">https://www.agsuitetech.com/cookie-policy</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/cookie-policy/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Legal &amp; System Pages</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Maintenance</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/maintenance"><Data ss:Type="String">https://www.agsuitetech.com/maintenance</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/maintenance/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Legal &amp; System Pages</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Privacy Policy</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/privacy-policy"><Data ss:Type="String">https://www.agsuitetech.com/privacy-policy</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/privacy-policy.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Legal &amp; System Pages</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Terms Conditions</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/terms-conditions"><Data ss:Type="String">https://www.agsuitetech.com/terms-conditions</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/terms-and-conditions.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Legal &amp; System Pages</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Thank You</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/thank-you"><Data ss:Type="String">https://www.agsuitetech.com/thank-you</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/contact-us/thank-you.php | https://agsuitetech.com/free-consultation-now/thankyou.php | https://agsuitetech.com/thankyou.php | https://agsuitetech.com/careers/thankyou.php | https://agsuitetech.com/careers/thank-you.php | https://agsuitetech.com/free-consultation-now/thank-you.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Legal &amp; System Pages</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Thankyou</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/free-consultation/thankyou"><Data ss:Type="String">https://www.agsuitetech.com/free-consultation/thankyou</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/free-consultation/thankyou/</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Other Website Pages</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Oracle NetSuite ERP Solutions | AGSuite Technologies</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/netsuite"><Data ss:Type="String">https://www.agsuitetech.com/netsuite</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/default-page | https://agsuitetech.com/default-page.php | https://agsuitetech.com/demo | https://agsuitetech.com/demo.php | https://agsuitetech.com/FAQ.php | https://agsuitetech.com/Downloads.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+
+      <Row ss:AutoFitHeight="1">
+        <Cell ss:StyleID="DataSection"><Data ss:Type="String">Other Website Pages</Data></Cell>
+        <Cell ss:StyleID="DataBold"><Data ss:Type="String">Zoho Solutions | CRM, HR, Finance &amp; Automation | AGSuite</Data></Cell>
+        <Cell ss:StyleID="DataLink" ss:HRef="https://www.agsuitetech.com/zoho"><Data ss:Type="String">https://www.agsuitetech.com/zoho</Data></Cell>
+        <Cell ss:StyleID="DataOldLink"><Data ss:Type="String">https://agsuitetech.com/zoho/solutions | https://agsuitetech.com/Zoho-Products.php | https://agsuitetech.com/Zoho-Services.php | https://agsuitetech.com/zoho-customer-testimonials.php | https://agsuitetech.com/zoho-customer-list.php | https://agsuitetech.com/zoho-case-studies.php | https://agsuitetech.com/zoho-releases.php | https://agsuitetech.com/zoho-authorized-partner/ | https://agsuitetech.com/zoho-improvement-and-latest-features.php | https://agsuitetech.com/announcement-unused-formula-fields-are-no-longer-computed.php</Data></Cell>
+        <Cell ss:StyleID="DataStatus"><Data ss:Type="String">Live Public Page</Data></Cell>
+      </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Layout x:Orientation="Landscape"/>
+   </PageSetup>
+   <FitToPage/>
+   <Print>
+    <ValidPrinterInfo/>
+    <FitWidth>1</FitWidth>
+    <FitHeight>0</FitHeight>
+   </Print>
+   <Selected/>
+   <FreezePanes/>
+   <FrozenNoSplit/>
+   <SplitHorizontal>1</SplitHorizontal>
+   <TopRowBottomPane>1</TopRowBottomPane>
+   <ActivePane>2</ActivePane>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

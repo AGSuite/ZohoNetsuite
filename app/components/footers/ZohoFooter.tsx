@@ -188,7 +188,7 @@ export default function ZohoFooter() {
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-800 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-gray-500 text-sm text-center md:text-left">
+                        <p className="text-gray-500 text-sm text-center md:text-left" suppressHydrationWarning>
                             Copyright © {new Date().getFullYear()} AGSuite Technologies Pvt. Ltd. All rights reserved.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">

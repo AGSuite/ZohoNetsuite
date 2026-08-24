@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import NavbarNetSuite from "./components/NSNavbar";
-const NetSuiteFooter = dynamic(() => import("../components/footers/NetSuiteFooter"));
+import NetSuiteFooter from "../components/footers/NetSuiteFooter";
 
 export const metadata: Metadata = {
   title: "NetSuite Solutions - Enterprise ERP & CRM",
