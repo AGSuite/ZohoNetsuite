@@ -304,11 +304,11 @@ function WhoWeAreSection() {
           <div className="relative w-full max-w-[900px]">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/aboutus/zohodoor.jpg"
-                alt="AGSuite Technologies Team"
+                src="/images/aboutus/zoho_partner_office_wall.jpg"
+                alt="AGSuite Zoho Premium Partner"
                 width={1400}
                 height={900}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover rounded-3xl"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

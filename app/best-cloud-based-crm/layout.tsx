@@ -68,20 +68,6 @@ export default function BestCloudBasedCrmLayout({
 
       {children}
 
-      {/* Google Ads */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=AW-10876325873"
-        strategy="lazyOnload"
-      />
-      <Script id="google-ads-init" strategy="lazyOnload">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-10876325873');
-        `}
-      </Script>
-
       {/* Zoho SalesIQ */}
       <Script
         id="zsiqchat"

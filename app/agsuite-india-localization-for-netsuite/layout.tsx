@@ -59,20 +59,6 @@ export default function IndiaLocalizationLayout({
 
       {children}
 
-      {/* Google Ads */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=AW-10876325873"
-        strategy="afterInteractive"
-      />
-      <Script id="google-ads-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-10876325873');
-        `}
-      </Script>
-
       {/* Zoho SalesIQ */}
       <Script id="zsiqchat" strategy="lazyOnload">
         {`
