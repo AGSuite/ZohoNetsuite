@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, useSpring, useTransform, animate, useMotionValue } from "framer-motion";
+import { motion, useTransform, animate, useMotionValue } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
@@ -14,18 +14,16 @@ import {
   Globe,
   Globe2,
   CheckCircle,
-  ChevronRight,
   Building2,
   Send,
   Briefcase,
-  HelpCircle,
   Target,
   Users,
-  UserCog,
-  Heart,
   Rocket,
 } from "lucide-react";
 import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
+import IntlTelInput from "@intl-tel-input/react/with-utils";
+import "intl-tel-input/styles";
 
 function StatCard({ item, index }: { item: any; index: number }) {
   const numericValue = parseInt(item.value.replace(/\D/g, "")) || 0;
@@ -57,30 +55,30 @@ function StatCard({ item, index }: { item: any; index: number }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{
-        scale: 1.05,
-        rotateY: 10,
-        rotateX: -5,
-        transition: { duration: 0.4, ease: "easeOut" },
+        scale: 1.03,
+        rotateY: 6,
+        rotateX: -3,
+        transition: { duration: 0.3, ease: "easeOut" },
       }}
       transition={{ delay: 0.4 + index * 0.1 }}
       style={{ perspective: 1000 }}
-      className="relative group p-6 rounded-[2rem] bg-gradient-to-br from-white via-white/95 to-blue-50 border border-blue-100/50 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 overflow-hidden"
+      className="relative group p-4 rounded-xl bg-gradient-to-br from-white via-white/95 to-blue-50/90 border border-blue-100/60 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-500 overflow-hidden"
     >
       {/* Decorative faint icon bg */}
-      <div className="absolute -right-4 -bottom-4 opacity-[0.25] group-hover:opacity-[0.45] transition-all duration-500 pointer-events-none">
-        <item.icon className="w-24 h-24 text-blue-900" strokeWidth={1} />
+      <div className="absolute -right-2 -bottom-2 opacity-[0.18] group-hover:opacity-[0.32] transition-all duration-500 pointer-events-none">
+        <item.icon className="w-16 h-16 text-blue-900" strokeWidth={1} />
       </div>
 
       <div className="relative z-10 flex flex-col items-start text-left">
-        <div className="mb-5 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
-          <item.icon className="w-6 h-6 font-bold" strokeWidth={1.5} />
+        <div className="mb-2.5 w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-xs">
+          <item.icon className="w-4 h-4" strokeWidth={1.5} />
         </div>
         <div className="space-y-1">
-          <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-blue-900 to-black tracking-tight">
+          <div className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#000d2e] via-blue-900 to-black tracking-tight leading-tight">
             {displayCount}
             {suffix}
           </div>
-          <p className="text-gray-500 font-semibold text-[10px] group-hover:text-blue-700 transition-colors uppercase tracking-widest leading-tight">
+          <p className="text-gray-500 font-semibold text-[11px] group-hover:text-blue-700 transition-colors uppercase tracking-wider leading-tight">
             {item.label}
           </p>
         </div>
@@ -193,12 +191,16 @@ const PARTICLES = [
   { w: 2, h: 2, top: 75, left: 88, dur: 4.8, delay: 2.0 },
   { w: 1, h: 1, top: 40, left: 42, dur: 3.5, delay: 0.5 },
   { w: 2.5, h: 2.5, top: 85, left: 30, dur: 5.5, delay: 1.5 },
+  { w: 1.5, h: 1.5, top: 18, left: 55, dur: 4.0, delay: 0.9 },
+  { w: 2, h: 2, top: 62, left: 76, dur: 5.3, delay: 0.2 },
 ];
 
 export default function ZohoContactPage() {
+  const [submitted, setSubmitted] = useState(false);
   const [locationFilter, setLocationFilter] = useState<Region>("All");
   const [isClient, setIsClient] = useState(false);
-
+  const [mobile, setMobile] = useState("");
+  const [isMobileValid, setIsMobileValid] = useState(false);
   const [returnUrl, setReturnUrl] = useState('https://www.agsuite.tech/thank-you');
 
   useEffect(() => {
@@ -208,108 +210,158 @@ export default function ZohoContactPage() {
     }
 
     (window as any).addAriaSelected409531000047791049 = function (event: any) {
-        const optionElem = (event as any).target;
-        const prev = optionElem.querySelector('[aria-selected=true]');
-        if (prev) prev.removeAttribute('aria-selected');
-        optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
+      const optionElem = (event as any).target;
+      const prev = optionElem.querySelector('[aria-selected=true]');
+      if (prev) prev.removeAttribute('aria-selected');
+      optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
     };
 
     (window as any).validateEmail409531000047791049 = function () {
-        const form = document.forms.namedItem('WebToLeads409531000047791049') as HTMLFormElement;
-        if (!form) return true;
-        const emailFld = form.querySelectorAll('[data-ftype="email"]');
-        for (let i = 0; i < emailFld.length; i++) {
-            const emailVal = (emailFld[i] as HTMLInputElement).value;
-            if ((emailVal.replace(/^\s+|\s+$/g, '')).length !== 0) {
-                const atpos = emailVal.indexOf('@');
-                const dotpos = emailVal.lastIndexOf('.');
-                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
-                    alert('Please enter a valid email address.');
-                    (emailFld[i] as HTMLInputElement).focus();
-                    return false;
-                }
-            }
+      const form = document.forms.namedItem('WebToLeads409531000047791049') as HTMLFormElement;
+      if (!form) return true;
+      const emailFld = form.querySelectorAll('[data-ftype="email"]');
+      for (let i = 0; i < emailFld.length; i++) {
+        const emailVal = (emailFld[i] as HTMLInputElement).value;
+        if ((emailVal.replace(/^\s+|\s+$/g, '')).length !== 0) {
+          const atpos = emailVal.indexOf('@');
+          const dotpos = emailVal.lastIndexOf('.');
+          if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+            alert('Please enter a valid email address.');
+            (emailFld[i] as HTMLInputElement).focus();
+            return false;
+          }
         }
-        return true;
+      }
+      return true;
     };
 
     (window as any).rccallback409531000047791049 = function () {
-        const recap = document.getElementById('recap409531000047791049');
-        if (recap) recap.setAttribute('captcha-verified', 'true');
-        const recapErr = document.getElementById('recapErr409531000047791049');
-        if (recapErr && recapErr.style.visibility === 'visible') {
-            recapErr.style.visibility = 'hidden';
-        }
+      const recap = document.getElementById('recap409531000047791049');
+      if (recap) recap.setAttribute('captcha-verified', 'true');
+      const recapErr = document.getElementById('recapErr409531000047791049');
+      if (recapErr && recapErr.style.visibility === 'visible') {
+        recapErr.style.visibility = 'hidden';
+      }
     };
 
     (window as any).reCaptchaAlert409531000047791049 = function () {
-        const recap = document.getElementById('recap409531000047791049');
-        if (recap && recap.getAttribute('captcha-verified') === 'false') {
-            const recapErr = document.getElementById('recapErr409531000047791049');
-            if (recapErr) recapErr.style.visibility = 'visible';
-            return false;
-        }
-        return true;
+      const recap = document.getElementById('recap409531000047791049');
+      if (recap && recap.getAttribute('captcha-verified') === 'false') {
+        const recapErr = document.getElementById('recapErr409531000047791049');
+        if (recapErr) recapErr.style.visibility = 'visible';
+        return false;
+      }
+      return true;
     };
 
     (window as any).checkMandatory409531000047791049 = function () {
-        const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF165'];
-        const fldLangVal = ['Company Name', 'Name', 'Role', "POC's Email", "POC's Mobile", 'Annual Revenue', 'How We Can Help You', 'Services'];
-        const form = document.forms.namedItem('WebToLeads409531000047791049') as HTMLFormElement;
-        if (!form) return false;
+      const mndFileds = ['Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF165'];
+      const fldLangVal = ['Company Name', 'Name', 'Role', "POC's Email", "POC's Mobile", 'Annual Revenue', 'How We Can Help You', 'Services'];
+      const form = document.forms.namedItem('WebToLeads409531000047791049') as HTMLFormElement;
+      if (!form) return false;
 
-        for (let i = 0; i < mndFileds.length; i++) {
-            const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
-            if (fieldObj) {
-                if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length === 0) {
-                    alert(fldLangVal[i] + ' cannot be empty.');
-                    fieldObj.focus();
-                    return false;
-                } else if (fieldObj.nodeName === 'SELECT') {
-                    const selectField = fieldObj as HTMLSelectElement;
-                    if (selectField.options[selectField.selectedIndex].value === '' || selectField.options[selectField.selectedIndex].value === '-None-') {
-                        alert(fldLangVal[i] + ' cannot be none.');
-                        fieldObj.focus();
-                        return false;
-                    }
-                }
+      for (let i = 0; i < mndFileds.length; i++) {
+        const fieldObj = form.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+        if (fieldObj) {
+          if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length === 0) {
+            alert(fldLangVal[i] + ' cannot be empty.');
+            fieldObj.focus();
+            return false;
+          } else if (fieldObj.nodeName === 'SELECT') {
+            const selectField = fieldObj as HTMLSelectElement;
+            if (selectField.options[selectField.selectedIndex].value === '' || selectField.options[selectField.selectedIndex].value === '-None-') {
+              alert(fldLangVal[i] + ' cannot be none.');
+              fieldObj.focus();
+              return false;
             }
+          }
         }
-        if ((window as any).validateEmail409531000047791049 && !(window as any).validateEmail409531000047791049()) return false;
-        if ((window as any).reCaptchaAlert409531000047791049 && !(window as any).reCaptchaAlert409531000047791049()) return false;
-        return true;
+      }
+      if ((window as any).validateEmail409531000047791049 && !(window as any).validateEmail409531000047791049()) return false;
+      if ((window as any).reCaptchaAlert409531000047791049 && !(window as any).reCaptchaAlert409531000047791049()) return false;
+      return true;
     };
 
-    // Bulletproof instant reCAPTCHA renderer
     const renderRecaptcha = () => {
-        const container = document.getElementById('recap409531000047791049');
-        if (container && container.children.length === 0 && (window as any).grecaptcha && (window as any).grecaptcha.render) {
-            try {
-                (window as any).grecaptcha.render(container, {
-                    sitekey: '6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7',
-                    theme: 'light',
-                    callback: (window as any).rccallback409531000047791049
-                });
-            } catch (e) {}
-        }
+      const container = document.getElementById('recap409531000047791049');
+      if (container && container.children.length === 0 && (window as any).grecaptcha && (window as any).grecaptcha.render) {
+        try {
+          (window as any).grecaptcha.render(container, {
+            sitekey: '6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7',
+            theme: 'light',
+            callback: (window as any).rccallback409531000047791049
+          });
+        } catch (e) { }
+      }
     };
 
     let attempts = 0;
     const interval = setInterval(() => {
-        attempts++;
-        const container = document.getElementById('recap409531000047791049');
-        if (container && container.children.length > 0) {
-            clearInterval(interval);
-            return;
-        }
-        if ((window as any).grecaptcha && (window as any).grecaptcha.render) {
-            renderRecaptcha();
-        }
-        if (attempts > 60) clearInterval(interval);
+      attempts++;
+      const container = document.getElementById('recap409531000047791049');
+      if (container && container.children.length > 0) {
+        clearInterval(interval);
+        return;
+      }
+      if ((window as any).grecaptcha && (window as any).grecaptcha.render) {
+        renderRecaptcha();
+      }
+      if (attempts > 60) clearInterval(interval);
     }, 100);
 
     return () => clearInterval(interval);
   }, []);
+
+  const sendEmail = async (form: HTMLFormElement) => {
+    const formData = new FormData(form);
+    fetch('/api/contact/zoho-notification', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: formData.get('Last Name'),
+        email: formData.get('Email'),
+        mobile: formData.get('Mobile'),
+        role: formData.get('Designation'),
+        company: formData.get('Company'),
+        services: formData.getAll('LEADCF165'),
+        revenue: formData.get('LEADCF19'),
+        hearAbout: formData.get('LEADCF127'),
+        message: formData.get('LEADCF123'),
+        subjectTitle: 'Zoho Contact us Form Enquiry'
+      })
+    }).catch(() => { });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    if ((window as any).checkMandatory409531000047791049 && !(window as any).checkMandatory409531000047791049()) {
+      e.preventDefault();
+      return;
+    }
+
+    try {
+      // @ts-ignore
+      if (window.$zoho && window.$zoho.salesiq) {
+        const form = e.currentTarget;
+        const LDTuvidObj = form.elements.namedItem('LDTuvid') as HTMLInputElement;
+        if (LDTuvidObj) {
+          // @ts-ignore
+          LDTuvidObj.value = window.$zoho.salesiq.visitor.uniqueid();
+        }
+        const nameObj = form.elements.namedItem('Last Name') as HTMLInputElement;
+        const emailObj = form.elements.namedItem('Email') as HTMLInputElement;
+        if (nameObj) {
+          // @ts-ignore
+          window.$zoho.salesiq.visitor.name(nameObj.value);
+        }
+        if (emailObj) {
+          // @ts-ignore
+          window.$zoho.salesiq.visitor.email(emailObj.value);
+        }
+      }
+    } catch (err) { }
+
+    await sendEmail(e.currentTarget);
+  };
 
   if (!isClient) return null;
 
@@ -317,84 +369,90 @@ export default function ZohoContactPage() {
     <div className="min-h-screen bg-white selection:bg-blue-900 selection:text-white">
 
       {/* ── Hero / Form Section ─────────────────────────────────────────────── */}
-      <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d] flex items-center">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[radial-gradient(ellipse_90%_90%_at_50%_-15%,rgba(14,165,233,0.28),rgba(0,8,20,0.98)_70%),linear-gradient(135deg,#000814_0%,#000d2e_50%,#001a4d_100%)]">
 
-        {/* Grid lines */}
+        {/* Square Grid Pattern Lines */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
-            backgroundSize: "70px 70px",
+            backgroundImage: `
+              linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px)
+            `,
+            backgroundSize: "48px 48px",
+            maskImage: "radial-gradient(ellipse at 50% 45%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.1) 75%, transparent 100%)",
+            WebkitMaskImage: "radial-gradient(ellipse at 50% 45%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.1) 75%, transparent 100%)",
           }}
         />
 
-        {/* Glow blobs */}
-        <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-blue-600/15 rounded-full blur-[140px] -translate-x-1/3 -translate-y-1/4 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4 pointer-events-none" />
-        <div className="absolute bottom-0 left-1/2 w-[800px] h-[400px] bg-cyan-700/10 rounded-full blur-[150px] -translate-x-1/2 translate-y-1/3 pointer-events-none" />
+        {/* Gradient Glow Blobs */}
+        <div className="absolute -top-24 -left-24 w-[650px] h-[650px] bg-gradient-to-br from-blue-600/35 via-cyan-400/25 to-transparent rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 right-0 w-[550px] h-[550px] bg-gradient-to-bl from-indigo-600/30 via-purple-600/20 to-cyan-500/20 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute -bottom-20 left-1/3 w-[700px] h-[400px] bg-gradient-to-tr from-cyan-600/30 via-blue-600/25 to-indigo-700/25 rounded-full blur-[140px] pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-16 pb-10">
+        {/* Floating particles */}
+        {PARTICLES.map((p, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-blue-400/40 pointer-events-none"
+            style={{ width: p.w, height: p.h, top: `${p.top}%`, left: `${p.left}%` }}
+            animate={{ y: [0, -22, 0], opacity: [0.25, 0.9, 0.25] }}
+            transition={{ duration: p.dur, repeat: Infinity, ease: "easeInOut", delay: p.delay }}
+          />
+        ))}
 
-          {/* Breadcrumb */}
-          <motion.nav
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-2 text-sm font-medium mb-8"
-          >
-            <Link href="/zoho" className="text-blue-300 hover:text-white transition-colors">Home</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/60">Contact</span>
-          </motion.nav>
+        {/* Content Grid */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 w-full py-20 lg:py-24">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
 
-          <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-start">
-
-            {/* ── LEFT: Headline + Info ─────────────────────────────────────── */}
+            {/* ── LEFT: Hero Content ────────────────────────────────────────── */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="flex flex-col gap-6 lg:sticky lg:top-32"
+              className="flex flex-col justify-between pt-8"
             >
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
-                Transform Your Business with{" "}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-indigo-300 to-cyan-200">
-                  Zoho
-                </span>
-              </h1>
+              {/* H1 */}
+              <div>
+                <h1 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[48px] font-semibold text-white leading-tight tracking-tight mb-3">
+                  Transform Your Business with{" "}
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300">
+                    Zoho
+                  </span>
+                </h1>
 
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: 80 }}
-                transition={{ delay: 0.5, duration: 0.7 }}
-                className="h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"
-              />
+                {/* Divider */}
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: 72 }}
+                  transition={{ delay: 0.5, duration: 0.7 }}
+                  className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mb-4"
+                />
 
-              <div className="space-y-4">
-                <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-lg">
+                {/* Subline */}
+                <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-md mb-5">
                   Bridge the gap between vision and execution. Partner with certified Zoho experts to build a resilient, unified, and data-driven enterprise.
                 </p>
+
+                {/* Partner Logo */}
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="mb-5"
+                >
+                  <Image
+                    src="/images/zoho-logos/zoho premium.png"
+                    alt="Zoho Premium Partner"
+                    width={220}
+                    height={64}
+                    className="h-14 w-auto object-contain"
+                  />
+                </motion.div>
               </div>
 
-              {/* Partner Logo */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="mt-4 mb-2"
-              >
-                <Image
-                  src="/images/zoho-logos/zoho premium.png"
-                  alt="Zoho Premium Partner"
-                  width={220}
-                  height={70}
-                  className="h-16 object-contain"
-                  style={{ width: 'auto' }}
-                />
-              </motion.div>
-
-              {/* Consultation Metrics Cards (Synced from About Us) */}
-              <div className="mt-2 grid grid-cols-2 gap-4 sm:gap-5">
+              {/* Stat Cards — 3 columns */}
+              <div className="grid grid-cols-3 gap-3">
                 {[
                   { label: "Projects Completed", value: "700+", icon: Briefcase },
                   { label: "Global Customers", value: "250+", icon: Building2 },
@@ -408,192 +466,306 @@ export default function ZohoContactPage() {
               </div>
             </motion.div>
 
-            {/* ── RIGHT: Form (PERFECT NETSUITE MIRROR) ──────────────────────── */}
+            {/* ── RIGHT: Contact Form ────────────────────────────────────────── */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              className="w-full relative"
             >
-              <div className="relative bg-white rounded-3xl shadow-[0_32px_80px_rgba(0,0,0,0.5)] overflow-hidden">
-                <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600" />
+              {/* Ambient Glow Behind Form */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/30 via-cyan-400/25 to-indigo-600/30 rounded-3xl blur-xl -z-10 pointer-events-none" />
 
-                <div className="relative z-10 p-5 sm:p-6 lg:p-7">
-                  <div className="mb-4">
-                    <h2 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">Accelerate your growth with zoho</h2>
-                  </div>
+              <div className="relative bg-white p-6 sm:p-7 rounded-2xl border border-blue-100/80 shadow-[0_20px_50px_-10px_rgba(37,99,235,0.25),0_10px_25px_-5px_rgba(6,182,212,0.18),0_30px_70px_rgba(0,0,0,0.35)] overflow-hidden w-full">
+                {/* Top Accent Bar */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-600 z-20" />
 
-                  <form
-                    action="https://crm.zoho.in/crm/WebToLeadForm"
-                    id="webform409531000047791049"
-                    name="WebToLeads409531000047791049"
-                    method="POST"
-                    onSubmit={(e) => {
-                      if ((window as any).checkMandatory409531000047791049 && !(window as any).checkMandatory409531000047791049()) {
-                        e.preventDefault();
-                        return;
-                      }
-                      const targetForm = e.currentTarget;
-                      const formData = new FormData(targetForm);
-                      fetch('/api/contact/zoho-notification', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                          name: formData.get('Last Name'),
-                          email: formData.get('Email'),
-                          mobile: formData.get('Mobile'),
-                          role: formData.get('Designation'),
-                          company: formData.get('Company'),
-                          services: formData.getAll('LEADCF165'),
-                          revenue: formData.get('LEADCF19'),
-                          hearAbout: formData.get('LEADCF127'),
-                          message: formData.get('LEADCF123'),
-                          subjectTitle: 'Zoho Contact us Form Enquiry'
-                        })
-                      }).catch(() => {});
-                    }}
-                    acceptCharset="UTF-8"
-                    className="space-y-5"
-                  >
-                    <input type="text" className="hidden" name="xnQsjsdp" value="67860b2429a550e35c7c44282b3ccd5de42dee7cf8fadbbd5b2f0246e4e596a8" readOnly />
-                    <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-                    <input type="text" className="hidden" name="xmIwtLD" value="921e163c506154d37a6252eba6666b0ab6a5878005e7d9cb1bf24e8009451307593cbebb06b6266e387cfba4816aa5de" readOnly />
-                    <input type="text" className="hidden" name="actionType" value="TGVhZHM=" readOnly />
-                    <input type="text" className="hidden" name="returnURL" value={returnUrl} readOnly />
-                    <input type="text" className="hidden" name="aG9uZXlwb3Q" value="" readOnly />
+                <div className="relative z-10 pt-1">
+                  <h2 className="text-xl sm:text-2xl font-extrabold bg-gradient-to-r from-blue-700 via-indigo-700 to-cyan-600 bg-clip-text text-transparent tracking-tight mb-3">
+                    Talk to a Zoho Expert
+                  </h2>
 
-                    {/* Hidden default fields required by Zoho */}
-                    <select name="Lead Status" className="hidden" defaultValue="Database">
-                      <option value="Database">Database</option>
-                    </select>
-                    <select name="Lead Source" className="hidden" defaultValue="Website (Form)">
-                      <option value="Website (Form)">Website (Form)</option>
-                    </select>
-                    <input type="hidden" name="No of Employees" value="0" />
-
-                    {/* Name Row */}
-                    <div className="grid grid-cols-1 sm:grid-cols-1 gap-5">
-                      <div>
-                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Name *</label>
-                        <input type="text" id="Last_Name" name="Last Name" required maxLength={80} placeholder="John Doe" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                  {submitted ? (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="flex flex-col items-center justify-center py-12 text-center gap-3"
+                    >
+                      <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center">
+                        <CheckCircle className="w-7 h-7 text-green-600" />
                       </div>
-                    </div>
+                      <h3 className="text-lg font-bold text-gray-900">Message Sent!</h3>
+                      <p className="text-xs text-gray-500 max-w-xs">Thank you for reaching out. Our certified Zoho experts will connect with you within 24 hours.</p>
+                    </motion.div>
+                  ) : (
+                    <form
+                      action="https://crm.zoho.in/crm/WebToLeadForm"
+                      id="webform409531000047791049"
+                      name="WebToLeads409531000047791049"
+                      method="POST"
+                      onSubmit={handleSubmit}
+                      acceptCharset="UTF-8"
+                      className="space-y-3"
+                    >
+                      <input type="text" className="hidden" name="xnQsjsdp" value="67860b2429a550e35c7c44282b3ccd5de42dee7cf8fadbbd5b2f0246e4e596a8" readOnly />
+                      <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+                      <input type="text" className="hidden" name="xmIwtLD" value="921e163c506154d37a6252eba6666b0ab6a5878005e7d9cb1bf24e8009451307593cbebb06b6266e387cfba4816aa5de" readOnly />
+                      <input type="text" className="hidden" name="actionType" value="TGVhZHM=" readOnly />
+                      <input type="text" className="hidden" name="returnURL" value={returnUrl} readOnly />
+                      <input type="text" className="hidden" name="aG9uZXlwb3Q" value="" readOnly />
+                      <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
 
-                    {/* Business Email Row */}
-                    <div>
-                      <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Email *</label>
-                      <input type="text" id="Email" data-ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
-                    </div>
+                      <select name="Lead Status" className="hidden" defaultValue="Database">
+                        <option value="Database">Database</option>
+                      </select>
+                      <select name="Lead Source" className="hidden" defaultValue="Website (Form)">
+                        <option value="Website (Form)">Website (Form)</option>
+                      </select>
+                      <input type="hidden" name="No of Employees" value="0" />
 
-                    {/* Mobile + Job Title Row */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div>
-                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Mobile *</label>
-                        <input type="text" id="Mobile" name="Mobile" required maxLength={30} placeholder="+91 9876543210" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+                      {/* Row 1: Name & Company */}
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                            Name <span className="text-blue-600">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            required
+                            id="Last_Name"
+                            name="Last Name"
+                            maxLength={80}
+                            placeholder="John Doe"
+                            className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none transition-all placeholder-slate-400"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                            Company <span className="text-blue-600">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            id="Company"
+                            name="Company"
+                            required
+                            maxLength={200}
+                            placeholder="Company Inc."
+                            className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none transition-all placeholder-slate-400"
+                          />
+                        </div>
                       </div>
-                      <div>
-                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Role *</label>
-                        <input type="text" id="Designation" name="Designation" required maxLength={100} placeholder="CTO / Manager" className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
+
+                      {/* Row 2: Email & Mobile */}
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                            Email <span className="text-blue-600">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            id="Email"
+                            data-ftype="email"
+                            required
+                            name="Email"
+                            maxLength={100}
+                            placeholder="john@company.com"
+                            className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none transition-all placeholder-slate-400"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                            Mobile <span className="text-blue-600">*</span>
+                          </label>
+                          <div className="w-full text-slate-900 contact-iti-wrapper">
+                            <IntlTelInput
+                              value={mobile}
+                              onChangeNumber={(val) => setMobile(val)}
+                              onChangeValidity={(isValid) => setIsMobileValid(isValid)}
+                              initialCountry="in"
+                              separateDialCode={true}
+                              strictMode={true}
+                              countryOrder={["in", "us", "gb", "ae"]}
+                              inputProps={{
+                                id: "Mobile",
+                                name: "Mobile",
+                                required: true,
+                                maxLength: 30,
+                                placeholder: "Mobile number",
+                                className: "w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none transition-all placeholder-slate-400",
+                              }}
+                            />
+                          </div>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Company Name Row */}
-                    <div>
-                      <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Company Name *</label>
-                      <input type="text" id="Company" name="Company" required maxLength={200} placeholder="Company Inc." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all placeholder-gray-400 shadow-sm" />
-                    </div>
+                      {/* Row 3: Role & Annual Revenue */}
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                            Role <span className="text-blue-600">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            id="Designation"
+                            name="Designation"
+                            required
+                            maxLength={100}
+                            placeholder="CTO / Manager"
+                            className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none transition-all placeholder-slate-400"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                            Annual Revenue <span className="text-blue-600">*</span>
+                          </label>
+                          <select
+                            id="LEADCF19"
+                            name="LEADCF19"
+                            required
+                            onChange={(e) => (window as any).addAriaSelected409531000047791049?.(e)}
+                            className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none cursor-pointer transition-all"
+                          >
+                            <option value="-None-">-None-</option>
+                            <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
+                            <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
+                            <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
+                            <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
+                            <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
+                            <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
+                            <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
+                            <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
+                            <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
+                            <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
+                          </select>
+                        </div>
+                      </div>
 
-                    {/* Service Row */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      {/* Row 4: Services & Source */}
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                            Zoho Services <span className="text-blue-600">*</span>
+                          </label>
+                          <MultiSelectDropdown
+                            id="LEADCF165"
+                            name="LEADCF165"
+                            placeholder="-Select Service-"
+                            className="!py-2.5 !px-3 !text-xs"
+                            bgClassName="bg-white border border-slate-200"
+                            textColorClassName="text-slate-900"
+                            options={[
+                              "Zoho Licenses",
+                              "Zoho Implementation",
+                              "Zoho Support",
+                              "Zoho Optimization",
+                              "Zoho Customization",
+                              "Zoho Integrations",
+                            ]}
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                            How did you hear? <span className="text-blue-600">*</span>
+                          </label>
+                          <select
+                            id="LEADCF127"
+                            name="LEADCF127"
+                            required
+                            onChange={(e) => (window as any).addAriaSelected409531000047791049?.(e)}
+                            className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none cursor-pointer transition-all"
+                          >
+                            <option value="-None-">-None-</option>
+                            <option value="Email">Email</option>
+                            <option value="Event">Event</option>
+                            <option value="Friend/Associate">Friend/Associate</option>
+                            <option value="Search">Search</option>
+                            <option value="Social Media">Social Media</option>
+                            <option value="Referral">Referral</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      {/* Row 5: Message */}
                       <div>
-                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Services *</label>
-                        <MultiSelectDropdown
-                          id="LEADCF165"
-                          name="LEADCF165"
-                          placeholder="-Select Service-"
-                          bgClassName="bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 shadow-sm"
-                          textColorClassName="text-gray-900"
-                          options={[
-                            "Zoho Licenses",
-                            "Zoho Implementation",
-                            // "Zoho Licenses + Implementation",
-                            "Zoho Support",
-                            "Zoho Optimization",
-                            "Zoho Customization",
-                            "Zoho Integrations",
-                          ]}
+                        <label className="block text-xs font-semibold text-slate-700 mb-1">
+                          How We Can Help You <span className="text-blue-600">*</span>
+                        </label>
+                        <textarea
+                          required
+                          name="LEADCF123"
+                          rows={3}
+                          placeholder="Tell us about your requirements..."
+                          className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs transition-all outline-none resize-none placeholder-slate-400"
                         />
                       </div>
-                      <div>
-                        <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">Annual Revenue *</label>
-                        <select id="LEADCF19" name="LEADCF19" required onChange={(e) => (window as any).addAriaSelected409531000047791049?.(e)} className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
-                          <option value="-None-">-None-</option>
-                          <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
-                          <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
-                          <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
-                          <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
-                          <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
-                          <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
-                          <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
-                          <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
-                          <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
-                          <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
-                        </select>
+
+                      {/* Captcha */}
+                      <div className="flex flex-col gap-0.5 -mb-2.5">
+                        <div
+                          data-sitekey="6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7"
+                          data-theme="light"
+                          data-callback="rccallback409531000047791049"
+                          captcha-verified="false"
+                          id="recap409531000047791049"
+                          className="g-recaptcha scale-[0.82] origin-left"
+                        ></div>
+                        <div
+                          id="recapErr409531000047791049"
+                          style={{ visibility: 'hidden', color: 'red', fontSize: '11px' }}
+                        >
+                          Captcha validation failed. Please try again.
+                        </div>
                       </div>
-                    </div>
 
-                    {/* How did you hear about us Row */}
-                    <div>
-                      <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">How did you hear about us. *</label>
-                      <select id="LEADCF127" name="LEADCF127" required onChange={(e) => (window as any).addAriaSelected409531000047791049?.(e)} className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none appearance-none cursor-pointer shadow-sm">
-                        <option value="-None-">-None-</option>
-                        <option value="Email">Email</option>
-                        <option value="Event">Event</option>
-                        <option value="Friend/Associate">Friend/Associate</option>
-                        <option value="Search">Search</option>
-                        <option value="Social Media">Social Media</option>
-                        <option value="Referral">Referral</option>
-                      </select>
-                    </div>
-
-                    {/* How We Can Help You Row */}
-                    <div>
-                      <label className="block text-gray-700 text-xs font-semibold uppercase tracking-wider mb-2">How We Can Help You *</label>
-                      <textarea id="LEADCF123" name="LEADCF123" required rows={3} placeholder="Tell us about your requirements..." className="w-full bg-blue-50/50 border-2 border-blue-100 hover:border-blue-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50 rounded-xl px-4 py-3.5 text-gray-900 text-sm outline-none transition-all resize-none placeholder-gray-400 shadow-sm" />
-                    </div>
-
-                    {/* Captcha Section */}
-                    <div className="flex flex-col gap-2 my-2">
-                      <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
-                      <div
-                        className="g-recaptcha"
-                        data-sitekey="6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7"
-                        data-theme="light"
-                        data-callback="rccallback409531000047791049"
-                        captcha-verified="false"
-                        id="recap409531000047791049"
-                      ></div>
-                      <div
-                        id="recapErr409531000047791049"
-                        style={{ visibility: 'hidden', color: '#ef4444', fontSize: '12px' }}
-                      >
-                        Captcha validation failed. If you are not a robot then please try again.
+                      {/* Submit */}
+                      <div className="-mt-1">
+                        <button
+                          type="submit"
+                          id="formsubmit"
+                          className="w-full inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all duration-300 shadow-md hover:shadow-blue-500/30 hover:scale-[1.02] text-sm uppercase tracking-wider cursor-pointer formsubmit-contact"
+                        >
+                          <Send className="w-4 h-4" />
+                          Submit
+                        </button>
                       </div>
-                    </div>
-
-                    <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full shrink-0 inline-flex items-center justify-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-semibold rounded-full transition-all duration-300 shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02] text-sm cursor-pointer" value="Submit" />
-                  </form>
-
+                    </form>
+                  )}
                 </div>
               </div>
             </motion.div>
           </div>
         </div>
+
+        <style jsx global>{`
+          .contact-iti-wrapper .iti {
+            width: 100%;
+            display: block;
+          }
+          .contact-iti-wrapper .iti__flag-container {
+            height: 100%;
+          }
+          .contact-iti-wrapper .iti__selected-dial-code {
+            font-size: 12px;
+          }
+          .contact-iti-wrapper .iti__selected-country {
+            height: 100%;
+            border-radius: 0.75rem 0 0 0.75rem;
+            padding: 0 8px;
+          }
+          .contact-iti-wrapper .iti__tel-input {
+            border-radius: 0 0.75rem 0.75rem 0 !important;
+          }
+          .contact-iti-wrapper .iti__dropdown-content {
+            z-index: 70;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+          }
+        `}</style>
       </section>
 
       {/* ── Quick Access Sub-Pages ────────────────────────────────────────── */}
       <section className="py-20 bg-white border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Section Header */}
           <div className="text-center max-w-4xl mx-auto mb-12">
             <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 tracking-tight">
               Explore More Ways to{" "}
@@ -700,7 +872,7 @@ export default function ZohoContactPage() {
               <span className="text-blue-700 text-xs font-semibold tracking-widest uppercase">Our Global Presence</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 mb-4 tracking-tight">
-              We're Where{" "}
+              We&apos;re Where{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
                 Innovation Happens
               </span>
@@ -720,7 +892,6 @@ export default function ZohoContactPage() {
           >
             {(["All", "INDIA", "USA", "UK"] as Region[]).map(tab => {
               const isActive = locationFilter === tab;
-
               const labels: Record<Region, string> = { All: "Global Offices", INDIA: "INDIA", USA: "USA", UK: "UK" };
               return (
                 <button
@@ -775,9 +946,8 @@ export default function ZohoContactPage() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    {/* Floating flag and region */}
                     <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-sm border border-white/20">
-                      <img 
+                      <img
                         src={`https://flagcdn.com/${loc.region === "INDIA" ? "in" : loc.region === "USA" ? "us" : "gb"}.svg`}
                         alt={loc.region}
                         className="w-4 h-3 object-cover rounded-sm"
@@ -788,7 +958,6 @@ export default function ZohoContactPage() {
 
                   {/* Card body */}
                   <div className="relative z-10 p-6 flex flex-col flex-1 gap-4">
-                    {/* Flag + City */}
                     <div className="flex items-center justify-between">
                       <div>
                         <h3 className="text-base font-semibold text-gray-900 leading-tight">{loc.city}</h3>
@@ -799,10 +968,8 @@ export default function ZohoContactPage() {
                       </div>
                     </div>
 
-                    {/* Divider */}
                     <div className="h-px bg-gray-100 w-full" />
 
-                    {/* Contact Details — Address only */}
                     <div className="space-y-3 flex-1">
                       <div className="flex items-start gap-2.5">
                         <div className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0 mt-0.5 bg-blue-50 border border-blue-100">
@@ -828,7 +995,6 @@ export default function ZohoContactPage() {
                       )}
                     </div>
 
-                    {/* Connect Button */}
                     <a
                       href={loc.mapUrl}
                       target="_blank"
@@ -852,7 +1018,6 @@ export default function ZohoContactPage() {
             transition={{ duration: 0.6 }}
             className="mt-14 rounded-3xl overflow-hidden relative py-10 px-8 sm:px-12 text-left border border-gray-800"
           >
-            {/* Background Image with Dark Opacity */}
             <div className="absolute inset-0 z-0">
               <Image
                 src="/images/office/building.webp"
@@ -865,9 +1030,7 @@ export default function ZohoContactPage() {
             </div>
 
             <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-              {/* Left Side: Content & Contacts */}
               <div className="flex flex-col items-start gap-4 max-w-2xl">
-                
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-medium text-white leading-tight">
                   Ready to transform your business{" "}
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-blue-300 to-indigo-300 font-bold">
@@ -875,7 +1038,6 @@ export default function ZohoContactPage() {
                   </span>
                 </h3>
 
-                {/* Horizontal Stack for Direct Contact Info */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-2 text-white/90">
                   <a href="mailto:contact@agsuitetech.com" className="flex items-center gap-2.5 hover:text-cyan-400 transition-colors group">
                     <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
@@ -886,7 +1048,6 @@ export default function ZohoContactPage() {
                 </div>
               </div>
 
-              {/* Right Side: Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
                 <button
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -910,14 +1071,6 @@ export default function ZohoContactPage() {
 
       {/* ── Scripts ───────────────────────────────────────────────────────────── */}
       <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
-      {/* Zoho SalesIQ Chatbot - Commented out */}
-      {/*
-      <Script id="zoho-salesiq" strategy="afterInteractive">
-        {`
-          var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.in/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
-        `}
-      </Script>
-      */}
       <Script id="recap-callback" strategy="afterInteractive">
         {`
           function rccallback409531000042578178() {
@@ -930,7 +1083,7 @@ export default function ZohoContactPage() {
           }
         `}
       </Script>
-      <Script id="wf_anal_zoho_contact" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=e7fa82545e6cbc426156b206aa8236f2c686a1dd1fa2201a42f8f8bc1f3ed582856adb0b2a204a9d5af92c2452e3a8a8gidc5c4b2eec1a1272f8a476c638c29bb49a4d78e91e7b5216007f5c7aeef1afd9fgid5f6d199f406123ad764d17f846376ab5e7fab29b0bebbbde07b6a8367d0aba4cgid8d7aa6245a7de773373511b56e3ffa902647cb1e3730e636a86b82d0019d0cce&tw=b2ff6a1aabcf001476b36b61fabd0fbad09ea545696c57b419b7adca06e6ef53&version=v2" strategy="afterInteractive" />
+      <Script id="wf_anal_zoho_contact" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=e7fa82545e6cbc426156b206aa8236f2c686a1dd1fa2201a42f8f8bc1f3ed582856adb0b2a204a9d5af92c2452e3a8a8gidc5c4b2eec1a1272f8a476c638c29bb49a4d78e91e7b5216007f5c7aeef1afd9fg5f6d199f406123ad764d17f846376ab5e7fab29b0bebbbde07b6a8367d0aba4cgid8d7aa6245a7de773373511b56e3ffa902647cb1e3730e636a86b82d0019d0cce&tw=b2ff6a1aabcf001476b36b61fabd0fbad09ea545696c57b419b7adca06e6ef53&version=v2" strategy="afterInteractive" />
     </div>
   );
 }

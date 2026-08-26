@@ -318,7 +318,7 @@ export default function ContactPage() {
         message: formData.get('LEADCF123'),
         subjectTitle: 'NetSuite Contact us Form Enquiry'
       })
-    }).catch(() => {});
+    }).catch(() => { });
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -399,10 +399,10 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="flex flex-col justify-between"
+              className="flex flex-col justify-between pt-8"
             >
               {/* H1 */}
-              <h1 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[48px] font-extrabold text-white leading-tight tracking-tight mb-3">
+              <h1 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[48px] font-semibold text-white leading-tight tracking-tight mb-3">
                 Scale Your Business with{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300">
                   Oracle NetSuite ERP
@@ -690,13 +690,13 @@ export default function ContactPage() {
                       </div>
 
                       {/* Captcha */}
-                      <div className="flex flex-col gap-0.5">
+                      <div className="flex flex-col gap-0.5 -mb-2.5">
                         <div data-sitekey='6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7' data-theme='light' data-callback='rccallback409531000047791096' captcha-verified='false' id='recap409531000047791096' className="g-recaptcha scale-[0.82] origin-left"></div>
                         <div id='recapErr409531000047791096' style={{ visibility: 'hidden', color: 'red', fontSize: '11px' }}>Captcha validation failed. Please try again.</div>
                       </div>
 
                       {/* Submit */}
-                      <div className="pt-0.5">
+                      <div className="-mt-1">
                         <button
                           type="submit"
                           id="formsubmit"
