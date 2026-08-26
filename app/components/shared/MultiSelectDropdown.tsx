@@ -90,7 +90,11 @@ export default function MultiSelectDropdown({
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-full text-left flex items-center justify-between transition-all rounded-xl px-4 py-3.5 text-sm cursor-pointer ${bgClassName} ${
+        className={`w-full text-left flex items-center justify-between transition-all rounded-xl ${
+          className.includes("px-") ? "" : "px-4"
+        } ${className.includes("py-") ? "" : "py-3.5"} ${
+          className.includes("text-") ? "" : "text-sm"
+        } cursor-pointer ${bgClassName} ${
           selected.length === 0 ? "text-gray-400" : textColorClassName
         } ${className}`}
       >

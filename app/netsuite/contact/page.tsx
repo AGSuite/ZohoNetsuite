@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion, useSpring, useTransform, animate, useMotionValue } from "framer-motion";
+import { motion, useTransform, animate, useMotionValue } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
@@ -14,19 +14,17 @@ import {
   Globe,
   Globe2,
   CheckCircle,
-  ChevronRight,
   Building2,
-  UserCog,
   Rocket,
   Send,
   Briefcase,
-  HelpCircle,
   Target,
-  Users,
   Heart,
   Shield,
 } from "lucide-react";
 import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
+import IntlTelInput from "@intl-tel-input/react/with-utils";
+import "intl-tel-input/styles";
 
 
 function StatCard({ item, index }: { item: any; index: number }) {
@@ -59,30 +57,30 @@ function StatCard({ item, index }: { item: any; index: number }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{
-        scale: 1.05,
-        rotateY: 10,
-        rotateX: -5,
-        transition: { duration: 0.4, ease: "easeOut" },
+        scale: 1.03,
+        rotateY: 6,
+        rotateX: -3,
+        transition: { duration: 0.3, ease: "easeOut" },
       }}
       transition={{ delay: 0.4 + index * 0.1 }}
       style={{ perspective: 1000 }}
-      className="relative group p-6 rounded-[2rem] bg-gradient-to-br from-white via-white/95 to-blue-50 border border-blue-100/50 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 overflow-hidden"
+      className="relative group p-4 rounded-xl bg-gradient-to-br from-white via-white/95 to-blue-50/90 border border-blue-100/60 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-500 overflow-hidden"
     >
       {/* Decorative faint icon bg */}
-      <div className="absolute -right-4 -bottom-4 opacity-[0.25] group-hover:opacity-[0.45] transition-all duration-500 pointer-events-none">
-        <item.icon className="w-24 h-24 text-blue-900" strokeWidth={1} />
+      <div className="absolute -right-2 -bottom-2 opacity-[0.18] group-hover:opacity-[0.32] transition-all duration-500 pointer-events-none">
+        <item.icon className="w-16 h-16 text-blue-900" strokeWidth={1} />
       </div>
 
       <div className="relative z-10 flex flex-col items-start text-left">
-        <div className="mb-5 w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
-          <item.icon className="w-6 h-6 font-bold" strokeWidth={1.5} />
+        <div className="mb-2.5 w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-xs">
+          <item.icon className="w-4 h-4" strokeWidth={1.5} />
         </div>
         <div className="space-y-1">
-          <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#000d2e] via-blue-900 to-black tracking-tight">
+          <div className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#000d2e] via-blue-900 to-black tracking-tight leading-tight">
             {displayCount}
             {suffix}
           </div>
-          <p className="text-gray-500 font-semibold text-[10px] sm:text-[11px] group-hover:text-blue-700 transition-colors uppercase tracking-widest leading-tight">
+          <p className="text-gray-500 font-semibold text-[11px] group-hover:text-blue-700 transition-colors uppercase tracking-wider leading-tight">
             {item.label}
           </p>
         </div>
@@ -105,7 +103,6 @@ const locations: {
   mapUrl: string;
   image: string;
 }[] = [
-    // ── INDIA ──────────────────────────────────────────────────────────────────
     {
       region: "INDIA",
       city: "Pune",
@@ -166,7 +163,6 @@ const locations: {
       mapUrl: "https://maps.google.com/?q=Subcity+Center+Udaipur+Rajasthan",
       image: "/images/offices/udaipur_city.png",
     },
-    // ── USA ────────────────────────────────────────────────────────────────────
     {
       region: "USA",
       city: "Fort Myers",
@@ -177,7 +173,6 @@ const locations: {
       mapUrl: "https://maps.google.com/?q=6421+Metro+Plantation+Road+Fort+Myers+FL",
       image: "/images/offices/florida_city.png",
     },
-    // ── UK ─────────────────────────────────────────────────────────────────────
     {
       region: "UK",
       city: "St Austell",
@@ -190,7 +185,7 @@ const locations: {
     },
   ];
 
-/* ─── Particles (static to avoid SSR mismatch) ────────────────────────────── */
+/* ─── Particles ────────────────────────────────────────────────────────────── */
 const PARTICLES = [
   { w: 2, h: 2, top: 10, left: 15, dur: 5, delay: 0.3 },
   { w: 1.5, h: 1.5, top: 25, left: 70, dur: 4.2, delay: 1.1 },
@@ -206,6 +201,8 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [locationFilter, setLocationFilter] = useState<Region>("All");
   const [isClient, setIsClient] = useState(false);
+  const [mobile, setMobile] = useState("");
+  const [isMobileValid, setIsMobileValid] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -270,7 +267,6 @@ export default function ContactPage() {
       return true;
     };
 
-    // Handle reCAPTCHA rendering for SPA navigation
     const renderRecaptcha = () => {
       const container = document.getElementById('recap409531000047791096');
       if ((window as any).grecaptcha && container) {
@@ -331,7 +327,6 @@ export default function ContactPage() {
       return;
     }
 
-    // Visitor Tracking update
     try {
       // @ts-ignore
       if (window.$zoho && window.$zoho.salesiq) {
@@ -363,22 +358,26 @@ export default function ContactPage() {
     <div className="min-h-screen bg-white selection:bg-blue-900 selection:text-white">
 
       {/* ── Hero / Form Section ─────────────────────────────────────────────── */}
-      <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d] flex items-center">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[radial-gradient(ellipse_90%_90%_at_50%_-15%,rgba(14,165,233,0.28),rgba(0,8,20,0.98)_70%),linear-gradient(135deg,#000814_0%,#000d2e_50%,#001a4d_100%)]">
 
-        {/* Grid lines */}
+        {/* Square Grid Pattern Lines */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
-            backgroundSize: "70px 70px",
+            backgroundImage: `
+              linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px)
+            `,
+            backgroundSize: "48px 48px",
+            maskImage: "radial-gradient(ellipse at 50% 45%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.1) 75%, transparent 100%)",
+            WebkitMaskImage: "radial-gradient(ellipse at 50% 45%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.1) 75%, transparent 100%)",
           }}
         />
 
-        {/* Glow blobs */}
-        <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-blue-600/15 rounded-full blur-[140px] -translate-x-1/3 -translate-y-1/4 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4 pointer-events-none" />
-        <div className="absolute bottom-0 left-1/2 w-[800px] h-[400px] bg-cyan-700/10 rounded-full blur-[150px] -translate-x-1/2 translate-y-1/3 pointer-events-none" />
+        {/* Gradient Glow Blobs */}
+        <div className="absolute -top-24 -left-24 w-[650px] h-[650px] bg-gradient-to-br from-blue-600/35 via-cyan-400/25 to-transparent rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 right-0 w-[550px] h-[550px] bg-gradient-to-bl from-indigo-600/30 via-purple-600/20 to-cyan-500/20 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute -bottom-20 left-1/3 w-[700px] h-[400px] bg-gradient-to-tr from-cyan-600/30 via-blue-600/25 to-indigo-700/25 rounded-full blur-[140px] pointer-events-none" />
 
         {/* Floating particles */}
         {PARTICLES.map((p, i) => (
@@ -391,32 +390,19 @@ export default function ContactPage() {
           />
         ))}
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-16 pb-12">
+        {/* Content Grid */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 w-full py-20 lg:py-24">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
 
-          {/* Breadcrumb */}
-          <motion.nav
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-            className="flex items-center gap-2 text-sm font-medium mb-8"
-            aria-label="Breadcrumb"
-          >
-            <Link href="/netsuite" className="text-blue-300 hover:text-white transition-colors">Home</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-white/30" />
-            <span className="text-white/60">Contact</span>
-          </motion.nav>
-
-          <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-start">
-
-            {/* ── LEFT: Headline + Info ─────────────────────────────────────── */}
+            {/* ── LEFT: Hero Content ────────────────────────────────────────── */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="flex flex-col gap-6 lg:sticky lg:top-32"
+              className="flex flex-col justify-between"
             >
               {/* H1 */}
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[48px] font-extrabold text-white leading-tight tracking-tight mb-3">
                 Scale Your Business with{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300">
                   Oracle NetSuite ERP
@@ -426,43 +412,41 @@ export default function ContactPage() {
               {/* Divider */}
               <motion.div
                 initial={{ width: 0 }}
-                animate={{ width: 80 }}
+                animate={{ width: 72 }}
                 transition={{ delay: 0.5, duration: 0.7 }}
-                className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"
+                className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mb-4"
               />
 
-              {/* Sublines */}
-              <div className="space-y-4">
-                <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-lg">
-                  Bridge the gap between vision and execution. Partner with India’s leading certified consultants to build a resilient, data-driven enterprise.
-                </p>
-              </div>
+              {/* Subline */}
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-md mb-5">
+                Bridge the gap between vision and execution. Partner with India&apos;s leading certified consultants to build a resilient, data-driven enterprise.
+              </p>
 
               {/* Partner Logo */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="mt-4 mb-2"
+                className="mb-5"
               >
                 <Image
                   src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png"
                   alt="NetSuite Partner"
                   width={220}
-                  height={70}
-                  className="h-16 w-auto object-contain"
+                  height={64}
+                  className="h-14 w-auto object-contain"
                 />
               </motion.div>
 
-              {/* Consultation Metrics Cards (Synced from About Us) */}
-              <div className="mt-2 grid grid-cols-2 gap-4 sm:gap-6">
+              {/* Stat Cards — 3 columns */}
+              <div className="grid grid-cols-3 gap-3">
                 {[
-                  { label: 'Projects Completed', value: '700+', icon: Briefcase },
-                  { label: 'Global Customers', value: '250+', icon: Building2 },
-                  { label: 'Industry Expertise', value: '15+', icon: Target },
-                  { label: 'Customer Retention', value: '84%', icon: Heart },
-                  { label: 'Years Experience', value: '15+', icon: Rocket },
-                  { label: 'Countries Serving', value: '10+', icon: Globe2 },
+                  { label: 'Projects Done', value: '700+', icon: Briefcase },
+                  { label: 'Global Clients', value: '250+', icon: Building2 },
+                  { label: 'Industries', value: '15+', icon: Target },
+                  { label: 'Retention Rate', value: '84%', icon: Heart },
+                  { label: 'Yrs Experience', value: '15+', icon: Rocket },
+                  { label: 'Countries', value: '10+', icon: Globe2 },
                 ].map((item, i) => (
                   <StatCard key={i} item={item} index={i} />
                 ))}
@@ -474,29 +458,31 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              className="w-full relative"
             >
-              <div className="relative bg-white rounded-3xl shadow-[0_32px_80px_rgba(0,0,0,0.5)] overflow-hidden">
-                {/* Top accent bar */}
-                <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600" />
+              {/* Ambient Glow Behind Form */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/30 via-cyan-400/25 to-indigo-600/30 rounded-3xl blur-xl -z-10 pointer-events-none" />
 
-                {/* Light blobs inside form */}
-                <div className="absolute top-0 right-0 w-[280px] h-[280px] bg-blue-50/80 rounded-full blur-[80px] translate-x-1/4 -translate-y-1/4 pointer-events-none" />
-                <div className="relative z-10 p-5 sm:p-6 lg:p-7">
-                  <div className="mb-4">
-                    <h2 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">Talk to a NetSuite Expert</h2>
-                  </div>
+              <div className="relative bg-white p-6 sm:p-7 rounded-2xl border border-blue-100/80 shadow-[0_20px_50px_-10px_rgba(37,99,235,0.25),0_10px_25px_-5px_rgba(6,182,212,0.18),0_30px_70px_rgba(0,0,0,0.35)] overflow-hidden w-full">
+                {/* Top Accent Bar */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-600 z-20" />
+
+                <div className="relative z-10 pt-1">
+                  <h2 className="text-xl sm:text-2xl font-extrabold bg-gradient-to-r from-blue-700 via-indigo-700 to-cyan-600 bg-clip-text text-transparent tracking-tight mb-3">
+                    Talk to a NetSuite Expert
+                  </h2>
 
                   {submitted ? (
                     <motion.div
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      className="flex flex-col items-center justify-center py-16 text-center gap-4"
+                      className="flex flex-col items-center justify-center py-12 text-center gap-3"
                     >
-                      <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
-                        <CheckCircle className="w-8 h-8 text-green-600" />
+                      <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center">
+                        <CheckCircle className="w-7 h-7 text-green-600" />
                       </div>
-                      <h3 className="text-xl font-medium text-gray-900">Message Sent!</h3>
-                      <p className="text-gray-500 max-w-xs">Thank you for reaching out. Our team will connect with you within 24 hours.</p>
+                      <h3 className="text-lg font-bold text-gray-900">Message Sent!</h3>
+                      <p className="text-xs text-gray-500 max-w-xs">Thank you for reaching out. Our team will connect with you within 24 hours.</p>
                     </motion.div>
                   ) : (
                     <form
@@ -506,7 +492,7 @@ export default function ContactPage() {
                       method="POST"
                       onSubmit={handleSubmit}
                       acceptCharset="UTF-8"
-                      className="space-y-5"
+                      className="space-y-3"
                     >
                       <input type="text" className="hidden" name="xnQsjsdp" value="d93e9734418e9c3b30c5c23b8af4dd429de93b1470fabb4bf7e171e04e9320c4" readOnly />
                       <input type="hidden" name="zc_gad" id="zc_gad" value="" />
@@ -516,7 +502,6 @@ export default function ContactPage() {
                       <input type="text" className="hidden" name="aG9uZXlwb3Q" value="" readOnly />
                       <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
 
-                      {/* Hidden default fields required by Zoho */}
                       <select name="Lead Status" className="hidden" defaultValue="Database">
                         <option value="Database">Database</option>
                       </select>
@@ -525,10 +510,10 @@ export default function ContactPage() {
                       </select>
                       <input type="hidden" name="No of Employees" value="0" />
 
-                      {/* Name Row */}
-                      <div className="grid grid-cols-1 sm:grid-cols-1 gap-5">
+                      {/* Row 1: Name & Company */}
+                      <div className="grid grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
                             Name <span className="text-blue-600">*</span>
                           </label>
                           <input
@@ -538,46 +523,72 @@ export default function ContactPage() {
                             name="Last Name"
                             maxLength={80}
                             placeholder="John Doe"
-                            className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
+                            className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none transition-all placeholder-slate-400"
                           />
                         </div>
-                      </div>
-
-                      {/* POC Email */}
-                      <div>
-                        <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
-                          Email <span className="text-blue-600">*</span>
-                        </label>
-                        <input
-                          type="text"
-                          id="Email"
-                          data-ftype="email"
-                          required
-                          name="Email"
-                          maxLength={100}
-                          placeholder="john@company.com"
-                          className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
-                        />
-                      </div>
-
-                      {/* Phone + Role */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
-                          <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
-                            Mobile <span className="text-blue-600">*</span>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                            Company <span className="text-blue-600">*</span>
                           </label>
                           <input
                             type="text"
-                            id="Mobile"
-                            name="Mobile"
+                            id="Company"
+                            name="Company"
                             required
-                            maxLength={30}
-                            placeholder="+91 9876543210"
-                            className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
+                            maxLength={200}
+                            placeholder="Company Inc."
+                            className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none transition-all placeholder-slate-400"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Row 2: Email & Mobile */}
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                            Email <span className="text-blue-600">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            id="Email"
+                            data-ftype="email"
+                            required
+                            name="Email"
+                            maxLength={100}
+                            placeholder="john@company.com"
+                            className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none transition-all placeholder-slate-400"
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                            Mobile <span className="text-blue-600">*</span>
+                          </label>
+                          <div className="w-full text-slate-900 contact-iti-wrapper">
+                            <IntlTelInput
+                              value={mobile}
+                              onChangeNumber={(val) => setMobile(val)}
+                              onChangeValidity={(isValid) => setIsMobileValid(isValid)}
+                              initialCountry="in"
+                              separateDialCode={true}
+                              strictMode={true}
+                              countryOrder={["in", "us", "gb", "ae"]}
+                              inputProps={{
+                                id: "Mobile",
+                                name: "Mobile",
+                                required: true,
+                                maxLength: 30,
+                                placeholder: "Mobile number",
+                                className: "w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none transition-all placeholder-slate-400",
+                              }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Row 3: Role & Annual Revenue */}
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
                             Role <span className="text-blue-600">*</span>
                           </label>
                           <input
@@ -587,55 +598,11 @@ export default function ContactPage() {
                             required
                             maxLength={100}
                             placeholder="CFO / Manager"
-                            className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Company */}
-                      <div>
-                        <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
-                          Company Name <span className="text-blue-600">*</span>
-                        </label>
-                        <input
-                          type="text"
-                          id="Company"
-                          name="Company"
-                          required
-                          maxLength={200}
-                          placeholder="Company Inc."
-                          className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none placeholder-gray-400"
-                        />
-                      </div>
-
-                      {/* Netsuite Services + Annual Revenue */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div>
-                          <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
-                            Netsuite Services <span className="text-blue-600">*</span>
-                          </label>
-                          <MultiSelectDropdown
-                            id="LEADCF166"
-                            name="LEADCF166"
-                            placeholder="-Select NetSuite Service-"
-                            bgClassName="bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500"
-                            textColorClassName="text-gray-900"
-                            options={[
-                              "NetSuite Licenses",
-                              "NetSuite Implementation",
-                              // "NetSuite Licenses + Implementation",
-                              "New Subsidiary Implementation",
-                              "NetSuite Support",
-                              "NetSuite Optimization",
-                              "NetSuite Customization",
-                              "NetSuite Integrations",
-                              "NetSuite India Localization",
-                              "NetSuite Data Backup for India",
-                            ]}
+                            className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none transition-all placeholder-slate-400"
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
                             Annual Revenue <span className="text-blue-600">*</span>
                           </label>
                           <select
@@ -643,7 +610,7 @@ export default function ContactPage() {
                             name="LEADCF19"
                             required
                             onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)}
-                            className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer"
+                            className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none cursor-pointer transition-all"
                           >
                             <option value="-None-">-None-</option>
                             <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
@@ -660,46 +627,80 @@ export default function ContactPage() {
                         </div>
                       </div>
 
-                      {/* How did you hear about us? */}
-                      <div>
-                        <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">How did you hear about us. *</label>
-                        <select id="LEADCF127" name="LEADCF127" required onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)} className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none appearance-none cursor-pointer">
-                          <option value="-None-">-None-</option>
-                          <option value="Email">Email</option>
-                          <option value="Event">Event</option>
-                          <option value="Friend/Associate">Friend/Associate</option>
-                          <option value="Search">Search</option>
-                          <option value="Social Media">Social Media</option>
-                          <option value="Referral">Referral</option>
-                        </select>
+                      {/* Row 4: Services & Source */}
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                            NetSuite Services <span className="text-blue-600">*</span>
+                          </label>
+                          <MultiSelectDropdown
+                            id="LEADCF166"
+                            name="LEADCF166"
+                            placeholder="-Select Service-"
+                            className="!py-2.5 !px-3 !text-xs"
+                            bgClassName="bg-white border border-slate-200"
+                            textColorClassName="text-slate-900"
+                            options={[
+                              "NetSuite Licenses",
+                              "NetSuite Implementation",
+                              "New Subsidiary Implementation",
+                              "NetSuite Support",
+                              "NetSuite Optimization",
+                              "NetSuite Customization",
+                              "NetSuite Integrations",
+                              "NetSuite India Localization",
+                              "NetSuite Data Backup for India",
+                            ]}
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                            How did you hear? <span className="text-blue-600">*</span>
+                          </label>
+                          <select
+                            id="LEADCF127"
+                            name="LEADCF127"
+                            required
+                            onChange={(e) => (window as any).addAriaSelected409531000047791096?.(e)}
+                            className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none cursor-pointer transition-all"
+                          >
+                            <option value="-None-">-None-</option>
+                            <option value="Email">Email</option>
+                            <option value="Event">Event</option>
+                            <option value="Friend/Associate">Friend/Associate</option>
+                            <option value="Search">Search</option>
+                            <option value="Social Media">Social Media</option>
+                            <option value="Referral">Referral</option>
+                          </select>
+                        </div>
                       </div>
 
-                      {/* Message */}
+                      {/* Row 5: Message */}
                       <div>
-                        <label className="block text-gray-700 text-xs font-semibold tracking-wider mb-2 uppercase">
+                        <label className="block text-xs font-semibold text-slate-700 mb-1">
                           How We Can Help You <span className="text-blue-600">*</span>
                         </label>
                         <textarea
                           required
                           name="LEADCF123"
-                          rows={4}
-                          placeholder="How We Can Help You*"
-                          className="w-full bg-gradient-to-br from-blue-50/60 via-white to-purple-50/30 border-2 border-blue-100 hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 rounded-xl px-4 py-3.5 text-gray-900 text-sm transition-all outline-none resize-none placeholder-gray-400 shadow-sm"
+                          rows={3}
+                          placeholder="Tell us how we can help..."
+                          className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs transition-all outline-none resize-none placeholder-slate-400"
                         />
                       </div>
 
-                      {/* Captcha Section */}
-                      <div className="flex flex-col gap-2">
-                        <div data-sitekey='6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7' data-theme='light' data-callback='rccallback409531000047791096' captcha-verified='false' id='recap409531000047791096' className="g-recaptcha"></div>
-                        <div id='recapErr409531000047791096' style={{ visibility: 'hidden', color: 'red', fontSize: '12px' }}>Captcha validation failed. If you are not a robot then please try again.</div>
+                      {/* Captcha */}
+                      <div className="flex flex-col gap-0.5">
+                        <div data-sitekey='6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7' data-theme='light' data-callback='rccallback409531000047791096' captcha-verified='false' id='recap409531000047791096' className="g-recaptcha scale-[0.82] origin-left"></div>
+                        <div id='recapErr409531000047791096' style={{ visibility: 'hidden', color: 'red', fontSize: '11px' }}>Captcha validation failed. Please try again.</div>
                       </div>
 
-                      {/* Submit Button */}
-                      <div className="pt-2">
+                      {/* Submit */}
+                      <div className="pt-0.5">
                         <button
                           type="submit"
                           id="formsubmit"
-                          className="w-full sm:w-auto shrink-0 inline-flex items-center justify-center gap-2 px-10 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-blue-500/30 hover:scale-[1.02] text-sm uppercase tracking-widest cursor-pointer formsubmit-contact"
+                          className="w-full inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all duration-300 shadow-md hover:shadow-blue-500/30 hover:scale-[1.02] text-sm uppercase tracking-wider cursor-pointer formsubmit-contact"
                         >
                           <Send className="w-4 h-4" />
                           Submit
@@ -710,15 +711,39 @@ export default function ContactPage() {
                 </div>
               </div>
             </motion.div>
-
           </div>
         </div>
+
+        <style jsx global>{`
+          .contact-iti-wrapper .iti {
+            width: 100%;
+            display: block;
+          }
+          .contact-iti-wrapper .iti__flag-container {
+            height: 100%;
+          }
+          .contact-iti-wrapper .iti__selected-dial-code {
+            font-size: 12px;
+          }
+          .contact-iti-wrapper .iti__selected-country {
+            height: 100%;
+            border-radius: 0.75rem 0 0 0.75rem;
+            padding: 0 8px;
+          }
+          .contact-iti-wrapper .iti__tel-input {
+            border-radius: 0 0.75rem 0.75rem 0 !important;
+          }
+          .contact-iti-wrapper .iti__dropdown-content {
+            z-index: 70;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+          }
+        `}</style>
       </section>
 
       {/* ── Quick Access Sub-Pages ────────────────────────────────────────── */}
       <section className="py-20 bg-white border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Section Header */}
           <div className="text-center max-w-4xl mx-auto mb-12">
             <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 tracking-tight">
               Explore More Ways to{" "}
@@ -764,27 +789,19 @@ export default function ContactPage() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-
-                {/* Gradient Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
                 <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-blue-900/0 transition-colors" />
-
-                {/* Content */}
                 <div className="relative z-10 p-8 text-left">
                   <div className="w-12 h-12 rounded-xl bg-blue-500/20 backdrop-blur-md flex items-center justify-center mb-4 group-hover:bg-blue-500 transition-colors duration-300">
                     <item.icon size={24} className="text-white" />
                   </div>
                   <h3 className="text-2xl font-medium text-white mb-2">{item.title}</h3>
                   <p className="text-gray-300 text-sm mb-6 group-hover:text-white transition-colors">{item.desc}</p>
-
-                  {/* Button Style Link */}
-                  <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white hover:bg-white text-blue-900 group-hover:text-blue-600 border border-white/20 hover:border-white transition-all duration-300 backdrop-blur-sm">
+                  <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-blue-900 group-hover:text-blue-600 border border-white/20 hover:border-white transition-all duration-300 backdrop-blur-sm">
                     <span className="text-xs font-medium uppercase tracking-wider">Explore More</span>
                     <ArrowRight size={14} />
                   </div>
                 </div>
-
-                {/* Bottom Progress Bar */}
                 <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 w-0 group-hover:w-full transition-all duration-700" />
               </Link>
             ))}
@@ -794,7 +811,6 @@ export default function ContactPage() {
 
       {/* ── Office Locations Section ─────────────────────────────────────────── */}
       <section className="py-24 relative overflow-hidden bg-white">
-        {/* Dashed Grid Background */}
         <div
           className="absolute inset-0 z-0 pointer-events-none opacity-40"
           style={{
@@ -805,50 +821,22 @@ export default function ContactPage() {
             backgroundSize: "20px 20px",
             backgroundPosition: "0 0, 0 0",
             maskImage: `
-              repeating-linear-gradient(
-                to right,
-                black 0px,
-                black 3px,
-                transparent 3px,
-                transparent 8px
-              ),
-              repeating-linear-gradient(
-                to bottom,
-                black 0px,
-                black 3px,
-                transparent 3px,
-                transparent 8px
-              )
+              repeating-linear-gradient(to right, black 0px, black 3px, transparent 3px, transparent 8px),
+              repeating-linear-gradient(to bottom, black 0px, black 3px, transparent 3px, transparent 8px)
             `,
             WebkitMaskImage: `
-              repeating-linear-gradient(
-                to right,
-                black 0px,
-                black 3px,
-                transparent 3px,
-                transparent 8px
-              ),
-              repeating-linear-gradient(
-                to bottom,
-                black 0px,
-                black 3px,
-                transparent 3px,
-                transparent 8px
-              )
+              repeating-linear-gradient(to right, black 0px, black 3px, transparent 3px, transparent 8px),
+              repeating-linear-gradient(to bottom, black 0px, black 3px, transparent 3px, transparent 8px)
             `,
             maskComposite: "intersect",
             WebkitMaskComposite: "source-in",
           }}
         />
-
-        {/* Tricolor Ambient Gradient Blobs */}
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-green-100/30 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 w-[600px] h-[400px] bg-blue-100/40 rounded-full blur-[130px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-red-100/20 rounded-full blur-[120px] translate-y-1/2 pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-
-          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -861,7 +849,7 @@ export default function ContactPage() {
               <span className="text-blue-700 text-xs font-medium tracking-widest uppercase">Our Global Offices</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-medium text-gray-900 mb-4 tracking-tight">
-              We're Where{" "}
+              We&apos;re Where{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
                 You Are
               </span>
@@ -871,7 +859,6 @@ export default function ContactPage() {
             </p>
           </motion.div>
 
-          {/* ── Region Filter Tabs ─────────────────────────────────────────── */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -881,7 +868,6 @@ export default function ContactPage() {
           >
             {(["All", "INDIA", "USA", "UK"] as Region[]).map(tab => {
               const isActive = locationFilter === tab;
-
               const labels: Record<Region, string> = { All: "Our Offices", INDIA: "INDIA", USA: "USA", UK: "UK" };
               return (
                 <button
@@ -916,7 +902,6 @@ export default function ContactPage() {
             })}
           </motion.div>
 
-          {/* ── Location Cards Grid ────────────────────────────────────────── */}
           <motion.div
             key={locationFilter}
             initial={{ opacity: 0, y: 12 }}
@@ -935,7 +920,6 @@ export default function ContactPage() {
                   whileHover={{ y: -5, transition: { duration: 0.22 } }}
                   className="group relative bg-white rounded-2xl overflow-hidden flex flex-col border border-gray-200 shadow-md hover:shadow-xl hover:border-blue-200 transition-all duration-300"
                 >
-                  {/* Office Image */}
                   <div className="relative h-40 w-full overflow-hidden shrink-0">
                     <img
                       src={loc.image}
@@ -943,9 +927,8 @@ export default function ContactPage() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    {/* Floating flag and region */}
                     <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-sm border border-white/20">
-                      <img 
+                      <img
                         src={`https://flagcdn.com/${loc.region === "INDIA" ? "in" : loc.region === "USA" ? "us" : "gb"}.svg`}
                         alt={loc.region}
                         className="w-4 h-3 object-cover rounded-sm"
@@ -954,9 +937,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  {/* Card body */}
                   <div className="relative z-10 p-6 flex flex-col flex-1 gap-4">
-                    {/* Flag + City */}
                     <div className="flex items-center justify-between">
                       <div>
                         <h3 className="text-base font-semibold text-gray-900 leading-tight">{loc.city}</h3>
@@ -967,10 +948,8 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    {/* Divider */}
                     <div className="h-px bg-gray-100 w-full" />
 
-                    {/* Contact Details — Address + Email only */}
                     <div className="space-y-3 flex-1">
                       <div className="flex items-start gap-2.5">
                         <div className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0 mt-0.5 bg-blue-50 border border-blue-100">
@@ -991,17 +970,13 @@ export default function ContactPage() {
                           <div className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0 bg-blue-50 border border-blue-100">
                             <Phone className="w-3 h-3 text-blue-600" />
                           </div>
-                          <a
-                            href={`tel:${loc.phone}`}
-                            className="text-gray-700 text-sm font-medium hover:text-blue-600 transition-colors"
-                          >
+                          <a href={`tel:${loc.phone}`} className="text-gray-700 text-sm font-medium hover:text-blue-600 transition-colors">
                             {loc.phone}
                           </a>
                         </div>
                       )}
                     </div>
 
-                    {/* Connect Button */}
                     <a
                       href={loc.mapUrl}
                       target="_blank"
@@ -1019,7 +994,6 @@ export default function ContactPage() {
               ))}
           </motion.div>
 
-          {/* Bottom Global CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1027,7 +1001,6 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="mt-14 rounded-3xl overflow-hidden relative py-10 px-8 sm:px-12 text-left border border-gray-800"
           >
-            {/* Background Image with Dark Opacity */}
             <div className="absolute inset-0 z-0">
               <Image
                 src="/images/office/building.webp"
@@ -1040,17 +1013,13 @@ export default function ContactPage() {
             </div>
 
             <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-              {/* Left Side: Content & Contacts */}
               <div className="flex flex-col items-start gap-4 max-w-2xl">
-                
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-medium text-white leading-tight">
                   Ready to transform your business{" "}
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-blue-300 to-indigo-300 font-bold">
                     from any location?
                   </span>
                 </h3>
-
-                {/* Horizontal Stack for Direct Contact Info */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-2 text-white/90">
                   <a href="mailto:contact@agsuitetech.com" className="flex items-center gap-2.5 hover:text-cyan-400 transition-colors group">
                     <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
@@ -1061,7 +1030,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Right Side: Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
                 <a
                   href="#"
@@ -1088,14 +1056,6 @@ export default function ContactPage() {
       {/* ── Scripts ─────────────────────────────────────────────────────────── */}
       <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
       <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=dc6cfe6eaa303bd5d195bb5352719bba230c529eae5f6f0823d0a841f9dd57657e6049706260d6effe692960c6c5bab7gid6711126e0f954ae10107c9d2bd1b386506273b37e6e0265531ba837d5c4ed25dgid10b59705091816e9551c4ebc62e953e4111c79398428255d38ea16f03d7b9f05gid0c55c5d686e2e3f755b127157834bc2774e542abc82e5c1ce5eba2a071c6fc31&tw=70c0fd3034b5b59f1ac7be0a50f49b22d50d34cb8687eb35e3649323a8c88143&version=v2" strategy="afterInteractive" />
-      {/* Zoho SalesIQ Chatbot - Commented out */}
-      {/*
-      <Script id="zoho-salesiq-ns" strategy="afterInteractive">
-        {`
-          var $zoho= $zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.in/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
-        `}
-      </Script>
-      */}
       <Script id="recap-callback-ns" strategy="afterInteractive">
         {`
           function rccallback409531000042578178_ns() {
@@ -1112,7 +1072,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
-
-
-
