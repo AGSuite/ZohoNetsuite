@@ -237,7 +237,7 @@ export default function NetSuiteSolutionsClient() {
         "AI-powered forecasting and business insights",
         "Intelligent workflow automation across departments"
       ],
-      link: "/artificial-intelligence-ai",
+      link: "/netsuite/next-ai",
       image: "/images/Dashboard/Artifical Intelligence 2 dashboard.jpg",
       icon: Star,
       tag: "AI",

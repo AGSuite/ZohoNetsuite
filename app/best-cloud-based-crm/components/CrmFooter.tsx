@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CrmFooter() {
   return (
@@ -27,23 +28,19 @@ export default function CrmFooter() {
 
           {/* Legal Links */}
           <div className="flex items-center space-x-6 text-xs font-medium">
-            <a
-              href="https://agsuitetech.com/privacy-policy/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/privacy-policy"
               className="text-slate-300 hover:text-blue-400 transition-colors"
             >
               Privacy Policy
-            </a>
+            </Link>
             <span className="text-slate-700">•</span>
-            <a
-              href="https://agsuitetech.com/terms-and-conditions/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/terms-conditions"
               className="text-slate-300 hover:text-blue-400 transition-colors"
             >
               Terms and Conditions
-            </a>
+            </Link>
           </div>
 
         </div>
