@@ -1327,8 +1327,8 @@ export const INDUSTRY_PAGES: Record<
   { title: string; description: string; keywords: string[]; category: string; publishedTime: string }
 > = {
   "/zoho/advertising-and-digital-marketing-agencies": {
-    "title": "Manage Campaigns & Margins Effectively with Zoho | AGSuite",
-    "description": "Integrate your project management and financials to gain real-time visibility into campaign profitability. Zoho helps agencies optimize resource allocation and ",
+    "title": "Zoho for Advertising & Marketing Industries | AGSuite Technologies",
+    "description": "Zoho for Advertising & Marketing Industries helps manage campaigns, leads, projects, and client relationships with smart solutions from AGSuite Technologies.",
     "keywords": [
       "Advertising & Marketing",
       "ERP Solutions",
@@ -1339,8 +1339,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/zoho/it-and-professional-services": {
-    "title": "Maximize Billable Hours & Delivery with Zoho | AGSuite",
-    "description": "Streamline project accounting, automate resource allocation, and gain real-time visibility with the unified Zoho cloud suite built for modern IT service provide",
+    "title": "Zoho IT Management Suite | Business Solutions | AGSuite Technologies",
+    "description": "Manage service, operations, devices, and cloud monitoring with Zoho IT management software. AGSuite Technologies helps streamline IT and boost efficiency.",
     "keywords": [
       "IT Services",
       "ERP Solutions",
@@ -1351,8 +1351,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/zoho/manufacturing": {
-    "title": "Build the Future of Your Factory Floor with Zoho | AGSuite",
-    "description": "Streamline production cycles, tighten supply chains, and gain real-time visibility with the unified Zoho cloud suite built for modern manufacturers.",
+    "title": "Zoho for Manufacturing | Efficient Production | AGSuite Technologies",
+    "description": "Boost manufacturing with Zoho tools for automation, resource planning, and supply chain management. Partner with AGSuite Technologies to improve efficiency.",
     "keywords": [
       "Manufacturing",
       "ERP Solutions",
@@ -1363,8 +1363,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/zoho/media-and-publishing": {
-    "title": "Optimize Ad Sales & Subscriptions with Zoho | AGSuite",
-    "description": "Manage the entire content lifecycle—from ad sales to subscriber management—on a single cloud platform. Drive digital transformation for your media house.",
+    "title": "Zoho for Media & Publishing Industries | AGSuite Technologies",
+    "description": "Zoho for Media & Publishing Industries helps streamline content, projects, sales, and customer management with smart solutions from AGSuite Technologies.",
     "keywords": [
       "Media & Publishing",
       "ERP Solutions",
@@ -1375,8 +1375,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/zoho/retail-and-e-commerce": {
-    "title": "Deliver Perfect Omnichannel Experiences with Zoho | AGSuite",
-    "description": "Connect your online store, physical POS, and warehouse back-office on a single cloud platform. Deliver unified, personalized customer journeys across every chan",
+    "title": "Zoho for Retail & E-commerce | Smart Business Solutions | AGSuite",
+    "description": "Streamline retail and e-commerce with Zoho tools for sales, inventory, and customer management. Grow your business with AGSuite Technologies.",
     "keywords": [
       "Retail & E-commerce",
       "ERP Solutions",
@@ -1387,8 +1387,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/zoho/software-and-technology": {
-    "title": "Accelerate Your SaaS Growth with Zoho | AGSuite",
-    "description": "Automate complex subscription billing, revenue recognition, and global financial consolidations with the unified Zoho cloud suite tailored for high-growth tech ",
+    "title": "Zoho for Software & Technology | AGSuite Technologies",
+    "description": "Zoho for Software & Technology solutions from AGSuite Technologies to streamline operations, automate workflows, manage projects, and drive business growth.",
     "keywords": [
       "Software & Technology",
       "ERP Solutions",
@@ -1399,8 +1399,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/zoho/transportation-and-logistics": {
-    "title": "Drive Operational Excellence with Zoho | AGSuite",
-    "description": "Gain complete visibility across your global shipments, fleet management, and logistics financials with the unified Zoho cloud suite tailored for the transportat",
+    "title": "Zoho for Transport & Logistics Industries | AGSuite Technologies",
+    "description": "Zoho for Transport & Logistics Industries helps streamline fleet, shipments, operations, and customer management with solutions from AGSuite Technologies.",
     "keywords": [
       "Transportation & Logistics",
       "ERP Solutions",
@@ -1411,8 +1411,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/zoho/wholesale-distribution": {
-    "title": "Maximize Supply Chain Efficiency with Zoho | AGSuite",
-    "description": "Run your entire distribution business on a unified cloud suite. Automate procurement, optimize warehouse operations, and improve order fulfillment to scale glob",
+    "title": "Zoho for Wholesale Distribution Industries | AGSuite Technologies",
+    "description": "Zoho for Wholesale Distribution Industries helps streamline inventory, orders, sales, and operations with smart business solutions from AGSuite Technologies.",
     "keywords": [
       "Wholesale Distribution",
       "ERP Solutions",
@@ -1423,8 +1423,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/zoho/telecom-industry": {
-    "title": "Zoho for Telecom Industry — Billing, CRM & Analytics | AGSuite",
-    "description": "Modernize your telecom operations with Zoho's unified cloud suite. Automate subscription billing, CRM integration, and real-time analytics. AGSuite Zoho Premium Partner.",
+    "title": "Zoho for Telecommunications Industries | AGSuite Technologies",
+    "description": "Zoho for Telecommunications Industries helps streamline customer service, billing, operations, and workflows with smart solutions from AGSuite Technologies.",
     "keywords": [
       "Zoho Telecom",
       "Telecom CRM Zoho",
@@ -1437,8 +1437,8 @@ export const INDUSTRY_PAGES: Record<
     "publishedTime": "2024-01-01T00:00:00Z"
   },
   "/zoho/financial-services": {
-    "title": "Zoho for Financial Services — Compliance, Risk & Reporting | AGSuite",
-    "description": "Streamline financial operations with Zoho's integrated suite. Compliance automation, real-time analytics, multi-entity management, and enterprise-grade security.",
+    "title": "Zoho for Financial Services Industries | AGSuite Technologies",
+    "description": "Zoho for Financial Services Industries helps streamline finance, client management, workflows, and operations with smart solutions from AGSuite Technologies.",
     "keywords": [
       "Zoho Financial Services",
       "Financial Compliance Zoho",
