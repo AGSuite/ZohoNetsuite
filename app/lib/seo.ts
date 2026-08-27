@@ -920,6 +920,54 @@ export const NETSUITE_PAGES: Record<
       { name: "NetSuite Data Backup Solution", url: "https://agsuitetech.com/netsuite-data-backup-solution/" },
     ],
   },
+  "/netsuite-erp-and-crm-implementation": {
+    title: "NetSuite Implementation Services | AGSuite Technologies",
+    description:
+      "AGSuite Technologies delivers netsuite implementation services for seamless ERP deployment, data migration, workflow optimization, and scalable business growth.",
+    keywords: ["NetSuite Implementation Services", "NetSuite ERP Implementation", "NetSuite CRM Implementation", "NetSuite Implementation Partner", "AGSuite Technologies"],
+    category: "ERP Software",
+    publishedTime: "2024-03-06T00:00:00Z",
+    canonicalUrl: "https://agsuitetech.com/netsuite-erp-and-crm-implementation/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "NetSuite Implementation Services", url: "https://agsuitetech.com/netsuite-erp-and-crm-implementation/" },
+    ],
+  },
+  "/netsuite-customization": {
+    title: "NetSuite Customization Services | AGSuite Technologies",
+    description:
+      "AGSuite Technologies offers NetSuite Customization Services to tailor ERP workflows, automate processes, improve efficiency, and support scalable business growth.",
+    keywords: ["NetSuite Customization Services", "SuiteScript Customization", "NetSuite Custom Workflows", "NetSuite Customization Partner", "AGSuite Technologies"],
+    category: "ERP Software",
+    publishedTime: "2024-03-06T00:00:00Z",
+    canonicalUrl: "https://agsuitetech.com/netsuite-customization/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "NetSuite Customization Services", url: "https://agsuitetech.com/netsuite-customization/" },
+    ],
+  },
+  "/netsuite-consulting": {
+    title: "NetSuite Consulting Services | AGSuite Technologies",
+    description:
+      "AGSuite Technologies offers NetSuite Consulting Services to optimize ERP strategies, streamline operations, improve performance, and accelerate business growth.",
+    keywords: ["NetSuite Consulting Services", "NetSuite ERP Consulting", "NetSuite Consultant", "NetSuite Advisory", "AGSuite Technologies"],
+    category: "ERP Software",
+    publishedTime: "2024-03-06T00:00:00Z",
+    canonicalUrl: "https://agsuitetech.com/netsuite-consulting/",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "NetSuite Consulting Services", url: "https://agsuitetech.com/netsuite-consulting/" },
+    ],
+  },
 };
 
 // ─── Zoho page metadata map ───────────────────────────────────────────────────
@@ -941,6 +989,66 @@ export const ZOHO_PAGES: Record<
     breadcrumbs?: { name: string; url: string }[];
   }
 > = {
+  "/zoho-implementation-and-integration": {
+    title: "Zoho Implementation Services & Zoho Experts | AGSuite Technologies",
+    description:
+      "AGSuite Technologies offers Zoho Implementation Services with Zoho Implementation Experts to streamline workflows, automate processes, and drive business growth.",
+    keywords: ["Zoho Implementation Services", "Zoho Implementation Experts", "Zoho Implementation Partner", "Zoho CRM Implementation", "AGSuite Technologies"],
+    category: "Business Software",
+    publishedTime: "2024-01-01T00:00:00Z",
+    canonicalUrl: "https://www.agsuitetech.com/zoho-implementation-and-integration",
+    ogImage: "https://www.agsuitetech.com/images/og/og-zoho.jpg",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+  },
+  "/zoho/implementation": {
+    title: "Zoho Implementation Services & Zoho Experts | AGSuite Technologies",
+    description:
+      "AGSuite Technologies offers Zoho Implementation Services with Zoho Implementation Experts to streamline workflows, automate processes, and drive business growth.",
+    keywords: ["Zoho Implementation Services", "Zoho Implementation Experts", "Zoho Implementation Partner", "Zoho CRM Implementation", "AGSuite Technologies"],
+    category: "Business Software",
+    publishedTime: "2024-01-01T00:00:00Z",
+    canonicalUrl: "https://www.agsuitetech.com/zoho-implementation-and-integration",
+    ogImage: "https://www.agsuitetech.com/images/og/og-zoho.jpg",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+  },
+  "/zoho-customization": {
+    title: "Zoho CRM Customization | Zoho Customization Services | AGSuite",
+    description:
+      "AGSuite Technologies delivers Zoho CRM Customization and Zoho Customization Services to automate workflows, enhance CRM performance, and accelerate growth.",
+    keywords: ["Zoho CRM Customization", "Zoho Customization Services", "Zoho Developer", "Deluge Scripting", "AGSuite Technologies"],
+    category: "Business Software",
+    publishedTime: "2024-01-01T00:00:00Z",
+    canonicalUrl: "https://www.agsuitetech.com/zoho-customization",
+    ogImage: "https://www.agsuitetech.com/images/og/og-zoho.jpg",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+  },
+  "/zoho/customization": {
+    title: "Zoho CRM Customization | Zoho Customization Services | AGSuite",
+    description:
+      "AGSuite Technologies delivers Zoho CRM Customization and Zoho Customization Services to automate workflows, enhance CRM performance, and accelerate growth.",
+    keywords: ["Zoho CRM Customization", "Zoho Customization Services", "Zoho Developer", "Deluge Scripting", "AGSuite Technologies"],
+    category: "Business Software",
+    publishedTime: "2024-01-01T00:00:00Z",
+    canonicalUrl: "https://www.agsuitetech.com/zoho-customization",
+    ogImage: "https://www.agsuitetech.com/images/og/og-zoho.jpg",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+  },
+  "/zoho/consulting": {
+    title: "Zoho Consulting Services | AGSuite Technologies",
+    description:
+      "AGSuite Technologies offers Zoho Consulting Services to optimize business processes, implement smarter solutions, automate workflows, and drive sustainable growth.",
+    keywords: ["Zoho Consulting Services", "Zoho Consultant", "Zoho Consulting Partner", "Zoho CRM Consultant", "AGSuite Technologies"],
+    category: "Business Consulting",
+    publishedTime: "2024-01-01T00:00:00Z",
+    canonicalUrl: "https://www.agsuitetech.com/zoho/consulting",
+    ogImage: "https://www.agsuitetech.com/images/og/og-zoho.jpg",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+  },
   "/fixed-asset-management": {
     title: "Fixed Asset Management Software",
     description:

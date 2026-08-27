@@ -539,7 +539,7 @@ export default function ImplementationPage() {
               className="space-y-6"
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-indigo-500 leading-tight">
-                NetSuite Implementation Done Right.
+                End-to-End NetSuite Implementation Services for Business Growth
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 A NetSuite implementation is more than installing software —
