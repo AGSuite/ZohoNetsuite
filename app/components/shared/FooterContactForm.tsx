@@ -86,8 +86,8 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
     ? {
         formId: "webform409531000047791096",
         formName: "WebToLeads409531000047791096",
-        xnQsjsdp: "d93e9734418e9c3b30c5c23b8af4dd429de93b1470fabb4bf7e171e04e9320c4",
-        xmIwtLD: "a1ff21d61463233d02dc2b03196b44982299ea07db1e7a146ec82490a3b4ed3f60122b57caf1c6ec49d3dab4bb853c05",
+        xnQsjsdp: "e79cbdec5c6e5b7d7f71b6fd074e22822590c7d5f2b4c7d541bbbb65cad7c1e9",
+        xmIwtLD: "07822c70b4131fef446a0a686c99d5195d6d6ddfa0431c1f0eeb3f080cc03771374f84de08a3fd4604be9855603d3099",
         serviceFieldName: "LEADCF166",
         serviceLabel: "Netsuite Services *",
         serviceDefault: "-Select NetSuite Service-",
@@ -103,7 +103,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
           "NetSuite India Localization",
           "NetSuite Data Backup for India",
         ],
-        analyticsUrl: "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=f3bd7ced542f46fb29f93c7b4373f644d31cd086a4c8ba496469ac37904e8969fb10bf3d8a40f15f5fe6730cdc57d4f2gid167833e7721e721304ef8b4e7b752e284f56e917ca0fccb8bc6f7aae6837f471gid5137712e2bcc0fc63616e5455f8634a0d25ac539577adfb58231ee7d8763df70gidf15b03d4b7c830e31d17a78a2ed5d924b5573ae74083bf9cf0ccd463f3da1b79&tw=305381ce4c4600239ccac51f06f0b5020c12d5e18d247356125554ea55b10144&version=v2",
+        analyticsUrl: "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=9928b42954d320356885bb078ab0c3360c484e291c9e63097274653a3641def28b6749111011c9996c331f7836c7a2e8gid872197a4e4b8e909c249edeced5a19f1d2f950e702a3b0289fff2eacb04b67b1gid273da06b7bb3796c20973a82554d312ddd92ec671fa5a6016c080db58e6ccf5agidf40ec6d150665170b0cb2e595aa0cb939a02ed9792327816f3776b9eead7fe3a&tw=48a179f0eb3b7de8eccbf4bf9c2ace934d9e1bdc655d88e07911628e929af667&version=v2",
         validateFuncName: "checkMandatory409531000047791096",
         validateEmailFuncName: "validateEmail409531000047791096",
         recapId: "recap409531000047791096_footer_ns",
@@ -115,8 +115,8 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
     : {
         formId: "webform409531000047791049",
         formName: "WebToLeads409531000047791049",
-        xnQsjsdp: "67860b2429a550e35c7c44282b3ccd5de42dee7cf8fadbbd5b2f0246e4e596a8",
-        xmIwtLD: "921e163c506154d37a6252eba6666b0ab6a5878005e7d9cb1bf24e8009451307593cbebb06b6266e387cfba4816aa5de",
+        xnQsjsdp: "262e1ed99e86602d574e7f7a3556903cf3987a60522587d193269076b51f27ac",
+        xmIwtLD: "50434209e66e7930102f5d083964cd0f9819b88a702d9fc9750da997ff754f7e4e67130f9f65fb9d33069cf9e29699b3",
         serviceFieldName: "LEADCF165",
         serviceLabel: "Zoho Services *",
         serviceDefault: "-Select Zoho Service-",
@@ -129,7 +129,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
           "Zoho Customization",
           "Zoho Integrations",
         ],
-        analyticsUrl: "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=b908fa1000ffab4de1ced9e0bc7e605d4b9da9c7e59003cda4fe2d5db395d3a6e920d6be9ea3169a822e7ffa8db98da3gid36af8b4f2f5e65871c16869ec7ceb488d9acd260a6a187e0e40496bb05cbd880gidc009046b21cd87dacbd66406502a39eeeee1bb100ecec3b05d1cddc544de6a91gid71744047765ea757c7b289ee81e7d53226bf584a9c9d5103f52b7caed0551abc&tw=2d15c3d8b27233dfba15d0cf7605b68dbbb864dd84073072c165ea1f4eabbc40&version=v2",
+        analyticsUrl: "https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=5be9692ef9ab427acf1391714f2fff91d5b72c469390938cefbd33ab84dd5b8e9c71223ce8c14f44c8e8365f6a8c23d6gidbc632d800f066907ef96d29b7bae4b8ea7e60f0229673f2235936f50246b89fbgid29eac7a96f602c220e122d79c6e3da45331fb2e363513e82ad55c00dfc35c738gidcab4223515c216b81de2936190487e2bac1ebee6f8458681d0b0cd6ba0ce7107&tw=d6fc29e8e9570866ed4bd03fb221b685fd56a29f2bc327bb3bb9169356a4b4e3&version=v2",
         validateFuncName: "checkMandatory409531000047791049",
         validateEmailFuncName: "validateEmail409531000047791049",
         recapId: "recap409531000047791049_footer_zoho",
@@ -476,16 +476,16 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                                 suppressHydrationWarning
                               >
                                 <option value="-None-">-None-</option>
-                                <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
-                                <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
-                                <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
-                                <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
-                                <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
-                                <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
-                                <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
-                                <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
-                                <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
-                                <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
+                                <option value="Less than $ 1M">Less than $ 1M</option>
+                                <option value="$ 1M - 2.5M">$ 1M - 2.5M</option>
+                                <option value="$ 2.5M - 5M">$ 2.5M - 5M</option>
+                                <option value="$ 5M - 10M">$ 5M - 10M</option>
+                                <option value="$ 10M - 15M">$ 10M - 15M</option>
+                                <option value="$ 15M - 25M">$ 15M - 25M</option>
+                                <option value="$ 25M - 50M">$ 25M - 50M</option>
+                                <option value="$ 50M - 100M">$ 50M - 100M</option>
+                                <option value="$ 100M - 250M">$ 100M - 250M</option>
+                                <option value="More than $ 250M">More than $ 250M</option>
                               </select>
                             </div>
                             <div>

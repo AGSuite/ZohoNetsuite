@@ -115,12 +115,12 @@ export default function EmbeddedZohoForm() {
 
     return (
         <div id="crmWebToEntityForm" className="zcwf_lblLeft crmWebToEntityForm">
-            <Script id="wf_anal_embed" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=b908fa1000ffab4de1ced9e0bc7e605d4b9da9c7e59003cda4fe2d5db395d3a6e920d6be9ea3169a822e7ffa8db98da3gid36af8b4f2f5e65871c16869ec7ceb488d9acd260a6a187e0e40496bb05cbd880gidc009046b21cd87dacbd66406502a39eeeee1bb100ecec3b05d1cddc544de6a91gid71744047765ea757c7b289ee81e7d53226bf584a9c9d5103f52b7caed0551abc&tw=2d15c3d8b27233dfba15d0cf7605b68dbbb864dd84073072c165ea1f4eabbc40&version=v2" strategy="afterInteractive" />
+            <Script id="wf_anal_embed" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=5be9692ef9ab427acf1391714f2fff91d5b72c469390938cefbd33ab84dd5b8e9c71223ce8c14f44c8e8365f6a8c23d6gidbc632d800f066907ef96d29b7bae4b8ea7e60f0229673f2235936f50246b89fbgid29eac7a96f602c220e122d79c6e3da45331fb2e363513e82ad55c00dfc35c738gidcab4223515c216b81de2936190487e2bac1ebee6f8458681d0b0cd6ba0ce7107&tw=d6fc29e8e9570866ed4bd03fb221b685fd56a29f2bc327bb3bb9169356a4b4e3&version=v2" strategy="afterInteractive" />
             <iframe name="zoho_iframe_embedded" style={{ display: 'none' }}></iframe>
             <form id="webform409531000047791049" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000047791049" method="POST" onSubmit={handleFormSubmit} acceptCharset="UTF-8">
-                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="67860b2429a550e35c7c44282b3ccd5de42dee7cf8fadbbd5b2f0246e4e596a8" readOnly />
+                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="262e1ed99e86602d574e7f7a3556903cf3987a60522587d193269076b51f27ac" readOnly />
                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                <input type="text" className="hidden" name="xmIwtLD" defaultValue="921e163c506154d37a6252eba6666b0ab6a5878005e7d9cb1bf24e8009451307593cbebb06b6266e387cfba4816aa5de" readOnly />
+                <input type="text" className="hidden" name="xmIwtLD" defaultValue="50434209e66e7930102f5d083964cd0f9819b88a702d9fc9750da997ff754f7e4e67130f9f65fb9d33069cf9e29699b3" readOnly />
                 <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
                 <input type="text" className="hidden" name="returnURL" value={returnUrl} readOnly />
                 <input type="text" className="hidden" name="aG9uZXlwb3Q" defaultValue="" readOnly />
@@ -243,16 +243,16 @@ export default function EmbeddedZohoForm() {
                         <label className="agsuite_label" htmlFor="LEADCF19">Annual Revenue *</label>
                         <select id="LEADCF19" name="LEADCF19" required onChange={() => (window as any).addAriaSelected409531000047791049?.()}>
                             <option value="-None-">-None-</option>
-                            <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
-                            <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
-                            <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
-                            <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
-                            <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
-                            <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
-                            <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
-                            <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
-                            <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
-                            <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
+                            <option value="Less than $ 1M">Less than $ 1M</option>
+                            <option value="$ 1M - 2.5M">$ 1M - 2.5M</option>
+                            <option value="$ 2.5M - 5M">$ 2.5M - 5M</option>
+                            <option value="$ 5M - 10M">$ 5M - 10M</option>
+                            <option value="$ 10M - 15M">$ 10M - 15M</option>
+                            <option value="$ 15M - 25M">$ 15M - 25M</option>
+                            <option value="$ 25M - 50M">$ 25M - 50M</option>
+                            <option value="$ 50M - 100M">$ 50M - 100M</option>
+                            <option value="$ 100M - 250M">$ 100M - 250M</option>
+                            <option value="More than $ 250M">More than $ 250M</option>
                         </select>
                     </div>
 

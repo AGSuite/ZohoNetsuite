@@ -216,7 +216,7 @@ export default function ContactFormDesign4() {
     <>
       <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
       {/* NetSuite Web-to-Lead Analytics */}
-      <Script id="wf_anal_netsuite" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=f84d1d6876a443cf36bdeab891c5582d7c3e142d9fce42d31ffc393506d6d6d54dbf7f9cf10e11397fb06e31977be163gid65b81325138b2fc10191c2ef7b4572a0b18f76ffadabafd1f029455ae866a59cgidf169f3e66dfe1cbf71d7bc2d3d67d57ab12b228f83d723a6a15eb3cfddecc257gid6d99bc21bab3635e5f6b816b959e07211ea39cb1eae372096d63da78a4b9dccc&tw=1db53bf46a6a8b587793bb8f51f25b9b772d35495cdb16dcd3a6abe2ad6ecd11&version=v2" strategy="afterInteractive" />
+      <Script id="wf_anal_netsuite" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=9928b42954d320356885bb078ab0c3360c484e291c9e63097274653a3641def28b6749111011c9996c331f7836c7a2e8gid872197a4e4b8e909c249edeced5a19f1d2f950e702a3b0289fff2eacb04b67b1gid273da06b7bb3796c20973a82554d312ddd92ec671fa5a6016c080db58e6ccf5agidf40ec6d150665170b0cb2e595aa0cb939a02ed9792327816f3776b9eead7fe3a&tw=48a179f0eb3b7de8eccbf4bf9c2ace934d9e1bdc655d88e07911628e929af667&version=v2" strategy="afterInteractive" />
       <section id="contact-form" className="relative py-10 sm:py-12 bg-slate-950 overflow-hidden scroll-mt-28">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.15),rgba(255,255,255,0))]" />
         
@@ -262,9 +262,9 @@ export default function ContactFormDesign4() {
                 acceptCharset="UTF-8"
                 className="space-y-5"
               >
-                <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="d93e9734418e9c3b30c5c23b8af4dd429de93b1470fabb4bf7e171e04e9320c4" readOnly />
+                <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="e79cbdec5c6e5b7d7f71b6fd074e22822590c7d5f2b4c7d541bbbb65cad7c1e9" readOnly />
                 <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-                <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="a1ff21d61463233d02dc2b03196b44982299ea07db1e7a146ec82490a3b4ed3f60122b57caf1c6ec49d3dab4bb853c05" readOnly />
+                <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="07822c70b4131fef446a0a686c99d5195d6d6ddfa0431c1f0eeb3f080cc03771374f84de08a3fd4604be9855603d3099" readOnly />
                 <input type="text" style={{ display: 'none' }} name="actionType" value="TGVhZHM=" readOnly />
                 <input type="text" style={{ display: 'none' }} name="returnURL" value="https://www.agsuite.tech/thank-you" readOnly />
                 <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" value="" readOnly />
@@ -334,16 +334,16 @@ export default function ContactFormDesign4() {
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Annual Revenue *</label>
                     <select id="LEADCF19" name="LEADCF19" required onChange={(e) => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none cursor-pointer">
                       <option value="-None-">-None-</option>
-                      <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
-                      <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
-                      <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
-                      <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
-                      <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
-                      <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
-                      <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
-                      <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
-                      <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
-                      <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
+                      <option value="Less than $ 1M">Less than $ 1M</option>
+                      <option value="$ 1M - 2.5M">$ 1M - 2.5M</option>
+                      <option value="$ 2.5M - 5M">$ 2.5M - 5M</option>
+                      <option value="$ 5M - 10M">$ 5M - 10M</option>
+                      <option value="$ 10M - 15M">$ 10M - 15M</option>
+                      <option value="$ 15M - 25M">$ 15M - 25M</option>
+                      <option value="$ 25M - 50M">$ 25M - 50M</option>
+                      <option value="$ 50M - 100M">$ 50M - 100M</option>
+                      <option value="$ 100M - 250M">$ 100M - 250M</option>
+                      <option value="More than $ 250M">More than $ 250M</option>
                     </select>
                   </div>
                   <div>

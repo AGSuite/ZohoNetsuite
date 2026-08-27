@@ -1,0 +1,520 @@
+<!-- Note :
+   - You can modify the font style and form style to suit your website. 
+   - Code lines with comments Do not remove this code are required for the form to work properly, make sure that you do not remove these lines of code. 
+   - The Mandatory check script can modified as to suit your business needs. 
+   - It is important that you test the modified form before going live.-->
+<div id = 'crmWebToEntityForm' class = 'zcwf_lblLeft crmWebToEntityForm' style = 'background-color: white;color: black;max-width: 600px;'>
+	<meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'>
+		<META HTTP-EQUIV = 'content-type' CONTENT = 'text/html;charset=UTF-8'>
+			<script src = 'https://www.google.com/recaptcha/api.js' async defer >
+		</script>
+		<form id = 'webform409531000047791096' action = 'https://crm.zoho.in/crm/WebToLeadForm' name = WebToLeads409531000047791096 method = 'POST' onSubmit = 'javascript:document.charset="UTF-8"; return checkMandatory409531000047791096()' accept-charset = 'UTF-8'>
+			<input type = 'text' style = 'display:none;' name = 'xnQsjsdp' value = 'e79cbdec5c6e5b7d7f71b6fd074e22822590c7d5f2b4c7d541bbbb65cad7c1e9'>
+			</input>
+			<input type = 'hidden' name = 'zc_gad' id = 'zc_gad' value = ''>
+			</input>
+			<input type = 'text' style = 'display:none;' name = 'xmIwtLD' value = '07822c70b4131fef446a0a686c99d5195d6d6ddfa0431c1f0eeb3f080cc03771374f84de08a3fd4604be9855603d3099'>
+			</input>
+			<input type = 'text' style = 'display:none;' name = 'actionType' value = 'TGVhZHM='>
+			</input>
+			<input type = 'text' style = 'display:none;' name = 'returnURL' value = 'https://www.agsuite.tech/thank-you'>
+			</input>
+			<!-- Do not remove this code. -->
+			<input type = 'text' style = 'display:none;' id = 'ldeskuid' name = 'ldeskuid'>
+			</input>
+			<input type = 'text' style = 'display:none;' id = 'LDTuvid' name = 'LDTuvid'>
+			</input>
+			<!-- Do not remove this code. -->
+			<div class = 'zcwf_title' style = 'max-width: 600px;color: black;'>
+				NetSuite Contact Us
+			</div>
+			<div class = 'zcwf_row'>
+				<div class = 'zcwf_col_lab' style = 'font-size:12px; font-family: Arial;'>
+					<label for = 'Company'>
+						Company Name
+						<span style = 'color:red;'>
+							*
+						</span>
+					</label>
+				</div>
+				<div class = 'zcwf_col_fld'>
+					<input type = 'text' id = 'Company' name = 'Company' maxlength = '200'>
+					</input>
+					<div class = 'zcwf_col_help'>
+					</div>
+				</div>
+			</div>
+			<div class = 'zcwf_row'>
+				<div class = 'zcwf_col_lab' style = 'font-size:12px; font-family: Arial;'>
+					<label for = 'Last_Name'>
+						Name
+						<span style = 'color:red;'>
+							*
+						</span>
+					</label>
+				</div>
+				<div class = 'zcwf_col_fld'>
+					<input type = 'text' id = 'Last_Name' name = 'Last Name' maxlength = '80'>
+					</input>
+					<div class = 'zcwf_col_help'>
+					</div>
+				</div>
+			</div>
+			<div class = 'zcwf_row'>
+				<div class = 'zcwf_col_lab' style = 'font-size:12px; font-family: Arial;'>
+					<label for = 'Designation'>
+						Role
+						<span style = 'color:red;'>
+							*
+						</span>
+					</label>
+				</div>
+				<div class = 'zcwf_col_fld'>
+					<input type = 'text' id = 'Designation' name = 'Designation' maxlength = '100'>
+					</input>
+					<div class = 'zcwf_col_help'>
+					</div>
+				</div>
+			</div>
+			<div class = 'zcwf_row'>
+				<div class = 'zcwf_col_lab' style = 'font-size:12px; font-family: Arial;'>
+					<label for = 'Email'>
+						Email
+						<span style = 'color:red;'>
+							*
+						</span>
+					</label>
+				</div>
+				<div class = 'zcwf_col_fld'>
+					<input type = 'text' id = 'Email' name = 'Email' data-ftype = 'email' id = 'Email' name = 'Email' maxlength = '100'>
+					</input>
+					<div class = 'zcwf_col_help'>
+					</div>
+				</div>
+			</div>
+			<div class = 'zcwf_row'>
+				<div class = 'zcwf_col_lab' style = 'font-size:12px; font-family: Arial;'>
+					<label for = 'Mobile'>
+						Mobile
+						<span style = 'color:red;'>
+							*
+						</span>
+					</label>
+				</div>
+				<div class = 'zcwf_col_fld'>
+					<input type = 'text' id = 'Mobile' name = 'Mobile' maxlength = '30'>
+					</input>
+					<div class = 'zcwf_col_help'>
+					</div>
+				</div>
+			</div>
+			<div class = 'zcwf_row'>
+				<div class = 'zcwf_col_lab' style = 'font-size:12px; font-family: Arial;'>
+					<label for = 'LEADCF19'>
+						Annual Revenue
+						<span style = 'color:red;'>
+							*
+						</span>
+					</label>
+				</div>
+				<div class = 'zcwf_col_fld'>
+					<select class = 'zcwf_col_fld_slt' id = 'LEADCF19' name = 'LEADCF19' onchange = 'addAriaSelected409531000047791096(this)'>
+						<option value = '-None-'>
+							-None-
+						</option>
+						<option value = 'Less&#x20;than&#x20;&#x24;&#x20;1M'>
+							Less than &#x24; 1M
+						</option>
+						<option value = '&#x24;&#x20;1M&#x20;-&#x20;2.5M'>
+							&#x24; 1M - 2.5M
+						</option>
+						<option value = '&#x24;&#x20;2.5M&#x20;-&#x20;5M'>
+							&#x24; 2.5M - 5M
+						</option>
+						<option value = '&#x24;&#x20;5M&#x20;-&#x20;10M'>
+							&#x24; 5M - 10M
+						</option>
+						<option value = '&#x24;&#x20;10M&#x20;-&#x20;15M'>
+							&#x24; 10M - 15M
+						</option>
+						<option value = '&#x24;&#x20;15M&#x20;-&#x20;25M'>
+							&#x24; 15M - 25M
+						</option>
+						<option value = '&#x24;&#x20;25M&#x20;-&#x20;50M'>
+							&#x24; 25M - 50M
+						</option>
+						<option value = '&#x24;&#x20;50M&#x20;-&#x20;100M'>
+							&#x24; 50M - 100M
+						</option>
+						<option value = '&#x24;&#x20;100M&#x20;-&#x20;250M'>
+							&#x24; 100M - 250M
+						</option>
+						<option value = 'More&#x20;than&#x20;&#x24;&#x20;250M'>
+							More than &#x24; 250M
+						</option>
+					</select>
+					<div class = 'zcwf_col_help'>
+					</div>
+				</div>
+			</div>
+			<div class = 'zcwf_row'>
+				<div class = 'zcwf_col_lab' style = 'font-size:12px; font-family: Arial;'>
+					<label for = 'LEADCF123'>
+						How We Can Help You
+						<span style = 'color:red;'>
+							*
+						</span>
+					</label>
+				</div>
+				<div class = 'zcwf_col_fld'>
+					<textarea id = 'LEADCF123' name = 'LEADCF123'>
+					</textarea>
+					<div class = 'zcwf_col_help'>
+					</div>
+				</div>
+			</div>
+			<div class = 'zcwf_row'>
+				<div class = 'zcwf_col_lab' style = 'font-size:12px; font-family: Arial;'>
+					<label for = 'LEADCF127'>
+						How did you hear about us.
+					</label>
+				</div>
+				<div class = 'zcwf_col_fld'>
+					<select class = 'zcwf_col_fld_slt' id = 'LEADCF127' name = 'LEADCF127' onchange = 'addAriaSelected409531000047791096(this)'>
+						<option value = '-None-'>
+							-None-
+						</option>
+						<option value = 'Email'>
+							Email
+						</option>
+						<option value = 'Event'>
+							Event
+						</option>
+						<option value = 'Friend/Associate'>
+							Friend/Associate
+						</option>
+						<option value = 'Search'>
+							Search
+						</option>
+						<option value = 'Social&#x20;Media'>
+							Social Media
+						</option>
+						<option value = 'Referral'>
+							Referral
+						</option>
+					</select>
+					<div class = 'zcwf_col_help'>
+					</div>
+				</div>
+			</div>
+			<div class = 'zcwf_row'>
+				<div class = 'zcwf_col_lab' style = 'font-size:12px; font-family: Arial;'>
+					<label for = 'LEADCF166'>
+						Netsuite Services
+						<span style = 'color:red;'>
+							*
+						</span>
+					</label>
+				</div>
+				<div class = 'zcwf_col_fld'>
+					<select class = 'zcwf_col_fld_slt' id = 'LEADCF166' name = 'LEADCF166' multiple onchange = 'addAriaSelected409531000047791096(this)'>
+						<option value = 'NetSuite&#x20;Licenses'>
+							NetSuite Licenses
+						</option>
+						<option value = 'NetSuite&#x20;Implementation'>
+							NetSuite Implementation
+						</option>
+						<option value = 'New&#x20;Subsidiary&#x20;Implementation'>
+							New Subsidiary Implementation
+						</option>
+						<option value = 'NetSuite&#x20;Support'>
+							NetSuite Support
+						</option>
+						<option value = 'NetSuite&#x20;Optimization'>
+							NetSuite Optimization
+						</option>
+						<option value = 'NetSuite&#x20;Customization'>
+							NetSuite Customization
+						</option>
+						<option value = 'NetSuite&#x20;Integrations'>
+							NetSuite Integrations
+						</option>
+						<option value = 'NetSuite&#x20;India&#x20;Localization'>
+							NetSuite India Localization
+						</option>
+						<option value = 'NetSuite&#x20;Data&#x20;Backup&#x20;for&#x20;India'>
+							NetSuite Data Backup for India
+						</option>
+					</select>
+					<div class = 'zcwf_col_help'>
+					</div>
+				</div>
+			</div>
+			<div class = 'zcwf_row wfrm_fld_dpNn'>
+				<div class = 'zcwf_col_lab' style = 'font-size:12px; font-family: Arial;'>
+					<label for = 'Lead_Status'>
+						Lead Status
+					</label>
+				</div>
+				<div class = 'zcwf_col_fld'>
+					<select class = 'zcwf_col_fld_slt' id = 'Lead_Status' name = 'Lead Status'>
+						<option value = '-None-'>
+							-None-
+						</option>
+						<option value = 'Attempted&#x20;to&#x20;Contact'>
+							Attempted to Contact
+						</option>
+						<option value = 'Cold&#x20;Lead'>
+							Cold Lead
+						</option>
+						<option value = 'Contact&#x20;in&#x20;Future'>
+							Contact in Future
+						</option>
+						<option value = 'Contacted'>
+							Contacted
+						</option>
+						<option selected value = 'Database'>
+							Database
+						</option>
+						<option value = 'In&#x20;Progress'>
+							In Progress
+						</option>
+						<option value = 'Junk&#x20;Lead'>
+							Junk Lead
+						</option>
+						<option value = 'Lost&#x20;Lead'>
+							Lost Lead
+						</option>
+						<option value = 'Not&#x20;Contacted'>
+							Not Contacted
+						</option>
+						<option value = 'Pre-Qualified'>
+							Pre-Qualified
+						</option>
+						<option value = 'Qualified'>
+							Qualified
+						</option>
+						<option value = 'Warm&#x20;Lead'>
+							Warm Lead
+						</option>
+						<option value = 'Cross&#x20;Sell&#x20;Existing'>
+							Cross Sell Existing
+						</option>
+					</select>
+					<div class = 'zcwf_col_help'>
+					</div>
+				</div>
+			</div>
+			<div class = 'zcwf_row wfrm_fld_dpNn'>
+				<div class = 'zcwf_col_lab' style = 'font-size:12px; font-family: Arial;'>
+					<label for = 'Lead_Source'>
+						Lead Source
+					</label>
+				</div>
+				<div class = 'zcwf_col_fld'>
+					<select class = 'zcwf_col_fld_slt' id = 'Lead_Source' name = 'Lead Source'>
+						<option value = '-None-'>
+							-None-
+						</option>
+						<option value = 'Advertisement'>
+							Advertisement
+						</option>
+						<option value = 'Chat'>
+							Chat
+						</option>
+						<option value = 'Cold&#x20;Call'>
+							Cold Call
+						</option>
+						<option value = 'Employee&#x20;Referral'>
+							Employee Referral
+						</option>
+						<option value = 'External&#x20;Referral'>
+							External Referral
+						</option>
+						<option value = 'Online&#x20;Store'>
+							Online Store
+						</option>
+						<option value = 'Partner'>
+							Partner
+						</option>
+						<option value = 'Public&#x20;Relations'>
+							Public Relations
+						</option>
+						<option value = 'Sales&#x20;Email&#x20;Alias'>
+							Sales Email Alias
+						</option>
+						<option value = 'Trade&#x20;Show'>
+							Trade Show
+						</option>
+						<option value = 'Web&#x20;Download'>
+							Web Download
+						</option>
+						<option value = 'Web&#x20;Research'>
+							Web Research
+						</option>
+						<option selected value = 'Website&#x20;&#x28;Form&#x29;'>
+							Website &#x28;Form&#x29;
+						</option>
+						<option value = 'Web&#x20;Mail'>
+							Web Mail
+						</option>
+						<option value = 'WhatsApp'>
+							WhatsApp
+						</option>
+						<option value = 'Digital&#x20;Marketing'>
+							Digital Marketing
+						</option>
+						<option value = 'Social&#x20;Media'>
+							Social Media
+						</option>
+						<option value = 'Webinar'>
+							Webinar
+						</option>
+						<option value = 'Word&#x20;of&#x20;Mouth'>
+							Word of Mouth
+						</option>
+						<option value = 'Events'>
+							Events
+						</option>
+					</select>
+					<div class = 'zcwf_col_help'>
+					</div>
+				</div>
+			</div>
+			<div class = 'zcwf_row wfrm_fld_dpNn'>
+				<div class = 'zcwf_col_lab' style = 'font-size:12px; font-family: Arial;'>
+					<label for = 'No_of_Employees'>
+						No of Employees
+					</label>
+				</div>
+				<div class = 'zcwf_col_fld'>
+					<input type = 'text' id = 'No_of_Employees' name = 'No of Employees' maxlength = '9' value = '0'>
+					</input>
+					<div class = 'zcwf_col_help'>
+					</div>
+				</div>
+			</div>
+			<div class = 'zcwf_row'>
+				<div class = 'zcwf_col_lab'>
+				</div>
+				<div class = 'zcwf_col_fld'>
+					<div class = 'g-recaptcha' data-sitekey = '6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7' data-theme = 'light' data-callback = 'rccallback409531000047791096' captcha-verified = 'false' id = 'recap409531000047791096'>
+					</div>
+					<div id = 'recapErr409531000047791096' style = 'font-size:12px;color:red;padding-left: 5px;visibility:hidden;'>
+						Google reCAPTCHA verification failed
+					</div>
+				</div>
+			</div>
+			<div class = 'zcwf_row'>
+				<div class = 'zcwf_col_lab'>
+				</div>
+				<div class = 'zcwf_col_fld'>
+					<input type = 'submit' id = 'formsubmit' class = 'formsubmit zcwf_button' value = 'Submit' title = 'Submit'>
+					<input type = 'reset' class = 'zcwf_button' name = 'reset' value = 'Reset' title = 'Reset'>
+				</div>
+			</div>
+			<script>
+				function addAriaSelected409531000047791096(optionElem) {
+					var previousSelectedOption = optionElem.querySelector('[aria-selected="true"]');
+					if (previousSelectedOption) {
+						previousSelectedOption.removeAttribute('aria-selected');
+					}
+					var selectedOption = optionElem.options[optionElem.selectedIndex];
+					selectedOption.setAttribute('aria-selected', 'true');
+				}
+				function rccallback409531000047791096() {
+					if (document.getElementById('recap409531000047791096') != undefined) {
+						document.getElementById('recap409531000047791096').setAttribute('captcha-verified', true);
+					}
+					if (document.getElementById('recapErr409531000047791096') != undefined && document.getElementById('recapErr409531000047791096').style.visibility == 'visible') {
+						document.getElementById('recapErr409531000047791096').style.visibility = 'hidden';
+					}
+				}
+				function reCaptchaAlert409531000047791096() {
+					var recap = document.getElementById('recap409531000047791096');
+					if (recap != undefined && recap.getAttribute('captcha-verified') == 'false') {
+						document.getElementById('recapErr409531000047791096').style.visibility = 'visible';
+						return false;
+					}
+					return true;
+				}
+				function validateEmail409531000047791096() {
+					var form = document.forms['WebToLeads409531000047791096'];
+					var emailFld = form.querySelectorAll('[data-ftype=email]');
+					var i;
+					for (i = 0; i < emailFld.length; i++) {
+						var emailVal = emailFld[i].value;
+						if ((emailVal.replace(/^\s+|\s+$/g, '')).length != 0) {
+							var atpos = emailVal.indexOf('@');
+							var dotpos = emailVal.lastIndexOf('.');
+							if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+								alert('Please enter a valid email address. ');
+								emailFld[i].focus();
+								return false;
+							}
+						}
+					}
+					return true;
+				}
+				function checkMandatory409531000047791096() {
+					var mndFileds = new Array('Company', 'Last Name', 'Designation', 'Email', 'Mobile', 'LEADCF19', 'LEADCF123', 'LEADCF166');
+					var fldLangVal = new Array('Company\x20Name', 'Name', 'Role', 'Email', 'Mobile', 'Annual\x20Revenue', 'How\x20We\x20Can\x20Help\x20You', 'Netsuite\x20Services');
+					for (i = 0; i < mndFileds.length; i++) {
+						var fieldObj = document.forms['WebToLeads409531000047791096'][mndFileds[i]];
+						if (fieldObj) {
+							if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length == 0) {
+								if (fieldObj.type == 'file') {
+									alert('Please select a file to upload.');
+									fieldObj.focus();
+									return false;
+								}
+								alert(fldLangVal[i] + ' cannot be empty.');
+								fieldObj.focus();
+								return false;
+							} else if (fieldObj.nodeName == 'SELECT') {
+								if (fieldObj.options[fieldObj.selectedIndex].value == '-None-') {
+									alert(fldLangVal[i] + ' cannot be none.');
+									fieldObj.focus();
+									return false;
+								}
+							} else if (fieldObj.type == 'checkbox') {
+								if (fieldObj.checked == false) {
+									alert('Please accept  ' + fldLangVal[i]);
+									fieldObj.focus();
+									return false;
+								}
+							}
+							try {
+								if (fieldObj.name == 'Last Name') {
+									name = fieldObj.value;
+								}
+							} catch (e) {
+							}
+						}
+					}
+					if (!validateEmail409531000047791096()) {
+						return false;
+					}
+					if (!reCaptchaAlert409531000047791096()) {
+						return false;
+					}
+					document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+				}
+				function tooltipShow409531000047791096(el) {
+					var tooltip = el.nextElementSibling;
+					var tooltipDisplay = tooltip.style.display;
+					if (tooltipDisplay == 'none') {
+						var elements = document.getElementsByClassName('zcwf_tooltip_over');
+						for (i = 0; i < elements.length; i++) {
+							elements[i].style.display = 'none';
+						}
+						tooltip.style.display = 'block';
+					} else {
+						tooltip.style.display = 'none';
+					}
+				}
+			</script>
+			<script id = 'wf_anal' src = 'https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=9928b42954d320356885bb078ab0c3360c484e291c9e63097274653a3641def28b6749111011c9996c331f7836c7a2e8gid872197a4e4b8e909c249edeced5a19f1d2f950e702a3b0289fff2eacb04b67b1gid273da06b7bb3796c20973a82554d312ddd92ec671fa5a6016c080db58e6ccf5agidf40ec6d150665170b0cb2e595aa0cb939a02ed9792327816f3776b9eead7fe3a&tw=48a179f0eb3b7de8eccbf4bf9c2ace934d9e1bdc655d88e07911628e929af667&version=v2'>
+			</script>
+		</form>
+	</div>

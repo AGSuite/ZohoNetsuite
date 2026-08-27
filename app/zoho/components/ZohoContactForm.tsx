@@ -90,7 +90,7 @@ export default function ZohoContactForm() {
                 }
             }
             if ((window as any).validateEmail409531000047791049 && !(window as any).validateEmail409531000047791049()) return false;
-            if ((window as any).reCaptchaAlert409531000042578178_zohocomp && !(window as any).reCaptchaAlert409531000042578178_zohocomp()) return false;
+            if ((window as any).reCaptchaAlert409531000047791049 && !(window as any).reCaptchaAlert409531000047791049()) return false;
 
             const submitButton = document.querySelector('.crmWebToEntityForm .formsubmit') as HTMLInputElement;
             if (submitButton) {
@@ -216,7 +216,7 @@ export default function ZohoContactForm() {
     return (
         <>
             {/* Zoho CRM Web-to-Lead Analytics */}
-            <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=0eb6a535c81a04e07aa886637740a304d7d59028aa8cf0d09048e8d1fbedf647e44d9f74b254709a0882eb1c31136d9cgid6d4592f2dce66ea8bcc60167960b9d0d27138cba33ac6ce7248c5c53d3a06fdcgid365cc1061c930ed0655f44af7ff3ea4d0b60a3b2784693cb6b2d5828f4dd9f35gid1cae83d6cd96c22775ca40c3b71805971400a95aea889397fdfa8c8f955523fd&tw=d336253c98c6a8f95f079a1420d0d2411cea660a574b2a28d90b4690781c9053&version=v2" strategy="afterInteractive" />
+            <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=5be9692ef9ab427acf1391714f2fff91d5b72c469390938cefbd33ab84dd5b8e9c71223ce8c14f44c8e8365f6a8c23d6gidbc632d800f066907ef96d29b7bae4b8ea7e60f0229673f2235936f50246b89fbgid29eac7a96f602c220e122d79c6e3da45331fb2e363513e82ad55c00dfc35c738gidcab4223515c216b81de2936190487e2bac1ebee6f8458681d0b0cd6ba0ce7107&tw=d6fc29e8e9570866ed4bd03fb221b685fd56a29f2bc327bb3bb9169356a4b4e3&version=v2" strategy="afterInteractive" />
             <section id="contact-form" className="relative py-10 sm:py-12 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
                 {/* Background Decorative Gradients */}
                 <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-blue-500/30 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
@@ -359,9 +359,9 @@ export default function ZohoContactForm() {
                                 variants={containerVariants}
                                 className="space-y-6"
                             >
-                                <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="67860b2429a550e35c7c44282b3ccd5de42dee7cf8fadbbd5b2f0246e4e596a8" readOnly />
+                                <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="262e1ed99e86602d574e7f7a3556903cf3987a60522587d193269076b51f27ac" readOnly />
                                 <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-                                <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="921e163c506154d37a6252eba6666b0ab6a5878005e7d9cb1bf24e8009451307593cbebb06b6266e387cfba4816aa5de" readOnly />
+                                <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="50434209e66e7930102f5d083964cd0f9819b88a702d9fc9750da997ff754f7e4e67130f9f65fb9d33069cf9e29699b3" readOnly />
                                 <input type="text" style={{ display: 'none' }} name="actionType" value="TGVhZHM=" readOnly />
                                 <input type="text" style={{ display: 'none' }} name="returnURL" value={returnUrl} readOnly />
                                 <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" value="" readOnly />
@@ -446,16 +446,16 @@ export default function ZohoContactForm() {
                                                 className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md"
                                             >
                                                 <option value="-None-">-None-</option>
-                                                <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
-                                                <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
-                                                <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
-                                                <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
-                                                <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
-                                                <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
-                                                <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
-                                                <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
-                                                <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
-                                                <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
+                                                <option value="Less than $ 1M">Less than $ 1M</option>
+                                                <option value="$ 1M - 2.5M">$ 1M - 2.5M</option>
+                                                <option value="$ 2.5M - 5M">$ 2.5M - 5M</option>
+                                                <option value="$ 5M - 10M">$ 5M - 10M</option>
+                                                <option value="$ 10M - 15M">$ 10M - 15M</option>
+                                                <option value="$ 15M - 25M">$ 15M - 25M</option>
+                                                <option value="$ 25M - 50M">$ 25M - 50M</option>
+                                                <option value="$ 50M - 100M">$ 50M - 100M</option>
+                                                <option value="$ 100M - 250M">$ 100M - 250M</option>
+                                                <option value="More than $ 250M">More than $ 250M</option>
                                             </select>
                                         </div>
                                     </motion.div>

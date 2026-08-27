@@ -507,9 +507,9 @@ export default function ZohoContactPage() {
                       acceptCharset="UTF-8"
                       className="space-y-3"
                     >
-                      <input type="text" className="hidden" name="xnQsjsdp" value="67860b2429a550e35c7c44282b3ccd5de42dee7cf8fadbbd5b2f0246e4e596a8" readOnly />
+                      <input type="text" className="hidden" name="xnQsjsdp" value="262e1ed99e86602d574e7f7a3556903cf3987a60522587d193269076b51f27ac" readOnly />
                       <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-                      <input type="text" className="hidden" name="xmIwtLD" value="921e163c506154d37a6252eba6666b0ab6a5878005e7d9cb1bf24e8009451307593cbebb06b6266e387cfba4816aa5de" readOnly />
+                      <input type="text" className="hidden" name="xmIwtLD" value="50434209e66e7930102f5d083964cd0f9819b88a702d9fc9750da997ff754f7e4e67130f9f65fb9d33069cf9e29699b3" readOnly />
                       <input type="text" className="hidden" name="actionType" value="TGVhZHM=" readOnly />
                       <input type="text" className="hidden" name="returnURL" value={returnUrl} readOnly />
                       <input type="text" className="hidden" name="aG9uZXlwb3Q" value="" readOnly />
@@ -626,16 +626,16 @@ export default function ZohoContactPage() {
                             className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none cursor-pointer transition-all"
                           >
                             <option value="-None-">-None-</option>
-                            <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
-                            <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
-                            <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
-                            <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
-                            <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
-                            <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
-                            <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
-                            <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
-                            <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
-                            <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
+                            <option value="Less than $ 1M">Less than $ 1M</option>
+                            <option value="$ 1M - 2.5M">$ 1M - 2.5M</option>
+                            <option value="$ 2.5M - 5M">$ 2.5M - 5M</option>
+                            <option value="$ 5M - 10M">$ 5M - 10M</option>
+                            <option value="$ 10M - 15M">$ 10M - 15M</option>
+                            <option value="$ 15M - 25M">$ 15M - 25M</option>
+                            <option value="$ 25M - 50M">$ 25M - 50M</option>
+                            <option value="$ 50M - 100M">$ 50M - 100M</option>
+                            <option value="$ 100M - 250M">$ 100M - 250M</option>
+                            <option value="More than $ 250M">More than $ 250M</option>
                           </select>
                         </div>
                       </div>
@@ -1073,17 +1073,17 @@ export default function ZohoContactPage() {
       <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
       <Script id="recap-callback" strategy="afterInteractive">
         {`
-          function rccallback409531000042578178() {
-            if(document.getElementById('recap409531000042578178')!=undefined){
-              document.getElementById('recap409531000042578178').setAttribute('captcha-verified',true);
+          function rccallback409531000047791049() {
+            if(document.getElementById('recap409531000047791049')!=undefined){
+              document.getElementById('recap409531000047791049').setAttribute('captcha-verified',true);
             }
-            if(document.getElementById('recapErr409531000042578178')!=undefined && document.getElementById('recapErr409531000042578178').style.visibility == 'visible' ){
-              document.getElementById('recapErr409531000042578178').style.visibility='hidden';
+            if(document.getElementById('recapErr409531000047791049')!=undefined && document.getElementById('recapErr409531000047791049').style.visibility == 'visible' ){
+              document.getElementById('recapErr409531000047791049').style.visibility='hidden';
             }
           }
         `}
       </Script>
-      <Script id="wf_anal_zoho_contact" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=e7fa82545e6cbc426156b206aa8236f2c686a1dd1fa2201a42f8f8bc1f3ed582856adb0b2a204a9d5af92c2452e3a8a8gidc5c4b2eec1a1272f8a476c638c29bb49a4d78e91e7b5216007f5c7aeef1afd9fg5f6d199f406123ad764d17f846376ab5e7fab29b0bebbbde07b6a8367d0aba4cgid8d7aa6245a7de773373511b56e3ffa902647cb1e3730e636a86b82d0019d0cce&tw=b2ff6a1aabcf001476b36b61fabd0fbad09ea545696c57b419b7adca06e6ef53&version=v2" strategy="afterInteractive" />
+      <Script id="wf_anal_zoho_contact" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=5be9692ef9ab427acf1391714f2fff91d5b72c469390938cefbd33ab84dd5b8e9c71223ce8c14f44c8e8365f6a8c23d6gidbc632d800f066907ef96d29b7bae4b8ea7e60f0229673f2235936f50246b89fbgid29eac7a96f602c220e122d79c6e3da45331fb2e363513e82ad55c00dfc35c738gidcab4223515c216b81de2936190487e2bac1ebee6f8458681d0b0cd6ba0ce7107&tw=d6fc29e8e9570866ed4bd03fb221b685fd56a29f2bc327bb3bb9169356a4b4e3&version=v2" strategy="afterInteractive" />
     </div>
   );
 }

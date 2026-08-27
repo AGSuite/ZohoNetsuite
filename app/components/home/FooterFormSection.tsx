@@ -282,9 +282,9 @@ export default function FooterFormSection() {
                 className="space-y-6"
               >
                 {/* Zoho CRM Hidden Fields */}
-                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="d93e9734418e9c3b30c5c23b8af4dd429de93b1470fabb4bf7e171e04e9320c4" readOnly />
+                <input type="text" className="hidden" name="xnQsjsdp" defaultValue="e79cbdec5c6e5b7d7f71b6fd074e22822590c7d5f2b4c7d541bbbb65cad7c1e9" readOnly />
                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
-                <input type="text" className="hidden" name="xmIwtLD" defaultValue="a1ff21d61463233d02dc2b03196b44982299ea07db1e7a146ec82490a3b4ed3f60122b57caf1c6ec49d3dab4bb853c05" readOnly />
+                <input type="text" className="hidden" name="xmIwtLD" defaultValue="07822c70b4131fef446a0a686c99d5195d6d6ddfa0431c1f0eeb3f080cc03771374f84de08a3fd4604be9855603d3099" readOnly />
                 <input type="text" className="hidden" name="Lead Source" value="Web to Leads" readOnly />
                 <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
                 <input type="text" className="hidden" name="returnURL" defaultValue="https://www.agsuite.tech/thank-you" readOnly />
@@ -352,16 +352,16 @@ export default function FooterFormSection() {
                     <div className="relative">
                       <select name="LEADCF19" required defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000042578178?.(); }} className="w-full bg-blue-50/30 border-2 border-transparent focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-gray-900 transition-all outline-none appearance-none cursor-pointer text-sm">
                         <option value="" disabled>Select Revenue</option>
-                        <option value="Less than 8 Cr ($ 1M)">Less than 8 Cr ($ 1M)</option>
-                        <option value="8 - 20 Cr ($ 1M - 2.5M)">8 - 20 Cr ($ 1M - 2.5M)</option>
-                        <option value="20 - 40 Cr ($ 2.5M - 5M)">20 - 40 Cr ($ 2.5M - 5M)</option>
-                        <option value="40 - 80 Cr ($ 5M - 10M)">40 - 80 Cr ($ 5M - 10M)</option>
-                        <option value="80 - 120 Cr ($ 10M - 15M)">80 - 120 Cr ($ 10M - 15M)</option>
-                        <option value="120 - 200 Cr ($ 15M - 25M)">120 - 200 Cr ($ 15M - 25M)</option>
-                        <option value="200 - 400 Cr ($ 25M - 50M)">200 - 400 Cr ($ 25M - 50M)</option>
-                        <option value="400 - 800 Cr ($ 50M - 100M)">400 - 800 Cr ($ 50M - 100M)</option>
-                        <option value="800 - 2000 Cr ($ 100M - 250M)">800 - 2000 Cr ($ 100M - 250M)</option>
-                        <option value="More than 2000 Cr ($ 250M+)">More than 2000 Cr ($ 250M+)</option>
+                        <option value="Less than $ 1M">Less than $ 1M</option>
+                        <option value="$ 1M - 2.5M">$ 1M - 2.5M</option>
+                        <option value="$ 2.5M - 5M">$ 2.5M - 5M</option>
+                        <option value="$ 5M - 10M">$ 5M - 10M</option>
+                        <option value="$ 10M - 15M">$ 10M - 15M</option>
+                        <option value="$ 15M - 25M">$ 15M - 25M</option>
+                        <option value="$ 25M - 50M">$ 25M - 50M</option>
+                        <option value="$ 50M - 100M">$ 50M - 100M</option>
+                        <option value="$ 100M - 250M">$ 100M - 250M</option>
+                        <option value="More than $ 250M">More than $ 250M</option>
                       </select>
                       <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
@@ -417,7 +417,7 @@ export default function FooterFormSection() {
       </div>
       <Script src="https://www.google.com/recaptcha/api.js" />
       {/* Zoho CRM Web-to-Lead Analytics */}
-      <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=dc6cfe6eaa303bd5d195bb5352719bba230c529eae5f6f0823d0a841f9dd57657e6049706260d6effe692960c6c5bab7gid6711126e0f954ae10107c9d2bd1b386506273b37e6e0265531ba837d5c4ed25dgid10b59705091816e9551c4ebc62e953e4111c79398428255d38ea16f03d7b9f05gid0c55c5d686e2e3f755b127157834bc2774e542abc82e5c1ce5eba2a071c6fc31&tw=70c0fd3034b5b59f1ac7be0a50f49b22d50d34cb8687eb35e3649323a8c88143&version=v2" />
+      <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=9928b42954d320356885bb078ab0c3360c484e291c9e63097274653a3641def28b6749111011c9996c331f7836c7a2e8gid872197a4e4b8e909c249edeced5a19f1d2f950e702a3b0289fff2eacb04b67b1gid273da06b7bb3796c20973a82554d312ddd92ec671fa5a6016c080db58e6ccf5agidf40ec6d150665170b0cb2e595aa0cb939a02ed9792327816f3776b9eead7fe3a&tw=48a179f0eb3b7de8eccbf4bf9c2ace934d9e1bdc655d88e07911628e929af667&version=v2" />
     </section>
 
   );
