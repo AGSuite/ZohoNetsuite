@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Search, Filter, ArrowRight, X, CheckCircle2 } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import 'intl-tel-input/styles';
 
