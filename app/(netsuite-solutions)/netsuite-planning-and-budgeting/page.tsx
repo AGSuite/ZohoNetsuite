@@ -241,7 +241,7 @@ export default function PlanningPage() {
       <nav className="sticky top-[72px] z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-wrap items-center justify-center gap-1 py-2 sm:py-4">
-            {[{ label: "What is NetSuite Planning and Budgeting?", href: "#what-is" }, { label: "Features", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Services", href: "#services" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
+            {[{ label: "What is NetSuite Planning and Budgeting?", href: "#what-is-netsuite-planning-and-budgeting" }, { label: "Features", href: "#modules" }, { label: "Benefits", href: "#benefits" }, { label: "Pricing", href: "#pricing" }, { label: "FAQ", href: "#faq" }].map(l => (
               <a key={l.href} href={l.href} className="px-4 py-2 text-base font-semibold hover:bg-teal-50 rounded-lg transition-all whitespace-nowrap">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-700 via-cyan-600 to-teal-500">{l.label}</span>
               </a>
@@ -251,7 +251,7 @@ export default function PlanningPage() {
       </nav>
 
       {/* What is */}
-      <section id="what-is" className="pt-5 pb-14 bg-white scroll-mt-36">
+      <section id="what-is-netsuite-planning-and-budgeting" className="pt-5 pb-14 bg-white scroll-mt-36">
         <div className="max-w-8xl mx-auto px-16">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             <motion.div
