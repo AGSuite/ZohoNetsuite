@@ -248,7 +248,7 @@ export default function NetSuiteConnectorPage() {
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6" style={{ minHeight: '500px' }}>
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.3]">
-                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400 mb-2">Experience a smarter<br /> way to manage your{' '}</span>
+                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400 mb-2">Experience a smarter<br /> way to connect and manage your{' '}</span>
 
                 {/* Pill card — bg + border animate with each word */}
                 <motion.span

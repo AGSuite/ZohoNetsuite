@@ -193,7 +193,7 @@ export default function IndiaLocalizationPage() {
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15] tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                  Streamlined Tax Management With AGSuite India Localization for NetSuite
+                  Streamlined Tax & Statutory Compliance With AGSuite India Localization for NetSuite
                 </span>
               </motion.h1>
               <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }}

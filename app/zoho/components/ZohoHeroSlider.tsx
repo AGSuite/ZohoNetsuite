@@ -70,12 +70,21 @@ const HeroSlide = ({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight pb-1 ${titleGradient ? titleGradient : (textColor === 'dark'
-                  ? "bg-gradient-to-r from-gray-950 via-gray-800 to-red-600 bg-clip-text text-transparent"
-                  : "text-white"
-                  )}`}>
-                  {title}
-                </h1>
+                {priority ? (
+                  <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight pb-1 ${titleGradient ? titleGradient : (textColor === 'dark'
+                    ? "bg-gradient-to-r from-gray-950 via-gray-800 to-red-600 bg-clip-text text-transparent"
+                    : "text-white"
+                    )}`}>
+                    {title}
+                  </h1>
+                ) : (
+                  <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight pb-1 ${titleGradient ? titleGradient : (textColor === 'dark'
+                    ? "bg-gradient-to-r from-gray-950 via-gray-800 to-red-600 bg-clip-text text-transparent"
+                    : "text-white"
+                    )}`}>
+                    {title}
+                  </h2>
+                )}
 
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}

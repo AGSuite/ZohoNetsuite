@@ -29,6 +29,11 @@ export default function Home() {
     <main
       className="min-h-screen px-4 md:px-8 lg:px-12 py-6 md:py-10 relative z-0"
     >
+      {/* Primary Semantic H1 for Search Engines */}
+      <h1 className="sr-only">
+        Oracle NetSuite ERP & Zoho Premium Implementation Partner | AGSuite Technologies
+      </h1>
+
       <div className="fixed inset-0 -z-10 w-screen h-screen">
         <Image
           src="/images/Background/bghomepage.webp"

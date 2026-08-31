@@ -210,8 +210,6 @@ export default function FreeConsultationTopLevel() {
     await sendEmail(e.currentTarget);
   };
 
-  if (!isClient) return null;
-
   return (
     <div className="min-h-screen bg-white selection:bg-blue-900 selection:text-white">
 
