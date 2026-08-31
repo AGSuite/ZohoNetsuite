@@ -382,20 +382,12 @@ const nextConfig: NextConfig = {
       { source: '/jobs/netsuite-developer', destination: '/careers/netsuite-developer/', permanent: true },
       { source: '/jobs/netsuite-technical-lead-2', destination: '/careers/netsuite-technical-lead/', permanent: true },
       { source: '/home-page/', destination: '/', permanent: true },
-      { source: '/best-cloud-based-erp-software/index.php', destination: '/best-cloud-based-erp-software', permanent: true },
-      { source: '/best-cloud-based-erp-software/index.php/', destination: '/best-cloud-based-erp-software', permanent: true },
+      { source: '/netsuite/suitecloud', destination: '/netsuite-customization', permanent: true },
     ];
   },
   async rewrites() {
     return [
       { source: '/email/Logo-Light-static-to-gif', destination: '/email/Logo-Light-static-to-gif.gif' },
-      { source: '/zoho-implementation-and-integration', destination: '/zoho/implementation' },
-      { source: '/zoho-integration', destination: '/zoho/integration-services' },
-      { source: '/zoho-customization', destination: '/zoho/customization' },
-      { source: '/zoho-support', destination: '/zoho/managed-services' },
-      { source: '/zoho-training-services', destination: '/zoho/training-services' },
-      { source: '/zoho-products', destination: '/zoho/solutions' },
-      { source: '/zoho-products/', destination: '/zoho/solutions' },
     ];
   },
 };

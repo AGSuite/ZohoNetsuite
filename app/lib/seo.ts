@@ -1037,6 +1037,54 @@ export const ZOHO_PAGES: Record<
     ogType: "article",
     ogSiteName: "AGSuite",
   },
+  "/zoho-products": {
+    title: "Zoho Implementation Partner | Top Zoho Partner | Best Zoho Partner | Pune | India",
+    description:
+      "Elevate your business with AGSuite Technologies, the top Zoho Implementation Partner in Pune, India. Unlock the full potential of Zoho solutions with our expert services.",
+    keywords: ["Zoho Partner", "Zoho Implementation Partner", "Zoho Products", "Zoho Suite", "AGSuite Technologies"],
+    category: "Business Software",
+    publishedTime: "2024-01-01T00:00:00Z",
+    canonicalUrl: "https://www.agsuitetech.com/zoho-products",
+    ogImage: "https://www.agsuitetech.com/images/og/og-zoho.jpg",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+  },
+  "/zoho-integration": {
+    title: "Zoho Integration Services | AGSuite Technologies",
+    description:
+      "AGSuite Technologies offers Zoho Integration Services to connect business applications, automate workflows, streamline operations, and boost productivity.",
+    keywords: ["Zoho Integration Services", "Zoho API Integration", "Zoho Flow", "AGSuite Technologies"],
+    category: "Business Software",
+    publishedTime: "2024-01-01T00:00:00Z",
+    canonicalUrl: "https://www.agsuitetech.com/zoho-integration",
+    ogImage: "https://www.agsuitetech.com/images/og/og-zoho.jpg",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+  },
+  "/zoho-support": {
+    title: "Zoho Support & Zoho Managed Services | AGSuite Technologies",
+    description:
+      "AGSuite Technologies offers Zoho Support & Zoho Managed Services for seamless operations, faster issue resolution, system optimization, and business growth.",
+    keywords: ["Zoho Support", "Zoho Managed Services", "Zoho Maintenance", "AGSuite Technologies"],
+    category: "Business Software",
+    publishedTime: "2024-01-01T00:00:00Z",
+    canonicalUrl: "https://www.agsuitetech.com/zoho-support",
+    ogImage: "https://www.agsuitetech.com/images/og/og-zoho.jpg",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+  },
+  "/zoho-training-services": {
+    title: "Zoho Training Services | AGSuite Technologies",
+    description:
+      "Upskill your team with expert-led Zoho Training Services from AGSuite Technologies. Practical hands-on training for Zoho CRM, Books, Creator, and more.",
+    keywords: ["Zoho Training Services", "Zoho Training Partner", "Zoho Certification", "AGSuite Technologies"],
+    category: "Business Training",
+    publishedTime: "2024-01-01T00:00:00Z",
+    canonicalUrl: "https://www.agsuitetech.com/zoho-training-services",
+    ogImage: "https://www.agsuitetech.com/images/og/og-zoho.jpg",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+  },
   "/zoho/consulting": {
     title: "Zoho Consulting Services | AGSuite Technologies",
     description:

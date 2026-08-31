@@ -255,10 +255,10 @@ const data: IndustryPageData = {
     },
   ],
   relatedIndustries: [
-    { label: "Software & Technology", href: "/netsuite/software" },
-    { label: "Telecom Industry", href: "/netsuite/telecom" },
-    { label: "IT & Professional Services", href: "/netsuite/it-services" },
-    { label: "Wholesale Distribution", href: "/netsuite/wholesale" },
+    { label: "Software & Technology", href: "/netsuite/software-and-technology" },
+    { label: "Telecom Industry", href: "/netsuite/telecom-industry" },
+    { label: "IT & Professional Services", href: "/netsuite/it-and-professional-services" },
+    { label: "Wholesale Distribution", href: "/netsuite/wholesale-distribution" },
   ],
 };
 

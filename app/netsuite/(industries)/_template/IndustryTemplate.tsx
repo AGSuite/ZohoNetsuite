@@ -167,7 +167,7 @@ const nsServices = [
     description:
       "Tailor NetSuite to your unique business needs with SuiteScript and SuiteCloud.",
     icon: Code,
-    href: "/netsuite/suitecloud",
+    href: "/netsuite-customization",
   },
   {
     title: "NetSuite Managed Support",
