@@ -3,9 +3,21 @@
 import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Filter, ArrowRight, X, CheckCircle2 } from 'lucide-react';
-import IntlTelInput from '@intl-tel-input/react/with-utils';
+import dynamic from 'next/dynamic';
 import 'intl-tel-input/styles';
+
+const IntlTelInput = dynamic(() => import('@intl-tel-input/react/with-utils'), {
+    ssr: false,
+    loading: () => (
+        <input
+            type="tel"
+            id="modal-phone"
+            required
+            placeholder="Mobile number"
+            className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+        />
+    ),
+});
 
 interface CaseStudy {
     id: number;

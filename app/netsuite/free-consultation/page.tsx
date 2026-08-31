@@ -14,8 +14,23 @@ import {
   Send,
 } from "lucide-react";
 import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
-import IntlTelInput from "@intl-tel-input/react/with-utils";
+import dynamic from "next/dynamic";
 import "intl-tel-input/styles";
+
+const IntlTelInput = dynamic(() => import("@intl-tel-input/react/with-utils"), {
+  ssr: false,
+  loading: () => (
+    <input
+      type="tel"
+      id="Mobile"
+      name="Mobile"
+      required
+      maxLength={30}
+      placeholder="Mobile number"
+      className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none transition-all placeholder-slate-400"
+    />
+  ),
+});
 
 /* ─── Particles ───────────────────────────────────────────────────────────── */
 const PARTICLES = [
@@ -675,8 +690,8 @@ export default function FreeConsultationTopLevel() {
       </section>
 
       {/* ── Scripts ─────────────────────────────────────────────────────────── */}
-      <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
-      <Script id="wf_anal_ns_consult" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=9928b42954d320356885bb078ab0c3360c484e291c9e63097274653a3641def28b6749111011c9996c331f7836c7a2e8gid872197a4e4b8e909c249edeced5a19f1d2f950e702a3b0289fff2eacb04b67b1gid273da06b7bb3796c20973a82554d312ddd92ec671fa5a6016c080db58e6ccf5agidf40ec6d150665170b0cb2e595aa0cb939a02ed9792327816f3776b9eead7fe3a&tw=48a179f0eb3b7de8eccbf4bf9c2ace934d9e1bdc655d88e07911628e929af667&version=v2" strategy="afterInteractive" />
+      <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="lazyOnload" />
+      <Script id="wf_anal_ns_consult" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=9928b42954d320356885bb078ab0c3360c484e291c9e63097274653a3641def28b6749111011c9996c331f7836c7a2e8gid872197a4e4b8e909c249edeced5a19f1d2f950e702a3b0289fff2eacb04b67b1gid273da06b7bb3796c20973a82554d312ddd92ec671fa5a6016c080db58e6ccf5agidf40ec6d150665170b0cb2e595aa0cb939a02ed9792327816f3776b9eead7fe3a&tw=48a179f0eb3b7de8eccbf4bf9c2ace934d9e1bdc655d88e07911628e929af667&version=v2" strategy="lazyOnload" />
     </div>
   );
 }

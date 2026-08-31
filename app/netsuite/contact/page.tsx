@@ -22,70 +22,48 @@ import {
   Heart,
   Shield,
 } from "lucide-react";
-import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
-import IntlTelInput from "@intl-tel-input/react/with-utils";
+import dynamic from "next/dynamic";
 import "intl-tel-input/styles";
 
+const IntlTelInput = dynamic(() => import("@intl-tel-input/react/with-utils"), {
+  ssr: false,
+  loading: () => (
+    <input
+      type="tel"
+      id="Mobile"
+      name="Mobile"
+      required
+      maxLength={30}
+      placeholder="Mobile number"
+      className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none transition-all placeholder-slate-400"
+    />
+  ),
+});
 
-function StatCard({ item, index }: { item: any; index: number }) {
-  const numericValue = parseInt(item.value.replace(/\D/g, "")) || 0;
-  const suffix = item.value.replace(/\d/g, "");
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest));
-  const [displayCount, setDisplayCount] = useState(0);
-
-  useEffect(() => {
-    const unsubscribe = rounded.on("change", (v) => setDisplayCount(v));
-    return () => unsubscribe();
-  }, [rounded]);
-
-  const triggerRoll = () => {
-    animate(count, numericValue, {
-      duration: 1.5,
-      ease: "easeOut",
-      from: 0,
-    });
-  };
-
-  useEffect(() => {
-    triggerRoll();
-  }, [numericValue]);
-
+function StatCard({ item }: { item: any; index?: number }) {
   return (
-    <motion.div
-      onMouseEnter={triggerRoll}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      whileHover={{
-        scale: 1.03,
-        rotateY: 6,
-        rotateX: -3,
-        transition: { duration: 0.3, ease: "easeOut" },
-      }}
-      transition={{ delay: 0.4 + index * 0.1 }}
-      style={{ perspective: 1000 }}
-      className="relative group p-4 rounded-xl bg-gradient-to-br from-white via-white/95 to-blue-50/90 border border-blue-100/60 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-500 overflow-hidden"
+    <div
+      className="relative group p-4 rounded-xl bg-gradient-to-br from-white via-white/95 to-blue-50/90 border border-blue-100/60 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 overflow-hidden"
     >
       {/* Decorative faint icon bg */}
-      <div className="absolute -right-2 -bottom-2 opacity-[0.18] group-hover:opacity-[0.32] transition-all duration-500 pointer-events-none">
+      <div className="absolute -right-2 -bottom-2 opacity-[0.18] group-hover:opacity-[0.32] transition-opacity duration-300 pointer-events-none">
         <item.icon className="w-16 h-16 text-blue-900" strokeWidth={1} />
       </div>
 
       <div className="relative z-10 flex flex-col items-start text-left">
-        <div className="mb-2.5 w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-xs">
+        <div className="mb-2.5 w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-xs">
           <item.icon className="w-4 h-4" strokeWidth={1.5} />
         </div>
         <div className="space-y-1">
           <div className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#000d2e] via-blue-900 to-black tracking-tight leading-tight">
-            {displayCount}
-            {suffix}
+            {item.value}
           </div>
           <p className="text-gray-500 font-semibold text-[11px] group-hover:text-blue-700 transition-colors uppercase tracking-wider leading-tight">
             {item.label}
           </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -880,15 +858,7 @@ export default function ContactPage() {
                     }`}
                 >
                   <span className="text-base leading-none" suppressHydrationWarning>
-                    {tab === "All" ? (
-                      "🌐"
-                    ) : (
-                      <img
-                        src={`https://flagcdn.com/${tab === "INDIA" ? "in" : tab === "USA" ? "us" : "gb"}.svg`}
-                        alt={tab}
-                        className="w-5 h-3.5 rounded-sm object-cover inline-block"
-                      />
-                    )}
+                    {tab === "All" ? "🌐" : tab === "INDIA" ? "🇮🇳" : tab === "USA" ? "🇺🇸" : "🇬🇧"}
                   </span>
                   {labels[tab]}
                   {isActive && (
@@ -920,19 +890,18 @@ export default function ContactPage() {
                   whileHover={{ y: -5, transition: { duration: 0.22 } }}
                   className="group relative bg-white rounded-2xl overflow-hidden flex flex-col border border-gray-200 shadow-md hover:shadow-xl hover:border-blue-200 transition-all duration-300"
                 >
-                  <div className="relative h-40 w-full overflow-hidden shrink-0">
-                    <img
+                  <div className="relative h-40 w-full overflow-hidden shrink-0 bg-slate-100">
+                    <Image
                       src={loc.image}
                       alt={`${loc.city} Office`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      loading="lazy"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-sm border border-white/20">
-                      <img
-                        src={`https://flagcdn.com/${loc.region === "INDIA" ? "in" : loc.region === "USA" ? "us" : "gb"}.svg`}
-                        alt={loc.region}
-                        className="w-4 h-3 object-cover rounded-sm"
-                      />
+                      <span className="text-xs">{loc.flag}</span>
                       <span className="text-gray-800 font-bold text-[9px] tracking-wider uppercase">{loc.region}</span>
                     </div>
                   </div>
@@ -1006,6 +975,7 @@ export default function ContactPage() {
                 src="/images/office/building.webp"
                 alt="Office Building"
                 fill
+                loading="lazy"
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 80vw"
               />
@@ -1054,8 +1024,8 @@ export default function ContactPage() {
       </section>
 
       {/* ── Scripts ─────────────────────────────────────────────────────────── */}
-      <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
-      <Script id="recap-callback-ns" strategy="afterInteractive">
+      <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="lazyOnload" />
+      <Script id="recap-callback-ns" strategy="lazyOnload">
         {`
           function rccallback409531000047791096() {
             if(document.getElementById('recap409531000047791096')!=undefined){
@@ -1067,7 +1037,7 @@ export default function ContactPage() {
           }
         `}
       </Script>
-      <Script id="wf_anal_ns" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=9928b42954d320356885bb078ab0c3360c484e291c9e63097274653a3641def28b6749111011c9996c331f7836c7a2e8gid872197a4e4b8e909c249edeced5a19f1d2f950e702a3b0289fff2eacb04b67b1gid273da06b7bb3796c20973a82554d312ddd92ec671fa5a6016c080db58e6ccf5agidf40ec6d150665170b0cb2e595aa0cb939a02ed9792327816f3776b9eead7fe3a&tw=48a179f0eb3b7de8eccbf4bf9c2ace934d9e1bdc655d88e07911628e929af667&version=v2" strategy="afterInteractive" />
+      <Script id="wf_anal_ns" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=9928b42954d320356885bb078ab0c3360c484e291c9e63097274653a3641def28b6749111011c9996c331f7836c7a2e8gid872197a4e4b8e909c249edeced5a19f1d2f950e702a3b0289fff2eacb04b67b1gid273da06b7bb3796c20973a82554d312ddd92ec671fa5a6016c080db58e6ccf5agidf40ec6d150665170b0cb2e595aa0cb939a02ed9792327816f3776b9eead7fe3a&tw=48a179f0eb3b7de8eccbf4bf9c2ace934d9e1bdc655d88e07911628e929af667&version=v2" strategy="lazyOnload" />
     </div>
   );
 }

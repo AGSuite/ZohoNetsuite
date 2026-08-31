@@ -784,20 +784,7 @@ export default function ZohoContactPage() {
                     }`}
                 >
                   <span className="text-base leading-none">
-                    {tab === "All" ? (
-                      "🌐"
-                    ) : (
-                      <span className="inline-block w-4.5 h-3 overflow-hidden rounded-xs relative">
-                        <Image
-                          src={`https://flagcdn.com/${tab === "INDIA" ? "in" : tab === "USA" ? "us" : "gb"}.svg`}
-                          alt={tab}
-                          width={18}
-                          height={12}
-                          className="w-full h-full object-cover"
-                          unoptimized
-                        />
-                      </span>
-                    )}
+                    {tab === "All" ? "🌐" : tab === "INDIA" ? "🇮🇳" : tab === "USA" ? "🇺🇸" : "🇬🇧"}
                   </span>
                   {labels[tab]}
                 </button>
@@ -826,16 +813,7 @@ export default function ZohoContactPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-xs border border-white/20">
-                      <span className="inline-block w-4 h-3 overflow-hidden rounded-xs relative">
-                        <Image
-                          src={`https://flagcdn.com/${loc.region === "INDIA" ? "in" : loc.region === "USA" ? "us" : "gb"}.svg`}
-                          alt={loc.region}
-                          width={16}
-                          height={12}
-                          className="w-full h-full object-cover"
-                          unoptimized
-                        />
-                      </span>
+                      <span className="text-xs">{loc.flag}</span>
                       <span className="text-gray-800 font-bold text-[9px] tracking-wider uppercase">{loc.region}</span>
                     </div>
                   </div>
