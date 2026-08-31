@@ -7,66 +7,30 @@ import Script from "next/script";
 import { Send, Briefcase, Building2, Target, Heart } from "lucide-react";
 import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
 
-function Design4StatCard({ item, index }: { item: any; index: number }) {
-  const numericValue = parseInt(item.value.replace(/\D/g, "")) || 0;
-  const suffix = item.value.replace(/\d/g, "");
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest));
-  const [displayCount, setDisplayCount] = useState(0);
-
-  useEffect(() => {
-    const unsubscribe = rounded.on("change", (v) => setDisplayCount(v));
-    return () => unsubscribe();
-  }, [rounded]);
-
-  const triggerRoll = () => {
-    animate(count, numericValue, {
-      duration: 1.5,
-      ease: "easeOut",
-      from: 0,
-    });
-  };
-
-  useEffect(() => {
-    triggerRoll();
-  }, [numericValue]);
-
+function Design4StatCard({ item }: { item: any; index?: number }) {
   return (
-    <motion.div
-      onMouseEnter={triggerRoll}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{
-        scale: 1.05,
-        rotateY: 10,
-        rotateX: -5,
-        transition: { duration: 0.4, ease: "easeOut" },
-      }}
-      transition={{ delay: 0.3 + index * 0.1 }}
-      style={{ perspective: 1000 }}
-      className="relative group p-5 sm:p-6 rounded-[2rem] bg-gradient-to-br from-white via-white/95 to-blue-50 border border-blue-100/50 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 overflow-hidden flex flex-col justify-between"
+    <div
+      className="relative group p-5 sm:p-6 rounded-[2rem] bg-gradient-to-br from-white via-white/95 to-blue-50 border border-blue-100/50 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 overflow-hidden flex flex-col justify-between"
     >
       {/* Decorative faint icon bg */}
-      <div className="absolute -right-4 -bottom-4 opacity-[0.25] group-hover:opacity-[0.45] transition-all duration-500 pointer-events-none">
+      <div className="absolute -right-4 -bottom-4 opacity-[0.25] group-hover:opacity-[0.45] transition-opacity duration-300 pointer-events-none">
         <item.icon className="w-24 h-24 text-blue-900" strokeWidth={1} />
       </div>
 
       <div className="relative z-10 flex flex-col items-start text-left">
-        <div className="mb-4 w-11 h-11 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
+        <div className="mb-4 w-11 h-11 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-sm">
           <item.icon className="w-5.5 h-5.5 font-bold" strokeWidth={1.5} />
         </div>
         <div className="space-y-1">
           <div className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#000d2e] via-blue-900 to-black tracking-tight">
-            {displayCount}
-            {suffix}
+            {item.value}
           </div>
           <p className="text-gray-500 font-semibold text-[10px] sm:text-[11px] group-hover:text-blue-700 transition-colors uppercase tracking-widest leading-tight">
             {item.label}
           </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -214,9 +178,9 @@ export default function ContactFormDesign4() {
 
   return (
     <>
-      <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
+      <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="lazyOnload" />
       {/* NetSuite Web-to-Lead Analytics */}
-      <Script id="wf_anal_netsuite" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=9928b42954d320356885bb078ab0c3360c484e291c9e63097274653a3641def28b6749111011c9996c331f7836c7a2e8gid872197a4e4b8e909c249edeced5a19f1d2f950e702a3b0289fff2eacb04b67b1gid273da06b7bb3796c20973a82554d312ddd92ec671fa5a6016c080db58e6ccf5agidf40ec6d150665170b0cb2e595aa0cb939a02ed9792327816f3776b9eead7fe3a&tw=48a179f0eb3b7de8eccbf4bf9c2ace934d9e1bdc655d88e07911628e929af667&version=v2" strategy="afterInteractive" />
+      <Script id="wf_anal_netsuite" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=9928b42954d320356885bb078ab0c3360c484e291c9e63097274653a3641def28b6749111011c9996c331f7836c7a2e8gid872197a4e4b8e909c249edeced5a19f1d2f950e702a3b0289fff2eacb04b67b1gid273da06b7bb3796c20973a82554d312ddd92ec671fa5a6016c080db58e6ccf5agidf40ec6d150665170b0cb2e595aa0cb939a02ed9792327816f3776b9eead7fe3a&tw=48a179f0eb3b7de8eccbf4bf9c2ace934d9e1bdc655d88e07911628e929af667&version=v2" strategy="lazyOnload" />
       <section id="contact-form" className="relative py-10 sm:py-12 bg-slate-950 overflow-hidden scroll-mt-28">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.15),rgba(255,255,255,0))]" />
         

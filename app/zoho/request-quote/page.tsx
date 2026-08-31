@@ -14,8 +14,23 @@ import {
   Send,
 } from "lucide-react";
 import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
-import IntlTelInput from "@intl-tel-input/react/with-utils";
+import dynamic from "next/dynamic";
 import "intl-tel-input/styles";
+
+const IntlTelInput = dynamic(() => import("@intl-tel-input/react/with-utils"), {
+  ssr: false,
+  loading: () => (
+    <input
+      type="tel"
+      id="Mobile"
+      name="Mobile"
+      required
+      maxLength={30}
+      placeholder="Mobile number"
+      className="w-full bg-white border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-3 py-2.5 text-slate-900 text-xs outline-none transition-all placeholder-slate-400"
+    />
+  ),
+});
 
 /* ─── Particles ───────────────────────────────────────────────────────────── */
 const PARTICLES = [
@@ -682,8 +697,8 @@ export default function ZohoRequestQuotePage() {
       </section>
 
       {/* ── Scripts ───────────────────────────────────────────────────────────── */}
-      <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="afterInteractive" />
-      <Script id="wf_anal_zoho_quote" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=5be9692ef9ab427acf1391714f2fff91d5b72c469390938cefbd33ab84dd5b8e9c71223ce8c14f44c8e8365f6a8c23d6gidbc632d800f066907ef96d29b7bae4b8ea7e60f0229673f2235936f50246b89fbgid29eac7a96f602c220e122d79c6e3da45331fb2e363513e82ad55c00dfc35c738gidcab4223515c216b81de2936190487e2bac1ebee6f8458681d0b0cd6ba0ce7107&tw=d6fc29e8e9570866ed4bd03fb221b685fd56a29f2bc327bb3bb9169356a4b4e3&version=v2" strategy="afterInteractive" />
+      <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="lazyOnload" />
+      <Script id="wf_anal_zoho_quote" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=5be9692ef9ab427acf1391714f2fff91d5b72c469390938cefbd33ab84dd5b8e9c71223ce8c14f44c8e8365f6a8c23d6gidbc632d800f066907ef96d29b7bae4b8ea7e60f0229673f2235936f50246b89fbgid29eac7a96f602c220e122d79c6e3da45331fb2e363513e82ad55c00dfc35c738gidcab4223515c216b81de2936190487e2bac1ebee6f8458681d0b0cd6ba0ce7107&tw=d6fc29e8e9570866ed4bd03fb221b685fd56a29f2bc327bb3bb9169356a4b4e3&version=v2" strategy="lazyOnload" />
     </div>
   );
 }

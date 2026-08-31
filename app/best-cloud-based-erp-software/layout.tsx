@@ -30,7 +30,7 @@ export default function LandingLayout({
   return (
     <>
       {/* Google Tag Manager Script */}
-      <Script id="gtm-init" strategy="afterInteractive">
+      <Script id="gtm-init" strategy="lazyOnload">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -43,9 +43,9 @@ export default function LandingLayout({
       {/* Google tag (gtag.js) - Google Ads */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=AW-10876325873"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
-      <Script id="google-ads-init" strategy="afterInteractive">
+      <Script id="google-ads-init" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}

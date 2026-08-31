@@ -8,66 +8,30 @@ import Script from "next/script";
 import { Briefcase, Building2, Heart, Target } from "lucide-react";
 import MultiSelectDropdown from "./MultiSelectDropdown";
 
-function FooterStatCard({ item, index }: { item: any; index: number }) {
-  const numericValue = parseInt(item.value.replace(/\D/g, "")) || 0;
-  const suffix = item.value.replace(/\d/g, "");
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest));
-  const [displayCount, setDisplayCount] = useState(0);
-
-  useEffect(() => {
-    const unsubscribe = rounded.on("change", (v) => setDisplayCount(v));
-    return () => unsubscribe();
-  }, [rounded]);
-
-  const triggerRoll = () => {
-    animate(count, numericValue, {
-      duration: 1.5,
-      ease: "easeOut",
-      from: 0,
-    });
-  };
-
-  useEffect(() => {
-    triggerRoll();
-  }, [numericValue]);
-
+function FooterStatCard({ item }: { item: any; index?: number }) {
   return (
-    <motion.div
-      onMouseEnter={triggerRoll}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{
-        scale: 1.05,
-        rotateY: 10,
-        rotateX: -5,
-        transition: { duration: 0.4, ease: "easeOut" },
-      }}
-      transition={{ delay: 0.3 + index * 0.1 }}
-      style={{ perspective: 1000 }}
-      className="relative group p-5 sm:p-6 rounded-[2rem] bg-gradient-to-br from-white via-white/95 to-blue-50 border border-blue-100/50 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 overflow-hidden flex flex-col justify-between"
+    <div
+      className="relative group p-5 sm:p-6 rounded-[2rem] bg-gradient-to-br from-white via-white/95 to-blue-50 border border-blue-100/50 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 overflow-hidden flex flex-col justify-between"
     >
       {/* Decorative faint icon bg */}
-      <div className="absolute -right-4 -bottom-4 opacity-[0.25] group-hover:opacity-[0.45] transition-all duration-500 pointer-events-none">
+      <div className="absolute -right-4 -bottom-4 opacity-[0.25] group-hover:opacity-[0.45] transition-opacity duration-300 pointer-events-none">
         <item.icon className="w-24 h-24 text-blue-900" strokeWidth={1} />
       </div>
 
       <div className="relative z-10 flex flex-col items-start text-left">
-        <div className="mb-4 w-11 h-11 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
+        <div className="mb-4 w-11 h-11 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 shadow-sm">
           <item.icon className="w-5.5 h-5.5 font-bold" strokeWidth={1.5} />
         </div>
         <div className="space-y-1">
           <div className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#000d2e] via-blue-900 to-black tracking-tight">
-            {displayCount}
-            {suffix}
+            {item.value}
           </div>
           <p className="text-gray-500 font-semibold text-[10px] sm:text-[11px] group-hover:text-blue-700 transition-colors uppercase tracking-widest leading-tight">
             {item.label}
           </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -279,7 +243,9 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
         <>
           <Script
             src="https://www.google.com/recaptcha/api.js"
-            strategy="afterInteractive"
+            async
+            defer
+            strategy="lazyOnload"
           />
           <Script
             id={`wf_anal_${platform}`}

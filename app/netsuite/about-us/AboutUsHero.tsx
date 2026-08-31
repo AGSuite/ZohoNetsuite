@@ -79,6 +79,7 @@ export default function AboutUsHero() {
             loop
             muted
             playsInline
+            preload="metadata"
             poster="/images/aboutus/aboutusbg.webp"
             style={{ borderRadius: "inherit" }}
           />

@@ -13,8 +13,22 @@ import {
     Minus
 } from 'lucide-react';
 import { submitPricingQuote } from '@/app/api/actions/submitPricingQuote';
-import IntlTelInput from '@intl-tel-input/react/with-utils';
+import dynamic from 'next/dynamic';
 import 'intl-tel-input/styles';
+
+const IntlTelInput = dynamic(() => import('@intl-tel-input/react/with-utils'), {
+    ssr: false,
+    loading: () => (
+        <input
+            type="tel"
+            id="mobile"
+            name="mobile"
+            required
+            placeholder="Phone number"
+            className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all placeholder-slate-400 font-medium"
+        />
+    ),
+});
 
 // --- INTERFACES ---
 interface CalculatorFormData {

@@ -126,7 +126,7 @@ export default function ZohoSupportPage() {
 
     return (
         <div className="min-h-screen bg-white selection:bg-blue-900 selection:text-white">
-            <Script src="https://js.zohostatic.in/support/app/js/jqueryandencoder.ef05974972bf3bca1b87.js" strategy="afterInteractive" />
+            <Script src="https://js.zohostatic.in/support/app/js/jqueryandencoder.ef05974972bf3bca1b87.js" async defer strategy="lazyOnload" />
 
             {/* ── Hero / Form Section ─────────────────────────────────────────────── */}
             <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#000814] via-[#000d2e] to-[#001a4d] flex items-center">
@@ -485,7 +485,7 @@ export default function ZohoSupportPage() {
             </section>
 
             {/* Trigger captcha load on mount */}
-            <Script id="captcha-loader" strategy="afterInteractive">
+            <Script id="captcha-loader" strategy="lazyOnload">
                 {`
                     setTimeout(function() {
                         if (window.zsRegenerateCaptcha) {

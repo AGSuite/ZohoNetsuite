@@ -115,7 +115,7 @@ export default function EmbeddedZohoForm() {
 
     return (
         <div id="crmWebToEntityForm" className="zcwf_lblLeft crmWebToEntityForm">
-            <Script id="wf_anal_embed" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=5be9692ef9ab427acf1391714f2fff91d5b72c469390938cefbd33ab84dd5b8e9c71223ce8c14f44c8e8365f6a8c23d6gidbc632d800f066907ef96d29b7bae4b8ea7e60f0229673f2235936f50246b89fbgid29eac7a96f602c220e122d79c6e3da45331fb2e363513e82ad55c00dfc35c738gidcab4223515c216b81de2936190487e2bac1ebee6f8458681d0b0cd6ba0ce7107&tw=d6fc29e8e9570866ed4bd03fb221b685fd56a29f2bc327bb3bb9169356a4b4e3&version=v2" strategy="afterInteractive" />
+            <Script id="wf_anal_embed" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=5be9692ef9ab427acf1391714f2fff91d5b72c469390938cefbd33ab84dd5b8e9c71223ce8c14f44c8e8365f6a8c23d6gidbc632d800f066907ef96d29b7bae4b8ea7e60f0229673f2235936f50246b89fbgid29eac7a96f602c220e122d79c6e3da45331fb2e363513e82ad55c00dfc35c738gidcab4223515c216b81de2936190487e2bac1ebee6f8458681d0b0cd6ba0ce7107&tw=d6fc29e8e9570866ed4bd03fb221b685fd56a29f2bc327bb3bb9169356a4b4e3&version=v2" strategy="lazyOnload" />
             <iframe name="zoho_iframe_embedded" style={{ display: 'none' }}></iframe>
             <form id="webform409531000047791049" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads409531000047791049" method="POST" onSubmit={handleFormSubmit} acceptCharset="UTF-8">
                 <input type="text" className="hidden" name="xnQsjsdp" defaultValue="262e1ed99e86602d574e7f7a3556903cf3987a60522587d193269076b51f27ac" readOnly />
@@ -275,7 +275,7 @@ export default function EmbeddedZohoForm() {
                     </div>
 
                     <div className="agsuite_column-large">
-                        <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
+                        <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="lazyOnload" />
                         <div
                             className="g-recaptcha"
                             data-sitekey="6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7"
