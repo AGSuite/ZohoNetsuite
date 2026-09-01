@@ -255,25 +255,25 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
         </>
       )}
 
-      <section id="contact-form" className="relative py-10 sm:py-12 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
-        <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-blue-500/30 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3" />
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-500/25 rounded-full blur-[140px] translate-x-1/3 -translate-y-1/3" />
+      <section id="contact-form" className="relative pt-2 pb-6 sm:pt-3 sm:pb-8 lg:pt-4 lg:pb-10 min-h-[calc(100vh-80px)] flex items-start justify-center bg-[#0a0a0a] overflow-hidden scroll-mt-20">
+        <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-blue-500/30 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-500/25 rounded-full blur-[140px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="rounded-3xl bg-[#0d0d0d]/70 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-white/5 rounded-3xl" />
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="rounded-3xl bg-[#0d0d0d]/80 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-white/5 rounded-3xl pointer-events-none" />
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
 
               {/* Left Side - Platform Content */}
-              <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10 bg-gradient-to-br from-blue-950/40 via-purple-950/20 to-transparent">
-                <div className="relative z-10 flex flex-col justify-between h-full space-y-6">
+              <div className="p-5 sm:p-7 lg:p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10 bg-gradient-to-br from-blue-950/40 via-purple-950/20 to-transparent">
+                <div className="relative z-10 flex flex-col justify-between h-full space-y-4">
                   <div>
                     <motion.h2
-                      initial={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 15 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.1 }}
-                      className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight"
+                      className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-3 tracking-tight leading-tight"
                     >
                       {isNetSuite ? (
                         <>Transform Your Business with <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">Oracle NetSuite</span></>
@@ -283,11 +283,11 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                     </motion.h2>
 
                     <motion.p
-                      initial={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 15 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.2 }}
-                      className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-xl"
+                      className="text-gray-300 text-xs sm:text-sm lg:text-base leading-relaxed max-w-xl"
                     >
                       {isNetSuite
                         ? 'Connect with our certified NetSuite consultants for licensing, multi-subsidiary implementations, optimizations, and custom integrations tailored for enterprise scale.'
@@ -295,7 +295,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                     </motion.p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mt-auto pt-2">
+                  <div className="grid grid-cols-2 gap-2.5 sm:gap-3 mt-auto pt-2">
                     {[
                       { value: "700+", label: "Projects Completed", icon: Briefcase },
                       { value: "250+", label: "Global Customers", icon: Building2 },
@@ -309,7 +309,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
               </div>
 
               {/* Right Side - Form */}
-              <div className="p-5 sm:p-6 lg:p-7 bg-white flex flex-col justify-center">
+              <div className="p-4 sm:p-5 lg:p-6 bg-white flex flex-col justify-center">
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -319,26 +319,26 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      className="text-center py-12"
+                      className="text-center py-8"
                     >
-                      <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <h3 className="text-3xl font-bold text-gray-900 mb-3">Thank You!</h3>
-                      <p className="text-gray-600 max-w-md mx-auto mb-8">Your request has been received. Our team will get back to you shortly.</p>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+                      <p className="text-gray-600 max-w-md mx-auto mb-6 text-sm">Your request has been received. Our team will get back to you shortly.</p>
                       <button
                         onClick={() => setSubmitted(false)}
-                        className="mt-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm"
+                        className="mt-2 px-6 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-md hover:scale-[1.02] text-xs uppercase tracking-wider"
                       >
                         Submit Another Enquiry
                       </button>
                     </motion.div>
                   ) : (
                     <>
-                      <div className="mb-4">
-                        <h3 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">Let’s Get Started !!</h3>
+                      <div className="mb-3">
+                        <h3 className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">Let’s Get Started !!</h3>
                       </div>
 
                       <div id="crmWebToEntityForm" className="crmWebToEntityForm">
@@ -372,7 +372,7 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                             }).catch(() => {});
                           }}
                           acceptCharset="UTF-8"
-                          className="space-y-4"
+                          className="space-y-3"
                         >
                           <input type="text" className="hidden" name="xnQsjsdp" value={config.xnQsjsdp} readOnly />
                           <input type="hidden" name="zc_gad" id="zc_gad" value="" />
@@ -390,55 +390,55 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                           </select>
                           <input type="hidden" name="No of Employees" value="0" />
 
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                              <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Name <span className="text-red-500">*</span></label>
-                              <input type="text" id="Last_Name" name="Last Name" maxLength={80} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="John Doe" suppressHydrationWarning />
+                              <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">Name <span className="text-red-500">*</span></label>
+                              <input type="text" id="Last_Name" name="Last Name" maxLength={80} required className="w-full bg-gray-50 border border-blue-100 focus:border-blue-500 rounded-lg px-3 py-2 text-gray-900 outline-none text-xs transition-all shadow-xs" placeholder="John Doe" suppressHydrationWarning />
                             </div>
                             <div>
-                              <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Email <span className="text-red-500">*</span></label>
-                              <input type="text" id="Email" data-ftype="email" name="Email" maxLength={100} autoComplete="off" required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="john@company.com" suppressHydrationWarning />
-                            </div>
-                          </div>
-
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                              <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Role <span className="text-red-500">*</span></label>
-                              <input type="text" id="Designation" name="Designation" maxLength={100} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Manager" suppressHydrationWarning />
-                            </div>
-                            <div>
-                              <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Mobile <span className="text-red-500">*</span></label>
-                              <input type="text" id="Mobile" name="Mobile" maxLength={30} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="+91 9876543210" suppressHydrationWarning />
+                              <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">Email <span className="text-red-500">*</span></label>
+                              <input type="text" id="Email" data-ftype="email" name="Email" maxLength={100} autoComplete="off" required className="w-full bg-gray-50 border border-blue-100 focus:border-blue-500 rounded-lg px-3 py-2 text-gray-900 outline-none text-xs transition-all shadow-xs" placeholder="john@company.com" suppressHydrationWarning />
                             </div>
                           </div>
 
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                              <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Company Name <span className="text-red-500">*</span></label>
-                              <input type="text" id="Company" name="Company" maxLength={200} required className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none text-sm transition-all shadow-sm" placeholder="Company Inc." suppressHydrationWarning />
+                              <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">Role <span className="text-red-500">*</span></label>
+                              <input type="text" id="Designation" name="Designation" maxLength={100} required className="w-full bg-gray-50 border border-blue-100 focus:border-blue-500 rounded-lg px-3 py-2 text-gray-900 outline-none text-xs transition-all shadow-xs" placeholder="Manager" suppressHydrationWarning />
                             </div>
                             <div>
-                              <label htmlFor={`service_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">{config.serviceLabel}</label>
+                              <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">Mobile <span className="text-red-500">*</span></label>
+                              <input type="text" id="Mobile" name="Mobile" maxLength={30} required className="w-full bg-gray-50 border border-blue-100 focus:border-blue-500 rounded-lg px-3 py-2 text-gray-900 outline-none text-xs transition-all shadow-xs" placeholder="+91 9876543210" suppressHydrationWarning />
+                            </div>
+                          </div>
+
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                              <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">Company Name <span className="text-red-500">*</span></label>
+                              <input type="text" id="Company" name="Company" maxLength={200} required className="w-full bg-gray-50 border border-blue-100 focus:border-blue-500 rounded-lg px-3 py-2 text-gray-900 outline-none text-xs transition-all shadow-xs" placeholder="Company Inc." suppressHydrationWarning />
+                            </div>
+                            <div>
+                              <label htmlFor={`service_${platform}`} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">{config.serviceLabel}</label>
                               <MultiSelectDropdown
                                 id={config.serviceFieldName}
                                 name={config.serviceFieldName}
                                 placeholder={config.serviceDefault}
-                                bgClassName="bg-gray-50 border-2 border-blue-100 focus:border-blue-500 hover:border-blue-300 shadow-sm"
+                                bgClassName="bg-gray-50 border border-blue-100 focus:border-blue-500 hover:border-blue-300 shadow-xs text-xs py-1.5 px-3 rounded-lg"
                                 textColorClassName="text-gray-900"
                                 options={config.serviceOptions}
                               />
                             </div>
                           </div>
 
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                              <label htmlFor={`revenue_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">Annual Revenue <span className="text-red-500">*</span></label>
+                              <label htmlFor={`revenue_${platform}`} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">Annual Revenue <span className="text-red-500">*</span></label>
                               <select
                                 id="LEADCF19"
                                 name="LEADCF19"
                                 onChange={(e) => (window as any).addAriaSelectedFooter?.(e)}
                                 required
-                                className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm"
+                                className="w-full bg-gray-50 border border-blue-100 focus:border-blue-500 rounded-lg px-3 py-2 text-gray-900 outline-none appearance-none cursor-pointer text-xs transition-all shadow-xs"
                                 suppressHydrationWarning
                               >
                                 <option value="-None-">-None-</option>
@@ -455,13 +455,13 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                               </select>
                             </div>
                             <div>
-                              <label htmlFor={`hear_${platform}`} className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How did you hear about us. <span className="text-red-500">*</span></label>
+                              <label htmlFor={`hear_${platform}`} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">How did you hear about us. <span className="text-red-500">*</span></label>
                               <select
                                 id="LEADCF127"
                                 name="LEADCF127"
                                 onChange={(e) => (window as any).addAriaSelectedFooter?.(e)}
                                 required
-                                className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none appearance-none cursor-pointer text-sm transition-all shadow-sm"
+                                className="w-full bg-gray-50 border border-blue-100 focus:border-blue-500 rounded-lg px-3 py-2 text-gray-900 outline-none appearance-none cursor-pointer text-xs transition-all shadow-xs"
                                 suppressHydrationWarning
                               >
                                 <option value="-None-">-None-</option>
@@ -476,22 +476,22 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                           </div>
 
                           <div>
-                            <label className="block text-gray-700 text-xs font-bold uppercase tracking-widest mb-1.5">How We Can Help You <span className="text-red-500">*</span></label>
+                            <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">How We Can Help You <span className="text-red-500">*</span></label>
                             <textarea
                               id="LEADCF123"
                               name="LEADCF123"
                               rows={2}
                               required
-                              className="w-full bg-gray-50 border-2 border-blue-100 focus:border-blue-500 rounded-xl px-4 py-2.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-sm transition-all shadow-sm"
+                              className="w-full bg-gray-50 border border-blue-100 focus:border-blue-500 rounded-lg px-3 py-1.5 text-gray-900 outline-none placeholder-gray-400 resize-none text-xs transition-all shadow-xs"
                               placeholder="Share your requirements..."
                               suppressHydrationWarning
                             />
                           </div>
 
                           {/* Captcha Section */}
-                          <div className="flex flex-col gap-2 my-2">
+                          <div className="flex flex-col gap-1 my-1">
                             <div
-                              className="g-recaptcha"
+                              className="g-recaptcha scale-[0.85] origin-left"
                               data-sitekey={config.recapSiteKey}
                               data-theme="light"
                               data-callback={config.recapCallbackName}
@@ -500,17 +500,17 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                             ></div>
                             <div
                               id={config.recapErrId}
-                              style={{ visibility: 'hidden', color: '#ef4444', fontSize: '12px' }}
+                              style={{ visibility: 'hidden', color: '#ef4444', fontSize: '11px' }}
                             >
                               Captcha validation failed. If you are not a robot then please try again.
                             </div>
                           </div>
 
-                          <div className="flex pt-2">
+                          <div className="flex pt-1">
                             <input
                               type="submit"
                               id="formsubmit"
-                              className="formsubmit zcwf_button flex-1 py-3.5 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] text-sm uppercase tracking-widest cursor-pointer"
+                              className="formsubmit zcwf_button flex-1 py-3 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white font-bold rounded-xl transition-all shadow-md hover:scale-[1.01] text-xs uppercase tracking-wider cursor-pointer"
                               value="Submit"
                               suppressHydrationWarning
                             />

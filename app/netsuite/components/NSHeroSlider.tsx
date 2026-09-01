@@ -322,7 +322,7 @@ const NSComplianceCardDeck = ({ isActive }: { isActive: boolean }) => {
                 {/* Action Button */}
                 <div className="mt-3 flex items-center justify-between">
                   <Link
-                    href="/netsuite/contact"
+                    href="#contact-form"
                     className={`inline-flex items-center gap-2 text-xs font-semibold text-white px-4 py-2 rounded-xl bg-linear-to-r ${item.btnGradient} shadow-md transition-all duration-300 hover:opacity-95`}
                   >
                     {item.btnText}
@@ -406,7 +406,7 @@ export default function NSHeroSlider() {
           title="AI-Powered, Future-Ready ERP Solutions Tailored for Your Industry"
           desc="Empower your business with AI-driven NetSuite solutions to automate operations, deliver predictive insights, and accelerate growth across your industry."
           cta="Book a Demo"
-          link="/netsuite/contact"
+          link="#contact-form"
           customVisual={<NSHeroNextAIVisual />}
           priority={true}
           multiColorShadow={true}
@@ -451,7 +451,7 @@ export default function NSHeroSlider() {
           title="One ERP. Complete Financial Control. Zero Guesswork."
           desc="Eliminate spreadsheets, manual reporting, and disconnected systems. AI-powered NetSuite gives CFOs real-time financial visibility, intelligent forecasting, automated compliance, and complete control—all from one unified ERP platform."
           cta="Book a Demo"
-          link="/netsuite/contact"
+          link="#contact-form"
           customVisual={<NSCircularDesign />}
           showOverlay={false}
           textColor="dark"
@@ -471,7 +471,7 @@ export default function NSHeroSlider() {
           title="Your Finance Team Shouldn’t Be Working Until Midnight."
           desc="Eliminate manual reconciliations, delayed approvals, compliance chaos, and reporting bottlenecks with AI-enabled automation. NetSuite streamlines core financial processes and empowers finance leaders to focus on strategy, forecasting, and business growth—not operational firefighting."
           cta="Book a Demo"
-          link="/netsuite/contact"
+          link="#contact-form"
           customVisual={
             <div className="relative w-full flex justify-center lg:justify-end">
               {/* Background glow */}
@@ -548,7 +548,7 @@ export default function NSHeroSlider() {
           title="Built for CFOs Who Can’t Afford Delays, Errors, or Blind Spots."
           desc="Manual reporting, delayed month-end close, and lack of real-time visibility keep CFOs stuck in operational challenges. AI-powered NetSuite transforms finance operations with intelligent automation, real-time dashboards, predictive analytics, streamlined compliance, and a single source of truth for scalable growth."
           cta="Book a Demo"
-          link="/netsuite/contact"
+          link="#contact-form"
           customVisual={
             <div className="relative w-full flex justify-center lg:justify-end">
               {/* Background glow */}
@@ -664,7 +664,7 @@ export default function NSHeroSlider() {
           title="CFOs Need More Than Reports. They Need Real-Time Intelligence."
           desc="Make faster, data-driven decisions with AI-powered forecasting, live dashboards, automated MIS reporting, and real-time analytics. NetSuite transforms finance operations into a strategic command center for smarter planning and confident decision-making."
           cta="Book a Demo"
-          link="/netsuite/contact"
+          link="#contact-form"
           showOverlay={false}
           textColor="dark"
           customVisual={
@@ -760,7 +760,7 @@ export default function NSHeroSlider() {
           title="Turn Compliance Stress Into Automated Confidence."
           desc="Automate GST, TDS, e-Invoicing, approvals, audit trails, revenue recognition, and financial controls with AI-driven workflows in one unified ERP. Reduce compliance risk, eliminate manual dependencies, and stay audit-ready at all times."
           cta="Book a Demo"
-          link="/netsuite/contact"
+          link="#contact-form"
           customVisual={
             <NSComplianceCardDeck isActive={activeIndex === 5} />
           }
@@ -784,7 +784,7 @@ export default function NSHeroSlider() {
           title="Built to Support Growth Without Operational Chaos."
           desc="As your business expands, disconnected tools and manual processes become harder to manage. AI-powered NetSuite provides a scalable cloud ERP platform that supports growing teams, increasing transactions, and evolving business models—without adding complexity."
           cta="Book a Demo"
-          link="/netsuite/contact"
+          link="#contact-form"
           customVisual={
             <div className="relative w-full flex justify-center lg:justify-end">
               {/* Background ambient glow */}

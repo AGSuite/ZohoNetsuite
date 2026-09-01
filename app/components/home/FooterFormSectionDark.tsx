@@ -3,6 +3,7 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import MultiSelectDropdown from "../shared/MultiSelectDropdown";
 
 export default function FooterFormSectionDark() {
   const [mounted, setMounted] = useState(false);
@@ -201,13 +202,13 @@ export default function FooterFormSectionDark() {
   if (!mounted) return null;
 
   return (
-    <section id="contact-us" className="relative py-10 sm:py-12 overflow-hidden bg-[#0a0a0a]">
+    <section id="contact-form" className="relative pt-2 pb-6 sm:pt-3 sm:pb-8 lg:pt-4 lg:pb-10 min-h-[calc(100vh-80px)] flex items-start justify-center overflow-hidden bg-[#0a0a0a] scroll-mt-20">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none opacity-60"></div>
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[130px] translate-y-1/2 -translate-x-1/4 pointer-events-none opacity-60"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
           {/* Left Column: Heading and Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -215,37 +216,37 @@ export default function FooterFormSectionDark() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-3 tracking-tight leading-tight">
               Let's Architect <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-200">
                 Your Digital Future
               </span>
             </h2>
 
-            <div className="space-y-4 text-gray-300 text-sm sm:text-base leading-relaxed max-w-lg mb-6">
+            <div className="space-y-3 text-gray-300 text-xs sm:text-sm lg:text-base leading-relaxed max-w-lg mb-5">
               <p>Ready to streamline your business? Our experts are standing by to help you unlock the full power of Zoho and Oracle NetSuite.</p>
             </div>
 
             {/* Trust Badges */}
-            <div className="flex flex-wrap items-center gap-6 opacity-60 grayscale brightness-150 hover:grayscale-0 transition-all duration-500">
-              <Image src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" alt="NetSuite Partner" width={160} height={50} className="h-10 w-auto object-contain" />
-              <Image src="/images/zoho-logos/zoho premium.png" alt="Zoho Partner" width={140} height={40} className="h-8 w-auto object-contain" />
+            <div className="flex flex-wrap items-center gap-5 opacity-70 grayscale brightness-150 hover:grayscale-0 transition-all duration-500">
+              <Image src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" alt="NetSuite Partner" width={140} height={45} className="h-8 sm:h-9 w-auto object-contain" />
+              <Image src="/images/zoho-logos/zoho premium.png" alt="Zoho Partner" width={130} height={35} className="h-7 sm:h-8 w-auto object-contain" />
             </div>
           </motion.div>
 
           {/* Right Column: The Modern Zoho Web Form */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
             className="relative"
           >
-            <div className="absolute inset-0 bg-blue-400 rounded-3xl blur-3xl opacity-[0.05] -rotate-3"></div>
-            <div className="relative bg-[#1a1a1a] border border-white/10 rounded-3xl p-5 sm:p-6 lg:p-7 shadow-2xl overflow-hidden backdrop-blur-sm">
+            <div className="absolute inset-0 bg-blue-400 rounded-3xl blur-3xl opacity-[0.05] -rotate-3 pointer-events-none"></div>
+            <div className="relative bg-[#1a1a1a] border border-white/10 rounded-3xl p-4 sm:p-5 lg:p-6 shadow-2xl overflow-hidden backdrop-blur-sm">
               {/* Form Heading */}
-              <div className="mb-4 text-center lg:text-left">
-                <h3 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent tracking-tight">Get in Touch</h3>
+              <div className="mb-3 text-center lg:text-left">
+                <h3 className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent tracking-tight">Get in Touch</h3>
               </div>
 
               <form
@@ -278,129 +279,112 @@ export default function FooterFormSectionDark() {
                   }).catch(() => {});
                 }}
                 acceptCharset="UTF-8"
-                className="space-y-6"
+                className="space-y-3"
               >
                 {/* Zoho CRM Hidden Fields */}
                 <input type="text" className="hidden" name="xnQsjsdp" defaultValue="e79cbdec5c6e5b7d7f71b6fd074e22822590c7d5f2b4c7d541bbbb65cad7c1e9" readOnly />
                 <input type="hidden" name="zc_gad" id="zc_gad" defaultValue="" />
                 <input type="text" className="hidden" name="xmIwtLD" defaultValue="07822c70b4131fef446a0a686c99d5195d6d6ddfa0431c1f0eeb3f080cc03771374f84de08a3fd4604be9855603d3099" readOnly />
+                <input type="text" className="hidden" name="Lead Source" value="Web to Leads" readOnly />
                 <input type="text" className="hidden" name="actionType" defaultValue="TGVhZHM=" readOnly />
                 <input type="text" className="hidden" name="returnURL" defaultValue="https://www.agsuite.tech/thank-you" readOnly />
                 <input type="text" className="hidden" id="ldeskuid" name="ldeskuid" readOnly />
                 <input type="text" className="hidden" id="LDTuvid" name="LDTuvid" readOnly />
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {/* Full Name */}
                   <div>
-                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5">Full Name *</label>
-                    <input type="text" name="Last Name" required className="w-full bg-white/5 border-2 border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-xl px-4 py-3 text-white transition-all outline-none text-sm" placeholder="John Doe" />
+                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-wider mb-1">Full Name *</label>
+                    <input type="text" name="Last Name" required className="w-full bg-white/5 border border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-lg px-3 py-2 text-white transition-all outline-none text-xs" placeholder="John Doe" />
                   </div>
 
                   {/* Business Email */}
                   <div>
-                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5">Business Email *</label>
-                    <input type="email" data-ftype="email" name="LEADCF8" required className="w-full bg-white/5 border-2 border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-xl px-4 py-3 text-white transition-all outline-none text-sm" placeholder="john@company.com" />
+                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-wider mb-1">Business Email *</label>
+                    <input type="email" data-ftype="email" name="LEADCF8" required className="w-full bg-white/5 border border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-lg px-3 py-2 text-white transition-all outline-none text-xs" placeholder="john@company.com" />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {/* Role */}
                   <div>
-                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5">Job Title *</label>
-                    <input type="text" name="Designation" required className="w-full bg-white/5 border-2 border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-xl px-4 py-3 text-white transition-all outline-none text-sm" placeholder="Director" />
+                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-wider mb-1">Job Title *</label>
+                    <input type="text" name="Designation" required className="w-full bg-white/5 border border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-lg px-3 py-2 text-white transition-all outline-none text-xs" placeholder="Director" />
                   </div>
 
                   {/* Mobile */}
                   <div>
-                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5">Mobile *</label>
-                    <input type="tel" name="Mobile" required className="w-full bg-white/5 border-2 border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-xl px-4 py-3 text-white transition-all outline-none text-sm" placeholder="+91 00000 00000" />
+                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-wider mb-1">Mobile *</label>
+                    <input type="tel" name="Mobile" required className="w-full bg-white/5 border border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-lg px-3 py-2 text-white transition-all outline-none text-xs" placeholder="+91 00000 00000" />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {/* Company */}
                   <div>
-                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5">Company Name *</label>
-                    <input type="text" name="Company" required className="w-full bg-white/5 border-2 border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-xl px-4 py-3 text-white transition-all outline-none text-sm" placeholder="Company Inc." />
+                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-wider mb-1">Company Name *</label>
+                    <input type="text" name="Company" required className="w-full bg-white/5 border border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-lg px-3 py-2 text-white transition-all outline-none text-xs" placeholder="Company Inc." />
                   </div>
 
                   {/* Service Interest */}
                   <div>
-                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5">Service *</label>
-                    <select
-                      multiple
+                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-wider mb-1">Service *</label>
+                    <MultiSelectDropdown
+                      id="LEADCF5"
                       name="LEADCF5"
-                      required
-                      className="w-full bg-white/5 border-2 border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-xl p-2 text-white transition-all outline-none text-sm h-28"
-                    >
-                      {[
+                      placeholder="Select Service"
+                      bgClassName="bg-white/5 border border-transparent focus:border-blue-500 focus:bg-[#252525] text-xs py-1.5 px-3 rounded-lg"
+                      textColorClassName="text-white"
+                      options={[
                         "Licenses",
                         "AMC",
                         "NetSuite Product /Services",
                         "Zoho Products/Services",
-                      ].map((opt) => (
-                        <option
-                          key={opt}
-                          value={opt}
-                          onMouseDown={(e) => {
-                            e.preventDefault();
-                            const option = e.currentTarget;
-                            option.selected = !option.selected;
-                            const select = option.parentElement as HTMLSelectElement;
-                            if (select) {
-                              select.dispatchEvent(new Event('change', { bubbles: true }));
-                            }
-                          }}
-                          className="py-1 px-2 hover:bg-blue-600 checked:bg-blue-600 checked:text-white cursor-pointer rounded bg-[#252525]"
-                        >
-                          {opt}
-                        </option>
-                      ))}
-                    </select>
-                    <p className="text-[11px] text-gray-400 mt-1 font-medium">Click options to select/unselect multiple services</p>
+                      ]}
+                    />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {/* Annual Revenue */}
                   <div>
-                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5">Annual Revenue *</label>
+                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-wider mb-1">Annual Revenue *</label>
                     <div className="relative">
-                      <select name="LEADCF19" required defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000042578178?.(); }} className="w-full bg-white/5 border-2 border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-xl px-4 py-3 text-white transition-all outline-none appearance-none cursor-pointer text-sm">
-                        <option value="" disabled>Select Revenue</option>
-                        <option value="Less than $ 1M">Less than $ 1M</option>
-                        <option value="$ 1M - 2.5M">$ 1M - 2.5M</option>
-                        <option value="$ 2.5M - 5M">$ 2.5M - 5M</option>
-                        <option value="$ 5M - 10M">$ 5M - 10M</option>
-                        <option value="$ 10M - 15M">$ 10M - 15M</option>
-                        <option value="$ 15M - 25M">$ 15M - 25M</option>
-                        <option value="$ 25M - 50M">$ 25M - 50M</option>
-                        <option value="$ 50M - 100M">$ 50M - 100M</option>
-                        <option value="$ 100M - 250M">$ 100M - 250M</option>
-                        <option value="More than $ 250M">More than $ 250M</option>
+                      <select name="LEADCF19" required defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000042578178?.(); }} className="w-full bg-white/5 border border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-lg px-3 py-2 text-white transition-all outline-none appearance-none cursor-pointer text-xs">
+                        <option value="" disabled className="bg-slate-900 text-white">Select Revenue</option>
+                        <option value="Less than $ 1M" className="bg-slate-900 text-white">Less than $ 1M</option>
+                        <option value="$ 1M - 2.5M" className="bg-slate-900 text-white">$ 1M - 2.5M</option>
+                        <option value="$ 2.5M - 5M" className="bg-slate-900 text-white">$ 2.5M - 5M</option>
+                        <option value="$ 5M - 10M" className="bg-slate-900 text-white">$ 5M - 10M</option>
+                        <option value="$ 10M - 15M" className="bg-slate-900 text-white">$ 10M - 15M</option>
+                        <option value="$ 15M - 25M" className="bg-slate-900 text-white">$ 15M - 25M</option>
+                        <option value="$ 25M - 50M" className="bg-slate-900 text-white">$ 25M - 50M</option>
+                        <option value="$ 50M - 100M" className="bg-slate-900 text-white">$ 50M - 100M</option>
+                        <option value="$ 100M - 250M" className="bg-slate-900 text-white">$ 100M - 250M</option>
+                        <option value="More than $ 250M" className="bg-slate-900 text-white">More than $ 250M</option>
                       </select>
                       <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
                       </div>
                     </div>
                   </div>
 
                   {/* Referral Source */}
                   <div>
-                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5">Referral Source</label>
+                    <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-wider mb-1">Referral Source</label>
                     <div className="relative">
-                      <select name="LEADCF127" defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000042578178?.(); }} className="w-full bg-white/5 border-2 border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-xl px-4 py-3 text-white transition-all outline-none appearance-none cursor-pointer text-sm">
-                        <option value="" disabled>Select Option</option>
-                        <option value="-None-">-None-</option>
-                        <option value="Email">Email</option>
-                        <option value="Event">Event</option>
-                        <option value="Friend /Associate">Friend /Associate</option>
-                        <option value="Search">Search</option>
-                        <option value="Social Media">Social Media</option>
-                        <option value="Referral">Referral</option>
+                      <select name="LEADCF127" defaultValue="" onChange={(e) => { (e.target as any).ariaSelected = "true"; (window as any).addAriaSelected409531000042578178?.(); }} className="w-full bg-white/5 border border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-lg px-3 py-2 text-white transition-all outline-none appearance-none cursor-pointer text-xs">
+                        <option value="" disabled className="bg-slate-900 text-white">Select Option</option>
+                        <option value="-None-" className="bg-slate-900 text-white">-None-</option>
+                        <option value="Email" className="bg-slate-900 text-white">Email</option>
+                        <option value="Event" className="bg-slate-900 text-white">Event</option>
+                        <option value="Friend /Associate" className="bg-slate-900 text-white">Friend /Associate</option>
+                        <option value="Search" className="bg-slate-900 text-white">Search</option>
+                        <option value="Social Media" className="bg-slate-900 text-white">Social Media</option>
+                        <option value="Referral" className="bg-slate-900 text-white">Referral</option>
                       </select>
                       <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
                       </div>
                     </div>
                   </div>
@@ -408,21 +392,21 @@ export default function FooterFormSectionDark() {
 
                 {/* Requirements */}
                 <div>
-                  <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5">How We Can Help You *</label>
-                  <textarea name="LEADCF123" required rows={2} className="w-full bg-white/5 border-2 border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-xl px-4 py-3 text-white transition-all outline-none resize-none text-sm" placeholder="How We Can Help You*"></textarea>
+                  <label className="block text-gray-400 text-[10px] font-bold uppercase tracking-wider mb-1">How We Can Help You *</label>
+                  <textarea name="LEADCF123" required rows={2} className="w-full bg-white/5 border border-transparent focus:border-blue-500 focus:bg-[#252525] rounded-lg px-3 py-1.5 text-white transition-all outline-none resize-none text-xs" placeholder="How We Can Help You*"></textarea>
                 </div>
 
                 {/* Google reCAPTCHA */}
-                <div className="captcha-area transform scale-[0.9] origin-left">
+                <div className="captcha-area transform scale-[0.85] origin-left my-1">
                   <div data-sitekey="6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7" data-theme="dark" data-callback="rccallback409531000047791096" captcha-verified="false" id="recap409531000047791096" className="g-recaptcha"></div>
-                  <div id="recapErr409531000047791096" style={{ fontSize: '10px', color: '#ff4d4d', marginTop: '4px', visibility: 'hidden' }}>Please verify that you are not a robot.</div>
+                  <div id="recapErr409531000047791096" style={{ fontSize: '10px', color: '#ff4d4d', marginTop: '2px', visibility: 'hidden' }}>Please verify that you are not a robot.</div>
                 </div>
 
                 {/* Submit Button */}
                 <button
                   type="submit"
                   id="formsubmit"
-                  className="formsubmit-dark w-full py-4 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-bold rounded-xl shadow-xl shadow-blue-500/20 transition-all duration-300 hover:scale-[1.01] transform active:scale-[0.99] text-sm uppercase tracking-widest cursor-pointer"
+                  className="formsubmit-dark w-full py-3 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-bold rounded-xl shadow-md shadow-blue-500/20 transition-all duration-300 hover:scale-[1.01] transform active:scale-[0.99] text-xs uppercase tracking-wider cursor-pointer"
                 >
                   Submit
                 </button>

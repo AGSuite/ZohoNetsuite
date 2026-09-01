@@ -177,7 +177,7 @@ const NSMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) => 
                             <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-cyan-300 via-blue-300 via-purple-300 to-pink-300 blur-md opacity-0 group-hover:opacity-100 transition duration-300 animate-gradient-x" />
 
                             <Link
-                                href="/netsuite/free-consultation"
+                                href="#contact-form"
                                 className="relative inline-flex items-center justify-center p-[1.5px] rounded-xl overflow-hidden font-bold text-base transition-all duration-300 hover:scale-105 active:scale-100"
                                 suppressHydrationWarning={true}
                             >
@@ -199,7 +199,7 @@ const NSMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) => 
                             <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 blur-md opacity-0 group-hover:opacity-100 transition duration-300" />
 
                             <Link
-                                href="/netsuite/contact"
+                                href="#contact-form"
                                 className="relative inline-flex items-center justify-center p-[1.5px] rounded-xl overflow-hidden font-bold text-base transition-all duration-300 hover:scale-105 active:scale-100"
                                 suppressHydrationWarning={true}
                             >

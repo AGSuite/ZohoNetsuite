@@ -57,7 +57,7 @@ export const NSHero: React.FC<NSHeroProps> = () => {
                   <div className="mt-5 relative inline-flex group">
                     <div className="absolute inset-0 rounded-xl bg-linear-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg" />
                     <Link
-                      href="/netsuite/contact"
+                      href="#contact-form"
                       className="bg-gray-950 text-white relative px-10 py-4 rounded-xl font-medium shadow-2xl inline-block"
                     >
                       Book a Demo

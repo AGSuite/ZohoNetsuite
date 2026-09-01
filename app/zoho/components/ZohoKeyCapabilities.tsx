@@ -315,7 +315,7 @@ const ZohoKeyCapabilities = () => {
                         <p className="text-white/90 text-base md:text-xl font-medium">Join thousands of businesses running on the most comprehensive cloud suite.</p>
                     </div>
                     <Link
-                        href="/zoho/contact"
+                        href="#contact-form"
                         className="relative z-10 px-8 md:px-10 py-4 md:py-5 bg-white text-[#880e4f] hover:bg-rose-50 rounded-xl font-bold transition-all shadow-xl flex items-center gap-3 group text-lg md:text-xl whitespace-nowrap active:scale-95"
                     >
                         Get Started <ChevronRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />

@@ -12,26 +12,139 @@ const HASH_ALIASES: Record<string, string> = {
   "Our_Featured_Clients": "hero",
   "Why_you_will_Love_NetSuite": "whyNetSuite",
   "benefits": "benefits",
+  // Contact & Footer Form aliases
+  "contact": "contact-form",
+  "contact-us": "contact-form",
+  "contact_us": "contact-form",
+  "contactform": "contact-form",
+  "footer-form": "contact-form",
+  "footer_form": "contact-form",
+  "get-in-touch": "contact-form",
+  "get_in_touch": "contact-form",
+  "quote": "contact-form",
+  "demo": "contact-form",
+  "request-quote": "contact-form",
+  "book-demo": "contact-form",
 };
 
 export default function AnchorScrollHandler() {
   const pathname = usePathname();
 
   useEffect(() => {
+    // Find target element with fallback resolution for contact forms
+    const findTargetElement = (targetId: string): HTMLElement | null => {
+      if (!targetId) return null;
+
+      // 1. Direct ID match
+      let elem = document.getElementById(targetId);
+      if (elem) return elem;
+
+      // 2. Resolved alias match
+      const resolvedId = HASH_ALIASES[targetId];
+      if (resolvedId) {
+        elem = document.getElementById(resolvedId);
+        if (elem) return elem;
+      }
+
+      // 3. Smart fallback if looking for contact/footer form
+      const isContactQuery = [
+        "contact",
+        "contact-us",
+        "contact-form",
+        "footer-form",
+        "footer_form",
+        "get-in-touch",
+        "quote",
+        "demo",
+      ].includes(targetId.toLowerCase());
+
+      if (isContactQuery) {
+        elem =
+          document.getElementById("contact-form") ||
+          document.getElementById("contact-us") ||
+          document.getElementById("contact") ||
+          document.getElementById("footer-form") ||
+          (document.querySelector("section[id*='contact']") as HTMLElement) ||
+          (document.querySelector("#crmWebToEntityForm") as HTMLElement);
+        if (elem) return elem;
+      }
+
+      return null;
+    };
+
     const scrollToId = (targetId: string) => {
       if (!targetId || targetId === "hero" || targetId === "top") {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        const lenis = (window as any).__lenis;
+        if (lenis && typeof lenis.scrollTo === "function") {
+          lenis.scrollTo(0, { duration: 0.8 });
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
         return;
       }
 
-      const element = document.getElementById(targetId);
+      const element = findTargetElement(targetId);
       if (element) {
+        const navbarHeight = 75;
+        const elemRect = element.getBoundingClientRect();
+        const elemHeight = element.offsetHeight || elemRect.height;
+        const viewportHeight = window.innerHeight;
+        const availableHeight = viewportHeight - navbarHeight;
+
+        // Check if query is targeting a contact or footer form
+        const isContact =
+          [
+            "contact",
+            "contact-us",
+            "contact_us",
+            "contactform",
+            "contact-form",
+            "footer-form",
+            "footer_form",
+            "get-in-touch",
+            "get_in_touch",
+            "quote",
+            "demo",
+            "request-quote",
+            "book-demo",
+          ].includes(targetId.toLowerCase()) ||
+          element.id.includes("contact") ||
+          element.id.includes("footer");
+
+        // Calculate intelligent scroll offset to ensure full section and bottom visibility
+        let calculatedOffset = -navbarHeight;
+        if (isContact) {
+          // Take section up to top so the entire bottom (captcha & submit button) is 100% visible
+          if (elemHeight > availableHeight) {
+            // Scroll enough so the bottom of the section aligns comfortably inside the screen
+            const overflow = elemHeight - availableHeight;
+            calculatedOffset = -(navbarHeight + overflow + 25);
+          } else {
+            // Fits nicely: align snugly right under top navbar
+            calculatedOffset = -(navbarHeight + 4);
+          }
+        } else if (elemHeight > 0 && elemHeight < availableHeight) {
+          // Center element inside available viewport space
+          const extraSpace = availableHeight - elemHeight;
+          calculatedOffset = -(navbarHeight + Math.floor(extraSpace / 2));
+        } else {
+          calculatedOffset = -(navbarHeight + 10);
+        }
+
         const lenis = (window as any).__lenis;
         if (lenis && typeof lenis.scrollTo === "function") {
-          lenis.scrollTo(element, { offset: -80, duration: 0.9, lock: false });
+          lenis.scrollTo(element, {
+            offset: calculatedOffset,
+            duration: 0.9,
+            lock: false,
+          });
         } else {
-          const targetY = element.getBoundingClientRect().top + window.pageYOffset - 80;
-          window.scrollTo({ top: targetY, behavior: "smooth" });
+          const targetY =
+            elemRect.top + window.pageYOffset + calculatedOffset;
+          window.scrollTo({
+            top: Math.max(0, targetY),
+            behavior: "smooth",
+          });
         }
       }
     };
@@ -51,20 +164,16 @@ export default function AnchorScrollHandler() {
 
       if (!hashPart) return;
 
-      // Resolve alias if present
-      if (HASH_ALIASES[hashPart]) {
-        hashPart = HASH_ALIASES[hashPart];
-      }
-
       const currentPath = window.location.pathname;
 
       if (
         !pathPart ||
         pathPart === currentPath ||
         pathPart === `${currentPath}/` ||
-        currentPath.endsWith(pathPart)
+        currentPath.endsWith(pathPart) ||
+        (currentPath === "/" && (pathPart === "" || pathPart === "/"))
       ) {
-        const targetElement = document.getElementById(hashPart);
+        const targetElement = findTargetElement(hashPart);
         if (targetElement || hashPart === "hero") {
           e.preventDefault();
           scrollToId(hashPart);
@@ -77,32 +186,36 @@ export default function AnchorScrollHandler() {
       }
     };
 
-    document.addEventListener("click", handleGlobalClick, true);
+    const handleHashChange = () => {
+      if (window.location.hash) {
+        const rawId = window.location.hash.substring(1);
+        if (rawId) {
+          scrollToId(rawId);
+        }
+      }
+    };
 
-    // 2. Handle initial page load with #hash in URL (including legacy aliases)
+    document.addEventListener("click", handleGlobalClick, true);
+    window.addEventListener("hashchange", handleHashChange);
+
+    // 2. Handle initial page load with #hash in URL
     if (window.location.hash) {
       const rawId = window.location.hash.substring(1);
-      const targetId = HASH_ALIASES[rawId] || rawId;
-
-      if (targetId) {
-        // Clean and update the URL bar to the canonical hash
-        if (targetId !== rawId) {
-          const newUrl =
-            targetId === "hero"
-              ? window.location.pathname
-              : `${window.location.pathname}#${targetId}`;
-          window.history.replaceState(null, "", newUrl);
-        }
-
+      if (rawId) {
         const timer = setTimeout(() => {
-          scrollToId(targetId);
-        }, 400);
-        return () => clearTimeout(timer);
+          scrollToId(rawId);
+        }, 300);
+        return () => {
+          clearTimeout(timer);
+          document.removeEventListener("click", handleGlobalClick, true);
+          window.removeEventListener("hashchange", handleHashChange);
+        };
       }
     }
 
     return () => {
       document.removeEventListener("click", handleGlobalClick, true);
+      window.removeEventListener("hashchange", handleHashChange);
     };
   }, [pathname]);
 

@@ -217,12 +217,12 @@ export default function ZohoContactForm() {
         <>
             {/* Zoho CRM Web-to-Lead Analytics */}
             <Script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=5be9692ef9ab427acf1391714f2fff91d5b72c469390938cefbd33ab84dd5b8e9c71223ce8c14f44c8e8365f6a8c23d6gidbc632d800f066907ef96d29b7bae4b8ea7e60f0229673f2235936f50246b89fbgid29eac7a96f602c220e122d79c6e3da45331fb2e363513e82ad55c00dfc35c738gidcab4223515c216b81de2936190487e2bac1ebee6f8458681d0b0cd6ba0ce7107&tw=d6fc29e8e9570866ed4bd03fb221b685fd56a29f2bc327bb3bb9169356a4b4e3&version=v2" strategy="lazyOnload" />
-            <section id="contact-form" className="relative py-10 sm:py-12 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
+            <section id="contact-form" className="relative pt-2 pb-6 sm:pt-3 sm:pb-8 lg:pt-4 lg:pb-10 min-h-[calc(100vh-80px)] flex items-start justify-center bg-[#0a0a0a] overflow-hidden scroll-mt-20">
                 {/* Background Decorative Gradients */}
                 <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-blue-500/30 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-500/25 rounded-full blur-[140px] translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
 
-                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+                <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="rounded-3xl bg-[#0d0d0d]/80 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
                         {/* Left Side: Brand Narrative */}
                         <motion.div
@@ -239,7 +239,7 @@ export default function ZohoContactForm() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.2 }}
-                            className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-gradient-to-br from-blue-950 via-[#0d0d0d] to-[#0a0a0a] relative overflow-hidden border-b lg:border-b-0 lg:border-r border-white/10"
+                            className="p-5 sm:p-7 lg:p-8 flex flex-col justify-between bg-gradient-to-br from-blue-950 via-[#0d0d0d] to-[#0a0a0a] relative overflow-hidden border-b lg:border-b-0 lg:border-r border-white/10"
                         >
                             <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/Background/grid-white.svg')] opacity-[0.05] pointer-events-none z-10"></div>
 
@@ -258,10 +258,10 @@ export default function ZohoContactForm() {
                             <div className="relative z-20 text-left">
                                 <motion.h2
                                     variants={{
-                                        hidden: { opacity: 0, y: 20 },
+                                        hidden: { opacity: 0, y: 15 },
                                         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
                                     }}
-                                    className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight leading-tight text-white"
+                                    className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-3 tracking-tight leading-tight text-white"
                                 >
                                     Architecting <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
@@ -271,32 +271,32 @@ export default function ZohoContactForm() {
 
                                 <motion.p
                                     variants={{
-                                        hidden: { opacity: 0, y: 20 },
+                                        hidden: { opacity: 0, y: 15 },
                                         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
                                     }}
-                                    className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6 max-w-md"
+                                    className="text-gray-300 text-xs sm:text-sm lg:text-base leading-relaxed mb-4 max-w-md"
                                 >
                                     Join 500+ enterprises that have optimized their operations with our certified Zoho implementation expertise and custom industrial automation.
                                 </motion.p>
 
                                 <motion.div
                                     variants={{
-                                        hidden: { opacity: 0, y: 20 },
+                                        hidden: { opacity: 0, y: 15 },
                                         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
                                     }}
-                                    className="mb-6"
+                                    className="mb-4"
                                 >
                                     <Image
                                         src="/images/zoho-logos/zoho premium.png"
                                         alt="Zoho Premium Partner"
-                                        width={360}
-                                        height={120}
-                                        className="w-64 h-auto object-contain transition-all hover:scale-105 duration-500 rounded-2xl p-3 bg-white/10 backdrop-blur-md border border-white/10"
-                                        sizes="(max-width: 768px) 100vw, 360px"
+                                        width={240}
+                                        height={80}
+                                        className="w-48 h-auto object-contain transition-all hover:scale-105 duration-500 rounded-xl p-2.5 bg-white/10 backdrop-blur-md border border-white/10"
+                                        sizes="(max-width: 768px) 100vw, 240px"
                                     />
                                 </motion.div>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
+                                <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
                                     {[
                                         { value: "700+", label: "Projects Completed", icon: Briefcase },
                                         { value: "250+", label: "Global Customers", icon: Building2 },
@@ -310,26 +310,23 @@ export default function ZohoContactForm() {
                                                 visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5, delay: 0.1 * i } }
                                             }}
                                             whileHover={{
-                                                scale: 1.05,
-                                                rotateY: 10,
-                                                rotateX: -5,
-                                                transition: { duration: 0.4, ease: "easeOut" },
+                                                scale: 1.03,
+                                                transition: { duration: 0.3, ease: "easeOut" },
                                             }}
-                                            style={{ perspective: 1000 }}
-                                            className="relative group p-5 sm:p-6 rounded-[2rem] bg-gradient-to-br from-white via-white/95 to-blue-50 border border-blue-100/50 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 overflow-hidden flex flex-col justify-between"
+                                            className="relative group p-3.5 sm:p-4 rounded-2xl bg-gradient-to-br from-white via-white/95 to-blue-50 border border-blue-100/50 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 overflow-hidden flex flex-col justify-between"
                                         >
-                                            <div className="absolute -right-4 -bottom-4 opacity-[0.25] group-hover:opacity-[0.45] transition-all duration-500 pointer-events-none">
-                                                <item.icon className="w-24 h-24 text-blue-900" strokeWidth={1} />
+                                            <div className="absolute -right-3 -bottom-3 opacity-[0.25] group-hover:opacity-[0.45] transition-all duration-300 pointer-events-none">
+                                                <item.icon className="w-16 h-16 text-blue-900" strokeWidth={1} />
                                             </div>
                                             <div className="relative z-10 flex flex-col items-start text-left">
-                                                <div className="mb-4 w-11 h-11 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
-                                                    <item.icon className="w-5.5 h-5.5 font-bold" strokeWidth={1.5} />
+                                                <div className="mb-2 w-8 h-8 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-xs">
+                                                    <item.icon className="w-4 h-4 font-bold" strokeWidth={1.5} />
                                                 </div>
-                                                <div className="space-y-1">
-                                                    <div className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#000d2e] via-blue-900 to-black tracking-tight">
+                                                <div className="space-y-0.5">
+                                                    <div className="text-xl sm:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#000d2e] via-blue-900 to-black tracking-tight">
                                                         {item.value}
                                                     </div>
-                                                    <p className="text-gray-500 font-semibold text-[10px] sm:text-[11px] group-hover:text-blue-700 transition-colors uppercase tracking-widest leading-tight">
+                                                    <p className="text-gray-500 font-semibold text-[9px] sm:text-[10px] group-hover:text-blue-700 transition-colors uppercase tracking-widest leading-tight">
                                                         {item.label}
                                                     </p>
                                                 </div>
@@ -341,9 +338,9 @@ export default function ZohoContactForm() {
                         </motion.div>
 
                         {/* Right Side: Form */}
-                        <div className="p-5 sm:p-6 lg:p-7 bg-white relative flex flex-col justify-center">
-                            <div className="relative z-10 mb-4">
-                                <h3 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">Let’s Get Started !!</h3>
+                        <div className="p-4 sm:p-5 lg:p-6 bg-white relative flex flex-col justify-center">
+                            <div className="relative z-10 mb-3">
+                                <h3 className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">Let’s Get Started !!</h3>
                             </div>
 
                             <motion.form
@@ -357,7 +354,7 @@ export default function ZohoContactForm() {
                                 whileInView="visible"
                                 viewport={{ once: true, amount: 0.05 }}
                                 variants={containerVariants}
-                                className="space-y-6"
+                                className="space-y-3"
                             >
                                 <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="262e1ed99e86602d574e7f7a3556903cf3987a60522587d193269076b51f27ac" readOnly />
                                 <input type="hidden" name="zc_gad" id="zc_gad" value="" />
@@ -375,43 +372,43 @@ export default function ZohoContactForm() {
                                 </select>
                                 <input type="hidden" name="No of Employees" value="0" />
 
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">Name *</motion.label>
-                                        <input type="text" id="Last_Name" name="Last Name" required maxLength={80} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="Johnathan Doe" />
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1 ml-0.5">Name *</motion.label>
+                                        <input type="text" id="Last_Name" name="Last Name" required maxLength={80} className="w-full bg-blue-50/30 border border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-lg px-3 py-2 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-xs text-xs" placeholder="Johnathan Doe" />
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">Email *</motion.label>
-                                        <input type="text" id="Email" data-ftype="email" name="Email" required maxLength={100} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="john@enterprise.com" />
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1 ml-0.5">Email *</motion.label>
+                                        <input type="text" id="Email" data-ftype="email" name="Email" required maxLength={100} className="w-full bg-blue-50/30 border border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-lg px-3 py-2 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-xs text-xs" placeholder="john@enterprise.com" />
                                     </motion.div>
                                 </div>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">Role *</motion.label>
-                                        <input type="text" id="Designation" name="Designation" required maxLength={100} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="Manager" />
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1 ml-0.5">Role *</motion.label>
+                                        <input type="text" id="Designation" name="Designation" required maxLength={100} className="w-full bg-blue-50/30 border border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-lg px-3 py-2 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-xs text-xs" placeholder="Manager" />
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">Mobile *</motion.label>
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1 ml-0.5">Mobile *</motion.label>
                                         <input
                                             type="text"
                                             id="Mobile"
                                             name="Mobile"
                                             required
                                             maxLength={30}
-                                            className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm"
+                                            className="w-full bg-blue-50/30 border border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-lg px-3 py-2 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-xs text-xs"
                                             placeholder="+91 9876543210"
                                         />
                                     </motion.div>
                                 </div>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">Company Name *</motion.label>
-                                        <input type="text" id="Company" name="Company" required maxLength={200} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-sm focus:shadow-md text-sm" placeholder="Company Inc." />
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1 ml-0.5">Company Name *</motion.label>
+                                        <input type="text" id="Company" name="Company" required maxLength={200} className="w-full bg-blue-50/30 border border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-lg px-3 py-2 text-gray-900 outline-none transition-all placeholder-gray-400 shadow-xs text-xs" placeholder="Company Inc." />
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">Services *</motion.label>
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1 ml-0.5">Services *</motion.label>
                                         <div className="relative group">
                                             <select
                                                 id="LEADCF165"
@@ -419,7 +416,7 @@ export default function ZohoContactForm() {
                                                 defaultValue=""
                                                 required
                                                 onChange={(e) => { (window as any).addAriaSelected409531000047791049?.(); }}
-                                                className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md"
+                                                className="w-full bg-blue-50/30 border border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-lg px-3 py-2 text-gray-900 outline-none cursor-pointer text-xs transition-all shadow-xs"
                                             >
                                                 <option value="" disabled>-Select Service-</option>
                                                 <option value="Zoho Licenses">Zoho Licenses</option>
@@ -434,16 +431,16 @@ export default function ZohoContactForm() {
                                     </motion.div>
                                 </div>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">Annual Revenue *</motion.label>
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1 ml-0.5">Annual Revenue *</motion.label>
                                         <div className="relative group">
                                             <select
                                                 id="LEADCF19"
                                                 name="LEADCF19"
                                                 required
                                                 onChange={(e) => { (window as any).addAriaSelected409531000047791049?.(); }}
-                                                className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md"
+                                                className="w-full bg-blue-50/30 border border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-lg px-3 py-2 text-gray-900 outline-none cursor-pointer text-xs transition-all shadow-xs"
                                             >
                                                 <option value="-None-">-None-</option>
                                                 <option value="Less than $ 1M">Less than $ 1M</option>
@@ -460,14 +457,14 @@ export default function ZohoContactForm() {
                                         </div>
                                     </motion.div>
                                     <motion.div variants={itemVariants} className="flex flex-col">
-                                        <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">How did you hear about us. *</motion.label>
+                                        <motion.label variants={labelVariants} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1 ml-0.5">How did you hear about us. *</motion.label>
                                         <div className="relative group">
                                             <select
                                                 id="LEADCF127"
                                                 name="LEADCF127"
                                                 required
                                                 onChange={(e) => { (window as any).addAriaSelected409531000047791049?.(); }}
-                                                className="w-full bg-blue-50/30 border-2 border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none cursor-pointer text-sm transition-all shadow-sm focus:shadow-md"
+                                                className="w-full bg-blue-50/30 border border-blue-100/50 group-hover:border-blue-400 focus:border-blue-700 rounded-lg px-3 py-2 text-gray-900 outline-none cursor-pointer text-xs transition-all shadow-xs"
                                             >
                                                 <option value="-None-">-None-</option>
                                                 <option value="Email">Email</option>
@@ -482,14 +479,14 @@ export default function ZohoContactForm() {
                                 </div>
 
                                 <motion.div variants={itemVariants} className="flex flex-col">
-                                    <motion.label variants={labelVariants} className="block text-gray-700 text-xs font-bold uppercase tracking-wider mb-2 ml-1">How We Can Help You *</motion.label>
-                                    <textarea id="LEADCF123" name="LEADCF123" required rows={3} className="w-full bg-blue-50/30 border-2 border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-2xl px-5 py-3.5 text-gray-900 outline-none transition-all placeholder-gray-400 resize-none shadow-sm focus:shadow-md text-sm" placeholder="Tell us about your project goals..." />
+                                    <motion.label variants={labelVariants} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1 ml-0.5">How We Can Help You *</motion.label>
+                                    <textarea id="LEADCF123" name="LEADCF123" required rows={2} className="w-full bg-blue-50/30 border border-blue-100/50 hover:border-blue-400 focus:border-blue-700 rounded-lg px-3 py-1.5 text-gray-900 outline-none transition-all placeholder-gray-400 resize-none shadow-xs text-xs" placeholder="Tell us about your project goals..." />
                                 </motion.div>
 
-                                <motion.div variants={itemVariants} className="flex flex-col gap-2 my-2">
+                                <motion.div variants={itemVariants} className="flex flex-col gap-1 my-1">
                                   <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="lazyOnload" />
                                   <div
-                                    className="g-recaptcha"
+                                    className="g-recaptcha scale-[0.85] origin-left"
                                     data-sitekey="6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7"
                                     data-theme="light"
                                     data-callback="rccallback409531000047791049"
@@ -498,14 +495,14 @@ export default function ZohoContactForm() {
                                   ></div>
                                   <div
                                     id="recapErr409531000047791049"
-                                    style={{ visibility: 'hidden', color: '#ef4444', fontSize: '12px' }}
+                                    style={{ visibility: 'hidden', color: '#ef4444', fontSize: '11px' }}
                                   >
                                     Captcha validation failed. If you are not a robot then please try again.
                                   </div>
                                 </motion.div>
 
-                                <motion.div variants={itemVariants} className="pt-2">
-                                    <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full px-12 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-2xl transition-all shadow-lg hover:scale-[1.02] active:scale-95 text-sm uppercase tracking-widest cursor-pointer text-center" value="Submit" />
+                                <motion.div variants={itemVariants} className="pt-1">
+                                    <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all shadow-md hover:scale-[1.01] active:scale-95 text-xs uppercase tracking-wider cursor-pointer text-center" value="Submit" />
                                 </motion.div>
                             </motion.form>
                         </div>

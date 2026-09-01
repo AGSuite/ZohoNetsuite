@@ -14,61 +14,61 @@ export default function ContactFormZoho() {
     };
 
     return (
-        <section id="contact-form" className="relative py-10 sm:py-12 bg-[#0a0a0a] overflow-hidden scroll-mt-36">
-            <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-red-500/20 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3"></div>
-            <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[110px] translate-x-1/3 translate-y-1/3"></div>
+        <section id="contact-form" className="relative pt-2 pb-6 sm:pt-3 sm:pb-8 lg:pt-4 lg:pb-10 min-h-[calc(100vh-80px)] flex items-start justify-center bg-[#0a0a0a] overflow-hidden scroll-mt-20">
+            <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-red-500/20 rounded-full blur-[150px] -translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+            <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[110px] translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6">
                 <div className="rounded-3xl bg-[#0d0d0d]/80 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                         {/* Left Side */}
-                        <div className="p-6 lg:p-10 flex flex-col justify-center">
-                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight leading-tight">
+                        <div className="p-5 lg:p-8 flex flex-col justify-center">
+                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 tracking-tight leading-tight">
                                 Ready for <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-orange-400">Zoho Mastery?</span>
                             </h2>
-                            <p className="text-gray-300 text-sm sm:text-base mb-6 leading-relaxed">
+                            <p className="text-gray-300 text-xs sm:text-sm lg:text-base mb-5 leading-relaxed">
                                 Leverage the power of the Zoho One suite to unify your business operations. Our experts help you implement, customize, and scale.
                             </p>
-                            <div className="flex items-center gap-4 text-gray-400">
-                                <div className="p-2.5 bg-red-500/10 rounded-xl border border-red-500/20">
-                                    <CheckCircle className="text-red-500 w-5 h-5" />
+                            <div className="flex items-center gap-3 text-gray-400">
+                                <div className="p-2 bg-red-500/10 rounded-xl border border-red-500/20">
+                                    <CheckCircle className="text-red-500 w-4 h-4" />
                                 </div>
                                 <span className="text-xs sm:text-sm font-medium">Premier Zoho Consulting Partner</span>
                             </div>
                         </div>
 
                         {/* Right Side - Form */}
-                        <div className="bg-white p-6 lg:p-8 relative">
+                        <div className="bg-white p-5 lg:p-7 relative flex flex-col justify-center">
                             {submitted ? (
-                                <div className="h-full flex flex-col items-center justify-center text-center py-20">
-                                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                                        <CheckCircle className="text-green-600 w-8 h-8" />
+                                <div className="h-full flex flex-col items-center justify-center text-center py-12">
+                                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-3">
+                                        <CheckCircle className="text-green-600 w-6 h-6" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-gray-900">Thank You!</h3>
-                                    <p className="text-gray-500">Our Zoho consultant will contact you shortly.</p>
+                                    <h3 className="text-xl font-bold text-gray-900">Thank You!</h3>
+                                    <p className="text-gray-500 text-xs">Our Zoho consultant will contact you shortly.</p>
                                 </div>
                             ) : (
-                                <form onSubmit={handleSubmit} className="space-y-5">
-                                    <div className="grid sm:grid-cols-2 gap-5">
+                                <form onSubmit={handleSubmit} className="space-y-3">
+                                    <div className="grid sm:grid-cols-2 gap-3">
                                         <div>
-                                            <label className="block text-gray-700 text-xs font-bold uppercase mb-2">First Name</label>
-                                            <input type="text" required className="w-full bg-red-50/30 border-2 border-red-100 rounded-xl px-4 py-3 outline-none focus:border-red-500 transition-all" />
+                                            <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">First Name</label>
+                                            <input type="text" required className="w-full bg-red-50/30 border border-red-100 rounded-lg px-3 py-2 outline-none focus:border-red-500 transition-all text-xs" />
                                         </div>
                                         <div>
-                                            <label className="block text-gray-700 text-xs font-bold uppercase mb-2">Last Name</label>
-                                            <input type="text" required className="w-full bg-red-50/30 border-2 border-red-100 rounded-xl px-4 py-3 outline-none focus:border-red-500 transition-all" />
+                                            <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">Last Name</label>
+                                            <input type="text" required className="w-full bg-red-50/30 border border-red-100 rounded-lg px-3 py-2 outline-none focus:border-red-500 transition-all text-xs" />
                                         </div>
                                     </div>
                                     <div>
-                                        <label className="block text-gray-700 text-xs font-bold uppercase mb-2">Business Email</label>
-                                        <input type="email" required className="w-full bg-red-50/30 border-2 border-red-100 rounded-xl px-4 py-3 outline-none focus:border-red-500 transition-all" />
+                                        <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">Business Email</label>
+                                        <input type="email" required className="w-full bg-red-50/30 border border-red-100 rounded-lg px-3 py-2 outline-none focus:border-red-500 transition-all text-xs" />
                                     </div>
                                     <div>
-                                        <label className="block text-gray-700 text-xs font-bold uppercase mb-2">Message</label>
-                                        <textarea rows={3} className="w-full bg-red-50/30 border-2 border-red-100 rounded-xl px-4 py-3 outline-none focus:border-red-500 transition-all resize-none"></textarea>
+                                        <label className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">Message</label>
+                                        <textarea rows={2} className="w-full bg-red-50/30 border border-red-100 rounded-lg px-3 py-1.5 outline-none focus:border-red-500 transition-all resize-none text-xs"></textarea>
                                     </div>
-                                    <button type="submit" className="w-full py-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 transition-all flex items-center justify-center gap-2">
-                                        <Send size={18} /> Send Application
+                                    <button type="submit" className="w-full py-3 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 transition-all flex items-center justify-center gap-2 text-xs uppercase tracking-wider">
+                                        <Send size={14} /> Send Application
                                     </button>
                                 </form>
                             )}

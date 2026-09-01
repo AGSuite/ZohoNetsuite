@@ -181,24 +181,24 @@ export default function ContactFormDesign4() {
       <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="lazyOnload" />
       {/* NetSuite Web-to-Lead Analytics */}
       <Script id="wf_anal_netsuite" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=9928b42954d320356885bb078ab0c3360c484e291c9e63097274653a3641def28b6749111011c9996c331f7836c7a2e8gid872197a4e4b8e909c249edeced5a19f1d2f950e702a3b0289fff2eacb04b67b1gid273da06b7bb3796c20973a82554d312ddd92ec671fa5a6016c080db58e6ccf5agidf40ec6d150665170b0cb2e595aa0cb939a02ed9792327816f3776b9eead7fe3a&tw=48a179f0eb3b7de8eccbf4bf9c2ace934d9e1bdc655d88e07911628e929af667&version=v2" strategy="lazyOnload" />
-      <section id="contact-form" className="relative py-10 sm:py-12 bg-slate-950 overflow-hidden scroll-mt-28">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.15),rgba(255,255,255,0))]" />
+      <section id="contact-form" className="relative pt-2 pb-6 sm:pt-3 sm:pb-8 lg:pt-4 lg:pb-10 min-h-[calc(100vh-80px)] flex items-start justify-center bg-slate-950 overflow-hidden scroll-mt-20">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.15),rgba(255,255,255,0))] pointer-events-none" />
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6">
           <div className="rounded-3xl bg-slate-900/90 border border-slate-800 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
             {/* Left Narrative */}
-            <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-gradient-to-br from-blue-950/40 via-slate-900 to-slate-950 relative overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-800">
-              <div className="relative z-10 flex flex-col justify-between h-full space-y-6">
+            <div className="p-5 sm:p-7 lg:p-8 flex flex-col justify-between bg-gradient-to-br from-blue-950/40 via-slate-900 to-slate-950 relative overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-800">
+              <div className="relative z-10 flex flex-col justify-between h-full space-y-4">
                 <div>
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-3 tracking-tight leading-tight">
                     Accelerate Enterprise Growth with <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">Oracle NetSuite</span>
                   </h2>
-                  <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl">
+                  <p className="text-slate-300 text-xs sm:text-sm lg:text-base leading-relaxed max-w-xl">
                     Get in touch with our certified NetSuite consultants for licensing, multi-subsidiary implementations, optimizations, and custom integrations.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mt-auto pt-2">
+                <div className="grid grid-cols-2 gap-2.5 sm:gap-3 mt-auto pt-2">
                   {[
                     { value: "700+", label: "Projects Completed", icon: Briefcase },
                     { value: "250+", label: "Global Customers", icon: Building2 },
@@ -212,9 +212,9 @@ export default function ContactFormDesign4() {
             </div>
 
             {/* Right Form */}
-            <div className="p-5 sm:p-6 lg:p-7 bg-white flex flex-col justify-center">
-              <div className="mb-4">
-                <h3 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">Let’s Get Started !!</h3>
+            <div className="p-4 sm:p-5 lg:p-6 bg-white flex flex-col justify-center">
+              <div className="mb-3">
+                <h3 className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 bg-clip-text text-transparent tracking-tight">Let’s Get Started !!</h3>
               </div>
 
               <form
@@ -224,7 +224,7 @@ export default function ContactFormDesign4() {
                 method="POST"
                 onSubmit={handleFormSubmit}
                 acceptCharset="UTF-8"
-                className="space-y-5"
+                className="space-y-3"
               >
                 <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="e79cbdec5c6e5b7d7f71b6fd074e22822590c7d5f2b4c7d541bbbb65cad7c1e9" readOnly />
                 <input type="hidden" name="zc_gad" id="zc_gad" value="" />
@@ -242,40 +242,40 @@ export default function ContactFormDesign4() {
                 </select>
                 <input type="hidden" name="No of Employees" value="0" />
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Name *</label>
-                    <input type="text" id="Last_Name" name="Last Name" required maxLength={80} placeholder="John Doe" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1">Name *</label>
+                    <input type="text" id="Last_Name" name="Last Name" required maxLength={80} placeholder="John Doe" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-lg px-3 py-2 text-slate-900 text-xs outline-none transition-all shadow-xs" />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Email *</label>
-                    <input type="text" id="Email" data-ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Role *</label>
-                    <input type="text" id="Designation" name="Designation" required maxLength={100} placeholder="CTO / Manager" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Mobile *</label>
-                    <input type="text" id="Mobile" name="Mobile" required maxLength={30} placeholder="+91 9876543210" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1">Email *</label>
+                    <input type="text" id="Email" data-ftype="email" name="Email" required maxLength={100} placeholder="john@company.com" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-lg px-3 py-2 text-slate-900 text-xs outline-none transition-all shadow-xs" />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Company Name *</label>
-                    <input type="text" id="Company" name="Company" required maxLength={200} placeholder="Company Inc." className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all" />
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1">Role *</label>
+                    <input type="text" id="Designation" name="Designation" required maxLength={100} placeholder="CTO / Manager" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-lg px-3 py-2 text-slate-900 text-xs outline-none transition-all shadow-xs" />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Netsuite Services *</label>
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1">Mobile *</label>
+                    <input type="text" id="Mobile" name="Mobile" required maxLength={30} placeholder="+91 9876543210" className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-lg px-3 py-2 text-slate-900 text-xs outline-none transition-all shadow-xs" />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1">Company Name *</label>
+                    <input type="text" id="Company" name="Company" required maxLength={200} placeholder="Company Inc." className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-lg px-3 py-2 text-slate-900 text-xs outline-none transition-all shadow-xs" />
+                  </div>
+                  <div>
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1">Netsuite Services *</label>
                     <MultiSelectDropdown
                       id="LEADCF166"
                       name="LEADCF166"
                       placeholder="-Select NetSuite Service-"
-                      bgClassName="bg-slate-50 border border-slate-200 focus:border-blue-600 hover:border-blue-400"
+                      bgClassName="bg-slate-50 border border-slate-200 focus:border-blue-600 hover:border-blue-400 shadow-xs text-xs py-1.5 px-3 rounded-lg"
                       textColorClassName="text-slate-900"
                       options={[
                         "NetSuite Licenses",
@@ -293,10 +293,10 @@ export default function ContactFormDesign4() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Annual Revenue *</label>
-                    <select id="LEADCF19" name="LEADCF19" required onChange={(e) => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none cursor-pointer">
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1">Annual Revenue *</label>
+                    <select id="LEADCF19" name="LEADCF19" required onChange={(e) => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-lg px-3 py-2 text-slate-900 text-xs outline-none cursor-pointer shadow-xs">
                       <option value="-None-">-None-</option>
                       <option value="Less than $ 1M">Less than $ 1M</option>
                       <option value="$ 1M - 2.5M">$ 1M - 2.5M</option>
@@ -311,8 +311,8 @@ export default function ContactFormDesign4() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">How did you hear about us. *</label>
-                    <select id="LEADCF127" name="LEADCF127" required onChange={(e) => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none cursor-pointer">
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1">How did you hear about us. *</label>
+                    <select id="LEADCF127" name="LEADCF127" required onChange={(e) => (window as any).addAriaSelected409531000047791096?.()} className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-lg px-3 py-2 text-slate-900 text-xs outline-none cursor-pointer shadow-xs">
                       <option value="-None-">-None-</option>
                       <option value="Email">Email</option>
                       <option value="Event">Event</option>
@@ -325,14 +325,14 @@ export default function ContactFormDesign4() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">How We Can Help You *</label>
-                  <textarea id="LEADCF123" name="LEADCF123" required rows={3} placeholder="Tell us about your NetSuite requirement..." className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-xl px-4 py-3 text-slate-900 text-sm outline-none resize-none transition-all" />
+                  <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1">How We Can Help You *</label>
+                  <textarea id="LEADCF123" name="LEADCF123" required rows={2} placeholder="Tell us about your NetSuite requirement..." className="w-full bg-slate-50 border border-slate-200 focus:border-blue-600 rounded-lg px-3 py-1.5 text-slate-900 text-xs outline-none resize-none transition-all shadow-xs" />
                 </div>
 
                 {/* Captcha Section */}
-                <div className="flex flex-col gap-2 my-2">
+                <div className="flex flex-col gap-1 my-1">
                   <div
-                    className="g-recaptcha"
+                    className="g-recaptcha scale-[0.85] origin-left"
                     data-sitekey="6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7"
                     data-theme="light"
                     data-callback="rccallback409531000047791096"
@@ -341,14 +341,14 @@ export default function ContactFormDesign4() {
                   ></div>
                   <div
                     id="recapErr409531000047791096"
-                    style={{ visibility: 'hidden', color: '#ef4444', fontSize: '12px' }}
+                    style={{ visibility: 'hidden', color: '#ef4444', fontSize: '11px' }}
                   >
                     Captcha validation failed. If you are not a robot then please try again.
                   </div>
                 </div>
 
-                <div className="pt-2">
-                  <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full px-10 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all shadow-lg hover:scale-[1.02] active:scale-95 text-sm uppercase tracking-widest cursor-pointer text-center" value="Submit" />
+                <div className="pt-1">
+                  <input type="submit" id="formsubmit" className="formsubmit zcwf_button w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all shadow-md hover:scale-[1.01] active:scale-95 text-xs uppercase tracking-wider cursor-pointer text-center" value="Submit" />
                 </div>
               </form>
             </div>
