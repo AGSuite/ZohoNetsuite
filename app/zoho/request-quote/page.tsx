@@ -259,7 +259,7 @@ export default function ZohoRequestQuotePage() {
             >
               {/* H1 */}
               <div>
-                <h1 className="text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] font-semibold text-white leading-tight tracking-tight mb-3">
+                <h1 className="text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] font-medium text-white leading-tight tracking-tight mb-3">
                   Get a Quick, Customized Quote <br />
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300">
                     Built Around Your Business Needs
