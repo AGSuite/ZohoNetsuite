@@ -392,24 +392,26 @@ function StrategicPartnersSection() {
             >
               {/* Zoho Premium Partner Logo Card */}
               <div className="bg-white px-5 py-3.5 rounded-2xl border border-white/10 shadow-xl flex items-center justify-center h-20 sm:h-24">
-                <Image
-                  src="/images/zoho-logos/zoho premium.png"
-                  alt="Zoho Premium Partner"
-                  width={180}
-                  height={70}
-                  className="max-h-12 sm:max-h-14 w-auto object-contain"
-                />
+                <div className="relative h-16 w-32">
+                  <Image
+                    src="/images/zoho-logos/zoho premium.webp"
+                    alt="Zoho Premium Partner"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
 
               {/* ISO 27001 Certification Badge Card */}
               <div className="bg-white px-4 py-2 rounded-2xl border border-white/10 shadow-xl flex items-center justify-center h-20 sm:h-24">
-                <Image
-                  src="/images/iso-27001-certified.png"
-                  alt="ISO 27001:2022 (ISMS) Certified"
-                  width={180}
-                  height={90}
-                  className="max-h-14 sm:max-h-16 w-auto object-contain"
-                />
+                <div className="relative h-16 w-32">
+                  <Image
+                    src="/images/iso-27001-certified.webp"
+                    alt="ISO 27001 Certified"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>

@@ -35,7 +35,7 @@ export default function ZohoFooter() {
                         {/* Zoho Partner Badge */}
                         <div className="mb-6">
                             <Image
-                                src="/images/zoho-logos/zoho premium.png"
+                                src="/images/zoho-logos/zoho premium.webp"
                                 alt="Zoho Partner"
                                 width={180}
                                 height={60}
@@ -73,7 +73,7 @@ export default function ZohoFooter() {
                         <div className="mt-6">
                             <div className="inline-block bg-white rounded-lg p-1.5 shadow-md">
                                 <Image
-                                    src="/images/iso-27001-certified.png"
+                                    src="/images/iso-27001-certified.webp"
                                     alt="ISO 27001:2022 (ISMS) Certified - MSCB-154 TNV"
                                     width={180}
                                     height={90}

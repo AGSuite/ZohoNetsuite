@@ -230,7 +230,7 @@ export default function FooterFormSectionDark() {
             {/* Trust Badges */}
             <div className="flex flex-wrap items-center gap-5 opacity-70 grayscale brightness-150 hover:grayscale-0 transition-all duration-500">
               <Image src="/images/netsuiteimages/netsuitelogos/netsuitepartner1.png" alt="NetSuite Partner" width={140} height={45} className="h-8 sm:h-9 w-auto object-contain" />
-              <Image src="/images/zoho-logos/zoho premium.png" alt="Zoho Partner" width={130} height={35} className="h-7 sm:h-8 w-auto object-contain" />
+              <Image src="/images/zoho-logos/zoho premium.webp" alt="Zoho Partner" width={130} height={35} className="h-7 sm:h-8 w-auto object-contain brightness-0 invert opacity-80" />
             </div>
           </motion.div>
 

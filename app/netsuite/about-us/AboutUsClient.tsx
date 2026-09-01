@@ -412,7 +412,7 @@ function StrategicPartnersSection() {
               {/* ISO 27001 Certification Badge Card */}
               <div className="bg-white px-4 py-2 rounded-2xl border border-white/10 shadow-xl flex items-center justify-center h-20 sm:h-24">
                 <Image
-                  src="/images/iso-27001-certified.png"
+                  src="/images/iso-27001-certified.webp"
                   alt="ISO 27001:2022 (ISMS) Certified"
                   width={180}
                   height={90}

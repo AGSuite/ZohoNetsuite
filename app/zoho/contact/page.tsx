@@ -93,7 +93,7 @@ const locations: {
     address: `Office No. 1110, 11th floor, Gera's Imperium Rise, Hinjewadi Rajiv Gandhi Infotech Park, Hinjewadi, Pune, Maharashtra, INDIA – 411057.`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://www.google.com/maps/place/AGSuite+Technologies+(Zoho+Premium+Partner)/@18.5963249,73.7154474,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2b9510b38301b:0x5d84fc070cd2d1c9!8m2!3d18.5963249!4d73.7180223!16s%2Fg%2F11j7z08531?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D",
-    image: "/images/offices/pune_city.png",
+    image: "/images/offices/pune_city.webp",
   },
   {
     region: "INDIA",
@@ -103,7 +103,7 @@ const locations: {
     address: `3rd Floor, Unit no. 4, Inspire, Main Road, G Block BKC, Bandra Kurla Complex, Mumbai, Maharashtra INDIA – 400051`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://maps.google.com/?q=Inspire+BKC+Bandra+Kurla+Complex+Mumbai",
-    image: "/images/offices/mumbai_city.png",
+    image: "/images/offices/mumbai_city.webp",
   },
   {
     region: "INDIA",
@@ -113,7 +113,7 @@ const locations: {
     address: `Whitefield, Survey No. 192, Whitefield Main Road, B Narayanapura, Mahadevapura, Bangalore, KA, INDIA – 560001`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://maps.google.com/?q=Whitefield+Main+Road+Mahadevapura+Bangalore",
-    image: "/images/offices/bangalore_city.png",
+    image: "/images/offices/bangalore_city.webp",
   },
   {
     region: "INDIA",
@@ -123,7 +123,7 @@ const locations: {
     address: `6th Floor, N Heights, Plot No 38, Phase 2 Hitec City, Siddiq nagar, Hyderabad, Telangana, INDIA – 500081`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://maps.google.com/?q=N+Heights+Hitec+City+Hyderabad",
-    image: "/images/offices/hyderabad_city.png",
+    image: "/images/offices/hyderabad_city.webp",
   },
   {
     region: "INDIA",
@@ -133,7 +133,7 @@ const locations: {
     address: `07th Floor, Gate No. 03 & Gate No. 04, Ambience Island, NH 48, Gurugram, Haryana, INDIA – 122002`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://maps.google.com/?q=Ambience+Island+NH48+Gurugram",
-    image: "/images/offices/gurugram_city.png",
+    image: "/images/offices/gurugram_city.webp",
   },
   {
     region: "INDIA",
@@ -143,7 +143,7 @@ const locations: {
     address: `F-18 Subcity Center, Opp. Income Tax Office, Udaipur, Rajasthan INDIA – 313001`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://maps.google.com/?q=Subcity+Center+Udaipur+Rajasthan",
-    image: "/images/offices/udaipur_city.png",
+    image: "/images/offices/udaipur_city.webp",
   },
   {
     region: "USA",
@@ -153,7 +153,7 @@ const locations: {
     address: `6421-1 Metro Plantation Road, Fort Myers, FL, US – 33966`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://maps.google.com/?q=6421+Metro+Plantation+Road+Fort+Myers+FL",
-    image: "/images/offices/florida_city.png",
+    image: "/images/offices/florida_city.webp",
   },
   {
     region: "UK",
@@ -163,7 +163,7 @@ const locations: {
     address: `The Old Dairy, Drummers Hill, St Austell, Cornwall, PL26 8XR`,
     email: "contact@agsuitetech.com",
     mapUrl: "https://maps.google.com/?q=Drummers+Hill+St+Austell+Cornwall",
-    image: "/images/offices/uk_city.png",
+    image: "/images/offices/uk_city.webp",
   },
 ];
 
@@ -367,7 +367,7 @@ export default function ZohoContactPage() {
                 {/* Partner Logo */}
                 <div className="mb-6 h-14 relative w-56">
                   <Image
-                    src="/images/zoho-logos/zoho premium.png"
+                    src="/images/zoho-logos/zoho premium.webp"
                     alt="Zoho Premium Partner"
                     fill
                     priority
@@ -445,7 +445,7 @@ export default function ZohoContactPage() {
                       {/* Row 1: Name & Company */}
                       <div className="grid grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                          <label htmlFor="Last_Name" className="block text-xs font-semibold text-slate-700 mb-1">
                             Name <span className="text-blue-600">*</span>
                           </label>
                           <input
@@ -459,7 +459,7 @@ export default function ZohoContactPage() {
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                          <label htmlFor="Company" className="block text-xs font-semibold text-slate-700 mb-1">
                             Company <span className="text-blue-600">*</span>
                           </label>
                           <input
@@ -477,7 +477,7 @@ export default function ZohoContactPage() {
                       {/* Row 2: Email & Mobile */}
                       <div className="grid grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                          <label htmlFor="Email" className="block text-xs font-semibold text-slate-700 mb-1">
                             Email <span className="text-blue-600">*</span>
                           </label>
                           <input
@@ -492,7 +492,7 @@ export default function ZohoContactPage() {
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                          <label htmlFor="Mobile" className="block text-xs font-semibold text-slate-700 mb-1">
                             Mobile <span className="text-blue-600">*</span>
                           </label>
                           <div className="w-full text-slate-900 contact-iti-wrapper min-h-[38px]">
@@ -520,7 +520,7 @@ export default function ZohoContactPage() {
                       {/* Row 3: Role & Annual Revenue */}
                       <div className="grid grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                          <label htmlFor="Designation" className="block text-xs font-semibold text-slate-700 mb-1">
                             Role <span className="text-blue-600">*</span>
                           </label>
                           <input
@@ -534,7 +534,7 @@ export default function ZohoContactPage() {
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                          <label htmlFor="LEADCF19" className="block text-xs font-semibold text-slate-700 mb-1">
                             Annual Revenue <span className="text-blue-600">*</span>
                           </label>
                           <select
@@ -562,7 +562,7 @@ export default function ZohoContactPage() {
                       {/* Row 4: Services & Source */}
                       <div className="grid grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                          <label htmlFor="LEADCF165" className="block text-xs font-semibold text-slate-700 mb-1">
                             Zoho Services <span className="text-blue-600">*</span>
                           </label>
                           <MultiSelectDropdown
@@ -583,7 +583,7 @@ export default function ZohoContactPage() {
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-semibold text-slate-700 mb-1">
+                          <label htmlFor="LEADCF127" className="block text-xs font-semibold text-slate-700 mb-1">
                             How did you hear? <span className="text-blue-600">*</span>
                           </label>
                           <select
@@ -606,11 +606,12 @@ export default function ZohoContactPage() {
 
                       {/* Row 5: Message */}
                       <div>
-                        <label className="block text-xs font-semibold text-slate-700 mb-1">
+                        <label htmlFor="LEADCF123" className="block text-xs font-semibold text-slate-700 mb-1">
                           How We Can Help You <span className="text-blue-600">*</span>
                         </label>
                         <textarea
                           required
+                          id="LEADCF123"
                           name="LEADCF123"
                           rows={3}
                           placeholder="Tell us about your requirements..."

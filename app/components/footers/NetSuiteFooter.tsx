@@ -73,7 +73,7 @@ export default function NetSuiteFooter() {
                         <div className="mt-6">
                             <div className="inline-block bg-white rounded-lg p-1.5 shadow-md">
                                 <Image
-                                    src="/images/iso-27001-certified.png"
+                                    src="/images/iso-27001-certified.webp"
                                     alt="ISO 27001:2022 (ISMS) Certified - MSCB-154 TNV"
                                     width={180}
                                     height={90}

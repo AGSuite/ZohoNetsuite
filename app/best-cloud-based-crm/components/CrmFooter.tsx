@@ -17,7 +17,7 @@ export default function CrmFooter() {
             </span>
             <div className="inline-block bg-white rounded-md p-1 shadow-sm">
               <Image
-                src="/images/iso-27001-certified.png"
+                src="/images/iso-27001-certified.webp"
                 alt="ISO 27001:2022 (ISMS) Certified"
                 width={140}
                 height={70}

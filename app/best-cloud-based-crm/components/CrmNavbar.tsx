@@ -97,7 +97,7 @@ export default function CrmNavbar() {
             className="hidden sm:block"
           >
             <Image
-              src="/images/zoho-logos/zoho premium.png"
+              src="/images/zoho-logos/zoho premium.webp"
               alt="Zoho Premium Partner Logo"
               width={160}
               height={55}
@@ -123,7 +123,7 @@ export default function CrmNavbar() {
           <div className="flex justify-between items-center pb-3 border-b border-slate-100">
             <span className="text-xs font-extrabold text-blue-600 uppercase tracking-widest">Menu</span>
             <Image
-              src="/images/zoho-logos/zoho premium.png"
+              src="/images/zoho-logos/zoho premium.webp"
               alt="Zoho Premium Partner Logo"
               width={130}
               height={40}

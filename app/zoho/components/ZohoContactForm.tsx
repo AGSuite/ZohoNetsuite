@@ -287,7 +287,7 @@ export default function ZohoContactForm() {
                                     className="mb-4"
                                 >
                                     <Image
-                                        src="/images/zoho-logos/zoho premium.png"
+                                        src="/images/zoho-logos/zoho premium.webp"
                                         alt="Zoho Premium Partner"
                                         width={240}
                                         height={80}
