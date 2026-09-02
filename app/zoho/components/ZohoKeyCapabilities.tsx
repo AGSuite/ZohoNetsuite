@@ -79,6 +79,43 @@ const ZohoKeyCapabilities = () => {
         setActiveTab(capabilities[nextIndex].id);
     };
 
+    const scrollToContact = (e: React.MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const executeScroll = (isFollowUp = false) => {
+            const element = document.getElementById("contact-form") || document.querySelector("#crmWebToEntityForm") || document.querySelector("section[id*='contact']");
+            if (!element) return;
+
+            const navbarHeight = 75;
+            const elemRect = element.getBoundingClientRect();
+            const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+            const targetY = currentScrollY + elemRect.top - navbarHeight - 5;
+
+            const lenis = (window as any).__lenis;
+            if (lenis && typeof lenis.scrollTo === "function") {
+                lenis.scrollTo(targetY, {
+                    duration: isFollowUp ? 0.4 : 0.8,
+                    lock: false,
+                    immediate: isFollowUp,
+                });
+            } else {
+                window.scrollTo({
+                    top: Math.max(0, targetY),
+                    behavior: isFollowUp ? "auto" : "smooth",
+                });
+            }
+        };
+
+        executeScroll(false);
+        setTimeout(() => executeScroll(false), 200);
+        setTimeout(() => executeScroll(true), 450);
+        setTimeout(() => executeScroll(true), 800);
+        setTimeout(() => executeScroll(true), 1200);
+
+        window.history.pushState(null, "", `${window.location.pathname}#contact-form`);
+    };
+
     return (
         <section className="relative pt-16 pb-0 overflow-hidden bg-white">
             <div className="relative z-10 max-w-[1240px] mx-auto px-4 md:px-6">
@@ -316,6 +353,7 @@ const ZohoKeyCapabilities = () => {
                     </div>
                     <Link
                         href="#contact-form"
+                        onClick={scrollToContact}
                         className="relative z-10 px-8 md:px-10 py-4 md:py-5 bg-white text-[#880e4f] hover:bg-rose-50 rounded-xl font-bold transition-all shadow-xl flex items-center gap-3 group text-lg md:text-xl whitespace-nowrap active:scale-95"
                     >
                         Get Started <ChevronRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />

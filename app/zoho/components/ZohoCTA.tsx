@@ -5,6 +5,43 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const ZohoCTA = () => {
+  const scrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const executeScroll = (isFollowUp = false) => {
+      const element = document.getElementById("contact-form") || document.querySelector("#crmWebToEntityForm") || document.querySelector("section[id*='contact']");
+      if (!element) return;
+
+      const navbarHeight = 75;
+      const elemRect = element.getBoundingClientRect();
+      const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const targetY = currentScrollY + elemRect.top - navbarHeight - 5;
+
+      const lenis = (window as any).__lenis;
+      if (lenis && typeof lenis.scrollTo === "function") {
+        lenis.scrollTo(targetY, {
+          duration: isFollowUp ? 0.4 : 0.8,
+          lock: false,
+          immediate: isFollowUp,
+        });
+      } else {
+        window.scrollTo({
+          top: Math.max(0, targetY),
+          behavior: isFollowUp ? "auto" : "smooth",
+        });
+      }
+    };
+
+    executeScroll(false);
+    setTimeout(() => executeScroll(false), 200);
+    setTimeout(() => executeScroll(true), 450);
+    setTimeout(() => executeScroll(true), 800);
+    setTimeout(() => executeScroll(true), 1200);
+
+    window.history.pushState(null, "", `${window.location.pathname}#contact-form`);
+  };
+
   return (
     <section className="relative w-full py-20">
 
@@ -65,6 +102,7 @@ const ZohoCTA = () => {
           >
             <a
               href="#contact-form"
+              onClick={scrollToContact}
               className="
                 inline-flex items-center px-7 py-4 
                 bg-white text-black font-semibold 

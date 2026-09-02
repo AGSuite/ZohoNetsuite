@@ -83,70 +83,38 @@ export default function AnchorScrollHandler() {
         return;
       }
 
-      const element = findTargetElement(targetId);
-      if (element) {
+      const executeScroll = (isFollowUp = false) => {
+        const element = findTargetElement(targetId);
+        if (!element) return;
+
         const navbarHeight = 75;
         const elemRect = element.getBoundingClientRect();
-        const elemHeight = element.offsetHeight || elemRect.height;
-        const viewportHeight = window.innerHeight;
-        const availableHeight = viewportHeight - navbarHeight;
-
-        // Check if query is targeting a contact or footer form
-        const isContact =
-          [
-            "contact",
-            "contact-us",
-            "contact_us",
-            "contactform",
-            "contact-form",
-            "footer-form",
-            "footer_form",
-            "get-in-touch",
-            "get_in_touch",
-            "quote",
-            "demo",
-            "request-quote",
-            "book-demo",
-          ].includes(targetId.toLowerCase()) ||
-          element.id.includes("contact") ||
-          element.id.includes("footer");
-
-        // Calculate intelligent scroll offset to ensure full section and bottom visibility
-        let calculatedOffset = -navbarHeight;
-        if (isContact) {
-          // Take section up to top so the entire bottom (captcha & submit button) is 100% visible
-          if (elemHeight > availableHeight) {
-            // Scroll enough so the bottom of the section aligns comfortably inside the screen
-            const overflow = elemHeight - availableHeight;
-            calculatedOffset = -(navbarHeight + overflow + 25);
-          } else {
-            // Fits nicely: align snugly right under top navbar
-            calculatedOffset = -(navbarHeight + 4);
-          }
-        } else if (elemHeight > 0 && elemHeight < availableHeight) {
-          // Center element inside available viewport space
-          const extraSpace = availableHeight - elemHeight;
-          calculatedOffset = -(navbarHeight + Math.floor(extraSpace / 2));
-        } else {
-          calculatedOffset = -(navbarHeight + 10);
-        }
+        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+        const targetY = currentScrollY + elemRect.top - navbarHeight - 5;
 
         const lenis = (window as any).__lenis;
         if (lenis && typeof lenis.scrollTo === "function") {
-          lenis.scrollTo(element, {
-            offset: calculatedOffset,
-            duration: 0.9,
+          lenis.scrollTo(targetY, {
+            duration: isFollowUp ? 0.4 : 0.8,
             lock: false,
+            immediate: isFollowUp,
           });
         } else {
-          const targetY =
-            elemRect.top + window.pageYOffset + calculatedOffset;
           window.scrollTo({
             top: Math.max(0, targetY),
-            behavior: "smooth",
+            behavior: isFollowUp ? "auto" : "smooth",
           });
         }
-      }
+      };
+
+      // Initial scroll pass
+      executeScroll(false);
+
+      // Subsequent recalibration passes to adjust as LazySection / dynamic components expand DOM
+      setTimeout(() => executeScroll(false), 200);
+      setTimeout(() => executeScroll(true), 450);
+      setTimeout(() => executeScroll(true), 800);
+      setTimeout(() => executeScroll(true), 1200);
     };
 
     // 1. Handle clicking any link pointing to an anchor #hash
@@ -173,16 +141,14 @@ export default function AnchorScrollHandler() {
         currentPath.endsWith(pathPart) ||
         (currentPath === "/" && (pathPart === "" || pathPart === "/"))
       ) {
-        const targetElement = findTargetElement(hashPart);
-        if (targetElement || hashPart === "hero") {
-          e.preventDefault();
-          scrollToId(hashPart);
-          window.history.pushState(
-            null,
-            "",
-            hashPart === "hero" ? currentPath : `${currentPath}#${hashPart}`
-          );
-        }
+        e.preventDefault();
+        e.stopPropagation();
+        scrollToId(hashPart);
+        window.history.pushState(
+          null,
+          "",
+          hashPart === "hero" ? currentPath : `${currentPath}#${hashPart}`
+        );
       }
     };
 
