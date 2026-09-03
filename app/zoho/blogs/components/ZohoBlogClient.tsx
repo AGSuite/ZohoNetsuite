@@ -72,11 +72,22 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
                     <p className="m-0 font-medium">{children}</p>
                 </blockquote>
             ),
-            normal: ({ children }: any) => (
-                <p className="text-slate-600 text-[15px] sm:text-base leading-relaxed mb-4 font-normal">
-                    {children}
-                </p>
-            ),
+            normal: ({ value, children }: any) => {
+                const rawText = value?.children?.map((c: any) => c.text || '').join('') || '';
+                if (rawText.trim().startsWith('<') && (rawText.includes('</') || rawText.includes('/>') || rawText.includes('<table') || rawText.includes('<div') || rawText.includes('<article') || rawText.includes('<p') || rawText.includes('<h1') || rawText.includes('<h2'))) {
+                    return (
+                        <div
+                            className="blog-html-content text-slate-600 text-[15px] sm:text-base leading-relaxed my-4"
+                            dangerouslySetInnerHTML={{ __html: rawText }}
+                        />
+                    );
+                }
+                return (
+                    <p className="text-slate-600 text-[15px] sm:text-base leading-relaxed mb-4 font-normal">
+                        {children}
+                    </p>
+                );
+            },
         },
         list: {
             bullet: ({ children }: any) => <ul className="list-disc pl-5 mb-4 space-y-1.5 text-slate-600 text-[15px] sm:text-base leading-relaxed">{children}</ul>,
