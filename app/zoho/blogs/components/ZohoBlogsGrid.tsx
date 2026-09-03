@@ -3,7 +3,6 @@
 import React, { useState, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Search, Calendar, User, ArrowRight, ChevronRight, BookOpen, Filter, Star } from 'lucide-react'
 import ZohoSanityImage from '../../components/ZohoSanityImage'
 
@@ -76,9 +75,9 @@ function EditorPickCard({ blog }: { blog: Blog }) {
     )
 }
 
-function BlogCard({ blog, index }: { blog: Blog; index: number }) {
+function BlogCard({ blog }: { blog: Blog; index?: number }) {
     return (
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, scale: 0.97 }} transition={{ duration: 0.4, delay: index * 0.04 }} className="group">
+        <div className="group">
             <Link href={`/zoho/blogs/${blog.slug.current}`} className="block h-full">
                 <div className="flex flex-col h-full rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-xl transition-all duration-300 group-hover:-translate-y-0.5">
                     <div className="relative h-48 w-full overflow-hidden bg-gray-50 flex-shrink-0">
@@ -102,7 +101,7 @@ function BlogCard({ blog, index }: { blog: Blog; index: number }) {
                     </div>
                 </div>
             </Link>
-        </motion.div>
+        </div>
     )
 }
 
@@ -147,7 +146,7 @@ export default function ZohoBlogsGrid({ blogs }: ZohoBlogsGridProps) {
                         <ChevronRight className="w-3.5 h-3.5 text-white/30" /><span className="text-white/60">Blog</span>
                     </nav>
                     <span className="inline-flex items-center px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white font-medium tracking-widest uppercase text-xs md:text-sm mb-6 backdrop-blur-sm">Zoho Insights &amp; Updates</span>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight mb-6">AGSuite <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-400">Zoho Blog</span></h1>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight mb-5">AGSuite <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-400">Zoho Blog</span></h1>
                     <p className="text-lg md:text-xl text-blue-100/80 max-w-2xl mx-auto leading-relaxed">Expert strategies, technical guides, and transformation news for the modern Zoho enterprise.</p>
                 </div>
             </section>
@@ -180,15 +179,13 @@ export default function ZohoBlogsGrid({ blogs }: ZohoBlogsGridProps) {
                     </div>
                 </div>
 
-                <AnimatePresence mode="popLayout">
-                    {filteredBlogs.length > 0 ? (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                            {(showHero ? gridBlogs : filteredBlogs).map((blog, i) => <BlogCard key={blog._id} blog={blog} index={i} />)}
-                        </div>
-                    ) : (
-                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="py-24 text-center"><h3 className="text-xl font-bold text-gray-900 mb-2">No results found</h3><p className="text-gray-500 text-sm max-w-md mx-auto mb-6">Try a different keyword or clear your filters.</p><button onClick={() => { setSearchQuery(''); setActiveCategory('All') }} className="px-6 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-semibold">Clear Filters</button></motion.div>
-                    )}
-                </AnimatePresence>
+                {filteredBlogs.length > 0 ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                        {(showHero ? gridBlogs : filteredBlogs).map((blog, i) => <BlogCard key={blog._id} blog={blog} index={i} />)}
+                    </div>
+                ) : (
+                    <div className="py-24 text-center"><h3 className="text-xl font-bold text-gray-900 mb-2">No results found</h3><p className="text-gray-500 text-sm max-w-md mx-auto mb-6">Try a different keyword or clear your filters.</p><button onClick={() => { setSearchQuery(''); setActiveCategory('All') }} className="px-6 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-semibold">Clear Filters</button></div>
+                )}
             </div>
             <div id="contact"><FooterContactForm platform="Zoho" /></div>
         </div>

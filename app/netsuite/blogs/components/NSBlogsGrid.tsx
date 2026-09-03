@@ -3,7 +3,6 @@
 import React, { useState, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Search, Calendar, User, ArrowRight, ChevronRight, BookOpen, Filter, Star } from 'lucide-react'
 import SanityImage from '../../components/SanityImage'
 import ContactFormDesign4 from '../../components/ContactFormDesign4'
@@ -117,15 +116,9 @@ function EditorPickCard({ blog }: { blog: Blog }) {
 }
 
 /* ─── REGULAR BLOG CARD ──────────────────────────────── */
-function BlogCard({ blog, index }: { blog: Blog; index: number }) {
+function BlogCard({ blog }: { blog: Blog; index?: number }) {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.97 }}
-            transition={{ duration: 0.4, delay: index * 0.04 }}
-            className="group cursor-pointer"
-        >
+        <div className="group cursor-pointer">
             <Link href={`/netsuite/blogs/${blog.slug.current}`} className="block h-full">
                 <div className="flex flex-col h-full rounded-xl overflow-hidden border border-gray-200 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.10)] hover:border-gray-300 transition-all duration-300 group-hover:-translate-y-0.5">
                     {/* Image */}
@@ -182,7 +175,7 @@ function BlogCard({ blog, index }: { blog: Blog; index: number }) {
                     </div>
                 </div>
             </Link>
-        </motion.div>
+        </div>
     )
 }
 
@@ -243,7 +236,7 @@ export default function NSBlogsGrid({ blogs }: NSBlogsGridProps) {
                     <span className="inline-flex items-center px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white font-medium tracking-widest uppercase text-xs md:text-sm mb-6 backdrop-blur-sm shadow-sm hover:bg-white/15 transition-colors">
                         NetSuite Insights &amp; Updates
                     </span>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-tight mb-6">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-tight mb-5">
                         AGSuite{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-400">
                             NetSuite Blog
@@ -324,35 +317,29 @@ export default function NSBlogsGrid({ blogs }: NSBlogsGridProps) {
                 </div>
 
                 {/* ── BLOG GRID ── */}
-                <AnimatePresence mode="popLayout">
-                    {filteredBlogs.length > 0 ? (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                            {(showHero ? gridBlogs : filteredBlogs).map((blog, i) => (
-                                <BlogCard key={blog._id} blog={blog} index={i} />
-                            ))}
+                {filteredBlogs.length > 0 ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                        {(showHero ? gridBlogs : filteredBlogs).map((blog, i) => (
+                            <BlogCard key={blog._id} blog={blog} index={i} />
+                        ))}
+                    </div>
+                ) : (
+                    <div className="py-24 text-center">
+                        <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                            <Search className="w-7 h-7 text-gray-300" />
                         </div>
-                    ) : (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            className="py-24 text-center"
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">No results found</h3>
+                        <p className="text-gray-500 text-sm max-w-md mx-auto mb-6">
+                            We couldn&apos;t find any articles matching your search. Try a different keyword or clear your filters.
+                        </p>
+                        <button
+                            onClick={() => { setSearchQuery(''); setActiveCategory('All') }}
+                            className="px-6 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors shadow-sm"
                         >
-                            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-5">
-                                <Search className="w-7 h-7 text-gray-300" />
-                            </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">No results found</h3>
-                            <p className="text-gray-500 text-sm max-w-md mx-auto mb-6">
-                                We couldn&apos;t find any articles matching your search. Try a different keyword or clear your filters.
-                            </p>
-                            <button
-                                onClick={() => { setSearchQuery(''); setActiveCategory('All') }}
-                                className="px-6 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors shadow-sm"
-                            >
-                                Clear Filters
-                            </button>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                            Clear Filters
+                        </button>
+                    </div>
+                )}
             </div>
 
             {/* ── CONTACT FORM ── */}
