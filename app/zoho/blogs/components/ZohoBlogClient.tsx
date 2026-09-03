@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Calendar, User, Tag, Clock, ChevronRight, ArrowLeft, ArrowRight } from 'lucide-react';
 import { PortableText } from '@portabletext/react';
 import { urlForZohoImage } from '../../../../sanity/lib/zohoImage';
+import CodeBlock from '@/app/components/blog/CodeBlock';
 
 export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
 
@@ -41,7 +42,9 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
                         )}
                     </div>
                 )
-            }
+            },
+            codeBlock: ({ value }: any) => <CodeBlock value={value} />,
+            code: ({ value }: any) => <CodeBlock value={value} />,
         },
         block: {
             h2: ({ children }: any) => (
@@ -102,6 +105,11 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
                 )
             },
             strong: ({ children }: any) => <strong className="font-semibold text-slate-900">{children}</strong>,
+            code: ({ children }: any) => (
+                <code className="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-pink-600 font-mono text-[13px] font-semibold">
+                    {children}
+                </code>
+            ),
         }
     };
 
