@@ -6,8 +6,6 @@ import Link from 'next/link'
 import { Search, Calendar, User, ArrowRight, ChevronRight, BookOpen, Filter, Star } from 'lucide-react'
 import ZohoSanityImage from '../../components/ZohoSanityImage'
 
-import FooterContactForm from '@/app/components/shared/FooterContactForm'
-
 interface Blog {
     _id: string
     title: string
@@ -187,7 +185,32 @@ export default function ZohoBlogsGrid({ blogs }: ZohoBlogsGridProps) {
                     <div className="py-24 text-center"><h3 className="text-xl font-bold text-gray-900 mb-2">No results found</h3><p className="text-gray-500 text-sm max-w-md mx-auto mb-6">Try a different keyword or clear your filters.</p><button onClick={() => { setSearchQuery(''); setActiveCategory('All') }} className="px-6 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-semibold">Clear Filters</button></div>
                 )}
             </div>
-            <div id="contact"><FooterContactForm platform="Zoho" /></div>
+
+            {/* ─── CTA PARALLAX SECTION ─── */}
+            <div className="relative overflow-hidden w-full bg-slate-900 bg-fixed bg-center bg-cover mt-16" style={{ backgroundImage: "url('/images/people/threeteam.webp')" }}>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/90 via-[#000d2b]/80 to-[#001f5c]/70"></div>
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[80px] pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-[60px] pointer-events-none" />
+
+                <div className="relative z-10 max-w-[1200px] mx-auto px-8 md:px-16 lg:px-24 py-20 md:py-28 flex flex-col md:flex-row md:items-center justify-between gap-12">
+                    <div className="text-left max-w-2xl">
+                        <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 font-medium tracking-widest uppercase text-xs backdrop-blur-sm mb-6 shadow-sm">
+                            Ready to Transform?
+                        </span>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-5 tracking-tight text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #ffffff, #93c5fd, #60a5fa)' }}>
+                            Let&apos;s Build Something Amazing Together
+                        </h2>
+                        <p className="text-blue-100/90 text-base md:text-lg font-medium max-w-2xl leading-relaxed">
+                            Connect with our Zoho experts and discover how we can elevate your business operations to the next level.
+                        </p>
+                    </div>
+                    <div className="shrink-0 flex md:block items-center justify-start">
+                        <Link href="/zoho/contact" className="inline-flex items-center justify-center gap-3 bg-white text-[#001f5c] font-black uppercase tracking-widest text-[13px] px-10 py-5 rounded-2xl hover:bg-blue-50 transition-all shadow-2xl hover:shadow-white/10 hover:-translate-y-0.5 active:scale-95">
+                            Get a Free Consultation <ChevronRight className="w-4 h-4" />
+                        </Link>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

@@ -2,15 +2,24 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Calendar, User, Tag, Clock, ChevronRight, ArrowLeft } from 'lucide-react';
+import { Calendar, User, Tag, Clock, ChevronRight, ArrowLeft, ArrowRight } from 'lucide-react';
 import { PortableText } from '@portabletext/react';
-import dynamic from 'next/dynamic';
-
-const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
-
 import { urlForZohoImage } from '../../../../sanity/lib/zohoImage';
 
 export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
+
+    const sanitizedBody = React.useMemo(() => {
+        if (!Array.isArray(post?.body)) return post?.body;
+        return post.body.filter((block: any) => {
+            if (block._type !== 'block' || !block.children) return true;
+            const text = block.children.map((c: any) => c.text || '').join(' ').toLowerCase();
+            if (text.includes('ready to supercharge')) return false;
+            if (text.includes('explore zoho commerce with agsuite')) return false;
+            if (text.includes('explore oracle netsuite with agsuite')) return false;
+            if (text.includes('agsuitetech.com/contact')) return false;
+            return true;
+        });
+    }, [post?.body]);
 
     const bodyComponents = {
         types: {
@@ -76,11 +85,20 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
         },
         marks: {
             link: ({ value, children }: any) => {
-                const target = (value?.href || '').startsWith('http') ? '_blank' : undefined
+                let href = value?.href || ''
+                if (href.includes('agsuitetech.com/contact') || href === '/contact' || href === '/contact/' || href === 'contact' || href === 'contact/') {
+                    href = '/zoho/contact'
+                }
+                const isInternal = href.startsWith('/') || href.startsWith('#')
                 return (
-                    <a href={value?.href} target={target} rel={target === '_blank' ? 'noindex nofollow' : undefined} className="text-blue-600 hover:text-blue-800 underline underline-offset-2 font-medium">
+                    <Link
+                        href={href}
+                        target={isInternal ? undefined : '_blank'}
+                        rel={isInternal ? undefined : 'noindex nofollow'}
+                        className="text-blue-600 hover:text-blue-800 underline underline-offset-2 font-medium"
+                    >
                         {children}
-                    </a>
+                    </Link>
                 )
             },
             strong: ({ children }: any) => <strong className="font-semibold text-slate-900">{children}</strong>,
@@ -175,7 +193,37 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
                     <div className="bg-white shadow-sm border border-slate-200/80 rounded-2xl overflow-hidden p-6 sm:p-10 md:p-14">
                         {/* ── MAIN BODY CONTENT ── */}
                         <div className="text-slate-700">
-                            <PortableText value={post.body} components={bodyComponents} />
+                            <PortableText value={sanitizedBody} components={bodyComponents} />
+                        </div>
+
+                        {/* ── READY TO SUPERCHARGE CALLOUT CARD (DARK WITH BG IMAGE) ── */}
+                        <div
+                            className="my-10 relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/15 shadow-2xl p-8 sm:p-10 text-white bg-cover bg-center"
+                            style={{ backgroundImage: "url('/images/people/threeteam.webp')" }}
+                        >
+                            {/* Dark gradient overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#000814]/95 via-[#001535]/90 to-[#002a6b]/85 pointer-events-none" />
+                            <div className="absolute top-0 right-0 w-72 h-72 bg-blue-500/15 rounded-full blur-[80px] pointer-events-none" />
+
+                            <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                                <div className="max-w-xl">
+                                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white mb-2 leading-snug">
+                                        Ready to Supercharge Your Sales?
+                                    </h3>
+                                    <p className="text-blue-100/85 text-sm sm:text-base leading-relaxed m-0 font-normal">
+                                        Explore Zoho Commerce with AGSuite
+                                    </p>
+                                </div>
+
+                                <div className="shrink-0 flex items-center">
+                                    <Link
+                                        href="/zoho/contact"
+                                        className="inline-flex items-center justify-center gap-2.5 bg-slate-950/90 hover:bg-black text-white font-bold text-sm px-8 py-3.5 rounded-xl transition-all border border-white/20 shadow-xl hover:border-white/40 hover:-translate-y-0.5 active:scale-95"
+                                    >
+                                        Contact Us <ArrowRight className="w-4 h-4 text-blue-400" />
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
 
                         {/* ── EXCERPT HIGHLIGHT BOX (BOTTOM SUMMARY) ── */}
@@ -191,16 +239,16 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
                             </div>
                         )}
 
-                        {/* ── BACK LINK ── */}
-                        <div className="mt-8">
-                            <Link href="/zoho/blogs" className="inline-flex items-center gap-2 text-blue-700 font-semibold text-xs hover:text-blue-900 transition-colors">
-                                <ArrowLeft className="w-3.5 h-3.5" /> Back to All Articles
+                        {/* ── BACK TO ALL ARTICLES BUTTON ── */}
+                        <div className="mt-10 pt-6 border-t border-slate-100 flex items-center justify-between">
+                            <Link
+                                href="/zoho/blogs"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 hover:text-[#001f5c] font-semibold text-xs transition-all shadow-sm hover:shadow hover:-translate-x-0.5 active:scale-95"
+                            >
+                                <ArrowLeft className="w-4 h-4 text-slate-500" /> Back to All Articles
                             </Link>
                         </div>
                     </div>
-                </div>
-                <div id="contact" className="mt-16">
-                    <FooterContactForm platform="Zoho" />
                 </div>
             </div>
         </article>
