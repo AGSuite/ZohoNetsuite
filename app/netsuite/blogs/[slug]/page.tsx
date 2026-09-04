@@ -8,12 +8,18 @@ type Props = {
     params: Promise<{ slug: string }>
 }
 
+const customTitleBySlug: Record<string, string> = {
+    'the-roi-of-accounting-automation-why-modern-enterprises-are-making-the-switch':
+        'The Modern CFO’s Advantage: Why NetSuite Accounting Is the Future of Finance',
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const resolvedParams = await params;
     const post = await getPostBySlug(resolvedParams.slug)
     if (!post) return { title: 'Post Not Found | AGSuite' }
+    const title = customTitleBySlug[resolvedParams.slug] || post.title;
     return {
-        title: `${post.title} | AGSuite Technologies`,
+        title: `${title} | AGSuite Technologies`,
         description: post.excerpt || "Read the latest insights from AGSuite Technologies.",
     }
 }

@@ -9,6 +9,11 @@ import CodeBlock from '@/app/components/blog/CodeBlock';
 
 export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any) {
 
+    const displayTitle =
+        post?.slug?.current === 'the-roi-of-accounting-automation-why-modern-enterprises-are-making-the-switch'
+            ? 'The Modern CFO’s Advantage: Why NetSuite Accounting Is the Future of Finance'
+            : post?.title;
+
     const sanitizedBody = React.useMemo(() => {
         if (!Array.isArray(post?.body)) return post?.body;
         return post.body.filter((block: any) => {
@@ -18,6 +23,9 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
             if (text.includes('explore oracle netsuite with agsuite')) return false;
             if (text.includes('explore zoho commerce with agsuite')) return false;
             if (text.includes('agsuitetech.com/contact')) return false;
+            if (text.includes('ready to make the switch from record-keeping')) return false;
+            if (text.includes('book your free consultation')) return false;
+            if (text.includes('agsuitetech.com/free-consultation')) return false;
             return true;
         });
     }, [post?.body]);
@@ -43,8 +51,49 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
                     </div>
                 )
             },
-            codeBlock: ({ value }: any) => <CodeBlock value={value} />,
-            code: ({ value }: any) => <CodeBlock value={value} />,
+            codeBlock: ({ value }: any) => {
+                const code = value?.code || '';
+                const lang = (value?.language || '').toLowerCase();
+                const isHtml =
+                    (lang === 'html' || lang === 'xml' || !lang) &&
+                    (/<[a-z][\s\S]*>/i.test(code) || code.includes('<p') || code.includes('<h2') || code.includes('<h3') || code.includes('<div') || code.includes('<table') || code.includes('<ul') || code.includes('<ol') || code.includes('<article'));
+
+                if (isHtml) {
+                    return (
+                        <div
+                            className="blog-html-content text-slate-700 text-[15px] sm:text-base leading-relaxed my-4"
+                            dangerouslySetInnerHTML={{ __html: code }}
+                        />
+                    );
+                }
+                return <CodeBlock value={value} />;
+            },
+            code: ({ value }: any) => {
+                const code = value?.code || '';
+                const lang = (value?.language || '').toLowerCase();
+                const isHtml =
+                    (lang === 'html' || lang === 'xml' || !lang) &&
+                    (/<[a-z][\s\S]*>/i.test(code) || code.includes('<p') || code.includes('<h2') || code.includes('<h3') || code.includes('<div') || code.includes('<table') || code.includes('<ul') || code.includes('<ol') || code.includes('<article'));
+
+                if (isHtml) {
+                    return (
+                        <div
+                            className="blog-html-content text-slate-700 text-[15px] sm:text-base leading-relaxed my-4"
+                            dangerouslySetInnerHTML={{ __html: code }}
+                        />
+                    );
+                }
+                return <CodeBlock value={value} />;
+            },
+            rawHtml: ({ value }: any) => {
+                const html = value?.html || value?.code || '';
+                return (
+                    <div
+                        className="blog-html-content text-slate-700 text-[15px] sm:text-base leading-relaxed my-4"
+                        dangerouslySetInnerHTML={{ __html: html }}
+                    />
+                );
+            },
         },
         block: {
             h2: ({ children }: any) => (
@@ -72,22 +121,11 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
                     <p className="m-0 font-medium">{children}</p>
                 </blockquote>
             ),
-            normal: ({ value, children }: any) => {
-                const rawText = value?.children?.map((c: any) => c.text || '').join('') || '';
-                if (rawText.trim().startsWith('<') && (rawText.includes('</') || rawText.includes('/>') || rawText.includes('<table') || rawText.includes('<div') || rawText.includes('<article') || rawText.includes('<p') || rawText.includes('<h1') || rawText.includes('<h2'))) {
-                    return (
-                        <div
-                            className="blog-html-content text-slate-600 text-[15px] sm:text-base leading-relaxed my-4"
-                            dangerouslySetInnerHTML={{ __html: rawText }}
-                        />
-                    );
-                }
-                return (
-                    <p className="text-slate-600 text-[15px] sm:text-base leading-relaxed mb-4 font-normal">
-                        {children}
-                    </p>
-                );
-            },
+            normal: ({ children }: any) => (
+                <p className="text-slate-600 text-[15px] sm:text-base leading-relaxed mb-4 font-normal">
+                    {children}
+                </p>
+            ),
         },
         list: {
             bullet: ({ children }: any) => <ul className="list-disc pl-5 mb-4 space-y-1.5 text-slate-600 text-[15px] sm:text-base leading-relaxed">{children}</ul>,
@@ -158,7 +196,7 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
                         <ChevronRight className="w-3 h-3 text-white/30" />
                         <Link href="/netsuite/blogs" className="text-blue-400 hover:text-white transition-colors">Blogs</Link>
                         <ChevronRight className="w-3 h-3 text-white/30" />
-                        <span className="text-white/50 line-clamp-1 max-w-[200px]">{post.title}</span>
+                        <span className="text-white/50 line-clamp-1 max-w-[200px]">{displayTitle}</span>
                     </nav>
 
                     {post.categories && post.categories.length > 0 && (
@@ -172,7 +210,7 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
                     )}
 
                     <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight shadow-sm max-w-4xl leading-tight text-white pb-2 mb-6">
-                        {post.title}
+                        {displayTitle}
                     </h1>
 
                     <div className="flex flex-wrap items-center justify-center gap-6 text-[11px] font-medium uppercase tracking-[0.2em]">
@@ -198,7 +236,7 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
                     <div className="w-full bg-slate-200 rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white aspect-[16/9] sm:aspect-[16/7.5]">
                         <img
                             src={featuredImageUrl}
-                            alt={post.title}
+                            alt={displayTitle}
                             className="w-full h-full object-cover object-center"
                             style={{ display: 'block' }}
                         />
@@ -227,7 +265,9 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
                             <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
                                 <div className="max-w-xl">
                                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white mb-2 leading-snug">
-                                        Ready to Supercharge Your Operations?
+                                        {post?.slug?.current === 'the-roi-of-accounting-automation-why-modern-enterprises-are-making-the-switch'
+                                            ? 'Ready to make the switch from record-keeping to growth leadership?'
+                                            : 'Ready to Supercharge Your Operations?'}
                                     </h3>
                                     <p className="text-blue-100/85 text-sm sm:text-base leading-relaxed m-0 font-normal">
                                         Explore Oracle NetSuite with AGSuite
@@ -236,10 +276,16 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
 
                                 <div className="shrink-0 flex items-center">
                                     <Link
-                                        href="/netsuite/contact"
+                                        href={
+                                            post?.slug?.current === 'the-roi-of-accounting-automation-why-modern-enterprises-are-making-the-switch'
+                                                ? '/free-consultation'
+                                                : '/netsuite/contact'
+                                        }
                                         className="inline-flex items-center justify-center gap-2.5 bg-slate-950/90 hover:bg-black text-white font-bold text-sm px-8 py-3.5 rounded-xl transition-all border border-white/20 shadow-xl hover:border-white/40 hover:-translate-y-0.5 active:scale-95"
                                     >
-                                        Contact Us <ArrowRight className="w-4 h-4 text-blue-400" />
+                                        {post?.slug?.current === 'the-roi-of-accounting-automation-why-modern-enterprises-are-making-the-switch'
+                                            ? 'Book Free Consultation'
+                                            : 'Contact Us'} <ArrowRight className="w-4 h-4 text-blue-400" />
                                     </Link>
                                 </div>
                             </div>

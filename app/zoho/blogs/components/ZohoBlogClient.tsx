@@ -18,6 +18,9 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
             if (text.includes('explore zoho commerce with agsuite')) return false;
             if (text.includes('explore oracle netsuite with agsuite')) return false;
             if (text.includes('agsuitetech.com/contact')) return false;
+            if (text.includes('ready to make the switch from record-keeping')) return false;
+            if (text.includes('book your free consultation')) return false;
+            if (text.includes('agsuitetech.com/free-consultation')) return false;
             return true;
         });
     }, [post?.body]);
@@ -43,8 +46,49 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
                     </div>
                 )
             },
-            codeBlock: ({ value }: any) => <CodeBlock value={value} />,
-            code: ({ value }: any) => <CodeBlock value={value} />,
+            codeBlock: ({ value }: any) => {
+                const code = value?.code || '';
+                const lang = (value?.language || '').toLowerCase();
+                const isHtml =
+                    (lang === 'html' || lang === 'xml' || !lang) &&
+                    (/<[a-z][\s\S]*>/i.test(code) || code.includes('<p') || code.includes('<h2') || code.includes('<h3') || code.includes('<div') || code.includes('<table') || code.includes('<ul') || code.includes('<ol') || code.includes('<article'));
+
+                if (isHtml) {
+                    return (
+                        <div
+                            className="blog-html-content text-slate-700 text-[15px] sm:text-base leading-relaxed my-4"
+                            dangerouslySetInnerHTML={{ __html: code }}
+                        />
+                    );
+                }
+                return <CodeBlock value={value} />;
+            },
+            code: ({ value }: any) => {
+                const code = value?.code || '';
+                const lang = (value?.language || '').toLowerCase();
+                const isHtml =
+                    (lang === 'html' || lang === 'xml' || !lang) &&
+                    (/<[a-z][\s\S]*>/i.test(code) || code.includes('<p') || code.includes('<h2') || code.includes('<h3') || code.includes('<div') || code.includes('<table') || code.includes('<ul') || code.includes('<ol') || code.includes('<article'));
+
+                if (isHtml) {
+                    return (
+                        <div
+                            className="blog-html-content text-slate-700 text-[15px] sm:text-base leading-relaxed my-4"
+                            dangerouslySetInnerHTML={{ __html: code }}
+                        />
+                    );
+                }
+                return <CodeBlock value={value} />;
+            },
+            rawHtml: ({ value }: any) => {
+                const html = value?.html || value?.code || '';
+                return (
+                    <div
+                        className="blog-html-content text-slate-700 text-[15px] sm:text-base leading-relaxed my-4"
+                        dangerouslySetInnerHTML={{ __html: html }}
+                    />
+                );
+            },
         },
         block: {
             h2: ({ children }: any) => (
@@ -72,22 +116,11 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
                     <p className="m-0 font-medium">{children}</p>
                 </blockquote>
             ),
-            normal: ({ value, children }: any) => {
-                const rawText = value?.children?.map((c: any) => c.text || '').join('') || '';
-                if (rawText.trim().startsWith('<') && (rawText.includes('</') || rawText.includes('/>') || rawText.includes('<table') || rawText.includes('<div') || rawText.includes('<article') || rawText.includes('<p') || rawText.includes('<h1') || rawText.includes('<h2'))) {
-                    return (
-                        <div
-                            className="blog-html-content text-slate-600 text-[15px] sm:text-base leading-relaxed my-4"
-                            dangerouslySetInnerHTML={{ __html: rawText }}
-                        />
-                    );
-                }
-                return (
-                    <p className="text-slate-600 text-[15px] sm:text-base leading-relaxed mb-4 font-normal">
-                        {children}
-                    </p>
-                );
-            },
+            normal: ({ children }: any) => (
+                <p className="text-slate-600 text-[15px] sm:text-base leading-relaxed mb-4 font-normal">
+                    {children}
+                </p>
+            ),
         },
         list: {
             bullet: ({ children }: any) => <ul className="list-disc pl-5 mb-4 space-y-1.5 text-slate-600 text-[15px] sm:text-base leading-relaxed">{children}</ul>,

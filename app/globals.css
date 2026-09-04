@@ -206,4 +206,22 @@ h6 {
 
 .blog-html-content tr:nth-child(even) td {
   background-color: #f8fafc;
-}
+}
+
+.blog-html-content strong,
+.blog-html-content b {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.blog-html-content a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+}
+
+.blog-html-content a:hover {
+  color: #1e40af;
+}
+
