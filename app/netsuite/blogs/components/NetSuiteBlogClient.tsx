@@ -52,13 +52,14 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
                 )
             },
             codeBlock: ({ value }: any) => {
-                const code = value?.code || '';
+                let code = (value?.code || '').trim();
                 const lang = (value?.language || '').toLowerCase();
                 const isHtml =
                     (lang === 'html' || lang === 'xml' || !lang) &&
                     (/<[a-z][\s\S]*>/i.test(code) || code.includes('<p') || code.includes('<h2') || code.includes('<h3') || code.includes('<div') || code.includes('<table') || code.includes('<ul') || code.includes('<ol') || code.includes('<article'));
 
                 if (isHtml) {
+                    code = code.replace(/^(<h[1-6][^>]*)(>)/i, '$1 style="border-top:none!important;border:none!important;padding-top:0!important;margin-top:0!important;"$2');
                     return (
                         <div
                             className="blog-html-content text-slate-700 text-[15px] sm:text-base leading-relaxed my-4"
@@ -69,13 +70,14 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
                 return <CodeBlock value={value} />;
             },
             code: ({ value }: any) => {
-                const code = value?.code || '';
+                let code = (value?.code || '').trim();
                 const lang = (value?.language || '').toLowerCase();
                 const isHtml =
                     (lang === 'html' || lang === 'xml' || !lang) &&
                     (/<[a-z][\s\S]*>/i.test(code) || code.includes('<p') || code.includes('<h2') || code.includes('<h3') || code.includes('<div') || code.includes('<table') || code.includes('<ul') || code.includes('<ol') || code.includes('<article'));
 
                 if (isHtml) {
+                    code = code.replace(/^(<h[1-6][^>]*)(>)/i, '$1 style="border-top:none!important;border:none!important;padding-top:0!important;margin-top:0!important;"$2');
                     return (
                         <div
                             className="blog-html-content text-slate-700 text-[15px] sm:text-base leading-relaxed my-4"
@@ -86,7 +88,8 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
                 return <CodeBlock value={value} />;
             },
             rawHtml: ({ value }: any) => {
-                const html = value?.html || value?.code || '';
+                let html = (value?.html || value?.code || '').trim();
+                html = html.replace(/^(<h[1-6][^>]*)(>)/i, '$1 style="border-top:none!important;border:none!important;padding-top:0!important;margin-top:0!important;"$2');
                 return (
                     <div
                         className="blog-html-content text-slate-700 text-[15px] sm:text-base leading-relaxed my-4"

@@ -5,5 +5,5 @@ export const POSTS_QUERY = groq`*[_type == "post" && defined(slug.current)] | or
 }`
 
 export const POST_BY_SLUG_QUERY = groq`*[_type == "post" && slug.current == $slug][0]{
-  _id, _createdAt, _updatedAt, title, slug, publishedAt, mainImage, body, excerpt, "author": author, "categories": categories
+  _id, _createdAt, _updatedAt, title, slug, publishedAt, mainImage, body, excerpt, "author": author, "categories": categories, metaTitle, metaDescription, keywords
 }`

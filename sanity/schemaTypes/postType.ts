@@ -152,6 +152,29 @@ export const postType = defineType({
                 }),
             ],
         }),
+        defineField({
+            name: 'metaTitle',
+            title: 'Meta Title (SEO)',
+            description: 'Custom SEO title tag (recommended 50-60 characters)',
+            type: 'string',
+        }),
+        defineField({
+            name: 'metaDescription',
+            title: 'Meta Description (SEO)',
+            description: 'Custom SEO description (recommended 150-160 characters)',
+            type: 'text',
+            rows: 3,
+        }),
+        defineField({
+            name: 'keywords',
+            title: 'SEO Keywords',
+            description: 'Target keywords for this blog post',
+            type: 'array',
+            of: [{ type: 'string' }],
+            options: {
+                layout: 'tags',
+            },
+        }),
     ],
     preview: {
         select: {
