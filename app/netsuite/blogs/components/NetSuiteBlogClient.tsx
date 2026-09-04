@@ -281,7 +281,7 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
                                     <Link
                                         href={
                                             post?.slug?.current === 'the-roi-of-accounting-automation-why-modern-enterprises-are-making-the-switch'
-                                                ? '/free-consultation'
+                                                ? '/netsuite/contact'
                                                 : '/netsuite/contact'
                                         }
                                         className="inline-flex items-center justify-center gap-2.5 bg-slate-950/90 hover:bg-black text-white font-bold text-sm px-8 py-3.5 rounded-xl transition-all border border-white/20 shadow-xl hover:border-white/40 hover:-translate-y-0.5 active:scale-95"
