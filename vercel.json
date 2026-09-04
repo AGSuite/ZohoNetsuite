@@ -10,6 +10,11 @@
       ],
       "destination": "https://www.agsuitetech.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/index.php",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
