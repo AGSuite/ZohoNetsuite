@@ -9,7 +9,7 @@ type Props = {
 }
 
 // Specific SEO configurations by slug (can be added here or in Sanity CMS)
-const customBlogSeoBySlug: Record<string, { title?: string; description?: string; keywords?: string[] }> = {
+const customBlogSeoBySlug: Record<string, { title?: string; description?: string; keywords?: string[]; customImage?: string; mins?: number }> = {
     'the-roi-of-accounting-automation-why-modern-enterprises-are-making-the-switch': {
         title: 'The Modern CFO’s Advantage: Why NetSuite Accounting Is the Future of Finance',
         description: 'Discover how NetSuite Accounting transforms modern finance operations, accelerates month-end closes, and turns financial data into strategic growth.',
@@ -19,6 +19,8 @@ const customBlogSeoBySlug: Record<string, { title?: string; description?: string
         title: 'SAP ECC to Oracle NetSuite Migration: Complete Guide',
         description: 'Explore the SAP ECC to Oracle NetSuite migration roadmap, data migration, finance transformation, cutover planning, and best practices.',
         keywords: ['SAP ECC to NetSuite migration', 'SAP ECC migration', 'Oracle NetSuite migration', 'ERP migration', 'SAP ECC replacement'],
+        customImage: '/images/blogs/sap-ecc-to-oracle-netsuite-migration.png',
+        mins: 10,
     },
 };
 
@@ -34,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const description = customSeo?.description || post.metaDescription || post.excerpt || "Read the latest Oracle NetSuite insights from AGSuite Technologies.";
     const keywords = customSeo?.keywords || post.keywords || ['NetSuite', 'Oracle NetSuite', 'ERP', 'AGSuite Technologies'];
     const url = `https://www.agsuitetech.com/netsuite/blogs/${slug}`;
-    const imageUrl = post.mainImage ? urlForImage(post.mainImage) : undefined;
+    const imageUrl = customSeo?.customImage || (post.mainImage ? urlForImage(post.mainImage) : undefined);
 
     return {
         title,
@@ -74,9 +76,9 @@ export default async function BlogPostPage({ params }: Props) {
     const post = await getPostBySlug(resolvedParams.slug);
     if (!post) notFound();
 
-    const featuredImageUrl = urlForImage(post.mainImage);
-    const mins = readingTime(post.body);
     const customSeo = customBlogSeoBySlug[resolvedParams.slug];
+    const featuredImageUrl = customSeo?.customImage || (post.mainImage ? urlForImage(post.mainImage) : undefined);
+    const mins = customSeo?.mins || readingTime(post.body);
     const title = customSeo?.title || post.metaTitle || post.title;
     const description = customSeo?.description || post.metaDescription || post.excerpt;
 

@@ -21,14 +21,28 @@ interface NSBlogsGridProps {
     blogs: Blog[]
 }
 
+const customCardImages: Record<string, string> = {
+    'sap-ecc-to-oracle-netsuite-migration': '/images/blogs/sap-ecc-to-oracle-netsuite-migration.png',
+};
+
 /* ─── FEATURED HERO POST ─────────────────────────────── */
 function FeaturedPost({ blog }: { blog: Blog }) {
+    const customImg = customCardImages[blog.slug.current];
+
     return (
         <Link href={`/netsuite/blogs/${blog.slug.current}`} className="group block h-full">
             <div className="relative h-full rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 group-hover:-translate-y-0.5">
                 {/* Image */}
                 <div className="relative h-72 w-full overflow-hidden bg-gray-100">
-                    {blog.mainImage ? (
+                    {customImg ? (
+                        <Image
+                            src={customImg}
+                            alt={blog.title}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            sizes="(max-width: 768px) 100vw, 60vw"
+                        />
+                    ) : blog.mainImage ? (
                         <SanityImage
                             image={blog.mainImage}
                             alt={blog.title}
@@ -79,11 +93,21 @@ function FeaturedPost({ blog }: { blog: Blog }) {
 
 /* ─── EDITOR'S PICK ROW ──────────────────────────────── */
 function EditorPickCard({ blog }: { blog: Blog }) {
+    const customImg = customCardImages[blog.slug.current];
+
     return (
         <Link href={`/netsuite/blogs/${blog.slug.current}`} className="group flex gap-3 p-3 rounded-xl hover:bg-gray-50 transition-all border border-transparent hover:border-gray-100">
             {/* Thumbnail */}
             <div className="relative w-20 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100">
-                {blog.mainImage ? (
+                {customImg ? (
+                    <Image
+                        src={customImg}
+                        alt={blog.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        sizes="80px"
+                    />
+                ) : blog.mainImage ? (
                     <SanityImage
                         image={blog.mainImage}
                         alt={blog.title}
@@ -116,13 +140,23 @@ function EditorPickCard({ blog }: { blog: Blog }) {
 
 /* ─── REGULAR BLOG CARD ──────────────────────────────── */
 function BlogCard({ blog }: { blog: Blog; index?: number }) {
+    const customImg = customCardImages[blog.slug.current];
+
     return (
         <div className="group cursor-pointer">
             <Link href={`/netsuite/blogs/${blog.slug.current}`} className="block h-full">
                 <div className="flex flex-col h-full rounded-xl overflow-hidden border border-gray-200 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.10)] hover:border-gray-300 transition-all duration-300 group-hover:-translate-y-0.5">
                     {/* Image */}
                     <div className="relative h-48 w-full overflow-hidden bg-gray-50 flex-shrink-0">
-                        {blog.mainImage ? (
+                        {customImg ? (
+                            <Image
+                                src={customImg}
+                                alt={blog.title}
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                            />
+                        ) : blog.mainImage ? (
                             <SanityImage
                                 image={blog.mainImage}
                                 alt={blog.title}
