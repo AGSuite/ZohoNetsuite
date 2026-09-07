@@ -3,7 +3,6 @@ import { Inter, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import ClientOverlays from "./components/shared/ClientOverlays";
-import GoogleAnalytics from "./components/shared/GoogleAnalytics";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL, SITE_NAME, orgSchema, websiteSchema, localBusinessSchema } from "./lib/seo";
 
@@ -171,8 +170,23 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager / Analytics (G-FWVDJQ8Q2R) - excluded on ERP landing page */}
-        <GoogleAnalytics />
+        {/* Google tag (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-FWVDJQ8Q2R"
+        />
+        <Script
+          id="google-tag-gtag"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-FWVDJQ8Q2R');
+          `}
+        </Script>
 
         {/* Performance: preconnect & DNS prefetch */}
         <link rel="dns-prefetch" href="https://cdn.sanity.io" />

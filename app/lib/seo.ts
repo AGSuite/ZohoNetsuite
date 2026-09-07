@@ -968,6 +968,38 @@ export const NETSUITE_PAGES: Record<
       { name: "NetSuite Consulting Services", url: "https://agsuitetech.com/netsuite-consulting/" },
     ],
   },
+  "/netsuite-integration": {
+    title: "NetSuite Integration Services | AGSuite Technologies",
+    description:
+      "Connect NetSuite ERP seamlessly with CRM, e-Commerce, 3PL, and third-party applications via robust REST/SOAP APIs and custom middleware solutions.",
+    keywords: ["NetSuite Integration Services", "NetSuite API Integration", "NetSuite Celigo Integration", "NetSuite Connector", "AGSuite Technologies"],
+    category: "ERP Software",
+    publishedTime: "2024-03-06T00:00:00Z",
+    canonicalUrl: "https://www.agsuitetech.com/netsuite-integration",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "NetSuite Integration", url: "https://www.agsuitetech.com/netsuite-integration" },
+    ],
+  },
+  "/netsuite-managed-support": {
+    title: "NetSuite Managed Support Services | 24/7 Administration | AGSuite",
+    description:
+      "Ensure peak performance, continuous optimization, user training, and 24/7 technical administration with AGSuite's NetSuite Managed Support Services.",
+    keywords: ["NetSuite Managed Support", "NetSuite Support Services", "NetSuite Administrator", "NetSuite Maintenance", "AGSuite Technologies"],
+    category: "ERP Software",
+    publishedTime: "2024-03-06T00:00:00Z",
+    canonicalUrl: "https://www.agsuitetech.com/netsuite-managed-support",
+    ogImage: "https://agsuitetech.com/wp-content/uploads/2024/09/logo-img.png",
+    ogType: "article",
+    ogSiteName: "AGSuite",
+    breadcrumbs: [
+      { name: "Home", url: "https://agsuitetech.com/" },
+      { name: "NetSuite Managed Support", url: "https://www.agsuitetech.com/netsuite-managed-support" },
+    ],
+  },
 };
 
 // ─── Zoho page metadata map ───────────────────────────────────────────────────
