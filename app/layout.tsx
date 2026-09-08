@@ -136,8 +136,7 @@ export const metadata: Metadata = {
 
   // ── Search Console Verification tokens ────────────────────────────────────
   verification: {
-    // google: "YOUR_GOOGLE_VERIFICATION_TOKEN",  // ← paste after GSC setup
-    // bing:   "YOUR_BING_VERIFICATION_TOKEN",
+    google: "uvZsTLiNY0_maGBWX8qehXq5kB0KGu4xBBWK8cE9Jsk",
   },
 
   // ── Referrer & Format detection ────────────────────────────────────────────
