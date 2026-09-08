@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 
@@ -129,7 +129,7 @@ export default function ZohoERPPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/people/zoho_erp_hero.jpg"
-      whatIsImage="/images/zoho-dashboards/zoho-erp-ai.png"
+      whatIsImage="/images/zoho-dashboards/zoho-erp-updated-dashboard.png"
       heroCard1={{
         title: "50+ Apps",
         subtitle: "Everything you need in one place.",

@@ -143,7 +143,7 @@ export default function ZohoDeskPage() {
     {
       title: "Happier Customers",
       description: "Provide the fast, accurate, and multi-channel support that your customers expect. Reduce churn by delivering excellence consistently.",
-      image: "/images/people/zoho_people_plus_benefit_experience.png",
+      image: "/images/people/zoho_desk_benefit_happier_customers.png",
       points: [
         "Support on email, chat, social, and phone",
         "Transparent ticket status for customers",

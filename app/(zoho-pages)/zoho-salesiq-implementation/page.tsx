@@ -158,7 +158,7 @@ export default function ZohoSalesIqPage() {
     {
       title: "Unified Team Productivity",
       description: "Help your agents work smarter. Provide them with all the tools and context they need to deliver exceptional support and sales.",
-      image: "/images/people/zoho_recruit_benefit_collaboration.png",
+      image: "/images/people/zoho_salesiq_benefit_productivity.png",
       points: [
         "Department-based chat routing & queues",
         "Internal team chat for instant collaboration",
@@ -182,7 +182,7 @@ export default function ZohoSalesIqPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/people/zoho_salesiq_hero.svg"
+      heroImage="/images/people/zoho_salesiq_hero.png"
       whatIsImage="/images/zoho-dashboards/zoho-sales-IQ.webp"
       heroCard1={{
         title: "Real-time Tracking",

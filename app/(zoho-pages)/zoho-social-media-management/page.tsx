@@ -183,7 +183,7 @@ export default function ZohoSocialPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/zoho-dashboards/zoho-social-dashboard.png"
-      whatIsImage="/images/zoho-dashboards/zoho-marketing-plus-dashboard.png"
+      whatIsImage="/images/zoho-dashboards/zoho-social-dashboard.png"
       heroCard1={{
         title: "All Networks Unified",
         subtitle: "One calendar for FB, IG, LI, and TW.",
