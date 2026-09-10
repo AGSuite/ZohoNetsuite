@@ -57,8 +57,8 @@ const HeroSlide = ({
   const activeGridClass = gridClass || defaultGridClass;
 
   return (
-    <div className="relative h-full w-full flex items-center">
-      <div className="absolute inset-0 top-0 -z-10">
+    <div className="relative h-full w-full flex items-center max-w-full overflow-hidden">
+      <div className="absolute inset-0 top-0 -z-10 overflow-hidden">
         {customBg ? (
           customBg
         ) : (
@@ -82,7 +82,7 @@ const HeroSlide = ({
         <div className="absolute inset-0 bg-linear-to-r from-black/55 via-black/55 to-transparent" />
       )}
 
-      <div className={`relative z-10 mx-auto max-w-6xl ${containerClass} w-full grid grid-cols-1 ${activeGridClass} gap-10 lg:gap-27 items-center -translate-y-4 lg:-translate-y-6`}>
+      <div className={`relative z-10 mx-auto max-w-6xl ${containerClass} w-full grid grid-cols-1 ${activeGridClass} gap-6 sm:gap-8 lg:gap-16 xl:gap-24 items-center translate-y-0 lg:-translate-y-4`}>
         <div className={`${textWidthClass} text-left ${textColumnClass}`}>
           <AnimatePresence mode="wait">
             {isActive && (
@@ -92,14 +92,14 @@ const HeroSlide = ({
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 {priority ? (
-                  <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight pb-1 ${textColor === 'dark'
+                  <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold lg:font-medium leading-tight sm:leading-tight lg:leading-tight tracking-tight pb-1 ${textColor === 'dark'
                     ? "bg-linear-to-r from-blue-950 via-blue-800 to-blue-900 bg-clip-text text-transparent"
                     : "text-white"
                     }`}>
                     {title}
                   </h1>
                 ) : (
-                  <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight pb-1 ${textColor === 'dark'
+                  <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold lg:font-medium leading-tight sm:leading-tight lg:leading-tight tracking-tight pb-1 ${textColor === 'dark'
                     ? "bg-linear-to-r from-blue-950 via-blue-800 to-blue-900 bg-clip-text text-transparent"
                     : "text-white"
                     }`}>
@@ -111,19 +111,19 @@ const HeroSlide = ({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                  className={`mt-4 text-base sm:text-lg lg:text-xl font-normal leading-relaxed ${textColor === 'dark' ? 'text-gray-700' : 'text-white/90'
+                  className={`mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg xl:text-xl font-normal leading-relaxed ${textColor === 'dark' ? 'text-gray-700' : 'text-white/90'
                     }`}>{desc}</motion.p>
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-                  className="mt-5 relative inline-flex group"
+                  className="mt-4 sm:mt-5 relative inline-flex group"
                 >
                   <div className={`absolute inset-0 rounded-xl bg-linear-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg group-hover:opacity-100 transition duration-700`} />
                   <Link
                     href={link || "#"}
-                    className="bg-gray-950 text-white relative px-10 py-4 rounded-xl font-medium shadow-2xl hover:bg-white hover:text-black transition-all duration-300 transform group-hover:scale-105 inline-block text-center"
+                    className="bg-gray-950 text-white relative px-6 py-3 sm:px-8 sm:py-3.5 lg:px-10 lg:py-4 rounded-xl text-sm sm:text-base font-medium shadow-2xl hover:bg-white hover:text-black transition-all duration-300 transform group-hover:scale-105 inline-block text-center"
                   >
                     {cta}
                   </Link>
@@ -134,7 +134,7 @@ const HeroSlide = ({
         </div>
 
         {!isMobile && (image || customVisual) && (
-          <div className="hidden lg:flex justify-center lg:justify-end">
+          <div className="hidden lg:flex justify-center lg:justify-end overflow-visible">
             <AnimatePresence mode="wait">
               {isActive && (
                 <motion.div
@@ -144,7 +144,7 @@ const HeroSlide = ({
                   className="w-full relative"
                 >
                   {multiColorShadow && (
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[110%] bg-linear-to-r from-blue-400/20 via-cyan-400/15 to-blue-300/10 blur-[120px] rounded-full -z-10" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[110%] bg-linear-to-r from-blue-400/20 via-cyan-400/15 to-blue-300/10 blur-[120px] rounded-full -z-10 pointer-events-none" />
                   )}
                   {customVisual ? (
                     <div className="w-full flex justify-center lg:justify-end">
@@ -389,7 +389,7 @@ export default function NSHeroSlider() {
 
   return (
     <Swiper
-      className="hero-swiper w-full h-full"
+      className="hero-swiper w-full h-full max-w-full pb-8 sm:pb-10 lg:pb-0"
       modules={[Pagination, Autoplay]}
       loop
       autoplay={{ delay: 4500, disableOnInteraction: false }}

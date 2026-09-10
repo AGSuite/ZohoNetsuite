@@ -96,6 +96,16 @@ h6 {
   bottom: -19px;
 }
 
+.hero-swiper .swiper-pagination {
+  bottom: 12px !important;
+}
+
+@media (min-width: 1024px) {
+  .hero-swiper .swiper-pagination {
+    bottom: 24px !important;
+  }
+}
+
 /* ── Blog Embedded HTML Content Styling ── */
 .blog-html-content h1 {
   font-size: 1.65rem;

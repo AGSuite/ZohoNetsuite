@@ -36,8 +36,10 @@ const AnchorScrollHandler = dynamic(
 export default function ClientOverlays() {
     const pathname = usePathname();
     const isStudio = pathname?.includes('/studio');
+    const isHome = pathname === '/';
 
     if (isStudio) return null;
+    if (isHome) return <ScrollRestorer />;
 
     return (
         <>

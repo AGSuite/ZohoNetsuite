@@ -169,14 +169,14 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <head>
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js) - Defer to lazyOnload to unblock FCP, LCP, and TBT */}
         <Script
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://www.googletagmanager.com/gtag/js?id=G-FWVDJQ8Q2R"
         />
         <Script
           id="google-tag-gtag"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         >
           {`
             window.dataLayer = window.dataLayer || [];
@@ -188,6 +188,9 @@ export default function RootLayout({
         </Script>
 
         {/* Performance: preconnect & DNS prefetch */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://cdn.sanity.io" />
 
         {/* JSON-LD — Organisation (rich knowledge panel & brand signals) */}

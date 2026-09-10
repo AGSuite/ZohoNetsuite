@@ -99,9 +99,10 @@ export default function Home() {
           alt="AGSuite Technologies Background"
           fill
           priority
-          className="object-cover object-center scale-110"
+          fetchPriority="high"
+          className="object-cover object-center scale-105"
           sizes="100vw"
-          quality={75}
+          quality={68}
         />
       </div>
 
@@ -123,6 +124,7 @@ export default function Home() {
               height={60}
               priority
               className="h-10 sm:h-14 md:h-16 lg:h-18 w-auto object-contain"
+              quality={80}
             />
             <div className="w-px h-8 bg-gray-400/50 hidden sm:block" />
             <Image
@@ -132,6 +134,7 @@ export default function Home() {
               height={60}
               priority
               className="h-10 sm:h-14 md:h-16 lg:h-18 w-auto object-contain"
+              quality={80}
             />
           </div>
           <span className="px-6 py-2.5 sm:px-8 sm:py-3 rounded-lg bg-gray-700 text-white text-base sm:text-lg font-semibold hover:bg-gray-900 transition-colors inline-block shadow-md">
@@ -139,7 +142,7 @@ export default function Home() {
           </span>
         </Link>
 
-        {/* RIGHT — NETSUITE PEOPLE IMAGE */}
+        {/* RIGHT — NETSUITE PEOPLE IMAGE (LCP Target) */}
         <Link
           href="/netsuite"
           prefetch={true}
@@ -151,9 +154,10 @@ export default function Home() {
             alt="Oracle NetSuite Business Professionals"
             fill
             priority
+            fetchPriority="high"
             className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
             sizes="(max-width: 768px) 100vw, 50vw"
-            quality={82}
+            quality={75}
           />
 
           {/* Top dark gradient — logo area */}
@@ -217,9 +221,11 @@ export default function Home() {
             src="/images/home/zoho_hero_card.webp"
             alt="Zoho Cloud Business Solutions"
             fill
+            priority
+            fetchPriority="high"
             className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             sizes="(max-width: 768px) 100vw, 50vw"
-            quality={80}
+            quality={75}
           />
 
           {/* Top dark gradient — logo area */}
@@ -252,7 +258,9 @@ export default function Home() {
               alt="AGSuite Technologies Logo"
               width={180}
               height={60}
+              priority
               className="h-10 sm:h-14 md:h-16 lg:h-18 w-auto object-contain"
+              quality={80}
             />
             <div className="w-px h-8 bg-gray-400/50 hidden sm:block" />
             <Image
@@ -260,7 +268,9 @@ export default function Home() {
               alt="Zoho Premium Partner Logo"
               width={180}
               height={60}
+              priority
               className="h-10 sm:h-14 md:h-16 lg:h-18 w-auto object-contain"
+              quality={80}
             />
           </div>
           <span className="px-6 py-2.5 sm:px-8 sm:py-3 rounded-lg bg-gray-700 text-white text-base sm:text-lg font-semibold hover:bg-gray-900 transition-colors inline-block shadow-md">
