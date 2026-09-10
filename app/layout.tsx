@@ -193,6 +193,24 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://cdn.sanity.io" />
 
+        {/* LCP Preload Hints for Instant Discovery */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/home/netsuite_hero_card_mob.webp"
+          type="image/webp"
+          media="(max-width: 768px)"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/home/netsuite_hero_card.webp"
+          type="image/webp"
+          media="(min-width: 769px)"
+          fetchPriority="high"
+        />
+
         {/* JSON-LD — Organisation (rich knowledge panel & brand signals) */}
         <Script
           id="org-schema"

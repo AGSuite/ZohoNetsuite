@@ -92,18 +92,26 @@ export default function Home() {
         Oracle NetSuite ERP & Zoho Premium Implementation Partner | AGSuite Technologies
       </h1>
 
-      {/* Background Image - Ultra-Optimized & Preloaded */}
+      {/* Background Image - Responsive & Ultra-Fast */}
       <div className="fixed inset-0 -z-10 w-screen h-screen">
-        <Image
-          src="/images/home/bg_homepage.webp"
-          alt="AGSuite Technologies Background"
-          fill
-          priority
-          fetchPriority="high"
-          className="object-cover object-center scale-105"
-          sizes="100vw"
-          quality={68}
-        />
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcSet="/images/home/bg_homepage_mob.webp"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 769px)"
+            srcSet="/images/home/bg_homepage.webp"
+            type="image/webp"
+          />
+          <img
+            src="/images/home/bg_homepage.webp"
+            alt="AGSuite Technologies Background"
+            decoding="async"
+            className="w-full h-full object-cover object-center scale-105"
+          />
+        </picture>
       </div>
 
       {/* TOP TWO SECTIONS — NETSUITE */}
@@ -142,23 +150,32 @@ export default function Home() {
           </span>
         </Link>
 
-        {/* RIGHT — NETSUITE PEOPLE IMAGE (LCP Target) */}
+        {/* RIGHT — NETSUITE PEOPLE IMAGE (Primary LCP Target) */}
         <Link
           href="/netsuite"
           prefetch={true}
           className="relative h-[38vh] min-h-[250px] md:h-[70vh] group overflow-hidden block shadow-lg rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-400"
           aria-label="Explore Oracle NetSuite ERP #1 Cloud ERP"
         >
-          <Image
-            src="/images/home/netsuite_hero_card.webp"
-            alt="Oracle NetSuite Business Professionals"
-            fill
-            priority
-            fetchPriority="high"
-            className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={75}
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet="/images/home/netsuite_hero_card_mob.webp"
+              type="image/webp"
+            />
+            <source
+              media="(min-width: 769px)"
+              srcSet="/images/home/netsuite_hero_card.webp"
+              type="image/webp"
+            />
+            <img
+              src="/images/home/netsuite_hero_card.webp"
+              alt="Oracle NetSuite Business Professionals"
+              fetchPriority="high"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+          </picture>
 
           {/* Top dark gradient — logo area */}
           <div
@@ -217,16 +234,25 @@ export default function Home() {
           className="relative h-[38vh] min-h-[250px] md:h-[70vh] group overflow-hidden block shadow-lg rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-400"
           aria-label="Visit Zoho Solutions and CRM"
         >
-          <Image
-            src="/images/home/zoho_hero_card.webp"
-            alt="Zoho Cloud Business Solutions"
-            fill
-            priority
-            fetchPriority="high"
-            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={75}
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet="/images/home/zoho_hero_card_mob.webp"
+              type="image/webp"
+            />
+            <source
+              media="(min-width: 769px)"
+              srcSet="/images/home/zoho_hero_card.webp"
+              type="image/webp"
+            />
+            <img
+              src="/images/home/zoho_hero_card.webp"
+              alt="Zoho Cloud Business Solutions"
+              loading="eager"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+          </picture>
 
           {/* Top dark gradient — logo area */}
           <div
