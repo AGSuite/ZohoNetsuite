@@ -18,7 +18,6 @@ import {
   FiLock,
   FiAward,
   FiPlay,
-  FiActivity,
   FiGrid,
   FiBarChart2,
   FiUsers,
@@ -822,7 +821,7 @@ export default function NetSuiteNextAIPage() {
       </section>
 
       {/* ── 7. PLATFORM SECURITY & EXTENSIBILITY ─────────────────────── */}
-      <section className="relative py-16 sm:py-28 px-4 sm:px-6 overflow-hidden">
+      <section className="relative pt-14 sm:pt-24 pb-4 sm:pb-8 px-4 sm:px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-blue-950/15 to-slate-950 pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto">
@@ -835,7 +834,7 @@ export default function NetSuiteNextAIPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
             {[
               {
                 icon: FiLock,
@@ -880,38 +879,11 @@ export default function NetSuiteNextAIPage() {
               </motion.div>
             ))}
           </div>
-
-          {/* Already using NS box */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative rounded-3xl overflow-hidden border border-cyan-400/30 shadow-2xl"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900" />
-            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 blur-[80px]" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 blur-[80px]" />
-            <div className="relative z-10 p-6 sm:p-14 text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4 sm:mb-6">
-                <FiActivity className="w-3.5 h-3.5" /> Coming Soon
-              </div>
-              <h3 className="text-xl sm:text-4xl font-extrabold text-white mb-3 sm:mb-4">Already Using Oracle NetSuite?</h3>
-              <p className="text-slate-300 text-xs sm:text-base max-w-2xl mx-auto leading-relaxed mb-6 sm:mb-8">
-                NetSuite Next is coming to customers soon! Switching will be as simple as pressing a button — zero data migration or rework required. Partner with AGSuite to prepare your team.
-              </p>
-              <Link
-                href="#contact-form"
-                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 rounded-full bg-gradient-to-r from-[#13FFAA] via-[#1E67C6] to-[#CE84CF] text-slate-950 font-black text-xs sm:text-base shadow-xl hover:scale-105 transition-all duration-300"
-              >
-                Prepare For NetSuite Next With AGSuite →
-              </Link>
-            </div>
-          </motion.div>
         </div>
       </section>
 
       {/* ── 8. FINAL CTA BANNER ───────────────────────────────────────── */}
-      <section className="py-14 sm:py-24 overflow-hidden relative">
+      <section className="pt-2 sm:pt-6 pb-14 sm:pb-24 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
