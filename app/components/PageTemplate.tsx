@@ -4,7 +4,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import FooterContactForm from '@/app/components/shared/FooterContactForm';
+import dynamic from 'next/dynamic';
+const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
 
 interface Feature {
   title: string;

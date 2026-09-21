@@ -25,7 +25,8 @@ import {
   Calendar,
   Linkedin,
 } from "lucide-react";
-import FooterContactForm from "@/app/components/shared/FooterContactForm";
+import dynamic from 'next/dynamic';
+const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
 
 const STATIC_STARS = Array.from({ length: 40 }, (_, i) => {
   const w = ((i * 7 + 1) % 2) + 1; // 1px or 2px

@@ -10,7 +10,7 @@ import {
   TrendingUp, Layers, DollarSign, BookOpen, Star, ChevronRight, GraduationCap, Wrench, Settings, Building2, Target
 } from 'lucide-react';
 import dynamic from 'next/dynamic';
-import FooterContactForm from '@/app/components/shared/FooterContactForm';
+const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
 
 const ScrollFloat = dynamic(() => import('./ScrollFloat'), { ssr: false }) as any;
 const RotatingText = dynamic(() => import('./RotatingText'), { ssr: false }) as any;

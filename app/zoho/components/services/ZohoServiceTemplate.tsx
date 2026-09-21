@@ -30,7 +30,8 @@ import {
   ClipboardList,
 } from "lucide-react";
 import { FAQ } from "@/app/components/home/FAQ";
-import FooterContactForm from "@/app/components/shared/FooterContactForm";
+import dynamic from 'next/dynamic';
+const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
 
 interface Stat {
   label: string;

@@ -1,8 +1,5 @@
-"use client";
-
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 
 const socialLinks = [
@@ -141,45 +138,29 @@ export default function ThankYouPage() {
       {/* === MAIN CONTENT === */}
       <div className="relative z-10 w-full max-w-2xl mx-4 py-10">
 
-        {/* Check Icon */}
-        <motion.div
-          initial={{ scale: 0, rotate: -20 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-          className="flex justify-center mb-5"
-        >
+        {/* Check Icon — CSS spring animation replaces framer-motion */}
+        <div className="flex justify-center mb-5 animate-[bounceIn_0.6s_cubic-bezier(0.34,1.56,0.64,1)_forwards]">
           <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-200">
             <CheckCircle2 className="w-9 h-9 text-white" strokeWidth={2.5} />
           </div>
-        </motion.div>
+        </div>
 
-        {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.25 }}
-          className="text-center text-4xl md:text-5xl font-extrabold text-gray-800 mb-3"
+        {/* Heading — CSS fade-up replaces framer-motion */}
+        <h1
+          className="text-center text-4xl md:text-5xl font-extrabold text-gray-800 mb-3 animate-[fadeUp_0.5s_ease-out_0.25s_both]"
         >
           Thank You!
-        </motion.h1>
+        </h1>
 
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35 }}
-          className="text-center text-base text-gray-500 max-w-sm mx-auto mb-8 leading-relaxed"
+        {/* Subtitle — CSS fade-up replaces framer-motion */}
+        <p
+          className="text-center text-base text-gray-500 max-w-sm mx-auto mb-8 leading-relaxed animate-[fadeUp_0.5s_ease-out_0.35s_both]"
         >
           Your Submission Has Been Received.<br />We will get in touch with you soon.
-        </motion.p>
+        </p>
 
-        {/* Single Card — Follow Us On */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45 }}
-          className="max-w-md mx-auto"
-        >
+        {/* Single Card — Follow Us On — CSS fade-up replaces framer-motion */}
+        <div className="max-w-md mx-auto animate-[fadeUp_0.5s_ease-out_0.45s_both]">
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col items-center gap-4">
             <h2 className="text-gray-800 font-bold text-lg">Follow Us On</h2>
             <div className="flex items-center gap-3">
@@ -198,13 +179,21 @@ export default function ThankYouPage() {
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
 
       </div>
+
+      {/* CSS keyframes to replace framer-motion animations */}
+      <style>{`
+        @keyframes bounceIn {
+          0% { transform: scale(0) rotate(-20deg); opacity: 0; }
+          100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+        @keyframes fadeUp {
+          0% { opacity: 0; transform: translateY(14px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </main>
   );
 }
-
-
-
-

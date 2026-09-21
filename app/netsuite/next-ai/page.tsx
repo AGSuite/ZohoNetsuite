@@ -30,7 +30,8 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import NSHeroNextAIVisual from "../components/NSHeroNextAIVisual";
-import FooterContactForm from "@/app/components/shared/FooterContactForm";
+import dynamic from 'next/dynamic';
+const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 

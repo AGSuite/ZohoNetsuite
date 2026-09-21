@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
 import dynamic from "next/dynamic";
-import "intl-tel-input/styles";
+// intl-tel-input styles loaded dynamically via useEffect below
 
 const IntlTelInput = dynamic(() => import("@intl-tel-input/react/with-utils"), {
   ssr: false,
@@ -52,6 +52,7 @@ export default function ZohoRequestQuotePage() {
   const [returnUrl, setReturnUrl] = useState('https://www.agsuite.tech/thank-you');
 
   useEffect(() => {
+    import("intl-tel-input/styles");
     setIsClient(true);
     if (typeof window !== 'undefined') {
       setReturnUrl(window.location.origin + '/thank-you');

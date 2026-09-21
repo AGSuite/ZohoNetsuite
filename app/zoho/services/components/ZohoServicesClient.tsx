@@ -44,7 +44,8 @@ import {
   Wifi
 } from "lucide-react";
 import ZohoServicesCards from "../../components/ZohoServicesCards";
-import FooterContactForm from "@/app/components/shared/FooterContactForm";
+import dynamic from 'next/dynamic';
+const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
 import { FAQ } from "@/app/components/home/FAQ";
 
 function Counter({ value }: { value: number }) {

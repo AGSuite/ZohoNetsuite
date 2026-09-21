@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
 import dynamic from "next/dynamic";
-import "intl-tel-input/styles";
+// intl-tel-input styles loaded dynamically via useEffect below
 
 const IntlTelInput = dynamic(() => import("@intl-tel-input/react/with-utils"), {
   ssr: false,
@@ -52,6 +52,7 @@ export default function ZohoFreeConsultationPage() {
   }, []);
 
   useEffect(() => {
+    import("intl-tel-input/styles");
     if (typeof window !== "undefined") {
       setReturnUrl(window.location.origin + "/thank-you");
       (window as any).onRecaptchaLoadZohoConsult = initRecaptcha;

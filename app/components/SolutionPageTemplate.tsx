@@ -7,7 +7,8 @@ import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import FlipNumbers from 'react-flip-numbers';
 import { ArrowRight, CheckCircle2, ExternalLink, LucideIcon } from 'lucide-react';
-import FooterContactForm from '@/app/components/shared/FooterContactForm';
+import dynamic from 'next/dynamic';
+const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
 import ServiceExploreSection from './ServiceExploreSection';
 
 interface HeroData {

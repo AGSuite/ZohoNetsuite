@@ -39,7 +39,8 @@ import {
   Target,
   Wifi,
 } from "lucide-react";
-import FooterContactForm from "@/app/components/shared/FooterContactForm";
+import dynamic from 'next/dynamic';
+const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
 
 function Counter({ value }: { value: number }) {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });

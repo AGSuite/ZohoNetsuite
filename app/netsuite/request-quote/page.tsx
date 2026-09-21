@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
 import dynamic from "next/dynamic";
-import "intl-tel-input/styles";
+// intl-tel-input styles loaded dynamically via useEffect below
 
 const IntlTelInput = dynamic(() => import("@intl-tel-input/react/with-utils"), {
   ssr: false,
@@ -54,6 +54,7 @@ export default function RequestQuotePremium() {
   const [isMobileValid, setIsMobileValid] = useState(false);
 
   useEffect(() => {
+    import("intl-tel-input/styles");
     setIsClient(true);
 
     (window as any).rccallback409531000047791096 = function () {
