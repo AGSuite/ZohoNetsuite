@@ -30,8 +30,9 @@ import {
   GitMerge,
   BrainCircuit,
 } from "lucide-react";
-import { FAQ } from "@/app/components/home/FAQ";
-import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+import dynamic from "next/dynamic";
+const FAQ = dynamic(() => import("@/app/components/home/FAQ").then((m) => m.FAQ), { ssr: true });
+const ContactFormDesign4 = dynamic(() => import("@/app/netsuite/components/ContactFormDesign4"), { ssr: false });
 
 const CTA_PARTICLES = [
   { w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 },
@@ -314,65 +315,40 @@ export default function CustomizationPage() {
             className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6 lg:mb-8"
             style={{ minHeight: "calc(100vh - 150px)" }}
           >
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
+            <div>
+              <h1
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
                   NetSuite Customization Services
                 </span>
-              </motion.h1>
+              </h1>
 
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "80px" }}
-                transition={{ delay: 0.45, duration: 0.6 }}
-                className="h-[3px] bg-gradient-to-r from-blue-500 to-blue-300 mb-5 sm:mb-6 rounded-full"
+              <div
+                className="h-[3px] bg-gradient-to-r from-blue-500 to-blue-300 mb-5 sm:mb-6 rounded-full w-[80px]"
               />
 
-              <motion.p
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35 }}
+              <p
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
                 Make NetSuite work exactly the way your business does. Our
                 SuiteCloud experts build upgrade-safe SuiteScripts, SuiteFlow
                 workflows, custom forms, and tailored automations — all within
                 NetSuite's native platform.
-              </motion.p>
+              </p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-              >
+              <div>
                 <a
                   href="#contact-form"
                   className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
                 >
                   Start Your Customization
-                  <motion.span
-                    animate={{ x: [0, 6, 0] }}
-                    transition={{
-                      duration: 1.2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                    className="flex items-center"
-                  >
-                    <ArrowRight className="w-4 h-4" />
-                  </motion.span>
+                  <span className="flex items-center">
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </a>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
 
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -391,8 +367,8 @@ export default function CustomizationPage() {
                     alt="NetSuite Customization Services"
                     fill
                     className="object-cover object-center"
-                    priority
-                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                    loading="eager"
+                    sizes="(max-width: 1024px) 1px, 50vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                 </div>
 
@@ -922,7 +898,7 @@ export default function CustomizationPage() {
           >
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {CTA_PARTICLES.map((p, i) => (
-                <motion.div
+                <div
                   key={i}
                   className="absolute bg-white rounded-full"
                   style={{
@@ -930,13 +906,8 @@ export default function CustomizationPage() {
                     height: `${p.h}px`,
                     top: `${p.top}%`,
                     left: `${p.left}%`,
-                  }}
-                  animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }}
-                  transition={{
-                    duration: p.dur,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: p.delay,
+                    animation: `ctaFloat ${p.dur}s ease-in-out ${p.delay}s infinite`,
+                    opacity: 0.3,
                   }}
                 />
               ))}
@@ -980,6 +951,13 @@ export default function CustomizationPage() {
 
       {/* ── Contact Form ─────────────────────────────────────────────────── */}
       <ContactFormDesign4 />
+
+      <style>{`
+        @keyframes ctaFloat {
+          0%, 100% { transform: translateY(0); opacity: 0.2; }
+          50% { transform: translateY(-30px); opacity: 0.8; }
+        }
+      `}</style>
     </div>
   );
 }

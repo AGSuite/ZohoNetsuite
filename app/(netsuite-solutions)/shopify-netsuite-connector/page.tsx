@@ -6,9 +6,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import { ShoppingBag, Package, Truck, Globe, Users, Zap, ArrowRight, Check, ChevronRight, BarChart3, RefreshCw, CheckCircle2, TrendingUp, Repeat } from "lucide-react";
-import { FAQ } from "@/app/components/home/FAQ";
-import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
-import NSServicesSection from '@/app/netsuite/components/NSServicesSection';
+import dynamic from "next/dynamic";
+const FAQ = dynamic(() => import("@/app/components/home/FAQ").then((m) => m.FAQ), { ssr: true });
+const ContactFormDesign4 = dynamic(() => import("@/app/netsuite/components/ContactFormDesign4"), { ssr: false });
+const NSServicesSection = dynamic(() => import('@/app/netsuite/components/NSServicesSection'), { ssr: true });
 
 const PARTICLES = [{ w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 }, { w: 1.4, h: 2.1, top: 28, left: 22, dur: 4.1, delay: 1.2 }, { w: 2.8, h: 1.2, top: 45, left: 37, dur: 6.3, delay: 0.8 }, { w: 2.3, h: 1.8, top: 78, left: 70, dur: 5.5, delay: 0.3 }, { w: 2.6, h: 2.0, top: 5, left: 50, dur: 3.5, delay: 0.6 }, { w: 1.9, h: 1.3, top: 33, left: 72, dur: 6.1, delay: 1.4 }];
 
@@ -70,24 +71,24 @@ export default function ShopifyConnectorPage() {
             <ChevronRight className="w-3.5 h-3.5 text-white/30" /><span className="text-white/80">NetSuite Shopify Connector</span>
           </motion.nav>
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6" style={{ minHeight: '500px' }}>
-            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15]">
+            <div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15]">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">NetSuite Shopify Connector</span>
-              </motion.h1>
-              <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }} className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full" />
-              <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }} className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8">
+              </h1>
+              <div className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full w-[80px]" />
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8">
                 Connect your Shopify store to NetSuite ERP — sync orders, inventory, fulfillments, and customers automatically with zero manual data entry.
-              </motion.p>
-              <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+              </p>
+              <div>
                 <Link href="#contact-form" className="inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:scale-105">
-                  Connect Shopify Now <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity }}><ArrowRight className="w-4 h-4" /></motion.span>
+                  Connect Shopify Now <span className="flex items-center"><ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></span>
                 </Link>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
-                  <Image src="/images/lap/lap1.webp" alt="Shopify Connector" fill className="object-cover object-center" priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                  <Image src="/images/lap/lap1.webp" alt="Shopify Connector" fill className="object-cover object-center" loading="eager" sizes="(max-width: 1024px) 1px, 50vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }} className="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3.5 shadow-xl flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,#1e3a8a,#2563eb)' }}><ShoppingBag className="w-5 h-5 text-white" /></div>

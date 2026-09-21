@@ -145,22 +145,22 @@ export default function ThankYouPage() {
           </div>
         </div>
 
-        {/* Heading — CSS fade-up replaces framer-motion */}
+        {/* Heading — Instant FCP/LCP */}
         <h1
-          className="text-center text-4xl md:text-5xl font-extrabold text-gray-800 mb-3 animate-[fadeUp_0.5s_ease-out_0.25s_both]"
+          className="text-center text-4xl md:text-5xl font-extrabold text-gray-800 mb-3"
         >
           Thank You!
         </h1>
 
-        {/* Subtitle — CSS fade-up replaces framer-motion */}
+        {/* Subtitle */}
         <p
-          className="text-center text-base text-gray-500 max-w-sm mx-auto mb-8 leading-relaxed animate-[fadeUp_0.5s_ease-out_0.35s_both]"
+          className="text-center text-base text-gray-500 max-w-sm mx-auto mb-8 leading-relaxed"
         >
           Your Submission Has Been Received.<br />We will get in touch with you soon.
         </p>
 
-        {/* Single Card — Follow Us On — CSS fade-up replaces framer-motion */}
-        <div className="max-w-md mx-auto animate-[fadeUp_0.5s_ease-out_0.45s_both]">
+        {/* Single Card — Follow Us On */}
+        <div className="max-w-md mx-auto">
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col items-center gap-4">
             <h2 className="text-gray-800 font-bold text-lg">Follow Us On</h2>
             <div className="flex items-center gap-3">

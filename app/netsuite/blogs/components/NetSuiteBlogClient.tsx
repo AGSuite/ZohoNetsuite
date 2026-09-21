@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Calendar, User, Tag, Clock, ChevronRight, ArrowLeft, ArrowRight } from 'lucide-react';
 import { PortableText } from '@portabletext/react';
 import { urlForImage } from '../../../../sanity/lib/image';
@@ -236,12 +237,14 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
             {/* ─── BANNER IMAGE (centered, half overlapping) ─── */}
             {featuredImageUrl && (
                 <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 sm:-mt-28 mb-12 sm:mb-16">
-                    <div className="w-full bg-slate-200 rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white aspect-[16/9] sm:aspect-[16/7.5]">
-                        <img
+                    <div className="relative w-full bg-slate-200 rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white aspect-[16/9] sm:aspect-[16/7.5]">
+                        <Image
                             src={featuredImageUrl}
-                            alt={displayTitle}
-                            className="w-full h-full object-cover object-center"
-                            style={{ display: 'block' }}
+                            alt={displayTitle || "Blog Post Banner"}
+                            fill
+                            priority
+                            sizes="(max-width: 1200px) 100vw, 1200px"
+                            className="object-cover object-center"
                         />
                     </div>
                 </div>

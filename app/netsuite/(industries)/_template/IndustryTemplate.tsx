@@ -28,8 +28,9 @@ import {
   Zap,
   Shield,
 } from "lucide-react";
-import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
-import { FAQ } from "@/app/components/home/FAQ";
+import dynamic from "next/dynamic";
+const ContactFormDesign4 = dynamic(() => import("@/app/netsuite/components/ContactFormDesign4"), { ssr: false });
+const FAQ = dynamic(() => import("@/app/components/home/FAQ").then((mod) => mod.FAQ), { ssr: true });
 
 // Static CTA particles to avoid SSR mismatch
 const CTA_PARTICLES = [
@@ -251,47 +252,28 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
             className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center"
             style={{ minHeight: "calc(100vh - 150px)" }}
           >
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15 }}
+            <div>
+              <div
                 className="inline-flex items-center gap-2 bg-blue-600/20 border border-blue-500/30 rounded-full px-4 py-1.5 text-blue-300 text-xs font-bold uppercase tracking-widest mb-4"
               >
                 <Star className="w-3.5 h-3.5" /> NetSuite for {data.industry}
-              </motion.div>
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
+              </div>
+              <h1
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15]"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
                   {data.heroTitle}
                 </span>
-              </motion.h1>
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "80px" }}
-                transition={{ delay: 0.45, duration: 0.6 }}
-                className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full"
+              </h1>
+              <div
+                className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full w-[80px]"
               />
-              <motion.p
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35 }}
+              <p
                 className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8"
               >
                 {data.heroDescription}
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
+              </p>
+              <div
                 className="flex flex-wrap gap-3"
               >
                 <Link
@@ -299,12 +281,9 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                   className="inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:scale-105"
                 >
                   Get a Free Demo
-                  <motion.span
-                    animate={{ x: [0, 6, 0] }}
-                    transition={{ duration: 1.2, repeat: Infinity }}
-                  >
-                    <ArrowRight className="w-4 h-4" />
-                  </motion.span>
+                  <span className="flex items-center">
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </Link>
                 <Link
                   href="#challenges"
@@ -312,8 +291,8 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                 >
                   View Challenges
                 </Link>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
             {/* Right image */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
@@ -331,9 +310,9 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                     src={data.heroImage}
                     alt={data.industry}
                     fill
-                    sizes="(max-width: 768px) 100vw, 40vw"
+                    sizes="(max-width: 1024px) 1px, 40vw"
                     className="object-cover object-center"
-                    priority
+                    loading="eager"
                   />
                 </div>
                 <motion.div
@@ -1003,7 +982,7 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
             {/* Animated star particles */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {CTA_PARTICLES.map((p, i) => (
-                <motion.div
+                <div
                   key={i}
                   className="absolute bg-white rounded-full"
                   style={{
@@ -1011,13 +990,8 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
                     height: `${p.h}px`,
                     top: `${p.top}%`,
                     left: `${p.left}%`,
-                  }}
-                  animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }}
-                  transition={{
-                    duration: p.dur,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: p.delay,
+                    animation: `industryCtaFloat ${p.dur}s ease-in-out ${p.delay}s infinite`,
+                    opacity: 0.3,
                   }}
                 />
               ))}
@@ -1053,6 +1027,13 @@ export default function IndustryTemplate({ data }: { data: IndustryPageData }) {
 
       {/* ══════ CONTACT FORM ══════ */}
       <ContactFormDesign4 />
+
+      <style>{`
+        @keyframes industryCtaFloat {
+          0%, 100% { transform: translateY(0); opacity: 0.2; }
+          50% { transform: translateY(-30px); opacity: 0.8; }
+        }
+      `}</style>
     </div>
   );
 }

@@ -1,11 +1,25 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getPostBySlug } from '../../../../sanity/lib/fetch'
+import { getPostBySlug, getPosts } from '../../../../sanity/lib/fetch'
 import { urlForImage } from '../../../../sanity/lib/image'
 import NetSuiteBlogClient from '../components/NetSuiteBlogClient'
 
 type Props = {
     params: Promise<{ slug: string }>
+}
+
+export async function generateStaticParams() {
+    try {
+        const posts = await getPosts();
+        if (!posts || !Array.isArray(posts)) return [];
+        return posts
+            .filter((p: any) => p?.slug?.current || p?.slug)
+            .map((p: any) => ({
+                slug: p.slug?.current || p.slug,
+            }));
+    } catch {
+        return [];
+    }
 }
 
 // Specific SEO configurations by slug (can be added here or in Sanity CMS)

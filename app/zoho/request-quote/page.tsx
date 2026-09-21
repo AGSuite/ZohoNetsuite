@@ -209,8 +209,6 @@ export default function ZohoRequestQuotePage() {
     await sendEmail(e.currentTarget);
   };
 
-  if (!isClient) return null;
-
   return (
     <div className="min-h-screen bg-white selection:bg-blue-900 selection:text-white">
 
@@ -238,12 +236,17 @@ export default function ZohoRequestQuotePage() {
 
         {/* Floating particles */}
         {PARTICLES.map((p, i) => (
-          <motion.div
+          <div
             key={i}
             className="absolute rounded-full bg-blue-400/40 pointer-events-none"
-            style={{ width: p.w, height: p.h, top: `${p.top}%`, left: `${p.left}%` }}
-            animate={{ y: [0, -22, 0], opacity: [0.25, 0.9, 0.25] }}
-            transition={{ duration: p.dur, repeat: Infinity, ease: "easeInOut", delay: p.delay }}
+            style={{
+              width: p.w,
+              height: p.h,
+              top: `${p.top}%`,
+              left: `${p.left}%`,
+              animation: `quoteFloat ${p.dur}s ease-in-out ${p.delay}s infinite`,
+              opacity: 0.35,
+            }}
           />
         ))}
 
@@ -252,12 +255,7 @@ export default function ZohoRequestQuotePage() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
 
             {/* ── LEFT: Hero Content ────────────────────────────────────────── */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="flex flex-col justify-center gap-5 pt-2"
-            >
+            <div className="flex flex-col justify-center gap-5 pt-2">
               {/* H1 */}
               <div>
                 <h1 className="text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] font-medium text-white leading-tight tracking-tight mb-3">
@@ -268,12 +266,7 @@ export default function ZohoRequestQuotePage() {
                 </h1>
 
                 {/* Divider */}
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: 72 }}
-                  transition={{ delay: 0.5, duration: 0.7 }}
-                  className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mb-4"
-                />
+                <div className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mb-4 w-[72px]" />
 
                 {/* Subline */}
                 <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-lg">
@@ -330,7 +323,7 @@ export default function ZohoRequestQuotePage() {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
             {/* ── RIGHT: Request Quote Form ──────────────────────────────────── */}
             <motion.div
@@ -700,6 +693,13 @@ export default function ZohoRequestQuotePage() {
       {/* ── Scripts ───────────────────────────────────────────────────────────── */}
       <Script src="https://www.google.com/recaptcha/api.js" async defer strategy="lazyOnload" />
       <Script id="wf_anal_zoho_quote" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=5be9692ef9ab427acf1391714f2fff91d5b72c469390938cefbd33ab84dd5b8e9c71223ce8c14f44c8e8365f6a8c23d6gidbc632d800f066907ef96d29b7bae4b8ea7e60f0229673f2235936f50246b89fbgid29eac7a96f602c220e122d79c6e3da45331fb2e363513e82ad55c00dfc35c738gidcab4223515c216b81de2936190487e2bac1ebee6f8458681d0b0cd6ba0ce7107&tw=d6fc29e8e9570866ed4bd03fb221b685fd56a29f2bc327bb3bb9169356a4b4e3&version=v2" strategy="lazyOnload" />
+
+      <style>{`
+        @keyframes quoteFloat {
+          0%, 100% { transform: translateY(0); opacity: 0.25; }
+          50% { transform: translateY(-22px); opacity: 0.85; }
+        }
+      `}</style>
     </div>
   );
 }

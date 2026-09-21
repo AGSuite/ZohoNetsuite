@@ -12,8 +12,8 @@ import {
   UserCheck, Smartphone, Truck, FileSpreadsheet, Briefcase
 } from "lucide-react";
 import dynamic from "next/dynamic";
-import { FAQ } from "@/app/components/home/FAQ";
-import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+const FAQ = dynamic(() => import("@/app/components/home/FAQ").then((m) => m.FAQ), { ssr: true });
+const ContactFormDesign4 = dynamic(() => import("@/app/netsuite/components/ContactFormDesign4"), { ssr: false });
 
 const IndiaComplianceCircle = dynamic(() => import("./components/IndiaComplianceCircle"), {
   ssr: false,
@@ -189,28 +189,26 @@ export default function IndiaLocalizationPage() {
           </motion.nav>
 
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6" style={{ minHeight: '500px' }}>
-            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+            <div>
+              <h1
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.15] tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
                   Streamlined Tax & Statutory Compliance With AGSuite India Localization for NetSuite
                 </span>
-              </motion.h1>
-              <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }}
-                className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full" />
-              <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
-                className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8">
+              </h1>
+              <div className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full w-[80px]" />
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8">
                 Full Indian tax compliance inside NetSuite — GST automation, e-invoicing with IRP, TDS/TCS management, e-Way Bills, and GSTR filing reports. Built for Indian businesses running on NetSuite.
-              </motion.p>
-              <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+              </p>
+              <div>
                 <Link href="#contact-form" className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:scale-105">
                   Get in Touch
-                  <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }} className="flex items-center">
-                    <ArrowRight className="w-4 h-4" />
-                  </motion.span>
+                  <span className="flex items-center">
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </Link>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
 
             {/* Hero Right — India Compliance Circular Diagram */}
             <motion.div
@@ -484,7 +482,20 @@ export default function IndiaLocalizationPage() {
             </div>
 
             <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
-              {PARTICLES.map((p, i) => (<motion.div key={i} className="absolute bg-white rounded-full" style={{ width: `${p.w}px`, height: `${p.h}px`, top: `${p.top}%`, left: `${p.left}%` }} animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }} transition={{ duration: p.dur, repeat: Infinity, ease: 'easeInOut', delay: p.delay }} />))}
+              {PARTICLES.map((p, i) => (
+                <div
+                  key={i}
+                  className="absolute bg-white rounded-full"
+                  style={{
+                    width: `${p.w}px`,
+                    height: `${p.h}px`,
+                    top: `${p.top}%`,
+                    left: `${p.left}%`,
+                    animation: `indiaCtaFloat ${p.dur}s ease-in-out ${p.delay}s infinite`,
+                    opacity: 0.3,
+                  }}
+                />
+              ))}
             </div>
 
             <div className="relative z-20 px-10 py-16 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
@@ -501,6 +512,13 @@ export default function IndiaLocalizationPage() {
       </section>
 
       <ContactFormDesign4 />
+
+      <style>{`
+        @keyframes indiaCtaFloat {
+          0%, 100% { transform: translateY(0); opacity: 0.2; }
+          50% { transform: translateY(-30px); opacity: 0.8; }
+        }
+      `}</style>
     </div>
   );
 }
