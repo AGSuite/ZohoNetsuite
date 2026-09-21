@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, ArrowRight, X, CheckCircle2 } from 'lucide-react';
 import dynamic from 'next/dynamic';
-import 'intl-tel-input/styles';
 
 const IntlTelInput = dynamic(() => import('@intl-tel-input/react/with-utils'), {
     ssr: false,
@@ -186,6 +185,12 @@ const ZohoCaseStudiesGrid = () => {
         { code: '+27', label: 'ZA (+27)' },
         { code: '+852', label: 'HK (+852)' },
     ];
+
+    useEffect(() => {
+        if (isModalOpen) {
+            import('intl-tel-input/styles');
+        }
+    }, [isModalOpen]);
 
     const handleReadClick = (e: React.MouseEvent, study: CaseStudy) => {
         e.preventDefault();

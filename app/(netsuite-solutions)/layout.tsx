@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import NavbarNetSuite from "@/app/netsuite/components/NSNavbar";
 import NetSuiteFooter from "@/app/components/footers/NetSuiteFooter";
-import { SITE_URL, SITE_NAME, buildWebPageSchema, NETSUITE_PAGES } from "@/app/lib/seo";
-import JsonLd from "@/app/components/seo/JsonLd";
+import { SITE_URL, SITE_NAME } from "@/app/lib/seo";
 
 export const metadata: Metadata = {
   title: {
@@ -41,37 +39,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function NetSuiteSolutionsLayout({
+export default function NetSuiteSolutionsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // Get current path for JSON-LD (Next.js server-side trick)
-  const headersList = await headers();
-  const domain = headersList.get("host") || "";
-  const fullUrl = headersList.get("referer") || "";
-  const path = (domain && fullUrl.includes(domain))
-    ? (fullUrl.split(domain)[1]?.split("?")[0] || "/netsuite")
-    : "/netsuite";
-  
-  const pageData = NETSUITE_PAGES[path];
-  const schema = pageData ? buildWebPageSchema({
-    title: pageData.title,
-    description: pageData.description,
-    path: path,
-    breadcrumbs: pageData.breadcrumbs || [
-      { name: "Home", url: "/" },
-      { name: "NetSuite", url: "/netsuite" },
-      { name: pageData.title.split("|")[0].trim(), url: path }
-    ],
-    datePublished: pageData.publishedTime ? pageData.publishedTime.split("T")[0] : undefined,
-    dateModified: pageData.dateModified,
-    url: pageData.canonicalUrl,
-  }) : null;
-
   return (
     <div className="min-h-screen bg-white">
-      {schema && <JsonLd schema={schema} />}
       <NavbarNetSuite />
       <main>{children}</main>
       <NetSuiteFooter />

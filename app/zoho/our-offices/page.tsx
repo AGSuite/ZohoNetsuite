@@ -122,13 +122,6 @@ const locations: Location[] = [
 
 export default function ZohoOfficesPage() {
   const [locationFilter, setLocationFilter] = useState<Region>("All");
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) return null;
 
   return (
     <div className="min-h-screen bg-white selection:bg-blue-900 selection:text-white">
@@ -145,10 +138,7 @@ export default function ZohoOfficesPage() {
         
         <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-[120px] sm:pt-[136px] pb-12">
           {/* Breadcrumb */}
-          <motion.nav
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+          <nav
             className="flex items-center gap-2 text-sm font-medium mb-8"
           >
             <Link href="/zoho" className="text-blue-300 hover:text-white transition-colors">Home</Link>
@@ -156,55 +146,36 @@ export default function ZohoOfficesPage() {
             <Link href="/zoho/about-us" className="text-blue-300 hover:text-white transition-colors">About Us</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" />
             <span className="text-white/80">Our Offices</span>
-          </motion.nav>
+          </nav>
 
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center flex-1">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15 }}
+            <div>
+              <div
                 className="inline-flex items-center gap-2 bg-blue-600/20 border border-blue-500/30 rounded-full px-4 py-1.5 text-blue-300 text-xs font-bold uppercase tracking-widest mb-6"
               >
                 <Globe className="w-3.5 h-3.5" /> Global Footprint
-              </motion.div>
+              </div>
               
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
+              <h1
                 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-medium text-white leading-[1.1] tracking-tight mb-6"
               >
                 Our Global{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300">
                   Presence
                 </span>
-              </motion.h1>
+              </h1>
               
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "100px" }}
-                transition={{ delay: 0.45, duration: 0.6 }}
-                className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-6 rounded-full"
+              <div
+                className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-6 rounded-full w-[100px]"
               />
               
-              <motion.p
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35 }}
+              <p
                 className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-xl mb-10"
               >
                 Strategic hubs positioned across the globe to deliver localized Zoho expertise with a worldwide perspective. Connect with our certified consultants wherever you are.
-              </motion.p>
+              </p>
               
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
+              <div
                 className="flex flex-wrap gap-4"
               >
                 <Link
@@ -220,8 +191,8 @@ export default function ZohoOfficesPage() {
                 >
                   Get in Touch
                 </Link>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
 
             {/* Right side: Hero Image with floating cards */}
             <motion.div
@@ -241,8 +212,8 @@ export default function ZohoOfficesPage() {
                     alt="AGSuite Zoho Offices"
                     fill
                     className="object-cover object-center"
-                    priority
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    loading="eager"
+                    sizes="(max-width: 1024px) 1px, 50vw"
                   />
                   {/* Overlay Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

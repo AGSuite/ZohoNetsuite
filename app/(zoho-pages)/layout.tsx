@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import ZohoNavbar from "@/app/zoho/components/ZohoNavbar";
 import ZohoFooter from "@/app/components/footers/ZohoFooter";
-import { SITE_URL, SITE_NAME, buildWebPageSchema, ZOHO_PAGES } from "@/app/lib/seo";
-import JsonLd from "@/app/components/seo/JsonLd";
+import { SITE_URL, SITE_NAME } from "@/app/lib/seo";
 
 export const metadata: Metadata = {
   title: {
@@ -42,37 +40,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function ZohoPagesLayout({
+export default function ZohoPagesLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // Get current path for JSON-LD
-  const headersList = await headers();
-  const domain = headersList.get("host") || "";
-  const fullUrl = headersList.get("referer") || "";
-  const path = (domain && fullUrl.includes(domain))
-    ? (fullUrl.split(domain)[1]?.split("?")[0] || "/zoho")
-    : "/zoho";
-  
-  const pageData = ZOHO_PAGES[path];
-  const schema = pageData ? buildWebPageSchema({
-    title: pageData.title,
-    description: pageData.description,
-    path: path,
-    breadcrumbs: pageData.breadcrumbs ?? [
-      { name: "Home", url: "/" },
-      { name: "Zoho", url: "/zoho" },
-      { name: pageData.title.split("|")[0].trim(), url: path }
-    ],
-    datePublished: pageData.publishedTime ? pageData.publishedTime.split("T")[0] : undefined,
-    dateModified: pageData.dateModified,
-    url: pageData.canonicalUrl
-  }) : null;
-
   return (
     <div className="min-h-screen bg-white">
-      {schema && <JsonLd schema={schema} />}
       <ZohoNavbar />
       <main>{children}</main>
       <ZohoFooter />

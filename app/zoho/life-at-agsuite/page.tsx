@@ -3,7 +3,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import OurLeaders from "@/app/components/OurLeaders";
 import Link from "next/link";
 import {
   ChevronRight,
@@ -22,11 +21,10 @@ import {
   Briefcase,
   Users,
   Play,
-  Calendar,
-  Linkedin,
 } from "lucide-react";
 import dynamic from 'next/dynamic';
 const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
+const OurLeaders = dynamic(() => import("@/app/components/OurLeaders"), { ssr: true });
 
 const STATIC_STARS = Array.from({ length: 40 }, (_, i) => {
   const w = ((i * 7 + 1) % 2) + 1; // 1px or 2px
@@ -147,59 +145,39 @@ export default function ZohoLifeAtAGSuite() {
         <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Left Side: Text & CTA */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col items-start text-left pt-12 lg:pt-0"
-          >
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
+            <div
+              className="flex flex-col items-start text-left pt-12 lg:pt-0"
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
-                Welcome to AGSuite Technologies
-              </span>
-            </motion.h1>
-
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "80px" }}
-              transition={{ delay: 0.45, duration: 0.6 }}
-              className="h-[3px] bg-gradient-to-r from-blue-500 to-blue-300 mb-5 sm:mb-6 rounded-full"
-            />
-
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35 }}
-              className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
-            >
-              Architecting scalable Zoho cloud solutions today to empower your business tomorrow. We believe in innovation, collaboration, and driving real impact through the Zoho ecosystem.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-            >
-              <Link
-                href="#celebrations"
-                className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
+              <h1
+                className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
               >
-                Discover Our Culture
-                <motion.span
-                  animate={{ x: [0, 6, 0] }}
-                  transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
-                  className="flex items-center"
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400">
+                  Welcome to AGSuite Technologies
+                </span>
+              </h1>
+
+              <div
+                className="h-[3px] bg-gradient-to-r from-blue-500 to-blue-300 mb-5 sm:mb-6 rounded-full w-[80px]"
+              />
+
+              <p
+                className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
+              >
+                Architecting scalable Zoho cloud solutions today to empower your business tomorrow. We believe in innovation, collaboration, and driving real impact through the Zoho ecosystem.
+              </p>
+
+              <div>
+                <Link
+                  href="#celebrations"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
                 >
-                  <ArrowRight className="w-4 h-4" />
-                </motion.span>
-              </Link>
-            </motion.div>
-          </motion.div>
+                  Discover Our Culture
+                  <span className="flex items-center">
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+              </div>
+            </div>
 
           {/* Right Side: Building Image with Border & Stats Card */}
           <motion.div

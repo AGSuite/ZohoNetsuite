@@ -21,7 +21,6 @@ const ZohoNavbar = () => {
   const [openNavbar, setOpenNavbar] = useState(false);
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
   const [openMobileSolution, setOpenMobileSolution] = useState<string>('ZOHO');
-  const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -29,7 +28,6 @@ const ZohoNavbar = () => {
 
 
   useEffect(() => {
-    setMounted(true);
     let ticking = false;
     const handleScroll = () => {
       if (!ticking) {
@@ -70,19 +68,6 @@ const ZohoNavbar = () => {
   };
 
   if (isStudio) return null;
-  if (!mounted) {
-    return (
-      <header className="fixed top-0 left-0 right-0 z-[100] h-20 bg-white shadow-sm flex items-center">
-        <div className="max-w-[1450px] mx-auto px-6 w-full flex items-center justify-between">
-          <div className="w-32 h-10 bg-gray-100 animate-pulse rounded" />
-          <div className="hidden lg:flex gap-4">
-             {[1,2,3,4,5].map(i => <div key={i} className="w-20 h-4 bg-gray-100 animate-pulse rounded" />)}
-          </div>
-          <div className="w-24 h-10 bg-gray-100 animate-pulse rounded" />
-        </div>
-      </header>
-    );
-  }
 
 
   return (

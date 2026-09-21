@@ -7,7 +7,7 @@ export async function getZohoPosts() {
         return []
     }
     return zohoClient.fetch(POSTS_QUERY, {}, {
-        next: { revalidate: 0 }
+        next: { revalidate: 3600 }
     })
 }
 
@@ -15,5 +15,7 @@ export async function getZohoPostBySlug(slug: string) {
     if (!zohoProjectId || !zohoDataset) {
         return null
     }
-    return zohoClient.fetch(POST_BY_SLUG_QUERY, { slug })
+    return zohoClient.fetch(POST_BY_SLUG_QUERY, { slug }, {
+        next: { revalidate: 3600 }
+    })
 }
