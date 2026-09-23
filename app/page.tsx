@@ -77,8 +77,8 @@ const homeSchema = {
 
 export default function Home() {
   return (
-    <main
-      className="min-h-screen px-4 md:px-8 lg:px-12 py-6 md:py-10 relative z-0"
+    <div
+      className="h-[100dvh] w-full flex flex-col justify-between p-3 sm:p-5 md:p-6 lg:p-7 relative z-0 overflow-hidden box-border"
     >
       {/* Schema.org Structured Data */}
       <Script
@@ -93,7 +93,7 @@ export default function Home() {
       </h1>
 
       {/* Background Image - Responsive & Ultra-Fast */}
-      <div className="fixed inset-0 -z-10 w-screen h-screen">
+      <div className="fixed inset-0 -z-10 w-screen h-screen pointer-events-none select-none">
         <picture>
           <source
             media="(max-width: 768px)"
@@ -114,197 +114,255 @@ export default function Home() {
         </picture>
       </div>
 
-      {/* TOP TWO SECTIONS — NETSUITE */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6" aria-label="Oracle NetSuite Solutions">
-
-        {/* LEFT — NETSUITE LOGO + BUTTON */}
+      {/* TOP HEADER: AGSuite Logo Left | "Technology Partners" + NetSuite & Zoho Logos Right */}
+      <header className="flex items-center justify-between w-full shrink-0 z-20 px-1 sm:px-2 pt-1 mb-2 sm:mb-3">
+        {/* Left Side: AGSuite Logo */}
         <Link
-          href="/netsuite"
-          prefetch={true}
-          className="relative h-[38vh] min-h-[250px] md:h-[70vh] flex flex-col items-center justify-center text-center rounded-2xl shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-          aria-label="Visit Oracle NetSuite ERP Page"
+          href="/"
+          className="flex items-center transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-lg p-1"
+          aria-label="AGSuite Technologies Home"
         >
-          <div className="flex items-center justify-center gap-4 sm:gap-5 mb-6 sm:mb-8 px-4 flex-wrap sm:flex-nowrap">
-            <Image
-              src="/images/home/agsuite_logo.webp"
-              alt="AGSuite Technologies Logo"
-              width={180}
-              height={60}
-              priority
-              className="h-10 sm:h-14 md:h-16 lg:h-18 w-auto object-contain"
-              quality={80}
-            />
-            <div className="w-px h-8 bg-gray-400/50 hidden sm:block" />
-            <Image
-              src="/images/home/netsuite_partner_logo.webp"
-              alt="Oracle NetSuite Partner Logo"
-              width={180}
-              height={60}
-              priority
-              className="h-10 sm:h-14 md:h-16 lg:h-18 w-auto object-contain"
-              quality={80}
-            />
-          </div>
-          <span className="px-6 py-2.5 sm:px-8 sm:py-3 rounded-lg bg-gray-700 text-white text-base sm:text-lg font-semibold hover:bg-gray-900 transition-colors inline-block shadow-md">
-            Visit NetSuite →
-          </span>
+          <Image
+            src="/images/home/agsuite_logo.webp"
+            alt="AGSuite Technologies Logo"
+            width={180}
+            height={55}
+            priority
+            className="h-8 sm:h-10 md:h-11 lg:h-12 w-auto object-contain drop-shadow"
+            quality={90}
+          />
         </Link>
 
-        {/* RIGHT — NETSUITE PEOPLE IMAGE (Primary LCP Target) */}
-        <Link
-          href="/netsuite"
-          prefetch={true}
-          className="relative h-[38vh] min-h-[250px] md:h-[70vh] group overflow-hidden block shadow-lg rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-400"
-          aria-label="Explore Oracle NetSuite ERP #1 Cloud ERP"
-        >
-          <picture>
-            <source
-              media="(max-width: 768px)"
-              srcSet="/images/home/netsuite_hero_card_mob.webp"
-              type="image/webp"
-            />
-            <source
-              media="(min-width: 769px)"
-              srcSet="/images/home/netsuite_hero_card.webp"
-              type="image/webp"
-            />
-            <img
-              src="/images/home/netsuite_hero_card.webp"
-              alt="Oracle NetSuite Business Professionals"
-              fetchPriority="high"
-              decoding="async"
-              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-            />
-          </picture>
-
-          {/* Top dark gradient — logo area */}
-          <div
-            className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/5 to-transparent pointer-events-none"
-          />
-
-          {/* Bottom dark gradient — text area */}
-          <div
-            className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent pointer-events-none"
-          />
-
-          {/* Content */}
-          <article className="absolute bottom-4 left-4 md:bottom-8 md:left-8 text-white drop-shadow-lg pr-4">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold leading-snug">
-              <span
-                style={{
-                  background:
-                    "linear-gradient(90deg, #cceeff 0%, #a0d8f1 30%, #ffffff 60%, #d4eaff 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  fontWeight: 600,
-                }}
-              >
-                Oracle NetSuite
-              </span>{" "}
-              <span className="text-white font-semibold hidden md:inline">—</span>{" "}
-              <span
-                style={{
-                  background:
-                    "linear-gradient(90deg, #ffd580 0%, #ffb347 50%, #ff8c42 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  fontWeight: 600,
-                }}
-              >
-                #1 ERP
+        {/* Right Side: "Technology Partners" + Logos (Solid White BG + Next AI style gradient shadow on hover) */}
+        <div className="flex items-center gap-2.5 sm:gap-3.5 md:gap-5">
+          {/* Technology Partners Label (Solid White BG with Next AI gradient shadow on hover) */}
+          <div className="relative group">
+            <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-[#13FFAA] via-[#1E67C6] to-[#CE84CF] blur-sm opacity-0 group-hover:opacity-90 transition duration-300 pointer-events-none" />
+            <div className="relative px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-white text-slate-900 border border-slate-200/90 shadow-md group-hover:shadow-lg transition-all duration-300 flex items-center">
+              <span className="text-xs sm:text-sm md:text-base font-extrabold tracking-wider bg-gradient-to-r from-slate-950 via-slate-800 to-slate-950 bg-clip-text text-transparent uppercase whitespace-nowrap">
+                Technology Partners
               </span>
-            </h2>
-            <p className="text-sm sm:text-base md:text-lg opacity-90 mt-1 font-medium">Run Your Entire Business Smarter &amp; Faster</p>
-          </article>
-        </Link>
-
-      </section>
-
-      <div className="my-6 sm:my-10"></div>
-
-      {/* BOTTOM TWO SECTIONS — ZOHO */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6" aria-label="Zoho Solutions">
-
-        {/* LEFT — ZOHO BACKGROUND */}
-        <Link
-          href="/zoho"
-          prefetch={true}
-          className="relative h-[38vh] min-h-[250px] md:h-[70vh] group overflow-hidden block shadow-lg rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-400"
-          aria-label="Visit Zoho Solutions and CRM"
-        >
-          <picture>
-            <source
-              media="(max-width: 768px)"
-              srcSet="/images/home/zoho_hero_card_mob.webp"
-              type="image/webp"
-            />
-            <source
-              media="(min-width: 769px)"
-              srcSet="/images/home/zoho_hero_card.webp"
-              type="image/webp"
-            />
-            <img
-              src="/images/home/zoho_hero_card.webp"
-              alt="Zoho Cloud Business Solutions"
-              loading="eager"
-              decoding="async"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-            />
-          </picture>
-
-          {/* Top dark gradient — logo area */}
-          <div
-            className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/10 to-transparent pointer-events-none"
-          />
-
-          {/* Bottom dark gradient — text area */}
-          <div
-            className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent pointer-events-none"
-          />
-
-          {/* Content */}
-          <article className="absolute bottom-4 left-4 md:bottom-8 md:left-8 text-white drop-shadow-lg pr-4">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold">Smarter Business. Faster Growth.</h2>
-            <p className="text-sm sm:text-base md:text-xl opacity-90 mt-1 font-medium">Zoho Solutions for Every Team</p>
-          </article>
-        </Link>
-
-        {/* RIGHT — ZOHO LOGO + BUTTON */}
-        <Link
-          href="/zoho"
-          prefetch={true}
-          className="relative h-[38vh] min-h-[250px] md:h-[70vh] flex flex-col items-center justify-center text-center rounded-2xl shadow-lg focus:outline-none focus:ring-2 focus:ring-emerald-400"
-          aria-label="Go to Zoho Page"
-        >
-          <div className="flex items-center justify-center gap-4 sm:gap-5 mb-6 sm:mb-8 px-4 flex-wrap sm:flex-nowrap">
-            <Image
-              src="/images/home/agsuite_logo.webp"
-              alt="AGSuite Technologies Logo"
-              width={180}
-              height={60}
-              priority
-              className="h-10 sm:h-14 md:h-16 lg:h-18 w-auto object-contain"
-              quality={80}
-            />
-            <div className="w-px h-8 bg-gray-400/50 hidden sm:block" />
-            <Image
-              src="/images/home/zoho_premium_partner.webp"
-              alt="Zoho Premium Partner Logo"
-              width={180}
-              height={60}
-              priority
-              className="h-10 sm:h-14 md:h-16 lg:h-18 w-auto object-contain"
-              quality={80}
-            />
+            </div>
           </div>
-          <span className="px-6 py-2.5 sm:px-8 sm:py-3 rounded-lg bg-gray-700 text-white text-base sm:text-lg font-semibold hover:bg-gray-900 transition-colors inline-block shadow-md">
-            Visit Zoho →
-          </span>
-        </Link>
 
+          {/* Logos Container (Solid White BG with Next AI gradient shadow on hover) */}
+          <div className="relative group">
+            <div className="absolute -inset-0.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#13FFAA] via-[#1E67C6] to-[#CE84CF] blur-sm opacity-0 group-hover:opacity-90 transition duration-300 pointer-events-none" />
+            <div className="relative flex items-center gap-2.5 sm:gap-4 md:gap-5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 shadow-md group-hover:shadow-lg transition-all duration-300">
+              {/* NetSuite Partner Logo (Black text for white background) */}
+              <Link
+                href="/netsuite"
+                prefetch={true}
+                className="transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
+                aria-label="Oracle NetSuite Solution Provider Partner"
+              >
+                <Image
+                  src="/images/netsuiteimages/netsuitelogos/netsuiteblack.webp"
+                  alt="Oracle NetSuite Partner Logo"
+                  width={180}
+                  height={55}
+                  priority
+                  className="h-8 sm:h-10 md:h-11 lg:h-12 w-auto object-contain"
+                  quality={90}
+                />
+              </Link>
+
+              {/* Separator Line */}
+              <div className="w-px h-6 sm:h-8 bg-slate-300" />
+
+              {/* Zoho Premium Partner Logo */}
+              <Link
+                href="/zoho"
+                prefetch={true}
+                className="transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-400 rounded"
+                aria-label="Zoho Premium Partner"
+              >
+                <Image
+                  src="/images/home/zoho_premium_partner.webp"
+                  alt="Zoho Premium Partner Logo"
+                  width={180}
+                  height={55}
+                  priority
+                  className="h-8 sm:h-10 md:h-11 lg:h-12 w-auto object-contain"
+                  quality={90}
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* MAIN CARDS: Side-by-Side (Wider width, medium shadows, NetSuite First, Zoho Second) */}
+      <section
+        className="w-full max-w-[96%] xl:max-w-7xl 2xl:max-w-[1400px] mx-auto flex-1 min-h-0 flex items-center justify-center py-1 sm:py-2 md:py-3 z-10"
+        aria-label="Oracle NetSuite and Zoho Solutions"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-7 w-full h-full max-h-[78vh]">
+          {/* CARD 1 — ORACLE NETSUITE (FIRST / LEFT) */}
+          <div className="relative h-full w-full group">
+            {/* Mouseover Medium Gradient Shadow */}
+            <div className="absolute -inset-1 rounded-2xl md:rounded-3xl bg-gradient-to-r from-blue-600/70 via-cyan-500/70 to-indigo-600/70 opacity-0 group-hover:opacity-40 blur-lg transition-all duration-500 -z-10 pointer-events-none" />
+
+            {/* Card Link */}
+            <Link
+              href="/netsuite"
+              prefetch={true}
+              className="relative h-full w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-white/15 group-hover:border-cyan-400/40 group-hover:shadow-[0_12px_35px_-8px_rgba(56,189,248,0.35)] transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-blue-400 flex flex-col justify-between p-4 sm:p-6 md:p-7 block"
+              aria-label="Explore Oracle NetSuite ERP #1 Cloud ERP"
+            >
+              {/* Background Photo */}
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcSet="/images/home/netsuite_hero_card_mob.webp"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 769px)"
+                  srcSet="/images/home/netsuite_hero_card.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="/images/home/netsuite_hero_card.webp"
+                  alt="Oracle NetSuite Business Professionals"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </picture>
+
+              {/* Text Gradients for Readability */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent pointer-events-none" />
+
+              {/* Top Badge */}
+              <div className="relative z-10 flex items-center justify-between">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-black/40 text-cyan-200 border border-cyan-400/35 backdrop-blur-md shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                  Oracle Solution Provider
+                </span>
+              </div>
+
+              {/* Bottom Content & CTA */}
+              <article className="relative z-10 text-white drop-shadow-lg">
+                <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight">
+                  <span className="text-white drop-shadow-md">Oracle NetSuite</span>{" "}
+                  <span className="text-white/70 font-normal hidden sm:inline">—</span>{" "}
+                  <span
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #67e8f9 0%, #38bdf8 40%, #fdba74 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                      fontWeight: 800,
+                    }}
+                  >
+                    #1 ERP
+                  </span>
+                </h2>
+                <p className="text-xs sm:text-sm md:text-base text-gray-200 font-medium mt-1 drop-shadow">
+                  Run Your Entire Business Smarter &amp; Faster
+                </p>
+
+                {/* White Button with Mouseover Gradient Shadow */}
+                <div className="mt-3 sm:mt-4">
+                  <div className="relative group/btn inline-block">
+                    {/* Hover gradient shadow behind button */}
+                    <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 opacity-0 group-hover/btn:opacity-100 blur-md transition-all duration-300 pointer-events-none" />
+                    <span className="relative inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-white text-slate-950 font-bold text-xs sm:text-sm shadow-md border border-white transition-all duration-300 group-hover/btn:scale-105 group-hover/btn:shadow-[0_0_25px_rgba(56,189,248,0.7)] group-hover/btn:gap-3">
+                      <span>Visit NetSuite</span>
+                      <span className="transition-transform duration-300 group-hover/btn:translate-x-1 font-extrabold text-blue-600">→</span>
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </Link>
+          </div>
+
+          {/* CARD 2 — ZOHO (SECOND / RIGHT) */}
+          <div className="relative h-full w-full group">
+            {/* Mouseover Medium Gradient Shadow */}
+            <div className="absolute -inset-1 rounded-2xl md:rounded-3xl bg-gradient-to-r from-emerald-600/70 via-teal-400/70 to-green-500/70 opacity-0 group-hover:opacity-40 blur-lg transition-all duration-500 -z-10 pointer-events-none" />
+
+            {/* Card Link */}
+            <Link
+              href="/zoho"
+              prefetch={true}
+              className="relative h-full w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-white/15 group-hover:border-emerald-400/40 group-hover:shadow-[0_12px_35px_-8px_rgba(52,211,153,0.35)] transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 flex flex-col justify-between p-4 sm:p-6 md:p-7 block"
+              aria-label="Visit Zoho Solutions and Cloud CRM"
+            >
+              {/* Background Photo */}
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcSet="/images/home/zoho_hero_card_mob.webp"
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 769px)"
+                  srcSet="/images/home/zoho_hero_card.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="/images/home/zoho_hero_card.webp"
+                  alt="Zoho Cloud Business Solutions"
+                  loading="eager"
+                  decoding="async"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </picture>
+
+              {/* Text Gradients for Readability */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent pointer-events-none" />
+
+              {/* Top Badge */}
+              <div className="relative z-10 flex items-center justify-between">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-black/40 text-emerald-200 border border-emerald-400/35 backdrop-blur-md shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  Zoho Premium Partner
+                </span>
+              </div>
+
+              {/* Bottom Content & CTA — Headline includes Zoho at starting */}
+              <article className="relative z-10 text-white drop-shadow-lg">
+                <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight">
+                  <span className="text-white drop-shadow-md">Zoho</span>{" "}
+                  <span className="text-white/70 font-normal hidden sm:inline">—</span>{" "}
+                  <span
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #6ee7b7 0%, #34d399 40%, #fde047 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                      fontWeight: 800,
+                    }}
+                  >
+                    Smarter Business
+                  </span>
+                </h2>
+                <p className="text-xs sm:text-sm md:text-base text-gray-200 font-medium mt-1 drop-shadow">
+                  Faster Growth with Cloud Solutions for Every Team
+                </p>
+
+                {/* White Button with Mouseover Gradient Shadow */}
+                <div className="mt-3 sm:mt-4">
+                  <div className="relative group/btn inline-block">
+                    {/* Hover gradient shadow behind button */}
+                    <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-emerald-400 via-teal-400 to-green-500 opacity-0 group-hover/btn:opacity-100 blur-md transition-all duration-300 pointer-events-none" />
+                    <span className="relative inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-white text-slate-950 font-bold text-xs sm:text-sm shadow-md border border-white transition-all duration-300 group-hover/btn:scale-105 group-hover/btn:shadow-[0_0_25px_rgba(52,211,153,0.7)] group-hover/btn:gap-3">
+                      <span>Visit Zoho</span>
+                      <span className="transition-transform duration-300 group-hover/btn:translate-x-1 font-extrabold text-emerald-600">→</span>
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </Link>
+          </div>
+        </div>
       </section>
-    </main>
+    </div>
   );
 }
