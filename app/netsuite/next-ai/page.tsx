@@ -21,6 +21,7 @@ import {
   FiGrid,
   FiBarChart2,
   FiUsers,
+  FiChevronRight,
 } from "react-icons/fi";
 import {
   useMotionTemplate,
@@ -183,7 +184,7 @@ function AskOracleFeatures() {
 
                     {/* Line 2: Title */}
                     <h3
-                      className={`text-base sm:text-lg font-extrabold transition-colors duration-300 ${isActive ? "text-slate-900" : "text-slate-700 group-hover:text-blue-600"
+                      className={`text-base sm:text-lg font-medium transition-colors duration-300 ${isActive ? "text-slate-900" : "text-slate-700 group-hover:text-blue-600"
                         }`}
                     >
                       {item.title}
@@ -483,7 +484,7 @@ export default function NetSuiteNextAIPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-full max-w-4xl bg-gradient-to-br from-white via-slate-100 to-slate-300 bg-clip-text text-center text-2xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-transparent tracking-tight px-2"
+            className="w-full max-w-4xl bg-gradient-to-br from-white via-slate-100 to-slate-300 bg-clip-text text-center text-2xl sm:text-5xl lg:text-6xl font-medium leading-tight text-transparent tracking-tight px-2"
           >
             NetSuite Next: The Future of AI-Powered Business
           </motion.h1>
@@ -539,9 +540,9 @@ export default function NetSuiteNextAIPage() {
       </motion.section>
 
       {/* ── 2. TRUST METRICS BAR ───────────────────────────────────────── */}
-      <section className="relative py-12 sm:py-16 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 border-y border-slate-800/60">
+      <section className="relative py-10 sm:py-12 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 border-y border-slate-800/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <h2 className="text-center text-2xl sm:text-4xl font-extrabold text-white mb-8 sm:mb-12">
+          <h2 className="text-center text-2xl sm:text-3xl lg:text-4xl font-medium text-white mb-6 sm:mb-8 tracking-tight leading-tight">
             The #1 AI-Powered ERP
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
@@ -562,7 +563,7 @@ export default function NetSuiteNextAIPage() {
                   <item.icon className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg font-extrabold text-white mb-1">{item.title}</h3>
+                  <h3 className="text-base sm:text-lg font-medium text-white mb-1">{item.title}</h3>
                   <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </motion.div>
@@ -572,7 +573,7 @@ export default function NetSuiteNextAIPage() {
       </section>
 
       {/* ── 3. ASK ORACLE — AI IS THE NEW UI ──────────────────────────── */}
-      <section id="ask-oracle" className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden bg-white text-slate-900 border-b border-slate-200/80">
+      <section id="ask-oracle" className="relative pt-10 sm:pt-14 pb-14 sm:pb-20 px-4 sm:px-6 overflow-hidden bg-white text-slate-900 border-b border-slate-200/80">
         {/* Square Dotted Grid Pattern Background on Pure White */}
         <svg className="absolute inset-0 w-full h-full opacity-45 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -584,11 +585,8 @@ export default function NetSuiteNextAIPage() {
         </svg>
 
         <div className="relative max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-blue-700 bg-blue-50 px-4 py-1.5 rounded-full border border-blue-200/80 shadow-sm">
-              AI IS THE NEW UI
-            </span>
-            <h2 className="text-2xl sm:text-5xl font-medium bg-gradient-to-r from-slate-900 via-blue-950 to-indigo-900 bg-clip-text text-transparent mt-4 sm:mt-5 tracking-tight leading-tight">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium bg-gradient-to-r from-slate-900 via-blue-950 to-indigo-900 bg-clip-text text-transparent tracking-tight leading-tight">
               Ask Oracle: The Intelligence at the Core of NetSuite Next
             </h2>
             <p className="text-slate-700 mt-3 sm:mt-4 text-sm sm:text-lg leading-relaxed whitespace-pre-line font-semibold">
@@ -627,7 +625,7 @@ export default function NetSuiteNextAIPage() {
             {/* Dedicated clean caption bar below the image */}
             <div className="bg-slate-900 border-t border-slate-800 p-5 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <p className="text-white font-extrabold text-lg sm:text-2xl tracking-tight">Ask Oracle in Action</p>
+                <p className="text-white font-medium text-lg sm:text-2xl tracking-tight">Ask Oracle in Action</p>
                 <p className="text-slate-400 text-xs sm:text-sm font-medium mt-1">Powered by Oracle AI, delivered by AGSuite</p>
               </div>
               <Link
@@ -642,17 +640,14 @@ export default function NetSuiteNextAIPage() {
       </section>
 
       {/* ── 4. INDUSTRY SOLUTIONS ─────────────────────────────────────── */}
-      <section className="relative py-16 sm:py-28 px-4 sm:px-6 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950">
+      <section className="relative pt-10 sm:pt-14 pb-14 sm:pb-20 px-4 sm:px-6 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950">
         {/* BG accent */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/8 blur-[150px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-600/8 blur-[150px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#CE84CF] bg-[#CE84CF]/10 px-4 py-1.5 rounded-full border border-[#CE84CF]/30">
-              TAILORED INDUSTRY SOLUTIONS
-            </span>
-            <h2 className="text-2xl sm:text-5xl font-medium text-white mt-4 sm:mt-5 tracking-tight leading-tight">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-white tracking-tight leading-tight">
               AI-Powered ERP Built for the Way Your Industry Works.
             </h2>
             <p className="text-slate-400 mt-3 sm:mt-4 text-sm sm:text-lg">
@@ -695,7 +690,7 @@ export default function NetSuiteNextAIPage() {
                   {/* Card Content Body */}
                   <div className="p-4 sm:p-5 pt-3.5 sm:pt-4 flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-base sm:text-lg font-extrabold text-[#001e4d] mb-1.5 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-base sm:text-lg font-medium text-[#001e4d] mb-1.5 group-hover:text-blue-600 transition-colors">
                         {ind.name}
                       </h3>
                       <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium line-clamp-2">
@@ -722,16 +717,13 @@ export default function NetSuiteNextAIPage() {
 
 
       {/* ── 6. ERP MODULE SHOWCASE ────────────────────────────────────── */}
-      <section className="relative py-16 sm:py-28 px-4 sm:px-6 overflow-hidden">
+      <section className="relative pt-10 sm:pt-14 pb-14 sm:pb-20 px-4 sm:px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900/40 to-slate-950 pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-emerald-600/8 blur-[180px] pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#13FFAA] bg-[#13FFAA]/10 px-4 py-1.5 rounded-full border border-[#13FFAA]/30">
-              UNIFIED ARCHITECTURE
-            </span>
-            <h2 className="text-2xl sm:text-5xl font-medium text-white mt-4 sm:mt-5 tracking-tight leading-tight">
+          <div className="text-center max-w-3xl mx-auto mb-7 sm:mb-9">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-white tracking-tight leading-tight">
               Native Intelligence Embedded Across Your Core ERP Engine
             </h2>
             <p className="text-slate-400 mt-3 sm:mt-4 text-sm sm:text-lg">
@@ -739,98 +731,134 @@ export default function NetSuiteNextAIPage() {
             </p>
           </div>
 
-          {/* Module Pills */}
-          <div className="flex overflow-x-auto no-scrollbar py-2 px-1 sm:flex-wrap sm:justify-center gap-2 sm:gap-3 mb-8 sm:mb-10 max-w-full">
-            {erpModules.map((mod) => (
-              <button
-                key={mod.id}
-                onClick={() => setActiveModule(mod.id)}
-                type="button"
-                className={`flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer shrink-0 border ${activeModule === mod.id
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg border-blue-500/50"
-                  : "bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 border-white/10"
-                  }`}
-              >
-                <mod.icon className="w-4 h-4" />
-                {mod.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Module Card */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeModule}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.3 }}
-              className="max-w-5xl mx-auto rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md overflow-hidden shadow-2xl"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                {/* Text */}
-                <div className="p-6 sm:p-10 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-4">
-                    {activeModuleData && (
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg">
-                        <activeModuleData.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                      </div>
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch">
+            {/* Left Sidebar - Vertical List */}
+            <div className="w-full lg:w-[320px] xl:w-[350px] shrink-0 flex flex-col gap-2.5">
+              {erpModules.map((mod) => {
+                const isActive = activeModule === mod.id;
+                return (
+                  <button
+                    key={mod.id}
+                    onClick={() => setActiveModule(mod.id)}
+                    type="button"
+                    className={`group relative flex items-center justify-between p-3.5 sm:p-4 rounded-2xl text-left transition-all duration-300 cursor-pointer border ${
+                      isActive
+                        ? "bg-gradient-to-r from-blue-600/30 via-indigo-600/20 to-blue-900/10 border-blue-500/60 shadow-lg shadow-blue-950/40 text-white"
+                        : "bg-white/[0.03] border-white/10 text-slate-300 hover:text-white hover:bg-white/[0.08] hover:border-white/20"
+                    }`}
+                  >
+                    {isActive && (
+                      <span className="absolute left-0 top-2.5 bottom-2.5 w-1.5 rounded-r-full bg-gradient-to-b from-blue-400 via-indigo-400 to-cyan-400 shadow-[0_0_12px_rgba(59,130,246,0.8)]" />
                     )}
-                    <h3 className="text-xl sm:text-2xl font-extrabold text-white">
-                      {activeModuleData?.label}
-                    </h3>
-                  </div>
-                  <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
-                    {activeModuleData?.desc}
-                  </p>
-                  <div className="space-y-2.5 sm:space-y-3">
-                    {(moduleBullets[activeModule] || []).map((point, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                        <FiCheck className="text-emerald-400 shrink-0 mt-0.5" />
-                        <span>{point}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-6 sm:mt-8">
-                    <Link
-                      href="#contact-form"
-                      className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm shadow-lg transition-all"
-                    >
-                      Explore {activeModuleData?.label} Suite
-                      <FiArrowRight />
-                    </Link>
-                  </div>
-                </div>
 
-                {/* High-res Module Preview Image */}
-                <div className="relative min-h-[340px] sm:min-h-[420px] lg:min-h-[460px] overflow-hidden border-t lg:border-t-0 lg:border-l border-white/10 bg-slate-950 flex items-center justify-center p-3 sm:p-5">
-                  <div className="relative w-full h-full min-h-[300px] sm:min-h-[380px] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900">
-                    <Image
-                      src={activeModuleData?.image || "/images/next-ai/mod_accounting_v3.jpg"}
-                      alt={`NetSuite ${activeModuleData?.label} Module Preview`}
-                      fill
-                      className="object-contain object-center p-2"
-                      quality={100}
-                      unoptimized
+                    <div className="flex items-center gap-3.5 pl-1.5">
+                      <div
+                        className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${
+                          isActive
+                            ? "bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-md shadow-blue-500/30 scale-105"
+                            : "bg-white/5 text-slate-400 group-hover:text-white group-hover:bg-white/10"
+                        }`}
+                      >
+                        <mod.icon className="w-5 h-5" />
+                      </div>
+                      <span
+                        className={`text-sm sm:text-base font-medium block leading-snug transition-colors ${
+                          isActive ? "text-white" : "text-slate-300 group-hover:text-white"
+                        }`}
+                      >
+                        {mod.label}
+                      </span>
+                    </div>
+
+                    <FiChevronRight
+                      className={`w-4 h-4 transition-all duration-300 shrink-0 ${
+                        isActive
+                          ? "text-blue-400 translate-x-0.5 opacity-100"
+                          : "text-slate-500 opacity-40 group-hover:opacity-80 group-hover:translate-x-0.5"
+                      }`}
                     />
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Right Side - Active Module Content Card */}
+            <div className="flex-1 w-full min-w-0">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeModule}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.25 }}
+                  className="h-full rounded-3xl bg-white/[0.04] border border-white/10 backdrop-blur-md overflow-hidden shadow-2xl flex flex-col justify-center"
+                >
+                  <div className="grid grid-cols-1 xl:grid-cols-2 h-full">
+                    {/* Text */}
+                    <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+                      <div>
+                        <div className="flex items-center gap-3 mb-4">
+                          {activeModuleData && (
+                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg">
+                              <activeModuleData.icon className="w-5 h-5 text-white" />
+                            </div>
+                          )}
+                          <h3 className="text-xl sm:text-2xl font-medium text-white">
+                            {activeModuleData?.label}
+                          </h3>
+                        </div>
+                        <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                          {activeModuleData?.desc}
+                        </p>
+                        <div className="space-y-3">
+                          {(moduleBullets[activeModule] || []).map((point, idx) => (
+                            <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
+                              <FiCheck className="text-emerald-400 shrink-0 mt-0.5" />
+                              <span>{point}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="mt-8 pt-6 border-t border-white/10">
+                        <Link
+                          href="#contact-form"
+                          className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm shadow-lg shadow-blue-600/30 transition-all hover:gap-3"
+                        >
+                          Explore {activeModuleData?.label} Suite
+                          <FiArrowRight />
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* High-res Module Preview Image */}
+                    <div className="relative min-h-[300px] sm:min-h-[380px] xl:min-h-[460px] overflow-hidden border-t xl:border-t-0 xl:border-l border-white/10 bg-slate-950 flex items-center justify-center p-4 sm:p-6">
+                      <div className="relative w-full h-full min-h-[260px] sm:min-h-[340px] xl:min-h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900">
+                        <Image
+                          src={activeModuleData?.image || "/images/next-ai/mod_accounting_v3.jpg"}
+                          alt={`NetSuite ${activeModuleData?.label} Module Preview`}
+                          fill
+                          className="object-contain object-center p-2"
+                          quality={100}
+                          unoptimized
+                        />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ── 7. PLATFORM SECURITY & EXTENSIBILITY ─────────────────────── */}
-      <section className="relative pt-14 sm:pt-24 pb-4 sm:pb-8 px-4 sm:px-6 overflow-hidden">
+      <section className="relative pt-10 sm:pt-14 pb-6 sm:pb-10 px-4 sm:px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-blue-950/15 to-slate-950 pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-blue-400 bg-blue-400/10 px-4 py-1.5 rounded-full border border-blue-400/30">
-              ENTERPRISE PLATFORM
-            </span>
-            <h2 className="text-2xl sm:text-5xl font-black text-white mt-4 sm:mt-5 tracking-tight">
+          <div className="text-center max-w-2xl mx-auto mb-7 sm:mb-9">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-white tracking-tight leading-tight">
               Built for Scale, Security & Extension
             </h2>
           </div>
@@ -874,7 +902,7 @@ export default function NetSuiteNextAIPage() {
                   <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-4 sm:mb-5 shadow-lg`}>
                     <item.icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-extrabold text-white mb-2 sm:mb-3">{item.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-medium text-white mb-2 sm:mb-3">{item.title}</h3>
                   <p className="text-slate-400 text-xs sm:text-base leading-relaxed">{item.desc}</p>
                 </div>
               </motion.div>
@@ -909,7 +937,7 @@ export default function NetSuiteNextAIPage() {
                 <span className="w-1.5 h-1.5 bg-[#13FFAA] rounded-full animate-pulse" />
                 NetSuite Next — Now Available via AGSuite
               </span>
-              <h2 className="text-2xl sm:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-medium text-white mb-4 sm:mb-6 leading-tight">
                 Scale your vision with the world&apos;s #1 Cloud ERP.
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Ready to get started?</span>

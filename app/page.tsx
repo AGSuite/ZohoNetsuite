@@ -114,42 +114,46 @@ export default function Home() {
         </picture>
       </div>
 
-      {/* TOP HEADER: AGSuite Logo Left | "Technology Partners" + NetSuite & Zoho Logos Right */}
-      <header className="flex items-center justify-between w-full shrink-0 z-20 px-1 sm:px-2 pt-1 mb-2 sm:mb-3">
-        {/* Left Side: AGSuite Logo */}
-        <Link
-          href="/"
-          className="flex items-center transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-lg p-1"
-          aria-label="AGSuite Technologies Home"
-        >
-          <Image
-            src="/images/home/agsuite_logo.webp"
-            alt="AGSuite Technologies Logo"
-            width={180}
-            height={55}
-            priority
-            className="h-8 sm:h-10 md:h-11 lg:h-12 w-auto object-contain drop-shadow"
-            quality={90}
-          />
-        </Link>
+      {/* TOP HEADER */}
+      {/* 1. MOBILE HEADER (Shown only on mobile: < md) */}
+      <header className="flex md:hidden w-full shrink-0 z-20 px-1 sm:px-2 pt-0.5 sm:pt-1 mb-1.5 sm:mb-2 flex-col items-center gap-1 sm:gap-1.5">
+        {/* Line 1: AGSuite Logo Top-Left (Alone on its line) */}
+        <div className="w-full flex items-center justify-start">
+          <Link
+            href="/"
+            className="flex items-center transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-lg p-0.5 sm:p-1"
+            aria-label="AGSuite Technologies Home"
+          >
+            <Image
+              src="/images/home/agsuite_logo.webp"
+              alt="AGSuite Technologies Logo"
+              width={180}
+              height={55}
+              priority
+              className="h-8 sm:h-9 w-auto object-contain drop-shadow"
+              quality={90}
+            />
+          </Link>
+        </div>
 
-        {/* Right Side: "Technology Partners" + Logos (Solid White BG + Next AI style gradient shadow on hover) */}
-        <div className="flex items-center gap-2.5 sm:gap-3.5 md:gap-5">
-          {/* Technology Partners Label (Solid White BG with Next AI gradient shadow on hover) */}
+        {/* Line 2: Technology Partner Text (Separate & in Center, matched width with logos) */}
+        <div className="flex justify-center w-full">
           <div className="relative group">
-            <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-[#13FFAA] via-[#1E67C6] to-[#CE84CF] blur-sm opacity-0 group-hover:opacity-90 transition duration-300 pointer-events-none" />
-            <div className="relative px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-white border border-slate-200/90 shadow-md group-hover:shadow-lg transition-all duration-300 flex items-center">
-              <span className="text-xs sm:text-sm md:text-base font-extrabold tracking-wider bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent uppercase whitespace-nowrap">
-                Technology Partners
+            <div className="absolute -inset-0.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#13FFAA] via-[#1E67C6] to-[#CE84CF] blur-sm opacity-0 group-hover:opacity-90 transition duration-300 pointer-events-none" />
+            <div className="relative w-[210px] sm:w-[230px] px-3 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 shadow-sm group-hover:shadow-lg transition-all duration-300 flex items-center justify-center">
+              <span className="text-[11px] sm:text-xs font-extrabold tracking-wider bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent uppercase whitespace-nowrap">
+                Technology Partner
               </span>
             </div>
           </div>
+        </div>
 
-          {/* Logos Container (Solid White BG with Next AI gradient shadow on hover) */}
+        {/* Line 3: Two Partner Logos (Separate & in Center, Down to that Text, Bigger Size) */}
+        <div className="flex justify-center w-full">
           <div className="relative group">
             <div className="absolute -inset-0.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#13FFAA] via-[#1E67C6] to-[#CE84CF] blur-sm opacity-0 group-hover:opacity-90 transition duration-300 pointer-events-none" />
-            <div className="relative flex items-center gap-2.5 sm:gap-4 md:gap-5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 shadow-md group-hover:shadow-lg transition-all duration-300">
-              {/* NetSuite Partner Logo (Black text for white background) */}
+            <div className="relative w-[210px] sm:w-[230px] flex items-center justify-center gap-3 sm:gap-4 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 shadow-sm group-hover:shadow-lg transition-all duration-300">
+              {/* NetSuite Partner Logo */}
               <Link
                 href="/netsuite"
                 prefetch={true}
@@ -162,13 +166,13 @@ export default function Home() {
                   width={180}
                   height={55}
                   priority
-                  className="h-8 sm:h-10 md:h-11 lg:h-12 w-auto object-contain"
+                  className="h-7.5 sm:h-8.5 w-auto object-contain"
                   quality={90}
                 />
               </Link>
 
               {/* Separator Line */}
-              <div className="w-px h-6 sm:h-8 bg-slate-300" />
+              <div className="w-px h-6 sm:h-7 bg-slate-300" />
 
               {/* Zoho Premium Partner Logo */}
               <Link
@@ -183,7 +187,85 @@ export default function Home() {
                   width={180}
                   height={55}
                   priority
-                  className="h-8 sm:h-10 md:h-11 lg:h-12 w-auto object-contain"
+                  className="h-7.5 sm:h-8.5 w-auto object-contain"
+                  quality={90}
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* 2. DESKTOP / NORMAL HEADER (Shown on md+ screens: exact previous layout with matched height) */}
+      <header className="hidden md:flex items-center justify-between w-full shrink-0 z-20 px-2 pt-1 mb-2 sm:mb-3">
+        {/* Left Side: AGSuite Logo */}
+        <Link
+          href="/"
+          className="flex items-center transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-lg p-1"
+          aria-label="AGSuite Technologies Home"
+        >
+          <Image
+            src="/images/home/agsuite_logo.webp"
+            alt="AGSuite Technologies Logo"
+            width={180}
+            height={55}
+            priority
+            className="h-10 md:h-11 lg:h-12 w-auto object-contain drop-shadow"
+            quality={90}
+          />
+        </Link>
+
+        {/* Right Side: "Technology Partners" + Logos (Matched height and styling) */}
+        <div className="flex items-stretch gap-3.5 md:gap-5">
+          {/* Technology Partners Label (Height matches logos box) */}
+          <div className="relative group flex">
+            <div className="absolute -inset-0.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#13FFAA] via-[#1E67C6] to-[#CE84CF] blur-sm opacity-0 group-hover:opacity-90 transition duration-300 pointer-events-none" />
+            <div className="relative px-5 py-2 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 shadow-md group-hover:shadow-lg transition-all duration-300 flex items-center justify-center w-full">
+              <span className="text-sm md:text-base font-extrabold tracking-wider bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent uppercase whitespace-nowrap">
+                Technology Partners
+              </span>
+            </div>
+          </div>
+
+          {/* Logos Container */}
+          <div className="relative group flex">
+            <div className="absolute -inset-0.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#13FFAA] via-[#1E67C6] to-[#CE84CF] blur-sm opacity-0 group-hover:opacity-90 transition duration-300 pointer-events-none" />
+            <div className="relative flex items-center gap-4 md:gap-5 px-4 py-2 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 shadow-md group-hover:shadow-lg transition-all duration-300">
+              {/* NetSuite Partner Logo */}
+              <Link
+                href="/netsuite"
+                prefetch={true}
+                className="transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
+                aria-label="Oracle NetSuite Solution Provider Partner"
+              >
+                <Image
+                  src="/images/netsuiteimages/netsuitelogos/netsuiteblack.webp"
+                  alt="Oracle NetSuite Partner Logo"
+                  width={180}
+                  height={55}
+                  priority
+                  className="h-10 md:h-11 lg:h-12 w-auto object-contain"
+                  quality={90}
+                />
+              </Link>
+
+              {/* Separator Line */}
+              <div className="w-px h-8 bg-slate-300" />
+
+              {/* Zoho Premium Partner Logo */}
+              <Link
+                href="/zoho"
+                prefetch={true}
+                className="transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-400 rounded"
+                aria-label="Zoho Premium Partner"
+              >
+                <Image
+                  src="/images/home/zoho_premium_partner.webp"
+                  alt="Zoho Premium Partner Logo"
+                  width={180}
+                  height={55}
+                  priority
+                  className="h-10 md:h-11 lg:h-12 w-auto object-contain"
                   quality={90}
                 />
               </Link>
@@ -207,7 +289,7 @@ export default function Home() {
             <Link
               href="/netsuite"
               prefetch={true}
-              className="relative h-full w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-white/15 group-hover:border-cyan-400/40 group-hover:shadow-[0_12px_35px_-8px_rgba(56,189,248,0.35)] transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-blue-400 flex flex-col justify-between p-4 sm:p-5 md:p-6 block"
+              className="relative h-full w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-white/15 group-hover:border-cyan-400/40 group-hover:shadow-[0_12px_35px_-8px_rgba(56,189,248,0.35)] transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-blue-400 flex flex-col justify-end p-4 sm:p-5 md:p-6"
               aria-label="Explore Oracle NetSuite ERP #1 Cloud ERP"
             >
               {/* Background Photo */}
@@ -234,11 +316,11 @@ export default function Home() {
               {/* Smooth dark gradient at bottom half so text and headline are clearly readable */}
               <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/90 via-black/55 to-transparent pointer-events-none" />
 
-              {/* Top Badge */}
-              <div className="relative z-10 flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-black/50 text-cyan-200 border border-cyan-400/40 backdrop-blur-md shadow-sm">
+              {/* Top Badge Pinned on Top-Left Corner */}
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-5 md:left-5 z-20">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-xs font-semibold tracking-wide bg-black/60 text-cyan-200 border border-cyan-400/40 backdrop-blur-md shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                  Oracle Solution Provider
+                  Oracle NetSuite Solution Provider Partner
                 </span>
               </div>
 
@@ -288,7 +370,7 @@ export default function Home() {
             <Link
               href="/zoho"
               prefetch={true}
-              className="relative h-full w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-white/15 group-hover:border-emerald-400/40 group-hover:shadow-[0_12px_35px_-8px_rgba(52,211,153,0.35)] transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 flex flex-col justify-between p-4 sm:p-5 md:p-6 block"
+              className="relative h-full w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-white/15 group-hover:border-emerald-400/40 group-hover:shadow-[0_12px_35px_-8px_rgba(52,211,153,0.35)] transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 flex flex-col justify-end p-4 sm:p-5 md:p-6"
               aria-label="Visit Zoho Solutions and Cloud CRM"
             >
               {/* Background Photo */}
@@ -315,9 +397,9 @@ export default function Home() {
               {/* Smooth dark gradient at bottom half so text and headline are clearly readable */}
               <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/90 via-black/55 to-transparent pointer-events-none" />
 
-              {/* Top Badge */}
-              <div className="relative z-10 flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-black/50 text-emerald-200 border border-emerald-400/40 backdrop-blur-md shadow-sm">
+              {/* Top Badge Pinned on Top-Left Corner */}
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-5 md:left-5 z-20">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-xs font-semibold tracking-wide bg-black/60 text-emerald-200 border border-emerald-400/40 backdrop-blur-md shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   Zoho Premium Partner
                 </span>

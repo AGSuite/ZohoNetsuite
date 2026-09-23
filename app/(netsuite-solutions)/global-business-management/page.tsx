@@ -163,7 +163,7 @@ export default function GlobalBusinessPage() {
                 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
               >
-                Manage global subsidiaries, currencies, tax regulations, and financial operations from one intelligent cloud platform with real-time visibility across 200+ countries. Powered by AI insights, NetSuite helps multinational businesses streamline operations and simplify compliance.
+                Manage global subsidiaries, currencies, and tax compliance from one intelligent cloud platform with real-time visibility across 200+ countries.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
