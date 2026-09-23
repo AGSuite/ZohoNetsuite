@@ -138,8 +138,8 @@ export default function Home() {
           {/* Technology Partners Label (Solid White BG with Next AI gradient shadow on hover) */}
           <div className="relative group">
             <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-[#13FFAA] via-[#1E67C6] to-[#CE84CF] blur-sm opacity-0 group-hover:opacity-90 transition duration-300 pointer-events-none" />
-            <div className="relative px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-white text-slate-900 border border-slate-200/90 shadow-md group-hover:shadow-lg transition-all duration-300 flex items-center">
-              <span className="text-xs sm:text-sm md:text-base font-extrabold tracking-wider bg-gradient-to-r from-slate-950 via-slate-800 to-slate-950 bg-clip-text text-transparent uppercase whitespace-nowrap">
+            <div className="relative px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-white border border-slate-200/90 shadow-md group-hover:shadow-lg transition-all duration-300 flex items-center">
+              <span className="text-xs sm:text-sm md:text-base font-extrabold tracking-wider bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent uppercase whitespace-nowrap">
                 Technology Partners
               </span>
             </div>
@@ -192,12 +192,12 @@ export default function Home() {
         </div>
       </header>
 
-      {/* MAIN CARDS: Side-by-Side (Wider width, medium shadows, NetSuite First, Zoho Second) */}
+      {/* MAIN CARDS: Side-by-Side (Slightly smaller width & height, NetSuite First, Zoho Second) */}
       <section
-        className="w-full max-w-[96%] xl:max-w-7xl 2xl:max-w-[1400px] mx-auto flex-1 min-h-0 flex items-center justify-center py-1 sm:py-2 md:py-3 z-10"
+        className="w-full max-w-[92%] xl:max-w-6xl 2xl:max-w-[1260px] mx-auto flex-1 min-h-0 flex items-center justify-center py-1 sm:py-2 md:py-3 z-10"
         aria-label="Oracle NetSuite and Zoho Solutions"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-7 w-full h-full max-h-[78vh]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-7 w-full h-full max-h-[72vh]">
           {/* CARD 1 — ORACLE NETSUITE (FIRST / LEFT) */}
           <div className="relative h-full w-full group">
             {/* Mouseover Medium Gradient Shadow */}
@@ -207,7 +207,7 @@ export default function Home() {
             <Link
               href="/netsuite"
               prefetch={true}
-              className="relative h-full w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-white/15 group-hover:border-cyan-400/40 group-hover:shadow-[0_12px_35px_-8px_rgba(56,189,248,0.35)] transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-blue-400 flex flex-col justify-between p-4 sm:p-6 md:p-7 block"
+              className="relative h-full w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-white/15 group-hover:border-cyan-400/40 group-hover:shadow-[0_12px_35px_-8px_rgba(56,189,248,0.35)] transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-blue-400 flex flex-col justify-between p-4 sm:p-5 md:p-6 block"
               aria-label="Explore Oracle NetSuite ERP #1 Cloud ERP"
             >
               {/* Background Photo */}
@@ -231,23 +231,22 @@ export default function Home() {
                 />
               </picture>
 
-              {/* Text Gradients for Readability */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-transparent pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent pointer-events-none" />
+              {/* Smooth dark gradient at bottom half so text and headline are clearly readable */}
+              <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/90 via-black/55 to-transparent pointer-events-none" />
 
               {/* Top Badge */}
               <div className="relative z-10 flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-black/40 text-cyan-200 border border-cyan-400/35 backdrop-blur-md shadow-sm">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-black/50 text-cyan-200 border border-cyan-400/40 backdrop-blur-md shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
                   Oracle Solution Provider
                 </span>
               </div>
 
               {/* Bottom Content & CTA */}
-              <article className="relative z-10 text-white drop-shadow-lg">
+              <article className="relative z-10 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                 <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight">
                   <span className="text-white drop-shadow-md">Oracle NetSuite</span>{" "}
-                  <span className="text-white/70 font-normal hidden sm:inline">—</span>{" "}
+                  <span className="text-white/80 font-normal hidden sm:inline">—</span>{" "}
                   <span
                     style={{
                       background:
@@ -261,7 +260,7 @@ export default function Home() {
                     #1 ERP
                   </span>
                 </h2>
-                <p className="text-xs sm:text-sm md:text-base text-gray-200 font-medium mt-1 drop-shadow">
+                <p className="text-xs sm:text-sm md:text-base text-gray-100 font-medium mt-1 drop-shadow-md">
                   Run Your Entire Business Smarter &amp; Faster
                 </p>
 
@@ -289,7 +288,7 @@ export default function Home() {
             <Link
               href="/zoho"
               prefetch={true}
-              className="relative h-full w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-white/15 group-hover:border-emerald-400/40 group-hover:shadow-[0_12px_35px_-8px_rgba(52,211,153,0.35)] transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 flex flex-col justify-between p-4 sm:p-6 md:p-7 block"
+              className="relative h-full w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-white/15 group-hover:border-emerald-400/40 group-hover:shadow-[0_12px_35px_-8px_rgba(52,211,153,0.35)] transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 flex flex-col justify-between p-4 sm:p-5 md:p-6 block"
               aria-label="Visit Zoho Solutions and Cloud CRM"
             >
               {/* Background Photo */}
@@ -313,20 +312,19 @@ export default function Home() {
                 />
               </picture>
 
-              {/* Text Gradients for Readability */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-transparent pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent pointer-events-none" />
+              {/* Smooth dark gradient at bottom half so text and headline are clearly readable */}
+              <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/90 via-black/55 to-transparent pointer-events-none" />
 
               {/* Top Badge */}
               <div className="relative z-10 flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-black/40 text-emerald-200 border border-emerald-400/35 backdrop-blur-md shadow-sm">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-black/50 text-emerald-200 border border-emerald-400/40 backdrop-blur-md shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   Zoho Premium Partner
                 </span>
               </div>
 
               {/* Bottom Content & CTA — Headline includes Zoho at starting */}
-              <article className="relative z-10 text-white drop-shadow-lg">
+              <article className="relative z-10 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                 <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight">
                   <span className="text-white drop-shadow-md">Zoho</span>{" "}
                   <span className="text-white/70 font-normal hidden sm:inline">—</span>{" "}
