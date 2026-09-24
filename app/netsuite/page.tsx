@@ -18,13 +18,7 @@ export default async function NetSuitePage() {
 
   return (
     <div className="relative">
-      <NSHero
-        title="NetSuite Solutions"
-        subtitle="Enterprise ERP & CRM Platform"
-        description="Transform your enterprise with Oracle NetSuite's comprehensive cloud platform. Streamline operations, gain real-time insights, and scale your business with integrated ERP, CRM, and e-commerce solutions designed for growing enterprises."
-        ctaText="Explore Solutions"
-        ctaHref="/netsuite/solutions"
-      />
+      <NSHero />
 
       <NSPageClient blogs={blogs} />
     </div>

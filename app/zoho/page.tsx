@@ -18,13 +18,7 @@ export default async function ZohoPage() {
 
   return (
     <div className="relative">
-      <ZohoHero
-        title="Zoho Solutions"
-        subtitle="Complete Business Software Suite"
-        description="Transform your business with Zoho's integrated suite of applications. From CRM and HR to finance and marketing, streamline operations and boost productivity with powerful, easy-to-use tools designed for modern businesses."
-        ctaText="Explore Solutions"
-        ctaHref="/zoho/solutions"
-      />
+      <ZohoHero />
 
       <ZohoPageClient blogs={blogs} />
     </div>
