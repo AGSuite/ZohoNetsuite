@@ -17,7 +17,6 @@ import {
   HelpCircle,
   Scale,
   CheckCircle2,
-  ArrowLeft,
   Calendar,
 } from "lucide-react";
 
@@ -198,16 +197,6 @@ export default function TermsOfServicesIndiaLocalizationPage() {
               className="h-10 sm:h-12 w-auto object-contain"
             />
           </Link>
-
-          <div className="flex items-center gap-3 sm:gap-4">
-            <Link
-              href="/agsuite-india-localization-for-netsuite"
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-blue-600 hover:text-blue-700 bg-blue-50 hover:bg-blue-100/70 border border-blue-200/60 px-3.5 py-2 rounded-lg transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>India Localization SuiteApp</span>
-            </Link>
-          </div>
         </div>
       </header>
 
