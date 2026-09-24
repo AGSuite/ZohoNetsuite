@@ -27,7 +27,14 @@ export default function LocalizationFooter() {
           </div>
 
           {/* Legal Links */}
-          <div className="flex items-center space-x-6 text-xs font-medium">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium">
+            <Link
+              href="/terms-of-services-of-agsuite-india-localization-for-netsuite"
+              className="text-slate-300 hover:text-blue-400 transition-colors"
+            >
+              Terms of Services
+            </Link>
+            <span className="text-slate-700">•</span>
             <Link
               href="/privacy-policy"
               className="text-slate-300 hover:text-blue-400 transition-colors"
