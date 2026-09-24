@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
@@ -25,64 +24,75 @@ export const ZohoHero: React.FC<ZohoHeroProps> = () => {
   }, []);
 
   return (
-    <div id="hero" className="relative w-full max-w-full overflow-hidden bg-white font-dm-sans">
-      <section className="relative w-full min-h-[580px] sm:min-h-[640px] lg:h-[calc(100vh-80px)] lg:min-h-[660px] flex items-center mt-20 pt-4 pb-14 sm:pb-16 lg:py-0">
-        <div className="relative w-full h-full">
-          {!isMounted ? (
-            /* SSR Placeholder - Simple, Responsive and Fast */
-            <div className="relative h-full w-full flex items-center py-4 lg:py-0">
-              <div className="absolute inset-0 top-0 -z-10">
-                <Image
-                  src="/images/Background/heropinkbg.webp"
-                  alt="Zoho Background"
-                  fill
-                  priority
-                  fetchPriority="high"
-                  className="object-cover"
-                  sizes="100vw"
-                  quality={75}
-                />
-              </div>
+    <div id="hero" className="relative w-full font-dm-sans">
+      {/* Hero section: full-viewport on all screens, no white gaps */}
+      <section className="relative w-full h-[100dvh] min-h-[600px] flex items-center overflow-hidden">
 
-              <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-[52%_46%] gap-8 lg:gap-10 items-center translate-y-0 lg:-translate-y-4">
-                <div className="max-w-2xl text-left lg:-ml-12">
-                  <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold lg:font-medium leading-tight tracking-tight bg-linear-to-r from-gray-950 via-gray-800 to-red-600 bg-clip-text text-transparent pb-1">
-                    Empower Your Business with Premium Zoho Cloud Solutions
-                  </h1>
-
-                  <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-xl font-normal leading-relaxed text-gray-700">
-                    Run your entire business operations on a single, unified cloud platform designed for growth and scale.
-                  </p>
-
-                  <div className="mt-4 sm:mt-5 relative inline-flex group">
-                    <div className="absolute inset-0 rounded-xl bg-linear-to-r from-[#E91E63] via-[#FF4081] to-[#F06292] opacity-70 blur-lg" />
-                    <Link
-                      href="/zoho-products"
-                      className="bg-gray-950 text-white relative px-6 py-3 sm:px-8 sm:py-3.5 lg:px-10 lg:py-4 rounded-xl text-sm sm:text-base font-medium shadow-2xl inline-block"
-                    >
-                      Experience Zoho One
-                    </Link>
-                  </div>
-                </div>
-
-                <div className="hidden lg:flex justify-center lg:justify-end">
-                  <div className="w-full relative">
-                    <Image
-                      src="/images/Dashboard/zohodash.webp"
-                      alt="Empower Your Business with Premium Zoho Cloud Solutions"
-                      width={1200}
-                      height={1000}
-                      className="w-[140%] max-lg:h-auto max-w-none object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.2)] -ml-[25%]"
-                      sizes="(max-width: 1024px) 100vw, 60vw"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <ZohoHeroSlider />
-          )}
+        {/* Full-bleed background — covers entire hero on all screen sizes */}
+        <div className="absolute inset-0 z-0">
+          <picture>
+            <source
+              media="(max-width: 1023px)"
+              srcSet="/images/Background/heropinkbg_mob.webp"
+              type="image/webp"
+            />
+            <source
+              media="(min-width: 1024px)"
+              srcSet="/images/Background/heropinkbg.webp"
+              type="image/webp"
+            />
+            <img
+              src="/images/Background/heropinkbg.webp"
+              alt=""
+              aria-hidden="true"
+              decoding="async"
+              fetchPriority="high"
+              className="w-full h-full object-cover object-center"
+            />
+          </picture>
         </div>
+
+        {/* Navbar offset spacer */}
+        <div className="absolute inset-x-0 top-0 h-[72px] sm:h-[80px] z-0 pointer-events-none" />
+
+        {/* Content layer */}
+        <div className="relative z-10 w-full px-5 sm:px-8 lg:px-12 flex flex-col items-start justify-center h-full pt-[72px] sm:pt-[80px] pb-12">
+          <div className="max-w-2xl">
+            {/* Badge */}
+            <span className="inline-flex items-center gap-1.5 mb-4 px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-rose-500/10 text-rose-700 border border-rose-300/60 backdrop-blur-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+              Zoho Premium Partner
+            </span>
+
+            {/* Headline */}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight bg-gradient-to-r from-gray-950 via-gray-800 to-rose-600 bg-clip-text text-transparent pb-1">
+              Empower Your Business with Premium Zoho Cloud Solutions
+            </h1>
+
+            {/* Subtext */}
+            <p className="mt-4 text-base sm:text-lg font-normal leading-relaxed text-slate-700 max-w-xl">
+              Run your entire business operations on a single, unified cloud platform designed for growth and scale.
+            </p>
+
+            {/* CTA */}
+            <div className="mt-6 relative inline-flex group">
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#E91E63] via-[#FF4081] to-[#F06292] opacity-70 blur-lg group-hover:opacity-100 transition duration-500" />
+              <Link
+                href="/zoho-products"
+                className="bg-gray-950 text-white relative px-7 py-3.5 sm:px-9 sm:py-4 rounded-xl text-sm sm:text-base font-semibold shadow-2xl hover:bg-white hover:text-black transition-all duration-300 inline-block"
+              >
+                Experience Zoho One
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Render the full interactive slider once mounted */}
+        {isMounted && (
+          <div className="absolute inset-0 z-10">
+            <ZohoHeroSlider />
+          </div>
+        )}
       </section>
     </div>
   );

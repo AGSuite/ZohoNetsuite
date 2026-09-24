@@ -98,6 +98,14 @@ h6 {
 
 .hero-swiper .swiper-pagination {
   bottom: 12px !important;
+  z-index: 30 !important;
+}
+
+/* Ensure swiper and its wrapper fill full height — no white gaps */
+.hero-swiper,
+.hero-swiper .swiper-wrapper,
+.hero-swiper .swiper-slide {
+  height: 100% !important;
 }
 
 @media (min-width: 1024px) {

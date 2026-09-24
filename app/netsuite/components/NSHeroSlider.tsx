@@ -58,31 +58,41 @@ const HeroSlide = ({
 
   return (
     <div className="relative h-full w-full flex items-center max-w-full overflow-hidden">
-      <div className="absolute inset-0 top-0 -z-10 overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         {customBg ? (
           customBg
         ) : (
-          <div className="absolute inset-0 bg-linear-to-br from-white via-blue-50 to-blue-200/40">
+          <div className="absolute inset-0">
             {bg && (
-              <Image
-                src={bg}
-                alt="Hero Background"
-                fill
-                priority={priority}
-                fetchPriority={priority ? "high" : "auto"}
-                className="object-cover"
-                sizes="100vw"
-              />
+              <picture>
+                <source
+                  media="(max-width: 1023px)"
+                  srcSet={bg.includes("herobluebg") ? "/images/Background/herobluebg_mob.webp" : bg}
+                  type="image/webp"
+                />
+                <source
+                  media="(min-width: 1024px)"
+                  srcSet={bg}
+                  type="image/webp"
+                />
+                <img
+                  src={bg}
+                  alt=""
+                  aria-hidden="true"
+                  decoding="async"
+                  className="w-full h-full object-cover object-center"
+                />
+              </picture>
             )}
           </div>
         )}
       </div>
 
       {showOverlay && bg && (
-        <div className="absolute inset-0 bg-linear-to-r from-black/55 via-black/55 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/55 to-transparent z-10" />
       )}
 
-      <div className={`relative z-10 mx-auto max-w-6xl ${containerClass} w-full grid grid-cols-1 ${activeGridClass} gap-6 sm:gap-8 lg:gap-16 xl:gap-24 items-center translate-y-0 lg:-translate-y-4`}>
+      <div className={`relative z-20 mx-auto max-w-6xl ${containerClass} w-full grid grid-cols-1 ${activeGridClass} gap-6 sm:gap-8 lg:gap-16 xl:gap-24 items-center pt-[72px] sm:pt-[80px] pb-10 lg:pt-0 lg:pb-0 lg:-translate-y-4`}>
         <div className={`${textWidthClass} text-left ${textColumnClass}`}>
           <AnimatePresence mode="wait">
             {isActive && (
@@ -389,7 +399,7 @@ export default function NSHeroSlider() {
 
   return (
     <Swiper
-      className="hero-swiper w-full h-full max-w-full pb-8 sm:pb-10 lg:pb-0"
+      className="hero-swiper w-full h-full max-w-full"
       modules={[Pagination, Autoplay]}
       loop
       autoplay={{ delay: 4500, disableOnInteraction: false }}
