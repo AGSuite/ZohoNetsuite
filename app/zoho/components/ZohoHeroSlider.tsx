@@ -286,8 +286,6 @@ export default function ZohoHeroSlider() {
           }
           priority={true}
           multiColorShadow={true}
-          showOverlay={false}
-          textColor="dark"
         />
       </SwiperSlide>
 
