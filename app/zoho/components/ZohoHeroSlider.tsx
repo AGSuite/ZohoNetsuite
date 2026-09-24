@@ -71,7 +71,7 @@ const HeroSlide = ({
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/55 to-transparent z-10" />
       )}
 
-      <div className={`relative z-20 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 ${image || customVisual ? 'lg:grid-cols-[52%_46%]' : 'lg:grid-cols-2'} gap-6 sm:gap-8 lg:gap-16 xl:gap-24 items-center pt-[72px] sm:pt-[80px] pb-10 lg:pt-0 lg:pb-0 lg:-translate-y-4`}>
+      <div className={`relative z-20 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 ${image || customVisual ? 'lg:grid-cols-[52%_46%]' : 'lg:grid-cols-2'} gap-6 sm:gap-8 lg:gap-16 xl:gap-24 items-center pt-[72px] sm:pt-[80px] pb-10 lg:pt-0 lg:pb-0 lg:translate-y-6`}>
         <div className={`max-w-2xl text-left ${contentShiftLeft === 'extra' ? 'lg:-ml-28 xl:-ml-32' : (contentShiftLeft ? 'lg:-ml-20 xl:-ml-24' : 'lg:-ml-12')}`}>
           <AnimatePresence mode="wait">
             {isActive && (
@@ -81,14 +81,14 @@ const HeroSlide = ({
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 {priority ? (
-                  <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold lg:font-medium leading-tight sm:leading-tight lg:leading-tight tracking-tight pb-1 ${titleGradient ? titleGradient : (textColor === 'dark'
+                  <h1 className={`text-4xl sm:text-4xl md:text-4xl lg:text-5xl font-medium leading-tight sm:leading-tight lg:leading-tight tracking-tight pb-1 ${titleGradient ? titleGradient : (textColor === 'dark'
                     ? "bg-gradient-to-r from-gray-950 via-gray-800 to-red-600 bg-clip-text text-transparent"
                     : "text-white"
                   )}`}>
                     {title}
                   </h1>
                 ) : (
-                  <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold lg:font-medium leading-tight sm:leading-tight lg:leading-tight tracking-tight pb-1 ${titleGradient ? titleGradient : (textColor === 'dark'
+                  <h2 className={`text-4xl sm:text-4xl md:text-4xl lg:text-5xl font-medium leading-tight sm:leading-tight lg:leading-tight tracking-tight pb-1 ${titleGradient ? titleGradient : (textColor === 'dark'
                     ? "bg-gradient-to-r from-gray-950 via-gray-800 to-red-600 bg-clip-text text-transparent"
                     : "text-white"
                   )}`}>
@@ -100,19 +100,19 @@ const HeroSlide = ({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                  className={`mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg xl:text-xl font-normal leading-relaxed ${textColor === 'dark' ? 'text-gray-700' : 'text-white/90'
+                  className={`mt-6 sm:mt-6 text-base sm:text-base lg:text-lg xl:text-xl font-normal leading-relaxed ${textColor === 'dark' ? 'text-gray-700' : 'text-white/90'
                     }`}>{desc}</motion.p>
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-                  className="mt-4 sm:mt-5 relative inline-flex group"
+                  className="mt-7 sm:mt-7 relative inline-flex group"
                 >
                   <div className={`absolute inset-0 rounded-xl bg-linear-to-r from-[#E91E63] via-[#FF4081] to-[#F06292] opacity-70 blur-lg group-hover:opacity-100 transition duration-700`} />
                   <Link
                     href={link || "#"}
-                    className="bg-gray-950 text-white relative px-6 py-3 sm:px-8 sm:py-3.5 lg:px-10 lg:py-4 rounded-xl text-sm sm:text-base font-medium shadow-2xl hover:bg-white hover:text-black transition-all duration-300 transform group-hover:scale-105 inline-block text-center"
+                    className="bg-gray-950 text-white relative px-8 py-3.5 sm:px-8 sm:py-3.5 lg:px-10 lg:py-4 rounded-xl text-base sm:text-base font-medium shadow-2xl hover:bg-white hover:text-black transition-all duration-300 transform group-hover:scale-105 inline-block text-center"
                   >
                     {cta}
                   </Link>
@@ -186,13 +186,28 @@ export default function ZohoHeroSlider() {
       <SwiperSlide>
         <HeroSlide
           isActive={activeIndex === 0}
-          bg="/images/Background/heropinkbg.webp"
+          customBg={
+            <div className="absolute inset-0 overflow-hidden">
+              {/* Mobile: light rose-white gradient */}
+              <div className="absolute inset-0 lg:hidden bg-gradient-to-br from-rose-50 via-pink-50 to-white" />
+              {/* Soft accent blobs on mobile */}
+              <div className="absolute -top-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-rose-200/40 blur-[80px] lg:hidden" />
+              <div className="absolute -bottom-[10%] -left-[10%] w-[50%] h-[50%] rounded-full bg-pink-200/30 blur-[60px] lg:hidden" />
+              {/* Desktop: full pink bg image */}
+              <picture className="hidden lg:block absolute inset-0 w-full h-full">
+                <source media="(min-width: 1024px)" srcSet="/images/Background/heropinkbg.webp" type="image/webp" />
+                <img src="/images/Background/heropinkbg.webp" alt="" aria-hidden="true" decoding="async" className="w-full h-full object-cover object-center" />
+              </picture>
+            </div>
+          }
           title="Turn Customer Relationships into Business Growth with Zoho CRM"
           titleGradient="bg-gradient-to-r from-gray-950 via-rose-900 to-rose-600 bg-clip-text text-transparent"
           desc="Build stronger customer relationships, streamline your sales process, and turn every opportunity into measurable growth with Zoho CRM."
           cta="Explore Zoho CRM"
           link="/zoho-crm"
           contentShiftLeft="extra"
+          showOverlay={false}
+          textColor="dark"
           customVisual={
             <div className="relative w-full flex justify-center lg:justify-end">
               <div className="relative w-full h-full flex items-center justify-center p-4">
