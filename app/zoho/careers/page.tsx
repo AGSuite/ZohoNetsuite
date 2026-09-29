@@ -197,6 +197,7 @@ export default function ZohoCareersPage() {
                     src="/images/contact/carrer.webp"
                     alt="Life at AGSuite"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-950/40 via-transparent to-transparent" />

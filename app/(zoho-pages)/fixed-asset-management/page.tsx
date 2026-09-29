@@ -1146,6 +1146,7 @@ export default function FixedAssetManagementPage() {
                     src={benefitsList[activeBenefit].image}
                     alt={benefitsList[activeBenefit].title}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 55vw"
                     className={`cursor-pointer ${
                       benefitsList[activeBenefit].image.includes('mobile')
                         ? "object-contain p-4 max-h-[520px]"
@@ -1333,34 +1334,7 @@ export default function FixedAssetManagementPage() {
         </div>
       </section>
 
-      {/* ── 8. ZOHO ADD-ONS CARD SECTION ────────────────────────────────────────── */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl overflow-hidden p-8 sm:p-12 md:p-16 bg-gradient-to-r from-[#000814] via-[#001740] to-[#000814] shadow-2xl border border-blue-500/20 text-white flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 space-y-4 max-w-2xl text-center md:text-left">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-red-600 text-white text-xs font-extrabold uppercase tracking-widest shadow-md">
-                ZOHO
-              </span>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-white">
-                All the tools you need for sales, HR, operations &amp; automation.
-              </h3>
-            </div>
-
-            <div className="relative z-10 shrink-0">
-              <Link
-                href="/zoho/solutions"
-                className="group inline-flex items-center gap-3 px-8 py-4 text-base font-semibold rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:scale-105"
-              >
-                Explore Zoho
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── 9. CONTACT FORM SECTION ─────────────────────────────────────────── */}
       <div id="contact-form" className="scroll-mt-28">

@@ -167,7 +167,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="ltr" suppressHydrationWarning>
+    <html lang="en" dir="ltr" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         {/* Google tag (gtag.js) - Defer to lazyOnload to unblock FCP, LCP, and TBT */}
         <Script

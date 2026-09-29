@@ -397,6 +397,7 @@ function StrategicPartnersSection() {
                     src="/images/zoho-logos/zoho premium.webp"
                     alt="Zoho Premium Partner"
                     fill
+                    sizes="128px"
                     className="object-contain"
                   />
                 </div>
@@ -409,6 +410,7 @@ function StrategicPartnersSection() {
                     src="/images/iso-27001-certified.webp"
                     alt="ISO 27001 Certified"
                     fill
+                    sizes="128px"
                     className="object-contain"
                   />
                 </div>

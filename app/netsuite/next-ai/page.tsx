@@ -677,6 +677,7 @@ export default function NetSuiteNextAIPage() {
                       src={ind.image}
                       alt={ind.name}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/15 to-transparent" />
@@ -838,6 +839,7 @@ export default function NetSuiteNextAIPage() {
                           src={activeModuleData?.image || "/images/next-ai/mod_accounting_v3.jpg"}
                           alt={`NetSuite ${activeModuleData?.label} Module Preview`}
                           fill
+                          sizes="(max-width: 1280px) 100vw, 50vw"
                           className="object-contain object-center p-2"
                           quality={100}
                           unoptimized
@@ -893,6 +895,7 @@ export default function NetSuiteNextAIPage() {
                     src={item.img}
                     alt={item.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                     quality={98}
                   />
