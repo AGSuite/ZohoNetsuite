@@ -33,13 +33,26 @@ const AnchorScrollHandler = dynamic(
     { ssr: false }
 );
 
+const CookieConsentBanner = dynamic(
+    () => import('./CookieConsentBanner'),
+    { ssr: false }
+);
+
 export default function ClientOverlays() {
     const pathname = usePathname();
     const isStudio = pathname?.includes('/studio');
     const isHome = pathname === '/';
 
     if (isStudio) return null;
-    if (isHome) return <ScrollRestorer />;
+    
+    if (isHome) {
+        return (
+            <>
+                <ScrollRestorer />
+                <CookieConsentBanner />
+            </>
+        );
+    }
 
     return (
         <>
@@ -48,6 +61,7 @@ export default function ClientOverlays() {
             <AnchorScrollHandler />
             <SocialSidebar />
             <ScrollToTopButton />
+            <CookieConsentBanner />
         </>
     );
 }
