@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { getDiwaliEmailTemplate } from '@/app/api/utils/diwaliEmailTemplate';
 
 export async function POST(req: Request) {
   try {
@@ -75,61 +76,28 @@ export async function POST(req: Request) {
       </div>
     `;
 
+    // 4. Internal Notification Email (FIRST EMAIL to AGSuite Team)
+    const teamRecipients = 'inbound@agsuitetech.com, hello@agsuitetech.com, contact@agsuitetech.com, nikhil.khode@agsuitetech.com, sales@agsuitetech.com, dwoqqigo@parser.zohocrm.in';
+
     await transporter.sendMail({
       from: '"AGSuite Technologies" <hello@agsuitetech.com>',
-      to: 'sales@agsuitetech.com,nikhil.khode@agsuitetech.com,inbound@agsuitetech.com,dwoqqigo@parser.zohocrm.in',
+      replyTo: email || 'hello@agsuitetech.com',
+      to: teamRecipients,
       subject: emailSubject,
       html: internalMailContent,
     });
+    console.log(`✅ [1/2] Consultation lead email sent first to: ${teamRecipients}`);
 
-    // 5. Auto-Reply Email
-    const autoReplyContent = `
-      <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="background-color: #ffffff; font-family: Georgia, Times, serif;">
-        <tr>
-          <td align="center">
-            <table width="600" border="0" cellpadding="0" cellspacing="0" style="border: 1px solid #dadada; padding: 20px;">
-              <tr>
-                <td align="center" style="padding: 14px 0;">
-                  <a href="https://agsuitetech.com" target="_blank">
-                    <img src="https://agsuitetech.com/email/img/thankyou.png" alt="Thank You" style="border: none; display: block; max-width: 100%;" />
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td align="center" style="padding: 15px 0;">
-                  <p style="font-size: 16px; margin: 0; color: #000; font-family: verdana;">
-                    We have received your request.<br />One of our team representatives will contact you shortly.<br />
-                    Alternatively, reach us at <a href="mailto:hello@agsuitetech.com">hello@agsuitetech.com</a>
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td align="center" style="padding: 15px 0; border-top: 1px solid #dadada;">
-                  <p style="font-size: 16px; margin: 0; color: #000; font-family: verdana;">
-                    <strong>For Immediate Assistance Contact:</strong><br />+91 9461046161
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td align="center" style="padding: 14px 0;">
-                  <a href="https://agsuitetech.com" target="_blank">
-                    <img src="https://agsuitetech.com/email/img/partners-logos.png" alt="Authorized Partner" style="border: none; display: block; max-width: 100%;" />
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    `;
-
+    // 5. Auto-Reply Email (SECOND EMAIL to User)
     if (email) {
       await transporter.sendMail({
         from: '"AGSuite Technologies" <hello@agsuitetech.com>',
+        replyTo: 'hello@agsuitetech.com',
         to: email,
-        subject: 'Auto Reply : Consultation Request Received',
-        html: autoReplyContent,
+        subject: 'Happy Diwali & Consultation Request Received - AGSuite Technologies',
+        html: getDiwaliEmailTemplate({ recipientName: name, companyName: companyname }),
       });
+      console.log(`✅ [2/2] Auto-reply email template sent to user: ${email}`);
     }
 
     return NextResponse.json({

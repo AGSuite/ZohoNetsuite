@@ -23,4 +23,4 @@ export const getTransporter = () => {
     return transporter;
 };
 
-export const defaultSender = `"AGSuite Website" <${process.env.SMTP_USER || 'no-reply@agsuiteindia.com'}>`;
+export const defaultSender = `"AGSuite Technologies" <${process.env.SMTP_USER || 'hello@agsuitetech.com'}>`;

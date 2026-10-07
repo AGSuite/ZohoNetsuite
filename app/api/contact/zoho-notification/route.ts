@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getTransporter, defaultSender } from '@/app/api/utils/mailer';
+import { getDiwaliEmailTemplate } from '@/app/api/utils/diwaliEmailTemplate';
 
 export async function POST(request: Request) {
     try {
@@ -19,10 +20,14 @@ export async function POST(request: Request) {
 
         const transporter = getTransporter();
 
+        // 1. FIRST EMAIL: Internal notification to AGSuite Team (inbound, hello, contact, nikhil)
+        const teamRecipients = 'inbound@agsuitetech.com, hello@agsuitetech.com, contact@agsuitetech.com, nikhil.khode@agsuitetech.com';
+
         const mailOptions = {
             from: defaultSender,
-            to: 'inbound@agsuitetech.com, hello@agsuitetech.com, contact@agsuitetech.com',
-            subject: subjectTitle,
+            replyTo: email || 'hello@agsuitetech.com',
+            to: teamRecipients,
+            subject: `${subjectTitle} - Lead: ${name || 'Website Visitor'}`,
             html: `
                 <div style="font-family: Arial, sans-serif; padding: 24px; color: #1e293b; max-width: 650px; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #ffffff;">
                     <div style="border-bottom: 2px solid #2563eb; padding-bottom: 16px; margin-bottom: 20px;">
@@ -81,8 +86,22 @@ export async function POST(request: Request) {
         };
 
         if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+            // STEP 1: Send Team Notification Email FIRST
             await transporter.sendMail(mailOptions);
-            console.log(`✅ Zoho notification email ("${subjectTitle}") sent to inbound@agsuitetech.com`);
+            console.log(`✅ [1/2] Team notification email sent to ${teamRecipients}`);
+
+            // STEP 2: Send User Auto-Reply Email Template THEN (second)
+            if (email) {
+                const autoReplyOptions = {
+                    from: defaultSender,
+                    replyTo: 'hello@agsuitetech.com',
+                    to: email,
+                    subject: 'Happy Diwali & Thank You for Connecting with AGSuite Technologies!',
+                    html: getDiwaliEmailTemplate({ recipientName: name, companyName: company }),
+                };
+                await transporter.sendMail(autoReplyOptions);
+                console.log(`✅ [2/2] Auto-reply email template sent to user: ${email}`);
+            }
         } else {
             console.log(`--- MOCK ZOHO NOTIFICATION EMAIL (${subjectTitle}) ---`, body);
         }

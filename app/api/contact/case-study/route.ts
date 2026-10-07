@@ -21,7 +21,7 @@ export async function POST(request: Request) {
 
         const mailOptions = {
             from: defaultSender,
-            to: 'inbound@agsuitetech.com, hello@agsuitetech.com, contact@agsuitetech.com',
+            to: 'inbound@agsuitetech.com, hello@agsuitetech.com, contact@agsuitetech.com, nikhil.khode@agsuitetech.com',
             subject: subjectTitle,
             html: `
                 <div style="font-family: Arial, sans-serif; padding: 20px; color: #333; max-width: 600px; border: 1px solid #eee;">
