@@ -23,7 +23,6 @@ import {
   Cpu,
   Check,
   X,
-  HelpCircle,
   Maximize2,
   Smartphone,
   Wrench,
@@ -76,7 +75,11 @@ export default function FixedAssetManagementPage() {
         "Automated status transitions across departments"
       ],
       icon: Layers,
-      color: "from-blue-600 to-indigo-600",
+      cardGradient: "from-blue-50/80 via-white to-indigo-50/40",
+      borderColor: "border-blue-100/90 hover:border-blue-300",
+      iconBg: "bg-gradient-to-br from-blue-100 to-indigo-100 text-blue-700 border-blue-200/80",
+      shadowHover: "hover:shadow-blue-500/10",
+      checkColor: "text-blue-600",
       image: "/images/assets/asset_tracker_dashboard.png"
     },
     {
@@ -88,7 +91,11 @@ export default function FixedAssetManagementPage() {
         "24/7 web & mobile portal availability"
       ],
       icon: Globe,
-      color: "from-teal-600 to-emerald-600",
+      cardGradient: "from-teal-50/80 via-white to-emerald-50/40",
+      borderColor: "border-teal-100/90 hover:border-teal-300",
+      iconBg: "bg-gradient-to-br from-teal-100 to-emerald-100 text-teal-700 border-teal-200/80",
+      shadowHover: "hover:shadow-teal-500/10",
+      checkColor: "text-teal-600",
       image: "/images/assets/auditor_dashboard_mobile.png"
     },
     {
@@ -100,7 +107,11 @@ export default function FixedAssetManagementPage() {
         "Eliminates duplicate asset entries and ghost inventory"
       ],
       icon: QrCode,
-      color: "from-purple-600 to-violet-600",
+      cardGradient: "from-purple-50/80 via-white to-violet-50/40",
+      borderColor: "border-purple-100/90 hover:border-purple-300",
+      iconBg: "bg-gradient-to-br from-purple-100 to-violet-100 text-purple-700 border-purple-200/80",
+      shadowHover: "hover:shadow-purple-500/10",
+      checkColor: "text-purple-600",
       image: "/images/assets/asset_qr_barcode_master.png"
     },
     {
@@ -112,7 +123,11 @@ export default function FixedAssetManagementPage() {
         "Zero manual spreadsheet calculation risk"
       ],
       icon: FileSpreadsheet,
-      color: "from-amber-600 to-orange-600",
+      cardGradient: "from-amber-50/80 via-white to-orange-50/40",
+      borderColor: "border-amber-100/90 hover:border-amber-300",
+      iconBg: "bg-gradient-to-br from-amber-100 to-orange-100 text-amber-700 border-amber-200/80",
+      shadowHover: "hover:shadow-amber-500/10",
+      checkColor: "text-amber-600",
       image: "/images/assets/depreciation_dashboard.png"
     },
     {
@@ -124,7 +139,11 @@ export default function FixedAssetManagementPage() {
         "Scheduled physical audit cycles with progress tracking"
       ],
       icon: ShieldCheck,
-      color: "from-rose-600 to-red-600",
+      cardGradient: "from-rose-50/80 via-white to-red-50/40",
+      borderColor: "border-rose-100/90 hover:border-rose-300",
+      iconBg: "bg-gradient-to-br from-rose-100 to-red-100 text-rose-700 border-rose-200/80",
+      shadowHover: "hover:shadow-rose-500/10",
+      checkColor: "text-rose-600",
       image: "/images/assets/audit_trail_overview.png"
     },
     {
@@ -136,7 +155,11 @@ export default function FixedAssetManagementPage() {
         "Service due scheduling to extend equipment lifespan"
       ],
       icon: Wrench,
-      color: "from-yellow-600 to-amber-600",
+      cardGradient: "from-yellow-50/80 via-white to-amber-50/40",
+      borderColor: "border-yellow-100/90 hover:border-yellow-300",
+      iconBg: "bg-gradient-to-br from-yellow-100 to-amber-100 text-amber-800 border-yellow-200/80",
+      shadowHover: "hover:shadow-yellow-500/10",
+      checkColor: "text-amber-600",
       image: "/images/assets/preventive_maintenance.png"
     },
     {
@@ -148,7 +171,11 @@ export default function FixedAssetManagementPage() {
         "Customizable notification triggers for audit dates"
       ],
       icon: Bell,
-      color: "from-indigo-600 to-blue-600",
+      cardGradient: "from-indigo-50/80 via-white to-blue-50/40",
+      borderColor: "border-indigo-100/90 hover:border-indigo-300",
+      iconBg: "bg-gradient-to-br from-indigo-100 to-blue-100 text-indigo-700 border-indigo-200/80",
+      shadowHover: "hover:shadow-indigo-500/10",
+      checkColor: "text-indigo-600",
       image: "/images/assets/audit_trail_history.png"
     },
     {
@@ -160,7 +187,11 @@ export default function FixedAssetManagementPage() {
         "Clear historical logs of asset transfer & usage"
       ],
       icon: UserCheck,
-      color: "from-cyan-600 to-blue-600",
+      cardGradient: "from-cyan-50/80 via-white to-blue-50/40",
+      borderColor: "border-cyan-100/90 hover:border-cyan-300",
+      iconBg: "bg-gradient-to-br from-cyan-100 to-blue-100 text-cyan-700 border-cyan-200/80",
+      shadowHover: "hover:shadow-cyan-500/10",
+      checkColor: "text-cyan-600",
       image: "/images/assets/fixed_asset_register.png"
     },
     {
@@ -172,7 +203,11 @@ export default function FixedAssetManagementPage() {
         "Scales seamlessly from single location to multi-entity enterprises"
       ],
       icon: Sliders,
-      color: "from-pink-600 to-rose-600",
+      cardGradient: "from-pink-50/80 via-white to-rose-50/40",
+      borderColor: "border-pink-100/90 hover:border-pink-300",
+      iconBg: "bg-gradient-to-br from-pink-100 to-rose-100 text-pink-700 border-pink-200/80",
+      shadowHover: "hover:shadow-pink-500/10",
+      checkColor: "text-pink-600",
       image: "/images/zoho-dashboards/zoho-creator-updated-dashboard.png"
     },
     {
@@ -184,7 +219,11 @@ export default function FixedAssetManagementPage() {
         "Configurable multi-dimensional reports for CFO decision making"
       ],
       icon: BarChart3,
-      color: "from-emerald-600 to-teal-600",
+      cardGradient: "from-emerald-50/80 via-white to-teal-50/40",
+      borderColor: "border-emerald-100/90 hover:border-emerald-300",
+      iconBg: "bg-gradient-to-br from-emerald-100 to-teal-100 text-emerald-700 border-emerald-200/80",
+      shadowHover: "hover:shadow-emerald-500/10",
+      checkColor: "text-emerald-600",
       image: "/images/zoho-dashboards/zoho-analytics-dashboard.png"
     }
   ];
@@ -637,24 +676,36 @@ export default function FixedAssetManagementPage() {
 
   const faqs = [
     {
-      question: "What is Fixed Asset Management software?",
-      answer:
-        "Fixed Asset Management software is a centralized platform that tracks the entire lifecycle of an organization's physical assets—from purchase, tagging, location transfer, and maintenance to depreciation and final retirement.",
+      q: "What is Fixed Asset Management software?",
+      a: "Fixed Asset Management software is a centralized platform that tracks the entire lifecycle of an organization's physical assets—from purchase, tagging, location transfer, and maintenance to depreciation and final retirement.",
     },
     {
-      question: "How does the tool handle Companies Act and Income Tax depreciation?",
-      answer:
-        "Our Fixed Asset Management tool built on Zoho Creator features integrated depreciation engines that simultaneously calculate Written Down Value (WDV) and Straight Line Method (SLM) depreciation in compliance with both The Companies Act and The Income Tax Act.",
+      q: "How does the tool handle Companies Act and Income Tax depreciation?",
+      a: "Our Fixed Asset Management tool built on Zoho Creator features integrated depreciation engines that simultaneously calculate Written Down Value (WDV) and Straight Line Method (SLM) depreciation in compliance with both The Companies Act and The Income Tax Act.",
     },
     {
-      question: "Can we track assets using mobile phones and QR codes?",
-      answer:
-        "Yes! The solution provides native mobile synchronization allowing staff to scan QR codes or barcodes on assets to update location, assign custodians, log maintenance requests, and complete physical audit verification on the go.",
+      q: "Can we track assets using mobile phones and QR codes?",
+      a: "Yes! The solution provides native mobile synchronization allowing staff to scan QR codes or barcodes on assets to update location, assign custodians, log maintenance requests, and complete physical audit verification on the go.",
     },
     {
-      question: "Can this solution be customized for our organization's branding and workflow?",
-      answer:
-        "Absolutely. Developed on Zoho Creator, the tool offers deep customization including custom fields, approval workflows, automated email notifications, theme personalization, and seamless integration with your existing ERP or accounting system.",
+      q: "Can this solution be customized for our organization's branding and workflow?",
+      a: "Absolutely. Developed on Zoho Creator, the tool offers deep customization including custom fields, approval workflows, automated email notifications, theme personalization, and seamless integration with your existing ERP or accounting system.",
+    },
+    {
+      q: "Can the Fixed Asset Management tool integrate with Zoho Books or existing ERP systems?",
+      a: "Yes, the application integrates seamlessly with Zoho Books, Zoho Inventory, and external ERP systems via REST APIs to synchronize asset purchases, capitalization, depreciation journal entries, and asset disposal records.",
+    },
+    {
+      q: "How does physical audit verification and barcode/QR scanning work?",
+      a: "Each asset receives a unique QR code or barcode that can be scanned using smartphones or handheld scanners via the native mobile app. Field auditors can instantly verify asset presence, flag discrepancies, update physical locations, and record custodian sign-offs.",
+    },
+    {
+      q: "Does the software maintain an audit trail for compliance and external auditors?",
+      a: "Yes, every transaction—including asset additions, transfers between departments or branches, revaluations, depreciation runs, maintenance logs, and retirements—is recorded with user timestamps in an unalterable audit log ready for statutory audit scrutiny.",
+    },
+    {
+      q: "How does preventive maintenance and AMC/warranty tracking work?",
+      a: "The system logs warranty terms, insurance policies, and annual maintenance contracts (AMC). It sends automated alerts before renewal deadlines and lets maintenance managers schedule periodic inspections, assign technician tasks, and log repair costs against individual assets.",
     },
   ];
 
@@ -855,7 +906,12 @@ export default function FixedAssetManagementPage() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="space-y-5"
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 leading-tight">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 border border-blue-200 text-blue-800 text-xs sm:text-sm font-semibold uppercase tracking-wider">
+                <Layers className="w-4 h-4 text-blue-600" />
+                Overview & Platform Capabilities
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900 tracking-tight leading-tight">
                 Streamlining Fixed Asset Management with Zoho Creator
               </h2>
 
@@ -890,7 +946,7 @@ export default function FixedAssetManagementPage() {
               <Layers className="w-4 h-4 text-blue-400" />
               Interactive Feature & Module Showcase
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white mb-6 tracking-tight leading-tight">
               Explore Fixed Asset Features & Live Screenshots
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-normal">
@@ -1120,7 +1176,7 @@ export default function FixedAssetManagementPage() {
               <CheckCircle2 className="w-4 h-4 text-blue-600" />
               Key Strategic & Operational Advantages
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900 mb-6 tracking-tight leading-tight">
               Why Enterprise Leaders Choose Our Fixed Asset Management Tool
             </h2>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-normal">
@@ -1137,10 +1193,10 @@ export default function FixedAssetManagementPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: (idx % 3) * 0.08 }}
-                className="p-6 sm:p-7 rounded-2xl bg-white border border-gray-200 hover:shadow-xl hover:border-blue-300 transition-all duration-300 group flex flex-col justify-between"
+                className={`p-6 sm:p-7 rounded-2xl bg-gradient-to-br ${b.cardGradient} border ${b.borderColor} hover:shadow-xl ${b.shadowHover} transition-all duration-300 group flex flex-col justify-between`}
               >
                 <div>
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${b.color} flex items-center justify-center text-white mb-5 group-hover:scale-105 transition-transform duration-300 shadow-md`}>
+                  <div className={`w-12 h-12 rounded-xl ${b.iconBg} border flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300 shadow-sm`}>
                     <b.icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2.5 group-hover:text-blue-600 transition-colors">
@@ -1150,10 +1206,10 @@ export default function FixedAssetManagementPage() {
                     {b.description}
                   </p>
                 </div>
-                <ul className="space-y-2 border-t border-gray-100 pt-4">
+                <ul className="space-y-2 border-t border-gray-200/60 pt-4">
                   {b.points.map((pt, j) => (
                     <li key={j} className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-700">
-                      <Check className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                      <Check className={`w-4 h-4 ${b.checkColor} shrink-0 mt-0.5`} />
                       <span>{pt}</span>
                     </li>
                   ))}
@@ -1168,7 +1224,11 @@ export default function FixedAssetManagementPage() {
       <section id="challenges" className="py-20 bg-white scroll-mt-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-100 border border-red-200 text-red-800 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4">
+              <AlertTriangle className="w-4 h-4 text-red-600" />
+              Problem & Solution Breakdown
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900 mb-6 tracking-tight leading-tight">
               Overcoming Traditional Asset Management Challenges
             </h2>
             <p className="text-base sm:text-lg text-gray-600">
@@ -1180,20 +1240,20 @@ export default function FixedAssetManagementPage() {
             {challenges.map((c, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-2xl border border-gray-200 bg-gray-50/50 hover:bg-white hover:shadow-xl transition-all duration-300"
+                className="p-8 rounded-2xl border border-red-100/80 bg-gradient-to-br from-white via-slate-50/60 to-red-50/30 hover:bg-white hover:border-red-200 hover:shadow-xl hover:shadow-red-500/5 transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-red-100 text-red-600 rounded-lg">
+                  <div className="p-2.5 bg-gradient-to-br from-red-100 to-rose-100 text-red-600 rounded-xl border border-red-200/60 shadow-sm">
                     <AlertTriangle className="w-5 h-5" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900">{c.challenge}</h3>
                 </div>
-                <div className="space-y-3 pl-2 border-l-2 border-red-200 mb-6">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-red-600">The Problem</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">{c.impact}</p>
+                <div className="space-y-2.5 p-4 rounded-xl bg-gradient-to-r from-red-50/70 to-orange-50/40 border-l-4 border-red-400 mb-5">
+                  <p className="text-xs font-bold uppercase tracking-wider text-red-700">The Problem & Business Impact</p>
+                  <p className="text-sm text-gray-700 leading-relaxed">{c.impact}</p>
                 </div>
-                <div className="space-y-2 pt-4 border-t border-gray-200">
-                  <div className="flex items-center gap-2 text-emerald-600 text-xs font-bold uppercase tracking-wider">
+                <div className="space-y-2.5 p-4 rounded-xl bg-gradient-to-r from-emerald-50/70 to-teal-50/40 border-l-4 border-emerald-500">
+                  <div className="flex items-center gap-2 text-emerald-700 text-xs font-bold uppercase tracking-wider">
                     <CheckCircle2 className="w-4 h-4" />
                     Zoho Creator Solution
                   </div>
@@ -1206,30 +1266,14 @@ export default function FixedAssetManagementPage() {
       </section>
 
       {/* ── 7. FAQ SECTION ─────────────────────────────────────────────────── */}
-      <section id="faq" className="py-20 bg-gray-50 scroll-mt-28">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-base text-gray-600">
-              Everything you need to know about our Fixed Asset Management tool.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {faqs.map((f, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 flex items-start gap-3">
-                  <HelpCircle className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                  {f.question}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed pl-8">{f.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQ
+        id="faq"
+        variant="zoho"
+        layout="sidebar"
+        cardTheme="light"
+        customSubtitle="Everything you need to know about our Fixed Asset Management tool on Zoho Creator — from depreciation rules and QR tracking to statutory compliance."
+        customFaqs={faqs}
+      />
 
 
 

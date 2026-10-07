@@ -183,9 +183,10 @@ interface FAQProps {
   customFaqs?: { q: string; a: string }[];
   customSubtitle?: string;
   layout?: "centered" | "sidebar";
+  cardTheme?: "dark" | "light";
 }
 
-export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar" }: FAQProps) => {
+export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar", cardTheme = "dark" }: FAQProps) => {
   const [activeCategory, setActiveCategory] = useState<"zoho" | "netsuite" | "netsuite-accounting" | "netsuite-global-business" | "netsuite-crm">(
     variant || "netsuite"
   );
@@ -233,15 +234,25 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
           <div className={`${layout === "sidebar" ? "lg:col-span-4 lg:sticky lg:top-24 lg:self-start" : "w-full max-w-4xl"}`}>
             <aside
               className={`relative p-8 rounded-2xl overflow-hidden shadow-2xl ${layout === "centered" ? "text-center flex flex-col items-center" : ""}`}
-              style={{
-                background: "linear-gradient(145deg, #0a1628 0%, #0f2a57 50%, #1a3a7a 100%)",
-              }}
+              style={
+                cardTheme === "light"
+                  ? {
+                      background: "linear-gradient(145deg, #f0f7ff 0%, #e0effe 50%, #eff6ff 100%)",
+                      border: "1px solid rgba(191, 219, 254, 0.8)",
+                      boxShadow: "0 20px 40px -15px rgba(37, 99, 235, 0.12)",
+                    }
+                  : {
+                      background: "linear-gradient(145deg, #0a1628 0%, #0f2a57 50%, #1a3a7a 100%)",
+                    }
+              }
             >
               {/* Subtle glow orb */}
               <div
                 className="absolute -top-10 -right-10 w-48 h-48 rounded-full"
                 style={{
-                  background: "radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%)",
+                  background: cardTheme === "light"
+                    ? "radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%)"
+                    : "radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%)",
                   filter: "blur(20px)",
                 }}
               />
@@ -249,7 +260,9 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
               <div
                 className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full"
                 style={{
-                  background: "radial-gradient(circle, rgba(99,179,237,0.15) 0%, transparent 70%)",
+                  background: cardTheme === "light"
+                    ? "radial-gradient(circle, rgba(99,179,237,0.12) 0%, transparent 70%)"
+                    : "radial-gradient(circle, rgba(99,179,237,0.15) 0%, transparent 70%)",
                   filter: "blur(18px)",
                 }}
               />
@@ -259,27 +272,31 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
                 <div
                   className="w-10 h-1 rounded-full"
                   style={{
-                    background: "linear-gradient(90deg, #60a5fa, #93c5fd)",
-                    boxShadow: "0 0 8px rgba(96,165,250,0.7)",
+                    background: cardTheme === "light"
+                      ? "linear-gradient(90deg, #2563eb, #60a5fa)"
+                      : "linear-gradient(90deg, #60a5fa, #93c5fd)",
+                    boxShadow: cardTheme === "light"
+                      ? "0 0 8px rgba(37,99,235,0.4)"
+                      : "0 0 8px rgba(96,165,250,0.7)",
                   }}
                 />
 
-                <h2 className={`text-3xl md:text-5xl font-medium tracking-tight ${layout === "centered" ? "text-center" : ""}`}>
-                  <span className="text-white">
+                <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight leading-tight ${layout === "centered" ? "text-center" : ""}`}>
+                  <span className={cardTheme === "light" ? "text-gray-900" : "text-white"}>
                     Frequently{" "}
                   </span>
                   {layout === "sidebar" && <br />}
-                  <span className="text-white">
+                  <span className={cardTheme === "light" ? "text-gray-900" : "text-white"}>
                     Asked{" "}
                   </span>
-                  <span style={{ color: "#93c5fd" }}>
+                  <span style={{ color: cardTheme === "light" ? "#2563eb" : "#93c5fd" }}>
                     Questions
                   </span>
                 </h2>
 
                 <p
                   className="leading-relaxed text-sm"
-                  style={{ color: "rgba(255,255,255,0.80)" }}
+                  style={{ color: cardTheme === "light" ? "rgba(55,65,81,0.85)" : "rgba(255,255,255,0.80)" }}
                 >
                   {customSubtitle
                     ? customSubtitle
