@@ -63,7 +63,6 @@ export default function FixedAssetManagementPage() {
   const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [activeTab, setActiveTab] = useState(0);
   const [activeFeatureIndex, setActiveFeatureIndex] = useState(0);
-  const [activeBenefit, setActiveBenefit] = useState(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [depreciationSubTab, setDepreciationSubTab] = useState<'dashboard' | 'company' | 'tax'>('dashboard');
 
@@ -1129,106 +1128,7 @@ export default function FixedAssetManagementPage() {
             </p>
           </div>
 
-          {/* Interactive Split Showcase: Live Preview Left (Wider) / Accordion List Right */}
-          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-8 xl:gap-12 items-stretch mb-20">
-            {/* Left Image Preview Container (WIDER SIDE) */}
-            <div className="relative min-h-[420px] lg:min-h-[560px] rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-slate-950 flex items-center justify-center p-2">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeBenefit}
-                  initial={{ opacity: 0, scale: 1.03 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.4 }}
-                  className="absolute inset-0 flex items-center justify-center bg-slate-950 p-3"
-                >
-                  <Image
-                    src={benefitsList[activeBenefit].image}
-                    alt={benefitsList[activeBenefit].title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 55vw"
-                    className={`cursor-pointer ${
-                      benefitsList[activeBenefit].image.includes('mobile')
-                        ? "object-contain p-4 max-h-[520px]"
-                        : "object-cover object-top"
-                    }`}
-                    onClick={() => setSelectedImage(benefitsList[activeBenefit].image)}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute bottom-6 left-6 right-6 text-white pointer-events-none">
-                    <span className="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold uppercase tracking-wider mb-2 shadow-md">
-                      Live Interface View
-                    </span>
-                    <h4 className="text-xl sm:text-2xl font-bold text-white mb-1 drop-shadow-md">
-                      {benefitsList[activeBenefit].title}
-                    </h4>
-                    <p className="text-xs sm:text-sm text-gray-300 line-clamp-2 drop-shadow">
-                      {benefitsList[activeBenefit].description}
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => setSelectedImage(benefitsList[activeBenefit].image)}
-                    className="absolute top-4 right-4 px-3.5 py-1.5 rounded-lg bg-black/80 hover:bg-black text-white text-xs font-semibold flex items-center gap-1.5 backdrop-blur-md transition-colors shadow-lg"
-                  >
-                    <Maximize2 className="w-4 h-4" />
-                    Expand View
-                  </button>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Right Accordion List */}
-            <div className="rounded-3xl border border-gray-200 bg-white p-4 sm:p-6 flex flex-col gap-2 justify-center shadow-xl">
-              {benefitsList.map((item, index) => {
-                const IconComponent = item.icon;
-                const isActive = activeBenefit === index;
-                return (
-                  <button
-                    key={index}
-                    onClick={() => setActiveBenefit(index)}
-                    className={`group w-full flex flex-col justify-center px-5 py-3.5 text-left rounded-xl transition-all duration-300 outline-none ${
-                      isActive
-                        ? "bg-blue-50 shadow-md border-l-4 border-blue-600"
-                        : "bg-transparent border-l-4 border-transparent hover:bg-gray-50"
-                    }`}
-                  >
-                    <div className="flex items-center gap-4 w-full">
-                      <div className={`p-2 rounded-lg shrink-0 transition-colors ${isActive ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600 group-hover:bg-gray-200"}`}>
-                        <IconComponent className="w-4 h-4" />
-                      </div>
-                      <span className={`text-sm sm:text-base flex-1 font-bold ${isActive ? "text-blue-950" : "text-gray-800"}`}>
-                        {item.title}
-                      </span>
-                      <ChevronRight className={`w-4 h-4 shrink-0 transition-all ${isActive ? "text-blue-600 rotate-90" : "text-gray-400 opacity-0 group-hover:opacity-60"}`} />
-                    </div>
-
-                    {isActive && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden mt-3 pl-10"
-                      >
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-3">
-                          {item.description}
-                        </p>
-                        <ul className="space-y-1.5">
-                          {item.points.map((pt, pi) => (
-                            <li key={pi} className="flex items-center gap-2 text-xs sm:text-sm text-gray-700 font-medium">
-                              <Check className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                              <span>{pt}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </motion.div>
-                    )}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Quick-Scan Grid of 10 Benefits Cards */}
+          {/* Benefits Cards Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefitsList.map((b, idx) => (
               <motion.div
@@ -1237,26 +1137,23 @@ export default function FixedAssetManagementPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: (idx % 3) * 0.08 }}
-                onClick={() => {
-                  setActiveBenefit(idx);
-                  const el = document.getElementById("benefits");
-                  if (el) el.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="p-6 rounded-2xl bg-white border border-gray-200 hover:shadow-xl hover:border-blue-300 transition-all duration-300 group cursor-pointer"
+                className="p-6 sm:p-7 rounded-2xl bg-white border border-gray-200 hover:shadow-xl hover:border-blue-300 transition-all duration-300 group flex flex-col justify-between"
               >
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${b.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md`}>
-                  <b.icon className="w-6 h-6" />
+                <div>
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${b.color} flex items-center justify-center text-white mb-5 group-hover:scale-105 transition-transform duration-300 shadow-md`}>
+                    <b.icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2.5 group-hover:text-blue-600 transition-colors">
+                    {b.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed font-normal mb-5">
+                    {b.description}
+                  </p>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                  {b.title}
-                </h3>
-                <p className="text-gray-600 text-xs leading-relaxed font-normal mb-4">
-                  {b.description}
-                </p>
-                <ul className="space-y-1.5 border-t border-gray-100 pt-3">
-                  {b.points.slice(0, 2).map((pt, j) => (
-                    <li key={j} className="flex items-center gap-2 text-xs text-gray-700">
-                      <Check className="w-3 h-3 text-blue-600 shrink-0" />
+                <ul className="space-y-2 border-t border-gray-100 pt-4">
+                  {b.points.map((pt, j) => (
+                    <li key={j} className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-700">
+                      <Check className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
                       <span>{pt}</span>
                     </li>
                   ))}
