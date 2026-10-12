@@ -296,8 +296,8 @@ export function getDiwaliExistingCustomerEmailTemplate(options: DiwaliEmailOptio
  * Diwali Email Template for Prospective Customers
  */
 export function getDiwaliProspectEmailTemplate(options: DiwaliEmailOptions = {}): string {
-  const name = options.recipientName?.trim() || 'Business Leader';
-  const preheader = 'Happy Diwali from AGSuite Technologies! Wishing you and your organization new beginnings, progress, and scalable growth.';
+  const name = options.recipientName?.trim() || 'Prospect';
+  const preheader = 'Happy Diwali from AGSuite Technologies! Wishing you and your team new beginnings, fresh opportunities, and continued success.';
 
   const bodyHtml = `
               <!-- Greeting & Letter Body -->
@@ -311,39 +311,35 @@ export function getDiwaliProspectEmailTemplate(options: DiwaliEmailOptions = {})
                 </p>
 
                 <p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
-                  Diwali symbolizes new beginnings, fresh opportunities, and the light of progress. As your organization looks ahead to another year of growth, we wish you continued success, prosperity, and exciting new possibilities.
+                  As we celebrate the festival of lights, we wish you and your team new beginnings, fresh opportunities, and continued success in the year ahead.
                 </p>
 
                 <p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
-                  At <strong style="color: #ffffff;">AGSuite Technologies</strong>, we help businesses simplify operations, improve visibility, and scale with confidence through <strong style="color: #ffffff;">Oracle NetSuite ERP solutions</strong>.
+                  It has been a pleasure connecting with you and learning about your business goals. At <strong style="color: #ffffff;">AGSuite Technologies</strong>, we look forward to continuing our conversations and exploring how <strong style="color: #ffffff;">Oracle NetSuite ERP</strong> can help your organization streamline operations, gain better business visibility, and build a strong foundation for future growth.
                 </p>
 
                 <p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
-                  Whether you are exploring ERP implementation, migrating from SAP or another legacy system, optimizing your existing NetSuite environment, or looking to automate business processes, our team would be happy to understand your requirements and explore how we can help.
-                </p>
-
-                <p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
-                  This festive season could be the perfect time to take the next step toward a more connected, efficient, and future-ready business.
+                  Whether we are just beginning to understand your requirements or have already explored the solution through our discussions and demos, we appreciate the opportunity to engage with your team and look forward to taking the next steps together at your convenience.
                 </p>
 
                 <p style="margin: 0 0 18px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
-                  We would welcome the opportunity to connect with you and discuss your business goals whenever convenient.
+                  May this Diwali bring new opportunities, prosperity, and success to your organization.
                 </p>
 
                 <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; font-weight: 600; color: #f1f5f9; font-family: 'Segoe UI', Arial, sans-serif;">
-                  Wishing you and your team a <strong style="color: #f5b700;">Happy Diwali filled with prosperity, innovation, and success!</strong>
+                  Wishing you and your team a <strong style="color: #f5b700;">bright, prosperous, and joyful Diwali!</strong>
                 </p>
 
                 <!-- Sign-off Block -->
                 <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(212, 175, 55, 0.25);">
                   <p style="margin: 0 0 4px 0; font-size: 14px; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
-                    Best regards,
+                    Warm regards,
                   </p>
                   <p style="margin: 0 0 3px 0; font-size: 16px; font-weight: 700; color: #ffffff; font-family: 'Segoe UI', Arial, sans-serif;">
                     Team AGSuite Technologies
                   </p>
                   <p style="margin: 0 0 8px 0; font-size: 13px; font-style: italic; color: #d4af37; font-family: 'Segoe UI', Arial, sans-serif;">
-                    Empowering Businesses with Real-Time Insights, Control &amp; Scalable Growth
+                    Oracle NetSuite ERP Solutions Partner
                   </p>
                   <p style="margin: 0; font-size: 13px; color: #94a3b8; font-family: 'Segoe UI', Arial, sans-serif;">
                     Website: <a href="https://agsuitetech.com" target="_blank" rel="noopener noreferrer" style="color: #f5b700; text-decoration: none; font-weight: 600;">agsuitetech.com</a>
