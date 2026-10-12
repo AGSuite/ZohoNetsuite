@@ -1,11 +1,15 @@
+export type DiwaliAudienceType = 'existing' | 'prospect';
+
 export interface DiwaliEmailOptions {
   recipientName?: string;
   companyName?: string;
+  type?: DiwaliAudienceType;
 }
 
-export function getDiwaliEmailTemplate(options: DiwaliEmailOptions = {}): string {
-  const name = options.recipientName?.trim() || 'Valued Partner & Client';
-
+/**
+ * Shared HTML email layout with AGSuite festive theme, header, partner badges, social links & footer
+ */
+function renderDiwaliEmailShell(preheaderText: string, bodyContentHtml: string): string {
   return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
@@ -65,7 +69,7 @@ export function getDiwaliEmailTemplate(options: DiwaliEmailOptions = {}): string
 
   <!-- PREHEADER -->
   <div style="display: none; font-size: 1px; color: #0b132b; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-    Wishing you a luminous, joyful, and prosperous Diwali! ✨ Thank you for connecting with AGSuite Technologies.
+    ${preheaderText}
     &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
   </div>
 
@@ -122,40 +126,7 @@ export function getDiwaliEmailTemplate(options: DiwaliEmailOptions = {}): string
                 </tr>
               </table>
 
-              <!-- Greeting Message -->
-              <p style="margin: 0 0 16px 0; font-size: 17px; line-height: 1.6; color: #f1f5f9; font-family: 'Segoe UI', Arial, sans-serif;">
-                Dear <strong style="color: #f5b700;">${name}</strong>,
-              </p>
-
-              <p style="margin: 0 0 18px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
-                Thank you for reaching out to <strong style="color: #ffffff;">AGSuite Technologies</strong>. We have received your request and our enterprise solutions team will contact you shortly to discuss how we can empower your business.
-              </p>
-
-              <p style="margin: 0 0 20px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
-                As the auspicious lights of Diwali illuminate homes and hearts, we extend our warmest wishes to you, your family, and your team for boundless joy, good health, and stellar growth in the year ahead!
-              </p>
-
-              <!-- Immediate Assistance -->
-              <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 20px auto; background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 8px; padding: 12px 24px;">
-                <tr>
-                  <td align="center" style="font-size: 14px; color: #e2e8f0; font-family: 'Segoe UI', Arial, sans-serif;">
-                    <strong style="color: #f5b700;">For Immediate Assistance:</strong><br />
-                    Call: <a href="tel:+919461046161" style="color: #ffffff; font-weight: 600; text-decoration: none;">+91 9461046161</a> &nbsp;|&nbsp; 
-                    Email: <a href="mailto:hello@agsuitetech.com" style="color: #ffffff; font-weight: 600; text-decoration: none;">hello@agsuitetech.com</a>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- CTA Button -->
-              <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 24px auto 8px auto;">
-                <tr>
-                  <td align="center" style="border-radius: 28px; background: linear-gradient(135deg, #e5a700 0%, #b38200 100%); background-color: #d4af37;">
-                    <a href="https://agsuitetech.com" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 14px 34px; font-size: 13px; font-weight: 700; letter-spacing: 0.8px; color: #0b132b; text-decoration: none; border-radius: 28px; text-transform: uppercase;">
-                      Visit AGSuite Technologies &rarr;
-                    </a>
-                  </td>
-                </tr>
-              </table>
+              ${bodyContentHtml}
 
             </td>
           </tr>
@@ -250,4 +221,157 @@ export function getDiwaliEmailTemplate(options: DiwaliEmailOptions = {}): string
 
 </body>
 </html>`;
+}
+
+/**
+ * Diwali Email Template for Existing Customers
+ */
+export function getDiwaliExistingCustomerEmailTemplate(options: DiwaliEmailOptions = {}): string {
+  const name = options.recipientName?.trim() || 'Valued Customer';
+  const preheader = 'Warm Diwali wishes from AGSuite Technologies! Thank you for your continued trust and partnership.';
+
+  const bodyHtml = `
+              <!-- Greeting & Letter Body -->
+              <div style="text-align: left;">
+                <p style="margin: 0 0 16px 0; font-size: 16px; line-height: 1.6; color: #f1f5f9; font-family: 'Segoe UI', Arial, sans-serif;">
+                  Dear <strong style="color: #f5b700;">${name}</strong>,
+                </p>
+
+                <p style="margin: 0 0 16px 0; font-size: 17px; line-height: 1.5; font-weight: 700; color: #f5b700; font-family: 'Segoe UI', Arial, sans-serif;">
+                  Warm Diwali wishes from AGSuite Technologies!
+                </p>
+
+                <p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
+                  As we celebrate the festival of lights, we would like to thank you for your continued trust and partnership. It has been a pleasure being part of your business journey, and we truly value the relationship we share with you.
+                </p>
+
+                <p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
+                  May this Diwali bring new opportunities, prosperity, and success to you and your organization. May the year ahead be filled with growth, innovation, and new milestones.
+                </p>
+
+                <p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
+                  As your business continues to evolve, our team remains committed to supporting your <strong style="color: #ffffff;">Oracle NetSuite ERP journey</strong> through reliable support, process optimization, automation, and solutions that help your business operate more efficiently.
+                </p>
+
+                <p style="margin: 0 0 18px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
+                  We look forward to achieving many more milestones together.
+                </p>
+
+                <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; font-weight: 600; color: #f1f5f9; font-family: 'Segoe UI', Arial, sans-serif;">
+                  Wishing you, your team, and your family a <strong style="color: #f5b700;">Happy, Safe, and Prosperous Diwali!</strong>
+                </p>
+
+                <!-- Sign-off Block -->
+                <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(212, 175, 55, 0.25);">
+                  <p style="margin: 0 0 4px 0; font-size: 14px; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
+                    Warm regards,
+                  </p>
+                  <p style="margin: 0 0 3px 0; font-size: 16px; font-weight: 700; color: #ffffff; font-family: 'Segoe UI', Arial, sans-serif;">
+                    Team AGSuite Technologies
+                  </p>
+                  <p style="margin: 0 0 8px 0; font-size: 13px; font-style: italic; color: #d4af37; font-family: 'Segoe UI', Arial, sans-serif;">
+                    Your Partner in Smarter Business Growth
+                  </p>
+                  <p style="margin: 0; font-size: 13px; color: #94a3b8; font-family: 'Segoe UI', Arial, sans-serif;">
+                    Website: <a href="https://agsuitetech.com" target="_blank" rel="noopener noreferrer" style="color: #f5b700; text-decoration: none; font-weight: 600;">agsuitetech.com</a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- CTA Button -->
+              <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 28px auto 8px auto;">
+                <tr>
+                  <td align="center" style="border-radius: 28px; background: linear-gradient(135deg, #e5a700 0%, #b38200 100%); background-color: #d4af37;">
+                    <a href="https://agsuitetech.com" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 13px 32px; font-size: 13px; font-weight: 700; letter-spacing: 0.8px; color: #0b132b; text-decoration: none; border-radius: 28px; text-transform: uppercase;">
+                      Visit AGSuite Technologies &rarr;
+                    </a>
+                  </td>
+                </tr>
+              </table>`;
+
+  return renderDiwaliEmailShell(preheader, bodyHtml);
+}
+
+/**
+ * Diwali Email Template for Prospective Customers
+ */
+export function getDiwaliProspectEmailTemplate(options: DiwaliEmailOptions = {}): string {
+  const name = options.recipientName?.trim() || 'Business Leader';
+  const preheader = 'Happy Diwali from AGSuite Technologies! Wishing you and your organization new beginnings, progress, and scalable growth.';
+
+  const bodyHtml = `
+              <!-- Greeting & Letter Body -->
+              <div style="text-align: left;">
+                <p style="margin: 0 0 16px 0; font-size: 16px; line-height: 1.6; color: #f1f5f9; font-family: 'Segoe UI', Arial, sans-serif;">
+                  Dear <strong style="color: #f5b700;">${name}</strong>,
+                </p>
+
+                <p style="margin: 0 0 16px 0; font-size: 17px; line-height: 1.5; font-weight: 700; color: #f5b700; font-family: 'Segoe UI', Arial, sans-serif;">
+                  Happy Diwali from AGSuite Technologies!
+                </p>
+
+                <p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
+                  Diwali symbolizes new beginnings, fresh opportunities, and the light of progress. As your organization looks ahead to another year of growth, we wish you continued success, prosperity, and exciting new possibilities.
+                </p>
+
+                <p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
+                  At <strong style="color: #ffffff;">AGSuite Technologies</strong>, we help businesses simplify operations, improve visibility, and scale with confidence through <strong style="color: #ffffff;">Oracle NetSuite ERP solutions</strong>.
+                </p>
+
+                <p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
+                  Whether you are exploring ERP implementation, migrating from SAP or another legacy system, optimizing your existing NetSuite environment, or looking to automate business processes, our team would be happy to understand your requirements and explore how we can help.
+                </p>
+
+                <p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
+                  This festive season could be the perfect time to take the next step toward a more connected, efficient, and future-ready business.
+                </p>
+
+                <p style="margin: 0 0 18px 0; font-size: 15px; line-height: 1.7; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
+                  We would welcome the opportunity to connect with you and discuss your business goals whenever convenient.
+                </p>
+
+                <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; font-weight: 600; color: #f1f5f9; font-family: 'Segoe UI', Arial, sans-serif;">
+                  Wishing you and your team a <strong style="color: #f5b700;">Happy Diwali filled with prosperity, innovation, and success!</strong>
+                </p>
+
+                <!-- Sign-off Block -->
+                <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(212, 175, 55, 0.25);">
+                  <p style="margin: 0 0 4px 0; font-size: 14px; color: #cbd5e1; font-family: 'Segoe UI', Arial, sans-serif;">
+                    Best regards,
+                  </p>
+                  <p style="margin: 0 0 3px 0; font-size: 16px; font-weight: 700; color: #ffffff; font-family: 'Segoe UI', Arial, sans-serif;">
+                    Team AGSuite Technologies
+                  </p>
+                  <p style="margin: 0 0 8px 0; font-size: 13px; font-style: italic; color: #d4af37; font-family: 'Segoe UI', Arial, sans-serif;">
+                    Empowering Businesses with Real-Time Insights, Control &amp; Scalable Growth
+                  </p>
+                  <p style="margin: 0; font-size: 13px; color: #94a3b8; font-family: 'Segoe UI', Arial, sans-serif;">
+                    Website: <a href="https://agsuitetech.com" target="_blank" rel="noopener noreferrer" style="color: #f5b700; text-decoration: none; font-weight: 600;">agsuitetech.com</a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- CTA Button -->
+              <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 28px auto 8px auto;">
+                <tr>
+                  <td align="center" style="border-radius: 28px; background: linear-gradient(135deg, #e5a700 0%, #b38200 100%); background-color: #d4af37;">
+                    <a href="https://agsuitetech.com" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 13px 32px; font-size: 13px; font-weight: 700; letter-spacing: 0.8px; color: #0b132b; text-decoration: none; border-radius: 28px; text-transform: uppercase;">
+                      Connect with AGSuite &rarr;
+                    </a>
+                  </td>
+                </tr>
+              </table>`;
+
+  return renderDiwaliEmailShell(preheader, bodyHtml);
+}
+
+/**
+ * Default Diwali Email Template Dispatcher
+ * Defaults to 'existing' customer template if type is omitted.
+ */
+export function getDiwaliEmailTemplate(options: DiwaliEmailOptions = {}): string {
+  if (options.type === 'prospect') {
+    return getDiwaliProspectEmailTemplate(options);
+  }
+  return getDiwaliExistingCustomerEmailTemplate(options);
 }
