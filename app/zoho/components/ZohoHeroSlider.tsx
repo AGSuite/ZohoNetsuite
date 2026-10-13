@@ -328,7 +328,7 @@ export default function ZohoHeroSlider() {
               )}
             </div>
           }
-          title="50+ Integrated Zoho Apps for Modern Businesses"
+          title="50+ AI-enabled Integrated Zoho Apps"
           titleGradient="bg-gradient-to-r from-slate-950 via-slate-900 to-cyan-600 bg-clip-text text-transparent"
           desc="Zoho Apps offer a complete set of tools to manage and streamline business operations. They help improve productivity, automate tasks, and support smarter business growth."
           cta="Explore Zoho One"
@@ -597,7 +597,7 @@ export default function ZohoHeroSlider() {
         <HeroSlide
           isActive={activeIndex === 3}
           bg="/images/Background/herobg5.png"
-          title="Experience Zoho One — The Operating System for Business"
+          title="Experience AI-powered Zoho One — The Operating System for Business"
           titleGradient="bg-gradient-to-r from-slate-950 via-slate-900 to-blue-600 bg-clip-text text-transparent"
           desc="Unify your sales, marketing, finance, HR, and operations on a single, secure cloud platform of over 50+ integrated applications."
           cta="Explore Zoho One"
@@ -863,7 +863,7 @@ export default function ZohoHeroSlider() {
               )}
             </div>
           }
-          title="Drive Smarter Growth with Powerful Zoho ERP Solutions"
+          title="Drive Smarter Growth with Powerful AI-enabled Zoho ERP"
           titleGradient="bg-gradient-to-r from-slate-950 via-slate-900 to-amber-600 bg-clip-text text-transparent"
           desc="Simplify operations, boost efficiency, and scale your business confidently with smart, integrated Zoho ERP solutions."
           cta="Explore Zoho ERP"
