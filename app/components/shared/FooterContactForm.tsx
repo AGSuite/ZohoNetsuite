@@ -37,14 +37,16 @@ function FooterStatCard({ item }: { item: any; index?: number }) {
 
 interface FooterContactFormProps {
   platform: 'NetSuite' | 'Zoho';
+  contentVariant?: 'Odoo';
 }
 
-export default function FooterContactForm({ platform }: FooterContactFormProps) {
+export default function FooterContactForm({ platform, contentVariant }: FooterContactFormProps) {
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const isNetSuite = platform === 'NetSuite';
+  const isOdooContent = contentVariant === 'Odoo';
 
   const config = isNetSuite
     ? {
@@ -275,7 +277,9 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                       transition={{ delay: 0.1 }}
                       className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-3 tracking-tight leading-tight"
                     >
-                      {isNetSuite ? (
+                      {isOdooContent ? (
+                        <>Transform Your Operations with <span className="bg-gradient-to-r from-purple-400 via-fuchsia-400 to-blue-400 bg-clip-text text-transparent">Odoo Solutions</span></>
+                      ) : isNetSuite ? (
                         <>Transform Your Business with <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">Oracle NetSuite</span></>
                       ) : (
                         <>Accelerate Growth with <span className="bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500 bg-clip-text text-transparent">Zoho Solutions</span></>
@@ -289,7 +293,9 @@ export default function FooterContactForm({ platform }: FooterContactFormProps) 
                       transition={{ delay: 0.2 }}
                       className="text-gray-300 text-xs sm:text-sm lg:text-base leading-relaxed max-w-xl"
                     >
-                      {isNetSuite
+                      {isOdooContent
+                        ? 'Connect with our Odoo specialists for implementation, customization, integrations, migration, training, and ongoing support shaped around your business.'
+                        : isNetSuite
                         ? 'Connect with our certified NetSuite consultants for licensing, multi-subsidiary implementations, optimizations, and custom integrations tailored for enterprise scale.'
                         : 'Partner with AGSuite for complete Zoho ecosystem strategy, implementation, custom deluge development, license optimization, and 24/7 technical support.'}
                     </motion.p>
