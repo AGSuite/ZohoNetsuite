@@ -6,7 +6,7 @@ import Image from "next/image";
 import { ArrowRight, Menu, X } from "lucide-react";
 
 const navItems = [
-  { label: "About Us", href: "/odoo#overview" },
+  { label: "About Us", href: "/odoo/about-us" },
   { label: "Solution", href: "/odoo#apps" },
   { label: "Services", href: "/odoo#services" },
   { label: "Industries", href: "/odoo#industries" },

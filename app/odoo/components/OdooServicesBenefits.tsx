@@ -64,12 +64,9 @@ export default function OdooServicesBenefits() {
           transition={{ duration: 0.6 }}
           className="mx-auto mb-14 max-w-4xl text-center"
         >
-          <h2 className="bg-gradient-to-r from-[#3f245f] via-[#643b9f] to-[#2563eb] bg-clip-text text-4xl font-medium tracking-tight text-transparent sm:text-5xl">
+          <h2 className="whitespace-nowrap bg-gradient-to-r from-[#3f245f] via-[#643b9f] to-[#2563eb] bg-clip-text text-[clamp(0.875rem,4vw,3rem)] font-medium leading-tight tracking-tight text-transparent">
             Odoo Services Built Around Your Business
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-            Our work connects platform decisions to real operating outcomes—from process discovery and configuration to adoption and continuous improvement.
-          </p>
         </motion.div>
 
         <div className="grid items-stretch gap-8 lg:grid-cols-[2fr_3fr] lg:gap-10">

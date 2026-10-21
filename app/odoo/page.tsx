@@ -4,17 +4,14 @@ import Link from "next/link";
 import Script from "next/script";
 import OdooTrustMetrics from "./components/OdooTrustMetrics";
 import OdooServicesBenefits from "./components/OdooServicesBenefits";
+import OdooHeroSlider from "./components/OdooHeroSlider";
 import FooterContactForm from "@/app/components/shared/FooterContactForm";
 import {
   ArrowRight,
   BarChart3,
-  Boxes,
-  Check,
   CircleDollarSign,
   Compass,
   Factory,
-  Gauge,
-  Headphones,
   HeartHandshake,
   PackageCheck,
   PencilRuler,
@@ -81,78 +78,7 @@ export default function OdooHomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      <section id="overview" className="relative isolate min-h-[700px] overflow-hidden px-6 pb-12 pt-28 lg:pt-32">
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_12%_18%,rgba(100,59,159,0.10),transparent_32%),radial-gradient(circle_at_88%_25%,rgba(37,99,235,0.08),transparent_30%),linear-gradient(135deg,#ffffff_0%,#ffffff_52%,#faf9ff_76%,#f7faff_100%)]" />
-        <div className="absolute left-[-8rem] top-40 -z-10 h-72 w-72 rounded-full border-[40px] border-[#643b9f]/5" />
-        <div className="absolute right-[-5rem] top-28 -z-10 h-64 w-64 rounded-full bg-[#2563eb]/5 blur-2xl" />
-
-        <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[0.92fr_1.08fr]">
-          <div>
-            <h1 className="max-w-2xl text-4xl font-medium leading-[1.2] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-6xl">
-              Your trusted  <br />Odoo partner
-              <span className="block bg-gradient-to-r from-[#643b9f] via-[#7048c8] to-[#2563eb] bg-clip-text text-transparent">for smarter business growth</span>
-            </h1>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-slate-600">
-              AGSuite Technologies helps you connect sales, finance, inventory, manufacturing, projects, people, and commerce through a tailored Odoo environment—implemented around your processes, priorities, and growth plans.
-            </p>
-            <div className="mt-7 flex flex-col gap-4 sm:flex-row">
-              <Link href="#contact" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#643b9f] px-7 py-4 font-bold text-white shadow-xl shadow-[#643b9f]/20 transition hover:-translate-y-1 hover:bg-[#4c2d7d]">
-                Plan your Odoo journey <ArrowRight size={18} />
-              </Link>
-              <Link href="#apps" className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-7 py-4 font-bold text-slate-700 transition hover:border-[#643b9f]/40 hover:text-[#643b9f]">
-                Explore the app suite
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative mx-auto w-full max-w-2xl lg:-translate-y-6">
-            <div className="absolute -inset-8 rounded-[3rem] bg-gradient-to-br from-[#643b9f]/20 via-white to-[#2563eb]/20 blur-2xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/90 p-3 shadow-[0_35px_90px_-35px_rgba(56,36,52,0.42)] backdrop-blur">
-              <div className="flex items-center justify-between rounded-t-[1.4rem] bg-[#332b33] px-5 py-4 text-white">
-                <div className="flex items-center gap-3">
-                  <div className="grid h-9 w-9 place-items-center rounded-xl bg-[#643b9f] text-sm font-black">O</div>
-                  <div><p className="text-sm font-bold">Business workspace</p><p className="text-[11px] text-slate-400">Connected operations overview</p></div>
-                </div>
-                <div className="flex gap-1.5" aria-hidden="true"><span className="h-2 w-2 rounded-full bg-[#2563eb]" /><span className="h-2 w-2 rounded-full bg-slate-500" /><span className="h-2 w-2 rounded-full bg-slate-500" /></div>
-              </div>
-              <div className="grid gap-3 bg-[#f1effb] p-4 sm:grid-cols-[0.82fr_1.18fr]">
-                <div className="space-y-3">
-                  <div className="rounded-2xl bg-[#643b9f] p-5 text-white">
-                    <p className="text-xs font-semibold text-white/70">Today&apos;s focus</p>
-                    <p className="mt-2 text-2xl font-bold">One source of truth</p>
-                    <div className="mt-5 h-1.5 overflow-hidden rounded-full bg-white/20"><div className="h-full w-3/4 rounded-full bg-[#93c5fd]" /></div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    {[
-                      { label: "Sales", icon: BarChart3, color: "text-[#643b9f]" },
-                      { label: "Stock", icon: Boxes, color: "text-[#2563eb]" },
-                      { label: "Finance", icon: CircleDollarSign, color: "text-amber-600" },
-                      { label: "Service", icon: Headphones, color: "text-blue-600" },
-                    ].map(({ label, icon: Icon, color }) => (
-                      <div key={label} className="rounded-2xl bg-white p-4 shadow-sm"><Icon size={20} className={color} /><p className="mt-4 text-xs font-bold text-slate-700">{label}</p></div>
-                    ))}
-                  </div>
-                </div>
-                <div className="rounded-2xl bg-white p-5 shadow-sm">
-                  <div className="flex items-center justify-between"><div><p className="text-xs text-slate-400">Operations</p><p className="font-bold text-slate-800">Live workflow</p></div><Gauge size={22} className="text-[#2563eb]" /></div>
-                  <div className="mt-8 flex h-32 items-end gap-2" aria-label="Illustrative operations chart">
-                    {[38, 57, 47, 72, 61, 86, 77, 94].map((height, index) => (
-                      <div key={height} className="flex-1 rounded-t-md bg-gradient-to-t from-[#643b9f] to-[#a78bfa]" style={{ height: `${height}%`, opacity: 0.62 + index * 0.045 }} />
-                    ))}
-                  </div>
-                  <div className="mt-6 space-y-3">
-                    {["Quote approved", "Inventory reserved", "Invoice scheduled"].map((item, index) => (
-                      <div key={item} className="flex items-center gap-3 rounded-xl bg-slate-50 px-3 py-2.5 text-xs font-semibold text-slate-600">
-                        <span className={`grid h-6 w-6 place-items-center rounded-full ${index === 2 ? "bg-[#2563eb]/10 text-[#1d4ed8]" : "bg-[#643b9f]/10 text-[#643b9f]"}`}><Check size={13} /></span>{item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <OdooHeroSlider />
 
       <OdooTrustMetrics />
 
