@@ -74,7 +74,7 @@ const serviceSchema = {
 
 export default function OdooHomePage() {
   return (
-    <div className="overflow-hidden bg-white">
+    <div className="overflow-x-clip bg-white">
       <Script
         id="odoo-service-schema"
         type="application/ld+json"
