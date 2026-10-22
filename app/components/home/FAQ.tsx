@@ -177,8 +177,43 @@ const zohoFaqs = [
   },
 ];
 
+const odooFaqs = [
+  {
+    q: "What is Odoo ERP and how does it work?",
+    a: "Odoo is a comprehensive, open-source business management platform that unifies CRM, sales, accounting, inventory, manufacturing, human resources, and eCommerce into a single integrated system. Its modular framework lets you start with the applications you need today and seamlessly add more as your business expands.",
+  },
+  {
+    q: "Is Odoo ERP suitable for mid-sized and growing businesses?",
+    a: "Yes. Odoo is designed for high scalability, serving fast-growing mid-market companies to large multi-entity enterprises. Its flexibility, modern interface, and robust API ecosystem eliminate operational silos across sales, finance, inventory, and supply chain.",
+  },
+  {
+    q: "What is the difference between Odoo Community and Odoo Enterprise?",
+    a: "Odoo Community is the open-source edition covering basic business needs. Odoo Enterprise includes full mobile responsiveness, advanced accounting (automated bank reconciliation, dynamic financial reports), Odoo Studio customization, barcode warehouse management, full MRP II manufacturing, and official version upgrades.",
+  },
+  {
+    q: "How long does an Odoo ERP implementation take?",
+    a: "A typical Odoo implementation takes 6 to 16 weeks depending on the number of apps, customization requirements, data migration scope, and third-party integrations. AGSuite follows a structured, agile delivery methodology to guarantee predictable milestones and fast time-to-value.",
+  },
+  {
+    q: "Can Odoo integrate with our existing third-party systems?",
+    a: "Absolutely. Odoo provides robust REST and XML-RPC APIs, enabling seamless bi-directional integration with payment gateways (Stripe, Razorpay, PayPal), logistics providers, eCommerce channels (Shopify, WooCommerce, Amazon), banking feeds, and custom legacy databases.",
+  },
+  {
+    q: "Can we migrate our legacy data from SAP, Tally, QuickBooks, or Excel into Odoo?",
+    a: "Yes. AGSuite provides end-to-end data migration services. We extract, clean, map, and validate your historical chart of accounts, open invoices, customer/vendor masters, product catalogs, and inventory balances to ensure complete accuracy with zero data loss.",
+  },
+  {
+    q: "Can Odoo be customized to fit our specific operational processes?",
+    a: "Yes. Odoo is one of the most flexible ERP platforms on the market. AGSuite's certified Odoo developers create bespoke modules, configure approval hierarchies, automate multi-level business workflows, and build tailored reports and analytics dashboards aligned with your exact processes.",
+  },
+  {
+    q: "What ongoing support and maintenance does AGSuite provide after go-live?",
+    a: "We offer dedicated post-implementation managed support including 24/7 technical assistance, system health monitoring, routine performance tuning, module enhancements, user training, and version upgrade assistance to keep your Odoo ecosystem operating smoothly.",
+  },
+];
+
 interface FAQProps {
-  variant?: "zoho" | "netsuite" | "netsuite-accounting" | "netsuite-global-business" | "netsuite-crm";
+  variant?: "zoho" | "netsuite" | "netsuite-accounting" | "netsuite-global-business" | "netsuite-crm" | "odoo";
   id?: string;
   customFaqs?: { q: string; a: string }[];
   customSubtitle?: string;
@@ -187,7 +222,7 @@ interface FAQProps {
 }
 
 export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar", cardTheme = "dark" }: FAQProps) => {
-  const [activeCategory, setActiveCategory] = useState<"zoho" | "netsuite" | "netsuite-accounting" | "netsuite-global-business" | "netsuite-crm">(
+  const [activeCategory, setActiveCategory] = useState<"zoho" | "netsuite" | "netsuite-accounting" | "netsuite-global-business" | "netsuite-crm" | "odoo">(
     variant || "netsuite"
   );
   const [openItems, setOpenItems] = useState<{ [key: number]: boolean }>({});
@@ -196,13 +231,15 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
     ? customFaqs
     : activeCategory === "zoho"
       ? zohoFaqs
-      : activeCategory === "netsuite-accounting"
-        ? accountingFaqs
-        : activeCategory === "netsuite-global-business"
-          ? globalBusinessFaqs
-          : activeCategory === "netsuite-crm"
-            ? crmFaqs
-            : netsuiteFaqs;
+      : activeCategory === "odoo"
+        ? odooFaqs
+        : activeCategory === "netsuite-accounting"
+          ? accountingFaqs
+          : activeCategory === "netsuite-global-business"
+            ? globalBusinessFaqs
+            : activeCategory === "netsuite-crm"
+              ? crmFaqs
+              : netsuiteFaqs;
 
   const toggle = (idx: number) => {
     setOpenItems((prev) => ({ ...prev, [idx]: !prev[idx] }));
@@ -222,9 +259,9 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
   };
 
   return (
-    <div id={id} className={`w-full relative text-gray-800 ${variant === "zoho" ? "bg-white" : "bg-[#f0f4ff]"} scroll-mt-36`}>
+    <div id={id} className={`w-full relative text-gray-800 ${variant === "zoho" || variant === "odoo" ? "bg-white" : "bg-[#f0f4ff]"} scroll-mt-36`}>
       <Script
-        id={`faq-schema-${variant}`}
+        id={`faq-schema-${variant || activeCategory}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
@@ -237,12 +274,20 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
               style={
                 cardTheme === "light"
                   ? {
-                      background: "linear-gradient(145deg, #f0f7ff 0%, #e0effe 50%, #eff6ff 100%)",
-                      border: "1px solid rgba(191, 219, 254, 0.8)",
-                      boxShadow: "0 20px 40px -15px rgba(37, 99, 235, 0.12)",
+                      background: activeCategory === "odoo"
+                        ? "linear-gradient(145deg, #fdf8ff 0%, #f4e8ff 50%, #faeefd 100%)"
+                        : "linear-gradient(145deg, #f0f7ff 0%, #e0effe 50%, #eff6ff 100%)",
+                      border: activeCategory === "odoo"
+                        ? "1px solid rgba(216, 180, 254, 0.8)"
+                        : "1px solid rgba(191, 219, 254, 0.8)",
+                      boxShadow: activeCategory === "odoo"
+                        ? "0 20px 40px -15px rgba(100, 59, 159, 0.14)"
+                        : "0 20px 40px -15px rgba(37, 99, 235, 0.12)",
                     }
                   : {
-                      background: "linear-gradient(145deg, #0a1628 0%, #0f2a57 50%, #1a3a7a 100%)",
+                      background: activeCategory === "odoo"
+                        ? "linear-gradient(145deg, #160e26 0%, #2b1342 50%, #4a1d6d 100%)"
+                        : "linear-gradient(145deg, #0a1628 0%, #0f2a57 50%, #1a3a7a 100%)",
                     }
               }
             >
@@ -250,7 +295,9 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
               <div
                 className="absolute -top-10 -right-10 w-48 h-48 rounded-full"
                 style={{
-                  background: cardTheme === "light"
+                  background: activeCategory === "odoo"
+                    ? "radial-gradient(circle, rgba(168,85,247,0.30) 0%, transparent 70%)"
+                    : cardTheme === "light"
                     ? "radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%)"
                     : "radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%)",
                   filter: "blur(20px)",
@@ -260,7 +307,9 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
               <div
                 className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full"
                 style={{
-                  background: cardTheme === "light"
+                  background: activeCategory === "odoo"
+                    ? "radial-gradient(circle, rgba(113,75,103,0.25) 0%, transparent 70%)"
+                    : cardTheme === "light"
                     ? "radial-gradient(circle, rgba(99,179,237,0.12) 0%, transparent 70%)"
                     : "radial-gradient(circle, rgba(99,179,237,0.15) 0%, transparent 70%)",
                   filter: "blur(18px)",
@@ -272,10 +321,14 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
                 <div
                   className="w-10 h-1 rounded-full"
                   style={{
-                    background: cardTheme === "light"
+                    background: activeCategory === "odoo"
+                      ? (cardTheme === "light" ? "linear-gradient(90deg, #643b9f, #a855f7)" : "linear-gradient(90deg, #c084fc, #e879f9)")
+                      : cardTheme === "light"
                       ? "linear-gradient(90deg, #2563eb, #60a5fa)"
                       : "linear-gradient(90deg, #60a5fa, #93c5fd)",
-                    boxShadow: cardTheme === "light"
+                    boxShadow: activeCategory === "odoo"
+                      ? "0 0 8px rgba(168,85,247,0.6)"
+                      : cardTheme === "light"
                       ? "0 0 8px rgba(37,99,235,0.4)"
                       : "0 0 8px rgba(96,165,250,0.7)",
                   }}
@@ -289,7 +342,7 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
                   <span className={cardTheme === "light" ? "text-gray-900" : "text-white"}>
                     Asked{" "}
                   </span>
-                  <span style={{ color: cardTheme === "light" ? "#2563eb" : "#93c5fd" }}>
+                  <span style={{ color: activeCategory === "odoo" ? (cardTheme === "light" ? "#643b9f" : "#d8b4fe") : (cardTheme === "light" ? "#2563eb" : "#93c5fd") }}>
                     Questions
                   </span>
                 </h2>
@@ -300,7 +353,9 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
                 >
                   {customSubtitle
                     ? customSubtitle
-                    : variant === "zoho"
+                    : variant === "odoo"
+                      ? "Everything you need to know about Odoo ERP — from modules and licensing to customisation, implementation, and long-term support."
+                      : variant === "zoho"
                       ? "Find answers to common questions about Zoho solutions and how AGSuite can help."
                       : variant === "netsuite-accounting"
                         ? "Everything you need to know about NetSuite Cloud Accounting — from closing faster and multi-entity consolidation to compliance and go-live timelines."
@@ -368,8 +423,16 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ duration: 0.4, delay: idx * 0.07 }}
                   className={`rounded-xl border transition-all duration-300 ${isOpen
-                    ? "bg-white border-blue-300 shadow-md shadow-blue-100"
-                    : "bg-white border-gray-100 hover:border-blue-200 hover:shadow-sm"
+                    ? (activeCategory === "odoo"
+                        ? "bg-white border-purple-300 shadow-md shadow-purple-100"
+                        : activeCategory === "zoho"
+                        ? "bg-white border-rose-300 shadow-md shadow-rose-100"
+                        : "bg-white border-blue-300 shadow-md shadow-blue-100")
+                    : (activeCategory === "odoo"
+                        ? "bg-white border-gray-100 hover:border-purple-200 hover:shadow-sm"
+                        : activeCategory === "zoho"
+                        ? "bg-white border-gray-100 hover:border-rose-200 hover:shadow-sm"
+                        : "bg-white border-gray-100 hover:border-blue-200 hover:shadow-sm")
                     }`}
                 >
                   <button
@@ -379,16 +442,16 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
                   >
                     <span
                       className={`text-base md:text-lg font-semibold transition-colors pr-4 ${isOpen
-                        ? (activeCategory === "zoho" ? "text-rose-700" : "text-blue-700")
-                        : (activeCategory === "zoho" ? "text-gray-800 group-hover:text-rose-600" : "text-gray-800 group-hover:text-blue-600")
+                        ? (activeCategory === "odoo" ? "text-[#643b9f]" : activeCategory === "zoho" ? "text-rose-700" : "text-blue-700")
+                        : (activeCategory === "odoo" ? "text-gray-800 group-hover:text-[#643b9f]" : activeCategory === "zoho" ? "text-gray-800 group-hover:text-rose-600" : "text-gray-800 group-hover:text-blue-600")
                         }`}
                     >
                       {faq.q}
                     </span>
                     <div
                       className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen
-                        ? (activeCategory === "zoho" ? "bg-rose-600 text-white rotate-180" : "bg-blue-600 text-white rotate-180")
-                        : (activeCategory === "zoho" ? "bg-rose-50 text-rose-400 group-hover:bg-rose-100" : "bg-blue-50 text-blue-400 group-hover:bg-blue-100")
+                        ? (activeCategory === "odoo" ? "bg-[#643b9f] text-white rotate-180" : activeCategory === "zoho" ? "bg-rose-600 text-white rotate-180" : "bg-blue-600 text-white rotate-180")
+                        : (activeCategory === "odoo" ? "bg-purple-50 text-purple-700 group-hover:bg-purple-100" : activeCategory === "zoho" ? "bg-rose-50 text-rose-400 group-hover:bg-rose-100" : "bg-blue-50 text-blue-400 group-hover:bg-blue-100")
                         }`}
                     >
                       <FaChevronDown className="w-3.5 h-3.5" />
@@ -401,7 +464,7 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
                       : "max-h-0 opacity-0 px-6"
                       }`}
                   >
-                    <div className={`w-full h-px ${activeCategory === "zoho" ? "bg-rose-100" : "bg-blue-100"} mb-4`} />
+                    <div className={`w-full h-px ${activeCategory === "odoo" ? "bg-purple-100" : activeCategory === "zoho" ? "bg-rose-100" : "bg-blue-100"} mb-4`} />
                     <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                       {faq.a}
                     </p>

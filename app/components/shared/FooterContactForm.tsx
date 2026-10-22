@@ -275,7 +275,9 @@ export default function FooterContactForm({ platform, contentVariant }: FooterCo
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.1 }}
-                      className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-3 tracking-tight leading-tight"
+                      className={isOdooContent
+                        ? "mb-3 text-[clamp(1.5rem,3.4vw,2.8rem)] font-medium leading-[1.2] tracking-[-0.045em] text-white"
+                        : "text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-3 tracking-tight leading-tight"}
                     >
                       {isOdooContent ? (
                         <>Transform Your Operations with <span className="bg-gradient-to-r from-purple-400 via-fuchsia-400 to-blue-400 bg-clip-text text-transparent">Odoo Solutions</span></>

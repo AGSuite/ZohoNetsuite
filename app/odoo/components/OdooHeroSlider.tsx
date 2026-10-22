@@ -138,7 +138,7 @@ export default function OdooHeroSlider() {
       </AnimatePresence>
 
       {isTeam && (
-        <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.90)_32%,rgba(255,255,255,0.50)_58%,rgba(255,255,255,0.16)_75%,rgba(255,255,255,0)_92%)]" />
+        <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,rgba(255,255,255,0.96)_0%,rgba(255,255,255,0.85)_25%,rgba(255,255,255,0.42)_48%,rgba(255,255,255,0.12)_68%,rgba(255,255,255,0)_88%)]" />
       )}
       <div
         className="pointer-events-none absolute inset-0 -z-10 opacity-35 [background-image:linear-gradient(rgba(100,59,159,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(100,59,159,0.10)_1px,transparent_1px)] [background-size:56px_56px]"

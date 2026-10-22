@@ -5,6 +5,9 @@ import Script from "next/script";
 import OdooTrustMetrics from "./components/OdooTrustMetrics";
 import OdooServicesBenefits from "./components/OdooServicesBenefits";
 import OdooHeroSlider from "./components/OdooHeroSlider";
+import OdooEcosystemSection from "./components/OdooEcosystemSection";
+import OdooGrowthLeadMagnet from "./components/OdooGrowthLeadMagnet";
+import { FAQ } from "@/app/components/home/FAQ";
 import FooterContactForm from "@/app/components/shared/FooterContactForm";
 import {
   ArrowRight,
@@ -82,19 +85,25 @@ export default function OdooHomePage() {
 
       <OdooTrustMetrics />
 
-      <section id="apps" className="relative overflow-hidden bg-[#08080c] px-6 py-24 text-white sm:py-28">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(100,59,159,0.20),transparent_30%),radial-gradient(circle_at_88%_12%,rgba(37,99,235,0.14),transparent_28%)]" />
+      <OdooEcosystemSection />
+
+      <OdooGrowthLeadMagnet />
+
+      <OdooServicesBenefits />
+
+      <section id="apps" className="relative overflow-hidden bg-gradient-to-br from-white via-[#f8f5ff] to-[#eef5ff] px-6 py-24 text-slate-950 sm:py-28">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(100,59,159,0.13),transparent_30%),radial-gradient(circle_at_88%_12%,rgba(37,99,235,0.10),transparent_28%)]" />
         <div className="relative mx-auto max-w-7xl">
           <div className="mx-auto max-w-6xl text-center">
-            <h2 className="mx-auto whitespace-nowrap text-[clamp(1rem,4.4vw,3.75rem)] font-medium leading-[1.2] tracking-[-0.045em] text-white">
-              One Suite.{" "}<span className="inline bg-gradient-to-r from-[#a78bfa] via-[#818cf8] to-[#60a5fa] bg-clip-text text-transparent">Apps that work together</span>
+            <h2 className="mx-auto text-[clamp(1.5rem,3.4vw,2.8rem)] font-medium leading-[1.2] tracking-[-0.045em] text-slate-950">
+              One Suite.{" "}<span className="inline bg-gradient-to-r from-[#643b9f] via-[#7048c8] to-[#2563eb] bg-clip-text text-transparent">Apps that work together</span>
             </h2>
-            <p className="mt-5 text-lg leading-8 text-slate-300">Start with the workflows that matter now, then extend the platform without rebuilding the foundation.</p>
+            <p className="mt-5 text-lg leading-8 text-slate-600">Start with the workflows that matter now, then extend the platform without rebuilding the foundation.</p>
           </div>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {apps.map(({ name, detail, icon: Icon, image, accent }) => (
-              <article key={name} className="group relative flex min-h-[390px] flex-col overflow-hidden rounded-2xl border shadow-2xl shadow-black/30 transition duration-300 hover:-translate-y-2" style={{ borderColor: `${accent}55`, backgroundColor: "#121218" }}>
-                <div className="relative h-56 overflow-hidden bg-[#17171f]">
+              <article key={name} className="group relative flex min-h-[390px] flex-col overflow-hidden rounded-2xl border shadow-xl shadow-[#643b9f]/10 transition duration-300 hover:-translate-y-2 hover:shadow-2xl" style={{ borderColor: `${accent}55`, backgroundColor: "#ffffff" }}>
+                <div className="relative h-56 overflow-hidden bg-slate-100">
                   <Image
                     src={image}
                     alt={`${name} business module`}
@@ -102,17 +111,17 @@ export default function OdooHomePage() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover object-top transition duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${accent}55 0%, rgba(0,0,0,0.08) 48%, transparent 76%)` }} />
+                  <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${accent}40 0%, rgba(255,255,255,0.04) 48%, transparent 76%)` }} />
                 </div>
-                <div className="relative flex flex-1 flex-col p-6" style={{ background: `linear-gradient(145deg, ${accent}4d 0%, ${accent}20 52%, #15131d 100%)` }}>
+                <div className="relative flex flex-1 flex-col p-6" style={{ background: `linear-gradient(145deg, ${accent}35 0%, ${accent}14 52%, #ffffff 100%)` }}>
                   <div className="mb-5 flex items-center justify-between">
-                    <span className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.06]" style={{ color: accent }}>
+                    <span className="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 bg-white/80 shadow-sm" style={{ color: accent }}>
                       <Icon size={21} />
                     </span>
-                    <ArrowRight size={19} className="text-slate-500 transition duration-300 group-hover:translate-x-1 group-hover:text-white" />
+                    <ArrowRight size={19} className="text-slate-400 transition duration-300 group-hover:translate-x-1 group-hover:text-[#643b9f]" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">{name}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-400">{detail}</p>
+                  <h3 className="text-xl font-bold text-slate-950">{name}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">{detail}</p>
                   <div className="absolute inset-x-6 bottom-0 h-px opacity-80" style={{ backgroundColor: accent }} />
                 </div>
               </article>
@@ -121,13 +130,11 @@ export default function OdooHomePage() {
         </div>
       </section>
 
-      <OdooServicesBenefits />
-
       <section id="industries" className="relative flex min-h-[520px] items-center overflow-hidden bg-[#171329] bg-[url('/images/industries/logistics_transport_hologram.jpg')] bg-cover bg-center bg-scroll px-6 py-24 text-white sm:py-28 md:bg-fixed">
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/42 to-black/5" aria-hidden="true" />
         <div className="relative mx-auto w-full max-w-7xl">
           <div className="max-w-xl">
-            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Industry-aware delivery</h2>
+            <h2 className="text-[clamp(1.5rem,3.4vw,2.8rem)] font-medium leading-[1.2] tracking-[-0.045em]">Industry-aware delivery</h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-slate-200">Odoo is modular. Your implementation should be too. We shape the application mix and rollout around the processes, controls, and pace of your organization.</p>
             <Link href="#contact" className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 font-bold text-[#4c2d7d] shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:bg-[#f7f2ff]">
               Discuss your industry needs <ArrowRight size={18} />
@@ -144,7 +151,7 @@ export default function OdooHomePage() {
         <div className="approach-floating-dot approach-floating-dot-four absolute h-3 w-3 rounded-full bg-[#8b5cf6]/55 shadow-[0_0_24px_8px_rgba(139,92,246,0.18)]" aria-hidden="true" />
         <div className="relative mx-auto max-w-7xl">
           <div className="max-w-4xl">
-            <h2 className="bg-gradient-to-r from-[#3f245f] via-[#643b9f] to-[#2563eb] bg-clip-text text-4xl font-medium tracking-tight text-transparent sm:text-5xl">Move forward in clear, manageable stages.</h2>
+            <h2 className="bg-gradient-to-r from-[#3f245f] via-[#643b9f] to-[#2563eb] bg-clip-text text-[clamp(1.5rem,3.4vw,2.8rem)] font-medium leading-[1.2] tracking-[-0.045em] text-transparent">Move forward in clear, manageable stages.</h2>
           </div>
           <div className="relative mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="absolute left-8 right-8 top-8 hidden h-px bg-gradient-to-r from-[#a78bfa]/30 via-[#643b9f]/60 to-[#60a5fa]/30 lg:block" aria-hidden="true">
@@ -182,7 +189,7 @@ export default function OdooHomePage() {
           <div className="absolute -right-16 -top-20 h-72 w-72 rounded-full border-[55px] border-white/[0.06]" />
           <div className="absolute bottom-[-6rem] right-[24%] h-56 w-56 rounded-full bg-[#2563eb]/30 blur-3xl" />
           <div className="relative max-w-3xl">
-            <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">Tell us what you want your business systems to do better.</h2>
+            <h2 className="max-w-3xl text-[clamp(1.5rem,3.4vw,2.8rem)] font-medium leading-[1.2] tracking-[-0.045em]">Tell us what you want your business systems to do better.</h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">We&apos;ll help you identify the right Odoo starting point, scope, and rollout path for your organization.</p>
             <a href="mailto:hello@agsuitetech.com?subject=Odoo%20Consultation%20Request" className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 font-bold text-[#643b9f] shadow-xl transition hover:-translate-y-1 hover:bg-[#f9f4f8]">
               Start a conversation <ArrowRight size={18} />
@@ -190,6 +197,8 @@ export default function OdooHomePage() {
           </div>
         </div>
       </section>
+
+      <FAQ variant="odoo" layout="sidebar" id="faq" />
 
       <FooterContactForm platform="NetSuite" contentVariant="Odoo" />
     </div>

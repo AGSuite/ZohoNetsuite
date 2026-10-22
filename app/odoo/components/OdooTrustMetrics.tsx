@@ -36,7 +36,7 @@ export default function OdooTrustMetrics() {
     <section aria-labelledby="trusted-brands-heading" className="border-y border-slate-200 bg-white px-6 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl">
         <div className="text-center">
-          <h2 id="trusted-brands-heading" className="bg-gradient-to-r from-[#643b9f] via-[#7048c8] to-[#2563eb] bg-clip-text text-3xl font-medium tracking-tight text-transparent sm:text-4xl">
+          <h2 id="trusted-brands-heading" className="bg-gradient-to-r from-[#643b9f] via-[#7048c8] to-[#2563eb] bg-clip-text text-[clamp(1.5rem,3.4vw,2.8rem)] font-medium leading-[1.2] tracking-[-0.045em] text-transparent">
             Trusted by industry leading brands
           </h2>
         </div>
