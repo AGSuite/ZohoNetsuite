@@ -6,6 +6,7 @@ import Image from "next/image";
 import Script from "next/script";
 import { Send, Briefcase, Building2, Target, Heart } from "lucide-react";
 import MultiSelectDropdown from "@/app/components/shared/MultiSelectDropdown";
+import { sendLeadNotification } from "@/app/lib/leadSubmission";
 
 function Design4StatCard({ item }: { item: any; index?: number }) {
   return (
@@ -149,29 +150,23 @@ export default function ContactFormDesign4() {
     (window as any)._wfa_fstprtcken[409531000047791096] = true;
   }, []);
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     if ((window as any).checkMandatory409531000047791096 && !(window as any).checkMandatory409531000047791096()) {
       e.preventDefault();
       return;
     }
+
+    e.preventDefault();
     const targetForm = e.currentTarget;
-    const formData = new FormData(targetForm);
-    fetch('/api/contact/zoho-notification', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: formData.get('Last Name'),
-        email: formData.get('Email'),
-        mobile: formData.get('Mobile'),
-        role: formData.get('Designation'),
-        company: formData.get('Company'),
-        services: formData.getAll('LEADCF166'),
-        revenue: formData.get('LEADCF19'),
-        hearAbout: formData.get('LEADCF127'),
-        message: formData.get('LEADCF123'),
-        subjectTitle: 'NetSuite Contact us Form Enquiry'
-      })
-    }).catch(() => {});
+    try {
+      await sendLeadNotification(targetForm, {
+        platform: "NetSuite",
+        subjectTitle: "NetSuite Contact Us Form Enquiry",
+      });
+      targetForm.submit();
+    } catch {
+      alert("We could not send your enquiry right now. Please try again.");
+    }
   };
 
   if (!isClient) return null;
@@ -230,7 +225,7 @@ export default function ContactFormDesign4() {
                 <input type="hidden" name="zc_gad" id="zc_gad" value="" />
                 <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="07822c70b4131fef446a0a686c99d5195d6d6ddfa0431c1f0eeb3f080cc03771374f84de08a3fd4604be9855603d3099" readOnly />
                 <input type="text" style={{ display: 'none' }} name="actionType" value="TGVhZHM=" readOnly />
-                <input type="text" style={{ display: 'none' }} name="returnURL" value="https://www.agsuite.tech/thank-you" readOnly />
+                <input type="text" style={{ display: 'none' }} name="returnURL" value="https://www.agsuitetech.com/thank-you" readOnly />
                 <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" value="" readOnly />
 
                 {/* Hidden default fields required by Zoho */}

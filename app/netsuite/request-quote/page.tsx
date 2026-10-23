@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { sendLeadNotification } from "@/app/lib/leadSubmission";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -169,23 +170,10 @@ export default function RequestQuotePremium() {
   }, []);
 
   const sendEmail = async (form: HTMLFormElement) => {
-    const formData = new FormData(form);
-    fetch('/api/contact/zoho-notification', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: formData.get('Last Name'),
-        email: formData.get('Email'),
-        mobile: formData.get('Mobile'),
-        role: formData.get('Designation'),
-        company: formData.get('Company'),
-        services: formData.getAll('LEADCF166'),
-        revenue: formData.get('LEADCF19'),
-        hearAbout: formData.get('LEADCF127'),
-        message: formData.get('LEADCF123'),
-        subjectTitle: 'NetSuite Request Quote Form Enquiry'
-      })
-    }).catch(() => { });
+    await sendLeadNotification(form, {
+      platform: "NetSuite",
+      subjectTitle: "NetSuite Request Quote Form Enquiry",
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -193,6 +181,9 @@ export default function RequestQuotePremium() {
       e.preventDefault();
       return;
     }
+
+    e.preventDefault();
+    const form = e.currentTarget;
 
     try {
       // @ts-ignore
@@ -216,7 +207,12 @@ export default function RequestQuotePremium() {
       }
     } catch (err) { }
 
-    await sendEmail(e.currentTarget);
+    try {
+      await sendEmail(form);
+      form.submit();
+    } catch {
+      alert("We could not send your quote request right now. Please try again.");
+    }
   };
 
   if (!isClient) return null;

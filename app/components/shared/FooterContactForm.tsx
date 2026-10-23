@@ -7,6 +7,7 @@ import Image from "next/image";
 import Script from "next/script";
 import { Briefcase, Building2, Heart, Target } from "lucide-react";
 import MultiSelectDropdown from "./MultiSelectDropdown";
+import { sendLeadNotification } from "@/app/lib/leadSubmission";
 
 function FooterStatCard({ item }: { item: any; index?: number }) {
   return (
@@ -365,29 +366,27 @@ export default function FooterContactForm({ platform, contentVariant }: FooterCo
                           name={config.formName}
                           action="https://crm.zoho.in/crm/WebToLeadForm"
                           method="POST"
-                          onSubmit={(e) => {
+                          onSubmit={async (e) => {
                             if ((window as any)[config.validateFuncName] && !(window as any)[config.validateFuncName]()) {
                               e.preventDefault();
                               return;
                             }
+
+                            e.preventDefault();
                             const targetForm = e.currentTarget;
-                            const formData = new FormData(targetForm);
-                            fetch('/api/contact/zoho-notification', {
-                              method: 'POST',
-                              headers: { 'Content-Type': 'application/json' },
-                              body: JSON.stringify({
-                                name: formData.get('Last Name'),
-                                email: formData.get('Email'),
-                                mobile: formData.get('Mobile'),
-                                role: formData.get('Designation'),
-                                company: formData.get('Company'),
-                                services: formData.getAll(config.serviceFieldName),
-                                revenue: formData.get('LEADCF19'),
-                                hearAbout: formData.get('LEADCF127'),
-                                message: formData.get('LEADCF123'),
-                                subjectTitle: isNetSuite ? 'NetSuite Contact us Form Enquiry' : 'Zoho Contact us Form Enquiry'
-                              })
-                            }).catch(() => {});
+                            try {
+                              await sendLeadNotification(targetForm, {
+                                platform: isOdooContent ? "Odoo" : isNetSuite ? "NetSuite" : "Zoho",
+                                subjectTitle: isOdooContent
+                                  ? "Odoo Contact Us Form Enquiry"
+                                  : isNetSuite
+                                    ? "NetSuite Contact Us Form Enquiry"
+                                    : "Zoho Contact Us Form Enquiry",
+                              });
+                              targetForm.submit();
+                            } catch {
+                              alert("We could not send your enquiry right now. Please try again.");
+                            }
                           }}
                           acceptCharset="UTF-8"
                           className="space-y-3"

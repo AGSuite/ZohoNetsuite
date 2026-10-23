@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { getTransporter, defaultSender } from '@/app/api/utils/mailer';
-import { getDiwaliEmailTemplate } from '@/app/api/utils/diwaliEmailTemplate';
 
 export async function POST(request: Request) {
     try {
@@ -17,6 +16,10 @@ export async function POST(request: Request) {
             message,
             subjectTitle = 'Zoho Contact us Form Enquiry'
         } = body;
+
+        if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+            return NextResponse.json({ message: 'Email service is not configured' }, { status: 503 });
+        }
 
         const transporter = getTransporter();
 
@@ -90,25 +93,31 @@ export async function POST(request: Request) {
             await transporter.sendMail(mailOptions);
             console.log(`✅ [1/2] Team notification email sent to ${teamRecipients}`);
 
-            // STEP 2: Send User Auto-Reply Email Template THEN (second)
+            // STEP 2: Send a confirmation to the person who submitted the form.
             if (email) {
                 const autoReplyOptions = {
                     from: defaultSender,
                     replyTo: 'hello@agsuitetech.com',
                     to: email,
-                    subject: 'Happy Diwali & Thank You for Connecting with AGSuite Technologies!',
-                    html: getDiwaliEmailTemplate({ recipientName: name, companyName: company }),
+                    subject: 'Thank you for contacting AGSuite Technologies',
+                    html: `
+                        <div style="font-family: Arial, sans-serif; padding: 24px; color: #1e293b; max-width: 620px; border: 1px solid #e2e8f0; border-radius: 12px;">
+                            <h2 style="color: #1e3a8a;">Thank you for reaching out${name ? `, ${name}` : ''}.</h2>
+                            <p>We have received your enquiry${company ? ` for ${company}` : ''}. Our team will review it and contact you shortly.</p>
+                            <p>If your request is urgent, reply to this email and our team will assist you.</p>
+                            <p style="margin-top: 24px;">Regards,<br/><strong>Team AGSuite Technologies</strong></p>
+                        </div>
+                    `,
                 };
                 await transporter.sendMail(autoReplyOptions);
-                console.log(`✅ [2/2] Auto-reply email template sent to user: ${email}`);
+                console.log(`Confirmation email sent to user: ${email}`);
             }
-        } else {
-            console.log(`--- MOCK ZOHO NOTIFICATION EMAIL (${subjectTitle}) ---`, body);
         }
 
         return NextResponse.json({ message: 'Success' }, { status: 200 });
-    } catch (error: any) {
-        console.error('❌ Error sending Zoho notification email:', error?.message || error);
-        return NextResponse.json({ message: 'Error', details: error?.message }, { status: 500 });
+    } catch (error: unknown) {
+        const details = error instanceof Error ? error.message : 'Unknown email error';
+        console.error('Error sending Zoho notification email:', details);
+        return NextResponse.json({ message: 'Error', details }, { status: 500 });
     }
 }

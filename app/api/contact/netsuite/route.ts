@@ -14,8 +14,13 @@ export async function POST(request: Request) {
             revenue,
             hearAboutUs,
             requirements,
-            platform = 'NetSuite'
+            platform = 'NetSuite',
+            subjectTitle = 'NetSuite Website Form Enquiry'
         } = body;
+
+        if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+            return NextResponse.json({ message: 'Email service is not configured' }, { status: 503 });
+        }
 
         const transporter = getTransporter();
 
@@ -23,7 +28,8 @@ export async function POST(request: Request) {
         const mailOptions = {
             from: defaultSender,
             to: 'inbound@agsuitetech.com, hello@agsuitetech.com, contact@agsuitetech.com, nikhil.khode@agsuitetech.com',
-            subject: `New Lead Generated - ${name} (${platform})`,
+            replyTo: email || 'hello@agsuitetech.com',
+            subject: `${subjectTitle} - Lead: ${name || 'Website Visitor'}` ,
             html: `
                 <div style="font-family: Arial, sans-serif; padding: 20px; color: #333; max-width: 600px; border: 1px solid #eee;">
                     <div style="text-align: center; margin-bottom: 20px;">
@@ -89,7 +95,8 @@ export async function POST(request: Request) {
             const autoReplyOptions = {
                 from: defaultSender,
                 to: email,
-                subject: `Received New Lead - ${name}`,
+                replyTo: 'hello@agsuitetech.com',
+                subject: `Thank you for your ${platform} enquiry`,
                 html: `
                     <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; border: 1px solid #eee; padding: 20px;">
                         <div style="text-align: center; margin-bottom: 20px;">
@@ -107,7 +114,9 @@ export async function POST(request: Request) {
                     </div>
                 `
             };
-            await transporter.sendMail(autoReplyOptions);
+            if (email) {
+                await transporter.sendMail(autoReplyOptions);
+            }
         }
 
         return NextResponse.json({ message: 'Success' }, { status: 200 });
