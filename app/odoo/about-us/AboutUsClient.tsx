@@ -965,7 +965,7 @@ export default function AboutUsClient() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative overflow-hidden w-full bg-gradient-to-br from-[#0033ad] via-[#0055ff] to-[#00c2cb] px-6 md:px-26 py-24 flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl"
+            className="relative overflow-hidden w-full bg-gradient-to-br from-[#3d2138] via-[#714b67] to-[#8f5d83] px-6 md:px-26 py-24 flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl"
           >
             {/* Background Star Particles */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -1002,7 +1002,7 @@ export default function AboutUsClient() {
 
             <Link
               href="#contact-form"
-              className="relative z-10 px-12 py-5 bg-white text-blue-700 hover:bg-blue-50 rounded-xl font-bold transition-all shadow-xl flex items-center gap-3 group text-xl whitespace-nowrap active:scale-95 shrink-0"
+              className="relative z-10 px-12 py-5 bg-white text-[#714b67] hover:bg-purple-50 rounded-xl font-bold transition-all shadow-xl flex items-center gap-3 group text-xl whitespace-nowrap active:scale-95 shrink-0"
             >
               Get Started <ChevronRight className="w-7 h-7 group-hover:translate-x-1 transition-transform" />
             </Link>
