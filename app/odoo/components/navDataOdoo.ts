@@ -115,41 +115,41 @@ export const navItemsOdoo: OdooNavSection[] = [
             {
               title: "Sales & CRM",
               items: [
-                { label: "Odoo CRM", href: sectionLink.apps, logo: "/images/odoo-apps/crm.svg" },
-                { label: "Odoo Sales", href: sectionLink.apps, logo: "/images/odoo-apps/sales.svg" },
+                { label: "Odoo CRM", href: "/odoo/apps/crm", logo: "/images/odoo-apps/crm.svg" },
+                { label: "Odoo Sales", href: "/odoo/apps/sales", logo: "/images/odoo-apps/sales.svg" },
               ],
             },
             {
               title: "Finance",
-              items: [{ label: "Odoo Accounting", href: sectionLink.apps, logo: "/images/odoo-apps/accounting.svg" }],
+              items: [{ label: "Odoo Accounting", href: "/odoo/apps/accounting", logo: "/images/odoo-apps/accounting.svg" }],
             },
             {
               title: "Operations",
               items: [
-                { label: "Odoo Inventory", href: sectionLink.apps, logo: "/images/odoo-apps/inventory.svg" },
-                { label: "Odoo Purchase", href: sectionLink.apps, logo: "/images/odoo-apps/purchase.svg" },
-                { label: "Odoo Manufacturing", href: sectionLink.apps, logo: "/images/odoo-apps/manufacturing.svg" },
+                { label: "Odoo Inventory", href: "/odoo/apps/inventory", logo: "/images/odoo-apps/inventory.svg" },
+                { label: "Odoo Purchase", href: "/odoo/apps/purchase", logo: "/images/odoo-apps/purchase.svg" },
+                { label: "Odoo Manufacturing", href: "/odoo/apps/manufacturing", logo: "/images/odoo-apps/manufacturing.svg" },
               ],
             },
             {
               title: "Service Management",
               items: [
-                { label: "Odoo Projects", href: sectionLink.apps, logo: "/images/odoo-apps/projects.svg" },
-                { label: "Odoo Helpdesk", href: sectionLink.apps, logo: "/images/odoo-apps/helpdesk.svg" },
+                { label: "Odoo Projects", href: "/odoo/apps/projects", logo: "/images/odoo-apps/projects.svg" },
+                { label: "Odoo Helpdesk", href: "/odoo/apps/helpdesk", logo: "/images/odoo-apps/helpdesk.svg" },
               ],
             },
             {
               title: "Website & Commerce",
               items: [
-                { label: "Odoo Website", href: sectionLink.apps, logo: "/images/odoo-apps/website.svg" },
-                { label: "Odoo eCommerce", href: sectionLink.apps, logo: "/images/odoo-apps/ecommerce.svg" },
+                { label: "Odoo Website", href: "/odoo/apps/website", logo: "/images/odoo-apps/website.svg" },
+                { label: "Odoo eCommerce", href: "/odoo/apps/ecommerce", logo: "/images/odoo-apps/ecommerce.svg" },
               ],
             },
             {
               title: "People & Marketing",
               items: [
-                { label: "Odoo Employees", href: sectionLink.apps, logo: "/images/odoo-apps/employees.svg" },
-                { label: "Odoo Marketing", href: sectionLink.apps, logo: "/images/odoo-apps/marketing.svg" },
+                { label: "Odoo Employees", href: "/odoo/apps/employees", logo: "/images/odoo-apps/employees.svg" },
+                { label: "Odoo Marketing", href: "/odoo/apps/marketing", logo: "/images/odoo-apps/marketing.svg" },
               ],
             },
           ],

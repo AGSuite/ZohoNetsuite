@@ -219,9 +219,18 @@ interface FAQProps {
   customSubtitle?: string;
   layout?: "centered" | "sidebar";
   cardTheme?: "dark" | "light";
+  stickyTopClass?: string;
 }
 
-export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar", cardTheme = "dark" }: FAQProps) => {
+export const FAQ = ({
+  variant,
+  id,
+  customFaqs,
+  customSubtitle,
+  layout = "sidebar",
+  cardTheme = "dark",
+  stickyTopClass = "lg:top-24",
+}: FAQProps) => {
   const [activeCategory, setActiveCategory] = useState<"zoho" | "netsuite" | "netsuite-accounting" | "netsuite-global-business" | "netsuite-crm" | "odoo">(
     variant || "netsuite"
   );
@@ -259,7 +268,7 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
   };
 
   return (
-    <div id={id} className={`w-full relative text-gray-800 ${variant === "zoho" || variant === "odoo" ? "bg-white" : "bg-[#f0f4ff]"} scroll-mt-36`}>
+    <div id={id} className={`w-full relative text-gray-800 ${variant === "zoho" || variant === "odoo" ? "bg-white" : "bg-[#f0f4ff]"} scroll-mt-40`}>
       <Script
         id={`faq-schema-${variant || activeCategory}`}
         type="application/ld+json"
@@ -268,7 +277,7 @@ export const FAQ = ({ variant, id, customFaqs, customSubtitle, layout = "sidebar
       <section className="py-16 mx-auto max-w-7xl px-6 lg:px-10">
         <div className={`flex flex-col ${layout === "sidebar" ? "lg:grid lg:grid-cols-12 gap-10" : "items-center gap-12"}`}>
           {/* Sidebar or Top Header */}
-          <div className={`${layout === "sidebar" ? "lg:col-span-4 lg:sticky lg:top-24 lg:self-start" : "w-full max-w-4xl"}`}>
+          <div className={`${layout === "sidebar" ? `lg:col-span-4 lg:sticky ${stickyTopClass} lg:self-start` : "w-full max-w-4xl"}`}>
             <aside
               className={`relative p-8 rounded-2xl overflow-hidden shadow-2xl ${layout === "centered" ? "text-center flex flex-col items-center" : ""}`}
               style={

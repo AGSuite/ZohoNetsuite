@@ -118,7 +118,7 @@ export default function OdooServicesBenefits() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="services" className="relative scroll-mt-28 overflow-hidden bg-white px-6 py-24 sm:py-28">
+    <section ref={sectionRef} id="services" className="relative scroll-mt-40 overflow-hidden bg-white px-6 py-24 sm:py-28">
       <div className="pointer-events-none absolute inset-0 z-0 bg-white" />
       <div ref={overlayRef} className="pointer-events-none absolute inset-0 z-[1] bg-black opacity-0" />
       <div ref={glowRef} className="pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(circle_at_50%_10%,rgba(100,59,159,0.28),transparent_42%),radial-gradient(circle_at_90%_70%,rgba(37,99,235,0.14),transparent_32%)] opacity-0" />
