@@ -1,0 +1,173 @@
+export type DiwaliAudienceType = 'existing' | 'prospect';
+
+export interface DiwaliEmailOptions {
+  recipientName?: string;
+  companyName?: string;
+  type?: DiwaliAudienceType;
+}
+
+/**
+ * Shared HTML email layout with AGSuite festive theme, header, partner badges, social links & footer
+ */
+export function renderDiwaliEmailShell(preheaderText: string, bodyContentHtml: string): string {
+  return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="x-apple-disable-message-reformatting" />
+  <title>Happy Diwali from AGSuite Technologies</title>
+  <!--[if mso]>
+  <style type="text/css">
+    body, table, td, p, a, span { font-family: Arial, Helvetica, sans-serif !important; }
+  </style>
+  <![endif]-->
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      min-width: 100%;
+      background-color: #0b132b;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    table {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+    img {
+      border: 0;
+      outline: none;
+      text-decoration: none;
+      -ms-interpolation-mode: bicubic;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+    }
+    @media only screen and (max-width: 620px) {
+      .email-container {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .content-padding {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      .hero-image {
+        width: 100% !important;
+        height: auto !important;
+      }
+      .social-icons-table {
+        margin: 0 auto !important;
+      }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #0b132b; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+
+  <!-- PREHEADER -->
+  <div style="display: none; font-size: 1px; color: #0b132b; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+    ${preheaderText}
+    &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+  </div>
+
+  <!-- WRAPPER -->
+  <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#0b132b" style="background-color: #0b132b; width: 100%;">
+    <tr>
+      <td align="center" style="padding: 12px 12px 24px 12px;">
+
+        <!--[if (gte mso 9)|(IE)]>
+        <table role="presentation" width="600" align="center" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+        <td>
+        <![endif]-->
+
+        <!-- MAIN CONTAINER -->
+        <table role="presentation" class="email-container" width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width: 600px; background-color: #0f1c3f; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45); border: 1px solid rgba(212, 175, 55, 0.3);">
+
+          <!-- 1. HEADER (AGSuite Logo) -->
+          <tr>
+            <td align="center" style="padding: 12px 20px; background-color: #ffffff; border-bottom: 2px solid #d4af37;">
+              <a href="https://agsuitetech.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://agsuitetech.com/email/agsuite-logo.png" alt="AGSuite Technologies - Empower Your Success" width="180" style="width: 180px; max-width: 100%; height: auto; margin: 0 auto;" />
+              </a>
+            </td>
+          </tr>
+
+          <!-- 2. HERO IMAGE (Diwali Banner) -->
+          <tr>
+            <td align="center" bgcolor="#081028" style="background-color: #081028; line-height: 0; padding: 0;">
+              <a href="https://agsuitetech.com" target="_blank" rel="noopener noreferrer">
+                <img class="hero-image" src="https://agsuitetech.com/email/happy-diwali.jpg" alt="Happy Diwali - May the Festival of Lights Bring You Prosperity and Joy" width="600" style="width: 100%; max-width: 600px; height: auto; display: block;" />
+              </a>
+            </td>
+          </tr>
+
+          <!-- 3. FESTIVE GREETING BODY -->
+          <tr>
+            <td class="content-padding" style="padding: 24px 32px 22px 32px; background-color: #0f1c3f; text-align: center;">
+
+              <p style="margin: 0 0 6px 0; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #f5b700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                FESTIVAL OF LIGHTS &bull; DIWALI WISHES
+              </p>
+
+              <h1 style="margin: 0 0 10px 0; font-size: 25px; line-height: 1.3; font-weight: 700; color: #ffffff; font-family: Georgia, 'Times New Roman', serif;">
+                Wishing You a Blessed, Joyous &amp; Prosperous Diwali!
+              </h1>
+
+              <!-- Diya Divider -->
+              <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto 18px auto;">
+                <tr>
+                  <td width="50" style="border-bottom: 1px solid #d4af37;"></td>
+                  <td style="padding: 0 10px; color: #f5b700; font-size: 17px;">&#129684;</td>
+                  <td width="50" style="border-bottom: 1px solid #d4af37;"></td>
+                </tr>
+              </table>
+
+              ${bodyContentHtml}
+
+            </td>
+          </tr>
+
+          <!-- 4. TECHNOLOGY PARTNERS & SOCIAL CHANNELS -->
+          <tr>
+            <td align="center" style="padding: 18px 20px; background-color: #ffffff; border-top: 1px solid #e2e8f0;">
+              <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="54%" align="center" valign="middle" style="padding: 0 16px 0 0; border-right: 1px solid #e2e8f0;">
+                    <p style="margin: 0 0 8px 0; font-size: 11px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #64748b; font-family: 'Segoe UI', Arial, sans-serif;">Technology Partners</p>
+                    <a href="https://agsuitetech.com" target="_blank" rel="noopener noreferrer"><img src="https://agsuitetech.com/email/img/partners-logos.png" alt="Oracle NetSuite Solution Provider Partner | Zoho Premium Partner" width="380" style="width: 380px; max-width: 90%; height: auto; margin: 0 auto;" /></a>
+                  </td>
+                  <td width="46%" align="center" valign="middle" style="padding: 0 0 0 16px;">
+                    <p style="margin: 0 0 10px 0; font-size: 10px; font-weight: 700; color: #64748b; letter-spacing: 0.8px; text-transform: uppercase; font-family: 'Segoe UI', Arial, sans-serif;">Follow Us &amp; Stay Connected</p>
+                    <table role="presentation" class="social-icons-table" border="0" cellpadding="0" cellspacing="0" align="center">
+                      <tr>
+                        <td align="center" style="padding: 0 4px;"><a href="https://www.linkedin.com/company/agsuitetech/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><img src="https://agsuitetech.com/email/img/44994ddd001121ef78ab.png" alt="LinkedIn" width="34" height="34" style="width: 34px; height: 34px; border-radius: 6px; display: block;" /></a></td>
+                        <td align="center" style="padding: 0 4px;"><a href="https://www.facebook.com/AGSuiteTech" target="_blank" rel="noopener noreferrer" title="Facebook"><img src="https://agsuitetech.com/email/img/f365fd888609adb4592a.png" alt="Facebook" width="34" height="34" style="width: 34px; height: 34px; border-radius: 6px; display: block;" /></a></td>
+                        <td align="center" style="padding: 0 4px;"><a href="https://www.instagram.com/agsuitetech/" target="_blank" rel="noopener noreferrer" title="Instagram"><img src="https://agsuitetech.com/email/img/3581a585b3c1ed74caa7.png" alt="Instagram" width="34" height="34" style="width: 34px; height: 34px; border-radius: 6px; display: block;" /></a></td>
+                        <td align="center" style="padding: 0 4px;"><a href="https://x.com/agsuite" target="_blank" rel="noopener noreferrer" title="X / Twitter"><img src="https://agsuitetech.com/email/img/2a322e4d20895f8456e3.png" alt="X (Twitter)" width="34" height="34" style="width: 34px; height: 34px; border-radius: 6px; display: block;" /></a></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!-- END MAIN CONTAINER -->
+
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>`;
+}

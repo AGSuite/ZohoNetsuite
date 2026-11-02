@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const highlights = [
   "A clear view of sales, finance, and inventory",
@@ -13,20 +13,17 @@ const highlights = [
 
 export default function OdooGrowthLeadMagnet() {
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-20 sm:px-6 sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden bg-white px-4 pb-10 pt-10 sm:px-6 sm:pb-14 sm:pt-12 lg:pb-16 lg:pt-14">
       <div className="relative mx-auto grid max-w-[1400px] items-stretch gap-12 lg:grid-cols-2 lg:gap-10">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.65 }}
-          className="flex h-full flex-col justify-center py-4"
+          className="flex h-full flex-col justify-center"
         >
           <div>
-            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#714b67]">
-              <Sparkles size={15} /> Grow without limits
-            </span>
-            <h2 className="mt-6 text-[clamp(2rem,4.2vw,3.45rem)] font-medium leading-[1.04] tracking-[-0.05em] text-slate-950">
+            <h2 className="text-[clamp(2rem,4.2vw,3.45rem)] font-medium leading-[1.04] tracking-[-0.05em] text-slate-950">
               Join <span className="bg-gradient-to-r from-[#714b67] via-[#8b5cf6] to-[#5b21b6] bg-clip-text text-transparent">28 million happy users</span>
             </h2>
             <p className="mt-4 text-xl font-medium leading-8 text-slate-700">who grow their business with Odoo.</p>
@@ -52,15 +49,20 @@ export default function OdooGrowthLeadMagnet() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.75, delay: 0.08 }}
-          className="flex h-full items-center lg:-mr-16"
+          className="group relative isolate flex h-full items-center lg:-mr-16"
         >
+          <div className="pointer-events-none absolute inset-[10%] z-0 rounded-[3rem] bg-gradient-to-br from-[#714b67]/35 via-violet-400/20 to-blue-400/20 opacity-70 blur-3xl transition duration-700 group-hover:scale-110 group-hover:opacity-100" />
+          <div className="pointer-events-none absolute inset-[4%] z-20 overflow-hidden rounded-[2.5rem]">
+            <div className="absolute inset-y-[-20%] -left-1/3 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/35 to-transparent blur-xl transition-transform duration-[1400ms] ease-out group-hover:translate-x-[500%]" />
+          </div>
           <Image
             src="/images/odoo/odoo-growth-dashboard-transparent.png"
             alt="Odoo-inspired business dashboard showing revenue, sales pipeline, CRM, finance, and inventory data"
-            width={1536}
-            height={1024}
+            width={1515}
+            height={873}
+            unoptimized
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="h-auto w-full object-contain lg:w-[118%] lg:max-w-none lg:shrink-0"
+            className="relative z-10 h-auto w-full object-contain drop-shadow-[0_28px_35px_rgba(113,75,103,0.28)] transition duration-700 ease-out group-hover:scale-[1.035] group-hover:drop-shadow-[0_34px_42px_rgba(113,75,103,0.38)] lg:w-[118%] lg:max-w-none lg:shrink-0"
           />
         </motion.div>
       </div>

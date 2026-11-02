@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppTemplate";
+import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppProductTemplate";
 
 export const metadata: Metadata = {
-  title: "Odoo Manufacturing & MRP Implementation | AGSuite Technologies",
+  title: "Odoo Manufacturing & MRP Implementation",
   description:
     "Optimize production planning, multi-level bills of materials (BOM), work center routing, capacity scheduling, quality control, and cost tracking with Odoo MRP consulting and implementation from AGSuite Technologies.",
 };
@@ -109,7 +109,7 @@ const faqs = [
   },
   {
     q: "How does the shop floor tablet interface work for machine operators?",
-    a: "Odoo provides a dedicated, touchscreen-optimized Shop Floor application. Operators can scan barcodes, view digital work instructions (PDFs or videos), log work start/stop times, record scrap, trigger maintenance requests, and register quality checks with zero paperwork.",
+    a: "Odoo provides a dedicated, touchscreen-optimized Shop Floor application. Operators can scan barcodes, view digital work instructions (PDFs or videos), log work start/stop times, record scrap, trigger maintenance requests, and register quality checks with less paper-based administration.",
   },
   {
     q: "How does Odoo MRP calculate manufacturing costs and work center rates?",
@@ -138,8 +138,8 @@ export default function OdooManufacturingPage() {
     <OdooAppTemplate
       appName="Odoo Manufacturing"
       appLogo="/images/odoo-apps/manufacturing.svg"
-      title="Precision MRP and Shop Floor Execution in One Connected Suite"
-      description="Manage multi-level Bills of Materials, schedule production capacity, streamline work center operations, and calculate true manufacturing costs with Odoo MRP."
+      title="Odoo Manufacturing for MRP, Work Orders, and Production Control"
+      description="Manage bills of materials, routings, work centers, material planning, work orders, shop-floor activity, production costs, quality, and maintenance."
       heroImage="/images/modules/manufacturing.webp"
       overviewImage="/images/hero/industry_manufacturing_hero.png"
       overviewTitle="Unified shop floor execution, production scheduling, and inventory control"

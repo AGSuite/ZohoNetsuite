@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppTemplate";
+import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppProductTemplate";
 
 export const metadata: Metadata = {
-  title: "Odoo Marketing Automation & Email Campaign Implementation | AGSuite Technologies",
+  title: "Odoo Marketing Automation & Email Campaign Implementation",
   description:
     "Run targeted email campaigns, automate multi-step marketing workflows, manage social media, track conversion funnels, and generate qualified leads with Odoo Marketing — implemented by AGSuite Technologies.",
 };
@@ -186,8 +186,8 @@ export default function OdooMarketingPage() {
     <OdooAppTemplate
       appName="Odoo Marketing"
       appLogo="/images/odoo-apps/marketing.svg"
-      title="Attract, Nurture, and Convert Leads With Fully Automated Odoo Marketing"
-      description="Run targeted email campaigns, build multi-step marketing automation workflows, score and qualify leads, schedule social media content, and measure true campaign ROI — all connected to your Odoo CRM and eCommerce."
+      title="Odoo Marketing for Campaigns, Automation, and Attribution"
+      description="Plan email, automation, social, SMS, surveys, and lifecycle campaigns using connected CRM, website, event, customer, and eCommerce data."
       heroImage="/images/Dashboard/odoo_command_dashboard.webp"
       overviewImage="/images/Dashboard/odoo_live_operations_dashboard.webp"
       overviewTitle="From first touch to closed deal: automated marketing that works while you sleep"

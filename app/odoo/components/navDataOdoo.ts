@@ -6,7 +6,6 @@ import {
   Boxes,
   BriefcaseBusiness,
   Building2,
-  Code2,
   Compass,
   Factory,
   FileText,
@@ -17,11 +16,8 @@ import {
   Hospital,
   Layers3,
   LifeBuoy,
-  PlugZap,
   RefreshCw,
   Rocket,
-  ShoppingBag,
-  ShoppingCart,
   Store,
   Truck,
   Users,
@@ -72,13 +68,109 @@ export interface OdooNavSection {
 }
 
 const sectionLink = {
-  apps: "/odoo#apps",
+  apps: "/odoo/apps",
   services: "/odoo#services",
   industries: "/odoo#industries",
   insights: "/odoo#approach",
   contact: "/odoo#contact",
 };
 
+const odooAppLink = (label: string, logoSlug: string, routeSlug = logoSlug): OdooNavLink => ({
+  label: `Odoo ${label}`,
+  href: `/odoo/apps/${routeSlug}`,
+  logo: `/images/odoo-apps/all/${logoSlug}.svg`,
+});
+
+const odooAppNavigationCategories: OdooMegaCategory[] = [
+  {
+    title: "Finance",
+    items: [
+      odooAppLink("Accounting", "accounting"),
+      odooAppLink("Invoicing", "invoicing"),
+      odooAppLink("Expenses", "expenses"),
+      odooAppLink("Sign", "sign"),
+      odooAppLink("Spreadsheet", "spreadsheet"),
+      odooAppLink("ESG", "esg"),
+    ],
+  },
+  {
+    title: "Sales",
+    items: [
+      odooAppLink("CRM", "crm"),
+      odooAppLink("Sales", "sales"),
+      odooAppLink("Subscriptions", "subscriptions"),
+      odooAppLink("POS Shop", "pos-shop"),
+      odooAppLink("POS Restaurant", "pos-restaurant"),
+      odooAppLink("Rental", "rental"),
+    ],
+  },
+  {
+    title: "Websites",
+    items: [
+      odooAppLink("Website Builder", "website-builder", "website"),
+      odooAppLink("eCommerce", "ecommerce"),
+      odooAppLink("Events", "events"),
+      odooAppLink("Blog", "blog"),
+      odooAppLink("eLearning", "elearning"),
+      odooAppLink("Forum", "forum"),
+    ],
+  },
+  {
+    title: "Supply Chain",
+    items: [
+      odooAppLink("Inventory", "inventory"),
+      odooAppLink("Manufacturing", "manufacturing"),
+      odooAppLink("Maintenance", "maintenance"),
+      odooAppLink("PLM", "plm"),
+      odooAppLink("Quality", "quality"),
+      odooAppLink("Purchase", "purchase"),
+    ],
+  },
+  {
+    title: "Human Resources",
+    items: [
+      odooAppLink("Employees", "employees"),
+      odooAppLink("Payroll", "payroll"),
+      odooAppLink("Recruitment", "recruitment"),
+      odooAppLink("Time Off", "time-off"),
+      odooAppLink("Appraisals", "appraisals"),
+      odooAppLink("Fleet", "fleet"),
+    ],
+  },
+  {
+    title: "Marketing",
+    items: [
+      odooAppLink("Social Marketing", "social-marketing"),
+      odooAppLink("Email Marketing", "email-marketing"),
+      odooAppLink("SMS Marketing", "sms-marketing"),
+      odooAppLink("Marketing Automation", "marketing-automation"),
+      odooAppLink("WhatsApp", "whatsapp"),
+      odooAppLink("Surveys", "surveys"),
+    ],
+  },
+  {
+    title: "Services",
+    items: [
+      odooAppLink("Project", "project", "projects"),
+      odooAppLink("Timesheets", "timesheets"),
+      odooAppLink("Planning", "planning"),
+      odooAppLink("Appointments", "appointments"),
+      odooAppLink("Live Chat", "live-chat"),
+      odooAppLink("Helpdesk", "helpdesk"),
+    ],
+  },
+  {
+    title: "Productivity",
+    items: [
+      odooAppLink("Artificial Intelligence", "artificial-intelligence"),
+      odooAppLink("Discuss", "discuss"),
+      odooAppLink("VoIP", "voip"),
+      odooAppLink("IoT", "iot"),
+      odooAppLink("Documents", "documents"),
+      odooAppLink("Knowledge", "knowledge"),
+    ],
+  },
+];
 export const navItemsOdoo: OdooNavSection[] = [
   {
     title: "About Us",
@@ -102,7 +194,7 @@ export const navItemsOdoo: OdooNavSection[] = [
   {
     title: "Solutions",
     bannerTitle: "Odoo Business Solutions",
-    bannerDescription: "Connected applications, integrations, and extensions for every team.",
+    bannerDescription: "Connected business applications for every team.",
     viewAllHref: sectionLink.apps,
     children: [
       {
@@ -110,75 +202,8 @@ export const navItemsOdoo: OdooNavSection[] = [
         href: sectionLink.apps,
         megaMenu: {
           title: "Odoo Business Applications",
-          description: "Choose the applications you need today and expand as your business grows.",
-          categories: [
-            {
-              title: "Sales & CRM",
-              items: [
-                { label: "Odoo CRM", href: "/odoo/apps/crm", logo: "/images/odoo-apps/crm.svg" },
-                { label: "Odoo Sales", href: "/odoo/apps/sales", logo: "/images/odoo-apps/sales.svg" },
-              ],
-            },
-            {
-              title: "Finance",
-              items: [{ label: "Odoo Accounting", href: "/odoo/apps/accounting", logo: "/images/odoo-apps/accounting.svg" }],
-            },
-            {
-              title: "Operations",
-              items: [
-                { label: "Odoo Inventory", href: "/odoo/apps/inventory", logo: "/images/odoo-apps/inventory.svg" },
-                { label: "Odoo Purchase", href: "/odoo/apps/purchase", logo: "/images/odoo-apps/purchase.svg" },
-                { label: "Odoo Manufacturing", href: "/odoo/apps/manufacturing", logo: "/images/odoo-apps/manufacturing.svg" },
-              ],
-            },
-            {
-              title: "Service Management",
-              items: [
-                { label: "Odoo Projects", href: "/odoo/apps/projects", logo: "/images/odoo-apps/projects.svg" },
-                { label: "Odoo Helpdesk", href: "/odoo/apps/helpdesk", logo: "/images/odoo-apps/helpdesk.svg" },
-              ],
-            },
-            {
-              title: "Website & Commerce",
-              items: [
-                { label: "Odoo Website", href: "/odoo/apps/website", logo: "/images/odoo-apps/website.svg" },
-                { label: "Odoo eCommerce", href: "/odoo/apps/ecommerce", logo: "/images/odoo-apps/ecommerce.svg" },
-              ],
-            },
-            {
-              title: "People & Marketing",
-              items: [
-                { label: "Odoo Employees", href: "/odoo/apps/employees", logo: "/images/odoo-apps/employees.svg" },
-                { label: "Odoo Marketing", href: "/odoo/apps/marketing", logo: "/images/odoo-apps/marketing.svg" },
-              ],
-            },
-          ],
-        },
-      },
-      {
-        label: "ODOO INTEGRATIONS & EXTENSIONS",
-        href: sectionLink.services,
-        megaMenu: {
-          title: "Odoo Integrations and Extensions",
-          description: "Connect commerce, payments, logistics, and custom workflows to Odoo.",
-          categories: [
-            {
-              title: "Commerce Connections",
-              items: [
-                { label: "Shopify Integration", href: sectionLink.services, icon: ShoppingBag },
-                { label: "WooCommerce Integration", href: sectionLink.services, icon: Store },
-                { label: "Amazon Integration", href: sectionLink.services, icon: ShoppingCart },
-              ],
-            },
-            {
-              title: "Automation & Extensions",
-              items: [
-                { label: "Payment & Shipping Integrations", href: sectionLink.services, icon: PlugZap },
-                { label: "Custom Odoo Modules", href: sectionLink.services, icon: Code2 },
-                { label: "API & Third-Party Integrations", href: sectionLink.services, icon: Layers3 },
-              ],
-            },
-          ],
+          description: "Explore all 48 connected applications across finance, sales, operations, people, marketing, services, and productivity.",
+          categories: odooAppNavigationCategories,
         },
       },
     ],
@@ -197,14 +222,14 @@ export const navItemsOdoo: OdooNavSection[] = [
     bannerDescription: "End-to-end expertise from discovery to continuous improvement.",
     viewAllHref: sectionLink.services,
     children: [
-      { label: "Odoo Consulting", href: sectionLink.services, description: "Define the right strategy and rollout roadmap.", icon: Compass },
-      { label: "Odoo Implementation", href: sectionLink.services, description: "Configure and launch Odoo around your processes.", icon: Layers3 },
-      { label: "Odoo Customization", href: sectionLink.services, description: "Tailor workflows, screens, approvals, and reports.", icon: Wrench },
-      { label: "Odoo Integration", href: sectionLink.services, description: "Connect Odoo with your essential business systems.", icon: RefreshCw },
-      { label: "Data Migration", href: sectionLink.services, description: "Clean, map, validate, and migrate critical data.", icon: Activity },
-      { label: "Version Upgrade", href: sectionLink.services, description: "Upgrade safely while protecting business continuity.", icon: ArrowUpCircle },
-      { label: "Training & Adoption", href: sectionLink.services, description: "Prepare teams with practical role-based training.", icon: GraduationCap },
-      { label: "Managed Support", href: sectionLink.services, description: "Keep Odoo reliable, optimized, and improving.", icon: Headphones },
+      { label: "Odoo Consulting", href: "/odoo/services/consulting", description: "Define the right strategy and rollout roadmap.", icon: Compass },
+      { label: "Odoo Implementation", href: "/odoo/services/implementation", description: "Configure and launch Odoo around your processes.", icon: Layers3 },
+      { label: "Odoo Customization", href: "/odoo/services/customization", description: "Tailor workflows, screens, approvals, and reports.", icon: Wrench },
+      { label: "Odoo Integration", href: "/odoo/services/integration", description: "Connect Odoo with your essential business systems.", icon: RefreshCw },
+      { label: "Data Migration", href: "/odoo/services/data-migration", description: "Clean, map, validate, and migrate critical data.", icon: Activity },
+      { label: "Version Upgrade", href: "/odoo/services/version-upgrade", description: "Upgrade safely while protecting business continuity.", icon: ArrowUpCircle },
+      { label: "Training & Adoption", href: "/odoo/services/training-adoption", description: "Prepare teams with practical role-based training.", icon: GraduationCap },
+      { label: "Managed Support", href: "/odoo/services/managed-support", description: "Keep Odoo reliable, optimized, and improving.", icon: Headphones },
     ],
     featured: {
       eyebrow: "Implementation roadmap",
@@ -221,14 +246,14 @@ export const navItemsOdoo: OdooNavSection[] = [
     bannerDescription: "Odoo solutions shaped around real operational requirements.",
     viewAllHref: sectionLink.industries,
     children: [
-      { label: "Manufacturing", href: sectionLink.industries, description: "Plan production, quality, inventory, and maintenance.", icon: Factory },
-      { label: "Wholesale & Distribution", href: sectionLink.industries, description: "Connect purchasing, warehousing, and fulfilment.", icon: Boxes },
-      { label: "Retail & eCommerce", href: sectionLink.industries, description: "Unify storefronts, orders, stock, and customers.", icon: Store },
-      { label: "Professional Services", href: sectionLink.industries, description: "Manage projects, resources, time, and billing.", icon: BriefcaseBusiness },
-      { label: "Software & Technology", href: sectionLink.industries, description: "Scale subscriptions, services, and customer growth.", icon: Rocket },
-      { label: "Transportation & Logistics", href: sectionLink.industries, description: "Improve fleet, warehouse, and delivery visibility.", icon: Truck },
-      { label: "Construction", href: sectionLink.industries, description: "Control projects, procurement, costs, and teams.", icon: Building2 },
-      { label: "Healthcare", href: sectionLink.industries, description: "Coordinate operations, supplies, people, and finance.", icon: Hospital },
+      { label: "Manufacturing", href: "/odoo/industries/manufacturing", description: "Plan production, quality, inventory, and maintenance.", icon: Factory },
+      { label: "Wholesale & Distribution", href: "/odoo/industries/wholesale-distribution", description: "Connect purchasing, warehousing, and fulfilment.", icon: Boxes },
+      { label: "Retail & eCommerce", href: "/odoo/industries/retail-ecommerce", description: "Unify storefronts, orders, stock, and customers.", icon: Store },
+      { label: "Professional Services", href: "/odoo/industries/professional-services", description: "Manage projects, resources, time, and billing.", icon: BriefcaseBusiness },
+      { label: "Software & Technology", href: "/odoo/industries/software-technology", description: "Scale subscriptions, services, and customer growth.", icon: Rocket },
+      { label: "Transportation & Logistics", href: "/odoo/industries/transportation-logistics", description: "Improve fleet, warehouse, and delivery visibility.", icon: Truck },
+      { label: "Construction", href: "/odoo/industries/construction", description: "Control projects, procurement, costs, and teams.", icon: Building2 },
+      { label: "Healthcare", href: "/odoo/industries/healthcare", description: "Coordinate operations, supplies, people, and finance.", icon: Hospital },
     ],
     featured: {
       eyebrow: "Industry-ready Odoo",

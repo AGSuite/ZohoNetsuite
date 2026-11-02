@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppTemplate";
+import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppProductTemplate";
 
 export const metadata: Metadata = {
-  title: "Odoo Employees & HR Management Implementation | AGSuite Technologies",
+  title: "Odoo Employees & HR Management Implementation",
   description:
     "Centralize employee records, contracts, leave management, expense claims, recruitment pipelines, and payroll with Odoo Employees — implemented and configured by AGSuite Technologies.",
 };
@@ -186,8 +186,8 @@ export default function OdooEmployeesPage() {
     <OdooAppTemplate
       appName="Odoo Employees"
       appLogo="/images/odoo-apps/employees.svg"
-      title="Manage Your Entire Workforce From Hire to Retire in One Integrated HR Platform"
-      description="Streamline recruitment, contracts, attendance, leave management, expense claims, payroll processing, and performance appraisals with Odoo Employees — fully integrated with your Odoo ecosystem."
+      title="Odoo Employees for Workforce Records and HR Operations"
+      description="Centralize employee records, departments, managers, contracts, documents, skills, and access while connecting recruitment, leave, attendance, expenses, and payroll."
       heroImage="/images/people/odoo_team_collaboration_customization.webp"
       overviewImage="/images/people/people_using_odoo.jpg"
       overviewTitle="Complete employee lifecycle management: from first application to final payslip"

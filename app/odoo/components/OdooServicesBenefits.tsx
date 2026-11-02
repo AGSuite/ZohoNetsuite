@@ -22,6 +22,7 @@ gsap.registerPlugin(ScrollTrigger);
 const services = [
   {
     title: "Odoo Consulting",
+    href: "/odoo/services/consulting",
     description: "Define the right Odoo roadmap before configuration begins, grounded in business priorities, process realities, and measurable outcomes.",
     image: "/images/odoo-services/generated-v2/odoo-consulting-v2.webp",
     icon: Compass,
@@ -29,6 +30,7 @@ const services = [
   },
   {
     title: "Odoo Implementation",
+    href: "/odoo/services/implementation",
     description: "Translate business requirements into a phased Odoo setup with clear ownership, validation, and adoption milestones.",
     image: "/images/odoo-services/generated-v2/odoo-implementation-v2.webp",
     icon: Layers3,
@@ -36,6 +38,7 @@ const services = [
   },
   {
     title: "Odoo Customization",
+    href: "/odoo/services/customization",
     description: "Configure workflows, permissions, screens, and reports around the way your teams actually work.",
     image: "/images/odoo-services/generated-v2/odoo-customization-v2.webp",
     icon: Wrench,
@@ -43,6 +46,7 @@ const services = [
   },
   {
     title: "Odoo Integration",
+    href: "/odoo/services/integration",
     description: "Connect Odoo with the systems that need to remain part of your operating landscape.",
     image: "/images/odoo-services/generated-v2/odoo-integration-v2.webp",
     icon: RefreshCw,
@@ -50,6 +54,7 @@ const services = [
   },
   {
     title: "Data Migration",
+    href: "/odoo/services/data-migration",
     description: "Move essential business data into Odoo through controlled cleansing, mapping, validation, and reconciliation.",
     image: "/images/odoo-services/generated-v2/odoo-data-migration-v2.webp",
     icon: Database,
@@ -57,6 +62,7 @@ const services = [
   },
   {
     title: "Version Upgrade",
+    href: "/odoo/services/version-upgrade",
     description: "Modernize an existing Odoo environment while protecting custom modules, integrations, data quality, and business continuity.",
     image: "/images/odoo-services/generated-v2/odoo-version-upgrade-v2.webp",
     icon: ArrowUpCircle,
@@ -64,6 +70,7 @@ const services = [
   },
   {
     title: "Training & Adoption",
+    href: "/odoo/services/training-adoption",
     description: "Prepare administrators and business users with practical role-based training for confident day-to-day adoption.",
     image: "/images/odoo-services/generated-v2/odoo-training-adoption-v2.webp",
     icon: GraduationCap,
@@ -71,6 +78,7 @@ const services = [
   },
   {
     title: "Managed Support",
+    href: "/odoo/services/managed-support",
     description: "Keep the platform dependable with user support, monitoring, performance improvements, and structured enhancement releases.",
     image: "/images/odoo-services/generated-v2/odoo-managed-support-v2.webp",
     icon: Headphones,
@@ -118,7 +126,7 @@ export default function OdooServicesBenefits() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="services" className="relative scroll-mt-40 overflow-hidden bg-white px-6 py-24 sm:py-28">
+    <section ref={sectionRef} id="services" className="relative scroll-mt-40 overflow-hidden bg-white px-6 pb-24 pt-16 sm:pb-28 sm:pt-20">
       <div className="pointer-events-none absolute inset-0 z-0 bg-white" />
       <div ref={overlayRef} className="pointer-events-none absolute inset-0 z-[1] bg-black opacity-0" />
       <div ref={glowRef} className="pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(circle_at_50%_10%,rgba(100,59,159,0.28),transparent_42%),radial-gradient(circle_at_90%_70%,rgba(37,99,235,0.14),transparent_32%)] opacity-0" />
@@ -174,7 +182,7 @@ export default function OdooServicesBenefits() {
                     <Icon className="h-10 w-10 text-white" strokeWidth={1.8} />
                     <h3 className="text-xl font-bold leading-tight text-white">{service.title}</h3>
                     <p className="line-clamp-3 text-sm leading-6 text-white/80">{service.description}</p>
-                    <a href="#contact" className="inline-flex rounded-full border border-white/30 bg-black/40 px-4 py-2 text-xs font-bold text-white backdrop-blur md:hidden">
+                    <a href={service.href} className="inline-flex rounded-full border border-white/30 bg-black/40 px-4 py-2 text-xs font-bold text-white backdrop-blur md:hidden">
                       Know More
                     </a>
                   </div>
@@ -197,7 +205,7 @@ export default function OdooServicesBenefits() {
 
                   <div className="relative w-fit">
                     <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 opacity-80 blur-sm transition group-hover:opacity-100" />
-                    <a href="#contact" className="relative inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-xs font-bold text-white transition hover:bg-slate-900">
+                    <a href={service.href} className="relative inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-xs font-bold text-white transition hover:bg-slate-900">
                       Know More
                       <span aria-hidden="true">→</span>
                     </a>

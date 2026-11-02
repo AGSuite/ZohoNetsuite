@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppTemplate";
+import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppProductTemplate";
 
 export const metadata: Metadata = {
-  title: "Odoo Website Builder Implementation | AGSuite Technologies",
+  title: "Odoo Website Builder Implementation",
   description:
     "Build, customize, and manage your business website with no-code drag-and-drop tools, SEO controls, live chat, and full Odoo CRM & eCommerce integration — implemented by AGSuite Technologies.",
 };
@@ -186,8 +186,8 @@ export default function OdooWebsitePage() {
     <OdooAppTemplate
       appName="Odoo Website"
       appLogo="/images/odoo-apps/website.svg"
-      title="Build, Manage, and Convert With Your Odoo-Powered Business Website"
-      description="Design professional websites with no-code tools, capture leads directly into CRM, publish SEO-optimized content, and manage your entire digital presence from one integrated Odoo platform."
+      title="Odoo Website for Content, Lead Capture, and SEO"
+      description="Build and manage pages, forms, blogs, multilingual content, metadata, redirects, and lead capture connected directly to CRM and other Odoo apps."
       heroImage="/images/Dashboard/odoo_command_dashboard.webp"
       overviewImage="/images/Dashboard/odoo_live_operations_dashboard.webp"
       overviewTitle="Your website, your CRM, and your marketing — all in one platform"

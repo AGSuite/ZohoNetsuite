@@ -2,17 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Box } from "lucide-react";
 import type { OdooNavSection } from "./navDataOdoo";
 
 interface DropdownProps {
   item: OdooNavSection;
   closeMenu: () => void;
-}
-
-interface MegaMenuProps extends DropdownProps {
-  activePanel: string;
-  setActivePanel: (label: string) => void;
 }
 
 const sectionThemes: Record<string, { banner: string; icon: string; iconHover: string; linkHover: string }> = {
@@ -48,20 +43,12 @@ const sectionThemes: Record<string, { banner: string; icon: string; iconHover: s
   },
 };
 
-const categoryThemes = [
-  "from-purple-50 to-violet-50/30 border-purple-100 text-purple-950",
-  "from-blue-50 to-indigo-50/30 border-blue-100 text-blue-950",
-  "from-emerald-50 to-teal-50/30 border-emerald-100 text-emerald-950",
-  "from-amber-50 to-orange-50/30 border-amber-100 text-amber-950",
-  "from-fuchsia-50 to-pink-50/30 border-fuchsia-100 text-fuchsia-950",
-  "from-cyan-50 to-sky-50/30 border-cyan-100 text-cyan-950",
-];
-
 export function OdooDesktopDropdown({ item, closeMenu }: DropdownProps) {
   const theme = sectionThemes[item.title] ?? sectionThemes["About Us"];
+  const isAboutUs = item.title === "About Us";
 
   return (
-    <div className="fixed inset-x-0 top-20 z-50 w-screen border-b border-slate-200 bg-white shadow-2xl">
+    <div className="fixed inset-x-0 top-20 z-[520] w-screen border-b border-slate-200 bg-white shadow-2xl">
       <div className="mx-auto max-w-7xl px-5 py-6">
         <div className="grid min-h-fit grid-cols-[2fr_1fr] divide-x divide-slate-100">
           <div className="p-6">
@@ -79,17 +66,17 @@ export function OdooDesktopDropdown({ item, closeMenu }: DropdownProps) {
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-3">
+              <div className={`grid grid-cols-3 ${isAboutUs ? "gap-4" : "gap-3"}`}>
                 {item.children.map((link) => {
                   const Icon = link.icon;
                   return (
-                    <Link key={link.label} href={link.href} onClick={closeMenu} className="group flex items-start gap-2.5 rounded-xl border border-transparent p-3 transition hover:border-slate-100 hover:bg-slate-50">
-                      <span className={`shrink-0 rounded-lg p-1.5 transition-colors ${theme.icon} ${theme.iconHover}`}>
-                        {Icon && <Icon className="h-4 w-4" />}
+                    <Link key={link.label} href={link.href} onClick={closeMenu} className={`group flex rounded-xl border border-transparent transition hover:border-slate-100 hover:bg-slate-50 ${isAboutUs ? "min-h-[125px] items-center gap-3.5 p-4" : "items-start gap-2.5 p-3"}`}>
+                      <span className={`shrink-0 rounded-lg transition-colors ${isAboutUs ? "p-2.5" : "p-1.5"} ${theme.icon} ${theme.iconHover}`}>
+                        {Icon && <Icon className={isAboutUs ? "h-5 w-5" : "h-4 w-4"} />}
                       </span>
                       <span className="min-w-0">
-                        <span className={`block text-[14px] font-bold text-slate-900 transition-colors ${theme.linkHover}`}>{link.label}</span>
-                        {link.description && <span className="mt-0.5 line-clamp-2 block text-[11px] leading-relaxed text-slate-500">{link.description}</span>}
+                        <span className={`block font-bold text-slate-900 transition-colors ${isAboutUs ? "text-base" : "text-[14px]"} ${theme.linkHover}`}>{link.label}</span>
+                        {link.description && <span className={`${isAboutUs ? "mt-1.5 text-xs leading-5" : "mt-0.5 text-[11px] leading-relaxed"} line-clamp-2 block text-slate-500`}>{link.description}</span>}
                       </span>
                     </Link>
                   );
@@ -118,73 +105,42 @@ export function OdooDesktopDropdown({ item, closeMenu }: DropdownProps) {
   );
 }
 
-export function OdooDesktopMegaMenu({ item, activePanel, setActivePanel, closeMenu }: MegaMenuProps) {
-  const selected = item.children.find((child) => child.label === activePanel) ?? item.children[0];
-  const categories = selected?.megaMenu?.categories ?? [];
-  const isApps = selected?.label === "ODOO BUSINESS APPS";
+export function OdooDesktopMegaMenu({ item, closeMenu }: DropdownProps) {
+  const categories = item.children[0]?.megaMenu?.categories ?? [];
 
   return (
-    <div className="fixed inset-x-0 top-20 z-50 w-screen border-b border-slate-200 bg-slate-50 shadow-2xl">
-      <div className="mx-auto max-w-[1500px] px-5 py-4">
-        <div className="flex gap-4">
-          <div className="grid w-64 shrink-0 grid-rows-2 gap-3 self-stretch">
-            {item.children.map((child, index) => {
-              const active = selected?.label === child.label;
-              return (
-                <div
-                  key={child.label}
-                  onMouseEnter={() => setActivePanel(child.label)}
-                  onFocus={() => setActivePanel(child.label)}
-                  className={`group relative min-h-[150px] cursor-pointer overflow-hidden rounded-xl border-2 transition duration-300 ${active ? "scale-[1.01] border-[#8b5cf6] shadow-lg" : "border-transparent hover:border-purple-200"}`}
-                  tabIndex={0}
-                >
-                  <Image
-                    src={index === 0 ? "/images/odoo/odoo-growth-dashboard.png" : "/images/navbar/services.png"}
-                    alt=""
-                    fill
-                    sizes="256px"
-                    className="object-cover transition duration-700 group-hover:scale-110"
-                  />
-                  <div className={`absolute inset-0 opacity-85 mix-blend-multiply ${index === 0 ? "bg-gradient-to-br from-[#3d2138] via-[#714b67] to-[#6d28d9]" : "bg-gradient-to-br from-[#25142f] via-[#5b2774] to-[#4338ca]"}`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-3.5">
-                    <h4 className="text-[13px] font-black uppercase leading-tight tracking-wider text-white">{child.label}</h4>
-                    <p className="mt-1 line-clamp-1 text-[10px] text-white/80">{child.megaMenu?.description}</p>
-                    <div className="mt-2 flex items-center justify-between">
-                      <Link href={child.href} onClick={closeMenu} className="rounded-lg bg-white/20 px-3 py-1 text-[9px] font-bold uppercase tracking-widest text-white backdrop-blur transition hover:bg-violet-600">
-                        Explore
-                      </Link>
-                      <span className={`grid h-7 w-7 place-items-center rounded-full transition ${active ? "bg-violet-600" : "bg-white/10 group-hover:bg-violet-600"}`}>
-                        <ArrowRight className="h-3.5 w-3.5 text-white" />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          <div className={`grid flex-1 auto-rows-fr items-stretch gap-3 ${isApps ? "grid-cols-3 grid-rows-2" : "grid-cols-2 grid-rows-1"}`}>
-            {categories.map((category, categoryIndex) => (
-              <div key={category.title} className={`group relative overflow-hidden rounded-xl border bg-gradient-to-br p-3.5 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg ${categoryThemes[categoryIndex % categoryThemes.length]}`}>
-                <div className="absolute -right-12 -top-12 h-24 w-24 rounded-full bg-white/50 transition duration-700 group-hover:scale-150" />
-                <h4 className="relative border-b border-current/10 pb-2 text-[11px] font-bold uppercase tracking-[0.14em]">{category.title}</h4>
-                <div className="relative mt-2.5 grid gap-2">
+    <div className="fixed inset-x-0 top-20 z-[520] max-h-[calc(100vh-5rem)] w-screen overflow-y-auto border-b border-slate-200 bg-slate-50 shadow-2xl">
+      <div className="mx-auto max-w-[1540px] px-4 py-2">
+        <div className="overflow-hidden bg-white">
+          <div className="grid grid-cols-4 border-l border-slate-200">
+            {categories.map((category) => (
+              <section key={category.title} className="border-r border-slate-200 px-5 py-2.5">
+                <h4 className="flex items-center gap-2 pb-1.5 text-sm font-extrabold uppercase tracking-[0.08em] text-slate-800">
+                  <span className="h-5 w-1 rounded-full bg-gradient-to-b from-[#714b67] to-violet-600" />
+                  {category.title}
+                </h4>
+                <div className="mt-1">
                   {category.items.map((sub) => {
                     const Icon = sub.icon;
                     return (
-                      <Link key={sub.label} href={sub.href} onClick={closeMenu} className="group/link flex items-center gap-2.5 rounded-lg p-1 transition hover:bg-white/70">
-                        <span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg border border-white/80 bg-white shadow-sm transition group-hover/link:scale-105">
-                          {sub.logo ? <Image src={sub.logo} alt="" width={20} height={20} className="h-[18px] w-[18px] object-contain" /> : Icon ? <Icon className="h-3.5 w-3.5 text-[#714b67]" /> : null}
-                        </span>
-                        <span className="text-xs font-bold leading-tight text-slate-900 transition group-hover/link:translate-x-0.5 group-hover/link:text-violet-700">{sub.label}</span>
+                      <Link key={sub.label} href={sub.href} onClick={closeMenu} className="group/link flex min-h-9 items-center gap-3 px-1 py-1 transition-all hover:pl-2 hover:text-[#714b67]">
+                        {sub.logo ? <Image src={sub.logo} alt="" width={30} height={30} className="h-6 w-6 shrink-0 object-contain transition group-hover/link:scale-110" /> : Icon ? <Icon className="h-5 w-5 shrink-0 text-[#714b67]" /> : null}
+                        <span className="text-[13px] font-semibold leading-snug text-slate-700 transition group-hover/link:text-[#714b67]">{sub.label}</span>
+                        <ArrowRight className="ml-auto h-3.5 w-3.5 -translate-x-1 text-[#714b67] opacity-0 transition group-hover/link:translate-x-0 group-hover/link:opacity-100" />
                       </Link>
                     );
                   })}
                 </div>
-              </div>
+              </section>
             ))}
           </div>
+        </div>
+        <div className="flex justify-center py-2">
+          <Link href="/odoo/apps" onClick={closeMenu} className="group inline-flex items-center gap-2.5 rounded-full bg-slate-950 px-5 py-2 text-sm font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#714b67] hover:shadow-lg">
+            <Box className="h-4 w-4" />
+            Browse all Apps
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
         </div>
       </div>
     </div>

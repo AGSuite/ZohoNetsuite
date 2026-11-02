@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppTemplate";
+import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppProductTemplate";
 
 export const metadata: Metadata = {
-  title: "Odoo Projects & Service Delivery Implementation | AGSuite Technologies",
+  title: "Odoo Projects & Service Delivery Implementation",
   description:
     "Streamline project planning, agile Kanban boards, Gantt chart scheduling, timesheet tracking, resource allocation, and project billing with Odoo Projects implementation from AGSuite Technologies.",
 };
@@ -138,8 +138,8 @@ export default function OdooProjectsPage() {
     <OdooAppTemplate
       appName="Odoo Projects"
       appLogo="/images/odoo-apps/projects.svg"
-      title="Deliver Client Projects on Time, on Scope, and Within Budget"
-      description="Manage modern agile workflows, Gantt timelines, resource capacity, integrated timesheets, and project profitability in a platform natively linked to sales and billing."
+      title="Odoo Projects for Delivery, Resources, Timesheets, and Billing"
+      description="Plan tasks and milestones, assign resources, capture time and expenses, coordinate documents, invoice work, and review project profitability."
       heroImage="/images/Dashboard/odoo_command_dashboard.webp"
       overviewImage="/images/modules/project_management.webp"
       overviewTitle="From proposal to delivery: complete project operational control"
@@ -150,7 +150,7 @@ export default function OdooProjectsPage() {
       heroCards={[
         { value: "Real-time", label: "Profitability tracking" },
         { value: "Agile", label: "Kanban & Gantt views" },
-        { value: "100%", label: "Timesheet accuracy" },
+        { value: "Checked", label: "Timesheet accuracy" },
       ]}
       capabilities={capabilities}
       benefits={benefits}

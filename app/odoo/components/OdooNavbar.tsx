@@ -7,11 +7,8 @@ import { ArrowRight, ChevronDown, Menu, Sparkles, X } from "lucide-react";
 import { OdooDesktopDropdown, OdooDesktopMegaMenu } from "./OdooNavbarDropdowns";
 import { navItemsOdoo } from "./navDataOdoo";
 
-const DEFAULT_SOLUTION_PANEL = "ODOO BUSINESS APPS";
-
 export default function OdooNavbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [activeSolutionPanel, setActiveSolutionPanel] = useState(DEFAULT_SOLUTION_PANEL);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSection, setMobileSection] = useState<string | null>(null);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -19,7 +16,6 @@ export default function OdooNavbar() {
 
   const closeMenus = useCallback(() => {
     setOpenDropdown(null);
-    setActiveSolutionPanel(DEFAULT_SOLUTION_PANEL);
   }, []);
 
   useEffect(() => {
@@ -57,7 +53,6 @@ export default function OdooNavbar() {
   const openMenu = (title: string) => {
     if (closeTimeout.current) clearTimeout(closeTimeout.current);
     setOpenDropdown(title);
-    if (title === "Solutions") setActiveSolutionPanel(DEFAULT_SOLUTION_PANEL);
   };
 
   const scheduleClose = () => {
@@ -65,7 +60,7 @@ export default function OdooNavbar() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[100] h-20 border-b border-slate-100 bg-white shadow-sm">
+    <header className="fixed inset-x-0 top-0 z-[500] h-20 border-b border-slate-100 bg-white shadow-sm">
       <nav className="mx-auto grid h-full max-w-[1450px] grid-cols-[1fr_auto] items-center px-5 lg:grid-cols-[auto_1fr_auto] lg:px-6" aria-label="Odoo navigation">
         <Link href="/odoo" className="flex items-center" aria-label="AGSuite Odoo solutions home">
           <Image src="/images/logos/agsuite-logo.webp" alt="AGSuite Technologies" width={240} height={80} priority className="h-16 w-auto object-contain sm:h-20" />
@@ -96,12 +91,7 @@ export default function OdooNavbar() {
                 </button>
 
                 {isDesktop && item.title === "Solutions" && isOpen && (
-                  <OdooDesktopMegaMenu
-                    item={item}
-                    activePanel={activeSolutionPanel}
-                    setActivePanel={setActiveSolutionPanel}
-                    closeMenu={closeMenus}
-                  />
+                  <OdooDesktopMegaMenu item={item} closeMenu={closeMenus} />
                 )}
 
                 {isDesktop && item.title !== "Solutions" && isOpen && <OdooDesktopDropdown item={item} closeMenu={closeMenus} />}
@@ -160,19 +150,25 @@ export default function OdooNavbar() {
                       {item.title === "Solutions"
                         ? item.children.map((panel) => (
                             <div key={panel.label} className="rounded-xl bg-slate-50 p-4">
-                              <Link href={panel.href} onClick={() => setMobileOpen(false)} className="text-xs font-black uppercase tracking-[0.12em] text-[#714b67]">{panel.label}</Link>
+                              <Link href={panel.href} onClick={() => setMobileOpen(false)} className="text-sm font-black uppercase tracking-[0.1em] text-[#714b67]">{panel.label}</Link>
                               <div className="mt-3 space-y-4">
                                 {panel.megaMenu?.categories.map((category) => (
                                   <div key={category.title}>
-                                    <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400">{category.title}</p>
+                                    <p className="text-xs font-extrabold uppercase tracking-wide text-slate-500">{category.title}</p>
                                     <div className="mt-1 grid gap-1 sm:grid-cols-2">
                                       {category.items.map((link) => (
-                                        <Link key={link.label} href={link.href} onClick={() => setMobileOpen(false)} className="rounded-lg py-2 text-sm font-semibold text-slate-700 hover:text-[#714b67]">{link.label}</Link>
+                                        <Link key={link.label} href={link.href} onClick={() => setMobileOpen(false)} className="rounded-lg py-2.5 text-base font-semibold text-slate-700 hover:text-[#714b67]">{link.label}</Link>
                                       ))}
                                     </div>
                                   </div>
                                 ))}
                               </div>
+                              {panel.label === "ODOO BUSINESS APPS" && (
+                                <Link href="/odoo/apps" onClick={() => setMobileOpen(false)} className="group/cta mt-4 flex items-center justify-center gap-2 rounded-lg border border-violet-400/20 bg-gradient-to-r from-[#26142d] via-[#714b67] to-[#6d28d9] px-4 py-3 text-sm font-extrabold text-white shadow-lg shadow-violet-900/25 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#714b67]/20 hover:from-white hover:via-purple-50 hover:to-white hover:text-[#714b67] hover:shadow-xl hover:shadow-[#714b67]/20">
+                                  Browse all apps
+                                  <ArrowRight className="h-4 w-4 transition-transform group-hover/cta:translate-x-1" />
+                                </Link>
+                              )}
                             </div>
                           ))
                         : item.children.map((link) => {

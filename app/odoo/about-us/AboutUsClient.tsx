@@ -374,7 +374,7 @@ function StrategicPartnersSection() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight"
               >
-                Odoo Solutions Built Around Your Business
+                AGSuite: Your Trusted Odoo Partner
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, x: -30 }}
@@ -395,7 +395,7 @@ function StrategicPartnersSection() {
               className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-2"
             >
               {/* Odoo Logo Card */}
-              <div className="bg-white/5 backdrop-blur-md px-5 py-3.5 rounded-2xl border border-white/10 shadow-xl flex items-center justify-center h-20 sm:h-24">
+              <div className="bg-white px-5 py-3.5 rounded-2xl border border-white/70 shadow-xl flex items-center justify-center h-20 sm:h-24">
                 <Image
                   src="/images/logos/odoo-logo.png"
                   alt="Odoo Logo"

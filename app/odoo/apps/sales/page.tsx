@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppTemplate";
+import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppProductTemplate";
 
 export const metadata: Metadata = {
-  title: "Odoo Sales Implementation & Consulting | AGSuite Technologies",
+  title: "Odoo Sales Implementation & Consulting",
   description:
     "Streamline quotations, sales orders, pricing, approvals, invoicing, and customer handoffs with Odoo Sales implementation and support from AGSuite Technologies.",
 };
@@ -138,8 +138,8 @@ export default function OdooSalesPage() {
     <OdooAppTemplate
       appName="Odoo Sales"
       appLogo="/images/odoo-apps/sales.svg"
-      title="Move From Quotation to Revenue With Less Friction"
-      description="Create professional quotations, control pricing, confirm orders, and connect sales with delivery and invoicing in one coordinated workflow."
+      title="Odoo Sales for Quotations, Orders, Pricing, and Invoicing"
+      description="Create quotations, control prices and approvals, confirm sales orders, coordinate delivery, and trigger invoicing in one connected order-to-cash workflow."
       heroImage="/images/odoo/odoo-growth-dashboard.png"
       overviewImage="/images/people/person_using_odoo.webp"
       overviewTitle="A connected sales process from first offer to final handoff"

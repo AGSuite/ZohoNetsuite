@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppTemplate";
+import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppProductTemplate";
 
 export const metadata: Metadata = {
-  title: "Odoo Inventory & Warehouse Management Implementation | AGSuite Technologies",
+  title: "Odoo Inventory & Warehouse Management Implementation",
   description:
     "Optimize stock levels, barcode scanning, multi-warehouse routing, automated replenishment, and traceability with Odoo Inventory consulting and implementation from AGSuite Technologies.",
 };
@@ -68,7 +68,7 @@ const benefits = [
   },
   {
     title: "Lightning-fast warehouse operations",
-    description: "Empower warehouse staff with handheld barcode scanners, optimized picking paths, and guided workflows that cut processing times by over 40%.",
+    description: "Empower warehouse staff with handheld barcode scanners, optimized picking paths, and guided workflows that reduce processing time after baseline measurement.",
     points: ["Paperless barcode scanning", "Optimized picking & putaway routes", "Wave and batch order picking", "Fewer fulfillment errors"],
     image: "/images/benefits/wholesale_warehouse_management_wms.png",
   },
@@ -101,7 +101,7 @@ const benefits = [
 const faqs = [
   {
     q: "What is Odoo Inventory and how does its double-entry system work?",
-    a: "Odoo Inventory is a comprehensive warehouse management system (WMS) built on a double-entry principle. Rather than simply adding or subtracting numbers from a total, stock moves between defined locations (vendors, inventory loss, scrap, production, physical racks, and customers). This ensures every transaction has an origin and destination for 100% mathematical auditability.",
+    a: "Odoo Inventory is a comprehensive warehouse management system (WMS) built on a double-entry principle. Rather than simply adding or subtracting numbers from a total, stock moves between defined locations (vendors, inventory loss, scrap, production, physical racks, and customers). This ensures every transaction has an origin and destination for a traceable movement history.",
   },
   {
     q: "Can Odoo Inventory manage multiple warehouses and retail locations?",
@@ -129,7 +129,7 @@ const faqs = [
   },
   {
     q: "How long does an Odoo Inventory & Warehouse implementation take?",
-    a: "A focused warehouse implementation typically takes between 4 to 12 weeks depending on warehouse size, number of locations, barcode scanning scope, eCommerce integrations, custom routing requirements, and staff training. AGSuite delivers a structured, phase-tested roadmap to ensure zero disruption to live order fulfillment.",
+    a: "A focused warehouse implementation typically takes between 4 to 12 weeks depending on warehouse size, number of locations, barcode scanning scope, eCommerce integrations, custom routing requirements, and staff training. AGSuite delivers a structured, phase-tested roadmap to ensure a controlled cutover for live order fulfilment.",
   },
 ];
 
@@ -138,17 +138,17 @@ export default function OdooInventoryPage() {
     <OdooAppTemplate
       appName="Odoo Inventory"
       appLogo="/images/odoo-apps/inventory.svg"
-      title="Real-Time Inventory Control Across Every Warehouse and Channel"
-      description="Maximize order fulfillment, automate stock replenishment, streamline barcode scanning, and track lots and serial numbers with Odoo's double-entry inventory engine."
+      title="Odoo Inventory for Multi-Warehouse Stock and Fulfilment"
+      description="Control receipts, locations, replenishment, barcode operations, picking, packing, lots, serials, and valuation across warehouses and sales channels."
       heroImage="/images/Dashboard/odoo_command_dashboard.webp"
       overviewImage="/images/modules/warehouse_management.webp"
       overviewTitle="Modern warehouse management without stockouts or excess holding costs"
       overviewParagraphs={[
         "Odoo Inventory operates on a unique double-entry inventory system where nothing is lost or created—stock simply moves between locations, suppliers, transit lines, and customers with complete mathematical auditability.",
-        "Integrated seamlessly with Odoo Sales, Purchase, Manufacturing, and Accounting, your warehouse teams experience zero lag between customer orders, picking routes, vendor receipts, and automated general ledger inventory valuation entries.",
+        "Integrated seamlessly with Odoo Sales, Purchase, Manufacturing, and Accounting, your warehouse teams experience a coordinated flow between customer orders, picking routes, vendor receipts, and automated general ledger inventory valuation entries.",
       ]}
       heroCards={[
-        { value: "100%", label: "Stock traceability" },
+        { value: "Live", label: "Stock traceability" },
         { value: "Real-time", label: "Multi-warehouse sync" },
         { value: "Double", label: "Entry inventory" },
       ]}

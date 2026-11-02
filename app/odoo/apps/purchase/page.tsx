@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppTemplate";
+import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppProductTemplate";
 
 export const metadata: Metadata = {
-  title: "Odoo Purchase & Procurement Implementation | AGSuite Technologies",
+  title: "Odoo Purchase & Procurement Implementation",
   description:
     "Automate vendor requests for quotation (RFQs), purchase orders, vendor agreements, price controls, and 3-way bill matching with Odoo Purchase consulting and implementation from AGSuite Technologies.",
 };
@@ -67,7 +67,7 @@ const benefits = [
     image: "/images/Dashboard/odoo_command_dashboard.webp",
   },
   {
-    title: "Zero invoice discrepancies",
+    title: "Fewer invoice discrepancies",
     description: "Protect your bottom line by automating 3-way matching between what was ordered, what was delivered, and what was billed.",
     points: ["Automated 3-way PO matching", "Discrepancy tolerance controls", "Prevention of duplicate billings", "Accurate accounts payable data"],
     image: "/images/Dashboard/accounting and planing dashboard.jpg",
@@ -138,8 +138,8 @@ export default function OdooPurchasePage() {
     <OdooAppTemplate
       appName="Odoo Purchase"
       appLogo="/images/odoo-apps/purchase.svg"
-      title="Smarter Procurement With Total Spend Visibility and Control"
-      description="Automate vendor RFQs, compare bids, streamline purchase orders, enforce approval hierarchies, and eliminate invoice discrepancies with connected 3-way matching."
+      title="Odoo Purchase for Procurement, Approvals, and Vendor Control"
+      description="Manage requests for quotation, supplier comparison, purchase approvals, orders, receipts, vendor bills, and procurement reporting in one controlled process."
       heroImage="/images/Dashboard/odoo_live_operations_dashboard.webp"
       overviewImage="/images/modules/procurement.webp"
       overviewTitle="From requisition to payment: complete procurement control"
@@ -149,7 +149,7 @@ export default function OdooPurchasePage() {
       ]}
       heroCards={[
         { value: "3-Way", label: "Invoice matching" },
-        { value: "100%", label: "Spend transparency" },
+        { value: "Live", label: "Spend transparency" },
         { value: "Auto", label: "PO & RFQ triggers" },
       ]}
       capabilities={capabilities}

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppTemplate";
+import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppProductTemplate";
 
 export const metadata: Metadata = {
-  title: "Odoo Accounting Implementation & Consulting | AGSuite Technologies",
+  title: "Odoo Accounting Implementation & Consulting",
   description:
     "Automate bookkeeping, bank reconciliation, multi-currency invoicing, tax compliance, and real-time financial reporting with Odoo Accounting implementation from AGSuite Technologies.",
 };
@@ -67,14 +67,14 @@ const benefits = [
     image: "/images/Dashboard/odoo_command_dashboard.webp",
   },
   {
-    title: "Dramatically faster period closes",
+    title: "Faster period closes",
     description: "Automate repetitive reconciliation, recurring entries, and accruals to cut the monthly financial close from weeks to a few days.",
-    points: ["95% bank auto-matching", "Automated recurring journals", "One-click period locking", "Pre-configured tax filing reports"],
+    points: ["Rule-based bank matching", "Automated recurring journals", "One-click period locking", "Pre-configured tax filing reports"],
     image: "/images/people/person_using_odoo.webp",
   },
   {
     title: "Seamless operational-to-financial flow",
-    description: "Every sales shipment, purchase receipt, and inventory change posts automatically into the ledger with zero manual data re-entry.",
+    description: "Every sales shipment, purchase receipt, and inventory change posts automatically into the ledger with less manual data re-entry.",
     points: ["3-way purchase matching", "Real-time stock valuation", "Sales order to invoice sync", "Elimination of double entries"],
     image: "/images/Dashboard/odoo_live_operations_dashboard.webp",
   },
@@ -86,7 +86,7 @@ const benefits = [
   },
   {
     title: "Built-in statutory compliance & auditability",
-    description: "Ensure bulletproof compliance with local tax rules, e-invoicing mandates, IFRS/GAAP standards, and tamper-evident audit trails.",
+    description: "Ensure stronger compliance controls with local tax rules, e-invoicing mandates, IFRS/GAAP standards, and tamper-evident audit trails.",
     points: ["Country fiscal localizations", "Automated GST/VAT calculation", "E-way bill & e-invoicing ready", "Immutable audit log tracking"],
     image: "/images/people/odoo_team_collaboration_customization.webp",
   },
@@ -105,7 +105,7 @@ const faqs = [
   },
   {
     q: "How is Odoo Accounting different from tools like QuickBooks, Tally, or standalone ERPs?",
-    a: "Unlike standalone accounting software that requires third-party connectors or manual CSV imports, Odoo Accounting is embedded in the same database as your sales, purchasing, inventory, and project operations. When an order ships or goods arrive, corresponding journal entries update automatically in real time with zero duplicate data entry.",
+    a: "Unlike standalone accounting software that requires third-party connectors or manual CSV imports, Odoo Accounting is embedded in the same database as your sales, purchasing, inventory, and project operations. When an order ships or goods arrive, corresponding journal entries update automatically in real time with less duplicate data entry.",
   },
   {
     q: "Can Odoo Accounting connect with our bank accounts automatically?",
@@ -125,7 +125,7 @@ const faqs = [
   },
   {
     q: "Can AGSuite migrate our historical accounting data from our current software?",
-    a: "Yes. AGSuite provides end-to-end data migration services. We extract, clean, map, and validate your historical chart of accounts, open receivables, payables, customer/vendor balances, fixed assets, and trial balances from systems like Tally, QuickBooks, NetSuite, SAP, or spreadsheets with zero data loss.",
+    a: "Yes. AGSuite provides end-to-end data migration services. We extract, clean, map, and validate your historical chart of accounts, open receivables, payables, customer/vendor balances, fixed assets, and trial balances from systems like Tally, QuickBooks, NetSuite, SAP, or spreadsheets with controlled reconciliation and documented exceptions.",
   },
   {
     q: "How long does an Odoo Accounting implementation take?",
@@ -138,8 +138,8 @@ export default function OdooAccountingPage() {
     <OdooAppTemplate
       appName="Odoo Accounting"
       appLogo="/images/odoo-apps/accounting.svg"
-      title="Real-Time Financial Control Connected to Every Transaction"
-      description="Automate bookkeeping, bank reconciliation, multi-currency invoicing, tax compliance, and financial reporting with an accounting system built directly into your operational workflow."
+      title="Odoo Accounting for Real-Time Finance and Compliance"
+      description="Manage receivables, payables, bank reconciliation, taxes, assets, multi-currency transactions, and financial reporting in a ledger connected to business operations."
       heroImage="/images/Dashboard/odoo_live_operations_dashboard.webp"
       overviewImage="/images/Dashboard/accounting and planing dashboard.jpg"
       overviewTitle="Financial clarity that keeps pace with your business execution"
@@ -149,7 +149,7 @@ export default function OdooAccountingPage() {
       ]}
       heroCards={[
         { value: "Real-time", label: "Ledger accuracy" },
-        { value: "95%", label: "Bank auto-match" },
+        { value: "Rules", label: "Bank matching" },
         { value: "Multi", label: "Currency & company" },
       ]}
       capabilities={capabilities}

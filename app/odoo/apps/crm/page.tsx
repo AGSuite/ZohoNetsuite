@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppTemplate";
+import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppProductTemplate";
 
 export const metadata: Metadata = {
-  title: "Odoo CRM Implementation & Consulting | AGSuite Technologies",
+  title: "Odoo CRM Implementation & Consulting",
   description:
     "Build a connected sales pipeline with Odoo CRM consulting, implementation, customization, integration, migration, training, and support from AGSuite Technologies.",
 };
@@ -138,8 +138,8 @@ export default function OdooCrmPage() {
     <OdooAppTemplate
       appName="Odoo CRM"
       appLogo="/images/odoo-apps/crm.svg"
-      title="Turn Every Opportunity Into a Clear Next Step"
-      description="Centralize leads, customer conversations, sales activities, and forecasts in a CRM that stays connected to the rest of your business."
+      title="Odoo CRM for Lead, Pipeline, and Sales Activity Management"
+      description="Centralize leads, opportunities, activities, communication, forecasts, and customer context in a CRM connected to Odoo Sales, Marketing, Accounting, and Helpdesk."
       heroImage="/images/Dashboard/odoo_command_dashboard.webp"
       overviewImage="/images/people/odoo_team_collaboration_customization.webp"
       overviewTitle="A CRM that stays connected to the rest of your business"

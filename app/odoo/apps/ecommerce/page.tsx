@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppTemplate";
+import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppProductTemplate";
 
 export const metadata: Metadata = {
-  title: "Odoo eCommerce Implementation & Online Store Setup | AGSuite Technologies",
+  title: "Odoo eCommerce Implementation & Online Store Setup",
   description:
     "Launch a fully integrated Odoo online store with product management, payment gateways, inventory sync, abandoned cart recovery, and real-time order tracking — implemented by AGSuite Technologies.",
 };
@@ -186,8 +186,8 @@ export default function OdooEcommercePage() {
     <OdooAppTemplate
       appName="Odoo eCommerce"
       appLogo="/images/odoo-apps/ecommerce.svg"
-      title="Launch a Fully Integrated Online Store That Sells, Ships, and Scales"
-      description="Manage your entire online retail operation — products, inventory, payments, shipping, abandoned cart recovery, and customer accounts — in one platform natively connected to your ERP and accounting."
+      title="Odoo eCommerce for Products, Orders, Payments, and Fulfilment"
+      description="Connect storefront content, products, prices, checkout, payments, inventory, shipping, customer accounts, orders, returns, and accounting."
       heroImage="/images/Dashboard/odoo_live_operations_dashboard.webp"
       overviewImage="/images/Dashboard/odoo_command_dashboard.webp"
       overviewTitle="From product listing to delivered order: end-to-end eCommerce operations"

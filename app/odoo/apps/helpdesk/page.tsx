@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppTemplate";
+import OdooAppTemplate from "@/app/odoo/components/apps/OdooAppProductTemplate";
 
 export const metadata: Metadata = {
-  title: "Odoo Helpdesk Implementation & Customer Support Automation | AGSuite Technologies",
+  title: "Odoo Helpdesk Implementation & Customer Support Automation",
   description:
     "Deliver faster issue resolution with SLA management, omnichannel ticket routing, CSAT surveys, knowledge base, and real-time team KPIs using Odoo Helpdesk implemented by AGSuite Technologies.",
 };
@@ -73,7 +73,7 @@ const capabilities = [
 
 const benefits = [
   {
-    title: "Dramatically faster issue resolution",
+    title: "Faster issue resolution",
     description:
       "Equip agents with instant ticket context, one-click macros, canned replies, and automated routing so that no customer query sits idle waiting for manual assignment or response.",
     points: [
@@ -186,8 +186,8 @@ export default function OdooHelpdeskPage() {
     <OdooAppTemplate
       appName="Odoo Helpdesk"
       appLogo="/images/odoo-apps/helpdesk.svg"
-      title="Resolve Every Customer Issue Faster With Full SLA Visibility and Omnichannel Control"
-      description="Manage every support ticket, enforce SLA commitments, deliver multi-channel customer service, and measure team satisfaction scores in one platform natively connected to your sales and operations."
+      title="Odoo Helpdesk for Ticketing, SLAs, and Customer Support"
+      description="Manage support tickets, teams, channels, priorities, SLA rules, escalations, knowledge, customer portals, and service reporting in one system."
       heroImage="/images/Dashboard/odoo_live_operations_dashboard.webp"
       overviewImage="/images/contact/support.webp"
       overviewTitle="From first contact to happy customer: end-to-end support operations"
