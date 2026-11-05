@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE_URL, NETSUITE_PAGES, ZOHO_PAGES, INDUSTRY_PAGES } from "./lib/seo";
 import { getPosts } from "../sanity/lib/fetch";
 import { getZohoPosts } from "../sanity/lib/zohoFetch";
+import { getOdooPosts } from "../sanity/lib/odooFetch";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
@@ -137,6 +138,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/netsuite/insights/events",
     "/netsuite/insights/awards-achievements",
     "/zoho/blogs",
+    "/odoo/blogs",
     "/zoho/case-studies",
     "/zoho/insights",
     "/zoho/insights/blogs",
@@ -257,6 +259,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Error fetching Zoho blog posts for sitemap:", err);
   }
 
+  // 10. Dynamic Odoo Blog Posts (from the isolated Odoo Sanity project)
+  let dynamicOdooBlogs: MetadataRoute.Sitemap = [];
+  try {
+    const odooPosts = await getOdooPosts();
+    if (Array.isArray(odooPosts)) {
+      dynamicOdooBlogs = odooPosts
+        .filter((post: any) => post?.slug?.current || (typeof post?.slug === "string" && post.slug))
+        .map((post: any) => {
+          const slug = post.slug?.current || post.slug;
+          const postDate = post._updatedAt || post.publishedAt || post._createdAt;
+          return {
+            url: `${SITE_URL}/odoo/blogs/${slug}`,
+            lastModified: postDate ? new Date(postDate) : now,
+            changeFrequency: "weekly" as const,
+            priority: 0.7,
+          };
+        });
+    }
+  } catch (err) {
+    console.error("Error fetching Odoo blog posts for sitemap:", err);
+  }
   // Deduplicate URLs in case any path overlaps
   const allEntries = [
     ...staticPages,
@@ -270,6 +293,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...industryPages,
     ...dynamicNetsuiteBlogs,
     ...dynamicZohoBlogs,
+    ...dynamicOdooBlogs,
   ];
 
   const uniqueUrls = new Map<string, MetadataRoute.Sitemap[number]>();

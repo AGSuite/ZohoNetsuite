@@ -9,6 +9,8 @@ import OdooEcosystemSection from "./components/OdooEcosystemSection";
 import OdooGrowthLeadMagnet from "./components/OdooGrowthLeadMagnet";
 import { FAQ } from "@/app/components/home/FAQ";
 import FooterContactForm from "@/app/components/shared/FooterContactForm";
+import { getOdooPosts } from "@/sanity/lib/odooFetch";
+import OdooBlogsSlider from "./components/OdooBlogsSlider";
 import {
   ArrowRight,
   BarChart3,
@@ -72,7 +74,9 @@ const serviceSchema = {
   areaServed: "Worldwide",
 };
 
-export default function OdooHomePage() {
+export default async function OdooHomePage() {
+  const blogs = await getOdooPosts();
+
   return (
     <div className="overflow-x-clip bg-white">
       <Script
@@ -197,6 +201,8 @@ export default function OdooHomePage() {
           </div>
         </div>
       </section>
+
+      <OdooBlogsSlider blogs={blogs} variant="small" />
 
       <FAQ variant="odoo" layout="sidebar" id="faq" />
 
