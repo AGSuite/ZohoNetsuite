@@ -150,7 +150,7 @@ export default function ZohoIntegrationServicesPage() {
       stats={stats}
       modules={modules}
       benefits={benefits}
-      heroImage="/images/zohoimages/zohointegration.png"
+      heroImage="/images/zohoimages/zoho-integration-latest-logo.png"
       introImage="/images/Services/zoho_integration_services_overview.png"
       bgImage="/images/zohoimages/background/zohobg.webp"
       introTitle="Unify Your Entire Business Stack."
