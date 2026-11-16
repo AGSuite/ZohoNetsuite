@@ -27,7 +27,15 @@ function Counter({ value }: { value: number }) {
 
 type ParticleDatum = { width: number; height: number; top: string; left: string; duration: number; delay: number };
 
-export default function ZohoSolutionsClient() {
+interface ZohoSolutionsClientProps {
+  heroCtaLabel?: string;
+  heroCtaHref?: string;
+}
+
+export default function ZohoSolutionsClient({
+  heroCtaLabel = "Explore All Solutions",
+  heroCtaHref = "#solutions",
+}: ZohoSolutionsClientProps) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -285,8 +293,8 @@ export default function ZohoSolutionsClient() {
                 Comprehensive Zoho solutions tailored to your unique business needs. From core CRM to advanced analytics and automation — scale with confidence on the world&apos;s most versatile cloud business suite.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                <Link href="#solutions" className="inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:scale-105">
-                  Explore All Solutions <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity }}><ArrowRight className="w-4 h-4" /></motion.span>
+                <Link href={heroCtaHref} className="inline-flex items-center gap-3 px-7 py-3.5 sm:px-9 sm:py-4 text-sm sm:text-base font-medium rounded-full bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 shadow-xl hover:scale-105">
+                  {heroCtaLabel} <motion.span animate={{ x: [0, 6, 0] }} transition={{ duration: 1.2, repeat: Infinity }}><ArrowRight className="w-4 h-4" /></motion.span>
                 </Link>
               </motion.div>
             </motion.div>

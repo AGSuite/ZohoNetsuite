@@ -50,7 +50,8 @@ import {
     Terminal,
     Server,
     Box,
-    Database
+    Database,
+    Handshake
 } from 'lucide-react';
 
 // Types
@@ -105,6 +106,12 @@ export const navItemsZoho: NavSection[] = [
                 href: "/zoho/our-offices",
                 description: "Explore our global presence and office locations.",
                 icon: Building2
+            },
+            {
+                label: "Our Customers",
+                href: "/zoho/customers",
+                description: "Meet the businesses that trust AGSuite for Zoho solutions.",
+                icon: Handshake
             },
             {
                 label: "Life at AGSuite",

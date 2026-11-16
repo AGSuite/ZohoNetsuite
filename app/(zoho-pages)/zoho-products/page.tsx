@@ -6,5 +6,10 @@ const ZohoSolutionsClient = dynamic(() => import('@/app/zoho/solutions/component
 });
 
 export default function ZohoProductsPage() {
-  return <ZohoSolutionsClient />;
+  return (
+    <ZohoSolutionsClient
+      heroCtaLabel="Sign Up for Zoho Products"
+      heroCtaHref="#contact-form"
+    />
+  );
 }

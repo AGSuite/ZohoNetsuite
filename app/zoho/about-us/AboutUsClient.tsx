@@ -22,6 +22,7 @@ import { motion, useAnimation, type Variants } from "framer-motion";
 import dynamic from "next/dynamic";
 import LazySection from "@/app/components/shared/LazySection";
 import OurLeaders from "@/app/components/OurLeaders";
+import ZohoCustomersSection from "../components/ZohoCustomersSection";
 
 // Dynamically import map component with no SSR to pull simple-maps & d3 out of the main page bundle
 const GlobalOfficeMap = dynamic(() => import("../../netsuite/components/GlobalOfficeMap"), {
@@ -233,26 +234,6 @@ const wordItem: Variants = {
   },
 };
 
-const partnerLogos = [
-  { logo: "/images/zoho%20client%20images/all%20wave%20av.png", name: "All Wave AV" },
-  { logo: "/images/zoho%20client%20images/aurionpro.png", name: "Aurionpro" },
-  { logo: "/images/zoho%20client%20images/avaso.png", name: "Avaso" },
-  { logo: "/images/zoho%20client%20images/Bettinelli.png", name: "Bettinelli" },
-  { logo: "/images/zoho%20client%20images/dahchi.png", name: "Dahchi" },
-  { logo: "/images/zoho%20client%20images/incuspaze.png", name: "Incuspaze" },
-  { logo: "/images/zoho%20client%20images/indialand.png", name: "IndiaLand" },
-  { logo: "/images/zoho%20client%20images/initium.png", name: "Initium" },
-  { logo: "/images/zoho%20client%20images/krishgen.png", name: "Krishgen" },
-  { logo: "/images/zoho%20client%20images/KTA.png", name: "KTA" },
-  { logo: "/images/zoho%20client%20images/rentopia_v2.png", name: "Rentopia" },
-  { logo: "/images/zoho%20client%20images/samson.png", name: "Samson" },
-  { logo: "/images/zoho%20client%20images/shaurrya.png", name: "Shaurrya" },
-  { logo: "/images/zoho%20client%20images/tardid.png", name: "Tardid" },
-  { logo: "/images/zoho%20client%20images/vsn.png", name: "VSN" },
-  { logo: "/images/zoho%20client%20images/Waco.png", name: "Waco" },
-  { logo: "/images/zoho%20client%20images/ziptrip.png", name: "Ziptrip" },
-];
-
 function WhoWeAreSection() {
   return (
     <section className="relative py-24 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
@@ -461,82 +442,6 @@ function StrategicPartnersSection() {
   );
 }
 
-function ClientsSection() {
-  const { ref: marqueeRef, inView: marqueeInView } = useInView({ triggerOnce: true, threshold: 0.1 });
-
-  return (
-    <section className="relative py-14 overflow-hidden bg-white">
-      {/* Background Decorative Elements */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-50/50 rounded-full blur-[100px]" />
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-indigo-50/50 rounded-full blur-[100px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(249,250,251,0.8)_0%,transparent_100%)]" />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="text-center mb-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-900 text-3xl md:text-5xl font-medium"
-          >
-            Trusted by Industry Leaders
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, width: 0 }}
-            whileInView={{ opacity: 1, width: 100 }}
-            viewport={{ once: true }}
-            className="h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-4 rounded-full"
-          />
-        </div>
-
-        <motion.div
-          ref={marqueeRef}
-          initial={{ opacity: 0, y: 30 }}
-          animate={marqueeInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative w-full overflow-hidden py-8"
-        >
-          <div className="animate-marquee whitespace-nowrap flex items-center" style={{ willChange: "transform" }}>
-            {partnerLogos.concat(partnerLogos).map((logo, index) => (
-              <div key={index} className="inline-flex px-4">
-                <div className="flex h-20 w-44 sm:h-24 sm:w-52 items-center justify-center bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 p-4 hover:shadow-xl hover:scale-105 hover:bg-white">
-                  <Image
-                    src={logo.logo}
-                    alt={`${logo.name} logo`}
-                    width={180}
-                    height={70}
-                    sizes="(max-width: 640px) 100px, 150px"
-                    className="max-h-full w-auto object-contain"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
-
-      <style jsx global>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          display: inline-flex;
-          animation: marquee 50s linear infinite;
-          will-change: transform;
-        }
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
-    </section>
-  );
-}
-
-
-
 export default function AboutUsClient() {
   return (
     <>
@@ -549,7 +454,7 @@ export default function AboutUsClient() {
       </LazySection>
 
       <LazySection height="400px">
-        <ClientsSection />
+        <ZohoCustomersSection />
       </LazySection>
 
       <LazySection height="500px">

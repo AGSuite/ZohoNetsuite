@@ -110,6 +110,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/zoho/solutions",
     "/zoho/industries",
     "/zoho/about-us",
+    "/zoho/customers",
     "/zoho/careers",
     "/zoho/contact",
     "/zoho/support",
