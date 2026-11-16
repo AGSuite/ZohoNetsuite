@@ -128,7 +128,7 @@ export default function AnchorScrollHandler() {
 
       const hashIndex = href.indexOf("#");
       const pathPart = href.substring(0, hashIndex);
-      let hashPart = href.substring(hashIndex + 1);
+      const hashPart = href.substring(hashIndex + 1);
 
       if (!hashPart) return;
 

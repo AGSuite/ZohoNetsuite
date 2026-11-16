@@ -65,7 +65,12 @@ export const GoogleRecaptcha = forwardRef<GoogleRecaptchaRef, GoogleRecaptchaPro
             script.defer = true;
             script.onload = () => {
               try {
-                (window as any).grecaptcha?.ready?.(renderWidget) || renderWidget();
+                const grecaptcha = (window as any).grecaptcha;
+                if (grecaptcha?.ready) {
+                  grecaptcha.ready(renderWidget);
+                } else {
+                  renderWidget();
+                }
               } catch (e) {
                 console.warn('reCAPTCHA init error:', e);
               }

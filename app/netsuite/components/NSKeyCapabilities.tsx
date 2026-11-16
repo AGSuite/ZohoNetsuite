@@ -58,6 +58,21 @@ const capabilities: Capability[] = [
     }
 ];
 
+const seededValue = (seed: number) => {
+    const value = Math.sin(seed * 12.9898) * 43758.5453;
+    return value - Math.floor(value);
+};
+
+const capabilityParticles = Array.from({ length: 15 }, (_, index) => ({
+    width: seededValue(index * 7 + 1) * 2 + 1,
+    height: seededValue(index * 7 + 2) * 2 + 1,
+    top: seededValue(index * 7 + 3) * 100,
+    left: seededValue(index * 7 + 4) * 100,
+    drift: seededValue(index * 7 + 5) * 20 - 10,
+    duration: seededValue(index * 7 + 6) * 5 + 3,
+    delay: seededValue(index * 7 + 7) * 5,
+}));
+
 const NSKeyCapabilities = () => {
     const [activeTab, setActiveTab] = useState(capabilities[0].id);
     const [isMounted, setIsMounted] = useState(false);
@@ -336,26 +351,26 @@ const NSKeyCapabilities = () => {
             >
                 {/* Background particles */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    {isMounted && !isMobile && [...Array(15)].map((_, i) => (
+                    {isMounted && !isMobile && capabilityParticles.map((particle, i) => (
                         <motion.div
                             key={i}
                             className="absolute bg-white rounded-full"
                             style={{
-                                width: Math.random() * 2 + 1 + 'px',
-                                height: Math.random() * 2 + 1 + 'px',
-                                top: Math.random() * 100 + '%',
-                                left: Math.random() * 100 + '%',
+                                width: particle.width + 'px',
+                                height: particle.height + 'px',
+                                top: particle.top + '%',
+                                left: particle.left + '%',
                             }}
                             animate={{
                                 y: [0, -30, 0],
-                                x: [0, Math.random() * 20 - 10, 0],
+                                x: [0, particle.drift, 0],
                                 opacity: [0.2, 0.8, 0.2],
                             }}
                             transition={{
-                                duration: Math.random() * 5 + 3,
+                                duration: particle.duration,
                                 repeat: Infinity,
                                 ease: "easeInOut",
-                                delay: Math.random() * 5,
+                                delay: particle.delay,
                             }}
                         />
                     ))}

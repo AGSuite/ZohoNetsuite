@@ -24,11 +24,17 @@ const nextConfig: NextConfig = {
       },
     ],
     formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1440],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1440, 1920],
+    imageSizes: [32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 604800,
     dangerouslyAllowSVG: true,
     qualities: [75, 80, 85, 90, 95],
+    localPatterns: [
+      {
+        pathname: '/images/**',
+        search: '',
+      },
+    ],
   },
   experimental: {
     optimizePackageImports: [

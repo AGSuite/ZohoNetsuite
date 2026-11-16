@@ -12,6 +12,7 @@
  */
 import { urlForImage } from '../../../sanity/lib/image'
 import { CSSProperties } from 'react'
+import SanityCdnImage from '../../components/SanityCdnImage'
 
 interface SanityImageProps {
     image: any
@@ -32,6 +33,7 @@ export default function SanityImage({
     fill = false,
     className = '',
     priority = false,
+    sizes,
     fallback = '/images/placeholder.webp',
     style,
     width,
@@ -39,29 +41,17 @@ export default function SanityImage({
 }: SanityImageProps) {
     const src = urlForImage(image) || fallback
 
-    if (fill) {
-        return (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-                src={src}
-                alt={alt}
-                loading={priority ? 'eager' : 'lazy'}
-                className={`absolute inset-0 w-full h-full ${className}`}
-                style={{ objectFit: 'cover', ...style }}
-            />
-        )
-    }
-
     return (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
+        <SanityCdnImage
             src={src}
             alt={alt}
+            fill={fill}
             width={width}
             height={height}
-            loading={priority ? 'eager' : 'lazy'}
+            priority={priority}
+            sizes={sizes || (fill ? '100vw' : undefined)}
             className={className}
-            style={style}
+            style={{ objectFit: fill ? 'cover' : undefined, ...style }}
         />
     )
 }

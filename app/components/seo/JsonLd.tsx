@@ -11,8 +11,19 @@
  */
 import Script from "next/script";
 
+function stableSchemaId(schema: Record<string, unknown>): string {
+  const serialized = JSON.stringify(schema);
+  let hash = 0;
+
+  for (let index = 0; index < serialized.length; index += 1) {
+    hash = (hash * 31 + serialized.charCodeAt(index)) >>> 0;
+  }
+
+  return `jsonld-${hash.toString(36)}`;
+}
+
 export default function JsonLd({ schema, id }: { schema: Record<string, unknown>; id?: string }) {
-  const scriptId = id || `jsonld-${Math.random().toString(36).substring(2, 9)}`;
+  const scriptId = id || stableSchemaId(schema);
   return (
     <Script
       id={scriptId}

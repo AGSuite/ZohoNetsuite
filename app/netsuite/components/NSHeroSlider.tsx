@@ -12,6 +12,16 @@ import { FileCheck, ShieldCheck, Zap, TrendingUp, DollarSign, BarChart3, PieChar
 import "swiper/css";
 import "swiper/css/pagination";
 
+const seededValue = (seed: number) => {
+  const value = Math.sin(seed * 12.9898) * 43758.5453;
+  return value - Math.floor(value);
+};
+
+const heroParticlePaths = Array.from({ length: 15 }, (_, index) => ({
+  x: [seededValue(index * 4 + 1) * 1000, seededValue(index * 4 + 2) * 1000],
+  y: [seededValue(index * 4 + 3) * 800, seededValue(index * 4 + 4) * 800],
+}));
+
 const NSCircularDesign = dynamic(() => import("./NSCircularDesign").then(mod => mod.NSCircularDesign), {
   ssr: false,
   loading: () => <div className="w-[350px] h-[350px] xl:w-[550px] xl:h-[550px] rounded-full bg-blue-50/50 animate-pulse mx-auto" />
@@ -635,13 +645,13 @@ export default function NSHeroSlider() {
             <div className="absolute inset-0 overflow-hidden bg-white">
               {!isMobile && (
                 <div className="absolute inset-0">
-                  {Array.from({ length: 15 }).map((_, i) => (
+                   {heroParticlePaths.map((particle, i) => (
                     <motion.div
                       key={i}
                       initial={{ opacity: 0 }}
                       animate={{
-                        x: [Math.random() * 1000, Math.random() * 1000],
-                        y: [Math.random() * 800, Math.random() * 800],
+                         x: particle.x,
+                         y: particle.y,
                         opacity: [0, 0.3, 0],
                         scale: [0.5, 0.8, 0.5]
                       }}

@@ -6,6 +6,7 @@ import { Calendar, User, Tag, Clock, ChevronRight, ArrowLeft, ArrowRight } from 
 import { PortableText } from '@portabletext/react';
 import { urlForZohoImage } from '../../../../sanity/lib/zohoImage';
 import CodeBlock from '@/app/components/blog/CodeBlock';
+import SanityCdnImage from '@/app/components/SanityCdnImage';
 
 export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
 
@@ -33,12 +34,12 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
                 if (!inlineImgUrl) return null
                 return (
                     <div className="my-8 rounded-2xl overflow-hidden shadow-md border border-slate-200">
-                        <img
+                        <SanityCdnImage
                             src={inlineImgUrl}
                             alt={value.alt || "article illustration"}
                             className="w-full h-auto"
+                            sizes="(max-width: 1024px) calc(100vw - 3rem), 960px"
                             style={{ maxHeight: '460px', objectFit: 'cover', display: 'block' }}
-                            loading="lazy"
                         />
                         {value.alt && (
                             <p className="text-center text-xs text-slate-500 font-medium py-2 bg-slate-50 border-t border-slate-100">{value.alt}</p>
@@ -232,9 +233,12 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
             {featuredImageUrl && (
                 <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 sm:-mt-28 mb-12 sm:mb-16">
                     <div className="w-full bg-slate-200 rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white aspect-[16/9] sm:aspect-[16/7.5]">
-                        <img
+                        <SanityCdnImage
                             src={featuredImageUrl}
                             alt={post.title}
+                            priority
+                            quality={90}
+                            sizes="(max-width: 1200px) calc(100vw - 2rem), 1200px"
                             className="w-full h-full object-cover object-center"
                             style={{ display: 'block' }}
                         />

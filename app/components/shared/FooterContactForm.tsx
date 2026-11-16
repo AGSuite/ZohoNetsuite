@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import Image from "next/image";
@@ -49,7 +49,7 @@ export default function FooterContactForm({ platform, contentVariant }: FooterCo
   const isNetSuite = platform === 'NetSuite';
   const isOdooContent = contentVariant === 'Odoo';
 
-  const config = isNetSuite
+  const config = useMemo(() => (isNetSuite
     ? {
         formId: "webform409531000047791096",
         formName: "WebToLeads409531000047791096",
@@ -114,7 +114,7 @@ export default function FooterContactForm({ platform, contentVariant }: FooterCo
         recapCallbackName: "rccallback409531000047791049_footer_zoho",
         reCapAlertFuncName: "reCaptchaAlert409531000047791049_footer_zoho",
         recapSiteKey: "6LeWKowtAAAAACYRbbynrmgj7_9Oiqz-QvTAEZb7",
-      };
+      }), [isNetSuite, isOdooContent]);
 
   const [returnUrl, setReturnUrl] = useState('https://www.agsuite.tech/thank-you');
 

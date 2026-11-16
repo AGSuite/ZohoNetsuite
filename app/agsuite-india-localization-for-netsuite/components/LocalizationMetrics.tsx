@@ -27,9 +27,16 @@ function AnimatedCounter({ value, inView }: { value: string; inView: boolean }) 
   const match = value.match(/^(\d+)(.*)$/);
   if (!match) return <span>{value}</span>;
 
-  const targetNumber = parseInt(match[1], 10);
-  const suffix = match[2];
+  return (
+    <NumericAnimatedCounter
+      targetNumber={parseInt(match[1], 10)}
+      suffix={match[2]}
+      inView={inView}
+    />
+  );
+}
 
+function NumericAnimatedCounter({ targetNumber, suffix, inView }: { targetNumber: number; suffix: string; inView: boolean }) {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
   const [displayValue, setDisplayValue] = useState(0);

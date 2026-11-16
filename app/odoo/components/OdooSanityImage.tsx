@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Image from 'next/image'
 import type { CSSProperties } from 'react'
 
 import { urlForOdooImage } from '../../../sanity/lib/odooImage'
+import SanityCdnImage from '../../components/SanityCdnImage'
 
 interface OdooSanityImageProps {
     image: any
@@ -32,14 +32,13 @@ export default function OdooSanityImage({
     const src = urlForOdooImage(image) || fallback
 
     return (
-        <Image
+        <SanityCdnImage
             src={src}
             alt={alt}
             fill={fill}
             width={!fill ? (width || 800) : undefined}
             height={!fill ? (height || 600) : undefined}
             priority={priority}
-            loading={priority ? 'eager' : 'lazy'}
             className={className}
             sizes={sizes || (fill ? '100vw' : undefined)}
             style={{ objectFit: fill ? 'cover' : undefined, ...style }}

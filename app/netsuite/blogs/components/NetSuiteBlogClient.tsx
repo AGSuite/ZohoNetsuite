@@ -7,6 +7,7 @@ import { Calendar, User, Tag, Clock, ChevronRight, ArrowLeft, ArrowRight } from 
 import { PortableText } from '@portabletext/react';
 import { urlForImage } from '../../../../sanity/lib/image';
 import CodeBlock from '@/app/components/blog/CodeBlock';
+import SanityCdnImage from '@/app/components/SanityCdnImage';
 
 export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any) {
 
@@ -39,12 +40,12 @@ export default function NetSuiteBlogClient({ post, featuredImageUrl, mins }: any
                 if (!inlineImgUrl) return null
                 return (
                     <div className="my-8 rounded-2xl overflow-hidden shadow-md border border-slate-200">
-                        <img
+                        <SanityCdnImage
                             src={inlineImgUrl}
                             alt={value.alt || "article illustration"}
                             className="w-full h-auto"
+                            sizes="(max-width: 1024px) calc(100vw - 3rem), 960px"
                             style={{ maxHeight: '460px', objectFit: 'cover', display: 'block' }}
-                            loading="lazy"
                         />
                         {value.alt && (
                             <p className="text-center text-xs text-slate-500 font-medium py-2 bg-slate-50 border-t border-slate-100">{value.alt}</p>

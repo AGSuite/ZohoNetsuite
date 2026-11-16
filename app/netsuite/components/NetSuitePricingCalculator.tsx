@@ -100,7 +100,7 @@ const NetSuitePricingCalculator = () => {
         'Fixed Asset Management'
     ];
 
-    const industryModules: Record<string, string[]> = {
+    const industryModules = useMemo<Record<string, string[]>>(() => ({
         'Software and Technology': [
             'SuiteBilling',
             'Advanced Revenue Management (ARM)',
@@ -160,7 +160,7 @@ const NetSuitePricingCalculator = () => {
             'Inventory Management'
         ],
         'Other': []
-    };
+    }), []);
 
     const revenueRanges = ['Under $1M', '$1M to $10M', '$10M to $50M', '$50M to $100M', '$100M to $500M', '$500M+'];
     const stepTitles = ['Industry', 'Geo', 'Solutions', 'Finish'];
@@ -268,7 +268,7 @@ const NetSuitePricingCalculator = () => {
             }
         });
         return Array.from(recs);
-    }, [formData.industries]);
+    }, [formData.industries, industryModules]);
 
     // ── SUCCESS SCREEN ──────────────────────────────────────────────────────
     if (showSuccess) return (

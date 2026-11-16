@@ -149,7 +149,12 @@ export default function RequestQuotePremium() {
       } else {
         const interval = setInterval(() => {
           if ((window as any).grecaptcha) {
-            (window as any).grecaptcha.ready ? (window as any).grecaptcha.ready(renderRecaptcha) : renderRecaptcha();
+            const grecaptcha = (window as any).grecaptcha;
+            if (grecaptcha.ready) {
+              grecaptcha.ready(renderRecaptcha);
+            } else {
+              renderRecaptcha();
+            }
             clearInterval(interval);
           }
         }, 300);
