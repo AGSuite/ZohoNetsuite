@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import NavbarNetSuite from "@/app/netsuite/components/NSNavbar";
 import NetSuiteFooter from "@/app/components/footers/NetSuiteFooter";
 import { SITE_URL, SITE_NAME } from "@/app/lib/seo";
+import BusinessEmailGuard from "@/app/components/shared/BusinessEmailGuard";
 
 export const metadata: Metadata = {
   title: {
@@ -46,6 +47,7 @@ export default function NetSuiteSolutionsLayout({
 }) {
   return (
     <div className="min-h-screen bg-white">
+      <BusinessEmailGuard />
       <NavbarNetSuite />
       <main>{children}</main>
       <NetSuiteFooter />

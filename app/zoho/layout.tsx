@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ZohoNavbar from "./components/ZohoNavbar";
 import ZohoFooter from "../components/footers/ZohoFooter";
+import BusinessEmailGuard from "../components/shared/BusinessEmailGuard";
 
 export const metadata: Metadata = {
   title: "Zoho Solutions - Business Software Suite",
@@ -14,6 +15,7 @@ export default function ZohoLayout({
 }) {
   return (
     <div className="min-h-screen bg-white">
+      <BusinessEmailGuard />
       <ZohoNavbar />
       <main>{children}</main>
       <ZohoFooter />

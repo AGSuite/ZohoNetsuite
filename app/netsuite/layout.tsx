@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import NavbarNetSuite from "./components/NSNavbar";
 import NetSuiteFooter from "../components/footers/NetSuiteFooter";
+import BusinessEmailGuard from "../components/shared/BusinessEmailGuard";
 
 export const metadata: Metadata = {
   title: "NetSuite Solutions - Enterprise ERP & CRM",
@@ -14,6 +15,7 @@ export default function NetSuiteLayout({
 }) {
   return (
     <div className="min-h-screen bg-white">
+      <BusinessEmailGuard />
       <NavbarNetSuite />
       <main>{children}</main>
       <NetSuiteFooter />
