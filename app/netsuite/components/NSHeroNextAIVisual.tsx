@@ -34,7 +34,6 @@ export const NSHeroNextAIVisual: React.FC<NSHeroNextAIVisualProps> = ({
               unoptimized={true}
               className="w-full h-auto object-contain"
               sizes="(max-width: 1024px) 100vw, 70vw"
-              quality={100}
             />
           </div>
         </div>

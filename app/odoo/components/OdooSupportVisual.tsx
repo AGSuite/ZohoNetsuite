@@ -35,7 +35,7 @@ export const OdooSupportVisual: React.FC<OdooSupportVisualProps> = ({
               priority
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]"
               sizes="(max-width: 1024px) 100vw, 60vw"
-              quality={92}
+              quality={95}
             />
           </div>
         </div>

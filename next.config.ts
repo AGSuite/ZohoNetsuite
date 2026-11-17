@@ -23,12 +23,17 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-    formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1440, 1920],
+    // Keep one modern output format so each source/width/quality combination
+    // creates one cached transformation instead of separate AVIF and WebP
+    // variants. WebP retains broad browser support and the configured quality.
+    formats: ['image/webp'],
+    deviceSizes: [640, 750, 1080, 1200, 1440, 1920],
     imageSizes: [32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 604800,
     dangerouslyAllowSVG: true,
-    qualities: [75, 80, 85, 90, 95],
+    // Three deliberate quality tiers prevent near-identical cache variants.
+    // Components use only these values, with high-detail images kept at 95.
+    qualities: [75, 85, 95],
     localPatterns: [
       {
         pathname: '/images/**',
@@ -46,7 +51,9 @@ const nextConfig: NextConfig = {
       "react-icons",
       "gsap",
     ],
-    serverSourceMaps: true,
+    // Production server source maps added roughly 80 MB to the current build.
+    // Keep them out of deployments; this does not affect runtime behaviour.
+    serverSourceMaps: false,
   },
   transpilePackages: ["swiper", "framer-motion", "gsap", "lucide-react"],
   compiler: {

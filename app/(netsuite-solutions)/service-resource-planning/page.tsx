@@ -407,7 +407,7 @@ export default function NetSuiteSRPPage() {
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover rounded-xl transition-transform duration-700 hover:scale-105"
-                    quality={98}
+                    quality={95}
                     priority
                   />
                 </div>

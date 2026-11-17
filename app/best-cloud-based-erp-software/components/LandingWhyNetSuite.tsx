@@ -169,7 +169,7 @@ export default function LandingWhyNetSuite() {
             alt="NetSuite Business Growth CTA"
             fill
             className="object-cover object-center"
-            quality={80}
+            quality={85}
             sizes="100vw"
           />
           {/* Dark gradient overlay */}

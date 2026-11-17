@@ -131,7 +131,7 @@ export default function Home() {
               height={55}
               priority
               className="h-8 sm:h-9 w-auto object-contain drop-shadow"
-              quality={90}
+              quality={95}
             />
           </Link>
         </div>
@@ -167,7 +167,7 @@ export default function Home() {
                   height={55}
                   priority
                   className="h-7.5 sm:h-8.5 w-auto object-contain"
-                  quality={90}
+                  quality={95}
                 />
               </Link>
 
@@ -188,7 +188,7 @@ export default function Home() {
                   height={55}
                   priority
                   className="h-7.5 sm:h-8.5 w-auto object-contain"
-                  quality={90}
+                  quality={95}
                 />
               </Link>
             </div>
@@ -211,7 +211,7 @@ export default function Home() {
             height={55}
             priority
             className="h-10 md:h-11 lg:h-12 w-auto object-contain drop-shadow"
-            quality={90}
+            quality={95}
           />
         </Link>
 
@@ -245,7 +245,7 @@ export default function Home() {
                   height={55}
                   priority
                   className="h-10 md:h-11 lg:h-12 w-auto object-contain"
-                  quality={90}
+                  quality={95}
                 />
               </Link>
 
@@ -266,7 +266,7 @@ export default function Home() {
                   height={55}
                   priority
                   className="h-10 md:h-11 lg:h-12 w-auto object-contain"
-                  quality={90}
+                  quality={95}
                 />
               </Link>
             </div>

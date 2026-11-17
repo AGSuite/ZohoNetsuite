@@ -311,7 +311,7 @@ export default function LandingServicesIndustries() {
                       fill
                       className="object-cover"
                       sizes="350px"
-                      quality={80}
+                      quality={85}
                     />
                     {/* Black gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent" />
@@ -401,7 +401,7 @@ export default function LandingServicesIndustries() {
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      quality={80}
+                      quality={85}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
                   </div>
@@ -465,7 +465,7 @@ export default function LandingServicesIndustries() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) calc(100vw - 48px), 100vw"
-                  quality={80}
+                  quality={85}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
 

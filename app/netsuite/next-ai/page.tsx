@@ -225,7 +225,6 @@ function AskOracleFeatures() {
                               width={700}
                               height={450}
                               className="w-full h-auto object-contain bg-white"
-                              quality={100}
                               unoptimized
                             />
                             <div className="bg-slate-50 border-t border-slate-200 p-3 flex items-center justify-between">
@@ -297,7 +296,6 @@ function AskOracleFeatures() {
                   width={900}
                   height={600}
                   className="w-full h-auto object-contain rounded-t-xl"
-                  quality={100}
                   unoptimized
                 />
               </motion.div>
@@ -616,7 +614,6 @@ export default function NetSuiteNextAIPage() {
                 width={1400}
                 height={1400}
                 className="w-full h-auto object-cover rounded-t-2xl sm:rounded-t-3xl"
-                quality={100}
                 priority
                 unoptimized
               />
@@ -841,7 +838,6 @@ export default function NetSuiteNextAIPage() {
                           fill
                           sizes="(max-width: 1280px) 100vw, 50vw"
                           className="object-contain object-center p-2"
-                          quality={100}
                           unoptimized
                         />
                       </div>
@@ -897,7 +893,7 @@ export default function NetSuiteNextAIPage() {
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    quality={98}
+                    quality={95}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
                 </div>
@@ -929,7 +925,7 @@ export default function NetSuiteNextAIPage() {
               fill
               className="object-cover"
               sizes="100vw"
-              quality={98}
+              quality={95}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-transparent" />
             <div className="absolute top-0 right-0 w-72 h-72 bg-blue-500/15 blur-3xl -mr-36 -mt-36" />

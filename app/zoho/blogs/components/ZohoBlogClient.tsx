@@ -237,7 +237,7 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
                             src={featuredImageUrl}
                             alt={post.title}
                             priority
-                            quality={90}
+                            quality={95}
                             sizes="(max-width: 1200px) calc(100vw - 2rem), 1200px"
                             className="w-full h-full object-cover object-center"
                             style={{ display: 'block' }}
