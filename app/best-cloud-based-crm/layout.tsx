@@ -68,28 +68,7 @@ export default function BestCloudBasedCrmLayout({
 
       {children}
 
-      {/* Zoho SalesIQ */}
-      <Script
-        id="zsiqchat"
-        strategy="lazyOnload"
-      >
-        {`
-          var $zoho=$zoho || {};
-          $zoho.salesiq = $zoho.salesiq || {
-            widgetcode: "siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19",
-            values:{},
-            ready:function(){}
-          };
-          var d=document;
-          var s=d.createElement("script");
-          s.type="text/javascript";
-          s.id="zsiqscript";
-          s.defer=true;
-          s.src="https://salesiq.zohopublic.in/widget";
-          var t=d.getElementsByTagName("script")[0];
-          t.parentNode.insertBefore(s,t);
-        `}
-      </Script>
+      {/* Zoho SalesIQ chatbot intentionally disabled on landing pages. */}
 
       {/* Zoho CRM Analytics script */}
       <Script
