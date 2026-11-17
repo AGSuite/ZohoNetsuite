@@ -169,7 +169,7 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        {/* Google tag (gtag.js) - Defer to lazyOnload to unblock FCP, LCP, and TBT */}
+        {/* Google tag (gtag.js) - Analytics and Google Ads */}
         <Script
           strategy="lazyOnload"
           src="https://www.googletagmanager.com/gtag/js?id=G-FWVDJQ8Q2R"
@@ -184,6 +184,7 @@ export default function RootLayout({
             gtag('js', new Date());
 
             gtag('config', 'G-FWVDJQ8Q2R');
+            gtag('config', 'AW-10876325873');
           `}
         </Script>
 
