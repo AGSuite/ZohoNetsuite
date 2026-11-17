@@ -53,24 +53,17 @@ export default function LandingLayout({
       {children}
 
       {/* Zoho SalesIQ */}
-      <Script id="zsiqchat" strategy="lazyOnload">
+      <Script id="zsiq-init" strategy="afterInteractive">
         {`
-          var $zoho=$zoho || {};
-          $zoho.salesiq = $zoho.salesiq || {
-            widgetcode: "siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19",
-            values:{},
-            ready:function(){}
-          };
-          var d=document;
-          var s=d.createElement("script");
-          s.type="text/javascript";
-          s.id="zsiqscript";
-          s.defer=true;
-          s.src="https://salesiq.zohopublic.in/widget";
-          var t=d.getElementsByTagName("script")[0];
-          t.parentNode.insertBefore(s,t);
+          window.$zoho = window.$zoho || {};
+          $zoho.salesiq = $zoho.salesiq || { ready: function(){} };
         `}
       </Script>
+      <Script
+        id="zsiqscript"
+        src="https://salesiq.zohopublic.in/widget?wc=siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19"
+        strategy="afterInteractive"
+      />
 
       {/* Zoho CRM Analytics script */}
       <Script
