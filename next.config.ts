@@ -5,7 +5,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   images: {
-    unoptimized: false,
+    // Temporary Vercel quota safeguard: serve original image sources directly
+    // instead of creating new /_next/image transformations.
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
