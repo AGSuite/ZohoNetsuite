@@ -2,6 +2,8 @@ import { zohoClient } from "./zohoClient";
 import { POSTS_QUERY, POST_BY_SLUG_QUERY } from "./queries";
 import { zohoProjectId, zohoDataset } from "../env";
 
+const ZOHO_BLOG_REVALIDATE_SECONDS = 60;
+
 export async function getZohoPosts() {
   if (!zohoProjectId || !zohoDataset) {
     return [];
@@ -10,9 +12,8 @@ export async function getZohoPosts() {
     POSTS_QUERY,
     {},
     {
-      // Keep newly published Zoho posts visible on listing pages without
-      // making a fresh Sanity request for every visitor.
-      next: { revalidate: 300 },
+      // Refresh shortly after publishing without requesting Sanity for every visitor.
+      next: { revalidate: ZOHO_BLOG_REVALIDATE_SECONDS },
     },
   );
 }
@@ -25,7 +26,7 @@ export async function getZohoPostBySlug(slug: string) {
     POST_BY_SLUG_QUERY,
     { slug },
     {
-      next: { revalidate: 3600 },
+      next: { revalidate: ZOHO_BLOG_REVALIDATE_SECONDS },
     },
   );
 }
