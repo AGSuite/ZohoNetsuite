@@ -52,7 +52,18 @@ export default function LandingLayout({
 
       {children}
 
-      {/* Zoho SalesIQ chatbot intentionally disabled on landing pages. */}
+      {/* Zoho SalesIQ */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html:
+            'window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}',
+        }}
+      />
+      <script
+        id="zsiqscript"
+        src="https://salesiq.zohopublic.in/widget?wc=siq35ed179fbb63b96bebd9bc669caab3cc7ab9252873ae18a7fd3bac7692c8ff19"
+        defer
+      />
 
       {/* Zoho CRM Analytics script */}
       <Script
