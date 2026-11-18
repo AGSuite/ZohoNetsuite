@@ -1,0 +1,527 @@
+<article class="zoho-one-guide">
+  <style>
+    .zoho-one-guide {
+      --zoho-blue: #2563eb;
+      --zoho-navy: #1e293b;
+      --zoho-slate: #475569;
+      --zoho-border: #e2e8f0;
+      color: var(--zoho-slate);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .zoho-one-guide * {
+      box-sizing: border-box;
+    }
+    .zoho-one-guide p {
+      margin: 0 0 1.15rem;
+    }
+    .zoho-one-guide h2 {
+      scroll-margin-top: 7rem;
+    }
+
+    .zoho-one-guide .intro-card,
+    .zoho-one-guide .workflow-card,
+    .zoho-one-guide .partner-card,
+    .zoho-one-guide .final-card {
+      background: #f8fafc;
+      border: 1px solid var(--zoho-border);
+      border-radius: 10px;
+      color: var(--zoho-slate);
+      margin: 1.5rem 0 2rem;
+      padding: 1.25rem;
+    }
+
+    .zoho-one-guide .intro-card {
+      background: #f8fbff;
+      border-left: 4px solid var(--zoho-blue);
+    }
+
+    .zoho-one-guide .eyebrow {
+      color: #1d4ed8;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .zoho-one-guide .lead {
+      color: var(--zoho-navy);
+      font-size: 1.08rem;
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    .zoho-one-guide .app-grid {
+      display: block;
+      margin-top: 1.5rem;
+    }
+
+    .zoho-one-guide .app-pill {
+      align-items: center;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #e2e8f0;
+      border-radius: 0;
+      color: #334155;
+      display: flex;
+      font-size: 0.95rem;
+      font-weight: 600;
+      gap: 0.6rem;
+      padding: 0.65rem 0;
+    }
+
+    .zoho-one-guide .app-dot {
+      border-radius: 7px;
+      color: white;
+      display: inline-grid;
+      flex: 0 0 28px;
+      font-size: 0.7rem;
+      font-weight: 850;
+      height: 28px;
+      place-items: center;
+      width: 28px;
+    }
+
+    .zoho-one-guide .blue {
+      background: #2563eb;
+    }
+    .zoho-one-guide .red {
+      background: #dc2626;
+    }
+    .zoho-one-guide .green {
+      background: #16a34a;
+    }
+    .zoho-one-guide .orange {
+      background: #ea580c;
+    }
+    .zoho-one-guide .purple {
+      background: #7c3aed;
+    }
+    .zoho-one-guide .cyan {
+      background: #0891b2;
+    }
+    .zoho-one-guide .pink {
+      background: #db2777;
+    }
+    .zoho-one-guide .amber {
+      background: #d97706;
+    }
+
+    .zoho-one-guide .section-number {
+      align-items: center;
+      background: #2563eb;
+      border-radius: 999px;
+      color: #fff;
+      display: inline-flex;
+      font-size: 0.8rem;
+      font-weight: 850;
+      height: 32px;
+      justify-content: center;
+      margin-right: 0.55rem;
+      vertical-align: 0.2rem;
+      width: 32px;
+    }
+
+    .zoho-one-guide .feature-list {
+      display: block;
+      list-style: disc;
+      margin: 0.75rem 0 1.25rem;
+      padding-left: 1.5rem;
+    }
+
+    .zoho-one-guide .feature-list li {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      color: #475569;
+      margin: 0 0 0.45rem;
+      padding: 0 0 0 0.2rem;
+    }
+
+    .zoho-one-guide .benefit {
+      background: #eff6ff;
+      border-left: 4px solid var(--zoho-blue);
+      border-radius: 0 10px 10px 0;
+      color: #334155;
+      margin: 1.1rem 0 1.4rem;
+      padding: 0.9rem 1rem;
+    }
+
+    .zoho-one-guide .benefit strong {
+      color: #1e3a8a;
+    }
+
+    .zoho-one-guide .workflow-card {
+      background: #f8fafc;
+    }
+
+    .zoho-one-guide .workflow-card h3,
+    .zoho-one-guide .workflow-card strong {
+      color: #1e293b;
+    }
+
+    .zoho-one-guide .workflow {
+      display: block;
+      list-style: decimal;
+      margin: 1rem 0 0;
+      padding-left: 1.5rem;
+    }
+
+    .zoho-one-guide .workflow li {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      margin: 0 0 0.75rem;
+      padding: 0 0 0 0.25rem;
+    }
+
+    .zoho-one-guide .partner-card {
+      background: #fffdf7;
+      border-color: #fde68a;
+    }
+
+    .zoho-one-guide .partner-card h3 {
+      color: #334155;
+      margin-top: 0;
+    }
+
+    .zoho-one-guide .final-card {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: #334155;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .zoho-one-guide .final-card h2,
+    .zoho-one-guide .final-card strong {
+      color: #1e3a8a;
+    }
+
+    .zoho-one-guide .final-card h2 {
+      border: 0 !important;
+      margin: 0 0 0.75rem !important;
+      padding: 0 !important;
+    }
+
+    .zoho-one-guide .cta-button {
+      background: #2563eb;
+      border-radius: 10px;
+      color: #fff !important;
+      display: inline-block;
+      font-weight: 850;
+      margin-top: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      text-decoration: none !important;
+    }
+
+    .zoho-one-guide .cta-button:hover {
+      background: #1d4ed8;
+    }
+  </style>
+
+  <section class="intro-card">
+    <div class="eyebrow">One connected operating system for your business</div>
+    <p class="lead">
+      Managing sales, marketing, finance, HR, and customer support requires
+      close coordination across multiple departments. When these functions rely
+      on disconnected applications and manual processes, businesses often face
+      delays, duplicated data, missed follow-ups, and reduced productivity.
+    </p>
+    <p>
+      What if your entire business could work together through one connected
+      ecosystem? Zoho One is an integrated suite of business applications
+      designed to simplify operations, automate repetitive tasks, and improve
+      collaboration across departments.
+    </p>
+    <p>
+      As a <strong>Zoho Premium Partner</strong>, AGSuite Technologies helps
+      businesses implement and customise Zoho solutions to build smarter, more
+      efficient workflows.
+    </p>
+
+    <div class="app-grid" aria-label="Zoho applications covered in this guide">
+      <div class="app-pill"><span class="app-dot blue">CRM</span>Zoho CRM</div>
+      <div class="app-pill"><span class="app-dot red">M</span>Marketing</div>
+      <div class="app-pill"><span class="app-dot green">B</span>Zoho Books</div>
+      <div class="app-pill">
+        <span class="app-dot orange">P</span>Zoho People
+      </div>
+      <div class="app-pill"><span class="app-dot purple">F</span>Zoho Flow</div>
+      <div class="app-pill">
+        <span class="app-dot cyan">C</span>Zoho Creator
+      </div>
+      <div class="app-pill">
+        <span class="app-dot pink">A</span>Zoho Analytics
+      </div>
+      <div class="app-pill"><span class="app-dot amber">D</span>Zoho Desk</div>
+    </div>
+  </section>
+
+  <p>Let us explore how Zoho One can transform your business operations.</p>
+
+  <h2><span class="section-number">1</span>Automate Sales with Zoho CRM</h2>
+  <p>
+    Managing leads and ensuring timely follow-ups can become challenging as your
+    business grows. Zoho CRM streamlines the complete sales process by
+    automating repetitive activities and giving teams a clear view of every
+    opportunity.
+  </p>
+  <p><strong>With Zoho CRM, you can:</strong></p>
+  <ul class="feature-list">
+    <li>Automatically capture and assign website leads.</li>
+    <li>Schedule follow-up reminders and sales activities.</li>
+    <li>Automate emails and customer communication.</li>
+    <li>Track deals through different sales stages.</li>
+    <li>Monitor sales performance through dashboards.</li>
+  </ul>
+  <div class="benefit">
+    <strong>Business benefit:</strong> Better lead management, faster
+    follow-ups, and improved sales productivity.
+  </div>
+
+  <h2>
+    <span class="section-number">2</span>Simplify Marketing with Zoho
+    Applications
+  </h2>
+  <p>
+    Managing campaigns across multiple platforms can consume valuable time. Zoho
+    Campaigns, Zoho Marketing Automation, and Zoho Social help businesses manage
+    customer engagement more efficiently.
+  </p>
+  <p><strong>You can:</strong></p>
+  <ul class="feature-list">
+    <li>Schedule social media posts.</li>
+    <li>Automate email marketing campaigns.</li>
+    <li>Create personalised customer journeys.</li>
+    <li>Segment audiences and nurture leads.</li>
+    <li>Track campaign performance.</li>
+  </ul>
+  <div class="benefit">
+    <strong>Business benefit:</strong> Consistent customer engagement, better
+    lead nurturing, and more efficient marketing operations.
+  </div>
+
+  <h2>
+    <span class="section-number">3</span>Streamline Finance with Zoho Books
+  </h2>
+  <p>
+    Manual invoicing, payment tracking, and expense management can increase the
+    workload of finance teams. Zoho Books simplifies accounting operations
+    through automation.
+  </p>
+  <p><strong>You can:</strong></p>
+  <ul class="feature-list">
+    <li>Generate and schedule recurring invoices.</li>
+    <li>Automate payment reminders.</li>
+    <li>Track expenses and transactions.</li>
+    <li>Manage purchase orders.</li>
+    <li>Configure approval workflows.</li>
+    <li>Monitor financial reports.</li>
+  </ul>
+  <div class="benefit">
+    <strong>Business benefit:</strong> Reduced manual accounting work, improved
+    payment tracking, and better financial visibility.
+  </div>
+
+  <h2>
+    <span class="section-number">4</span>Simplify HR Operations with Zoho People
+  </h2>
+  <p>
+    Managing employee information and routine HR activities becomes easier with
+    Zoho People.
+  </p>
+  <p><strong>Businesses can automate:</strong></p>
+  <ul class="feature-list">
+    <li>Employee onboarding.</li>
+    <li>Leave applications and approvals.</li>
+    <li>Attendance and timesheet tracking.</li>
+    <li>HR notifications and reminders.</li>
+    <li>Employee record management.</li>
+  </ul>
+  <div class="benefit">
+    <strong>Business benefit:</strong> Simplified HR administration, faster
+    approvals, and better workforce management.
+  </div>
+
+  <h2>
+    <span class="section-number">5</span>Connect Applications with Zoho Flow
+  </h2>
+  <p>
+    Businesses often use multiple applications to manage different operations.
+    Zoho Flow connects Zoho applications and supported third-party tools,
+    enabling information to move between systems automatically.
+  </p>
+  <p><strong>For example:</strong></p>
+  <ul class="feature-list">
+    <li>A new CRM lead can trigger an automated notification.</li>
+    <li>An approved request can initiate the next workflow.</li>
+    <li>Customer information can move between connected applications.</li>
+    <li>Important business activities can trigger automated alerts.</li>
+  </ul>
+  <div class="benefit">
+    <strong>Business benefit:</strong> Reduced manual data entry, improved
+    connectivity, and smoother cross-department workflows.
+  </div>
+
+  <h2>
+    <span class="section-number">6</span>Build Custom Applications with Zoho
+    Creator
+  </h2>
+  <p>
+    Every business has unique operational requirements. Zoho Creator enables
+    organisations to build customised business applications using a low-code
+    development platform.
+  </p>
+  <p><strong>Businesses can create:</strong></p>
+  <ul class="feature-list">
+    <li>Inventory management applications.</li>
+    <li>Vendor management portals.</li>
+    <li>Employee management systems.</li>
+    <li>Approval management solutions.</li>
+    <li>Custom operational dashboards.</li>
+  </ul>
+  <div class="benefit">
+    <strong>Business benefit:</strong> Tailored applications that address
+    specific business requirements and simplify everyday processes.
+  </div>
+
+  <h2>
+    <span class="section-number">7</span>Make Data-Driven Decisions with Zoho
+    Analytics
+  </h2>
+  <p>
+    Making informed business decisions requires accurate and accessible
+    information. Zoho Analytics helps organisations consolidate data and
+    transform it into meaningful reports and dashboards.
+  </p>
+  <p><strong>You can monitor:</strong></p>
+  <ul class="feature-list">
+    <li>Sales performance and revenue trends.</li>
+    <li>Financial reports and expenses.</li>
+    <li>Marketing campaign results.</li>
+    <li>Customer support performance.</li>
+    <li>Overall business growth.</li>
+  </ul>
+  <div class="benefit">
+    <strong>Business benefit:</strong> Better business visibility, simplified
+    reporting, and data-driven decision-making.
+  </div>
+
+  <h2>
+    <span class="section-number">8</span>Improve Customer Support with Zoho Desk
+  </h2>
+  <p>
+    Managing customer queries across multiple channels can make support
+    operations difficult to track. Zoho Desk centralises customer interactions
+    and automates ticket management.
+  </p>
+  <p><strong>With Zoho Desk, you can:</strong></p>
+  <ul class="feature-list">
+    <li>Automatically create and assign support tickets.</li>
+    <li>Configure ticket escalation rules.</li>
+    <li>Set SLA reminders and notifications.</li>
+    <li>Track ticket status and resolution time.</li>
+    <li>Monitor customer support performance.</li>
+  </ul>
+  <div class="benefit">
+    <strong>Business benefit:</strong> Faster issue resolution, organised
+    support operations, and an improved customer experience.
+  </div>
+
+  <h2>
+    <span class="section-number">9</span>How Zoho One Connects Your Entire
+    Business
+  </h2>
+  <p>
+    The real advantage of Zoho One is its ability to connect different business
+    functions and create integrated workflows.
+  </p>
+
+  <section class="workflow-card">
+    <h3>A connected customer journey</h3>
+    <ol class="workflow">
+      <li>
+        A customer submits an enquiry through your website, and
+        <strong>Zoho CRM</strong> captures the lead.
+      </li>
+      <li>
+        The sales team follows up and manages the opportunity through CRM.
+      </li>
+      <li>
+        As the deal progresses, connected finance processes support invoicing
+        through <strong>Zoho Books</strong>.
+      </li>
+      <li>
+        Customer queries are managed and tracked through
+        <strong>Zoho Desk</strong>.
+      </li>
+      <li>
+        Data from connected applications is consolidated and analysed in
+        <strong>Zoho Analytics</strong>.
+      </li>
+    </ol>
+  </section>
+
+  <p>
+    With Zoho Flow and application-specific automation, businesses can connect
+    processes, trigger notifications, and reduce repetitive manual activities.
+    This creates a connected environment where departments collaborate and
+    access relevant information efficiently.
+  </p>
+
+  <h2>
+    <span class="section-number">10</span>Why Choose AGSuite Technologies for
+    Zoho One Implementation?
+  </h2>
+  <p>
+    Having the right software is only the beginning. Successful automation
+    requires a clear understanding of business processes and the ability to
+    implement the right solution.
+  </p>
+
+  <section class="partner-card">
+    <h3>Your Zoho Premium Partner</h3>
+    <p>AGSuite Technologies helps businesses simplify operations through:</p>
+    <ul class="feature-list">
+      <li>Zoho One implementation and configuration.</li>
+      <li>Business process automation.</li>
+      <li>Zoho application integration.</li>
+      <li>Custom application development.</li>
+      <li>Workflow configuration and optimisation.</li>
+      <li>Reporting and analytics.</li>
+      <li>User training and ongoing support.</li>
+    </ul>
+    <p>
+      We focus on understanding your business requirements and aligning Zoho
+      applications with your operational needs to create efficient, connected
+      workflows.
+    </p>
+  </section>
+
+  <h2>Final Thoughts</h2>
+  <p>
+    Business automation is no longer just about reducing manual work. It is
+    about building connected processes that help organisations operate more
+    efficiently and make better decisions.
+  </p>
+  <p>
+    With Zoho One, businesses can streamline sales, marketing, finance, HR, and
+    customer support through an integrated ecosystem.
+  </p>
+
+  <section class="final-card">
+    <h2>Ready to Automate Your Business with Zoho One?</h2>
+    <p>
+      Partner with AGSuite Technologies to discover how the right Zoho solutions
+      can simplify your workflows and support sustainable business growth.
+    </p>
+    <a
+      class="cta-button"
+      href="https://www.agsuitetech.com/zoho/free-consultation"
+      >Book a Free Zoho Consultation</a
+    >
+  </section>
+</article>
