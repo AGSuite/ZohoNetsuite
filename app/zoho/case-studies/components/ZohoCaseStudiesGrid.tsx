@@ -23,11 +23,12 @@ interface CaseStudy {
     id: number;
     title: string;
     description: string;
-    image: string;
+    image?: string;
     company: string;
     industry: string;
     tags: string[];
     recipientEmail: string;
+    ctaEnabled?: boolean;
 }
 
 const allCaseStudies: CaseStudy[] = [
@@ -35,7 +36,7 @@ const allCaseStudies: CaseStudy[] = [
         id: 1,
         title: "Zoho for Agriculture Industry",
         description: "How a team of dedicated professionals is transforming agriculture through sustainable, tech-driven solutions.",
-        image: "/images/case-studies/cs_agriculture.png",
+        image: "/images/case-studies/cards/01-agriculture.webp",
         company: "Agriculture",
         industry: "Agriculture",
         tags: ["Zoho", "Agriculture"],
@@ -45,7 +46,7 @@ const allCaseStudies: CaseStudy[] = [
         id: 2,
         title: "Zoho for Business Consulting & Services Industry Sector",
         description: "A leading managed consulting provider streamlines its operations and client management.",
-        image: "/images/case-studies/cs_consulting_operations.png",
+        image: "/images/case-studies/cards/02-business-consulting-operations.webp",
         company: "Business Consulting",
         industry: "Business Consulting & Services",
         tags: ["Zoho", "Business Consulting & Services"],
@@ -55,7 +56,7 @@ const allCaseStudies: CaseStudy[] = [
         id: 3,
         title: "Zoho for Business Consulting & Services Industry",
         description: "Modernizing a traditional accounting ecosystem with Zoho's automated business suite.",
-        image: "/images/case-studies/cs_consulting_accounting.png",
+        image: "/images/case-studies/cards/03-business-consulting-accounting.webp",
         company: "Business Consulting",
         industry: "Business Consulting & Services",
         tags: ["Zoho", "Business Consulting & Services"],
@@ -65,7 +66,7 @@ const allCaseStudies: CaseStudy[] = [
         id: 4,
         title: "Zoho for Financial Services",
         description: "Adopting a modern approach to gather, analyze, and manage mission-critical financial data.",
-        image: "/images/case-studies/cs_financial_services_office.png",
+        image: "/images/case-studies/cards/04-financial-services-office.webp",
         company: "Financial Services",
         industry: "Financial Services",
         tags: ["Zoho", "Financial Services"],
@@ -75,7 +76,7 @@ const allCaseStudies: CaseStudy[] = [
         id: 5,
         title: "Zoho for Healthcare & Medical Spa Industry",
         description: "Optimizing patient workflows and clinic management for a leading medical spa provider.",
-        image: "/images/case-studies/cs_healthcare_spa.png",
+        image: "/images/case-studies/cards/05-healthcare-medical-spa.webp",
         company: "Healthcare",
         industry: "Healthcare",
         tags: ["Zoho", "Healthcare"],
@@ -85,7 +86,7 @@ const allCaseStudies: CaseStudy[] = [
         id: 6,
         title: "Zoho for Media Industry",
         description: "Hosting and managing high-volume media assets with a centralized digital ecosystem.",
-        image: "/images/case-studies/cs_media.png",
+        image: "/images/case-studies/cards/06-media.webp",
         company: "Media",
         industry: "Media",
         tags: ["Zoho", "Media"],
@@ -95,7 +96,7 @@ const allCaseStudies: CaseStudy[] = [
         id: 7,
         title: "Zoho for Real Estate Industry",
         description: "Replacing legacy property management systems with a unified lead and listing platform.",
-        image: "/images/case-studies/cs_real_estate.png",
+        image: "/images/case-studies/cards/07-real-estate.webp",
         company: "Real Estate",
         industry: "Real Estate",
         tags: ["Zoho", "Real Estate"],
@@ -105,7 +106,7 @@ const allCaseStudies: CaseStudy[] = [
         id: 8,
         title: "Zoho for Retail and E-Commerce Industry",
         description: "Scaling a global retail brand with integrated POS, inventory, and online sales tracking.",
-        image: "/images/case-studies/cs_retail_ecommerce.png",
+        image: "/images/case-studies/cards/08-retail-ecommerce.webp",
         company: "Retail & E-Commerce",
         industry: "Retail & E-Commerce",
         tags: ["Zoho", "Retail & E-Commerce"],
@@ -115,7 +116,7 @@ const allCaseStudies: CaseStudy[] = [
         id: 9,
         title: "Zoho for Security and Investigations Industry",
         description: "Enhancing investigation workflows for an internationally renowned security enterprise.",
-        image: "/images/case-studies/cs_security_investigations.png",
+        image: "/images/case-studies/cards/09-security-investigations.webp",
         company: "Security & Investigations",
         industry: "Security & Investigations",
         tags: ["Zoho", "Security & Investigations"],
@@ -125,7 +126,7 @@ const allCaseStudies: CaseStudy[] = [
         id: 10,
         title: "Zoho for Software Development Industry",
         description: "Optimizing project delivery and resource management for a leading software development firm.",
-        image: "/images/case-studies/cs_software_dev.png",
+        image: "/images/case-studies/cards/10-software-development.webp",
         company: "Software Development",
         industry: "Software Development",
         tags: ["Zoho", "Software Development"],
@@ -135,7 +136,7 @@ const allCaseStudies: CaseStudy[] = [
         id: 11,
         title: "Zoho for Wholesale Distribution Industry",
         description: "Streamlining order fulfillment and inventory for a major wholesale audio product distributor.",
-        image: "/images/case-studies/cs_wholesale_distribution.png",
+        image: "/images/case-studies/cards/11-wholesale-distribution.webp",
         company: "Wholesale Distribution",
         industry: "Wholesale Distribution",
         tags: ["Zoho", "Wholesale Distribution"],
@@ -145,15 +146,139 @@ const allCaseStudies: CaseStudy[] = [
         id: 12,
         title: "Zoho for IT Services & IT Consulting Industry",
         description: "Automating corporate travel technology services through advanced IT consulting integration.",
-        image: "/images/case-studies/cs_it_consulting.png",
+        image: "/images/case-studies/cards/12-it-consulting.webp",
         company: "IT Services & Consulting",
         industry: "IT Services & IT Consulting",
         tags: ["Zoho", "IT Services & IT Consulting"],
         recipientEmail: "shivam@agsuitetech.com"
+    },
+    {
+        id: 13,
+        title: "Transforming Sales Operations with Centralised Lead Management & Region-Wise Reporting Using Zoho CRM",
+        description: "Previously using Salesforce to manage sales operations and customer information, the business transitioned to Zoho CRM to centralise lead management, streamline sales processes, and gain better visibility into region-wise product performance.",
+        image: "/images/case-studies/cards/13-manufacturing-crm-sales.webp",
+        company: "Zoho for Manufacturing",
+        industry: "Manufacturing",
+        tags: ["Zoho Manufacturing"],
+        recipientEmail: "shivam@agsuitetech.com",
+        ctaEnabled: true
+    },
+    {
+        id: 14,
+        title: "Centralising Customer Management & Support Operations with Zoho One",
+        description: "Transitioning from a custom ERP system to Zoho One to centralise customer data, streamline customer relationship management, improve service tracking, and enhance support operations through integrated Zoho applications.",
+        image: "/images/case-studies/cards/14-environmental-zoho-one.webp",
+        company: "Zoho for Environmental Services",
+        industry: "Environmental Services",
+        tags: ["Zoho Environmental Services"],
+        recipientEmail: "shivam@agsuitetech.com",
+        ctaEnabled: true
+    },
+    {
+        id: 15,
+        title: "Streamlining Employee Management & Performance Tracking with Zoho People",
+        description: "Transitioning from Excel-based HR management to Zoho People to centralise employee information, streamline HR operations, and improve employee performance tracking and visibility.",
+        image: "/images/case-studies/cards/15-legal-zoho-people.webp",
+        company: "Zoho for Legal Services",
+        industry: "Legal Services",
+        tags: ["Zoho Legal Services"],
+        recipientEmail: "shivam@agsuitetech.com",
+        ctaEnabled: true
+    },
+    {
+        id: 16,
+        title: "Transforming Global Customer Management with Zoho CRM",
+        description: "Moving from Excel-based data management to Zoho CRM to centralise customer information, streamline lead management, and unify multiple lead sources and WhatsApp communication into a single platform for improved customer visibility across global operations.",
+        image: "/images/case-studies/cards/16-financial-global-crm.webp",
+        company: "Zoho for Financial Services",
+        industry: "Financial Services",
+        tags: ["Zoho Financial Services"],
+        recipientEmail: "shivam@agsuitetech.com",
+        ctaEnabled: true
+    },
+    {
+        id: 17,
+        title: "Enhancing Jewellery Business Management Through Zoho CRM",
+        description: "Transitioning from Excel-based management to Zoho CRM to centralise customer information, streamline lead management, and improve coordination between business applications through GATI ERP integration.",
+        image: "/images/case-studies/cards/17-jewellery-crm.webp",
+        company: "Zoho for Jewellery Industry",
+        industry: "Jewellery Industry",
+        tags: ["Zoho Jewellery Industry"],
+        recipientEmail: "shivam@agsuitetech.com",
+        ctaEnabled: true
+    },
+    {
+        id: 18,
+        title: "Email Transformation & Cost Optimisation with Zoho Mail",
+        description: "Migrating from Google Workspace (G-Suite) to Zoho Mail to provide a cost-effective business email solution, reduce subscription expenses, and streamline business email management.",
+        image: "/images/case-studies/cards/18-manufacturing-zoho-mail.webp",
+        company: "Zoho for Manufacturing",
+        industry: "Manufacturing",
+        tags: ["Zoho Manufacturing"],
+        recipientEmail: "shivam@agsuitetech.com",
+        ctaEnabled: true
+    },
+    {
+        id: 19,
+        title: "Modernising Financial Management with Zoho Books",
+        description: "Migrating from Tally to Zoho Books to streamline accounting operations, automate payment reminders, simplify financial workflows, and improve overall financial process management.",
+        image: "/images/case-studies/cards/19-professional-services-books.webp",
+        company: "Zoho for Professional Services",
+        industry: "Professional Services",
+        tags: ["Zoho Professional Services"],
+        recipientEmail: "shivam@agsuitetech.com",
+        ctaEnabled: true
+    },
+    {
+        id: 20,
+        title: "Streamlining Payroll Management & Compliance with Zoho Payroll",
+        description: "Transitioning from Excel-based payroll management to Zoho Payroll to centralise employee payroll data, streamline payroll processing, simplify compliance management, and improve overall payroll administration.",
+        image: "/images/case-studies/cards/20-fisheries-payroll.webp",
+        company: "Zoho for Fisheries Industry",
+        industry: "Fisheries Industry",
+        tags: ["Zoho Fisheries Industry"],
+        recipientEmail: "shivam@agsuitetech.com",
+        ctaEnabled: true
+    },
+    {
+        id: 21,
+        title: "Transforming Recruitment Operations Through Zoho Recruit Automation",
+        description: "Streamlining large-scale recruitment operations with Zoho Recruit by centralising candidate applications, integrating multiple job portals, automating resume parsing, and improving recruitment workflow efficiency.",
+        image: "/images/case-studies/cards/21-recruitment-staffing.webp",
+        company: "Zoho for Recruitment & Staffing",
+        industry: "Recruitment & Staffing",
+        tags: ["Zoho Recruitment & Staffing"],
+        recipientEmail: "shivam@agsuitetech.com",
+        ctaEnabled: true
+    },
+    {
+        id: 22,
+        title: "Centralising Customer Feedback Management with Zoho Forms",
+        description: "Migrating from Google Forms to Zoho Forms to streamline customer feedback collection, centralise responses, and simplify feedback management through an organised and accessible system.",
+        image: "/images/case-studies/cards/22-facility-feedback-forms.webp",
+        company: "Zoho for Facility & Infrastructure Services",
+        industry: "Facility & Infrastructure Services",
+        tags: ["Zoho Facility & Infrastructure Services"],
+        recipientEmail: "shivam@agsuitetech.com",
+        ctaEnabled: true
+    },
+    {
+        id: 23,
+        title: "Transforming Customer Data Management with Zoho CRM",
+        description: "Migrating from Excel-based data management to Zoho CRM to centralise customer information, streamline data management, and establish a structured platform for managing customer relationships and business activities.",
+        image: "/images/case-studies/cards/23-engineering-consulting-crm.webp",
+        company: "Zoho for Engineering Consulting",
+        industry: "Engineering Consulting",
+        tags: ["Zoho Engineering Consulting"],
+        recipientEmail: "shivam@agsuitetech.com",
+        ctaEnabled: true
     }
 ];
 
-const INDUSTRIES = ["All", "Agriculture", "Business Consulting & Services", "Financial Services", "Healthcare", "Media", "Real Estate", "Retail & E-Commerce", "Security & Investigations", "Software Development", "Wholesale Distribution", "IT Services & IT Consulting"];
+const INDUSTRIES = [
+    "All",
+    ...Array.from(new Set(allCaseStudies.map((study) => study.industry)))
+];
 
 const ZohoCaseStudiesGrid = () => {
     const [searchQuery, setSearchQuery] = useState("");
@@ -165,26 +290,6 @@ const ZohoCaseStudiesGrid = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [formData, setFormData] = useState({ 'Last Name': '', 'Designation': '', 'Mobile': '', 'Email': '', 'Company': '', 'countryCode': '' });
     const [isMobileValid, setIsMobileValid] = useState(false);
-
-    const COUNTRY_CODES = [
-        { code: '+91', label: 'IN (+91)' },
-        { code: '+1', label: 'US (+1)' },
-        { code: '+44', label: 'UK (+44)' },
-        { code: '+971', label: 'UAE (+971)' },
-        { code: '+966', label: 'KSA (+966)' },
-        { code: '+974', label: 'QA (+974)' },
-        { code: '+965', label: 'KW (+965)' },
-        { code: '+968', label: 'OM (+968)' },
-        { code: '+973', label: 'BH (+973)' },
-        { code: '+65', label: 'SG (+65)' },
-        { code: '+61', label: 'AU (+61)' },
-        { code: '+31', label: 'NL (+31)' },
-        { code: '+353', label: 'IE (+353)' },
-        { code: '+49', label: 'DE (+49)' },
-        { code: '+33', label: 'FR (+33)' },
-        { code: '+27', label: 'ZA (+27)' },
-        { code: '+852', label: 'HK (+852)' },
-    ];
 
     useEffect(() => {
         if (isModalOpen) {
@@ -334,13 +439,27 @@ const ZohoCaseStudiesGrid = () => {
                             >
                                 {/* Image Box */}
                                 <div className="relative h-56 w-full overflow-hidden shrink-0">
-                                    <Image
-                                        src={study.image}
-                                        alt={study.title}
-                                        fill
-                                        className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                                    />
+                                    {study.image ? (
+                                        <Image
+                                            src={study.image}
+                                            alt={study.title}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                                        />
+                                    ) : (
+                                        <div className="absolute inset-0 bg-gradient-to-br from-[#7f1d1d] via-[#b91c1c] to-[#eab308] p-6 flex flex-col justify-between text-white">
+                                            <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-white/80">
+                                                <span className="w-2 h-2 rounded-full bg-[#facc15]" />
+                                                Zoho Customer Success
+                                            </div>
+                                            <p className="max-w-[90%] text-xl font-bold leading-tight">
+                                                {study.company}
+                                            </p>
+                                            <div className="absolute -right-10 -bottom-14 w-40 h-40 rounded-full border-[28px] border-white/10" />
+                                            <div className="absolute right-16 top-10 w-16 h-16 rounded-full bg-white/10 blur-sm" />
+                                        </div>
+                                    )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent opacity-60" />
 
 
@@ -351,35 +470,39 @@ const ZohoCaseStudiesGrid = () => {
                                 </div>
 
                                 {/* Content Box */}
-                                <div className="p-6 md:p-8 flex flex-col flex-grow bg-white text-slate-900">
-                                    <h4 className="text-[13px] font-extrabold text-[#eab308] uppercase tracking-widest mb-3 border-l-2 border-[#eab308] pl-2 flex items-center">
+                                <div className="relative isolate overflow-hidden p-6 md:p-8 flex flex-col flex-grow bg-white text-slate-900 transition-colors duration-500 group-hover:bg-orange-50/70">
+                                    <div className="absolute -right-20 -bottom-20 -z-10 h-56 w-56 rounded-full bg-gradient-to-br from-amber-200/10 via-orange-300/35 to-orange-500/45 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
+                                    <div className="absolute right-0 bottom-0 -z-10 h-32 w-32 bg-gradient-to-tl from-orange-400/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                                    <h4 className="text-[13px] font-extrabold text-[#eab308] uppercase tracking-widest mb-3 border-l-2 border-[#eab308] pl-2 flex items-center transition-colors duration-300 group-hover:text-slate-900 group-hover:border-orange-500">
                                         {study.company}
                                     </h4>
-                                    <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 group-hover:text-[#eab308] transition-colors leading-tight">
+                                    <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 group-hover:text-slate-950 transition-colors leading-tight">
                                         {study.title}
                                     </h3>
-                                    <p className="text-slate-600 mb-6 flex-grow line-clamp-3 leading-relaxed text-sm">
+                                    <p className="text-slate-600 mb-6 flex-grow line-clamp-3 leading-relaxed text-sm transition-colors duration-300 group-hover:text-slate-800">
                                         {study.description}
                                     </p>
 
                                     <div className="flex flex-wrap gap-2 mb-6">
                                         {study.tags.map(tag => (
-                                            <span key={tag} className="text-[10px] font-semibold bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">
+                                            <span key={tag} className="text-[10px] font-semibold bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md transition-colors duration-300 group-hover:bg-white/80 group-hover:text-slate-800">
                                                 {tag}
                                             </span>
                                         ))}
                                     </div>
 
-                                    <button
-                                        onClick={(e) => handleReadClick(e, study)}
-                                        className="mt-auto flex items-center font-bold text-[#0a0a0a] group-hover:text-[#eab308] transition-colors bg-transparent border-none p-0 cursor-pointer"
-                                        suppressHydrationWarning
-                                    >
-                                        <span className="border-b-2 border-transparent group-hover:border-[#eab308] pb-0.5 transition-all text-sm uppercase tracking-wide">
-                                            Read Full Story
-                                        </span>
-                                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                                    </button>
+                                    {study.ctaEnabled !== false && (
+                                        <button
+                                            onClick={(e) => handleReadClick(e, study)}
+                                            className="mt-auto flex items-center font-bold text-[#0a0a0a] group-hover:text-slate-950 transition-colors bg-transparent border-none p-0 cursor-pointer"
+                                            suppressHydrationWarning
+                                        >
+                                            <span className="border-b-2 border-transparent group-hover:border-orange-500 pb-0.5 transition-all text-sm uppercase tracking-wide">
+                                                Read Full Story
+                                            </span>
+                                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         ))}
@@ -434,7 +557,7 @@ const ZohoCaseStudiesGrid = () => {
                                                 <CheckCircle2 className="w-10 h-10" />
                                             </div>
                                             <h4 className="text-2xl font-bold text-slate-900 mb-2">Thank You!</h4>
-                                            <p className="text-slate-600">Your request has been received. We'll send the case study to your email shortly.</p>
+                                            <p className="text-slate-600">Your request has been received. We&apos;ll send the case study to your email shortly.</p>
                                             <button
                                                 onClick={closeModal}
                                                 className="mt-8 px-8 py-3 bg-[#eab308] text-white font-bold rounded-xl hover:bg-black transition-colors"

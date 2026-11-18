@@ -32,7 +32,8 @@ export default function ZohoDigitalTransformationPage() {
   const modules = [
     {
       title: "ERP Modernization",
-      description: "Replace siloed legacy ERPs or spreadsheets with Zoho's unified cloud-native platform — eliminating data silos and manual reconciliations.",
+      description:
+        "Replace siloed legacy ERPs or spreadsheets with Zoho's unified cloud-native platform — eliminating data silos and manual reconciliations.",
       image: "/images/modules/unified_platform.png",
       color: "#1e3a8a",
       rgb: "14,50,130",
@@ -40,7 +41,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "Cloud Migration",
-      description: "Safely lift and shift your on-premise systems to Zoho with zero data loss — including data cleansing and parallel run testing.",
+      description:
+        "Safely lift and shift your on-premise systems to Zoho with zero data loss — including data cleansing and parallel run testing.",
       image: "/images/lap/lap2.webp",
       color: "#0e7490",
       rgb: "14,116,144",
@@ -48,7 +50,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "Process Automation",
-      description: "Identify and eliminate repetitive manual workflows using Zoho Flow, Blueprints, and custom Deluge scripts for end-to-end efficiency.",
+      description:
+        "Identify and eliminate repetitive manual workflows using Zoho Flow, Blueprints, and custom Deluge scripts for end-to-end efficiency.",
       image: "/images/modules/intelligent_automation.png",
       color: "#065f46",
       rgb: "6,95,70",
@@ -56,7 +59,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "Unified Integration",
-      description: "Connect Zoho to your ERP, e-commerce, or third-party platforms via Zoho Flow and custom API-led connections.",
+      description:
+        "Connect Zoho to your ERP, e-commerce, or third-party platforms via Zoho Flow and custom API-led connections.",
       image: "/images/Services/zoho_srv_integration_new.jpg",
       color: "#581c87",
       rgb: "88,28,135",
@@ -64,7 +68,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "Data & Analytics",
-      description: "Unlock the value hidden in your data with Zoho Analytics — custom dashboards, cross-functional reports, and AI-driven insights.",
+      description:
+        "Unlock the value hidden in your data with Zoho Analytics — custom dashboards, cross-functional reports, and AI-driven insights.",
       image: "/images/modules/analytics_visual_analysis.png",
       color: "#92400e",
       rgb: "146,64,14",
@@ -72,7 +77,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "AI Integration",
-      description: "Embed Zia-driven anomaly detection, demand forecasting, and smart approval routing into your Zoho business processes.",
+      description:
+        "Embed Zia-driven anomaly detection, demand forecasting, and smart approval routing into your Zoho business processes.",
       image: "/images/modules/analytics_augmented_ai.png",
       color: "#1e1b4b",
       rgb: "30,27,75",
@@ -80,7 +86,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "Custom App Dev",
-      description: "Build bespoke business applications using Zoho Creator — perfectly tailored to your unique industry requirements.",
+      description:
+        "Build bespoke business applications using Zoho Creator — perfectly tailored to your unique industry requirements.",
       image: "/images/Services/zoho_srv_low_code_new.jpg",
       color: "#1a4365",
       rgb: "26,67,101",
@@ -88,7 +95,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "Customer Portals",
-      description: "Extend Zoho to your customers and vendors with responsive self-service portals and customized mobile interfaces.",
+      description:
+        "Extend Zoho to your customers and vendors with responsive self-service portals and customized mobile interfaces.",
       image: "/images/modules/sc_mobile_commerce.png",
       color: "#4a1942",
       rgb: "74,25,66",
@@ -96,7 +104,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "Digital Strategy",
-      description: "Define a phased Zoho roadmap aligned with your business goals — from quick-win automations to global rollout programmes.",
+      description:
+        "Define a phased Zoho roadmap aligned with your business goals — from quick-win automations to global rollout programmes.",
       image: "/images/modules/analytics_forecasting.png",
       color: "#14532d",
       rgb: "20,83,45",
@@ -104,7 +113,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "Change Management",
-      description: "Ensure lasting adoption with user training, executive workshops, and structured hypercare post go-live on the Zoho platform.",
+      description:
+        "Ensure lasting adoption with user training, executive workshops, and structured hypercare post go-live on the Zoho platform.",
       image: "/images/modules/workforce_management.png",
       color: "#7f1d1d",
       rgb: "127,29,29",
@@ -112,7 +122,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "Compliance & Security",
-      description: "Harden your Zoho environment with role-based access controls, data encryption, and global compliance alignment (GDPR, HIPAA).",
+      description:
+        "Harden your Zoho environment with role-based access controls, data encryption, and global compliance alignment (GDPR, HIPAA).",
       image: "/images/modules/compliance_calendar.png",
       color: "#312e81",
       rgb: "49,46,129",
@@ -120,7 +131,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "Managed Evolution",
-      description: "Protect your investment with proactive upgrades, SLA-backed support, and a dedicated Zoho success manager.",
+      description:
+        "Protect your investment with proactive upgrades, SLA-backed support, and a dedicated Zoho success manager.",
       image: "/images/modules/real_time_visibility.png",
       color: "#0c4a6e",
       rgb: "12,74,110",
@@ -131,7 +143,8 @@ export default function ZohoDigitalTransformationPage() {
   const benefits = [
     {
       title: "Accelerated Time-to-Value",
-      description: "Our proven rapid-deployment methodology gets your teams live on Zoho in weeks, not months — with a structured cutover plan.",
+      description:
+        "Our proven rapid-deployment methodology gets your teams live on Zoho in weeks, not months — with a structured cutover plan.",
       image: "/images/modules/benefit_operations.png",
       points: [
         "Pre-configured Zoho templates",
@@ -142,7 +155,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "Unified Business Cloud",
-      description: "Eliminate silos by connecting finance, supply chain, and CRM in a single source of truth — giving teams real-time visibility.",
+      description:
+        "Eliminate silos by connecting finance, supply chain, and CRM in a single source of truth — giving teams real-time visibility.",
       image: "/images/modules/unified_platform.png",
       points: [
         "One platform (Zoho One) suite",
@@ -153,7 +167,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "AI-Driven Insights",
-      description: "Stop relying on intuition. Zoho's live dashboards and Zia-powered analytics put decision-critical data in front of every role.",
+      description:
+        "Stop relying on intuition. Zoho's live dashboards and Zia-powered analytics put decision-critical data in front of every role.",
       image: "/images/modules/analytics_mobile_bi.png",
       points: [
         "Role-based Zia dashboards",
@@ -164,7 +179,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "Enterprise Reliability",
-      description: "Add new users, regions, and apps in minutes. Zoho scales with your growth trajectory with zero infrastructure overhead.",
+      description:
+        "Add new users, regions, and apps in minutes. Zoho scales with your growth trajectory with zero infrastructure overhead.",
       image: "/images/modules/benefit_reporting.png",
       points: [
         "Global multi-region data centers",
@@ -175,7 +191,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "Optimized TCO",
-      description: "Reduce your Total Cost of Ownership by consolidating multiple expensive point solutions into a single Zoho One subscription.",
+      description:
+        "Reduce your Total Cost of Ownership by consolidating multiple expensive point solutions into a single Zoho One subscription.",
       image: "/images/modules/cost_efficiency.png",
       points: [
         "Eliminate redundant license costs",
@@ -186,7 +203,8 @@ export default function ZohoDigitalTransformationPage() {
     },
     {
       title: "Seamless Compliance",
-      description: "Ensure your digital processes meet global standards automatically with Zoho's built-in security and compliance framework.",
+      description:
+        "Ensure your digital processes meet global standards automatically with Zoho's built-in security and compliance framework.",
       image: "/images/modules/benefit_compliance.png",
       points: [
         "GDPR & HIPAA ready environments",
@@ -200,23 +218,28 @@ export default function ZohoDigitalTransformationPage() {
   const faqs = [
     {
       question: "How long does a Zoho digital transformation usually take?",
-      answer: "A typical transformation project ranges from 8 to 16 weeks depending on the number of Zoho apps being implemented and the complexity of your current data. We follow a phased approach to deliver early wins.",
+      answer:
+        "A typical transformation project ranges from 8 to 16 weeks depending on the number of Zoho apps being implemented and the complexity of your current data. We follow a phased approach to deliver early wins.",
     },
     {
       question: "Can Zoho replace my existing legacy ERP?",
-      answer: "Yes, the Zoho Finance suite (Books, Inventory, etc.) combined with Zoho One can replace traditional ERPs like Sage, Tally, or legacy on-premise systems with a modern, cloud-first architecture.",
+      answer:
+        "Yes, the Zoho Finance suite (Books, Inventory, etc.) combined with Zoho One can replace traditional ERPs like Sage, Tally, or legacy on-premise systems with a modern, cloud-first architecture.",
     },
     {
       question: "Will our data be secure during the transition?",
-      answer: "Absolutely. We follow a strict zero-data-loss migration framework with full audit trails and validation tests at every step of the migration process into Zoho.",
+      answer:
+        "Absolutely. We follow a strict zero-data-loss migration framework with full audit trails and validation tests at every step of the migration process into Zoho.",
     },
     {
       question: "Do you provide post-implementation support?",
-      answer: "Yes, we offer structured hypercare for the first 60 days, followed by managed services and SLA-backed support to ensure your long-term success.",
+      answer:
+        "Yes, we offer structured hypercare for the first 60 days, followed by managed services and SLA-backed support to ensure your long-term success.",
     },
     {
       question: "Can Zoho integrate with our existing industry-specific tools?",
-      answer: "Yes, we use Zoho Flow and custom API integrations to connect Zoho with your existing niche software, ensuring a unified data flow.",
+      answer:
+        "Yes, we use Zoho Flow and custom API integrations to connect Zoho with your existing niche software, ensuring a unified data flow.",
     },
   ];
 
@@ -228,13 +251,16 @@ export default function ZohoDigitalTransformationPage() {
       breadcrumb={[
         { label: "Home", href: "/zoho" },
         { label: "Services", href: "/zoho/services" },
-        { label: "Digital Transformation", href: "/zoho/digital-transformation" },
+        {
+          label: "Digital Transformation",
+          href: "/zoho/digital-transformation",
+        },
       ]}
       stats={stats}
       modules={modules}
       benefits={benefits}
       heroImage="/images/zohoimages/zoho-digital-transformation-latest-logo.png"
-      introImage="/images/Services/zoho_digital_transformation_overview.png"
+      introImage="/images/Services/zoho_digital_transformation_overview_no_logo.webp"
       introTitle="Zoho Business Transformation Done Right."
       introDescription1="Digital transformation isn't just about software — it's about reimagining how your business operates and grows. Zoho provides the unified platform, and AGSuite provides the expertise to make it real."
       introDescription2="We work with growing businesses to replace disconnected legacy systems with a single, intelligent cloud suite — automating workflows, unifying data, and enabling smarter decisions faster than ever."
@@ -242,7 +268,3 @@ export default function ZohoDigitalTransformationPage() {
     />
   );
 }
-
-
-
-
