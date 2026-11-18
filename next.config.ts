@@ -382,6 +382,50 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
+      {
+        source: '/centralising-customer-feedback-management-with-zoho-forms.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Centralising%20Customer%20Feedback%20Management%20with%20Zoho%20Forms.pdf',
+      },
+      {
+        source: '/centralising-customer-management-support-operations-with-zoho-one.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Centralising%20Customer%20Management%20-%20Support%20Operations%20with%20Zoho%20One.pdf',
+      },
+      {
+        source: '/email-transformation-cost-optimisation-with-zoho-mail.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Email%20Transformation%20-%20Cost%20Optimisation%20with%20Zoho%20Mail.pdf',
+      },
+      {
+        source: '/enhancing-jewellery-business-management-through-zoho-crm.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Enhancing%20Jewellery%20Business%20Management%20Through%20Zoho%20CRM.pdf',
+      },
+      {
+        source: '/modernising-financial-management-with-zoho-books.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Modernising%20Financial%20Management%20with%20Zoho%20Books.pdf',
+      },
+      {
+        source: '/streamlining-employee-management-performance-tracking-with-zoho-people.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Streamlining%20Employee%20Management%20Performance%20Tracking%20with%20Zoho%20People%20TLH_%20Advocates%20and%20Solic.pdf',
+      },
+      {
+        source: '/streamlining-payroll-management-compliance-with-zoho-payroll.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Streamlining%20Payroll%20Management%20-%20Compliance%20with%20Zoho%20Payroll.pdf',
+      },
+      {
+        source: '/transforming-customer-data-management-with-zoho-crm.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Transforming%20Customer%20Data%20Management%20with%20Zoho%20CRM.pdf',
+      },
+      {
+        source: '/transforming-global-customer-management-with-zoho-crm.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Transforming%20Global%20Customer%20Management%20with%20Zoho%20CRM.pdf',
+      },
+      {
+        source: '/transforming-recruitment-operations-through-zoho-recruit-automation.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Transforming%20Recruitment%20Operations%20Through%20Zoho%20Recruit%20Automation.pdf',
+      },
+      {
+        source: '/transforming-sales-operations-with-centralised-lead-management-region-wise-reporting-using-zoho-crm.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Transforming%20Sales%20Operations%20with%20Centralised%20Lead%20Management%20-Region-Wise%20Reporting%20Using%20Zoh.pdf',
+      },
       { source: '/email/Logo-Light-static-to-gif', destination: '/email/Logo-Light-static-to-gif.gif' },
     ];
   },

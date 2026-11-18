@@ -29,6 +29,7 @@ interface CaseStudy {
     tags: string[];
     recipientEmail: string;
     ctaEnabled?: boolean;
+    pdfUrl?: string;
 }
 
 const allCaseStudies: CaseStudy[] = [
@@ -157,6 +158,7 @@ const allCaseStudies: CaseStudy[] = [
         title: "Transforming Sales Operations with Centralised Lead Management & Region-Wise Reporting Using Zoho CRM",
         description: "Previously using Salesforce to manage sales operations and customer information, the business transitioned to Zoho CRM to centralise lead management, streamline sales processes, and gain better visibility into region-wise product performance.",
         image: "/images/case-studies/cards/13-manufacturing-crm-sales.webp",
+        pdfUrl: "/transforming-sales-operations-with-centralised-lead-management-region-wise-reporting-using-zoho-crm.pdf",
         company: "Zoho for Manufacturing",
         industry: "Manufacturing",
         tags: ["Zoho Manufacturing"],
@@ -168,6 +170,7 @@ const allCaseStudies: CaseStudy[] = [
         title: "Centralising Customer Management & Support Operations with Zoho One",
         description: "Transitioning from a custom ERP system to Zoho One to centralise customer data, streamline customer relationship management, improve service tracking, and enhance support operations through integrated Zoho applications.",
         image: "/images/case-studies/cards/14-environmental-zoho-one.webp",
+        pdfUrl: "/centralising-customer-management-support-operations-with-zoho-one.pdf",
         company: "Zoho for Environmental Services",
         industry: "Environmental Services",
         tags: ["Zoho Environmental Services"],
@@ -179,6 +182,7 @@ const allCaseStudies: CaseStudy[] = [
         title: "Streamlining Employee Management & Performance Tracking with Zoho People",
         description: "Transitioning from Excel-based HR management to Zoho People to centralise employee information, streamline HR operations, and improve employee performance tracking and visibility.",
         image: "/images/case-studies/cards/15-legal-zoho-people.webp",
+        pdfUrl: "/streamlining-employee-management-performance-tracking-with-zoho-people.pdf",
         company: "Zoho for Legal Services",
         industry: "Legal Services",
         tags: ["Zoho Legal Services"],
@@ -190,6 +194,7 @@ const allCaseStudies: CaseStudy[] = [
         title: "Transforming Global Customer Management with Zoho CRM",
         description: "Moving from Excel-based data management to Zoho CRM to centralise customer information, streamline lead management, and unify multiple lead sources and WhatsApp communication into a single platform for improved customer visibility across global operations.",
         image: "/images/case-studies/cards/16-financial-global-crm.webp",
+        pdfUrl: "/transforming-global-customer-management-with-zoho-crm.pdf",
         company: "Zoho for Financial Services",
         industry: "Financial Services",
         tags: ["Zoho Financial Services"],
@@ -201,6 +206,7 @@ const allCaseStudies: CaseStudy[] = [
         title: "Enhancing Jewellery Business Management Through Zoho CRM",
         description: "Transitioning from Excel-based management to Zoho CRM to centralise customer information, streamline lead management, and improve coordination between business applications through GATI ERP integration.",
         image: "/images/case-studies/cards/17-jewellery-crm.webp",
+        pdfUrl: "/enhancing-jewellery-business-management-through-zoho-crm.pdf",
         company: "Zoho for Jewellery Industry",
         industry: "Jewellery Industry",
         tags: ["Zoho Jewellery Industry"],
@@ -212,6 +218,7 @@ const allCaseStudies: CaseStudy[] = [
         title: "Email Transformation & Cost Optimisation with Zoho Mail",
         description: "Migrating from Google Workspace (G-Suite) to Zoho Mail to provide a cost-effective business email solution, reduce subscription expenses, and streamline business email management.",
         image: "/images/case-studies/cards/18-manufacturing-zoho-mail.webp",
+        pdfUrl: "/email-transformation-cost-optimisation-with-zoho-mail.pdf",
         company: "Zoho for Manufacturing",
         industry: "Manufacturing",
         tags: ["Zoho Manufacturing"],
@@ -223,6 +230,7 @@ const allCaseStudies: CaseStudy[] = [
         title: "Modernising Financial Management with Zoho Books",
         description: "Migrating from Tally to Zoho Books to streamline accounting operations, automate payment reminders, simplify financial workflows, and improve overall financial process management.",
         image: "/images/case-studies/cards/19-professional-services-books.webp",
+        pdfUrl: "/modernising-financial-management-with-zoho-books.pdf",
         company: "Zoho for Professional Services",
         industry: "Professional Services",
         tags: ["Zoho Professional Services"],
@@ -234,6 +242,7 @@ const allCaseStudies: CaseStudy[] = [
         title: "Streamlining Payroll Management & Compliance with Zoho Payroll",
         description: "Transitioning from Excel-based payroll management to Zoho Payroll to centralise employee payroll data, streamline payroll processing, simplify compliance management, and improve overall payroll administration.",
         image: "/images/case-studies/cards/20-fisheries-payroll.webp",
+        pdfUrl: "/streamlining-payroll-management-compliance-with-zoho-payroll.pdf",
         company: "Zoho for Fisheries Industry",
         industry: "Fisheries Industry",
         tags: ["Zoho Fisheries Industry"],
@@ -245,6 +254,7 @@ const allCaseStudies: CaseStudy[] = [
         title: "Transforming Recruitment Operations Through Zoho Recruit Automation",
         description: "Streamlining large-scale recruitment operations with Zoho Recruit by centralising candidate applications, integrating multiple job portals, automating resume parsing, and improving recruitment workflow efficiency.",
         image: "/images/case-studies/cards/21-recruitment-staffing.webp",
+        pdfUrl: "/transforming-recruitment-operations-through-zoho-recruit-automation.pdf",
         company: "Zoho for Recruitment & Staffing",
         industry: "Recruitment & Staffing",
         tags: ["Zoho Recruitment & Staffing"],
@@ -256,6 +266,7 @@ const allCaseStudies: CaseStudy[] = [
         title: "Centralising Customer Feedback Management with Zoho Forms",
         description: "Migrating from Google Forms to Zoho Forms to streamline customer feedback collection, centralise responses, and simplify feedback management through an organised and accessible system.",
         image: "/images/case-studies/cards/22-facility-feedback-forms.webp",
+        pdfUrl: "/centralising-customer-feedback-management-with-zoho-forms.pdf",
         company: "Zoho for Facility & Infrastructure Services",
         industry: "Facility & Infrastructure Services",
         tags: ["Zoho Facility & Infrastructure Services"],
@@ -267,6 +278,7 @@ const allCaseStudies: CaseStudy[] = [
         title: "Transforming Customer Data Management with Zoho CRM",
         description: "Migrating from Excel-based data management to Zoho CRM to centralise customer information, streamline data management, and establish a structured platform for managing customer relationships and business activities.",
         image: "/images/case-studies/cards/23-engineering-consulting-crm.webp",
+        pdfUrl: "/transforming-customer-data-management-with-zoho-crm.pdf",
         company: "Zoho for Engineering Consulting",
         industry: "Engineering Consulting",
         tags: ["Zoho Engineering Consulting"],
@@ -557,10 +569,25 @@ const ZohoCaseStudiesGrid = () => {
                                                 <CheckCircle2 className="w-10 h-10" />
                                             </div>
                                             <h4 className="text-2xl font-bold text-slate-900 mb-2">Thank You!</h4>
-                                            <p className="text-slate-600">Your request has been received. We&apos;ll send the case study to your email shortly.</p>
+                                            <p className="text-slate-600">
+                                                {selectedStudy?.pdfUrl
+                                                    ? "Your request has been received. Your case study is ready to view."
+                                                    : "Your request has been received. We'll send the case study to your email shortly."}
+                                            </p>
+                                            {selectedStudy?.pdfUrl && (
+                                                <a
+                                                    href={selectedStudy.pdfUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="mt-8 inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-[#eab308] to-[#b91c1c] text-white font-bold rounded-xl hover:shadow-lg transition-all"
+                                                >
+                                                    View Case Study
+                                                    <ArrowRight className="w-4 h-4 ml-2" />
+                                                </a>
+                                            )}
                                             <button
                                                 onClick={closeModal}
-                                                className="mt-8 px-8 py-3 bg-[#eab308] text-white font-bold rounded-xl hover:bg-black transition-colors"
+                                                className={`${selectedStudy?.pdfUrl ? "mt-4 block mx-auto text-sm text-slate-500 hover:text-slate-900" : "mt-8 px-8 py-3 bg-[#eab308] text-white font-bold rounded-xl hover:bg-black"} transition-colors`}
                                                 suppressHydrationWarning
                                             >
                                                 Close
