@@ -15,15 +15,68 @@ import { getOdooAppTheme } from "./odooAppThemes";
 const links = [
   { label: "Overview", href: "#overview" },
   { label: "Features", href: "#features" },
+  { label: "Business Value", href: "#business-value" },
   { label: "Compatibility", href: "#compatibility" },
   { label: "Implementation", href: "#implementation" },
   { label: "FAQ", href: "#faq" },
 ];
 
+const businessValueByCategory: Record<string, Array<{ title: string; description: string }>> = {
+  Finance: [
+    { title: "Faster financial execution", description: "Reduce avoidable handoffs and give responsible teams a clearer route from source transaction to review, approval, and completion." },
+    { title: "Stronger financial control", description: "Apply consistent roles, policies, validation points, and evidence so exceptions are visible and decisions remain traceable." },
+    { title: "More reliable reporting", description: "Keep operational and financial information connected so authorized users can review current status without rebuilding disconnected spreadsheets." },
+    { title: "Scalable governance", description: "Standardize the core process while retaining the company, currency, tax, localization, and access controls required by the operating model." },
+  ],
+  Sales: [
+    { title: "Consistent customer journeys", description: "Give commercial teams a shared process for customer interactions, pricing, commitments, fulfilment, and follow-through." },
+    { title: "Shorter transaction cycles", description: "Reduce repeated entry and manual coordination by connecting the application with the records and teams that act next." },
+    { title: "Clear commercial visibility", description: "Track status, ownership, value, exceptions, and customer history through structured records and role-appropriate reporting." },
+    { title: "Connected fulfilment", description: "Carry approved commercial information into inventory, service, billing, or finance workflows without rebuilding the transaction." },
+  ],
+  Websites: [
+    { title: "Unified digital operations", description: "Manage content, visitors, registrations, learning, or community activity within the same environment as relevant customer records." },
+    { title: "Clear conversion pathways", description: "Design focused journeys that move visitors toward the next useful action while keeping submissions and responses measurable." },
+    { title: "Connected audience data", description: "Pass authorized digital interactions into the Odoo applications responsible for sales, service, events, learning, or communication." },
+    { title: "Governed publishing", description: "Define ownership, access, review, structure, and publishing responsibilities so digital information stays current and controlled." },
+  ],
+  "Supply Chain": [
+    { title: "Better operational visibility", description: "Give teams a shared view of demand, work, availability, quality, equipment, changes, and exceptions relevant to the application." },
+    { title: "Controlled execution", description: "Use defined responsibilities, status changes, approvals, and checks to keep operational work moving through an agreed process." },
+    { title: "Stronger traceability", description: "Retain the records, ownership, dates, evidence, and related transactions needed to understand what happened and why." },
+    { title: "Connected cost and service", description: "Link operational activity with purchasing, inventory, manufacturing, sales, maintenance, or finance where the wider process requires it." },
+  ],
+  "Human Resources": [
+    { title: "Consistent employee processes", description: "Give employees, managers, and HR teams one governed route for the workforce activity managed by the application." },
+    { title: "Faster approvals and response", description: "Make ownership and pending actions visible so routine requests do not depend on disconnected messages or spreadsheets." },
+    { title: "Useful workforce visibility", description: "Organize authorized employee, department, schedule, attendance, performance, or payroll information for responsible teams." },
+    { title: "Better employee experience", description: "Provide clearer self-service, status, communication, and follow-up while protecting access to sensitive workforce information." },
+  ],
+  Marketing: [
+    { title: "Coordinated engagement", description: "Plan and execute the relevant channel activity through a structured process with clear ownership, audience, timing, and status." },
+    { title: "More relevant communication", description: "Use governed customer and audience information to improve targeting while respecting consent, preference, and access requirements." },
+    { title: "Measurable performance", description: "Connect activity, response, engagement, and conversion information so teams can evaluate what is working and refine the next action." },
+    { title: "Stronger sales handoff", description: "Route qualified responses and customer context into the appropriate CRM or sales workflow instead of leaving them in an isolated tool." },
+  ],
+  Services: [
+    { title: "Easier customer access", description: "Give customers and internal teams a clear way to request, schedule, discuss, record, or review the service activity managed by the app." },
+    { title: "Better capacity decisions", description: "Make demand, availability, ownership, workload, and timing visible before teams commit to work." },
+    { title: "Traceable service delivery", description: "Keep status, time, communication, evidence, and exceptions connected to the relevant customer, project, or service record." },
+    { title: "Connected commercial flow", description: "Link delivered work with CRM, projects, timesheets, helpdesk, sales, or invoicing when the end-to-end process requires it." },
+  ],
+  Productivity: [
+    { title: "One place for shared work", description: "Keep relevant conversations, documents, knowledge, calls, devices, or automated assistance connected to business context." },
+    { title: "Less context switching", description: "Help users act from the records and workflows they already use instead of repeatedly moving information between disconnected tools." },
+    { title: "Controlled collaboration", description: "Apply role-based access, ownership, retention, and review expectations to the information handled by the application." },
+    { title: "Practical automation", description: "Use supported automation to reduce repetitive coordination while keeping important decisions visible to responsible users." },
+  ],
+};
+
 export default function OdooDirectoryAppTemplate({ app }: { app: OdooAdditionalApp }) {
   const [activeSection, setActiveSection] = useState("");
   const appTheme = getOdooAppTheme(app.slug);
   const profile = getOdooAdditionalAppProfile(app.slug);
+  const businessValues = businessValueByCategory[app.category];
   const appThemeStyle = { "--app-primary": appTheme.primary, "--app-secondary": appTheme.secondary } as CSSProperties;
   const logo = `/images/odoo-apps/all/${app.slug}.svg`;
   const verdict = `${app.description} It is designed for ${app.bestFor.charAt(0).toLowerCase()}${app.bestFor.slice(1)} AGSuite implements the app as an official Odoo Partner, covering process design, configuration, access, data preparation, integration, testing, training, and go-live support. The final scope depends on your Odoo edition, version, hosting model, localization, and connected applications.`;
@@ -125,6 +178,48 @@ export default function OdooDirectoryAppTemplate({ app }: { app: OdooAdditionalA
                 </div>
               </motion.article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="business-value" className="scroll-mt-40 px-6 py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-4xl">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--app-primary)]">Business value</p>
+            <h2 className="mt-4 text-[clamp(1.8rem,3.8vw,3rem)] font-medium leading-tight tracking-[-0.04em]">What can {app.name} improve?</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">{app.name} creates the most value when its workflow, ownership, data, controls, and connected applications are designed together. For {app.bestFor.charAt(0).toLowerCase()}{app.bestFor.slice(1)}, the following outcomes provide a practical basis for scope and success measures.</p>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {businessValues.map((value, index) => (
+              <article key={value.title} className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[var(--app-primary)] via-[var(--app-secondary)] to-slate-900" />
+                <span className="text-xs font-black tracking-[0.18em] text-[var(--app-primary)]">{String(index + 1).padStart(2, "0")}</span>
+                <h3 className="mt-5 text-xl font-extrabold tracking-tight">{value.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{value.description}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-14 rounded-[2rem] bg-[#f8f5f8] p-7 sm:p-10">
+            <div className="max-w-3xl">
+              <h2 className="text-[clamp(1.6rem,3vw,2.5rem)] font-medium leading-tight tracking-[-0.04em]">How does {app.name} fit into your operating model?</h2>
+              <p className="mt-4 leading-8 text-slate-600">A dependable implementation considers the application itself and the surrounding records, responsibilities, systems, and controls. These three areas should be confirmed during discovery.</p>
+            </div>
+            <div className="mt-9 grid gap-5 lg:grid-cols-3">
+              <article className="rounded-2xl border border-white bg-white/85 p-6 shadow-sm">
+                <h3 className="text-lg font-extrabold text-[var(--app-primary)]">Process scope</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">Validate how {app.features.map((feature) => feature.title.toLowerCase()).join(", ")} support the target process, including ownership, exceptions, approvals, and reporting.</p>
+              </article>
+              <article className="rounded-2xl border border-white bg-white/85 p-6 shadow-sm">
+                <h3 className="text-lg font-extrabold text-[var(--app-primary)]">Data readiness</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{profile.dataRequirements}</p>
+              </article>
+              <article className="rounded-2xl border border-white bg-white/85 p-6 shadow-sm">
+                <h3 className="text-lg font-extrabold text-[var(--app-primary)]">Connected applications</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{profile.integrations}</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
