@@ -36,6 +36,15 @@ const ZOHO_CASE_STUDY_DOCUMENT_PATHS = [
   "/transforming-customer-data-management-with-zoho-crm.pdf",
 ] as const;
 
+// Keep newly published priority posts discoverable even if Sanity is temporarily unavailable.
+// Dynamic Sanity results are deduplicated against these canonical URLs below.
+const FEATURED_ZOHO_BLOG_POSTS = [
+  {
+    slug: "zoho-erp-streamline-business-operations",
+    publishedAt: "2026-11-20",
+  },
+] as const;
+
 interface SitemapPost {
   slug?: string | { current?: string };
   _createdAt?: string;
@@ -324,6 +333,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
+  const featuredZohoBlogPages: MetadataRoute.Sitemap = FEATURED_ZOHO_BLOG_POSTS.map((post) => ({
+    url: `${SITE_URL}/zoho/blogs/${post.slug}`,
+    lastModified: new Date(post.publishedAt),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
   // 9. Dynamic NetSuite Blog Posts (from Sanity CMS)
   let dynamicNetsuiteBlogs: MetadataRoute.Sitemap = [];
   try {
@@ -366,6 +382,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...odooServicePages,
     ...odooIndustryPages,
     ...zohoCaseStudyDocuments,
+    ...featuredZohoBlogPages,
     ...dynamicNetsuiteBlogs,
     ...dynamicZohoBlogs,
     ...dynamicOdooBlogs,
