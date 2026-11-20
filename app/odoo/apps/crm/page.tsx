@@ -140,8 +140,10 @@ export default function OdooCrmPage() {
       appLogo="/images/odoo-apps/crm.svg"
       title="Odoo CRM for Lead, Pipeline, and Sales Activity Management"
       description="Centralize leads, opportunities, activities, communication, forecasts, and customer context in a CRM connected to Odoo Sales, Marketing, Accounting, and Helpdesk."
-      heroImage="/images/Dashboard/odoo_command_dashboard.webp"
-      overviewImage="/images/people/odoo_team_collaboration_customization.webp"
+      heroImage="/images/odoo-apps/generated/odoo-crm-dashboard-hero.webp"
+      transparentHero
+      overviewImage="/images/odoo-apps/generated/odoo-crm-overview-dashboard.webp"
+      overviewBestFitBelowImage
       overviewTitle="A CRM that stays connected to the rest of your business"
       overviewParagraphs={[
         "Odoo CRM gives sales teams one structured workspace for managing leads, opportunities, activities, communication, and pipeline visibility. It helps every seller understand what needs attention and what should happen next.",

@@ -142,7 +142,7 @@ export default function OdooAccountingPage() {
       description="Manage receivables, payables, bank reconciliation, taxes, assets, multi-currency transactions, and financial reporting in a ledger connected to business operations."
       heroImage="/images/odoo-apps/generated/odoo-accounting-dashboard-hero.webp"
       transparentHero
-      overviewImage="/images/odoo-apps/generated/odoo-accounting-overview-dashboard.jpg"
+      overviewImage="/images/odoo-apps/generated/odoo-accounting-overview-dashboard.webp"
       overviewBestFitBelowImage
       overviewTitle="Financial clarity that keeps pace with your business execution"
       overviewParagraphs={[

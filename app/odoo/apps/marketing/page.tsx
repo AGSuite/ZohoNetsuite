@@ -188,8 +188,10 @@ export default function OdooMarketingPage() {
       appLogo="/images/odoo-apps/marketing.svg"
       title="Odoo Marketing for Campaigns, Automation, and Attribution"
       description="Plan email, automation, social, SMS, surveys, and lifecycle campaigns using connected CRM, website, event, customer, and eCommerce data."
-      heroImage="/images/Dashboard/odoo_command_dashboard.webp"
-      overviewImage="/images/Dashboard/odoo_live_operations_dashboard.webp"
+      heroImage="/images/odoo-apps/generated/odoo-marketing-dashboard-hero.webp"
+      transparentHero
+      overviewImage="/images/odoo-apps/generated/odoo-marketing-overview-dashboard.webp"
+      overviewBestFitBelowImage
       overviewTitle="From first touch to closed deal: automated marketing that works while you sleep"
       overviewParagraphs={[
         "Odoo Marketing gives your team a complete campaign management platform — email, SMS, social media, landing pages, and marketing automation — all natively integrated with CRM, eCommerce, and your Odoo website so every campaign interaction becomes traceable, actionable data.",
@@ -214,4 +216,3 @@ export default function OdooMarketingPage() {
     />
   );
 }
-

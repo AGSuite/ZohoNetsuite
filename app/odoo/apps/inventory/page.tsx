@@ -140,8 +140,10 @@ export default function OdooInventoryPage() {
       appLogo="/images/odoo-apps/inventory.svg"
       title="Odoo Inventory for Multi-Warehouse Stock and Fulfilment"
       description="Control receipts, locations, replenishment, barcode operations, picking, packing, lots, serials, and valuation across warehouses and sales channels."
-      heroImage="/images/Dashboard/odoo_command_dashboard.webp"
-      overviewImage="/images/modules/warehouse_management.webp"
+      heroImage="/images/odoo-apps/generated/odoo-inventory-dashboard-hero.webp"
+      transparentHero
+      overviewImage="/images/odoo-apps/generated/odoo-inventory-overview-dashboard.webp"
+      overviewBestFitBelowImage
       overviewTitle="Modern warehouse management without stockouts or excess holding costs"
       overviewParagraphs={[
         "Odoo Inventory operates on a unique double-entry inventory system where nothing is lost or created—stock simply moves between locations, suppliers, transit lines, and customers with complete mathematical auditability.",
@@ -166,4 +168,3 @@ export default function OdooInventoryPage() {
     />
   );
 }
-

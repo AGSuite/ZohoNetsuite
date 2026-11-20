@@ -188,8 +188,10 @@ export default function OdooEcommercePage() {
       appLogo="/images/odoo-apps/ecommerce.svg"
       title="Odoo eCommerce for Products, Orders, Payments, and Fulfilment"
       description="Connect storefront content, products, prices, checkout, payments, inventory, shipping, customer accounts, orders, returns, and accounting."
-      heroImage="/images/Dashboard/odoo_live_operations_dashboard.webp"
-      overviewImage="/images/Dashboard/odoo_command_dashboard.webp"
+      heroImage="/images/odoo-apps/generated/odoo-ecommerce-dashboard-hero.webp"
+      transparentHero
+      overviewImage="/images/odoo-apps/generated/odoo-ecommerce-overview-dashboard.webp"
+      overviewBestFitBelowImage
       overviewTitle="From product listing to delivered order: end-to-end eCommerce operations"
       overviewParagraphs={[
         "Odoo eCommerce gives businesses a powerful online store that is natively connected to inventory, accounting, CRM, and marketing — eliminating the disconnected plugin stacks that slow down Shopify and WooCommerce-based operations.",
@@ -214,4 +216,3 @@ export default function OdooEcommercePage() {
     />
   );
 }
-

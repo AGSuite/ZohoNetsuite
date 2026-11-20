@@ -188,8 +188,10 @@ export default function OdooWebsitePage() {
       appLogo="/images/odoo-apps/website.svg"
       title="Odoo Website for Content, Lead Capture, and SEO"
       description="Build and manage pages, forms, blogs, multilingual content, metadata, redirects, and lead capture connected directly to CRM and other Odoo apps."
-      heroImage="/images/Dashboard/odoo_command_dashboard.webp"
-      overviewImage="/images/Dashboard/odoo_live_operations_dashboard.webp"
+      heroImage="/images/odoo-apps/generated/odoo-website-dashboard-hero.webp"
+      transparentHero
+      overviewImage="/images/odoo-apps/generated/odoo-website-overview-dashboard.webp"
+      overviewBestFitBelowImage
       overviewTitle="Your website, your CRM, and your marketing — all in one platform"
       overviewParagraphs={[
         "Odoo Website gives marketing and business teams a powerful no-code page builder, SEO toolkit, blog publishing platform, and live chat system — all natively connected to Odoo CRM, eCommerce, and Email Marketing so every visitor interaction automatically becomes a business opportunity.",
@@ -214,4 +216,3 @@ export default function OdooWebsitePage() {
     />
   );
 }
-

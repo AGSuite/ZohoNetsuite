@@ -509,16 +509,31 @@ const ZohoCaseStudiesGrid = () => {
                                     </div>
 
                                     {study.ctaEnabled !== false && (
-                                        <button
-                                            onClick={(e) => handleReadClick(e, study)}
-                                            className="mt-auto flex items-center font-bold text-[#0a0a0a] group-hover:text-slate-950 transition-colors bg-transparent border-none p-0 cursor-pointer"
-                                            suppressHydrationWarning
-                                        >
-                                            <span className="border-b-2 border-transparent group-hover:border-orange-500 pb-0.5 transition-all text-sm uppercase tracking-wide">
-                                                Read Full Story
-                                            </span>
-                                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                                        </button>
+                                        study.pdfUrl ? (
+                                            <a
+                                                href={study.pdfUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="mt-auto flex items-center font-bold text-[#0a0a0a] group-hover:text-slate-950 transition-colors"
+                                                aria-label={`Read full case study: ${study.title}`}
+                                            >
+                                                <span className="border-b-2 border-transparent group-hover:border-orange-500 pb-0.5 transition-all text-sm uppercase tracking-wide">
+                                                    Read Full Story
+                                                </span>
+                                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                            </a>
+                                        ) : (
+                                            <button
+                                                onClick={(e) => handleReadClick(e, study)}
+                                                className="mt-auto flex items-center font-bold text-[#0a0a0a] group-hover:text-slate-950 transition-colors bg-transparent border-none p-0 cursor-pointer"
+                                                suppressHydrationWarning
+                                            >
+                                                <span className="border-b-2 border-transparent group-hover:border-orange-500 pb-0.5 transition-all text-sm uppercase tracking-wide">
+                                                    Read Full Story
+                                                </span>
+                                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                            </button>
+                                        )
                                     )}
                                 </div>
                             </div>

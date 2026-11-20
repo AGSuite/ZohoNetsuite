@@ -140,8 +140,10 @@ export default function OdooProjectsPage() {
       appLogo="/images/odoo-apps/projects.svg"
       title="Odoo Projects for Delivery, Resources, Timesheets, and Billing"
       description="Plan tasks and milestones, assign resources, capture time and expenses, coordinate documents, invoice work, and review project profitability."
-      heroImage="/images/Dashboard/odoo_command_dashboard.webp"
-      overviewImage="/images/modules/project_management.webp"
+      heroImage="/images/odoo-apps/generated/odoo-projects-dashboard-hero.webp"
+      transparentHero
+      overviewImage="/images/odoo-apps/generated/odoo-projects-overview-dashboard.webp"
+      overviewBestFitBelowImage
       overviewTitle="From proposal to delivery: complete project operational control"
       overviewParagraphs={[
         "Odoo Projects empowers service organizations, consultancies, engineering teams, and internal departments to manage tasks, collaborate transparently, and maintain complete visibility into milestones and deliverables.",
@@ -166,4 +168,3 @@ export default function OdooProjectsPage() {
     />
   );
 }
-

@@ -140,8 +140,10 @@ export default function OdooSalesPage() {
       appLogo="/images/odoo-apps/sales.svg"
       title="Odoo Sales for Quotations, Orders, Pricing, and Invoicing"
       description="Create quotations, control prices and approvals, confirm sales orders, coordinate delivery, and trigger invoicing in one connected order-to-cash workflow."
-      heroImage="/images/odoo/odoo-growth-dashboard.png"
-      overviewImage="/images/people/person_using_odoo.webp"
+      heroImage="/images/odoo-apps/generated/odoo-sales-dashboard-hero.webp"
+      transparentHero
+      overviewImage="/images/odoo-apps/generated/odoo-sales-overview-dashboard.webp"
+      overviewBestFitBelowImage
       overviewTitle="A connected sales process from first offer to final handoff"
       overviewParagraphs={[
         "Odoo Sales gives commercial teams a structured way to prepare quotations, manage products and prices, confirm customer orders, and track what happens next. Shared templates and controls help teams move quickly while keeping offers consistent.",

@@ -188,8 +188,10 @@ export default function OdooHelpdeskPage() {
       appLogo="/images/odoo-apps/helpdesk.svg"
       title="Odoo Helpdesk for Ticketing, SLAs, and Customer Support"
       description="Manage support tickets, teams, channels, priorities, SLA rules, escalations, knowledge, customer portals, and service reporting in one system."
-      heroImage="/images/Dashboard/odoo_live_operations_dashboard.webp"
-      overviewImage="/images/contact/support.webp"
+      heroImage="/images/odoo-apps/generated/odoo-helpdesk-dashboard-hero.webp"
+      transparentHero
+      overviewImage="/images/odoo-apps/generated/odoo-helpdesk-overview-dashboard.webp"
+      overviewBestFitBelowImage
       overviewTitle="From first contact to happy customer: end-to-end support operations"
       overviewParagraphs={[
         "Odoo Helpdesk gives support teams a single command center for every customer interaction — whether it arrives by email, live chat, portal, or WhatsApp. Tickets are automatically routed to the right agent, SLAs are tracked in real time, and escalations are automated so no issue ever falls through the cracks.",
@@ -214,4 +216,3 @@ export default function OdooHelpdeskPage() {
     />
   );
 }
-

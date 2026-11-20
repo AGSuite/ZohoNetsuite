@@ -188,8 +188,10 @@ export default function OdooEmployeesPage() {
       appLogo="/images/odoo-apps/employees.svg"
       title="Odoo Employees for Workforce Records and HR Operations"
       description="Centralize employee records, departments, managers, contracts, documents, skills, and access while connecting recruitment, leave, attendance, expenses, and payroll."
-      heroImage="/images/people/odoo_team_collaboration_customization.webp"
-      overviewImage="/images/people/people_using_odoo.jpg"
+      heroImage="/images/odoo-apps/generated/odoo-employees-dashboard-hero.webp"
+      transparentHero
+      overviewImage="/images/odoo-apps/generated/odoo-employees-overview-dashboard.webp"
+      overviewBestFitBelowImage
       overviewTitle="Complete employee lifecycle management: from first application to final payslip"
       overviewParagraphs={[
         "Odoo Employees gives HR teams a centralized platform to manage every stage of the employee journey — recruiting top talent, onboarding new hires, tracking attendance and leaves, processing payroll, and evaluating performance — all from one connected system.",
@@ -214,4 +216,3 @@ export default function OdooEmployeesPage() {
     />
   );
 }
-

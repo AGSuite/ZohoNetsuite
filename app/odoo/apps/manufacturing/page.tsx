@@ -140,8 +140,10 @@ export default function OdooManufacturingPage() {
       appLogo="/images/odoo-apps/manufacturing.svg"
       title="Odoo Manufacturing for MRP, Work Orders, and Production Control"
       description="Manage bills of materials, routings, work centers, material planning, work orders, shop-floor activity, production costs, quality, and maintenance."
-      heroImage="/images/modules/manufacturing.webp"
-      overviewImage="/images/hero/industry_manufacturing_hero.png"
+      heroImage="/images/odoo-apps/generated/odoo-manufacturing-dashboard-hero.webp"
+      transparentHero
+      overviewImage="/images/odoo-apps/generated/odoo-manufacturing-overview-dashboard.webp"
+      overviewBestFitBelowImage
       overviewTitle="Unified shop floor execution, production scheduling, and inventory control"
       overviewParagraphs={[
         "Odoo Manufacturing (MRP II) brings engineering, planning, shop floor operators, and finance together into a synchronized production environment. From multi-tier Bills of Materials (BOM) to dynamic work center routings, production workflows adapt seamlessly to your exact shop floor realities.",
@@ -166,4 +168,3 @@ export default function OdooManufacturingPage() {
     />
   );
 }
-

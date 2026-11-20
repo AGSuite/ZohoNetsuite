@@ -140,8 +140,10 @@ export default function OdooPurchasePage() {
       appLogo="/images/odoo-apps/purchase.svg"
       title="Odoo Purchase for Procurement, Approvals, and Vendor Control"
       description="Manage requests for quotation, supplier comparison, purchase approvals, orders, receipts, vendor bills, and procurement reporting in one controlled process."
-      heroImage="/images/Dashboard/odoo_live_operations_dashboard.webp"
-      overviewImage="/images/modules/procurement.webp"
+      heroImage="/images/odoo-apps/generated/odoo-purchase-dashboard-hero.webp"
+      transparentHero
+      overviewImage="/images/odoo-apps/generated/odoo-purchase-overview-dashboard.webp"
+      overviewBestFitBelowImage
       overviewTitle="From requisition to payment: complete procurement control"
       overviewParagraphs={[
         "Odoo Purchase centralizes your procurement lifecycle, turning manual requisition requests and scattered vendor emails into a structured, trackable purchasing workflow with automated approval gates.",
@@ -166,4 +168,3 @@ export default function OdooPurchasePage() {
     />
   );
 }
-
