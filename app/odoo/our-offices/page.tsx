@@ -123,7 +123,7 @@ export default function OdooOfficesPage() {
   return (
     <div className="min-h-screen bg-white selection:bg-purple-900 selection:text-white">
       {/* ── Hero Section ────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen overflow-hidden flex flex-col" style={{ background: "linear-gradient(135deg, #1d0f1b, #2d1830, #3d2138)" }}>
+      <section aria-labelledby="odoo-offices-title" className="relative min-h-screen overflow-hidden flex flex-col" style={{ background: "linear-gradient(135deg, #1d0f1b, #2d1830, #3d2138)" }}>
         <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-purple-600/10 rounded-full blur-[140px]" />
         <div
           className="absolute inset-0"
@@ -164,12 +164,13 @@ export default function OdooOfficesPage() {
               </motion.div>
               
               <motion.h1
+                id="odoo-offices-title"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-medium text-white leading-[1.1] tracking-tight mb-6"
               >
-                Our Global{" "}
+                Our Offices &amp; Global{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-violet-400 to-purple-300">
                   Presence
                 </span>

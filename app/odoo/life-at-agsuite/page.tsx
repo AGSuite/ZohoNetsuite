@@ -55,7 +55,7 @@ export default function LifeAtAGSuite() {
       {/* ─────────────────────────────────────────────────────────
           MAIN HERO SECTION
       ────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-24 px-6 lg:px-12 bg-gradient-to-br from-[#1d0f1b] via-[#2d1830] to-[#4a2943]">
+      <section aria-labelledby="odoo-life-title" className="relative min-h-screen flex items-center justify-center overflow-hidden py-24 px-6 lg:px-12 bg-gradient-to-br from-[#1d0f1b] via-[#2d1830] to-[#4a2943]">
         {/* Ambient glow effects */}
         <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-fuchsia-800/10 rounded-full blur-[100px] pointer-events-none" />
@@ -80,6 +80,7 @@ export default function LifeAtAGSuite() {
             className="flex flex-col items-start text-left pt-12 lg:pt-0"
           >
             <motion.h1
+              id="odoo-life-title"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}

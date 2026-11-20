@@ -34,7 +34,9 @@ interface OdooAppTemplateProps {
   title: string;
   description: string;
   heroImage: string;
+  transparentHero?: boolean;
   overviewImage: string;
+  overviewBestFitBelowImage?: boolean;
   overviewTitle: string;
   overviewParagraphs: string[];
   heroCards: Array<{ value: string; label: string }>;
@@ -67,7 +69,9 @@ export default function OdooAppProductTemplate({
   title,
   description,
   heroImage,
+  transparentHero = false,
   overviewImage,
+  overviewBestFitBelowImage = false,
   overviewTitle,
   overviewParagraphs,
   capabilities,
@@ -128,13 +132,21 @@ export default function OdooAppProductTemplate({
             </Link>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.96, y: 24 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.1 }} className="relative mx-auto w-full max-w-[650px]">
-            <div className="absolute -inset-10 rounded-[42%_58%_54%_46%/45%_42%_58%_55%] blur-2xl" style={{ backgroundImage: `linear-gradient(135deg, ${appTheme.primary}3d, ${appTheme.secondary}24, transparent)` }} />
-            <div className="absolute -right-4 -top-5 h-20 w-20 rounded-full border-2 border-dashed border-slate-300" />
-            <div className="absolute -bottom-5 -left-4 grid h-16 w-16 grid-cols-3 gap-1 rounded-2xl bg-white/70 p-3 shadow-lg backdrop-blur" aria-hidden="true">{Array.from({ length: 9 }).map((_, index) => <span key={index} className="h-1.5 w-1.5 rounded-full bg-[var(--app-primary)]/45" />)}</div>
-            <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-slate-200 bg-gradient-to-br from-white via-[#fbf8fb] to-[#f0e8f6] p-3 shadow-[0_30px_80px_rgba(71,38,64,0.20)]">
-              <div className="relative h-full w-full overflow-hidden rounded-[1.4rem] bg-white"><Image src={heroImage} alt={`${appName} application interface`} fill priority className="object-contain object-center p-1 transition duration-700 hover:scale-[1.025]" sizes="(max-width: 1024px) 100vw, 50vw" /></div>
-            </div>
+          <motion.div initial={{ opacity: 0, scale: 0.96, y: 24 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.1 }} className={`relative mx-auto w-full ${transparentHero ? "max-w-[760px] sm:scale-[1.05] lg:scale-[1.14]" : "max-w-[650px]"}`}>
+            {transparentHero ? (
+              <div className="relative aspect-[16/10] overflow-visible">
+                <Image src={heroImage} alt={`${appName} application interface`} fill priority className="object-contain object-center transition duration-700 hover:scale-[1.025]" sizes="(max-width: 1024px) 100vw, 58vw" />
+              </div>
+            ) : (
+              <>
+                <div className="absolute -inset-10 rounded-[42%_58%_54%_46%/45%_42%_58%_55%] blur-2xl" style={{ backgroundImage: `linear-gradient(135deg, ${appTheme.primary}3d, ${appTheme.secondary}24, transparent)` }} />
+                <div className="absolute -right-4 -top-5 h-20 w-20 rounded-full border-2 border-dashed border-slate-300" />
+                <div className="absolute -bottom-5 -left-4 grid h-16 w-16 grid-cols-3 gap-1 rounded-2xl bg-white/70 p-3 shadow-lg backdrop-blur" aria-hidden="true">{Array.from({ length: 9 }).map((_, index) => <span key={index} className="h-1.5 w-1.5 rounded-full bg-[var(--app-primary)]/45" />)}</div>
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-slate-200 bg-gradient-to-br from-white via-[#fbf8fb] to-[#f0e8f6] p-3 shadow-[0_30px_80px_rgba(71,38,64,0.20)]">
+                  <div className="relative h-full w-full overflow-hidden rounded-[1.4rem] bg-white"><Image src={heroImage} alt={`${appName} application interface`} fill priority className="object-contain object-center p-1 transition duration-700 hover:scale-[1.025]" sizes="(max-width: 1024px) 100vw, 50vw" /></div>
+                </div>
+              </>
+            )}
           </motion.div>
         </div>
       </section>
@@ -144,14 +156,22 @@ export default function OdooAppProductTemplate({
       </nav>
 
       <section id="overview" className="scroll-mt-40 px-6 py-20 sm:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[0.95fr_1.05fr]">
-          <motion.div initial={{ opacity: 0, x: -28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} className="relative"><div className="absolute -left-5 -top-5 h-36 w-36 rounded-full bg-violet-200/60 blur-3xl" /><div className="relative aspect-[3/2] overflow-hidden rounded-[2rem] bg-[#f3edf2] shadow-2xl shadow-slate-300/50"><Image src={overviewImage} alt={`${appName} business workflow`} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 48vw" /></div></motion.div>
+        <div className="mx-auto grid max-w-7xl items-start gap-14 lg:grid-cols-[0.95fr_1.05fr]">
+          <motion.div initial={{ opacity: 0, x: -28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} className="relative">
+            <div className="absolute -left-5 -top-5 h-36 w-36 rounded-full bg-violet-200/60 blur-3xl" />
+            <div className={`relative aspect-[3/2] overflow-hidden rounded-[2rem] bg-[#f3edf2] shadow-2xl shadow-slate-300/50 ${overviewBestFitBelowImage ? "border border-slate-300 bg-white p-2 ring-1 ring-slate-200/70" : ""}`}>
+              <div className={`relative h-full w-full overflow-hidden ${overviewBestFitBelowImage ? "rounded-[1.5rem] bg-white" : ""}`}>
+                <Image src={overviewImage} alt={`${appName} business workflow`} fill className={overviewBestFitBelowImage ? "object-contain" : "object-cover"} sizes="(max-width: 1024px) 100vw, 48vw" />
+              </div>
+            </div>
+            {overviewBestFitBelowImage && <div className="relative mt-6 rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-[#fbf8fb] to-[#f4edf3] p-6 shadow-lg shadow-slate-200/60"><p className="text-sm font-black uppercase tracking-[0.16em] text-[var(--app-primary)]">Best fit</p><p className="mt-2 leading-7 text-slate-700">{profile.bestFor}</p></div>}
+          </motion.div>
           <motion.div initial={{ opacity: 0, x: 28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }}>
             <h2 className="text-[clamp(1.8rem,3.8vw,3rem)] font-medium leading-tight tracking-[-0.04em]">What does {appName} do?</h2>
             <h3 className="mt-5 text-xl font-extrabold text-[var(--app-primary)]">{overviewTitle}</h3>
             <p className="mt-5 text-lg leading-8 text-slate-600">{description}</p>
             <div className="mt-5 space-y-4 text-base leading-8 text-slate-600">{overviewParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
-            <div className="mt-7 rounded-xl bg-[#f8f5f8] p-5"><p className="text-sm font-black uppercase tracking-[0.16em] text-[var(--app-primary)]">Best fit</p><p className="mt-2 leading-7 text-slate-700">{profile.bestFor}</p></div>
+            {!overviewBestFitBelowImage && <div className="mt-7 rounded-xl bg-[#f8f5f8] p-5"><p className="text-sm font-black uppercase tracking-[0.16em] text-[var(--app-primary)]">Best fit</p><p className="mt-2 leading-7 text-slate-700">{profile.bestFor}</p></div>}
           </motion.div>
         </div>
       </section>

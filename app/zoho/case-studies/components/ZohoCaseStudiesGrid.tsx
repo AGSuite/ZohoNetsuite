@@ -287,6 +287,11 @@ const allCaseStudies: CaseStudy[] = [
     }
 ];
 
+const orderedCaseStudies = [
+    ...allCaseStudies.filter((study) => Boolean(study.pdfUrl)),
+    ...allCaseStudies.filter((study) => !study.pdfUrl),
+];
+
 const INDUSTRIES = [
     "All",
     ...Array.from(new Set(allCaseStudies.map((study) => study.industry)))
@@ -365,7 +370,7 @@ const ZohoCaseStudiesGrid = () => {
     };
 
     const filteredStudies = useMemo(() => {
-        return allCaseStudies.filter((study) => {
+        return orderedCaseStudies.filter((study) => {
             const matchesSearch =
                 study.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 study.company.toLowerCase().includes(searchQuery.toLowerCase()) ||

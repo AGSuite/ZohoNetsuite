@@ -1,5 +1,5 @@
 import { zohoClient } from "./zohoClient";
-import { POSTS_QUERY, POST_BY_SLUG_QUERY } from "./queries";
+import { POSTS_QUERY, POST_BY_SLUG_QUERY, SITEMAP_POSTS_QUERY } from "./queries";
 import { zohoProjectId, zohoDataset } from "../env";
 
 const ZOHO_BLOG_REVALIDATE_SECONDS = 60;
@@ -13,6 +13,19 @@ export async function getZohoPosts() {
     {},
     {
       // Refresh shortly after publishing without requesting Sanity for every visitor.
+      next: { revalidate: ZOHO_BLOG_REVALIDATE_SECONDS },
+    },
+  );
+}
+
+export async function getZohoPostsForSitemap() {
+  if (!zohoProjectId || !zohoDataset) {
+    return [];
+  }
+  return zohoClient.fetch(
+    SITEMAP_POSTS_QUERY,
+    {},
+    {
       next: { revalidate: ZOHO_BLOG_REVALIDATE_SECONDS },
     },
   );

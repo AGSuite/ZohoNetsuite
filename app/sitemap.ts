@@ -1,8 +1,68 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL, NETSUITE_PAGES, ZOHO_PAGES, INDUSTRY_PAGES } from "./lib/seo";
-import { getPosts } from "../sanity/lib/fetch";
-import { getZohoPosts } from "../sanity/lib/zohoFetch";
-import { getOdooPosts } from "../sanity/lib/odooFetch";
+import { getPostsForSitemap } from "../sanity/lib/fetch";
+import { getZohoPostsForSitemap } from "../sanity/lib/zohoFetch";
+import { getOdooPostsForSitemap } from "../sanity/lib/odooFetch";
+import { odooAdditionalApps } from "./odoo/components/apps/odooAdditionalAppsData";
+import { odooIndustries } from "./odoo/components/industries/odooIndustryData";
+import { odooServices } from "./odoo/components/services/odooServiceData";
+
+const ODOO_CORE_APP_SLUGS = [
+  "accounting",
+  "crm",
+  "ecommerce",
+  "employees",
+  "helpdesk",
+  "inventory",
+  "manufacturing",
+  "marketing",
+  "projects",
+  "purchase",
+  "sales",
+  "website",
+] as const;
+
+const ZOHO_CASE_STUDY_DOCUMENT_PATHS = [
+  "/transforming-sales-operations-with-centralised-lead-management-region-wise-reporting-using-zoho-crm.pdf",
+  "/centralising-customer-management-support-operations-with-zoho-one.pdf",
+  "/streamlining-employee-management-performance-tracking-with-zoho-people.pdf",
+  "/transforming-global-customer-management-with-zoho-crm.pdf",
+  "/enhancing-jewellery-business-management-through-zoho-crm.pdf",
+  "/email-transformation-cost-optimisation-with-zoho-mail.pdf",
+  "/modernising-financial-management-with-zoho-books.pdf",
+  "/streamlining-payroll-management-compliance-with-zoho-payroll.pdf",
+  "/transforming-recruitment-operations-through-zoho-recruit-automation.pdf",
+  "/centralising-customer-feedback-management-with-zoho-forms.pdf",
+  "/transforming-customer-data-management-with-zoho-crm.pdf",
+] as const;
+
+interface SitemapPost {
+  slug?: string | { current?: string };
+  _createdAt?: string;
+  _updatedAt?: string;
+  publishedAt?: string;
+}
+
+function createBlogSitemapEntries(
+  posts: unknown,
+  basePath: string,
+  fallbackDate: Date,
+): MetadataRoute.Sitemap {
+  if (!Array.isArray(posts)) return [];
+
+  return posts.flatMap((post: SitemapPost) => {
+    const slug = typeof post.slug === "string" ? post.slug : post.slug?.current;
+    if (!slug) return [];
+
+    const postDate = post._updatedAt || post.publishedAt || post._createdAt;
+    return [{
+      url: `${SITE_URL}${basePath}/${slug}`,
+      lastModified: postDate ? new Date(postDate) : fallbackDate,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    }];
+  });
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
@@ -23,6 +83,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${SITE_URL}/zoho`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/odoo`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
@@ -129,23 +195,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  // 4. Insights, Case Studies & Resources (NetSuite & Zoho)
+  // 4. Insights, blog indexes, case-study indexes, and resource hubs.
+  // Placeholder "content coming soon" child routes are intentionally excluded.
   const resourcePages: MetadataRoute.Sitemap = [
     "/netsuite/blogs",
     "/netsuite/case-studies",
     "/netsuite/insights",
-    "/netsuite/insights/blogs",
-    "/netsuite/insights/case-studies",
     "/netsuite/insights/events",
     "/netsuite/insights/awards-achievements",
     "/zoho/blogs",
-    "/odoo/blogs",
     "/zoho/case-studies",
     "/zoho/insights",
-    "/zoho/insights/blogs",
-    "/zoho/insights/case-studies",
     "/zoho/insights/events",
     "/zoho/insights/awards-achievements",
+    "/odoo/blogs",
   ].map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: now,
@@ -216,68 +279,74 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   );
 
-  // 8. Dynamic NetSuite Blog Posts (from Sanity CMS)
+  // 8. Complete Odoo navigation, app, service, and industry coverage.
+  const odooCompanyPages: MetadataRoute.Sitemap = [
+    "/odoo/about-us",
+    "/odoo/our-offices",
+    "/odoo/life-at-agsuite",
+    "/odoo/apps",
+  ].map((path) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  const odooAppPages: MetadataRoute.Sitemap = [
+    ...ODOO_CORE_APP_SLUGS,
+    ...odooAdditionalApps.map((app) => app.slug),
+  ].map((slug) => ({
+    url: `${SITE_URL}/odoo/apps/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  const odooServicePages: MetadataRoute.Sitemap = odooServices.map((service) => ({
+    url: `${SITE_URL}/odoo/services/${service.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  const odooIndustryPages: MetadataRoute.Sitemap = odooIndustries.map((industry) => ({
+    url: `${SITE_URL}/odoo/industries/${industry.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  // Same-domain clean PDF URLs backed by Vercel Blob rewrites.
+  const zohoCaseStudyDocuments: MetadataRoute.Sitemap = ZOHO_CASE_STUDY_DOCUMENT_PATHS.map((path) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified: now,
+    changeFrequency: "yearly" as const,
+    priority: 0.6,
+  }));
+
+  // 9. Dynamic NetSuite Blog Posts (from Sanity CMS)
   let dynamicNetsuiteBlogs: MetadataRoute.Sitemap = [];
   try {
-    const nsPosts = await getPosts();
-    if (Array.isArray(nsPosts)) {
-      dynamicNetsuiteBlogs = nsPosts
-        .filter((post: any) => post?.slug?.current || (typeof post?.slug === "string" && post.slug))
-        .map((post: any) => {
-          const slug = post.slug?.current || post.slug;
-          const postDate = post._updatedAt || post.publishedAt || post._createdAt;
-          return {
-            url: `${SITE_URL}/netsuite/blogs/${slug}`,
-            lastModified: postDate ? new Date(postDate) : now,
-            changeFrequency: "weekly" as const,
-            priority: 0.7,
-          };
-        });
-    }
+    const nsPosts = await getPostsForSitemap();
+    dynamicNetsuiteBlogs = createBlogSitemapEntries(nsPosts, "/netsuite/blogs", now);
   } catch (err) {
     console.error("Error fetching NetSuite blog posts for sitemap:", err);
   }
 
-  // 9. Dynamic Zoho Blog Posts (from Sanity CMS)
+  // 10. Dynamic Zoho Blog Posts (from Sanity CMS)
   let dynamicZohoBlogs: MetadataRoute.Sitemap = [];
   try {
-    const zohoPosts = await getZohoPosts();
-    if (Array.isArray(zohoPosts)) {
-      dynamicZohoBlogs = zohoPosts
-        .filter((post: any) => post?.slug?.current || (typeof post?.slug === "string" && post.slug))
-        .map((post: any) => {
-          const slug = post.slug?.current || post.slug;
-          const postDate = post._updatedAt || post.publishedAt || post._createdAt;
-          return {
-            url: `${SITE_URL}/zoho/blogs/${slug}`,
-            lastModified: postDate ? new Date(postDate) : now,
-            changeFrequency: "weekly" as const,
-            priority: 0.7,
-          };
-        });
-    }
+    const zohoPosts = await getZohoPostsForSitemap();
+    dynamicZohoBlogs = createBlogSitemapEntries(zohoPosts, "/zoho/blogs", now);
   } catch (err) {
     console.error("Error fetching Zoho blog posts for sitemap:", err);
   }
 
-  // 10. Dynamic Odoo Blog Posts (from the isolated Odoo Sanity project)
+  // 11. Dynamic Odoo Blog Posts (from the isolated Odoo Sanity project)
   let dynamicOdooBlogs: MetadataRoute.Sitemap = [];
   try {
-    const odooPosts = await getOdooPosts();
-    if (Array.isArray(odooPosts)) {
-      dynamicOdooBlogs = odooPosts
-        .filter((post: any) => post?.slug?.current || (typeof post?.slug === "string" && post.slug))
-        .map((post: any) => {
-          const slug = post.slug?.current || post.slug;
-          const postDate = post._updatedAt || post.publishedAt || post._createdAt;
-          return {
-            url: `${SITE_URL}/odoo/blogs/${slug}`,
-            lastModified: postDate ? new Date(postDate) : now,
-            changeFrequency: "weekly" as const,
-            priority: 0.7,
-          };
-        });
-    }
+    const odooPosts = await getOdooPostsForSitemap();
+    dynamicOdooBlogs = createBlogSitemapEntries(odooPosts, "/odoo/blogs", now);
   } catch (err) {
     console.error("Error fetching Odoo blog posts for sitemap:", err);
   }
@@ -292,6 +361,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...zohoPages,
     ...additionalZohoServices,
     ...industryPages,
+    ...odooCompanyPages,
+    ...odooAppPages,
+    ...odooServicePages,
+    ...odooIndustryPages,
+    ...zohoCaseStudyDocuments,
     ...dynamicNetsuiteBlogs,
     ...dynamicZohoBlogs,
     ...dynamicOdooBlogs,

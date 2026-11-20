@@ -1,5 +1,5 @@
 import { client } from './client'
-import { POSTS_QUERY, POST_BY_SLUG_QUERY } from './queries'
+import { POSTS_QUERY, POST_BY_SLUG_QUERY, SITEMAP_POSTS_QUERY } from './queries'
 import { projectId, dataset } from '../env'
 
 export async function getPosts() {
@@ -7,6 +7,15 @@ export async function getPosts() {
         return []
     }
     return client.fetch(POSTS_QUERY, {}, {
+        next: { revalidate: 3600 }
+    })
+}
+
+export async function getPostsForSitemap() {
+    if (!projectId || !dataset) {
+        return []
+    }
+    return client.fetch(SITEMAP_POSTS_QUERY, {}, {
         next: { revalidate: 3600 }
     })
 }

@@ -1,11 +1,19 @@
 import { odooDataset, odooProjectId } from '../env'
 import { odooClient } from './odooClient'
-import { POST_BY_SLUG_QUERY, POSTS_QUERY } from './queries'
+import { POST_BY_SLUG_QUERY, POSTS_QUERY, SITEMAP_POSTS_QUERY } from './queries'
 
 export async function getOdooPosts() {
     if (!odooClient || !odooProjectId || !odooDataset) return []
 
     return odooClient.fetch(POSTS_QUERY, {}, {
+        next: { revalidate: 3600 },
+    })
+}
+
+export async function getOdooPostsForSitemap() {
+    if (!odooClient || !odooProjectId || !odooDataset) return []
+
+    return odooClient.fetch(SITEMAP_POSTS_QUERY, {}, {
         next: { revalidate: 3600 },
     })
 }

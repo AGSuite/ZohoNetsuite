@@ -140,8 +140,10 @@ export default function OdooAccountingPage() {
       appLogo="/images/odoo-apps/accounting.svg"
       title="Odoo Accounting for Real-Time Finance and Compliance"
       description="Manage receivables, payables, bank reconciliation, taxes, assets, multi-currency transactions, and financial reporting in a ledger connected to business operations."
-      heroImage="/images/Dashboard/odoo_live_operations_dashboard.webp"
-      overviewImage="/images/Dashboard/accounting and planing dashboard.jpg"
+      heroImage="/images/odoo-apps/generated/odoo-accounting-dashboard-hero.webp"
+      transparentHero
+      overviewImage="/images/odoo-apps/generated/odoo-accounting-overview-dashboard.jpg"
+      overviewBestFitBelowImage
       overviewTitle="Financial clarity that keeps pace with your business execution"
       overviewParagraphs={[
         "Odoo Accounting bridges the traditional divide between daily business operations and financial bookkeeping. Because it connects natively with Odoo Sales, Purchasing, Inventory, and Subscriptions, transactions post automatically to your chart of accounts without manual re-entry or reconciliation bottlenecks.",
@@ -166,4 +168,3 @@ export default function OdooAccountingPage() {
     />
   );
 }
-
