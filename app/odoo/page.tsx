@@ -41,14 +41,14 @@ export const metadata: Metadata = {
 };
 
 const apps = [
-  { name: "CRM", detail: "Leads, pipelines, and customer activity", icon: HeartHandshake, image: "/images/modules/crm.png", accent: "#a78bfa" },
-  { name: "Accounting", detail: "Invoicing and financial operations", icon: CircleDollarSign, image: "/images/modules/financial_management.png", accent: "#60a5fa" },
-  { name: "Sales", detail: "Quotations, orders, and subscriptions", icon: BarChart3, image: "/images/modules/order_management.png", accent: "#fb923c" },
-  { name: "Inventory", detail: "Stock, warehouse, and fulfilment", icon: PackageCheck, image: "/images/modules/inventory_management.png", accent: "#2dd4bf" },
-  { name: "Manufacturing", detail: "Planning, quality, and maintenance", icon: Factory, image: "/images/modules/manufacturing.png", accent: "#f472b6" },
-  { name: "eCommerce", detail: "Web store and connected operations", icon: ShoppingCart, image: "/images/modules/ecommerce.png", accent: "#38bdf8" },
-  { name: "Projects", detail: "Tasks, timesheets, and delivery", icon: Workflow, image: "/images/modules/project_management.png", accent: "#818cf8" },
-  { name: "Employees", detail: "People and workforce workflows", icon: Users, image: "/images/modules/hr_management.png", accent: "#fb7185" },
+  { name: "CRM", detail: "Leads, pipelines, and customer activity", icon: HeartHandshake, image: "/images/modules/crm-card.webp", accent: "#a78bfa" },
+  { name: "Accounting", detail: "Invoicing and financial operations", icon: CircleDollarSign, image: "/images/modules/financial_management-card.webp", accent: "#60a5fa" },
+  { name: "Sales", detail: "Quotations, orders, and subscriptions", icon: BarChart3, image: "/images/modules/order_management-card.webp", accent: "#fb923c" },
+  { name: "Inventory", detail: "Stock, warehouse, and fulfilment", icon: PackageCheck, image: "/images/modules/inventory_management-card.webp", accent: "#2dd4bf" },
+  { name: "Manufacturing", detail: "Planning, quality, and maintenance", icon: Factory, image: "/images/modules/manufacturing-card.webp", accent: "#f472b6" },
+  { name: "eCommerce", detail: "Web store and connected operations", icon: ShoppingCart, image: "/images/modules/ecommerce-card.webp", accent: "#38bdf8" },
+  { name: "Projects", detail: "Tasks, timesheets, and delivery", icon: Workflow, image: "/images/modules/project_management-card.webp", accent: "#818cf8" },
+  { name: "Employees", detail: "People and workforce workflows", icon: Users, image: "/images/modules/hr_management-card.webp", accent: "#fb7185" },
 ];
 
 
@@ -113,6 +113,7 @@ export default async function OdooHomePage() {
                     alt={`${name} business module`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    loading="lazy"
                     className="object-cover object-top transition duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${accent}40 0%, rgba(255,255,255,0.04) 48%, transparent 76%)` }} />

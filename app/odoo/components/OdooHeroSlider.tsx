@@ -96,6 +96,7 @@ export default function OdooHeroSlider() {
   return (
     <section
       id="overview"
+      role="region"
       className="relative isolate min-h-screen overflow-hidden bg-white px-6 pb-10 pt-24 lg:pt-28"
       aria-roledescription="carousel"
       aria-label="Odoo solutions"
@@ -109,7 +110,7 @@ export default function OdooHeroSlider() {
       }}
       tabIndex={0}
     >
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={"background-" + active}
           initial={{ opacity: 0 }}
@@ -120,7 +121,7 @@ export default function OdooHeroSlider() {
         >
           {isTeam ? (
             <Image
-              src="/images/odoo-about/odoo-team-collaboration.png"
+              src="/images/odoo-about/odoo-team-collaboration.webp"
               alt="A collaborative business team working with connected Odoo-style dashboards"
               fill
               priority
@@ -146,7 +147,7 @@ export default function OdooHeroSlider() {
       />
 
       <div className="mx-auto flex min-h-[calc(100vh-8.5rem)] max-w-7xl items-center pb-16">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={active}
             initial={{ opacity: 0, x: 42 }}

@@ -41,7 +41,7 @@ export default function ZohoSitesPage() {
     {
       title: "Responsive Templates",
       description: "Choose from hundreds of professionally-designed templates that look great on any device.",
-      image: "/images/modules/ecommerce.png",
+      image: "/images/modules/ecommerce.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -55,21 +55,21 @@ export default function ZohoSitesPage() {
     {
       title: "Site Customization",
       description: "Full control over fonts, colors, and layouts to ensure your site perfectly matches your brand identity.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#1a6080",
       rgb: "20,88,115",
     },
     {
       title: "Member Portals",
       description: "Create exclusive areas for your members, customers, or partners with secure login and restricted content.",
-      image: "/images/modules/hr_management.png",
+      image: "/images/modules/hr_management.webp",
       color: "#6a2575",
       rgb: "95,30,105",
     },
     {
       title: "Commerce Ready",
       description: "Seamlessly integrate with Zoho Commerce to sell products directly from your custom website.",
-      image: "/images/modules/order_management.png",
+      image: "/images/modules/order_management.webp",
       color: "#154e8a",
       rgb: "18,68,130",
     },

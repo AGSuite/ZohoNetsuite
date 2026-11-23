@@ -27,7 +27,7 @@ export default function ZohoServicePage() {
     {
       title: "Omnichannel Support",
       description: "Manage customer requests across email, phone, chat, and social media from a single interface.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },

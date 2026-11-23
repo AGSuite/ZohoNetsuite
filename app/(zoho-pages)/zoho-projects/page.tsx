@@ -33,7 +33,7 @@ export default function ZohoProjectsPage() {
     {
       title: "Task Management",
       description: "Break complex projects down into manageable tasks, milestones, and subtasks for better clarity and tracking.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },

@@ -23,7 +23,7 @@ export default function CrmModules() {
     {
       title: "Lead Management",
       description: "Capture, nurture, and convert leads from multiple sources with automated workflows and scoring.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -79,7 +79,7 @@ export default function CrmModules() {
     {
       title: "AI Sales Assistant (Zia)",
       description: "Let Zia predict lead conversion, identify anomalies, and suggest the best time to contact customers.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },

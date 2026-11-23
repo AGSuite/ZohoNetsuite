@@ -69,7 +69,7 @@ export default function NetSuiteSRPPage() {
       title: "Project Management",
       description:
         "Manage projects from inception to completion with real-time visibility into status, budgets, and milestones.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1e8a9e",
       rgb: "14,108,130",
     },
@@ -85,7 +85,7 @@ export default function NetSuiteSRPPage() {
       title: "Project Accounting",
       description:
         "Connect project activities directly to the financials for accurate cost tracking and margin analysis.",
-      image: "/images/modules/financial_management.png",
+      image: "/images/modules/financial_management.webp",
       color: "#8b3a6a",
       rgb: "125,42,88",
     },
@@ -149,7 +149,7 @@ export default function NetSuiteSRPPage() {
       title: "Opportunity Management",
       description:
         "Link CRM opportunities directly to project delivery for early insight into upcoming resource needs.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },

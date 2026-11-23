@@ -56,7 +56,7 @@ export default function SuiteSuccessPage() {
     { title: "Role-Based Dashboards", description: "300+ pre-built KPIs and dashboards for every function — from CFO to warehouse manager.", image: "/images/netsuiteimages/ns_visibility_dash.png", color: "#1a6080", rgb: "26,96,128" },
     { title: "Industry Best Practices", description: "Built-in workflows and processes based on thousands of successful global deployments.", image: "/images/netsuiteimages/ns_realtime_visibility.png", color: "#6a2575", rgb: "106,37,117" },
     { title: "Continuous Updates", description: "Two automatic platform upgrades per year — with all your customizations preserved.", image: "/images/benefits/benefit_sc_security_scale.png", color: "#154e8a", rgb: "21,78,138" },
-    { title: "Phased Approach", description: "A structured, agile methodology that delivers business value at every single stage.", image: "/images/modules/project_management.png", color: "#1a6545", rgb: "26,101,69" },
+    { title: "Phased Approach", description: "A structured, agile methodology that delivers business value at every single stage.", image: "/images/modules/project_management.webp", color: "#1a6545", rgb: "26,101,69" },
     { title: "Training & Adoption", description: "Built-in training pathways ensure rapid user adoption from the first day of go-live.", image: "/images/netsuiteimages/ns_training_services.png", color: "#8a2a3a", rgb: "138,42,58" },
     { title: "Ongoing Innovation", description: "NetSuite continuously innovates the SuiteSuccess editions based on real customer feedback and market trends.", image: "/images/modules/intelligent_automation.png", color: "#0f4e8a", rgb: "15,78,138" },
   ];

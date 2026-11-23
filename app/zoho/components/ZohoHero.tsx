@@ -1,13 +1,4 @@
-"use client";
-
-import dynamic from "next/dynamic";
-
-const ZohoHeroSlider = dynamic(() => import("./ZohoHeroSlider"), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-[100dvh] min-h-[600px] bg-[url('/images/Background/heropinkbg.webp')] bg-cover bg-center" />
-  ),
-});
+import ZohoHeroSlider from "./ZohoHeroSlider";
 
 export const ZohoHero: React.FC = () => {
   return (

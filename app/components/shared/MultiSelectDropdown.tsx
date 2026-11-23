@@ -90,6 +90,10 @@ export default function MultiSelectDropdown({
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={placeholder}
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+        aria-controls={`${id}-options`}
         className={`w-full text-left flex items-center justify-between transition-all rounded-xl ${
           className.includes("px-") ? "" : "px-4"
         } ${className.includes("py-") ? "" : "py-3.5"} ${
@@ -100,6 +104,7 @@ export default function MultiSelectDropdown({
       >
         <span className="truncate pr-2 font-medium">{displayText}</span>
         <ChevronDown
+          aria-hidden="true"
           className={`w-4 h-4 transition-transform duration-200 shrink-0 text-gray-400 ${
             isOpen ? "rotate-180 text-blue-600" : ""
           }`}
@@ -126,6 +131,10 @@ export default function MultiSelectDropdown({
             }
           `}</style>
           <div
+            id={`${id}-options`}
+            role="listbox"
+            aria-label={placeholder}
+            aria-multiselectable="true"
             style={{
               scrollbarWidth: 'thin',
               scrollbarColor: darkMenu ? '#475569 transparent' : '#94a3b8 #f1f5f9',
@@ -139,10 +148,13 @@ export default function MultiSelectDropdown({
           {options.map((opt) => {
             const isChecked = selected.includes(opt);
             return (
-              <div
+              <button
+                type="button"
                 key={opt}
                 onClick={() => toggleOption(opt)}
-                className={`flex items-center justify-between px-4 py-2.5 cursor-pointer transition-colors ${
+                role="option"
+                aria-selected={isChecked}
+                className={`flex w-full items-center justify-between px-4 py-2.5 cursor-pointer transition-colors ${
                   isChecked
                     ? darkMenu
                       ? "bg-blue-600/30 text-blue-300 font-semibold"
@@ -160,7 +172,7 @@ export default function MultiSelectDropdown({
                     }`}
                   />
                 )}
-              </div>
+              </button>
             );
           })}
         </div>

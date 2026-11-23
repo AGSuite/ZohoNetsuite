@@ -34,7 +34,7 @@ export default function ZohoPeoplePage() {
     {
       title: "Employee Onboarding",
       description: "Give new hires a warm welcome with automated checklists, digital document signing, and interactive portals.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -104,7 +104,7 @@ export default function ZohoPeoplePage() {
     {
       title: "Exit Management",
       description: "Streamline the offboarding process with automated exit interviews, clearance forms, and final settlements.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },

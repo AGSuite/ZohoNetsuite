@@ -6,9 +6,11 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "Zoho Solutions | CRM, HR, Finance & Automation | AGSuite",
   description: "Transform your business with Zoho's integrated suite of applications. AGSuite is a Zoho Premium Partner providing implementation, customization, and support.",
+  alternates: { canonical: "https://www.agsuitetech.com/zoho" },
   openGraph: {
     title: "Zoho Solutions | AGSuite Technologies",
     description: "Complete Business Software Suite - Streamline operations and boost productivity.",
+    url: "https://www.agsuitetech.com/zoho",
     images: ["/images/Background/heropinkbg.webp"],
   },
 };

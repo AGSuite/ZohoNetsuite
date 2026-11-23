@@ -88,7 +88,7 @@ export default function NetSuiteCRMPage() {
       title: "Sales Force Automation",
       description:
         "Manage every lead, opportunity, and forecast in real time — giving sales reps the pipeline visibility they need to close faster and managers the accuracy to plan confidently.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -136,7 +136,7 @@ export default function NetSuiteCRMPage() {
       title: "Quote & Order Management",
       description:
         "Generate accurate, branded quotes in seconds with product catalogs, pricing rules, and discount approvals — converting to orders without re-keying a single line.",
-      image: "/images/modules/order_management.png",
+      image: "/images/modules/order_management.webp",
       color: "#1a6545",
       rgb: "20,95,60",
     },

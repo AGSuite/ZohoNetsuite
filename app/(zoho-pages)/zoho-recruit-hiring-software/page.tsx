@@ -34,7 +34,7 @@ export default function ZohoRecruitPage() {
     {
       title: "Applicant Tracking (ATS)",
       description: "Manage candidate pipelines from sourcing to onboarding with a powerful, automated tracking system.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -69,7 +69,7 @@ export default function ZohoRecruitPage() {
     {
       title: "CRM for Recruiters",
       description: "Treat candidates like customers with a built-in CRM for managing long-term talent relationships.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#154e8a",
       rgb: "18,68,130",
     },

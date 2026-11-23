@@ -37,14 +37,14 @@ export default function ZohoFinancePlusPage() {
     {
       title: "Zoho Books",
       description: "Manage your complex business accounting, invoicing, and GST compliance with the world's most intuitive platform.",
-      image: "/images/modules/financial_management.png",
+      image: "/images/modules/financial_management.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Zoho Inventory",
       description: "Control your stock levels, manage multi-channel orders, and fulfill shipments with precise inventory control.",
-      image: "/images/modules/inventory_management.png",
+      image: "/images/modules/inventory_management.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -65,7 +65,7 @@ export default function ZohoFinancePlusPage() {
     {
       title: "Zoho Checkout",
       description: "Create personalized payment pages and collect online payments securely from customers worldwide.",
-      image: "/images/modules/ecommerce.png",
+      image: "/images/modules/ecommerce.webp",
       color: "#6a2575",
       rgb: "95,30,105",
     },

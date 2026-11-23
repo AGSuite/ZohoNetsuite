@@ -1,0 +1,3 @@
+# Local source-quality image archive. Keep available in the repository, but do
+# not upload it to Vercel's build or deployment environment.
+asset-originals/

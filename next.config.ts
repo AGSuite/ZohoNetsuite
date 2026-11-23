@@ -44,6 +44,10 @@ const nextConfig: NextConfig = {
     ],
   },
   experimental: {
+    // Tailwind's global atomic stylesheet was the homepage's primary
+    // render-blocking request on Slow 4G. Inline it in production so the
+    // server-rendered hero can paint without a second network round trip.
+    inlineCss: true,
     optimizePackageImports: [
       "lucide-react",
       "framer-motion",

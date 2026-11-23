@@ -246,7 +246,7 @@ export default function CrmMetrics() {
                   className="relative w-full h-[320px] sm:h-[480px] lg:h-[620px] overflow-hidden bg-slate-50"
                 >
                   <Image
-                    src="/images/zoho-dashboards/zoho-crm-updated-dashboard.png"
+                    src="/images/zoho-dashboards/zoho-crm-updated-dashboard.webp"
                     alt="Zoho CRM Sales & Pipeline Intelligence Dashboard — AGSuite Technologies"
                     fill
                     sizes="(min-width: 1024px) 1000px, 100vw"

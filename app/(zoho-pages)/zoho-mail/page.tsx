@@ -62,7 +62,7 @@ export default function ZohoMailPage() {
     {
       title: "Tasks & Notes",
       description: "Keep track of your to-dos and capture ideas directly within your email interface for maximum productivity.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#6a2575",
       rgb: "95,30,105",
     },

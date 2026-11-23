@@ -61,7 +61,7 @@ export default function ZohoExpensePage() {
     {
       title: "Approval Workflows",
       description: "Define multi-level, automated approval rules to ensure transparency and prevent expense policy violations.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a6080",
       rgb: "20,88,115",
     },
@@ -82,7 +82,7 @@ export default function ZohoExpensePage() {
     {
       title: "Direct Reimbursements",
       description: "Empower your employees by paying back their business expenses directly to their bank accounts on time.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#1a6545",
       rgb: "20,95,60",
     },

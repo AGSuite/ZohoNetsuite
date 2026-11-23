@@ -126,7 +126,7 @@ export default function NetSuiteBIPage() {
       title: "Sales Analytics",
       description:
         "Track pipeline, quota attainment, and win rates by rep, region, or product with live CRM-connected analytics.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#1a6080",
       rgb: "20,88,115",
     },
@@ -142,7 +142,7 @@ export default function NetSuiteBIPage() {
       title: "Inventory Analytics",
       description:
         "Monitor stock levels, reorder points, slow-movers, and carrying costs in real time across all warehouse locations.",
-      image: "/images/modules/inventory_management.png",
+      image: "/images/modules/inventory_management.webp",
       color: "#154e8a",
       rgb: "18,68,130",
     },

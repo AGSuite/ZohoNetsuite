@@ -41,7 +41,7 @@ export default function ZohoCampaignsPage() {
     {
       title: "Audience Segmentation",
       description: "Segment your audience based on behavior and demographics for highly targeted campaigns.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },

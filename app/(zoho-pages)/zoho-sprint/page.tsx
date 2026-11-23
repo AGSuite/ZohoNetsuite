@@ -35,7 +35,7 @@ export default function ZohoSprintsPage() {
     {
       title: "Sprint Planning",
       description: "Define your goals, estimate tasks using story points, and plan your sprints with a simple drag-and-drop interface.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },

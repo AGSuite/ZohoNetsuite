@@ -34,14 +34,14 @@ export default function ZohoInventoryPage() {
     {
       title: "Stock Management",
       description: "Get real-time updates on stock levels across all your warehouses and selling channels in one place.",
-      image: "/images/modules/inventory_management.png",
+      image: "/images/modules/inventory_management.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Order Fulfilment",
       description: "Process orders fast with automated packing and shipping labels from 40+ shipping carriers.",
-      image: "/images/modules/order_management.png",
+      image: "/images/modules/order_management.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -62,7 +62,7 @@ export default function ZohoInventoryPage() {
     {
       title: "Multi-Channel Selling",
       description: "Sync inventory and orders across Amazon, eBay, Etsy, and your own online store automatically.",
-      image: "/images/modules/ecommerce.png",
+      image: "/images/modules/ecommerce.webp",
       color: "#6a2575",
       rgb: "95,30,105",
     },

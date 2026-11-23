@@ -34,7 +34,7 @@ export default function ZohoCRMPlusPage() {
     {
       title: "Advanced CRM",
       description: "Get the full power of Zoho CRM Enterprise, with advanced automation and AI-powered insights.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -69,7 +69,7 @@ export default function ZohoCRMPlusPage() {
     {
       title: "Surveys & Feedback",
       description: "Collect customer feedback at critical touchpoints and use it to improve your customer experience.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#154e8a",
       rgb: "18,68,130",
     },

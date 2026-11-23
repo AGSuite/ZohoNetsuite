@@ -47,16 +47,16 @@ export default function NetSuiteEcommercePage() {
   ];
 
   const modules = [
-    { title: "Order Management", description: "Centralize orders from all sales channels into a single, real-time fulfillment workflow without manual data entry.", image: "/images/modules/order_management.png", color: "#1e6fa8", rgb: "30,111,168" },
+    { title: "Order Management", description: "Centralize orders from all sales channels into a single, real-time fulfillment workflow without manual data entry.", image: "/images/modules/order_management.webp", color: "#1e6fa8", rgb: "30,111,168" },
     { title: "Product Catalog", description: "Manage rich product data, images, pricing rules, and variants all from one centralized location.", image: "/images/netsuiteimages/ns_endtoend_management.png", color: "#3b5299", rgb: "59,82,153" },
     { title: "Site Management", description: "Drag-and-drop tools to manage promotions, landing pages, and navigation — no developer required.", image: "/images/netsuiteimages/ns_low_code_dev.png", color: "#1a7a55", rgb: "26,122,85" },
-    { title: "CRM Integration", description: "360-degree customer view with purchase history, preferences, and support tickets in one profile.", image: "/images/modules/crm.png", color: "#7b3a8a", rgb: "123,58,138" },
+    { title: "CRM Integration", description: "360-degree customer view with purchase history, preferences, and support tickets in one profile.", image: "/images/modules/crm.webp", color: "#7b3a8a", rgb: "123,58,138" },
     { title: "B2B Commerce", description: "Negotiated pricing, quote-to-order workflows, and self-service portals built for wholesale buyers.", image: "/images/modules/accounts_receivable_custom.png", color: "#a05a18", rgb: "160,90,24" },
     { title: "Marketing Engine", description: "Targeted email campaigns, dynamic promotions, and A/B testing powered by your own ERP data.", image: "/images/modules/sc_marketing_engine.png", color: "#4a3a8a", rgb: "74,58,138" },
     { title: "Mobile Commerce", description: "Fully responsive storefronts that deliver seamless shopping on any device, anywhere in the world.", image: "/images/modules/sc_mobile_commerce.png", color: "#1a6080", rgb: "26,96,128" },
     { title: "Analytics & Reports", description: "Real-time insight into sales performance, customer behavior, and inventory across all channels.", image: "/images/modules/financial_reporting_custom.png", color: "#6a2575", rgb: "106,37,117" },
     { title: "Payment Processing", description: "Accept all major payment methods with built-in fraud detection and PCI DSS Level 1 compliance.", image: "/images/modules/accounts_payable_custom.png", color: "#154e8a", rgb: "21,78,138" },
-    { title: "Inventory Sync", description: "Real-time inventory on your web store — no overselling, no stockouts, always accurate.", image: "/images/modules/inventory_management.png", color: "#1a6545", rgb: "26,101,69" },
+    { title: "Inventory Sync", description: "Real-time inventory on your web store — no overselling, no stockouts, always accurate.", image: "/images/modules/inventory_management.webp", color: "#1a6545", rgb: "26,101,69" },
     { title: "Multi-Site Management", description: "Run multiple brands and regional storefronts from one account with centralized management.", image: "/images/netsuiteimages/ns_global_business.png", color: "#8a2a3a", rgb: "138,42,58" },
     { title: "Global Commerce", description: "Multi-currency, multi-language, and multi-tax support so you can sell anywhere in the world.", image: "/images/modules/multi_currency_custom.png", color: "#0f4e8a", rgb: "15,78,138" },
   ];

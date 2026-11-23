@@ -28,10 +28,9 @@ export const NSHeroNextAIVisual: React.FC<NSHeroNextAIVisualProps> = ({
             <Image
               src="/images/lap/Next AI Dashboard.webp"
               alt="Oracle NetSuite Next AI Command Dashboard"
-              width={2752}
-              height={1536}
+              width={1400}
+              height={782}
               priority
-              unoptimized={true}
               className="w-full h-auto object-contain"
               sizes="(max-width: 1024px) 100vw, 70vw"
             />

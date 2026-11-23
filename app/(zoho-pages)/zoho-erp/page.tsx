@@ -41,28 +41,28 @@ export default function ZohoERPPage() {
     {
       title: "Inventory Management",
       description: "Track stock levels, manage warehouses, and automate reordering processes across multiple locations.",
-      image: "/images/modules/inventory_management.png",
+      image: "/images/modules/inventory_management.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "People & Payroll",
       description: "Streamline HR processes from onboarding to retirement, including automated payroll processing.",
-      image: "/images/modules/hr_management.png",
+      image: "/images/modules/hr_management.webp",
       color: "#8b3a6a",
       rgb: "125,42,88",
     },
     {
       title: "CRM & Sales",
       description: "Build lasting customer relationships and accelerate sales cycles with unified customer data.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Project Management",
       description: "Plan, track, and collaborate on projects with integrated time tracking and billing.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
@@ -129,7 +129,7 @@ export default function ZohoERPPage() {
       modules={modules}
       benefits={benefits}
       heroImage="/images/people/zoho_erp_hero.jpg"
-      whatIsImage="/images/zoho-dashboards/zoho-erp-updated-dashboard.png"
+      whatIsImage="/images/zoho-dashboards/zoho-erp-updated-dashboard.webp"
       heroCard1={{
         title: "50+ Apps",
         subtitle: "Everything you need in one place.",

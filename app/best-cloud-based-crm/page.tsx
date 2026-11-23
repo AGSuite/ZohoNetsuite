@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/zoho-dashboards/zoho-crm-updated-dashboard.png",
+        url: "/images/zoho-dashboards/zoho-crm-updated-dashboard.webp",
         width: 1200,
         height: 630,
         alt: "Best Cloud-Based CRM Software — AGSuite Technologies",

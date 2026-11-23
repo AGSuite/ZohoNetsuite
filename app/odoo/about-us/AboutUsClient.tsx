@@ -547,7 +547,7 @@ function AwardsAndRecognitionSection() {
   return (
     <section className="relative min-h-[520px] overflow-hidden bg-[#171020]">
       <Image
-        src="/images/odoo-about/odoo-team-collaboration.png"
+        src="/images/odoo-about/odoo-team-collaboration.webp"
         alt="A collaborative team working with connected Odoo-style business dashboards"
         fill
         className="object-cover object-center"

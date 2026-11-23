@@ -80,14 +80,14 @@ export default function ZohoSocialPage() {
     {
       title: "Lead Generation",
       description: "Identify and capture potential leads directly from social media and sync them automatically with your Zoho CRM.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#1a6545",
       rgb: "20,95,60",
     },
     {
       title: "Social CRM",
       description: "Link your social media profiles with your CRM data to understand the full social lifestyle of your customers.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },

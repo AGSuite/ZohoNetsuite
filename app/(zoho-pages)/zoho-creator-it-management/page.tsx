@@ -55,7 +55,7 @@ export default function ZohoCreatorITManagementPage() {
     {
       title: "Workflow Automation",
       description: "Automate routine IT tasks like user onboarding, password resets, and hardware procurement requests.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a6080",
       rgb: "20,88,115",
     },

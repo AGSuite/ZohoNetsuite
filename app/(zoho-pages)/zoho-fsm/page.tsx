@@ -40,7 +40,7 @@ export default function ZohoFsmPage() {
     {
       title: "Work Order Management",
       description: "Centralize and track all maintenance, install, and repair requests from creation to closure.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -68,7 +68,7 @@ export default function ZohoFsmPage() {
     {
       title: "Inventory & Spare Parts",
       description: "Track parts and tools in vans or warehouses in real-time, ensuring technicians always have what they need.",
-      image: "/images/modules/inventory_management.png",
+      image: "/images/modules/inventory_management.webp",
       color: "#6a2575",
       rgb: "95,30,105",
     },

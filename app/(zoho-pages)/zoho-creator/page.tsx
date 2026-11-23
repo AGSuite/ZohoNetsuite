@@ -104,7 +104,7 @@ export default function ZohoCreatorPage() {
     {
       title: "Extension & Customization",
       description: "Add custom logic with Deluge, Zoho's powerful scripting language, for complex business requirements.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },

@@ -37,7 +37,7 @@ export default function ZohoIntegrationServicesPage() {
     {
       title: "E-Commerce Sync",
       description: "Auto-sync Shopify, WooCommerce, or Amazon sales data with Zoho Inventory and Books in real-time.",
-      image: "/images/modules/ecommerce.png",
+      image: "/images/modules/ecommerce.webp",
       color: "#0e7490",
       rgb: "14,116,144",
       Icon: ArrowRightLeft,
@@ -64,7 +64,7 @@ export default function ZohoIntegrationServicesPage() {
     {
       title: "Zero Manual Data Entry",
       description: "Eliminate the risk of human error by automating data transfers between your business critical apps.",
-      image: "/images/modules/order_management.png",
+      image: "/images/modules/order_management.webp",
       points: [
         "Automated record creation",
         "Bi-directional data sync",

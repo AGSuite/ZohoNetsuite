@@ -35,7 +35,7 @@ export default function ZohoOnePage() {
     {
       title: "Unified CRM",
       description: "A centralized customer platform for sales, marketing, and support to build lasting relationships.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -49,7 +49,7 @@ export default function ZohoOnePage() {
     {
       title: "Full HR Suite",
       description: "From hiring to retirement, manage your workforce with automated processes and self-service.",
-      image: "/images/modules/hr_management.png",
+      image: "/images/modules/hr_management.webp",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
@@ -63,7 +63,7 @@ export default function ZohoOnePage() {
     {
       title: "Project Management",
       description: "Plan, track, and collaborate on projects with ease using social features and task boards.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#6a2575",
       rgb: "95,30,105",
     },

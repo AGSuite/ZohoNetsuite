@@ -34,7 +34,7 @@ export default function ZohoITManagementPage() {
     {
       title: "Service Desk (Servicely)",
       description: "A comprehensive ITIL-aligned service desk for managing incidents, problems, and changes with ease.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -76,7 +76,7 @@ export default function ZohoITManagementPage() {
     {
       title: "IT Asset Management",
       description: "Track the entire lifecycle of your IT assets, from procurement and deployment to disposal.",
-      image: "/images/modules/inventory_management.png",
+      image: "/images/modules/inventory_management.webp",
       color: "#1a6545",
       rgb: "20,95,60",
     },

@@ -45,7 +45,7 @@ export default function ZohoMarketingPlusPage() {
     {
       title: "Email Marketing",
       description: "Create stunning email campaigns, manage subscriber lists, and track engagement with detailed analytics.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
@@ -59,7 +59,7 @@ export default function ZohoMarketingPlusPage() {
     {
       title: "Event Management",
       description: "Plan, promote, and manage both virtual and in-person events with integrated registration and tracking.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#6a2575",
       rgb: "95,30,105",
     },

@@ -3,6 +3,7 @@ import { Inter, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import ClientOverlays from "./components/shared/ClientOverlays";
+import DeferredGoogleTag from "./components/shared/DeferredGoogleTag";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL, SITE_NAME, orgSchema, websiteSchema, localBusinessSchema } from "./lib/seo";
 
@@ -169,27 +170,7 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        {/* Google tag (gtag.js) - Analytics and Google Ads */}
-        <Script
-          strategy="lazyOnload"
-          src="https://www.googletagmanager.com/gtag/js?id=G-FWVDJQ8Q2R"
-        />
-        <Script
-          id="google-tag-gtag"
-          strategy="lazyOnload"
-        >
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-FWVDJQ8Q2R');
-            gtag('config', 'AW-10876325873');
-          `}
-        </Script>
-
-        {/* Performance: preconnect & DNS prefetch */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        {/* Performance: DNS hints only; Google Tag is loaded after interaction/idle. */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://cdn.sanity.io" />
@@ -215,7 +196,8 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${dmSans.variable} antialiased`}>
-        <main>{children}</main>
+        <div id="page-content">{children}</div>
+        <DeferredGoogleTag />
         <ClientOverlays />
         <SpeedInsights />
       </body>

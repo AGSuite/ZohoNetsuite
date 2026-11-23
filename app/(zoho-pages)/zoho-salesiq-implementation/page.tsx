@@ -87,7 +87,7 @@ export default function ZohoSalesIqPage() {
     {
       title: "CRM Integration",
       description: "View visitor history and background information directly from Zoho CRM or other popular platforms.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },
@@ -115,7 +115,7 @@ export default function ZohoSalesIqPage() {
     {
       title: "Chat Transfers",
       description: "Seamlessly transfer chats between departments or agents to ensure every query is handled by the right expert.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },

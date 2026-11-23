@@ -35,7 +35,7 @@ export default function ZohoPeoplePlusPage() {
     {
       title: "Applicant Tracking",
       description: "Source, track, and hire the best talent with an integrated applicant tracking system that streamlines recruitment.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },

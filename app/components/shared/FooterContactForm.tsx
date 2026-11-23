@@ -399,10 +399,10 @@ export default function FooterContactForm({ platform, contentVariant }: FooterCo
                           <input type="text" className="hidden" name="aG9uZXlwb3Q" value="" readOnly />
 
                           {/* Hidden default fields required by Zoho */}
-                          <select name="Lead Status" className="hidden" defaultValue="Database">
+                          <select name="Lead Status" aria-label="Lead status" className="hidden" defaultValue="Database">
                             <option value="Database">Database</option>
                           </select>
-                          <select name="Lead Source" className="hidden" defaultValue="Website (Form)">
+                          <select name="Lead Source" aria-label="Lead source" className="hidden" defaultValue="Website (Form)">
                             <option value="Website (Form)">Website (Form)</option>
                           </select>
                           <input type="hidden" name="No of Employees" value="0" />
@@ -435,7 +435,7 @@ export default function FooterContactForm({ platform, contentVariant }: FooterCo
                               <input type="text" id="Company" name="Company" maxLength={200} required className="w-full bg-gray-50 border border-blue-100 focus:border-blue-500 rounded-lg px-3 py-2 text-gray-900 outline-none text-xs transition-all shadow-xs" placeholder="Company Inc." suppressHydrationWarning />
                             </div>
                             <div>
-                              <label htmlFor={`service_${platform}`} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">{config.serviceLabel}</label>
+                              <label htmlFor={config.serviceFieldName} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">{config.serviceLabel}</label>
                               <MultiSelectDropdown
                                 id={config.serviceFieldName}
                                 name={config.serviceFieldName}
@@ -449,7 +449,7 @@ export default function FooterContactForm({ platform, contentVariant }: FooterCo
 
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                              <label htmlFor={`revenue_${platform}`} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">Annual Revenue <span className="text-red-500">*</span></label>
+                              <label htmlFor="LEADCF19" className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">Annual Revenue <span className="text-red-500">*</span></label>
                               <select
                                 id="LEADCF19"
                                 name="LEADCF19"
@@ -472,7 +472,7 @@ export default function FooterContactForm({ platform, contentVariant }: FooterCo
                               </select>
                             </div>
                             <div>
-                              <label htmlFor={`hear_${platform}`} className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">How did you hear about us. <span className="text-red-500">*</span></label>
+                              <label htmlFor="LEADCF127" className="block text-gray-700 text-[10px] font-bold uppercase tracking-wider mb-1">How did you hear about us. <span className="text-red-500">*</span></label>
                               <select
                                 id="LEADCF127"
                                 name="LEADCF127"

@@ -41,7 +41,7 @@ export default function ZohoBooksPage() {
     {
       title: "Inventory Management",
       description: "Track stock levels in real-time, manage sales and purchase orders, and optimize your supply chain.",
-      image: "/images/modules/inventory_management.png",
+      image: "/images/modules/inventory_management.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -62,7 +62,7 @@ export default function ZohoBooksPage() {
     {
       title: "Project Accounting",
       description: "Track time spent on tasks, manage project budgets, and bill clients directly from your projects.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#6a2575",
       rgb: "95,30,105",
     },
@@ -97,7 +97,7 @@ export default function ZohoBooksPage() {
     {
       title: "Sales Orders",
       description: "Manage your sales pipeline from quote to fulfillment, ensuring every order is tracked accurately.",
-      image: "/images/modules/order_management.png",
+      image: "/images/modules/order_management.webp",
       color: "#523a8a",
       rgb: "75,48,130",
     },

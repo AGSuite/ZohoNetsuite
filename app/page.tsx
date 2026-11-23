@@ -77,9 +77,18 @@ const homeSchema = {
 
 export default function Home() {
   return (
-    <div
+    <main
       className="h-[100dvh] w-full flex flex-col justify-between p-3 sm:p-5 md:p-6 lg:p-7 relative z-0 overflow-hidden box-border"
     >
+      <link
+        rel="preload"
+        as="image"
+        href="/images/home/netsuite_hero_card_mob.webp"
+        type="image/webp"
+        media="(max-width: 768px)"
+        fetchPriority="high"
+      />
+
       {/* Schema.org Structured Data */}
       <Script
         id="home-page-schema"
@@ -125,13 +134,13 @@ export default function Home() {
             aria-label="AGSuite Technologies Home"
           >
             <Image
-              src="/images/home/agsuite_logo.webp"
+              src="/images/home/agsuite_logo-200.webp"
               alt="AGSuite Technologies Logo"
-              width={180}
-              height={55}
-              priority
+              width={200}
+              height={67}
+              loading="eager"
+              fetchPriority="low"
               className="h-8 sm:h-9 w-auto object-contain drop-shadow"
-              quality={95}
             />
           </Link>
         </div>
@@ -156,18 +165,18 @@ export default function Home() {
               {/* NetSuite Partner Logo */}
               <Link
                 href="/netsuite"
-                prefetch={true}
+                prefetch={false}
                 className="transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
                 aria-label="Oracle NetSuite Solution Provider Partner"
               >
                 <Image
-                  src="/images/netsuiteimages/netsuitelogos/netsuiteblack.webp"
+                  src="/images/netsuiteimages/netsuitelogos/netsuiteblack-192.webp"
                   alt="Oracle NetSuite Partner Logo"
-                  width={180}
-                  height={55}
-                  priority
+                  width={192}
+                  height={58}
+                  loading="eager"
+                  fetchPriority="low"
                   className="h-7.5 sm:h-8.5 w-auto object-contain"
-                  quality={95}
                 />
               </Link>
 
@@ -177,18 +186,18 @@ export default function Home() {
               {/* Zoho Premium Partner Logo */}
               <Link
                 href="/zoho"
-                prefetch={true}
+                prefetch={false}
                 className="transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-400 rounded"
                 aria-label="Zoho Premium Partner"
               >
                 <Image
-                  src="/images/home/zoho_premium_partner.webp"
+                  src="/images/home/zoho_premium_partner-200.webp"
                   alt="Zoho Premium Partner Logo"
-                  width={180}
-                  height={55}
-                  priority
+                  width={200}
+                  height={59}
+                  loading="eager"
+                  fetchPriority="low"
                   className="h-7.5 sm:h-8.5 w-auto object-contain"
-                  quality={95}
                 />
               </Link>
             </div>
@@ -205,13 +214,13 @@ export default function Home() {
           aria-label="AGSuite Technologies Home"
         >
           <Image
-            src="/images/home/agsuite_logo.webp"
+            src="/images/home/agsuite_logo-200.webp"
             alt="AGSuite Technologies Logo"
-            width={180}
-            height={55}
-            priority
+            width={200}
+            height={67}
+            loading="eager"
+            fetchPriority="low"
             className="h-10 md:h-11 lg:h-12 w-auto object-contain drop-shadow"
-            quality={95}
           />
         </Link>
 
@@ -234,18 +243,18 @@ export default function Home() {
               {/* NetSuite Partner Logo */}
               <Link
                 href="/netsuite"
-                prefetch={true}
+                prefetch={false}
                 className="transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
                 aria-label="Oracle NetSuite Solution Provider Partner"
               >
                 <Image
-                  src="/images/netsuiteimages/netsuitelogos/netsuiteblack.webp"
+                  src="/images/netsuiteimages/netsuitelogos/netsuiteblack-192.webp"
                   alt="Oracle NetSuite Partner Logo"
-                  width={180}
-                  height={55}
-                  priority
+                  width={192}
+                  height={58}
+                  loading="eager"
+                  fetchPriority="low"
                   className="h-10 md:h-11 lg:h-12 w-auto object-contain"
-                  quality={95}
                 />
               </Link>
 
@@ -255,18 +264,18 @@ export default function Home() {
               {/* Zoho Premium Partner Logo */}
               <Link
                 href="/zoho"
-                prefetch={true}
+                prefetch={false}
                 className="transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-400 rounded"
                 aria-label="Zoho Premium Partner"
               >
                 <Image
-                  src="/images/home/zoho_premium_partner.webp"
+                  src="/images/home/zoho_premium_partner-200.webp"
                   alt="Zoho Premium Partner Logo"
-                  width={180}
-                  height={55}
-                  priority
+                  width={200}
+                  height={59}
+                  loading="eager"
+                  fetchPriority="low"
                   className="h-10 md:h-11 lg:h-12 w-auto object-contain"
-                  quality={95}
                 />
               </Link>
             </div>
@@ -288,7 +297,7 @@ export default function Home() {
             {/* Card Link */}
             <Link
               href="/netsuite"
-              prefetch={true}
+              prefetch={false}
               className="relative h-full w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-white/15 group-hover:border-cyan-400/40 group-hover:shadow-[0_12px_35px_-8px_rgba(56,189,248,0.35)] transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-blue-400 flex flex-col justify-end p-4 sm:p-5 md:p-6"
               aria-label="Explore Oracle NetSuite ERP #1 Cloud ERP"
             >
@@ -307,6 +316,9 @@ export default function Home() {
                 <img
                   src="/images/home/netsuite_hero_card.webp"
                   alt="Oracle NetSuite Business Professionals"
+                  width="500"
+                  height="334"
+                  loading="eager"
                   fetchPriority="high"
                   decoding="async"
                   className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -369,7 +381,7 @@ export default function Home() {
             {/* Card Link */}
             <Link
               href="/zoho"
-              prefetch={true}
+              prefetch={false}
               className="relative h-full w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border border-white/15 group-hover:border-emerald-400/40 group-hover:shadow-[0_12px_35px_-8px_rgba(52,211,153,0.35)] transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 flex flex-col justify-end p-4 sm:p-5 md:p-6"
               aria-label="Visit Zoho Solutions and Cloud CRM"
             >
@@ -388,7 +400,10 @@ export default function Home() {
                 <img
                   src="/images/home/zoho_hero_card.webp"
                   alt="Zoho Cloud Business Solutions"
+                  width="500"
+                  height="334"
                   loading="eager"
+                  fetchPriority="low"
                   decoding="async"
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
@@ -443,6 +458,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

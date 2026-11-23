@@ -9,35 +9,15 @@ const ZohoCTA = () => {
     e.preventDefault();
     e.stopPropagation();
 
-    const executeScroll = (isFollowUp = false) => {
-      const element = document.getElementById("contact-form") || document.querySelector("#crmWebToEntityForm") || document.querySelector("section[id*='contact']");
-      if (!element) return;
+    const element = document.getElementById("contact-form") || document.querySelector("#crmWebToEntityForm") || document.querySelector("section[id*='contact']");
+    if (!element) return;
 
-      const navbarHeight = 75;
-      const elemRect = element.getBoundingClientRect();
-      const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-      const targetY = currentScrollY + elemRect.top - navbarHeight - 5;
-
-      const lenis = (window as any).__lenis;
-      if (lenis && typeof lenis.scrollTo === "function") {
-        lenis.scrollTo(targetY, {
-          duration: isFollowUp ? 0.4 : 0.8,
-          lock: false,
-          immediate: isFollowUp,
-        });
-      } else {
-        window.scrollTo({
-          top: Math.max(0, targetY),
-          behavior: isFollowUp ? "auto" : "smooth",
-        });
-      }
-    };
-
-    executeScroll(false);
-    setTimeout(() => executeScroll(false), 200);
-    setTimeout(() => executeScroll(true), 450);
-    setTimeout(() => executeScroll(true), 800);
-    setTimeout(() => executeScroll(true), 1200);
+    const lenis = (window as any).__lenis;
+    if (lenis && typeof lenis.scrollTo === "function") {
+      lenis.scrollTo(element, { offset: -80, duration: 0.8, lock: false });
+    } else {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
 
     window.history.pushState(null, "", `${window.location.pathname}#contact-form`);
   };

@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import dynamic from "next/dynamic";
+import { NSHeroNextAIVisual } from "./NSHeroNextAIVisual";
 import { FileCheck, ShieldCheck, Zap, TrendingUp, DollarSign, BarChart3, PieChart } from "lucide-react";
 
 import "swiper/css";
@@ -25,11 +26,6 @@ const heroParticlePaths = Array.from({ length: 15 }, (_, index) => ({
 const NSCircularDesign = dynamic(() => import("./NSCircularDesign").then(mod => mod.NSCircularDesign), {
   ssr: false,
   loading: () => <div className="w-[350px] h-[350px] xl:w-[550px] xl:h-[550px] rounded-full bg-blue-50/50 animate-pulse mx-auto" />
-});
-
-const NSHeroNextAIVisual = dynamic(() => import("./NSHeroNextAIVisual").then(mod => mod.NSHeroNextAIVisual), {
-  ssr: false,
-  loading: () => <div className="w-full h-[450px] rounded-2xl bg-blue-50/50 animate-pulse mx-auto" />
 });
 
 const HeroSlide = ({
@@ -89,6 +85,10 @@ const HeroSlide = ({
                   src={bg}
                   alt=""
                   aria-hidden="true"
+                  width={1920}
+                  height={1080}
+                  loading={priority ? "eager" : "lazy"}
+                  fetchPriority={priority ? "high" : "low"}
                   decoding="async"
                   className="w-full h-full object-cover object-center"
                 />
@@ -128,14 +128,14 @@ const HeroSlide = ({
                 )}
 
                 <motion.p
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={skipEntranceAnimation ? false : { opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                   className={`mt-6 sm:mt-6 text-base sm:text-base lg:text-lg xl:text-xl font-normal leading-relaxed ${textColor === 'dark' ? 'text-gray-700' : 'text-white/90'
                     }`}>{desc}</motion.p>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={skipEntranceAnimation ? false : { opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                   className="mt-7 sm:mt-7 relative inline-flex group"
@@ -158,7 +158,7 @@ const HeroSlide = ({
             <AnimatePresence mode="wait">
               {isActive && (
                 <motion.div
-                  initial={{ opacity: 0, x: 100 }}
+                  initial={skipEntranceAnimation ? false : { opacity: 0, x: 100 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
                   className="w-full relative"
@@ -512,9 +512,9 @@ export default function NSHeroSlider() {
                   <Image
                     src="/images/lap/group1.webp"
                     alt="Happy Corporate Finance Team Collaborating with Oracle NetSuite"
-                    width={1500}
-                    height={1000}
-                    priority={true}
+                    width={1400}
+                    height={980}
+                    loading="lazy"
                     className="w-full h-auto rounded-xl object-contain filter drop-shadow-[0_14px_28px_rgba(37,99,235,0.2)] transition-transform duration-700 hover:scale-[1.01]"
                     sizes="(max-width: 1024px) 100vw, 60vw"
                     quality={85}
@@ -822,8 +822,9 @@ export default function NSHeroSlider() {
                 <Image
                   src="/images/lap/netsuitelap2.webp"
                   alt="NetSuite for IT and ITES"
-                  width={1900}
-                  height={1900}
+                  width={1200}
+                  height={800}
+                  loading="lazy"
                   className="w-full h-auto object-contain filter drop-shadow-[0_25px_50px_rgba(99,102,241,0.25)] transition-transform duration-700 hover:scale-[1.01]"
                   sizes="(max-width: 1024px) 100vw, 60vw"
                   quality={85}

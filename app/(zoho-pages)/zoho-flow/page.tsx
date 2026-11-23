@@ -50,7 +50,7 @@ export default function ZohoFlowPage() {
     {
       title: "Custom Functions",
       description: "Extend your workflows with custom Deluge scripts to handle complex business logic and data transformations.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
@@ -113,7 +113,7 @@ export default function ZohoFlowPage() {
     {
       title: "API Access",
       description: "Build powerful integrations with Zoho Flow's robust API and extend its capabilities even further.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },

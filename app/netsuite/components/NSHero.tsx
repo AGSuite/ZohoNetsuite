@@ -1,13 +1,4 @@
-"use client";
-
-import dynamic from "next/dynamic";
-
-const NSHeroSlider = dynamic(() => import("./NSHeroSlider"), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-[100dvh] min-h-[600px] bg-[url('/images/Background/herobluebg.webp')] bg-cover bg-center" />
-  ),
-});
+import NSHeroSlider from "./NSHeroSlider";
 
 export const NSHero: React.FC = () => {
   return (

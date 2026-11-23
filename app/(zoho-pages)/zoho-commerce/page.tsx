@@ -34,21 +34,21 @@ export default function ZohoCommercePage() {
     {
       title: "Storefront Builder",
       description: "Build a stunning, professionally-designed online store without writing a single line of code.",
-      image: "/images/modules/ecommerce.png",
+      image: "/images/modules/ecommerce.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Inventory Sync",
       description: "Real-time stock synchronization across your online store, brick-and-mortar shops, and major marketplaces.",
-      image: "/images/modules/inventory_management.png",
+      image: "/images/modules/inventory_management.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Order Management",
       description: "Centrally manage every order from payment to shipping, tracking, and customer notification.",
-      image: "/images/modules/order_management.png",
+      image: "/images/modules/order_management.webp",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
@@ -111,7 +111,7 @@ export default function ZohoCommercePage() {
     {
       title: "Finance & CRM Sync",
       description: "Native integration with Zoho Books and Zoho CRM keeps your entire business in perfect sync.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },

@@ -17,7 +17,7 @@ const modules = [
   {
     title: "CRM",
     description: "Unified 360° customer data, pipeline tracking, quote-to-order, and customer lifecycle management.",
-    image: "/images/modules/crm.png",
+    image: "/images/modules/crm.webp",
     color: "#6a2575",
     rgb: "95,30,105",
   },
@@ -52,7 +52,7 @@ const modules = [
   {
     title: "Manufacturing",
     description: "Work orders, shop floor scheduling, multi-level BOMs, routing, and real-time production visibility.",
-    image: "/images/modules/manufacturing.png",
+    image: "/images/modules/manufacturing.webp",
     color: "#8b3a6a",
     rgb: "125,42,88",
   },
@@ -73,7 +73,7 @@ const modules = [
   {
     title: "E-commerce",
     description: "Connected B2B and B2C digital storefronts seamlessly unified with ERP inventory and orders.",
-    image: "/images/modules/ecommerce.png",
+    image: "/images/modules/ecommerce.webp",
     color: "#0f4e8a",
     rgb: "12,68,130",
   },

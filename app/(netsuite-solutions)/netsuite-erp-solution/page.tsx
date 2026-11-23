@@ -375,18 +375,18 @@ export default function NetSuiteERPPage() {
           </motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
             {[
-              { title: "Financial Management", description: "Real-time P&L, balance sheets, multi-currency, tax compliance, and automated close.", image: "/images/modules/financial_management.png", color: "#1e8a9e", rgb: "14,108,130" },
+              { title: "Financial Management", description: "Real-time P&L, balance sheets, multi-currency, tax compliance, and automated close.", image: "/images/modules/financial_management.webp", color: "#1e8a9e", rgb: "14,108,130" },
               { title: "Procurement", description: "Automate purchase orders, vendor management, and approval workflows end-to-end.", image: "/images/modules/procurement.png", color: "#3b5299", rgb: "40,65,145" },
-              { title: "Manufacturing", description: "Work order management, production scheduling, BOM, and shop floor control.", image: "/images/modules/manufacturing.png", color: "#8b3a6a", rgb: "125,42,88" },
-              { title: "Inventory Management", description: "Real-time multi-location inventory tracking with demand planning and reorder automation.", image: "/images/modules/inventory_management.png", color: "#1a7a55", rgb: "18,108,72" },
-              { title: "Order Management", description: "Streamline quote-to-cash with order fulfilment, billing, and revenue recognition.", image: "/images/modules/order_management.png", color: "#a05a18", rgb: "145,75,18" },
+              { title: "Manufacturing", description: "Work order management, production scheduling, BOM, and shop floor control.", image: "/images/modules/manufacturing.webp", color: "#8b3a6a", rgb: "125,42,88" },
+              { title: "Inventory Management", description: "Real-time multi-location inventory tracking with demand planning and reorder automation.", image: "/images/modules/inventory_management.webp", color: "#1a7a55", rgb: "18,108,72" },
+              { title: "Order Management", description: "Streamline quote-to-cash with order fulfilment, billing, and revenue recognition.", image: "/images/modules/order_management.webp", color: "#a05a18", rgb: "145,75,18" },
               { title: "Warehouse Management", description: "Barcode-driven receiving, pick/pack/ship, and bin management at any scale.", image: "/images/modules/warehouse_management.png", color: "#4a3a8a", rgb: "65,45,130" },
               { title: "Supply Chain", description: "End-to-end supply chain visibility with demand sensing and supplier collaboration.", image: "/images/modules/supply_chain.png", color: "#1a6080", rgb: "20,88,115" },
-              { title: "CRM", description: "Unified customer data, pipeline tracking, service cases, and marketing campaigns.", image: "/images/modules/crm.png", color: "#6a2575", rgb: "95,30,105" },
-              { title: "Project Management", description: "Resource allocation, time tracking, project accounting, and milestone billing.", image: "/images/modules/project_management.png", color: "#154e8a", rgb: "18,68,130" },
+              { title: "CRM", description: "Unified customer data, pipeline tracking, service cases, and marketing campaigns.", image: "/images/modules/crm.webp", color: "#6a2575", rgb: "95,30,105" },
+              { title: "Project Management", description: "Resource allocation, time tracking, project accounting, and milestone billing.", image: "/images/modules/project_management.webp", color: "#154e8a", rgb: "18,68,130" },
               { title: "Workforce Management", description: "Time & attendance, scheduling, and labour cost analytics tied to payroll.", image: "/images/modules/workforce_management.png", color: "#1a6545", rgb: "20,95,60" },
-              { title: "HR Management", description: "Employee records, onboarding, performance reviews, and benefits administration.", image: "/images/modules/hr_management.png", color: "#8a2a3a", rgb: "130,35,48" },
-              { title: "Ecommerce", description: "Native B2B/B2C storefront connected directly to inventory, orders, and fulfilment.", image: "/images/modules/ecommerce.png", color: "#0f4e8a", rgb: "12,68,130" },
+              { title: "HR Management", description: "Employee records, onboarding, performance reviews, and benefits administration.", image: "/images/modules/hr_management.webp", color: "#8a2a3a", rgb: "130,35,48" },
+              { title: "Ecommerce", description: "Native B2B/B2C storefront connected directly to inventory, orders, and fulfilment.", image: "/images/modules/ecommerce.webp", color: "#0f4e8a", rgb: "12,68,130" },
               { title: "Marketing Automation", description: "Campaign management, lead nurture, and ROI analytics integrated with CRM.", image: "/images/modules/marketing_automation.png", color: "#523a8a", rgb: "75,48,130" },
             ].map((mod, index) => (
               <Link key={index} href="#contact-form" className="block h-full">

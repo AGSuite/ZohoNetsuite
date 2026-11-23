@@ -76,7 +76,7 @@ export default function CrmWhatIs() {
               {/* High-Resolution Dashboard Image Frame */}
               <div className="relative w-full h-[280px] sm:h-[380px] md:h-[430px] bg-slate-950 overflow-hidden">
                 <Image
-                  src="/images/zoho-dashboards/zoho-crm-updated-dashboard.png"
+                  src="/images/zoho-dashboards/zoho-crm-updated-dashboard.webp"
                   alt="What is Zoho CRM — Modern Cloud Customer Relationship Management"
                   fill
                   className="object-contain object-top p-1"

@@ -58,6 +58,10 @@ const HeroSlide = ({
                   src={bg}
                   alt=""
                   aria-hidden="true"
+                  width={1920}
+                  height={1080}
+                  loading={priority ? "eager" : "lazy"}
+                  fetchPriority={priority ? "high" : "low"}
                   decoding="async"
                   className="w-full h-full object-cover object-center"
                 />
@@ -76,7 +80,7 @@ const HeroSlide = ({
           <AnimatePresence mode="wait">
             {isActive && (
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                  initial={priority ? false : { opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
@@ -97,14 +101,14 @@ const HeroSlide = ({
                 )}
 
                 <motion.p
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={priority ? false : { opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                   className={`mt-6 sm:mt-6 text-base sm:text-base lg:text-lg xl:text-xl font-normal leading-relaxed ${textColor === 'dark' ? 'text-gray-700' : 'text-white/90'
                     }`}>{desc}</motion.p>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={priority ? false : { opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                   className="mt-7 sm:mt-7 relative inline-flex group"
@@ -127,7 +131,7 @@ const HeroSlide = ({
             <AnimatePresence mode="wait">
               {isActive && (
                 <motion.div
-                  initial={{ opacity: 0, x: 100 }}
+                  initial={priority ? false : { opacity: 0, x: 100 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
                   className="w-full relative"
@@ -196,7 +200,7 @@ export default function ZohoHeroSlider() {
               {/* Desktop: full pink bg image */}
               <picture className="hidden lg:block absolute inset-0 w-full h-full">
                 <source media="(min-width: 1024px)" srcSet="/images/Background/heropinkbg.webp" type="image/webp" />
-                <img src="/images/Background/heropinkbg.webp" alt="" aria-hidden="true" decoding="async" className="w-full h-full object-cover object-center" />
+                <img src="/images/Background/heropinkbg.webp" alt="" aria-hidden="true" width="1920" height="1080" loading="eager" decoding="async" fetchPriority="high" className="w-full h-full object-cover object-center" />
               </picture>
             </div>
           }
@@ -241,10 +245,10 @@ export default function ZohoHeroSlider() {
                   {/* Dashboard Image Inside Frame */}
                   <div className="relative overflow-hidden rounded-b-2xl bg-slate-50">
                     <Image
-                      src="/images/zoho-dashboards/zoho-crm-updated-dashboard.png"
+                      src="/images/zoho-dashboards/zoho-crm-updated-dashboard.webp"
                       alt="Zoho CRM Agreements & Sales Analytics Dashboard"
-                      width={1600}
-                      height={1100}
+                      width={1024}
+                      height={682}
                       quality={85}
                       priority
                       className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
@@ -546,10 +550,10 @@ export default function ZohoHeroSlider() {
                   {/* Dashboard Image Inside Frame */}
                   <div className="relative overflow-hidden rounded-b-2xl bg-slate-50">
                     <Image
-                      src="/images/zoho-dashboards/zoho-creator-updated-dashboard.png"
+                      src="/images/zoho-dashboards/zoho-creator-updated-dashboard.webp"
                       alt="Zoho Creator Custom Apps Dashboard"
-                      width={1600}
-                      height={1100}
+                      width={1024}
+                      height={682}
                       quality={85}
                       className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 75vw"
@@ -596,7 +600,7 @@ export default function ZohoHeroSlider() {
       <SwiperSlide>
         <HeroSlide
           isActive={activeIndex === 3}
-          bg="/images/Background/herobg5.png"
+          bg="/images/Background/herobg5.webp"
           title="Experience AI-powered Zoho One — The Operating System for Business"
           titleGradient="bg-gradient-to-r from-slate-950 via-slate-900 to-blue-600 bg-clip-text text-transparent"
           desc="Unify your sales, marketing, finance, HR, and operations on a single, secure cloud platform of over 50+ integrated applications."
@@ -636,10 +640,10 @@ export default function ZohoHeroSlider() {
                   {/* Dashboard Image Inside Frame */}
                   <div className="relative overflow-hidden rounded-b-2xl bg-slate-50">
                     <Image
-                      src="/images/zoho-dashboards/zoho-one-updated-dashboard.png"
+                      src="/images/zoho-dashboards/zoho-one-updated-dashboard.webp"
                       alt="Zoho One Business Operating System"
-                      width={1600}
-                      height={1100}
+                      width={1024}
+                      height={682}
                       quality={85}
                       className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 75vw"
@@ -773,10 +777,10 @@ export default function ZohoHeroSlider() {
                   {/* Dashboard Image Inside Frame */}
                   <div className="relative overflow-hidden rounded-b-2xl bg-slate-50">
                     <Image
-                      src="/images/zoho-dashboards/zoho-books-updated-dashboard.png"
+                      src="/images/zoho-dashboards/zoho-books-updated-dashboard.webp"
                       alt="Zoho Books Finance Dashboard"
-                      width={1600}
-                      height={1100}
+                      width={1024}
+                      height={682}
                       quality={85}
                       className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 75vw"
@@ -902,10 +906,10 @@ export default function ZohoHeroSlider() {
                   {/* Dashboard Image Inside Frame */}
                   <div className="relative overflow-hidden rounded-b-2xl bg-slate-50">
                     <Image
-                      src="/images/zoho-dashboards/zoho-erp-updated-dashboard.png"
+                      src="/images/zoho-dashboards/zoho-erp-updated-dashboard.webp"
                       alt="Zoho ERP Business Overview Dashboard"
-                      width={1600}
-                      height={1100}
+                      width={1024}
+                      height={682}
                       quality={85}
                       className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 75vw"
@@ -1031,10 +1035,10 @@ export default function ZohoHeroSlider() {
                   {/* Dashboard Image Inside Frame */}
                   <div className="relative overflow-hidden rounded-b-2xl bg-slate-50">
                     <Image
-                      src="/images/zoho-dashboards/zoho-people-updated.png"
+                      src="/images/zoho-dashboards/zoho-people-updated.webp"
                       alt="Zoho People HR Management Dashboard"
-                      width={1600}
-                      height={1100}
+                      width={1024}
+                      height={682}
                       quality={85}
                       className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       sizes="(max-width: 1024px) 100vw, 75vw"

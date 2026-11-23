@@ -89,7 +89,7 @@ export default function SuiteProjectProPage() {
       title: "Advanced Billing",
       description:
         "Support for the most complex billing scenarios including T&M, fixed-price, milestone, and outcome-based.",
-      image: "/images/modules/order_management.png",
+      image: "/images/modules/order_management.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -113,7 +113,7 @@ export default function SuiteProjectProPage() {
       title: "Project Accounting",
       description:
         "Connect project activities directly to financials for accurate cost tracking and real-time margin analysis.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a6080",
       rgb: "20,88,115",
     },
@@ -145,7 +145,7 @@ export default function SuiteProjectProPage() {
       title: "Opportunity Management",
       description:
         "Link CRM opportunities to project delivery for early insight into upcoming resource needs and capacity.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },

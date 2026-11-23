@@ -34,7 +34,7 @@ export default function ZohoDeskPage() {
     {
       title: "Ticket Management",
       description: "Organize, prioritize, and resolve customer queries across multiple channels from a single, unified view.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
@@ -76,7 +76,7 @@ export default function ZohoDeskPage() {
     {
       title: "SLA Management",
       description: "Define and track service level agreements to maintain high standards and meet customer expectations.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a6545",
       rgb: "20,95,60",
     },

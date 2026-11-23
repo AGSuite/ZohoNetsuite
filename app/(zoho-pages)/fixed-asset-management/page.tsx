@@ -208,7 +208,7 @@ export default function FixedAssetManagementPage() {
       iconBg: "bg-gradient-to-br from-pink-100 to-rose-100 text-pink-700 border-pink-200/80",
       shadowHover: "hover:shadow-pink-500/10",
       checkColor: "text-pink-600",
-      image: "/images/zoho-dashboards/zoho-creator-updated-dashboard.png"
+      image: "/images/zoho-dashboards/zoho-creator-updated-dashboard.webp"
     },
     {
       title: "Centralized Reporting & Decision Support",

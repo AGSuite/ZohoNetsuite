@@ -57,7 +57,7 @@ export default function ZohoPayrollPage() {
     {
       title: "Benefits Management",
       description: "Administer employee benefits, health insurance, and retirement plans seamlessly within the payroll workflow.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a6080",
       rgb: "20,88,115",
     },
@@ -85,7 +85,7 @@ export default function ZohoPayrollPage() {
     {
       title: "Custom Allowances",
       description: "Define bespoke earnings and deduction components to perfectly match your organization's compensation structure.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },

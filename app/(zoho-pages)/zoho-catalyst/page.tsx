@@ -105,7 +105,7 @@ export default function ZohoCatalystPage() {
     {
       title: "Environment Management",
       description: "Manage development, testing, and production environments with complete isolation and security.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },

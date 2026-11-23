@@ -41,14 +41,14 @@ export default function ZohoMarketingAutomationPage() {
     {
       title: "Lead Scoring",
       description: "Automatically identify your hottest leads based on their interaction and engagement levels across all touchpoints.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },
     {
       title: "Webinar Marketing",
       description: "Manage end-to-end webinar workflows, from registration and reminders to follow-ups and CRM sync.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#4a3a8a",
       rgb: "65,45,130",
     },
@@ -83,7 +83,7 @@ export default function ZohoMarketingAutomationPage() {
     {
       title: "E-Commerce Automation",
       description: "Recover abandoned carts, send personalized product recommendations, and nurture repeat buyers automatically.",
-      image: "/images/modules/ecommerce.png",
+      image: "/images/modules/ecommerce.webp",
       color: "#8a2a3a",
       rgb: "130,35,48",
     },

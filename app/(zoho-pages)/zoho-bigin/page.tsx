@@ -34,14 +34,14 @@ export default function ZohoBiginPage() {
     {
       title: "Pipeline Management",
       description: "Visual, drag-and-drop pipelines that help you track every stage of your deals with absolute clarity.",
-      image: "/images/modules/order_management.png",
+      image: "/images/modules/order_management.webp",
       color: "#1a7a55",
       rgb: "18,108,72",
     },
     {
       title: "Contact Management",
       description: "Keep all your customer interactions, history, and notes organized in one clean, easy-to-use interface.",
-      image: "/images/modules/crm.png",
+      image: "/images/modules/crm.webp",
       color: "#a05a18",
       rgb: "145,75,18",
     },
@@ -69,7 +69,7 @@ export default function ZohoBiginPage() {
     {
       title: "Activities & Tasks",
       description: "Stay on top of your schedule with reminders, tasks, and calls linked directly to your contacts and deals.",
-      image: "/images/modules/project_management.png",
+      image: "/images/modules/project_management.webp",
       color: "#154e8a",
       rgb: "18,68,130",
     },
@@ -90,7 +90,7 @@ export default function ZohoBiginPage() {
     {
       title: "Product Catalog",
       description: "Keep track of your products and services and link them directly to your deals and invoices.",
-      image: "/images/modules/inventory_management.png",
+      image: "/images/modules/inventory_management.webp",
       color: "#0f4e8a",
       rgb: "12,68,130",
     },
