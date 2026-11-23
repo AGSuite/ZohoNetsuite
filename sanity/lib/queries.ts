@@ -6,7 +6,11 @@ export const POSTS_QUERY = groq`*[_type == "post" && defined(slug.current)] | or
 
 // Keep sitemap discovery independent from the 100-post limit used by blog listings.
 // Only fields needed to build sitemap entries are requested.
-export const SITEMAP_POSTS_QUERY = groq`*[_type == "post" && defined(slug.current)] | order(coalesce(publishedAt, _createdAt) desc, _createdAt desc){
+export const SITEMAP_POSTS_QUERY = groq`*[
+  _type == "post" &&
+  defined(slug.current) &&
+  (!defined(publishedAt) || publishedAt <= now())
+] | order(coalesce(publishedAt, _createdAt) desc, _createdAt desc){
   _createdAt, _updatedAt, publishedAt, slug
 }`
 

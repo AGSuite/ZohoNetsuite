@@ -40,7 +40,11 @@ const ZOHO_CASE_STUDY_DOCUMENT_PATHS = [
 // Dynamic Sanity results are deduplicated against these canonical URLs below.
 const FEATURED_ZOHO_BLOG_POSTS = [
   {
-    slug: "zoho-erp-streamline-business-operations",
+    slug: "zoho-marketing-automation-features-benefits",
+    publishedAt: "2026-11-23",
+  },
+  {
+    slug: "how-zoho-erp-streamlines-business-operations-and-boosts-productivity",
     publishedAt: "2026-11-20",
   },
 ] as const;

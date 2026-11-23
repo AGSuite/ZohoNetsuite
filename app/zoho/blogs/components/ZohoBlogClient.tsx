@@ -10,6 +10,8 @@ import SanityCdnImage from '@/app/components/SanityCdnImage';
 
 export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
 
+    const useFullBannerRatio = post?.slug?.current === 'zoho-marketing-automation-features-benefits';
+
     const sanitizedBody = React.useMemo(() => {
         if (!Array.isArray(post?.body)) return post?.body;
         return post.body.filter((block: any) => {
@@ -232,7 +234,7 @@ export default function ZohoBlogClient({ post, featuredImageUrl, mins }: any) {
             {/* ─── BANNER IMAGE (centered, half overlapping) ─── */}
             {featuredImageUrl && (
                 <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 sm:-mt-28 mb-12 sm:mb-16">
-                    <div className="w-full bg-slate-200 rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white aspect-[16/9] sm:aspect-[16/7.5]">
+                    <div className={`w-full bg-slate-200 rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white aspect-[16/9] ${useFullBannerRatio ? 'sm:aspect-[16/9]' : 'sm:aspect-[16/7.5]'}`}>
                         <SanityCdnImage
                             src={featuredImageUrl}
                             alt={post.title}

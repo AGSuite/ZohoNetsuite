@@ -5,7 +5,7 @@ Open the Zoho Sanity Studio: https://www.agsuitetech.com/zoho/studio
 ## Content fields
 
 - **Title:** How Zoho ERP Streamlines Business Operations and Boosts Productivity
-- **Slug:** `zoho-erp-streamline-business-operations`
+- **Slug:** `how-zoho-erp-streamlines-business-operations-and-boosts-productivity`
 - **Author:** AGSuite Technologies
 - **Published at:** Select the intended publication date and time
 - **Categories:** Zoho ERP, Business Automation, Digital Transformation
