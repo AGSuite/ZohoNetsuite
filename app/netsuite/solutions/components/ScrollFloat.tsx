@@ -8,7 +8,7 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-interface ScrollFloatProps {
+export interface ScrollFloatProps {
   children: string;
   containerClassName?: string;
   fromColor?: string; // hex e.g. '#111827'

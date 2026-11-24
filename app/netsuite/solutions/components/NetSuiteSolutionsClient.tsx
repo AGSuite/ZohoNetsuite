@@ -1,34 +1,45 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, useSpring, useTransform, useScroll } from 'framer-motion';
+import { motion, useTransform, useScroll } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useInView } from 'react-intersection-observer';
 import {
-  Trophy, Users, Globe2, Rocket, Briefcase, Database, HeartHandshake, ArrowRight, CheckCircle2, BarChart3, ShoppingCart, Globe,
-  TrendingUp, Layers, DollarSign, BookOpen, Star, ChevronRight, GraduationCap, Wrench, Settings, Building2, Target
+  Trophy, Users, Rocket, Database, HeartHandshake, ArrowRight, CheckCircle2, BarChart3, ShoppingCart, Globe,
+  TrendingUp, Layers, DollarSign, BookOpen, Star, ChevronRight, GraduationCap, Wrench, Settings
 } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import type { ScrollFloatProps } from './ScrollFloat';
+import type { RotatingTextProps } from './RotatingText';
 const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
 
-const ScrollFloat = dynamic(() => import('./ScrollFloat'), { ssr: false }) as any;
-const RotatingText = dynamic(() => import('./RotatingText'), { ssr: false }) as any;
-
-function Counter({ value }: { value: number }) {
-  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
-  const spring = useSpring(0, { mass: 0.8, stiffness: 75, damping: 15 });
-  const display = useTransform(spring, (v) => Math.round(v));
-  useEffect(() => { if (inView) { spring.set(value); } else { spring.set(0); } }, [inView, spring, value]);
-  return <span ref={ref}><motion.span>{display}</motion.span></span>;
-}
+const ScrollFloat = dynamic<ScrollFloatProps>(() => import('./ScrollFloat'), { ssr: false });
+const RotatingText = dynamic<RotatingTextProps>(() => import('./RotatingText'), {
+  ssr: false,
+  loading: () => (
+    <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
+      AI-Driven Automation
+    </span>
+  ),
+});
 
 type ParticleDatum = { width: number; height: number; top: string; left: string; duration: number; delay: number };
 
+const createParticles = (count: number, minSize: number, sizeRange: number): ParticleDatum[] =>
+  Array.from({ length: count }, (_, index) => ({
+    width: minSize + ((index * 7) % sizeRange),
+    height: minSize + ((index * 11) % sizeRange),
+    top: `${(index * 37) % 100}%`,
+    left: `${(index * 61) % 100}%`,
+    duration: 3 + ((index * 13) % 5),
+    delay: (index % 10) * 0.4,
+  }));
+
+const INTRO_PARTICLES = createParticles(20, 2, 4);
+const SECTION_STARS = createParticles(50, 1, 2);
+
 export default function NetSuiteSolutionsClient() {
   const [isMobile, setIsMobile] = useState(false);
-  const [introParticles, setIntroParticles] = useState<ParticleDatum[]>([]);
-  const [sectionStars, setSectionStars] = useState<ParticleDatum[]>([]);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1024);
@@ -37,30 +48,6 @@ export default function NetSuiteSolutionsClient() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  useEffect(() => {
-    setIntroParticles(
-      Array.from({ length: 20 }, () => ({
-        width: Math.random() * 4 + 2,
-        height: Math.random() * 4 + 2,
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        duration: Math.random() * 5 + 5,
-        delay: Math.random() * 5,
-      }))
-    );
-    setSectionStars(
-      Array.from({ length: 50 }, () => ({
-        width: Math.random() * 2 + 1,
-        height: Math.random() * 2 + 1,
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        duration: Math.random() * 3 + 2,
-        delay: Math.random() * 5,
-      }))
-    );
-  }, []);
-
-  const { ref: statsRef } = useInView({ triggerOnce: false, threshold: 0.2 });
   const [rotatingIdx, setRotatingIdx] = useState(0);
 
   const wordColors = [
@@ -70,15 +57,6 @@ export default function NetSuiteSolutionsClient() {
     { text: '#ffffff', bg: '#1e3a8a', border: '#1e40af' },
   ];
   const currentColor = wordColors[rotatingIdx] ?? wordColors[0];
-
-  const stats = [
-    { label: "Projects Completed", value: 700, suffix: "+", icon: Briefcase },
-    { label: "Global Customers", value: 250, suffix: "+", icon: Building2 },
-    { label: "Industry Expertise", value: 15, suffix: "+", icon: Target },
-    { label: "Customer Retention", value: 84, suffix: "%", icon: HeartHandshake },
-    { label: "Years Experience", value: 15, suffix: "+", icon: Rocket },
-    { label: "Countries Serving", value: 10, suffix: "+", icon: Globe2 },
-  ];
 
   const imageBgGradients = [
     'linear-gradient(135deg, #1e3a8aff, #2563ebff, #1e40af)',
@@ -321,13 +299,13 @@ export default function NetSuiteSolutionsClient() {
         <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[140px]" />
         <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px)', backgroundSize: '70px 70px' }} />
         <div className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 w-full pt-40 pb-20">
-          <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20">
+          <motion.nav initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="absolute top-24 sm:top-28 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20">
             <Link href="/netsuite" className="text-blue-300 hover:text-white transition-colors">Home</Link>
             <ChevronRight className="w-3.5 h-3.5 text-white/30" /><span className="text-white/80">NetSuite Solutions</span>
           </motion.nav>
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-6" style={{ minHeight: '500px' }}>
-            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.3]">
+            <motion.div initial={false} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+              <motion.h1 initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-[1.3]">
                 <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-400 mb-2">Transform Business Operations with<br />Oracle NetSuite &{' '}</span>
 
                 <motion.span
@@ -355,8 +333,8 @@ export default function NetSuiteSolutionsClient() {
                   />
                 </motion.span>
               </motion.h1>
-              <motion.div initial={{ width: 0 }} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }} className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full" />
-              <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }} className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8">
+              <motion.div initial={false} animate={{ width: "80px" }} transition={{ delay: 0.45, duration: 0.6 }} className="h-[3px] bg-gradient-to-r from-blue-500 to-cyan-300 mb-5 rounded-full" />
+              <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }} className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mb-8">
                 Comprehensive NetSuite solutions tailored to your unique business needs. From core ERP to specialized add-ons — scale with confidence on the world&apos;s #1 cloud platform.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
@@ -365,7 +343,7 @@ export default function NetSuiteSolutionsClient() {
                 </Link>
               </motion.div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
+            <motion.div initial={false} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.0, delay: 0.4 }} className="relative hidden lg:flex items-center justify-center" style={{ minHeight: 460 }}>
               <div className="relative w-[88%] ml-auto">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/50" style={{ height: 390 }}>
                   <Image src="/images/netsuiteimages/netsuitemainpageheroimg.webp" alt="Oracle NetSuite Solutions" fill className="object-cover object-center" priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
@@ -402,7 +380,7 @@ export default function NetSuiteSolutionsClient() {
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2" />
-          {introParticles.map((p, i) => (
+          {INTRO_PARTICLES.map((p, i) => (
             <motion.div
               key={i}
               className="absolute bg-white/10 rounded-full"
@@ -431,7 +409,15 @@ export default function NetSuiteSolutionsClient() {
                 className="flex items-center justify-center rounded-2xl"
                 style={{ minHeight: 340 }}
               >
-                <Image src="/images/netsuiteimages/netsuitemainpage2ndsec.jpeg" alt="Oracle NetSuite Platform" width={560} height={380} className="w-full h-auto rounded-xl object-cover border-2 border-indigo-100 shadow-xl" priority />
+                <Image
+                  src="/images/netsuiteimages/netsuitemainpage2ndsec.jpeg"
+                  alt="Oracle NetSuite Platform"
+                  width={1200}
+                  height={896}
+                  className="w-full h-auto rounded-xl object-cover border-2 border-indigo-100 shadow-xl"
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: isMobile ? 0 : 30 }}
@@ -494,7 +480,7 @@ export default function NetSuiteSolutionsClient() {
             </>
           )}
 
-          {sectionStars.map((s, i) => (
+          {SECTION_STARS.map((s, i) => (
             <motion.div
               key={i}
               className="absolute bg-white rounded-full"
