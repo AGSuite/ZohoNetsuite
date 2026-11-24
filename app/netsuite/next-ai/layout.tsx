@@ -1,42 +1,15 @@
 import type { Metadata } from "next";
+import { createServiceMetadata, ServicePageJsonLd } from "@/app/netsuite/components/ServicePageSeo";
 
-export const metadata: Metadata = {
+const seo = {
   title: "NetSuite Next AI | Artificial Intelligence in NetSuite | AGSuite Technologies",
-  description:
-    "Oracle NetSuite Next AI brings intelligent automation, predictive insights, and real-time decision-making directly into your NetSuite ERP environment.",
-  alternates: {
-    canonical: "https://www.agsuitetech.com/netsuite/next-ai",
-  },
-  openGraph: {
-    title: "NetSuite Next AI | AGSuite Technologies",
-    description:
-      "Intelligent automation and predictive analytics powered by NetSuite Next AI.",
-    url: "https://www.agsuitetech.com/netsuite/next-ai",
-    siteName: "AGSuite Technologies",
-    images: [
-      {
-        url: "https://www.agsuitetech.com/images/lap/Next AI Dashboard.webp",
-        width: 1200,
-        height: 630,
-        alt: "NetSuite Next AI Dashboard",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "NetSuite Next AI | AGSuite Technologies",
-    description:
-      "Intelligent automation and predictive analytics powered by NetSuite Next AI.",
-    images: ["https://www.agsuitetech.com/images/lap/Next AI Dashboard.webp"],
-  },
+  description: "Oracle NetSuite Next AI brings intelligent automation, predictive insights, and real-time decision-making directly into your NetSuite ERP environment.",
+  path: "/netsuite/next-ai",
+  serviceName: "NetSuite Next AI Solutions",
+  image: "/images/lap/Next AI Dashboard.webp",
+  keywords: ["NetSuite Next AI", "NetSuite artificial intelligence", "Ask Oracle AI", "AI-powered ERP"],
 };
-
-export default function NextAILayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+export const metadata: Metadata = createServiceMetadata(seo);
+export default function NetSuiteNextAILayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <><ServicePageJsonLd {...seo} />{children}</>;
 }

@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useInView } from "react-intersection-observer";
 import {
   ArrowRight,
@@ -30,8 +31,11 @@ import {
   Cpu,
   Lock,
 } from "lucide-react";
-import { FAQ } from "@/app/components/home/FAQ";
-import ContactFormDesign4 from "@/app/netsuite/components/ContactFormDesign4";
+const FAQ = dynamic(() => import("@/app/components/home/FAQ").then((module) => module.FAQ));
+const ContactFormDesign4 = dynamic(
+  () => import("@/app/netsuite/components/ContactFormDesign4"),
+  { ssr: false },
+);
 
 const CTA_PARTICLES = [
   { w: 2.1, h: 1.6, top: 12, left: 8, dur: 5.2, delay: 0.5 },
@@ -307,14 +311,15 @@ export default function NetSuiteIntegrationClient() {
             fill
             className="object-cover object-center"
             priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+            sizes="100vw"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
         </div>
 
         <div className="relative z-10 flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 w-full pt-24 sm:pt-32 pb-8 sm:pb-10">
           <motion.nav
-            initial={{ opacity: 0, y: -8 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.5 }}
             className="absolute top-20 sm:top-24 left-4 sm:left-6 flex items-center gap-2 text-sm font-medium z-20"
@@ -337,12 +342,12 @@ export default function NetSuiteIntegrationClient() {
             style={{ minHeight: "calc(100vh - 150px)" }}
           >
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={false}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
               <motion.h1
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 sm:mb-5 leading-[1.15] tracking-tight"
@@ -353,14 +358,14 @@ export default function NetSuiteIntegrationClient() {
               </motion.h1>
 
               <motion.div
-                initial={{ width: 0 }}
+                initial={false}
                 animate={{ width: "80px" }}
                 transition={{ delay: 0.45, duration: 0.6 }}
                 className="h-[3px] bg-gradient-to-r from-blue-500 to-blue-300 mb-5 sm:mb-6 rounded-full"
               />
 
               <motion.p
-                initial={{ opacity: 0, y: 15 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35 }}
                 className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed max-w-xl mb-8 sm:mb-10"
@@ -397,7 +402,7 @@ export default function NetSuiteIntegrationClient() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={false}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.0, delay: 0.4 }}
               className="relative hidden lg:flex items-center justify-center"
@@ -413,8 +418,8 @@ export default function NetSuiteIntegrationClient() {
                     alt="NetSuite Integration Services"
                     fill
                     className="object-cover object-center"
-                    priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                    sizes="(max-width: 1200px) 50vw, 40vw"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                 </div>
 

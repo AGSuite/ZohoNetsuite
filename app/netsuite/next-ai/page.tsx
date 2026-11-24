@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -23,71 +23,10 @@ import {
   FiUsers,
   FiChevronRight,
 } from "react-icons/fi";
-import {
-  useMotionTemplate,
-  useMotionValue,
-  motion,
-  animate,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import NSHeroNextAIVisual from "../components/NSHeroNextAIVisual";
 import dynamic from 'next/dynamic';
 const FooterContactForm = dynamic(() => import('@/app/components/shared/FooterContactForm'), { ssr: false });
-
-const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
-
-// Reduced stars for performance
-const StarsCanvas = () => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let animationFrameId: number;
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
-
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    };
-    window.addEventListener("resize", handleResize);
-
-    const numStars = 40;
-    const stars = Array.from({ length: numStars }).map(() => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      size: Math.random() * 1.2 + 0.3,
-      alpha: Math.random(),
-      speed: Math.random() * 0.008 + 0.002,
-    }));
-
-    const render = () => {
-      ctx.clearRect(0, 0, width, height);
-      stars.forEach((star) => {
-        star.alpha += star.speed;
-        if (star.alpha > 1 || star.alpha < 0) star.speed = -star.speed;
-        ctx.fillStyle = `rgba(255, 255, 255, ${Math.abs(star.alpha)})`;
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-        ctx.fill();
-      });
-      animationFrameId = requestAnimationFrame(render);
-    };
-    render();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
-
-  return <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none w-full h-full" />;
-};
 
 /* ── Ask Oracle Interactive Features Section ──────────────────────────────── */
 const askOracleFeatureItems = [
@@ -325,21 +264,7 @@ function AskOracleFeatures() {
 
 
 export default function NetSuiteNextAIPage() {
-  const color = useMotionValue(COLORS_TOP[0]);
   const [activeModule, setActiveModule] = useState("accounting");
-
-  useEffect(() => {
-    animate(color, COLORS_TOP, {
-      ease: "easeInOut",
-      duration: 10,
-      repeat: Infinity,
-      repeatType: "mirror",
-    });
-  }, [color]);
-
-  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
-  const border = useMotionTemplate`1px solid ${color}`;
-  const boxShadow = useMotionTemplate`0px 4px 24px ${color}`;
 
   const industries = [
     {
@@ -468,53 +393,36 @@ export default function NetSuiteNextAIPage() {
     <main className="min-h-screen bg-slate-950 text-slate-100 font-sans overflow-x-hidden">
 
       {/* ── 1. AURORA HERO ─────────────────────────────────────────────── */}
-      <motion.section
-        style={{ backgroundImage }}
-        className="relative grid min-h-screen place-content-center overflow-hidden bg-gray-950 px-4 pt-28 pb-20"
-      >
-        <StarsCanvas />
+      <section className="relative grid min-h-screen place-content-center overflow-hidden bg-[radial-gradient(125%_125%_at_50%_0%,#020617_50%,#1e3a8a)] px-4 pt-28 pb-20">
 
         <div className="relative z-10 flex flex-col items-center max-w-6xl mx-auto text-center">
 
 
           {/* Headline — single line */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+          <h1
             className="w-full max-w-4xl bg-gradient-to-br from-white via-slate-100 to-slate-300 bg-clip-text text-center text-2xl sm:text-5xl lg:text-6xl font-medium leading-tight text-transparent tracking-tight px-2"
           >
             NetSuite Next: The Future of AI-Powered Business
-          </motion.h1>
+          </h1>
 
           {/* Single-line description */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+          <p
             className="mt-4 max-w-3xl text-center text-sm sm:text-lg text-slate-300 font-normal px-2 whitespace-pre-line"
           >
             {"Make every decision smarter with AI that understands your business,\nanticipates what’s next, and helps you act with confidence."}
-          </motion.p>
+          </p>
 
           {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+          <div
             className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-8 w-full sm:w-auto px-4"
           >
-            <motion.button
-              style={{ border, boxShadow }}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="w-full sm:w-auto group relative flex items-center justify-center gap-2.5 rounded-full bg-gray-950/80 px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-extrabold text-white backdrop-blur-md cursor-pointer hover:bg-slate-900 shadow-xl"
+            <Link
+              href="#contact-form"
+              className="w-full sm:w-auto group relative flex items-center justify-center gap-2.5 rounded-full border border-cyan-400 bg-gray-950/80 px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-extrabold text-white backdrop-blur-md hover:bg-slate-900 shadow-[0_4px_24px_rgba(34,211,238,0.35)] transition-transform hover:scale-[1.03]"
             >
-              <Link href="#contact-form" className="flex items-center gap-2">
                 <span>Take NetSuite Next For A Spin</span>
                 <FiArrowRight className="transition-transform group-hover:translate-x-1.5" />
-              </Link>
-            </motion.button>
+            </Link>
 
             <Link
               href="#ask-oracle"
@@ -523,19 +431,16 @@ export default function NetSuiteNextAIPage() {
               <FiPlay className="text-cyan-400" />
               <span>Explore Ask Oracle AI</span>
             </Link>
-          </motion.div>
+          </div>
 
           {/* Dashboard Image */}
-          <motion.div
-            initial={{ opacity: 0, y: 50, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
+          <div
             className="relative mt-8 sm:mt-10 w-full max-w-4xl sm:max-w-5xl lg:max-w-6xl mx-auto"
           >
             <NSHeroNextAIVisual containerClassName="w-full max-w-full ml-0" showCards={false} />
-          </motion.div>
+          </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* ── 2. TRUST METRICS BAR ───────────────────────────────────────── */}
       <section className="relative py-10 sm:py-12 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 border-y border-slate-800/60">
@@ -611,11 +516,11 @@ export default function NetSuiteNextAIPage() {
               <Image
                 src="/images/lap/ask_oracle_laptop_v3.jpg"
                 alt="Ask Oracle AI in Action — NetSuite Next AI Dashboard on MacBook Pro on desk"
-                width={1400}
-                height={1400}
+                width={1024}
+                height={1024}
                 className="w-full h-auto object-cover rounded-t-2xl sm:rounded-t-3xl"
-                priority
-                unoptimized
+                loading="lazy"
+                sizes="(max-width: 1024px) 100vw, 1024px"
               />
             </div>
 
