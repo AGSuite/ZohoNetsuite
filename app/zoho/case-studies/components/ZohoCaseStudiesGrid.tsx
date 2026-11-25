@@ -286,16 +286,20 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/case-studies/cards/23-engineering-consulting-crm.webp",
         pdfUrl: "/transforming-customer-data-management-with-zoho-crm.pdf",
         company: "Zoho for Engineering Consulting",
+        clientName: "DigitiseIT India Pvt. Ltd.",
         industry: "Engineering Consulting",
         tags: ["Zoho Engineering Consulting"],
         recipientEmail: "shivam@agsuitetech.com",
-        ctaEnabled: true
+        ctaEnabled: true,
+        showCaseStudyLabel: true
     }
 ];
 
 const orderedCaseStudies = [
     ...allCaseStudies.filter((study) => study.id === 20),
-    ...allCaseStudies.filter((study) => Boolean(study.pdfUrl) && study.id !== 20),
+    ...allCaseStudies.filter((study) => study.id === 13),
+    ...allCaseStudies.filter((study) => study.id === 23),
+    ...allCaseStudies.filter((study) => Boolean(study.pdfUrl) && ![20, 13, 23].includes(study.id)),
     ...allCaseStudies.filter((study) => !study.pdfUrl),
 ];
 
