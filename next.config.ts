@@ -79,6 +79,17 @@ const nextConfig: NextConfig = {
         destination: 'https://www.agsuitetech.com/:path*',
         permanent: true,
       },
+      {
+        source: '/contact',
+        has: [
+          {
+            type: 'host',
+            value: 'sandbox.agsuitetech.com',
+          },
+        ],
+        destination: '/',
+        permanent: true,
+      },
       { source: '/index.php', destination: '/', permanent: true },
       { source: '/index.html', destination: '/', permanent: true },
       { source: '/index', destination: '/', permanent: true },

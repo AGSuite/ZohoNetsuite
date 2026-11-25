@@ -30,6 +30,8 @@ interface CaseStudy {
     recipientEmail: string;
     ctaEnabled?: boolean;
     pdfUrl?: string;
+    showCaseStudyLabel?: boolean;
+    clientName?: string;
 }
 
 const allCaseStudies: CaseStudy[] = [
@@ -244,10 +246,12 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/case-studies/cards/20-fisheries-payroll.webp",
         pdfUrl: "/streamlining-payroll-management-compliance-with-zoho-payroll.pdf",
         company: "Zoho for Fisheries Industry",
+        clientName: "Vaishnavi Aquatech Private Limited",
         industry: "Fisheries Industry",
         tags: ["Zoho Fisheries Industry"],
         recipientEmail: "shivam@agsuitetech.com",
-        ctaEnabled: true
+        ctaEnabled: true,
+        showCaseStudyLabel: true
     },
     {
         id: 21,
@@ -288,7 +292,8 @@ const allCaseStudies: CaseStudy[] = [
 ];
 
 const orderedCaseStudies = [
-    ...allCaseStudies.filter((study) => Boolean(study.pdfUrl)),
+    ...allCaseStudies.filter((study) => study.id === 20),
+    ...allCaseStudies.filter((study) => Boolean(study.pdfUrl) && study.id !== 20),
     ...allCaseStudies.filter((study) => !study.pdfUrl),
 ];
 
@@ -449,9 +454,22 @@ const ZohoCaseStudiesGrid = () => {
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                        {filteredStudies.map((study) => (
+                        {filteredStudies.map((study, index) => (
+                            <React.Fragment key={study.id}>
+                            {!study.pdfUrl && (index === 0 || Boolean(filteredStudies[index - 1]?.pdfUrl)) && (
+                                <div
+                                    className="col-span-full flex items-center gap-4 py-3 sm:py-5"
+                                    role="separator"
+                                    aria-label="Old Case Studies"
+                                >
+                                    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-300 to-slate-300" />
+                                    <span className="shrink-0 rounded-full border border-slate-200 bg-white px-5 py-2 text-xs font-bold uppercase tracking-[0.18em] text-slate-600 shadow-sm sm:text-sm">
+                                        Old Case Studies
+                                    </span>
+                                    <div className="h-px flex-1 bg-gradient-to-l from-transparent via-slate-300 to-slate-300" />
+                                </div>
+                            )}
                             <div
-                                key={study.id}
                                 className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-red-900/10 flex flex-col group transition-all duration-300 border border-slate-100 hover:-translate-y-2 h-full"
                             >
                                 {/* Image Box */}
@@ -490,23 +508,32 @@ const ZohoCaseStudiesGrid = () => {
                                 <div className="relative isolate overflow-hidden p-6 md:p-8 flex flex-col flex-grow bg-white text-slate-900 transition-colors duration-500 group-hover:bg-orange-50/70">
                                     <div className="absolute -right-20 -bottom-20 -z-10 h-56 w-56 rounded-full bg-gradient-to-br from-amber-200/10 via-orange-300/35 to-orange-500/45 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
                                     <div className="absolute right-0 bottom-0 -z-10 h-32 w-32 bg-gradient-to-tl from-orange-400/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                                    <h4 className="text-[13px] font-extrabold text-[#eab308] uppercase tracking-widest mb-3 border-l-2 border-[#eab308] pl-2 flex items-center transition-colors duration-300 group-hover:text-slate-900 group-hover:border-orange-500">
-                                        {study.company}
-                                    </h4>
+                                    {study.showCaseStudyLabel ? (
+                                        <div className="mb-4">
+                                            <h4 className="text-[13px] font-extrabold text-[#eab308] uppercase tracking-widest mb-3 border-l-2 border-[#eab308] pl-2 flex items-center transition-colors duration-300 group-hover:text-slate-900 group-hover:border-orange-500">
+                                                {study.company}
+                                            </h4>
+                                            <h4 className="mb-3 text-sm font-extrabold leading-snug text-[#102a56] md:text-base">
+                                                {study.clientName}
+                                            </h4>
+                                            <div className="flex items-center gap-3">
+                                                <span className="shrink-0 text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#102a56]">
+                                                    Case Study
+                                                </span>
+                                                <span className="h-0.5 flex-1 rounded-full bg-gradient-to-r from-[#102a56] to-[#a66a00]" aria-hidden="true" />
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <h4 className="text-[13px] font-extrabold text-[#eab308] uppercase tracking-widest mb-3 border-l-2 border-[#eab308] pl-2 flex items-center transition-colors duration-300 group-hover:text-slate-900 group-hover:border-orange-500">
+                                            {study.company}
+                                        </h4>
+                                    )}
                                     <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 group-hover:text-slate-950 transition-colors leading-tight">
                                         {study.title}
                                     </h3>
                                     <p className="text-slate-600 mb-6 flex-grow line-clamp-3 leading-relaxed text-sm transition-colors duration-300 group-hover:text-slate-800">
                                         {study.description}
                                     </p>
-
-                                    <div className="flex flex-wrap gap-2 mb-6">
-                                        {study.tags.map(tag => (
-                                            <span key={tag} className="text-[10px] font-semibold bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md transition-colors duration-300 group-hover:bg-white/80 group-hover:text-slate-800">
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
 
                                     {study.ctaEnabled !== false && (
                                         study.pdfUrl ? (
@@ -537,6 +564,7 @@ const ZohoCaseStudiesGrid = () => {
                                     )}
                                 </div>
                             </div>
+                            </React.Fragment>
                         ))}
                     </div>
                 )}

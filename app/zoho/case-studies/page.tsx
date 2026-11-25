@@ -41,7 +41,7 @@ export default function CaseStudiesPage() {
 
                 <div className="relative z-10 max-w-4xl w-full mx-auto px-6 text-center flex flex-col items-center">
                     <span className="inline-flex items-center px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white font-medium tracking-widest uppercase text-xs md:text-sm mb-6 backdrop-blur-sm shadow-sm hover:bg-white/15 transition-colors">
-                        Customer Success Stories
+                        Our Zoho Customers Case Studies
                     </span>
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-tight mb-6">
                         From Complexity to Clarity:{' '}
@@ -50,7 +50,7 @@ export default function CaseStudiesPage() {
                         </span>
                     </h1>
                     <p className="text-lg md:text-xl text-red-100/80 max-w-2xl mx-auto leading-relaxed font-medium">
-                        Discover how industry leaders are transforming their operations and driving remarkable growth with Zoho and AGSuite.
+                        Discover how industries are transforming their operations and driving remarkable growth with Zoho and AGSuite.
                     </p>
                 </div>
             </section>
