@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+  <rect width="900" height="360" rx="18" fill="#08769f"/>
+  <text x="65" y="220" font-family="Arial, sans-serif" font-size="145" font-weight="500" fill="white">Innovalus</text>
+  <path d="M67 245c80 38 160 38 240 0" fill="none" stroke="white" stroke-width="12" stroke-linecap="round"/>
+</svg>

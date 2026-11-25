@@ -2,25 +2,8 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useInView } from "framer-motion";
-
-/* ------------ Logos (same paths you already use) ------------ */
-
-type Logo = { id: string; logo: string; name: string; link?: string };
-
-const logos: Logo[] = [
-  { id: "affle", logo: "/images/assets/affle%20tech.webp", name: "Affle", link: "https://www.affle.com" },
-  { id: "tyfone", logo: "/images/assets/tyfone%20tech.webp", name: "Tyfone", link: "https://www.tyfone.com" },
-  { id: "airling", logo: "/images/assets/airling%20tech.webp", name: "Airling", link: "#" },
-  { id: "videoverse", logo: "/images/assets/video%20verse%20tech.webp", name: "VideoVerse", link: "https://www.videoverse.com" },
-  { id: "quickheal", logo: "/images/assets/quickheal%20tech.webp", name: "Quick Heal", link: "https://www.quickheal.com" },
-  { id: "controlservice", logo: "/images/assets/control%20service.webp", name: "Control Service", link: "#" },
-  { id: "uniacco", logo: "/images/assets/uniAcco%20service.webp", name: "UniAcco", link: "https://www.uniacco.com" },
-  { id: "dlz", logo: "/images/assets/dlz%20service.webp", name: "DLZ", link: "#" },
-  { id: "indovance", logo: "/images/assets/indovance%20service.webp", name: "Indovance", link: "https://www.indovance.com" },
-  { id: "pace", logo: "/images/assets/pace%20services.webp", name: "Pace", link: "#" },
-];
+import { zohoCustomerLogos as logos } from "../data/customerLogos";
 
 /* ------------ Main hero images (keep same paths) ------------ */
 

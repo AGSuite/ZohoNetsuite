@@ -3,34 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
-const customerLogos = [
-  { logo: "/images/zoho%20client%20images/customers/edelweiss.webp", name: "Edelweiss" },
-  { logo: "/images/zoho%20client%20images/customers/modefin.webp", name: "Modefin" },
-  { logo: "/images/zoho%20client%20images/customers/kforce.webp", name: "Kforce" },
-  { logo: "/images/zoho%20client%20images/customers/chemicea.webp", name: "Chemicea" },
-  { logo: "/images/zoho%20client%20images/customers/pt-ecological.webp", name: "PT Ecological Services" },
-  { logo: "/images/zoho%20client%20images/customers/worldpack.webp", name: "Worldpack Automation Systems" },
-  { logo: "/images/zoho%20client%20images/customers/biozed.webp", name: "BioZed" },
-  { logo: "/images/zoho%20client%20images/customers/rts-imaging.webp", name: "RTS Imaging" },
-  { logo: "/images/zoho%20client%20images/customers/gatilek.webp", name: "GatiLek" },
-  { logo: "/images/zoho%20client%20images/customers/cactus-partners.webp", name: "Cactus Partners" },
-  { logo: "/images/zoho%20client%20images/customers/milo-jewels.webp", name: "Milo Jewels" },
-  { logo: "/images/zoho%20client%20images/customers/sapl.webp", name: "SAPL" },
-  { logo: "/images/zoho%20client%20images/customers/nina-percept.webp", name: "Nina Percept" },
-  { logo: "/images/zoho%20client%20images/customers/aurionpro.webp", name: "Aurionpro" },
-  { logo: "/images/zoho%20client%20images/customers/indialand.webp", name: "IndiaLand" },
-  { logo: "/images/zoho%20client%20images/customers/bettinelli.webp", name: "Bettinelli" },
-  { logo: "/images/zoho%20client%20images/customers/shaurrya.webp", name: "Shaurrya Teleservices" },
-  { logo: "/images/zoho%20client%20images/customers/initium.webp", name: "Initium Digital" },
-  { logo: "/images/zoho%20client%20images/customers/avaso.webp", name: "AVASO Technology Solutions" },
-  { logo: "/images/zoho%20client%20images/customers/waco.webp", name: "Waco" },
-  { logo: "/images/zoho%20client%20images/customers/tardid.webp", name: "Tardid" },
-  { logo: "/images/zoho%20client%20images/customers/ziptrip.webp", name: "Ziptrip" },
-  { logo: "/images/zoho%20client%20images/customers/dai-ichi.webp", name: "Dai-ichi Specialty Chemicals" },
-  { logo: "/images/zoho%20client%20images/customers/samson.webp", name: "Samson" },
-  { logo: "/images/zoho%20client%20images/customers/incuspaze.webp", name: "Incuspaze Office Spaces" },
-];
+import { zohoCustomerLogos } from "../data/customerLogos";
 
 export default function ZohoCustomersSection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -72,7 +45,7 @@ export default function ZohoCustomersSection() {
                 className="zoho-customers-track flex shrink-0 items-center"
                 aria-hidden={duplicateTrack || undefined}
               >
-                {customerLogos.map((customer) => (
+                {zohoCustomerLogos.map((customer) => (
                   <div key={customer.name} className="inline-flex px-4">
                     <div className="flex h-20 w-44 items-center justify-center rounded-2xl border border-gray-100 bg-white/80 p-2.5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white hover:shadow-xl sm:h-24 sm:w-52 sm:p-3">
                       <Image

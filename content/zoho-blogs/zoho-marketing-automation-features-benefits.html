@@ -18,12 +18,31 @@
       line-height: 1.8;
     }
 
-    .zma-guide * { box-sizing: border-box; }
-    .zma-guide section { scroll-margin-top: 110px; }
-    .zma-guide p { margin: 0 0 1.25rem; }
-    .zma-guide strong { color: var(--zma-ink); }
-    .zma-guide a { color: #1d4ed8; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-    .zma-guide a:hover { color: #1e40af; }
+    .zma-guide * {
+      box-sizing: border-box;
+    }
+
+    .zma-guide section {
+      scroll-margin-top: 110px;
+    }
+
+    .zma-guide p {
+      margin: 0 0 1.25rem;
+    }
+
+    .zma-guide strong {
+      color: var(--zma-ink);
+    }
+
+    .zma-guide a {
+      color: #1d4ed8;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .zma-guide a:hover {
+      color: #1e40af;
+    }
 
     .zma-guide h2 {
       margin: 2.8rem 0 1rem;
@@ -41,9 +60,20 @@
     }
 
     .zma-guide ul,
-    .zma-guide ol { margin: 0 0 1.4rem; padding-left: 1.45rem; }
-    .zma-guide li { margin: 0.45rem 0; padding-left: 0.2rem; }
-    .zma-guide li::marker { color: var(--zma-blue); font-weight: 700; }
+    .zma-guide ol {
+      margin: 0 0 1.4rem;
+      padding-left: 1.45rem;
+    }
+
+    .zma-guide li {
+      margin: 0.45rem 0;
+      padding-left: 0.2rem;
+    }
+
+    .zma-guide li::marker {
+      color: var(--zma-blue);
+      font-weight: 700;
+    }
 
     .zma-lead {
       margin: 0 0 2rem;
@@ -82,10 +112,21 @@
       font-weight: 500;
     }
 
-    .zma-capability:nth-child(4n+1) { border-left: 3px solid var(--zma-blue); }
-    .zma-capability:nth-child(4n+2) { border-left: 3px solid var(--zma-red); }
-    .zma-capability:nth-child(4n+3) { border-left: 3px solid var(--zma-green); }
-    .zma-capability:nth-child(4n+4) { border-left: 3px solid var(--zma-orange); }
+    .zma-capability:nth-child(4n+1) {
+      border-left: 3px solid var(--zma-blue);
+    }
+
+    .zma-capability:nth-child(4n+2) {
+      border-left: 3px solid var(--zma-red);
+    }
+
+    .zma-capability:nth-child(4n+3) {
+      border-left: 3px solid var(--zma-green);
+    }
+
+    .zma-capability:nth-child(4n+4) {
+      border-left: 3px solid var(--zma-orange);
+    }
 
     .zma-contents {
       margin: 2rem 0;
@@ -95,8 +136,14 @@
       background: var(--zma-soft);
     }
 
-    .zma-contents h2 { margin: 0 0 0.85rem; font-size: 1.3rem; }
-    .zma-contents ol { margin-bottom: 0; }
+    .zma-contents h2 {
+      margin: 0 0 0.85rem;
+      font-size: 1.3rem;
+    }
+
+    .zma-contents ol {
+      margin-bottom: 0;
+    }
 
     .zma-benefit {
       margin: 1.45rem 0;
@@ -106,7 +153,9 @@
       background: #f6fef8;
     }
 
-    .zma-benefit strong { color: #166534; }
+    .zma-benefit strong {
+      color: #166534;
+    }
 
     .zma-note {
       margin: 1.5rem 0;
@@ -126,7 +175,9 @@
       background: #fffaf5;
     }
 
-    .zma-partner h2 { margin-top: 0; }
+    .zma-partner h2 {
+      margin-top: 0;
+    }
 
     .zma-cta {
       margin: 2.5rem 0 0;
@@ -137,8 +188,15 @@
       text-align: center;
     }
 
-    .zma-cta h2 { margin: 0 0 0.75rem; }
-    .zma-cta p { max-width: 720px; margin: 0 auto 1.2rem; }
+    .zma-cta h2 {
+      margin: 0 0 0.75rem;
+    }
+
+    .zma-cta p {
+      max-width: 720px;
+      margin: 0 auto 1.2rem;
+    }
+
     .zma-cta a {
       display: inline-block;
       padding: 0.8rem 1.25rem;
@@ -148,36 +206,61 @@
       font-weight: 700;
       text-decoration: none;
     }
-    .zma-cta a:hover { background: #1d4ed8; color: #fff; }
+
+    .zma-cta a:hover {
+      background: #1d4ed8;
+      color: #fff;
+    }
 
     @media (max-width: 700px) {
-      .zma-guide { font-size: 16px; line-height: 1.75; }
-      .zma-capabilities { grid-template-columns: 1fr; }
-      .zma-lead, .zma-contents, .zma-partner, .zma-cta { padding: 1.2rem; }
+      .zma-guide {
+        font-size: 16px;
+        line-height: 1.75;
+      }
+
+      .zma-capabilities {
+        grid-template-columns: 1fr;
+      }
+
+      .zma-lead,
+      .zma-contents,
+      .zma-partner,
+      .zma-cta {
+        padding: 1.2rem;
+      }
     }
   </style>
 
   <p class="zma-lead">
-    Discover how Zoho Marketing Automation helps businesses automate campaigns, nurture leads, personalise customer experiences, and improve marketing performance.
+    Discover how Zoho Marketing Automation helps businesses automate campaigns, nurture leads, personalise customer
+    experiences, and improve marketing performance.
   </p>
 
   <p>
-    Marketing today is no longer only about generating leads or sending promotional emails. Businesses need to understand customer behaviour, deliver relevant communication, and engage potential customers at the right stage of their buying journey.
+    Marketing today is no longer only about generating leads or sending promotional emails. Businesses need to
+    understand customer behaviour, deliver relevant communication, and engage potential customers at the right stage of
+    their buying journey.
   </p>
   <p>
-    Managing multiple campaigns, following up with prospects, and tracking customer interactions manually can consume significant time and resources. This is where <strong>Zoho Marketing Automation</strong> can help teams work more efficiently.
+    Managing multiple campaigns, following up with prospects, and tracking customer interactions manually can consume
+    significant time and resources. This is where <strong>Zoho Marketing Automation</strong> can help teams work more
+    efficiently.
   </p>
   <p>
-    At AGSuite Technologies, a Zoho Premium Partner, we help businesses evaluate and implement suitable Zoho solutions to simplify processes, connect customer data, and improve operational efficiency.
+    At AGSuite Technologies, a Zoho Premium Partner, we help businesses evaluate and implement suitable Zoho solutions
+    to simplify processes, connect customer data, and improve operational efficiency.
   </p>
 
   <section id="what-is-zoho-marketing-automation">
     <h2>What Is Zoho Marketing Automation?</h2>
     <p>
-      Zoho Marketing Automation is a platform for managing and automating marketing activities across the customer journey. It enables marketers to capture leads, segment audiences, create automated journeys, observe customer behaviour, qualify prospects, and analyse campaign performance.
+      Zoho Marketing Automation is a platform for managing and automating marketing activities across the customer
+      journey. It enables marketers to capture leads, segment audiences, create automated journeys, observe customer
+      behaviour, qualify prospects, and analyse campaign performance.
     </p>
     <p>
-      Instead of managing every interaction manually, businesses can create rule-based journeys that deliver communication according to customer interests, activities, and engagement stages.
+      Instead of managing every interaction manually, businesses can create rule-based journeys that deliver
+      communication according to customer interests, activities, and engagement stages.
     </p>
 
     <div class="zma-capabilities" aria-label="Zoho Marketing Automation capabilities">
@@ -211,29 +294,41 @@
   <section id="automate-activities">
     <h3>1. Automate Repetitive Marketing Activities</h3>
     <p>
-      Marketing teams frequently repeat activities such as welcome emails, follow-up messages, internal notifications, list updates, and lead-stage changes. Automating these steps helps create a consistent process without requiring an employee to initiate every action.
+      Marketing teams frequently repeat activities such as welcome emails, follow-up messages, internal notifications,
+      list updates, and lead-stage changes. Automating these steps helps create a consistent process without requiring
+      an employee to initiate every action.
     </p>
     <p>
-      A workflow can begin when a contact submits a form, joins a list, visits an important page, reaches a defined score, or completes another configured activity. The journey can then wait, evaluate conditions, send relevant communication, update information, or notify the appropriate team.
+      A workflow can begin when a contact submits a form, joins a list, visits an important page, reaches a defined
+      score, or completes another configured activity. The journey can then wait, evaluate conditions, send relevant
+      communication, update information, or notify the appropriate team.
     </p>
-    <div class="zma-benefit"><strong>Business benefit:</strong> Less repetitive work, more consistent follow-up, and more time for campaign strategy and creative activities.</div>
+    <div class="zma-benefit"><strong>Business benefit:</strong> Less repetitive work, more consistent follow-up, and
+      more time for campaign strategy and creative activities.</div>
   </section>
 
   <section id="capture-leads">
     <h3>2. Capture and Organise Leads</h3>
     <p>
-      Zoho Marketing Automation supports lead generation through tools such as signup forms, landing pages, and pop-ups. These tools help businesses convert website visitors and campaign audiences into contacts that can enter an organised nurturing process.
+      Zoho Marketing Automation supports lead generation through tools such as signup forms, landing pages, and pop-ups.
+      These tools help businesses convert website visitors and campaign audiences into contacts that can enter an
+      organised nurturing process.
     </p>
     <p>
-      Teams can use lists, tags, topics, and lifecycle stages to keep contact information structured. Good data organisation also makes it easier to select the right audience for each campaign and avoid sending the same message to everyone.
+      Teams can use lists, tags, topics, and lifecycle stages to keep contact information structured. Good data
+      organisation also makes it easier to select the right audience for each campaign and avoid sending the same
+      message to everyone.
     </p>
-    <div class="zma-benefit"><strong>Business benefit:</strong> A more structured lead database and a clearer path from initial interest to marketing engagement.</div>
+    <div class="zma-benefit"><strong>Business benefit:</strong> A more structured lead database and a clearer path from
+      initial interest to marketing engagement.</div>
   </section>
 
   <section id="segment-personalise">
     <h3>3. Segment Audiences and Personalise Engagement</h3>
     <p>
-      Different customers have different interests, requirements, and levels of purchase intent. Audience segmentation allows marketers to group contacts using relevant attributes and activities rather than relying on a single broad mailing list.
+      Different customers have different interests, requirements, and levels of purchase intent. Audience segmentation
+      allows marketers to group contacts using relevant attributes and activities rather than relying on a single broad
+      mailing list.
     </p>
     <p>Segments can be designed around factors such as:</p>
     <ul>
@@ -246,66 +341,90 @@
     <p>
       These groups can support more relevant messages, offers, and journeys while reducing unnecessary communication.
     </p>
-    <div class="zma-benefit"><strong>Business benefit:</strong> Better-targeted campaigns and customer communication that reflects genuine interests and behaviour.</div>
+    <div class="zma-benefit"><strong>Business benefit:</strong> Better-targeted campaigns and customer communication
+      that reflects genuine interests and behaviour.</div>
   </section>
 
   <section id="customer-journeys">
     <h3>4. Build Automated Customer Journeys</h3>
     <p>
-      The journey builder helps teams visualise and automate engagement paths. Marketers can combine triggers, conditions, delays, and actions to respond differently as contacts move through the buying journey.
+      The journey builder helps teams visualise and automate engagement paths. Marketers can combine triggers,
+      conditions, delays, and actions to respond differently as contacts move through the buying journey.
     </p>
     <p>
-      For example, a new lead may receive a welcome message, wait for a defined period, and then follow a different path depending on whether they opened an email, visited a product page, or reached a qualification threshold. The journey can continue nurturing early-stage prospects while directing more engaged leads towards the next appropriate action.
+      For example, a new lead may receive a welcome message, wait for a defined period, and then follow a different path
+      depending on whether they opened an email, visited a product page, or reached a qualification threshold. The
+      journey can continue nurturing early-stage prospects while directing more engaged leads towards the next
+      appropriate action.
     </p>
-    <div class="zma-benefit"><strong>Business benefit:</strong> Timely engagement at scale without treating every prospect in exactly the same way.</div>
+    <div class="zma-benefit"><strong>Business benefit:</strong> Timely engagement at scale without treating every
+      prospect in exactly the same way.</div>
   </section>
 
   <section id="website-behaviour">
     <h3>5. Understand Website Behaviour and Visitor Intent</h3>
     <p>
-      Website tracking helps marketing teams understand how known contacts interact with selected pages and links. Teams can define website goals, review activity, and use behaviour as an input for segmentation or automation.
+      Website tracking helps marketing teams understand how known contacts interact with selected pages and links. Teams
+      can define website goals, review activity, and use behaviour as an input for segmentation or automation.
     </p>
     <p>
-      A visitor repeatedly viewing a service page may require different communication from someone who has only subscribed to a newsletter. Behavioural information helps marketers recognise these differences and create more relevant follow-up paths.
+      A visitor repeatedly viewing a service page may require different communication from someone who has only
+      subscribed to a newsletter. Behavioural information helps marketers recognise these differences and create more
+      relevant follow-up paths.
     </p>
-    <div class="zma-benefit"><strong>Business benefit:</strong> Clearer insight into customer interests and more informed decisions about when and how to engage.</div>
+    <div class="zma-benefit"><strong>Business benefit:</strong> Clearer insight into customer interests and more
+      informed decisions about when and how to engage.</div>
   </section>
 
   <section id="lead-scoring">
     <h3>6. Qualify Leads and Align Marketing with Sales</h3>
     <p>
-      Lead scoring helps businesses assign value to meaningful contact attributes and engagement activities. Lifecycle stages can then help teams distinguish early prospects from contacts showing stronger intent.
+      Lead scoring helps businesses assign value to meaningful contact attributes and engagement activities. Lifecycle
+      stages can then help teams distinguish early prospects from contacts showing stronger intent.
     </p>
     <p>
-      Integration with Zoho CRM can support the flow of suitable contact information between marketing and sales processes. When implemented with agreed qualification rules, this gives sales teams clearer context and helps marketing teams understand which activities contribute to sales-ready opportunities.
+      Integration with Zoho CRM can support the flow of suitable contact information between marketing and sales
+      processes. When implemented with agreed qualification rules, this gives sales teams clearer context and helps
+      marketing teams understand which activities contribute to sales-ready opportunities.
     </p>
-    <div class="zma-benefit"><strong>Business benefit:</strong> Better lead prioritisation, clearer handovers, and improved coordination between marketing and sales teams.</div>
+    <div class="zma-benefit"><strong>Business benefit:</strong> Better lead prioritisation, clearer handovers, and
+      improved coordination between marketing and sales teams.</div>
   </section>
 
   <section id="multichannel">
     <h3>7. Coordinate Multichannel Marketing</h3>
     <p>
-      Customers interact with businesses through more than one channel. Zoho Marketing Automation supports engagement across channels that can include email, SMS, WhatsApp, and social media, depending on the selected plan, configuration, region, and connected services.
+      Customers interact with businesses through more than one channel. Zoho Marketing Automation supports engagement
+      across channels that can include email, SMS, WhatsApp, and social media, depending on the selected plan,
+      configuration, region, and connected services.
     </p>
     <p>
-      Coordinating activities through one marketing strategy can reduce isolated campaigns and help teams maintain a more consistent customer experience. The appropriate channel should still be selected according to customer consent, communication preferences, and applicable regulations.
+      Coordinating activities through one marketing strategy can reduce isolated campaigns and help teams maintain a
+      more consistent customer experience. The appropriate channel should still be selected according to customer
+      consent, communication preferences, and applicable regulations.
     </p>
-    <div class="zma-benefit"><strong>Business benefit:</strong> More coordinated outreach and greater flexibility in how customers are engaged.</div>
+    <div class="zma-benefit"><strong>Business benefit:</strong> More coordinated outreach and greater flexibility in how
+      customers are engaged.</div>
   </section>
 
   <section id="analytics">
     <h3>8. Measure Campaigns with Analytics and Reports</h3>
     <p>
-      Campaign dashboards and reports help teams review engagement and assess which activities are performing effectively. Depending on the available features and configuration, marketers can monitor campaign results, journeys, website goals, lead sources, attribution, and other relevant performance indicators.
+      Campaign dashboards and reports help teams review engagement and assess which activities are performing
+      effectively. Depending on the available features and configuration, marketers can monitor campaign results,
+      journeys, website goals, lead sources, attribution, and other relevant performance indicators.
     </p>
     <p>
-      The marketing planner can also help teams organise activities, timelines, goals, tasks, and budgets. Combining planning with measurable results supports continuous improvement instead of relying only on assumptions.
+      The marketing planner can also help teams organise activities, timelines, goals, tasks, and budgets. Combining
+      planning with measurable results supports continuous improvement instead of relying only on assumptions.
     </p>
-    <div class="zma-benefit"><strong>Business benefit:</strong> Better visibility into marketing performance and more evidence-based campaign decisions.</div>
+    <div class="zma-benefit"><strong>Business benefit:</strong> Better visibility into marketing performance and more
+      evidence-based campaign decisions.</div>
   </section>
 
   <aside class="zma-note">
-    <strong>Important:</strong> Zoho Marketing Automation features and limits vary by edition, region, connected channel, and configuration. Confirm current plan availability before designing your final implementation.
+    <strong>Important:</strong> Zoho Marketing Automation features and limits vary by edition, region, connected
+    channel, and configuration. Confirm current plan availability before designing your final implementation.
   </aside>
 
   <section id="business-benefits">
@@ -313,10 +432,13 @@
     <ul>
       <li><strong>Saves time:</strong> automates repeatable campaign and nurturing activities.</li>
       <li><strong>Improves relevance:</strong> uses segments, behaviour, and lifecycle data to guide communication.</li>
-      <li><strong>Supports lead nurturing:</strong> maintains engagement with prospects who are not ready to buy immediately.</li>
-      <li><strong>Strengthens sales alignment:</strong> connects marketing context with suitable Zoho CRM processes.</li>
+      <li><strong>Supports lead nurturing:</strong> maintains engagement with prospects who are not ready to buy
+        immediately.</li>
+      <li><strong>Strengthens sales alignment:</strong> connects marketing context with suitable Zoho CRM processes.
+      </li>
       <li><strong>Improves visibility:</strong> provides dashboards and reports for campaign evaluation.</li>
-      <li><strong>Supports scale:</strong> helps teams manage growing audiences without manually executing every interaction.</li>
+      <li><strong>Supports scale:</strong> helps teams manage growing audiences without manually executing every
+        interaction.</li>
     </ul>
   </section>
 
@@ -332,14 +454,16 @@
       <li>Campaign and journey reports help the marketing team refine future activity.</li>
     </ol>
     <p>
-      This process does not replace marketing strategy or human decision-making. It provides a structured system that helps teams execute their strategy more consistently and learn from measurable customer behaviour.
+      This process does not replace marketing strategy or human decision-making. It provides a structured system that
+      helps teams execute their strategy more consistently and learn from measurable customer behaviour.
     </p>
   </section>
 
   <section class="zma-partner" id="agsuite-implementation">
     <h2>Why Choose AGSuite Technologies?</h2>
     <p>
-      Marketing automation produces better results when it reflects real customer journeys, clean data, clear consent, and agreed processes between marketing and sales. Simply activating the software is not enough.
+      Marketing automation produces better results when it reflects real customer journeys, clean data, clear consent,
+      and agreed processes between marketing and sales. Simply activating the software is not enough.
     </p>
     <p>As a Zoho Premium Partner, AGSuite Technologies can assist with:</p>
     <ul>
@@ -355,17 +479,21 @@
   <section id="conclusion">
     <h2>Build Smarter Marketing Processes with Zoho</h2>
     <p>
-      Zoho Marketing Automation gives businesses practical tools to capture leads, understand behaviour, automate journeys, coordinate campaigns, qualify prospects, and measure results. The greatest value comes from configuring these capabilities around a clear marketing strategy and a well-defined customer journey.
+      Zoho Marketing Automation gives businesses practical tools to capture leads, understand behaviour, automate
+      journeys, coordinate campaigns, qualify prospects, and measure results. The greatest value comes from configuring
+      these capabilities around a clear marketing strategy and a well-defined customer journey.
     </p>
     <p>
-      With the right implementation, marketing teams can reduce repetitive work, improve the relevance of customer communication, and create a stronger connection between campaign activity and business growth.
+      With the right implementation, marketing teams can reduce repetitive work, improve the relevance of customer
+      communication, and create a stronger connection between campaign activity and business growth.
     </p>
   </section>
 
   <aside class="zma-cta" aria-label="Zoho consultation call to action">
     <h2>Ready to Automate Your Marketing?</h2>
     <p>
-      Talk to AGSuite Technologies about a Zoho Marketing Automation setup designed around your audience, campaigns, sales process, and growth objectives.
+      Talk to AGSuite Technologies about a Zoho Marketing Automation setup designed around your audience, campaigns,
+      sales process, and growth objectives.
     </p>
     <a href="https://www.agsuitetech.com/zoho/free-consultation">Book a Free Zoho Consultation</a>
   </aside>

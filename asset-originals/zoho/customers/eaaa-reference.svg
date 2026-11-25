@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="320" viewBox="0 0 1000 320">
+  <g transform="translate(55 55)" fill="none" stroke="#073b83" stroke-width="11">
+    <path d="M155 20A100 100 0 1 0 155 200"/>
+    <circle cx="106" cy="110" r="16" fill="#073b83" stroke="none"/>
+    <path d="M106 94V48M106 126v46M90 110H44M122 110h46M95 99 62 66M117 121l33 33M117 99l33-33M95 121l-33 33" stroke-linecap="round"/>
+  </g>
+  <text x="285" y="175" font-family="Arial, sans-serif" font-size="130" font-weight="500" fill="#073b83">Edelweiss</text>
+  <text x="292" y="245" font-family="Arial, sans-serif" font-size="55" font-weight="700" letter-spacing="11" fill="#008e9c">ALTERNATIVES</text>
+</svg>

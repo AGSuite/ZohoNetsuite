@@ -4,37 +4,7 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { Sparkles, Users, TrendingUp, Award } from "lucide-react";
-
-interface LogoItem {
-  id: string;
-  logo: string;
-  name: string;
-  link: string;
-  pad?: number;
-  unopt?: boolean;
-}
-
-// Full list of Zoho client logos matching Zoho enterprise client portfolio
-const logos: LogoItem[] = [
-  { id: "allwave", logo: "/images/zoho%20client%20images/all%20wave%20av.png", name: "All Wave AV", link: "#", pad: 3 },
-  { id: "aurionpro", logo: "/images/zoho%20client%20images/aurionpro.png", name: "Aurionpro", link: "#", pad: 3 },
-  { id: "avaso", logo: "/images/zoho%20client%20images/avaso.png", name: "Avaso", link: "#", pad: 2 },
-  { id: "bettinelli", logo: "/images/zoho%20client%20images/Bettinelli.png", name: "Bettinelli", link: "#", pad: 3 },
-  { id: "dahchi", logo: "/images/zoho%20client%20images/dahchi.png", name: "Dahchi", link: "#", pad: 2 },
-  { id: "flatworld", logo: "/images/zoho%20client%20images/flatworld.png", name: "Flatworld", link: "#", pad: 3 },
-  { id: "incuspaze", logo: "/images/zoho%20client%20images/incuspaze.png", name: "Incuspaze", link: "#", pad: 3 },
-  { id: "indialand", logo: "/images/zoho%20client%20images/indialand.png", name: "IndiaLand", link: "#", pad: 3 },
-  { id: "initium", logo: "/images/zoho%20client%20images/initium.png", name: "Initium", link: "#", pad: 2 },
-  { id: "krishgen", logo: "/images/zoho%20client%20images/krishgen.png", name: "Krishgen", link: "#", pad: 3 },
-  { id: "kta", logo: "/images/zoho%20client%20images/KTA.png", name: "KTA", link: "#", pad: 2 },
-  { id: "rentopia", logo: "/images/zoho%20client%20images/rentopia_v2.png", name: "Rentopia", link: "#", pad: 3 },
-  { id: "samson", logo: "/images/zoho%20client%20images/samson.png", name: "Samson", link: "#", pad: 3 },
-  { id: "shaurrya", logo: "/images/zoho%20client%20images/shaurrya.png", name: "Shaurrya", link: "#", pad: 3 },
-  { id: "tardid", logo: "/images/zoho%20client%20images/tardid.png", name: "Tardid", link: "#", pad: 3 },
-  { id: "vsn", logo: "/images/zoho%20client%20images/vsn.png", name: "VSN", link: "#", pad: 2 },
-  { id: "waco", logo: "/images/zoho%20client%20images/Waco.png", name: "Waco", link: "#", pad: 3 },
-  { id: "ziptrip", logo: "/images/zoho%20client%20images/ziptrip.png", name: "Ziptrip", link: "#", pad: 3 },
-];
+import { zohoCustomerLogos as logos } from "../../zoho/data/customerLogos";
 
 export default function CrmClients() {
   const containerRef = useRef<HTMLElement>(null);

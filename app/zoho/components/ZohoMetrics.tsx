@@ -6,26 +6,7 @@ import { Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
-const logos = [
-    { id: "allwave", logo: "/images/zoho%20client%20images/all%20wave%20av.png", name: "All Wave AV", link: "#" },
-    { id: "aurionpro", logo: "/images/zoho%20client%20images/aurionpro.png", name: "Aurionpro", link: "#" },
-    { id: "avaso", logo: "/images/zoho%20client%20images/avaso.png", name: "Avaso", link: "#" },
-    { id: "bettinelli", logo: "/images/zoho%20client%20images/Bettinelli.png", name: "Bettinelli", link: "#" },
-    { id: "dahchi", logo: "/images/zoho%20client%20images/dahchi.png", name: "Dahchi", link: "#" },
-    { id: "incuspaze", logo: "/images/zoho%20client%20images/incuspaze.png", name: "Incuspaze", link: "#" },
-    { id: "indialand", logo: "/images/zoho%20client%20images/indialand.png", name: "IndiaLand", link: "#" },
-    { id: "initium", logo: "/images/zoho%20client%20images/initium.png", name: "Initium", link: "#" },
-    { id: "krishgen", logo: "/images/zoho%20client%20images/krishgen.png", name: "Krishgen", link: "#" },
-    { id: "kta", logo: "/images/zoho%20client%20images/KTA.png", name: "KTA", link: "#" },
-    { id: "rentopia", logo: "/images/zoho%20client%20images/rentopia_v2.png", name: "Rentopia", link: "#" },
-    { id: "samson", logo: "/images/zoho%20client%20images/samson.png", name: "Samson", link: "#" },
-    { id: "shaurrya", logo: "/images/zoho%20client%20images/shaurrya.png", name: "Shaurrya", link: "#" },
-    { id: "tardid", logo: "/images/zoho%20client%20images/tardid.png", name: "Tardid", link: "#" },
-    { id: "vsn", logo: "/images/zoho%20client%20images/vsn.png", name: "VSN", link: "#" },
-    { id: "waco", logo: "/images/zoho%20client%20images/Waco.png", name: "Waco", link: "#" },
-    { id: "ziptrip", logo: "/images/zoho%20client%20images/ziptrip.png", name: "Ziptrip", link: "#" },
-];
+import { zohoCustomerLogos as logos } from "../data/customerLogos";
 
 const ZohoMetrics = ({ hideBackground = false }: { hideBackground?: boolean }) => {
     const [isHovered, setIsHovered] = useState(false);
