@@ -157,15 +157,17 @@ const allCaseStudies: CaseStudy[] = [
     },
     {
         id: 13,
-        title: "Transforming Sales Operations with Centralised Lead Management & Region-Wise Reporting Using Zoho CRM",
+        title: "Transforming Sales Operations with Centralised Lead Management & Region Wise Reporting Using Zoho CRM",
         description: "Previously using Salesforce to manage sales operations and customer information, the business transitioned to Zoho CRM to centralise lead management, streamline sales processes, and gain better visibility into region-wise product performance.",
         image: "/images/case-studies/cards/13-manufacturing-crm-sales.webp",
         pdfUrl: "/transforming-sales-operations-with-centralised-lead-management-region-wise-reporting-using-zoho-crm.pdf",
         company: "Zoho for Manufacturing",
+        clientName: "Worldpack Automation Systems Pvt. Ltd.",
         industry: "Manufacturing",
         tags: ["Zoho Manufacturing"],
         recipientEmail: "shivam@agsuitetech.com",
-        ctaEnabled: true
+        ctaEnabled: true,
+        showCaseStudyLabel: true
     },
     {
         id: 14,

@@ -439,7 +439,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/transforming-sales-operations-with-centralised-lead-management-region-wise-reporting-using-zoho-crm.pdf',
-        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Transforming%20Sales%20Operations%20with%20Centralised%20Lead%20Management%20-Region-Wise%20Reporting%20Using%20Zoho.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Transforming%20Sales%20Operations%20with%20Centralised%20Lead%20Management%20-%20Region-Wise%20Reporting%20Using%20Zo.pdf',
       },
       { source: '/email/Logo-Light-static-to-gif', destination: '/email/Logo-Light-static-to-gif.gif' },
     ];
