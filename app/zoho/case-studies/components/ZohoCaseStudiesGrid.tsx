@@ -174,24 +174,28 @@ const allCaseStudies: CaseStudy[] = [
         title: "Centralising Customer Management & Support Operations with Zoho One",
         description: "Transitioning from a custom ERP system to Zoho One to centralise customer data, streamline customer relationship management, improve service tracking, and enhance support operations through integrated Zoho applications.",
         image: "/images/case-studies/cards/14-environmental-zoho-one.webp",
-        pdfUrl: "/centralising-customer-management-support-operations-with-zoho-one.pdf",
+        pdfUrl: "/centralising-customer-management-and-support-operations-with-zoho-one.pdf",
         company: "Zoho for Environmental Services",
+        clientName: "PT Ecological Services Pvt. Ltd.",
         industry: "Environmental Services",
         tags: ["Zoho Environmental Services"],
         recipientEmail: "shivam@agsuitetech.com",
-        ctaEnabled: true
+        ctaEnabled: true,
+        showCaseStudyLabel: true
     },
     {
         id: 15,
         title: "Streamlining Employee Management & Performance Tracking with Zoho People",
         description: "Transitioning from Excel-based HR management to Zoho People to centralise employee information, streamline HR operations, and improve employee performance tracking and visibility.",
         image: "/images/case-studies/cards/15-legal-zoho-people.webp",
-        pdfUrl: "/streamlining-employee-management-performance-tracking-with-zoho-people.pdf",
+        pdfUrl: "/streamlining-employee-management-and-performance-tracking-with-zoho-people.pdf",
         company: "Zoho for Legal Services",
+        clientName: "TLH, Advocates and Solicitors",
         industry: "Legal Services",
         tags: ["Zoho Legal Services"],
         recipientEmail: "shivam@agsuitetech.com",
-        ctaEnabled: true
+        ctaEnabled: true,
+        showCaseStudyLabel: true
     },
     {
         id: 16,
@@ -200,10 +204,12 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/case-studies/cards/16-financial-global-crm.webp",
         pdfUrl: "/transforming-global-customer-management-with-zoho-crm.pdf",
         company: "Zoho for Financial Services",
+        clientName: "Modefin",
         industry: "Financial Services",
         tags: ["Zoho Financial Services"],
         recipientEmail: "shivam@agsuitetech.com",
-        ctaEnabled: true
+        ctaEnabled: true,
+        showCaseStudyLabel: true
     },
     {
         id: 17,
@@ -212,22 +218,26 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/case-studies/cards/17-jewellery-crm.webp",
         pdfUrl: "/enhancing-jewellery-business-management-through-zoho-crm.pdf",
         company: "Zoho for Jewellery Industry",
+        clientName: "Milo Jewels",
         industry: "Jewellery Industry",
         tags: ["Zoho Jewellery Industry"],
         recipientEmail: "shivam@agsuitetech.com",
-        ctaEnabled: true
+        ctaEnabled: true,
+        showCaseStudyLabel: true
     },
     {
         id: 18,
         title: "Email Transformation & Cost Optimisation with Zoho Mail",
         description: "Migrating from Google Workspace (G-Suite) to Zoho Mail to provide a cost-effective business email solution, reduce subscription expenses, and streamline business email management.",
         image: "/images/case-studies/cards/18-manufacturing-zoho-mail.webp",
-        pdfUrl: "/email-transformation-cost-optimisation-with-zoho-mail.pdf",
+        pdfUrl: "/email-transformation-and-cost-optimisation-with-zoho-mail.pdf",
         company: "Zoho for Manufacturing",
+        clientName: "Ionisation Filtration Industries Pvt. Ltd.",
         industry: "Manufacturing",
         tags: ["Zoho Manufacturing"],
         recipientEmail: "shivam@agsuitetech.com",
-        ctaEnabled: true
+        ctaEnabled: true,
+        showCaseStudyLabel: true
     },
     {
         id: 19,
@@ -236,10 +246,12 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/case-studies/cards/19-professional-services-books.webp",
         pdfUrl: "/modernising-financial-management-with-zoho-books.pdf",
         company: "Zoho for Professional Services",
+        clientName: "Triangular Infosolutions Pvt. Ltd.",
         industry: "Professional Services",
         tags: ["Zoho Professional Services"],
         recipientEmail: "shivam@agsuitetech.com",
-        ctaEnabled: true
+        ctaEnabled: true,
+        showCaseStudyLabel: true
     },
     {
         id: 20,
@@ -262,10 +274,12 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/case-studies/cards/21-recruitment-staffing.webp",
         pdfUrl: "/transforming-recruitment-operations-through-zoho-recruit-automation.pdf",
         company: "Zoho for Recruitment & Staffing",
+        clientName: "K Force Inc.",
         industry: "Recruitment & Staffing",
         tags: ["Zoho Recruitment & Staffing"],
         recipientEmail: "shivam@agsuitetech.com",
-        ctaEnabled: true
+        ctaEnabled: true,
+        showCaseStudyLabel: true
     },
     {
         id: 22,
@@ -274,10 +288,12 @@ const allCaseStudies: CaseStudy[] = [
         image: "/images/case-studies/cards/22-facility-feedback-forms.webp",
         pdfUrl: "/centralising-customer-feedback-management-with-zoho-forms.pdf",
         company: "Zoho for Facility & Infrastructure Services",
+        clientName: "Nina Percept Pvt. Ltd.",
         industry: "Facility & Infrastructure Services",
         tags: ["Zoho Facility & Infrastructure Services"],
         recipientEmail: "shivam@agsuitetech.com",
-        ctaEnabled: true
+        ctaEnabled: true,
+        showCaseStudyLabel: true
     },
     {
         id: 23,
@@ -292,6 +308,48 @@ const allCaseStudies: CaseStudy[] = [
         recipientEmail: "shivam@agsuitetech.com",
         ctaEnabled: true,
         showCaseStudyLabel: true
+    },
+    {
+        id: 24,
+        title: "Streamlining Financial Management with Zoho Books US Edition",
+        description: "Streamlining financial operations with Zoho Books US Edition to centralise accounting data, simplify financial workflows, and improve visibility across business operations.",
+        image: "/images/case-studies/cards/24-oqton-books-us.webp",
+        pdfUrl: "/streamlining-financial-management-with-zoho-books-us-edition.pdf",
+        company: "Zoho for Software & Technology",
+        clientName: "OQTON 3DXPERT US CORP",
+        industry: "Software & Technology",
+        tags: ["Zoho Software & Technology"],
+        recipientEmail: "shivam@agsuitetech.com",
+        ctaEnabled: true,
+        showCaseStudyLabel: true
+    },
+    {
+        id: 25,
+        title: "Streamlining End-to-End Sales Management with Zoho CRM",
+        description: "Centralising end-to-end sales management with Zoho CRM to improve lead visibility, standardise sales processes, and support more consistent customer follow-ups.",
+        image: "/images/case-studies/cards/25-cactus-partners-crm.webp",
+        pdfUrl: "/streamlining-end-to-end-sales-management-with-zoho-crm.pdf",
+        company: "Zoho for Business Consulting & Services",
+        clientName: "Cactus Partners",
+        industry: "Business Consulting & Services",
+        tags: ["Zoho Business Consulting & Services"],
+        recipientEmail: "shivam@agsuitetech.com",
+        ctaEnabled: true,
+        showCaseStudyLabel: true
+    },
+    {
+        id: 26,
+        title: "Transforming Payroll Reporting with Zoho Analytics",
+        description: "Transforming payroll reporting with Zoho Analytics to centralise workforce data, simplify report preparation, and provide clearer insights for informed business decisions.",
+        image: "/images/case-studies/cards/26-youngun-analytics.webp",
+        pdfUrl: "/transforming-payroll-reporting-with-zoho-analytics.pdf",
+        company: "Zoho for Advertising & Marketing",
+        clientName: "Youngun",
+        industry: "Advertising & Marketing",
+        tags: ["Zoho Advertising & Marketing"],
+        recipientEmail: "shivam@agsuitetech.com",
+        ctaEnabled: true,
+        showCaseStudyLabel: true
     }
 ];
 
@@ -299,7 +357,18 @@ const orderedCaseStudies = [
     ...allCaseStudies.filter((study) => study.id === 20),
     ...allCaseStudies.filter((study) => study.id === 13),
     ...allCaseStudies.filter((study) => study.id === 23),
-    ...allCaseStudies.filter((study) => Boolean(study.pdfUrl) && ![20, 13, 23].includes(study.id)),
+    ...allCaseStudies.filter((study) => study.id === 14),
+    ...allCaseStudies.filter((study) => study.id === 19),
+    ...allCaseStudies.filter((study) => study.id === 18),
+    ...allCaseStudies.filter((study) => study.id === 21),
+    ...allCaseStudies.filter((study) => study.id === 24),
+    ...allCaseStudies.filter((study) => study.id === 22),
+    ...allCaseStudies.filter((study) => study.id === 25),
+    ...allCaseStudies.filter((study) => study.id === 26),
+    ...allCaseStudies.filter((study) => study.id === 17),
+    ...allCaseStudies.filter((study) => study.id === 15),
+    ...allCaseStudies.filter((study) => study.id === 16),
+    ...allCaseStudies.filter((study) => Boolean(study.pdfUrl) && ![20, 13, 23, 14, 19, 18, 21, 24, 22, 25, 26, 17, 15, 16].includes(study.id)),
     ...allCaseStudies.filter((study) => !study.pdfUrl),
 ];
 

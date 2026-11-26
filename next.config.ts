@@ -402,12 +402,20 @@ const nextConfig: NextConfig = {
         destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Centralising%20Customer%20Feedback%20Management%20with%20Zoho%20Forms.pdf',
       },
       {
+        source: '/centralising-customer-management-and-support-operations-with-zoho-one.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Centralising%20Customer%20Management%20and%20Support%20Operations%20with%20Zoho%20One.pdf',
+      },
+      {
         source: '/centralising-customer-management-support-operations-with-zoho-one.pdf',
-        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Centralising%20Customer%20Management%20-%20Support%20Operations%20with%20Zoho%20One.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Centralising%20Customer%20Management%20and%20Support%20Operations%20with%20Zoho%20One.pdf',
+      },
+      {
+        source: '/email-transformation-and-cost-optimisation-with-zoho-mail.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Email%20Transformation%20%26%20Cost%20Optimisation%20with%20Zoho%20Mail.pdf',
       },
       {
         source: '/email-transformation-cost-optimisation-with-zoho-mail.pdf',
-        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Email%20Transformation%20-%20Cost%20Optimisation%20with%20Zoho%20Mail.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Email%20Transformation%20%26%20Cost%20Optimisation%20with%20Zoho%20Mail.pdf',
       },
       {
         source: '/enhancing-jewellery-business-management-through-zoho-crm.pdf',
@@ -418,8 +426,12 @@ const nextConfig: NextConfig = {
         destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Modernising%20Financial%20Management%20with%20Zoho%20Books.pdf',
       },
       {
+        source: '/streamlining-employee-management-and-performance-tracking-with-zoho-people.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Streamlining%20Employee%20Management%20%26%20Performance%20Tracking%20with%20Zoho%20People.pdf',
+      },
+      {
         source: '/streamlining-employee-management-performance-tracking-with-zoho-people.pdf',
-        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Streamlining%20Employee%20Management%20Performance%20Tracking%20with%20Zoho%20People%20TLH_%20Advocates%20and%20Solic.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Streamlining%20Employee%20Management%20%26%20Performance%20Tracking%20with%20Zoho%20People.pdf',
       },
       {
         source: '/streamlining-payroll-management-compliance-with-zoho-payroll.pdf',
@@ -436,6 +448,18 @@ const nextConfig: NextConfig = {
       {
         source: '/transforming-recruitment-operations-through-zoho-recruit-automation.pdf',
         destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Transforming%20Recruitment%20Operations%20Through%20Zoho%20Recruit%20Automation.pdf',
+      },
+      {
+        source: '/streamlining-financial-management-with-zoho-books-us-edition.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Streamlining%20Financial%20Management%20with%20Zoho%20Books%20US%20Edition.pdf',
+      },
+      {
+        source: '/streamlining-end-to-end-sales-management-with-zoho-crm.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Streamlining%20End-to-End%20Sales%20Management%20with%20Zoho%20CRM.pdf',
+      },
+      {
+        source: '/transforming-payroll-reporting-with-zoho-analytics.pdf',
+        destination: 'https://kstiyvw2rekcbxpz.public.blob.vercel-storage.com/Zoho%20Case%20Studies/Transforming%20Payroll%20Reporting%20with%20Zoho%20Analytics.pdf',
       },
       {
         source: '/transforming-sales-operations-with-centralised-lead-management-region-wise-reporting-using-zoho-crm.pdf',
